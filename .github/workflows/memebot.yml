@@ -1,0 +1,84 @@
+name: Meme Bot
+
+# The overnight meme-coin paper bot (memebot/bot.py): fresh Solana pairs, 23:00 to 07:00
+# Bratislava time, no wallet and no real money. Its data goes to the meme-data branch.
+# A public repository gets GitHub Actions minutes for free, so it runs every night. The
+# Claude clock starts it at 23:02 (GitHub's own cron below can be hours late); the Run
+# workflow button starts it any time ("anytime" for a test in the day).
+#
+# A job may run at most 6 hours, so a night is two jobs: this one starts the next when it ends
+# before 07:00.
+
+on:
+  schedule:
+    - cron: "0 22 * 1-3,10-12 *"            # 23:00 Bratislava in winter time (late October to late March)
+    - cron: "0 21 * 3-10 *"                 # 23:00 in summer time; in March and October both run, the bot decides
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: "Minutes to run (empty: until 07:00, at most 5 h 40 min per job)"
+        required: false
+        default: ""
+      anytime:
+        description: "Run outside 23:00-07:00 too (a test run, sold at its end)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: memebot
+  cancel-in-progress: false
+
+jobs:
+  night:
+    if: github.event_name == 'workflow_dispatch' || vars.MEMEBOT_OFF != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: The bot's data (branch meme-data)
+        run: |
+          git config --global user.name "memebot"
+          git config --global user.email "memebot@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin meme-data > /dev/null; then
+            git fetch -q origin meme-data
+            git worktree add -q --detach memedata origin/meme-data
+          else
+            git worktree add -q --detach memedata
+            cd memedata && git checkout -q --orphan meme-data && git rm -rfq .
+          fi
+
+      - name: The night
+        env:
+          MINUTES: ${{ inputs.minutes }}
+          ANYTIME: ${{ inputs.anytime }}
+        run: |
+          save() {
+            ( cd memedata && git add -A && { git diff --cached --quiet || git commit -q -m "meme-data: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; } \
+              && for i in 1 2 3; do git push -q origin HEAD:meme-data && break; sleep $((i * 5)); done ) || true
+          }
+          ( sleep 45; save; while sleep 120; do save; done ) &      # the page reads it every minute
+          SAVER=$!
+          ARGS="--minutes ${MINUTES:-340}"
+          [ "$ANYTIME" = "true" ] && ARGS="$ARGS --anytime"
+          python3 memebot/bot.py run --data memedata $ARGS --summary "$GITHUB_STEP_SUMMARY" || true
+          kill $SAVER 2>/dev/null || true
+          python3 memebot/bot.py page --data memedata --out memedata/index.html
+          save
+
+      - name: The rest of the night
+        if: inputs.anytime != true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # still the night (more than 10 minutes before 07:00)? then the next job takes over
+          LEFT=$(python3 -c "import sys, datetime; sys.path.insert(0, 'memebot'); import bot; s = bot.session_of(datetime.datetime.utcnow(), bot.load_config()); print(int(s[2]) if s else 0)")
+          if [ "$LEFT" -gt 10 ]; then gh workflow run memebot.yml --ref "$GITHUB_REF_NAME"; echo "next job started ($LEFT min left)"; fi
