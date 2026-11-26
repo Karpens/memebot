@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T14:31:01Z",
+ "updated": "2026-11-26T14:31:33Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 26,
   "checked": 26,
   "filtered": 3,
-  "lines": 467,
+  "lines": 468,
   "last_rug": {
    "coin": "BLUFI",
    "pass": false
@@ -1376,6 +1376,10 @@
   [
    1795703413,
    85.18
+  ],
+  [
+   1795703473,
+   85.18
   ]
  ],
  "position_pct": 10.0,
@@ -1802,15 +1806,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T11:47:31Z",
-   "time": "12:47:31",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 4 watched · 14 rejected (serial launcher 5, dev bought 3, mayhem mode 3) · closest VP64: too young: 31 s (min 45 s)",
-   "n": 268
-  },
   {
    "t": "2026-11-26T11:47:33Z",
    "time": "12:47:33",
@@ -3601,6 +3596,15 @@
    "action": "scan",
    "text": "new pairs · 12.4 a minute · 4 watched · 36 rejected (serial launcher 33, dump 2, dev bought 1) · closest GAUTO: too young: 1 s (min 45 s)",
    "n": 467
+  },
+  {
+   "t": "2026-11-26T14:31:26Z",
+   "time": "15:31:26",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 9.8 a minute · 4 watched · 5 rejected (serial launcher 2, dump 2, dev bought 1) · closest GAUTO: too young: 21 s (min 45 s)",
+   "n": 468
   }
  ],
  "nights": [
@@ -3643,7 +3647,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3651,24 +3655,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1140,
-    "last_event_age_s": 45.8,
+    "events": 1142,
+    "last_event_age_s": 19.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19147,
-    "last_event_age_s": 0.5,
+    "events": 19248,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 900,
-    "last_event_age_s": 44.6,
+    "events": 902,
+    "last_event_age_s": 19.9,
     "errors": 40,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3681,9 +3685,9 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 11.8,
-  "watching": 3,
-  "followed": 12
+  "creates_per_min": 9.6,
+  "watching": 4,
+  "followed": 8
  },
  "learner": {
   "samples": 106,
@@ -3728,23 +3732,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8548,
+   "sent": 8582,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8548,
+   "sent": 8582,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PP",
+   "name": "Pumps & Pits",
+   "mint": "BPezJKhz5aTPmP267kpNJFjnjsCYL3N8qZgEpDJSpump",
+   "age_s": 19,
+   "sol_in": 6.83,
+   "buys": 8,
+   "sells": 9,
+   "rise_pct": 37.2,
+   "mcap_sol": 67.8,
+   "dev_pct": 26.6,
+   "big_sell": 1.63,
+   "x": "https://x.com/pumpsnpits/status/2125960420204986414?a=HntTD3mJ2qrzmzAwHKo&s=20",
+   "tg": false,
+   "web": "https://pumpsnpits.fun/",
+   "status": "rejected: dev bought 26.6% (max 8%)",
+   "why": "dev bought 26.6% (max 8%)"
+  },
+  {
+   "symbol": "TEST",
+   "name": "test",
+   "mint": "AGRDAGQycEKyj9AFhPVQ4vSVTtB9RoGrcTcP1X5zwyap",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 293884.5,
+   "mcap_sol": 82195.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/ShillMeFun",
+   "tg": false,
+   "web": "https://shillme.fun/token/AGRDAGQycEKyj9AFhPVQ4vSVTtB9RoGrcTcP1X5zwyap",
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
    "symbol": "GAUTO",
    "name": "Gemini Auto",
    "mint": "GqRjriSQzA2uqHVQh1rrJcnMf1o794EMeYnvKiUufbv5",
-   "age_s": 45,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -3762,7 +3802,7 @@
    "symbol": "TURKE",
    "name": "Turke",
    "mint": "2Hpmp36sLotWj2jtCc3qV9PdZuF7pVL4QKB8bmjDKNC6",
-   "age_s": 50,
+   "age_s": 82,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -3780,12 +3820,12 @@
    "symbol": "CRAB",
    "name": "What The Crab",
    "mint": "6ppi7LfHkAhHkQwS3kT1zjCsGYQyK4uvpp3pE6Xmpump",
-   "age_s": 107,
-   "sol_in": 44.88,
-   "buys": 41,
-   "sells": 43,
-   "rise_pct": 488.7,
-   "mcap_sol": 181.1,
+   "age_s": 139,
+   "sol_in": 53.7,
+   "buys": 57,
+   "sells": 46,
+   "rise_pct": 632.6,
+   "mcap_sol": 225.3,
    "dev_pct": 5.0,
    "big_sell": 11.57,
    "x": "https://x.com/whatthecrablol",
@@ -3798,7 +3838,7 @@
    "symbol": "Irochan",
    "name": "Irochancoin",
    "mint": "5wLuqkFVNFsWKT9MswTobNfydY1G4XPYBHxT5cioFHTo",
-   "age_s": 112,
+   "age_s": 144,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -3816,7 +3856,7 @@
    "symbol": "Razol",
    "name": "Razol",
    "mint": "7zsVzbcSsGnt9Y6rbxKoxAYrjmwnK3tzFXb7N1eJpump",
-   "age_s": 128,
+   "age_s": 160,
    "sol_in": -1.87,
    "buys": 3,
    "sells": 2,
@@ -3834,7 +3874,7 @@
    "symbol": "moose",
    "name": "moose",
    "mint": "2kBpESdmpum8NrNZ1QaPfabyHBVKCusqMcnjSbojpump",
-   "age_s": 147,
+   "age_s": 179,
    "sol_in": -0.29,
    "buys": 1,
    "sells": 1,
@@ -3847,114 +3887,6 @@
    "web": false,
    "status": "rejected: serial launcher: 3 more coins in 60 min",
    "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "in",
-   "name": "catinbucket",
-   "mint": "5PySq1RTvSHgUqhc4SRBUNX8Nd2nrPBcsL57CrMChkea",
-   "age_s": 154,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 21925.1,
-   "mcap_sol": 6158.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 20 more coins in 60 min",
-   "why": "serial launcher: 20 more coins in 60 min"
-  },
-  {
-   "symbol": "MONA",
-   "name": "Monacoin",
-   "mint": "6is11V1KgpybgPdMkYGBacbiT62kqunsvnLDNzDfpump",
-   "age_s": 159,
-   "sol_in": 41.43,
-   "buys": 27,
-   "sells": 12,
-   "rise_pct": 409.3,
-   "mcap_sol": 171.9,
-   "dev_pct": 9.6,
-   "big_sell": 5.09,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.6% (max 8%)",
-   "why": "dev bought 9.6% (max 8%)"
-  },
-  {
-   "symbol": "Husky Coin",
-   "name": "Husky Charm",
-   "mint": "G6uCd2mjLkcZJZF7nH1JiKYPxuP25MPv3jZD66cApump",
-   "age_s": 162,
-   "sol_in": 0.01,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "6K MC???",
-   "name": "CO FOUNDER COINBASE LIKED TWEET",
-   "mint": "6cSKW4FkuTew4UrNHZvSL2A29Ufc6GK5KKRFadBkAuPC",
-   "age_s": 179,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/mandenruss/status/2125954784087691668?a=bZ67eX5ZshkaXDO9jpE&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 337 more coins in 60 min",
-   "why": "serial launcher: 337 more coins in 60 min"
-  },
-  {
-   "symbol": "6K MC???",
-   "name": "CO FOUNDER COINBASE LIKED TWEET",
-   "mint": "95ubL9eDXf29YQyycyPCCW8APXYiuGZWyEQ2EDtnuHo9",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/mandenruss/status/2125954784087691668?a=bZ67eX5ZshkaXDO9jpE&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 336 more coins in 60 min",
-   "why": "serial launcher: 336 more coins in 60 min"
-  },
-  {
-   "symbol": "6K MC???",
-   "name": "CO FOUNDER COINBASE LIKED TWEET",
-   "mint": "5uvJ9UsgPWG24KvErXakkmhNgTNMcJBci2R4xnGRD5Hi",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/mandenruss/status/2125954784087691668?a=bZ67eX5ZshkaXDO9jpE&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 335 more coins in 60 min",
-   "why": "serial launcher: 335 more coins in 60 min"
   }
  ],
  "strategies": [
