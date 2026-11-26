@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:58:55Z",
+ "updated": "2026-11-26T10:59:22Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 16,
   "checked": 16,
   "filtered": 1,
-  "lines": 200,
+  "lines": 201,
   "last_rug": {
    "coin": "NODIVO",
    "pass": true
@@ -528,6 +528,10 @@
   [
    1795690681,
    87.14
+  ],
+  [
+   1795690741,
+   87.14
   ]
  ],
  "position_pct": 10.0,
@@ -869,15 +873,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:04:56Z",
-   "time": "10:04:56",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "start",
-   "text": "night 2026-11-26 · start $88.92 · 8 agents · 00:00 → 00:00",
-   "n": 1
-  },
   {
    "t": "2026-11-26T09:04:56Z",
    "time": "10:04:56",
@@ -2668,6 +2663,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 2 watched · 2 rejected (dev bought 2) · closest BABYATX: too young: 3 s (min 45 s)",
    "n": 200
+  },
+  {
+   "t": "2026-11-26T10:59:08Z",
+   "time": "11:59:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 2 watched · 3 rejected (dev bought 1, dump 1, mayhem mode 1) · closest BABYATX: too young: 3 s (min 45 s)",
+   "n": 201
   }
  ],
  "nights": [
@@ -2712,7 +2716,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2720,15 +2724,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 70,
-    "last_event_age_s": 20.4,
+    "events": 71,
+    "last_event_age_s": 8.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1531,
+    "events": 1560,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -2736,8 +2740,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 51,
-    "last_event_age_s": 41.9,
+    "events": 52,
+    "last_event_age_s": 6.8,
     "errors": 4,
     "last_error": "not an http uri"
    }
@@ -2751,8 +2755,8 @@
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
   "creates_per_min": 2.0,
-  "watching": 2,
-  "followed": 4
+  "watching": 3,
+  "followed": 5
  },
  "learner": {
   "samples": 104,
@@ -2797,23 +2801,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1031,
+   "sent": 1059,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1031,
+   "sent": 1059,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SITT",
+   "name": "So its Treason, then",
+   "mint": "CXNgcBuHRgvg2CUKxa3YTwXddm16rgzr65JF8sNBMobo",
+   "age_s": 8,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://boards.4chan.org/news/thread/1549143",
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
    "symbol": "CAODINIU",
    "name": "CAO DI NIU",
    "mint": "2ayeGF1yWSjhZdrk1vqxY9G8h6txwFu3BUJtyPuXpump",
-   "age_s": 20,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2831,12 +2853,12 @@
    "symbol": "GHOST",
    "name": "Ghost Terminal",
    "mint": "8yJzFtE2Yr7fYfph54wxW6mj8EKXgUiRAzPv5rYipump",
-   "age_s": 41,
-   "sol_in": 38.81,
-   "buys": 22,
-   "sells": 15,
-   "rise_pct": 414.7,
-   "mcap_sol": 149.7,
+   "age_s": 68,
+   "sol_in": 38.36,
+   "buys": 33,
+   "sells": 31,
+   "rise_pct": 408.0,
+   "mcap_sol": 147.7,
    "dev_pct": 2.1,
    "big_sell": 7.53,
    "x": "https://x.com/GhostTerminals/status/2125906965406634358",
@@ -2849,7 +2871,7 @@
    "symbol": "FERRETWOBBLY",
    "name": "Wobbly Ferret",
    "mint": "9pdMj3auBgD99ipTAmpbPgg1Z9LHhh7jYcdDhqi8Zxt7",
-   "age_s": 88,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2867,7 +2889,7 @@
    "symbol": "CI",
    "name": "Cold Inu",
    "mint": "E5y95kVeNusQZH4oqvZ4GocXnGfC2vSFDjZZ9hN4pump",
-   "age_s": 114,
+   "age_s": 141,
    "sol_in": -9.88,
    "buys": 9,
    "sells": 18,
@@ -2885,7 +2907,7 @@
    "symbol": "BABYATX",
    "name": "Baby Atx",
    "mint": "DwavMxfc2ojvpNgg1BTFmuB9717wdpbkVtdKXpC9pump",
-   "age_s": 148,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
