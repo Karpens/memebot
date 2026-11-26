@@ -35,33 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T15:21:26Z",
-    "time": "16:21:26",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 9.2 a minute · 14 watched · 10 rejected (serial launcher 5, mayhem mode 3, dev bought 1) · closest RWAFFLE: too young: 31 s (min 45 s)",
-    "n": 539
-   },
-   {
-    "t": "2026-11-26T15:22:27Z",
-    "time": "16:22:27",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 8.4 a minute · 17 watched · 12 rejected (serial launcher 5, dev bought 3, mayhem mode 3) · closest RWAFFLE: buy share 46%/65% · mcap 78 SOL (max 70)",
-    "n": 540
-   },
-   {
-    "t": "2026-11-26T15:23:28Z",
-    "time": "16:23:28",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.0 a minute · 17 watched · 9 rejected (dev bought 3, serial launcher 2, mayhem mode 2) · closest TRENCH: too young: 30 s (min 45 s)",
-    "n": 541
-   },
-   {
     "t": "2026-11-26T15:24:29Z",
     "time": "16:24:29",
     "agent": "SCANNER",
@@ -5433,6 +5406,33 @@
     "action": "flag",
     "text": "momentum · 5.5 SOL in · 9/13 buys (69%) · +38% since launch · mcap 42 SOL · 47 s old",
     "n": 1138
+   },
+   {
+    "t": "2026-11-26T22:29:01Z",
+    "time": "23:29:01",
+    "agent": "RUG CHECK",
+    "coin": "BTC",
+    "action": "pass",
+    "text": "PASS · 11 holders · top holder 5.0% · top 10 20% (curve left out)",
+    "n": 1139
+   },
+   {
+    "t": "2026-11-26T22:29:01Z",
+    "time": "23:29:01",
+    "agent": "LEARNER",
+    "coin": "BTC",
+    "action": "skip",
+    "text": "skip · past trades like this lost avg 11.9% · np:sol:3-6 -22.9% over 8.5, news:0-2 -17.9% over 16",
+    "n": 1140
+   },
+   {
+    "t": "2026-11-26T22:29:01Z",
+    "time": "23:29:01",
+    "agent": "LEARNER",
+    "coin": "BTC",
+    "action": "shadow",
+    "text": "SHADOW BTC · not bought (learner skip) · followed as if bought: $8.23 at 0.000003094 (curve maths, every cost) · same exits, outside the book",
+    "n": 1141
    }
   ],
   "trades": [
@@ -6190,9 +6190,9 @@
   "cooldown_until": 1795731622.817321,
   "scans": 0,
   "flagged": 74,
-  "checked": 53,
+  "checked": 54,
   "filtered": 11,
-  "lines": 1138,
+  "lines": 1141,
   "flags": [
    {
     "coin": "ZeroBlock",
@@ -6236,10 +6236,6 @@
    }
   ],
   "curve": [
-   [
-    1795696153,
-    85.94
-   ],
    [
     1795696213,
     85.94
@@ -8635,10 +8631,14 @@
    [
     1795732107,
     82.3
+   ],
+   [
+    1795732167,
+    82.3
    ]
   ],
   "last_rug": {
-   "coin": "PFE",
+   "coin": "BTC",
    "pass": true
   },
   "np_said": 1795732134.474359,
@@ -9449,11 +9449,13 @@
     "weight": 0.5
    }
   ],
-  "open": []
+  "open": [
+   "BTC"
+  ]
  },
  "learner_summary": {
   "samples": 110,
-  "skipped": 29,
+  "skipped": 30,
   "explored": 7,
   "min_samples": 8,
   "best": [
