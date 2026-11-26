@@ -676,6 +676,23 @@ class Summary(unittest.TestCase):
         self.assertIn("a hint, not a promise", page)
         self.assertEqual(said[1:], ["  tape ...", "  live check: 11 live trades, 11 replayed", "  DECISION: KEEP · thin"])
 
+    def test_the_coins_the_tape_cannot_judge_and_old_rug_lines_are_on_the_page(self):
+        """The post-fix review's finding: report.json kept the base's unjudged coins, but the page never showed them,
+        and its list of what a change needs left the unjudged rules out."""
+        rep = report("keep")
+        rep["tape"]["rug_lines_old"] = 120
+        rep["base"]["unjudged"] = {"first_part": 70, "held_out": 34,
+                                   "held_out_by_cause": {"stale": 30, "missing": 3, "unseen": 1}}
+        rep["top"][0]["unjudged"] = {"first_part": 2, "held_out": 1, "held_out_by_cause": {"stale": 0, "missing": 1,
+                                                                                          "unseen": 0}}
+        page, _ = self.page(rep)
+        self.assertIn("PF ∞ · 34 coins it cannot judge (30 waiting for holders, no fresher report, 3 no RugCheck "
+                      "report, 1 no readings) |", page)
+        self.assertIn("· 1 blind · 1 coin it cannot judge (1 no RugCheck report) |", page)
+        self.assertIn("at most 10 % as many coins the tape cannot judge for it beyond the base's as it has trades, and "
+                      "at most 10 % of its trades on coins the tape cannot judge for the base", page)
+        self.assertIn("120 RugCheck lines recorded before the tape counted the wallets holding a coin", page)
+
     def test_change_shows_the_diff_and_never_applies_it(self):
         page, _ = self.page(report("change"))
         self.assertTrue(page.startswith("## Backtest: CHANGE"))

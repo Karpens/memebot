@@ -58,8 +58,9 @@ Honest limits: the replay can only judge rules on what the live bot recorded, an
 missing, not neutral. A looser entry rule finds coins the live bot let go at once (no readings: they never
 trigger here) or never asked RugCheck about ("no report": no entry, like live): the extra trades the rule would
 make are simply not in the replay, winners and losers alike, so such a rule looks like the base, not better or
-worse ("unseen" and "rug_missing" in the stats count those coins; backtest.py will not recommend a config with
-many of them). The same for a RugCheck recheck (newpairs: a report that leaves the coin waiting, too few wallets
+worse ("unseen" and "rug_missing" in the stats count those coins: "rug_missing" a coin whose trigger fired and
+that no ask ever got a recorded report for, never a prefetch that only came too early; backtest.py will not recommend
+a config with many of them, and leaves them out of its comparison with the base). The same for a RugCheck recheck (newpairs: a report that leaves the coin waiting, too few wallets
 holding it for np_min_holders or np_max_sol_per_holder, is asked for again after np_rug_recheck_s): when the replay
 waits longer than the live bot did, the tape has no fresher report, the coin goes unbought, and "rug_stale" counts it
 (in "unjudged" too); a report handed out again that would not leave it waiting is not stale. A hold longer than the recorder's
@@ -223,6 +224,7 @@ class Tape(object):
         self.unknown = collections.Counter()
         self.bad = 0
         self.rug_failed = 0
+        self.rug_old = 0            # reports from "rug" lines recorded before the holder count of wallets ("held")
         self.files = []
         self._seq = 0
         self.t0 = self.t1 = None
@@ -290,6 +292,8 @@ class Tape(object):
             rep = rug_report_of(fields, mint)
             if rep is None:
                 self.rug_failed += 1                                # a failed ask: no report then
+            elif rug_line_old(fields):
+                self.rug_old += 1                                   # its holders: a lower bound (rug_report_of)
             ms = num(fields.get("ms"))                              # v1: from the ask to the loop taking it
             ask = round(t - ms / 1000.0, 6) if ms is not None and 0 <= ms < 3.6e6 else None
             if rep is not None or ask is not None:                  # a failed ask is kept when its ask is known
@@ -579,6 +583,9 @@ class Tape(object):
                                                                        len(self.states[m][0]) > 1),
                 "coins_with_rugcheck": sum(1 for v in self.rugs.values() if any(r is not None for _, r, _ in v)),
                 "rugcheck_failed_asks": self.rug_failed,
+                # RugCheck reports recorded before the tape counted the wallets holding a coin (f16ee6e): the holder
+                # rules judge them on the wallets their top lists, a lower bound (rug_report_of)
+                "rug_lines_old": self.rug_old,
                 "coins_with_meta": len(self.metas), "sol_prices": len(self.sol[0]),
                 "runs": [[iso(a), iso(b)] for a, b in self.runs][:50], "live_lines": len(self.live),
                 # what the tape does not cover: lines the recorder lost (a gap for every coin between two heartbeats),
@@ -599,7 +606,12 @@ def rug_report_of(fields, mint):
         rug_check_np() reads (a holder per % in "top", then as many holding, empty and curve accounts as the line
         counted: recorder.holder_list, the risks with their levels), so the engine's own rules (np_max_holder_pct,
         np_max_top10_pct, the bad risk names, insiders, the holders: newpairs.rug_holders) judge it again. A line
-        recorded before "held" counts its "holders" (totalHolders) as before: max(holders, the top it lists);
+        recorded before "held" (rug_line_old: f16ee6e's, whose "holders" is RugCheck's totalHolders, every open
+        token account, the empty ones and the curve's included) counts the wallets its "top" lists and no more: all
+        the wallets holding the coin when it lists fewer than 10 (RugCheck lists the biggest accounts first, so the
+        ones it left out held nothing), else at least 10, a lower bound. A coin whose holder rules need more waits;
+        with no fresher report on the tape the replay counts it "rug_stale" (unjudged), never a PASS live would not
+        give (live's count: newpairs.rug_holders on the whole report);
       - a short {"ok", "reasons", "top1_pct", "top10_pct"} summary: one holder at top1_pct, the rest of the top
         10 in nine equal parts, a "danger" risk per reason when it said FAIL."""
     if not isinstance(fields, dict) or fields.get("ok") is False and not any(
@@ -609,9 +621,7 @@ def rug_report_of(fields, mint):
         rep = dict(fields["report"])
     elif "topHolders" in fields or "graphInsidersDetected" in fields or "totalHolders" in fields:
         rep = dict(fields)
-    elif any(k in fields for k in ("top", "top1", "top10")) or (
-            any(k in fields for k in ("risks", "insiders", "holders")) and
-            not any(k in fields for k in ("top1_pct", "top10_pct", "reasons"))):
+    elif _summary_line(fields):
         pcts = [num(p) for p in fields.get("top") or [] if num(p) is not None and num(p) > 0]
         if not pcts and num(fields.get("top1")):
             top1 = num(fields.get("top1"))
@@ -628,7 +638,8 @@ def rug_report_of(fields, mint):
         rep = {"rugged": bool(fields.get("rugged")), "risks": risks,
                "topHolders": bot.recorder.holder_list(pcts, fields.get("held"), fields.get("empty") or 0,
                                                   fields.get("curve") or 0),
-               "totalHolders": int(num(fields.get("holders")) or 0),
+               # an old line: the wallets its top lists (its totalHolders counted the empty accounts too)
+               "totalHolders": len(pcts) if fields.get("held") is None else int(num(fields.get("holders")) or 0),
                "graphInsidersDetected": int(num(fields.get("insiders")) or 0),
                "markets": bot.recorder.rebuilt_markets(fields), "knownAccounts": {}}
     elif any(k in fields for k in ("ok", "top1_pct", "top10_pct", "reasons")):
@@ -650,6 +661,21 @@ def rug_report_of(fields, mint):
         return None
     rep.setdefault("mint", mint)
     return rep
+
+
+def _summary_line(fields):
+    """Whether a "rug" line is the recorder's summary (rug_report_of's second form), not a whole report."""
+    return not isinstance(fields.get("report"), dict) and not any(
+        k in fields for k in ("topHolders", "graphInsidersDetected", "totalHolders")) and (
+        any(k in fields for k in ("top", "top1", "top10")) or (
+            any(k in fields for k in ("risks", "insiders", "holders")) and
+            not any(k in fields for k in ("top1_pct", "top10_pct", "reasons"))))
+
+
+def rug_line_old(fields):
+    """Whether a "rug" line is a recorder summary from before the holder count of wallets ("held", "empty",
+    "curve": c8d6617): its "holders" is RugCheck's totalHolders, so rug_report_of counts the wallets its top lists."""
+    return isinstance(fields, dict) and _summary_line(fields) and fields.get("held") is None
 
 
 HOUR_RE = re.compile(r"(\d{4}-\d{2}-\d{2})T(\d{2})")
@@ -861,7 +887,9 @@ class ReplayMarket(object):
         self.quote_why = None
         self.source = "replay"
         self.stats = collections.Counter()
-        self.rug_missing = set()            # mints RugCheck was asked about with no report on the tape
+        # mints RugCheck was asked about with no report on the tape (any ask: a prefetch's too); replay() counts
+        # those whose ENTRY needed one (Context.wanted) and never got a recorded report ("rug_missing")
+        self.rug_missing = set()
         # mints the engine asked again while that report left them WAITING (too few holders for the entry: the
         # recheck of newpairs.rug_cache_s) and the tape could only answer with that same report: the live bot never
         # asked then. Unless the coin was bought in the end, its result is unknown ("unjudged"). A report handed out
@@ -1220,6 +1248,7 @@ class Context(object):
         self.creates = 0
         self.last_event_t = float("-inf")
         self.unseen = set()                 # coins watched with no readings on the tape (ReplayFeeds.seen)
+        self.wanted = set()                 # coins whose trigger fired and wanted their RugCheck report (np_rug_get)
 
     def wait(self, fut):
         self.seq += 1
@@ -1262,6 +1291,12 @@ def night_class(ctx):
 
         def np_speed_view(self, now):
             return None
+
+        def np_rug_get(self, mint):
+            # the report a fire (or RISK's shadow) judges the coin's entry on: a coin whose entry never got one is
+            # unjudged; a prefetch that found nothing yet is not (it asks before the trigger, maybe never fires)
+            ctx.wanted.add(mint)
+            return super(ReplayNight, self).np_rug_get(mint)
 
         def sol_usd(self, prices=None, fetch=False):
             # SOL/USD as the live bot priced with it at this moment (the tape's "sol" lines: each change; older
@@ -1406,16 +1441,22 @@ def replay(tape, cfg, since=None, until=None, job_min=340.0, job_gap_s=120.0, ru
         stats = dict(market.stats)
         bought = {tr.get("mint") for tr in trades} | set(state.get("positions") or {})
         stale = market.rug_stale - bought               # asked again, nothing newer on the tape, never bought
+        # its trigger fired and no ask ever got a recorded report (a prefetch that came too early for one is no
+        # reason: the coin may never fire, or its fire finds the live bot's own report)
+        missing = (market.rug_missing & ctx.wanted) - set(market.rug_given) - bought
         stats.update(sim_s=round(until - since, 1), wall_s=round(time.monotonic() - wall, 2), jobs=jobs,
-                     events=ctx.delivered, rug_missing=len(market.rug_missing), unseen=len(ctx.unseen),
+                     events=ctx.delivered, rug_missing=len(missing), unseen=len(ctx.unseen),
                      rug_stale=len(stale),
                      # coins this config would have judged on data the tape does not have (no readings, no
                      # RugCheck report, no fresher report for a recheck): its result on them is unknown, not "no trade"
-                     unjudged=len(ctx.unseen | market.rug_missing | stale),
+                     unjudged=len(ctx.unseen | missing | stale),
                      sol_from_tape=bool(tape.sol[0]), max_event_t=ctx.last_event_t if ctx.delivered else None)
         stats["creates"] = ctx.creates
         return {"trades": rows, "open": open_, "start_equity": start_eq, "end_equity": round(end_eq, 4),
-                "memory": mem, "stats": stats, "log": log if keep_log else []}
+                "memory": mem, "stats": stats, "log": log if keep_log else [],
+                # which coins, by cause (backtest.py leaves them out of its comparison with the base)
+                "unjudged_coins": {"unseen": sorted(ctx.unseen), "missing": sorted(missing - ctx.unseen),
+                                   "stale": sorted(stale - ctx.unseen - missing)}}
     finally:
         if own:
             shutil.rmtree(data_dir, ignore_errors=True)

@@ -103,9 +103,10 @@ DEFAULTS = {
     # holders, then a -28 % dump) and the waits of BST (8 holders, -9 %) and YARL (9, -14 %). rug_holders()
     # counts the WALLETS HOLDING the coin: RugCheck's totalHolders counts every open token account, the empty ones
     # of wallets that sold out included (real reports: 7 accounts, 5 of them empty, 1 wallet holding), so it is
-    # cut by the empty accounts and the curve's it lists. Fewer than np_min_holders is no PASS but "waiting" (no
-    # entry on this reading, ask again in np_rug_recheck_s). 0 turns it off. Eleven trades fit no number: the
-    # tapes decide.
+    # cut by the empty accounts and the curve's it lists (a list that shows an empty account, the biggest first,
+    # shows every wallet holding: the unlisted ones are empty too). Fewer than np_min_holders is no PASS but
+    # "waiting" (no entry on this reading, ask again in np_rug_recheck_s). 0 turns it off. Eleven trades fit no
+    # number: the tapes decide.
     "np_min_holders": 10,
     "np_rug_recheck_s": 4.0,        # a report that leaves the coin waiting is asked for again after this (the
                                     # caller's np_rug_get: rug_cache_s()), not the 30 s cache: RugCheck's
@@ -898,16 +899,21 @@ def holder_counts(report, coin=None):
 
 
 def rug_holders(report, coin=None):
-    """How many WALLETS hold the coin by a RugCheck report: its totalHolders less the empty and the curve's
-    accounts it lists, or the holding accounts it lists when that is more (RugCheck lists at most 20 accounts,
-    the biggest first: when it lists all of them, both are the same count; when there are more, the accounts it
-    does not list may be empty too, so this is an upper bound; while totalHolders is still 0, the list). Real
-    reports of 2026-11-26: 7 accounts, 5 empty, the curve's and 1 wallet holding -> 1, not 7. 0 for no report:
-    a brand-new coin's report often lists nothing yet (RugCheck has not indexed it), not "spread out"."""
+    """How many WALLETS hold the coin by a RugCheck report. RugCheck lists at most 20 accounts, the biggest first
+    (every real report: the empty ones last). So a list that shows an EMPTY account shows every account with a
+    balance, and the accounts it does not list are empty too: the count is the holding accounts it lists, however
+    many more totalHolders counts (2xhio_0: 14 wallets holding, 5 empty, the curve's; with totalHolders 30 still
+    14, not 24). A list with no empty account: its totalHolders less the curve's accounts, or the holding accounts
+    it lists when that is more (when it lists all of them, both are the same count; when there are more, the
+    accounts it does not list may hold some too, so this is an upper bound; while totalHolders is still 0, the
+    list). Real reports of 2026-11-26: 7 accounts, 5 empty, the curve's and 1 wallet holding -> 1, not 7. 0 for no
+    report: a brand-new coin's report often lists nothing yet (RugCheck has not indexed it), not "spread out"."""
     if not isinstance(report, dict) or not report.get("mint"):
         return 0
     c = holder_counts(report, coin)
-    return max(c["holding"], c["total"] - c["empty"] - c["curve"])
+    if c["empty"] > 0:
+        return c["holding"]
+    return max(c["holding"], c["total"] - c["curve"])
 
 
 def _short_of_holders(holders, coin, cfg):

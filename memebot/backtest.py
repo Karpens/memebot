@@ -27,8 +27,10 @@ What it does:
      COINS by more than the noise (per coin either config traded: its P&L % of an order minus the base's; the
      t-statistic of the mean difference at least the one-sided 2.5 % level, Bonferroni-corrected for the up to
      --top configs tried there: 2.58 for 5), a total P&L at least --margin-pct (2) % of the start balance above
-     the base's, at most 10 % blind exits, and at most 10 % as many coins the tape cannot judge for it (no
-     readings, no RugCheck report: "unjudged") beyond the base's as it has trades. Otherwise: "keep".
+     the base's, at most 10 % blind exits, at most 10 % as many coins the tape cannot judge for it (no
+     readings, no RugCheck report for its entry, a holder wait with no fresher report: "unjudged") beyond the
+     base's as it has trades, and at most 10 % of its trades on coins the tape cannot judge for the base (the coins
+     either cannot judge are left out of the comparison on the same coins). Otherwise: "keep".
 
 The report (JSON, --out) has per config: trades, win rate, total and mean P&L after costs ($ and %), max drawdown,
 profit factor, by hold tier and by exit, "blind" exits (priced on a stale reading), and the decision with the
@@ -350,11 +352,13 @@ def is_size(levers):
     return any(k in SIZE_LEVERS for k in (levers or {}))
 
 
-def paired(cand, base):
+def paired(cand, base, skip=()):
     """The candidate's held-out trades against the base's ON THE SAME COINS: per coin either config traded, its P&L %
     of an order after costs minus the base's (0 for a config that did not trade it; a coin traded twice: its trades
-    summed). Size-free: the same trades in more dollars are a difference of 0. -> {"coins", "mean", "sd", "t"}: t
-    the mean difference over its standard error (0 with no difference)."""
+    summed). Size-free: the same trades in more dollars are a difference of 0. skip: coins either config could not
+    judge (replay.py's "unjudged_coins"): its result there is unknown, not 0, so the difference is too, and they are
+    left out. -> {"coins", "mean", "sd", "t"}: t the mean difference over its standard error (0 with no
+    difference)."""
     def by_coin(trades):
         out = collections.defaultdict(float)
         for i, t in enumerate(trades or []):
@@ -363,7 +367,8 @@ def paired(cand, base):
                 out[t.get("mint") or "?%d" % i] += p
         return out
     a, b = by_coin(cand), by_coin(base)
-    d = [a.get(m, 0.0) - b.get(m, 0.0) for m in set(a) | set(b)]
+    skip = set(skip or ())
+    d = [a.get(m, 0.0) - b.get(m, 0.0) for m in (set(a) | set(b)) - skip]
     n = len(d)
     mean = sum(d) / n if n else 0.0
     sd = (sum((x - mean) ** 2 for x in d) / (n - 1)) ** 0.5 if n > 1 else 0.0
@@ -381,11 +386,35 @@ def t_needed(tries, alpha=0.025):
     return round(statistics.NormalDist().inv_cdf(1 - alpha / max(1, int(tries))), 2)
 
 
-def judge(cand, base_test, min_trades, margin_usd, t_need=None, pair=None, unjudged_extra=0):
+# why the tape cannot judge a coin for a config (replay.py's "unjudged_coins"), in words
+UNJUDGED_WHY = (("stale", "waiting for RugCheck to see enough holders, no fresher report on the tape: the live bot "
+                          "stopped asking"),
+                ("missing", "no RugCheck report on the tape for the entry: the live bot never asked then"),
+                ("unseen", "no readings: the live bot let them go at their create"))
+
+
+def unjudged_of(res):
+    """{cause: set of mints} a replay result could not judge (replay.py's "unjudged_coins"), None when it has none."""
+    u = (res or {}).get("unjudged_coins")
+    return {k: set(v or ()) for k, v in u.items()} if isinstance(u, dict) else None
+
+
+def unjudged_text(causes):
+    """{cause: count} -> "3 waiting for RugCheck ...; 1 no RugCheck report ..." (the causes with a count)."""
+    if not causes:
+        return "no readings or no RugCheck report: the live bot let them go"
+    return "; ".join("%d %s" % (causes[k], w) for k, w in UNJUDGED_WHY if causes.get(k))
+
+
+def judge(cand, base_test, min_trades, margin_usd, t_need=None, pair=None, unjudged_extra=0, unjudged_causes=None,
+          on_base_unjudged=0, base_causes=None):
     """Why a candidate does NOT pass on the held-out part ([] when it passes): a size lever never does; it needs
     min_trades trades, a mean P&L % a trade after costs above 0, a paired difference against the base on the same
     coins (pair, paired()) of at least t_need standard errors, a total margin_usd over the base's, at most BLIND_MAX
-    blind exits and at most UNJUDGED_MAX x its trades coins the tape cannot judge for it beyond the base's."""
+    blind exits, at most UNJUDGED_MAX x its trades coins the tape cannot judge for it beyond the base's
+    (unjudged_extra, by cause: unjudged_causes) and at most UNJUDGED_MAX x its trades made on coins the tape cannot
+    judge for the BASE (on_base_unjudged, by cause: base_causes): the base's result there is unknown, not "no
+    trade", so such a trade beats nothing known."""
     m, b = cand.get("test") or {}, base_test or {}
     why = []
     if is_size(cand.get("levers")):
@@ -409,8 +438,11 @@ def judge(cand, base_test, min_trades, margin_usd, t_need=None, pair=None, unjud
         why.append("%d of %d held-out exits blind (the tape had no reading then: their price is a guess)" % (
             m.get("blind") or 0, n))
     if unjudged_extra > UNJUDGED_MAX * max(1, n):
-        why.append("%d more coins than the base that the tape cannot judge for it (no readings or no RugCheck report: "
-                   "the live bot let them go): its result on them is unknown" % unjudged_extra)
+        why.append("%d more coins than the base that the tape cannot judge for it (%s): its result on them is "
+                   "unknown" % (unjudged_extra, unjudged_text(unjudged_causes)))
+    if on_base_unjudged > UNJUDGED_MAX * max(1, n):
+        why.append("%d of its %d held-out trades on coins the tape cannot judge for the base (%s): the base's result "
+                   "there is unknown, so is the difference" % (on_base_unjudged, n, unjudged_text(base_causes)))
     return why
 
 
@@ -468,9 +500,12 @@ def backtest(data=None, since=None, until=None, grid="default", split=0.7, cfg=N
     base_train = (train.get(0) or {}).get("metrics")
     base_test = (test.get(0) or {}).get("metrics")
     base_unj = ((test.get(0) or {}).get("stats") or {}).get("unjudged") or 0
+    base_by = unjudged_of(test.get(0))                   # the coins the base could not judge on the held-out part
+    base_set = set().union(*base_by.values()) if base_by else set()
     report["base"] = {"levers": {}, "first_part": base_train, "held_out": base_test,
                       "unjudged": {"first_part": ((train.get(0) or {}).get("stats") or {}).get("unjudged"),
-                                   "held_out": base_unj},
+                                   "held_out": base_unj,
+                                   "held_out_by_cause": {k: len(v) for k, v in base_by.items()} if base_by else None},
                       "error": (train.get(0) or {}).get("error") or (test.get(0) or {}).get("error")}
     cands = []
     for rank, i in enumerate(picks, 1):
@@ -479,12 +514,24 @@ def backtest(data=None, since=None, until=None, grid="default", split=0.7, cfg=N
              "config_diff": config_diff(base_cfg, cfgs[i]), "first_part": train[i]["metrics"],
              "held_out": res.get("metrics"), "error": res.get("error")}
         c["test"] = c["held_out"] or {}
-        c["vs_base"] = paired(res.get("trades"), (test.get(0) or {}).get("trades")) if c["held_out"] else None
+        by = unjudged_of(res)
+        own = set().union(*by.values()) if by else set()
+        # the coins either config could not judge are left out of the comparison: a result there is unknown, not 0
+        c["vs_base"] = paired(res.get("trades"), (test.get(0) or {}).get("trades"), own | base_set) \
+            if c["held_out"] else None
         c["unjudged"] = {"first_part": (train[i].get("stats") or {}).get("unjudged"),
-                         "held_out": (res.get("stats") or {}).get("unjudged")}
-        extra = max(0, (c["unjudged"]["held_out"] or 0) - base_unj)
-        c["why_not"] = judge(c, base_test, min_trades, margin_usd, t_need, c["vs_base"], extra) if c["held_out"] \
-            else ["not replayed (budget)"]
+                         "held_out": (res.get("stats") or {}).get("unjudged"),
+                         "held_out_by_cause": {k: len(v) for k, v in by.items()} if by else None}
+        if by is not None and base_by is not None:      # which coins: the ones it cannot judge and the base can
+            causes = {k: len(v - base_set) for k, v in by.items()}
+            extra = sum(causes.values())
+        else:
+            causes, extra = None, max(0, (c["unjudged"]["held_out"] or 0) - base_unj)
+        traded = [t.get("mint") for t in res.get("trades") or []]     # its trades on coins the base cannot judge
+        on_base = {k: sum(1 for m in traded if m in v) for k, v in (base_by or {}).items()}
+        c["on_base_unjudged"] = sum(on_base.values())
+        c["why_not"] = judge(c, base_test, min_trades, margin_usd, t_need, c["vs_base"], extra, causes,
+                             c["on_base_unjudged"], on_base) if c["held_out"] else ["not replayed (budget)"]
         c["passes"] = not c["why_not"]
         cands.append(c)
     report["settings"]["t_needed"] = t_need
@@ -573,7 +620,11 @@ ASSUMPTIONS = [
     "\"rug_stale\"; only a report that would still leave it waiting counts so). "
     "A looser entry rule's extra trades are therefore simply not in its replay, winners and losers alike: it looks "
     "like the base, not better and not worse. Each config's \"unjudged\" counts those coins; a config with more of "
-    "them than the base, beyond 10 % of its held-out trades, is not recommended.",
+    "them than the base, beyond 10 % of its held-out trades, is not recommended. The coins either config cannot "
+    "judge are left out of its comparison with the base (a result there is unknown, not 0 %), and a config with more "
+    "than 10 % of its held-out trades on coins the base cannot judge is not recommended either: those trades beat "
+    "nothing known. A RugCheck line recorded before the tape counted the wallets holding a coin is judged on the "
+    "wallets its top lists, a lower bound: a holder rule that needs more waits, unjudged, never a PASS.",
     "A coin held past what the tape recorded of it (its end, a \"gap\" when the hour's tape was full, lines the "
     "recorder lost: the report's \"tape\" says how many and when) gets no readings: it is sold on the clock's exits "
     "at its last recorded state and counted as a blind exit (its price is a guess); a held-out result with more than "
@@ -597,6 +648,9 @@ def text_lines(r):
     rg = r.get("range") or {}
     out.append("tape %s → %s · %s coins · %s with RugCheck · split at %s" % (
         tp.get("from"), tp.get("to"), tp.get("coins"), tp.get("coins_with_rugcheck"), rg.get("split_at")))
+    if tp.get("rug_lines_old"):
+        out.append("%d RugCheck lines recorded before the tape counted the wallets holding a coin: their holder rules "
+                   "are judged on the wallets their top lists (a lower bound)" % tp["rug_lines_old"])
     if tp.get("lost_lines") or tp.get("capped_coins"):
         out.append("tape gaps: %d lines lost (hours %s), %d coins' readings left out at a full hour's cap (hours %s), "
                    "%.0f s unknown for every coin: exits there are counted blind" % (
@@ -610,14 +664,24 @@ def text_lines(r):
             m["trades"], "%.0f%%" % (m["win_rate"] * 100) if m.get("win_rate") is not None else "-", m["total_pnl"],
             m["mean_pnl_pct"] or 0, m["max_drawdown"], m["profit_factor"],
             " · %d blind" % m["blind"] if m.get("blind") else "")
+    def unj(c):                 # the held-out coins the tape cannot judge for a config (left out of "vs the base")
+        u = c.get("unjudged") or {}
+        if not u.get("held_out"):
+            return ""
+        by = u.get("held_out_by_cause") or {}
+        parts = ["%d %s" % (by[k], w) for k, w in (("stale", "waiting for holders, no fresher report"),
+                                                    ("missing", "no RugCheck report"), ("unseen", "no readings"))
+                 if by.get(k)]
+        return " · %d coin%s the tape cannot judge%s" % (u["held_out"], "" if u["held_out"] == 1 else "s",
+                                                         " (%s)" % ", ".join(parts) if parts else "")
     b = r.get("base") or {}
     out.append("base       first part: %s" % fmt(b.get("first_part")))
-    out.append("           held-out:   %s" % fmt(b.get("held_out")))
+    out.append("           held-out:   %s%s" % (fmt(b.get("held_out")), unj(b)))
     for c in r.get("top") or []:
         out.append("#%d %s" % (c["rank"], c["text"]))
         out.append("           first part: %s" % fmt(c.get("first_part")))
-        out.append("           held-out:   %s%s" % (fmt(c.get("held_out")), "" if c.get("passes") else
-                                                     " · no: " + "; ".join(c.get("why_not") or [])))
+        out.append("           held-out:   %s%s%s" % (fmt(c.get("held_out")), unj(c), "" if c.get("passes") else
+                                                       " · no: " + "; ".join(c.get("why_not") or [])))
     for c in (r.get("risk_levers") or [])[:6]:
         out.append("risk choice %s · first part: %s (same rules, other dollars: never a recommendation)" % (
             c["text"], fmt(c.get("first_part"))))

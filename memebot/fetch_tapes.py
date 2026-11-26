@@ -515,6 +515,20 @@ def held_text(m):
         " · %d blind" % m["blind"] if _num(m.get("blind")) else "")
 
 
+def unjudged_text(c):
+    """A config's held-out coins the tape cannot judge for it, by cause ("" when none): left out of its comparison
+    with the base (backtest.py)."""
+    u = (c or {}).get("unjudged") or {}
+    if not _num(u.get("held_out")):
+        return ""
+    by = u.get("held_out_by_cause") or {}
+    parts = ["%d %s" % (by[k], w) for k, w in (("stale", "waiting for holders, no fresher report"),
+                                                ("missing", "no RugCheck report"), ("unseen", "no readings"))
+             if _num(by.get(k))]
+    return " · %d coin%s it cannot judge%s" % (u["held_out"], "" if u["held_out"] == 1 else "s",
+                                                " (%s)" % ", ".join(parts) if parts else "")
+
+
 def vs_text(v, need):
     if not v:
         return "-"
@@ -540,6 +554,9 @@ def gaps_lines(tp):
         out.append("unknown kinds ignored: %s" % json.dumps(tp["unknown_kinds"], sort_keys=True))
     if _num(tp.get("rugcheck_failed_asks")):
         out.append("%d RugCheck asks that failed live" % tp["rugcheck_failed_asks"])
+    if _num(tp.get("rug_lines_old")):
+        out.append("%d RugCheck lines recorded before the tape counted the wallets holding a coin (their holder rules "
+                   "judged on the wallets their top lists: a lower bound)" % tp["rug_lines_old"])
     return out
 
 
@@ -576,18 +593,21 @@ def summary_markdown(rep):
                 "|---|---|---|---|---|---|"]
         if base:
             out.append("| base | config.json as it is | %s | %s | | %s |" % (
-                first_text(base.get("first_part")), held_text(base.get("held_out")),
+                first_text(base.get("first_part")), held_text(base.get("held_out")) + unjudged_text(base),
                 _md(base.get("error")) if base.get("error") else ""))
         for c in top:
             verdict = "**passes**" if c.get("passes") else "no: " + "; ".join(c.get("why_not") or [])
             out.append("| #%s | %s | %s | %s | %s | %s |" % (
                 c.get("rank"), _md(c.get("text") or c.get("levers"), 160), first_text(c.get("first_part")),
-                held_text(c.get("held_out")), vs_text(c.get("vs_base"), need), _md(verdict, 400)))
+                held_text(c.get("held_out")) + unjudged_text(c), vs_text(c.get("vs_base"), need), _md(verdict, 400)))
         out.append("")
         out.append("A change needs, on the held-out part: at least %s trades, a mean above 0 after costs, a paired t "
                    "of %s or more against the base on the same coins, %s $ more than the base in all, at most 10 %% "
-                   "blind exits." % (st.get("min_trades", "-"), need if need is not None else "-",
-                                     "%.2f" % st["margin_usd"] if _num(st.get("margin_usd")) is not None else "-"))
+                   "blind exits, at most 10 %% as many coins the tape cannot judge for it beyond the base's as it has "
+                   "trades, and at most 10 %% of its trades on coins the tape cannot judge for the base. The coins "
+                   "either cannot judge are left out of the comparison on the same coins (a result there is unknown, "
+                   "not 0 %%)." % (st.get("min_trades", "-"), need if need is not None else "-",
+                                   "%.2f" % st["margin_usd"] if _num(st.get("margin_usd")) is not None else "-"))
         out.append("")
     risk = rep.get("risk_levers") or []
     if risk:

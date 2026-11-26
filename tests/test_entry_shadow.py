@@ -85,12 +85,62 @@ class Recheck(S.Base):
         self.assertIsNotNone(bought)                                    # with the 30 s cache: not before 30 s
         self.assertLessEqual(bought, 5.0)
         self.assertLessEqual(len(self.m.rug_calls) - first, 2)          # one call a recheck, not one a reading
+        self.assertEqual(len(self.lines(n, "SCANNER", "flag")), 1)      # flagged once, wait or not
+        self.assertEqual(n.state["night"]["flagged"], 1)
         pos = n.state["positions"]["slow"]
         self.assertEqual(pos["holders"], 14)
         self.assertIn("np:holders:10-20", pos["learn"])
         self.assertIn("np:solh:.25-.5", pos["learn"])                  # 3.9-4.8 SOL in over 14 wallets
         self.assertEqual(len(self.lines(n, "RUG CHECK", "wait")), 1)    # said once
         self.assertEqual(len(self.lines(n, "RUG CHECK", "pass")), 1)
+
+    def test_a_waiting_coin_is_flagged_once_while_its_trigger_lapses_and_holds_again(self):
+        """The post-fix review's finding: the SCANNER flag (the page's line, the night's "flagged" count, the tape's
+        "fire" line) was said once a TRIGGER, and a waiting coin's trigger lapses and holds again whenever its SOL dips
+        under np_min_sol and comes back (each a new trigger_t): one more flag line and one more flagged coin each time
+        (30 in 60 s for one coin). A coin waiting for RugCheck to see its holders is flagged once in all."""
+        n = self.night(cfg())
+        coin = self.walk(n, "chop", CROWD, seen("chop", 3, (3.0,)))
+        r = CROWD[-1] + 0.3
+        self.read(n, "chop", r)
+        self.assertTrue(npm.rug_waiting(coin), coin.rug)
+        fires, holds = n.np_stats["fired"], 0
+        for k in range(12):
+            r += -0.8 if k % 2 == 0 else 0.8                            # under np_min_sol (3), then over it again
+            self.read(n, "chop", r)
+            holds += coin.trigger_t is not None
+        self.assertTrue(npm.rug_waiting(coin), coin.rug)
+        self.assertEqual((coin.status, n.state["positions"]), ("watching", {}))
+        self.assertGreaterEqual(holds, 5)                               # the trigger held again, and again
+        self.assertEqual(len(self.lines(n, "SCANNER", "flag")), 1)
+        self.assertEqual(n.state["night"]["flagged"], 1)
+        self.assertEqual(n.np_stats["fired"], fires)
+        self.assertEqual(len(self.lines(n, "RUG CHECK", "wait")), 1)
+        self.m.reports["chop"] = seen("chop", 14)                       # RugCheck sees its holders: bought, no new flag
+        for _ in range(8):
+            r += 0.3
+            self.read(n, "chop", r)
+            if "chop" in n.state["positions"]:
+                break
+        self.assertIn("chop", n.state["positions"])
+        self.assertEqual(len(self.lines(n, "SCANNER", "flag")), 1)
+
+    def test_a_list_that_shows_empty_accounts_is_not_counted_past_it(self):
+        """The post-fix review's finding, in the engine: RugCheck lists the curve's account, 3 wallets holding and 16
+        that sold out (its 20 biggest, the empty ones last) of 30 accounts. The 10 it does not list are empty too:
+        3 wallets, a wait, never "PASS · 13 holders" and a buy."""
+        rep = seen("few", 3, empty=16)
+        rep["totalHolders"] = 30
+        n = self.night(cfg())
+        coin = self.walk(n, "few", CROWD, rep)
+        self.read(n, "few", CROWD[-1] + 0.3)
+        self.assertEqual((n.state["positions"], n.shadows), ({}, {}))
+        self.assertTrue(npm.rug_waiting(coin), coin.rug)
+        self.assertEqual(coin.rug["holders"], 3)
+        self.assertEqual(self.lines(n, "RUG CHECK", "pass"), [])
+        self.assertEqual(self.lines(n, "RUG CHECK", "wait"), [
+            "waiting: RugCheck sees 3 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s "
+            "while the trigger holds"])
 
     def test_a_recheck_that_lands_between_two_readings_buys_on_that_turn(self):
         """np_reports() judges a waiting coin again when its fresh report lands, even past np_rug_timeout_s after the

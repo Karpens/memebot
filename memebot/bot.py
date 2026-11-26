@@ -2185,8 +2185,12 @@ class Night(object):
             self.wl.retry(coin)
             self.np_shadow_safe("np_shadow_risk", coin, why, minutes_left)    # shadow_on_risk: a SHADOW if it passes RugCheck
             return
-        if ("fire", mint, coin.trigger_t) not in self.np_said:
+        # flagged once a trigger; a coin waiting for RugCheck to see its holders once in all: while it waits, its
+        # trigger can lapse and hold again every few readings (each a new trigger_t), and each one is no new coin
+        if ("fire", mint, coin.trigger_t) not in self.np_said and not (
+                newpairs.rug_waiting(coin) and ("flag", mint) in self.np_said):
             self.np_said[("fire", mint, coin.trigger_t)] = now
+            self.np_said[("flag", mint)] = now
             self.np_stats["fired"] += 1
             n["flagged"] = n.get("flagged", 0) + 1
             n["flags"] = ([x for x in n.get("flags", []) if x.get("coin") != coin.symbol]

@@ -174,10 +174,50 @@ class Holders(unittest.TestCase):
         self.assertEqual(npm.rug_check_np(three, npm.Coin(mint=c.mint, curve="cv"), D)[:2],
                          (None, ["waiting: RugCheck sees 3 holders (min 10)"]))
 
+    def test_a_list_that_shows_an_empty_account_shows_every_wallet_holding(self):
+        """The post-fix review's finding: RugCheck lists the 20 biggest accounts, the biggest first (every real report:
+        the empty ones last), so once its list shows an empty account, the accounts it does not list (totalHolders
+        less the listed ones) are empty too. rug_holders() counted them as wallets past 20 accounts: 3 wallets
+        holding among 30 accounts passed as 13 holders and were bought; 2xhio_0 with its count filled in (30) passed
+        as 24 where 14 wallets hold it."""
+        for name in ("2mYEHX_6", "2xhio_0", "2xhio_2", "5Uty_24", "CuVV71_7"):
+            amounts = [h["amount"] for h in real(name)["topHolders"]]
+            self.assertEqual(amounts, sorted(amounts, reverse=True), name)
+        rep = real("2xhio_0")                                                  # 14 holding, 5 empty, the curve's
+        rep["totalHolders"] = 30
+        self.assertEqual(npm.rug_holders(rep, None), 14)
+        coin = npm.Coin(mint=rep["mint"], curve="", rsol0=0.0, rsol=10.0)      # 10 SOL in: 20 wallets at 0.5
+        self.assertEqual(npm.rug_check_np(rep, coin, D),
+                         (None, ["waiting: 14 holders for 10.0 SOL in (0.71 SOL a holder, max 0.5)"], 14))
+        # 2mYEHX_6's shape (ONE wallet holding, the rest sold out) past 20 accounts: still one wallet, still a wait
+        rep = real("2mYEHX_6")
+        rep["risks"] = []
+        empty = [h for h in rep["topHolders"] if not h["amount"]][0]
+        rep["topHolders"] += [dict(empty, address="sold%d" % i, owner="seller%d" % i)
+                              for i in range(len(rep["topHolders"]), 20)]
+        rep["totalHolders"] = 40
+        self.assertEqual(npm.holder_counts(rep, None), {"holding": 1, "empty": 18, "curve": 1, "total": 40})
+        self.assertEqual(npm.rug_check_np(rep, npm.Coin(mint=rep["mint"], curve="", rsol0=0.0, rsol=4.0), D),
+                         (None, ["waiting: RugCheck sees 1 holder (min 10)"], 1))
+        # the review's engine case: the curve's, 3 wallets holding, 16 sold out listed, 30 accounts counted
+        c = npm.Coin(mint="few", curve="cv", rsol0=0.0, rsol=4.5)
+        few = report(c.mint, c.curve, 3, (3.0, 2.0, 1.5), empty=16, total=30)
+        self.assertEqual(npm.rug_holders(few, c), 3)
+        self.assertEqual(npm.rug_check_np(few, c, D), (None, ["waiting: RugCheck sees 3 holders (min 10)"], 3))
+        # a full list with no empty account still counts the unlisted accounts (they may hold some): an upper bound
+        self.assertEqual(npm.rug_holders(report(c.mint, c.curve, 19, [1.0] * 19, total=30), c), 29)
+        # and the tape keeps it: the replay rebuilds the report and counts the same 3
+        rec, rp = load("memebot", "recorder"), load("memebot", "replay")
+        line = rec.rug_summary(few, c.curve, npm._curve_accounts(few, c))
+        self.assertEqual({k: line[k] for k in ("holders", "held", "empty", "curve")},
+                         {"holders": 30, "held": 3, "empty": 16, "curve": 1})
+        self.assertEqual(npm.rug_holders(rp.rug_report_of(dict(line, ok=True), c.mint), npm.Coin(mint=c.mint)), 3)
+
     def test_the_tape_keeps_the_count_for_the_replay(self):
         """The recorder's "rug" line keeps the accounts a report listed by kind ("held", "empty", "curve") beside its
         totalHolders ("holders"), so a replay rebuilds a report the holders rule counts as the live bot did, the real
-        reports included; a line recorded before those fields counts its totalHolders as the code that recorded it."""
+        reports included; a line recorded before those fields counts the wallets its top lists (its totalHolders
+        counted the empty accounts and the curve's: tests below)."""
         rec = load("memebot", "recorder")
         rp = load("memebot", "replay")
         cases = [real(n) for n in ("CuVV71_7", "2mYEHX_6", "5Uty_24", "2xhio_0", "2xhio_2")]
@@ -194,7 +234,43 @@ class Holders(unittest.TestCase):
         self.assertEqual({k: line[k] for k in ("holders", "held", "empty", "curve")},
                          {"holders": 40, "held": 30, "empty": 0, "curve": 1})
         old = {"ok": True, "holders": 14, "top": [3.0, 2.0, 1.5], "top1": 3.0, "top10": 6.5, "risks": [], "insiders": 0}
-        self.assertEqual(npm.rug_holders(rp.rug_report_of(old, "mm"), None), 14)
+        self.assertEqual(npm.rug_holders(rp.rug_report_of(old, "mm"), None), 3)
+
+    def test_an_old_tape_line_is_judged_on_the_wallets_its_top_lists(self):
+        """The post-fix review's finding: every tape the first backtest reads was recorded by f16ee6e, whose "rug" line
+        has "holders" (RugCheck's totalHolders: the empty accounts and the curve's counted) and "top" but no "held",
+        and the replay judged the holder rules on that totalHolders: CuVV71 (15 accounts, 4 wallets) waits live and
+        PASSED as 15 holders in the replay, so the base bought it and counted it as judged. Now an old line counts
+        the wallets its top lists (every one when it lists fewer than 10: the biggest come first; else at least 10),
+        never more than the live count: the replay never PASSes a coin the live rule holds back."""
+        rec, rp = load("memebot", "recorder"), load("memebot", "replay")
+        for name in ("CuVV71_7", "5Uty_24", "2mYEHX_6", "2xhio_0", "2xhio_2"):
+            rep = real(name)
+            rep["risks"] = []                                                  # only the holder rules can stop it
+            rep["topHolders"] = [dict(h, pct=min(h["pct"], 5.0)) for h in rep["topHolders"]]
+            coin = npm.Coin(mint=rep["mint"], curve="", rsol0=0.3, rsol=3.6)
+            line = rec.rug_summary(rep, "", npm._curve_accounts(rep, coin))
+            old = {k: v for k, v in line.items() if k not in ("held", "empty", "curve")}    # what f16ee6e wrote
+            back = rp.rug_report_of(dict(old, ok=True), rep["mint"])
+            live_n, old_n = npm.rug_holders(rep, coin), npm.rug_holders(back, None)
+            self.assertEqual(old_n, live_n if len(old["top"]) < 10 else 10, name)
+            for lever in ({}, {"np_min_holders": 5}, {"np_min_holders": 0}, {"np_min_holders": 20},
+                          {"np_max_sol_per_holder": 0.35}):
+                c = dict(D, **lever)
+                live = npm.rug_check_np(rep, npm.Coin.from_dict(coin.to_dict()), c)[0]
+                replayed = npm.rug_check_np(back, npm.Coin.from_dict(coin.to_dict()), c)[0]
+                self.assertFalse(replayed is True and live is not True, (name, lever, live_n, old_n))
+                if len(old["top"]) < 10:
+                    self.assertEqual(replayed, live, (name, lever))
+            self.assertTrue(rp.rug_line_old(dict(old, ok=True)) and not rp.rug_line_old(dict(line, ok=True)), name)
+        self.assertEqual([npm.rug_holders(rp.rug_report_of(dict(
+            {k: v for k, v in rec.rug_summary(real(n), "", npm._curve_accounts(real(n), None)).items()
+             if k not in ("held", "empty", "curve")}, ok=True), "x"), None) for n in ("CuVV71_7", "5Uty_24", "2mYEHX_6")],
+            [4, 3, 1])                                                         # not 15, 10, 7
+        # the tape says how many of its reports are old: the backtest's report and summary page show it
+        tape = rp.tape_of([dict(old, k="rug", t=T0, m="x", ok=True), dict(line, k="rug", t=T0 + 1, m="y", ok=True),
+                           {"k": "rug", "t": T0 + 2, "m": "z", "ok": False, "ms": 300}])
+        self.assertEqual(tape.summary()["rug_lines_old"], 1)
 
     def test_a_fail_beats_the_wait(self):
         """A report that already shows a 15 % holder among 3 is a FAIL, not a wait: too few holders never makes a
@@ -727,6 +803,28 @@ class Levers(unittest.TestCase):
         self.assertEqual((res["stats"]["rug_stale"], res["stats"]["unjudged"]), (0, 0))
         opened = R.ts_epoch((res["trades"] or res["open"])[0]["opened"])
         self.assertGreaterEqual(opened - START - 5, 10.0)                       # not before RugCheck saw 14
+
+    def test_an_old_tape_line_never_buys_a_coin_the_live_rule_waits_for(self):
+        """The post-fix review's finding, through the replay: an f16ee6e "rug" line (holders 15 = RugCheck's
+        totalHolders: 4 wallets holding, 11 empty accounts; no "held") was bought by the base config as "15 holders"
+        and counted judged (unjudged 0). Now it waits on its 4 wallets, and with no fresher report on the tape for its
+        recheck it is unjudged (rug_stale), as the same report recorded by today's recorder is."""
+        m = mints()["thin"]
+        recs = tape_coin(m, START + 5, R.path_to(0.3, 6.3, 0.3) + R.path_to(6.3, 7.5, 0.05), holders=4,
+                         top=(3.0, 2.0, 1.5, 1.0))
+        for r in recs:
+            if r["k"] == "rug":
+                for k in ("held", "empty", "curve"):
+                    r.pop(k)
+                r["holders"] = 15
+        tape = R.tape_of(recs + [{"k": "hb", "t": START + 10 * i, "sol": 200.0} for i in range(0, 71)])
+        res = R.replay(tape, replay_cfg(), START, START + 700)
+        self.assertEqual(len(res["trades"]) + len(res["open"]), 0)
+        self.assertEqual((res["stats"]["rug_stale"], res["stats"]["unjudged"]), (1, 1))
+        self.assertEqual(tape.summary()["rug_lines_old"], 1)
+        # the holder rules off: judged on what the line says, as before
+        res = R.replay(tape, replay_cfg(np_min_holders=0, np_max_sol_per_holder=0), START, START + 700)
+        self.assertEqual(len(res["trades"]) + len(res["open"]), 1)
 
 
 if __name__ == "__main__":

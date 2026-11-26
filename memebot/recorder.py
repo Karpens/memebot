@@ -356,7 +356,10 @@ def rug_report(line, mint=None):
         return None
     risks = [r for r in line.get("risks") or [] if isinstance(r, (list, tuple)) and len(r) == 2]
     top = [p for p in line.get("top") or [] if _num(p) is not None]
-    return {"mint": mint or line.get("m"), "rugged": bool(line.get("rugged")), "totalHolders": _f(line.get("holders")),
+    # a line from before "held": its "holders" counted the empty accounts too, so the wallets its top lists (as
+    # replay.rug_report_of)
+    holders = _f(line.get("holders")) if line.get("held") is not None else sum(1 for p in top if float(p) > 0)
+    return {"mint": mint or line.get("m"), "rugged": bool(line.get("rugged")), "totalHolders": holders,
             "graphInsidersDetected": _f(line.get("insiders")), "score_normalised": line.get("score"),
             "risks": [{"name": r[0], "level": r[1]} for r in risks], "markets": rebuilt_markets(line),
             "knownAccounts": {},

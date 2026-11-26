@@ -104,11 +104,15 @@ class Tapes(unittest.TestCase):
                    "insiders": 0}, False, "risk: Low liquidity"),
                  ({"ok": True, "holders": 9, "top1": 3.0, "top10": 3.0, "top": [3.0], "risks": [], "insiders": 2},
                   False, "2 insiders"),
-                 ({"ok": True, "holders": 12, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0},
-                  True, None),
+                 ({"ok": True, "holders": 12, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0,
+                   "held": 12, "empty": 0, "curve": 0}, True, None),
                  # the same report seeing 9 holders: no PASS but a wait (np_min_holders 10: tests/test_entry_quality.py)
-                 ({"ok": True, "holders": 9, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0},
-                  None, "waiting: RugCheck sees 9 holders")]
+                 ({"ok": True, "holders": 9, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0,
+                   "held": 9, "empty": 0, "curve": 0}, None, "waiting: RugCheck sees 9 holders"),
+                 # a line recorded before "held" (its holders: totalHolders, empty accounts counted): the wallets its
+                 # top lists, 5
+                 ({"ok": True, "holders": 12, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0},
+                  None, "waiting: RugCheck sees 5 holders")]
         for fields, want, why in cases:
             rep = R.rug_report_of(fields, "mmm")
             ok, bad, _ = bot.newpairs.rug_check_np(rep, bot.newpairs.Coin(mint="mmm", curve="cv"), cfg)
@@ -285,9 +289,10 @@ class Market(unittest.TestCase):
         m, t = mint(8), START + 100.0
         rows = [{"k": "rug", "t": t + 0.43, "m": m, "ok": False, "why": "prefetch", "ms": 430},      # asked at t
                 {"k": "rug", "t": t + 5.38, "m": m, "ok": True, "why": "fire", "ms": 380, "holders": 9, "top1": 3.0,
-                 "top10": 3.0, "top": [3.0], "risks": [], "insiders": 0},                            # asked at t + 5
+                 "top10": 3.0, "top": [3.0], "risks": [], "insiders": 0, "held": 9, "empty": 0, "curve": 0},  # at t + 5
                 {"k": "rug", "t": t + 40.2, "m": m, "ok": True, "why": "prefetch", "ms": 200, "holders": 30, "top1": 15.0,
-                 "top10": 15.0, "top": [15.0], "risks": [], "insiders": 0}]                          # asked at t + 40
+                 "top10": 15.0, "top": [15.0], "risks": [], "insiders": 0, "held": 30, "empty": 0,
+                 "curve": 0}]                                                                        # asked at t + 40
         tape = R.tape_of(R.synth_coin(m, START, [1.0], rug=None) + rows)
         market = R.ReplayMarket(tape, R.SimClock(t), START + 3600, {}, rug_latency_s=0.4)
         self.assertEqual(market.rug_answer(m, t), (t + 0.43, None))                   # live's failure, when it came
@@ -708,6 +713,150 @@ class KeepRule(unittest.TestCase):
         # ... and the default grid no longer has the looser line
         self.assertFalse([lv for lv in bt.build_grid("default", bot.load_config(bot.CONFIG), 200)
                           if lv.get("np_max_dev_pct", 0) > 8.0])
+        self.assertEqual(res["unjudged_coins"], {"unseen": [never], "missing": [polled], "stale": []})
+
+    def test_the_coins_the_base_cannot_judge_are_left_out_of_the_comparison(self):
+        """The post-fix review's finding: paired() scored the held-out coins the BASE could not judge (on an f16ee6e
+        tape the base waits for holders and finds no fresher report: rug_stale) as "the base made 0 %", and judge()
+        only refused a candidate with MORE unjudged coins than the base. A looser holder rule that bought exactly
+        those coins was recommended, t 99, on coins where the base's result is unknown. Now the coins either config
+        cannot judge are left out of the comparison, and a config with more than 10 % of its trades on coins the
+        base cannot judge is not recommended."""
+        rng = random.Random(6)
+        base = {"train": [self.draw(rng) for _ in range(93)], "test": [self.draw(rng) for _ in range(40)]}
+        waits = ["wait%d" % i for i in range(37)]
+
+        def fake(tape, tasks, jobs=None, budget_s=None, progress=None):
+            out = {}
+            for key, cfg, since, until, mem, opts in tasks:
+                part = "train" if until <= 0.7 * 24 * 3600 + 1 else "test"
+                rows = [("%s%d" % (part, i), p) for i, p in enumerate(base[part])]
+                if key:
+                    rows += [(m, 6.3) for m in waits]   # the looser rule buys the coins the base waited on: winners
+                tr = [{"mint": m, "pnl": p / 10.0, "pnl_pct": p, "why": "x", "opened": "2026-11-26T00:00:00Z",
+                       "closed": "2026-11-26T%02d:%02d:00Z" % (i // 60 % 24, i % 60)} for i, (m, p) in enumerate(rows)]
+                unj = {"unseen": [], "missing": [], "stale": [] if key else list(waits)}
+                out[key] = {"trades": tr, "metrics": R.metrics(tr, 100.0), "memory": None,
+                            "stats": {"unjudged": len(unj["stale"])}, "unjudged_coins": unj}
+            return out
+        with unittest.mock.patch.object(bt, "run_many", fake):
+            rep = bt.backtest(cfg=bot.load_config(bot.CONFIG), tape=self.Tape(), grid={"combos": [{"np_min_holders": 5}]},
+                              jobs=1, live_check=False)
+        c = rep["top"][0]
+        self.assertEqual(rep["decision"]["action"], "keep", rep["decision"])
+        self.assertEqual((c["vs_base"]["coins"], c["vs_base"]["mean"], c["vs_base"]["t"]), (40, 0.0, 0.0))
+        self.assertEqual(c["on_base_unjudged"], 37)
+        self.assertIn("37 of its 77 held-out trades on coins the tape cannot judge for the base (37 waiting for "
+                      "RugCheck to see enough holders, no fresher report on the tape: the live bot stopped asking)",
+                      "; ".join(c["why_not"]))
+        self.assertEqual(rep["base"]["unjudged"]["held_out_by_cause"], {"unseen": 0, "missing": 0, "stale": 37})
+        self.assertIn("           held-out:   40 trades", "\n".join(rep["lines"]))
+        self.assertTrue(any("37 coins the tape cannot judge (37 waiting for holders, no fresher report)" in x
+                            for x in rep["lines"]), rep["lines"])
+        # its own unjudged coins beyond the base's, said by their cause (not "the live bot let them go")
+        why = bt.judge({"levers": {"np_min_holders": 5}, "test": {"trades": 40, "mean_pnl_pct": 2.0, "total_pnl": 9.0}},
+                       {"total_pnl": 0.0}, 30, 2.0, 1.96, {"coins": 40, "mean": 2.0, "t": 3.0}, 6,
+                       {"stale": 4, "missing": 2, "unseen": 0})
+        self.assertEqual(why, ["6 more coins than the base that the tape cannot judge for it (4 waiting for RugCheck to "
+                               "see enough holders, no fresher report on the tape: the live bot stopped asking; 2 no "
+                               "RugCheck report on the tape for the entry: the live bot never asked then): its result "
+                               "on them is unknown"])
+        self.assertEqual(bt.paired([{"mint": "a", "pnl_pct": 5.0}, {"mint": "b", "pnl_pct": 2.0}],
+                                   [{"mint": "a", "pnl_pct": 1.0}], skip={"b"})["coins"], 1)
+
+    def test_a_replayed_base_that_waits_on_a_coin_is_no_benchmark_on_it(self):
+        """The same through the real replays: every coin's only RugCheck report sees 7 wallets. The base (10 holders)
+        waits and the tape has no fresher report (rug_stale); np_min_holders 5 buys them all. Before, that was a
+        "change" at t 99 against a base that "made 0 %" on them."""
+        recs = []
+        for i in range(60):
+            for r in R.synth_coin(mint(i, "w"), START + 5 + 50 * i, R.pump_path(peak_gain=60)):
+                if r["k"] == "rug":
+                    r.update(holders=8, held=7, empty=0, curve=1)
+                recs.append(r)
+        recs += [{"k": "hb", "t": START + 10.0 * i, "sol": 200.0} for i in range(0, 310)]
+        tape = R.tape_of(sorted(recs, key=lambda r: r["t"]))
+        rep = bt.backtest(tape=tape, grid={"combos": [{"np_min_holders": 5}]}, cfg=base_cfg(), jobs=1, min_trades=10,
+                          live_check=False)
+        c = rep["top"][0]
+        self.assertEqual(rep["decision"]["action"], "keep", rep["decision"])
+        self.assertEqual(c["vs_base"]["coins"], 0)                      # no coin both could judge
+        self.assertGreaterEqual(c["held_out"]["trades"], 10)
+        self.assertEqual(rep["base"]["held_out"]["trades"], 0)
+        self.assertEqual(rep["base"]["unjudged"]["held_out_by_cause"]["stale"], rep["base"]["unjudged"]["held_out"])
+        self.assertEqual(c["on_base_unjudged"], c["held_out"]["trades"])
+
+
+def slow_coin(m, at, peak=6.0, step=0.8):
+    """A coin whose SOL comes in slowly (0.02 SOL a reading) to 2.9 SOL, then up to `peak` and down. The live bot
+    (config.json: np_min_sol 2.5) asked RugCheck at its prefetch (1.25 SOL in) and at its fire (2.5): both reports
+    on the tape (18 wallets holding among 25 accounts: a PASS)."""
+    path = R.path_to(0.3, 2.9, 0.02) + R.path_to(2.9, peak, 0.2) + R.path_to(peak, 0.8, 0.5)
+    good = {"holders": 25, "top1": 3.0, "top10": 14.0, "top": [3.0, 2.0, 1.5, 1.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+            "held": 18, "empty": 6, "curve": 1, "risks": [], "insiders": 0, "rugged": False, "score": 1}
+    recs = [r for r in R.synth_coin(m, at, path, social=(True, True, True), step_s=step) if r["k"] != "rug"]
+
+    def t_at(sol_in):
+        k = next(j for j, r in enumerate(path) if r - 0.3 >= sol_in - 1e-9)
+        return at + 1.0 + k * step
+    recs.append(dict(good, k="rug", t=round(t_at(1.25) + 0.35, 3), m=m, ok=True, why="prefetch", ms=350))
+    recs.append(dict(good, k="rug", t=round(t_at(2.5) + 0.35, 3), m=m, ok=True, why="fire", ms=350))
+    return recs
+
+
+class EarlyPrefetch(unittest.TestCase):
+    """The post-fix review's finding: a looser trigger (np_min_sol 2.0, np_min_buys 4 in the default grid) asks RugCheck
+    at its prefetch EARLIER than the live bot did (half of np_min_sol and np_min_buys), finds nothing on the tape yet,
+    and the coin counted "rug_missing" (unjudged) for good: even when its fire then found the live bot's own report
+    and it was bought, and even when it never came near its trigger. The keep rule turned the lever down for it."""
+
+    def test_a_coin_bought_on_recorded_reports_is_not_unjudged(self):
+        m = mint(1, "slow")
+        tape = R.tape_of(sorted(slow_coin(m, START + 10) + [{"k": "hb", "t": START + 10.0 * i, "sol": 200.0}
+                                                             for i in range(80)], key=lambda r: r["t"]))
+        mk = {}
+        orig = R.ReplayMarket.__init__
+
+        def init(market, *a, **kw):
+            orig(market, *a, **kw)
+            mk["m"] = market
+        with unittest.mock.patch.object(R.ReplayMarket, "__init__", init):
+            res = R.replay(tape, bt.apply(base_cfg(), {"np_min_sol": 2.0}))
+        self.assertEqual(mk["m"].rug_missing, {m})                      # its prefetch found nothing yet ...
+        self.assertEqual(len(res["trades"]) + len(res["open"]), 1)      # ... its fire the live bot's report: bought
+        self.assertEqual((res["stats"]["rug_missing"], res["stats"]["unjudged"]), (0, 0), res["stats"])
+        res = R.replay(tape, base_cfg())
+        self.assertEqual((len(res["trades"]) + len(res["open"]), res["stats"]["unjudged"]), (1, 0))
+
+    def test_a_coin_that_never_comes_near_the_trigger_is_not_unjudged(self):
+        m = mint(2, "stall")
+        path = R.path_to(0.3, 1.4, 0.02) + [1.4 - 0.01 * (k % 2) for k in range(60)]    # 1.1 SOL in, then nothing
+        recs = [r for r in R.synth_coin(m, START + 10, path, social=(True, True, True), step_s=0.8) if r["k"] != "rug"]
+        tape = R.tape_of(recs + [{"k": "hb", "t": START + 10.0 * i, "sol": 200.0} for i in range(30)])
+        mk = {}
+        orig = R.ReplayMarket.__init__
+
+        def init(market, *a, **kw):
+            orig(market, *a, **kw)
+            mk["m"] = market
+        with unittest.mock.patch.object(R.ReplayMarket, "__init__", init):
+            res = R.replay(tape, bt.apply(base_cfg(), {"np_min_sol": 2.0}))
+        self.assertGreaterEqual(mk["m"].stats["rug_none"], 1)            # its prefetch at 1.0 SOL in: nothing recorded
+        self.assertEqual((res["stats"]["rug_missing"], res["stats"]["unjudged"]), (0, 0), res["stats"])
+
+    def test_the_keep_rule_does_not_refuse_the_lever_for_coins_it_judged(self):
+        recs = []
+        for i in range(60):
+            recs += slow_coin(mint(i, "s"), START + 10 + 50 * i)
+        recs += [{"k": "hb", "t": START + 10.0 * i, "sol": 200.0} for i in range(0, 320)]
+        tape = R.tape_of(sorted(recs, key=lambda r: r["t"]))
+        rep = bt.backtest(tape=tape, grid={"combos": [{"np_min_sol": 2.0}]}, cfg=base_cfg(), jobs=1, min_trades=10,
+                          live_check=False)
+        c = rep["top"][0]
+        self.assertEqual(c["held_out"]["trades"], rep["base"]["held_out"]["trades"])   # the same coins, all judged
+        self.assertGreaterEqual(c["held_out"]["trades"], 10)
+        self.assertEqual((c["unjudged"]["held_out"], rep["base"]["unjudged"]["held_out"]), (0, 0))
+        self.assertEqual([w for w in c["why_not"] if "cannot judge" in w], [])
 
 
 class ImmediatePool(object):
