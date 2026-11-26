@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T10:04:30Z",
+ "updated": "2026-11-26T10:05:00Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 87.76,
- "equity": 87.76,
+ "balance": 83.37,
+ "equity": 87.58,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 11,
-  "checked": 11,
+  "flagged": 12,
+  "checked": 12,
   "filtered": 1,
-  "lines": 123,
+  "lines": 130,
   "last_rug": {
-   "coin": "BACKER",
+   "coin": "YARL",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "STOREB",
-   "why": "momentum",
-   "t": "2026-11-26T09:15:09Z"
-  },
   {
    "coin": "KIDSTOCK",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "BACKER",
    "why": "momentum",
    "t": "2026-11-26T09:38:37Z"
+  },
+  {
+   "coin": "YARL",
+   "why": "momentum",
+   "t": "2026-11-26T10:04:54Z"
   }
  ],
  "curve": [
@@ -317,7 +317,52 @@
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "YARL",
+   "mint": "J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
+   "cost": 4.39,
+   "value": 4.21,
+   "pnl_pct": -4.0,
+   "opened": "2026-11-26T10:04:54Z",
+   "url": "https://pump.fun/coin/J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
+   "reason": "momentum · 2.9 SOL in · 9/13 buys (69%) · +20% since launch · mcap 34 SOL · 45 s old",
+   "size_pct": 5.0,
+   "entry_price": 2.50456e-06,
+   "price": 2.44474e-06,
+   "slip": 2.22,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 1.5,
+    "parts": [
+     "X post",
+     "web"
+    ],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "age_s": 45,
+   "mcap_sol": 34.2,
+   "dev_pct": 1.0,
+   "sol_in": 2.9,
+   "hist": [
+    2.50456e-06,
+    2.44449e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "ZEROCAST",
@@ -1716,6 +1761,69 @@
    "action": "scan",
    "text": "new pairs · 1.8 a minute · 0 watched · 4 rejected (dump 2, mayhem mode 1, no bonding curve key 1)",
    "n": 123
+  },
+  {
+   "t": "2026-11-26T10:04:36Z",
+   "time": "11:04:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 3 watched · 4 rejected (dump 2, no bonding curve key 1, mayhem mode 1) · closest YARL: too young: 22 s (min 45 s)",
+   "n": 124
+  },
+  {
+   "t": "2026-11-26T10:04:54Z",
+   "time": "11:04:54",
+   "agent": "SCANNER",
+   "coin": "YARL",
+   "action": "flag",
+   "text": "momentum · 2.9 SOL in · 9/13 buys (69%) · +20% since launch · mcap 34 SOL · 45 s old",
+   "n": 125
+  },
+  {
+   "t": "2026-11-26T10:04:54Z",
+   "time": "11:04:54",
+   "agent": "RUG CHECK",
+   "coin": "YARL",
+   "action": "pass",
+   "text": "PASS · 9 holders · top holder 2.6% · top 10 7% (curve left out)",
+   "n": 126
+  },
+  {
+   "t": "2026-11-26T10:04:54Z",
+   "time": "11:04:54",
+   "agent": "LEARNER",
+   "coin": "YARL",
+   "action": "explore",
+   "text": "explore · 1 in 5 skips is bought at half size · past trades like this lost avg 9.9% · hour:day -16.1% over 8, news:0-2 -16.1% over 8",
+   "n": 127
+  },
+  {
+   "t": "2026-11-26T10:04:54Z",
+   "time": "11:04:54",
+   "agent": "SIZER",
+   "coin": "YARL",
+   "action": "size",
+   "text": "10% of $87.76 x0.50 LEARNER = $4.39",
+   "n": 128
+  },
+  {
+   "t": "2026-11-26T10:04:54Z",
+   "time": "11:04:54",
+   "agent": "EXECUTOR",
+   "coin": "YARL",
+   "action": "enter",
+   "text": "ENTER YARL at 0.0000025046 · slip 2.2% · first in · 0.2 s after the trigger · 45 s after launch · curve maths 0.7% off Jupiter",
+   "n": 129
+  },
+  {
+   "t": "2026-11-26T10:04:54Z",
+   "time": "11:04:54",
+   "agent": "NEWS",
+   "coin": "YARL",
+   "action": "plan",
+   "text": "hold plan · 1.5/10 (X post, web) · scalp: +7",
+   "n": 130
   }
  ],
  "nights": [
@@ -1764,7 +1872,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 8 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1772,44 +1880,44 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 137,
-    "last_event_age_s": 16.4,
+    "events": 140,
+    "last_event_age_s": 7.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1950,
-    "last_event_age_s": 1.1,
+    "events": 1986,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 98,
-    "last_event_age_s": 14.9,
-    "errors": 76,
+    "events": 101,
+    "last_event_age_s": 5.5,
+    "errors": 79,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 65.0,
-  "first_in_last_ms": 65,
+  "first_in_ms": 65,
+  "first_in_last_ms": 224,
   "exit_ms": 32.0,
   "exit_last_ms": 32,
-  "launch_to_entry_s": 19.5,
+  "launch_to_entry_s": 20,
   "creates_per_min": 2.4,
-  "watching": 3,
-  "followed": 5
+  "watching": 4,
+  "followed": 8
  },
  "learner": {
   "samples": 103,
   "skipped": 4,
-  "explored": 0,
+  "explored": 1,
   "min_samples": 8,
   "best": [
    {
@@ -1849,41 +1957,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1883,
+   "sent": 1917,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1883,
+   "sent": 1917,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "PLCS",
-   "name": "PL Cluster Smoke",
-   "mint": "9eU1xBEZPHhUq4f8my1dBvEeU7WfcUtJ4RG3tmJvYZmr",
-   "age_s": 16,
-   "sol_in": 0.03,
-   "buys": 1,
+   "symbol": "ClashofCla",
+   "name": "ClashofClans",
+   "mint": "A26sC8Deqri5fxhR9Cyh6Fb9r8TzBz3zyEqbTSXopump",
+   "age_s": 7,
+   "sol_in": 0.29,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
+   "rise_pct": 1.9,
+   "mcap_sol": 30.2,
+   "dev_pct": 3.1,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 6 s (min 45 s)"
+  },
+  {
+   "symbol": "YEE",
+   "name": "Yeecoin",
+   "mint": "5bsikE3AS3YT9dNPYxsBbX7PtVUnzKT5BPGUWHtLpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 5 s (min 45 s)"
+  },
+  {
+   "symbol": "S42",
+   "name": "DON'T PANIC - SpaceX",
+   "mint": "bquFUeYe6qDFP5wyY9uPFdcsrH3FRzes679TF6xpump",
+   "age_s": 18,
+   "sol_in": 0.02,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "PLCS",
+   "name": "PL Cluster Smoke",
+   "mint": "9eU1xBEZPHhUq4f8my1dBvEeU7WfcUtJ4RG3tmJvYZmr",
+   "age_s": 46,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.03,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 42 s (min 45 s)"
   },
   {
    "symbol": "SVI",
    "name": "Sla Vs Inda",
    "mint": "4NjHX35kSKS3uTRrLUtkf3FbBrLs4u8gA92Actkw5HBL",
-   "age_s": 17,
+   "age_s": 47,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -1901,25 +2063,25 @@
    "symbol": "YARL",
    "name": "yarl",
    "mint": "J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
-   "age_s": 21,
-   "sol_in": 2.71,
-   "buys": 4,
-   "sells": 3,
-   "rise_pct": 18.7,
-   "mcap_sol": 33.8,
+   "age_s": 51,
+   "sol_in": 3.02,
+   "buys": 10,
+   "sells": 4,
+   "rise_pct": 20.9,
+   "mcap_sol": 34.4,
    "dev_pct": 1.0,
    "big_sell": 0.3,
    "x": "https://x.com/yarlonpfx/status/2125892896562073857",
    "tg": false,
    "web": "https://archive.4plebs.org/s4s/search/text/yarl/order/asc",
-   "status": "watching",
-   "why": "too young: 12 s (min 45 s)"
+   "status": "entered",
+   "why": "momentum · 2.9 SOL in · 9/13 buys (69%) · +20% since launch · mcap 34 SOL · 45 s old"
   },
   {
    "symbol": "LMAO",
    "name": "LMAO",
    "mint": "7MYYv9U3ChJeA4zn2YsYwYVpcehHfx7YWEH4gSdipump",
-   "age_s": 41,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1937,12 +2099,12 @@
    "symbol": "TRUMP",
    "name": "I Am Not Corrupt",
    "mint": "2kTvvwCRrWsWg7TtrgAakR8vDfR9r6MtvuTao1RApump",
-   "age_s": 101,
-   "sol_in": 19.56,
-   "buys": 19,
-   "sells": 33,
-   "rise_pct": 159.8,
-   "mcap_sol": 82.5,
+   "age_s": 131,
+   "sol_in": 27.87,
+   "buys": 31,
+   "sells": 38,
+   "rise_pct": 250.2,
+   "mcap_sol": 111.2,
    "dev_pct": 6.6,
    "big_sell": 2.35,
    "x": "https://x.com/chiggaquant/status/2125893022751551890",
@@ -1955,12 +2117,12 @@
    "symbol": "yarl",
    "name": "yarl",
    "mint": "gTXGaxKHb5ZwwFjZh5nmS2NCafXDdBvZgYPHPJXpump",
-   "age_s": 113,
-   "sol_in": 3.65,
-   "buys": 18,
-   "sells": 31,
-   "rise_pct": 25.5,
-   "mcap_sol": 35.8,
+   "age_s": 143,
+   "sol_in": 2.54,
+   "buys": 19,
+   "sells": 33,
+   "rise_pct": 17.5,
+   "mcap_sol": 33.5,
    "dev_pct": 1.0,
    "big_sell": 3.05,
    "x": "https://x.com/yarlonpfx/status/2125892896562073857",
@@ -1968,24 +2130,6 @@
    "web": "https://archive.4plebs.org/s4s/search/text/yarl/order/asc",
    "status": "rejected: dump: 3.0 SOL sold",
    "why": "dump: 3.0 SOL sold"
-  },
-  {
-   "symbol": "SOL",
-   "name": "Drip on the beach",
-   "mint": "HT64xfYfbyKFrze4YPMeyLA5Xq9a3V9bbBVGzy2SFEsb",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
