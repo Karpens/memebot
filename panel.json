@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:50:24Z",
+ "updated": "2026-11-26T12:50:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 23,
   "checked": 23,
   "filtered": 2,
-  "lines": 352,
+  "lines": 354,
   "last_rug": {
    "coin": "SATNA",
    "pass": true
@@ -1402,24 +1402,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T10:21:45Z",
-   "time": "11:21:45",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 6 watched · 11 rejected (dev bought 4, mayhem mode 3, no symbol or name 2) · closest konnichiwa: too young: 5 s (min 45 s)",
-   "n": 153
-  },
-  {
-   "t": "2026-11-26T10:22:46Z",
-   "time": "11:22:46",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.2 a minute · 5 watched · 13 rejected (dev bought 6, serial launcher 4, no symbol or name 2) · closest konnichiwa: too young: 5 s (min 45 s)",
-   "n": 154
-  },
   {
    "t": "2026-11-26T10:23:47Z",
    "time": "11:23:47",
@@ -3201,6 +3183,24 @@
    "action": "scan",
    "text": "new pairs · 8.8 a minute · 5 watched · 6 rejected (serial launcher 2, dev bought 2, mayhem mode 2) · closest EUTO: too young: 11 s (min 45 s)",
    "n": 352
+  },
+  {
+   "t": "2026-11-26T12:50:24Z",
+   "time": "13:50:24",
+   "agent": "SCANNER",
+   "coin": "Riku",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 353
+  },
+  {
+   "t": "2026-11-26T12:50:34Z",
+   "time": "13:50:34",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 8.2 a minute · 4 watched · 7 rejected (dev bought 3, mayhem mode 3, serial launcher 1) · closest EUTO: SOL in 1.7/2.5 · buys 3/6 · buy share 50%/65% · rise +11%/+12%",
+   "n": 354
   }
  ],
  "nights": [
@@ -3243,7 +3243,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3251,24 +3251,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 218,
-    "last_event_age_s": 7.2,
+    "events": 220,
+    "last_event_age_s": 8.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4535,
-    "last_event_age_s": 0.3,
+    "events": 4569,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 140,
-    "last_event_age_s": 8.5,
+    "events": 141,
+    "last_event_age_s": 8.4,
     "errors": 13,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3281,9 +3281,9 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 8.2,
-  "watching": 4,
-  "followed": 9
+  "creates_per_min": 8.0,
+  "watching": 3,
+  "followed": 8
  },
  "learner": {
   "samples": 106,
@@ -3328,28 +3328,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2123,
+   "sent": 2153,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2123,
+   "sent": 2153,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SHIBA",
+   "name": "The Official Pump Inu",
+   "mint": "3mEZFMMU98a3s5ntDWCsiV2apGaRDYgRsa18KSJspump",
+   "age_s": 8,
+   "sol_in": 239.73,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 5802.2,
+   "mcap_sol": 1650.2,
+   "dev_pct": 0.0,
+   "big_sell": 79.54,
+   "x": "https://x.com/Jesusisdev/status/2125910570469670913",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 11.7 SOL sold",
+   "why": "dump: 11.7 SOL sold"
+  },
+  {
    "symbol": "Calasanta",
    "name": "La Calasanta",
    "mint": "GW5cEzNyJp75P6DUxuSuEJ48huALee5aWmYisiNzpump",
-   "age_s": 8,
-   "sol_in": -1.28,
+   "age_s": 36,
+   "sol_in": -4.74,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": -7.2,
-   "mcap_sol": 35.2,
+   "sells": 5,
+   "rise_pct": -25.3,
+   "mcap_sol": 28.3,
    "dev_pct": 15.2,
    "big_sell": 3.41,
    "x": "https://x.com/calasantapf/status/2125935141440688250",
@@ -3362,7 +3380,7 @@
    "symbol": "痞痞兔",
    "name": "PIPI LABS",
    "mint": "ETrwKN2gEXfiEqX5AsBwaCktt8N4hLTNMGK9ehwrpump",
-   "age_s": 24,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3377,28 +3395,10 @@
    "why": "mayhem mode"
   },
   {
-   "symbol": "Riku",
-   "name": "リク",
-   "mint": "5XcH7VycuDV9K8vWZVEnu85xj9XTk9mQh5tChmgipump",
-   "age_s": 30,
-   "sol_in": 1.25,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 2.5,
-   "mcap_sol": 313.1,
-   "dev_pct": 74.8,
-   "big_sell": 0.5,
-   "x": "https://x.com/Sir_Kyosuke/status/2125934431970189545",
-   "tg": false,
-   "web": "https://www.instagram.com/Katanorinekoriku",
-   "status": "rejected: dev bought 74.8% (max 8%)",
-   "why": "dev bought 74.8% (max 8%)"
-  },
-  {
    "symbol": "TOFU",
    "name": "Tofucoin",
    "mint": "3rVaWTULXSXEwbRR5LhPREJi9VTfa7eVw7BbcenSX5aj",
-   "age_s": 41,
+   "age_s": 69,
    "sol_in": -3.06,
    "buys": 2,
    "sells": 5,
@@ -3416,7 +3416,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "EQpgnAgk8YLDsrcd677iQhQcfjJMkc3bK8NibBSrpump",
-   "age_s": 41,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3434,12 +3434,12 @@
    "symbol": "Tchiwa",
    "name": "Trollichiwa",
    "mint": "2RJPUTDGZRgTM4d9DYKRNjkRiDbUNJy8AFm9k2pjpump",
-   "age_s": 100,
-   "sol_in": -3.37,
+   "age_s": 128,
+   "sol_in": -3.62,
    "buys": 9,
-   "sells": 14,
-   "rise_pct": -19.0,
-   "mcap_sol": 28.7,
+   "sells": 15,
+   "rise_pct": -20.3,
+   "mcap_sol": 28.2,
    "dev_pct": 11.9,
    "big_sell": 2.92,
    "x": "https://x.com/actronfeLLas/status/2125933791655178369?a=QF9BnusnJRd3L7lMDio&s=20",
@@ -3452,7 +3452,7 @@
    "symbol": "EUTO",
    "name": "Euto Protocol",
    "mint": "EPyRcL9fpC3uJcr8CK9ZpZbdoK5gb6ipGkXEnYvXpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": 1.65,
    "buys": 3,
    "sells": 3,
@@ -3470,7 +3470,7 @@
    "symbol": "TEST",
    "name": "Dont buy this shit",
    "mint": "2BBcxwd5atUUdzUTiUSaLWVMhKAgRVKSuij46LQLpump",
-   "age_s": 122,
+   "age_s": 150,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 5,
@@ -3488,11 +3488,11 @@
    "symbol": "BOTS",
    "name": "Gemini Bots",
    "mint": "XsCPL9dNWBMvFtTmwcCA5v3xWPSMEBCszbQdiLLq6aN",
-   "age_s": 126,
-   "sol_in": 0.11,
+   "age_s": 154,
+   "sol_in": 0.1,
    "buys": 3,
-   "sells": 8,
-   "rise_pct": -95.3,
+   "sells": 9,
+   "rise_pct": -95.4,
    "mcap_sol": 1.3,
    "dev_pct": 0.0,
    "big_sell": 0.05,
@@ -3500,13 +3500,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.1/2.5 · buys 3/6 · buy share 27%/65% · rise -95%/+12%"
+   "why": "SOL in 0.1/2.5 · buys 3/6 · buy share 25%/65% · rise -95%/+12%"
   },
   {
    "symbol": "痞痞兔",
    "name": "PIPI LABS",
    "mint": "6RE37dLMoZkqz8S1X3Q1mq4ka4HKC8oeZFFaqVewpump",
-   "age_s": 134,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3524,7 +3524,7 @@
    "symbol": "cheetos",
    "name": "my cheetos",
    "mint": "8jUmYaGioVZ92AkEarE9rwy2HPfEigLi6gsVPoQgpump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 1,
@@ -3537,24 +3537,6 @@
    "web": false,
    "status": "rejected: serial launcher: 7 more coins in 60 min",
    "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "AMOON",
-   "name": "Ascend Moon",
-   "mint": "68PojHi3BBhJAw9z7tGX8fSSni5rJ1zmt11w86PCGaBd",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
   }
  ],
  "strategies": [
