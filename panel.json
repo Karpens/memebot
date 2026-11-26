@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T01:43:52Z",
+ "updated": "2026-11-26T01:44:56Z",
  "mode": "paper",
  "start_balance": 70.0,
- "balance": 32.16,
- "equity": 58.99,
+ "balance": 8.46,
+ "equity": 58.83,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -11,34 +11,51 @@
   "SIZER",
   "RISK",
   "EXIT",
-  "JOURNAL"
+  "JOURNAL",
+  "NEWS"
  ],
- "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $70. I will not be watching. Trade fast, log every decision so I can read it in the morning.\n\nUNIVERSE\n- Only fresh DEX pairs: launched or migrated in the last 6 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $15k, minimum 5m volume $5k, at least 150 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 20 seconds: new pairs, volume spikes (>2.5x 1h average), buy/sell ratio above 60% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 45%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 20% of the balance per trade, never less than $5.\n4. RISK - at most 4 open positions and 40 trades a night, a 15 minute pause after 3 losses in a row, no new entries in the last 15 minutes, stop for the night at -40%.\n5. EXIT - sell half at +30%, trail the rest 15% below the peak, stop loss at -18%, out after 20 minutes unless up 5%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n",
+ "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $70. I will not be watching. Trade fast, log every decision so I can read it in the morning.\n\nUNIVERSE\n- Only fresh DEX pairs: launched or migrated in the last 6 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $15k, minimum 5m volume $5k, at least 150 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 20 seconds: new pairs, volume spikes (>2.5x 1h average), buy/sell ratio above 60% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 45%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 20% of the balance per trade, never less than $5.\n4. RISK - at most 4 open positions and 40 trades a night, a 15 minute pause after 3 losses in a row, no new entries in the last 15 minutes, stop for the night at -40%.\n5. EXIT - sell half at +30%, trail the rest 15% below the peak, stop loss at -18%, out after 20 minutes unless up 5%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n7. NEWS - follows what people promote: the coin's X and Telegram, DexScreener boosts, the GeckoTerminal and DexScreener trending lists. Trending or boosted counts as a signal.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n",
  "night": {
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 227,
-  "flagged": 5,
-  "checked": 5
+  "scans": 230,
+  "flagged": 8,
+  "checked": 8
  },
  "live": true,
  "positions": [
   {
    "symbol": "MONEY",
    "cost": 14.61,
-   "value": 15.67,
-   "pnl_pct": 7.2,
+   "value": 16.0,
+   "pnl_pct": 9.5,
    "opened": "2026-11-26T01:29:04Z",
    "url": "https://dexscreener.com/solana/cchpignpbwf65nfsl3d8h4m4rwdprzh8lpcatynurxqg"
   },
   {
    "symbol": "Pumpcat",
    "cost": 11.68,
-   "value": 11.16,
-   "pnl_pct": -4.5,
+   "value": 10.86,
+   "pnl_pct": -7.0,
    "opened": "2026-11-26T01:40:25Z",
    "url": "https://dexscreener.com/solana/4j4q8fc5y3iazhqrzjmti95jeuqk38yx397q2depxwnf"
+  },
+  {
+   "symbol": "NORFEATH",
+   "cost": 11.87,
+   "value": 12.12,
+   "pnl_pct": 2.1,
+   "opened": "2026-11-26T01:44:12Z",
+   "url": "https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj"
+  },
+  {
+   "symbol": "UHI",
+   "cost": 11.83,
+   "value": 11.39,
+   "pnl_pct": -3.7,
+   "opened": "2026-11-26T01:44:34Z",
+   "url": "https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl"
   }
  ],
  "trades": [
@@ -539,6 +556,78 @@
    "coin": null,
    "action": "scan",
    "text": "86 nových coinov, 84 párov, 4 spĺňa pravidlá."
+  },
+  {
+   "t": "2026-11-26T01:44:12Z",
+   "time": "02:44:12",
+   "agent": "SCANNER",
+   "coin": "PUMPCHAN",
+   "action": "flag",
+   "text": "pumpswap, likvidita $35.3k, 5 min $26.8k, nákupy 63 % (trenduje, boost na DexScreeneri)."
+  },
+  {
+   "t": "2026-11-26T01:44:12Z",
+   "time": "02:44:12",
+   "agent": "NEWS",
+   "coin": "PUMPCHAN",
+   "action": "news",
+   "text": "Propagácia: X @ThePumpChan, web, 30 boostov na DexScreeneri, v trendoch GeckoTerminal/DexScreener."
+  },
+  {
+   "t": "2026-11-26T01:44:12Z",
+   "time": "02:44:12",
+   "agent": "RUG CHECK",
+   "coin": "PUMPCHAN",
+   "action": "reject",
+   "text": "Neprešiel: top 10 držiteľov má 60 %."
+  },
+  {
+   "t": "2026-11-26T01:44:12Z",
+   "time": "02:44:12",
+   "agent": "SCANNER",
+   "coin": "NORFEATH",
+   "action": "flag",
+   "text": "pumpswap, likvidita $54.5k, 5 min $6.1k, nákupy 64 % (trenduje, boost na DexScreeneri, držitelia +52 %)."
+  },
+  {
+   "t": "2026-11-26T01:44:12Z",
+   "time": "02:44:12",
+   "agent": "NEWS",
+   "coin": "NORFEATH",
+   "action": "news",
+   "text": "Propagácia: X @flynorfeather, web, 100 boostov na DexScreeneri, v trendoch GeckoTerminal/DexScreener."
+  },
+  {
+   "t": "2026-11-26T01:44:12Z",
+   "time": "02:44:12",
+   "agent": "SIZER",
+   "coin": "NORFEATH",
+   "action": "buy",
+   "text": "Kúpené za $11.87 (20 % zostatku), cena $0.0005822, dopad 0.8 %."
+  },
+  {
+   "t": "2026-11-26T01:44:34Z",
+   "time": "02:44:34",
+   "agent": "SCANNER",
+   "coin": "UHI",
+   "action": "flag",
+   "text": "pumpswap, likvidita $71.4k, 5 min $5.2k, nákupy 76 % (trenduje, boost na DexScreeneri)."
+  },
+  {
+   "t": "2026-11-26T01:44:34Z",
+   "time": "02:44:34",
+   "agent": "NEWS",
+   "coin": "UHI",
+   "action": "news",
+   "text": "Propagácia: X @UHICoinX, web, 100 boostov na DexScreeneri, v trendoch GeckoTerminal/DexScreener."
+  },
+  {
+   "t": "2026-11-26T01:44:34Z",
+   "time": "02:44:34",
+   "agent": "SIZER",
+   "coin": "UHI",
+   "action": "buy",
+   "text": "Kúpené za $11.83 (20 % zostatku), cena $0.00101367, dopad 1.9 %."
   }
  ],
  "nights": [
@@ -556,7 +645,6 @@
   }
  ],
  "errors": [
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
  ]
 }
