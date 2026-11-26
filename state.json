@@ -1,5 +1,5 @@
 {
- "balance": 96.47784347116357,
+ "balance": 95.21857197619282,
  "positions": {},
  "nights": [
   {
@@ -267,6 +267,78 @@
     "action": "scan",
     "text": "new pairs · 2.4 a minute · 3 watched · 3 rejected (mayhem mode 2, dump 1) · closest NN: SOL in 0.3/2.5 · rise +2%/+12%",
     "n": 26
+   },
+   {
+    "t": "2026-11-26T09:12:02Z",
+    "time": "10:12:02",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 2.8 a minute · 3 watched · 7 rejected (mayhem mode 3, dump 2, serial launcher 2) · closest T: buys 2/6 · mcap 83868 SOL (max 70)",
+    "n": 27
+   },
+   {
+    "t": "2026-11-26T09:12:29Z",
+    "time": "10:12:29",
+    "agent": "SCANNER",
+    "coin": "SWARM",
+    "action": "flag",
+    "text": "momentum · 6.1 SOL in · 6/6 buys (100%) · +43% since launch · mcap 42 SOL · 18 s old",
+    "n": 28
+   },
+   {
+    "t": "2026-11-26T09:12:29Z",
+    "time": "10:12:29",
+    "agent": "RUG CHECK",
+    "coin": "SWARM",
+    "action": "pass",
+    "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
+    "n": 29
+   },
+   {
+    "t": "2026-11-26T09:12:29Z",
+    "time": "10:12:29",
+    "agent": "SIZER",
+    "coin": "SWARM",
+    "action": "size",
+    "text": "10% of $96.48 = $9.65",
+    "n": 30
+   },
+   {
+    "t": "2026-11-26T09:12:29Z",
+    "time": "10:12:29",
+    "agent": "EXECUTOR",
+    "coin": "SWARM",
+    "action": "enter",
+    "text": "ENTER SWARM at 0.0000030946 · slip 1.7% · first in · 0.1 s after the trigger · 18 s after launch · curve maths 0.0% off Jupiter",
+    "n": 31
+   },
+   {
+    "t": "2026-11-26T09:12:29Z",
+    "time": "10:12:29",
+    "agent": "NEWS",
+    "coin": "SWARM",
+    "action": "plan",
+    "text": "hold plan · 2/10 (inflow 6.1 SOL, buys 100%) · scalp: +7",
+    "n": 32
+   },
+   {
+    "t": "2026-11-26T09:12:31Z",
+    "time": "10:12:31",
+    "agent": "EXECUTOR",
+    "coin": "SWARM",
+    "action": "exit",
+    "text": "EXIT SWARM $-1.26 (-13%) · stop -9% · out · 0.0 s after the reading",
+    "n": 33
+   },
+   {
+    "t": "2026-11-26T09:12:31Z",
+    "time": "10:12:31",
+    "agent": "LEARNER",
+    "coin": "SWARM",
+    "action": "learn",
+    "text": "learned · tier:scalp now avg -9.7% over 5",
+    "n": 34
    }
   ],
   "trades": [
@@ -421,16 +493,69 @@
      "tier:scalp",
      "hour:day"
     ]
+   },
+   {
+    "symbol": "SWARM",
+    "mint": "2Qce5nHgHDaYHbHBwS6DBdhvQ7boEq69zmoSAKgPpump",
+    "opened": "2026-11-26T09:12:29Z",
+    "closed": "2026-11-26T09:12:31Z",
+    "cost": 9.65,
+    "proceeds": 8.39,
+    "pnl": -1.26,
+    "pnl_pct": -13.1,
+    "why": "stop -9%",
+    "url": "https://pump.fun/coin/2Qce5nHgHDaYHbHBwS6DBdhvQ7boEq69zmoSAKgPpump",
+    "reason": "momentum · 6.1 SOL in · 6/6 buys (100%) · +43% since launch · mcap 42 SOL · 18 s old",
+    "size_pct": 10.0,
+    "entry_price": 3.094607208386565e-06,
+    "exit_price": 2.805712443831796e-06,
+    "slip": 1.67,
+    "strategy": "new_pairs",
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "plan": {
+     "tier": "scalp",
+     "score": 2,
+     "parts": [
+      "inflow 6.1 SOL",
+      "buys 100%"
+     ],
+     "ladder": [
+      [
+       7.0,
+       1.0
+      ]
+     ],
+     "step": 0,
+     "stop_pct": -7.0,
+     "trail_pct": 0.0
+    },
+    "age_s": 18,
+    "mcap_sol": 42.5,
+    "dev_pct": 3.19,
+    "sol_in": 6.06,
+    "exit_ms": 32,
+    "learn": [
+     "np:dev:2-5",
+     "np:sol:6-12",
+     "np:buys:90+",
+     "np:age:<30s",
+     "np:social:none",
+     "news:0-2",
+     "tier:scalp",
+     "hour:day"
+    ]
    }
   ],
   "entered": [],
-  "streak": 1,
+  "streak": 2,
   "cooldown_until": 0,
   "scans": 0,
-  "flagged": 2,
-  "checked": 2,
+  "flagged": 3,
+  "checked": 3,
   "filtered": 0,
-  "lines": 26,
+  "lines": 34,
   "flags": [
    {
     "coin": "ZEROCAST",
@@ -441,6 +566,11 @@
     "coin": "HOGZ",
     "why": "momentum",
     "t": "2026-11-26T09:05:39Z"
+   },
+   {
+    "coin": "SWARM",
+    "why": "momentum",
+    "t": "2026-11-26T09:12:29Z"
    }
   ],
   "curve": [
@@ -478,32 +608,36 @@
    ]
   ],
   "last_rug": {
-   "coin": "HOGZ",
+   "coin": "SWARM",
    "pass": true
   },
-  "np_said": 1795684261.860559,
+  "np_said": 1795684322.860576,
   "np_speed": {
    "first_in": [
     74,
+    65,
     65
    ],
    "launch": [
     10,
-    15
+    15,
+    19
    ],
    "exit": [
     31,
-    33
+    33,
+    32
    ]
   },
   "reenter": {
    "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump": 1795684228.529103,
    "8mm21tJZG54pEcuXzvetRhbwKs9QjqUySZ5WkfEaszk": 1795684249.030694,
-   "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump": 1795684313.860547
+   "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump": 1795684313.860547,
+   "2Qce5nHgHDaYHbHBwS6DBdhvQ7boEq69zmoSAKgPpump": 1795684651.030667
   }
  },
  "learner_summary": {
-  "samples": 99,
+  "samples": 100,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
