@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:35:42Z",
+ "updated": "2026-11-26T17:36:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 41,
-  "checked": 35,
-  "filtered": 7,
-  "lines": 710,
+  "flagged": 42,
+  "checked": 36,
+  "filtered": 8,
+  "lines": 713,
   "last_rug": {
-   "coin": "CUBE",
-   "pass": true
+   "coin": "pawzkie",
+   "pass": false
   }
  },
  "flags": [
-  {
-   "coin": "STREETS",
-   "why": "momentum",
-   "t": "2026-11-26T15:48:53Z"
-  },
   {
    "coin": "mrpompsik",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "breaddawg",
    "why": "momentum",
    "t": "2026-11-26T17:31:49Z"
+  },
+  {
+   "coin": "pawzkie",
+   "why": "momentum",
+   "t": "2026-11-26T17:36:03Z"
   }
  ],
  "curve": [
@@ -2116,6 +2116,10 @@
   [
    1795714513,
    84.53
+  ],
+  [
+   1795714573,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2590,33 +2594,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T15:05:44Z",
-   "time": "16:05:44",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 11 watched · 9 rejected (dev bought 5, serial launcher 2, dump 1) · closest GIFT: too young: 16 s (min 45 s)",
-   "n": 511
-  },
-  {
-   "t": "2026-11-26T15:06:45Z",
-   "time": "16:06:45",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.0 a minute · 10 watched · 11 rejected (serial launcher 7, dump 3, mayhem mode 1) · closest GIFT: buys 5/6 · buy share 22%/65%",
-   "n": 512
-  },
-  {
-   "t": "2026-11-26T15:08:11Z",
-   "time": "16:08:11",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "feed",
-   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
-   "n": 513
-  },
   {
    "t": "2026-11-26T15:08:11Z",
    "time": "16:08:11",
@@ -4389,6 +4366,33 @@
    "action": "scan",
    "text": "new pairs · 8.0 a minute · 8 watched · 21 rejected (serial launcher 13, mayhem mode 4, dev bought 2) · closest BASED: SOL in 0.1/2.5 · buys 4/6 · rise +1%/+12%",
    "n": 710
+  },
+  {
+   "t": "2026-11-26T17:35:51Z",
+   "time": "18:35:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 7.8 a minute · 8 watched · 21 rejected (serial launcher 12, mayhem mode 5, dev bought 3) · closest pawzkie: SOL in 1.2/2.5 · buys 5/6 · rise +8%/+12%",
+   "n": 711
+  },
+  {
+   "t": "2026-11-26T17:36:03Z",
+   "time": "18:36:03",
+   "agent": "SCANNER",
+   "coin": "pawzkie",
+   "action": "flag",
+   "text": "momentum · 3.3 SOL in · 7/8 buys (88%) · +23% since launch · mcap 37 SOL · 92 s old",
+   "n": 712
+  },
+  {
+   "t": "2026-11-26T17:36:03Z",
+   "time": "18:36:03",
+   "agent": "RUG CHECK",
+   "coin": "pawzkie",
+   "action": "reject",
+   "text": "FAIL · risk: Creator history of rugged tokens",
+   "n": 713
   }
  ],
  "nights": [
@@ -4431,7 +4435,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4439,24 +4443,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 512,
-    "last_event_age_s": 0.3,
+    "events": 515,
+    "last_event_age_s": 6.6,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6411,
-    "last_event_age_s": 2.9,
+    "events": 6475,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 373,
-    "last_event_age_s": 0.2,
+    "events": 374,
+    "last_event_age_s": 25.7,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4469,9 +4473,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 7.4,
-  "watching": 8,
-  "followed": 24
+  "creates_per_min": 7.8,
+  "watching": 6,
+  "followed": 17
  },
  "learner": {
   "samples": 107,
@@ -4517,30 +4521,84 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5113,
+   "sent": 5149,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5147,
+   "sent": 5183,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "THANKFUL",
-   "name": "I Am Thankful For",
-   "mint": "Eu1pWskggRaLpqTYSTV3zokQ2GQSUx1dnoWSBZkipump",
-   "age_s": 0,
+   "symbol": "?",
+   "name": "",
+   "mint": "3pLLwHm4aAQcGbkLnGQfs6rrnUdG8E5cxYpCSxYn2mTQ",
+   "age_s": 6,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 35.4,
-   "dev_pct": 12.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "RAIN",
+   "name": "RAINMAN",
+   "mint": "7ABkHuvfeEz1XvDWKoNf14NpPBX5ZV9ztU9dzVeKpump",
+   "age_s": 26,
+   "sol_in": 0.06,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 0.4,
+   "mcap_sol": 29.2,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 25 s (min 45 s)"
+  },
+  {
+   "symbol": "Disaster",
+   "name": "Lee Geon",
+   "mint": "3m6K2iz3ZjwaAJgvY1RKeyUxKXSu9fjFydEyq4Y1pump",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "THANKFUL",
+   "name": "I Am Thankful For",
+   "mint": "Eu1pWskggRaLpqTYSTV3zokQ2GQSUx1dnoWSBZkipump",
+   "age_s": 34,
+   "sol_in": 21.25,
+   "buys": 17,
+   "sells": 16,
+   "rise_pct": 165.4,
+   "mcap_sol": 94.1,
+   "dev_pct": 12.0,
+   "big_sell": 2.18,
    "x": "https://x.com/thankfulpf/status/2126006527890698362?a=yrUf3Pqc_WCmCsM4VgM&s=20",
    "tg": false,
    "web": "https://iamthankfulfor.site/",
@@ -4551,9 +4609,9 @@
    "symbol": "KUCOIN",
    "name": "KURO CURRENCY",
    "mint": "6vuRokmSTkQ7ns8GFpUZe7zg9xrtnNcmHBa5pCjDpump",
-   "age_s": 19,
+   "age_s": 53,
    "sol_in": 0.03,
-   "buys": 1,
+   "buys": 2,
    "sells": 0,
    "rise_pct": 0.2,
    "mcap_sol": 28.7,
@@ -4569,25 +4627,25 @@
    "symbol": "UHI",
    "name": "Universal High Income",
    "mint": "CJtv4hSrGYZGm7XRUv8VRn93LJ9Lyx4JT2nUwBrPz81B",
-   "age_s": 21,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 55,
+   "sol_in": 0.03,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
+   "rise_pct": 0.2,
+   "mcap_sol": 29.0,
    "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
   },
   {
    "symbol": "SNOOD",
    "name": "Snood",
    "mint": "GPyYBe5EKLfornUnrVit3qG73Fq6kAcP1KPb4GrgHh77",
-   "age_s": 22,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4605,7 +4663,7 @@
    "symbol": "sunless",
    "name": "Sunless",
    "mint": "F7araAoSFfXJCEwURtbC15BmQh6CgKxce3LRoEaBpump",
-   "age_s": 32,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4623,9 +4681,9 @@
    "symbol": "piars",
    "name": "Pairs",
    "mint": "5MzJtaByeWE6gk8zu7RpKeH1qDj3JjJhiPzSnv6Qpump",
-   "age_s": 58,
+   "age_s": 92,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
@@ -4635,17 +4693,17 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
   },
   {
    "symbol": "ARMORER",
    "name": "Armorer",
    "mint": "3cAs5LN6E65VEwUMTKRpHfk3KT4b4dT5NDwNppjYpump",
-   "age_s": 61,
+   "age_s": 95,
    "sol_in": -0.28,
-   "buys": 1,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": -1.9,
+   "rise_pct": -1.8,
    "mcap_sol": 28.0,
    "dev_pct": 1.0,
    "big_sell": 1.19,
@@ -4653,13 +4711,13 @@
    "tg": false,
    "web": "https://armorerlabs.com",
    "status": "watching",
-   "why": "too young: 2 s (min 45 s)"
+   "why": "SOL in -0.3/2.5 · buys 2/6 · rise -2%/+12%"
   },
   {
    "symbol": "sunless",
    "name": "Sunless",
    "mint": "2NEpdz7n8wEvSaBczZspy1E7YXb4Nc1VTSa6jhx4pump",
-   "age_s": 65,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4677,25 +4735,25 @@
    "symbol": "pawzkie",
    "name": "pawzkie",
    "mint": "Gm2vJzNKTTsQNriuVMYyiz4WMdNPCZBcpTz3EkHqpump",
-   "age_s": 71,
-   "sol_in": 1.23,
-   "buys": 5,
+   "age_s": 105,
+   "sol_in": 3.54,
+   "buys": 8,
    "sells": 1,
-   "rise_pct": 8.1,
-   "mcap_sol": 32.2,
+   "rise_pct": 24.2,
+   "mcap_sol": 37.0,
    "dev_pct": 3.4,
    "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "SOL in 1.2/2.5 · buys 5/6 · rise +8%/+12%"
+   "status": "rejected: risk: Creator history of rugged tokens",
+   "why": "risk: Creator history of rugged tokens"
   },
   {
    "symbol": "FCOURT",
    "name": "Family Court Gaurdian",
    "mint": "D7qodE654HAiqmksSD9Z4YFqUtg6d13FbRb51C7Vpump",
-   "age_s": 84,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4713,7 +4771,7 @@
    "symbol": "SCC",
    "name": "THEY TWEETED CA FAKE ALMOST BOND",
    "mint": "EJwdWiskPZvitEsFbP3rU3ptzovNtUV3jZ6qVohkpump",
-   "age_s": 85,
+   "age_s": 119,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -4731,7 +4789,7 @@
    "symbol": "SCC",
    "name": "THEY TWEETED CA FAKE ALMOST BOND",
    "mint": "3671MFDui3hB9Le2uAdjchH8sn75xHndm9ERnv4Epump",
-   "age_s": 87,
+   "age_s": 121,
    "sol_in": 0.03,
    "buys": 5,
    "sells": 5,
@@ -4749,7 +4807,7 @@
    "symbol": "Tjd",
    "name": "Trump j Donald",
    "mint": "5zTBqzW8frQbPT8ECZ2kJ5DTtQmwvx9Q2XfH2ufnpump",
-   "age_s": 95,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4767,7 +4825,7 @@
    "symbol": "VC",
    "name": "Venture Cat",
    "mint": "FwLDeBfz2PsdL1MQkDqoK1frnpfXYd8BLxD7c1dZpump",
-   "age_s": 109,
+   "age_s": 143,
    "sol_in": 0.03,
    "buys": 2,
    "sells": 0,
@@ -4785,7 +4843,7 @@
    "symbol": "pawskinz",
    "name": "pawskinz",
    "mint": "9K8EN1s2DoWg65696HPJ4PzCvNobMH8CgADPcGhmpump",
-   "age_s": 114,
+   "age_s": 148,
    "sol_in": -0.83,
    "buys": 3,
    "sells": 3,
@@ -4803,7 +4861,7 @@
    "symbol": "DOLLY",
    "name": "FAKE CHARITY AT 11K",
    "mint": "975sNpbh9Pb2raR42344iQnE5wikULHWQDkcPuPBgiW4",
-   "age_s": 115,
+   "age_s": 149,
    "sol_in": 0.07,
    "buys": 3,
    "sells": 1,
@@ -4821,7 +4879,7 @@
    "symbol": "DOLLY",
    "name": "FAKE CHARITY AT 11K",
    "mint": "bWM9Jy4JpzqMEkVxqWwgo4UmksnKxyzURMYnnguZN9F",
-   "age_s": 140,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4834,60 +4892,6 @@
    "web": "https://www.cbsnews.com/philadelphia/news/dolly-deptford-turkey-search/",
    "status": "rejected: serial launcher: 3 more coins in 60 min",
    "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "PLAYGROUND",
-   "name": "Playground Violations",
-   "mint": "zxRtmMtiMwXee3Gnt9LSXfFhohmWZaqmR9FGLoNqk24",
-   "age_s": 141,
-   "sol_in": -0.1,
-   "buys": 1,
-   "sells": 4,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/Dexerto/status/2126005666288419078",
-   "tg": false,
-   "web": "https://x.com/Dexerto/status/2126005666288419078",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "SCC",
-   "name": "THEY TWEETED CA FAKE ALMOST BOND",
-   "mint": "6voExx89p9zzAsM8we919NdFijiaA4UzdWEzMd9Ypump",
-   "age_s": 143,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.2,
-   "x": "https://x.com/selfcluster/status/2126005455898263939",
-   "tg": false,
-   "web": "https://selfcluster.app/",
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "SCC",
-   "name": "THEY TWEETED CA FAKE ALMOST BOND",
-   "mint": "Gozjw2Ptyjb2atVTfsfMPQMmsMwHcKpawfUv9Us6pump",
-   "age_s": 145,
-   "sol_in": 0.02,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/selfcluster/status/2126005455898263939",
-   "tg": false,
-   "web": "https://selfcluster.app/",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
   }
  ],
  "strategies": [
