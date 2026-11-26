@@ -35,42 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T13:34:57Z",
-    "time": "14:34:57",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.6 a minute · 6 watched · 16 rejected (dev bought 5, mayhem mode 5, dump 3) · closest CATE: too young: 22 s (min 45 s)",
-    "n": 406
-   },
-   {
-    "t": "2026-11-26T13:35:58Z",
-    "time": "14:35:58",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.6 a minute · 7 watched · 15 rejected (dev bought 4, mayhem mode 4, serial launcher 3) · closest CENTIPEDE: too young: 43 s (min 45 s)",
-    "n": 407
-   },
-   {
-    "t": "2026-11-26T13:36:06Z",
-    "time": "14:36:06",
-    "agent": "SCANNER",
-    "coin": "NoV",
-    "action": "migrate",
-    "text": "migrated: the curve is complete (pump-amm)",
-    "n": 408
-   },
-   {
-    "t": "2026-11-26T13:36:59Z",
-    "time": "14:36:59",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.2 a minute · 3 watched · 10 rejected (dev bought 4, mayhem mode 3, serial launcher 2) · closest CATE: SOL in 0.2/2.5 · buys 4/6 · rise +1%/+12%",
-    "n": 409
-   },
-   {
     "t": "2026-11-26T13:38:00Z",
     "time": "14:38:00",
     "agent": "SCANNER",
@@ -5433,6 +5397,42 @@
     "action": "scan",
     "text": "new pairs · 13.4 a minute · 9 watched · 32 rejected (serial launcher 13, mayhem mode 10, dev bought 3) · closest PORN: too young: 5 s (min 45 s)",
     "n": 1005
+   },
+   {
+    "t": "2026-11-26T21:04:26Z",
+    "time": "22:04:26",
+    "agent": "SCANNER",
+    "coin": "pyra",
+    "action": "flag",
+    "text": "momentum · 4.6 SOL in · 6/8 buys (75%) · +32% since launch · mcap 38 SOL · 56 s old",
+    "n": 1006
+   },
+   {
+    "t": "2026-11-26T21:04:27Z",
+    "time": "22:04:27",
+    "agent": "RUG CHECK",
+    "coin": "pyra",
+    "action": "pass",
+    "text": "PASS · 11 holders · top holder 3.3% · top 10 15% (curve left out)",
+    "n": 1007
+   },
+   {
+    "t": "2026-11-26T21:04:27Z",
+    "time": "22:04:27",
+    "agent": "LEARNER",
+    "coin": "pyra",
+    "action": "skip",
+    "text": "skip · past trades like this lost avg 11.5% · np:sol:3-6 -23.6% over 8, news:0-2 -17.4% over 14",
+    "n": 1008
+   },
+   {
+    "t": "2026-11-26T21:04:27Z",
+    "time": "22:04:27",
+    "agent": "LEARNER",
+    "coin": "pyra",
+    "action": "shadow",
+    "text": "SHADOW pyra · not bought (learner skip) · followed as if bought: $8.30 at 0.000002779 (curve maths, every cost) · same exits, outside the book",
+    "n": 1009
    }
   ],
   "trades": [
@@ -6135,16 +6135,11 @@
   "streak": 11,
   "cooldown_until": 1795724973.473005,
   "scans": 0,
-  "flagged": 62,
-  "checked": 46,
+  "flagged": 63,
+  "checked": 47,
   "filtered": 9,
-  "lines": 1005,
+  "lines": 1009,
   "flags": [
-   {
-    "coin": "FORU",
-    "why": "momentum",
-    "t": "2026-11-26T19:44:31Z"
-   },
    {
     "coin": "CHLOWIE",
     "why": "momentum",
@@ -6179,13 +6174,14 @@
     "coin": "rocket",
     "why": "momentum",
     "t": "2026-11-26T20:46:05Z"
+   },
+   {
+    "coin": "pyra",
+    "why": "momentum",
+    "t": "2026-11-26T21:04:26Z"
    }
   ],
   "curve": [
-   [
-    1795691041,
-    87.14
-   ],
    [
     1795691101,
     87.14
@@ -8581,10 +8577,14 @@
    [
     1795726993,
     82.97
+   ],
+   [
+    1795727053,
+    82.97
    ]
   ],
   "last_rug": {
-   "coin": "TOPH",
+   "coin": "pyra",
    "pass": true
   },
   "np_said": 1795727019.257794,
@@ -9311,11 +9311,13 @@
     "weight": 0.5
    }
   ],
-  "open": []
+  "open": [
+   "pyra"
+  ]
  },
  "learner_summary": {
   "samples": 109,
-  "skipped": 25,
+  "skipped": 26,
   "explored": 6,
   "min_samples": 8,
   "best": [
