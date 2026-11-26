@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T13:18:28Z",
+ "updated": "2026-11-26T13:19:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 24,
   "checked": 24,
   "filtered": 2,
-  "lines": 385,
+  "lines": 386,
   "last_rug": {
    "coin": "REMY",
    "pass": true
@@ -1514,15 +1514,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T10:48:08Z",
-   "time": "11:48:08",
-   "agent": "RUG CHECK",
-   "coin": "AISLE",
-   "action": "pass",
-   "text": "PASS · 7 holders · top holder 3.3% · top 10 9% (curve left out)",
-   "n": 186
-  },
   {
    "t": "2026-11-26T10:48:08Z",
    "time": "11:48:08",
@@ -3313,6 +3304,15 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 2 watched · 11 rejected (dump 6, serial launcher 3, mayhem mode 1) · closest BASS: buy share 60%/65% · mcap 81 SOL (max 70)",
    "n": 385
+  },
+  {
+   "t": "2026-11-26T13:18:48Z",
+   "time": "14:18:48",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.4 a minute · 1 watched · 6 rejected (serial launcher 2, dump 1, dev bought 1) · closest BASS: buy share 64%/65% · mcap 81 SOL (max 70)",
+   "n": 386
   }
  ],
  "nights": [
@@ -3355,7 +3355,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3363,15 +3363,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 368,
-    "last_event_age_s": 43.7,
+    "events": 374,
+    "last_event_age_s": 1.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7883,
+    "events": 7929,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -3379,8 +3379,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 252,
-    "last_event_age_s": 69.5,
+    "events": 256,
+    "last_event_age_s": 0.6,
     "errors": 18,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3393,9 +3393,9 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 4.2,
-  "watching": 1,
-  "followed": 5
+  "creates_per_min": 5.2,
+  "watching": 2,
+  "followed": 8
  },
  "learner": {
   "samples": 106,
@@ -3440,28 +3440,118 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3915,
+   "sent": 3951,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3915,
+   "sent": 3951,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CFI",
+   "name": "fsdfsf",
+   "mint": "GoUhbQGCgCsZ5FmMK8Sp5qnthfpsxCici1ignPLfpump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "TEEETHY",
+   "name": "TEEETHY",
+   "mint": "8VLv7U4RAUpkXJD864Jf2rN5yUeZTiMiL8W62W8vpump",
+   "age_s": 8,
+   "sol_in": -2.03,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -12.2,
+   "mcap_sol": 28.4,
+   "dev_pct": 7.5,
+   "big_sell": 2.28,
+   "x": "https://x.com/teeethy_yellow",
+   "tg": false,
+   "web": "https://teeethy.fun/",
+   "status": "rejected: dump: 2.3 SOL sold",
+   "why": "dump: 2.3 SOL sold"
+  },
+  {
+   "symbol": "CLM",
+   "name": "Cat Labs M",
+   "mint": "5tTDBkwe1R9ur1kqyY6979nMA7Z8TNCXyHaemppdpump",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.0,
+   "dev_pct": 5.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "YAO",
+   "name": "姚",
+   "mint": "4nMLkpc6wPG7DFdoADYbitzxw7goS8UkWGXLQQcHpump",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
+   "symbol": "HOLD20",
+   "name": "20 Year Hold",
+   "mint": "8HcjhXcCSGPkRtv8CUAb4s52hRjwvEfPVFQLdGcXpump",
+   "age_s": 27,
+   "sol_in": 0.51,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 2.7,
+   "mcap_sol": 47.3,
+   "dev_pct": 23.7,
+   "big_sell": 0.53,
+   "x": "https://x.com/cryptorover/status/2125686042359451962?a=B8ozgjgkro-pw0I4614&s=20",
+   "tg": false,
+   "web": "https://pump.fun/",
+   "status": "rejected: dev bought 23.7% (max 8%)",
+   "why": "dev bought 23.7% (max 8%)"
+  },
+  {
    "symbol": "DOGSTAR",
    "name": "DOGSTAR",
    "mint": "93bcPPwEZoLTs7YjzM7WgWCELYxCGjQ69w6hcWMmpump",
-   "age_s": 69,
-   "sol_in": 0.04,
-   "buys": 4,
+   "age_s": 103,
+   "sol_in": 0.14,
+   "buys": 6,
    "sells": 2,
-   "rise_pct": 0.3,
-   "mcap_sol": 28.2,
+   "rise_pct": 0.9,
+   "mcap_sol": 28.4,
    "dev_pct": 0.4,
    "big_sell": 0.32,
    "x": false,
@@ -3474,7 +3564,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AWZADqU88rasQtMCNokzYuSRZ6ge7w6edDQ1cB8Vpump",
-   "age_s": 103,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3492,7 +3582,7 @@
    "symbol": "TRUMPCOINS",
    "name": "TRUMPP",
    "mint": "B3qddVgaXhzV4Niy34Y26a9VHkVuhQMVDFZgNbRHpump",
-   "age_s": 111,
+   "age_s": 145,
    "sol_in": -0.06,
    "buys": 1,
    "sells": 1,
@@ -3510,7 +3600,7 @@
    "symbol": "CLIQUE",
    "name": "Clique",
    "mint": "5agb9VwkJB3W6YChyZPFEV7DbMQzV1GviKykiXa1pump",
-   "age_s": 118,
+   "age_s": 152,
    "sol_in": -0.55,
    "buys": 5,
    "sells": 3,
@@ -3528,7 +3618,7 @@
    "symbol": "CLM",
    "name": "Cat Labs M",
    "mint": "2ndsGDrT8oEJGL4WZSB35kiBigQtiu3PGMGaEVtPpump",
-   "age_s": 132,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3546,7 +3636,7 @@
    "symbol": "BASS",
    "name": "Sir Bassalot",
    "mint": "4U1ZcA8a8p5BKW8e4FsQnvd9TjvnWJgb4s58gGAApump",
-   "age_s": 140,
+   "age_s": 174,
    "sol_in": 20.64,
    "buys": 7,
    "sells": 4,
@@ -3559,24 +3649,6 @@
    "web": "https://bassalot.top/",
    "status": "watching",
    "why": "buy share 64%/65% · mcap 81 SOL (max 70)"
-  },
-  {
-   "symbol": "HIPPO",
-   "name": "Hippocoin",
-   "mint": "ERRWZ3cva8DwSRp7X6uUtq5hAnW2vv4ArXS2BRjxpump",
-   "age_s": 161,
-   "sol_in": 2.3,
-   "buys": 9,
-   "sells": 12,
-   "rise_pct": 15.4,
-   "mcap_sol": 34.4,
-   "dev_pct": 3.4,
-   "big_sell": 20.82,
-   "x": "https://x.com/bat0n336/status/2125940830951149617",
-   "tg": false,
-   "web": "https://pump.fun",
-   "status": "rejected: dump: 6.0 SOL sold",
-   "why": "dump: 6.0 SOL sold"
   }
  ],
  "strategies": [
