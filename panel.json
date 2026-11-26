@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:50:59Z",
+ "updated": "2026-11-26T22:51:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.3,
@@ -24,7 +24,7 @@
   "flagged": 74,
   "checked": 54,
   "filtered": 11,
-  "lines": 1164,
+  "lines": 1165,
   "last_rug": {
    "coin": "BTC",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795697473,
-   85.18
-  ],
   [
    1795697533,
    85.18
@@ -2472,6 +2468,10 @@
   [
    1795733427,
    82.3
+  ],
+  [
+   1795733487,
+   82.3
   ]
  ],
  "position_pct": 10.0,
@@ -3078,15 +3078,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T20:31:12Z",
-   "time": "21:31:12",
-   "agent": "LEARNER",
-   "coin": "TOPH",
-   "action": "shadow",
-   "text": "SHADOW TOPH · not bought (learner skip) · followed as if bought: $8.30 at 0.0000029412 (curve maths, every cost) · same exits, outside the book",
-   "n": 965
-  },
   {
    "t": "2026-11-26T20:31:16Z",
    "time": "21:31:16",
@@ -4877,6 +4868,15 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 3 watched · 8 rejected (mayhem mode 3, serial launcher 2, dump 2) · closest pip: too young: 39 s (min 45 s)",
    "n": 1164
+  },
+  {
+   "t": "2026-11-26T22:51:08Z",
+   "time": "23:51:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 2 watched · 7 rejected (dump 3, mayhem mode 3, serial launcher 1) · closest AI: too young: 2 s (min 45 s)",
+   "n": 1165
   }
  ],
  "nights": [
@@ -4919,7 +4919,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4927,15 +4927,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 583,
-    "last_event_age_s": 3.5,
+    "events": 586,
+    "last_event_age_s": 4.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7094,
+    "events": 7187,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -4943,8 +4943,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 436,
-    "last_event_age_s": 25.7,
+    "events": 438,
+    "last_event_age_s": 4.1,
     "errors": 10,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -4957,9 +4957,9 @@
   "exit_ms": 36,
   "exit_last_ms": 180,
   "launch_to_entry_s": 46,
-  "creates_per_min": 4.2,
-  "watching": 1,
-  "followed": 5
+  "creates_per_min": 4.0,
+  "watching": 3,
+  "followed": 7
  },
  "learner": {
   "samples": 110,
@@ -5005,23 +5005,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3551,
+   "sent": 3582,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3551,
+   "sent": 3582,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "byLOCKWOOD",
+   "name": "Baron Trump",
+   "mint": "3DRUQYWX2kmBEtR4vDrZWbMtEuC5PSUMTwxREzmipump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/marewop/status/2126083703197647105?a=FetNQjqlUD0LU9NjToA&s=20",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "SOL",
+   "name": "Mountain",
+   "mint": "CJE1LezX4MESpiHgHF9VhoroixWTJrBbyKJy2Nffpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "AI",
+   "name": "Alien Inu",
+   "mint": "AZMAkaDMDze3f3nr1nEEcjpVensnaod6Xo1TpX6Apump",
+   "age_s": 24,
+   "sol_in": 7.92,
+   "buys": 5,
+   "sells": 5,
+   "rise_pct": 59.7,
+   "mcap_sol": 44.7,
+   "dev_pct": 0.0,
+   "big_sell": 1.86,
+   "x": "https://x.com/Polymarket/status/2126083585652482433",
+   "tg": false,
+   "web": "https://www.ncwlife.com/news/videos/pet-of-the-week-sol-the-cat/video_f1527184-0f26-5384-94a2-80469faa414e.html",
+   "status": "watching",
+   "why": "too young: 17 s (min 45 s)"
+  },
+  {
    "symbol": "BABYHOLD",
    "name": "Baby Hold",
    "mint": "7EuXXDVVGJddKqNFivqg3WjJgE4VWZHjpUphmLgNpump",
-   "age_s": 3,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5039,7 +5093,7 @@
    "symbol": "GTA",
    "name": "GTAVICE",
    "mint": "2dXQ3ThQ9aXZRb88V5d1T33LAEVS39dCosRZLDKGpump",
-   "age_s": 18,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5057,7 +5111,7 @@
    "symbol": "Butt",
    "name": "Buttface",
    "mint": "BgSReLLzQaK219vUik6ojcZYUSAfsFCBM73HCQyppump",
-   "age_s": 25,
+   "age_s": 55,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -5075,12 +5129,12 @@
    "symbol": "DOOMED",
    "name": "Doomed Cat",
    "mint": "BfgTxoZLExVG9mzSY5jQJhEaVckavQNWGmAVbgsgpump",
-   "age_s": 42,
-   "sol_in": 4.76,
-   "buys": 27,
-   "sells": 15,
-   "rise_pct": 33.1,
-   "mcap_sol": 39.7,
+   "age_s": 72,
+   "sol_in": 4.55,
+   "buys": 31,
+   "sells": 25,
+   "rise_pct": 31.6,
+   "mcap_sol": 39.2,
    "dev_pct": 3.4,
    "big_sell": 33.14,
    "x": "https://x.com/Boku8figs/status/2126086006667722926",
@@ -5093,14 +5147,14 @@
    "symbol": "Fischer",
    "name": "I Hate Chess",
    "mint": "3wz3fuaoLuVSmhCwduS7x8PW2EsEb6USDh8g7Fb2pump",
-   "age_s": 63,
-   "sol_in": 3.51,
+   "age_s": 93,
+   "sol_in": 0.0,
    "buys": 2,
-   "sells": 1,
-   "rise_pct": 24.8,
-   "mcap_sol": 34.9,
+   "sells": 2,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 1.24,
+   "big_sell": 3.51,
    "x": "https://x.com/Minkopnl/status/2125777407802003860",
    "tg": false,
    "web": "https://www.tiktok.com/search?q=elo%20difference%20i%20hate%20chess&t=1795659291514",
@@ -5111,14 +5165,14 @@
    "symbol": "pip",
    "name": "pip",
    "mint": "9q6JVKAoFAaaGoBedsDL22cW65231Aa2imFPwqPBpump",
-   "age_s": 93,
-   "sol_in": 18.82,
-   "buys": 41,
-   "sells": 36,
-   "rise_pct": 158.4,
-   "mcap_sol": 77.1,
+   "age_s": 123,
+   "sol_in": 8.84,
+   "buys": 52,
+   "sells": 52,
+   "rise_pct": 65.2,
+   "mcap_sol": 49.3,
    "dev_pct": 3.4,
-   "big_sell": 3.28,
+   "big_sell": 4.72,
    "x": "https://x.com/piponpf/status/2126085909397319822",
    "tg": false,
    "web": "https://x.com/piponpf",
@@ -5129,7 +5183,7 @@
    "symbol": "ALIENHOUSE",
    "name": "Alien House",
    "mint": "5tHUyRZPQjmwZiS3asnrA88E56ow4nxGSPreKeSRpump",
-   "age_s": 128,
+   "age_s": 158,
    "sol_in": -0.49,
    "buys": 18,
    "sells": 5,
@@ -5142,24 +5196,6 @@
    "web": false,
    "status": "rejected: dump: 29.3 SOL sold",
    "why": "dump: 29.3 SOL sold"
-  },
-  {
-   "symbol": "Tjd",
-   "name": "Trump j Donald",
-   "mint": "5xRkrUPS9DRShTHcGT1TGYKzCVmh3aHnnP6RQXcPpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
