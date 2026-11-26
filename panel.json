@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:15:39Z",
+ "updated": "2026-11-26T12:16:08Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 21,
   "checked": 21,
   "filtered": 2,
-  "lines": 300,
+  "lines": 301,
   "last_rug": {
    "coin": "VP64",
    "pass": true
@@ -836,6 +836,10 @@
   [
    1795695301,
    85.94
+  ],
+  [
+   1795695361,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -1220,15 +1224,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:42:23Z",
-   "time": "10:42:23",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 5 watched · 15 rejected (dump 6, mayhem mode 6, dev bought 2) · closest PCAT: SOL in 0.5/2.5 · buys 5/6 · buy share 62%/65% · rise +3%/+12%",
-   "n": 101
-  },
   {
    "t": "2026-11-26T09:43:23Z",
    "time": "10:43:23",
@@ -3019,6 +3014,15 @@
    "action": "scan",
    "text": "new pairs · 6.6 a minute · 2 watched · 9 rejected (serial launcher 4, mayhem mode 2, dev bought 1) · closest MFRG: SOL in 0.0/2.5 · buy share 63%/65% · rise +0%/+12%",
    "n": 300
+  },
+  {
+   "t": "2026-11-26T12:15:45Z",
+   "time": "13:15:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.2 a minute · 2 watched · 6 rejected (serial launcher 4, dump 1, mayhem mode 1) · closest SANTA: too young: 0 s (min 45 s)",
+   "n": 301
   }
  ],
  "nights": [
@@ -3064,7 +3068,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3072,24 +3076,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 472,
-    "last_event_age_s": 4.5,
+    "events": 478,
+    "last_event_age_s": 12.8,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6725,
-    "last_event_age_s": 1.4,
+    "events": 6747,
+    "last_event_age_s": 1.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 351,
-    "last_event_age_s": 4.3,
+    "events": 355,
+    "last_event_age_s": 16.0,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3102,9 +3106,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 5.0,
-  "watching": 1,
-  "followed": 5
+  "creates_per_min": 5.4,
+  "watching": 3,
+  "followed": 8
  },
  "learner": {
   "samples": 105,
@@ -3149,23 +3153,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5933,
+   "sent": 5964,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5933,
+   "sent": 5964,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GT6",
+   "name": "GT6Vapor",
+   "mint": "A88haiHLRJcZ14AUAUR6PbrTeNW7b45NcMgbVsPWWenC",
+   "age_s": 16,
+   "sol_in": 7.03,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 50.1,
+   "mcap_sol": 45.4,
+   "dev_pct": 4.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/EXRDEV",
+   "tg": false,
+   "web": "https://x.com/i/communities/2016274259132481559",
+   "status": "watching",
+   "why": "too young: 5 s (min 45 s)"
+  },
+  {
+   "symbol": "SIM",
+   "name": "Santa Internet Money",
+   "mint": "ErLwhqC82rQVLsaHaey3uXQyATHL4g9GeGcEST1tpump",
+   "age_s": 20,
+   "sol_in": 7.51,
+   "buys": 7,
+   "sells": 4,
+   "rise_pct": 49.1,
+   "mcap_sol": 53.4,
+   "dev_pct": 12.5,
+   "big_sell": 3.24,
+   "x": "https://x.com/simoneyfun",
+   "tg": false,
+   "web": "https://simoney.fun",
+   "status": "rejected: dev bought 12.5% (max 8%)",
+   "why": "dev bought 12.5% (max 8%)"
+  },
+  {
+   "symbol": "SANTA",
+   "name": "Father Elon",
+   "mint": "HZon7BQgNAbwPpcT1Gj9YzQLvSaEfjgRhHmiq72Spump",
+   "age_s": 24,
+   "sol_in": 0.41,
+   "buys": 5,
+   "sells": 2,
+   "rise_pct": 2.8,
+   "mcap_sol": 28.7,
+   "dev_pct": 0.0,
+   "big_sell": 0.71,
+   "x": "https://x.com/JohnDoeOnSolana/status/2125874096844288024?a=WOLc0Wv-h9vUwXnoby4&s=20",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 21 s (min 45 s)"
+  },
+  {
+   "symbol": "ice",
+   "name": "ice cream",
+   "mint": "8MupG5NWr8HZb2VNRnyi6YjAYS91Q4jbuamP8NZ8pump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 8 more coins in 60 min",
+   "why": "serial launcher: 8 more coins in 60 min"
+  },
+  {
    "symbol": "gay",
    "name": "buy me pls",
    "mint": "PzPSfVkQYsbZhgEWkgjU8prDsmF3cdY9RYL538mpump",
-   "age_s": 4,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3183,7 +3259,7 @@
    "symbol": "Airdrop",
    "name": "Airdrop",
    "mint": "AwSiedTyvWNQCcod6moK7fLMDTasiMkQWzwJUSujAg5C",
-   "age_s": 100,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3201,7 +3277,7 @@
    "symbol": "SpaceXDrop",
    "name": "SpaceXDrop",
    "mint": "CdXwQVYy2zwo2EybqCefvW9CA8zLQGpGN5cbRHo2RiwT",
-   "age_s": 108,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3219,7 +3295,7 @@
    "symbol": "2SPCX",
    "name": "2SPCX and a Dream",
    "mint": "8MQ1QuBQZTobyCDGHLS9zp1Qasbsi6fGjtK7n2FUTMrs",
-   "age_s": 117,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3237,7 +3313,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "DoNAZsJf1RfwSBkUcwCxtgHaHk4Y56vPC9pHbHpwpump",
-   "age_s": 132,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3250,24 +3326,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "BOOM",
-   "name": "Boomerang",
-   "mint": "6YmCbMKorRK77hTdkzJNsty8yT2SxPxHDHuMB2Wspump",
-   "age_s": 157,
-   "sol_in": -0.28,
-   "buys": 11,
-   "sells": 24,
-   "rise_pct": -1.9,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.0,
-   "big_sell": 6.01,
-   "x": "https://x.com/_Boomerangx/status/2125925272151036105",
-   "tg": false,
-   "web": "https://www.boomerangdot.fun/",
-   "status": "rejected: dump: 6.0 SOL sold",
-   "why": "dump: 6.0 SOL sold"
   }
  ],
  "strategies": [
