@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:59:12Z",
+ "updated": "2026-11-26T12:59:42Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 24,
   "checked": 24,
   "filtered": 2,
-  "lines": 365,
+  "lines": 366,
   "last_rug": {
    "coin": "REMY",
    "pass": true
@@ -1008,6 +1008,10 @@
   [
    1795697893,
    85.18
+  ],
+  [
+   1795697953,
+   85.18
   ]
  ],
  "position_pct": 10.0,
@@ -1434,15 +1438,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T10:33:51Z",
-   "time": "11:33:51",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.6 a minute · 16 watched · 6 rejected (dev bought 2, mayhem mode 2, serial launcher 1) · closest Tiger: too young: 6 s (min 45 s)",
-   "n": 166
-  },
   {
    "t": "2026-11-26T10:34:52Z",
    "time": "11:34:52",
@@ -3233,6 +3228,15 @@
    "action": "scan",
    "text": "new pairs · 7.2 a minute · 6 watched · 14 rejected (mayhem mode 6, dev bought 4, dump 2) · closest EUTO: too young: 11 s (min 45 s)",
    "n": 365
+  },
+  {
+   "t": "2026-11-26T12:59:39Z",
+   "time": "13:59:39",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.6 a minute · 6 watched · 10 rejected (mayhem mode 5, dev bought 2, dump 2) · closest EUTO: SOL in 1.5/2.5 · buy share 50%/65% · rise +10%/+12%",
+   "n": 366
   }
  ],
  "nights": [
@@ -3275,7 +3279,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3283,24 +3287,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 270,
-    "last_event_age_s": 45.3,
+    "events": 272,
+    "last_event_age_s": 2.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5653,
-    "last_event_age_s": 1.2,
+    "events": 5682,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 178,
-    "last_event_age_s": 52.7,
+    "events": 180,
+    "last_event_age_s": 1.9,
     "errors": 13,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3313,8 +3317,8 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 7.0,
-  "watching": 5,
+  "creates_per_min": 6.8,
+  "watching": 7,
   "followed": 11
  },
  "learner": {
@@ -3360,23 +3364,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2685,
+   "sent": 2717,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2685,
+   "sent": 2717,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Sjack",
+   "name": "Samurai Jack",
+   "mint": "D2wscy6KVwDpmPkUXqYVPab4E5gfVSBtyfh6rKVupump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "WATaBUFF",
+   "name": "What a Buff!!",
+   "mint": "Fr4jpfd1qUJQtj2U5Xxzyhe5HrPJy5WrmB1pabLmpump",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 6 s (min 45 s)"
+  },
+  {
    "symbol": "STRUGGLE",
    "name": "Struggle",
    "mint": "HLKAWLLQSQBYbua4EbhJz7TdM7QWqmsiQe9SDvo39PFL",
-   "age_s": 45,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3394,25 +3434,25 @@
    "symbol": "EUTO",
    "name": "Euto Protocol",
    "mint": "4h6UczhnahZR2AgHaJKLL7ZZpqGqqSmYmkZx7Vuopump",
-   "age_s": 53,
-   "sol_in": 2.69,
+   "age_s": 83,
+   "sol_in": 1.22,
    "buys": 7,
-   "sells": 5,
-   "rise_pct": 18.1,
-   "mcap_sol": 35.2,
+   "sells": 8,
+   "rise_pct": 8.0,
+   "mcap_sol": 32.2,
    "dev_pct": 3.4,
    "big_sell": 1.16,
    "x": "https://x.com/eutoprotocol?s=20",
    "tg": false,
    "web": "https://eutoprotocol.xyz/",
    "status": "watching",
-   "why": "buy share 58%/65%"
+   "why": "SOL in 1.2/2.5 · buy share 47%/65% · rise +8%/+12%"
   },
   {
    "symbol": "CLM",
    "name": "Cat Labs M",
    "mint": "8uiKjhDEQyoSBTVJq9awqQuWzsanSPhWbu5Q6Zggpump",
-   "age_s": 58,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3430,7 +3470,7 @@
    "symbol": "GNJA",
    "name": "Gaming Ninja",
    "mint": "3539kimuh9ED3Nn7H9Hnu5LGRrtY2s95G8h6pZCfpump",
-   "age_s": 74,
+   "age_s": 104,
    "sol_in": 0.26,
    "buys": 2,
    "sells": 0,
@@ -3448,7 +3488,7 @@
    "symbol": "Pair",
    "name": "Pair",
    "mint": "6tqySk3KHa2bW6wkgV6eWAJNNCrDdD881uhCqYDUpump",
-   "age_s": 75,
+   "age_s": 105,
    "sol_in": -0.98,
    "buys": 7,
    "sells": 11,
@@ -3466,7 +3506,7 @@
    "symbol": "Tjd",
    "name": "Trump j Donald",
    "mint": "HZmekKHTLVs6NJb82gbZoQ54yLN3kbkNVwG5tMDCpump",
-   "age_s": 83,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3484,7 +3524,7 @@
    "symbol": "Liquid",
    "name": "Liquidisium",
    "mint": "GZ8hqXLvpwaqvQ2s38CXTdGeFLTwVordHyVm5hV2pump",
-   "age_s": 84,
+   "age_s": 114,
    "sol_in": -0.74,
    "buys": 2,
    "sells": 3,
@@ -3502,9 +3542,9 @@
    "symbol": "LCE",
    "name": "lceVSgirl",
    "mint": "BpV7mAx2cYxs72KfgNkUf8mQmDVdtkq3XUTzoD8qpump",
-   "age_s": 103,
+   "age_s": 133,
    "sol_in": 0.26,
-   "buys": 3,
+   "buys": 6,
    "sells": 5,
    "rise_pct": 1.7,
    "mcap_sol": 28.4,
@@ -3514,13 +3554,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 19 s (min 45 s)"
+   "why": "SOL in 0.3/2.5 · buy share 55%/65% · rise +2%/+12%"
   },
   {
    "symbol": "JIMMY",
    "name": "Jimmy Rustles",
    "mint": "EyCDg1yRA3mGKYFi9ThrLB8r4wGDt5i69ru2qirfpump",
-   "age_s": 104,
+   "age_s": 134,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -3538,7 +3578,7 @@
    "symbol": "T██S",
    "name": "T██S",
    "mint": "8WRkpKVCQMBjRYNLzPu98KGDRpj6PBduP9zZeaiqttMT",
-   "age_s": 110,
+   "age_s": 140,
    "sol_in": -3.06,
    "buys": 9,
    "sells": 14,
@@ -3556,7 +3596,7 @@
    "symbol": "SI",
    "name": "Space Inu",
    "mint": "A9bEvC4dhL9E3Wmiv2v8rtuJrbTcVtvXLtoXtUdmphNG",
-   "age_s": 123,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3574,7 +3614,7 @@
    "symbol": "TI",
    "name": "TI",
    "mint": "5BynnVGwhsVGGuQrWsozCaakfWzXPBq9TaBf1RJ3ixVq",
-   "age_s": 138,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3592,7 +3632,7 @@
    "symbol": "もち",
    "name": "Mochi",
    "mint": "5e2TCjYPTsWqNy6twFKRALTPwL2W4Ek9J2sriq58pump",
-   "age_s": 142,
+   "age_s": 172,
    "sol_in": -0.98,
    "buys": 4,
    "sells": 5,
@@ -3605,60 +3645,6 @@
    "web": "https://x.com/_v05qv/status/2125555917005746608",
    "status": "watching",
    "why": "SOL in -1.0/2.5 · buys 4/6 · buy share 44%/65% · rise -6%/+12%"
-  },
-  {
-   "symbol": "CCATS",
-   "name": "Copycats",
-   "mint": "ErrhWENqx6GYDoz1naUZY1SMEhSzaqm39qb6PGJbpump",
-   "age_s": 151,
-   "sol_in": 23.74,
-   "buys": 50,
-   "sells": 33,
-   "rise_pct": 190.0,
-   "mcap_sol": 102.8,
-   "dev_pct": 12.0,
-   "big_sell": 3.47,
-   "x": "https://x.com/copycatsfun",
-   "tg": false,
-   "web": "https://getcopycats.fun",
-   "status": "rejected: dev bought 12.0% (max 8%)",
-   "why": "dev bought 12.0% (max 8%)"
-  },
-  {
-   "symbol": "CBI",
-   "name": "Cool boi",
-   "mint": "3s9sYTgM27t4rK5chKBgP2er94xTBdAsTE2hi86vpump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "REMY",
-   "name": "REMY GOOGLE BOT",
-   "mint": "BcRh9rF1wo3YbrTdd3nrxBJ6GwF721yJ8HTW39iSs1qS",
-   "age_s": 156,
-   "sol_in": 3.22,
-   "buys": 9,
-   "sells": 4,
-   "rise_pct": 22.4,
-   "mcap_sol": 34.9,
-   "dev_pct": 1.0,
-   "big_sell": 0.11,
-   "x": "https://x.com/mark_k/status/2125931749704188119?a=43WzgrCEEvaxFwiFRaM&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: learner: skip",
-   "why": "learner: skip"
   }
  ],
  "strategies": [
