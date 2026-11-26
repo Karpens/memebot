@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T02:09:34Z",
+ "updated": "2026-11-26T02:11:32Z",
  "mode": "paper",
  "start_balance": 70.0,
  "balance": 54.92,
@@ -19,14 +19,23 @@
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 290,
-  "flagged": 10,
-  "checked": 27,
+  "scans": 297,
+  "flagged": 11,
+  "checked": 29,
   "filtered": null,
-  "lines": 10,
-  "last_rug": null
+  "lines": 16,
+  "last_rug": {
+   "coin": "TAXMAN",
+   "pass": true
+  }
  },
- "flags": [],
+ "flags": [
+  {
+   "coin": "TAXMAN",
+   "why": "holders +7%",
+   "t": "2026-11-26T02:11:07Z"
+  }
+ ],
  "curve": [
   [
    1795658452,
@@ -58,6 +67,14 @@
   ],
   [
    1795658931,
+   54.92
+  ],
+  [
+   1795658998,
+   54.92
+  ],
+  [
+   1795659059,
    54.92
   ]
  ],
@@ -930,6 +947,54 @@
    "coin": null,
    "action": "scan",
    "text": "scanned 52 new coins · 51 pairs · 1 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:09:42Z",
+   "time": "03:09:42",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 52 new coins · 51 pairs · 5 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:11:07Z",
+   "time": "03:11:07",
+   "agent": "SCANNER",
+   "coin": "TAXMAN",
+   "action": "flag",
+   "text": "flagged · raydium · liq $16.4k · 5m $6.3k · buys 62% · holders +7%"
+  },
+  {
+   "t": "2026-11-26T02:11:07Z",
+   "time": "03:11:07",
+   "agent": "NEWS",
+   "coin": "TAXMAN",
+   "action": "news",
+   "text": "promo: X @taxmandotrun · web"
+  },
+  {
+   "t": "2026-11-26T02:11:07Z",
+   "time": "03:11:07",
+   "agent": "RUG CHECK",
+   "coin": "TAXMAN",
+   "action": "pass",
+   "text": "PASS · mint & freeze revoked · LP locked · 533 holders"
+  },
+  {
+   "t": "2026-11-26T02:11:07Z",
+   "time": "03:11:07",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 52 new coins · 51 pairs · 3 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:11:07Z",
+   "time": "03:11:07",
+   "agent": "RISK",
+   "coin": "TAXMAN",
+   "action": "skip",
+   "text": "no entry: pause after a losing streak"
   }
  ],
  "nights": [
@@ -947,6 +1012,7 @@
   }
  ],
  "errors": [
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
  ]
 }
