@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:44:51Z",
+ "updated": "2026-11-26T19:45:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -24,7 +24,7 @@
   "flagged": 55,
   "checked": 42,
   "filtered": 8,
-  "lines": 893,
+  "lines": 894,
   "last_rug": {
    "coin": "FORU",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795686301,
-   87.76
-  ],
   [
    1795686361,
    87.76
@@ -2472,6 +2468,10 @@
   [
    1795722253,
    83.48
+  ],
+  [
+   1795722313,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2994,15 +2994,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T17:20:43Z",
-   "time": "18:20:43",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 5 watched · 10 rejected (serial launcher 7, dev bought 1, mayhem mode 1) · closest DERP: too young: 29 s (min 45 s)",
-   "n": 694
-  },
   {
    "t": "2026-11-26T17:21:43Z",
    "time": "18:21:43",
@@ -4793,6 +4784,15 @@
    "action": "shadow",
    "text": "SHADOW FORU · not bought (learner skip) · followed as if bought: $8.35 at 0.0000050766 (curve maths, every cost) · same exits, outside the book",
    "n": 893
+  },
+  {
+   "t": "2026-11-26T19:44:59Z",
+   "time": "20:44:59",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.4 a minute · 4 watched · 15 rejected (mayhem mode 9, serial launcher 2, dev bought 1) · closest BURNCOIN: SOL in 0.6/2.5 · buys 5/6 · buy share 31%/65% · rise +4%/+12%",
+   "n": 894
   }
  ],
  "nights": [
@@ -4837,7 +4837,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4845,15 +4845,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1638,
-    "last_event_age_s": 9.8,
+    "events": 1644,
+    "last_event_age_s": 2.9,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22013,
+    "events": 22048,
     "last_event_age_s": 0.8,
     "errors": 8,
     "last_error": "timeout after 5 s"
@@ -4861,8 +4861,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1144,
-    "last_event_age_s": 63.7,
+    "events": 1147,
+    "last_event_age_s": 2.7,
     "errors": 105,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4875,9 +4875,9 @@
   "exit_ms": 33,
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
-  "creates_per_min": 6.6,
-  "watching": 4,
-  "followed": 8
+  "creates_per_min": 6.8,
+  "watching": 3,
+  "followed": 10
  },
  "learner": {
   "samples": 108,
@@ -4923,23 +4923,113 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13364,
+   "sent": 13394,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13398,
+   "sent": 13428,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TagCat",
+   "name": "TagCat",
+   "mint": "9GkMHfmtgiFMjNNfcw1489jEUHTSYohVStynmJZJpump",
+   "age_s": 2,
+   "sol_in": 2.69,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 17.2,
+   "mcap_sol": 38.4,
+   "dev_pct": 8.2,
+   "big_sell": 0.57,
+   "x": "https://x.com/solana/status/2126039056618332351",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 8.2% (max 8%)",
+   "why": "dev bought 8.2% (max 8%)"
+  },
+  {
+   "symbol": "Flokimas",
+   "name": "Flokimas",
+   "mint": "HKt5EpL2rTcbUEtuqAo2y84tHqy4ZsCN4Uxm4GqKpump",
+   "age_s": 12,
+   "sol_in": 22.23,
+   "buys": 7,
+   "sells": 5,
+   "rise_pct": 191.2,
+   "mcap_sol": 89.6,
+   "dev_pct": 5.0,
+   "big_sell": 8.9,
+   "x": "https://x.com/FlockInu/status/2126039236558418279?a=QnBaDgF64iDCti2-Uqg&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 8.9 SOL sold",
+   "why": "dump: 8.9 SOL sold"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "FbFLNvhGhpKGQ4TD1WV5WWEugYTSEi5J1wAdZqafLoat",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "CumCoin",
+   "name": "CumCoin",
+   "mint": "sgRuVsV5ySFMiRuZ6zpHBVZxV329fkaA4ZNvDRHpump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.1,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 8 more coins in 60 min",
+   "why": "serial launcher: 8 more coins in 60 min"
+  },
+  {
+   "symbol": "SENTAI",
+   "name": "Sent AI Labs",
+   "mint": "76nbGbS1HQXEyBZe1uueAEsd3hRAkTU9Jh7wXVH4pump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "MFC",
    "name": "My first coin",
    "mint": "CUeaLS6TZM1j6fHc7gL3x8bfnUXCpe7a2VXiqvrupump",
-   "age_s": 9,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4957,7 +5047,7 @@
    "symbol": "GOOP",
    "name": "Goopcoin",
    "mint": "H51SESVDSq7MXVsa8tPejNNEa8nhfQREiyzMxHzppump",
-   "age_s": 10,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4975,7 +5065,7 @@
    "symbol": "kangay",
    "name": "Gay kanye",
    "mint": "BHoSzxjqkwHYSPKQry9B5BST7x5veaKVNjL2dVVYpump",
-   "age_s": 32,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4993,7 +5083,7 @@
    "symbol": "$MANDY",
    "name": "MANDY.GTA VI",
    "mint": "Ampi44DArxHRi2iqSQKpKDPbzWbF7vTeZWibbJV9pump",
-   "age_s": 41,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5011,7 +5101,7 @@
    "symbol": "ONCHAIN",
    "name": "Onchain",
    "mint": "BSuNT3vBgPzaNAD7pdEmCViENP9QUKhH7WzeRqMKpump",
-   "age_s": 63,
+   "age_s": 92,
    "sol_in": -0.1,
    "buys": 2,
    "sells": 1,
@@ -5029,7 +5119,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "4vswfgAQSKfhUBp32GGaniac6B7kFd3ThHzUUAgdpump",
-   "age_s": 69,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5047,12 +5137,12 @@
    "symbol": "FORU",
    "name": "foru.family",
    "mint": "2TAgsxidix8eUBVuFH1gJRbdkqTLLLwRdnzbXdwzpump",
-   "age_s": 71,
-   "sol_in": 18.94,
-   "buys": 34,
-   "sells": 17,
-   "rise_pct": 159.4,
-   "mcap_sol": 77.5,
+   "age_s": 100,
+   "sol_in": 19.22,
+   "buys": 36,
+   "sells": 20,
+   "rise_pct": 162.3,
+   "mcap_sol": 78.4,
    "dev_pct": 3.5,
    "big_sell": 1.25,
    "x": "https://x.com/forudotfamily",
@@ -5065,7 +5155,7 @@
    "symbol": "TNIGGA",
    "name": "Turkey Nigga",
    "mint": "71fFKQFySh96cUYqMP1hqiLArDPWq1eW9iM5N7iwpump",
-   "age_s": 73,
+   "age_s": 102,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 5,
@@ -5083,7 +5173,7 @@
    "symbol": "Cum",
    "name": "CumCoin",
    "mint": "9eSbR6zANotbd7pVbUHWKkz6eFsgfNDSdSYfum3vPete",
-   "age_s": 78,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5101,7 +5191,7 @@
    "symbol": "COKE",
    "name": "Buffett Still Buying Coke",
    "mint": "ELMnxRSxCbTemyo8TvYfTnjFFLwYgc3j1a8ASSFepump",
-   "age_s": 95,
+   "age_s": 124,
    "sol_in": 0.04,
    "buys": 2,
    "sells": 0,
@@ -5119,7 +5209,7 @@
    "symbol": "PUMPINU",
    "name": "Pumpfun INU",
    "mint": "5Q71LJysuedqfQJ93hwZ2KFr1r9ubhav533gnjoFpump",
-   "age_s": 105,
+   "age_s": 134,
    "sol_in": 0.1,
    "buys": 4,
    "sells": 0,
@@ -5137,7 +5227,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "EqrmqHinb9sKCPQDQC3Ng8njuC5JDCA897ZoMgp2pump",
-   "age_s": 106,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5155,7 +5245,7 @@
    "symbol": "THAI",
    "name": "thaiton",
    "mint": "GyYAji7JHPCscSVNHaeU1pEmAYun3S2EY1WYDAhisQNn",
-   "age_s": 114,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5173,7 +5263,7 @@
    "symbol": "BURNCOIN",
    "name": "Burncoin",
    "mint": "Hi4Pdmyc8GR93Hp6M5J2WsQjH6cZNGupqzzcZ5KaQS49",
-   "age_s": 121,
+   "age_s": 150,
    "sol_in": 0.63,
    "buys": 5,
    "sells": 11,
@@ -5191,7 +5281,7 @@
    "symbol": "MFC",
    "name": "My first coin",
    "mint": "6rqegoWQuG37ePWrNgt13ZdJM9WZqXLaoVcTbb7dpump",
-   "age_s": 128,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5204,60 +5294,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "8MGgfcH5NGooeX5qGcpr2PVateVWT8eJMxLBmFjT1UfF",
-   "age_s": 132,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 50.7,
-   "dev_pct": 27.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "SENTAI",
-   "name": "Sent AI Labs",
-   "mint": "3QWYjzjees5m5PKqMusnsGioarhn9FVDnJfXvS5Bpump",
-   "age_s": 132,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "NVDA",
-   "name": "Nigga Vermin Dickhead Ass",
-   "mint": "8wpYrvoHJrPHhCJEFBa1Ev6ZoH9JB1js1fK6TAsYpump",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
   }
  ],
  "strategies": [
@@ -5272,10 +5308,10 @@
    "why": "learner skip",
    "opened": "2026-11-26T19:44:31Z",
    "cost": 8.35,
-   "pnl_pct": 7.9,
+   "pnl_pct": 8.2,
    "tier": "swing",
    "score": 4,
-   "steps": 0,
+   "steps": 1,
    "fill": "curve",
    "age_s": 51,
    "sol_in": 16.26
