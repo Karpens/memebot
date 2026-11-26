@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:54:07Z",
+ "updated": "2026-11-26T22:54:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.3,
@@ -24,7 +24,7 @@
   "flagged": 75,
   "checked": 55,
   "filtered": 12,
-  "lines": 1169,
+  "lines": 1170,
   "last_rug": {
    "coin": "HOPPYJAK",
    "pass": false
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795697653,
-   85.18
-  ],
   [
    1795697713,
    85.18
@@ -2472,6 +2468,10 @@
   [
    1795733607,
    82.3
+  ],
+  [
+   1795733667,
+   82.3
   ]
  ],
  "position_pct": 10.0,
@@ -3078,15 +3078,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T20:33:23Z",
-   "time": "21:33:23",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 11.0 a minute · 22 watched · 17 rejected (dev bought 6, serial launcher 5, dump 4) · closest CUP: too young: 11 s (min 45 s)",
-   "n": 970
-  },
   {
    "t": "2026-11-26T20:34:23Z",
    "time": "21:34:23",
@@ -4877,6 +4868,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 6 watched · 6 rejected (mayhem mode 4, dump 1, a holder has 1) · closest AI: buy share 61%/65%",
    "n": 1169
+  },
+  {
+   "t": "2026-11-26T22:54:09Z",
+   "time": "23:54:09",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.4 a minute · 4 watched · 11 rejected (serial launcher 4, mayhem mode 3, dump 2) · closest GCoin: too young: 25 s (min 45 s)",
+   "n": 1170
   }
  ],
  "nights": [
@@ -4919,7 +4919,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4927,15 +4927,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 601,
-    "last_event_age_s": 3.1,
+    "events": 604,
+    "last_event_age_s": 2.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7636,
+    "events": 7706,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -4943,8 +4943,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 448,
-    "last_event_age_s": 14.0,
+    "events": 451,
+    "last_event_age_s": 2.0,
     "errors": 10,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -4957,9 +4957,9 @@
   "exit_ms": 36,
   "exit_last_ms": 180,
   "launch_to_entry_s": 46,
-  "creates_per_min": 4.4,
-  "watching": 4,
-  "followed": 11
+  "creates_per_min": 4.8,
+  "watching": 3,
+  "followed": 13
  },
  "learner": {
   "samples": 110,
@@ -5005,23 +5005,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3751,
+   "sent": 3780,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3751,
+   "sent": 3780,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CONGA372",
+   "name": "Conga #372",
+   "mint": "Az1qLyqsUmCHgzK7QeCebnf9sJHjBgJQjyxtQharAJ2B",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
+   "tg": false,
+   "web": "https://conga.monster",
+   "status": "rejected: serial launcher: 126 more coins in 60 min",
+   "why": "serial launcher: 126 more coins in 60 min"
+  },
+  {
+   "symbol": "El0n",
+   "name": "Elon muk",
+   "mint": "9RjE5Fys4onae3CkTewq5V39KrhNsrL7RDxBTrfVpump",
+   "age_s": 8,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Gemma",
+   "name": "Justice for Gemma",
+   "mint": "1eBN1srzyydnBo3e4yYUj93RQWT5aKBYBY1gs1ppump",
+   "age_s": 8,
+   "sol_in": 1.13,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 7.4,
+   "mcap_sol": 32.0,
+   "dev_pct": 3.4,
+   "big_sell": 23.03,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 23.0 SOL sold",
+   "why": "dump: 23.0 SOL sold"
+  },
+  {
    "symbol": "CONGA371",
    "name": "Conga #371",
    "mint": "F3A6nvyDeGdnmsb4za8UCfqq19b3Y6r7ScudhAadLJ81",
-   "age_s": 14,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5039,7 +5093,7 @@
    "symbol": "CONGA370",
    "name": "Conga #370",
    "mint": "AzjCT7jdDtg3tZy5knuFewM25uj2XQ7EjNf5a1nknzrr",
-   "age_s": 19,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5057,7 +5111,7 @@
    "symbol": "CONGA369",
    "name": "Conga #369",
    "mint": "EN5iSUnmjy4CE8UksYmTMC3FPvGQ2oQPrxpxdXrZEC46",
-   "age_s": 22,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5075,7 +5129,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "Hug6E9SVoxmZAYiWhtQaaKctsQCMoPe77VUbC8jgpump",
-   "age_s": 33,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5093,7 +5147,7 @@
    "symbol": "GCoin",
    "name": "Goku Coin",
    "mint": "GtdeTiR74JTu9kmqXGhRA8Hht1gT4u2bcETcrRn3pump",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": 0.93,
    "buys": 1,
    "sells": 0,
@@ -5111,7 +5165,7 @@
    "symbol": "?",
    "name": "",
    "mint": "GnQn5gJvNphhU74hiXdtPmjnNDAH3W5aj86CfgQpump",
-   "age_s": 39,
+   "age_s": 67,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5129,12 +5183,12 @@
    "symbol": "Gemma",
    "name": "Justice for Gemma",
    "mint": "5Zdxw9pwnrfK3LhnSK7aCq227NarQ7rqNo27iArQpump",
-   "age_s": 49,
-   "sol_in": 2.24,
-   "buys": 5,
-   "sells": 11,
-   "rise_pct": 15.5,
-   "mcap_sol": 32.3,
+   "age_s": 77,
+   "sol_in": 3.31,
+   "buys": 7,
+   "sells": 13,
+   "rise_pct": 23.3,
+   "mcap_sol": 34.5,
    "dev_pct": 0.0,
    "big_sell": 7.06,
    "x": "https://x.com/DaliGambol/status/2126086617911759170",
@@ -5147,11 +5201,11 @@
    "symbol": "TENPOINTS",
    "name": "Plus Ten Points",
    "mint": "3QYWj1QAiEJaj7X8UpZH9yaHekDJzL5qasnsiaUXpump",
-   "age_s": 55,
-   "sol_in": 0.0,
-   "buys": 2,
+   "age_s": 83,
+   "sol_in": 0.01,
+   "buys": 3,
    "sells": 2,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
    "big_sell": 2.93,
@@ -5165,7 +5219,7 @@
    "symbol": "ANSEM",
    "name": "Ansem Ball",
    "mint": "A3Sv8X4UTAGvW22Zs4qQEnFa7aaGxaVBMws9wfKhNhPc",
-   "age_s": 62,
+   "age_s": 90,
    "sol_in": 0.4,
    "buys": 4,
    "sells": 0,
@@ -5183,7 +5237,7 @@
    "symbol": "NEGATRON",
    "name": "NEGATRON",
    "mint": "B49iuwDkyoALX6swKADSnK4FJJS5AnTU9XyQxobnpump",
-   "age_s": 71,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5201,7 +5255,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "DGA16mLvJt7u3jwehS6E5ZsBYLeriKdemsPWPZGapump",
-   "age_s": 83,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5219,12 +5273,12 @@
    "symbol": "KiKi",
    "name": "The Wheelchair Goat",
    "mint": "2dAPbDqoMLZNLbDdMzrEfwQYDBRochYyw2JZi4uwpump",
-   "age_s": 117,
-   "sol_in": -0.31,
-   "buys": 3,
-   "sells": 10,
-   "rise_pct": -2.0,
-   "mcap_sol": 29.2,
+   "age_s": 145,
+   "sol_in": -0.54,
+   "buys": 4,
+   "sells": 11,
+   "rise_pct": -3.5,
+   "mcap_sol": 28.8,
    "dev_pct": 3.4,
    "big_sell": 4.18,
    "x": "https://x.com/RullerDeploys/status/2126086597871276539?a=WJkB60vRdlJGHXDj7jc&s=20",
@@ -5237,55 +5291,19 @@
    "symbol": "HOPPYJAK",
    "name": "HOPPYJAK",
    "mint": "4MJZsvhf3tj15ZzaSkWXcXQWcbiX6v5y6t5HdBFcpump",
-   "age_s": 134,
-   "sol_in": 5.7,
-   "buys": 16,
-   "sells": 2,
-   "rise_pct": 41.6,
-   "mcap_sol": 39.6,
+   "age_s": 162,
+   "sol_in": 4.72,
+   "buys": 17,
+   "sells": 3,
+   "rise_pct": 33.9,
+   "mcap_sol": 37.4,
    "dev_pct": 0.0,
-   "big_sell": 0.05,
+   "big_sell": 1.02,
    "x": false,
    "tg": false,
    "web": false,
    "status": "rejected: a holder has 13.7% (max 12%)",
    "why": "a holder has 13.7% (max 12%)"
-  },
-  {
-   "symbol": "byLOCKWOOD",
-   "name": "Baron Trump",
-   "mint": "3DRUQYWX2kmBEtR4vDrZWbMtEuC5PSUMTwxREzmipump",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/marewop/status/2126083703197647105?a=FetNQjqlUD0LU9NjToA&s=20",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
-  },
-  {
-   "symbol": "SOL",
-   "name": "Mountain",
-   "mint": "CJE1LezX4MESpiHgHF9VhoroixWTJrBbyKJy2Nffpump",
-   "age_s": 173,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
