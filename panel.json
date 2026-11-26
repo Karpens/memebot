@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T09:06:48Z",
+ "updated": "2026-11-26T09:07:21Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 87.52,
- "equity": 96.79,
+ "balance": 96.48,
+ "equity": 96.48,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 2,
   "checked": 2,
   "filtered": 0,
-  "lines": 19,
+  "lines": 22,
   "last_rug": {
    "coin": "HOGZ",
    "pass": true
@@ -50,57 +50,16 @@
   [
    1795683956,
    96.79
+  ],
+  [
+   1795684016,
+   96.48
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [
-  {
-   "symbol": "BST",
-   "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "cost": 9.88,
-   "value": 9.27,
-   "pnl_pct": -6.1,
-   "opened": "2026-11-26T09:01:53Z",
-   "url": "https://pump.fun/coin/9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "reason": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
-   "size_pct": 10.0,
-   "entry_price": 2.53912e-06,
-   "price": 2.40039e-06,
-   "slip": 3.15,
-   "tp1_done": false,
-   "strategy": "new_pairs",
-   "plan": {
-    "tier": "scalp",
-    "score": 0,
-    "parts": [],
-    "ladder": [
-     [
-      7.0,
-      1.0
-     ]
-    ],
-    "step": 0,
-    "stop_pct": -7.0,
-    "trail_pct": 0.0
-   },
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "age_s": 141,
-   "mcap_sol": 34.9,
-   "dev_pct": 3.42,
-   "sol_in": 2.51,
-   "hist": [
-    2.53912e-06,
-    2.47092e-06,
-    2.46925e-06,
-    2.46694e-06,
-    2.39734e-06
-   ]
-  }
- ],
+ "positions": [],
  "trades": [
   {
    "symbol": "ZEROCAST",
@@ -184,6 +143,45 @@
    "dev_pct": 0.0,
    "sol_in": 7.58,
    "exit_ms": 33
+  },
+  {
+   "symbol": "BST",
+   "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
+   "opened": "2026-11-26T09:01:53Z",
+   "closed": "2026-11-26T09:06:53Z",
+   "cost": 9.88,
+   "proceeds": 8.96,
+   "pnl": -0.92,
+   "pnl_pct": -9.3,
+   "why": "5 min, only -5%",
+   "url": "https://pump.fun/coin/9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
+   "reason": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
+   "size_pct": 10.0,
+   "entry_price": 2.539120805129968e-06,
+   "exit_price": 2.4003882207251965e-06,
+   "slip": 3.15,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 0,
+    "parts": [],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 141,
+   "mcap_sol": 34.9,
+   "dev_pct": 3.42,
+   "sol_in": 2.51
   }
  ],
  "log": [
@@ -357,6 +355,33 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 12 watched · 1 rejected (mayhem mode 1) · closest HOPPYESTER: SOL in 0.0/2.5 · buys 0/6 · buy share 0%/65% · rise +0%/+12%",
    "n": 19
+  },
+  {
+   "t": "2026-11-26T09:06:53Z",
+   "time": "10:06:53",
+   "agent": "EXECUTOR",
+   "coin": "BST",
+   "action": "exit",
+   "text": "EXIT BST $-0.92 (-9%) · 5 min, only -5%",
+   "n": 20
+  },
+  {
+   "t": "2026-11-26T09:06:53Z",
+   "time": "10:06:53",
+   "agent": "LEARNER",
+   "coin": "BST",
+   "action": "learn",
+   "text": "learned · tier:scalp now avg -8.9% over 4",
+   "n": 21
+  },
+  {
+   "t": "2026-11-26T09:06:57Z",
+   "time": "10:06:57",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 13 watched · 5 rejected (mayhem mode 5) · closest COKI: SOL in 0.4/2.5 · buys 3/6 · rise +2%/+12%",
+   "n": 22
   }
  ],
  "nights": [
@@ -399,7 +424,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -408,15 +433,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 21,
-    "last_event_age_s": 2.3,
+    "last_event_age_s": 35.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 99,
-    "last_event_age_s": 5.9,
+    "events": 106,
+    "last_event_age_s": 19.8,
     "errors": 0,
     "last_error": null
    },
@@ -424,7 +449,7 @@
     "name": "metadata",
     "connected": false,
     "events": 15,
-    "last_event_age_s": 31.5,
+    "last_event_age_s": 64.5,
     "errors": 15,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -439,10 +464,10 @@
   "launch_to_entry_s": 12.5,
   "creates_per_min": 4.0,
   "watching": 13,
-  "followed": 16
+  "followed": 15
  },
  "learner": {
-  "samples": 98,
+  "samples": 99,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
@@ -484,13 +509,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 125,
+   "sent": 161,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 125,
+   "sent": 161,
    "errors": 0,
    "last_error": null
   }
@@ -500,7 +525,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "8NJCPZxAaHBWqpgzibvNf88KsKChRUEer1c9MJL2pump",
-   "age_s": 2,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -518,7 +543,7 @@
    "symbol": "BROT",
    "name": "BRAINROT",
    "mint": "8gCKHPDEUuu9NAm7iR26fh6pEWzaDAsrzVss8R2Wpump",
-   "age_s": 4,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -536,7 +561,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "HBEvCsWZUZKKo6YdJ84VozZoNjpSfUEyRStxXBGpump",
-   "age_s": 28,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -554,7 +579,7 @@
    "symbol": "COKI",
    "name": "Killer coconut",
    "mint": "6SFtDZSCxuauu34VHQm5USkutnRDyPrwQpd9mByUpump",
-   "age_s": 33,
+   "age_s": 66,
    "sol_in": 0.37,
    "buys": 3,
    "sells": 1,
@@ -572,7 +597,7 @@
    "symbol": "BROT",
    "name": "BRAINROT",
    "mint": "2eckbvZScyDwwncu74BjdMs4RmU7BQFR3xdQov3Apump",
-   "age_s": 37,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -590,7 +615,7 @@
    "symbol": "MI",
    "name": "Mayhem Inu",
    "mint": "2JJAMzcvxrvdzViMXnQBfevocfYtQjGm3BqcsgYTpump",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -608,11 +633,11 @@
    "symbol": "HOPPYESTER",
    "name": "Hoppy Ester Coin",
    "mint": "663ixuFENQh3UGxc5ZZrsjF2ZEfUukuvL5Dj1L5fpump",
-   "age_s": 63,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 96,
+   "sol_in": 0.02,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 29.1,
    "dev_pct": 2.0,
    "big_sell": 0.0,
@@ -620,13 +645,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
   },
   {
    "symbol": "HAMMER",
    "name": "Hogz Hammer",
    "mint": "3EU2CdTJAqU94QExkfvahcXbF1X2dBG9Vh8XjwzufYA6",
-   "age_s": 70,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -644,7 +669,7 @@
    "symbol": "POT",
    "name": "Hogz Pot",
    "mint": "5iTMPk5MXGve8CjPpWGjGBU8y1ksGYG6Q1oiFSN8BpUj",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -662,7 +687,7 @@
    "symbol": "SNOUT",
    "name": "Hogz Snout",
    "mint": "3okgg8VZX7J4cmyuBMjJQsrwcB2qRtVVvjqjrm5Y1G1e",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -680,7 +705,7 @@
    "symbol": "WINNER",
    "name": "Hogz Winner",
    "mint": "CFCAcp95uBRxMWpXKhWjhmfgEX9ARrK8hLVXtpXzxX6V",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -698,7 +723,7 @@
    "symbol": "BANK",
    "name": "Hogz Bank",
    "mint": "AZxwCNue7DSywuoFCBbF9RkVFXU9zQQFCJ3zHCpgkZTq",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -716,7 +741,7 @@
    "symbol": "TROTTER",
    "name": "Hogz Trotter",
    "mint": "2dnMqmx9d3qshfHF7q4QDDxNRMsE38rxHjs41Ymmk4Kr",
-   "age_s": 72,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -734,7 +759,7 @@
    "symbol": "COIN",
    "name": "Hogz Coin",
    "mint": "9h2VNTwK81cHLAu75kmDrst2vNWTVTQRCsy3y7NEGpHS",
-   "age_s": 72,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -752,7 +777,7 @@
    "symbol": "OINK",
    "name": "Hogz Oink",
    "mint": "DeJPPW9gfy5M1Cv5n5KfLm7a1r8mggEpukTi7CnwnWFX",
-   "age_s": 72,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -770,7 +795,7 @@
    "symbol": "DUEL",
    "name": "Hogz Duel",
    "mint": "4pfNUZbtdNhLBtDYL8JRhJ3fKtgHASivpystcTd3TKAz",
-   "age_s": 72,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -788,7 +813,7 @@
    "symbol": "CRUMBS",
    "name": "Hogz Crumbs",
    "mint": "2MkgpZCcHAMiDz7fUJ4Z89RurFU6iEnBuuBiTwLvMqPp",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -806,7 +831,7 @@
    "symbol": "PIG",
    "name": "Hogz Pig",
    "mint": "92oVEzbDUN4NRVuMsCyTFPJyCEwduQJtohM1ZzFdrGxx",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -824,11 +849,11 @@
    "symbol": "HOGZ",
    "name": "Hogz",
    "mint": "8mm21tJZG54pEcuXzvetRhbwKs9QjqUySZ5WkfEaszk",
-   "age_s": 83,
-   "sol_in": 0.44,
-   "buys": 27,
+   "age_s": 116,
+   "sol_in": 0.45,
+   "buys": 28,
    "sells": 19,
-   "rise_pct": 2.9,
+   "rise_pct": 3.0,
    "mcap_sol": 28.8,
    "dev_pct": 0.0,
    "big_sell": 4.73,
@@ -842,14 +867,14 @@
    "symbol": "ZEROCAST",
    "name": "BOX ZEROCAST",
    "mint": "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump",
-   "age_s": 100,
-   "sol_in": 1.64,
-   "buys": 11,
-   "sells": 11,
-   "rise_pct": 10.8,
+   "age_s": 133,
+   "sol_in": 1.62,
+   "buys": 13,
+   "sells": 14,
+   "rise_pct": 10.7,
    "mcap_sol": 33.3,
    "dev_pct": 3.8,
-   "big_sell": 1.17,
+   "big_sell": 1.99,
    "x": false,
    "tg": false,
    "web": false,
