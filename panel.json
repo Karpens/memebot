@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T13:36:47Z",
+ "updated": "2026-11-26T13:37:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 25,
   "checked": 25,
   "filtered": 2,
-  "lines": 408,
+  "lines": 409,
   "last_rug": {
    "coin": "EUTO",
    "pass": true
@@ -1160,6 +1160,10 @@
   [
    1795700173,
    85.18
+  ],
+  [
+   1795700233,
+   85.18
   ]
  ],
  "position_pct": 10.0,
@@ -1586,15 +1590,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T11:07:11Z",
-   "time": "12:07:11",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 7 watched · 8 rejected (mayhem mode 3, dump 2, dev bought 2) · closest VIBE: too young: 1 s (min 45 s)",
-   "n": 209
-  },
   {
    "t": "2026-11-26T11:08:12Z",
    "time": "12:08:12",
@@ -3385,6 +3380,15 @@
    "action": "migrate",
    "text": "migrated: the curve is complete (pump-amm)",
    "n": 408
+  },
+  {
+   "t": "2026-11-26T13:36:59Z",
+   "time": "14:36:59",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.2 a minute · 3 watched · 10 rejected (dev bought 4, mayhem mode 3, serial launcher 2) · closest CATE: SOL in 0.2/2.5 · buys 4/6 · rise +1%/+12%",
+   "n": 409
   }
  ],
  "nights": [
@@ -3427,7 +3431,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3435,16 +3439,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 496,
-    "last_event_age_s": 41.2,
+    "events": 497,
+    "last_event_age_s": 25.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10120,
-    "last_event_age_s": 1.0,
+    "events": 10159,
+    "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
    },
@@ -3452,7 +3456,7 @@
     "name": "metadata",
     "connected": true,
     "events": 341,
-    "last_event_age_s": 46.3,
+    "last_event_age_s": 74.3,
     "errors": 21,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3465,9 +3469,9 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 6.2,
-  "watching": 5,
-  "followed": 13
+  "creates_per_min": 5.4,
+  "watching": 3,
+  "followed": 8
  },
  "learner": {
   "samples": 106,
@@ -3512,23 +3516,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5085,
+   "sent": 5114,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5085,
+   "sent": 5114,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CLA",
+   "name": "Cat Labs Act",
+   "mint": "7mGhiuKAkRBGwmkmYz86kR3weWHtTigWe48VJTYGpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 35.0,
+   "dev_pct": 11.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "FALCOR",
    "name": "Falcor",
    "mint": "BJZ15drmfGsqSGVGzfajoBVxBPpUJ9R7w493HTQkpump",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3546,7 +3568,7 @@
    "symbol": "Falcor",
    "name": "Falcor",
    "mint": "5WG97wcmvFbNKdDwaFKMGAxWEBo6bfRJAxDxKeAbpump",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": -1.48,
    "buys": 3,
    "sells": 13,
@@ -3564,12 +3586,12 @@
    "symbol": "PUMPMONEY",
    "name": "PUMPGIVESMONEY",
    "mint": "37Nt63gSWEVfce3oJZt97htdWxYQHxFJ43J87ksPpump",
-   "age_s": 53,
-   "sol_in": -3.58,
+   "age_s": 81,
+   "sol_in": -3.95,
    "buys": 2,
-   "sells": 1,
-   "rise_pct": -20.0,
-   "mcap_sol": 28.7,
+   "sells": 3,
+   "rise_pct": -21.9,
+   "mcap_sol": 28.0,
    "dev_pct": 12.5,
    "big_sell": 4.16,
    "x": false,
@@ -3582,7 +3604,7 @@
    "symbol": "$Mars",
    "name": "Mars Mountains",
    "mint": "3CogoPErnJVKuBYa3BAS4AAUyWB4rZcyid935o6tpump",
-   "age_s": 57,
+   "age_s": 85,
    "sol_in": 0.02,
    "buys": 3,
    "sells": 0,
@@ -3600,7 +3622,7 @@
    "symbol": "MINICAT",
    "name": "Minicat",
    "mint": "DwY2SuGjgwR7qL9fktcGqAzeNVtLTCZja1QU3Egvpump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3618,7 +3640,7 @@
    "symbol": "CENTIPEDE",
    "name": "centipede",
    "mint": "ARGkSZTV8yB35FCZSfokrCJRPXSd5bbWPLtRHDXqpump",
-   "age_s": 94,
+   "age_s": 122,
    "sol_in": -0.28,
    "buys": 12,
    "sells": 8,
@@ -3636,7 +3658,7 @@
    "symbol": "att",
    "name": "attention",
    "mint": "Y4jLHbA2T3EkGNMXu7Nwb4LUKJWRUJrJqfczPKn2Ah3",
-   "age_s": 101,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3654,7 +3676,7 @@
    "symbol": "SHINUBI",
    "name": "Shǐnǔbǐ (史努比)",
    "mint": "6qSi4ppyXwpUZx5zLU723W8m4g6Sjm6YTTnfd4BGpump",
-   "age_s": 110,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3672,7 +3694,7 @@
    "symbol": "CLM",
    "name": "Cat Labs M",
    "mint": "76c4bDpDqHkokMnmGjnTGTVFqPgG7qb1ZLnjzsdWpump",
-   "age_s": 121,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3690,7 +3712,7 @@
    "symbol": "CATE",
    "name": "PUMpCATE",
    "mint": "8hfQMfrjt7kzcVzJYUXJDTM2pNho6YwmYjt9FqGhpump",
-   "age_s": 135,
+   "age_s": 163,
    "sol_in": 0.19,
    "buys": 4,
    "sells": 0,
@@ -3703,114 +3725,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in 0.2/2.5 · buys 4/6 · rise +1%/+12%"
-  },
-  {
-   "symbol": "pipotam",
-   "name": "pipotam",
-   "mint": "93hStJFXMQRo1QNkZwEr2Thitmn8E4qVp1VkcdYwbpze",
-   "age_s": 160,
-   "sol_in": -0.99,
-   "buys": 12,
-   "sells": 14,
-   "rise_pct": -5.9,
-   "mcap_sol": 31.9,
-   "dev_pct": 9.9,
-   "big_sell": 3.2,
-   "x": "https://x.com/nonanon124/status/2125946142139814250",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.9% (max 8%)",
-   "why": "dev bought 9.9% (max 8%)"
-  },
-  {
-   "symbol": "henry",
-   "name": "henry",
-   "mint": "GjPkZMqZ5R5RVcDgGdkDzscs8qMv95GvTaNAqyMgBEBq",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -86.6,
-   "mcap_sol": 3.8,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 8 more coins in 60 min",
-   "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "SHINUBI",
-   "name": "Shǐnǔbǐ (史努比)",
-   "mint": "2uqM1wdMrnePnqLRDToWFMjxfQoisUkvc4miDMb5pump",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.6,
-   "dev_pct": 1.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SEL",
-   "name": "sel",
-   "mint": "E5QsA5iedBnL6RpHZdko8NsbjHwtffCDBxRhcNfSpump",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 32.8,
-   "dev_pct": 8.2,
-   "big_sell": 0.02,
-   "x": "https://x.com/icallaths/status/2125946129041023157",
-   "tg": false,
-   "web": "https://x.com/icallaths/status/2125946129041023157",
-   "status": "rejected: dev bought 8.2% (max 8%)",
-   "why": "dev bought 8.2% (max 8%)"
-  },
-  {
-   "symbol": "GIGA",
-   "name": "BLOCK ZERO TAX TO HOLDERS",
-   "mint": "8jUpZwp9C5KRvkEMv2UvcYUBpZLcqzSjpDv8NtMhpump",
-   "age_s": 170,
-   "sol_in": 0.12,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 0.8,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/trysharepad/status/2125944007746306246?a=mW1V1JY8dcWp8RCfE9I&s=20",
-   "tg": false,
-   "web": "https://launchonshare.xyz/#/",
-   "status": "watching",
-   "why": "SOL in 0.1/2.5 · buys 3/6 · rise +1%/+12%"
-  },
-  {
-   "symbol": "GIGA",
-   "name": "BLOCK ZERO TAX TO HOLDERS",
-   "mint": "7ZKTNLjtXhdua3xvMdSiegzaXrdXFSEswNbV8huWpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/trysharepad/status/2125944007746306246?a=mW1V1JY8dcWp8RCfE9I&s=20",
-   "tg": false,
-   "web": "https://launchonshare.xyz/#/",
-   "status": "watching",
-   "why": "too young: 19 s (min 45 s)"
   }
  ],
  "strategies": [
