@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T15:39:41Z",
+ "updated": "2026-11-26T15:40:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 31,
-  "checked": 30,
-  "filtered": 3,
-  "lines": 564,
+  "flagged": 32,
+  "checked": 31,
+  "filtered": 4,
+  "lines": 566,
   "last_rug": {
-   "coin": "PXCT",
-   "pass": true
+   "coin": "cpndagso",
+   "pass": false
   }
  },
  "flags": [
-  {
-   "coin": "REMY",
-   "why": "momentum",
-   "t": "2026-11-26T12:57:31Z"
-  },
   {
    "coin": "EUTO",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "PXCT",
    "why": "momentum",
    "t": "2026-11-26T15:28:58Z"
+  },
+  {
+   "coin": "cpndagso",
+   "why": "momentum",
+   "t": "2026-11-26T15:39:47Z"
   }
  ],
  "curve": [
@@ -1652,6 +1652,10 @@
   [
    1795707553,
    84.53
+  ],
+  [
+   1795707613,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2126,24 +2130,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T12:58:38Z",
-   "time": "13:58:38",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.2 a minute · 6 watched · 14 rejected (mayhem mode 6, dev bought 4, dump 2) · closest EUTO: too young: 11 s (min 45 s)",
-   "n": 365
-  },
-  {
-   "t": "2026-11-26T12:59:39Z",
-   "time": "13:59:39",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 6 watched · 10 rejected (mayhem mode 5, dev bought 2, dump 2) · closest EUTO: SOL in 1.5/2.5 · buy share 50%/65% · rise +10%/+12%",
-   "n": 366
-  },
   {
    "t": "2026-11-26T13:00:00Z",
    "time": "14:00:00",
@@ -3925,6 +3911,24 @@
    "action": "scan",
    "text": "new pairs · 6.8 a minute · 3 watched · 7 rejected (dev bought 3, mayhem mode 2, serial launcher 1) · closest cpndagso: buys 5/6",
    "n": 564
+  },
+  {
+   "t": "2026-11-26T15:39:47Z",
+   "time": "16:39:47",
+   "agent": "SCANNER",
+   "coin": "cpndagso",
+   "action": "flag",
+   "text": "momentum · 10.2 SOL in · 6/6 buys (100%) · +76% since launch · mcap 53 SOL · 116 s old",
+   "n": 565
+  },
+  {
+   "t": "2026-11-26T15:39:47Z",
+   "time": "16:39:47",
+   "agent": "RUG CHECK",
+   "coin": "cpndagso",
+   "action": "reject",
+   "text": "FAIL · risk: Creator history of rugged tokens",
+   "n": 566
   }
  ],
  "nights": [
@@ -3972,7 +3976,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3980,24 +3984,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 245,
-    "last_event_age_s": 12.5,
+    "events": 248,
+    "last_event_age_s": 6.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3112,
-    "last_event_age_s": 0.0,
+    "events": 3180,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 192,
-    "last_event_age_s": 110.7,
+    "events": 194,
+    "last_event_age_s": 5.9,
     "errors": 8,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4010,9 +4014,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 6.8,
+  "creates_per_min": 7.0,
   "watching": 3,
-  "followed": 8
+  "followed": 7
  },
  "learner": {
   "samples": 107,
@@ -4058,23 +4062,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2005,
+   "sent": 2040,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2015,
+   "sent": 2050,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MEMEDAQ",
+   "name": "MDAQ",
+   "mint": "8KkttpcF4MP3Xxcnf5yx7kG9Ew2swB6oQJSQpvRWpump",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/HimothyJamesJr_/status/2125964925025599912",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
+   "symbol": "UBR",
+   "name": "UNITED BITCOIN RESERVE",
+   "mint": "6PbhgWuvJ4VYce81nF9eazxPShnuUX7h4pf4LVtZpump",
+   "age_s": 20,
+   "sol_in": 0.09,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.6,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.01,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 13 s (min 45 s)"
+  },
+  {
    "symbol": "CLOCKOUT",
    "name": "Clock Out Forever",
    "mint": "Ek36jnSLWNooJnQRShyh42aDSskdjcKfUgpMPj9Rpump",
-   "age_s": 12,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4092,7 +4132,7 @@
    "symbol": "RB",
    "name": "ROGUES BUM",
    "mint": "9ZgD9sgerhvTPc2rdmBmgXbKFbCV9roociKTE27apump",
-   "age_s": 81,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4110,30 +4150,30 @@
    "symbol": "cpndagso",
    "name": "cpndagso",
    "mint": "CSx33YHxE9RF54udzdMMgjtL6pZ3y216ojhjSBHEpump",
-   "age_s": 110,
-   "sol_in": 10.15,
-   "buys": 5,
+   "age_s": 143,
+   "sol_in": 10.25,
+   "buys": 6,
    "sells": 0,
-   "rise_pct": 75.5,
-   "mcap_sol": 53.2,
+   "rise_pct": 76.4,
+   "mcap_sol": 53.5,
    "dev_pct": 4.2,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "buys 5/6"
+   "status": "rejected: risk: Creator history of rugged tokens",
+   "why": "risk: Creator history of rugged tokens"
   },
   {
    "symbol": "OROS",
    "name": "Oros",
    "mint": "JwTzPo7DYeyyfPT1MNZnEuyn69F3gT69uL3FvR3FPBG",
-   "age_s": 123,
-   "sol_in": 10.82,
-   "buys": 12,
-   "sells": 12,
-   "rise_pct": 83.2,
-   "mcap_sol": 53.3,
+   "age_s": 156,
+   "sol_in": 8.86,
+   "buys": 14,
+   "sells": 16,
+   "rise_pct": 66.3,
+   "mcap_sol": 48.4,
    "dev_pct": 2.1,
    "big_sell": 3.06,
    "x": "https://x.com/OrosDefi",
@@ -4146,25 +4186,25 @@
    "symbol": "COLD",
    "name": "Cold Privacy",
    "mint": "EKhJvNkQ9g4BNsjDHcQVgtAaRdt8TznZjQavZ8Aepump",
-   "age_s": 126,
-   "sol_in": 1.79,
+   "age_s": 159,
+   "sol_in": 0.16,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": 12.2,
-   "mcap_sol": 31.6,
+   "sells": 3,
+   "rise_pct": 1.0,
+   "mcap_sol": 28.4,
    "dev_pct": 0.4,
-   "big_sell": 0.59,
+   "big_sell": 1.63,
    "x": "https://x.com/coldprivacy",
    "tg": "https://t.me/coldprivacy",
    "web": "https://privacycold.com",
    "status": "watching",
-   "why": "too young: 39 s (min 45 s)"
+   "why": "SOL in 0.2/2.5 · buys 2/6 · buy share 40%/65% · rise +1%/+12%"
   },
   {
    "symbol": "BunBun",
    "name": "BunBun",
    "mint": "57uLKZLdCZeEUaK8SLWBnXTNfwsxXLZA5DXZcQcsRmUF",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": -4.94,
    "buys": 2,
    "sells": 4,
@@ -4182,7 +4222,7 @@
    "symbol": "HEARTTHROB",
    "name": "Roblox Heartthrob",
    "mint": "H1Vfo7TffeqSg7dJKNuvx2S1C7vUX5NdtF7z3gAcpump",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": -2.28,
    "buys": 3,
    "sells": 9,
@@ -4195,60 +4235,6 @@
    "web": "https://www.tiktok.com/search?q=1950s%20heartthrob%20roblox&t=1795707102947",
    "status": "rejected: dev bought 10.4% (max 8%)",
    "why": "dev bought 10.4% (max 8%)"
-  },
-  {
-   "symbol": "TURK",
-   "name": "TRUMPKEY",
-   "mint": "8EF7jTcrEXtNr4YAsRds8G745rCPF8d4d77cjtXXpump",
-   "age_s": 149,
-   "sol_in": 0.03,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/GizmoMemes/status/2125932579232809450",
-   "tg": false,
-   "web": "https://x.com/GizmoMemes/status/2125932579232809450",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "TURKEYRUNA",
-   "name": "Turkey Day Dash",
-   "mint": "4Yasdf3QNfru5QyHhGRWWRfyMitbh9zABNh8K6iSpump",
-   "age_s": 170,
-   "sol_in": -0.34,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": -2.2,
-   "mcap_sol": 28.4,
-   "dev_pct": 2.1,
-   "big_sell": 1.92,
-   "x": false,
-   "tg": false,
-   "web": "https://sports.yahoo.com/general/articles/more-14-000-runners-part-100021836.html?mint=",
-   "status": "watching",
-   "why": "SOL in -0.3/2.5 · buys 5/6 · buy share 62%/65% · rise -2%/+12%"
-  },
-  {
-   "symbol": "FIFA",
-   "name": "Fuck I Faded Again",
-   "mint": "F5Pd2tFvLNuapNm4LpNZRSZSM5PkL5DJoVN3dm7AM4D6",
-   "age_s": 177,
-   "sol_in": -4.94,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 3.56,
-   "x": "https://twitter.com/AFpost/status/2125977027748536478",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 15.2% (max 8%)",
-   "why": "dev bought 15.2% (max 8%)"
   }
  ],
  "strategies": [
