@@ -1,5 +1,5 @@
 {
- "balance": 95.21857197619282,
+ "balance": 92.80809644791505,
  "positions": {},
  "nights": [
   {
@@ -357,6 +357,78 @@
     "action": "scan",
     "text": "new pairs · 4.8 a minute · 4 watched · 16 rejected (serial launcher 10, mayhem mode 4, dump 1) · closest GOATLON: SOL in 0.0/2.5 · buys 0/6 · buy share 0%/65% · rise -100%/+12%",
     "n": 36
+   },
+   {
+    "t": "2026-11-26T09:15:04Z",
+    "time": "10:15:04",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.4 a minute · 6 watched · 12 rejected (serial launcher 7, mayhem mode 4, dev bought 1) · closest STOREB: buys 3/6",
+    "n": 37
+   },
+   {
+    "t": "2026-11-26T09:15:09Z",
+    "time": "10:15:09",
+    "agent": "SCANNER",
+    "coin": "STOREB",
+    "action": "flag",
+    "text": "momentum · 3.3 SOL in · 6/6 buys (100%) · +23% since launch · mcap 36 SOL · 25 s old",
+    "n": 38
+   },
+   {
+    "t": "2026-11-26T09:15:09Z",
+    "time": "10:15:09",
+    "agent": "RUG CHECK",
+    "coin": "STOREB",
+    "action": "pass",
+    "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
+    "n": 39
+   },
+   {
+    "t": "2026-11-26T09:15:09Z",
+    "time": "10:15:09",
+    "agent": "SIZER",
+    "coin": "STOREB",
+    "action": "size",
+    "text": "10% of $95.22 = $9.52",
+    "n": 40
+   },
+   {
+    "t": "2026-11-26T09:15:09Z",
+    "time": "10:15:09",
+    "agent": "EXECUTOR",
+    "coin": "STOREB",
+    "action": "enter",
+    "text": "ENTER STOREB at 0.0000026576 · slip 1.7% · first in · 0.1 s after the trigger · 25 s after launch · curve maths 0.0% off Jupiter",
+    "n": 41
+   },
+   {
+    "t": "2026-11-26T09:15:09Z",
+    "time": "10:15:09",
+    "agent": "NEWS",
+    "coin": "STOREB",
+    "action": "plan",
+    "text": "hold plan · 1/10 (buys 100%) · scalp: +7",
+    "n": 42
+   },
+   {
+    "t": "2026-11-26T09:15:12Z",
+    "time": "10:15:12",
+    "agent": "EXECUTOR",
+    "coin": "STOREB",
+    "action": "exit",
+    "text": "EXIT STOREB $-2.41 (-25%) · dump: 2.9 SOL sold · out · 0.0 s after the reading",
+    "n": 43
+   },
+   {
+    "t": "2026-11-26T09:15:12Z",
+    "time": "10:15:12",
+    "agent": "LEARNER",
+    "coin": "STOREB",
+    "action": "learn",
+    "text": "learned · np:dev:2-5 now avg -16.0% over 4",
+    "n": 44
    }
   ],
   "trades": [
@@ -564,16 +636,68 @@
      "tier:scalp",
      "hour:day"
     ]
+   },
+   {
+    "symbol": "STOREB",
+    "mint": "BwVYN64dKwHUjFXYQhYmQ9oaWq5vPTvbF16ARh5upump",
+    "opened": "2026-11-26T09:15:09Z",
+    "closed": "2026-11-26T09:15:12Z",
+    "cost": 9.52,
+    "proceeds": 7.11,
+    "pnl": -2.41,
+    "pnl_pct": -25.3,
+    "why": "dump: 2.9 SOL sold",
+    "url": "https://pump.fun/coin/BwVYN64dKwHUjFXYQhYmQ9oaWq5vPTvbF16ARh5upump",
+    "reason": "momentum · 3.3 SOL in · 6/6 buys (100%) · +23% since launch · mcap 36 SOL · 25 s old",
+    "size_pct": 10.0,
+    "entry_price": 2.6576046239779365e-06,
+    "exit_price": 2.1680575055503655e-06,
+    "slip": 1.67,
+    "strategy": "new_pairs",
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "plan": {
+     "tier": "scalp",
+     "score": 1,
+     "parts": [
+      "buys 100%"
+     ],
+     "ladder": [
+      [
+       7.0,
+       1.0
+      ]
+     ],
+     "step": 0,
+     "stop_pct": -7.0,
+     "trail_pct": 0.0
+    },
+    "age_s": 25,
+    "mcap_sol": 36.5,
+    "dev_pct": 3.25,
+    "sol_in": 3.32,
+    "exit_ms": 35,
+    "learn": [
+     "np:dev:2-5",
+     "np:sol:3-6",
+     "np:buys:90+",
+     "np:age:<30s",
+     "np:social:none",
+     "news:0-2",
+     "tier:scalp",
+     "hour:day"
+    ]
    }
   ],
   "entered": [],
-  "streak": 2,
+  "streak": 3,
   "cooldown_until": 0,
   "scans": 0,
-  "flagged": 3,
-  "checked": 3,
+  "flagged": 4,
+  "checked": 4,
   "filtered": 0,
-  "lines": 36,
+  "lines": 44,
   "flags": [
    {
     "coin": "ZEROCAST",
@@ -589,6 +713,11 @@
     "coin": "SWARM",
     "why": "momentum",
     "t": "2026-11-26T09:12:29Z"
+   },
+   {
+    "coin": "STOREB",
+    "why": "momentum",
+    "t": "2026-11-26T09:15:09Z"
    }
   ],
   "curve": [
@@ -631,39 +760,47 @@
    [
     1795684436,
     95.22
+   ],
+   [
+    1795684496,
+    95.22
    ]
   ],
   "last_rug": {
-   "coin": "SWARM",
+   "coin": "STOREB",
    "pass": true
   },
-  "np_said": 1795684444.860505,
+  "np_said": 1795684504.860509,
   "np_speed": {
    "first_in": [
     74,
     65,
-    65
+    65,
+    62
    ],
    "launch": [
     10,
     15,
-    19
+    19,
+    26
    ],
    "exit": [
     31,
     33,
-    32
+    32,
+    36
    ]
   },
   "reenter": {
    "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump": 1795684228.529103,
    "8mm21tJZG54pEcuXzvetRhbwKs9QjqUySZ5WkfEaszk": 1795684249.030694,
    "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump": 1795684313.860547,
-   "2Qce5nHgHDaYHbHBwS6DBdhvQ7boEq69zmoSAKgPpump": 1795684651.030667
+   "2Qce5nHgHDaYHbHBwS6DBdhvQ7boEq69zmoSAKgPpump": 1795684651.030667,
+   "BwVYN64dKwHUjFXYQhYmQ9oaWq5vPTvbF16ARh5upump": 1795684812.92276
   }
  },
  "learner_summary": {
-  "samples": 100,
+  "samples": 101,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
