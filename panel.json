@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:59:55Z",
+ "updated": "2026-11-26T11:00:28Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 16,
   "checked": 16,
   "filtered": 1,
-  "lines": 201,
+  "lines": 202,
   "last_rug": {
    "coin": "NODIVO",
    "pass": true
@@ -532,6 +532,10 @@
   [
    1795690741,
    87.14
+  ],
+  [
+   1795690801,
+   87.14
   ]
  ],
  "position_pct": 10.0,
@@ -873,15 +877,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:04:56Z",
-   "time": "10:04:56",
-   "agent": "EXECUTOR",
-   "coin": "BST",
-   "action": "stale",
-   "text": "no curve reading for 5 s · Jupiter's price $2.421e-06",
-   "n": 2
-  },
   {
    "t": "2026-11-26T09:04:56Z",
    "time": "10:04:56",
@@ -2672,6 +2667,15 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 2 watched · 3 rejected (dev bought 1, dump 1, mayhem mode 1) · closest BABYATX: too young: 3 s (min 45 s)",
    "n": 201
+  },
+  {
+   "t": "2026-11-26T11:00:08Z",
+   "time": "12:00:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 3 watched · 5 rejected (serial launcher 3, dump 1, mayhem mode 1) · closest SITT: too young: 2 s (min 45 s)",
+   "n": 202
   }
  ],
  "nights": [
@@ -2716,7 +2720,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2724,25 +2728,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 73,
-    "last_event_age_s": 18.0,
+    "events": 76,
+    "last_event_age_s": 1.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1595,
+    "events": 1632,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 54,
-    "last_event_age_s": 17.7,
-    "errors": 6,
+    "connected": true,
+    "events": 57,
+    "last_event_age_s": 1.8,
+    "errors": 8,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -2754,9 +2758,9 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 2.0,
-  "watching": 4,
-  "followed": 6
+  "creates_per_min": 2.4,
+  "watching": 3,
+  "followed": 7
  },
  "learner": {
   "samples": 104,
@@ -2801,23 +2805,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1095,
+   "sent": 1130,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1095,
+   "sent": 1130,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "clanker",
+   "name": "clanker",
+   "mint": "5L61GPrPTzWFX97EtVJEjigGGEHMsUbmXE7tCs71pump",
+   "age_s": 1,
+   "sol_in": 2.24,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 15.0,
+   "mcap_sol": 34.3,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/Milsaftermils/status/2125905825906532388",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "DeWae",
+   "name": "Ugandan Knuckles",
+   "mint": "7ZHo4txzFXp7rr46wCGHiPxnffiUxjPvA2YJLficPfZq",
+   "age_s": 32,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "DeWae",
+   "name": "Ugandan Knuckles",
+   "mint": "DY1TJdMvmZh82jhRFCVgXHMiDoYrV8draeRka36Ko5FJ",
+   "age_s": 32,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "DeWae",
    "name": "Ugandan Knuckles",
    "mint": "n8uc1mNuz6CSg6CBQcMcaqdPJrxkaeR1Kv7nWPKffHn",
-   "age_s": 18,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2835,25 +2893,25 @@
    "symbol": "DeWae",
    "name": "Ugandan Knuckles",
    "mint": "7hzebse9pYKrr6G1ekAgoXVQtVSdeXVz2KLUPjXLh69n",
-   "age_s": 25,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 58,
+   "sol_in": 0.05,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.3,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "too young: 2 s (min 45 s)"
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
   },
   {
    "symbol": "SITT",
    "name": "So its Treason, then",
    "mint": "CXNgcBuHRgvg2CUKxa3YTwXddm16rgzr65JF8sNBMobo",
-   "age_s": 41,
+   "age_s": 74,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -2871,7 +2929,7 @@
    "symbol": "CAODINIU",
    "name": "CAO DI NIU",
    "mint": "2ayeGF1yWSjhZdrk1vqxY9G8h6txwFu3BUJtyPuXpump",
-   "age_s": 80,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2889,12 +2947,12 @@
    "symbol": "GHOST",
    "name": "Ghost Terminal",
    "mint": "8yJzFtE2Yr7fYfph54wxW6mj8EKXgUiRAzPv5rYipump",
-   "age_s": 101,
-   "sol_in": 27.39,
-   "buys": 48,
-   "sells": 49,
-   "rise_pct": 259.2,
-   "mcap_sol": 104.4,
+   "age_s": 134,
+   "sol_in": 15.64,
+   "buys": 61,
+   "sells": 68,
+   "rise_pct": 128.4,
+   "mcap_sol": 66.4,
    "dev_pct": 2.1,
    "big_sell": 14.93,
    "x": "https://x.com/GhostTerminals/status/2125906965406634358",
@@ -2902,42 +2960,6 @@
    "web": "https://ghostterminal.lol/",
    "status": "rejected: dump: 7.5 SOL sold",
    "why": "dump: 7.5 SOL sold"
-  },
-  {
-   "symbol": "FERRETWOBBLY",
-   "name": "Wobbly Ferret",
-   "mint": "9pdMj3auBgD99ipTAmpbPgg1Z9LHhh7jYcdDhqi8Zxt7",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 15 s (min 45 s)"
-  },
-  {
-   "symbol": "CI",
-   "name": "Cold Inu",
-   "mint": "E5y95kVeNusQZH4oqvZ4GocXnGfC2vSFDjZZ9hN4pump",
-   "age_s": 174,
-   "sol_in": -9.88,
-   "buys": 9,
-   "sells": 18,
-   "rise_pct": -43.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 26.6,
-   "big_sell": 4.35,
-   "x": "https://x.com/bwamsbrother/status/2125905514823327842",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 26.6% (max 8%)",
-   "why": "dev bought 26.6% (max 8%)"
   }
  ],
  "strategies": [
