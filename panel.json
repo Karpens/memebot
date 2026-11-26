@@ -1,0 +1,274 @@
+{
+ "updated": "2026-11-26T08:49:20Z",
+ "mode": "paper",
+ "start_balance": 100.0,
+ "balance": 100.0,
+ "equity": 100.0,
+ "session": "23:00 → 07:00",
+ "agents": [
+  "SCANNER",
+  "NEWS",
+  "RUG CHECK",
+  "SIZER",
+  "EXECUTOR",
+  "RISK",
+  "LEARNER",
+  "LOGGER"
+ ],
+ "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $100. I will not be watching. Trade New Pairs, first in and first out: speed is the whole game. Log every decision so I can read it in the morning.\n\nSTRATEGY: NEW PAIRS\n- The \"New Pairs\" column of Axiom Pulse: brand-new pump.fun coins in their first seconds to minutes, still on the bonding curve.\n- Every new coin is watched for 180 seconds (40 at once, the oldest dropped first). Its bonding curve is read every 0.5 seconds while anything is held, every second otherwise.\n- Enter on the curve reading where, within 180 seconds of the launch, all of these hold: at least 2.5 SOL came in, at least 6 readings were buys and 65% of the moves, the price is at least 12% above the launch price, and the market cap is at most 70 SOL. Buy on that same reading.\n- Older migrated pairs (DexScreener, GeckoTerminal) are a second strategy, switched off.\n\nAGENTS\n1. SCANNER - watches every new pump.fun coin on PumpPortal's stream and reads its bonding curve: SOL in, buys against sells, the biggest sell, its age. It fires the entry trigger; it never trades.\n2. NEWS - reads the coin's socials (X, Telegram, website, from its metadata; a coin without any is allowed but scores lower) and the curve's momentum (SOL in, the share of buys) into a NEWS score from 0 to 10 and picks the hold plan from it. While a coin is held it reads them again every 30 seconds and may move the plan up or down.\n3. RUG CHECK - the creator bought at most 8% of the supply, no single sell of 2 SOL or more, no mayhem-mode launch, no account that is not a pump.fun bonding curve, no creator with 2 or more other launches in the last 60 minutes, and a RugCheck report within 3 seconds: no rug history, no danger risk, no single holder above 12%, the top 10 holders at most 35% (the curve left out), no insiders. A sell simulation on Jupiter may lose at most 10% on the two quotes alone (no honeypot; the haircut and the fixed fees are the same for every coin).\n4. SIZER - 10% of the balance per trade, never less than $3; the LEARNER moves it between 0.5x and 1.5x.\n5. EXECUTOR - fills every buy and sale at a real Jupiter quote for the amount, less a 1% latency haircut and the network and priority fees. The curve's own maths fills a sale only when Jupiter fails and that maths matched a Jupiter quote at the entry. It logs how fast it was: \"first in · 1.2 s after the trigger · 38 s after launch\" and \"out · 0.3 s after the reading\".\n6. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row (a trade that sold its first step is not one), no new entries in the last 10 minutes, stop for the night at -50%, everything sold by 06:55. The night is two jobs: no new pairs are bought in the last 5 minutes of the first one and what it holds is sold in its last minute, since nobody watches the exits until the next job starts.\n7. LEARNER - learns from its own closed trades, by what each coin looked like at entry (the creator's buy, SOL in, the share of buys, its age, its socials, the NEWS score, the hold plan, the hour). If past trades like this one lost 4% or more on average, it skips the coin; every 5th such skip is bought at half size to check. Otherwise it sizes from 0.5x to 1.5x by how such trades did.\n8. LOGGER - every decision with its reason, and a morning report.\n\nEXITS - checked on every curve reading of a held coin, in the same loop turn\n- The base: take the whole profit at +7% (scalp, NEWS 0-2).\n- Strong NEWS holds part of it longer. Each step sells a share of what is left: swing (NEWS 3-4) 50% at +7% and the rest at +20%; runner (5-6) 34% at +7%, 50% at +20%, the rest at +60%; moon (7+) 25% at +7%, 34% at +20%, 50% at +60%, the rest at +100%.\n- Stop loss at -7% until the first step. After the first step the stop moves to break-even (+1%) or higher, to where selling the rest still leaves the whole trade without a loss after its fees, and a trailing stop follows the top (6%, 10% and 15% under it for swing, runner and moon).\n- Out after 5 minutes unless up 2% (10, 15 and 20 minutes for swing, runner and moon), before the first step only; after twice that time, out unless the first step was reached.\n- Out when the curve has had no trade for 3 minutes: a curve nobody trades keeps its price for good.\n- Out at once on a dump (one sell of 2 SOL or more after the entry) and when the curve completes (the migration: sold into the curve's last state).\n- Fading: buys under 45% of the last 5 minutes and a NEWS score 2 or more below the entry's: the rest is sold while in profit.\n\nPaper mode: no wallet, no real money. Honest maths: pump.fun's fee is about 1.25% each way, plus the 1% latency haircut each way: about 4-5% a round trip, and 0.001 SOL of network and priority fees an order on top (about 1-1.5% of a $10 order each way). The +7% and -7% are counted from the fill price, so a +7% exit nets about +3% and a -7% stop costs about -10 to -11%. Scalps alone need a very high hit rate: the hold ladder (+20, +60, +100% when the NEWS is strong) and the LEARNER are what can tilt it. Not financial advice.\n",
+ "night": {
+  "id": "2026-11-26-test",
+  "start_equity": 100.0,
+  "started": "2026-11-26T08:49:04Z",
+  "scans": 0,
+  "flagged": 0,
+  "checked": 0,
+  "filtered": 0,
+  "lines": 3,
+  "last_rug": null
+ },
+ "flags": [],
+ "curve": [
+  [
+   1795682944,
+   100.0
+  ]
+ ],
+ "position_pct": 10.0,
+ "slip_cap": 10.0,
+ "live": true,
+ "positions": [],
+ "trades": [],
+ "log": [
+  {
+   "t": "2026-11-26T08:49:04Z",
+   "time": "09:49:04",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "start",
+   "text": "night 2026-11-26-test · start $100.00 · 8 agents · 23:00 → 07:00",
+   "n": 1
+  },
+  {
+   "t": "2026-11-26T08:49:05Z",
+   "time": "09:49:05",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 2
+  },
+  {
+   "t": "2026-11-26T08:49:15Z",
+   "time": "09:49:15",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest DOG: no curve reading yet",
+   "n": 3
+  }
+ ],
+ "nights": [
+  {
+   "id": "2026-11-25",
+   "start": 100.0,
+   "end": 61.33,
+   "pnl": -38.67,
+   "trades": 97,
+   "wins": 18,
+   "best": 1.22,
+   "worst": -2.11,
+   "flagged": 77,
+   "scans": 1637
+  }
+ ],
+ "errors": [
+  "https://api.rugcheck.xyz/v1/tokens/4i5y8ULNaqLR7VyvGDmXDHcik3HYDZsAeWYstRLNpump/report: HTTP 400"
+ ],
+ "stream": {
+  "topic": "memebot/00ade2c3a60b7da8",
+  "enabled": true,
+  "ws": [
+   "wss://broker.hivemq.com:8884/mqtt",
+   "wss://broker.emqx.io:8084/mqtt"
+  ]
+ },
+ "speed": {
+  "watch_sec": 1,
+  "tick_sec": 1,
+  "scan_sec": 5,
+  "gt_sec": 20,
+  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · live 1s",
+  "last_scan_ms": null,
+  "watch_ms": 0,
+  "scans_per_min": 0,
+  "feeds": [
+   {
+    "name": "pumpportal",
+    "connected": true,
+    "events": 4,
+    "last_event_age_s": 0.8,
+    "errors": 0,
+    "last_error": null
+   },
+   {
+    "name": "curve-poll",
+    "connected": true,
+    "events": 5,
+    "last_event_age_s": 0.9,
+    "errors": 0,
+    "last_error": null
+   },
+   {
+    "name": "metadata",
+    "connected": false,
+    "events": 3,
+    "last_event_age_s": 0.1,
+    "errors": 3,
+    "last_error": "ipfs.io: HTTP 403"
+   }
+  ],
+  "strategies": [
+   "new_pairs"
+  ],
+  "first_in_ms": null,
+  "first_in_last_ms": null,
+  "exit_ms": null,
+  "exit_last_ms": null,
+  "launch_to_entry_s": null,
+  "creates_per_min": 0.8,
+  "watching": 2,
+  "followed": 4
+ },
+ "learner": {
+  "samples": 95,
+  "skipped": 0,
+  "explored": 0,
+  "min_samples": 8,
+  "best": [
+   {
+    "label": "sig:holders",
+    "n": 8,
+    "avg": -4.9
+   },
+   {
+    "label": "hour:03-05",
+    "n": 49,
+    "avg": -4.6
+   },
+   {
+    "label": "vol5:5-20k",
+    "n": 14,
+    "avg": -6.0
+   }
+  ],
+  "worst": [
+   {
+    "label": "slip:1-2",
+    "n": 12,
+    "avg": -8.4
+   },
+   {
+    "label": "social:x",
+    "n": 40,
+    "avg": -6.6
+   },
+   {
+    "label": "dex:pumpswap",
+    "n": 40,
+    "avg": -6.6
+   }
+  ]
+ },
+ "live_stats": {
+  "broker.hivemq.com": {
+   "connected": true,
+   "sent": 18,
+   "errors": 0,
+   "last_error": null
+  },
+  "broker.emqx.io": {
+   "connected": true,
+   "sent": 18,
+   "errors": 0,
+   "last_error": null
+  }
+ },
+ "watch": [
+  {
+   "symbol": "C Troll",
+   "name": "Christmas Troll",
+   "mint": "EjAxeoaNhWacot51AWZ8xkwHjiTwkMEtzGVC1dSTpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.8,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 11.1% (max 8%)",
+   "why": "dev bought 11.1% (max 8%)"
+  },
+  {
+   "symbol": "PPV",
+   "name": "Pay Per View",
+   "mint": "G6LrNAtWt1uJ9ijDwrQQyiUyF4vAb86oU2Hs8eZBpump",
+   "age_s": 2,
+   "sol_in": 9.55,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 62.2,
+   "mcap_sol": 61.3,
+   "dev_pct": 15.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.0% (max 8%)",
+   "why": "dev bought 15.0% (max 8%)"
+  },
+  {
+   "symbol": "SANTA",
+   "name": "Father Elon",
+   "mint": "4i5y8ULNaqLR7VyvGDmXDHcik3HYDZsAeWYstRLNpump",
+   "age_s": 3,
+   "sol_in": 2.4,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 16.7,
+   "mcap_sol": 32.6,
+   "dev_pct": 0.0,
+   "big_sell": 1.25,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "SOL in 2.4/2.5 · buys 1/6 · buy share 50%/65%"
+  },
+  {
+   "symbol": "DOG",
+   "name": "Dogcoin",
+   "mint": "EfGwDkfCotdohEr57Xw8wt4oDZcpafoSMkKZ5YcWpump",
+   "age_s": 5,
+   "sol_in": 0.47,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 3.1,
+   "mcap_sol": 30.3,
+   "dev_pct": 2.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "SOL in 0.5/2.5 · buys 1/6 · rise +3%/+12%"
+  }
+ ],
+ "strategies": [
+  "new_pairs"
+ ]
+}
