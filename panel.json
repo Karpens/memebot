@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T02:33:46Z",
+ "updated": "2026-11-26T02:35:52Z",
  "mode": "paper",
  "start_balance": 70.0,
- "balance": 54.92,
- "equity": 54.92,
+ "balance": 52.24,
+ "equity": 56.8,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -19,14 +19,14 @@
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 377,
-  "flagged": 12,
-  "checked": 37,
+  "scans": 384,
+  "flagged": 13,
+  "checked": 38,
   "filtered": 1,
-  "lines": 35,
+  "lines": 42,
   "last_rug": {
-   "coin": "Zero",
-   "pass": false
+   "coin": "NETHER",
+   "pass": true
   }
  },
  "flags": [
@@ -39,6 +39,11 @@
    "coin": "Zero",
    "why": "holders +6%",
    "t": "2026-11-26T02:14:27Z"
+  },
+  {
+   "coin": "NETHER",
+   "why": "holders +148%",
+   "t": "2026-11-26T02:34:36Z"
   }
  ],
  "curve": [
@@ -161,12 +166,47 @@
   [
    1795660402,
    54.92
+  ],
+  [
+   1795660468,
+   54.92
+  ],
+  [
+   1795660535,
+   56.58
   ]
  ],
  "position_pct": 12.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "NETHER",
+   "cost": 6.59,
+   "value": 8.46,
+   "pnl_pct": 28.4,
+   "opened": "2026-11-26T02:34:36Z",
+   "url": "https://dexscreener.com/solana/astcqnj7yqbfd6ndkgjctnvdavmyppedywtmapl56cr",
+   "reason": "buys 56% · holders +148%",
+   "size_pct": 12.0,
+   "entry_price": 4.373260208402422e-05,
+   "price": 6.079652874817602e-05,
+   "slip": 2.26,
+   "tp1_done": true,
+   "hist": [
+    4.373260208402422e-05,
+    5.042292321758979e-05,
+    4.843057191569209e-05,
+    5.724148188509506e-05,
+    5.57688775443687e-05,
+    5.557571794316276e-05,
+    5.718421216635285e-05,
+    5.785063436766539e-05,
+    5.606847332274951e-05,
+    6.079652874817602e-05
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "Grodia",
@@ -1232,6 +1272,62 @@
    "coin": null,
    "action": "scan",
    "text": "scanned 49 new coins · 48 pairs · 3 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:34:36Z",
+   "time": "03:34:36",
+   "agent": "SCANNER",
+   "coin": "NETHER",
+   "action": "flag",
+   "text": "flagged · raydium · liq $15.3k · 5m $21.0k · buys 56% · holders +148%"
+  },
+  {
+   "t": "2026-11-26T02:34:36Z",
+   "time": "03:34:36",
+   "agent": "NEWS",
+   "coin": "NETHER",
+   "action": "news",
+   "text": "promo: X @nethercash · web"
+  },
+  {
+   "t": "2026-11-26T02:34:36Z",
+   "time": "03:34:36",
+   "agent": "RUG CHECK",
+   "coin": "NETHER",
+   "action": "pass",
+   "text": "PASS · mint & freeze revoked · LP locked · 499 holders"
+  },
+  {
+   "t": "2026-11-26T02:34:36Z",
+   "time": "03:34:36",
+   "agent": "SIZER",
+   "coin": "NETHER",
+   "action": "size",
+   "text": "12% of $54.92 = $6.59"
+  },
+  {
+   "t": "2026-11-26T02:34:36Z",
+   "time": "03:34:36",
+   "agent": "EXECUTOR",
+   "coin": "NETHER",
+   "action": "enter",
+   "text": "ENTER NETHER at 0.0000437326 · slip 2.3% · buys 56% · holders +148%"
+  },
+  {
+   "t": "2026-11-26T02:34:53Z",
+   "time": "03:34:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 47 new coins · 46 pairs · 2 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:35:01Z",
+   "time": "03:35:01",
+   "agent": "EXECUTOR",
+   "coin": "NETHER",
+   "action": "take",
+   "text": "TP +31% · sold 50% for $3.91"
   }
  ],
  "nights": [
