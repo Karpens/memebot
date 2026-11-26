@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:54:34Z",
+ "updated": "2026-11-26T12:55:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 23,
   "checked": 23,
   "filtered": 2,
-  "lines": 357,
+  "lines": 358,
   "last_rug": {
    "coin": "SATNA",
    "pass": true
@@ -1418,15 +1418,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T10:26:48Z",
-   "time": "11:26:48",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 6 watched · 13 rejected (dev bought 5, serial launcher 3, mayhem mode 2) · closest KONINUCHIWA: too young: 23 s (min 45 s)",
-   "n": 158
-  },
   {
    "t": "2026-11-26T10:27:49Z",
    "time": "11:27:49",
@@ -3217,6 +3208,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 5 watched · 6 rejected (dev bought 3, mayhem mode 2, dump 1) · closest EUTO: too young: 38 s (min 45 s)",
    "n": 357
+  },
+  {
+   "t": "2026-11-26T12:54:36Z",
+   "time": "13:54:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 5 watched · 4 rejected (dev bought 2, mayhem mode 2) · closest EUTO: SOL in 1.9/2.5 · buy share 43%/65%",
+   "n": 358
   }
  ],
  "nights": [
@@ -3259,7 +3259,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3267,15 +3267,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 234,
-    "last_event_age_s": 9.2,
+    "events": 236,
+    "last_event_age_s": 13.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4993,
+    "events": 5056,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -3283,8 +3283,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 151,
-    "last_event_age_s": 8.7,
+    "events": 153,
+    "last_event_age_s": 12.6,
     "errors": 13,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3297,9 +3297,9 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 3.8,
-  "watching": 5,
-  "followed": 7
+  "creates_per_min": 3.4,
+  "watching": 6,
+  "followed": 9
  },
  "learner": {
   "samples": 106,
@@ -3344,23 +3344,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2389,
+   "sent": 2419,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2389,
+   "sent": 2419,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "招き猫",
+   "name": "Maneki-Neko",
+   "mint": "4FPkbKkwaJbPxAekYrMqqxPFauqVES3yXyZhQeTuUjd5",
+   "age_s": 13,
+   "sol_in": 2.18,
+   "buys": 4,
+   "sells": 6,
+   "rise_pct": 13.6,
+   "mcap_sol": 38.6,
+   "dev_pct": 9.9,
+   "big_sell": 2.4,
+   "x": "https://x.com/StepCoinsol8/status/2125936280500609253",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
+   "symbol": "Pompom",
+   "name": "Pompompurin",
+   "mint": "8MVzM59XVbUTAUyRoQp9m29zNvMnxda6Wp21Cfy6R9Fi",
+   "age_s": 25,
+   "sol_in": -0.99,
+   "buys": 1,
+   "sells": 3,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 1.0,
+   "x": "https://x.com/i/status/2125548259917680702",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 5 s (min 45 s)"
+  },
+  {
    "symbol": "ALFIE",
    "name": "Alfie",
    "mint": "Cyd23sQTE6xYFU2NPbJ3MgFXj1oxntqGmAq925ycbBRq",
-   "age_s": 9,
+   "age_s": 37,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 0,
@@ -3378,7 +3414,7 @@
    "symbol": "CLM",
    "name": "Cat Labs M",
    "mint": "Gz3DZRyM3Zm5T2a2RRcTvmTQm1TiMco67n1pvFuwpump",
-   "age_s": 18,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3396,25 +3432,25 @@
    "symbol": "SHARES",
    "name": "Shares",
    "mint": "FMNzJaAddC38wbj496EStTw8hXw3gmLr6JqMUhe15TkF",
-   "age_s": 38,
-   "sol_in": 0.28,
+   "age_s": 66,
+   "sol_in": -0.2,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 1.8,
-   "mcap_sol": 29.4,
+   "sells": 2,
+   "rise_pct": -1.3,
+   "mcap_sol": 28.5,
    "dev_pct": 1.7,
-   "big_sell": 0.0,
+   "big_sell": 0.24,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 15 s (min 45 s)"
+   "why": "SOL in -0.2/2.5 · buys 2/6 · buy share 50%/65% · rise -1%/+12%"
   },
   {
    "symbol": "RAVI",
    "name": "RAVI",
    "mint": "8pLWSjLBGm72CThMHya3FHo8t5aEqgg82aJKMwA1pump",
-   "age_s": 77,
+   "age_s": 105,
    "sol_in": 0.07,
    "buys": 3,
    "sells": 0,
@@ -3432,7 +3468,7 @@
    "symbol": "PEACE",
    "name": "Peace Sign",
    "mint": "6D8x824s8uj6NGvepqimbE1Wpc3byyN4ZqZ9i88MnDoy",
-   "age_s": 81,
+   "age_s": 109,
    "sol_in": -0.18,
    "buys": 1,
    "sells": 2,
@@ -3450,10 +3486,10 @@
    "symbol": "EUTO",
    "name": "Euto Protocol",
    "mint": "5o6gToZc6f7qvDEoSjTiqdeGTunPg7SQPQjUUJrPpump",
-   "age_s": 108,
-   "sol_in": 1.93,
+   "age_s": 136,
+   "sol_in": 1.92,
    "buys": 6,
-   "sells": 8,
+   "sells": 9,
    "rise_pct": 12.8,
    "mcap_sol": 33.7,
    "dev_pct": 3.4,
@@ -3462,13 +3498,13 @@
    "tg": false,
    "web": "https://eutoprotocol.xyz/",
    "status": "watching",
-   "why": "SOL in 1.9/2.5 · buy share 43%/65%"
+   "why": "SOL in 1.9/2.5 · buy share 40%/65%"
   },
   {
    "symbol": "$CHILL",
    "name": "Chill capybara",
    "mint": "2k5Z5y5Thg278nZGPMR8xxXHZ7hMK75nxCsKpXSypump",
-   "age_s": 109,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3486,7 +3522,7 @@
    "symbol": "TWOSHARES",
    "name": "Two Shares",
    "mint": "BsGh3mijkDdNLwGM2iEuP5n1cFJ4ArWiz7rG7k4Ppump",
-   "age_s": 123,
+   "age_s": 151,
    "sol_in": 20.48,
    "buys": 7,
    "sells": 0,
@@ -3504,12 +3540,12 @@
    "symbol": "Archie",
    "name": "ArchieCoin",
    "mint": "FcCDsAs9qd3okbPRojwSw1aTZdxiqVaUqauYWyYQotcR",
-   "age_s": 129,
-   "sol_in": 2.02,
-   "buys": 41,
-   "sells": 43,
-   "rise_pct": 11.9,
-   "mcap_sol": 42.4,
+   "age_s": 157,
+   "sol_in": -3.31,
+   "buys": 43,
+   "sells": 55,
+   "rise_pct": -18.1,
+   "mcap_sol": 31.1,
    "dev_pct": 15.2,
    "big_sell": 13.11,
    "x": "https://x.com/MarioPrezldente/status/2125935705830662436",
