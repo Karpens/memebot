@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:55:06Z",
+ "updated": "2026-11-26T16:55:33Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 37,
   "checked": 34,
   "filtered": 7,
-  "lines": 656,
+  "lines": 657,
   "last_rug": {
    "coin": "skewerz",
    "pass": false
@@ -1952,6 +1952,10 @@
   [
    1795712053,
    84.53
+  ],
+  [
+   1795712113,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2426,15 +2430,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T14:20:21Z",
-   "time": "15:20:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 15.6 a minute · 1 watched · 39 rejected (serial launcher 35, dev bought 2, mayhem mode 2) · closest USDT COIN: too young: 19 s (min 45 s)",
-   "n": 457
-  },
   {
    "t": "2026-11-26T14:21:22Z",
    "time": "15:21:22",
@@ -4225,6 +4220,15 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 5 watched · 9 rejected (serial launcher 4, mayhem mode 3, dump 1) · closest TYCOON: SOL in 0.4/2.5 · buys 3/6 · buy share 33%/65% · rise +3%/+12%",
    "n": 656
+  },
+  {
+   "t": "2026-11-26T16:55:27Z",
+   "time": "17:55:27",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 4 watched · 7 rejected (serial launcher 3, mayhem mode 3, dump 1) · closest PIPE: too young: 5 s (min 45 s)",
+   "n": 657
   }
  ],
  "nights": [
@@ -4267,7 +4271,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4275,24 +4279,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 249,
-    "last_event_age_s": 46.8,
+    "events": 253,
+    "last_event_age_s": 2.2,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3549,
-    "last_event_age_s": 2.1,
+    "events": 3558,
+    "last_event_age_s": 1.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 182,
-    "last_event_age_s": 46.2,
+    "events": 185,
+    "last_event_age_s": 1.6,
     "errors": 12,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4305,9 +4309,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 4.0,
-  "watching": 3,
-  "followed": 7
+  "creates_per_min": 4.2,
+  "watching": 5,
+  "followed": 10
  },
  "learner": {
   "samples": 107,
@@ -4353,23 +4357,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2521,
+   "sent": 2549,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2555,
+   "sent": 2583,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$KURO",
+   "name": "KURO",
+   "mint": "H33875bkQoH5gzeM7hjRAzBZfN1wfCTNuBLP5AE7pump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/WhaleInsider/status/2125984923387674791",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "TOLY",
+   "name": "toly 🇺🇸",
+   "mint": "4McG7g7cp8QgdUvFczdU65WkKBivE1JDVm8b5BrE7QSY",
+   "age_s": 4,
+   "sol_in": -6.06,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -30.2,
+   "mcap_sol": 29.6,
+   "dev_pct": 20.1,
+   "big_sell": 18.63,
+   "x": "https://x.com/toly/status/2125996862952083828",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 20.1% (max 8%)",
+   "why": "dev bought 20.1% (max 8%)"
+  },
+  {
+   "symbol": "KEYFALL",
+   "name": "KEYFALL",
+   "mint": "4oj48F5DmAc6NetPty14AXpEPWpF6JkZazyodp3Gpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.6,
+   "dev_pct": 3.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/PlayKeyfall",
+   "tg": false,
+   "web": "https://keyfall.jdollar.site",
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
    "symbol": "BAGWORKER",
    "name": "BAGWORKER",
    "mint": "CRZ4FNE92c7g1nWfTa49tAGT5tHaV3rVfqJqCCsKpump",
-   "age_s": 46,
+   "age_s": 73,
    "sol_in": -0.9,
    "buys": 5,
    "sells": 2,
@@ -4387,7 +4445,7 @@
    "symbol": "ANGEL",
    "name": "DeadBullLabs",
    "mint": "97Q9T7A14gkSmDMUniTDpwgA4ppm3rg3ZkTyYPWdpump",
-   "age_s": 48,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4405,7 +4463,7 @@
    "symbol": "RB",
    "name": "ROGUES BUM",
    "mint": "8khQEgzLiPtPsQqvZ5guEUKsshjyARAf8gEFC5W3pump",
-   "age_s": 53,
+   "age_s": 80,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4423,7 +4481,7 @@
    "symbol": "THANKFULIN",
    "name": "Thankful Inu",
    "mint": "HRPyKBmxBzo1VS11gEoc2SytooJV2ghotbGVTVMSpump",
-   "age_s": 63,
+   "age_s": 90,
    "sol_in": 0.05,
    "buys": 2,
    "sells": 0,
@@ -4441,7 +4499,7 @@
    "symbol": "HONK",
    "name": "GOOSE",
    "mint": "668Fphnhy5o59FhoksX74tuuaktFuMMTCaocfYsZpump",
-   "age_s": 98,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4459,7 +4517,7 @@
    "symbol": "BRIBILI",
    "name": "BRIBILI",
    "mint": "mrbKpSuuqAm8apcKUNp28HiKGB9H8mqinK2J9Hhpump",
-   "age_s": 99,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -4477,7 +4535,7 @@
    "symbol": "STEVE",
    "name": "The Original Steve",
    "mint": "3ynHw4zW45wJSrgP1uU2GvZEtdB2swLPGo422Vva2bfC",
-   "age_s": 114,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4495,7 +4553,7 @@
    "symbol": "Zazu",
    "name": "Zazu",
    "mint": "GDzg6YSvPnhhW5QBkbpqCHMzEdnkqi81rUfn9ve9pump",
-   "age_s": 117,
+   "age_s": 144,
    "sol_in": -1.91,
    "buys": 5,
    "sells": 7,
@@ -4513,7 +4571,7 @@
    "symbol": "PIPE",
    "name": "Pipe Coin",
    "mint": "GMBnwsrka4dRvb6qxcMkMVJQ9RHHYnwkGcyYooYLpump",
-   "age_s": 132,
+   "age_s": 159,
    "sol_in": 0.14,
    "buys": 2,
    "sells": 0,
@@ -4531,37 +4589,19 @@
    "symbol": "Nala Cat",
    "name": "Nala Cat",
    "mint": "FpJ7Jm5H9hDR9dwun3cktHw7p7VKrbriTmbvvyu7pump",
-   "age_s": 135,
+   "age_s": 162,
    "sol_in": 0.04,
-   "buys": 4,
-   "sells": 0,
+   "buys": 5,
+   "sells": 1,
    "rise_pct": 0.3,
    "mcap_sol": 28.3,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "CHSz2CS8XuuPZ1J9x5DGKsYdRoBLFNtfDpSMmbDKpump",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
