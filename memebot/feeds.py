@@ -623,6 +623,8 @@ class _Curves(Feed):
         ev = {"kind": "curve", "mint": mint, "key": key, "price_sol": d["price_sol"], "vtok": d["vtok"],
               "vsol": d["vsol"], "rtok": d["rtok"], "rsol": d["rsol"], "complete": d["complete"], "slot": slot,
               "t": t, "src": self.src}
+        if "disc_ok" in d:
+            ev["disc_ok"] = d["disc_ok"]
         return 1 if self._emit(ev) else 0
 
 
@@ -769,6 +771,8 @@ class CurvePoller(_Curves):
             self._nulls.pop(mint, None)
             self._gone.discard(mint)
         d = decode_curve(raw)
+        if d is not None:
+            d["disc_ok"] = bytes(raw[:8]) == CURVE_DISC
         if d is None:
             self._error("%s: not a curve account (%d bytes)" % (mint[:8], len(raw)))
             return 0
@@ -910,6 +914,8 @@ class CurveSocket(_Curves, _Reconnecting):
         if raw is None:                 # a closed account: the poller reports curve_gone
             return
         d = decode_curve(raw)
+        if d is not None:
+            d["disc_ok"] = bytes(raw[:8]) == CURVE_DISC
         if d is None:
             self._error("%s: not a curve account" % tag[0][:8])
             return

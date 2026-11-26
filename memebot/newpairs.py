@@ -78,6 +78,7 @@ DEFAULTS = {
     "np_dump_sol": 2.0,             # one sell this big since launch rejects; after entry it exits
     "np_need_social": True,         # at least one of X, Telegram, website in the metadata
     "np_serial_window_min": 60,     # a creator who launched another coin this recently: serial
+    "np_serial_max": 0,             # other launches by the same creator allowed in that window
     # RUG CHECK, RugCheck's report (fetched by the bot in a worker thread)
     "np_rug_timeout_s": 3.0,        # no report this fast: no entry on this reading (caller's timer)
     "np_rug_cache_s": 30,           # the caller keeps a report this long
@@ -591,6 +592,12 @@ class Watchlist(object):
         coin = self.get(mint)
         if coin is None:
             return None
+        if isinstance(reading, dict) and reading.get("disc_ok") is False:
+            # the account is not a pump.fun bonding curve (another launchpad, or a key we were sent wrong): its
+            # bytes read as reserves are nonsense (a "+4050 %" coin in the dry run), so it is never traded
+            if coin.status == WATCHING:
+                self.reject(coin, "not a pump.fun bonding curve")
+            return None
         r = read_curve(reading)
         if r is None:
             # a migrated curve can read with its reserves zeroed (feeds.py still sends it): the
@@ -770,7 +777,7 @@ def cheap_check(coin, cfg=None):
     cap = _c(cfg, "np_max_dev_pct")
     if coin.dev_pct > cap + EPS:
         bad.append("dev bought %.1f%% (max %s%%)" % (coin.dev_pct, _g(cap)))
-    if coin.serial > 0:
+    if coin.serial > max(0, int(_c(cfg, "np_serial_max"))):
         bad.append("serial launcher: %d more coin%s in %s min" % (
             coin.serial, "" if coin.serial == 1 else "s", _g(_c(cfg, "np_serial_window_min"))))
     if _on(cfg, "np_need_social") and coin.meta is not None and not has_social(coin.meta):

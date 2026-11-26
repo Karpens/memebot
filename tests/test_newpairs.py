@@ -837,3 +837,51 @@ class Garbage(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DryRunFixes(unittest.TestCase):
+    """What the first dry run on GitHub Actions showed (2026-11-26): every coin was rejected (socials, a second
+    launch by the same creator), and a coin whose account was not a pump.fun curve read as +4050 %."""
+
+    def wl(self, **kw):
+        cfg = dict(npm.DEFAULTS)
+        cfg.update(kw)
+        return npm.Watchlist(cfg), cfg
+
+    def create(self, mint, creator="dev1", t=0.0):
+        return {"txType": "create", "mint": mint, "symbol": mint.upper(), "name": mint, "traderPublicKey": creator,
+                "initialBuy": 10_000_000.0, "solAmount": 0.3, "bondingCurveKey": "curve-" + mint,
+                "vTokensInBondingCurve": 1_062_000_000.0, "vSolInBondingCurve": 30.3, "marketCapSol": 28.5,
+                "uri": "", "is_mayhem_mode": False, "pool": "pump", "_rx": t}
+
+    def test_one_other_launch_is_allowed_when_np_serial_max_is_1(self):
+        wl, cfg = self.wl(np_serial_max=1)
+        wl.on_create(self.create("aaa"), 0.0)
+        b = wl.on_create(self.create("bbb"), 60.0)
+        ok, why = npm.cheap_check(b, cfg)
+        self.assertFalse(any(w.startswith("serial launcher") for w in why), why)
+        c = wl.on_create(self.create("ccc"), 120.0)
+        ok, why = npm.cheap_check(c, cfg)
+        self.assertTrue(any(w.startswith("serial launcher: 2 more coins") for w in why), why)
+
+    def test_the_default_still_rejects_a_second_launch(self):
+        wl, cfg = self.wl()
+        wl.on_create(self.create("aaa"), 0.0)
+        b = wl.on_create(self.create("bbb"), 60.0)
+        self.assertTrue(any(w.startswith("serial launcher") for w in npm.cheap_check(b, cfg)[1]))
+
+    def test_no_social_link_is_no_rejection_when_not_needed(self):
+        wl, cfg = self.wl(np_need_social=False)
+        c = wl.on_create(self.create("aaa"), 0.0)
+        wl.on_meta("aaa", {"name": "a"})
+        self.assertNotIn("no social link", npm.cheap_check(c, cfg)[1])
+
+    def test_an_account_that_is_not_a_pump_fun_curve_is_rejected_and_never_read(self):
+        wl, cfg = self.wl()
+        c = wl.on_create(self.create("aaa"), 0.0)
+        r = {"kind": "curve", "mint": "aaa", "vtok": int(1e15), "vsol": int(1e12), "rtok": 0, "rsol": int(9e11),
+             "price_sol": 1e-3, "complete": False, "slot": 5, "disc_ok": False}
+        self.assertIsNone(wl.on_curve("aaa", r, 1.0))
+        self.assertTrue(c.status.startswith("rejected: not a pump.fun bonding curve"), c.status)
+        self.assertEqual(c.readings, 0)
+

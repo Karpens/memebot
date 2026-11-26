@@ -1069,7 +1069,7 @@ class Speed(unittest.TestCase):
                      "market cap is at most %g SOL" % c["np_max_mcap_sol"],
                      "the creator bought at most %g%% of the supply" % c["np_max_dev_pct"],
                      "no single sell of %g SOL or more" % c["np_dump_sol"],
-                     "another launch in the last %d minutes" % c["np_serial_window_min"],
+                     "%d or more other launches in the last %d minutes" % (c["np_serial_max"] + 1, c["np_serial_window_min"]),
                      "a RugCheck report within %g seconds" % c["np_rug_timeout_s"],
                      "no single holder above %g%%" % c["np_max_holder_pct"],
                      "the top 10 holders at most %g%%" % c["np_max_top10_pct"],
