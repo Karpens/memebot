@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T20:31:08Z",
+ "updated": "2026-11-26T20:31:42Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.97,
@@ -22,11 +22,11 @@
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
   "flagged": 60,
-  "checked": 45,
+  "checked": 46,
   "filtered": 9,
-  "lines": 962,
+  "lines": 967,
   "last_rug": {
-   "coin": "RCAT",
+   "coin": "TOPH",
    "pass": true
   }
  },
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795689061,
-   87.14
-  ],
   [
    1795689121,
    87.14
@@ -2472,6 +2468,10 @@
   [
    1795725013,
    82.97
+  ],
+  [
+   1795725073,
+   82.97
   ]
  ],
  "position_pct": 10.0,
@@ -3036,51 +3036,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T18:14:15Z",
-   "time": "19:14:15",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.2 a minute · 6 watched · 15 rejected (serial launcher 9, dev bought 3, mayhem mode 2) · closest Plony: too young: 10 s (min 45 s)",
-   "n": 763
-  },
-  {
-   "t": "2026-11-26T18:15:15Z",
-   "time": "19:15:15",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 7 watched · 11 rejected (dev bought 4, serial launcher 3, mayhem mode 3) · closest CRACKVERA: buy share 33%/65%",
-   "n": 764
-  },
-  {
-   "t": "2026-11-26T18:16:16Z",
-   "time": "19:16:16",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.2 a minute · 6 watched · 13 rejected (dev bought 6, mayhem mode 3, dump 2) · closest mm: too young: 9 s (min 45 s)",
-   "n": 765
-  },
-  {
-   "t": "2026-11-26T18:17:16Z",
-   "time": "19:17:16",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 6 watched · 10 rejected (dev bought 5, mayhem mode 2, no symbol or name 2) · closest mm: SOL in 0.1/2.5 · buys 2/6 · rise +1%/+12%",
-   "n": 766
-  },
-  {
-   "t": "2026-11-26T18:18:17Z",
-   "time": "19:18:17",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 4 watched · 12 rejected (dev bought 4, no symbol or name 3, dump 2) · closest MANTLE: too young: 4 s (min 45 s)",
-   "n": 767
-  },
   {
    "t": "2026-11-26T18:19:17Z",
    "time": "19:19:17",
@@ -4835,6 +4790,51 @@
    "action": "wait",
    "text": "waiting: RugCheck sees 7 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
    "n": 962
+  },
+  {
+   "t": "2026-11-26T20:31:12Z",
+   "time": "21:31:12",
+   "agent": "RUG CHECK",
+   "coin": "TOPH",
+   "action": "pass",
+   "text": "PASS · 10 holders · top holder 5.0% · top 10 15% (curve left out)",
+   "n": 963
+  },
+  {
+   "t": "2026-11-26T20:31:12Z",
+   "time": "21:31:12",
+   "agent": "LEARNER",
+   "coin": "TOPH",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 11.6% · news:0-2 -16.8% over 13.5, tier:scalp -16.8% over 13.5",
+   "n": 964
+  },
+  {
+   "t": "2026-11-26T20:31:12Z",
+   "time": "21:31:12",
+   "agent": "LEARNER",
+   "coin": "TOPH",
+   "action": "shadow",
+   "text": "SHADOW TOPH · not bought (learner skip) · followed as if bought: $8.30 at 0.0000029412 (curve maths, every cost) · same exits, outside the book",
+   "n": 965
+  },
+  {
+   "t": "2026-11-26T20:31:16Z",
+   "time": "21:31:16",
+   "agent": "LEARNER",
+   "coin": "TOPH",
+   "action": "shadow",
+   "text": "SHADOW TOPH would have made -34.3% (dump: 5.7 SOL sold) · learned x0.5 · np:sol:3-6 now avg -23.6% over 8",
+   "n": 966
+  },
+  {
+   "t": "2026-11-26T20:31:23Z",
+   "time": "21:31:23",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 7.0 a minute · 3 watched · 18 rejected (serial launcher 7, dump 6, mayhem mode 3) · closest CONGA4: too young: 1 s (min 45 s)",
+   "n": 967
   }
  ],
  "nights": [
@@ -4879,7 +4879,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4887,15 +4887,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1996,
-    "last_event_age_s": 7.5,
+    "events": 2001,
+    "last_event_age_s": 0.1,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27150,
+    "events": 27202,
     "last_event_age_s": 0.3,
     "errors": 8,
     "last_error": "timeout after 5 s"
@@ -4903,9 +4903,9 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1378,
-    "last_event_age_s": 14.9,
-    "errors": 134,
+    "events": 1382,
+    "last_event_age_s": 0.5,
+    "errors": 135,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -4917,13 +4917,13 @@
   "exit_ms": 34.5,
   "exit_last_ms": 44,
   "launch_to_entry_s": 36.0,
-  "creates_per_min": 7.2,
-  "watching": 5,
-  "followed": 21
+  "creates_per_min": 7.4,
+  "watching": 6,
+  "followed": 20
  },
  "learner": {
   "samples": 109,
-  "skipped": 24,
+  "skipped": 25,
   "explored": 6,
   "min_samples": 8,
   "best": [
@@ -4945,47 +4945,137 @@
   ],
   "worst": [
    {
+    "label": "np:sol:3-6",
+    "n": 8,
+    "avg": -23.6
+   },
+   {
     "label": "tier:scalp",
     "n": 14,
-    "avg": -16.8
+    "avg": -17.4
    },
    {
     "label": "news:0-2",
     "n": 14,
-    "avg": -16.8
-   },
-   {
-    "label": "hour:day",
-    "n": 18,
-    "avg": -14.9
+    "avg": -17.4
    }
   ],
-  "shadows": 8
+  "shadows": 9
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16322,
+   "sent": 16358,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16356,
+   "sent": 16392,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "POT",
+   "name": "Motte Pot",
+   "mint": "71ma8pkVa26VXHDfphiXtucisB2dM75xvWFDFwwnxRvL",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "NAGI",
+   "name": "FOMO NAGI",
+   "mint": "4AP14oGF4kQBJi9MuwGkAZ9CmTrnp54kXaygp89Rpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "MOTTE",
+   "name": "Motte",
+   "mint": "HLregsFdJgh5q2cQ32j5s5oDifPECZBYLLBBGJKbQ85w",
+   "age_s": 10,
+   "sol_in": 10.17,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 79.3,
+   "mcap_sol": 50.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.29,
+   "x": "https://x.com/MotteFun",
+   "tg": false,
+   "web": "https://mottefun.xyz",
+   "status": "watching",
+   "why": "too young: 10 s (min 45 s)"
+  },
+  {
+   "symbol": "CONGA8",
+   "name": "Conga #8",
+   "mint": "9pNjYqbJvdMLj1RFS1zSovPHPSz1o9qTp24q8ZH6GHXF",
+   "age_s": 15,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 237323.5,
+   "mcap_sol": 66381.3,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
+   "tg": false,
+   "web": "https://conga.monster",
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "SUPERROACH",
+   "name": "The Super Cockroach",
+   "mint": "GFjDYE2bzTNGNxQDqD5ahAXkQUQEzikJFF1BGR1iCTmb",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -100.0,
+   "mcap_sol": 0.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 33 more coins in 60 min",
+   "why": "serial launcher: 33 more coins in 60 min"
+  },
+  {
    "symbol": "SAFKTE",
    "name": "Saffron Kite",
    "mint": "EJ6VTzNtNnuzj6SxSDswgDrQwdWxTMTUzxKKSFFAyu8k",
-   "age_s": 15,
-   "sol_in": -1.26,
-   "buys": 3,
+   "age_s": 49,
+   "sol_in": -1.25,
+   "buys": 4,
    "sells": 2,
-   "rise_pct": -7.9,
+   "rise_pct": -7.8,
    "mcap_sol": 28.0,
    "dev_pct": 4.4,
    "big_sell": 3.16,
@@ -4999,12 +5089,12 @@
    "symbol": "Wrapped",
    "name": "TrenchWrapped",
    "mint": "EoqWcAqR1yZdHSmAosVNppRxys1qgsenwCf77Zvipump",
-   "age_s": 19,
-   "sol_in": -0.94,
+   "age_s": 53,
+   "sol_in": -0.99,
    "buys": 8,
-   "sells": 3,
-   "rise_pct": -6.0,
-   "mcap_sol": 28.1,
+   "sells": 4,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 20.96,
    "x": "https://x.com/trenchwrapped26",
@@ -5017,7 +5107,7 @@
    "symbol": "ZCOIN",
    "name": "Zolana Coin",
    "mint": "8JD8Nput2qMPPLjZFgbtPqhdsSZfy4hty1U1Reobpump",
-   "age_s": 28,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5035,7 +5125,7 @@
    "symbol": "COCKROACH",
    "name": "Super Cockroach",
    "mint": "3E2oNFi2vSbDu88bbZWrQsjZDGgYEnkxeiHdWwoBR3YT",
-   "age_s": 29,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5053,7 +5143,7 @@
    "symbol": "pizzadan",
    "name": "pizzadan",
    "mint": "AaXsW6LPdfqtBkKBkJwLmgw5DVf9q8TvnWLtPf4wpump",
-   "age_s": 43,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5071,25 +5161,25 @@
    "symbol": "GOBL",
    "name": "Gobble",
    "mint": "6fBL6eotU9mvMbWwbTPuSHRPZiDZAhenLnx5iorHpump",
-   "age_s": 44,
-   "sol_in": 0.04,
+   "age_s": 78,
+   "sol_in": 0.0,
    "buys": 2,
-   "sells": 3,
-   "rise_pct": 0.2,
-   "mcap_sol": 29.0,
+   "sells": 4,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
    "dev_pct": 1.7,
    "big_sell": 0.49,
    "x": "https://x.com/elonmusk/status/2126045116624216127",
    "tg": false,
    "web": "https://x.com/elonmusk",
    "status": "watching",
-   "why": "too young: 23 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · buys 2/6 · buy share 33%/65% · rise +0%/+12%"
   },
   {
    "symbol": "MCAT",
    "name": "Talent Manager Cat",
    "mint": "H1mTedLXZwVshufQBU2J4y5JEnDRtDZMGuvaArfckH4f",
-   "age_s": 52,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5107,7 +5197,7 @@
    "symbol": "CONGA6",
    "name": "Conga #6",
    "mint": "3qsQiNRdTu16ye3k57pdQNbrQyQKNiAxS5pakjDc3mfV",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": 0.04,
    "buys": 1,
    "sells": 0,
@@ -5125,7 +5215,7 @@
    "symbol": "ZCOIN",
    "name": "Zolana Coin",
    "mint": "3qZ2x392nN1ENusw6meoUh2aGVrNFp2FGJ4F34CHpump",
-   "age_s": 67,
+   "age_s": 101,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5143,7 +5233,7 @@
    "symbol": "PANE",
    "name": "PaneApp",
    "mint": "87QXc778bhhz7BNVxsQ8d6pkZQkMRxiQAxQgJdXjpump",
-   "age_s": 68,
+   "age_s": 102,
    "sol_in": -0.99,
    "buys": 20,
    "sells": 10,
@@ -5161,12 +5251,12 @@
    "symbol": "coin",
    "name": "coin",
    "mint": "Wj1JvR4mSwzsq58Wc3crt6LKMst6mPmeH93gBJxpump",
-   "age_s": 75,
-   "sol_in": 27.2,
-   "buys": 29,
-   "sells": 38,
-   "rise_pct": 257.1,
-   "mcap_sol": 103.7,
+   "age_s": 109,
+   "sol_in": 25.86,
+   "buys": 37,
+   "sells": 50,
+   "rise_pct": 240.7,
+   "mcap_sol": 98.9,
    "dev_pct": 2.0,
    "big_sell": 6.55,
    "x": "https://x.com/kooleyyx/status/2126050499107422594?a=qhxR1-GmCCQ2ZsBJRs8&s=20",
@@ -5179,7 +5269,7 @@
    "symbol": "$GC",
    "name": "Gamble Coin",
    "mint": "xXVgVA7a6KJZxzg1aSoiAbknagFAo4JdD98wre5pump",
-   "age_s": 77,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5197,12 +5287,12 @@
    "symbol": "TA",
    "name": "Tel Avinu",
    "mint": "72yW5ZUqgd5hSEGdN3uVTXiVg1vV4AV9idhaDvimSyuH",
-   "age_s": 82,
-   "sol_in": -3.12,
+   "age_s": 116,
+   "sol_in": -3.36,
    "buys": 2,
-   "sells": 4,
-   "rise_pct": -17.5,
-   "mcap_sol": 29.5,
+   "sells": 5,
+   "rise_pct": -18.8,
+   "mcap_sol": 29.1,
    "dev_pct": 12.5,
    "big_sell": 8.4,
    "x": false,
@@ -5215,7 +5305,7 @@
    "symbol": "CONGA5",
    "name": "Conga #5",
    "mint": "2JEvsZCDCAm7KA74w8uA4MghJEcAyqUjXM3vHYWbGZGR",
-   "age_s": 83,
+   "age_s": 117,
    "sol_in": 0.04,
    "buys": 1,
    "sells": 0,
@@ -5233,7 +5323,7 @@
    "symbol": "CONGA4",
    "name": "Conga #4",
    "mint": "GiGV3SeWKzTbWbTvfe2v1TTCqERpRHURfy1F8f7AkxcE",
-   "age_s": 113,
+   "age_s": 147,
    "sol_in": 0.05,
    "buys": 1,
    "sells": 0,
@@ -5246,102 +5336,32 @@
    "web": "https://conga.monster",
    "status": "watching",
    "why": "too young: 1 s (min 45 s)"
-  },
-  {
-   "symbol": "SUPEPE",
-   "name": "SuPepe",
-   "mint": "D92jvfiMHgaDLNg1VzCKWWim9ZunP73V83UYpKfuoGar",
-   "age_s": 142,
-   "sol_in": 0.37,
-   "buys": 5,
-   "sells": 6,
-   "rise_pct": 2.5,
-   "mcap_sol": 28.7,
-   "dev_pct": 0.0,
-   "big_sell": 3.32,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dump: 2.2 SOL sold",
-   "why": "dump: 2.2 SOL sold"
-  },
-  {
-   "symbol": "TOPH",
-   "name": "Tophooks",
-   "mint": "2VPyWMTxVtNHbKkJrKjuerQCDBfWVrCJU8oA7BnPpump",
-   "age_s": 142,
-   "sol_in": 3.52,
-   "buys": 8,
-   "sells": 3,
-   "rise_pct": 23.6,
-   "mcap_sol": 38.0,
-   "dev_pct": 5.0,
-   "big_sell": 0.89,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "momentum · 3.5 SOL in · 8/11 buys (73%) · +24% since launch · mcap 38 SOL · 125 s old"
-  },
-  {
-   "symbol": "CONGA3",
-   "name": "Conga #3",
-   "mint": "6DHBHbpxCDu72ZdoNGSAXDc6QB9sxGyM4tEqcmsvrW2r",
-   "age_s": 143,
-   "sol_in": 2178.48,
-   "buys": 7,
-   "sells": 4,
-   "rise_pct": 275694.2,
-   "mcap_sol": 77109.4,
-   "dev_pct": 0.0,
-   "big_sell": 5609.67,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: dump: 3589.8 SOL sold",
-   "why": "dump: 3589.8 SOL sold"
-  },
-  {
-   "symbol": "MC",
-   "name": "Manager Cat",
-   "mint": "wgd6VuNCMHFbN8v4EmwkT3L9KRVEsLYaYx9BL9vGWWy",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 4158.0,
-   "mcap_sol": 1190.5,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 34 more coins in 60 min",
-   "why": "serial launcher: 34 more coins in 60 min"
-  },
-  {
-   "symbol": "INUFLUENCER",
-   "name": "inufluencer",
-   "mint": "65b76e7T9GHwcxr8Dw2HT6Tp7eRdVuF7nVhYhabJMkh8",
-   "age_s": 149,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 4158.0,
-   "mcap_sol": 1190.5,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 33 more coins in 60 min",
-   "why": "serial launcher: 33 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "TOPH",
+   "mint": "2VPyWMTxVtNHbKkJrKjuerQCDBfWVrCJU8oA7BnPpump",
+   "status": "closed",
+   "kind": "learner",
+   "why": "learner skip",
+   "opened": "2026-11-26T20:31:12Z",
+   "cost": 8.3,
+   "pnl_pct": -34.3,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 146,
+   "sol_in": 4.49,
+   "closed": "2026-11-26T20:31:16Z",
+   "exit": "dump: 5.7 SOL sold",
+   "pnl": -2.84,
+   "weight": 0.5
+  },
   {
    "symbol": "AT8",
    "mint": "2EUHE1LM8sATDQgTD4cBybd3g54MEimNtTpYaHiGpump",
@@ -5504,16 +5524,16 @@
   }
  ],
  "shadow_stats": {
-  "n": 8,
+  "n": 9,
   "wins": 2,
-  "win_rate": 25.0,
-  "mean_pnl_pct": -9.28,
+  "win_rate": 22.2,
+  "mean_pnl_pct": -12.06,
   "open": 0,
   "learner": {
-   "n": 8,
+   "n": 9,
    "wins": 2,
-   "win_rate": 25.0,
-   "mean_pnl_pct": -9.28
+   "win_rate": 22.2,
+   "mean_pnl_pct": -12.06
   },
   "risk": {
    "n": 0,
