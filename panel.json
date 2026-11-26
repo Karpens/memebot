@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T21:27:53Z",
+ "updated": "2026-11-26T21:28:22Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.97,
@@ -24,7 +24,7 @@
   "flagged": 66,
   "checked": 48,
   "filtered": 9,
-  "lines": 1042,
+  "lines": 1043,
   "last_rug": {
    "coin": "KITE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795692481,
-   85.94
-  ],
   [
    1795692541,
    85.94
@@ -2472,6 +2468,10 @@
   [
    1795728433,
    82.97
+  ],
+  [
+   1795728493,
+   82.97
   ]
  ],
  "position_pct": 10.0,
@@ -3036,15 +3036,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T19:00:00Z",
-   "time": "20:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-26T18 · 11324 lines (8771 curve readings) · 1.9 MB · 511 coins",
-   "n": 843
-  },
   {
    "t": "2026-11-26T19:00:35Z",
    "time": "20:00:35",
@@ -4835,6 +4826,15 @@
    "action": "scan",
    "text": "new pairs · 11.8 a minute · 4 watched · 38 rejected (serial launcher 30, dev bought 3, mayhem mode 3) · closest SUPEPE: too young: 32 s (min 45 s)",
    "n": 1042
+  },
+  {
+   "t": "2026-11-26T21:27:54Z",
+   "time": "22:27:54",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 11.4 a minute · 3 watched · 26 rejected (serial launcher 21, dev bought 2, dump 1) · closest OPENCRAWL: SOL in 0.4/2.5 · buys 2/6 · buy share 29%/65% · rise +3%/+12%",
+   "n": 1043
   }
  ],
  "nights": [
@@ -4880,7 +4880,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 43 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4888,24 +4888,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2751,
-    "last_event_age_s": 8.3,
+    "events": 2754,
+    "last_event_age_s": 9.5,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 33517,
-    "last_event_age_s": 0.4,
+    "events": 33526,
+    "last_event_age_s": 1.2,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1896,
-    "last_event_age_s": 9.0,
+    "events": 1897,
+    "last_event_age_s": 10.8,
     "errors": 225,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4918,9 +4918,9 @@
   "exit_ms": 34.5,
   "exit_last_ms": 44,
   "launch_to_entry_s": 36.0,
-  "creates_per_min": 11.4,
+  "creates_per_min": 11.0,
   "watching": 3,
-  "followed": 28
+  "followed": 22
  },
  "learner": {
   "samples": 109,
@@ -4966,28 +4966,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19946,
+   "sent": 19976,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19980,
+   "sent": 20010,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FOMOPUG",
+   "name": "Fomo PUG",
+   "mint": "GmwG9YChfRKJuDgF7jxsWizr1z8ZLBJY9iUCSrkupump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "CYBER",
+   "name": "Cybertruck",
+   "mint": "B5SPNgmAo7ykagLtgFBLzHiUSVdhUZYMoPqQof6k3WZo",
+   "age_s": 11,
+   "sol_in": 0.62,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 4.2,
+   "mcap_sol": 29.6,
+   "dev_pct": 0.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "TST",
+   "name": "tst",
+   "mint": "XsDoVfqeBukxuZHWhdvWHBhgEHjGNst4MLodqsJHzoB",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 6036.3,
+   "dev_pct": 100.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
    "symbol": "STILLGO144",
    "name": "Still Going #144",
    "mint": "3WCDPN9ZFi7pyB8nAxvNUZEShrts5raPMqqyaWfvCxUa",
-   "age_s": 9,
-   "sol_in": 0.06,
-   "buys": 1,
+   "age_s": 38,
+   "sol_in": 718.38,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 290171.7,
-   "mcap_sol": 81157.2,
+   "rise_pct": 294980.2,
+   "mcap_sol": 82501.6,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
@@ -5000,7 +5054,7 @@
    "symbol": "RWAFFLE",
    "name": "Rwaffle",
    "mint": "6SEa9gNXH2pfMdzCv9rGA77dsPERnffFH6st5nnUpump",
-   "age_s": 11,
+   "age_s": 40,
    "sol_in": 0.05,
    "buys": 1,
    "sells": 0,
@@ -5018,7 +5072,7 @@
    "symbol": "CFLEET143",
    "name": "Conga Fleet #143",
    "mint": "2uE2nYwcng2Nzs2nY8RbzuDHiMKMGt48ZZ86UYMmTXZp",
-   "age_s": 20,
+   "age_s": 49,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5036,7 +5090,7 @@
    "symbol": "CGROOVE142",
    "name": "Conga Groove #142",
    "mint": "3RLtWZGc3P6itRYixuitn3bZ8bw4S63B2fF8ULcMGbeR",
-   "age_s": 30,
+   "age_s": 59,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5054,7 +5108,7 @@
    "symbol": "CBRIDGE141",
    "name": "Conga Bridge #141",
    "mint": "4nEmg46dt12ZUHPUEVHq8Vwe5jadRb5oRu96U2qDgU1W",
-   "age_s": 40,
+   "age_s": 69,
    "sol_in": 0.07,
    "buys": 1,
    "sells": 0,
@@ -5072,7 +5126,7 @@
    "symbol": "RHYTHM140",
    "name": "Conga Rhythm #140",
    "mint": "Dn8g6GxfPSA2pd3LbzenJ41cVuF1xjYySK3qqu3kH9s3",
-   "age_s": 50,
+   "age_s": 79,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5090,7 +5144,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4xGkzZQRtRnWHyjNKXNe44xtMDaGoRPsM2XgRMP1x3b3",
-   "age_s": 52,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5108,7 +5162,7 @@
    "symbol": "CRUMBA139",
    "name": "Conga Rumba #139",
    "mint": "8duBvJuKF9qsSFuTj3LvUA4PFUdGZ2LH9PzyKP1fdkD3",
-   "age_s": 60,
+   "age_s": 89,
    "sol_in": 930.81,
    "buys": 3,
    "sells": 0,
@@ -5126,7 +5180,7 @@
    "symbol": "FARTHER",
    "name": "FARTHER",
    "mint": "5cTAo7dP1ydaH3TRoy2KLfMWBqcgXpaniHsmGZRbpump",
-   "age_s": 60,
+   "age_s": 89,
    "sol_in": 0.05,
    "buys": 1,
    "sells": 0,
@@ -5144,25 +5198,25 @@
    "symbol": "OPENCRAWL",
    "name": "OpenCrawler",
    "mint": "GFaSwYTx5g8ien9hBbYEeFtZV3ZFtqeFCkGMCg4epump",
-   "age_s": 65,
-   "sol_in": 0.38,
+   "age_s": 94,
+   "sol_in": 0.34,
    "buys": 2,
-   "sells": 5,
-   "rise_pct": 2.6,
-   "mcap_sol": 29.2,
+   "sells": 6,
+   "rise_pct": 2.3,
+   "mcap_sol": 29.1,
    "dev_pct": 1.0,
    "big_sell": 0.66,
    "x": "https://x.com/getopencrawl",
    "tg": false,
    "web": "https://getopencrawl.com",
    "status": "watching",
-   "why": "SOL in 0.4/2.5 · buys 2/6 · buy share 29%/65% · rise +3%/+12%"
+   "why": "SOL in 0.3/2.5 · buys 2/6 · buy share 25%/65% · rise +2%/+12%"
   },
   {
    "symbol": "CTRAIN138",
    "name": "Conga Train #138",
    "mint": "E8FFAbLg1sEVeB5xfmVtxuyP3cmqvbUgYWZ4W5T3ngyU",
-   "age_s": 69,
+   "age_s": 98,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5180,7 +5234,7 @@
    "symbol": "CBEACH137",
    "name": "Conga Beach #137",
    "mint": "ARjvx7VK8aQfWw5yYnmfdg2tzRdbRNLyn75ZbRSbkhFv",
-   "age_s": 78,
+   "age_s": 107,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5198,7 +5252,7 @@
    "symbol": "CBOUNCE136",
    "name": "Conga Bounce #136",
    "mint": "DxpTFQvPYyiZwBR3QiP8Zn5bhzXmXSU4xrVmDJZa4Evq",
-   "age_s": 87,
+   "age_s": 116,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5216,7 +5270,7 @@
    "symbol": "JOIN135",
    "name": "Join the Line #135",
    "mint": "6cUh8D26DSco5pe8CezZQvSCMBR9YjueJ9GeWyweecSs",
-   "age_s": 98,
+   "age_s": 127,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5234,7 +5288,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "7LKTMPPzzEnn39D64DKHhrBSYrXf2jsFpdSVM1Yapump",
-   "age_s": 107,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5252,7 +5306,7 @@
    "symbol": "CMINI134",
    "name": "Conga Mini #134",
    "mint": "3UXezSbMvTpXBrbx3i1uUUjVEJqVxx8wRmZEie2TsxNt",
-   "age_s": 108,
+   "age_s": 137,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5270,7 +5324,7 @@
    "symbol": "CCOMET133",
    "name": "Conga Comet #133",
    "mint": "HJdR9TQGYhEtqnXKdsgebAv5MMNfJ6x8TSBz8JFhfUGL",
-   "age_s": 118,
+   "age_s": 147,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -5283,60 +5337,6 @@
    "web": "https://conga.monster",
    "status": "rejected: serial launcher: 148 more coins in 60 min",
    "why": "serial launcher: 148 more coins in 60 min"
-  },
-  {
-   "symbol": "FI",
-   "name": "Fomo Inu",
-   "mint": "dNHShUniB1i6GprLNWJUJDdHi9Sq8gQf22MJQ6Spump",
-   "age_s": 120,
-   "sol_in": -2.71,
-   "buys": 21,
-   "sells": 34,
-   "rise_pct": -15.7,
-   "mcap_sol": 28.8,
-   "dev_pct": 10.2,
-   "big_sell": 2.77,
-   "x": "https://x.com/ZzzzzSol/status/2126064918600282118",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 10.2% (max 8%)",
-   "why": "dev bought 10.2% (max 8%)"
-  },
-  {
-   "symbol": "CLEGEND132",
-   "name": "Conga Legend #132",
-   "mint": "FVaood5oSnBgJrFGBoevxiwqJhqbfpiFyhj3K3KQnLAt",
-   "age_s": 125,
-   "sol_in": 0.06,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 300738.7,
-   "mcap_sol": 84111.6,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 147 more coins in 60 min",
-   "why": "serial launcher: 147 more coins in 60 min"
-  },
-  {
-   "symbol": "USI",
-   "name": "Universal SpaceX Income",
-   "mint": "AXL8STjkYa4Nng2umdWcTdP1cLufj2rUph6dqn5ZaPdk",
-   "age_s": 131,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -99.9,
-   "mcap_sol": 0.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/83fs732ts8236/status/2126064713242935611",
-   "tg": false,
-   "web": "https://github.com/emad-ii/dot-product",
-   "status": "rejected: serial launcher: 31 more coins in 60 min",
-   "why": "serial launcher: 31 more coins in 60 min"
   }
  ],
  "strategies": [
