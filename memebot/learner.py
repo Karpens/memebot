@@ -1,8 +1,8 @@
 """Meme Bot's LEARNER: it learns from its own closed trades which kinds of coins lose.
 
 A candidate is described by a few coarse buckets ("liq:<20k", "age:<30m", "sig:trending",
-"hour:01-03" ...). When a trade closes, its P&L % goes into the stats of the buckets it had at
-entry. Before a buy, the learner scores the candidate: each bucket's mean P&L, shrunk towards 0
+"hour:01-03" ...; a New Pair by "np:dev:0-2", "np:sol:3-6", "news:3-4", "tier:swing" ...).
+When a trade closes, its P&L % goes into the stats of the buckets it had at entry. Before a buy, the learner scores the candidate: each bucket's mean P&L, shrunk towards 0
 by k imaginary flat trades (sum / (n + k)), averaged over the buckets with at least min_n trades.
 A clearly bad score skips the coin, but every 5th such skip is still bought at half size, so a
 bucket that once went bad can show that it got better. Any other score scales the size.
@@ -48,9 +48,22 @@ NIGHT_HOURS = {23: "hour:23-01", 0: "hour:23-01", 1: "hour:01-03", 2: "hour:01-0
                3: "hour:03-05", 4: "hour:03-05", 5: "hour:05-07", 6: "hour:05-07"}
 DAY = "hour:day"                        # --anytime test runs, kept apart from the night
 
+# New Pairs (memebot/newpairs.py labels(), on the pump.fun curve) and the NEWS hold plan (memebot/plan.py):
+# the creator's initial buy, the real SOL in since launch, the buy share of the curve readings, the age at
+# entry, the coin's links, the NEWS score bucket and the hold plan's tier at entry. Fixed sets like the
+# others, so the memory stays bounded (a tier renamed in config.json's hold_tiers is not learned).
+NP_DEV = ("np:dev:0-2", "np:dev:2-5", "np:dev:5-8", "np:dev:8+")
+NP_SOL = ("np:sol:<3", "np:sol:3-6", "np:sol:6-12", "np:sol:12+")
+NP_BUYS = ("np:buys:<70", "np:buys:70-80", "np:buys:80-90", "np:buys:90+")
+NP_AGE = ("np:age:<30s", "np:age:30-90s", "np:age:90s+")
+NP_SOCIAL = ("np:social:x", "np:social:tg", "np:social:web", "np:social:none")
+NEWS = ("news:0-2", "news:3-4", "news:5-6", "news:7+")
+TIERS = ("tier:scalp", "tier:swing", "tier:runner", "tier:moon", "tier:base")
+
 KNOWN = frozenset([lab for table in (LIQ, VOL5, BUYS, AGE, HOLDERS, SLIP) for _, lab in table]
                   + [lab for _, lab in DEXES + SIGNALS] + [OTHER_DEX] + list(SOCIAL)
-                  + list(NIGHT_HOURS.values()) + [DAY])
+                  + list(NIGHT_HOURS.values()) + [DAY]
+                  + list(NP_DEV + NP_SOL + NP_BUYS + NP_AGE + NP_SOCIAL + NEWS + TIERS))
 
 K, MIN_N = 10, 8
 CFG = {"learn_skip_pct": -6.0, "learn_explore_every": 5, "learn_k": 10, "learn_min_n": 8,

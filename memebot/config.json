@@ -1,10 +1,134 @@
 {
-  "_about": "Meme Bot na papieri: nočné obchodovanie čerstvých meme coinov na Solane, v režime veľa rýchlych obchodov (štart $100, malé pozície, výstup celý na +7 %, stop -7 %, von po 5 minútach bez +2 %, opätovný vstup po 5 minútach). Hodnoty sú pravidlá zo súboru prompt.txt. Bez peňaženky a bez skutočných peňazí.",
+  "_about": "Meme Bot na papieri: nočné obchodovanie meme coinov na Solane. Hlavná stratégia je NEW PAIRS (stĺpec „New Pairs“ v Axiom Pulse): úplne nové mince z pump.fun v prvých sekundách až minútach, ešte na bonding curve. Prvý dnu a prvý von: vstup v tom istom kole slučky ako čítanie krivky, ktoré spustí signál, výstup v tom istom kole ako čítanie, ktoré prekročí stop alebo cieľ. Štart $100, 10 % na obchod, výstup na +7 % (alebo rebrík +20 / +60 / +100 %, keď sú NEWS silné), stop -7 %. Hodnoty sú pravidlá zo súboru prompt.txt. Bez peňaženky a bez skutočných peňazí.",
+  "strategies": [
+    "new_pairs"
+  ],
+  "_strategies": "new_pairs: nové páry na krivke pump.fun (hlavná). migrated: starší skener párov z DexScreener a GeckoTerminal (vypnutý; zapne sa pridaním \"migrated\" do zoznamu).",
   "start_balance": 100.0,
   "session_start": "23:00",
   "session_end": "07:00",
   "timezone": "Europe/Bratislava",
   "watch_sec": 1,
+  "_new_pairs": "NEW PAIRS: každý nový coin z PumpPortal sa sleduje np_watch_s sekúnd (najviac np_max_watch naraz), krivka sa číta jedným dávkovým getMultipleAccounts každých curve_poll_sec s, keď niečo drží, inak curve_idle_sec. Vstup, keď do np_max_age_s sekúnd od vzniku: aspoň np_min_sol SOL pritieklo, aspoň np_min_buys nákupných čítaní a np_min_buy_share z pohybov, cena aspoň np_min_rise_pct % nad štartom, trhová hodnota najviac np_max_mcap_sol SOL. RUG CHECK: nákup tvorcu najviac np_max_dev_pct %, žiadny predaj nad np_dump_sol SOL, aspoň jeden sociálny odkaz, nie mayhem mode, nie sériový tvorca, a správa RugCheck do np_rug_timeout_s s (jeden držiteľ najviac np_max_holder_pct %, top 10 najviac np_max_top10_pct %, žiadni insideri, žiadne riziko „danger“). Plnenie podľa kotácie Jupiter; matematika krivky (poplatok curve_fee_pct %) len ako záloha, ak bola pri vstupe do np_validate_pct % od kotácie. Noc sú dve úlohy GitHubu: v posledných job_no_entries_min min úlohy, ktorú prevezme ďalšia, sa nové páry nekupujú a v jej poslednej job_flat_min min sa držané predajú (medzi úlohami nikto nestráži výstupy).",
+  "np_watch_s": 180,
+  "np_max_watch": 40,
+  "np_skip_mayhem": true,
+  "np_max_dev_pct": 8.0,
+  "np_dump_sol": 2.0,
+  "np_need_social": true,
+  "np_serial_window_min": 60,
+  "np_rug_timeout_s": 3.0,
+  "np_rug_cache_s": 30,
+  "np_rug_retry_s": 5,
+  "np_rug_workers": 4,
+  "np_rug_prefetch": true,
+  "np_max_holder_pct": 12.0,
+  "np_max_top10_pct": 35.0,
+  "np_rug_bad_risks": [
+    "rugged tokens",
+    "single holder ownership"
+  ],
+  "np_max_age_s": 180,
+  "np_min_sol": 3.0,
+  "np_min_buys": 8,
+  "np_min_buy_share": 0.7,
+  "np_min_rise_pct": 15.0,
+  "np_max_mcap_sol": 70.0,
+  "np_stale_s": 5.0,
+  "np_quiet_min": 3.0,
+  "time_stop_late_x": 2.0,
+  "job_no_entries_min": 5,
+  "job_flat_min": 1,
+  "np_validate_pct": 5.0,
+  "np_tick_rows": 20,
+  "curve_fee_pct": 1.25,
+  "priority_fee_sol": 0.0005,
+  "curve_poll_sec": 0.5,
+  "curve_idle_sec": 1.0,
+  "curve_ws": false,
+  "feed_wait_sec": 0.25,
+  "sol_price_sec": 30,
+  "quote_timeout_s": 1.5,
+  "_hold": "NEWS skóre 0-10 (X, Telegram, web, prítok SOL, podiel nákupov, boosty, trending) vyberie plán držania: scalp (0-2) všetko na +7 %, swing (3-4) +7 % polovica a +20 %, runner (5-6) +7 / +20 / +60 %, moon (7+) +7 / +20 / +60 / +100 %. Každý krok predá podiel zo zvyšku. Pred prvým krokom stop stop_pct % a časový stop (time_stop_min z úrovne, ak nie je aspoň +time_stop_below_pct %), po prvom kroku stop na nulu (+breakeven_pct %) a klzavý stop trail_pct % pod vrcholom. NEWS sa prečíta znova každých news_refresh_sec s; keď nákupy klesnú pod fade_buy_ratio za posledných fade_window_s s a skóre o 2, v zisku predá zvyšok. Krivka bez jediného obchodu np_quiet_min min: mŕtva, predá sa. Pred prvým krokom po time_stop_late_x-násobku časového stopu úrovne bez prvého kroku: predá sa, aj keď je v pluse.",
+  "hold_tiers": [
+    {
+      "name": "scalp",
+      "min_score": 0,
+      "ladder": [
+        [
+          7.0,
+          1.0
+        ]
+      ],
+      "trail_pct": 0.0,
+      "time_stop_min": 5.0
+    },
+    {
+      "name": "swing",
+      "min_score": 3,
+      "ladder": [
+        [
+          7.0,
+          0.5
+        ],
+        [
+          20.0,
+          1.0
+        ]
+      ],
+      "trail_pct": 6.0,
+      "time_stop_min": 10.0
+    },
+    {
+      "name": "runner",
+      "min_score": 5,
+      "ladder": [
+        [
+          7.0,
+          0.34
+        ],
+        [
+          20.0,
+          0.5
+        ],
+        [
+          60.0,
+          1.0
+        ]
+      ],
+      "trail_pct": 10.0,
+      "time_stop_min": 15.0
+    },
+    {
+      "name": "moon",
+      "min_score": 7,
+      "ladder": [
+        [
+          7.0,
+          0.25
+        ],
+        [
+          20.0,
+          0.34
+        ],
+        [
+          60.0,
+          0.5
+        ],
+        [
+          100.0,
+          1.0
+        ]
+      ],
+      "trail_pct": 15.0,
+      "time_stop_min": 20.0
+    }
+  ],
+  "breakeven_pct": 1.0,
+  "news_refresh_sec": 30,
+  "fade_buy_ratio": 0.45,
+  "fade_window_s": 300,
+  "_migrated": "Pravidlá stratégie migrated (staršie páry), ak je zapnutá:",
   "scan_every_sec": 5,
   "gt_every_sec": 20,
   "max_age_h": 12.0,
@@ -26,6 +150,7 @@
   "max_top10_pct": 50.0,
   "min_lp_locked_pct": 95.0,
   "max_insiders": 0,
+  "_risk": "SIZER, RISK a výstupy pre obe stratégie (tp1_* a trail_pct len pre staršie pozície bez plánu):",
   "max_roundtrip_loss_pct": 10.0,
   "position_pct": 10.0,
   "min_order_usd": 3.0,
@@ -46,7 +171,7 @@
   "latency_slip_pct": 1.0,
   "slippage_bps": 300,
   "reenter_min": 5,
-  "_learner": "LEARNER: učí sa z vlastných uzavretých obchodov (memory.json v dátovom priečinku, zostáva z noci na noc). Pred nákupom ohodnotí mincu podľa minulých obchodov s rovnakými znakmi (likvidita, 5m objem, kupujúci, vek, držitelia, DEX, sociálne siete, signály, sklz, hodina). Skóre ≤ learn_skip_pct % mincu preskočí (nie na celú noc: znova sa na ňu pozrie po reenter_min minútach), každé learn_explore_every-te preskočenie ju aj tak kúpi za polovicu; inak veľkosť × (1 + skóre/20) v rozmedzí learn_mult_min až learn_mult_max. Znak sa počíta až od learn_min_n obchodov a learn_k pomyselných nulových obchodov ťahá malé vzorky k nule.",
+  "_learner": "LEARNER: učí sa z vlastných uzavretých obchodov (memory.json v dátovom priečinku, zostáva z noci na noc). Pred nákupom ohodnotí mincu podľa minulých obchodov s rovnakými znakmi (pri nových pároch: nákup tvorcu, prítok SOL, podiel nákupov, vek pri vstupe, sociálne siete, NEWS skóre, úroveň plánu, hodina; pri starších: likvidita, 5m objem, kupujúci, vek, držitelia, DEX, signály, sklz). Skóre ≤ learn_skip_pct % mincu preskočí (nie na celú noc: znova sa na ňu pozrie po reenter_min minútach), každé learn_explore_every-te preskočenie ju aj tak kúpi za polovicu; inak veľkosť × (1 + skóre/20) v rozmedzí learn_mult_min až learn_mult_max. Znak sa počíta až od learn_min_n obchodov a learn_k pomyselných nulových obchodov ťahá malé vzorky k nule.",
   "learn_skip_pct": -6.0,
   "learn_explore_every": 5,
   "learn_k": 10,
