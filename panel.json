@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:35:44Z",
+ "updated": "2026-11-26T16:36:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 36,
   "checked": 33,
   "filtered": 6,
-  "lines": 634,
+  "lines": 635,
   "last_rug": {
    "coin": "moztach",
    "pass": false
@@ -1876,6 +1876,10 @@
   [
    1795710913,
    84.53
+  ],
+  [
+   1795710973,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2350,15 +2354,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T14:00:00Z",
-   "time": "15:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-26T13 · 10101 lines (8246 curve readings) · 1.6 MB · 344 coins",
-   "n": 435
-  },
   {
    "t": "2026-11-26T14:00:10Z",
    "time": "15:00:10",
@@ -4149,6 +4144,15 @@
    "action": "scan",
    "text": "new pairs · 7.6 a minute · 8 watched · 7 rejected (dump 2, serial launcher 2, no symbol or name 2) · closest SUCK: too young: 25 s (min 45 s)",
    "n": 634
+  },
+  {
+   "t": "2026-11-26T16:36:18Z",
+   "time": "17:36:18",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 6 watched · 9 rejected (dump 3, no symbol or name 3, dev bought 1) · closest SUCK: SOL in 0.8/2.5 · buy share 46%/65% · rise +6%/+12%",
+   "n": 635
   }
  ],
  "nights": [
@@ -4191,7 +4195,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4199,15 +4203,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 135,
-    "last_event_age_s": 1.0,
+    "events": 139,
+    "last_event_age_s": 3.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1987,
+    "events": 2025,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -4215,8 +4219,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 97,
-    "last_event_age_s": 37.3,
+    "events": 100,
+    "last_event_age_s": 3.7,
     "errors": 8,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4229,9 +4233,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 7.6,
-  "watching": 7,
-  "followed": 10
+  "creates_per_min": 4.6,
+  "watching": 6,
+  "followed": 11
  },
  "learner": {
   "samples": 107,
@@ -4277,23 +4281,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1284,
+   "sent": 1320,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1318,
+   "sent": 1354,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GODO",
+   "name": "GORILLADOGE",
+   "mint": "8rXS66YXw3Bgpb4f5QCZLtJhH3h5Gpq8UoacaaoWpump",
+   "age_s": 3,
+   "sol_in": 0.07,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.5,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/GorillaDogeSOL/status/2125991909965611429",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "G5HcWzbW9vcNYrvcscUirrWTe5SM8891t6aUe4YedPqJ",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "anon",
+   "name": "anon",
+   "mint": "2iYubYzvYHvTQkif9aBpjNhijr3rv7CuJ14dmsP1pump",
+   "age_s": 21,
+   "sol_in": -0.79,
+   "buys": 6,
+   "sells": 3,
+   "rise_pct": -5.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 3.4,
+   "big_sell": 2.59,
+   "x": "https://x.com/BeAnonPF",
+   "tg": false,
+   "web": "https://knowyourmeme.com/memes/green-anon-old-anonymous",
+   "status": "rejected: dump: 2.6 SOL sold",
+   "why": "dump: 2.6 SOL sold"
+  },
+  {
+   "symbol": "Kinunu",
+   "name": "Kinunu",
+   "mint": "H5mTT2NJu1GkfxSy2zwASEv6nGhvffTxzpuNFjfWpump",
+   "age_s": 33,
+   "sol_in": -2.1,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": -12.6,
+   "mcap_sol": 28.1,
+   "dev_pct": 7.2,
+   "big_sell": 2.17,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 2.2 SOL sold",
+   "why": "dump: 2.2 SOL sold"
+  },
+  {
    "symbol": "$NEIGH",
    "name": "P",
    "mint": "AqnephN11Xhc2o929xLhh3wUpFPGGiDk2osf2igxpump",
-   "age_s": 0,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4311,61 +4387,61 @@
    "symbol": "ZETRO",
    "name": "ZETRO",
    "mint": "AKXbN4FNRM9W1X8sQqUEwsawVzdsU17dZhNSmod5pump",
-   "age_s": 37,
-   "sol_in": 0.71,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 4.7,
-   "mcap_sol": 30.8,
+   "age_s": 71,
+   "sol_in": 0.37,
+   "buys": 5,
+   "sells": 1,
+   "rise_pct": 2.4,
+   "mcap_sol": 30.1,
    "dev_pct": 2.7,
-   "big_sell": 0.0,
+   "big_sell": 0.8,
    "x": "https://x.com/ath_zetro",
    "tg": false,
    "web": "https://ath.zetro.io/",
    "status": "watching",
-   "why": "too young: 36 s (min 45 s)"
+   "why": "too young: 39 s (min 45 s)"
   },
   {
    "symbol": "SUCK",
    "name": "Suck coin",
    "mint": "UiHTEgm8dcSLbM1tWYC2r5gcbspBgEanwWhU1LEpump",
-   "age_s": 52,
-   "sol_in": 1.12,
+   "age_s": 86,
+   "sol_in": 0.84,
    "buys": 6,
-   "sells": 6,
-   "rise_pct": 7.5,
-   "mcap_sol": 30.9,
+   "sells": 7,
+   "rise_pct": 5.6,
+   "mcap_sol": 30.3,
    "dev_pct": 1.4,
    "big_sell": 1.05,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 1.1/2.5 · buy share 50%/65% · rise +8%/+12%"
+   "why": "SOL in 0.8/2.5 · buy share 46%/65% · rise +6%/+12%"
   },
   {
    "symbol": "LUCIA",
    "name": "Lucia Are Portrayed",
    "mint": "Ey2KguDEKbHUxmFsfZffHxBjmnKsWyAJKunmta1K1mHU",
-   "age_s": 70,
-   "sol_in": 0.0,
+   "age_s": 104,
+   "sol_in": -0.1,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": "https://x.com/Dexerto/status/2125990985721053591",
    "tg": false,
    "web": "https://x.com/Dexerto/status/2125990985721053591",
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "SOL in -0.1/2.5 · buys 0/6 · buy share 0%/65% · rise -1%/+12%"
   },
   {
    "symbol": "call.fun",
    "name": "call.fun",
    "mint": "BUpMFg4aZmTqSzzcW6PEkCQkwpgXdbujwfJ4zUwhpump",
-   "age_s": 88,
+   "age_s": 122,
    "sol_in": -1.93,
    "buys": 1,
    "sells": 8,
@@ -4383,7 +4459,7 @@
    "symbol": "call.fun",
    "name": "call.fun",
    "mint": "EMztecTAyjPMUWcsQNtL2MXqTbm5YNNFN44nb4wY2Kg8",
-   "age_s": 90,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4401,7 +4477,7 @@
    "symbol": "?",
    "name": "",
    "mint": "8ocCW3HZc4PYjPCUJpay1NTioWLZy1X4VgjE2aSFpump",
-   "age_s": 100,
+   "age_s": 134,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4419,7 +4495,7 @@
    "symbol": "WI",
    "name": "Wallet Inu",
    "mint": "Cuv1vUKeqvtVdWmAqsjSef2wExvKg3Mxa5Q8b86ns7jo",
-   "age_s": 106,
+   "age_s": 140,
    "sol_in": -2.67,
    "buys": 3,
    "sells": 11,
@@ -4437,7 +4513,7 @@
    "symbol": "WHITEOUT",
    "name": "Whiteout",
    "mint": "HbpUXbwxbs9XHtFVn1dDLPtE86mWscUCXDT7xchUpump",
-   "age_s": 107,
+   "age_s": 141,
    "sol_in": -0.35,
    "buys": 11,
    "sells": 29,
@@ -4455,7 +4531,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CKyjjKSdqRwzeAA45u6gHsmPTkEbXBLYKSh9aPKopump",
-   "age_s": 128,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4473,7 +4549,7 @@
    "symbol": "THANKLESS",
    "name": "I Am Thanless For...",
    "mint": "3cvNXWgb36AwjvDNjApUMJNPxWcAqrHEHJwk3mUBpump",
-   "age_s": 132,
+   "age_s": 166,
    "sol_in": -2.17,
    "buys": 3,
    "sells": 3,
@@ -4486,42 +4562,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in -2.2/2.5 · buys 3/6 · buy share 50%/65% · rise -13%/+12%"
-  },
-  {
-   "symbol": "RNC",
-   "name": "RealNiggaCoin",
-   "mint": "5x31rMY14SJUtxXVYSBRXG4wnPf8SRRsLqSmRWk3pump",
-   "age_s": 174,
-   "sol_in": 0.01,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.05,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 4/6 · rise +0%/+12%"
-  },
-  {
-   "symbol": "SIDE",
-   "name": "Side By Side",
-   "mint": "3M3gzmfyccvvAhrhHmxTfr9a6WuX94kYdxH61mQqpump",
-   "age_s": 178,
-   "sol_in": 0.53,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 3.5,
-   "mcap_sol": 30.9,
-   "dev_pct": 3.5,
-   "big_sell": 0.0,
-   "x": "https://www.instagram.com/p/DgNiR1bxVho/",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 22 s (min 45 s)"
   }
  ],
  "strategies": [
