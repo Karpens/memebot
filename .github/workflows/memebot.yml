@@ -1,7 +1,8 @@
 name: Meme Bot
 
-# The overnight meme-coin paper bot (memebot/bot.py): fresh Solana pairs, 23:00 to 07:00
-# Bratislava time, no wallet and no real money. Its data goes to the meme-data branch.
+# The overnight meme-coin paper bot (memebot/bot.py): New Pairs (brand-new pump.fun coins on their
+# bonding curve), 23:00 to 07:00 Bratislava time, no wallet and no real money. Its data goes to the
+# meme-data branch.
 # A public repository gets GitHub Actions minutes for free, so it runs every night. The
 # Claude clock starts it at 23:02 (GitHub's own cron below can be hours late); the Run
 # workflow button starts it any time ("anytime" for a test in the day).
@@ -43,6 +44,10 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+      - name: PumpPortal's stream for New Pairs (websockets; without it the bot runs on, with no new pairs)
+        run: |
+          pip install -q websockets==17.4 || echo "websockets not installed, the night runs without PumpPortal"
 
       - name: The bot's data (branch meme-data)
         run: |

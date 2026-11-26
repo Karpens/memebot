@@ -1,13 +1,22 @@
 name: Feed probe
 
-# A live check of the real-time sources the bot reads for New Pairs (PumpPortal's free stream, the Solana RPC
-# WebSocket, Jupiter, RugCheck, DexScreener, the coins' metadata). It does not trade and writes nothing.
+# A live check on GitHub Actions. It never trades for real, never touches the night's data (branch meme-data)
+# and never publishes on the live channel:
+#   probe  memebot/probe.py: PumpPortal's stream, the RPC WebSocket, Jupiter, RugCheck, DexScreener, the metadata
+#   feeds  python3 memebot/feeds.py --probe N: the bot's own feeds (PumpPortal, the curve poll, metadata) for N s
+#   bot    the bot itself (New Pairs, on paper) for N / 60 minutes (at least 1) in a fresh temporary data dir with
+#          the live channel off, then its last 120 log lines, its trades, panel.speed and panel.watch[:10]
 
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: "probe | feeds | bot"
+        type: choice
+        options: [probe, feeds, bot]
+        default: probe
       seconds:
-        description: "How long to listen"
+        description: "How long, in seconds (bot: seconds / 60 minutes, at least 1)"
         required: false
         default: "90"
 
@@ -21,11 +30,60 @@ concurrency:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -q websockets==17.4
-      - run: python3 memebot/probe.py --seconds "${{ inputs.seconds || 90 }}" --follow 8 --enrich 4
+
+      - name: Probe (memebot/probe.py)
+        if: inputs.mode == 'probe' || inputs.mode == ''
+        run: python3 memebot/probe.py --seconds "${{ inputs.seconds || 90 }}" --follow 8 --enrich 4
+
+      - name: The bot's feeds (memebot/feeds.py --probe)
+        if: inputs.mode == 'feeds'
+        run: python3 memebot/feeds.py --probe "${{ inputs.seconds || 90 }}"
+
+      - name: A dry run of the bot (paper, a fresh data dir, no live channel)
+        if: inputs.mode == 'bot'
+        env:
+          MEMEBOT_LIVE: "0"
+          PROBE_SECONDS: ${{ inputs.seconds || 90 }}
+        run: |
+          MIN=$(python3 -c "import os; print(round(max(1.0, float(os.environ['PROBE_SECONDS'] or 90) / 60), 2))")
+          DATA=$(mktemp -d)
+          echo "the bot for $MIN min in $DATA"
+          python3 memebot/bot.py run --data "$DATA" --minutes "$MIN" --anytime > "$DATA/run.out" 2>&1 \
+            || echo "the bot ended with code $?"
+          echo "=== the end of its output"
+          tail -n 25 "$DATA/run.out"
+          python3 - "$DATA" <<'PY'
+          import json, os, sys
+          d = sys.argv[1]
+          def read(name):
+              try:
+                  with open(os.path.join(d, name), encoding="utf-8") as fh:
+                      return json.load(fh)
+              except (OSError, ValueError) as e:
+                  print("no %s: %s" % (name, e))
+                  return {}
+          st, panel = read("state.json"), read("panel.json")
+          night = st.get("night") or st.get("last_night") or {}
+          print("=== the last 120 log lines")
+          for r in (night.get("decisions") or [])[-120:]:
+              print("%s %-9s %-10s %s" % (r.get("time"), r.get("agent"), r.get("coin") or "", r.get("text")))
+          print("=== trades (%d)" % len(night.get("trades") or []))
+          for t in night.get("trades") or []:
+              print(json.dumps({k: v for k, v in t.items() if k != "learn"}, ensure_ascii=False))
+          print("=== the book: balance %s, open %d, equity %s" % (st.get("balance"), len(st.get("positions") or {}),
+                                                                   panel.get("equity")))
+          print("=== panel.speed")
+          print(json.dumps(panel.get("speed"), ensure_ascii=False, indent=1))
+          print("=== panel.watch[:10]")
+          for row in (panel.get("watch") or [])[:10]:
+              print(json.dumps(row, ensure_ascii=False))
+          print("=== errors")
+          print(json.dumps(panel.get("errors"), ensure_ascii=False))
+          PY

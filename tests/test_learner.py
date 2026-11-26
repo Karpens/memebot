@@ -117,8 +117,35 @@ class Features(unittest.TestCase):
             "dex:pumpfun", "dex:pumpswap", "dex:raydium", "dex:meteora", "dex:other",
             "sig:trending", "sig:boosted", "sig:volume", "sig:holders",
             "social:x", "social:no-x", "social:none",
-            "hour:23-01", "hour:01-03", "hour:03-05", "hour:05-07", "hour:day"]))
-        self.assertTrue(all(len(lab) <= 16 and lab.count(":") == 1 for lab in lr.KNOWN))
+            "hour:23-01", "hour:01-03", "hour:03-05", "hour:05-07", "hour:day",
+            # New Pairs (memebot/newpairs.py labels()) and the NEWS hold plan (memebot/plan.py)
+            "np:dev:0-2", "np:dev:2-5", "np:dev:5-8", "np:dev:8+",
+            "np:sol:<3", "np:sol:3-6", "np:sol:6-12", "np:sol:12+",
+            "np:buys:<70", "np:buys:70-80", "np:buys:80-90", "np:buys:90+",
+            "np:age:<30s", "np:age:30-90s", "np:age:90s+",
+            "np:social:x", "np:social:tg", "np:social:web", "np:social:none",
+            "news:0-2", "news:3-4", "news:5-6", "news:7+",
+            "tier:scalp", "tier:swing", "tier:runner", "tier:moon", "tier:base"]))
+        self.assertTrue(all(len(lab) <= 16 and lab.count(":") == (2 if lab.startswith("np:") else 1)
+                            for lab in lr.KNOWN))
+
+    def test_new_pairs_news_and_tier_labels_are_learned(self):
+        """newpairs.labels() and plan.labels() give these at a New Pairs entry: the memory keeps them and
+        a later look-alike is scored on them (before, the filter kept only the hour and they were lost)."""
+        np_labels = ["np:dev:0-2", "np:sol:6-12", "np:buys:80-90", "np:age:30-90s", "np:social:x", "np:social:tg",
+                     "news:3-4", "tier:swing", "hour:01-03"]
+        mem = lr.fresh()
+        for _ in range(10):
+            lr.update(mem, np_labels + ["np:bogus", "tier:made-up", "news:99"], -12.0)
+        self.assertEqual(sorted(mem["labels"]), sorted(np_labels))
+        self.assertEqual(mem["labels"]["tier:swing"]["n"], 10)
+        d = lr.decide(mem, np_labels, {})
+        self.assertEqual(d["action"], "skip")                                  # -12 x 10 / 20 = -6: at the threshold
+        self.assertEqual(d["score"], -6.0)                                     # all 9 labels count, each -6
+        self.assertEqual(len(lr._rows(mem, np_labels, 10, 8)), 9)
+        rebuilt = lr._repair(json.loads(json.dumps(mem)))                       # memory.json keeps them
+        self.assertEqual(sorted(rebuilt["labels"]), sorted(np_labels))
+        self.assertTrue(lr.summary(mem)["worst"])
 
 
 class Learning(unittest.TestCase):

@@ -18,6 +18,7 @@ from unittest import mock
 from _load import load
 
 os.environ["MEMEBOT_LIVE"] = "0"                        # the tests never reach the public brokers
+os.environ["MEMEBOT_FEEDS"] = "0"                       # ... nor PumpPortal or the Solana RPC
 mb = load("memebot", "bot")
 SOL = mb.SOL
 T0 = datetime.datetime(2026, 11, 25, 22, 30)            # 23:30 in Bratislava
@@ -86,7 +87,10 @@ class FakeMarket(object):
 
 
 def cfg(**kw):
+    """The defaults, with the migrated strategy these tests are about (New Pairs, the default strategy
+    since, has its own tests in test_newpairs_engine.py)."""
     c = mb.load_config(None)
+    c["strategies"] = ["migrated"]
     c.update(kw)
     return c
 
@@ -684,7 +688,8 @@ class LiveNight(unittest.TestCase):
         memo = {}
         t1 = mb.tick_msg(n.state, n.cfg, prices, n.ts(), 1, memo)
         self.assertEqual(set(t1), {"v", "kind", "seq", "updated", "equity", "balance", "live", "night", "positions",
-                                   "log", "trades_n", "trades", "flags", "curve_last", "speed", "learner"})
+                                   "log", "trades_n", "trades", "flags", "curve_last", "speed", "learner", "watch"})
+        self.assertEqual(t1["watch"], [])                                              # New Pairs' rows: none here
         self.assertEqual((t1["v"], t1["kind"], t1["seq"], t1["live"], t1["trades_n"], t1["trades"]), (1, "tick", 1, True, 0, []))
         pos = t1["positions"][0]
         self.assertEqual((pos["mint"], pos["symbol"], "hist" in pos), ("aaa", "AAA", False))
@@ -1049,19 +1054,54 @@ class Speed(unittest.TestCase):
         self.assertEqual([r["n"] for r in n.state["night"]["decisions"]], [1])
 
     def test_the_prompt_says_what_config_json_does(self):
+        """prompt.txt (New Pairs since the strategy changed) says the numbers config.json trades by."""
         c = mb.load_config()
         with open(mb.PROMPT, encoding="utf-8") as fh:
             p = fh.read()
-        for text in ("starting balance of $%g." % c["start_balance"], "SCANNER - every %g seconds" % c["scan_every_sec"],
-                     "%g%% of the balance per trade" % c["position_pct"],
+        tiers = {t["name"]: t for t in c["hold_tiers"]}
+        self.assertEqual(c["strategies"], ["new_pairs"])
+        for text in ("starting balance of $%g." % c["start_balance"],
+                     "Every new coin is watched for %d seconds (%d at once" % (c["np_watch_s"], c["np_max_watch"]),
+                     "every %g seconds while anything is held, every second otherwise" % c["curve_poll_sec"],
+                     "within %d seconds of the launch" % c["np_max_age_s"], "at least %g SOL came in" % c["np_min_sol"],
+                     "at least %d readings were buys and %.0f%% of the moves" % (c["np_min_buys"], c["np_min_buy_share"] * 100),
+                     "at least %g%% above the launch price" % c["np_min_rise_pct"],
+                     "market cap is at most %g SOL" % c["np_max_mcap_sol"],
+                     "the creator bought at most %g%% of the supply" % c["np_max_dev_pct"],
+                     "no single sell of %g SOL or more" % c["np_dump_sol"],
+                     "another launch in the last %d minutes" % c["np_serial_window_min"],
+                     "a RugCheck report within %g seconds" % c["np_rug_timeout_s"],
+                     "no single holder above %g%%" % c["np_max_holder_pct"],
+                     "the top 10 holders at most %g%%" % c["np_max_top10_pct"],
+                     "may lose at most %g%%" % c["max_roundtrip_loss_pct"],
+                     "%g%% of the balance per trade, never less than $%g" % (c["position_pct"], c["min_order_usd"]),
+                     "between %gx and %gx" % (c["learn_mult_min"], c["learn_mult_max"]),
                      "up to %d open positions and %d trades a night" % (c["max_open"], c["max_trades_per_night"]),
                      "a %g minute pause after %d losses in a row" % (c["cooldown_min"], c["loss_streak"]),
-                     "traded again %g minutes after its exit" % c["reenter_min"],
-                     "watches every open position every second", "profit at +%g%%" % c["tp1_pct"],
-                     "stop loss at %g%%" % c["stop_pct"],
-                     "out after %g minutes unless up %g%%" % (c["time_stop_min"], c["time_stop_below_pct"]),
-                     "looks at it again %g minutes later" % mb.skip_wait_min(c)):
+                     "no new entries in the last %d minutes" % c["no_entries_last_min"],
+                     "stop for the night at %g%%" % c["night_stop_pct"],
+                     "lost %g%% or more on average" % -c["learn_skip_pct"], "every %dth such skip" % c["learn_explore_every"],
+                     "reads them again every %d seconds" % c["news_refresh_sec"],
+                     "take the whole profit at +%g%% (scalp, NEWS 0-2)" % tiers["scalp"]["ladder"][0][0],
+                     "swing (NEWS %d-4) 50%% at +7%% and the rest at +20%%" % tiers["swing"]["min_score"],
+                     "runner (%d-6) 34%% at +7%%, 50%% at +20%%, the rest at +60%%" % tiers["runner"]["min_score"],
+                     "moon (%d+) 25%% at +7%%, 34%% at +20%%, 50%% at +60%%, the rest at +100%%" % tiers["moon"]["min_score"],
+                     "Stop loss at %g%% until the first step" % c["stop_pct"],
+                     "the stop moves to break-even (+%g%%)" % c["breakeven_pct"],
+                     "(%g%%, %g%% and %g%% under it for swing, runner and moon)" % tuple(
+                         tiers[k]["trail_pct"] for k in ("swing", "runner", "moon")),
+                     "Out after %g minutes unless up %g%% (%g, %g and %g minutes for swing, runner and moon)" % (
+                         (tiers["scalp"]["time_stop_min"], c["time_stop_below_pct"]) +
+                         tuple(tiers[k]["time_stop_min"] for k in ("swing", "runner", "moon"))),
+                     "one sell of %g SOL or more after the entry" % c["np_dump_sol"],
+                     "buys under %.0f%% of the last %d minutes" % (c["fade_buy_ratio"] * 100, c["fade_window_s"] / 60),
+                     "pump.fun's fee is about %g%% each way" % c["curve_fee_pct"],
+                     "the %g%% latency haircut each way" % c["latency_slip_pct"],
+                     "everything sold by 06:%02d" % (60 - c["flat_before_end_min"])):
             self.assertIn(text, p)
+        for t, ladder in (("swing", [[7, 0.5], [20, 1]]), ("runner", [[7, 0.34], [20, 0.5], [60, 1]]),
+                          ("moon", [[7, 0.25], [20, 0.34], [60, 0.5], [100, 1]])):
+            self.assertEqual(tiers[t]["ladder"], ladder)
         self.assertEqual((c["tp1_sell_frac"], c["watch_sec"]), (1.0, 1))                # "the whole profit"; not tick_sec
 
     def test_tick_sec_is_read_as_watch_sec(self):
