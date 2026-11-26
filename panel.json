@@ -1,0 +1,332 @@
+{
+ "updated": "2026-11-26T02:37:06Z",
+ "mode": "paper",
+ "start_balance": 100.0,
+ "balance": 60.02,
+ "equity": 98.96,
+ "session": "23:00 → 07:00",
+ "agents": [
+  "SCANNER",
+  "NEWS",
+  "RUG CHECK",
+  "SIZER",
+  "EXECUTOR",
+  "RISK",
+  "LOGGER"
+ ],
+ "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $100. I will not be watching. Trade a lot, trade fast, and log every decision so I can read it in the morning.\n\nUNIVERSE\n- Fresh DEX pairs: launched or migrated in the last 12 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $8k, minimum 5m volume $2k, at least 100 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 10 seconds: new pairs, volume spikes (>2x 1h average), buy/sell ratio above 55% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 50%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 10% of the balance per trade, never less than $3.\n4. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row, no new entries in the last 10 minutes, stop for the night at -50%. A coin can be traded again 5 minutes after its exit.\n5. EXIT - take the whole profit at +7%, stop loss at -7%, out after 5 minutes unless up 2%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n7. NEWS - follows what people promote: the coin's X and Telegram, DexScreener boosts, the GeckoTerminal and DexScreener trending lists. Trending or boosted counts as a signal.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n",
+ "night": {
+  "id": "2026-11-25",
+  "start_equity": 100.0,
+  "started": "2026-11-26T02:36:46Z",
+  "scans": 2,
+  "flagged": 4,
+  "checked": 4,
+  "filtered": 0,
+  "lines": 22,
+  "last_rug": {
+   "coin": "NORFEATH",
+   "pass": true
+  }
+ },
+ "flags": [
+  {
+   "coin": "PUMPCHAN",
+   "why": "trending",
+   "t": "2026-11-26T02:36:46Z"
+  },
+  {
+   "coin": "Grodia",
+   "why": "trending",
+   "t": "2026-11-26T02:36:46Z"
+  },
+  {
+   "coin": "UHI",
+   "why": "trending",
+   "t": "2026-11-26T02:36:46Z"
+  },
+  {
+   "coin": "NORFEATH",
+   "why": "trending",
+   "t": "2026-11-26T02:36:46Z"
+  }
+ ],
+ "curve": [
+  [
+   1795660606,
+   99.86
+  ]
+ ],
+ "position_pct": 10.0,
+ "slip_cap": 10.0,
+ "live": true,
+ "positions": [
+  {
+   "symbol": "Grodia",
+   "cost": 10.0,
+   "value": 9.84,
+   "pnl_pct": -1.6,
+   "opened": "2026-11-26T02:36:46Z",
+   "url": "https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve",
+   "reason": "buys 59% · trending · boosted",
+   "size_pct": 10.0,
+   "entry_price": 0.0009324206343765439,
+   "price": 0.0009209681718279656,
+   "slip": 0.56,
+   "tp1_done": false,
+   "hist": [
+    0.0009324206343765439,
+    0.0009071173575312926,
+    0.0009103654091866241,
+    0.0009209681718279656,
+    0.0009209681718279656
+   ]
+  },
+  {
+   "symbol": "PUMPCHAN",
+   "cost": 10.0,
+   "value": 9.9,
+   "pnl_pct": -1.0,
+   "opened": "2026-11-26T02:36:46Z",
+   "url": "https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb",
+   "reason": "buys 70% · trending · boosted",
+   "size_pct": 10.0,
+   "entry_price": 0.0012684701373469568,
+   "price": 0.0012607984913829773,
+   "slip": 1.6,
+   "tp1_done": false,
+   "hist": [
+    0.0012684701373469568,
+    0.0012494081624631914,
+    0.0012476158189657872,
+    0.0012476158189657872,
+    0.0012607984913829773
+   ]
+  },
+  {
+   "symbol": "NORFEATH",
+   "cost": 9.99,
+   "value": 9.43,
+   "pnl_pct": -5.6,
+   "opened": "2026-11-26T02:36:46Z",
+   "url": "https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj",
+   "reason": "buys 69% · trending · boosted",
+   "size_pct": 10.0,
+   "entry_price": 0.0005249499175072951,
+   "price": 0.0004971541977051898,
+   "slip": 0.6,
+   "tp1_done": false,
+   "hist": [
+    0.0005249499175072951,
+    0.0005044779452616508,
+    0.0005030384078545524,
+    0.0004971541977051898,
+    0.0004971541977051898
+   ]
+  },
+  {
+   "symbol": "UHI",
+   "cost": 9.99,
+   "value": 9.76,
+   "pnl_pct": -2.2,
+   "opened": "2026-11-26T02:36:46Z",
+   "url": "https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl",
+   "reason": "buys 76% · trending · boosted",
+   "size_pct": 10.0,
+   "entry_price": 0.00115252258992611,
+   "price": 0.00113066713257348,
+   "slip": 0.49,
+   "tp1_done": false,
+   "hist": [
+    0.00115252258992611,
+    0.00112350240984134,
+    0.001131624196301992,
+    0.00113066713257348,
+    0.00113066713257348
+   ]
+  }
+ ],
+ "trades": [],
+ "log": [
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "start",
+   "text": "night 2026-11-25 · start $100.00 · 7 agents · 23:00 → 07:00"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SCANNER",
+   "coin": "PUMPCHAN",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $78.1k · 5m $11.6k · buys 70% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "NEWS",
+   "coin": "PUMPCHAN",
+   "action": "news",
+   "text": "promo: X @PumpChanMeme · web · 30 boosts · trending"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "RUG CHECK",
+   "coin": "PUMPCHAN",
+   "action": "pass",
+   "text": "PASS · mint & freeze revoked · LP locked · 1907 holders"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SCANNER",
+   "coin": "Grodia",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $69.7k · 5m $14.0k · buys 59% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "NEWS",
+   "coin": "Grodia",
+   "action": "news",
+   "text": "promo: X @thegrodia · web · 100 boosts · trending"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "RUG CHECK",
+   "coin": "Grodia",
+   "action": "pass",
+   "text": "PASS · mint & freeze revoked · LP locked · 8197 holders"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SCANNER",
+   "coin": "UHI",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $77.1k · 5m $5.8k · buys 76% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "NEWS",
+   "coin": "UHI",
+   "action": "news",
+   "text": "promo: X @UHICoinX · web · 100 boosts · trending"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "RUG CHECK",
+   "coin": "UHI",
+   "action": "pass",
+   "text": "PASS · mint & freeze revoked · LP locked · 2733 holders"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SCANNER",
+   "coin": "NORFEATH",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $52.1k · 5m $9.1k · buys 69% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "NEWS",
+   "coin": "NORFEATH",
+   "action": "news",
+   "text": "promo: X @flynorfeather · web · 100 boosts · trending"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "RUG CHECK",
+   "coin": "NORFEATH",
+   "action": "pass",
+   "text": "PASS · mint & freeze revoked · LP locked · 5331 holders"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 109 new coins · 95 pairs · 10 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SIZER",
+   "coin": "Grodia",
+   "action": "size",
+   "text": "10% of $100.00 = $10.00"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "EXECUTOR",
+   "coin": "Grodia",
+   "action": "enter",
+   "text": "ENTER Grodia at 0.0009324206 · slip 0.6% · buys 59% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SIZER",
+   "coin": "PUMPCHAN",
+   "action": "size",
+   "text": "10% of $99.96 = $10.00"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "EXECUTOR",
+   "coin": "PUMPCHAN",
+   "action": "enter",
+   "text": "ENTER PUMPCHAN at 0.0012684701 · slip 1.6% · buys 70% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SIZER",
+   "coin": "NORFEATH",
+   "action": "size",
+   "text": "10% of $99.93 = $9.99"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "EXECUTOR",
+   "coin": "NORFEATH",
+   "action": "enter",
+   "text": "ENTER NORFEATH at 0.0005249499 · slip 0.6% · buys 69% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "SIZER",
+   "coin": "UHI",
+   "action": "size",
+   "text": "10% of $99.89 = $9.99"
+  },
+  {
+   "t": "2026-11-26T02:36:46Z",
+   "time": "03:36:46",
+   "agent": "EXECUTOR",
+   "coin": "UHI",
+   "action": "enter",
+   "text": "ENTER UHI at 0.0011525226 · slip 0.5% · buys 76% · trending · boosted"
+  }
+ ],
+ "nights": [],
+ "errors": [
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
+ ]
+}
