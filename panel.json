@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T15:51:43Z",
+ "updated": "2026-11-26T15:52:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 34,
-  "checked": 31,
-  "filtered": 4,
-  "lines": 582,
+  "flagged": 35,
+  "checked": 32,
+  "filtered": 5,
+  "lines": 585,
   "last_rug": {
-   "coin": "cpndagso",
+   "coin": "mrpompsik",
    "pass": false
   }
  },
  "flags": [
-  {
-   "coin": "FLINT",
-   "why": "momentum",
-   "t": "2026-11-26T14:55:57Z"
-  },
   {
    "coin": "ONCE",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "STREETS",
    "why": "momentum",
    "t": "2026-11-26T15:48:53Z"
+  },
+  {
+   "coin": "mrpompsik",
+   "why": "momentum",
+   "t": "2026-11-26T15:51:45Z"
   }
  ],
  "curve": [
@@ -1700,6 +1700,10 @@
   [
    1795708273,
    84.53
+  ],
+  [
+   1795708333,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2174,33 +2178,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T13:15:46Z",
-   "time": "14:15:46",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 5 watched · 13 rejected (dump 8, dev bought 2, serial launcher 1) · closest FERMENT: too young: 27 s (min 45 s)",
-   "n": 383
-  },
-  {
-   "t": "2026-11-26T13:16:46Z",
-   "time": "14:16:46",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 6 watched · 14 rejected (dump 7, dev bought 2, serial launcher 2) · closest BASS: too young: 23 s (min 45 s)",
-   "n": 384
-  },
-  {
-   "t": "2026-11-26T13:17:47Z",
-   "time": "14:17:47",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 2 watched · 11 rejected (dump 6, serial launcher 3, mayhem mode 1) · closest BASS: buy share 60%/65% · mcap 81 SOL (max 70)",
-   "n": 385
-  },
   {
    "t": "2026-11-26T13:18:48Z",
    "time": "14:18:48",
@@ -3973,6 +3950,33 @@
    "action": "scan",
    "text": "new pairs · 5.6 a minute · 9 watched · 5 rejected (dump 2, mayhem mode 2, no symbol or name 1) · closest mrpompsik: SOL in 2.2/2.5 · buys 5/6",
    "n": 582
+  },
+  {
+   "t": "2026-11-26T15:51:44Z",
+   "time": "16:51:44",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 6 watched · 4 rejected (dump 1, dev bought 1, no symbol or name 1) · closest mrpompsik: SOL in 2.2/2.5 · buys 5/6",
+   "n": 583
+  },
+  {
+   "t": "2026-11-26T15:51:45Z",
+   "time": "16:51:45",
+   "agent": "SCANNER",
+   "coin": "mrpompsik",
+   "action": "flag",
+   "text": "momentum · 5.4 SOL in · 6/6 buys (100%) · +38% since launch · mcap 42 SOL · 178 s old",
+   "n": 584
+  },
+  {
+   "t": "2026-11-26T15:51:45Z",
+   "time": "16:51:45",
+   "agent": "RUG CHECK",
+   "coin": "mrpompsik",
+   "action": "reject",
+   "text": "FAIL · risk: Creator history of rugged tokens",
+   "n": 585
   }
  ],
  "nights": [
@@ -4020,7 +4024,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4028,24 +4032,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 305,
-    "last_event_age_s": 53.3,
+    "events": 307,
+    "last_event_age_s": 12.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4609,
-    "last_event_age_s": 0.9,
+    "events": 4657,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 236,
-    "last_event_age_s": 53.3,
+    "events": 237,
+    "last_event_age_s": 12.5,
     "errors": 11,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4058,9 +4062,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 4.6,
-  "watching": 6,
-  "followed": 8
+  "creates_per_min": 4.0,
+  "watching": 3,
+  "followed": 6
  },
  "learner": {
   "samples": 107,
@@ -4106,28 +4110,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2773,
+   "sent": 2807,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2783,
+   "sent": 2817,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BunBun",
+   "name": "BunBun",
+   "mint": "HwutDjeqd9DnPsh3QmBzpRcjQSTrMGj3qbRsDPrEpump",
+   "age_s": 12,
+   "sol_in": 3.36,
+   "buys": 4,
+   "sells": 4,
+   "rise_pct": 22.1,
+   "mcap_sol": 38.8,
+   "dev_pct": 6.6,
+   "big_sell": 2.71,
+   "x": "https://x.com/melsdevs/status/2125980881164915012?a=SaR6rSSTz3hxNi9V_fk&s=20",
+   "tg": false,
+   "web": "https://www.facebook.com/groups/spacehipsters/permalink/25399687269649483/",
+   "status": "rejected: dump: 2.7 SOL sold",
+   "why": "dump: 2.7 SOL sold"
+  },
+  {
+   "symbol": "SNW",
+   "name": "Let ist Snow...",
+   "mint": "665dFvJZmV8NRHJ3a9hiWdJaADjQHnz8tt7jQptdpump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "ty",
    "name": "ty",
    "mint": "DXQ79z5g5kbGhYAUcMRj1gELx7LoFNNEcbJxx5ArMmqb",
-   "age_s": 53,
-   "sol_in": -2.54,
+   "age_s": 85,
+   "sol_in": -3.03,
    "buys": 8,
-   "sells": 13,
-   "rise_pct": -14.8,
-   "mcap_sol": 28.9,
+   "sells": 14,
+   "rise_pct": -17.5,
+   "mcap_sol": 28.0,
    "dev_pct": 9.9,
    "big_sell": 5.28,
    "x": "https://x.com/nonanon124/status/2125979378303803800",
@@ -4140,12 +4180,12 @@
    "symbol": "HUSHFUND",
    "name": "Hushfund",
    "mint": "z37twMYUgNhbnu7zg48rMspvfaAMBwuDk7wwhmnpump",
-   "age_s": 57,
-   "sol_in": 7.39,
-   "buys": 6,
-   "sells": 7,
-   "rise_pct": 54.1,
-   "mcap_sol": 44.8,
+   "age_s": 89,
+   "sol_in": 15.68,
+   "buys": 15,
+   "sells": 9,
+   "rise_pct": 128.8,
+   "mcap_sol": 66.5,
    "dev_pct": 2.1,
    "big_sell": 2.08,
    "x": "https://x.com/hushfundlol/status/2125980477811314915",
@@ -4158,7 +4198,7 @@
    "symbol": "CLA",
    "name": "Cat Labs Act",
    "mint": "Fnwh1zjNcXmuNXhXiP1LE4LyaEP3zGuy2Djv6V5Ppump",
-   "age_s": 65,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4176,7 +4216,7 @@
    "symbol": "?",
    "name": "",
    "mint": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
-   "age_s": 79,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4194,7 +4234,7 @@
    "symbol": "Bench",
    "name": "Nietzschean Bench",
    "mint": "ANEHvqq824R5UpLrpZp3jAkUF8APxxokD1mmKQMgV7To",
-   "age_s": 87,
+   "age_s": 119,
    "sol_in": -0.09,
    "buys": 3,
    "sells": 5,
@@ -4212,7 +4252,7 @@
    "symbol": "RUDOLPH",
    "name": "Rudolph's Revenge",
    "mint": "6hE8T6ALK1ZfrLqQYaZ9vocFam7P3rsvxSiAeC5Hpump",
-   "age_s": 97,
+   "age_s": 129,
    "sol_in": 0.18,
    "buys": 5,
    "sells": 0,
@@ -4230,7 +4270,7 @@
    "symbol": "MOHT",
    "name": "MooseGrace",
    "mint": "Gec9Ju7toBq1wyhu4N87bqJ72cPjFcJsFPxTtHWoVFYk",
-   "age_s": 130,
+   "age_s": 162,
    "sol_in": -0.35,
    "buys": 1,
    "sells": 1,
@@ -4243,60 +4283,6 @@
    "web": "https://joeymoose.com/",
    "status": "watching",
    "why": "SOL in -0.3/2.5 · buys 1/6 · buy share 50%/65% · rise -2%/+12%"
-  },
-  {
-   "symbol": "CUMALOL",
-   "name": "Cumala LOL",
-   "mint": "4aS3RUVLgZoEDYvPnEpBb873jw9SRGN8PyxTEBA8pump",
-   "age_s": 149,
-   "sol_in": 0.24,
-   "buys": 10,
-   "sells": 0,
-   "rise_pct": 1.6,
-   "mcap_sol": 28.5,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.2/2.5 · rise +2%/+12%"
-  },
-  {
-   "symbol": "PillgrimIn",
-   "name": "PillgrimInu",
-   "mint": "F6arDEKEFHezL3vriL4unLLDCsAaCBKnFu7hQgeWpump",
-   "age_s": 163,
-   "sol_in": -0.98,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.99,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 22 s (min 45 s)"
-  },
-  {
-   "symbol": "mrpompsik",
-   "name": "mrpompsik",
-   "mint": "4irvag1SG2hqKw4Rh2n6FKvYarp96cgevnNgP5LPpump",
-   "age_s": 176,
-   "sol_in": 2.24,
-   "buys": 5,
-   "sells": 0,
-   "rise_pct": 14.9,
-   "mcap_sol": 34.8,
-   "dev_pct": 4.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 2.2/2.5 · buys 5/6"
   }
  ],
  "strategies": [
