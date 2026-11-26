@@ -71,7 +71,8 @@ th, td { text-align: left; padding: 7px 14px; border-top: 1px solid var(--line);
 th { font-weight: 500; color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; }
 td.num, th.num { text-align: right; }
 .scroll { overflow-x: auto; }
-.note { font: 400 11px/1.6 var(--mono); color: var(--muted); padding: 0 4px; }
+.note { font: 400 11px/1.6 var(--mono); color: var(--muted); padding: 0 4px; margin: 0; }
+.note a { color: var(--ink); }
 .msg { padding: 10px 14px; border-bottom: 1px solid var(--line); font: 400 12px/1.5 var(--mono); background: var(--chip); }
 .msg.bad { color: var(--down); }
 @media (max-width: 440px) {
@@ -137,6 +138,7 @@ td.num, th.num { text-align: right; }
         <h2>Nights</h2>
         <div class="scroll"><table><thead><tr><th>night</th><th class="num">start</th><th class="num">end</th><th class="num">pnl</th><th class="num">trades</th></tr></thead><tbody id="nights"></tbody></table></div>
       </section>
+      <p class="note">Live page, refreshed every minute: <a href="https://karpens.github.io/memebot/">karpens.github.io/memebot</a></p>
       <p class="note">Paper trading: every buy and sell is priced by a real Jupiter quote on Solana, with fees. No wallet, no real money. Not financial advice: most new meme coins lose most of their value within hours.</p>
     </main>
   </div>
@@ -302,9 +304,26 @@ td.num, th.num { text-align: right; }
       }, { refetchInterval: 60000 });
   }
 
+  // outside claude.ai (the GitHub Pages copy): the public repository's data, read every minute
+  var RAW = "https://raw.githubusercontent.com/" + OWNER + "/" + REPO + "/meme-data/panel.json";
+  var ACTIONS = "https://github.com/" + OWNER + "/" + REPO + "/actions/workflows/" + WF;
+  var onWeb = !(window.claude && window.claude.use);
+  function poll() {
+    fetch(RAW + "?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (doc) { if (doc) { render(doc); if (!$("msg").classList.contains("bad")) say(""); } })
+      .catch(function () { say("Dáta sa teraz nedajú načítať z GitHubu. Skúsim znova o minútu.", true); });
+  }
+  if (onWeb) { poll(); setInterval(poll, 60000); }
+
   var busy = false;
   $("run").addEventListener("click", function () {
     if (busy) return;
+    if (onWeb) {
+      say("Bot beží každú noc sám. Na spustenie hneď otvor GitHub Actions a klikni Run workflow.");
+      window.open(ACTIONS, "_blank", "noopener");
+      return;
+    }
     if (!mcp) {
       say("Táto stránka bota spustí cez tvoj konektor GitHub, ten tu teraz nie je dostupný. Bot sa dá spustiť aj na GitHube: Actions → Meme Bot → Run workflow.", true);
       return;
