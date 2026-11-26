@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:16:46Z",
+ "updated": "2026-11-26T11:17:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 17,
-  "checked": 17,
+  "flagged": 18,
+  "checked": 18,
   "filtered": 1,
-  "lines": 227,
+  "lines": 231,
   "last_rug": {
-   "coin": "MEME",
+   "coin": "MARU",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Oro",
-   "why": "momentum",
-   "t": "2026-11-26T09:34:24Z"
-  },
   {
    "coin": "BACKER",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "MEME",
    "why": "momentum",
    "t": "2026-11-26T11:09:47Z"
+  },
+  {
+   "coin": "MARU",
+   "why": "momentum",
+   "t": "2026-11-26T11:16:46Z"
   }
  ],
  "curve": [
@@ -600,6 +600,10 @@
   [
    1795691761,
    85.94
+  ],
+  [
+   1795691821,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -984,42 +988,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:12:29Z",
-   "time": "10:12:29",
-   "agent": "SCANNER",
-   "coin": "SWARM",
-   "action": "flag",
-   "text": "momentum · 6.1 SOL in · 6/6 buys (100%) · +43% since launch · mcap 42 SOL · 18 s old",
-   "n": 28
-  },
-  {
-   "t": "2026-11-26T09:12:29Z",
-   "time": "10:12:29",
-   "agent": "RUG CHECK",
-   "coin": "SWARM",
-   "action": "pass",
-   "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
-   "n": 29
-  },
-  {
-   "t": "2026-11-26T09:12:29Z",
-   "time": "10:12:29",
-   "agent": "SIZER",
-   "coin": "SWARM",
-   "action": "size",
-   "text": "10% of $96.48 = $9.65",
-   "n": 30
-  },
-  {
-   "t": "2026-11-26T09:12:29Z",
-   "time": "10:12:29",
-   "agent": "EXECUTOR",
-   "coin": "SWARM",
-   "action": "enter",
-   "text": "ENTER SWARM at 0.0000030946 · slip 1.7% · first in · 0.1 s after the trigger · 18 s after launch · curve maths 0.0% off Jupiter",
-   "n": 31
-  },
   {
    "t": "2026-11-26T09:12:29Z",
    "time": "10:12:29",
@@ -2783,6 +2751,42 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 3 watched · 10 rejected (dev bought 3, dump 3, mayhem mode 2) · closest MARU: buys 4/6 · buy share 57%/65%",
    "n": 227
+  },
+  {
+   "t": "2026-11-26T11:16:46Z",
+   "time": "12:16:46",
+   "agent": "SCANNER",
+   "coin": "MARU",
+   "action": "flag",
+   "text": "momentum · 3.6 SOL in · 6/9 buys (67%) · +25% since launch · mcap 36 SOL · 90 s old",
+   "n": 228
+  },
+  {
+   "t": "2026-11-26T11:16:46Z",
+   "time": "12:16:46",
+   "agent": "RUG CHECK",
+   "coin": "MARU",
+   "action": "pass",
+   "text": "PASS · 10 holders · top holder 3.4% · top 10 13% (curve left out)",
+   "n": 229
+  },
+  {
+   "t": "2026-11-26T11:16:46Z",
+   "time": "12:16:46",
+   "agent": "LEARNER",
+   "coin": "MARU",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 11.4% · hour:day -17.1% over 10, news:0-2 -17.1% over 10",
+   "n": 230
+  },
+  {
+   "t": "2026-11-26T11:17:16Z",
+   "time": "12:17:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 2 watched · 11 rejected (dev bought 4, dump 3, mayhem mode 3) · closest ALAL: SOL in 0.0/2.5 · buys 3/6 · rise +0%/+12%",
+   "n": 231
   }
  ],
  "nights": [
@@ -2828,7 +2832,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2836,24 +2840,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 155,
-    "last_event_age_s": 16.7,
+    "events": 158,
+    "last_event_age_s": 2.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2610,
-    "last_event_age_s": 3.9,
+    "events": 2648,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 102,
-    "last_event_age_s": 43.5,
+    "events": 105,
+    "last_event_age_s": 2.1,
     "errors": 14,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2866,13 +2870,13 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 4.2,
   "watching": 2,
-  "followed": 8
+  "followed": 10
  },
  "learner": {
   "samples": 105,
-  "skipped": 8,
+  "skipped": 9,
   "explored": 2,
   "min_samples": 8,
   "best": [
@@ -2913,23 +2917,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2173,
+   "sent": 2206,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2173,
+   "sent": 2206,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Oppai",
+   "name": "おっぱい",
+   "mint": "CL4fW9DV1E6zmjdJMN3zNDdM5zjm4Db7omrwvsoaTH6Z",
+   "age_s": 2,
+   "sol_in": 4.86,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 29.7,
+   "mcap_sol": 49.2,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/MarioPrezldente/status/2125911756321210418",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
+   "symbol": "Krampus",
+   "name": "Krampus",
+   "mint": "7d59Di3wANhXsaiaKAYnyREBTcCa5vah2c6Nxw5Dpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 1.33,
+   "x": "https://x.com/KrampusSol/status/2125911621520211980?a=VOK14aYqqpaO1BJQijs&s=20",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
+   "symbol": "Kimchi",
+   "name": "Larp Final Boss",
+   "mint": "F6rUfxT4p8fQ4spDzqRHSJ2gqiLqTmXxbHHor3UMpump",
+   "age_s": 23,
+   "sol_in": 19.39,
+   "buys": 11,
+   "sells": 9,
+   "rise_pct": 141.8,
+   "mcap_sol": 91.7,
+   "dev_pct": 15.2,
+   "big_sell": 2.57,
+   "x": "https://x.com/coddevz/status/2125911639048544306",
+   "tg": false,
+   "web": "https://x.com/killzzsolana/status/2125363616148865529",
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
    "symbol": "MARU",
    "name": "Maru",
    "mint": "3ny5WR9dGQqvUEPU1HnuEKuKUGZcrzPpQN4SFvkCbxxT",
-   "age_s": 16,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2947,7 +3005,7 @@
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "9VNWXPvFHTL12whCfF6PwjUn6dswdKk8DHwprWBdpump",
-   "age_s": 40,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2965,12 +3023,12 @@
    "symbol": "Oppai",
    "name": "おっぱい",
    "mint": "2Qh1DjCmgzgWcVnKgZyWs1wzAQzThbebzt6wWTsTYQVN",
-   "age_s": 43,
-   "sol_in": -3.7,
-   "buys": 4,
-   "sells": 9,
-   "rise_pct": -20.1,
-   "mcap_sol": 30.3,
+   "age_s": 74,
+   "sol_in": -3.48,
+   "buys": 5,
+   "sells": 12,
+   "rise_pct": -19.0,
+   "mcap_sol": 30.7,
    "dev_pct": 15.2,
    "big_sell": 3.97,
    "x": "https://x.com/StepCoinsol8/status/2125911255248494637",
@@ -2983,27 +3041,27 @@
    "symbol": "ALAL",
    "name": "ALAL",
    "mint": "33ej1y2CPGKXXbXcXuTQjwTJUFXdhQaM2MPFgo1Xpump",
-   "age_s": 58,
-   "sol_in": 0.02,
-   "buys": 2,
+   "age_s": 89,
+   "sol_in": 0.03,
+   "buys": 3,
    "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.1,
    "dev_pct": 0.1,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 3/6 · rise +0%/+12%"
   },
   {
    "symbol": "Oppaitology",
    "name": "Oppaitology",
    "mint": "FLKZSSFzA8y8p4T8qFJ7hixfPd6TYvPNCXygQE5Uzp3p",
-   "age_s": 83,
+   "age_s": 114,
    "sol_in": -2.02,
-   "buys": 9,
+   "buys": 10,
    "sells": 9,
    "rise_pct": -11.9,
    "mcap_sol": 29.9,
@@ -3019,30 +3077,30 @@
    "symbol": "MARU",
    "name": "Marucoin",
    "mint": "8foa3xKNg3AXTTZF5X9ZVC7v4X4EkNzGCcjk3nCbpump",
-   "age_s": 90,
-   "sol_in": 3.53,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": 24.5,
-   "mcap_sol": 36.1,
+   "age_s": 121,
+   "sol_in": 0.27,
+   "buys": 7,
+   "sells": 5,
+   "rise_pct": 1.7,
+   "mcap_sol": 29.5,
    "dev_pct": 2.0,
-   "big_sell": 0.35,
+   "big_sell": 2.88,
    "x": "https://x.com/fwogzz/status/2125908966224036346",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "buys 5/6 · buy share 62%/65%"
+   "status": "rejected: learner: skip",
+   "why": "learner: skip"
   },
   {
    "symbol": "SHIBA",
    "name": "The Official Pump Inu",
    "mint": "7BTKvcMn2b6vULJwSk7QFU2RPqTxH4oT5JkamixXpump",
-   "age_s": 103,
-   "sol_in": 143.5,
-   "buys": 5,
-   "sells": 18,
-   "rise_pct": 5061.9,
-   "mcap_sol": 1443.2,
+   "age_s": 134,
+   "sol_in": 121.01,
+   "buys": 6,
+   "sells": 20,
+   "rise_pct": 4896.1,
+   "mcap_sol": 1396.8,
    "dev_pct": 0.0,
    "big_sell": 80.56,
    "x": "https://x.com/Jesusisdev/status/2125903178931613704?a=7M4O-ooTOHKBhrhUpP4&s=20",
@@ -3055,7 +3113,7 @@
    "symbol": "Maru",
    "name": "catinbox",
    "mint": "BFkR9SBPKQTYqGMMQPvh1cFgZ3KQkgsFwxQ4QnpPpump",
-   "age_s": 111,
+   "age_s": 142,
    "sol_in": -1.97,
    "buys": 3,
    "sells": 4,
@@ -3073,7 +3131,7 @@
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "DbXTySbNmc3VCCfFtUUpTkiHjuSNjTrcxKNXCxLapump",
-   "age_s": 129,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3091,7 +3149,7 @@
    "symbol": "DRIFT",
    "name": "Miami Drift",
    "mint": "61v5TjiewBzQYSpKLo9tJpyw4zyvT2m8qh7WZT5Xd2tN",
-   "age_s": 131,
+   "age_s": 162,
    "sol_in": -1.2,
    "buys": 1,
    "sells": 2,
@@ -3104,42 +3162,6 @@
    "web": "https://x.com/i/communities/2016274259132481559",
    "status": "rejected: dump: 5.2 SOL sold",
    "why": "dump: 5.2 SOL sold"
-  },
-  {
-   "symbol": "SHELL",
-   "name": "Shell",
-   "mint": "EqJcgUNNe61t356uauosM9BsL3ifW9EZKLUM8i6joHRe",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 32.7,
-   "dev_pct": 8.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "WiNnInG",
-   "name": "TrUmPfUn",
-   "mint": "F46mDUdJptQswzpQHBHf3Znm71sZPoGLBzwUW8Zpump",
-   "age_s": 173,
-   "sol_in": 3.44,
-   "buys": 5,
-   "sells": 0,
-   "rise_pct": 23.9,
-   "mcap_sol": 35.8,
-   "dev_pct": 1.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/realDonaldTrump",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
