@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T09:05:13Z",
+ "updated": "2026-11-26T09:05:44Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 88.92,
- "equity": 98.19,
+ "balance": 77.67,
+ "equity": 96.34,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,13 +21,27 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 0,
-  "checked": 0,
+  "flagged": 2,
+  "checked": 2,
   "filtered": 0,
-  "lines": 4,
-  "last_rug": null
+  "lines": 16,
+  "last_rug": {
+   "coin": "HOGZ",
+   "pass": true
+  }
  },
- "flags": [],
+ "flags": [
+  {
+   "coin": "ZEROCAST",
+   "why": "momentum",
+   "t": "2026-11-26T09:05:18Z"
+  },
+  {
+   "coin": "HOGZ",
+   "why": "momentum",
+   "t": "2026-11-26T09:05:39Z"
+  }
+ ],
  "curve": [
   [
    1795683896,
@@ -42,14 +56,14 @@
    "symbol": "BST",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
    "cost": 9.88,
-   "value": 9.26,
-   "pnl_pct": -6.3,
+   "value": 9.27,
+   "pnl_pct": -6.2,
    "opened": "2026-11-26T09:01:53Z",
    "url": "https://pump.fun/coin/9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
    "reason": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
    "size_pct": 10.0,
    "entry_price": 2.53912e-06,
-   "price": 2.39734e-06,
+   "price": 2.3991e-06,
    "slip": 3.15,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -81,9 +95,94 @@
     2.46694e-06,
     2.39734e-06
    ]
+  },
+  {
+   "symbol": "HOGZ",
+   "mint": "8mm21tJZG54pEcuXzvetRhbwKs9QjqUySZ5WkfEaszk",
+   "cost": 9.66,
+   "value": 9.39,
+   "pnl_pct": -2.8,
+   "opened": "2026-11-26T09:05:39Z",
+   "url": "https://pump.fun/coin/8mm21tJZG54pEcuXzvetRhbwKs9QjqUySZ5WkfEaszk",
+   "reason": "momentum · 7.6 SOL in · 6/7 buys (86%) · +57% since launch · mcap 44 SOL · 14 s old",
+   "size_pct": 10.0,
+   "entry_price": 3.19596e-06,
+   "price": 3.13052e-06,
+   "slip": 1.8,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 2,
+    "parts": [
+     "inflow 7.6 SOL",
+     "buys 86%"
+    ],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "age_s": 14,
+   "mcap_sol": 43.9,
+   "dev_pct": 0.0,
+   "sol_in": 7.58,
+   "hist": [
+    3.19596e-06,
+    3.13052e-06
+   ]
   }
  ],
- "trades": [],
+ "trades": [
+  {
+   "symbol": "ZEROCAST",
+   "mint": "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump",
+   "opened": "2026-11-26T09:05:18Z",
+   "closed": "2026-11-26T09:05:28Z",
+   "cost": 9.82,
+   "proceeds": 8.23,
+   "pnl": -1.59,
+   "pnl_pct": -16.2,
+   "why": "stop -13%",
+   "url": "https://pump.fun/coin/7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump",
+   "reason": "momentum · 4.6 SOL in · 6/9 buys (67%) · +32% since launch · mcap 40 SOL · 10 s old",
+   "size_pct": 10.0,
+   "entry_price": 2.8910760678454497e-06,
+   "exit_price": 2.5269172110730157e-06,
+   "slip": 0.0,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 0,
+    "parts": [],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 10,
+   "mcap_sol": 39.7,
+   "dev_pct": 3.82,
+   "sol_in": 4.65,
+   "exit_ms": 31
+  }
+ ],
  "log": [
   {
    "t": "2026-11-26T09:04:56Z",
@@ -120,6 +219,114 @@
    "action": "feed",
    "text": "feeds · pumpportal live · curve poll 0.5 s · 1 watched · ws off",
    "n": 4
+  },
+  {
+   "t": "2026-11-26T09:05:18Z",
+   "time": "10:05:18",
+   "agent": "SCANNER",
+   "coin": "ZEROCAST",
+   "action": "flag",
+   "text": "momentum · 4.6 SOL in · 6/9 buys (67%) · +32% since launch · mcap 40 SOL · 10 s old",
+   "n": 5
+  },
+  {
+   "t": "2026-11-26T09:05:18Z",
+   "time": "10:05:18",
+   "agent": "RUG CHECK",
+   "coin": "ZEROCAST",
+   "action": "pass",
+   "text": "PASS · 11 holders · top holder 3.2% · top 10 11% (curve left out)",
+   "n": 6
+  },
+  {
+   "t": "2026-11-26T09:05:18Z",
+   "time": "10:05:18",
+   "agent": "SIZER",
+   "coin": "ZEROCAST",
+   "action": "size",
+   "text": "10% of $98.19 = $9.82",
+   "n": 7
+  },
+  {
+   "t": "2026-11-26T09:05:18Z",
+   "time": "10:05:18",
+   "agent": "EXECUTOR",
+   "coin": "ZEROCAST",
+   "action": "enter",
+   "text": "ENTER ZEROCAST at 0.0000028911 · slip 0.0% · first in · 0.1 s after the trigger · 10 s after launch · curve maths 0.0% off Jupiter",
+   "n": 8
+  },
+  {
+   "t": "2026-11-26T09:05:18Z",
+   "time": "10:05:18",
+   "agent": "NEWS",
+   "coin": "ZEROCAST",
+   "action": "plan",
+   "text": "hold plan · 0/10 (no news) · scalp: +7",
+   "n": 9
+  },
+  {
+   "t": "2026-11-26T09:05:28Z",
+   "time": "10:05:28",
+   "agent": "EXECUTOR",
+   "coin": "ZEROCAST",
+   "action": "exit",
+   "text": "EXIT ZEROCAST $-1.59 (-16%) · stop -13% · out · 0.0 s after the reading",
+   "n": 10
+  },
+  {
+   "t": "2026-11-26T09:05:28Z",
+   "time": "10:05:28",
+   "agent": "LEARNER",
+   "coin": "ZEROCAST",
+   "action": "learn",
+   "text": "learned · tier:scalp now avg -14.1% over 2",
+   "n": 11
+  },
+  {
+   "t": "2026-11-26T09:05:39Z",
+   "time": "10:05:39",
+   "agent": "SCANNER",
+   "coin": "HOGZ",
+   "action": "flag",
+   "text": "momentum · 7.6 SOL in · 6/7 buys (86%) · +57% since launch · mcap 44 SOL · 14 s old",
+   "n": 12
+  },
+  {
+   "t": "2026-11-26T09:05:39Z",
+   "time": "10:05:39",
+   "agent": "RUG CHECK",
+   "coin": "HOGZ",
+   "action": "pass",
+   "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
+   "n": 13
+  },
+  {
+   "t": "2026-11-26T09:05:39Z",
+   "time": "10:05:39",
+   "agent": "SIZER",
+   "coin": "HOGZ",
+   "action": "size",
+   "text": "10% of $96.60 = $9.66",
+   "n": 14
+  },
+  {
+   "t": "2026-11-26T09:05:39Z",
+   "time": "10:05:39",
+   "agent": "EXECUTOR",
+   "coin": "HOGZ",
+   "action": "enter",
+   "text": "ENTER HOGZ at 0.000003196 · slip 1.8% · first in · 0.1 s after the trigger · 14 s after launch · curve maths 0.0% off Jupiter",
+   "n": 15
+  },
+  {
+   "t": "2026-11-26T09:05:39Z",
+   "time": "10:05:39",
+   "agent": "NEWS",
+   "coin": "HOGZ",
+   "action": "plan",
+   "text": "hold plan · 2/10 (inflow 7.6 SOL, buys 86%) · scalp: +7",
+   "n": 16
   }
  ],
  "nights": [
@@ -162,7 +369,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 2 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 14 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -170,42 +377,42 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1,
-    "last_event_age_s": 5.0,
+    "events": 13,
+    "last_event_age_s": 7.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6,
-    "last_event_age_s": 1.8,
+    "events": 36,
+    "last_event_age_s": 2.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 1,
-    "last_event_age_s": 2.9,
-    "errors": 1,
+    "events": 13,
+    "last_event_age_s": 2.7,
+    "errors": 13,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": null,
-  "first_in_last_ms": null,
-  "exit_ms": null,
-  "exit_last_ms": null,
-  "launch_to_entry_s": null,
-  "creates_per_min": 0.2,
-  "watching": 1,
-  "followed": 2
+  "first_in_ms": 69.5,
+  "first_in_last_ms": 65,
+  "exit_ms": 31,
+  "exit_last_ms": 31,
+  "launch_to_entry_s": 12.5,
+  "creates_per_min": 2.6,
+  "watching": 11,
+  "followed": 14
  },
  "learner": {
-  "samples": 96,
+  "samples": 97,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
@@ -247,41 +454,257 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19,
+   "sent": 56,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19,
+   "sent": 56,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "ZEROCAST",
-   "name": "BOX ZEROCAST",
-   "mint": "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump",
-   "age_s": 5,
-   "sol_in": 4.41,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 30.3,
-   "mcap_sol": 39.2,
-   "dev_pct": 3.8,
-   "big_sell": 0.27,
+   "symbol": "HAMMER",
+   "name": "Hogz Hammer",
+   "mint": "3EU2CdTJAqU94QExkfvahcXbF1X2dBG9Vh8XjwzufYA6",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "buys 4/6"
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "POT",
+   "name": "Hogz Pot",
+   "mint": "5iTMPk5MXGve8CjPpWGjGBU8y1ksGYG6Q1oiFSN8BpUj",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "SNOUT",
+   "name": "Hogz Snout",
+   "mint": "3okgg8VZX7J4cmyuBMjJQsrwcB2qRtVVvjqjrm5Y1G1e",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "WINNER",
+   "name": "Hogz Winner",
+   "mint": "CFCAcp95uBRxMWpXKhWjhmfgEX9ARrK8hLVXtpXzxX6V",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "BANK",
+   "name": "Hogz Bank",
+   "mint": "AZxwCNue7DSywuoFCBbF9RkVFXU9zQQFCJ3zHCpgkZTq",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "TROTTER",
+   "name": "Hogz Trotter",
+   "mint": "2dnMqmx9d3qshfHF7q4QDDxNRMsE38rxHjs41Ymmk4Kr",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "COIN",
+   "name": "Hogz Coin",
+   "mint": "9h2VNTwK81cHLAu75kmDrst2vNWTVTQRCsy3y7NEGpHS",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "OINK",
+   "name": "Hogz Oink",
+   "mint": "DeJPPW9gfy5M1Cv5n5KfLm7a1r8mggEpukTi7CnwnWFX",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "DUEL",
+   "name": "Hogz Duel",
+   "mint": "4pfNUZbtdNhLBtDYL8JRhJ3fKtgHASivpystcTd3TKAz",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "CRUMBS",
+   "name": "Hogz Crumbs",
+   "mint": "2MkgpZCcHAMiDz7fUJ4Z89RurFU6iEnBuuBiTwLvMqPp",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "PIG",
+   "name": "Hogz Pig",
+   "mint": "92oVEzbDUN4NRVuMsCyTFPJyCEwduQJtohM1ZzFdrGxx",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "HOGZ",
+   "name": "Hogz",
+   "mint": "8mm21tJZG54pEcuXzvetRhbwKs9QjqUySZ5WkfEaszk",
+   "age_s": 19,
+   "sol_in": 7.68,
+   "buys": 7,
+   "sells": 1,
+   "rise_pct": 57.8,
+   "mcap_sol": 44.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.49,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "entered",
+   "why": "momentum · 7.6 SOL in · 6/7 buys (86%) · +57% since launch · mcap 44 SOL · 14 s old"
+  },
+  {
+   "symbol": "ZEROCAST",
+   "name": "BOX ZEROCAST",
+   "mint": "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump",
+   "age_s": 36,
+   "sol_in": 2.11,
+   "buys": 8,
+   "sells": 8,
+   "rise_pct": 14.0,
+   "mcap_sol": 34.3,
+   "dev_pct": 3.8,
+   "big_sell": 1.17,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "exited: stop -13%",
+   "why": "stop -13%"
   },
   {
    "symbol": "BST",
    "name": "bastion",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "age_s": 342,
+   "age_s": 373,
    "sol_in": 2.0,
    "buys": 13,
    "sells": 5,
