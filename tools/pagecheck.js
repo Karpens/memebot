@@ -18,15 +18,16 @@ const { chromium } = require('playwright');
   for (let i = 0; i < secs; i++) {
     await p.waitForTimeout(1000);
     const s = await p.evaluate(() => {
-      const pill = [...document.querySelectorAll('*')].find(e => /^(LIVE|OFFLINE|SNAPSHOT)/.test((e.textContent || '').trim()) && e.children.length < 3);
+      const t = id => { const e = document.getElementById(id); return e ? e.textContent.trim() : null; };
       const hero = document.body.innerText.match(/\$[0-9.,]+\s*balance/);
-      return { pill: pill ? pill.textContent.trim().slice(0, 40) : null, bal: hero ? hero[0] : null, mqtt: typeof window.mqtt };
+      return { pill: t('livePillText'), age: t('livePillAge'), bal: hero ? hero[0].replace(/\s+/g, ' ') : null, mqtt: typeof window.mqtt };
     });
     seen.push(s);
   }
   await p.screenshot({ path: 'pagecheck.png' });
   const pills = seen.map(s => s.pill);
   console.log('pills:', JSON.stringify([...new Set(pills)]));
+  console.log('ages:', JSON.stringify(seen.map(s => s.age)));
   console.log('balances:', JSON.stringify([...new Set(seen.map(s => s.bal))]));
   console.log('mqtt lib:', seen[seen.length - 1].mqtt);
   console.log('websockets:', JSON.stringify(ws));
