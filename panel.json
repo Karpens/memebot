@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:54:38Z",
+ "updated": "2026-11-26T10:55:12Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 16,
   "checked": 16,
   "filtered": 1,
-  "lines": 196,
+  "lines": 197,
   "last_rug": {
    "coin": "NODIVO",
    "pass": true
@@ -511,6 +511,10 @@
   ],
   [
    1795690441,
+   87.14
+  ],
+  [
+   1795690501,
    87.14
   ]
  ],
@@ -2616,6 +2620,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 4 watched · 6 rejected (dev bought 3, dump 2, mayhem mode 1) · closest gob: SOL in 0.2/2.5 · buys 5/6 · rise +2%/+12%",
    "n": 196
+  },
+  {
+   "t": "2026-11-26T10:55:06Z",
+   "time": "11:55:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 3 watched · 8 rejected (dev bought 3, mayhem mode 3, dump 2) · closest 28CENTS: SOL in 0.0/2.5 · buys 3/6 · rise +0%/+12%",
+   "n": 197
   }
  ],
  "nights": [
@@ -2658,7 +2671,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2666,15 +2679,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 58,
-    "last_event_age_s": 23.2,
+    "events": 61,
+    "last_event_age_s": 8.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1227,
+    "events": 1282,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -2682,8 +2695,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 44,
-    "last_event_age_s": 51.2,
+    "events": 46,
+    "last_event_age_s": 8.4,
     "errors": 3,
     "last_error": "not an http uri"
    }
@@ -2697,8 +2710,8 @@
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
   "creates_per_min": 3.8,
-  "watching": 2,
-  "followed": 6
+  "watching": 3,
+  "followed": 8
  },
  "learner": {
   "samples": 104,
@@ -2743,23 +2756,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 757,
+   "sent": 793,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 757,
+   "sent": 793,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WDYS",
+   "name": "what did you say?",
+   "mint": "FMZNFGb62oBZriAqVFewg6zoFvjVmCHKgW9jAm8Tpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "Yaranaika",
+   "name": "やらないか",
+   "mint": "9gEsFEFxSgCMTFVMNyhMGgcSyYsCqXKWy7rsSuqTyCaP",
+   "age_s": 24,
+   "sol_in": -3.06,
+   "buys": 1,
+   "sells": 4,
+   "rise_pct": -17.7,
+   "mcap_sol": 28.0,
+   "dev_pct": 9.9,
+   "big_sell": 3.28,
+   "x": "https://x.com/nonanon124/status/2125905505621283203",
+   "tg": false,
+   "web": "https://knowyourmeme.com/sensitive/memes/yaranaika-%E3%82%84%E3%82%89%E3%81%AA%E3%81%84%E3%81%8B",
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
+   "symbol": "CAODINIU",
+   "name": "CAO DI NIU",
+   "mint": "CgtwzZw1EGVX5cRAvujpmAorw9SNrMMMsCPeU6hApump",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "HALH",
    "name": "Haaland Hair",
    "mint": "J5KA3RQAPY1qu5UnKD72c73SknkJ3reru4ADNdEopump",
-   "age_s": 23,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2777,7 +2844,7 @@
    "symbol": "neuralink",
    "name": "link",
    "mint": "5MhMdJhaCLgFtJLbUoS1JQjEAcUJdrtcofe5gfwwpump",
-   "age_s": 51,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -2795,12 +2862,12 @@
    "symbol": "clanker",
    "name": "clanker",
    "mint": "DS4iXNbHrR1d3k3h8XwoUb6DbB1s7yF9Q9iv8ZwKpump",
-   "age_s": 56,
-   "sol_in": 9.76,
-   "buys": 19,
-   "sells": 18,
-   "rise_pct": 72.9,
-   "mcap_sol": 51.6,
+   "age_s": 90,
+   "sol_in": 2.72,
+   "buys": 20,
+   "sells": 33,
+   "rise_pct": 18.3,
+   "mcap_sol": 35.3,
    "dev_pct": 3.4,
    "big_sell": 7.01,
    "x": "https://x.com/Milsaftermils/status/2125905825906532388",
@@ -2813,7 +2880,7 @@
    "symbol": "MI",
    "name": "Math Inu",
    "mint": "Dfgc1H3gkqvreb82A9yvaz3faCYjyPLTrdAdwSyx5Xzc",
-   "age_s": 65,
+   "age_s": 99,
    "sol_in": -2.3,
    "buys": 5,
    "sells": 11,
@@ -2831,12 +2898,12 @@
    "symbol": "MINU",
    "name": "MathInu",
    "mint": "J6WymB78xYS2q7SszryLyuzws3me93k3z5e1FCzapump",
-   "age_s": 80,
-   "sol_in": 9.7,
-   "buys": 40,
-   "sells": 32,
-   "rise_pct": 75.1,
-   "mcap_sol": 49.0,
+   "age_s": 114,
+   "sol_in": 4.48,
+   "buys": 50,
+   "sells": 51,
+   "rise_pct": 32.1,
+   "mcap_sol": 36.9,
    "dev_pct": 0.0,
    "big_sell": 5.55,
    "x": "https://x.com/Dioss_Sol/status/2125905658822152585",
@@ -2849,7 +2916,7 @@
    "symbol": "CAODINIU",
    "name": "CAO DI NIU",
    "mint": "2phJYHgRQEyi3CA3GacBFNYghbavzSeTFzbkwyFzpump",
-   "age_s": 93,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2867,11 +2934,11 @@
    "symbol": "28CENTS",
    "name": "28 Cents",
    "mint": "Gf9CYKzmokT146h44vi8FFpYPF4k5sLs82oMtGunpump",
-   "age_s": 117,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.1,
+   "age_s": 151,
+   "sol_in": 0.03,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 0.2,
    "mcap_sol": 30.8,
    "dev_pct": 5.0,
    "big_sell": 0.0,
@@ -2879,18 +2946,18 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 3/6 · rise +0%/+12%"
   },
   {
    "symbol": "Yaranaika",
    "name": "やらないか",
    "mint": "3L6LHu2SScs57XNDjPgsG8sBny1HQAd1CXNtvGRd3RnT",
-   "age_s": 128,
-   "sol_in": 0.24,
+   "age_s": 162,
+   "sol_in": -0.14,
    "buys": 25,
-   "sells": 29,
-   "rise_pct": 1.4,
-   "mcap_sol": 34.4,
+   "sells": 31,
+   "rise_pct": -0.8,
+   "mcap_sol": 33.7,
    "dev_pct": 9.9,
    "big_sell": 2.95,
    "x": "https://x.com/nonanon124/status/2125905505621283203",
