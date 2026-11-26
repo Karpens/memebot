@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T01:39:54Z",
+ "updated": "2026-11-26T01:41:59Z",
  "mode": "paper",
  "start_balance": 70.0,
- "balance": 43.84,
- "equity": 58.31,
+ "balance": 32.16,
+ "equity": 58.83,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -18,19 +18,27 @@
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 215,
-  "flagged": 4,
-  "checked": 4
+  "scans": 221,
+  "flagged": 5,
+  "checked": 5
  },
  "live": true,
  "positions": [
   {
    "symbol": "MONEY",
    "cost": 14.61,
-   "value": 14.47,
-   "pnl_pct": -1.0,
+   "value": 14.99,
+   "pnl_pct": 2.6,
    "opened": "2026-11-26T01:29:04Z",
    "url": "https://dexscreener.com/solana/cchpignpbwf65nfsl3d8h4m4rwdprzh8lpcatynurxqg"
+  },
+  {
+   "symbol": "Pumpcat",
+   "cost": 11.68,
+   "value": 11.68,
+   "pnl_pct": 0.0,
+   "opened": "2026-11-26T01:40:25Z",
+   "url": "https://dexscreener.com/solana/4j4q8fc5y3iazhqrzjmti95jeuqk38yx397q2depxwnf"
   }
  ],
  "trades": [
@@ -491,6 +499,38 @@
    "coin": null,
    "action": "scan",
    "text": "90 nových coinov, 88 párov, 1 spĺňa pravidlá."
+  },
+  {
+   "t": "2026-11-26T01:40:04Z",
+   "time": "02:40:04",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "73 nových coinov, 71 párov, 3 spĺňa pravidlá."
+  },
+  {
+   "t": "2026-11-26T01:40:25Z",
+   "time": "02:40:25",
+   "agent": "SCANNER",
+   "coin": "Pumpcat",
+   "action": "flag",
+   "text": "pumpswap, likvidita $46.2k, 5 min $6.4k, nákupy 60 % (držitelia +26 %)."
+  },
+  {
+   "t": "2026-11-26T01:40:25Z",
+   "time": "02:40:25",
+   "agent": "SIZER",
+   "coin": "Pumpcat",
+   "action": "buy",
+   "text": "Kúpené za $11.68 (20 % zostatku), cena $0.00041832, dopad 0.8 %."
+  },
+  {
+   "t": "2026-11-26T01:41:49Z",
+   "time": "02:41:49",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "85 nových coinov, 83 párov, 7 spĺňa pravidlá."
   }
  ],
  "nights": [
@@ -507,5 +547,7 @@
    "scans": 3
   }
  ],
- "errors": []
+ "errors": [
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
+ ]
 }
