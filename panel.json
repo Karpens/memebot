@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:31:50Z",
+ "updated": "2026-11-26T19:32:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -24,7 +24,7 @@
   "flagged": 53,
   "checked": 41,
   "filtered": 8,
-  "lines": 874,
+  "lines": 875,
   "last_rug": {
    "coin": "WHO",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795685516,
-   87.76
-  ],
   [
    1795685576,
    87.76
@@ -2472,6 +2468,10 @@
   [
    1795721473,
    83.48
+  ],
+  [
+   1795721533,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2994,15 +2994,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T17:02:40Z",
-   "time": "18:02:40",
-   "agent": "RUG CHECK",
-   "coin": "MONANGAI",
-   "action": "wait",
-   "text": "waiting: RugCheck sees 8 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
-   "n": 675
-  },
   {
    "t": "2026-11-26T17:03:31Z",
    "time": "18:03:31",
@@ -4793,6 +4784,15 @@
    "action": "scan",
    "text": "new pairs · 7.8 a minute · 2 watched · 18 rejected (serial launcher 8, mayhem mode 6, dump 2) · closest YAO: SOL in 2.5/2.5 · buys 2/6 · buy share 25%/65%",
    "n": 874
+  },
+  {
+   "t": "2026-11-26T19:31:52Z",
+   "time": "20:31:52",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 7.6 a minute · 4 watched · 10 rejected (serial launcher 5, mayhem mode 3, dev bought 1) · closest AMUSK: too young: 8 s (min 45 s)",
+   "n": 875
   }
  ],
  "nights": [
@@ -4837,7 +4837,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4845,24 +4845,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1539,
-    "last_event_age_s": 7.2,
+    "events": 1541,
+    "last_event_age_s": 8.7,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21359,
-    "last_event_age_s": 3.4,
+    "events": 21377,
+    "last_event_age_s": 4.7,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1098,
-    "last_event_age_s": 5.0,
+    "events": 1099,
+    "last_event_age_s": 17.3,
     "errors": 96,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4875,9 +4875,9 @@
   "exit_ms": 33,
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
-  "creates_per_min": 7.6,
-  "watching": 4,
-  "followed": 10
+  "creates_per_min": 7.0,
+  "watching": 5,
+  "followed": 11
  },
  "learner": {
   "samples": 108,
@@ -4923,46 +4923,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12532,
+   "sent": 12564,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12566,
+   "sent": 12598,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "AMUSK",
-   "name": "AUSTIN MUSK",
-   "mint": "DryYCtYwxTL4enVJnCKtJRrPsE1TCnMHHZRknck2pump",
-   "age_s": 7,
-   "sol_in": 3.0,
-   "buys": 2,
+   "symbol": "SENTAI",
+   "name": "Sent AI Labs",
+   "mint": "FyUG2hes43CQ69m35NeUWCoDdeqvGG1zShqjSQV2pump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
    "sells": 0,
-   "rise_pct": 20.9,
-   "mcap_sol": 34.0,
-   "dev_pct": 0.4,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.0,
+   "dev_pct": 5.4,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "GENERA",
+   "name": "Genera Network",
+   "mint": "HKeiCfXn6T8fRfUAypSuUvzm7h26HL8dcQTpzQfnVcxm",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.3,
+   "dev_pct": 4.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/GeneraNetwork",
+   "tg": false,
+   "web": false,
    "status": "watching",
-   "why": "too young: 3 s (min 45 s)"
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "AMUSK",
+   "name": "AUSTIN MUSK",
+   "mint": "DryYCtYwxTL4enVJnCKtJRrPsE1TCnMHHZRknck2pump",
+   "age_s": 37,
+   "sol_in": 0.21,
+   "buys": 2,
+   "sells": 8,
+   "rise_pct": 1.4,
+   "mcap_sol": 28.5,
+   "dev_pct": 0.4,
+   "big_sell": 1.03,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 23 s (min 45 s)"
   },
   {
    "symbol": "ACCEPT",
    "name": "Financial Acceptance",
    "mint": "6n6eRRRseGhk5ZfDVzpAUKNL1AVu8oVwi73NPwo6BTwM",
-   "age_s": 9,
-   "sol_in": 1.15,
-   "buys": 1,
+   "age_s": 39,
+   "sol_in": 1.18,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 5.2,
-   "mcap_sol": 65.0,
+   "rise_pct": 5.4,
+   "mcap_sol": 65.1,
    "dev_pct": 35.1,
    "big_sell": 0.0,
    "x": "https://x.com/acceptsol",
@@ -4975,7 +5011,7 @@
    "symbol": "SI",
    "name": "Sex Inu",
    "mint": "9bt7xrTf7wpvu9n3yFvNfngamy9uMCSo1FbfrL4bVxR2",
-   "age_s": 17,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4993,7 +5029,7 @@
    "symbol": "USMS",
    "name": "USMS",
    "mint": "BxXoneWZ2bLLHJT1m56w3euRpjppDyhFF6su1MzcQAwZ",
-   "age_s": 22,
+   "age_s": 52,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -5011,7 +5047,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "EUTHuCu13Ps3xxva2x5XFedRrJ5HYQKYQAVt5Hn7pump",
-   "age_s": 24,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5029,7 +5065,7 @@
    "symbol": "SNOW",
    "name": "Snow",
    "mint": "FDKw3uTNBDLhGfBGH6kyv9SgUPk8yawAoH7SQNLAAwit",
-   "age_s": 40,
+   "age_s": 70,
    "sol_in": 0.08,
    "buys": 2,
    "sells": 1,
@@ -5047,7 +5083,7 @@
    "symbol": "AGI",
    "name": "Artificial Gooner Intelligence",
    "mint": "GcGxE3YvSkUtTDK34vgNikM4iNaruzQ1uf4VFE3LTNAR",
-   "age_s": 53,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5065,7 +5101,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "E1u12U3HBXoegncW3jmAHS2weCybaNgg56QooDFwpump",
-   "age_s": 96,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5083,7 +5119,7 @@
    "symbol": "SPDCHK",
    "name": "Speed Check",
    "mint": "2KvwYBoGUyAsrDx1noK8jGsqCmYEkaAbqBbrDUBpmyys",
-   "age_s": 100,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5101,7 +5137,7 @@
    "symbol": "Cumpute",
    "name": "Cumpute",
    "mint": "2uAmL67QYUyNUeUnLF3uPU5V34iUrUxkC2cucQNsAyew",
-   "age_s": 102,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5119,7 +5155,7 @@
    "symbol": "GOON",
    "name": "Gooncoin",
    "mint": "GDyaFsTEWdKhrjy2RxMWR4Sv1jPM1sAbGehVipx2Rg2J",
-   "age_s": 127,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5137,7 +5173,7 @@
    "symbol": "SLOU",
    "name": "slouworth",
    "mint": "HppTHK35WKTTqWDnbk8Ln6a5xx66KrYbcNSFNPbbK1YH",
-   "age_s": 135,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5155,7 +5191,7 @@
    "symbol": "Orgy",
    "name": "Orgyoin",
    "mint": "EDUBpo1dpoT7UGPpswomnR8Y87QQeKo39hfGtwdqHBPL",
-   "age_s": 147,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5168,24 +5204,6 @@
    "web": false,
    "status": "rejected: serial launcher: 39 more coins in 60 min",
    "why": "serial launcher: 39 more coins in 60 min"
-  },
-  {
-   "symbol": "SENTAI",
-   "name": "Sent AI Labs",
-   "mint": "3HRJHFhAfES2kXRGZy9Y1gi8rsAiHg17wkEYxsSDpump",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
