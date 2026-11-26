@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:42:30Z",
+ "updated": "2026-11-26T10:43:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 13,
   "checked": 13,
   "filtered": 1,
-  "lines": 174,
+  "lines": 176,
   "last_rug": {
    "coin": "TIPPD",
    "pass": true
@@ -463,6 +463,10 @@
   ],
   [
    1795689721,
+   87.14
+  ],
+  [
+   1795689781,
    87.14
   ]
  ],
@@ -2370,6 +2374,24 @@
    "action": "scan",
    "text": "new pairs · 4.2 a minute · 5 watched · 5 rejected (dev bought 4, dump 1) · closest STARSHIP: SOL in 1.2/2.5 · buys 3/6 · buy share 50%/65% · rise +8%/+12%",
    "n": 174
+  },
+  {
+   "t": "2026-11-26T10:42:48Z",
+   "time": "11:42:48",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 175
+  },
+  {
+   "t": "2026-11-26T10:43:00Z",
+   "time": "11:43:00",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (mayhem mode 1)",
+   "n": 176
   }
  ],
  "nights": [
@@ -2398,13 +2420,7 @@
    "scans": 0
   }
  ],
- "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/9zgrwK3S9Dv2gzsRJpM5cicFapKvsZ7n1425hYqspump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/9T5BtaWQH7MJUmJKuk7YMsB2q9tgdU8RFXBV8UcKpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/6RD7XyaPMipnm28xBhAAbsgi5PefKnqrmc8T6nnYN8zy/report: The read operation timed out",
-  "https://api.rugcheck.xyz/v1/tokens/7cEcwjn1AdpmtyxsH93dEtBNgYpvQxQo17EFgUEkrnVR/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/3duhiCgs3FFwoKBYAoPV8NFcV7nGKtdGsXBDstFG1dZf/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -2418,7 +2434,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 0 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2426,26 +2442,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 325,
-    "last_event_age_s": 5.2,
+    "events": 1,
+    "last_event_age_s": 4.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 4396,
-    "last_event_age_s": 0.2,
+    "connected": false,
+    "events": 0,
+    "last_event_age_s": null,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 241,
-    "last_event_age_s": 18.3,
-    "errors": 179,
-    "last_error": "ipfs.io: HTTP 403"
+    "connected": false,
+    "events": 0,
+    "last_event_age_s": null,
+    "errors": 0,
+    "last_error": null
    }
   ],
   "strategies": [
@@ -2456,9 +2472,9 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 4.2,
-  "watching": 3,
-  "followed": 8
+  "creates_per_min": 0.2,
+  "watching": 0,
+  "followed": 0
  },
  "learner": {
   "samples": 104,
@@ -2503,179 +2519,35 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4312,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4312,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "HALH",
-   "name": "Haaland Hair",
-   "mint": "GSmGmMbrJM99uqCKDXuPUVd9KMuwfJWBcufpKnKHpump",
-   "age_s": 5,
+   "symbol": "RSA",
+   "name": "RSA",
+   "mint": "CQqJhZ7GnFKYHfABLtwKkYMZzyvGSsVTdRdMu7NN68e",
+   "age_s": 4,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "Crack",
-   "name": "Crackcoin",
-   "mint": "4KkH5vdKTV9Tn4TcMDnFU3ZzSZwwv5FQv8qwvdUWxpap",
-   "age_s": 18,
-   "sol_in": 7.76,
-   "buys": 4,
-   "sells": 11,
-   "rise_pct": 49.3,
-   "mcap_sol": 56.6,
-   "dev_pct": 15.2,
-   "big_sell": 3.26,
-   "x": "https://x.com/danny8080/status/2125902249612210225",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 15.2% (max 8%)",
-   "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "KONNICHIWA",
-   "name": "konnichiwa",
-   "mint": "9L7EKiz4KsH6JrDH4o9fw7M3sDDPBzTBXTPfW4Gypump",
-   "age_s": 51,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 2 s (min 45 s)"
-  },
-  {
-   "symbol": "Crack",
-   "name": "Crackcoin",
-   "mint": "4XaVYoeW4EtR7t9AJENePW54zkhVByiVUVs3XqaNnL3i",
-   "age_s": 61,
-   "sol_in": -1.42,
-   "buys": 7,
-   "sells": 14,
-   "rise_pct": -7.9,
-   "mcap_sol": 34.9,
-   "dev_pct": 15.2,
-   "big_sell": 4.07,
-   "x": "https://x.com/danny8080/status/2125902249612210225",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 15.2% (max 8%)",
-   "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "RSA",
-   "name": "RSA cryptosystem",
-   "mint": "4qw1MA4Spjh9wEjgCwopFdHcMTVJAdM7VAnrZGEXW3Vr",
-   "age_s": 76,
-   "sol_in": 0.01,
-   "buys": 9,
-   "sells": 8,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.03,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.0/2.5 · buy share 53%/65% · rise +0%/+12%"
-  },
-  {
-   "symbol": "RSA",
-   "name": "Raccoon Shiba Ape",
-   "mint": "HpKhHAsaeBGqnfJ61QRBh2JvPAaMp6zEuCN1sDKwbY4P",
-   "age_s": 78,
-   "sol_in": -3.02,
-   "buys": 5,
-   "sells": 8,
-   "rise_pct": -17.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.9,
-   "big_sell": 3.91,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.9% (max 8%)",
-   "why": "dev bought 9.9% (max 8%)"
-  },
-  {
-   "symbol": "Boor",
-   "name": "Boor",
-   "mint": "ATCdsELcSGKVLaLd9diP5BnSSrt16Ck61WAoAqQEpump",
-   "age_s": 80,
-   "sol_in": 0.62,
-   "buys": 3,
-   "sells": 7,
-   "rise_pct": 4.1,
-   "mcap_sol": 29.7,
-   "dev_pct": 1.0,
-   "big_sell": 6.97,
-   "x": "https://x.com/boor4chanX/status/2125901547653500991",
-   "tg": false,
-   "web": "https://archive.4plebs.org/_/search/image/jlrgh1OuIlnrZVtJ4aKR_w/",
-   "status": "rejected: dump: 7.0 SOL sold",
-   "why": "dump: 7.0 SOL sold"
-  },
-  {
-   "symbol": "cracked",
-   "name": "CrackedCoin",
-   "mint": "5BPPHEiVyjjGxWpndXQb6UtqjjdnZ48F315ELwuVCkTH",
-   "age_s": 81,
-   "sol_in": -1.44,
-   "buys": 5,
-   "sells": 10,
-   "rise_pct": -8.1,
-   "mcap_sol": 34.9,
-   "dev_pct": 15.2,
-   "big_sell": 2.2,
-   "x": "https://x.com/MarioPrezldente/status/2125902666996089043",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 15.2% (max 8%)",
-   "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "DORITO",
-   "name": "Dorito Indicator",
-   "mint": "EesJTTBoH5AfhWrsdQQYxjGjPGSxo3PdR8Rzj14Cpump",
-   "age_s": 139,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 22 s (min 45 s)"
   }
  ],
  "strategies": [
