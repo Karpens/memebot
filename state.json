@@ -35,24 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T12:09:41Z",
-    "time": "13:09:41",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.4 a minute · 2 watched · 8 rejected (dev bought 6, dump 1, serial launcher 1) · closest Elonmas: SOL in 0.3/2.5 · buy share 64%/65% · rise +2%/+12%",
-    "n": 295
-   },
-   {
-    "t": "2026-11-26T12:10:42Z",
-    "time": "13:10:42",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.0 a minute · 5 watched · 10 rejected (dev bought 7, serial launcher 1, dump 1) · closest HPAY: too young: 1 s (min 45 s)",
-    "n": 296
-   },
-   {
     "t": "2026-11-26T12:11:42Z",
     "time": "13:11:42",
     "agent": "SCANNER",
@@ -5433,6 +5415,24 @@
     "action": "scan",
     "text": "new pairs · 6.4 a minute · 4 watched · 15 rejected (mayhem mode 9, serial launcher 2, dev bought 1) · closest BURNCOIN: SOL in 0.6/2.5 · buys 5/6 · buy share 31%/65% · rise +4%/+12%",
     "n": 894
+   },
+   {
+    "t": "2026-11-26T19:45:59Z",
+    "time": "20:45:59",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.4 a minute · 4 watched · 20 rejected (mayhem mode 9, serial launcher 5, dev bought 2) · closest COKE: too young: 34 s (min 45 s)",
+    "n": 895
+   },
+   {
+    "t": "2026-11-26T19:46:08Z",
+    "time": "20:46:08",
+    "agent": "LEARNER",
+    "coin": "FORU",
+    "action": "shadow",
+    "text": "SHADOW FORU would have made +3.7% (trailing stop 6% off the top (peak +17%)) · learned x0.5 · hour:day now avg -16.1% over 16.5",
+    "n": 896
    }
   ],
   "trades": [
@@ -6084,7 +6084,7 @@
   "flagged": 55,
   "checked": 42,
   "filtered": 8,
-  "lines": 894,
+  "lines": 896,
   "flags": [
    {
     "coin": "CALLUPB",
@@ -6128,10 +6128,6 @@
    }
   ],
   "curve": [
-   [
-    1795686361,
-    87.76
-   ],
    [
     1795686421,
     87.76
@@ -8527,13 +8523,17 @@
    [
     1795722313,
     83.48
+   ],
+   [
+    1795722373,
+    83.48
    ]
   ],
   "last_rug": {
    "coin": "FORU",
    "pass": true
   },
-  "np_said": 1795722299.257728,
+  "np_said": 1795722359.257738,
   "np_speed": {
    "first_in": [
     74,
@@ -8594,9 +8594,9 @@
    "at": 1795696593.636054
   },
   "shadow": {
-   "n": 6,
-   "wins": 0,
-   "sum": -94.6
+   "n": 7,
+   "wins": 1,
+   "sum": -90.9
   }
  },
  "last_night": {
@@ -9056,14 +9056,14 @@
   }
  },
  "shadow": {
-  "n": 6,
-  "wins": 0,
-  "sum": -94.6,
+  "n": 7,
+  "wins": 1,
+  "sum": -90.9,
   "by": {
    "learner": {
-    "n": 6,
-    "wins": 0,
-    "sum": -94.6
+    "n": 7,
+    "wins": 1,
+    "sum": -90.9
    },
    "risk": {
     "n": 0,
@@ -9191,11 +9191,29 @@
     "exit": "dump: 4.0 SOL sold",
     "pnl": -2.33,
     "weight": 0.5
+   },
+   {
+    "symbol": "FORU",
+    "mint": "2TAgsxidix8eUBVuFH1gJRbdkqTLLLwRdnzbXdwzpump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T19:44:31Z",
+    "cost": 8.35,
+    "pnl_pct": 3.7,
+    "tier": "swing",
+    "score": 4,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 51,
+    "sol_in": 16.26,
+    "closed": "2026-11-26T19:46:08Z",
+    "exit": "trailing stop 6% off the top (peak +17%)",
+    "pnl": 0.31,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "FORU"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 108,
@@ -9223,7 +9241,7 @@
    {
     "label": "hour:day",
     "n": 16,
-    "avg": -16.7
+    "avg": -16.1
    },
    {
     "label": "tier:scalp",
@@ -9236,6 +9254,6 @@
     "avg": -17.3
    }
   ],
-  "shadows": 6
+  "shadows": 7
  }
 }
