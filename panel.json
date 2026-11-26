@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:05:41Z",
+ "updated": "2026-11-26T11:06:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 16,
   "checked": 16,
   "filtered": 1,
-  "lines": 207,
+  "lines": 208,
   "last_rug": {
    "coin": "NODIVO",
    "pass": true
@@ -556,6 +556,10 @@
   [
    1795691101,
    87.14
+  ],
+  [
+   1795691161,
+   87.14
   ]
  ],
  "position_pct": 10.0,
@@ -897,15 +901,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:05:18Z",
-   "time": "10:05:18",
-   "agent": "EXECUTOR",
-   "coin": "ZEROCAST",
-   "action": "enter",
-   "text": "ENTER ZEROCAST at 0.0000028911 · slip 0.0% · first in · 0.1 s after the trigger · 10 s after launch · curve maths 0.0% off Jupiter",
-   "n": 8
-  },
   {
    "t": "2026-11-26T09:05:18Z",
    "time": "10:05:18",
@@ -2696,6 +2691,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 6 watched · 6 rejected (serial launcher 2, mayhem mode 2, no symbol or name 1) · closest Hey: too young: 6 s (min 45 s)",
    "n": 207
+  },
+  {
+   "t": "2026-11-26T11:06:11Z",
+   "time": "12:06:11",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.6 a minute · 4 watched · 7 rejected (mayhem mode 3, serial launcher 1, dump 1) · closest BVT: SOL in 0.6/2.5 · buys 3/6 · rise +4%/+12%",
+   "n": 208
   }
  ],
  "nights": [
@@ -2741,7 +2745,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2749,16 +2753,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 105,
-    "last_event_age_s": 2.1,
+    "events": 106,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1787,
-    "last_event_age_s": 0.5,
+    "events": 1807,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
@@ -2766,7 +2770,7 @@
     "name": "metadata",
     "connected": true,
     "events": 73,
-    "last_event_age_s": 1.9,
+    "last_event_age_s": 34.9,
     "errors": 12,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2779,9 +2783,9 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 4.4,
-  "watching": 7,
-  "followed": 10
+  "creates_per_min": 3.8,
+  "watching": 4,
+  "followed": 7
  },
  "learner": {
   "samples": 104,
@@ -2826,30 +2830,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1463,
+   "sent": 1498,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1463,
+   "sent": 1498,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SLB",
+   "name": "Silicon Labs B",
+   "mint": "2vdYNMxJcd3oYCTtHF75CatDYWDE6mFaz37EjEXSpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "WOJAP",
    "name": "ウォジャップ",
    "mint": "HoF7pf959CwUNpmEXKkHfW2iZ4WgWPYe3ssP4fGppump",
-   "age_s": 2,
-   "sol_in": 0.2,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 1.2,
-   "mcap_sol": 33.2,
+   "age_s": 35,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.8,
    "dev_pct": 8.2,
-   "big_sell": 0.0,
+   "big_sell": 0.32,
    "x": "https://x.com/wifcashback/status/2125908648350392364",
    "tg": false,
    "web": "https://archive.4plebs.org/pol/thread/114069652/#q114076735",
@@ -2860,7 +2882,7 @@
    "symbol": "POMP",
    "name": "BePomp",
    "mint": "8hxXkkoAykeS7B3oLdFDXFeqYqYv96ykLSGQgZMCR27D",
-   "age_s": 8,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2878,7 +2900,7 @@
    "symbol": "Green Pill",
    "name": "Green Pill",
    "mint": "5z33vHH453mhY3MHfBzDemZzjbpLns5t1xtTRSthpump",
-   "age_s": 12,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2896,11 +2918,11 @@
    "symbol": "BVT",
    "name": "BUENO VALT",
    "mint": "BXMnBZ3jX3GfCW3pxEVrZ7mSeCMfJaPSrNV1dxjJpump",
-   "age_s": 38,
-   "sol_in": 0.59,
-   "buys": 2,
+   "age_s": 71,
+   "sol_in": 0.6,
+   "buys": 3,
    "sells": 1,
-   "rise_pct": 3.9,
+   "rise_pct": 4.0,
    "mcap_sol": 29.2,
    "dev_pct": 0.2,
    "big_sell": 0.25,
@@ -2908,31 +2930,31 @@
    "tg": "https://t.me/Bueno_Vault",
    "web": "https://bueno.art/",
    "status": "watching",
-   "why": "too young: 32 s (min 45 s)"
+   "why": "SOL in 0.6/2.5 · buys 3/6 · rise +4%/+12%"
   },
   {
    "symbol": "Hey",
    "name": "Hey",
    "mint": "F9CwhBgSsEJuCigbodtUH257EqQpRSzKLKwHPPKNpump",
-   "age_s": 39,
-   "sol_in": 13.06,
-   "buys": 7,
-   "sells": 13,
-   "rise_pct": 102.0,
-   "mcap_sol": 60.3,
+   "age_s": 72,
+   "sol_in": 28.39,
+   "buys": 16,
+   "sells": 20,
+   "rise_pct": 267.2,
+   "mcap_sol": 109.5,
    "dev_pct": 3.4,
-   "big_sell": 1.39,
+   "big_sell": 4.3,
    "x": "https://x.com/h20hank?s=11",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "too young: 38 s (min 45 s)"
+   "status": "rejected: dump: 4.3 SOL sold",
+   "why": "dump: 4.3 SOL sold"
   },
   {
    "symbol": "JOUT",
    "name": "jensen OUT",
    "mint": "GT4nhiYTkkoysVL5kDNBWpn2ZxiNv2Bzj7E94yNhpump",
-   "age_s": 44,
+   "age_s": 77,
    "sol_in": 0.02,
    "buys": 3,
    "sells": 1,
@@ -2950,7 +2972,7 @@
    "symbol": "konnichiwa",
    "name": "konnichiwaa",
    "mint": "9pwNw37rWTt2CSkGXriAVBmVRmhBUWNeZxywpiiWpump",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -2968,7 +2990,7 @@
    "symbol": "YARANAIKA",
    "name": "Yaranaika",
    "mint": "5o86gv7ifuTtL3GecNuDhDzKsNwyNv4XvDS5EA8Djstv",
-   "age_s": 69,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2986,7 +3008,7 @@
    "symbol": "OVPRINT",
    "name": "Overprint",
    "mint": "A9itQT8SR5t5ZV2PT81dmzwY4rCYiERy7sriwoJJZRfY",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3004,7 +3026,7 @@
    "symbol": "SLB",
    "name": "Silicon Labs B",
    "mint": "7SJvwF58Agwo1wryKn6nwWBpkHPwwZ1tLHmeGiuBpump",
-   "age_s": 119,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3022,7 +3044,7 @@
    "symbol": "SLB",
    "name": "Silicon Labs B",
    "mint": "DFjPPib6FZN5SR9e4Ch9JFcq9KNFgoySaYV5gqTApump",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3035,60 +3057,6 @@
    "web": false,
    "status": "rejected: serial launcher: 7 more coins in 60 min",
    "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "SENSEI",
-   "name": "Sensei Meow",
-   "mint": "78X3FExAixS7KrFj2R55CqXUtkcC472RfAzJvdM1pump",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.29,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 3/6 · buy share 60%/65% · rise +0%/+12%"
-  },
-  {
-   "symbol": "BOOB$",
-   "name": "Bobs&Vagina",
-   "mint": "7mSqwPn2NndsLeipHtie91ZLEaaVTXuPqyCCQmPCpump",
-   "age_s": 167,
-   "sol_in": 0.17,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 1.1,
-   "mcap_sol": 29.2,
-   "dev_pct": 1.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.2/2.5 · buys 4/6 · rise +1%/+12%"
-  },
-  {
-   "symbol": "NEKO",
-   "name": "NEKO",
-   "mint": "7pXrPomw6iL1aM6wcsAY5gcaTH7YwjdE3Lk3vVZtocqr",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -96.9,
-   "mcap_sol": 0.9,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
