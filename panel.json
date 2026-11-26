@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:41:26Z",
+ "updated": "2026-11-26T11:41:58Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 19,
   "checked": 19,
   "filtered": 2,
-  "lines": 257,
+  "lines": 258,
   "last_rug": {
    "coin": "たかし",
    "pass": false
@@ -1084,15 +1084,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:20:54Z",
-   "time": "10:20:54",
-   "agent": "RUG CHECK",
-   "coin": "TANOSHIMI",
-   "action": "pass",
-   "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
-   "n": 58
-  },
   {
    "t": "2026-11-26T09:20:54Z",
    "time": "10:20:54",
@@ -2883,6 +2874,15 @@
    "action": "scan",
    "text": "new pairs · 4.6 a minute · 4 watched · 8 rejected (mayhem mode 4, dump 1, serial launcher 1) · closest LOKI: SOL in 0.2/2.5 · buys 5/6 · rise +1%/+12%",
    "n": 257
+  },
+  {
+   "t": "2026-11-26T11:41:30Z",
+   "time": "12:41:30",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.6 a minute · 3 watched · 5 rejected (mayhem mode 2, serial launcher 1, dev bought 1) · closest USDT: SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%",
+   "n": 258
   }
  ],
  "nights": [
@@ -2928,7 +2928,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2936,24 +2936,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 264,
-    "last_event_age_s": 11.2,
+    "events": 266,
+    "last_event_age_s": 12.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4435,
-    "last_event_age_s": 4.7,
+    "events": 4452,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 174,
-    "last_event_age_s": 74.5,
+    "events": 176,
+    "last_event_age_s": 12.5,
     "errors": 17,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2966,9 +2966,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.8,
   "watching": 3,
-  "followed": 5
+  "followed": 7
  },
  "learner": {
   "samples": 105,
@@ -3013,23 +3013,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3748,
+   "sent": 3782,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3748,
+   "sent": 3782,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "のび子",
+   "name": "LongCat",
+   "mint": "552tSJQzdHf3vnkHLmjc7G4qVJUVFFQTCqVoSFD3fcYN",
+   "age_s": 12,
+   "sol_in": 0.36,
+   "buys": 2,
+   "sells": 4,
+   "rise_pct": 2.2,
+   "mcap_sol": 34.7,
+   "dev_pct": 9.9,
+   "big_sell": 1.83,
+   "x": "https://x.com/nonanon124/status/2125917709716320535",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
+   "symbol": "Poop",
+   "name": "うんこお金ドリル",
+   "mint": "FbDr21JgFkZPtE8C7meie8wnQgVNkhvecRrxD6QXAWWM",
+   "age_s": 20,
+   "sol_in": -1.44,
+   "buys": 2,
+   "sells": 7,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.23,
+   "x": "https://x.com/MarioPrezldente/status/2125917891132551531",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "9WogpAbgXJqhEFKAWKC7LxyP2fyhziUEDzAmqtLdpump",
-   "age_s": 57,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3047,7 +3083,7 @@
    "symbol": "CHART",
    "name": "Chart Clearly",
    "mint": "3xbxks7i9zFxt4ko6P6CYGSCXaZ7vtNKJiPEAuHePS6M",
-   "age_s": 74,
+   "age_s": 106,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -3065,7 +3101,7 @@
    "symbol": "OMOTENASHI",
    "name": "Omotenashi",
    "mint": "GVp7ZAJ3hFmmdChptmkeVWMFv5mXhoUDPiJJSxAKAtVN",
-   "age_s": 74,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3083,7 +3119,7 @@
    "symbol": "USDT",
    "name": "Tether USDT",
    "mint": "BiZPKSa5KUxnJNbX9p13x45ur9ZbCKKinCAJqd6Dpump",
-   "age_s": 85,
+   "age_s": 117,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -3101,7 +3137,7 @@
    "symbol": "LIO",
    "name": "Liora",
    "mint": "Gc7rzv9oUKuEsb9DFPgC51E6gUkdX8tFDJ6qQNkvJLGJ",
-   "age_s": 87,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3119,12 +3155,12 @@
    "symbol": "elizabuth",
    "name": "elizabuth wurren",
    "mint": "EtYzQE1c5rew3ZmTjNtu7rinHxxTnLHv9HWqpymPUT58",
-   "age_s": 107,
-   "sol_in": -1.11,
+   "age_s": 139,
+   "sol_in": -1.18,
    "buys": 26,
-   "sells": 44,
-   "rise_pct": -6.3,
-   "mcap_sol": 35.5,
+   "sells": 45,
+   "rise_pct": -6.6,
+   "mcap_sol": 35.4,
    "dev_pct": 15.2,
    "big_sell": 3.59,
    "x": "https://x.com/MarioPrezldente/status/2125917390836048039",
@@ -3137,11 +3173,11 @@
    "symbol": "TOYSOL",
    "name": "Toy Soldier",
    "mint": "Bb7HqG9TRDsLj5pFXTkhi46Udu657K34Do644WWfpump",
-   "age_s": 114,
+   "age_s": 146,
    "sol_in": 0.17,
-   "buys": 3,
+   "buys": 4,
    "sells": 2,
-   "rise_pct": 1.1,
+   "rise_pct": 1.2,
    "mcap_sol": 28.3,
    "dev_pct": 0.0,
    "big_sell": 0.02,
@@ -3150,60 +3186,6 @@
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "$AGB",
-   "name": "Agentic B COIN",
-   "mint": "AvRk99M3Z84n1Z95nMCLbhmByBRKMpmTgcBqP2T1pump",
-   "age_s": 154,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SXSN",
-   "name": "67%",
-   "mint": "Db5xjGb2C9SstW4MV2JguPehTRybHC4aNaKCGTFKpump",
-   "age_s": 177,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "NUBU",
-   "name": "NUBU",
-   "mint": "GxyJvYFECC5sEWQvnHSrEwAQDeXj3Pk69njCB8Gn2Kbk",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
