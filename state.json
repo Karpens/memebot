@@ -35,24 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T11:15:16Z",
-    "time": "12:15:16",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.0 a minute · 3 watched · 10 rejected (dump 4, mayhem mode 3, dev bought 1) · closest MOYE: too young: 26 s (min 45 s)",
-    "n": 226
-   },
-   {
-    "t": "2026-11-26T11:16:16Z",
-    "time": "12:16:16",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.8 a minute · 3 watched · 10 rejected (dev bought 3, dump 3, mayhem mode 2) · closest MARU: buys 4/6 · buy share 57%/65%",
-    "n": 227
-   },
-   {
     "t": "2026-11-26T11:16:46Z",
     "time": "12:16:46",
     "agent": "SCANNER",
@@ -5433,6 +5415,24 @@
     "action": "shadow",
     "text": "SHADOW WHO · not bought (learner skip) · followed as if bought: $8.35 at 0.0000027085 (curve maths, every cost) · same exits, outside the book",
     "n": 825
+   },
+   {
+    "t": "2026-11-26T18:46:17Z",
+    "time": "19:46:17",
+    "agent": "LEARNER",
+    "coin": "WHO",
+    "action": "shadow",
+    "text": "SHADOW WHO would have made -27.9% (dump: 4.0 SOL sold) · learned x0.5 · np:sol:3-6 now avg -22.8% over 7.5",
+    "n": 826
+   },
+   {
+    "t": "2026-11-26T18:46:29Z",
+    "time": "19:46:29",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 11.6 a minute · 6 watched · 28 rejected (dev bought 10, serial launcher 9, mayhem mode 6) · closest TPGV: too young: 22 s (min 45 s)",
+    "n": 827
    }
   ],
   "trades": [
@@ -6084,7 +6084,7 @@
   "flagged": 52,
   "checked": 41,
   "filtered": 8,
-  "lines": 825,
+  "lines": 827,
   "flags": [
    {
     "coin": "FLOP",
@@ -8451,13 +8451,17 @@
    [
     1795718713,
     83.48
+   ],
+   [
+    1795718773,
+    83.48
    ]
   ],
   "last_rug": {
    "coin": "WHO",
    "pass": true
   },
-  "np_said": 1795718728.257822,
+  "np_said": 1795718789.257643,
   "np_speed": {
    "first_in": [
     74,
@@ -8518,9 +8522,9 @@
    "at": 1795696593.636054
   },
   "shadow": {
-   "n": 5,
+   "n": 6,
    "wins": 0,
-   "sum": -66.7
+   "sum": -94.6
   }
  },
  "last_night": {
@@ -8980,14 +8984,14 @@
   }
  },
  "shadow": {
-  "n": 5,
+  "n": 6,
   "wins": 0,
-  "sum": -66.7,
+  "sum": -94.6,
   "by": {
    "learner": {
-    "n": 5,
+    "n": 6,
     "wins": 0,
-    "sum": -66.7
+    "sum": -94.6
    },
    "risk": {
     "n": 0,
@@ -9095,11 +9099,29 @@
     "exit": "dump: 2.1 SOL sold",
     "pnl": -1.05,
     "weight": 0.5
+   },
+   {
+    "symbol": "WHO",
+    "mint": "4gUYiXBhaqoigWsxebTARd9q1mnJsAjgPtdt2XRvpump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T18:45:57Z",
+    "cost": 8.35,
+    "pnl_pct": -27.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 49,
+    "sol_in": 3.1,
+    "closed": "2026-11-26T18:46:17Z",
+    "exit": "dump: 4.0 SOL sold",
+    "pnl": -2.33,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "WHO"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 108,
@@ -9127,19 +9149,19 @@
    {
     "label": "hour:day",
     "n": 16,
-    "avg": -16.4
+    "avg": -16.7
    },
    {
     "label": "tier:scalp",
     "n": 12,
-    "avg": -16.8
+    "avg": -17.3
    },
    {
     "label": "news:0-2",
     "n": 12,
-    "avg": -16.8
+    "avg": -17.3
    }
   ],
-  "shadows": 5
+  "shadows": 6
  }
 }
