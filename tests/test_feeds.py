@@ -760,6 +760,148 @@ class Poller(unittest.TestCase):
         self.assertIsNone(ka.ka.conn)                                               # stop() closes it
 
 
+class PollerSilences(unittest.TestCase):
+    """What the poller tells the tape's heartbeat besides calls and ok (bot.np_rec_stats): its failed calls, settled
+    (never one still on its way), and its silences between good answers by their wall time. The RPC is a stub on
+    the poller itself (no server) and the wall clock the test's own: no sleeps."""
+
+    T = 1795680000.0
+
+    def setUp(self):
+        self.q = queue.Queue()
+        self.p = fd.CurvePoller(self.q, rpc="http://127.0.0.1:9/", timeout=1.0)
+        self.p.watch("m000", "km000")
+        self.p.watch("m001", "km001")
+        self.wall = self.T
+        self.answers = []                       # what the stub RPC answers next: "ok", "429", "500", "boom"
+        self.seen = []                          # (calls, ok, fails) while each call is on its way
+        self.p._post = self.post
+
+    def post(self, body):
+        self.seen.append((self.p.calls, self.p.ok, self.p.fails))
+        kind = self.answers.pop(0) if self.answers else "ok"
+        if kind == "429":
+            return 429, None, {"retry-after": "4"}, None
+        if kind == "500":
+            return 500, None, {}, "HTTP 500"
+        if kind == "boom":
+            raise ValueError("an answer of an odd shape")
+        vals = [{"data": [b64(account(vsol=VSOL0 + len(self.seen))), "base64"]} for _ in body["params"][0]]
+        return 200, {"jsonrpc": "2.0", "id": body["id"], "result": {"context": {"slot": 100 + len(self.seen)},
+                                                                     "value": vals}}, {}, None
+
+    def poll_at(self, t, *answers):
+        """One round at wall time T + t (time.time() patched for it: the readings' clock and the silences')."""
+        self.answers += list(answers)
+        real = fd.time.time
+        fd.time.time = lambda: self.T + t
+        try:
+            return self.p.poll()
+        finally:
+            fd.time.time = real
+
+    def gaps(self, t):
+        return self.p.take_gaps(now=self.T + t)
+
+    def test_failed_calls_are_counted_once_settled_never_while_on_their_way(self):
+        self.poll_at(0.0)
+        self.assertEqual((self.p.calls, self.p.ok, self.p.fails), (1, 1, 0))
+        self.assertEqual(self.seen[-1], (1, 0, 0))          # on its way: calls - ok says failed, fails does not
+        self.poll_at(1.0, "429")
+        self.assertEqual((self.p.calls, self.p.ok, self.p.fails, self.p.limited), (2, 1, 1, 1))
+        self.p.paused_until = 0.0
+        self.poll_at(2.0, "500")
+        self.assertEqual((self.p.calls, self.p.ok, self.p.fails), (3, 1, 2))
+        self.poll_at(3.0, "boom")                           # raised inside the call: poll() counts it through _fail
+        self.assertEqual((self.p.calls, self.p.ok, self.p.fails), (4, 1, 3))
+        self.assertIn("odd answer", self.p.last_error)
+        self.poll_at(4.0)
+        self.poll_at(5.0)
+        self.assertEqual((self.p.calls, self.p.ok, self.p.fails), (6, 3, 3))  # good calls never count as failed
+        self.assertEqual(self.seen[-1], (6, 2, 3))
+
+    def test_the_longest_silence_between_good_answers_since_the_last_heartbeat_then_afresh(self):
+        self.assertEqual(self.gaps(0.0), {"gap_ms": None, "since_ms": None})   # no good answer yet
+        self.poll_at(10.0)
+        self.assertEqual(self.gaps(10.3), {"gap_ms": 0, "since_ms": 300})      # the first answer, from its round
+        for t in (11.0, 12.0, 16.5, 17.5):                                      # a 4.5 s silence in the middle
+            self.poll_at(t)
+        self.assertEqual(self.gaps(18.0), {"gap_ms": 4500, "since_ms": 500})
+        self.poll_at(18.5)
+        self.assertEqual(self.gaps(20.0), {"gap_ms": 1000, "since_ms": 1500})  # the next heartbeat starts afresh
+        self.assertEqual(self.gaps(23.5), {"gap_ms": None, "since_ms": 5000})  # a silence still open
+
+    def test_a_429_pause_with_curves_watched_is_a_silence(self):
+        self.poll_at(0.0)
+        self.gaps(0.5)
+        self.poll_at(1.0, "429")                            # paused 4 s: no call, curves still watched
+        self.assertEqual(self.poll_at(2.0), 0)
+        self.assertEqual(self.p.calls, 2)
+        self.assertEqual(self.gaps(4.5), {"gap_ms": None, "since_ms": 4500})   # open at the heartbeat
+        self.p.paused_until = 0.0                           # the pause is over
+        self.poll_at(5.2)
+        self.assertEqual(self.gaps(5.5), {"gap_ms": 5200, "since_ms": 300})
+
+    def test_an_idle_spell_with_nothing_watched_is_no_silence(self):
+        self.poll_at(0.0)
+        self.poll_at(1.0)
+        self.p.unwatch("m000")
+        self.p.unwatch("m001")
+        self.poll_at(1.8)                                   # the first round with nothing to ask
+        self.poll_at(2.8)
+        self.assertEqual(self.p.calls, 2)
+        self.assertEqual(self.gaps(60.0), {"gap_ms": 1000, "since_ms": None})  # minutes idle: no silence open
+        self.p.watch("m000", "km000")
+        self.poll_at(300.0)                                 # the first answer after the idle spell
+        self.assertEqual(self.gaps(300.4), {"gap_ms": 0, "since_ms": 400})     # not a 299 s gap
+        self.poll_at(301.0)
+        self.assertEqual(self.gaps(301.2), {"gap_ms": 1000, "since_ms": 200})
+        # a silence that ended in an idle round (a 429 pause, then nothing left to watch) is still one
+        self.poll_at(302.0, "429")
+        self.p.paused_until = 0.0
+        self.p.unwatch("m000")
+        self.poll_at(306.0)
+        self.assertEqual(self.gaps(310.0), {"gap_ms": 5000, "since_ms": None})
+
+    def test_a_silence_before_the_first_good_answer_is_timed_from_the_first_round_with_curves_to_ask(self):
+        # a restart that kept a held coin: its curve is watched at once and the first call gets a 429
+        self.poll_at(0.0, "429")
+        self.assertEqual(self.poll_at(2.0), 0)              # paused: no call
+        self.assertEqual(self.gaps(4.5), {"gap_ms": None, "since_ms": 4500})   # open since the first round
+        self.p.paused_until = 0.0
+        self.poll_at(5.2)
+        self.assertEqual(self.gaps(5.5), {"gap_ms": 5200, "since_ms": 300})
+        # the same after an idle spell: nothing watched, then a new coin whose first two calls fail
+        self.p.unwatch("m000")
+        self.p.unwatch("m001")
+        self.poll_at(6.0)                                   # the round with nothing to ask
+        self.assertEqual(self.gaps(30.0), {"gap_ms": 800, "since_ms": None})
+        self.p.watch("m002", "km002")
+        self.poll_at(40.0, "500")
+        self.poll_at(41.0, "boom")
+        self.assertEqual(self.gaps(43.5), {"gap_ms": None, "since_ms": 3500})  # not None: a silence, curves watched
+        self.poll_at(44.0)
+        self.assertEqual(self.gaps(44.1), {"gap_ms": 4000, "since_ms": 100})   # never the idle minutes before it
+        self.assertEqual((self.p.calls, self.p.ok, self.p.fails), (5, 2, 3))
+        # rounds after a good answer leave its time alone: only the first round with none starts the clock
+        self.poll_at(45.0, "500")
+        self.assertEqual(self.gaps(46.0), {"gap_ms": None, "since_ms": 2000})
+
+    def test_a_429_pause_that_outlasts_the_last_curve_counts_on_until_its_first_round_after(self):
+        # a paused poller skips its rounds without looking at what is watched (the heartbeat shows watched 0 with
+        # the silence still open; the study reads nothing into a stretch with nothing watched at both ends)
+        self.poll_at(0.0)
+        self.gaps(0.5)
+        self.poll_at(1.0, "429")
+        self.p.unwatch("m000")
+        self.p.unwatch("m001")
+        self.assertEqual(self.poll_at(2.0), 0)
+        self.assertEqual(self.gaps(15.0), {"gap_ms": None, "since_ms": 15000})
+        self.p.paused_until = 0.0
+        self.poll_at(31.0)                                  # the first round after the pause: nothing to ask
+        self.assertEqual(self.gaps(35.0), {"gap_ms": 31000, "since_ms": None})
+
+
 # ---------------------------------------------------------------- the curve socket
 
 @unittest.skipIf(ws_serve is None, NEEDS_WS)

@@ -1,9 +1,10 @@
 """memebot/study.py, the edge study: the cost model (the engine's own curve maths), the fills (the next poll after the
 latency), no look-ahead (a tape cut right after a decision makes the same decision), the coverage (blind exits when
-the tape loses a coin, a completion sold into its last curve state), the split by create time, the calibration
-against the bot's booked trades (a hand-made pair and the real engine's own tape), the PASS rule (a planted edge
-passes, noise does not) and the command line end to end. Offline: synthetic tapes written as JSONL in the
-recorder's format (memebot/recorder.py, version 2), made up for the tests and never a claim about real coins."""
+the tape loses a coin, a completion sold into its last curve state; the poller's holes, by its own silences on the
+heartbeats and by the call counts on older tapes), the split by create time, the calibration against the bot's booked
+trades (a hand-made pair and the real engine's own tape), the PASS rule (a planted edge passes, noise does not) and
+the command line end to end. Offline: synthetic tapes written as JSONL in the recorder's format (memebot/recorder.py,
+version 2), made up for the tests and never a claim about real coins."""
 
 import contextlib
 import datetime
@@ -49,10 +50,13 @@ class Tape(object):
     """A synthetic tape in the recorder's format: one run (start, a heartbeat every 10 s with the poller's good calls
     growing and nothing lost, SOL's price, stop), coins with their create, change-only curve readings, follow / end /
     gap lines, and any live lines a test adds. lost: [(a, b)], the recorder lost lines in every heartbeat stretch
-    that ends in (a, b]; poll: {heartbeat t: (good calls, all calls)} of the stretch that heartbeat closes (else 10
-    good of 10: one call a second)."""
+    that ends in (a, b]; poll: {heartbeat t: (good calls, all calls[, failed calls])} of the stretch that heartbeat
+    closes (else 10 good of 10: one call a second; the failed ones: all less good). gaps: the heartbeats carry the
+    poller's own numbers too, as the bot's do since they came (poll_fail the failed calls so far; poll_gap_ms 1000,
+    poll_since_ms 200: a healthy poller); hb: {heartbeat t: {field: value}} written on that heartbeat over the rest
+    (a gap, a silence still open, "held": 1, ...); twice: the heartbeats written twice (the same line again)."""
 
-    def __init__(self, start=START, cfg=None, sol=71.0):
+    def __init__(self, start=START, cfg=None, sol=71.0, gaps=False):
         self.start, self.sol = start, sol
         self.cfg = dict(CFG if cfg is None else cfg)
         self.lines = []
@@ -60,6 +64,9 @@ class Tape(object):
         self.slot = 10 ** 6
         self.lost = []
         self.poll = {}
+        self.gaps = gaps
+        self.hb = {}
+        self.twice = set()
 
     def coin(self, m, t0, path, dt=1.0, dev=0.3, creator=None, follow=None, end=None, complete=None, gap=None,
              fires=(), sym=None):
@@ -124,13 +131,20 @@ class Tape(object):
 
     def all_lines(self, until=None):
         sysl = [{"k": "start", "t": self.start, "v": 2, "cfg": self.cfg}, {"k": "sol", "t": self.start + 0.5, "usd": self.sol}]
-        t, ok, calls, lost = self.start + 10, 0, 0, 0
+        t, ok, calls, lost, fails = self.start + 10, 0, 0, 0, 0
         while t <= self.last + 20:
-            good, all_ = self.poll.get(round(t, 6), (10, 10))
-            ok, calls = ok + good, calls + all_
+            step = self.poll.get(round(t, 6), (10, 10))
+            good, all_ = step[:2]
+            ok, calls, fails = ok + good, calls + all_, fails + (step[2] if len(step) > 2 else max(0, all_ - good))
             lost += 2 if any(a < t <= b for a, b in self.lost) else 0
-            sysl.append({"k": "hb", "t": round(t, 6), "sol": self.sol, "poll_ok": ok, "poll_calls": calls,
-                         "lost": lost, "drop": lost, "capped": 0})
+            hb = {"k": "hb", "t": round(t, 6), "sol": self.sol, "poll_ok": ok, "poll_calls": calls,
+                  "lost": lost, "drop": lost, "capped": 0}
+            if self.gaps:
+                hb.update(poll_fail=fails, poll_gap_ms=1000, poll_since_ms=200)
+            hb.update(self.hb.get(round(t, 6), {}))
+            sysl.append(hb)
+            if round(t, 6) in self.twice:
+                sysl.append(dict(hb))
             t += 10
         sysl.append({"k": "stop", "t": round(t, 6)})
         out = sorted(sysl + self.lines, key=lambda x: float(x["t"]))
@@ -305,6 +319,57 @@ class NoLookAhead(Base):
                 got = {m: t for m, t in part.get(ek, {}).items() if t <= cut + 1e-9}
                 self.assertEqual(got, want, "%s cut at %+.1f s" % (ek, cut - START))
 
+    def test_the_pollers_holes_by_its_silences_and_by_the_call_counts_never_look_ahead(self):
+        # poller holes by the heartbeats' own silences (a wait that began before its stretch, a silence still open)
+        # and by the counts (one over a heartbeat, a 429 pause's tail), placed two ways: closing at the heartbeat
+        # before a decision (its window then sees them: they move decisions), and closing at the heartbeat after it
+        # (the decision lies inside a hole the tape shows only later: no part of it may be known earlier). Cut at
+        # decisions, right after the ones in the holes, and around every hole's start and end: the same decisions,
+        # and the same holes known by the cut (each part of one, start to end, from the same heartbeat)
+        def known(folder, cut=float("inf")):
+            views, mk, _ = views_of(folder)
+            dec = st.decide(views, mk, entries())
+            return ({ek: {views[i].mint: t for i, t in d.items()} for ek, d in dec.items()},
+                    [(a, b) for a, b, why in mk.parts if why == "poller" and b <= cut + 1e-9])
+
+        for gaps in (True, False):
+            for after in (False, True):
+                tp = self.rich_tape()
+                tp.gaps = gaps
+                name = "%d%d" % (gaps, after)
+                plain = decisions(tp.write(self.folder("plain" + name)))
+                rng = random.Random(11)
+                picks = sorted(rng.sample(sorted({t for d in plain.values() for t in d.values()}), 8))
+                for k, t in enumerate(picks):
+                    b = round(START + 10 * math.floor((t - START) / 10.0) + (10 if after else 0), 6)
+                    if gaps:
+                        tp.hb.setdefault(round(b - 10, 6), {})["poll_since_ms"] = 800
+                        tp.hb.setdefault(b, {}).update({"poll_gap_ms": 4000} if k % 2 else {"poll_since_ms": 3500})
+                    elif k % 2:
+                        tp.poll.update({round(b - 10, 6): (8, 9), b: (8, 8)})
+                    else:
+                        tp.poll.update({round(b - 20, 6): (5, 6), round(b - 10, 6): (0, 0), b: (6, 6)})
+                full = decisions(tp.write(self.folder("full" + name)))
+                _, mk, _ = views_of(self.folder("full" + name))
+                parts = [(a, b) for a, b, why in mk.parts if why == "poller"]
+                self.assertGreaterEqual(len(parts), 8)
+                self.assertEqual(mk.poll_stretches["by_gaps" if gaps else "by_counts"], mk.poll_stretches["n"])
+                if not after:
+                    self.assertNotEqual(full, plain, "the holes moved no decision: the test would prove nothing")
+                cuts = set(rng.sample(sorted({t for d in full.values() for t in d.values()}), 10))
+                cuts.update(t + 0.01 for t in picks)
+                for a, b in parts:
+                    cuts.update((a + 0.05, b - 0.05, b + 0.05))
+                for k, cut in enumerate(sorted(cuts)):
+                    part, shown = known(tp.write(self.folder("cut%s-%d" % (name, k)), until=cut), cut)
+                    self.assertEqual(shown, [(a, b) for a, b in parts if b <= cut + 1e-9], "holes known at %+.2f s, "
+                                     "by %s" % (cut - START, "gaps" if gaps else "counts"))
+                    for ek, d in full.items():
+                        want = {m: t for m, t in d.items() if t <= cut + 1e-9}
+                        got = {m: t for m, t in part.get(ek, {}).items() if t <= cut + 1e-9}
+                        self.assertEqual(got, want, "%s cut at %+.2f s, by %s, holes %s the decisions" % (
+                            ek, cut - START, "gaps" if gaps else "counts", "after" if after else "before"))
+
     def test_a_lost_lines_stretch_over_several_heartbeats_is_known_stretch_by_stretch(self):
         # the recorder lost lines in 4 heartbeat stretches in a row, the coin's ages (40, 50] ... (70, 80] s: each one
         # is known from its own closing heartbeat (50, 60, 70, 80 s), never only from the last one (80 s)
@@ -404,6 +469,10 @@ class Coverage(Base):
         self.assertIn("holes_by_cause", rep["coverage"])
         self.assertIn("**Blind exits** (every trade of every combination, overlays aside): %d of %d" % (
             bl["blind"], bl["trades"]), rep["markdown"])
+        ps = rep["coverage"]["poller_stretches"]                        # an older tape: every stretch by the counts
+        self.assertEqual((ps["by_counts"], ps["by_gaps"], ps["carried"]), (ps["n"], 0, 0))
+        self.assertIn("heartbeat stretches %d (0 judged by the poller's own answer gaps, %d by its call counts)" % (
+            ps["n"], ps["n"]), rep["markdown"])
 
     def test_a_poller_outage_inside_one_heartbeat_stretch_is_a_hole_never_a_flat_curve(self):
         # readings every second to 50 s of age, then none until 58.5 s (a 429 pause or a time-out), the curve at 9 SOL
@@ -508,6 +577,292 @@ class Coverage(Base):
         self.assertEqual(f["completions"]["share"], 1.0)
         self.assertIn("completed (mean at x0.85)", rep["markdown"])
         self.assertIn("| 100%% (%+.2f) |" % f["stress"]["complete x0.85"]["mean"], rep["markdown"])
+
+
+class PollerHoles(Base):
+    """A heartbeat stretch where the poller was silent 3 s or more is a hole (no reading is "unchanged" only while it
+    answered): by the poller's own silences on a tape whose heartbeats carry them (poll_gap_ms, poll_since_ms), by
+    the call counts on older ones, each run its own way. The cases the review of 15dd6fc found: a silence over a
+    heartbeat, the tail of a long 429 pause, a call still on its way read as a failure, a slow answer; and the ones
+    the review of their fix found: the run's first stretch, a pause that outlasts the last curve, a hole over two
+    stretches reaching back further than the silence can have, a held poller's slowness, a coin held at one end."""
+
+    T0 = START + 30                     # the coin's create: the heartbeats come at its ages 50, 60, 70 ... s
+
+    def hb(self, age):
+        return round(self.T0 + age, 6)
+
+    def market(self, name, poll=None, hb=None, gaps=False, last=50.0, back=58.5, twice=(), extra=()):
+        """One coin read every second to `last` s of age, then not until `back` (the curve at 9 SOL by then)."""
+        up = [(1.0 + k, r) for k, r in enumerate(ramp(0.3, 6.0, 0.1))]
+        path = [p for p in up if p[0] <= last] + [(back, 9.0), (back + 1.0, 9.2)] + [
+            (back + 1.5 + k, 9.2 + 0.01 * k) for k in range(20)]
+        tp = Tape(gaps=gaps)
+        tp.poll = {self.hb(a): v for a, v in (poll or {}).items()}
+        tp.hb = {self.hb(a): v for a, v in (hb or {}).items()}
+        tp.twice = {self.hb(a) for a in twice}
+        tp.lines += list(extra)
+        tp.coin(mint(1), self.T0, path)
+        views, mk, cfg = views_of(tp.write(self.folder(name)))
+        return views[0], mk, cfg
+
+    def holes(self, mk):
+        return [(round(a - self.T0, 3), round(b - self.T0, 3)) for a, b, why in mk.parts if why == "poller"]
+
+    def order(self, cv, mk, cfg, age):
+        """An order decided at `age` s (sent 1 s later), held 15 s. -> (trade or None, why not)."""
+        return st.simulate(cv, mk, self.T0 + age, st.Hold(15), st.Sim(st.Costs(cfg, 8.5), 1.0, 1.0))
+
+    def test_by_the_pollers_own_silences_a_wait_of_3_s_is_a_hole_a_slow_answering_poller_is_not(self):
+        # a 4 s wait between two good answers ended in the ages (50, 60]: a hole, from the last good answer before
+        # it (0.2 s before the heartbeat at 50 s), known from its heartbeat at 60 s
+        cv, mk, cfg = self.market("gap", gaps=True, hb={60: {"poll_gap_ms": 4000}})
+        self.assertEqual(self.holes(mk), [(49.8, 60.0)])
+        self.assertEqual((mk.poll_stretches["by_gaps"], mk.poll_stretches["by_counts"]), (mk.poll_stretches["n"], 0))
+        self.assertEqual(self.order(cv, mk, cfg, 50.0), (None, "not polled at the fill"))
+        # a silence still open at the heartbeat: 3.5 s since the last good answer
+        cv, mk, cfg = self.market("open", gaps=True, hb={60: {"poll_since_ms": 3500}})
+        self.assertEqual(self.holes(mk), [(49.8, 60.0)])
+        self.assertEqual(self.order(cv, mk, cfg, 50.0), (None, "not polled at the fill"))
+        # the edges, to the millisecond: 3 s is a hole, a millisecond less is not, ended or still open; a slow answer
+        # still awaited 1.5 s at the heartbeat is none
+        for k, (field, ms, want) in enumerate((("poll_gap_ms", 3000, [(49.8, 60.0)]), ("poll_gap_ms", 2999, []),
+                                               ("poll_since_ms", 3000, [(49.8, 60.0)]),
+                                               ("poll_since_ms", 2999, []), ("poll_since_ms", 1500, []))):
+            _, mk, _ = self.market("edge%d" % k, gaps=True, hb={60: {field: ms}})
+            self.assertEqual(self.holes(mk), want, "%s %d" % (field, ms))
+        # 4 good calls of 10 and a failed one, but every wait under 3 s: a slow poller that answers, no silence (the
+        # same counts on an older tape are a hole: under half the calls due); a trade, on the unchanged curve
+        cv, mk, cfg = self.market("slow", gaps=True, poll={60: (4, 5)}, hb={60: {"poll_gap_ms": 2900}})
+        self.assertEqual(self.holes(mk), [])
+        self.assertEqual(mk.poll_stretches["failed_call"], 1)
+        tr, why = self.order(cv, mk, cfg, 50.0)
+        self.assertIsNotNone(tr, why)
+        _, old, _ = self.market("slow-old", poll={60: (4, 5)})
+        self.assertEqual(self.holes(old), [(50.0, 60.0)])
+        # a call still on its way at the heartbeat is in the calls, not yet in the good ones: a failure by
+        # poll_calls - poll_ok, none by the settled poll_fail
+        _, mk, _ = self.market("inflight", gaps=True, poll={60: (9, 10, 0), 70: (11, 10, 0)})
+        self.assertEqual((self.holes(mk), mk.poll_stretches["failed_call"]), ([], 0))
+        _, old, _ = self.market("inflight-old", poll={60: (9, 10, 0), 70: (11, 10, 0)})
+        self.assertEqual((self.holes(old), old.poll_stretches["failed_call"]), ([], 1))
+        # standing still with curves watched is a hole; with nothing watched at a heartbeat no call goes out
+        _, mk, _ = self.market("still", gaps=True, poll={60: (0, 0)}, hb={60: {"poll_gap_ms": None}})
+        self.assertEqual(self.holes(mk), [(49.8, 60.0)])
+        idle = {"poll_gap_ms": None, "poll_since_ms": None, "watched": 0}
+        _, mk, _ = self.market("idle", gaps=True, poll={60: (0, 0)}, hb={60: idle})
+        self.assertEqual(self.holes(mk), [])
+
+    def test_by_the_pollers_own_silences_a_stretch_with_nothing_watched_at_both_ends_is_no_hole(self):
+        # a 429 pause from 46.25 s, the last curve let go before the heartbeat at 60 s: a paused poller skips its
+        # rounds, so the silence counts on at 60 and 70 s with nothing watched, and its 31 s ends at the first round
+        # after the pause, with nothing to ask (80 s). The stretch with curves watched at 50 s is a hole; the two with
+        # nothing watched at both ends are none (no call was due there)
+        hb = {60: {"poll_since_ms": 13750, "watched": 0}, 70: {"poll_since_ms": 23750, "watched": 0},
+              80: {"poll_gap_ms": 31000, "poll_since_ms": None, "watched": 0}}
+        _, mk, _ = self.market("quiet", gaps=True, poll={60: (0, 0), 70: (0, 0), 80: (0, 0)}, hb=hb)
+        self.assertEqual(self.holes(mk), [(49.8, 60.0)])
+
+    def test_by_the_pollers_own_silences_the_runs_first_stretch_from_its_start_line_is_judged_too(self):
+        # a 429 two seconds into the run: the first heartbeat, 10 s after the start line, has a 6.1 s wait in it
+        _, mk, _ = self.market("first", gaps=True, poll={-20: (5, 6)}, hb={-20: {"poll_gap_ms": 6100,
+                                                                                 "poll_since_ms": 700}})
+        self.assertEqual(self.holes(mk), [(-30.0, -20.0)])
+        n = mk.poll_stretches["n"]
+        self.assertEqual((mk.poll_stretches["by_gaps"], mk.poll_stretches["failed_call"]), (n, 1))
+        # no good answer in it with a curve watched: a hole too
+        _, mk, _ = self.market("first-still", gaps=True, poll={-20: (0, 2)}, hb={-20: {"poll_gap_ms": None,
+                                                                                       "poll_since_ms": None}})
+        self.assertEqual(self.holes(mk), [(-30.0, -20.0)])
+        # a heartbeat right after the start line (the recorder's first step: 0.5 s, its first call on its way) holds
+        # no silence of 3 s: not judged, and the next stretch is judged from it
+        early = {"k": "hb", "t": round(START + 0.5, 6), "sol": 71.0, "poll_ok": 0, "poll_calls": 1, "lost": 0,
+                 "drop": 0, "capped": 0, "poll_fail": 0, "poll_gap_ms": None, "poll_since_ms": 500}
+        _, mk, _ = self.market("first-early", gaps=True, extra=[early])
+        self.assertEqual(self.holes(mk), [])
+        self.assertEqual(mk.poll_stretches["n"], n)                     # (0.5, 10] judged in place of (0, 10]
+        # an older tape's first heartbeat came at the run's first step: its first stretch is not judged (as before)
+        _, old, _ = self.market("first-old", poll={-20: (5, 6)})
+        self.assertEqual((self.holes(old), old.poll_stretches["n"]), ([], n - 1))
+
+    def test_a_silence_that_began_before_the_heartbeat_is_a_hole_from_its_start_known_from_its_end(self):
+        # the last good answer 0.8 s before the heartbeat at 50 s (the reading of 49 s, the curve unchanged since),
+        # the next one 4.8 s later at 54 s: the hole is (49.2, 60]
+        cv, mk, cfg = self.market("before", gaps=True, last=49.0, back=54.0,
+                                  hb={50: {"poll_since_ms": 800}, 60: {"poll_gap_ms": 4800}})
+        self.assertEqual(self.holes(mk), [(49.2, 60.0)])
+        self.assertFalse(mk.hole_known(self.T0 + 45.0, self.T0 + 49.5, self.T0 + 59.9))   # not before its heartbeat
+        self.assertTrue(mk.hole_known(self.T0 + 45.0, self.T0 + 49.5, self.T0 + 60.0))
+        # an order sent at 49.6 s would fill on the reading of 49 s, inside the silence (the curve was 9 SOL at 54 s)
+        self.assertEqual(self.order(cv, mk, cfg, 48.6), (None, "not polled at the fill"))
+        tr, why = self.order(cv, mk, cfg, 47.0)                         # filled at 48 s, before it: a trade, blind
+        self.assertIsNotNone(tr, why)
+        self.assertTrue(tr.blind)
+        self.assertAlmostEqual(tr.exit, self.T0 + 49.2)
+        # never before the heartbeat before: a silence from 35 s to 51 s (open 5 s at 40 s, 15 s at 50 s) makes a
+        # hole of each stretch it touched, each from its own heartbeat before at the most: (40, 60], not (35, 60]
+        _, mk, _ = self.market("long", gaps=True, hb={40: {"poll_since_ms": 5000}, 50: {"poll_since_ms": 15000},
+                                                       60: {"poll_gap_ms": 16000}})
+        self.assertEqual(self.holes(mk), [(29.8, 40.0), (35.0, 50.0), (40.0, 60.0)])
+
+    def test_by_the_call_counts_a_silence_over_a_heartbeat_and_a_pauses_tail_are_holes(self):
+        # 8 good of 9 calls (2 s unaccounted) then 8 of 8 (2 s more): a 4 s silence over the heartbeat at 60 s,
+        # under 3 s on each side; one hole over both stretches, known from 70 s, from as far back as the 8 good calls
+        # before 60 s let the silence have begun (their 2 s unaccounted, a 1 s poll, 1 s for an answer: 56 s); an
+        # order into it does not fill
+        cv, mk, cfg = self.market("straddle", poll={60: (8, 9), 70: (8, 8)}, last=57.0, back=62.0)
+        self.assertEqual(self.holes(mk), [(56.0, 70.0)])
+        self.assertEqual((mk.poll_stretches["carried"], mk.poll_stretches["by_counts"]), (1, mk.poll_stretches["n"]))
+        self.assertFalse(mk.hole_known(self.T0 + 55.0, self.T0 + 58.0, self.T0 + 69.0))
+        self.assertTrue(mk.hole_known(self.T0 + 55.0, self.T0 + 58.0, self.T0 + 70.0))
+        self.assertEqual(self.order(cv, mk, cfg, 57.5), (None, "not polled at the fill"))
+        n = mk.poll_stretches["n"]
+        # the same with the heartbeat at 60 s written twice: judged once, the same one hole
+        _, mk, _ = self.market("straddle-twice", poll={60: (8, 9), 70: (8, 8)}, last=57.0, back=62.0, twice=(60,))
+        self.assertEqual(self.holes(mk), [(56.0, 70.0)])
+        self.assertEqual((mk.poll_stretches["carried"], mk.poll_stretches["n"]), (1, n))
+        # the edge: 2 + 1 s unaccounted is a hole over both, 2 + 0 s is none
+        _, mk, _ = self.market("edge3", poll={60: (8, 9), 70: (9, 9)})
+        self.assertEqual(self.holes(mk), [(56.0, 70.0)])
+        _, mk, _ = self.market("edge2", poll={60: (8, 9), 70: (10, 10)})
+        self.assertEqual(self.holes(mk), [])
+        # 8 of 9 then 7 of 7: the second stretch a hole of its own (3 s unaccounted after a failed call), and the
+        # silence may have begun before its heartbeat: the hole reaches back as before
+        cv, mk, cfg = self.market("over", poll={60: (8, 9), 70: (7, 7)}, last=57.0, back=63.0)
+        self.assertEqual(self.holes(mk), [(56.0, 70.0)])
+        self.assertEqual(self.order(cv, mk, cfg, 57.5), (None, "not polled at the fill"))
+        # a call on its way at 60 s (9 of 10: 1 s unaccounted), then a silence of its own in (60, 70] (6 of 6): the
+        # stretch before answered all along, so the hole reaches back 3 s at the most, not over all of it; an order
+        # decided at 51 s fills on a curve the poller kept reading
+        cv, mk, cfg = self.market("own", poll={60: (9, 10), 70: (6, 6)}, last=63.0, back=68.0)
+        self.assertEqual(self.holes(mk), [(57.0, 70.0)])
+        tr, why = self.order(cv, mk, cfg, 51.0)
+        self.assertIsNotNone(tr, why)
+        self.assertEqual(self.order(cv, mk, cfg, 57.5), (None, "not polled at the fill"))
+        # the same while a coin is held (0.5 s polls): a 5 s time-out, 15 good of 16 then 15 of 15 (2.5 s a side)
+        held = {a: {"held": 1} for a in (50, 60, 70)}
+        _, mk, _ = self.market("held", poll={60: (15, 16), 70: (15, 15)}, hb=held)
+        self.assertEqual(self.holes(mk), [(56.0, 70.0)])
+        # a long 429 pause: 5 of 6 (a hole), stood still (a hole), 6 of 6 (4 s more of it: a hole too, the stretch
+        # that stood still counts as failed for the next one); an order into the tail does not fill
+        cv, mk, cfg = self.market("tail", poll={60: (5, 6), 70: (0, 0), 80: (6, 6)}, last=55.0, back=75.0)
+        self.assertEqual(self.holes(mk), [(50.0, 60.0), (60.0, 70.0), (70.0, 80.0)])
+        self.assertEqual(self.order(cv, mk, cfg, 72.0), (None, "not polled at the fill"))
+        # a quick failed call the next round answered a second later: no hole, nor the stretch after it
+        cv, mk, cfg = self.market("quick", poll={60: (9, 10)})
+        self.assertEqual(self.holes(mk), [])
+        self.assertEqual(mk.poll_stretches["failed_call"], 1)
+        tr, why = self.order(cv, mk, cfg, 50.0)
+        self.assertIsNotNone(tr, why)
+        # a hole is never carried on: after the 5 of 6, 8 of 8 (2 s) is no hole
+        _, mk, _ = self.market("after", poll={60: (5, 6), 70: (8, 8)})
+        self.assertEqual(self.holes(mk), [(50.0, 60.0)])
+
+    def test_by_the_call_counts_a_stretch_held_at_one_end_only_counts_no_less_than_nothing_unaccounted(self):
+        # a coin held to the heartbeat at 40 s (0.5 s polls, 20 good calls a stretch), let go before 50 s: (40, 50]
+        # is reckoned at the 1 s idle interval, which its 13 good calls (one call on its way at 50 s, a 5 s time-out)
+        # outnumber; the time-out runs on into (50, 60] (7 of 7: a hole of its own). The silence began before 50 s:
+        # the hole reaches back, at the 0.5 s interval of the stretch before (13 calls, 3.5 s unaccounted at it)
+        held = {a: {"held": 1} for a in range(-20, 41, 10)}
+        poll = {a: (20, 20) for a in range(-10, 41, 10)}
+        poll.update({50: (13, 14), 60: (7, 7)})
+        cv, mk, cfg = self.market("letgo", poll=poll, hb=held, last=47.0, back=54.0)
+        self.assertEqual(self.holes(mk), [(45.0, 60.0)])
+        self.assertEqual(mk.poll_stretches["carried"], 1)
+        self.assertEqual(self.order(cv, mk, cfg, 47.5), (None, "not polled at the fill"))
+
+    def test_by_the_call_counts_a_held_pollers_usual_slowness_is_no_silence_over_a_heartbeat(self):
+        # a coin held all along (0.5 s polls), answers a little slower than that: 19 good calls of the 20 due, 0.5 s
+        # unaccounted every stretch with nothing amiss. A call on its way at the heartbeat at 120 s (18 of 19) and a
+        # slower stretch after it (16 of 16): 1 + 2 s unaccounted, only 2 s more than usual, no silence. Two slow
+        # stretches with a call on its way at both 300 and 310 s (16 of 17, 16 of 16: 1.5 s more than usual a side,
+        # 3 s in all): a held poller's ordinary slowness, under the POLL_HELD_S more it takes while held. A 5 s
+        # time-out over the heartbeat at 200 s (15 of 16, 15 of 15): 4 s more than usual, one hole
+        held = {a: {"held": 1} for a in range(-20, 400, 10)}
+        poll = {a: (19, 19) for a in range(-20, 400, 10)}
+        poll.update({120: (18, 19), 130: (16, 16), 200: (15, 16), 210: (15, 15), 300: (16, 17), 310: (16, 16),
+                     320: (21, 20)})
+        _, mk, _ = self.market("usual", poll=poll, hb=held)
+        self.assertEqual(self.holes(mk), [(196.0, 210.0)])
+        self.assertEqual(mk.poll_stretches["carried"], 1)
+        # the edge while held, on a poller that usually leaves nothing (20 of 20): 2.5 + 1.5 s over the heartbeat at
+        # 60 s is a hole over both, 2.5 + 1 s is none
+        poll = {a: (20, 20) for a in range(-20, 400, 10)}
+        poll.update({60: (15, 16), 70: (17, 17)})
+        _, mk, _ = self.market("held-edge4", poll=poll, hb=held)
+        self.assertEqual(self.holes(mk), [(56.0, 70.0)])
+        poll[70] = (18, 18)
+        _, mk, _ = self.market("held-edge3.5", poll=poll, hb=held)
+        self.assertEqual(self.holes(mk), [])
+
+    def test_by_the_call_counts_the_usual_is_the_runs_own_from_its_5th_stretch_with_nothing_amiss(self):
+        # a steady but slow poller: 9 good of 9 calls every stretch, 1 s unaccounted, nothing amiss. A failed call and
+        # 2 + 1 s unaccounted over the heartbeat at 20 s, before the run has 5 such stretches: a hole over both (no
+        # usual yet); the same at 120 s, once the usual is 1 s a stretch: 0 + 1 s more than usual, none
+        poll = {a: (9, 9) for a in range(-10, 400, 10)}
+        poll.update({20: (8, 9), 120: (8, 9)})
+        _, mk, _ = self.market("warm", poll=poll)
+        self.assertEqual(self.holes(mk), [(16.0, 30.0)])
+        # stretches with a failed call never set the usual: a quick failed call in each of 10 stretches (9 of 10: 1 s
+        # unaccounted, no hole), then 2 + 1 s over the heartbeat at 160 s is a hole, as on the poller that answered
+        # every second before them
+        poll = {a: (9, 10) if 50 <= a < 150 else (10, 10) for a in range(-10, 400, 10)}
+        poll.update({160: (8, 9), 170: (9, 9)})
+        _, mk, _ = self.market("amiss", poll=poll)
+        self.assertEqual(self.holes(mk), [(156.0, 170.0)])
+        # nor do stretches with a coin held at one end only (13 good calls in each, more than the idle interval
+        # gives: counted as 0 s unaccounted): the slow poller's usual stays 1 s, and 2 + 1 s over the heartbeat at
+        # 320 s is 1 s more than usual, no silence
+        poll = {a: (9, 9) if a <= 90 or a >= 320 else (13, 13) for a in range(-10, 400, 10)}
+        poll.update({320: (8, 9), 330: (9, 9)})
+        _, mk, _ = self.market("blips", poll=poll, hb={a: {"held": 1} for a in range(100, 301, 20)})
+        self.assertEqual(self.holes(mk), [])
+        # each run its own: a slow first run (usual 1 s), then a run whose poller answers every second: the same
+        # 2 + 1 s over the heartbeat at its 50 s is a hole there
+        folder = self.folder("two-runs")
+        slow = Tape()
+        slow.coin(mint(1), START + 30, ramp(0.3, 6.0, 0.1))
+        slow.poll = {round(START + a, 6): (9, 9) for a in range(10, int(slow.last - START) + 40, 10)}
+        slow.write(folder)
+        b0 = slow.last + 300.0
+        quick = Tape(start=b0)
+        quick.poll = {round(b0 + 50, 6): (8, 9), round(b0 + 60, 6): (9, 9)}
+        quick.coin(mint(2), b0 + 30, ramp(0.3, 6.0, 0.1))
+        quick.write(folder)
+        _, mk, _ = views_of(folder)
+        self.assertEqual([(round(a - b0, 3), round(b - b0, 3)) for a, b, why in mk.parts if why == "poller"],
+                         [(46.0, 60.0)])
+
+    def test_a_tape_with_a_run_before_the_silences_came_and_one_after_judges_each_run_its_own_way(self):
+        folder = self.folder("mixed")
+        old = Tape()                                                    # recorded before poll_gap_ms came
+        old.poll = {round(START + 90, 6): (8, 9), round(START + 100, 6): (8, 8)}    # the straddle: by counts
+        old.coin(mint(1), START + 30, ramp(0.3, 6.0, 0.1))
+        old.write(folder)
+        b0 = old.last + 300.0
+        new = Tape(start=b0, gaps=True)
+        new.poll = {round(b0 + 60, 6): (4, 5)}                          # slow, a failed call, answering: no hole
+        new.hb = {round(b0 + 10, 6): {"poll_since_ms": 15000},          # its first stretch, from the start line
+                  round(b0 + 20, 6): {"poll_gap_ms": 4000},             # a hole, never back over its start line
+                  round(b0 + 40, 6): {"poll_since_ms": 3500}}
+        new.coin(mint(2), b0 + 30, ramp(0.3, 6.0, 0.1))
+        new.write(folder)
+        views, mk, cfg = views_of(folder)
+        self.assertEqual([(a, b) for a, b, why in mk.parts if why == "poller"],
+                         [(START + 86, START + 100), (b0, b0 + 10), (b0, b0 + 20), (b0 + 29.8, b0 + 40)])
+        n_old = sum(1 for x in old.all_lines() if x["k"] == "hb") - 1  # an older tape: from its second heartbeat
+        n_new = sum(1 for x in new.all_lines() if x["k"] == "hb")       # from its start line
+        cov = st.coverage(views, mk)
+        ps = cov["poller_stretches"]
+        self.assertEqual((ps["n"], ps["by_counts"], ps["by_gaps"], ps["failed_call"], ps["hole"], ps["carried"]),
+                         (n_old + n_new, n_old, n_new, 2, 4, 1))
+        self.assertEqual(len(mk.runs), 2)
+        # the summary says each of them where it should
+        md = st.markdown({"coverage": cov})
+        self.assertIn("; heartbeat stretches %d (%d judged by the poller's own answer gaps, %d by its call counts), 2 "
+                      "with a failed call, 4 holes (a silence of 3 s or more; by counts, a failed call with that much "
+                      "unaccounted, 1 of them over two stretches) · not traded: none" % (n_old + n_new, n_new, n_old),
+                      md)
 
 
 class Controls(Base):

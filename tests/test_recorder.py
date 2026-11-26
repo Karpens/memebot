@@ -502,6 +502,42 @@ class Hooks(unittest.TestCase):
         ends = {m: [e["why"] for e in tp["events"] if e["k"] == "end"] for m, tp in self.tape(n).items()}
         self.assertEqual((ends["n1"], ends["n2"]), (["cap"], ["cap"]))
 
+    # ---- the heartbeat
+    def test_the_heartbeat_has_the_pollers_settled_failures_and_silences_and_works_without_them(self):
+        n = self.night()
+        self.step(n, 1)                                                 # the first heartbeat, the engine's fake poller
+        old = n.np_rec_stats()                                          # ok alone
+        self.assertEqual(set(old), {"sol", "poll_ok", "poll_calls", "poll_ms", "watched", "held", "shadows"})
+        p = mb.feeds_mod.CurvePoller(rpc="http://127.0.0.1:9/")         # the real one, never started: no network
+        now = time.time()
+        for ago in (9.0, 4.5, 2.0):                                     # good answers: a 4.5 s silence between two
+            p._gap_to(now - ago)
+        p.calls, p.ok, p.fails, p.last_ms = 12, 9, 2, 240               # one of the 3 missing still on its way
+        self.feeds.poller = p
+        got = n.np_rec_stats()
+        self.assertEqual((got["poll_ok"], got["poll_calls"], got["poll_fail"], got["poll_ms"], got["poll_gap_ms"]),
+                         (9, 12, 2, 240, 4500))
+        self.assertTrue(2000 <= got["poll_since_ms"] < 2500, got)
+        again = n.np_rec_stats()                                        # the heartbeat's call starts the next count
+        self.assertIsNone(again["poll_gap_ms"])
+        self.assertGreaterEqual(again["poll_since_ms"], got["poll_since_ms"])
+        # on the tape: the hb line carries them
+        p._gap_to(now + 3.5)                                            # a good answer 5.5 s after the last one
+        self.step(n, 11)
+        n.np_close()
+        hbs = [x for x in rec_mod.load_system(os.path.join(self.dir, "tapes")) if x["k"] == "hb"]
+        self.assertEqual((hbs[-1]["poll_fail"], hbs[-1]["poll_gap_ms"]), (2, 5500))
+        self.assertNotIn("poll_gap_ms", hbs[0])                         # the fake poller's heartbeat: the old keys
+        self.assertIn("poll_ok", hbs[0])
+
+        def boom(now=None):
+            raise RuntimeError("poller bug")
+        self.feeds.poller = types.SimpleNamespace(ok=3, calls=4, last_ms=200, fails=1, take_gaps=boom)
+        got = n.np_rec_stats()                                          # never raises: the old numbers still go
+        self.assertEqual((got["poll_ok"], got["poll_calls"], got["poll_ms"]), (3, 4, 200))
+        self.assertNotIn("poll_gap_ms", got)
+        self.assertNotIn("poll_fail", got)
+
     # ---- never in the way
     def test_an_error_in_the_recorder_is_swallowed_said_once_and_its_curves_let_go(self):
         n = self.night()

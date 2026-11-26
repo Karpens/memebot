@@ -45,12 +45,13 @@ its own). SOL/USD is the tape's own ("sol" lines, heartbeats, the fills' "sol").
 cost. The report breaks a round trip at an unchanged price into its parts (about -6.5 % at $8.50 and SOL $71).
 
 COVERAGE. When the tape stops knowing the coin while a trade is open (its "end" line: cap, stop, gone, the follow
-time; a "gap" line; a heartbeat stretch where the poller stood still, made under half its calls, or had a
-failed call with 3 s or more of the stretch unaccounted for, or the recorder lost lines; the run's end), the trade is sold BLIND at the last state the tape knew, with
-costs, and counted. A rule with more than 10 % blind trades is flagged and never passes. A curve that completes
-(migrates) while held is sold into its last curve state before the completion (the bot's own "migrating: take it"),
-at the completing reading itself (the tape has no price after it), counted apart: a pass must still hold with every
-completion at x0.85, and the summary shows each finalist's completed share.
+time; a "gap" line; a heartbeat stretch where the poller was silent 3 s or more (Market: by the heartbeats' own
+poll_gap_ms / poll_since_ms where they have them, from the call counts on older tapes) or the recorder lost lines;
+the run's end), the trade is sold BLIND at the last state the tape knew, with costs, and counted. A rule with more
+than 10 % blind trades is flagged and never passes. A curve that completes (migrates) while held is sold into its
+last curve state before the completion (the bot's own "migrating: take it"), at the completing reading itself (the
+tape has no price after it), counted apart: a pass must still hold with every completion at x0.85, and the summary
+shows each finalist's completed share.
 
 CALIBRATION. The cost model is checked on every live trade (buy -> sells) and every shadow trade (open -> sells) on
 the tape: the study's P&L of the same trade, with its fills at the lines' own times, against the P&L the bot
@@ -218,22 +219,41 @@ def rnd(x, nd=2):
 # ---------------------------------------------------------------- the runs, SOL's price and the tape's holes
 
 class Market(object):
-    """The tape's lines without a coin: the recorded runs (start ... stop, or the last heartbeat + 2 when the run
-    died), each run's settings (its start line's cfg on config.json's), SOL's dollar price, and the stretches the tape
-    says nothing about for any coin: between two heartbeats where the poller made no good call; made a call that
-    failed (a 429 pause, a time-out, an error) and its good calls leave POLL_FAIL_S (3 s) or more of the stretch
-    unaccounted for (a silence of that length somewhere in it; the stretch after it too when it is still that short:
-    the pause ran on); or made under half the good calls its poll interval gives (curve_poll_sec while the bot held
-    a coin at both heartbeats, else curve_idle_sec: a poller that slow, failure or not); or where the recorder
-    lost lines without a mark. Each heartbeat stretch is a hole of its own, (a, b], known from its own closing
-    heartbeat b on: a decision at t only skips the holes that ended by t (back-to-back stretches are merged for
-    scoring only, never for a decision)."""
+    """The tape's lines without a coin: the recorded runs (start ... stop, or the last heartbeat + 2 when the run died),
+    each run's settings (its start line's cfg on config.json's), SOL's dollar price, and the stretches the tape
+    says nothing about for any coin. Readings are change-only (no reading = unchanged), which is only true while
+    the poller answered, so a heartbeat stretch is a hole where it did not (poller_stretch). On a tape whose
+    heartbeats carry the poller's own silences (poll_gap_ms, poll_since_ms): where it stood still with curves
+    watched, or a wait between its good answers of POLL_FAIL_S (3 s) or more ended in the stretch or was still
+    open at its end (not where nothing was watched at either end); such a hole starts at the last good answer
+    before the stretch when one was still awaited at its start (the tape cannot tell whether the silence began
+    there or later in the stretch: a bound on the safe side). The run's first stretch, from its start line, is
+    judged so too. On older tapes, from the call counts: where it made no good call; made a call that failed (a
+    429 pause, a time-out, an error) and its good calls leave POLL_FAIL_S or more of the stretch unaccounted for
+    (a silence of that length somewhere in it; the stretch after it too when it is still that short, or after one
+    that stood still: the pause ran on), or of this stretch and the one before together, beyond what the run's
+    poller usually leaves (a silence over their heartbeat: the hole reaches back as far as the one before's
+    count lets the silence have begun); or made under half the good calls its poll interval gives (curve_poll_sec
+    while the bot held a coin at both heartbeats, else curve_idle_sec: a poller that slow, failure or not). The
+    rule is chosen per pair of heartbeats (both carry the silences: by gaps), never across a start line: a tape
+    can hold a run recorded before they came and one after. And where the recorder lost lines without a mark.
+    Each hole is known from its own closing heartbeat b on, whatever its start: a decision at t only skips the
+    holes that ended by t (back-to-back stretches are merged for scoring only, never for a decision)."""
 
-    POLL_SHORT = 0.5                    # under this share of the calls the poll interval gives: a hole
-    POLL_FAIL_S = 3.0                   # a failed call (or the stretch after one) is a hole only when the good calls
-                                        # leave this many seconds of it unaccounted for: a quick error answered by
-                                        # the next round a second later is no silence (the first real tape: 97
-                                        # stretches, one every 2.5 min, were holes for one failed call each)
+    POLL_SHORT = 0.5                    # under this share of the calls the poll interval gives: a hole (old tapes)
+    POLL_FAIL_S = 3.0                   # a silence this long is a hole: a wait between good answers on a tape that
+                                        # records them; on older ones, a failed call (or the stretch after one) with
+                                        # the good calls leaving this many seconds unaccounted for. A quick error
+                                        # answered by the next round a second later is no silence (the first real
+                                        # tape: 97 stretches, one every 2.5 min, were holes for one failed call each)
+    POLL_HELD_S = 1.0                   # old tapes, a silence over a heartbeat while a coin is held (0.5 s polls):
+                                        # this much more unaccounted for, as answers slower than the interval leave a
+                                        # second or so a stretch, and a call on its way at the heartbeat (half of
+                                        # them then) looks failed (a never-failing poller, held spells, 24 h
+                                        # simulated: 41 holes over two stretches without it, 12 with it)
+    POLL_ANSWER_S = 1.0                 # old tapes: the time an answer can take, in how far back a silence over a
+                                        # heartbeat can have begun (the stretch's first good answer may be a call
+                                        # sent before the stretch began)
 
     def __init__(self, system, base_cfg):
         self.base_cfg = base_cfg
@@ -244,7 +264,9 @@ class Market(object):
         prev_ok = prev_lost = None
         run_cfg = base_cfg
         self.stops = 0
-        self.poll_stretches = collections.Counter()     # heartbeat stretches seen, with a failed call, made holes
+        self.poll_stretches = collections.Counter()     # heartbeat stretches: n, failed_call, hole; by_gaps / by_counts
+                                                        # (the rule that judged them), carried (old-tape holes over two)
+        self._usual = {}                                # the run's unaccounted seconds a stretch (poller_stretch)
         for x in system:
             t, k = num(x.get("t")), x.get("k")
             if t is None or not isinstance(k, str):
@@ -258,7 +280,8 @@ class Market(object):
                     self.runs.append((cur[0], cur[1] + 2 * HB_S, cur[2]))
                 cur = [t, t, x.get("cfg") if isinstance(x.get("cfg"), dict) else None]
                 run_cfg = dict(base_cfg, **cur[2]) if cur[2] else base_cfg
-                prev_ok = prev_lost = None
+                prev_ok = self.run_state(t)                 # a stretch never spans a start line (nor a stop): the
+                prev_lost = None                            # run's first one is from it, its counters then at 0
                 continue
             if cur is None:                             # a tape that starts inside a run: from its first line
                 cur = [t, t, None]
@@ -274,24 +297,11 @@ class Market(object):
             calls = num(x.get("poll_calls"))
             lost = num(x["lost"] if "lost" in x else x.get("drop"))
             if ok is not None:
-                fail = False
-                if prev_ok is not None and t > prev_ok[0]:
-                    p_t, p_ok, p_calls, p_hb, p_fail = prev_ok
-                    fail = calls is not None and p_calls is not None and calls - ok > p_calls - p_ok
-                    if ok <= p_ok:
-                        hole = True                         # stood still
-                    else:
-                        need, sec = self.calls_due(run_cfg, p_hb, x, t - p_t, with_sec=True)
-                        short = need is not None and ok - p_ok < self.POLL_SHORT * need - 1e-9
-                        silent = need is not None and (fail or p_fail) and (
-                            (t - p_t) - (ok - p_ok) * sec >= self.POLL_FAIL_S - 1e-9)
-                        hole = short or silent
-                    if hole:
-                        holes.append((p_t, t, "poller"))
-                    self.poll_stretches["n"] += 1
-                    self.poll_stretches["failed_call"] += 1 if fail else 0
-                    self.poll_stretches["hole"] += 1 if hole else 0
-                prev_ok = (t, ok, calls, x, fail)
+                if prev_ok is not None and not prev_ok["run"] and t <= prev_ok["t"]:   # the same heartbeat again:
+                    prev_ok = dict(prev_ok, ok=ok, calls=calls, hb=x)   # nothing to judge, the stretch before it keeps
+                                                                        # its verdict
+                else:
+                    prev_ok = self.poller_stretch(prev_ok, x, t, ok, calls, run_cfg, cur[0], holes)
             if lost is not None:
                 if prev_lost is not None and lost > prev_lost[1]:
                     holes.append((prev_lost[0], t, "lost lines"))
@@ -322,6 +332,112 @@ class Market(object):
         self.hole_a = [h[0] for h in merged]
         self.hole_b = [h[1] for h in merged]
         self.cfgs = {}
+
+    @staticmethod
+    def run_state(t):
+        """The poller's state at a run's start line (time t): no call made yet (poller_stretch's p)."""
+        return {"t": t, "ok": 0, "calls": 0, "hb": {}, "start": None, "fail": False, "stood": False, "u": None,
+                "ulo": None, "seclo": None, "ux": None, "hole": False, "run": True}
+
+    def poller_stretch(self, p, x, t, ok, calls, cfg, run_t0, holes):
+        """The heartbeat stretch (p's heartbeat, x] judged for the poller; a hole goes into holes. p: the last
+        heartbeat's state in this run (run_state at its start line; None at the first heartbeat of a tape that
+        starts inside a run: no stretch yet). -> this heartbeat's state.
+
+        BY GAPS, when both heartbeats carry the poller's own silences (poll_gap_ms and poll_since_ms: tapes recorded
+        since they came): a hole when the poller stood still with curves watched at both heartbeats, when a wait
+        between good answers that ended in the stretch was POLL_FAIL_S or more, or when one still open at x was;
+        with nothing watched at both heartbeats no call went out (a coin watched in between was watched under 10 s,
+        too young for an entry at 45 s, and let go by its end) and a pause that outlasted the last curve still
+        counts on there: no hole. It starts at the last good answer before the stretch when one was still awaited
+        at the heartbeat before (never before the heartbeat before that): that wait may be the silence, or it may
+        have ended in time and the silence come later in the stretch, which the tape cannot tell, so the start is
+        a bound on the safe side (under POLL_FAIL_S early: a wait that long at the heartbeat before made its own
+        stretch a hole). It is still known only from x. The run's first stretch, from its start line (the counters
+        at 0, no wait open), is judged so when it is POLL_FAIL_S or longer. No call counts: a slow but answering
+        poller is no silence, and poll_calls - poll_ok counts a call still on its way as failed (about 7 % of the
+        first tape's healthy stretches) while it can miss a real one. With nothing watched at one end, standing
+        still is no silence (no call goes out); the wait before the poller went idle is in poll_gap_ms.
+        BY COUNTS, on older tapes (never the stretch from the start line: such a tape's first heartbeat came at the
+        run's first step): stood still; under POLL_SHORT of the calls due; or a failed call (poll_calls - poll_ok
+        grew) in this stretch or the one before (a stretch that stood still counts as failed for the next: the tail
+        of a long 429 pause) with POLL_FAIL_S or more unaccounted for. And a silence over a heartbeat: when the
+        stretch before had a failed call and was no hole, and the two together leave POLL_FAIL_S or more
+        unaccounted beyond what this run's poller usually leaves at that interval (the median of its last 30
+        stretches with nothing amiss so far, from 5 of them on; POLL_HELD_S more while a coin was held at both
+        heartbeats: answers slower than the 0.5 s interval leave a second or so a stretch, no silence, and a call
+        on its way at a heartbeat looks failed), under it on each side or this one a hole of its own (the silence
+        may have begun before its heartbeat): one hole, known only from x, that starts as far back as the stretch
+        before's good calls let the silence have begun (its unaccounted seconds, one poll interval and
+        POLL_ANSWER_S before its heartbeat, at the faster interval when a coin was held at one end; never before
+        that stretch). A stretch with a coin held at one heartbeat only is reckoned at the idle interval, which
+        the poller ran at for only part of it: its unaccounted seconds count as 0 at least there, and it never
+        sets the usual. With nothing watched at one of the two heartbeats no calls are due and only standing still
+        is judged there, as before (a failed call then makes no hole; harmless: a coin watched in such a stretch
+        was watched under 10 s at its start, too young for an entry at 45 s, or let go by its end, and the bot
+        never lets a held coin go)."""
+        st = {"t": t, "ok": ok, "calls": calls, "hb": x, "start": None, "fail": False, "stood": False, "u": None,
+              "ulo": None, "seclo": None, "ux": None, "hole": False, "run": False}
+        gapped = all(k in x for k in ("poll_gap_ms", "poll_since_ms"))
+        if p is None or p["run"]:
+            self._usual = {}                            # this run's unaccounted seconds, by poll interval (below)
+            if p is None or not gapped or t - p["t"] < self.POLL_FAIL_S - 1e-9:
+                return st                               # no stretch to judge (yet)
+            p = dict(p, hb={"poll_fail": 0, "poll_gap_ms": None, "poll_since_ms": None})
+        ps = self.poll_stretches
+        hb0, dt = p["hb"], t - p["t"]
+        f0, f1 = num(hb0.get("poll_fail")), num(x.get("poll_fail"))
+        if f0 is not None and f1 is not None:
+            fail = f1 > f0                              # settled failures (never a call still on its way)
+        else:
+            fail = calls is not None and p["calls"] is not None and calls - ok > p["calls"] - p["ok"]
+        stood = ok <= p["ok"]
+        need, sec = self.calls_due(cfg, hb0, x, dt, with_sec=True)
+        held0, held1 = ((num(h.get("held")) or 0) > 0 for h in (hb0, x))
+        mixed = held0 != held1                          # a coin held at one end only: polled faster for part of it
+        good = ok - p["ok"]
+        u = dt - good * sec if need is not None else None              # seconds the good calls leave unaccounted
+        if u is not None and mixed:
+            u = max(0.0, u)
+        seclo = min(sec, self.calls_due(cfg, {"held": 1}, {"held": 1}, 1.0, with_sec=True)[1]) if mixed else sec
+        ulo = dt - good * seclo if need is not None else None         # the same at the faster interval
+        usual = self._usual.setdefault(sec, collections.deque(maxlen=30))
+        ux = None if u is None else u - (max(0.0, median(usual)) if len(usual) >= 5 else 0.0)  # beyond the usual
+        start = p["t"]
+        lim = self.POLL_FAIL_S - 1e-9
+        if all(k in d for d in (hb0, x) for k in ("poll_gap_ms", "poll_since_ms")):
+            ps["by_gaps"] += 1
+            w0, w1 = num(hb0.get("watched")), num(x.get("watched"))
+            watched = not ((w0 is not None and w0 <= 0) or (w1 is not None and w1 <= 0))
+            quiet = w0 is not None and w0 <= 0 and w1 is not None and w1 <= 0      # nothing watched at both ends
+            gap, since = num(x.get("poll_gap_ms")), num(x.get("poll_since_ms"))
+            hole = (stood and watched) or (not quiet and ((gap is not None and gap / 1000.0 >= lim) or (
+                since is not None and since / 1000.0 >= lim)))
+            since0 = num(hb0.get("poll_since_ms"))
+            if hole and since0 is not None and since0 > 0:
+                start = max(p["start"] if p["start"] is not None else run_t0, p["t"] - since0 / 1000.0)
+        else:
+            ps["by_counts"] += 1
+            if stood:
+                hole = True
+            else:
+                short = need is not None and good < self.POLL_SHORT * need - 1e-9
+                hole = short or (need is not None and (fail or p["fail"] or p["stood"]) and u >= lim)
+            bar = lim + (self.POLL_HELD_S if held0 and held1 else 0.0)
+            if ux is not None and p["ux"] is not None and (p["fail"] or p["stood"]) and not p["hole"] \
+                    and (fail or p["fail"]) and ux + p["ux"] >= bar:
+                hole = True                             # one silence over two stretches, this one a hole of its
+                ps["carried"] += 1                      # own or not (it may have begun before its heartbeat)
+                start = max(p["start"], p["t"] - (max(0.0, p["ulo"]) + p["seclo"] + self.POLL_ANSWER_S))
+        if hole:
+            holes.append((start, t, "poller"))
+        ps["n"] += 1
+        ps["failed_call"] += 1 if fail else 0
+        ps["hole"] += 1 if hole else 0
+        if u is not None and not hole and not fail and not stood and not mixed:
+            usual.append(u)                             # a stretch with nothing amiss
+        st.update(start=p["t"], fail=fail, stood=stood, u=u, ulo=ulo, seclo=seclo, ux=ux, hole=hole)
+        return st
 
     @staticmethod
     def calls_due(cfg, hb0, hb1, dt, with_sec=False):
@@ -2048,7 +2164,9 @@ def latency(views):
 def coverage(views, mk):
     """Per create hour: creates, skipped at the create, with readings, near a trigger, followed, ended by the cap
     (and how old then), with a gap, completed, late bloomers the tape cannot see (not near by 180 s but 10+ SOL in
-    at their last reading); and the seconds unknown for every coin (the poller, lost lines)."""
+    at their last reading); and the seconds unknown for every coin (the poller, lost lines), the holes by cause, and
+    the heartbeat stretches the poller was judged on (with a failed call, holes; judged by the poller's own answer
+    gaps or by its call counts, and the old tapes' holes over two stretches)."""
     rows = collections.OrderedDict()
     holes = mk.hole_seconds()
     for cv in sorted(views, key=lambda v: v.t0):
@@ -2083,9 +2201,13 @@ def coverage(views, mk):
         d = by.setdefault(why, {"n": 0, "s": 0.0})
         d["n"] += 1
         d["s"] += b - a
+    ps = dict(getattr(mk, "poll_stretches", None) or {})
+    if ps:                                              # the regimes too, at 0 when none (Market.poller_stretch)
+        for k in ("n", "failed_call", "hole", "by_gaps", "by_counts", "carried"):
+            ps.setdefault(k, 0)
     return {"hours": out, "total": total,
             "holes_by_cause": {k: {"n": v["n"], "s": round(v["s"], 1)} for k, v in sorted(by.items())},
-            "poller_stretches": dict(getattr(mk, "poll_stretches", None) or {})}
+            "poller_stretches": ps}
 
 
 def blind_cause(why):
@@ -2681,9 +2803,12 @@ def markdown(rep):
                        "" if bl.get("share") is None else " (%.1f %%)" % (bl["share"] * 100),
                        ", ".join("%s %d" % kv for kv in (bl.get("causes") or {}).items()) or "none",
                        (", ".join("%s %d (%.0f s)" % (k, v["n"], v["s"]) for k, v in hb.items()) or "none") + (
-                           "; heartbeat stretches %d, %d with a failed call, %d holes (a failed call is a hole only "
-                           "with %g s or more unaccounted)" % (ps.get("n") or 0, ps.get("failed_call") or 0,
-                                                               ps.get("hole") or 0, Market.POLL_FAIL_S) if ps else ""),
+                           "; heartbeat stretches %d (%d judged by the poller's own answer gaps, %d by its call "
+                           "counts), %d with a failed call, %d holes (a silence of %g s or more; by counts, a failed "
+                           "call with that much unaccounted, %d of them over two stretches)" % (
+                               ps.get("n") or 0, ps.get("by_gaps") or 0, ps.get("by_counts") or 0,
+                               ps.get("failed_call") or 0, ps.get("hole") or 0, Market.POLL_FAIL_S,
+                               ps.get("carried") or 0) if ps else ""),
                        ", ".join("%s %d" % kv for kv in sorted(((rep.get("tried") or {}).get("not_traded") or {})
                                                                .items(), key=lambda kv: -kv[1])) or "none"))
         out.append("")

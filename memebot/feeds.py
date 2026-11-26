@@ -634,7 +634,18 @@ class CurvePoller(_Curves):
     """Every watched curve in ONE batched getMultipleAccounts over HTTP (commitment processed, base64, at most 100
     accounts a call, more calls when more) every interval: 0.5 s while holding, 1 s otherwise (set_interval; the
     caller decides). A 429 pauses for its Retry-After; our own budget stays under the public 40 calls per 10 s per
-    method; errors, timeouts and null accounts are counted, never raised."""
+    method; errors, timeouts and null accounts are counted, never raised.
+
+    For the tape's heartbeat (bot.np_rec_stats) it keeps two settled facts besides calls and ok: fails, the calls
+    that failed (a 429, an error, a time-out, an odd answer), counted when the failure is known, never for a call
+    still on its way (calls - ok counts that one as failed until it answers); and the silences between good
+    answers, by their wall time (time.time(), the readings' clock): take_gaps() gives the longest one that ended
+    since it was last asked and how long ago the last good answer came. Before the first answer the wait runs from
+    the first round with curves to ask (a 429 at the start is a silence too). With nothing watched no call goes
+    out: that is no silence, so the last good answer is forgotten at such a round (a paused poller with curves
+    watched is one; a paused poller skips its rounds, so a pause that outlasts the last curve still counts on).
+    The silences are the poller's, not each batch's: with over 100 curves, a failing batch next to an answering one
+    would not show (one batch a round in practice: the recorder keeps the curves polled to rec_max_keys, 100)."""
 
     name = "curve-poll"
     src = "poll"
@@ -653,7 +664,12 @@ class CurvePoller(_Curves):
         self.ka = KeepAlive(rpc, self.timeout) if keepalive else None
         self.paused_until = 0.0         # time.monotonic() before which no call goes out (429)
         self.calls = self.ok = self.limited = self.nulls = self.readings = self.skipped = 0
+        self.fails = 0                  # calls known to have failed (_limited, _fail): never one still in flight
         self.fail_streak = 0
+        self._gap_lock = threading.Lock()   # the poller's thread notes the good answers, the bot's thread asks
+        self._good_t = None             # time.time() of the last good answer, or of the first round with curves to
+                                        # ask before one came (None: no such round yet, or nothing watched since)
+        self._gap_max = None            # the longest wait between two good answers since take_gaps() last asked
         self.lat = collections.deque(maxlen=600)        # ms of the last successful calls
         self.last_ms = None
         self.discs = collections.Counter()              # account discriminators seen (the probe checks them)
@@ -701,7 +717,9 @@ class CurvePoller(_Curves):
         items = sorted(self.watched().items())
         if not items:
             self.fail_streak = 0        # nothing to ask: no reason to hold the next first reading back
+            self._gap_to(time.time(), idle=True)
             return 0
+        self._gap_from(time.time())
         chunks = [items[i:i + self.batch] for i in range(0, len(items), self.batch)]
         first = self._turn % len(chunks)                # round robin: a tail cut by the budget goes first next time
         self._turn += 1
@@ -748,10 +766,54 @@ class CurvePoller(_Curves):
         self.last_ms = round(ms)
         slot = _slot(res.get("context"))
         t = time.time()
+        self._gap_to(t)
         return sum(self._reading(mint, key, v, slot, t) for (mint, key), v in zip(chunk, vals))
+
+    def _gap_to(self, t, idle=False):
+        """A good answer at wall time t: the wait since the last one, the longest kept for take_gaps(). idle: a
+        round with nothing to ask instead. No call goes out then and no silence starts, so the last good answer is
+        forgotten (the next round with curves to ask starts afresh, _gap_from: no idle minutes in it); the wait up to
+        the first such round is still
+        kept, curves were watched until then (a round after a good answer it is a second or so; after a 429 pause
+        it is the pause)."""
+        try:
+            with self._gap_lock:
+                if self._good_t is not None:
+                    gap = t - self._good_t
+                    if self._gap_max is None or gap > self._gap_max:
+                        self._gap_max = gap
+                self._good_t = None if idle else t
+        except Exception:               # noqa: BLE001 - a number for the tape is never worth a reading
+            pass
+
+    def _gap_from(self, t):
+        """A round with curves to ask at wall time t. With no good answer on the clock (the poller's first round, or
+        the first since nothing was watched) a silence may begin with its first call: the wait is timed from t, so
+        a 429 or a time-out before the first answer shows like any other."""
+        try:
+            with self._gap_lock:
+                if self._good_t is None:
+                    self._good_t = t
+        except Exception:               # noqa: BLE001 - a number for the tape is never worth a reading
+            pass
+
+    def take_gaps(self, now=None):
+        """For the tape's heartbeat (once per heartbeat: it starts the next count). -> {"gap_ms": the longest wait
+        between two good answers (or from the first round with curves to ask, or up to a round with nothing to ask)
+        that ended since the last call (None: none ended since), "since_ms": now - the last good answer, or the
+        first round with curves to ask before one came (None: no such round yet, or nothing watched since; a poller
+        paused by a 429 does not look at what is watched, so it keeps counting through the pause)}, in whole
+        milliseconds. now: time.time()."""
+        now = time.time() if now is None else now
+        with self._gap_lock:
+            gap, self._gap_max = self._gap_max, None
+            last = self._good_t
+        return {"gap_ms": None if gap is None else int(round(max(0.0, gap) * 1000.0)),
+                "since_ms": None if last is None else int(round(max(0.0, now - last) * 1000.0))}
 
     def _limited(self, hdr):
         self.limited += 1
+        self.fails += 1
         wait = retry_after(hdr.get("retry-after"), default=min(5.0 * 2 ** min(self.fail_streak, 4), 60.0))
         self.fail_streak += 1
         self.paused_until = time.monotonic() + wait
@@ -760,6 +822,7 @@ class CurvePoller(_Curves):
         return 0
 
     def _fail(self, text):
+        self.fails += 1                 # an error, a time-out, an odd answer (poll()'s own catch comes here too)
         self.fail_streak += 1
         self.connected = False
         self._error(text)

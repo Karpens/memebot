@@ -96,11 +96,20 @@ on every coin line:
 Lines without "m": {"k":"start","t","v":2,"cfg":{...}[,"bal","held","mem"]} (a run started: the settings it traded
 with, the book's cash, the positions it carried over, the LEARNER's memory then),
 {"k":"sol","t","usd"} the SOL/USD the bot prices with, each time it changes (the replay prices with the same),
-{"k":"hb","t","sol","poll_ok","poll_calls","poll_ms","watched","held","coins","follow","drop","lost","capped"}
-every rec_hb_s: sol the SOL/USD the bot prices with, poll_ok / poll_calls the curve poller's good / all calls so
-far (poll_ok standing still is a gap in the data), poll_ms its last call, watched the curves polled, held the
-coins held, coins the watch list's, follow the followed ones; this run's lines dropped so far: drop all of them,
-lost those without a mark (the writer's queue was full, or a coin line at the cap: "lost" growing between two
+{"k":"hb","t","sol","poll_ok","poll_calls","poll_ms","watched","held","shadows"[,"poll_fail","poll_gap_ms",
+"poll_since_ms"],"coins","follow","drop","lost","capped"}
+every rec_hb_s: sol the SOL/USD the bot prices with, poll_ok / poll_calls the curve poller's good / all calls so far
+(poll_ok standing still is a gap in the data; a call still on its way at the heartbeat is in poll_calls, not yet in
+poll_ok), poll_ms its last call, watched the curves polled, held the coins held, shadows the open shadow trades; from
+a poller that keeps them (feeds.CurvePoller; a tape recorded before they came has none of the three): poll_fail its
+failed calls so far (a 429, an error, a time-out: counted once the failure is known, never one still on its way),
+poll_gap_ms the longest wait between two good answers (before the first one, from the first round with curves to
+poll; or from one to a round with nothing left to poll) that ended since the last heartbeat (null: none ended),
+poll_since_ms the wait at this heartbeat since the last good answer, or since that first round (a silence still
+open; null: no such round yet, or nothing watched since: with nothing to poll no call goes out and nothing is
+silent; a poller paused by a 429 skips its rounds, so through a pause that outlasts the last curve it counts on,
+with watched 0); coins the watch list's, follow the followed ones; this run's lines dropped so far: drop all of
+them, lost those without a mark (the writer's queue was full, or a coin line at the cap: "lost" growing between two
 heartbeats is a gap for every coin), capped the curve readings left out behind a coin's "gap" line;
 {"k":"stop","t"} (the run ended: the curves still polled got their "end" just before).
 

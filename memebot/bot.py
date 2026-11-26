@@ -1848,11 +1848,23 @@ class Night(object):
 
     def np_rec_stats(self):
         """The heartbeat's numbers: SOL's dollar price, the poller's good calls (a gap in them is a gap in the
-        tape), the curves polled, the coins held."""
+        tape), the curves polled, the coins held; and, from a poller that keeps them (feeds.CurvePoller), its
+        failed calls so far and its longest silence between good answers since the last heartbeat (and the one
+        still open). The recorder's stats callback, called once per heartbeat and from nowhere else: asking for
+        the silences starts the next heartbeat's count."""
         poller = getattr(self.feeds, "poller", None)
-        return {"sol": self.sol_px[1] if self.sol_px else None, "poll_ok": getattr(poller, "ok", None),
-                "poll_calls": getattr(poller, "calls", None), "poll_ms": getattr(poller, "last_ms", None),
-                "watched": len(self.np_call("watched") or {}), "held": len(self.wl.held()), "shadows": len(self.shadows)}
+        out = {"sol": self.sol_px[1] if self.sol_px else None, "poll_ok": getattr(poller, "ok", None),
+               "poll_calls": getattr(poller, "calls", None), "poll_ms": getattr(poller, "last_ms", None),
+               "watched": len(self.np_call("watched") or {}), "held": len(self.wl.held()), "shadows": len(self.shadows)}
+        take = getattr(poller, "take_gaps", None)
+        if take is not None:                            # a fake or an older poller: the old numbers alone
+            try:
+                gaps = take()
+                out.update(poll_fail=getattr(poller, "fails", None), poll_gap_ms=gaps.get("gap_ms"),
+                           poll_since_ms=gaps.get("since_ms"))
+            except Exception:                           # noqa: BLE001 - a number for the tape is never worth a trade
+                pass
+        return out
 
     def np_unwatch(self, mint):
         shadow = mint in self.shadows                   # an open shadow keeps its curve polled, and its NEWS window
