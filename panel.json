@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T02:13:36Z",
+ "updated": "2026-11-26T02:15:34Z",
  "mode": "paper",
  "start_balance": 70.0,
  "balance": 54.92,
@@ -19,14 +19,14 @@
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 305,
-  "flagged": 11,
-  "checked": 36,
-  "filtered": null,
-  "lines": 17,
+  "scans": 312,
+  "flagged": 12,
+  "checked": 37,
+  "filtered": 1,
+  "lines": 22,
   "last_rug": {
-   "coin": "TAXMAN",
-   "pass": true
+   "coin": "Zero",
+   "pass": false
   }
  },
  "flags": [
@@ -34,6 +34,11 @@
    "coin": "TAXMAN",
    "why": "holders +7%",
    "t": "2026-11-26T02:11:07Z"
+  },
+  {
+   "coin": "Zero",
+   "why": "holders +6%",
+   "t": "2026-11-26T02:14:27Z"
   }
  ],
  "curve": [
@@ -83,6 +88,14 @@
   ],
   [
    1795659192,
+   54.92
+  ],
+  [
+   1795659259,
+   54.92
+  ],
+  [
+   1795659326,
    54.92
   ]
  ],
@@ -1011,6 +1024,46 @@
    "coin": null,
    "action": "scan",
    "text": "scanned 69 new coins · 68 pairs · 4 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:13:53Z",
+   "time": "03:13:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 88 new coins · 87 pairs · 3 pass the rules"
+  },
+  {
+   "t": "2026-11-26T02:14:27Z",
+   "time": "03:14:27",
+   "agent": "SCANNER",
+   "coin": "Zero",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $70.6k · 5m $86.8k · buys 58% · holders +6%"
+  },
+  {
+   "t": "2026-11-26T02:14:27Z",
+   "time": "03:14:27",
+   "agent": "NEWS",
+   "coin": "Zero",
+   "action": "news",
+   "text": "promo: X @ZeroSumEnjoyer · web"
+  },
+  {
+   "t": "2026-11-26T02:14:27Z",
+   "time": "03:14:27",
+   "agent": "RUG CHECK",
+   "coin": "Zero",
+   "action": "reject",
+   "text": "FAIL · 34 insiders"
+  },
+  {
+   "t": "2026-11-26T02:15:17Z",
+   "time": "03:15:17",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 88 new coins · 87 pairs · 1 pass the rules"
   }
  ],
  "nights": [
@@ -1028,6 +1081,8 @@
   }
  ],
  "errors": [
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
