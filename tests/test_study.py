@@ -385,6 +385,25 @@ class Coverage(Base):
         g_bad = st.gates(st.stats(bad, 8.5, boot=500, z=3.0), first, stress, 15)
         self.assertTrue(g_ok["blind_share"]["ok"])
         self.assertFalse(g_bad["blind_share"]["ok"])
+        # the report counts every blind trade by its cause, so the 10 % gate can be judged on a real tape
+        self.assertEqual(st.blind_cause(tr.why), "end cap")
+        self.assertEqual(st.blind_cause("stop -12% (filled blind: run end)"), "run end")
+        self.assertEqual(st.blind_cause("blind: tape hole"), "tape hole")
+        self.assertEqual(st.blind_cause("no exit"), "no exit")
+        got = st.blind_causes([tr, tr2, tr])
+        self.assertEqual((got["trades"], got["blind"], got["causes"]), (3, 2, {"end cap": 2}))
+        self.assertAlmostEqual(got["share"], 0.667)
+        self.assertEqual(st.blind_causes([]), {"trades": 0, "blind": 0, "share": None, "causes": {}})
+
+    def test_the_summary_says_why_trades_ended_blind_and_how_much_tape_is_unknown(self):
+        tp = planted_tape(n=60, every_s=120.0, edge=True)
+        rep = st.study(tp.write(self.folder()), split=0.7, boot=100, max_rules=40, embargo_s=0.0)
+        bl = rep["coverage"]["blind"]
+        self.assertGreater(bl["trades"], 0)
+        self.assertEqual(bl["blind"], sum(bl["causes"].values()))
+        self.assertIn("holes_by_cause", rep["coverage"])
+        self.assertIn("**Blind exits** (every trade of every combination, overlays aside): %d of %d" % (
+            bl["blind"], bl["trades"]), rep["markdown"])
 
     def test_a_poller_outage_inside_one_heartbeat_stretch_is_a_hole_never_a_flat_curve(self):
         # readings every second to 50 s of age, then none until 58.5 s (a 429 pause or a time-out), the curve at 9 SOL

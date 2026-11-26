@@ -2068,7 +2068,37 @@ def coverage(views, mk):
         total.update(r)
     total = dict(total)
     total["unknown_s"] = round(sum(holes.values()), 1)
-    return {"hours": out, "total": total}
+    by = {}
+    for a, b, why in mk.parts:                          # each heartbeat stretch apart (they may overlap)
+        d = by.setdefault(why, {"n": 0, "s": 0.0})
+        d["n"] += 1
+        d["s"] += b - a
+    return {"hours": out, "total": total,
+            "holes_by_cause": {k: {"n": v["n"], "s": round(v["s"], 1)} for k, v in sorted(by.items())}}
+
+
+def blind_cause(why):
+    """The cause in a blind trade's why: "blind: tape hole" -> "tape hole", "stop -12% (filled blind: run end)" ->
+    "run end", anything else as it is."""
+    w = str(why or "")
+    if "(filled blind: " in w:
+        return w.split("(filled blind: ", 1)[1].rstrip(")").strip() or "?"
+    if w.startswith("blind: "):
+        return w[7:].strip() or "?"
+    return w or "?"
+
+
+def blind_causes(trades):
+    """Every trade of every combination: how many there were, how many ended blind, and why (the tape's end of the
+    coin, a gap, a hole, the run's end): to judge the 10 % blind gate on a real tape."""
+    n, causes = 0, collections.Counter()
+    for t in trades:
+        n += 1
+        if t.blind:
+            causes[blind_cause(t.why)] += 1
+    k = sum(causes.values())
+    return {"trades": n, "blind": k, "share": rnd(k / n, 3) if n else None,
+            "causes": dict(causes.most_common())}
 
 
 def sanity(views):
@@ -2213,6 +2243,7 @@ def study(data=None, since=None, until=None, split=0.7, cfg=None, max_rules=300,
             got.append(tr)
         got.sort(key=lambda x: x.dec)
         trades[c["key"]] = got
+    rep["coverage"]["blind"] = blind_causes(t for c in combos for t in trades[c["key"]])
     say("study · %d combinations simulated (%.1f s)" % (len(combos), time.monotonic() - wall))
 
     def part(key, which):
@@ -2629,6 +2660,18 @@ def markdown(rep):
                        cov.get("creates") or 0, cov.get("near") or 0, cov.get("followed") or 0,
                        cov.get("cap_ends") or 0, cov.get("cap_before_600s") or 0, cov.get("gap_coins") or 0,
                        cov.get("late_bloomers_unseen") or 0, cov.get("unknown_s") or 0))
+        out.append("")
+    covd = rep.get("coverage") or {}
+    bl, hb = covd.get("blind") or {}, covd.get("holes_by_cause") or {}
+    if bl or hb:
+        out.append("**Blind exits** (every trade of every combination, overlays aside): %d of %d%s · causes: %s · "
+                   "tape holes by cause (each heartbeat stretch): %s · not traded: %s" % (
+                       bl.get("blind") or 0, bl.get("trades") or 0,
+                       "" if bl.get("share") is None else " (%.1f %%)" % (bl["share"] * 100),
+                       ", ".join("%s %d" % kv for kv in (bl.get("causes") or {}).items()) or "none",
+                       ", ".join("%s %d (%.0f s)" % (k, v["n"], v["s"]) for k, v in hb.items()) or "none",
+                       ", ".join("%s %d" % kv for kv in sorted(((rep.get("tried") or {}).get("not_traded") or {})
+                                                               .items(), key=lambda kv: -kv[1])) or "none"))
         out.append("")
     tr = rep.get("tried") or {}
     if tr:
