@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:52:31Z",
+ "updated": "2026-11-26T11:52:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 21,
   "checked": 21,
   "filtered": 2,
-  "lines": 275,
+  "lines": 276,
   "last_rug": {
    "coin": "VP64",
    "pass": true
@@ -1128,15 +1128,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:24:15Z",
-   "time": "10:24:15",
-   "agent": "LEARNER",
-   "coin": "OFTANIA",
-   "action": "skip",
-   "text": "skip · past trades like this lost avg 9.9% · hour:day -16.1% over 8, news:0-2 -16.1% over 8",
-   "n": 76
-  },
   {
    "t": "2026-11-26T09:25:11Z",
    "time": "10:25:11",
@@ -2927,6 +2918,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 1 watched · 5 rejected (serial launcher 2, mayhem mode 2, dev bought 1) · closest Nadia: too young: 10 s (min 45 s)",
    "n": 275
+  },
+  {
+   "t": "2026-11-26T11:52:33Z",
+   "time": "12:52:33",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 1 watched · 1 rejected (mayhem mode 1) · closest USDT: too young: 0 s (min 45 s)",
+   "n": 276
   }
  ],
  "nights": [
@@ -2972,7 +2972,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 1 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 2 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2980,24 +2980,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 314,
-    "last_event_age_s": 1.2,
+    "events": 316,
+    "last_event_age_s": 4.1,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5246,
-    "last_event_age_s": 0.6,
+    "events": 5248,
+    "last_event_age_s": 3.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 214,
-    "last_event_age_s": 1.0,
+    "events": 215,
+    "last_event_age_s": 3.9,
     "errors": 18,
     "last_error": "sajad.my: timeout after 2 s"
    }
@@ -3012,7 +3012,7 @@
   "launch_to_entry_s": 22.0,
   "creates_per_min": 2.4,
   "watching": 1,
-  "followed": 1
+  "followed": 2
  },
  "learner": {
   "samples": 105,
@@ -3057,25 +3057,61 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4456,
+   "sent": 4484,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4456,
+   "sent": 4484,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$AICC",
+   "name": "ALTCOIN",
+   "mint": "ky5Un2ox4iV9kZBkNM1DktMEq7WhHRzJnKhfKBUpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.5,
+   "dev_pct": 2.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "$AGB",
+   "name": "Agentic B COIN",
+   "mint": "BGwQj1qWhiBXaid7nfqgXehY5CrbfJa4M7iwxAwDpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "USDT",
    "name": "Tether USDT",
    "mint": "HDUQuDT9657Xn1USS6nhJAeRysiihD6gcBxmtHxypump",
-   "age_s": 1,
+   "age_s": 27,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
@@ -3085,13 +3121,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 4 s (min 45 s)"
   },
   {
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "YdBaWFwftpLNGLWv6XV6HhnqdBsUD9goU8Pfy7ipump",
-   "age_s": 59,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
