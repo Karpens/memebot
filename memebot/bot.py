@@ -82,6 +82,7 @@ DEFAULTS = {
     "night_stop_pct": -35.0,
     "loss_streak": 3,
     "cooldown_min": 30,
+    "reenter_min": -1,                  # minutes after an exit before the same coin may be bought again (-1: never tonight)
     "no_entries_last_min": 30,
     # exits
     "tp1_pct": 50.0,
@@ -536,6 +537,8 @@ class Night(object):
                 self.log("RISK", None, "pause", "%d losses in a row · %d min pause" % (
                     n["streak"], self.cfg["cooldown_min"]))
             del self.state["positions"][mint]
+            if self.cfg.get("reenter_min", -1) >= 0:
+                n.setdefault("reenter", {})[mint] = self.epoch() + self.cfg["reenter_min"] * 60
             self.log("EXECUTOR", pos["symbol"], "exit", "EXIT %s %s (%+.0f%%) · %s" % (
                 pos["symbol"], ("+" if pnl >= 0 else "") + usd(pnl), trade["pnl_pct"], why))
         else:
@@ -597,7 +600,9 @@ class Night(object):
         now = self.epoch()
         self.trend = self.m.trending(now)
         mints = self.m.new_pools(pages=2, now=now) + self.m.promoted() + list(self.trend)
-        mints = [m for m in dict.fromkeys(mints) if m not in n["entered"] and m not in self.state["positions"]]
+        wait = n.setdefault("reenter", {})
+        mints = [m for m in dict.fromkeys(mints) if m not in n["entered"] and m not in self.state["positions"]
+                 and wait.get(m, 0) <= now]
         pairs = self.m.pairs(mints)
         sol_usd = (prices.get(SOL) or {}).get("usd")
         ready, seen = [], {"inside": 0, "near": None}
@@ -643,7 +648,8 @@ class Night(object):
             pos["size_pct"] = round(pos["cost"] / eq * 100, 1) if eq else None
             self.state["balance"] -= pos["cost"]
             self.state["positions"][mint] = pos
-            n["entered"].append(mint)
+            if cfg["reenter_min"] < 0:
+                n["entered"].append(mint)
             self.log("SIZER", fx["symbol"], "size", "%.0f%% of %s = %s" % (cfg["position_pct"], usd(eq), usd(pos["cost"])))
             self.log("EXECUTOR", fx["symbol"], "enter", "ENTER %s at %s · slip %.1f%% · %s" % (
                 fx["symbol"], ("%.10f" % pos["entry_price"]).rstrip("0"), pos["impact_pct"], pos.get("reason") or "signal"))

@@ -262,6 +262,20 @@ class Night(unittest.TestCase):
         self.assertEqual(n.state["positions"], {})
         self.assertEqual(n.state["night"]["trades"][-1]["why"], "end of night")
 
+    def test_a_coin_can_be_bought_again_after_its_wait(self):
+        self.cfg["reenter_min"] = 20
+        self.coin("aaa")
+        n = self.night(T0)
+        n.tick(400)
+        n.close_part("aaa", 1.0, "test", 100.0)
+        n.save()
+        n = self.night(T0 + datetime.timedelta(minutes=10))
+        n.tick(400)
+        self.assertNotIn("aaa", n.state["positions"])                              # still waiting
+        n = self.night(T0 + datetime.timedelta(minutes=21))
+        n.tick(400)
+        self.assertIn("aaa", n.state["positions"])                                 # bought again
+
     def test_the_risk_limits(self):
         for m in ("a1", "a2", "a3", "a4"):
             self.coin(m)
