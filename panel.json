@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:53:43Z",
+ "updated": "2026-11-26T19:54:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -24,7 +24,7 @@
   "flagged": 56,
   "checked": 42,
   "filtered": 8,
-  "lines": 905,
+  "lines": 906,
   "last_rug": {
    "coin": "FORU",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795686841,
-   87.76
-  ],
   [
    1795686901,
    87.76
@@ -2472,6 +2468,10 @@
   [
    1795722793,
    83.48
+  ],
+  [
+   1795722853,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2994,15 +2994,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T17:31:49Z",
-   "time": "18:31:49",
-   "agent": "SCANNER",
-   "coin": "breaddawg",
-   "action": "flag",
-   "text": "momentum · 4.7 SOL in · 6/6 buys (100%) · +32% since launch · mcap 40 SOL · 109 s old",
-   "n": 706
-  },
   {
    "t": "2026-11-26T17:31:49Z",
    "time": "18:31:49",
@@ -4793,6 +4784,15 @@
    "action": "scan",
    "text": "new pairs · 5.8 a minute · 5 watched · 9 rejected (serial launcher 6, mayhem mode 2, dev bought 1) · closest POCOCK: buy share 40%/65%",
    "n": 905
+  },
+  {
+   "t": "2026-11-26T19:54:04Z",
+   "time": "20:54:04",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 3 watched · 8 rejected (serial launcher 4, mayhem mode 3, dev bought 1) · closest POCOCK: buy share 38%/65%",
+   "n": 906
   }
  ],
  "nights": [
@@ -4845,15 +4845,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1702,
-    "last_event_age_s": 17.4,
+    "events": 1704,
+    "last_event_age_s": 5.7,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22792,
+    "events": 22817,
     "last_event_age_s": 1.3,
     "errors": 8,
     "last_error": "timeout after 5 s"
@@ -4861,8 +4861,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1180,
-    "last_event_age_s": 17.3,
+    "events": 1181,
+    "last_event_age_s": 5.1,
     "errors": 109,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -4875,9 +4875,9 @@
   "exit_ms": 33,
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
-  "creates_per_min": 4.2,
+  "creates_per_min": 3.8,
   "watching": 3,
-  "followed": 9
+  "followed": 8
  },
  "learner": {
   "samples": 108,
@@ -4923,41 +4923,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13930,
+   "sent": 13963,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13964,
+   "sent": 13997,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "KIDSTBL",
+   "name": "Still At The Kids Table",
+   "mint": "2LwG4cYhrsjsk1d9yduoYGqBrwTQZsL6DRwJCRn5dg4q",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/polymarketbro",
+   "tg": "https://t.me/PolymarketBroAlerts",
+   "web": "https://polymarketbro.com/coin-lab/kidstbl/",
+   "status": "rejected: serial launcher: 17 more coins in 60 min",
+   "why": "serial launcher: 17 more coins in 60 min"
+  },
+  {
+   "symbol": "$MIND",
+   "name": "Mind the Malfoy",
+   "mint": "5EYq7ujBjYxrWQeXjcC18M74UwFfWSDATZ78VJhspump",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "Jensen",
    "name": "Chip Giving",
    "mint": "GYHSkKCEhjmsJrfWDyEwWkoDiHLBbPrWvVxu7opcpump",
-   "age_s": 17,
-   "sol_in": 0.28,
-   "buys": 3,
+   "age_s": 48,
+   "sol_in": 0.36,
+   "buys": 6,
    "sells": 0,
-   "rise_pct": 1.9,
-   "mcap_sol": 28.5,
+   "rise_pct": 2.4,
+   "mcap_sol": 28.6,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 16 s (min 45 s)"
+   "why": "SOL in 0.4/2.5 · rise +2%/+12%"
   },
   {
    "symbol": "inu",
    "name": "criminu",
    "mint": "B4gCaM5iSsshmnxYUknbzzgDrA5yjiPiUrrYhonhpump",
-   "age_s": 62,
+   "age_s": 93,
    "sol_in": -0.14,
    "buys": 2,
    "sells": 2,
@@ -4975,7 +5011,7 @@
    "symbol": "CLAPPED",
    "name": "And Everyone Clapped",
    "mint": "5JwBCjSP9NmSxo24T9VPVS9aZUGG7UkbjpbwKbfDMey6",
-   "age_s": 87,
+   "age_s": 118,
    "sol_in": -0.05,
    "buys": 0,
    "sells": 1,
@@ -4993,7 +5029,7 @@
    "symbol": "BIBI",
    "name": "BIBI MODE",
    "mint": "4wp9qpfHzwEdgZnkz5E7iK43SJwtRKbRXYaqWUMmpump",
-   "age_s": 108,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5011,7 +5047,7 @@
    "symbol": "MFC",
    "name": "My first coin",
    "mint": "8xXDn2K9pUrmtrmjSrWo8smztPxJjC3WYaFJKmoMpump",
-   "age_s": 130,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5029,7 +5065,7 @@
    "symbol": "PUSSY",
    "name": "PUSSY",
    "mint": "HGVGigoHH5DuK7MevBibJb6M2asDddDbmheC7AFVghm8",
-   "age_s": 132,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5047,7 +5083,7 @@
    "symbol": "FOMO",
    "name": "Fearless of Missing Out",
    "mint": "Gb9huzpmQMnAyQaoja7GXcMgSFTVK5SKbrBqy6qsGabr",
-   "age_s": 138,
+   "age_s": 169,
    "sol_in": -6.91,
    "buys": 4,
    "sells": 8,
@@ -5065,7 +5101,7 @@
    "symbol": "Fomo",
    "name": "Fomocoin",
    "mint": "DkbTNWP4sN8BHpbt32cDUdXuRfde6Vp7EjqHc5SUpump",
-   "age_s": 144,
+   "age_s": 175,
    "sol_in": -0.59,
    "buys": 0,
    "sells": 1,
@@ -5083,7 +5119,7 @@
    "symbol": "POCOCK",
    "name": "POCOCK",
    "mint": "DvMEuZeCxuhXtuivGYPVoeWCeyMbnYW7WTGWKzY9pump",
-   "age_s": 146,
+   "age_s": 177,
    "sol_in": 7.9,
    "buys": 6,
    "sells": 10,
@@ -5096,42 +5132,6 @@
    "web": "https://x.com/mattpocockuk",
    "status": "watching",
    "why": "buy share 38%/65%"
-  },
-  {
-   "symbol": "Kangay",
-   "name": "Gay kanye",
-   "mint": "xMWjB96pbyZnpjVYiD6thKQVPGyFLMVw5zTgAzgpump",
-   "age_s": 152,
-   "sol_in": -0.06,
-   "buys": 6,
-   "sells": 2,
-   "rise_pct": -0.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.36,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "FELONY",
-   "name": "Felony Cat",
-   "mint": "3zd6jTKSQ6ipBuLusFyv4sehgP7pfGfTqeebsEsMADrM",
-   "age_s": 162,
-   "sol_in": -0.98,
-   "buys": 6,
-   "sells": 4,
-   "rise_pct": -6.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 1.81,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
