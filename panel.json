@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-26T09:04:23Z",
+ "updated": "2026-11-26T09:05:13Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 88.92,
- "equity": 98.46,
- "session": "23:00 → 07:00",
+ "equity": 98.19,
+ "session": "24/7",
  "agents": [
   "SCANNER",
   "NEWS",
@@ -15,97 +15,23 @@
   "LEARNER",
   "LOGGER"
  ],
- "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $100. I will not be watching. Trade New Pairs, first in and first out: speed is the whole game. Log every decision so I can read it in the morning.\n\nSTRATEGY: NEW PAIRS\n- The \"New Pairs\" column of Axiom Pulse: brand-new pump.fun coins in their first seconds to minutes, still on the bonding curve.\n- Every new coin is watched for 180 seconds (40 at once, the oldest dropped first). Its bonding curve is read every 0.5 seconds while anything is held, every second otherwise.\n- Enter on the curve reading where, within 180 seconds of the launch, all of these hold: at least 2.5 SOL came in, at least 6 readings were buys and 65% of the moves, the price is at least 12% above the launch price, and the market cap is at most 70 SOL. Buy on that same reading.\n- Older migrated pairs (DexScreener, GeckoTerminal) are a second strategy, switched off.\n\nAGENTS\n1. SCANNER - watches every new pump.fun coin on PumpPortal's stream and reads its bonding curve: SOL in, buys against sells, the biggest sell, its age. It fires the entry trigger; it never trades.\n2. NEWS - reads the coin's socials (X, Telegram, website, from its metadata; a coin without any is allowed but scores lower) and the curve's momentum (SOL in, the share of buys) into a NEWS score from 0 to 10 and picks the hold plan from it. While a coin is held it reads them again every 30 seconds and may move the plan up or down.\n3. RUG CHECK - the creator bought at most 8% of the supply, no single sell of 2 SOL or more, no mayhem-mode launch, no account that is not a pump.fun bonding curve, no creator with 2 or more other launches in the last 60 minutes, and a RugCheck report within 3 seconds: no rug history, no danger risk, no single holder above 12%, the top 10 holders at most 35% (the curve left out), no insiders. A sell simulation on Jupiter may lose at most 10% on the two quotes alone (no honeypot; the haircut and the fixed fees are the same for every coin).\n4. SIZER - 10% of the balance per trade, never less than $3; the LEARNER moves it between 0.5x and 1.5x.\n5. EXECUTOR - fills every buy and sale at a real Jupiter quote for the amount, less a 1% latency haircut and the network and priority fees. The curve's own maths fills a sale only when Jupiter fails and that maths matched a Jupiter quote at the entry. It logs how fast it was: \"first in · 1.2 s after the trigger · 38 s after launch\" and \"out · 0.3 s after the reading\".\n6. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row (a trade that sold its first step is not one), no new entries in the last 10 minutes, stop for the night at -50%, everything sold by 06:55. The night is two jobs: no new pairs are bought in the last 5 minutes of the first one and what it holds is sold in its last minute, since nobody watches the exits until the next job starts.\n7. LEARNER - learns from its own closed trades, by what each coin looked like at entry (the creator's buy, SOL in, the share of buys, its age, its socials, the NEWS score, the hold plan, the hour). If past trades like this one lost 4% or more on average, it skips the coin; every 5th such skip is bought at half size to check. Otherwise it sizes from 0.5x to 1.5x by how such trades did.\n8. LOGGER - every decision with its reason, and a morning report.\n\nEXITS - checked on every curve reading of a held coin, in the same loop turn\n- The base: take the whole profit at +7% (scalp, NEWS 0-2).\n- Strong NEWS holds part of it longer. Each step sells a share of what is left: swing (NEWS 3-4) 50% at +7% and the rest at +20%; runner (5-6) 34% at +7%, 50% at +20%, the rest at +60%; moon (7+) 25% at +7%, 34% at +20%, 50% at +60%, the rest at +100%.\n- Stop loss at -7% until the first step. After the first step the stop moves to break-even (+1%) or higher, to where selling the rest still leaves the whole trade without a loss after its fees, and a trailing stop follows the top (6%, 10% and 15% under it for swing, runner and moon).\n- Out after 5 minutes unless up 2% (10, 15 and 20 minutes for swing, runner and moon), before the first step only; after twice that time, out unless the first step was reached.\n- Out when the curve has had no trade for 3 minutes: a curve nobody trades keeps its price for good.\n- Out at once on a dump (one sell of 2 SOL or more after the entry) and when the curve completes (the migration: sold into the curve's last state).\n- Fading: buys under 45% of the last 5 minutes and a NEWS score 2 or more below the entry's: the rest is sold while in profit.\n\nPaper mode: no wallet, no real money. Honest maths: pump.fun's fee is about 1.25% each way, plus the 1% latency haircut each way: about 4-5% a round trip, and 0.001 SOL of network and priority fees an order on top (about 1-1.5% of a $10 order each way). The +7% and -7% are counted from the fill price, so a +7% exit nets about +3% and a -7% stop costs about -10 to -11%. Scalps alone need a very high hit rate: the hold ladder (+20, +60, +100% when the NEWS is strong) and the LEARNER are what can tilt it. Not financial advice.\n",
+ "prompt": "You are Meme Bot, a meme-coin trading terminal on Solana. Run around the clock, 24/7, with a starting balance of $100. I will not be watching. Trade New Pairs, first in and first out: speed is the whole game. Log every decision so I can read it any time.\n\nSTRATEGY: NEW PAIRS\n- The \"New Pairs\" column of Axiom Pulse: brand-new pump.fun coins in their first seconds to minutes, still on the bonding curve.\n- Every new coin is watched for 180 seconds (40 at once, the oldest dropped first). Its bonding curve is read every 0.5 seconds while anything is held, every second otherwise.\n- Enter on the curve reading where, within 180 seconds of the launch, all of these hold: at least 2.5 SOL came in, at least 6 readings were buys and 65% of the moves, the price is at least 12% above the launch price, and the market cap is at most 70 SOL. Buy on that same reading.\n- Older migrated pairs (DexScreener, GeckoTerminal) are a second strategy, switched off.\n\nAGENTS\n1. SCANNER - watches every new pump.fun coin on PumpPortal's stream and reads its bonding curve: SOL in, buys against sells, the biggest sell, its age. It fires the entry trigger; it never trades.\n2. NEWS - reads the coin's socials (X, Telegram, website, from its metadata; a coin without any is allowed but scores lower) and the curve's momentum (SOL in, the share of buys) into a NEWS score from 0 to 10 and picks the hold plan from it. While a coin is held it reads them again every 30 seconds and may move the plan up or down.\n3. RUG CHECK - the creator bought at most 8% of the supply, no single sell of 2 SOL or more, no mayhem-mode launch, no account that is not a pump.fun bonding curve, no creator with 2 or more other launches in the last 60 minutes, and a RugCheck report within 3 seconds: no rug history, no danger risk, no single holder above 12%, the top 10 holders at most 35% (the curve left out), no insiders. A sell simulation on Jupiter may lose at most 10% on the two quotes alone (no honeypot; the haircut and the fixed fees are the same for every coin).\n4. SIZER - 10% of the balance per trade, never less than $3; the LEARNER moves it between 0.5x and 1.5x.\n5. EXECUTOR - fills every buy and sale at a real Jupiter quote for the amount, less a 1% latency haircut and the network and priority fees. The curve's own maths fills a sale only when Jupiter fails and that maths matched a Jupiter quote at the entry. It logs how fast it was: \"first in · 1.2 s after the trigger · 38 s after launch\" and \"out · 0.3 s after the reading\".\n6. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row (a trade that sold its first step is not one), no new entries in the last 10 minutes, stop for the night at -50%. Each calendar day is one book (a \"night\" on the page) and positions carry over midnight. The bot runs in jobs of 5 h 40 min, each starting the next: no new pairs are bought in the last 5 minutes of a job and what it holds is sold in its last minute, since nobody watches the exits until the next job starts.\n7. LEARNER - learns from its own closed trades, by what each coin looked like at entry (the creator's buy, SOL in, the share of buys, its age, its socials, the NEWS score, the hold plan, the hour). If past trades like this one lost 4% or more on average, it skips the coin; every 5th such skip is bought at half size to check. Otherwise it sizes from 0.5x to 1.5x by how such trades did.\n8. LOGGER - every decision with its reason, and a morning report.\n\nEXITS - checked on every curve reading of a held coin, in the same loop turn\n- The base: take the whole profit at +7% (scalp, NEWS 0-2).\n- Strong NEWS holds part of it longer. Each step sells a share of what is left: swing (NEWS 3-4) 50% at +7% and the rest at +20%; runner (5-6) 34% at +7%, 50% at +20%, the rest at +60%; moon (7+) 25% at +7%, 34% at +20%, 50% at +60%, the rest at +100%.\n- Stop loss at -7% until the first step. After the first step the stop moves to break-even (+1%) or higher, to where selling the rest still leaves the whole trade without a loss after its fees, and a trailing stop follows the top (6%, 10% and 15% under it for swing, runner and moon).\n- Out after 5 minutes unless up 2% (10, 15 and 20 minutes for swing, runner and moon), before the first step only; after twice that time, out unless the first step was reached.\n- Out when the curve has had no trade for 3 minutes: a curve nobody trades keeps its price for good.\n- Out at once on a dump (one sell of 2 SOL or more after the entry) and when the curve completes (the migration: sold into the curve's last state).\n- Fading: buys under 45% of the last 5 minutes and a NEWS score 2 or more below the entry's: the rest is sold while in profit.\n\nPaper mode: no wallet, no real money. Honest maths: pump.fun's fee is about 1.25% each way, plus the 1% latency haircut each way: about 4-5% a round trip, and 0.001 SOL of network and priority fees an order on top (about 1-1.5% of a $10 order each way). The +7% and -7% are counted from the fill price, so a +7% exit nets about +3% and a -7% stop costs about -10 to -11%. Scalps alone need a very high hit rate: the hold ladder (+20, +60, +100% when the NEWS is strong) and the LEARNER are what can tilt it. Not financial advice.\n",
  "night": {
-  "id": "2026-11-26-test",
-  "start_equity": 100.0,
-  "started": "2026-11-26T08:49:04Z",
+  "id": "2026-11-26",
+  "start_equity": 98.46,
+  "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 2,
-  "checked": 2,
+  "flagged": 0,
+  "checked": 0,
   "filtered": 0,
-  "lines": 32,
-  "last_rug": {
-   "coin": "BST",
-   "pass": true
-  }
+  "lines": 4,
+  "last_rug": null
  },
- "flags": [
-  {
-   "coin": "Drone",
-   "why": "momentum",
-   "t": "2026-11-26T08:59:07Z"
-  },
-  {
-   "coin": "BST",
-   "why": "momentum",
-   "t": "2026-11-26T09:01:52Z"
-  }
- ],
+ "flags": [],
  "curve": [
   [
-   1795682944,
-   100.0
-  ],
-  [
-   1795683004,
-   100.0
-  ],
-  [
-   1795683064,
-   100.0
-  ],
-  [
-   1795683124,
-   100.0
-  ],
-  [
-   1795683184,
-   100.0
-  ],
-  [
-   1795683244,
-   100.0
-  ],
-  [
-   1795683304,
-   100.0
-  ],
-  [
-   1795683364,
-   100.0
-  ],
-  [
-   1795683424,
-   100.0
-  ],
-  [
-   1795683484,
-   100.0
-  ],
-  [
-   1795683544,
-   100.0
-  ],
-  [
-   1795683604,
-   98.8
-  ],
-  [
-   1795683664,
-   98.8
-  ],
-  [
-   1795683724,
-   98.48
-  ],
-  [
-   1795683784,
-   98.45
-  ],
-  [
-   1795683844,
-   98.45
+   1795683896,
+   98.28
   ]
  ],
  "position_pct": 10.0,
@@ -116,14 +42,14 @@
    "symbol": "BST",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
    "cost": 9.88,
-   "value": 9.53,
-   "pnl_pct": -3.5,
+   "value": 9.26,
+   "pnl_pct": -6.3,
    "opened": "2026-11-26T09:01:53Z",
    "url": "https://pump.fun/coin/9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
    "reason": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
    "size_pct": 10.0,
    "entry_price": 2.53912e-06,
-   "price": 2.46711e-06,
+   "price": 2.39734e-06,
    "slip": 3.15,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -152,342 +78,48 @@
     2.53912e-06,
     2.47092e-06,
     2.46925e-06,
-    2.46694e-06
+    2.46694e-06,
+    2.39734e-06
    ]
   }
  ],
- "trades": [
-  {
-   "symbol": "Drone",
-   "mint": "27ZPtFUss1VtEpnppVDNJY6rtn63TKMeeMDojx31pump",
-   "opened": "2026-11-26T08:59:07Z",
-   "closed": "2026-11-26T08:59:24Z",
-   "cost": 10.0,
-   "proceeds": 8.8,
-   "pnl": -1.2,
-   "pnl_pct": -12.0,
-   "why": "stop -8%",
-   "url": "https://pump.fun/coin/27ZPtFUss1VtEpnppVDNJY6rtn63TKMeeMDojx31pump",
-   "reason": "momentum · 3.8 SOL in · 7/10 buys (70%) · +25% since launch · mcap 41 SOL · 13 s old",
-   "size_pct": 10.0,
-   "entry_price": 2.89468886036805e-06,
-   "exit_price": 2.6565794521505954e-06,
-   "slip": 0.0,
-   "strategy": "new_pairs",
-   "tier": "scalp",
-   "score": 0.5,
-   "steps": 0,
-   "plan": {
-    "tier": "scalp",
-    "score": 0.5,
-    "parts": [
-     "X post"
-    ],
-    "ladder": [
-     [
-      7.0,
-      1.0
-     ]
-    ],
-    "step": 0,
-    "stop_pct": -7.0,
-    "trail_pct": 0.0
-   },
-   "age_s": 13,
-   "mcap_sol": 40.8,
-   "dev_pct": 7.95,
-   "sol_in": 3.84,
-   "exit_ms": 12
-  }
- ],
+ "trades": [],
  "log": [
   {
-   "t": "2026-11-26T08:49:04Z",
-   "time": "09:49:04",
+   "t": "2026-11-26T09:04:56Z",
+   "time": "10:04:56",
    "agent": "LOGGER",
    "coin": null,
    "action": "start",
-   "text": "night 2026-11-26-test · start $100.00 · 8 agents · 23:00 → 07:00",
+   "text": "night 2026-11-26 · start $88.92 · 8 agents · 00:00 → 00:00",
    "n": 1
   },
   {
-   "t": "2026-11-26T08:49:05Z",
-   "time": "09:49:05",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "feed",
-   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "t": "2026-11-26T09:04:56Z",
+   "time": "10:04:56",
+   "agent": "EXECUTOR",
+   "coin": "BST",
+   "action": "stale",
+   "text": "no curve reading for 5 s · Jupiter's price $2.421e-06",
    "n": 2
   },
   {
-   "t": "2026-11-26T08:49:15Z",
-   "time": "09:49:15",
+   "t": "2026-11-26T09:04:56Z",
+   "time": "10:04:56",
    "agent": "SCANNER",
    "coin": null,
    "action": "scan",
-   "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest DOG: no curve reading yet",
+   "text": "new pairs · 0.0 a minute · 0 watched · 0 rejected",
    "n": 3
   },
   {
-   "t": "2026-11-26T08:50:16Z",
-   "time": "09:50:16",
+   "t": "2026-11-26T09:04:57Z",
+   "time": "10:04:57",
    "agent": "SCANNER",
    "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 5 watched · 7 rejected (dev bought 4, mayhem mode 3) · closest MREC: SOL in 2.0/2.5 · buys 1/6",
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 0.5 s · 1 watched · ws off",
    "n": 4
-  },
-  {
-   "t": "2026-11-26T08:51:11Z",
-   "time": "09:51:11",
-   "agent": "SCANNER",
-   "coin": "STUFFER",
-   "action": "migrate",
-   "text": "migrated: the curve is complete (pump-amm)",
-   "n": 5
-  },
-  {
-   "t": "2026-11-26T08:51:16Z",
-   "time": "09:51:16",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 5 watched · 9 rejected (dev bought 5, mayhem mode 4) · closest SANTA: SOL in 0.7/2.5 · buys 3/6 · buy share 33%/65% · rise +5%/+12%",
-   "n": 6
-  },
-  {
-   "t": "2026-11-26T08:52:16Z",
-   "time": "09:52:16",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 6 watched · 10 rejected (dev bought 6, mayhem mode 4) · closest SANTA: SOL in 0.1/2.5 · buys 3/6 · buy share 30%/65% · rise +1%/+12%",
-   "n": 7
-  },
-  {
-   "t": "2026-11-26T08:53:17Z",
-   "time": "09:53:17",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 4 watched · 5 rejected (dev bought 3, dump 1, mayhem mode 1) · closest SELFIECATS: buy share 41%/65%",
-   "n": 8
-  },
-  {
-   "t": "2026-11-26T08:54:17Z",
-   "time": "09:54:17",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 6 watched · 6 rejected (dev bought 4, dump 1, mayhem mode 1) · closest SELFIECATS: buy share 33%/65%",
-   "n": 9
-  },
-  {
-   "t": "2026-11-26T08:55:18Z",
-   "time": "09:55:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 4 watched · 8 rejected (dev bought 5, mayhem mode 2, dump 1) · closest SELFIECATS: buy share 36%/65%",
-   "n": 10
-  },
-  {
-   "t": "2026-11-26T08:56:18Z",
-   "time": "09:56:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 6 watched · 6 rejected (dev bought 4, mayhem mode 2) · closest Reveal: SOL in 1.9/2.5 · buys 2/6 · buy share 22%/65%",
-   "n": 11
-  },
-  {
-   "t": "2026-11-26T08:56:30Z",
-   "time": "09:56:30",
-   "agent": "SCANNER",
-   "coin": "WIENER",
-   "action": "migrate",
-   "text": "migrated: the curve is complete (pump-amm)",
-   "n": 12
-  },
-  {
-   "t": "2026-11-26T08:57:19Z",
-   "time": "09:57:19",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 7 watched · 5 rejected (dev bought 3, mayhem mode 2) · closest MCCOIN: SOL in 1.0/2.5 · buys 2/6 · buy share 50%/65% · rise +7%/+12%",
-   "n": 13
-  },
-  {
-   "t": "2026-11-26T08:58:19Z",
-   "time": "09:58:19",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 7 watched · 5 rejected (dev bought 3, mayhem mode 2) · closest Elonmas: SOL in 0.2/2.5 · buys 1/6 · rise +2%/+12%",
-   "n": 14
-  },
-  {
-   "t": "2026-11-26T08:59:07Z",
-   "time": "09:59:07",
-   "agent": "SCANNER",
-   "coin": "Drone",
-   "action": "flag",
-   "text": "momentum · 3.8 SOL in · 7/10 buys (70%) · +25% since launch · mcap 41 SOL · 13 s old",
-   "n": 15
-  },
-  {
-   "t": "2026-11-26T08:59:07Z",
-   "time": "09:59:07",
-   "agent": "RUG CHECK",
-   "coin": "Drone",
-   "action": "pass",
-   "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
-   "n": 16
-  },
-  {
-   "t": "2026-11-26T08:59:07Z",
-   "time": "09:59:07",
-   "agent": "SIZER",
-   "coin": "Drone",
-   "action": "size",
-   "text": "10% of $100.00 = $10.00",
-   "n": 17
-  },
-  {
-   "t": "2026-11-26T08:59:07Z",
-   "time": "09:59:07",
-   "agent": "EXECUTOR",
-   "coin": "Drone",
-   "action": "enter",
-   "text": "ENTER Drone at 0.0000028947 · slip 0.0% · first in · 0.0 s after the trigger · 13 s after launch · curve maths 2.7% off Jupiter",
-   "n": 18
-  },
-  {
-   "t": "2026-11-26T08:59:07Z",
-   "time": "09:59:07",
-   "agent": "NEWS",
-   "coin": "Drone",
-   "action": "plan",
-   "text": "hold plan · 0.5/10 (X post) · scalp: +7",
-   "n": 19
-  },
-  {
-   "t": "2026-11-26T08:59:20Z",
-   "time": "09:59:20",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 3 watched · 5 rejected (dev bought 3, mayhem mode 2) · closest xmascoin: SOL in 0.1/2.5 · buys 3/6 · rise +1%/+12%",
-   "n": 20
-  },
-  {
-   "t": "2026-11-26T08:59:24Z",
-   "time": "09:59:24",
-   "agent": "EXECUTOR",
-   "coin": "Drone",
-   "action": "exit",
-   "text": "EXIT Drone $-1.20 (-12%) · stop -8% · out · 0.0 s after the reading",
-   "n": 21
-  },
-  {
-   "t": "2026-11-26T08:59:24Z",
-   "time": "09:59:24",
-   "agent": "LEARNER",
-   "coin": "Drone",
-   "action": "learn",
-   "text": "learned · tier:scalp now avg -12.0% over 1",
-   "n": 22
-  },
-  {
-   "t": "2026-11-26T09:00:20Z",
-   "time": "10:00:20",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 1 watched · 3 rejected (dev bought 2, mayhem mode 1) · closest BST: SOL in 1.7/2.5 · rise +11%/+12%",
-   "n": 23
-  },
-  {
-   "t": "2026-11-26T09:01:20Z",
-   "time": "10:01:20",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 3 watched · 2 rejected (dev bought 2) · closest BST: SOL in 1.9/2.5",
-   "n": 24
-  },
-  {
-   "t": "2026-11-26T09:01:52Z",
-   "time": "10:01:52",
-   "agent": "SCANNER",
-   "coin": "BST",
-   "action": "flag",
-   "text": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
-   "n": 25
-  },
-  {
-   "t": "2026-11-26T09:01:53Z",
-   "time": "10:01:53",
-   "agent": "RUG CHECK",
-   "coin": "BST",
-   "action": "pass",
-   "text": "PASS · 8 holders · top holder 8.0% · top 10 9% (curve left out)",
-   "n": 26
-  },
-  {
-   "t": "2026-11-26T09:01:53Z",
-   "time": "10:01:53",
-   "agent": "SIZER",
-   "coin": "BST",
-   "action": "size",
-   "text": "10% of $98.80 = $9.88",
-   "n": 27
-  },
-  {
-   "t": "2026-11-26T09:01:53Z",
-   "time": "10:01:53",
-   "agent": "EXECUTOR",
-   "coin": "BST",
-   "action": "enter",
-   "text": "ENTER BST at 0.0000025391 · slip 3.1% · first in · 0.5 s after the trigger · 141 s after launch · curve maths 0.0% off Jupiter",
-   "n": 28
-  },
-  {
-   "t": "2026-11-26T09:01:53Z",
-   "time": "10:01:53",
-   "agent": "NEWS",
-   "coin": "BST",
-   "action": "plan",
-   "text": "hold plan · 1/10 (buys 93%) · scalp: +7",
-   "n": 29
-  },
-  {
-   "t": "2026-11-26T09:02:20Z",
-   "time": "10:02:20",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 4 watched · 4 rejected (dev bought 4) · closest ECHINUS: SOL in 0.1/2.5 · buys 3/6 · rise +0%/+12%",
-   "n": 30
-  },
-  {
-   "t": "2026-11-26T09:03:21Z",
-   "time": "10:03:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 5 watched · 7 rejected (dev bought 5, mayhem mode 2) · closest $HATCH: SOL in 0.1/2.5 · buys 2/6 · rise +1%/+12%",
-   "n": 31
-  },
-  {
-   "t": "2026-11-26T09:04:22Z",
-   "time": "10:04:22",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 4 watched · 9 rejected (dev bought 4, mayhem mode 4, serial launcher 1) · closest SNC: SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%",
-   "n": 32
   }
  ],
  "nights": [
@@ -502,15 +134,21 @@
    "worst": -2.11,
    "flagged": 77,
    "scans": 1637
+  },
+  {
+   "id": "2026-11-26-test",
+   "start": 100.0,
+   "end": 98.46,
+   "pnl": -1.54,
+   "trades": 1,
+   "wins": 0,
+   "best": -1.2,
+   "worst": -1.2,
+   "flagged": 2,
+   "scans": 0
   }
  ],
- "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/B2DmhVebKQK7yEDg9ciiTtRNBKecixotvqf4q2h3Zofz/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/B9DUYgrprvF54aQwq8kJwcpnHQiCVbPshutpLcZe6Hhi/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/4J92JE5xcbRGpPqEHfmTgdmdkgGEcubR9RZfz1xYpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/hKUgymSK1q8wc4nokx7TvQ7jV84FvR1SLqpxDYpb8Dh/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/Do9au5rhzNcwzGwKXtEvQzo63sg86xNPCkbvh9Vqpump/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -524,7 +162,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 2 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -532,39 +170,39 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 63,
-    "last_event_age_s": 4.4,
+    "events": 1,
+    "last_event_age_s": 5.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1175,
-    "last_event_age_s": 4.1,
+    "events": 6,
+    "last_event_age_s": 1.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 49,
-    "last_event_age_s": 5.6,
-    "errors": 33,
+    "events": 1,
+    "last_event_age_s": 2.9,
+    "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 276.0,
-  "first_in_last_ms": 525,
-  "exit_ms": 13,
-  "exit_last_ms": 13,
-  "launch_to_entry_s": 77.5,
-  "creates_per_min": 3.4,
-  "watching": 4,
-  "followed": 10
+  "first_in_ms": null,
+  "first_in_last_ms": null,
+  "exit_ms": null,
+  "exit_last_ms": null,
+  "launch_to_entry_s": null,
+  "creates_per_min": 0.2,
+  "watching": 1,
+  "followed": 2
  },
  "learner": {
   "samples": 96,
@@ -609,264 +247,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 983,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 983,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "KF3K2i67JHrd9vfETnhjxXZpdAV24eLcz3i6YDwpump",
-   "age_s": 4,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GOLDX",
-   "name": "GoldX",
-   "mint": "8ZPQyLH4KqyXQDHvxswyiHN8crtci5m32WPwTG47pump",
-   "age_s": 7,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "FERSPE",
-   "name": "Feral Specter",
-   "mint": "7xVHT316nVyozd8NUE3eVcqrnkajmT3d2J7pfZXQpump",
-   "age_s": 37,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 1.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SNC",
-   "name": "SUNCOIN",
-   "mint": "Do9au5rhzNcwzGwKXtEvQzo63sg86xNPCkbvh9Vqpump",
-   "age_s": 49,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "symbol": "ZEROCAST",
+   "name": "BOX ZEROCAST",
+   "mint": "7q6kcvFRL9oah7RdPxg5RoZnzTjoNpVA4ZovCNYdpump",
+   "age_s": 5,
+   "sol_in": 4.41,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 30.3,
+   "mcap_sol": 39.2,
+   "dev_pct": 3.8,
+   "big_sell": 0.27,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
-  },
-  {
-   "symbol": "RUGA",
-   "name": "Rug Attempt",
-   "mint": "8VLnf2tGx1gXVkrvYXq8ke8FQbvbgHgPsDh3i2yCAeWW",
-   "age_s": 73,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "KING",
-   "name": "Justice For King",
-   "mint": "hKUgymSK1q8wc4nokx7TvQ7jV84FvR1SLqpxDYpb8Dh",
-   "age_s": 84,
-   "sol_in": -1.84,
-   "buys": 19,
-   "sells": 21,
-   "rise_pct": -10.8,
-   "mcap_sol": 30.3,
-   "dev_pct": 9.9,
-   "big_sell": 2.25,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.9% (max 8%)",
-   "why": "dev bought 9.9% (max 8%)"
-  },
-  {
-   "symbol": "FERSPE",
-   "name": "Feral Specter",
-   "mint": "EenPg9W7PqEmvXfZNZWABRHSKLnChfXdkCV1vonDpump",
-   "age_s": 107,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 1.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Epstein",
-   "name": "Jeffery Epstein",
-   "mint": "98DdnueLybZJpe7gRHZeAamWw4LZ8N4K452SmLhepump",
-   "age_s": 110,
-   "sol_in": -1.97,
-   "buys": 2,
-   "sells": 11,
-   "rise_pct": -12.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 6.6,
-   "big_sell": 0.41,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in -2.0/2.5 · buys 2/6 · buy share 15%/65% · rise -12%/+12%"
-  },
-  {
-   "symbol": "BASKET",
-   "name": "BasketDAO",
-   "mint": "HrwSJkrGy5Rzpa7TbkhsDbMxr2UQaBUrMeXXS7D2pump",
-   "age_s": 113,
-   "sol_in": -3.07,
-   "buys": 7,
-   "sells": 17,
-   "rise_pct": -17.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 10.0,
-   "big_sell": 8.75,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 10.0% (max 8%)",
-   "why": "dev bought 10.0% (max 8%)"
-  },
-  {
-   "symbol": "KEVIN",
-   "name": "Kevin The Turkey",
-   "mint": "6Ww73xLqewGFs7m3aPKFJxpB9vQrq6yZRFm5YkuYF1cs",
-   "age_s": 135,
-   "sol_in": -0.02,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.1,
-   "x": "https://x.com/ThomasKDunne/status/2125867917191315703",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in -0.0/2.5 · buys 2/6 · buy share 50%/65% · rise -0%/+12%"
-  },
-  {
-   "symbol": "Cakecoin",
-   "name": "Cakecoin",
-   "mint": "8fsE8KSQoP88pb8p4QAS2hD6jxDZ6rkZ8c9rMrkLpump",
-   "age_s": 140,
-   "sol_in": -2.51,
-   "buys": 6,
-   "sells": 9,
-   "rise_pct": -14.6,
-   "mcap_sol": 28.8,
-   "dev_pct": 9.6,
-   "big_sell": 2.0,
-   "x": "https://x.com/Zeeko__Dev/status/2125877707955466437",
-   "tg": false,
-   "web": "https://www.urbandictionary.com/define.php?term=cake",
-   "status": "rejected: dev bought 9.6% (max 8%)",
-   "why": "dev bought 9.6% (max 8%)"
-  },
-  {
-   "symbol": "Drone",
-   "name": "The Drone",
-   "mint": "HaEJjty5CtGEWHR7H7H6snR77ecKsgHfTUKHPWaypump",
-   "age_s": 144,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.2,
-   "x": "https://x.com/joeroganhq/status/2125876631218884784",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 2/6 · buy share 50%/65% · rise +0%/+12%"
-  },
-  {
-   "symbol": "MOMO",
-   "name": "Momocoin",
-   "mint": "FuZps63GuQUMWufpwCqbX8jwcN1TYVCfgKSTMEmfpump",
-   "age_s": 146,
-   "sol_in": 1.86,
-   "buys": 18,
-   "sells": 19,
-   "rise_pct": 11.5,
-   "mcap_sol": 38.1,
-   "dev_pct": 10.2,
-   "big_sell": 1.24,
-   "x": "https://x.com/ZzzzzSol/status/2125877703362408829",
-   "tg": false,
-   "web": "https://x.com/momonosekaiii/status/2124635969639125488",
-   "status": "rejected: dev bought 10.2% (max 8%)",
-   "why": "dev bought 10.2% (max 8%)"
+   "why": "buys 4/6"
   },
   {
    "symbol": "BST",
    "name": "bastion",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "age_s": 292,
-   "sol_in": 2.48,
+   "age_s": 342,
+   "sol_in": 2.0,
    "buys": 13,
-   "sells": 4,
-   "rise_pct": 16.6,
-   "mcap_sol": 34.8,
+   "sells": 5,
+   "rise_pct": 13.3,
+   "mcap_sol": 33.8,
    "dev_pct": 3.4,
-   "big_sell": 0.17,
+   "big_sell": 0.48,
    "x": false,
    "tg": false,
    "web": false,
