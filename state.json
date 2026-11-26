@@ -35,15 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T13:40:01Z",
-    "time": "14:40:01",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.2 a minute · 1 watched · 26 rejected (serial launcher 18, dev bought 4, dump 2) · closest CARNAGEC: too young: 31 s (min 45 s)",
-    "n": 412
-   },
-   {
     "t": "2026-11-26T13:41:01Z",
     "time": "14:41:01",
     "agent": "SCANNER",
@@ -5433,6 +5424,15 @@
     "action": "scan",
     "text": "new pairs · 13.8 a minute · 7 watched · 40 rejected (serial launcher 13, mayhem mode 12, dev bought 7) · closest PICK: too young: 5 s (min 45 s)",
     "n": 1011
+   },
+   {
+    "t": "2026-11-26T21:06:19Z",
+    "time": "22:06:19",
+    "agent": "LEARNER",
+    "coin": "pyra",
+    "action": "shadow",
+    "text": "SHADOW pyra would have made -11.9% (stop -8%) · learned x0.5 · np:sol:3-6 now avg -22.9% over 8.5",
+    "n": 1012
    }
   ],
   "trades": [
@@ -6138,7 +6138,7 @@
   "flagged": 63,
   "checked": 47,
   "filtered": 9,
-  "lines": 1011,
+  "lines": 1012,
   "flags": [
    {
     "coin": "CHLOWIE",
@@ -6182,10 +6182,6 @@
    }
   ],
   "curve": [
-   [
-    1795691161,
-    87.14
-   ],
    [
     1795691221,
     87.14
@@ -8581,6 +8577,10 @@
    [
     1795727113,
     82.97
+   ],
+   [
+    1795727173,
+    82.97
    ]
   ],
   "last_rug": {
@@ -8652,9 +8652,9 @@
    "at": 1795696593.636054
   },
   "shadow": {
-   "n": 9,
+   "n": 10,
    "wins": 2,
-   "sum": -108.5
+   "sum": -120.4
   }
  },
  "last_night": {
@@ -9114,14 +9114,14 @@
   }
  },
  "shadow": {
-  "n": 9,
+  "n": 10,
   "wins": 2,
-  "sum": -108.5,
+  "sum": -120.4,
   "by": {
    "learner": {
-    "n": 9,
+    "n": 10,
     "wins": 2,
-    "sum": -108.5
+    "sum": -120.4
    },
    "risk": {
     "n": 0,
@@ -9309,11 +9309,29 @@
     "exit": "dump: 5.7 SOL sold",
     "pnl": -2.84,
     "weight": 0.5
+   },
+   {
+    "symbol": "pyra",
+    "mint": "BKa9mBiDiwx5FQ18S7DEfeQoVL7v7TGcX96fw4etpump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T21:04:27Z",
+    "cost": 8.3,
+    "pnl_pct": -11.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 56,
+    "sol_in": 4.58,
+    "closed": "2026-11-26T21:06:19Z",
+    "exit": "stop -8%",
+    "pnl": -0.99,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "pyra"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 109,
@@ -9341,19 +9359,19 @@
    {
     "label": "np:sol:3-6",
     "n": 8,
-    "avg": -23.6
+    "avg": -22.9
    },
    {
     "label": "tier:scalp",
     "n": 14,
-    "avg": -17.4
+    "avg": -17.2
    },
    {
     "label": "news:0-2",
     "n": 14,
-    "avg": -17.4
+    "avg": -17.2
    }
   ],
-  "shadows": 9
+  "shadows": 10
  }
 }
