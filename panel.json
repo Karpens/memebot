@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:46:13Z",
+ "updated": "2026-11-26T16:46:41Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 36,
   "checked": 33,
   "filtered": 6,
-  "lines": 645,
+  "lines": 646,
   "last_rug": {
    "coin": "moztach",
    "pass": false
@@ -2395,15 +2395,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-26T14:10:16Z",
-   "time": "15:10:16",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 21.8 a minute · 1 watched · 43 rejected (serial launcher 36, mayhem mode 4, dev bought 2) · closest IROCHAN: too young: 0 s (min 45 s)",
-   "n": 446
-  },
-  {
    "t": "2026-11-26T14:11:16Z",
    "time": "15:11:16",
    "agent": "SCANNER",
@@ -4193,6 +4184,15 @@
    "action": "scan",
    "text": "new pairs · 5.8 a minute · 7 watched · 4 rejected (serial launcher 4) · closest ONLYFUN: too young: 33 s (min 45 s)",
    "n": 645
+  },
+  {
+   "t": "2026-11-26T16:46:23Z",
+   "time": "17:46:23",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.4 a minute · 7 watched · 4 rejected (dump 2, serial launcher 1, no symbol or name 1) · closest DUO: too young: 7 s (min 45 s)",
+   "n": 646
   }
  ],
  "nights": [
@@ -4243,15 +4243,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 202,
-    "last_event_age_s": 2.0,
+    "events": 205,
+    "last_event_age_s": 8.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2987,
+    "events": 3042,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -4259,8 +4259,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 149,
-    "last_event_age_s": 2.0,
+    "events": 152,
+    "last_event_age_s": 8.6,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4273,9 +4273,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 5.6,
-  "watching": 6,
-  "followed": 10
+  "creates_per_min": 5.0,
+  "watching": 8,
+  "followed": 11
  },
  "learner": {
   "samples": 107,
@@ -4321,25 +4321,79 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1953,
+   "sent": 1983,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1987,
+   "sent": 2017,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "čert",
+   "name": "čert",
+   "mint": "GJkUjCDPTb1A5SXcWDMbEZceALqaYnFKXbKGndkpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "CIC",
+   "name": "cats is coming",
+   "mint": "63uFh5iPjAGM834HfwUvPcKNLVLUXRLpALjPTtAPpump",
+   "age_s": 21,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/mishalood",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 9 s (min 45 s)"
+  },
+  {
+   "symbol": "TRYMINT",
+   "name": "TryMint",
+   "mint": "GA8umYPbRhh5mu8xv5iqiVBmKBTCmXnhkPFr7ewWpump",
+   "age_s": 26,
+   "sol_in": 1.11,
+   "buys": 9,
+   "sells": 13,
+   "rise_pct": 7.4,
+   "mcap_sol": 30.9,
+   "dev_pct": 1.5,
+   "big_sell": 18.67,
+   "x": "https://x.com/trymintfun/status/2125994245265731593",
+   "tg": false,
+   "web": "https://www.trymint.fun/",
+   "status": "rejected: dump: 2.9 SOL sold",
+   "why": "dump: 2.9 SOL sold"
+  },
+  {
    "symbol": "BP",
    "name": "Ball Pair",
    "mint": "BD5FVwpZ9hunPWbZanPeKxXTzQEjeyrPHj4jya5apump",
-   "age_s": 2,
+   "age_s": 30,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
@@ -4349,13 +4403,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 19 s (min 45 s)"
   },
   {
    "symbol": "?",
    "name": "",
    "mint": "73k2QfyAVm2TS6B6uC9DHparj16KCrW3BX1mnwz9pump",
-   "age_s": 5,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4373,12 +4427,12 @@
    "symbol": "SCC",
    "name": "Solo Cashcup",
    "mint": "Di8CLzC4fXxEhhmdp9Pxzj2Nq2TDr1ZN5m2gtKZRpump",
-   "age_s": 11,
-   "sol_in": 21.73,
-   "buys": 7,
-   "sells": 5,
-   "rise_pct": 189.4,
-   "mcap_sol": 86.3,
+   "age_s": 39,
+   "sol_in": 19.0,
+   "buys": 16,
+   "sells": 19,
+   "rise_pct": 160.2,
+   "mcap_sol": 77.6,
    "dev_pct": 3.4,
    "big_sell": 3.17,
    "x": "https://x.com/Solocashcup_pf",
@@ -4391,7 +4445,7 @@
    "symbol": "DUO",
    "name": "Duo Coin",
    "mint": "34wcquNyHvsTG6nF8kiHsVNfRDMfJwnxarbyHEp5ZcGo",
-   "age_s": 13,
+   "age_s": 41,
    "sol_in": 0.19,
    "buys": 3,
    "sells": 1,
@@ -4409,7 +4463,7 @@
    "symbol": "CAT",
    "name": "Callout and Tail",
    "mint": "2NhPNp1zDroEyNkfXmAx6tgAWGxnuxZ7wntjQzpgD3C9",
-   "age_s": 26,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4427,25 +4481,25 @@
    "symbol": "skewerz",
    "name": "skewerz",
    "mint": "7TbUnkmtdekfu7aB1mGd4LVUozsTNA1ewj5n1oR1pump",
-   "age_s": 33,
-   "sol_in": 0.05,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": 0.3,
-   "mcap_sol": 30.4,
+   "age_s": 61,
+   "sol_in": 0.15,
+   "buys": 5,
+   "sells": 3,
+   "rise_pct": 0.9,
+   "mcap_sol": 30.6,
    "dev_pct": 4.2,
    "big_sell": 0.33,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 28 s (min 45 s)"
+   "why": "SOL in 0.1/2.5 · buys 5/6 · buy share 62%/65% · rise +1%/+12%"
   },
   {
    "symbol": "#558667",
    "name": "Rebecca Taylor",
    "mint": "CAdDkTTE2GWCSRjJ7okBHnEXaX5Kgix5GepBBuy1pump",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": -0.18,
    "buys": 4,
    "sells": 3,
@@ -4463,7 +4517,7 @@
    "symbol": "张沐芝",
    "name": "MUZHI",
    "mint": "8TKxzo51G1PpEabgbZrtu7q81UYbkhww1rEtPCmNpump",
-   "age_s": 52,
+   "age_s": 80,
    "sol_in": 0.02,
    "buys": 3,
    "sells": 1,
@@ -4481,9 +4535,9 @@
    "symbol": "ONLYFUN",
    "name": "DeadBullLabs",
    "mint": "4rgmaRjtZfGY7jUUE3ijSZcsW3ABwxWLErqJbujEpump",
-   "age_s": 84,
-   "sol_in": 0.14,
-   "buys": 3,
+   "age_s": 112,
+   "sol_in": 0.15,
+   "buys": 4,
    "sells": 1,
    "rise_pct": 1.0,
    "mcap_sol": 28.8,
@@ -4493,43 +4547,7 @@
    "tg": "https://t.me/DeadBullLabs",
    "web": "https://deadbull.app/",
    "status": "watching",
-   "why": "too young: 33 s (min 45 s)"
-  },
-  {
-   "symbol": "Goinginsane29",
-   "name": "Outrageous-Voice1459",
-   "mint": "HUCG7QfqsrZWzYTdA6cEkQJWGHURePkS5uneSo5o3aty",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -92.7,
-   "mcap_sol": 2.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/ripedevonchain/status/2125993760899080472",
-   "tg": false,
-   "web": "https://www.reddit.com/r/wallstreetbets/comments/1y5anxn/i_made_generational_money_1_million_in_2_weeks/",
-   "status": "rejected: serial launcher: 8 more coins in 60 min",
-   "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "calloor",
-   "name": "just start calling",
-   "mint": "JAGMy2Nmcj6PLRwSchiRxPy9MXsrgKDn4FdftTQjGaXt",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 161357.9,
-   "mcap_sol": 45142.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/flipski77/status/2124382650756428159",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 7 more coins in 60 min",
-   "why": "serial launcher: 7 more coins in 60 min"
+   "why": "SOL in 0.2/2.5 · buys 4/6 · rise +1%/+12%"
   }
  ],
  "strategies": [
