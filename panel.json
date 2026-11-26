@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:36:43Z",
+ "updated": "2026-11-26T11:37:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 18,
-  "checked": 18,
-  "filtered": 1,
-  "lines": 251,
+  "flagged": 19,
+  "checked": 19,
+  "filtered": 2,
+  "lines": 253,
   "last_rug": {
-   "coin": "MARU",
-   "pass": true
+   "coin": "たかし",
+   "pass": false
   }
  },
  "flags": [
-  {
-   "coin": "BACKER",
-   "why": "momentum",
-   "t": "2026-11-26T09:38:37Z"
-  },
   {
    "coin": "YARL",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "MARU",
    "why": "momentum",
    "t": "2026-11-26T11:16:46Z"
+  },
+  {
+   "coin": "たかし",
+   "why": "momentum",
+   "t": "2026-11-26T11:37:04Z"
   }
  ],
  "curve": [
@@ -680,6 +680,10 @@
   [
    1795692961,
    85.94
+  ],
+  [
+   1795693021,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -1064,24 +1068,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:16:45Z",
-   "time": "10:16:45",
-   "agent": "LEARNER",
-   "coin": "KIDSTOCK",
-   "action": "learn",
-   "text": "learned · np:dev:2-5 now avg -18.0% over 5",
-   "n": 52
-  },
-  {
-   "t": "2026-11-26T09:17:06Z",
-   "time": "10:17:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 5 watched · 8 rejected (mayhem mode 5, serial launcher 2, dev bought 1) · closest CYMATIUM: SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%",
-   "n": 53
-  },
   {
    "t": "2026-11-26T09:18:07Z",
    "time": "10:18:07",
@@ -2863,6 +2849,24 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 5 watched · 5 rejected (mayhem mode 3, dev bought 2) · closest POMPOM: too young: 44 s (min 45 s)",
    "n": 251
+  },
+  {
+   "t": "2026-11-26T11:37:04Z",
+   "time": "12:37:04",
+   "agent": "SCANNER",
+   "coin": "たかし",
+   "action": "flag",
+   "text": "momentum · 5.2 SOL in · 6/7 buys (86%) · +38% since launch · mcap 39 SOL · 63 s old",
+   "n": 252
+  },
+  {
+   "t": "2026-11-26T11:37:05Z",
+   "time": "12:37:05",
+   "agent": "RUG CHECK",
+   "coin": "たかし",
+   "action": "reject",
+   "text": "FAIL · risk: Creator history of rugged tokens",
+   "n": 253
   }
  ],
  "nights": [
@@ -2908,7 +2912,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2916,16 +2920,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 245,
-    "last_event_age_s": 11.9,
+    "events": 246,
+    "last_event_age_s": 8.7,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4241,
-    "last_event_age_s": 0.8,
+    "events": 4249,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
@@ -2933,7 +2937,7 @@
     "name": "metadata",
     "connected": true,
     "events": 165,
-    "last_event_age_s": 11.9,
+    "last_event_age_s": 39.9,
     "errors": 17,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2946,9 +2950,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 3.4,
-  "watching": 5,
-  "followed": 7
+  "creates_per_min": 3.2,
+  "watching": 3,
+  "followed": 5
  },
  "learner": {
   "samples": 105,
@@ -2993,23 +2997,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3447,
+   "sent": 3477,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3447,
+   "sent": 3477,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "34%",
+   "name": "34percent",
+   "mint": "A4LT8yXLTm8JmqE7FPXDnUtFFuBPzUs7sqD6vRzVpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "SAM",
    "name": "SAM COIN",
    "mint": "7xWrRpqNiunNunnxEpTGB7pgiyQWhMfrDLxAbiCYpump",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.1,
    "buys": 2,
    "sells": 0,
@@ -3027,7 +3049,7 @@
    "symbol": "ASCEND",
    "name": "ASCEND",
    "mint": "EhACZFFB8d7JcYXUKyGrmYNbA8uPX2J8j1JMqKS2NRYY",
-   "age_s": 18,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3045,12 +3067,12 @@
    "symbol": "蛙",
    "name": "蛙",
    "mint": "42ZW9XcQdEUQbtqsrDg1SYCUurW4qWhq5etcNx1FqYbP",
-   "age_s": 24,
-   "sol_in": -0.47,
+   "age_s": 52,
+   "sol_in": -0.68,
    "buys": 6,
-   "sells": 7,
-   "rise_pct": -2.6,
-   "mcap_sol": 36.9,
+   "sells": 9,
+   "rise_pct": -3.9,
+   "mcap_sol": 36.5,
    "dev_pct": 15.2,
    "big_sell": 1.93,
    "x": "https://x.com/MarioPrezldente/status/2125916552839278633",
@@ -3063,7 +3085,7 @@
    "symbol": "ACAT",
    "name": "Ascend Cat",
    "mint": "EvswTTaU7dnASkoQqEgG4DPkM4FQ92vCuSeTKL6rBiC6",
-   "age_s": 29,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3081,7 +3103,7 @@
    "symbol": "beer",
    "name": "beer",
    "mint": "4FHJQP6g7iXv34tXzx4bS8HcVn4fquZMpY3hkBSWpump",
-   "age_s": 35,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3099,25 +3121,25 @@
    "symbol": "たかし",
    "name": "Takashi Kotegawa",
    "mint": "DY3na3PKkbc8pgNZXhPqi8Ldsdkd7N9wHstgMTg3pump",
-   "age_s": 42,
-   "sol_in": 3.54,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 25.0,
-   "mcap_sol": 35.0,
+   "age_s": 70,
+   "sol_in": 7.4,
+   "buys": 8,
+   "sells": 2,
+   "rise_pct": 55.3,
+   "mcap_sol": 43.5,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.7,
    "x": "https://x.com/ramentrade/status/2125916429610369365",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "too young: 32 s (min 45 s)"
+   "status": "rejected: risk: Creator history of rugged tokens",
+   "why": "risk: Creator history of rugged tokens"
   },
   {
    "symbol": "ANIME",
    "name": "Anime",
    "mint": "FivCWrDksye4ZxcBwKxwXvYtNMoDUBX8mposaM2npump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": -0.4,
    "buys": 2,
    "sells": 4,
@@ -3130,60 +3152,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in -0.4/2.5 · buys 2/6 · buy share 33%/65% · rise -3%/+12%"
-  },
-  {
-   "symbol": "PussyCoin",
-   "name": "PUSSY",
-   "mint": "4jZDbLzRUs8Fr74LdbASCDJ545HRacwsNcoSauGtpump",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "POMPOM",
-   "name": "Pompompurin",
-   "mint": "6kugramUEtacMbcJ5KoYHUkQmrPG66aYTiiEGCYHpump",
-   "age_s": 155,
-   "sol_in": 0.25,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 1.7,
-   "mcap_sol": 28.6,
-   "dev_pct": 0.4,
-   "big_sell": 0.21,
-   "x": "https://x.com/myheartmargiela/status/2125118891391361344",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 44 s (min 45 s)"
-  },
-  {
-   "symbol": "HBHC",
-   "name": "Handsome Boy Hacking Club",
-   "mint": "DPdc2yU46aPPmRVrDnjwKWoBpZ74D3q6bq6uCFgop1Hj",
-   "age_s": 177,
-   "sol_in": -4.94,
-   "buys": 7,
-   "sells": 19,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 3.71,
-   "x": "https://x.com/MarioPrezldente/status/2125915913803477280",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 15.2% (max 8%)",
-   "why": "dev bought 15.2% (max 8%)"
   }
  ],
  "strategies": [
