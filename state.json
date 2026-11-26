@@ -35,15 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T13:54:07Z",
-    "time": "14:54:07",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.4 a minute · 6 watched · 12 rejected (mayhem mode 5, dump 3, serial launcher 2) · closest DS: buys 4/6",
-    "n": 426
-   },
-   {
     "t": "2026-11-26T13:54:59Z",
     "time": "14:54:59",
     "agent": "SCANNER",
@@ -5433,6 +5424,15 @@
     "action": "scan",
     "text": "new pairs · 13.6 a minute · 12 watched · 21 rejected (serial launcher 7, mayhem mode 7, dev bought 4) · closest ZINU!: too young: 1 s (min 45 s)",
     "n": 1025
+   },
+   {
+    "t": "2026-11-26T21:12:49Z",
+    "time": "22:12:49",
+    "agent": "LEARNER",
+    "coin": "KITE",
+    "action": "shadow",
+    "text": "SHADOW KITE would have made -13.9% (dump: 2.0 SOL sold) · learned x0.5 · hour:day now avg -15.3% over 19.5",
+    "n": 1026
    }
   ],
   "trades": [
@@ -6138,7 +6138,7 @@
   "flagged": 65,
   "checked": 48,
   "filtered": 9,
-  "lines": 1025,
+  "lines": 1026,
   "flags": [
    {
     "coin": "Conga",
@@ -6182,10 +6182,6 @@
    }
   ],
   "curve": [
-   [
-    1795691581,
-    85.94
-   ],
    [
     1795691641,
     85.94
@@ -8581,6 +8577,10 @@
    [
     1795727533,
     82.97
+   ],
+   [
+    1795727593,
+    82.97
    ]
   ],
   "last_rug": {
@@ -8652,9 +8652,9 @@
    "at": 1795696593.636054
   },
   "shadow": {
-   "n": 10,
+   "n": 11,
    "wins": 2,
-   "sum": -120.4
+   "sum": -134.3
   }
  },
  "last_night": {
@@ -9114,14 +9114,14 @@
   }
  },
  "shadow": {
-  "n": 10,
+  "n": 11,
   "wins": 2,
-  "sum": -120.4,
+  "sum": -134.3,
   "by": {
    "learner": {
-    "n": 10,
+    "n": 11,
     "wins": 2,
-    "sum": -120.4
+    "sum": -134.3
    },
    "risk": {
     "n": 0,
@@ -9329,11 +9329,29 @@
     "exit": "stop -8%",
     "pnl": -0.99,
     "weight": 0.5
+   },
+   {
+    "symbol": "KITE",
+    "mint": "3aFPMQqQ8vcL675kYpPsvdkEWaSxBL7eEPaHf6NKyvc3",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T21:12:31Z",
+    "cost": 8.3,
+    "pnl_pct": -13.9,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 45,
+    "sol_in": 9.65,
+    "closed": "2026-11-26T21:12:49Z",
+    "exit": "dump: 2.0 SOL sold",
+    "pnl": -1.16,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "KITE"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 109,
@@ -9374,6 +9392,6 @@
     "avg": -17.2
    }
   ],
-  "shadows": 10
+  "shadows": 11
  }
 }
