@@ -54,6 +54,9 @@ class FakeMarket(object):
     def promoted(self):
         return []
 
+    def trending(self, now=None):
+        return set()
+
     def pairs(self, mints):
         return {m: self.pairs_by_mint[m] for m in mints if m in self.pairs_by_mint}
 
@@ -109,6 +112,20 @@ class Rules(unittest.TestCase):
         ok, sig = mb.scanner_signals(calm, [[t - 700, 400], [t, 480]], c, t)              # +20 % in 10+ min
         self.assertTrue(ok)
         self.assertIn("držitelia +20 %", sig)
+
+    def test_news_trending_and_boosts_count_and_the_socials_are_written(self):
+        c, now = cfg(), (T0 - datetime.datetime(1970, 1, 1)).total_seconds() * 1000
+        p = pair("tr", vol5=30000, vol1h=300000, age_min=90)                         # no spike, no holder growth
+        p["info"] = {"socials": [{"type": "twitter", "url": "https://x.com/trcoin"}, {"type": "telegram", "url": "t.me/x"}]}
+        fx = mb.pair_facts(p, now)
+        self.assertFalse(mb.scanner_signals(fx, [], c, now / 1000)[0])
+        ok, sig = mb.scanner_signals(fx, [], c, now / 1000, trending={"tr"})
+        self.assertEqual((ok, sig), (True, ["trenduje"]))
+        p["boosts"] = {"active": 3}
+        self.assertIn("boost na DexScreeneri", mb.scanner_signals(mb.pair_facts(p, now), [], c, now / 1000)[1])
+        self.assertEqual(mb.news_text(mb.pair_facts(p, now), {"tr"}),
+                         "Propagácia: X @trcoin, Telegram, 3 boostov na DexScreeneri, v trendoch GeckoTerminal/DexScreener.")
+        self.assertIn("anonymný", mb.news_text(mb.pair_facts(pair("an"), now)))
 
     def test_the_rug_check(self):
         c = cfg()

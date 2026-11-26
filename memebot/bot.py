@@ -10,6 +10,10 @@ Six agents, written as rules (the prompt in memebot/prompt.txt says the same in 
   4. RISK       how many positions and trades a night, a loss streak pause, a stop for the night.
   5. EXIT       first target, trailing stop, stop loss, time stop, everything sold before 07:00.
   6. JOURNAL    every decision with its reason, and the morning report.
+  7. NEWS       what people promote: the coin's X and Telegram accounts (DexScreener), paid
+                DexScreener boosts and the GeckoTerminal and DexScreener trending lists. A coin
+                that trends or is boosted counts as a scanner signal. (Reading posts on X itself
+                costs money with X's API: not in this bot.)
 
 Paper trading: no wallet and no key. Every buy and sell is priced by a real Jupiter quote for that
 amount (pool fees and price impact included), less a network fee and a latency haircut. A real
@@ -93,7 +97,7 @@ DEFAULTS = {
     "slippage_bps": 300,
 }
 
-AGENTS = ["SCANNER", "RUG CHECK", "SIZER", "RISK", "EXIT", "JOURNAL"]
+AGENTS = ["SCANNER", "RUG CHECK", "SIZER", "RISK", "EXIT", "JOURNAL", "NEWS"]
 
 
 class MemeError(Exception):
@@ -214,6 +218,25 @@ class Market(object):
                     out.append(x["tokenAddress"])
         return out
 
+    def trending(self, now=None):
+        """Mints people are watching or paying to promote: GeckoTerminal's trending Solana pools and
+        DexScreener's most boosted tokens."""
+        out = set()
+        if now is None or now >= self.gt_backoff_until:
+            d = self.get("https://api.geckoterminal.com/api/v2/networks/solana/trending_pools?page=1")
+            if isinstance(d, dict) and "data" in d:
+                for p in d.get("data") or []:
+                    tid = str((((p.get("relationships") or {}).get("base_token") or {}).get("data") or {}).get("id") or "")
+                    if tid.startswith("solana_"):
+                        out.add(tid[len("solana_"):])
+            elif now is not None:
+                self.gt_backoff_until = now + 60
+        d = self.get("https://api.dexscreener.com/token-boosts/top/v1")
+        for x in d if isinstance(d, list) else []:
+            if isinstance(x, dict) and x.get("chainId") == "solana" and x.get("tokenAddress"):
+                out.add(x["tokenAddress"])
+        return out
+
     def pairs(self, mints):
         """{mint: its most liquid Solana pair} from DexScreener, 30 mints a call."""
         best = {}
@@ -273,7 +296,13 @@ def pair_facts(p, now_ms):
     # the 1h average of 5-minute volume, over the pair's own life when it is younger than an hour
     buckets = max(1.0, min(12.0, age_min / 5.0))
     avg5 = v1h / buckets if v1h > 0 else 0.0
+    info = p.get("info") or {}
+    socials = {str(x.get("type") or "").lower(): str(x.get("url") or "") for x in info.get("socials") or []
+               if isinstance(x, dict)}
     return {
+        "mint": (p.get("baseToken") or {}).get("address"),
+        "x": socials.get("twitter") or socials.get("x") or "", "telegram": socials.get("telegram") or "",
+        "web": bool(info.get("websites")), "boosts": int(f((p.get("boosts") or {}).get("active"))),
         "symbol": ((p.get("baseToken") or {}).get("symbol") or "?")[:16],
         "name": ((p.get("baseToken") or {}).get("name") or "")[:40],
         "dex": p.get("dexId"), "pair": p.get("pairAddress"), "url": p.get("url"),
@@ -297,11 +326,16 @@ def universe_ok(fx, cfg):
     return None
 
 
-def scanner_signals(fx, holders_hist, cfg, now):
+def scanner_signals(fx, holders_hist, cfg, now, trending=()):
     """(flag, signals): the buy ratio is required, then at least one of: a volume spike against
-    the hour's average, holder growth over holder_growth_min minutes. (Tracked smart-money and KOL
-    wallets would need a Solana RPC provider: not in this bot.)"""
+    the hour's average, holder growth over holder_growth_min minutes, the NEWS agent's trending
+    lists or a paid DexScreener boost. (Tracked smart-money and KOL wallets would need a Solana
+    RPC provider: not in this bot.)"""
     sig = []
+    if fx.get("mint") and fx["mint"] in trending:
+        sig.append("trenduje")
+    if fx.get("boosts"):
+        sig.append("boost na DexScreeneri")
     if fx["spike"] >= cfg["volume_spike_x"]:
         sig.append("objem %.1fx priemeru" % fx["spike"])
     hist = [(t, n) for t, n in holders_hist if now - t >= cfg["holder_growth_min"] * 60]
@@ -312,6 +346,23 @@ def scanner_signals(fx, holders_hist, cfg, now):
             sig.append("držitelia +%.0f %%" % ((n1 - n0) / float(n0) * 100))
     ok = fx["buy_ratio"] >= cfg["min_buy_ratio"] and bool(sig)
     return ok, sig
+
+
+def news_text(fx, trending=()):
+    """What the NEWS agent knows about a coin's promotion."""
+    bits = []
+    if fx.get("x"):
+        handle = fx["x"].rstrip("/").split("/")[-1]
+        bits.append("X @%s" % handle if handle and "search" not in fx["x"] else "X")
+    if fx.get("telegram"):
+        bits.append("Telegram")
+    if fx.get("web"):
+        bits.append("web")
+    if fx.get("boosts"):
+        bits.append("%d boostov na DexScreeneri" % fx["boosts"])
+    if fx.get("mint") in trending:
+        bits.append("v trendoch GeckoTerminal/DexScreener")
+    return ("Propagácia: %s." % ", ".join(bits)) if bits else "Bez X, Telegramu aj webu: anonymný coin."
 
 
 def rug_check(report, cfg):
@@ -539,7 +590,8 @@ class Night(object):
         cfg, n = self.cfg, self.state["night"]
         n["scans"] += 1
         now = self.epoch()
-        mints = self.m.new_pools(pages=2, now=now) + self.m.promoted()
+        self.trend = self.m.trending(now)
+        mints = self.m.new_pools(pages=2, now=now) + self.m.promoted() + list(self.trend)
         mints = [m for m in dict.fromkeys(mints) if m not in n["entered"] and m not in self.state["positions"]]
         pairs = self.m.pairs(mints)
         sol_usd = (prices.get(SOL) or {}).get("usd")
@@ -603,7 +655,7 @@ class Night(object):
         if nh and (not hold or now - hold[-1][0] >= 60):
             hold.append([now, nh])
             del hold[:-30]
-        flag, sig = scanner_signals(fx, hold, cfg, now)
+        flag, sig = scanner_signals(fx, hold, cfg, now, getattr(self, "trend", ()))
         if not flag:
             return
         fs = n.setdefault("flag_seen", {})
@@ -612,6 +664,7 @@ class Night(object):
             n["flagged"] += 1
             self.log("SCANNER", fx["symbol"], "flag", "%s, likvidita %s, 5 min %s, nákupy %.0f %% (%s)." % (
                 fx["dex"], usd(fx["liquidity"]), usd(fx["vol5"]), fx["buy_ratio"] * 100, ", ".join(sig)))
+            self.log("NEWS", fx["symbol"], "news", news_text(fx, getattr(self, "trend", ())))
         n["checked"] += 1
         if not ok_rug:
             self.log("RUG CHECK", fx["symbol"], "reject", "Neprešiel: %s." % "; ".join(bad[:3]))
