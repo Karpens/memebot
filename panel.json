@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:08:04Z",
+ "updated": "2026-11-26T17:08:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 40,
   "checked": 35,
   "filtered": 7,
-  "lines": 680,
+  "lines": 681,
   "last_rug": {
    "coin": "CUBE",
    "pass": true
@@ -2004,6 +2004,10 @@
   [
    1795712833,
    84.53
+  ],
+  [
+   1795712893,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2478,15 +2482,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T14:43:33Z",
-   "time": "15:43:33",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 12 watched · 6 rejected (dev bought 2, serial launcher 2, mayhem mode 2) · closest RZKI: SOL in 0.7/2.5 · rise +4%/+12%",
-   "n": 481
-  },
   {
    "t": "2026-11-26T14:44:04Z",
    "time": "15:44:04",
@@ -4277,6 +4272,15 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 5 watched · 3 rejected (serial launcher 2, no symbol or name 1) · closest INUPAD: too young: 0 s (min 45 s)",
    "n": 680
+  },
+  {
+   "t": "2026-11-26T17:08:36Z",
+   "time": "18:08:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 5 watched · 7 rejected (serial launcher 2, dump 2, dev bought 2) · closest KOENIGSEGG: too young: 10 s (min 45 s)",
+   "n": 681
   }
  ],
  "nights": [
@@ -4319,7 +4323,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4327,15 +4331,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 333,
-    "last_event_age_s": 17.9,
+    "events": 336,
+    "last_event_age_s": 3.7,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4286,
+    "events": 4317,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -4343,8 +4347,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 243,
-    "last_event_age_s": 17.8,
+    "events": 246,
+    "last_event_age_s": 3.1,
     "errors": 19,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4357,9 +4361,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 4.4,
-  "watching": 3,
-  "followed": 8
+  "creates_per_min": 4.0,
+  "watching": 5,
+  "followed": 11
  },
  "learner": {
   "samples": 107,
@@ -4405,30 +4409,84 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3348,
+   "sent": 3384,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3382,
+   "sent": 3418,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "OVEN",
+   "name": "Mr. Oven",
+   "mint": "FLdYqxDqcg8WnAecQwNKqVSMZ2U5yBhkiejEQvNipump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.8,
+   "dev_pct": 6.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/GizmoMemes/status/2125932579232809450",
+   "tg": false,
+   "web": "https://x.com/GizmoMemes/status/2125932579232809450",
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
+   "symbol": "JANTA",
+   "name": "Jimmy Santa",
+   "mint": "3mmaLtL3ZzrA9xuX6Dke55LMMAVufHq6DHDyYFfgpump",
+   "age_s": 13,
+   "sol_in": 0.03,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.2,
+   "mcap_sol": 29.9,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/JimmySantaSOL",
+   "tg": false,
+   "web": "https://jimmysanta.lol/",
+   "status": "watching",
+   "why": "too young: 9 s (min 45 s)"
+  },
+  {
+   "symbol": "Rogir",
+   "name": "Rogir",
+   "mint": "7Puax9draaJAKNHicgWh69SvN3aktPCY1MVNv9bMpump",
+   "age_s": 17,
+   "sol_in": -2.17,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -13.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 7.2,
+   "big_sell": 2.17,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 2.2 SOL sold",
+   "why": "dump: 2.2 SOL sold"
+  },
+  {
    "symbol": "PRIMIS",
    "name": "Primis Protocol",
    "mint": "8Dyd7kV1nD7h5jgCA41BnjWcNfVhteNuLn33ZD2Cpump",
-   "age_s": 17,
-   "sol_in": 2.01,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 12.5,
-   "mcap_sol": 38.3,
+   "age_s": 50,
+   "sol_in": 6.63,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": 44.1,
+   "mcap_sol": 49.0,
    "dev_pct": 10.0,
-   "big_sell": 0.0,
+   "big_sell": 0.63,
    "x": "https://x.com/primisprotocol",
    "tg": false,
    "web": false,
@@ -4439,7 +4497,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AKBMXyeBEk2zjtmVuBsKWknuLEjESo18XxSPVqxAkAry",
-   "age_s": 21,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4457,7 +4515,7 @@
    "symbol": "BF",
    "name": "Black Friday",
    "mint": "CWXjNztnK2KZ1jsbw8hJZphojbtFPwojBqrzCoFApump",
-   "age_s": 28,
+   "age_s": 61,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -4475,7 +4533,7 @@
    "symbol": "INUPAD",
    "name": "InuPad",
    "mint": "6f6ariLAsooMtiv3peEhq2AUATWNwJRhCdLUVQGwpump",
-   "age_s": 45,
+   "age_s": 78,
    "sol_in": -1.92,
    "buys": 1,
    "sells": 1,
@@ -4493,7 +4551,7 @@
    "symbol": "Kuro",
    "name": "inspired by dogecoin????",
    "mint": "D1AAdook9z224k3Kd99A6AS8NHGLZcmzmWt1vCfjpump",
-   "age_s": 77,
+   "age_s": 110,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 1,
@@ -4511,7 +4569,7 @@
    "symbol": "Kuro",
    "name": "inspired by dogecoin????",
    "mint": "8rhYcrBQfMkbhzszEX1iN263x2vZvis8bUxtVwfhpump",
-   "age_s": 78,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -4529,7 +4587,7 @@
    "symbol": "KOENIGSEGG",
    "name": "Koenigsegg",
    "mint": "3Lqy8H9rx9b9beJKC9hvjXGB3DpqPmrJnSAKCHeWpump",
-   "age_s": 106,
+   "age_s": 139,
    "sol_in": 0.3,
    "buys": 3,
    "sells": 0,
@@ -4547,7 +4605,7 @@
    "symbol": "MOOSE",
    "name": "Moosecoin",
    "mint": "C962cuN7Xx6aqxs1xazqdMV7grkGazqwTXqwAWCgczbA",
-   "age_s": 146,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4565,7 +4623,7 @@
    "symbol": "onsetpad",
    "name": "onsetpad",
    "mint": "ALHFAsVL5k5y1UG1aX6q1i74t2ec8npUmsh2jyZepump",
-   "age_s": 146,
+   "age_s": 179,
    "sol_in": 0.02,
    "buys": 4,
    "sells": 3,
@@ -4578,24 +4636,6 @@
    "web": "https://onsetpad.fun/",
    "status": "watching",
    "why": "SOL in 0.0/2.5 · buys 4/6 · buy share 57%/65% · rise +0%/+12%"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 6036.3,
-   "dev_pct": 100.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
