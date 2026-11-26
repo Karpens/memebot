@@ -1,5 +1,5 @@
 {
- "balance": 82.96689485869099,
+ "balance": 82.29879607834027,
  "positions": {},
  "nights": [
   {
@@ -34,87 +34,6 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
-   {
-    "t": "2026-11-26T15:04:44Z",
-    "time": "16:04:44",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.0 a minute · 7 watched · 10 rejected (dev bought 5, dump 3, mayhem mode 2) · closest MDAQ: buys 2/6",
-    "n": 510
-   },
-   {
-    "t": "2026-11-26T15:05:44Z",
-    "time": "16:05:44",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.4 a minute · 11 watched · 9 rejected (dev bought 5, serial launcher 2, dump 1) · closest GIFT: too young: 16 s (min 45 s)",
-    "n": 511
-   },
-   {
-    "t": "2026-11-26T15:06:45Z",
-    "time": "16:06:45",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.0 a minute · 10 watched · 11 rejected (serial launcher 7, dump 3, mayhem mode 1) · closest GIFT: buys 5/6 · buy share 22%/65%",
-    "n": 512
-   },
-   {
-    "t": "2026-11-26T15:08:11Z",
-    "time": "16:08:11",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "feed",
-    "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
-    "n": 513
-   },
-   {
-    "t": "2026-11-26T15:08:11Z",
-    "time": "16:08:11",
-    "agent": "LOGGER",
-    "coin": null,
-    "action": "tape",
-    "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
-    "n": 514
-   },
-   {
-    "t": "2026-11-26T15:08:19Z",
-    "time": "16:08:19",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (no symbol or name 1)",
-    "n": 515
-   },
-   {
-    "t": "2026-11-26T15:09:19Z",
-    "time": "16:09:19",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.0 a minute · 12 watched · 3 rejected (dump 1, dev bought 1, no symbol or name 1) · closest TRENCHS: too young: 26 s (min 45 s)",
-    "n": 516
-   },
-   {
-    "t": "2026-11-26T15:09:32Z",
-    "time": "16:09:32",
-    "agent": "SCANNER",
-    "coin": "TRENCHS",
-    "action": "flag",
-    "text": "momentum · 14.2 SOL in · 11/16 buys (69%) · +117% since launch · mcap 61 SOL · 47 s old",
-    "n": 517
-   },
-   {
-    "t": "2026-11-26T15:09:32Z",
-    "time": "16:09:32",
-    "agent": "RUG CHECK",
-    "coin": "TRENCHS",
-    "action": "pass",
-    "text": "PASS · 30 holders · top holder 4.9% · top 10 22% (curve left out)",
-    "n": 518
-   },
    {
     "t": "2026-11-26T15:09:32Z",
     "time": "16:09:32",
@@ -5433,6 +5352,87 @@
     "action": "scan",
     "text": "new pairs · 13.6 a minute · 13 watched · 29 rejected (serial launcher 24, mayhem mode 3, dump 1) · closest SLING: too young: 14 s (min 45 s)",
     "n": 1109
+   },
+   {
+    "t": "2026-11-26T22:18:16Z",
+    "time": "23:18:16",
+    "agent": "SCANNER",
+    "coin": "SLING",
+    "action": "flag",
+    "text": "momentum · 6.8 SOL in · 24/35 buys (69%) · +49% since launch · mcap 43 SOL · 46 s old",
+    "n": 1110
+   },
+   {
+    "t": "2026-11-26T22:18:16Z",
+    "time": "23:18:16",
+    "agent": "RUG CHECK",
+    "coin": "SLING",
+    "action": "pass",
+    "text": "PASS · 40 holders · top holder 1.4% · top 10 12% (curve left out)",
+    "n": 1111
+   },
+   {
+    "t": "2026-11-26T22:18:16Z",
+    "time": "23:18:16",
+    "agent": "LEARNER",
+    "coin": "SLING",
+    "action": "explore",
+    "text": "explore · 1 in 5 skips is bought at half size · past trades like this lost avg 11.7% · news:0-2 -18.1% over 15, tier:scalp -18.1% over 15",
+    "n": 1112
+   },
+   {
+    "t": "2026-11-26T22:18:16Z",
+    "time": "23:18:16",
+    "agent": "SIZER",
+    "coin": "SLING",
+    "action": "size",
+    "text": "10% of $82.97 x0.50 LEARNER = $4.15, raised to the $5.00 minimum: $5.00",
+    "n": 1113
+   },
+   {
+    "t": "2026-11-26T22:18:16Z",
+    "time": "23:18:16",
+    "agent": "EXECUTOR",
+    "coin": "SLING",
+    "action": "enter",
+    "text": "ENTER SLING at 0.00000314 · slip 1.3% · first in · 0.2 s after the trigger · 47 s after launch · curve maths 0.0% off Jupiter",
+    "n": 1114
+   },
+   {
+    "t": "2026-11-26T22:18:16Z",
+    "time": "23:18:16",
+    "agent": "NEWS",
+    "coin": "SLING",
+    "action": "plan",
+    "text": "hold plan · 1/10 (inflow 6.8 SOL) · scalp: +10",
+    "n": 1115
+   },
+   {
+    "t": "2026-11-26T22:18:22Z",
+    "time": "23:18:22",
+    "agent": "RISK",
+    "coin": null,
+    "action": "pause",
+    "text": "12 losses in a row · 2 min pause",
+    "n": 1116
+   },
+   {
+    "t": "2026-11-26T22:18:22Z",
+    "time": "23:18:22",
+    "agent": "EXECUTOR",
+    "coin": "SLING",
+    "action": "exit",
+    "text": "EXIT SLING $-0.67 (-13%) · stop -8% · out · 0.2 s after the reading",
+    "n": 1117
+   },
+   {
+    "t": "2026-11-26T22:18:22Z",
+    "time": "23:18:22",
+    "agent": "LEARNER",
+    "coin": "SLING",
+    "action": "learn",
+    "text": "learned · tier:scalp now avg -17.9% over 16",
+    "n": 1118
    }
   ],
   "trades": [
@@ -6129,22 +6129,71 @@
      "tier:scalp",
      "hour:day"
     ]
+   },
+   {
+    "symbol": "SLING",
+    "mint": "B34ctn7vDEvaM33FNdAYszcuG1FNButTDfxYdXt9XnXr",
+    "opened": "2026-11-26T22:18:16Z",
+    "closed": "2026-11-26T22:18:22Z",
+    "cost": 5.0,
+    "proceeds": 4.33,
+    "pnl": -0.67,
+    "pnl_pct": -13.4,
+    "why": "stop -8%",
+    "url": "https://pump.fun/coin/B34ctn7vDEvaM33FNdAYszcuG1FNButTDfxYdXt9XnXr",
+    "reason": "momentum · 6.8 SOL in · 24/35 buys (69%) · +49% since launch · mcap 43 SOL · 46 s old",
+    "size_pct": 6.0,
+    "entry_price": 3.139960200718259e-06,
+    "exit_price": 2.87412762530924e-06,
+    "slip": 1.34,
+    "strategy": "new_pairs",
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "plan": {
+     "tier": "scalp",
+     "score": 1,
+     "parts": [
+      "inflow 6.8 SOL"
+     ],
+     "ladder": [
+      [
+       10.0,
+       1.0
+      ]
+     ],
+     "step": 0,
+     "stop_pct": -7.0,
+     "trail_pct": 0.0
+    },
+    "age_s": 46,
+    "mcap_sol": 43.1,
+    "dev_pct": 1.74,
+    "sol_in": 6.77,
+    "exit_ms": 179,
+    "learn": [
+     "np:dev:0-2",
+     "np:sol:6-12",
+     "np:buys:<70",
+     "np:age:30-90s",
+     "np:solh:<.25",
+     "np:holders:40+",
+     "np:social:none",
+     "news:0-2",
+     "tier:scalp",
+     "hour:23-01"
+    ]
    }
   ],
   "entered": [],
-  "streak": 11,
-  "cooldown_until": 1795724973.473005,
+  "streak": 12,
+  "cooldown_until": 1795731622.817321,
   "scans": 0,
-  "flagged": 70,
-  "checked": 50,
+  "flagged": 71,
+  "checked": 51,
   "filtered": 10,
-  "lines": 1109,
+  "lines": 1118,
   "flags": [
-   {
-    "coin": "pyra",
-    "why": "momentum",
-    "t": "2026-11-26T21:04:26Z"
-   },
    {
     "coin": "PICK",
     "why": "momentum",
@@ -6179,13 +6228,14 @@
     "coin": "COKEBALL",
     "why": "momentum",
     "t": "2026-11-26T22:14:42Z"
+   },
+   {
+    "coin": "SLING",
+    "why": "momentum",
+    "t": "2026-11-26T22:18:16Z"
    }
   ],
   "curve": [
-   [
-    1795695493,
-    85.94
-   ],
    [
     1795695553,
     85.94
@@ -8581,11 +8631,15 @@
    [
     1795731447,
     82.97
+   ],
+   [
+    1795731507,
+    82.3
    ]
   ],
   "last_rug": {
-   "coin": "COKEBALL",
-   "pass": false
+   "coin": "SLING",
+   "pass": true
   },
   "np_said": 1795731465.474565,
   "np_speed": {
@@ -8601,7 +8655,8 @@
     66,
     374,
     477,
-    29318
+    29318,
+    198
    ],
    "launch": [
     10,
@@ -8615,7 +8670,8 @@
     46,
     48,
     46,
-    160
+    160,
+    47
    ],
    "exit": [
     31,
@@ -8629,7 +8685,8 @@
     22,
     39,
     89,
-    44
+    44,
+    180
    ]
   },
   "reenter": {
@@ -8645,7 +8702,8 @@
    "BFtzMjo2kHDiqgAuvspKaXU8ofF5LBpyhDydxCLepump": 1795696816.874642,
    "GS9TDnsDkjS9JpoodeYzu4TvnmdfDY3GHmyfujjJpump": 1795706122.269275,
    "B6MXUydYLpDb11bWaNzvv8tTe9kMw9VDgKeT6WMmpump": 1795718576.474651,
-   "ErHpRxEJBfX4vAdCmKbDCchFd3sbdY64fx1eU6sngduY": 1795725153.473005
+   "ErHpRxEJBfX4vAdCmKbDCchFd3sbdY64fx1eU6sngduY": 1795725153.473005,
+   "B34ctn7vDEvaM33FNdAYszcuG1FNButTDfxYdXt9XnXr": 1795731802.817321
   },
   "risk_said": {
    "why": "last 5 min of this job: no new entries (the next job takes over)",
@@ -9374,9 +9432,9 @@
   "open": []
  },
  "learner_summary": {
-  "samples": 109,
+  "samples": 110,
   "skipped": 28,
-  "explored": 6,
+  "explored": 7,
   "min_samples": 8,
   "best": [
    {
@@ -9403,13 +9461,13 @@
    },
    {
     "label": "tier:scalp",
-    "n": 15,
-    "avg": -18.1
+    "n": 16,
+    "avg": -17.9
    },
    {
     "label": "news:0-2",
-    "n": 15,
-    "avg": -18.1
+    "n": 16,
+    "avg": -17.9
    }
   ],
   "shadows": 12

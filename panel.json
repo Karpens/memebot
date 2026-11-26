@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T22:18:05Z",
+ "updated": "2026-11-26T22:18:39Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 82.97,
- "equity": 82.97,
+ "balance": 82.3,
+ "equity": 82.3,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 70,
-  "checked": 50,
+  "flagged": 71,
+  "checked": 51,
   "filtered": 10,
-  "lines": 1109,
+  "lines": 1118,
   "last_rug": {
-   "coin": "COKEBALL",
-   "pass": false
+   "coin": "SLING",
+   "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "pyra",
-   "why": "momentum",
-   "t": "2026-11-26T21:04:26Z"
-  },
   {
    "coin": "PICK",
    "why": "momentum",
@@ -70,13 +65,14 @@
    "coin": "COKEBALL",
    "why": "momentum",
    "t": "2026-11-26T22:14:42Z"
+  },
+  {
+   "coin": "SLING",
+   "why": "momentum",
+   "t": "2026-11-26T22:18:16Z"
   }
  ],
  "curve": [
-  [
-   1795695493,
-   85.94
-  ],
   [
    1795695553,
    85.94
@@ -2472,6 +2468,10 @@
   [
    1795731447,
    82.97
+  ],
+  [
+   1795731507,
+   82.3
   ]
  ],
  "position_pct": 10.0,
@@ -3033,90 +3033,51 @@
    "dev_pct": 0.0,
    "sol_in": 6.08,
    "exit_ms": 43
+  },
+  {
+   "symbol": "SLING",
+   "mint": "B34ctn7vDEvaM33FNdAYszcuG1FNButTDfxYdXt9XnXr",
+   "opened": "2026-11-26T22:18:16Z",
+   "closed": "2026-11-26T22:18:22Z",
+   "cost": 5.0,
+   "proceeds": 4.33,
+   "pnl": -0.67,
+   "pnl_pct": -13.4,
+   "why": "stop -8%",
+   "url": "https://pump.fun/coin/B34ctn7vDEvaM33FNdAYszcuG1FNButTDfxYdXt9XnXr",
+   "reason": "momentum · 6.8 SOL in · 24/35 buys (69%) · +49% since launch · mcap 43 SOL · 46 s old",
+   "size_pct": 6.0,
+   "entry_price": 3.139960200718259e-06,
+   "exit_price": 2.87412762530924e-06,
+   "slip": 1.34,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 1,
+    "parts": [
+     "inflow 6.8 SOL"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 46,
+   "mcap_sol": 43.1,
+   "dev_pct": 1.74,
+   "sol_in": 6.77,
+   "exit_ms": 179
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T19:58:06Z",
-   "time": "20:58:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 6 watched · 17 rejected (serial launcher 7, mayhem mode 5, dev bought 3) · closest onRing: too young: 2 s (min 45 s)",
-   "n": 910
-  },
-  {
-   "t": "2026-11-26T19:59:06Z",
-   "time": "20:59:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 6 watched · 16 rejected (mayhem mode 6, serial launcher 5, dev bought 3) · closest MEATWAD: SOL in 2.3/2.5 · buys 3/6 · buy share 27%/65%",
-   "n": 911
-  },
-  {
-   "t": "2026-11-26T20:00:00Z",
-   "time": "21:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-26T19 · 8036 lines (5844 curve readings) · 1.3 MB · 422 coins",
-   "n": 912
-  },
-  {
-   "t": "2026-11-26T20:00:06Z",
-   "time": "21:00:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 3 watched · 11 rejected (mayhem mode 4, serial launcher 3, dev bought 2) · closest MONANGAI: too young: 2 s (min 45 s)",
-   "n": 913
-  },
-  {
-   "t": "2026-11-26T20:01:07Z",
-   "time": "21:01:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.4 a minute · 5 watched · 15 rejected (serial launcher 6, mayhem mode 4, dev bought 2) · closest HCAT: too young: 37 s (min 45 s)",
-   "n": 914
-  },
-  {
-   "t": "2026-11-26T20:02:08Z",
-   "time": "21:02:08",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.8 a minute · 5 watched · 25 rejected (serial launcher 14, mayhem mode 4, dev bought 3) · closest HCAT: SOL in 2.2/2.5 · buy share 50%/65%",
-   "n": 915
-  },
-  {
-   "t": "2026-11-26T20:03:09Z",
-   "time": "21:03:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.0 a minute · 4 watched · 26 rejected (serial launcher 13, mayhem mode 6, dev bought 3) · closest HCAT: buy share 53%/65%",
-   "n": 916
-  },
-  {
-   "t": "2026-11-26T20:04:09Z",
-   "time": "21:04:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.0 a minute · 2 watched · 22 rejected (serial launcher 10, mayhem mode 7, dev bought 3) · closest SOW: too young: 4 s (min 45 s)",
-   "n": 917
-  },
-  {
-   "t": "2026-11-26T20:05:09Z",
-   "time": "21:05:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.2 a minute · 1 watched · 15 rejected (mayhem mode 5, dev bought 4, serial launcher 4) · closest SOW: SOL in -1.3/2.5 · buys 2/6 · buy share 50%/65% · rise -8%/+12%",
-   "n": 918
-  },
   {
    "t": "2026-11-26T20:06:10Z",
    "time": "21:06:10",
@@ -4835,6 +4796,87 @@
    "action": "scan",
    "text": "new pairs · 13.6 a minute · 13 watched · 29 rejected (serial launcher 24, mayhem mode 3, dump 1) · closest SLING: too young: 14 s (min 45 s)",
    "n": 1109
+  },
+  {
+   "t": "2026-11-26T22:18:16Z",
+   "time": "23:18:16",
+   "agent": "SCANNER",
+   "coin": "SLING",
+   "action": "flag",
+   "text": "momentum · 6.8 SOL in · 24/35 buys (69%) · +49% since launch · mcap 43 SOL · 46 s old",
+   "n": 1110
+  },
+  {
+   "t": "2026-11-26T22:18:16Z",
+   "time": "23:18:16",
+   "agent": "RUG CHECK",
+   "coin": "SLING",
+   "action": "pass",
+   "text": "PASS · 40 holders · top holder 1.4% · top 10 12% (curve left out)",
+   "n": 1111
+  },
+  {
+   "t": "2026-11-26T22:18:16Z",
+   "time": "23:18:16",
+   "agent": "LEARNER",
+   "coin": "SLING",
+   "action": "explore",
+   "text": "explore · 1 in 5 skips is bought at half size · past trades like this lost avg 11.7% · news:0-2 -18.1% over 15, tier:scalp -18.1% over 15",
+   "n": 1112
+  },
+  {
+   "t": "2026-11-26T22:18:16Z",
+   "time": "23:18:16",
+   "agent": "SIZER",
+   "coin": "SLING",
+   "action": "size",
+   "text": "10% of $82.97 x0.50 LEARNER = $4.15, raised to the $5.00 minimum: $5.00",
+   "n": 1113
+  },
+  {
+   "t": "2026-11-26T22:18:16Z",
+   "time": "23:18:16",
+   "agent": "EXECUTOR",
+   "coin": "SLING",
+   "action": "enter",
+   "text": "ENTER SLING at 0.00000314 · slip 1.3% · first in · 0.2 s after the trigger · 47 s after launch · curve maths 0.0% off Jupiter",
+   "n": 1114
+  },
+  {
+   "t": "2026-11-26T22:18:16Z",
+   "time": "23:18:16",
+   "agent": "NEWS",
+   "coin": "SLING",
+   "action": "plan",
+   "text": "hold plan · 1/10 (inflow 6.8 SOL) · scalp: +10",
+   "n": 1115
+  },
+  {
+   "t": "2026-11-26T22:18:22Z",
+   "time": "23:18:22",
+   "agent": "RISK",
+   "coin": null,
+   "action": "pause",
+   "text": "12 losses in a row · 2 min pause",
+   "n": 1116
+  },
+  {
+   "t": "2026-11-26T22:18:22Z",
+   "time": "23:18:22",
+   "agent": "EXECUTOR",
+   "coin": "SLING",
+   "action": "exit",
+   "text": "EXIT SLING $-0.67 (-13%) · stop -8% · out · 0.2 s after the reading",
+   "n": 1117
+  },
+  {
+   "t": "2026-11-26T22:18:22Z",
+   "time": "23:18:22",
+   "agent": "LEARNER",
+   "coin": "SLING",
+   "action": "learn",
+   "text": "learned · tier:scalp now avg -17.9% over 16",
+   "n": 1118
   }
  ],
  "nights": [
@@ -4877,7 +4919,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 54 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 49 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4885,24 +4927,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 297,
-    "last_event_age_s": 10.5,
+    "events": 303,
+    "last_event_age_s": 6.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2196,
-    "last_event_age_s": 0.6,
+    "events": 2233,
+    "last_event_age_s": 4.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 244,
-    "last_event_age_s": 28.8,
+    "events": 247,
+    "last_event_age_s": 15.8,
     "errors": 8,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4910,19 +4952,19 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 71.5,
-  "first_in_last_ms": 29318,
-  "exit_ms": 34.5,
-  "exit_last_ms": 44,
-  "launch_to_entry_s": 36.0,
-  "creates_per_min": 13.6,
-  "watching": 13,
-  "followed": 39
+  "first_in_ms": 74,
+  "first_in_last_ms": 198,
+  "exit_ms": 36,
+  "exit_last_ms": 180,
+  "launch_to_entry_s": 46,
+  "creates_per_min": 14.4,
+  "watching": 14,
+  "followed": 36
  },
  "learner": {
-  "samples": 109,
+  "samples": 110,
   "skipped": 28,
-  "explored": 6,
+  "explored": 7,
   "min_samples": 8,
   "best": [
    {
@@ -4949,13 +4991,13 @@
    },
    {
     "label": "tier:scalp",
-    "n": 15,
-    "avg": -18.1
+    "n": 16,
+    "avg": -17.9
    },
    {
     "label": "news:0-2",
-    "n": 15,
-    "avg": -18.1
+    "n": 16,
+    "avg": -17.9
    }
   ],
   "shadows": 12
@@ -4963,13 +5005,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1446,
+   "sent": 1486,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1446,
+   "sent": 1486,
    "errors": 0,
    "last_error": null
   }
@@ -4978,8 +5020,116 @@
   {
    "symbol": "White",
    "name": "White",
+   "mint": "8nFpvXAK5fCyHUcJCzGXDpwWScHsrWe9p5hdFzWpump",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Pepe",
+   "name": "pepe",
+   "mint": "53k7aDXSnNsP1TQNAC1dzEVdeJ4mpeK51QrqfnNzpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "ARESCOIN",
+   "name": "Ares Coin",
+   "mint": "EanE45eKskJ9XjpKeUVxbs1uHuyamn38kBDqP6X1cX7D",
+   "age_s": 15,
+   "sol_in": -0.5,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -3.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 1.7,
+   "big_sell": 0.25,
+   "x": "https://x.com/DrPlaceboSOL",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "JOBLESS",
+   "name": "Jobless Degen",
+   "mint": "BX6UukvyHdQaGfWXZ4QtuVGzLwUHr3DaBRTRBCrnpump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "CATE",
+   "name": "Cateball",
+   "mint": "EeD3beTiKDv3xRgj2uHndE4QcSXzbGckVuuj3rH2pump",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "4YmqQixBUZw9mxsJctveEiQcUeUscFWEj7mqzMVUpump",
+   "age_s": 33,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "White",
+   "name": "White",
    "mint": "8qYhEsgpBWaTLtg3C1MqQvXbmwZYonm9g3DMK66Ypump",
-   "age_s": 17,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4997,7 +5147,7 @@
    "symbol": "BAND",
    "name": "Sling Band",
    "mint": "6NiStt35J8wk4Px3kFkNZzQ81YEhc9Di4Gg7pfxo4TjC",
-   "age_s": 28,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5015,7 +5165,7 @@
    "symbol": "AGGIE",
    "name": "Sling Aggie",
    "mint": "Fpy4fqTUmhGpp4ZcFYVRSjnZtVRdrDRgqgTPy8wVoiaA",
-   "age_s": 29,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5033,7 +5183,7 @@
    "symbol": "STASH",
    "name": "Sling Stash",
    "mint": "8ni65SFzpzs4aMV2bWHDBPUP9kHCzcDMhPu52EVGay6e",
-   "age_s": 29,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5051,7 +5201,7 @@
    "symbol": "TIN",
    "name": "Sling Tin",
    "mint": "G7LYSjNgHFahhx22WsCKU1YqnxWCVCHLCSPKka3f5xJH",
-   "age_s": 29,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5069,7 +5219,7 @@
    "symbol": "BELL",
    "name": "Sling Bell",
    "mint": "8PgsRp81Lx22ThsKNyUVKb3hqLLps3MuuLC4s7Rpyx4T",
-   "age_s": 29,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5087,7 +5237,7 @@
    "symbol": "STONE",
    "name": "Sling Stone",
    "mint": "AnzHac4zk4hf5sVKsQTc1XNKWYecbsgDCjdsVSig8Tc8",
-   "age_s": 30,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5105,7 +5255,7 @@
    "symbol": "FORK",
    "name": "Sling Fork",
    "mint": "4QUSyBHNtxGJkFUQ1h2ANmvH87N1Sa5wSmetdJKUahGJ",
-   "age_s": 31,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5123,7 +5273,7 @@
    "symbol": "CAN",
    "name": "Sling Can",
    "mint": "AFCguHKG9fhbDaaDZurq5j6d1J9WhzVVcH7R7QspV5Q7",
-   "age_s": 31,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5141,12 +5291,12 @@
    "symbol": "HOLYASS",
    "name": "Holy Ass",
    "mint": "3CiYhLxkZoHfU5G8BtqexD4UHpmXB3Jg2eN2UHCHpump",
-   "age_s": 33,
-   "sol_in": 0.85,
-   "buys": 4,
+   "age_s": 67,
+   "sol_in": 0.92,
+   "buys": 5,
    "sells": 1,
-   "rise_pct": 5.0,
-   "mcap_sol": 38.4,
+   "rise_pct": 5.4,
+   "mcap_sol": 38.6,
    "dev_pct": 13.5,
    "big_sell": 0.01,
    "x": "https://x.com/HOLYASSOL",
@@ -5159,43 +5309,43 @@
    "symbol": "PIKA",
    "name": "PIKACHU",
    "mint": "8YtaGxzt2WGVGWKSAvvSZEwx4AzcpqiCDjzk4UEcpump",
-   "age_s": 35,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 69,
+   "sol_in": 0.28,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "rise_pct": 1.8,
+   "mcap_sol": 30.4,
    "dev_pct": 3.4,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 37 s (min 45 s)"
   },
   {
    "symbol": "SLING",
    "name": "Sling",
    "mint": "B34ctn7vDEvaM33FNdAYszcuG1FNButTDfxYdXt9XnXr",
-   "age_s": 35,
-   "sol_in": 6.34,
-   "buys": 17,
-   "sells": 7,
-   "rise_pct": 45.9,
-   "mcap_sol": 42.1,
+   "age_s": 69,
+   "sol_in": -0.33,
+   "buys": 25,
+   "sells": 19,
+   "rise_pct": -2.2,
+   "mcap_sol": 28.3,
    "dev_pct": 1.7,
-   "big_sell": 1.0,
+   "big_sell": 5.09,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "too young: 34 s (min 45 s)"
+   "status": "exited: stop -8%",
+   "why": "stop -8%"
   },
   {
    "symbol": "SC",
    "name": "Super Cockroach",
    "mint": "G1Wo5UQ9nMmqBARSYF5HMjjYsYDj2YeE2SwCWda5T3dB",
-   "age_s": 49,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5213,7 +5363,7 @@
    "symbol": "COCKROACH",
    "name": "COCKROACH",
    "mint": "Co7BEWaRBE4ZqjhxEVtsHEv6A6ZionCFYNGcVtMAaYyQ",
-   "age_s": 55,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5226,114 +5376,6 @@
    "web": false,
    "status": "rejected: serial launcher: 7 more coins in 60 min",
    "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA340",
-   "name": "Conga #340",
-   "mint": "BaagmqhXm8wGN1JZ1WM9dvf9R8V4ugVgVFSQ28vKcbiE",
-   "age_s": 77,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 323892.2,
-   "mcap_sol": 90585.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 94 more coins in 60 min",
-   "why": "serial launcher: 94 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA339",
-   "name": "Conga #339",
-   "mint": "H452GLk1fJBX8St49grnL3SMNiXiYSYWnjwWGicoFipL",
-   "age_s": 81,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 323892.2,
-   "mcap_sol": 90585.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 93 more coins in 60 min",
-   "why": "serial launcher: 93 more coins in 60 min"
-  },
-  {
-   "symbol": "White",
-   "name": "White",
-   "mint": "4gkAZw8CWNC3BTgDY7GaFTgXU3wwf94vVje3Wbezpump",
-   "age_s": 86,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "CONGA338",
-   "name": "Conga #338",
-   "mint": "D7GAAqwcptikTfgozRAfac3JZ2nAXG5Dapk81BbUP7HQ",
-   "age_s": 86,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 323892.2,
-   "mcap_sol": 90585.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 92 more coins in 60 min",
-   "why": "serial launcher: 92 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA337",
-   "name": "Conga #337",
-   "mint": "819TiSkJJRmCJePc35xB4Ceo2BBC8sjSpjhfB8jR8eut",
-   "age_s": 91,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 323892.2,
-   "mcap_sol": 90585.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 91 more coins in 60 min",
-   "why": "serial launcher: 91 more coins in 60 min"
-  },
-  {
-   "symbol": "LOKICOIN",
-   "name": "Loki Coin",
-   "mint": "3EQsN8gn3RLg1JJYGUQihQCdcJdxBUqLcojCfbmHDgXu",
-   "age_s": 93,
-   "sol_in": -0.5,
-   "buys": 0,
-   "sells": 2,
-   "rise_pct": -3.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.7,
-   "big_sell": 0.46,
-   "x": "https://x.com/DrPlaceboSOL",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
