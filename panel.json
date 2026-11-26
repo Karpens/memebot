@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:54:37Z",
+ "updated": "2026-11-26T11:55:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 21,
   "checked": 21,
   "filtered": 2,
-  "lines": 278,
+  "lines": 279,
   "last_rug": {
    "coin": "VP64",
    "pass": true
@@ -752,6 +752,10 @@
   [
    1795694041,
    85.94
+  ],
+  [
+   1795694101,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -1136,15 +1140,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:27:12Z",
-   "time": "10:27:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 4 watched · 7 rejected (dev bought 4, mayhem mode 2, dump 1) · closest 40: SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%",
-   "n": 79
-  },
   {
    "t": "2026-11-26T09:28:12Z",
    "time": "10:28:12",
@@ -2935,6 +2930,15 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 2 watched · 10 rejected (dev bought 4, serial launcher 2, mayhem mode 2) · closest USDT: too young: 4 s (min 45 s)",
    "n": 278
+  },
+  {
+   "t": "2026-11-26T11:55:03Z",
+   "time": "12:55:03",
+   "agent": "SCANNER",
+   "coin": "konnichiwa",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 279
   }
  ],
  "nights": [
@@ -2988,15 +2992,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 326,
-    "last_event_age_s": 0.6,
+    "events": 329,
+    "last_event_age_s": 3.6,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5304,
+    "events": 5330,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -3004,8 +3008,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 222,
-    "last_event_age_s": 0.4,
+    "events": 223,
+    "last_event_age_s": 15.1,
     "errors": 18,
     "last_error": "sajad.my: timeout after 2 s"
    }
@@ -3018,8 +3022,8 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 2.8,
-  "watching": 3,
+  "creates_per_min": 3.2,
+  "watching": 4,
   "followed": 9
  },
  "learner": {
@@ -3065,41 +3069,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4590,
+   "sent": 4621,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4590,
+   "sent": 4621,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "RIPEN",
-   "name": "Ripen",
-   "mint": "Er1Pur9MwxF7nobcGN4CKA3K5LizB8YMd9ywVMYmpump",
-   "age_s": 0,
+   "symbol": "Xmas1",
+   "name": "X-mass",
+   "mint": "jB5fbmiTBXdoqiPs4iceXdnW7rvM7TjwGU99C9jgMw3",
+   "age_s": 15,
+   "sol_in": -1.87,
+   "buys": 1,
+   "sells": 9,
+   "rise_pct": -11.4,
+   "mcap_sol": 28.1,
+   "dev_pct": 6.5,
+   "big_sell": 0.79,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 13 s (min 45 s)"
+  },
+  {
+   "symbol": "$AGB",
+   "name": "Agentic B COIN",
+   "mint": "5KeddTaUTLVKXwefzKW3nWHKf4RnEsn4r5mN51RZpump",
+   "age_s": 28,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 29.1,
-   "dev_pct": 2.1,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "RIPEN",
+   "name": "Ripen",
+   "mint": "Er1Pur9MwxF7nobcGN4CKA3K5LizB8YMd9ywVMYmpump",
+   "age_s": 29,
+   "sol_in": 5.52,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 39.4,
+   "mcap_sol": 40.5,
+   "dev_pct": 2.1,
+   "big_sell": 0.27,
    "x": "https://x.com/Ripenlol/status/2125921088437907864",
    "tg": false,
    "web": "https://ripen.lol",
    "status": "watching",
-   "why": "no curve reading yet"
+   "why": "too young: 11 s (min 45 s)"
   },
   {
    "symbol": "Teoto",
    "name": "TOTO",
    "mint": "9dr8Kjz8fp4e9ymdtKWHWrKTtUvmQrGipJXmSasGpump",
-   "age_s": 12,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3117,7 +3157,7 @@
    "symbol": "LOKI",
    "name": "Lokicoin",
    "mint": "4fpahFR4SSXtgZ7fJeatyah2XG2JoVSkRtZrj9nwpump",
-   "age_s": 15,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3132,33 +3172,15 @@
    "why": "too young: 2 s (min 45 s)"
   },
   {
-   "symbol": "konnichiwa",
-   "name": "konnichiwa",
-   "mint": "FYWv16SA5nDEG3F3oHf7WoRcN48YsfNxU3dA19Eopump",
-   "age_s": 36,
-   "sol_in": 0.29,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.6,
-   "mcap_sol": 307.1,
-   "dev_pct": 74.8,
-   "big_sell": 0.21,
-   "x": "https://x.com/solana/status/2125896648756985892",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 74.8% (max 8%)",
-   "why": "dev bought 74.8% (max 8%)"
-  },
-  {
    "symbol": "puter",
    "name": "apeonputer",
    "mint": "CwbKJzE9ni7ovkxySqQNDinqQCSd4JSWVAr628tr4nRJ",
-   "age_s": 45,
-   "sol_in": 20.76,
-   "buys": 16,
-   "sells": 14,
-   "rise_pct": 154.1,
-   "mcap_sol": 96.4,
+   "age_s": 74,
+   "sol_in": 19.55,
+   "buys": 21,
+   "sells": 21,
+   "rise_pct": 143.3,
+   "mcap_sol": 92.2,
    "dev_pct": 15.2,
    "big_sell": 5.65,
    "x": "https://twitter.com/Stally_P/status/2125920641719161280",
@@ -3171,7 +3193,7 @@
    "symbol": "?",
    "name": "",
    "mint": "6LQhah2y2dHKU3Ln9828duV9NaREtBf2BtWJBnSwpump",
-   "age_s": 64,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3189,7 +3211,7 @@
    "symbol": "DUCKNALD",
    "name": "DUCKNALD",
    "mint": "HHS1GQJtg7Lxs77FdPC1vJ1H9EHUrRLA1tMn5179MBWJ",
-   "age_s": 75,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3207,7 +3229,7 @@
    "symbol": "TETO",
    "name": "KASANE TETO",
    "mint": "2Tn1kMd2wAFtYbcaNApnFfrNJU1XV2Nq2wYvKKZJ99ed",
-   "age_s": 84,
+   "age_s": 113,
    "sol_in": -2.96,
    "buys": 1,
    "sells": 1,
@@ -3225,7 +3247,7 @@
    "symbol": "Teto",
    "name": "Kasane Teto",
    "mint": "GKKjAJNdw1qVBq44sQ9SeTfw28Fm9XH7yTf58ER9pump",
-   "age_s": 86,
+   "age_s": 115,
    "sol_in": -1.22,
    "buys": 5,
    "sells": 10,
@@ -3243,7 +3265,7 @@
    "symbol": "?",
    "name": "",
    "mint": "5CkhT7QXcXLQWGKh5h7CcQMv6a4nkfiYTqotnsHTpump",
-   "age_s": 89,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3261,7 +3283,7 @@
    "symbol": "$AICC",
    "name": "ALTCOIN",
    "mint": "ky5Un2ox4iV9kZBkNM1DktMEq7WhHRzJnKhfKBUpump",
-   "age_s": 104,
+   "age_s": 133,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -3279,7 +3301,7 @@
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "BGwQj1qWhiBXaid7nfqgXehY5CrbfJa4M7iwxAwDpump",
-   "age_s": 104,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3297,7 +3319,7 @@
    "symbol": "USDT",
    "name": "Tether USDT",
    "mint": "HDUQuDT9657Xn1USS6nhJAeRysiihD6gcBxmtHxypump",
-   "age_s": 127,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
