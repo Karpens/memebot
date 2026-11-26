@@ -4,6 +4,7 @@ name: Feed probe
 # and never publishes on the live channel:
 #   probe  memebot/probe.py: PumpPortal's stream, the RPC WebSocket, Jupiter, RugCheck, DexScreener, the metadata
 #   feeds  python3 memebot/feeds.py --probe N: the bot's own feeds (PumpPortal, the curve poll, metadata) for N s
+#   meta   memebot/probe_meta.py: every candidate source of a new coin's socials (IPFS gateways, pump.fun, RugCheck)
 #   bot    the bot itself (New Pairs, on paper) for N / 60 minutes (at least 1) in a fresh temporary data dir with
 #          the live channel off, then its last 120 log lines, its trades, panel.speed and panel.watch[:10]
 
@@ -11,9 +12,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "probe | feeds | bot"
+        description: "probe | feeds | meta | bot"
         type: choice
-        options: [probe, feeds, bot]
+        options: [probe, feeds, meta, bot]
         default: probe
       seconds:
         description: "How long, in seconds (bot: seconds / 60 minutes, at least 1)"
@@ -45,6 +46,10 @@ jobs:
       - name: The bot's feeds (memebot/feeds.py --probe)
         if: inputs.mode == 'feeds'
         run: python3 memebot/feeds.py --probe "${{ inputs.seconds || 90 }}"
+
+      - name: Where the socials of a new coin can be read (memebot/probe_meta.py)
+        if: inputs.mode == 'meta'
+        run: python3 memebot/probe_meta.py --seconds "${{ inputs.seconds || 90 }}"
 
       - name: A dry run of the bot (paper, a fresh data dir, no live channel)
         if: inputs.mode == 'bot'
