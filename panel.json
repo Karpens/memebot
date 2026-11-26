@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:09:44Z",
+ "updated": "2026-11-26T10:10:12Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 12,
-  "checked": 12,
+  "flagged": 13,
+  "checked": 13,
   "filtered": 1,
-  "lines": 138,
+  "lines": 141,
   "last_rug": {
-   "coin": "YARL",
+   "coin": "TIPPD",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "KIDSTOCK",
-   "why": "momentum",
-   "t": "2026-11-26T09:16:27Z"
-  },
   {
    "coin": "TANOSHIMI",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "YARL",
    "why": "momentum",
    "t": "2026-11-26T10:04:54Z"
+  },
+  {
+   "coin": "TIPPD",
+   "why": "momentum",
+   "t": "2026-11-26T10:09:59Z"
   }
  ],
  "curve": [
@@ -331,6 +331,10 @@
   ],
   [
    1795687741,
+   87.14
+  ],
+  [
+   1795687801,
    87.14
   ]
  ],
@@ -1914,6 +1918,33 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 5 watched · 5 rejected (mayhem mode 3, dev bought 1, no symbol or name 1) · closest TIPPD: too young: 21 s (min 45 s)",
    "n": 138
+  },
+  {
+   "t": "2026-11-26T10:09:59Z",
+   "time": "11:09:59",
+   "agent": "SCANNER",
+   "coin": "TIPPD",
+   "action": "flag",
+   "text": "momentum · 7.1 SOL in · 7/10 buys (70%) · +52% since launch · mcap 44 SOL · 46 s old",
+   "n": 139
+  },
+  {
+   "t": "2026-11-26T10:09:59Z",
+   "time": "11:09:59",
+   "agent": "RUG CHECK",
+   "coin": "TIPPD",
+   "action": "pass",
+   "text": "PASS · 7 holders · top holder 3.1% · top 10 5% (curve left out)",
+   "n": 140
+  },
+  {
+   "t": "2026-11-26T10:09:59Z",
+   "time": "11:09:59",
+   "agent": "LEARNER",
+   "coin": "TIPPD",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 10.2% · hour:day -15.9% over 9, news:0-2 -15.9% over 9",
+   "n": 141
   }
  ],
  "nights": [
@@ -1962,7 +1993,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1971,15 +2002,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 160,
-    "last_event_age_s": 9.3,
+    "last_event_age_s": 37.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2207,
-    "last_event_age_s": 1.8,
+    "events": 2221,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
@@ -1987,7 +2018,7 @@
     "name": "metadata",
     "connected": false,
     "events": 112,
-    "last_event_age_s": 7.1,
+    "last_event_age_s": 35.1,
     "errors": 86,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2000,13 +2031,13 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 3.8,
-  "watching": 5,
-  "followed": 6
+  "creates_per_min": 3.4,
+  "watching": 3,
+  "followed": 5
  },
  "learner": {
   "samples": 104,
-  "skipped": 4,
+  "skipped": 5,
   "explored": 1,
   "min_samples": 8,
   "best": [
@@ -2047,13 +2078,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2221,
+   "sent": 2251,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2221,
+   "sent": 2251,
    "errors": 0,
    "last_error": null
   }
@@ -2063,10 +2094,10 @@
    "symbol": "alon",
    "name": "pump killer",
    "mint": "5ugM9v4ZdgmpGE6aZqhsk8treC6AyKmSGpSDftdkpump",
-   "age_s": 9,
+   "age_s": 37,
    "sol_in": 0.0,
-   "buys": 2,
-   "sells": 1,
+   "buys": 3,
+   "sells": 2,
    "rise_pct": 0.0,
    "mcap_sol": 29.8,
    "dev_pct": 3.4,
@@ -2075,13 +2106,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 5 s (min 45 s)"
+   "why": "too young: 32 s (min 45 s)"
   },
   {
    "symbol": "HALH",
    "name": "Haaland Hair",
    "mint": "HburtSqjvEyaqmG18PVVmvhinWxu23vXvPVd9KoHpump",
-   "age_s": 31,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2099,25 +2130,25 @@
    "symbol": "TIPPD",
    "name": "tippd",
    "mint": "HwqBzXYPZn2Z8mAZpJjG7Fa51yxvDoGmnGxyL7cgpump",
-   "age_s": 31,
-   "sol_in": 2.82,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 19.3,
-   "mcap_sol": 34.7,
+   "age_s": 59,
+   "sol_in": 7.27,
+   "buys": 10,
+   "sells": 4,
+   "rise_pct": 53.2,
+   "mcap_sol": 44.5,
    "dev_pct": 2.1,
-   "big_sell": 0.01,
+   "big_sell": 0.93,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "too young: 21 s (min 45 s)"
+   "status": "rejected: learner: skip",
+   "why": "learner: skip"
   },
   {
    "symbol": "HALH",
    "name": "Haaland Hair",
    "mint": "7Wt9vNx6PHcfmTSQQ9LDma6kr1MCdstdjbZzdK96pump",
-   "age_s": 55,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2135,7 +2166,7 @@
    "symbol": "CYBERMAS",
    "name": "CYBERMAS",
    "mint": "Fjv6V5zMVjWAtVWVi4BrtRNqdrurDCjoXmcoAyVCpump",
-   "age_s": 69,
+   "age_s": 97,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 2,
@@ -2153,7 +2184,7 @@
    "symbol": "LIZARD",
    "name": "Lizard Coin",
    "mint": "DDSZQPrj6P6URC9JnZUAbAQuhV7qeAxWvsTv823QQPkr",
-   "age_s": 70,
+   "age_s": 98,
    "sol_in": 0.28,
    "buys": 4,
    "sells": 4,
@@ -2171,12 +2202,12 @@
    "symbol": "Strugglecat",
    "name": "Struggle Cat",
    "mint": "BUDb5hDXKFk1CAHnG6TBJRbycS1y69AQY9rp5JX8pump",
-   "age_s": 76,
-   "sol_in": -7.84,
-   "buys": 11,
-   "sells": 20,
-   "rise_pct": -35.5,
-   "mcap_sol": 31.9,
+   "age_s": 104,
+   "sol_in": -7.79,
+   "buys": 12,
+   "sells": 21,
+   "rise_pct": -35.2,
+   "mcap_sol": 32.0,
    "dev_pct": 26.6,
    "big_sell": 8.99,
    "x": "https://x.com/etquantz/status/2125893646624903523",
@@ -2189,7 +2220,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CZ8ke6YBtqHhEy2Xvn2ZRjKUYy5CoN1FrenotQLhpump",
-   "age_s": 133,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2202,42 +2233,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "SAVPIR",
-   "name": "Savage Piranha",
-   "mint": "BmEXZPX6brqXZRcD2Wc3SyY8wWU4eyU93SQ2CHZLpump",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "FACTFRANK",
-   "name": "Fact Check Frank",
-   "mint": "BZ8hmfdeHPZVHpsBYmrcmaaUxvEeZNHKtQGUThJQ1HEo",
-   "age_s": 178,
-   "sol_in": -0.46,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": -3.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.7,
-   "big_sell": 1.0,
-   "x": "https://x.com/i/status/2125864501019070680",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 6 s (min 45 s)"
   }
  ],
  "strategies": [
