@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:43:37Z",
+ "updated": "2026-11-26T10:44:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 13,
   "checked": 13,
   "filtered": 1,
-  "lines": 176,
+  "lines": 177,
   "last_rug": {
    "coin": "TIPPD",
    "pass": true
@@ -467,6 +467,10 @@
   ],
   [
    1795689781,
+   87.14
+  ],
+  [
+   1795689841,
    87.14
   ]
  ],
@@ -2392,6 +2396,15 @@
    "action": "scan",
    "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (mayhem mode 1)",
    "n": 176
+  },
+  {
+   "t": "2026-11-26T10:44:00Z",
+   "time": "11:44:00",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.2 a minute · 1 watched · 5 rejected (dev bought 2, mayhem mode 2, no bonding curve key 1) · closest TEST: too young: 9 s (min 45 s)",
+   "n": 177
   }
  ],
  "nights": [
@@ -2434,7 +2447,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 2 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 3 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2442,24 +2455,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 10.9,
+    "events": 6,
+    "last_event_age_s": 8.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17,
-    "last_event_age_s": 0.8,
+    "events": 47,
+    "last_event_age_s": 4.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 2,
-    "last_event_age_s": 10.3,
+    "events": 3,
+    "last_event_age_s": 17.2,
     "errors": 0,
     "last_error": null
    }
@@ -2472,9 +2485,9 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 0.8,
-  "watching": 0,
-  "followed": 2
+  "creates_per_min": 1.2,
+  "watching": 1,
+  "followed": 3
  },
  "learner": {
   "samples": 104,
@@ -2519,28 +2532,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 54,
+   "sent": 85,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 54,
+   "sent": 85,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "INB4",
+   "name": "Inb4",
+   "mint": "BHiUYWPiPZVqw1tqUuWcwMiUcVyWHb9E8AfnUWgVinb4",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "TEST",
+   "name": "TEST",
+   "mint": "HXKmAJNsW9ozTK6NRCYxx4H5DhAkxRhm4UhKQUtTS2Kf",
+   "age_s": 17,
+   "sol_in": 1.73,
+   "buys": 5,
+   "sells": 1,
+   "rise_pct": 11.8,
+   "mcap_sol": 31.3,
+   "dev_pct": 0.1,
+   "big_sell": 1.05,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 12 s (min 45 s)"
+  },
+  {
    "symbol": "Cyber",
    "name": "Cyber",
    "mint": "7YVeGtLmPiwHwFHSsPpoxdfiFmEvYyMsEGPNLKqgRgLG",
-   "age_s": 10,
-   "sol_in": 3.46,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": 22.0,
-   "mcap_sol": 41.4,
+   "age_s": 39,
+   "sol_in": -2.82,
+   "buys": 5,
+   "sells": 11,
+   "rise_pct": -16.3,
+   "mcap_sol": 28.4,
    "dev_pct": 9.9,
    "big_sell": 2.36,
    "x": "https://x.com/StepCoinsol8/status/2125903229020258714",
@@ -2553,14 +2602,14 @@
    "symbol": "Crack",
    "name": "Crackcoin",
    "mint": "5wp9xZJd2SHVqeJsfFyJEbokbSXpuRpbRoFeCbNzL6X5",
-   "age_s": 18,
-   "sol_in": 8.98,
-   "buys": 5,
-   "sells": 5,
-   "rise_pct": 58.0,
-   "mcap_sol": 59.9,
+   "age_s": 47,
+   "sol_in": 0.07,
+   "buys": 8,
+   "sells": 17,
+   "rise_pct": 0.4,
+   "mcap_sol": 38.1,
    "dev_pct": 15.2,
-   "big_sell": 3.16,
+   "big_sell": 6.53,
    "x": "https://x.com/MarioPrezldente/status/2125903215799709945",
    "tg": false,
    "web": false,
@@ -2571,7 +2620,7 @@
    "symbol": "HALH",
    "name": "Haaland Hair",
    "mint": "6vuHbwNADMxSkYYxWkjrtcz9X4oi4zXR1q3nfScPpump",
-   "age_s": 32,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2589,7 +2638,7 @@
    "symbol": "RSA",
    "name": "RSA",
    "mint": "CQqJhZ7GnFKYHfABLtwKkYMZzyvGSsVTdRdMu7NN68e",
-   "age_s": 37,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
