@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:10:12Z",
+ "updated": "2026-11-26T17:10:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 40,
   "checked": 35,
   "filtered": 7,
-  "lines": 682,
+  "lines": 683,
   "last_rug": {
    "coin": "CUBE",
    "pass": true
@@ -2012,6 +2012,10 @@
   [
    1795712953,
    84.53
+  ],
+  [
+   1795713013,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2486,15 +2490,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T14:44:33Z",
-   "time": "15:44:33",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 11 watched · 5 rejected (mayhem mode 3, serial launcher 2) · closest STU: SOL in 1.4/2.5 · buys 3/6 · buy share 50%/65% · rise +9%/+12%",
-   "n": 483
-  },
   {
    "t": "2026-11-26T14:45:33Z",
    "time": "15:45:33",
@@ -4285,6 +4280,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 4 watched · 7 rejected (serial launcher 2, dump 2, dev bought 2) · closest ATOMIC: too young: 27 s (min 45 s)",
    "n": 682
+  },
+  {
+   "t": "2026-11-26T17:10:37Z",
+   "time": "18:10:37",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 6 watched · 8 rejected (serial launcher 3, dev bought 2, dump 1) · closest HSANE: too young: 16 s (min 45 s)",
+   "n": 683
   }
  ],
  "nights": [
@@ -4335,24 +4339,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 343,
-    "last_event_age_s": 0.8,
+    "events": 345,
+    "last_event_age_s": 5.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4381,
-    "last_event_age_s": 0.1,
+    "events": 4398,
+    "last_event_age_s": 1.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 252,
-    "last_event_age_s": 0.6,
+    "events": 254,
+    "last_event_age_s": 5.7,
     "errors": 19,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4366,7 +4370,7 @@
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
   "creates_per_min": 3.8,
-  "watching": 5,
+  "watching": 6,
   "followed": 12
  },
  "learner": {
@@ -4413,25 +4417,61 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3485,
+   "sent": 3515,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3519,
+   "sent": 3549,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Sadcat",
+   "name": "Sadcat",
+   "mint": "BkvuTSbSsJLsAJpYLpfCDCi9LaCDio91gZBBCn4cpump",
+   "age_s": 5,
+   "sol_in": 0.27,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 1.8,
+   "mcap_sol": 30.4,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/sadcatpfps",
+   "tg": false,
+   "web": "https://www.instagram.com/p/DgCbxJ-kZjs/",
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "KIM",
+   "name": "KIMCHI",
+   "mint": "D83MboEUCdcxbjrzeE847R6MFBGEEPYafqZgvWEFpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/kimchi1x",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "SOLGIVING",
    "name": "Solgiving",
    "mint": "5q4hYv1NrdGuZipjg422oLNsNL5MXyX2PtmPc35opump",
-   "age_s": 0,
+   "age_s": 28,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 32.8,
@@ -4447,25 +4487,25 @@
    "symbol": "HSANE",
    "name": "Hamsanity",
    "mint": "4ykJMR3txJYxrbbG6SxPFvGSgX2iF5UiieXYJD4Npump",
-   "age_s": 4,
-   "sol_in": 34.73,
-   "buys": 2,
+   "age_s": 32,
+   "sol_in": 35.31,
+   "buys": 9,
    "sells": 3,
-   "rise_pct": 357.5,
-   "mcap_sol": 132.2,
+   "rise_pct": 365.6,
+   "mcap_sol": 134.5,
    "dev_pct": 1.7,
    "big_sell": 1.09,
    "x": "https://x.com/hamsanity_sol",
    "tg": "https://t.me/hamsanity_sol",
    "web": "https://hamsanity.club/",
    "status": "watching",
-   "why": "too young: 4 s (min 45 s)"
+   "why": "too young: 31 s (min 45 s)"
   },
   {
    "symbol": "MEOWI",
    "name": "MEOWI",
    "mint": "meowBvvan6sjdgjjZ5guuJeE1PeYxQRXPigjJZ9bKjw",
-   "age_s": 4,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4483,7 +4523,7 @@
    "symbol": "Cancer",
    "name": "LIVI",
    "mint": "CFbBkqqufBtab84xZRGb7R9Q8oa8GH3rduptq51apump",
-   "age_s": 28,
+   "age_s": 56,
    "sol_in": 0.44,
    "buys": 3,
    "sells": 5,
@@ -4501,7 +4541,7 @@
    "symbol": "DnG",
    "name": "Dingleberry",
    "mint": "2gmW984tWEyha55Mhu8gxBrrX8ExFGNnJw7WcuNdpump",
-   "age_s": 33,
+   "age_s": 61,
    "sol_in": 0.39,
    "buys": 2,
    "sells": 3,
@@ -4519,7 +4559,7 @@
    "symbol": "TRADING",
    "name": "MEME TRADER",
    "mint": "DhWAJ3jM1kH5mcBCG2PJWt7GYZNw2x5mckJsqUEwpump",
-   "age_s": 38,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -4537,25 +4577,25 @@
    "symbol": "ATOMIC",
    "name": "Atomic",
    "mint": "HsBJKDWfdraaPfQCSxCmnFCs3joUF69rqHoScUg7pump",
-   "age_s": 75,
-   "sol_in": 2.2,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 14.9,
-   "mcap_sol": 33.4,
+   "age_s": 103,
+   "sol_in": -0.03,
+   "buys": 4,
+   "sells": 3,
+   "rise_pct": -0.2,
+   "mcap_sol": 29.0,
    "dev_pct": 2.1,
-   "big_sell": 1.02,
+   "big_sell": 1.46,
    "x": "https://x.com/tryAtomic_Sol/status/2125999913498763369?a=SdSRCZZgn-g6gkcD4YE&s=20",
    "tg": false,
    "web": "https://atomicsol.xyz",
    "status": "watching",
-   "why": "too young: 44 s (min 45 s)"
+   "why": "SOL in -0.0/2.5 · buys 4/6 · buy share 57%/65% · rise -0%/+12%"
   },
   {
    "symbol": "OVEN",
    "name": "Mr. Oven",
    "mint": "FLdYqxDqcg8WnAecQwNKqVSMZ2U5yBhkiejEQvNipump",
-   "age_s": 98,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -4573,7 +4613,7 @@
    "symbol": "JANTA",
    "name": "Jimmy Santa",
    "mint": "3mmaLtL3ZzrA9xuX6Dke55LMMAVufHq6DHDyYFfgpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": -0.96,
    "buys": 2,
    "sells": 2,
@@ -4591,7 +4631,7 @@
    "symbol": "Rogir",
    "name": "Rogir",
    "mint": "7Puax9draaJAKNHicgWh69SvN3aktPCY1MVNv9bMpump",
-   "age_s": 112,
+   "age_s": 140,
    "sol_in": -2.17,
    "buys": 0,
    "sells": 2,
@@ -4609,7 +4649,7 @@
    "symbol": "PRIMIS",
    "name": "Primis Protocol",
    "mint": "8Dyd7kV1nD7h5jgCA41BnjWcNfVhteNuLn33ZD2Cpump",
-   "age_s": 145,
+   "age_s": 173,
    "sol_in": -1.86,
    "buys": 9,
    "sells": 9,
@@ -4627,7 +4667,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AKBMXyeBEk2zjtmVuBsKWknuLEjESo18XxSPVqxAkAry",
-   "age_s": 149,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4640,42 +4680,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "BF",
-   "name": "Black Friday",
-   "mint": "CWXjNztnK2KZ1jsbw8hJZphojbtFPwojBqrzCoFApump",
-   "age_s": 156,
-   "sol_in": -2.47,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -14.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 8.2,
-   "big_sell": 2.47,
-   "x": "https://x.com/ripedevonchain/status/2125999908075307285",
-   "tg": false,
-   "web": "https://x.com/ripedevonchain/status/2125999908075307285",
-   "status": "rejected: dev bought 8.2% (max 8%)",
-   "why": "dev bought 8.2% (max 8%)"
-  },
-  {
-   "symbol": "INUPAD",
-   "name": "InuPad",
-   "mint": "6f6ariLAsooMtiv3peEhq2AUATWNwJRhCdLUVQGwpump",
-   "age_s": 173,
-   "sol_in": -1.92,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 49345.3,
-   "mcap_sol": 15653.6,
-   "dev_pct": 6.5,
-   "big_sell": 1076.68,
-   "x": "https://x.com/TryInuPad",
-   "tg": false,
-   "web": "https://www.tryinupad.fun/",
-   "status": "rejected: dump: 1076.7 SOL sold",
-   "why": "dump: 1076.7 SOL sold"
   }
  ],
  "strategies": [
