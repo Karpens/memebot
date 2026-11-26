@@ -1,0 +1,31 @@
+name: Feed probe
+
+# A live check of the real-time sources the bot reads for New Pairs (PumpPortal's free stream, the Solana RPC
+# WebSocket, Jupiter, RugCheck, DexScreener, the coins' metadata). It does not trade and writes nothing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      seconds:
+        description: "How long to listen"
+        required: false
+        default: "90"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: probe
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -q websockets==17.4
+      - run: python3 memebot/probe.py --seconds "${{ inputs.seconds || 90 }}" --follow 8 --enrich 4
