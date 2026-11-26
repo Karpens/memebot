@@ -534,40 +534,6 @@ class RunTape(unittest.TestCase):
         self.assertTrue(10 <= len(hbs) <= 14, len(hbs))                 # every 10 s of a 2-minute run
         self.assertEqual(hbs[-1]["sol"], 100.0)
         self.assertEqual(hbs[0]["poll_ok"], 0)
-        st = sysl[0]                                                    # the run's settings, cash and LEARNER memory
-        self.assertEqual((st["cfg"]["hold_tiers"], st["cfg"]["stop_pct"], st["bal"], st["held"]),
-                         (eng.np_cfg()["hold_tiers"], -7.0, 100.0, 0))
-        self.assertIsInstance(st["mem"], dict)
-        sols = [x for x in sysl if x["k"] == "sol"]                     # SOL/USD when the bot's changes: once here
-        self.assertEqual([x["usd"] for x in sols], [100.0])
-
-
-class StartAndSol(Base):
-    def test_the_start_line_keeps_every_setting_a_replay_needs(self):
-        # the whole config at once went through _clean, which keeps 60 keys of a dict: hold_tiers, np_min_age_s,
-        # breakeven_pct ... were cut off the start line
-        cfg = mb.load_config(mb.CONFIG)
-        r = rec_mod.Recorder(self.tapes, cfg, clock=Clock(), log=self.said.append,
-                             start={"bal": 87.5, "held": 1, "mem": {"labels": {"np:sol:3-6": {"n": 3, "sum": -9.0}}, "k": 5}})
-        self.assertTrue(r.close(5))
-        st = rec_mod.load_system(self.tapes)[0]
-        want = {k for k in cfg if k in rec_mod.CFG_KEYS or k.startswith(rec_mod.CFG_PREFIX)}
-        self.assertGreater(len(want), 60)
-        self.assertEqual(set(st["cfg"]), want | {k for k in rec_mod.DEFAULTS})
-        for k in ("hold_tiers", "np_min_age_s", "breakeven_pct", "np_serial_max", "night_stop_pct", "loss_streak",
-                  "cooldown_min", "job_no_entries_min", "job_flat_min", "min_order_usd", "learn_skip_pct"):
-            self.assertEqual(st["cfg"][k], cfg[k], k)
-        self.assertEqual((st["bal"], st["held"], st["mem"]["labels"]["np:sol:3-6"]["n"]), (87.5, 1, 3))
-
-    def test_sol_goes_on_the_tape_each_time_it_changes(self):
-        clock = Clock()
-        r = self.rec(clock)
-        for px in (71.1, 71.1, 71.3, None, 0, float("nan"), 71.3, 70.9):
-            r.sol(px)
-            clock.t += 1
-        self.assertTrue(r.close(5))
-        sols = [(x["t"] - T0, x["usd"]) for x in self.lines() if x["k"] == "sol"]
-        self.assertEqual(sols, [(0.0, 71.1), (2.0, 71.3), (7.0, 70.9)])
 
 
 if __name__ == "__main__":

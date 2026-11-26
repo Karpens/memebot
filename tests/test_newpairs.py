@@ -885,24 +885,3 @@ class DryRunFixes(unittest.TestCase):
         self.assertTrue(c.status.startswith("rejected: not a pump.fun bonding curve"), c.status)
         self.assertEqual(c.readings, 0)
 
-    def test_no_entry_before_np_min_age_s(self):
-        """The live morning: entries 10-25 s after the launch were dumped on. With np_min_age_s 45 the same
-        momentum fires only once the coin is 45 s old, if it still holds then."""
-        wl, cfg = self.wl(np_min_age_s=45, np_need_social=False)
-        c = wl.on_create(self.create("aaa"), 0.0)
-        slot, rsol = 1, 0.0
-        fired = []
-        for k in range(1, 61):                                  # a reading a second, all buys, up 0.1 SOL each
-            rsol += 0.1
-            r = {"kind": "curve", "mint": "aaa", "vsol": int((30.0 + rsol) * 1e9), "vtok": int(32.2e9 / (30.0 + rsol) * 1e6),
-                 "rtok": 0, "rsol": int(rsol * 1e9), "price_sol": 0.0, "complete": False, "slot": slot}
-            r["price_sol"] = (r["vsol"] / 1e9) / (r["vtok"] / 1e6)
-            slot += 1
-            wl.on_curve("aaa", r, float(k))
-            ok, why = npm.trigger(c, cfg, float(k))
-            if ok:
-                fired.append(k)
-            elif k < 45 and c.sol_in >= 2.5:
-                self.assertTrue(why.startswith("too young"), why)
-        self.assertTrue(fired and fired[0] == 45, fired)
-

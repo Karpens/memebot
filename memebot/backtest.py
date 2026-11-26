@@ -23,11 +23,8 @@ What it does:
 
 The report (JSON, --out) has per config: trades, win rate, total and mean P&L after costs ($ and %), max drawdown,
 profit factor, by hold tier and by exit, "blind" exits (priced on a stale reading), and the decision with the
-config.json diff to apply. It also checks the replay itself ("live_check", when the tape has the live bot's own
-trades): the whole range replayed with the settings, cash and LEARNER memory the live run started with (its
-"start" line), trade by trade against the tape's buy / sell lines: the same entries, the same exits, the P&L gap.
-Where they differ, the replay's fills (the curve maths on the last reading) are not what Jupiter gave live, and
-every number above is that much less sure.
+config.json diff to apply. It also shows the live bot's own trades over the same time (from the tape's buy / sell
+lines) next to the base config's replay: a check of the replay itself.
 
 Honest limits (said in the report too): it is paper on paper. Picking the best of up to 200 configs on the first
 part flatters them; only the held-out part counts, and even a pass there is a hint, not a promise. The replay can
@@ -39,6 +36,7 @@ import argparse
 import copy
 import datetime
 import json
+import math
 import multiprocessing
 import os
 import random
@@ -309,8 +307,7 @@ def judge(cand, base_test, min_trades, margin_usd):
 
 
 def backtest(data=None, since=None, until=None, grid="default", split=0.7, cfg=None, jobs=None, max_combos=200,
-             budget_min=None, min_trades=30, margin_pct=2.0, top=5, seed=7, replay_opts=None, tape=None, out=None,
-             live_check=True):
+             budget_min=None, min_trades=30, margin_pct=2.0, top=5, seed=7, replay_opts=None, tape=None, out=None):
     """The walk-forward backtest -> the report dict (see the module's doc). tape: a replay.Tape already read
     (else read from data)."""
     say = out or (lambda *a: None)
@@ -402,11 +399,6 @@ def backtest(data=None, since=None, until=None, grid="default", split=0.7, cfg=N
                       "replay_base_trades": ((base_train or {}).get("trades") or 0) + ((base_test or {}).get("trades") or 0),
                       "live_config_differs": config_diff(base_cfg, dict(base_cfg, **(tape.live_cfg(since, until) or {})))
                       if tape.live_cfg(since, until) else None}
-    if lt and live_check:
-        # the replay itself checked: the whole range with the live run's own settings, cash and LEARNER memory,
-        # trade by trade against what the live bot did (memebot/replay.py live_check)
-        say("  live check: the live run's trades against their replay")
-        report["live_check"] = replay.live_check(tape, base_cfg, since, until, **opts)
     report["wall_s"] = round(time.monotonic() - wall, 1)
     report["lines"] = text_lines(report)
     return report
@@ -437,8 +429,6 @@ ASSUMPTIONS = [
     "recorded state and counted as a blind exit (its price is a guess).",
     "The jobs follow the recorded runs (start / stop lines) when the tape has them, else 340-minute jobs 2 minutes "
     "apart: no entries in a job's last 5 minutes, everything sold in its last one, like the live chain.",
-    "The split is a job end for both parts (no entries in the 5 minutes before it, everything sold in its last "
-    "minute, a fresh balance after it): a few trades fewer than the live run made around it.",
     "Selection bias: the best of many configs on the first part looks better than it is; a change is recommended "
     "only when it also wins on the held-out part. Even then it is a hint, not a promise. Not financial advice.",
 ]
@@ -470,8 +460,6 @@ def text_lines(r):
     lv = (r.get("live") or {}).get("trades")
     if lv:
         out.append("live bot   same range: %s (replay of the base: %d trades)" % (fmt(lv), r["live"]["replay_base_trades"]))
-    if r.get("live_check"):
-        out.append(replay.live_check_text(r["live_check"]))
     d = r.get("decision") or {}
     out.append("DECISION: %s · %s" % (d.get("action", "keep").upper(), d.get("why", "")))
     if d.get("action") == "change":

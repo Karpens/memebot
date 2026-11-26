@@ -1,5 +1,5 @@
 {
-  "_about": "Meme Bot na papieri: obchodovanie meme coinov na Solane nonstop, 24/7 (session_start = session_end; každý deň je v knihe a na stránke samostatná „noc“, pozície prechádzajú cez polnoc). Hlavná stratégia je NEW PAIRS (stĺpec „New Pairs“ v Axiom Pulse): úplne nové mince z pump.fun v prvých sekundách až minútach, ešte na bonding curve. Prvý dnu a prvý von: vstup v tom istom kole slučky ako čítanie krivky, ktoré spustí signál, výstup v tom istom kole ako čítanie, ktoré prekročí stop alebo cieľ. Štart $100, 10 % na obchod, výstup na +10 % (alebo rebrík +20 / +60 / +100 %, keď sú NEWS silné), stop -7 %; prečo práve tieto čísla, hovorí _cost. Hodnoty sú pravidlá zo súboru prompt.txt. Bez peňaženky a bez skutočných peňazí.",
+  "_about": "Meme Bot na papieri: obchodovanie meme coinov na Solane nonstop, 24/7 (session_start = session_end; každý deň je v knihe a na stránke samostatná „noc“, pozície prechádzajú cez polnoc). Hlavná stratégia je NEW PAIRS (stĺpec „New Pairs“ v Axiom Pulse): úplne nové mince z pump.fun v prvých sekundách až minútach, ešte na bonding curve. Prvý dnu a prvý von: vstup v tom istom kole slučky ako čítanie krivky, ktoré spustí signál, výstup v tom istom kole ako čítanie, ktoré prekročí stop alebo cieľ. Štart $100, 10 % na obchod, výstup na +7 % (alebo rebrík +20 / +60 / +100 %, keď sú NEWS silné), stop -7 %. Hodnoty sú pravidlá zo súboru prompt.txt. Bez peňaženky a bez skutočných peňazí.",
   "strategies": [
     "new_pairs"
   ],
@@ -30,7 +30,6 @@
     "single holder ownership"
   ],
   "np_max_age_s": 180,
-  "np_min_age_s": 45,
   "np_min_sol": 2.5,
   "np_min_buys": 6,
   "np_min_buy_share": 0.65,
@@ -51,14 +50,14 @@
   "feed_wait_sec": 0.25,
   "sol_price_sec": 30,
   "quote_timeout_s": 1.5,
-  "_hold": "NEWS skóre 0-10 (X, Telegram, web, prítok SOL, podiel nákupov, boosty, trending) vyberie plán držania: scalp (0-2) všetko na +10 %, swing (3-4) +10 % polovica a +20 %, runner (5-6) +10 / +20 / +60 %, moon (7+) +10 / +20 / +60 / +100 % (prvý krok bol +7 %, posunul sa na +10 % kvôli nákladom, pozri _cost). Každý krok predá podiel zo zvyšku. Pred prvým krokom stop stop_pct % a časový stop (time_stop_min z úrovne, ak nie je aspoň +time_stop_below_pct %), po prvom kroku stop na nulu (+breakeven_pct %) a klzavý stop trail_pct % pod vrcholom. NEWS sa prečíta znova každých news_refresh_sec s; keď nákupy klesnú pod fade_buy_ratio za posledných fade_window_s s a skóre o 2, v zisku predá zvyšok. Krivka bez jediného obchodu np_quiet_min min: mŕtva, predá sa. Pred prvým krokom po time_stop_late_x-násobku časového stopu úrovne bez prvého kroku: predá sa, aj keď je v pluse.",
+  "_hold": "NEWS skóre 0-10 (X, Telegram, web, prítok SOL, podiel nákupov, boosty, trending) vyberie plán držania: scalp (0-2) všetko na +7 %, swing (3-4) +7 % polovica a +20 %, runner (5-6) +7 / +20 / +60 %, moon (7+) +7 / +20 / +60 / +100 %. Každý krok predá podiel zo zvyšku. Pred prvým krokom stop stop_pct % a časový stop (time_stop_min z úrovne, ak nie je aspoň +time_stop_below_pct %), po prvom kroku stop na nulu (+breakeven_pct %) a klzavý stop trail_pct % pod vrcholom. NEWS sa prečíta znova každých news_refresh_sec s; keď nákupy klesnú pod fade_buy_ratio za posledných fade_window_s s a skóre o 2, v zisku predá zvyšok. Krivka bez jediného obchodu np_quiet_min min: mŕtva, predá sa. Pred prvým krokom po time_stop_late_x-násobku časového stopu úrovne bez prvého kroku: predá sa, aj keď je v pluse.",
   "hold_tiers": [
     {
       "name": "scalp",
       "min_score": 0,
       "ladder": [
         [
-          10.0,
+          7.0,
           1.0
         ]
       ],
@@ -70,7 +69,7 @@
       "min_score": 3,
       "ladder": [
         [
-          10.0,
+          7.0,
           0.5
         ],
         [
@@ -86,7 +85,7 @@
       "min_score": 5,
       "ladder": [
         [
-          10.0,
+          7.0,
           0.34
         ],
         [
@@ -106,7 +105,7 @@
       "min_score": 7,
       "ladder": [
         [
-          10.0,
+          7.0,
           0.25
         ],
         [
@@ -153,17 +152,16 @@
   "min_lp_locked_pct": 95.0,
   "max_insiders": 0,
   "_risk": "SIZER, RISK a výstupy pre obe stratégie (tp1_* a trail_pct len pre staršie pozície bez plánu):",
-  "_cost": "NÁKLADY, model enginu (bot.py: buy, sell_quote, np_even_gain), overený na prvých obchodoch New Pairs na GitHub Actions 26. 11. 2026 pri SOL $71 (Drone, ZEROCAST, SWARM a BST model trafil na cent; tests/test_levers.py): poplatok pump.fun curve_fee_pct 1,25 % každým smerom, latency_slip_pct 1 % každým smerom, dopad na cenu krivky (asi 0,4 % každým smerom pri $10 na krivke s 35 SOL virtuálnych rezerv, rastie s veľkosťou obchodu) a network_fee_sol + priority_fee_sol = 0,001 SOL za príkaz ($0,07 = 0,7 % z $10 každým smerom; $0,15-0,25 by to bolo až pri SOL $150-250). Tam a späť pri nezmenenej cene to je asi -6,5 %. Zisk sa počíta od ceny plnenia (náklady nákupu sú už v nej: hneď po nákupe je pozícia asi na -2,6 %), predaj je na nule pri +4 %. Tabuľka pri SOL $71, predaj celej pozície (tam a späť, +7 %, +10 %, stop -7 %): $5 (0,07 SOL): tam a späť -7,6 %, +7 % → +1,5 %, +10 % → +4,4 %, stop -7 % → -12,0 %; $10: -6,6 %, +2,7 %, +5,6 %, -10,8 %; $15: -6,5 %, +3,0 %, +5,9 %, -10,5 %; $20: -6,6 %, +3,0 %, +5,9 %, -10,4 %; $30: -7,1 %, +2,9 %, +5,7 %, -10,6 %. VEĽKOSŤ: pevný poplatok (0,002 SOL tam a späť) klesá s veľkosťou obchodu, dopad na krivku s ňou rastie; spolu sú najmenšie pri asi 0,2 SOL a od $10 do $20 sa líšia o 0,15 %. Preto position_pct zostáva 10: väčší obchod by náklady neznížil, len by zväčšil každú stratu. Pri SOL $150 stojí $10 už 3 % pevných poplatkov tam a späť a $20 1,5 % (celý obchod tam a späť -7,7 % proti -6,6 %): vtedy position_pct 20 a max_open 4. min_order_usd 5: pod $5 je pevný poplatok viac ako 1,4 % každým smerom; pod knihou $50 (10 % je menej ako $5) bot nič nekupuje. VÝSTUP: prvý krok každej úrovne je +10 %. Na +7 % obchod zarobil +2,7 % (živý HOGZ +1,9 %: predaj sa naplnil 1,9 % pod čítaním) a po čiastočnom predaji na +7 % ležal stop zvyšku na nule po nákladoch na +2,4 až +4 %, tesne pod krokom; na +10 % celý predaj zarobí +5,6 % a stop zvyšku (po predaji 50 / 34 / 25 %) je na +1 / +2 / +3 %. Stop -7 % stojí -10,8 % a živé stopy preskočili (čítania -8, -9 a -13 % → -12, -13 a -16 %); tesnejší stop by pri čítaní každých 0,5 s padal na šum. Scalp potrebuje 2 z 3 obchodov na +10 % pred stopom: na náhodnej prechádzke stratí každý plán výstupov asi tých 6,5 %; vyhrať môžu len pravidlá vstupu, rebrík a LEARNER. LEARNER: náhodný vstup stratí tých 6,5 %, 8 takých obchodov dá po zmenšení (learn_k 5 nulových) -4,0 %; learn_skip_pct -4 to delilo zaokrúhlením (pri $15 -3,98 %), learn_skip_pct -3,5 ho preskočí s rezervou, a druh mince, ktorý dosiahne +10 % v polovici obchodov (-2,6 % na obchod), kúpi menší. RISK: typický živý stop je pri 10 % asi -1,4 % knihy, dump -2,7 %: night_stop_pct -30 % je asi 20 stôp za deň (predtým -50 %: pri behu 24/7 by dva zlé dni vzali 75 %); 5 strát po sebe je asi -7 % a 2 minúty pauza.",
   "max_roundtrip_loss_pct": 10.0,
   "position_pct": 10.0,
-  "min_order_usd": 5.0,
+  "min_order_usd": 3.0,
   "max_open": 8,
   "max_trades_per_night": 250,
-  "night_stop_pct": -30.0,
+  "night_stop_pct": -50.0,
   "loss_streak": 5,
   "cooldown_min": 2,
   "no_entries_last_min": 10,
-  "tp1_pct": 10.0,
+  "tp1_pct": 7.0,
   "tp1_sell_frac": 1.0,
   "trail_pct": 10.0,
   "stop_pct": -7.0,
@@ -175,7 +173,7 @@
   "slippage_bps": 300,
   "reenter_min": 5,
   "_learner": "LEARNER: učí sa z vlastných uzavretých obchodov (memory.json v dátovom priečinku, zostáva z noci na noc). Pred nákupom ohodnotí mincu podľa minulých obchodov s rovnakými znakmi (pri nových pároch: nákup tvorcu, prítok SOL, podiel nákupov, vek pri vstupe, sociálne siete, NEWS skóre, úroveň plánu, hodina; pri starších: likvidita, 5m objem, kupujúci, vek, držitelia, DEX, signály, sklz). Skóre ≤ learn_skip_pct % mincu preskočí (nie na celú noc: znova sa na ňu pozrie po reenter_min minútach), každé learn_explore_every-te preskočenie ju aj tak kúpi za polovicu; inak veľkosť × (1 + skóre/20) v rozmedzí learn_mult_min až learn_mult_max. Znak sa počíta až od learn_min_n obchodov a learn_k pomyselných nulových obchodov ťahá malé vzorky k nule.",
-  "learn_skip_pct": -3.5,
+  "learn_skip_pct": -4.0,
   "learn_explore_every": 5,
   "learn_k": 5,
   "learn_min_n": 8,

@@ -30,8 +30,7 @@ dropped and counted. An hour's file stops taking curve readings at rec_max_mb_ho
 log); the rare other lines stop at 5 % over it.
 
 THE TAPE FORMAT (version 1; the backtester's contract). One JSON object per line, "k" its kind, "t" epoch
-seconds (UTC, to the microsecond: a replay's ages and windows come out as the live run's), "m" the coin's mint
-on every coin line:
+seconds (UTC, 3 decimals), "m" the coin's mint on every coin line:
   {"k":"create","m","t","symbol","name","creator","initialBuy","solAmount","bondingCurveKey",
    "vSolInBondingCurve","vTokensInBondingCurve","marketCapSol","is_mayhem_mode","pool","_rx"}
       PumpPortal's own fields (creator = traderPublicKey); t is "_rx", when the feed received it.
@@ -73,9 +72,7 @@ on every coin line:
       followed), "follow" (the follow time is over), "cap" (made room), "gone" (the account closed),
       "complete" (migrated), "stop" (the run ended), "off" (the recorder stopped after an error).
   {"k":"gone","m","t"}  the curve account read as null 3 times;  {"k":"migrate","m","t","pool"}
-Lines without "m": {"k":"start","t","v":1,"cfg":{...}[,"bal","held","mem"]} (a run started: the settings it traded
-with, the book's cash, the positions it carried over, the LEARNER's memory then),
-{"k":"sol","t","usd"} the SOL/USD the bot prices with, each time it changes (the replay prices with the same),
+Lines without "m": {"k":"start","t","v":1,"cfg":{...}} (a run started, with the settings it traded with),
 {"k":"hb","t","sol","poll_ok","poll_calls","poll_ms","watched","held","coins","follow","drop"} every
 rec_hb_s: sol the SOL/USD the bot prices with, poll_ok / poll_calls the curve poller's good / all calls so
 far (poll_ok standing still is a gap in the data), poll_ms its last call, watched the curves polled, held
@@ -105,7 +102,6 @@ import threading
 import time
 
 TAPE_VERSION = 1
-TD = 6                              # the decimals of a time on the tape: microseconds, as the bot's clock (a datetime)
 
 DEFAULTS = {
     "rec_on": True,                 # MEMEBOT_REC=0 in the environment turns it off too
@@ -128,11 +124,7 @@ MB = 1e6
 CFG_KEYS = ("curve_fee_pct", "latency_slip_pct", "network_fee_sol", "priority_fee_sol", "slippage_bps", "position_pct",
             "min_order_usd", "max_open", "stop_pct", "breakeven_pct", "time_stop_below_pct", "time_stop_late_x",
             "hold_tiers", "tp1_pct", "tp1_sell_frac", "trail_pct", "time_stop_min", "max_roundtrip_loss_pct",
-            "news_refresh_sec", "fade_buy_ratio", "fade_window_s", "curve_poll_sec", "curve_idle_sec", "start_balance",
-            # RISK and the job's end: a replay of this run needs them as much as the entry and exit rules
-            "night_stop_pct", "loss_streak", "cooldown_min", "reenter_min", "max_trades_per_night", "no_entries_last_min",
-            "flat_before_end_min", "job_no_entries_min", "job_flat_min", "watch_sec", "feed_wait_sec", "sol_price_sec",
-            "quote_timeout_s", "strategies", "session_start", "session_end", "timezone")
+            "news_refresh_sec", "fade_buy_ratio", "fade_window_s", "curve_poll_sec", "curve_idle_sec", "start_balance")
 CFG_PREFIX = ("np_", "rec_", "news_", "learn_")
 
 
@@ -195,17 +187,6 @@ def _clean(x, depth=0):
     if isinstance(x, dict):
         return {str(k)[:40]: _clean(v, depth + 1) for k, v in list(x.items())[:60]}
     return None
-
-
-def _plain(x, most):
-    """A JSON copy of the bot's own data (the LEARNER's memory), or None when it is not JSON or over `most` bytes."""
-    if x is None:
-        return None
-    try:
-        s = json.dumps(x, separators=(",", ":"), allow_nan=False)
-    except (TypeError, ValueError):
-        return None
-    return json.loads(s) if len(s) <= most else None
 
 
 def hour_key(t):
@@ -329,8 +310,7 @@ class Recorder(object):
     rec.close()                         # the run ends: everything still polled gets its "end", then the disk
     """
 
-    def __init__(self, folder, cfg=None, wl=None, clock=None, log=None, stats=None, pool_accounts=None, write=None,
-                 start=None):
+    def __init__(self, folder, cfg=None, wl=None, clock=None, log=None, stats=None, pool_accounts=None, write=None):
         self.dir = folder
         self.cfg = dict(DEFAULTS)
         self.cfg.update(cfg if isinstance(cfg, dict) else {})
@@ -372,19 +352,8 @@ class Recorder(object):
         self.werrs = 0
         self.written = 0
         self.closed = False
-        self.sol_last = None            # the last SOL/USD put on the tape
-        # every setting by itself (_clean caps a dict at 60 keys: the whole dict at once lost hold_tiers and more)
-        cfg_doc = {str(k)[:40]: _clean(v) for k, v in self.cfg.items() if k in CFG_KEYS or k.startswith(CFG_PREFIX)}
-        doc = {"k": "start", "t": round(now, TD), "v": TAPE_VERSION, "cfg": cfg_doc}
-        st = start if isinstance(start, dict) else {}
-        if _num(st.get("bal")) is not None:
-            doc["bal"] = _r(st["bal"], 6)               # the book's cash at the start: a replay of this run sizes alike
-        if isinstance(st.get("held"), int) and not isinstance(st.get("held"), bool):
-            doc["held"] = st["held"]                    # positions carried over from the last job (adopted)
-        mem = _plain(st.get("mem"), 65536)
-        if mem is not None:
-            doc["mem"] = mem                            # the LEARNER's memory.json at the start (a few KB)
-        self._line(doc)
+        cfg_doc = {k: v for k, v in self.cfg.items() if k in CFG_KEYS or k.startswith(CFG_PREFIX)}
+        self._line({"k": "start", "t": round(now, 3), "v": TAPE_VERSION, "cfg": _clean(cfg_doc)})
 
     # ---- time and the log
     def _now(self):
@@ -397,7 +366,7 @@ class Recorder(object):
     def _t(self, x, now):
         """An event's own time when it is a sane one (within a day of now), else now."""
         v = _num(x)
-        return round(float(v), TD) if v is not None and abs(v - now) < 86400 else round(now, TD)
+        return round(float(v), 3) if v is not None and abs(v - now) < 86400 else round(now, 3)
 
     def _log(self, text):
         if self.say is not None:
@@ -448,7 +417,7 @@ class Recorder(object):
 
     def _coin_line(self, r, k, now, **kw):
         r.last = now
-        obj = {"k": k, "m": r.mint, "t": round(now, TD)}
+        obj = {"k": k, "m": r.mint, "t": round(now, 3)}
         obj.update(kw)
         return self._line(obj, reading=(k == "c"))
 
@@ -504,7 +473,7 @@ class Recorder(object):
                             vSolInBondingCurve=_r(ev.get("vSolInBondingCurve"), 9),
                             vTokensInBondingCurve=_r(ev.get("vTokensInBondingCurve")),
                             marketCapSol=_r(ev.get("marketCapSol")), is_mayhem_mode=_yes(ev.get("is_mayhem_mode")),
-                            pool=_s(ev.get("pool"), 20), _rx=_r(ev.get("_rx"), TD))
+                            pool=_s(ev.get("pool"), 20), _rx=_r(ev.get("_rx"), 3))
         elif kind == "meta":
             r = self._get(mint)
             if r is None:
@@ -552,7 +521,7 @@ class Recorder(object):
         r.coin = coin
         r.fired = True
         g = lambda k: getattr(coin, k, None)            # noqa: E731
-        self._coin_line(r, "fire", self._now(), tt=_r(g("trigger_t"), TD), why=_s(g("why"), 200), sol_in=_r(g("sol_in"), 4),
+        self._coin_line(r, "fire", self._now(), tt=_r(g("trigger_t"), 3), why=_s(g("why"), 200), sol_in=_r(g("sol_in"), 4),
                         buys=_num(g("buys")), sells=_num(g("sells")), rise=_r(g("rise_pct"), 2),
                         mcap=_r(g("mcap_sol"), 2), age=_r(g("age_s"), 2), price=_r(g("price"), 15))
 
@@ -583,7 +552,7 @@ class Recorder(object):
                         sol=_r(sol_usd, 4), impact=_r(pos.get("impact_pct"), 3), fee_sol=_r(pos.get("fee_sol"), 9),
                         tier=_s(plan.get("entry_tier") or plan.get("tier"), 20),
                         score=_num(plan.get("entry_score", plan.get("score"))), size_pct=_r(pos.get("size_pct"), 2),
-                        check=_clean(pos.get("curve_check")), tt=_r(getattr(coin, "trigger_t", None), TD),
+                        check=_clean(pos.get("curve_check")), tt=_r(getattr(coin, "trigger_t", None), 3),
                         why=_s(pos.get("reason"), 200), learn=_clean(pos.get("learn")))
 
     def sell(self, mint, pos, frac, why, usd, raw=None, sol_usd=None, lat=None, note=""):
@@ -604,14 +573,6 @@ class Recorder(object):
                         px_sol=_r(getattr(r.coin, "price", None), 15), sol=_r(sol_usd, 4), why=_s(why, 200),
                         fill="curve" if "curve maths" in str(note or "") else "quote", final=final,
                         lat_ms=int(lat_v * 1000) if lat_v is not None else None, **kw)
-
-    def sol(self, usd):
-        """The SOL/USD the bot prices with: a "sol" line each time it changes (every sol_price_sec at most)."""
-        v = _num(usd)
-        if v is None or v <= 0 or v == self.sol_last:
-            return
-        self.sol_last = v
-        self._line({"k": "sol", "t": round(self._now(), TD), "usd": _r(v, 6)})
 
     # ---- following
     def _near(self, c):
@@ -668,7 +629,7 @@ class Recorder(object):
             self._unfollow(victim, "cap", now)
         self.follow[mint] = True
         r.following = True
-        self._coin_line(r, "follow", now, until=round(r.until(self.cfg), TD),
+        self._coin_line(r, "follow", now, until=round(r.until(self.cfg), 3),
                         why="traded" if r.traded else "fired" if r.fired else "near")
         return True
 
@@ -741,7 +702,7 @@ class Recorder(object):
         return out
 
     def _hb(self, now):
-        doc = {"k": "hb", "t": round(now, TD)}
+        doc = {"k": "hb", "t": round(now, 3)}
         if self.stats is not None:
             try:
                 got = self.stats()
@@ -865,7 +826,7 @@ class Recorder(object):
             for r in list(self.coins.values()):         # still polled (watched or followed): its data stops here
                 self._end(r, why, now)
             self.follow = {}
-            self._line({"k": "stop", "t": round(now, TD)})
+            self._line({"k": "stop", "t": round(now, 3)})
         with self.lock:
             self.stopping = True
         self._handoff()

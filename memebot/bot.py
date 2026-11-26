@@ -19,7 +19,7 @@ The agents, written as rules (the prompt in memebot/prompt.txt says the same in 
                 never trades.
   2. NEWS       the coin's X, Telegram and website (its metadata), the curve's momentum (SOL in, the
                 share of buys) and, for migrated pairs, boosts and the trending lists: a NEWS score
-                0-10 that picks the hold plan (+10 % scalp ... +100 % moon), read again every
+                0-10 that picks the hold plan (+7 % scalp ... +100 % moon), read again every
                 news_refresh_sec while the coin is held.
   3. RUG CHECK  RugCheck's report (rug history of the creator, one holder or the top 10 holding too
                 much, insiders, danger risks; for migrated pairs also mint and freeze authority and
@@ -1127,7 +1127,7 @@ class Night(object):
                      "strategy": pos.get("strategy") or "migrated"}
             plan = pos.get("plan")
             if isinstance(plan, dict):
-                # steps: the ladder steps sold, this sale too when it is the ladder's last ("TP +10%" on a scalp)
+                # steps: the ladder steps sold, this sale too when it is the ladder's last ("TP +7%" on a scalp)
                 last = int(f(take.get("steps"), 1)) if isinstance(take, dict) and take.get("kind") == "take" else 0
                 trade.update(tier=plan.get("entry_tier") or plan.get("tier"), score=plan.get("entry_score"),
                              steps=int(f(plan.get("sold"))) + last, plan=holdplan.panel_plan(plan) if holdplan else None)
@@ -1158,7 +1158,7 @@ class Night(object):
             pos["raw"] -= raw
             pos["tokens_ui"] = pos["raw"] / 10.0 ** pos["decimals"]
             pos["tp1_done"] = True
-            if isinstance(take, dict):                  # a ladder step: "TP +10% · sold 34% for $3.40 · stop to break-even"
+            if isinstance(take, dict):                  # a ladder step: "TP +7% · sold 34% for $3.40 · stop to break-even"
                 steps = int(f(take.get("steps"), 1))
                 text = "%s · sold %.0f%%%s for %s" % (take.get("why") or "TP", frac * 100,
                                                       " (%d steps)" % steps if steps > 1 else "", usd(got))
@@ -1634,9 +1634,7 @@ class Night(object):
             self.rec = recorder.Recorder(os.path.join(self.dir, "tapes"), self.cfg, wl=self.wl, clock=self.epoch,
                                          log=lambda text: self.log("LOGGER", None, "tape", text),
                                          stats=self.np_rec_stats,
-                                         pool_accounts=getattr(newpairs, "_curve_accounts", None),
-                                         start={"bal": self.state.get("balance"), "mem": self.mem,
-                                                "held": len(self.state.get("positions") or {})})
+                                         pool_accounts=getattr(newpairs, "_curve_accounts", None))
         except Exception as e:                          # noqa: BLE001 - no tape, the night goes on
             self.rec = None
             self.log("LOGGER", None, "error", "tape recorder off: %s: %s" % (type(e).__name__, str(e)[:160]))
@@ -1668,8 +1666,6 @@ class Night(object):
     def np_rec_tick(self):
         """The recorder's step (after each batch of events and each 1 s step): its decisions, the follow list,
         the hand-off to its writer. The curves it lets go are unwatched, never one the watch list has."""
-        if self.rec is not None and self.sol_px:
-            self.rec_call("sol", self.sol_px[1])
         for m in self.rec_call("tick", self.epoch()) or ():
             if self.wl.get(m) is None:
                 self.np_call("unwatch", m)

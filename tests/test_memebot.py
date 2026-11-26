@@ -1078,19 +1078,11 @@ class Speed(unittest.TestCase):
         with open(mb.PROMPT, encoding="utf-8") as fh:
             p = fh.read()
         tiers = {t["name"]: t for t in c["hold_tiers"]}
-
-        def says(t):
-            """A ladder in the prompt's words: "34% at +10%, 50% at +20%, the rest at +60%"."""
-            steps = ["%.0f%% at +%g%%" % (frac * 100, gain) for gain, frac in t["ladder"][:-1]]
-            steps.append("the rest at +%g%%" % t["ladder"][-1][0])
-            return (", " if len(steps) > 2 else " and ").join(steps)
-
         self.assertEqual(c["strategies"], ["new_pairs"])
         for text in ("starting balance of $%g." % c["start_balance"],
                      "Every new coin is watched for %d seconds (%d at once" % (c["np_watch_s"], c["np_max_watch"]),
                      "every %g seconds while anything is held, every second otherwise" % c["curve_poll_sec"],
-                     "within %d seconds of the launch" % c["np_max_age_s"],
-                     "Never before %d seconds after the launch" % c["np_min_age_s"], "at least %g SOL came in" % c["np_min_sol"],
+                     "within %d seconds of the launch" % c["np_max_age_s"], "at least %g SOL came in" % c["np_min_sol"],
                      "at least %d readings were buys and %.0f%% of the moves" % (c["np_min_buys"], c["np_min_buy_share"] * 100),
                      "at least %g%% above the launch price" % c["np_min_rise_pct"],
                      "market cap is at most %g SOL" % c["np_max_mcap_sol"],
@@ -1110,9 +1102,9 @@ class Speed(unittest.TestCase):
                      "lost %g%% or more on average" % -c["learn_skip_pct"], "every %dth such skip" % c["learn_explore_every"],
                      "reads them again every %d seconds" % c["news_refresh_sec"],
                      "take the whole profit at +%g%% (scalp, NEWS 0-2)" % tiers["scalp"]["ladder"][0][0],
-                     "swing (NEWS %d-4) %s;" % (tiers["swing"]["min_score"], says(tiers["swing"])),
-                     "runner (%d-6) %s;" % (tiers["runner"]["min_score"], says(tiers["runner"])),
-                     "moon (%d+) %s." % (tiers["moon"]["min_score"], says(tiers["moon"])),
+                     "swing (NEWS %d-4) 50%% at +7%% and the rest at +20%%" % tiers["swing"]["min_score"],
+                     "runner (%d-6) 34%% at +7%%, 50%% at +20%%, the rest at +60%%" % tiers["runner"]["min_score"],
+                     "moon (%d+) 25%% at +7%%, 34%% at +20%%, 50%% at +60%%, the rest at +100%%" % tiers["moon"]["min_score"],
                      "Stop loss at %g%% until the first step" % c["stop_pct"],
                      "the stop moves to break-even (+%g%%)" % c["breakeven_pct"],
                      "(%g%%, %g%% and %g%% under it for swing, runner and moon)" % tuple(
@@ -1127,10 +1119,8 @@ class Speed(unittest.TestCase):
                      "Run around the clock, 24/7" if mb.always_on(c) else
                      "everything sold by 06:%02d" % (60 - c["flat_before_end_min"])):
             self.assertIn(text, p)
-        # the first step moved from +7 % to +10 % for the costs (tests/test_levers.py has the arithmetic)
-        for t, ladder in (("scalp", [[10, 1]]), ("swing", [[10, 0.5], [20, 1]]),
-                          ("runner", [[10, 0.34], [20, 0.5], [60, 1]]),
-                          ("moon", [[10, 0.25], [20, 0.34], [60, 0.5], [100, 1]])):
+        for t, ladder in (("swing", [[7, 0.5], [20, 1]]), ("runner", [[7, 0.34], [20, 0.5], [60, 1]]),
+                          ("moon", [[7, 0.25], [20, 0.34], [60, 0.5], [100, 1]])):
             self.assertEqual(tiers[t]["ladder"], ladder)
         self.assertEqual((c["tp1_sell_frac"], c["watch_sec"]), (1.0, 1))                # "the whole profit"; not tick_sec
 

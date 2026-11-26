@@ -11,20 +11,9 @@ from _load import load
 
 P = load("memebot", "plan")
 
-# hold-spec.md's tiers as the user first set them (the first step at +7 %): the ladder, stop, replan and
-# fading tests below walk these numbers. plan.DEFAULT_TIERS (and config.json) moved the first step to
-# +10 % for the costs; test_default_tiers_are_the_spec and tests/test_levers.py check those.
-SPEC_TIERS = [
-    {"name": "scalp", "min_score": 0, "ladder": [[7.0, 1.0]], "trail_pct": 0.0, "time_stop_min": 5.0},
-    {"name": "swing", "min_score": 3, "ladder": [[7.0, 0.5], [20.0, 1.0]], "trail_pct": 6.0, "time_stop_min": 10.0},
-    {"name": "runner", "min_score": 5, "ladder": [[7.0, 0.34], [20.0, 0.5], [60.0, 1.0]], "trail_pct": 10.0,
-     "time_stop_min": 15.0},
-    {"name": "moon", "min_score": 7, "ladder": [[7.0, 0.25], [20.0, 0.34], [60.0, 0.5], [100.0, 1.0]],
-     "trail_pct": 15.0, "time_stop_min": 20.0},
-]
 # the values of config.json + hold-spec.md
 CFG = {"stop_pct": -7.0, "breakeven_pct": 1.0, "time_stop_below_pct": 2.0, "fade_buy_ratio": 0.45,
-       "hold_tiers": SPEC_TIERS}
+       "hold_tiers": P.DEFAULT_TIERS}
 
 
 def garbage():
@@ -58,16 +47,12 @@ def walk(plan, gains, cfg=CFG, held=1.0):
 
 class TestTiers(unittest.TestCase):
     def test_default_tiers_are_the_spec(self):
-        """hold-spec.md's tiers with the first step at +10 % instead of +7 % (the costs: tests/test_levers.py)."""
         by = {t["name"]: t for t in P.DEFAULT_TIERS}
         self.assertEqual([t["name"] for t in P.DEFAULT_TIERS], ["scalp", "swing", "runner", "moon"])
-        self.assertEqual(by["scalp"]["ladder"], [[10, 1.0]])
-        self.assertEqual(by["swing"]["ladder"], [[10, 0.5], [20, 1.0]])
-        self.assertEqual(by["runner"]["ladder"], [[10, 0.34], [20, 0.5], [60, 1.0]])
-        self.assertEqual(by["moon"]["ladder"], [[10, 0.25], [20, 0.34], [60, 0.5], [100, 1.0]])
-        for new, spec in zip(P.DEFAULT_TIERS, SPEC_TIERS):            # only the first step's gain moved
-            self.assertEqual(dict(new, ladder=new["ladder"][1:]), dict(spec, ladder=spec["ladder"][1:]))
-            self.assertEqual((new["ladder"][0][1], spec["ladder"][0][0]), (spec["ladder"][0][1], 7))
+        self.assertEqual(by["scalp"]["ladder"], [[7, 1.0]])
+        self.assertEqual(by["swing"]["ladder"], [[7, 0.5], [20, 1.0]])
+        self.assertEqual(by["runner"]["ladder"], [[7, 0.34], [20, 0.5], [60, 1.0]])
+        self.assertEqual(by["moon"]["ladder"], [[7, 0.25], [20, 0.34], [60, 0.5], [100, 1.0]])
         self.assertEqual([by[n]["trail_pct"] for n in ("swing", "runner", "moon")], [6, 10, 15])
         self.assertEqual([by[n]["time_stop_min"] for n in ("scalp", "swing", "runner", "moon")], [5, 10, 15, 20])
         self.assertEqual([by[n]["min_score"] for n in ("scalp", "swing", "runner", "moon")], [0, 3, 5, 7])
@@ -93,8 +78,8 @@ class TestTiers(unittest.TestCase):
         t = P.pick_tier(5)
         t["ladder"][0][1] = 0.9
         t["ladder"].append([500, 1])
-        self.assertEqual(P.pick_tier(5)["ladder"], [[10, 0.34], [20, 0.5], [60, 1.0]])
-        self.assertEqual(P.DEFAULT_TIERS[2]["ladder"], [[10, 0.34], [20, 0.5], [60, 1.0]])
+        self.assertEqual(P.pick_tier(5)["ladder"], [[7, 0.34], [20, 0.5], [60, 1.0]])
+        self.assertEqual(P.DEFAULT_TIERS[2]["ladder"], [[7, 0.34], [20, 0.5], [60, 1.0]])
 
     def test_ladder_is_cleaned(self):
         t = P.pick_tier(0, [{"name": "t", "min_score": 0, "ladder": [[20, 1.5], None, [7, 0.5], ["x", 1],
@@ -114,8 +99,7 @@ class TestTiers(unittest.TestCase):
         self.assertEqual(P.new_plan(9, [], cfg=old)["tier"], "base")
 
     def test_ladder_text(self):
-        self.assertEqual(P.ladder_text(P.DEFAULT_TIERS[2]["ladder"]), "+10 → +20 → +60")
-        self.assertEqual(P.ladder_text(SPEC_TIERS[2]["ladder"]), "+7 → +20 → +60")
+        self.assertEqual(P.ladder_text(P.DEFAULT_TIERS[2]["ladder"]), "+7 → +20 → +60")
         self.assertEqual(P.ladder_text([[7.5, 1]]), "+7.5")
         self.assertEqual(P.ladder_text(None), "-")
 

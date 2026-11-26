@@ -7,15 +7,11 @@ one JSON object a line: "k" (the kind), "t" (epoch seconds), "m" (the mint) and 
     create            PumpPortal's create fields (creator, bondingCurveKey, initialBuy, solAmount, vSol/vTokens...)
     c                 a curve reading, change-only: s (slot), vs / rs (virtual / real SOL, lamports), vt (virtual
                       tokens, base units), x 1 when complete
-    meta              ok, x, tg, web, xk (the coin's links; ok false: the uri could not be read; src "rugcheck":
-                      the links the bot took from RugCheck's copy of the metadata, put back into that report)
+    meta              ok, x, tg, web, xk (the coin's links; ok false: the uri could not be read)
     rug               ok, holders, top1, top10, top (the top holders' %, the curve left out), risks [[name, level]],
-                      insiders, rugged: rebuilt into the report fields the engine's own RUG CHECK reads; ms (from
-                      the ask): an ask the replay makes at the same moment gets this very answer, when it came
+                      insiders, rugged: rebuilt into the report fields the engine's own RUG CHECK reads
     follow / end      until when the coin's curve was polled (the bot's watch, then the recorder's follow-up)
-    start / hb / stop the recorded runs (jobs), the poller's health (hb "poll_ok")
-    sol               the SOL/USD the live bot priced with, at each change (older tapes: hb "sol"); the replay's
-                      engine prices with the same at the same moment
+    start / hb / stop the recorded runs (jobs), SOL's price (hb "sol"), the poller's health (hb "poll_ok")
     fire / dec / buy / sell    the live bot's own decisions and fills (a live-vs-replay check; never replayed)
     gone / migrate    passed through to the engine as feed events
 
@@ -54,19 +50,11 @@ follow-up (rec_follow_s, 15 minutes after launch) finds no readings (blind exits
 replay that made money is a hint, not a promise.
 
     python3 memebot/replay.py --data DIR [--since ISO] [--until ISO] [--config FILE] [--set key=json ...] [--out FILE]
-                              [--live-check]
     python3 memebot/replay.py --synth DIR [--coins 100] [--seed 1]      # a made-up tape (tests and demos only)
 
     tape = read_tape(DIR, since, until)                     # epoch seconds or None
     res = replay(tape, cfg, since, until)                   # {"trades", "open", "end_equity", "memory", "stats"}
     m = metrics(res["trades"], cfg["start_balance"])       # trades, win rate, P&L, drawdown, profit factor, tiers
-    chk = live_check(tape, cfg, since, until)               # the live run's own trades against their replay
-
-The live check (live_check; --live-check, and backtest.py's report): the range replayed with the settings, cash
-and LEARNER memory the live run started with, its trades against the tape's buy / sell lines. On a realistic
-synthetic stream (tests/test_endtoend.py) the replay makes the live run's trades to the cent when Jupiter quoted
-the last reading (what the live log showed: "curve maths 0.0% off Jupiter"); when Jupiter's quote ran ahead of
-the readings the entries still match, but the fills, and with them where a stop or a step sits, can differ.
 """
 
 import argparse
@@ -182,7 +170,6 @@ DROP = ("k", "kind", "t", "ts", "m", "mint")
 CURVE_FIELDS = {"s": "slot", "vs": "vsol", "vt": "vtok", "rs": "rsol", "x": "complete"}
 META_FIELDS = {"x": "twitter", "tg": "telegram", "web": "website", "xk": "x_kind", "src": "source"}
 HB_S = 10.0                             # the recorder's heartbeat (rec_hb_s): a run without "stop" ended about then
-SAME_ASK_S = 0.05                       # a replay's RugCheck ask this close to a recorded one is the same ask
 
 
 class Tape(object):
@@ -195,7 +182,7 @@ class Tape(object):
         self.states = {}            # mint -> ([t], [(vsol SOL, vtok tokens)]) usable curve states for quotes
         self.keys = {}              # mint -> bonding curve key
         self.metas = {}             # mint -> [(t, fields)]
-        self.rugs = {}              # mint -> [(t, report or None: a failed ask, the ask's time or None)]
+        self.rugs = {}              # mint -> [(t, report)]
         self.sol = ([], [])         # ([t], [usd])
         self.last = {}              # mint -> its last line's time
         self.ends = {}              # mint -> [(t, "end" | "follow", until)]
@@ -273,10 +260,8 @@ class Tape(object):
             rep = rug_report_of(fields, mint)
             if rep is None:
                 self.rug_failed += 1                                # a failed ask: no report then
-            ms = num(fields.get("ms"))                              # v1: from the ask to the loop taking it
-            ask = round(t - ms / 1000.0, 6) if ms is not None and 0 <= ms < 3.6e6 else None
-            if rep is not None or ask is not None:                  # a failed ask is kept when its ask is known
-                self.rugs.setdefault(mint, []).append((t, rep, ask))
+            else:
+                self.rugs.setdefault(mint, []).append((t, rep))
         elif kind in (MIGRATE, GONE):
             self.events.append([t, self._seq, kind, mint, fields])
         elif kind in ("follow", "end"):
@@ -324,7 +309,6 @@ class Tape(object):
         for d in (self.metas, self.rugs, self.ends):
             for mint in d:
                 d[mint].sort(key=lambda x: x[0])
-        self._rug_links()
         order = sorted(range(len(self.sol[0])), key=lambda i: self.sol[0][i])
         self.sol = ([self.sol[0][i] for i in order], [self.sol[1][i] for i in order])
         self.system.sort(key=lambda x: x[0])
@@ -334,22 +318,6 @@ class Tape(object):
         self.down = self._poll_down()
         self.down_t = [a for a, _ in self.down]
         return self
-
-    def _rug_links(self):
-        """The uri failed and the live bot took the coin's links from RugCheck's copy of its metadata (a "meta" line
-        with src "rugcheck", written on the loop turn that took the report): that report gets the links back as its
-        fileMeta, so the replay's engine reads them from it on the same path (np_rug_meta). {} links: RugCheck read
-        the metadata and it had none."""
-        for mint, metas in self.metas.items():
-            reps = self.rugs.get(mint) or []
-            for t, fields in metas:
-                if fields.get("source") != "rugcheck":
-                    continue
-                for rt, rep, _ in reps:
-                    if rep is not None and abs(rt - t) <= 0.002:
-                        rep["fileMeta"] = {"name": "(replay: RugCheck's copy)", "twitter": fields.get("twitter") or "",
-                                           "telegram": fields.get("telegram") or "", "website": fields.get("website") or ""}
-                        break
 
     def _poll_down(self):
         """[(from, to)] when the live curve poller made no good call between two heartbeats (hb "poll_ok" did not
@@ -472,32 +440,13 @@ class Tape(object):
                 got = f["cfg"]
         return got
 
-    def live_start(self, since=None, until=None):
-        """What the live bot started the range with: the first "start" line in [since, until) (else the last one
-        before since): {"t", "cfg", "bal", "held", "mem"} (each None when the line has none), or None."""
-        first = before = None
-        for t, kind, f in self.system:
-            if kind != "start":
-                continue
-            if since is not None and t < since:
-                before = (t, f)
-            elif until is None or t < until:
-                first = first or (t, f)
-        got = first or before
-        if got is None:
-            return None
-        t, f = got
-        return {"t": t, "cfg": f.get("cfg") if isinstance(f.get("cfg"), dict) else None, "bal": num(f.get("bal")),
-                "held": f.get("held"), "mem": f.get("mem") if isinstance(f.get("mem"), dict) else None}
-
     def summary(self):
         return {"files": len(self.files), "from": iso(self.t0), "to": iso(self.t1),
                 "hours": round((self.t1 - self.t0) / 3600.0, 2) if self.t0 is not None else 0.0,
                 "lines": dict(self.n), "bad_lines": self.bad, "unknown_kinds": dict(self.unknown),
                 "coins": len(self.created), "coins_with_readings": sum(1 for m in self.created if m in self.states and
                                                                        len(self.states[m][0]) > 1),
-                "coins_with_rugcheck": sum(1 for v in self.rugs.values() if any(r is not None for _, r, _ in v)),
-                "rugcheck_failed_asks": self.rug_failed,
+                "coins_with_rugcheck": len(self.rugs), "rugcheck_failed_asks": self.rug_failed,
                 "coins_with_meta": len(self.metas), "sol_prices": len(self.sol[0]),
                 "runs": [[iso(a), iso(b)] for a, b in self.runs][:50], "live_lines": len(self.live)}
 
@@ -786,36 +735,22 @@ class ReplayMarket(object):
         return self.prices(mints)
 
     def sol_price(self):
-        return self.sol_at(self.at())
-
-    def sol_at(self, t):
-        px = self.tape.sol_at(min(t, self.horizon))
+        px = self.tape.sol_at(self.at())
         return px if px is not None else self.sol_default
 
     # RugCheck
     def rug_answer(self, mint, now):
-        """(when the answer lands, the report or None). The live bot's own ask at this moment (a "rug" line whose
-        t - ms is within SAME_ASK_S of now): its answer as it came, the report or the failure, at its recorded time
-        (RugCheck's real latency; a replay in step with the live run asks when live did). Any other moment: the
-        latest report recorded by now + rug_latency_s, landing then; else the first one recorded within rug_wait_s
-        (RugCheck's own timeout: it lands then, never before the report existed); else None ("no report", never
-        invented)."""
+        """(when the answer lands, the report or None). The latest report recorded by the time the answer lands
+        (now + rug_latency_s); else the first one recorded within rug_wait_s (RugCheck's own timeout: the answer
+        lands then, never before the report existed); else None ("no report", never invented)."""
         self.stats["rug_asks"] += 1
-        reps = self.tape.rugs.get(mint) or []
-        for t, rep, ask in reps:
-            if ask is not None and abs(ask - now) <= SAME_ASK_S and t <= self.horizon + EPS:
-                self.stats["rug_same_ask"] += 1
-                if rep is None:
-                    self.stats["rug_failed"] += 1
-                return max(t, now), copy.deepcopy(rep)
         land = min(now + self.rug_latency, self.horizon)
+        reps = self.tape.rugs.get(mint) or []
         best = None
-        for t, rep, _ in reps:
-            if rep is None:
-                continue
+        for t, rep in reps:
             if t <= land + EPS:
                 best = (land, rep)
-            elif best is None and t <= now + self.rug_wait + EPS and t <= self.horizon:
+            elif t <= now + self.rug_wait + EPS and best is None and t <= self.horizon:
                 best = (t, rep)
                 break
             else:
@@ -892,13 +827,11 @@ class ReplayFeeds(object):
         return dict(self.watching)
 
     def fetch_meta(self, mint, uri):
-        """The uri's answer as the live bot got it, when it got it: its links, or its failure (the engine then asks
-        RugCheck for its copy of the metadata, like live, and finds the links in the report live took them from:
-        Tape._rug_links). A tape without the uri's own line: the first readable one (RugCheck's copy), else the
-        first failed one; none on the tape: a failed read 2 s later (every gateway failed)."""
+        """The coin's links when the live bot got them: the first readable metadata line (the uri's, or RugCheck's
+        copy when the uri failed: live took that path too), else the first failed one; none on the tape: a failed
+        read 2 s later (every gateway failed), after which the engine asks RugCheck for its copy."""
         recs = self.tape.metas.get(mint) or []
-        own = [r for r in recs if r[1].get("source") != "rugcheck"]
-        recs = own or [r for r in recs if r[1].get("ok", True)] or recs
+        recs = [r for r in recs if r[1].get("ok", True)] or recs
         if recs:
             t, fields = recs[0]
             at = max(self.clock.t, t)
@@ -1089,14 +1022,6 @@ def night_class(ctx):
         def np_speed_view(self, now):
             return None
 
-        def sol_usd(self, prices=None, fetch=False):
-            # SOL/USD as the live bot priced with it at this moment (the tape's "sol" lines: each change; older
-            # tapes: the heartbeat's), not re-fetched on the engine's own 30 s schedule: a fetch only lands on the
-            # tape after it, so the replay would lag the live run's price by a fetch
-            px = ctx.market.sol_at(self.epoch())
-            self.sol_px = (self.epoch(), px)
-            return px
-
         def close_night(self):
             n = self.state.get("night")
             if n:
@@ -1212,94 +1137,6 @@ def replay(tape, cfg, since=None, until=None, job_min=340.0, job_gap_s=120.0, ru
     finally:
         if own:
             shutil.rmtree(data_dir, ignore_errors=True)
-
-
-# ---------------------------------------------------------------- live against replay
-
-LIVE_SKIP = ("rec_", "live_")           # recorded settings a live check does not take over
-
-
-def live_check(tape, cfg, since=None, until=None, **opts):
-    """Does the replay reproduce what the live bot did? The tape's range replayed with the settings the live bot
-    traded with (its "start" line's, over cfg), its book's cash and its LEARNER memory at the start, then its own
-    trades (the tape's buy / sell lines) against the replay's: compare(). None when the tape has no live trade."""
-    t0, t1 = tape.span()
-    since = t0 if since is None else since
-    until = t1 if until is None else until
-    live = tape.live_trades(since, until)
-    if not live or since is None or until is None:
-        return None
-    st = tape.live_start(since, until) or {}
-    c = copy.deepcopy(cfg)
-    c.update({k: copy.deepcopy(v) for k, v in (st.get("cfg") or {}).items() if not k.startswith(LIVE_SKIP)})
-    if st.get("bal") is not None and st["bal"] > 0:
-        c["start_balance"] = st["bal"]
-    res = replay(tape, c, since, until, memory=st.get("mem"), **opts)
-    out = compare(live, [t for t in res["trades"] if since <= (ts_epoch(t.get("opened")) or since) < until])
-    out.update(settings="the live run's own (its start line)" if st.get("cfg") else "the base config (no start line)",
-               memory="the live run's LEARNER memory" if st.get("mem") else "a fresh LEARNER memory",
-               start_balance=c.get("start_balance"))
-    return out
-
-
-def compare(live, rep, entry_s=1.0, exit_s=2.0):
-    """Live trades against replayed ones: matched by coin, in order, opened within entry_s seconds. -> counts (same
-    entry; same exit: the same reason within exit_s), the gaps (exit time, P&L % after costs: replay - live), the
-    unmatched trades and the matched pairs (a few fields each)."""
-    def by_mint(ts):
-        out = collections.defaultdict(list)
-        for t in sorted(ts, key=lambda t: str(t.get("opened") or "")):
-            out[t.get("mint")].append(t)
-        return out
-
-    lv, rp = by_mint(live), by_mint(rep)
-    pairs, only_live, only_replay = [], [], []
-    for mint in sorted(set(lv) | set(rp), key=str):
-        left = list(rp.get(mint, []))
-        for x in lv.get(mint, []):
-            tx = ts_epoch(x.get("opened"))
-            j = next((i for i, y in enumerate(left) if tx is not None and ts_epoch(y.get("opened")) is not None
-                      and abs(ts_epoch(y.get("opened")) - tx) <= entry_s + EPS), None)
-            if j is None:
-                only_live.append(x)
-            else:
-                pairs.append((x, left.pop(j)))
-        only_replay += left
-    exit_gap, pnl_gap, same_exit = [], [], 0
-    rows = []
-    for x, y in pairs:
-        a, b = ts_epoch(x.get("closed")), ts_epoch(y.get("closed"))
-        g = abs(b - a) if a is not None and b is not None else None
-        d = (num(y.get("pnl_pct")) - num(x.get("pnl_pct"))) if num(y.get("pnl_pct")) is not None and \
-            num(x.get("pnl_pct")) is not None else None
-        if g is not None:
-            exit_gap.append(g)
-        if d is not None:
-            pnl_gap.append(d)
-        if g is not None and g <= exit_s + EPS and x.get("why") == y.get("why"):
-            same_exit += 1
-        rows.append({"mint": x.get("mint"), "opened": x.get("opened"), "live": [x.get("closed"), x.get("why"), x.get("pnl_pct")],
-                     "replay": [y.get("closed"), y.get("why"), y.get("pnl_pct")]})
-    short = lambda t: {k: t.get(k) for k in ("mint", "symbol", "opened", "closed", "why", "pnl_pct") if k in t}
-    n = len(pairs)
-    return {"live": len(live), "replay": len(rep), "same_entry": n, "same_exit": same_exit,
-            "exit_gap_s_max": round(max(exit_gap), 1) if exit_gap else None,
-            "exit_gap_s_median": round(median(exit_gap), 1) if exit_gap else None,
-            "pnl_pct_gap_mean": round(sum(pnl_gap) / len(pnl_gap), 2) if pnl_gap else None,
-            "pnl_pct_gap_max": round(max(pnl_gap, key=abs), 2) if pnl_gap else None,
-            "live_pnl": round(sum(num(t.get("pnl")) or 0.0 for t in live), 2),
-            "replay_pnl": round(sum(num(t.get("pnl")) or 0.0 for t in rep), 2),
-            "only_live": [short(t) for t in only_live[:20]], "only_replay": [short(t) for t in only_replay[:20]],
-            "pairs": rows[:60]}
-
-
-def live_check_text(c):
-    if not c:
-        return "live check: no live trade on the tape in this range"
-    return ("live check: %d live trades, %d replayed; same entry %d, same exit (reason, within 2 s) %d; exit gap max %s s; "
-            "P&L gap a trade (replay - live) mean %s %%, worst %s %%; live %+.2f $ against replay %+.2f $" % (
-                c["live"], c["replay"], c["same_entry"], c["same_exit"], c["exit_gap_s_max"], c["pnl_pct_gap_mean"],
-                c["pnl_pct_gap_max"], c["live_pnl"], c["replay_pnl"]))
 
 
 # ---------------------------------------------------------------- the numbers
@@ -1591,8 +1428,6 @@ def main(argv=None, out=print):
     ap.add_argument("--fill-delay", type=float, default=0.0, help="price fills this many seconds after the decision")
     ap.add_argument("--out", help="write the result (trades and numbers) as JSON here")
     ap.add_argument("-v", "--verbose", action="store_true", help="print the engine's log lines")
-    ap.add_argument("--live-check", action="store_true",
-                    help="also replay with the live run's own settings, cash and memory, and compare with its trades")
     ap.add_argument("--synth", metavar="DIR", help="write a synthetic tape into DIR/tapes and stop")
     ap.add_argument("--coins", type=int, default=100)
     ap.add_argument("--start", default="2026-11-26T08:00:00Z")
@@ -1620,10 +1455,6 @@ def main(argv=None, out=print):
     out("replay: %d trades · win rate %s · total %+.2f $ · mean %s %% a trade (after every cost) · max drawdown %.2f $ · "
         "%d blind exits · %.1f s" % (m["trades"], m["win_rate"], m["total_pnl"], m["mean_pnl_pct"], m["max_drawdown"],
                                      m["blind"], res["stats"]["wall_s"]))
-    if a.live_check:
-        res["live_check"] = live_check(tape, cfg, since, until, job_min=a.job_min, job_gap_s=a.job_gap_s,
-                                       rug_latency_s=a.rug_latency, fill_delay_s=a.fill_delay)
-        out(live_check_text(res["live_check"]))
     if a.out:
         res.pop("memory", None)
         with open(a.out, "w", encoding="utf-8") as fh:

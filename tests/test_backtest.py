@@ -4,6 +4,7 @@ probe's numbers: 30 SOL / 1.073e9 virtual tokens at launch, a reading every 0.5-
 never a claim about real coins."""
 
 import concurrent.futures
+import copy
 import datetime
 import json
 import os
@@ -31,18 +32,11 @@ def mint(i, tag="c"):
 
 def base_cfg(**kw):
     """config.json's rules on the code's defaults, with a LEARNER that neither skips nor resizes (so a test sees
-    the rule it is about), unless kw says otherwise. np_min_age_s 0: the synthetic coins here reach the trigger
-    5 s after their launch (config.json waits 45 s; tests/test_newpairs.py tests that rule, and
-    tests/test_endtoend.py replays a realistic stream with config.json as it is)."""
+    the rule it is about), unless kw says otherwise."""
     c = bot.load_config(bot.CONFIG)
-    c.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0, np_min_age_s=0)
+    c.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0)
     c.update(kw)
     return c
-
-
-def first_step(cfg, tier="scalp"):
-    """The gain % of a tier's first take-profit step in this config (config.json: +10)."""
-    return next(t for t in bot.holdplan.tiers_from_cfg(cfg) if t["name"] == tier)["ladder"][0][0]
 
 
 def entry_rsol(dev=0.3):
@@ -56,12 +50,11 @@ def gain_rsol(gain_pct, at=3.3):
 
 
 def trailing_tiers():
-    """The scalp tier sells a quarter at its first step and trails the rest 10 % under its top (the other tiers as
-    config)."""
+    """The scalp tier sells a quarter at +7 % and trails the rest 10 % under its top (the other tiers as config)."""
     ts = bt.tiers(bot.load_config(bot.CONFIG))
     for t in ts:
         if t["name"] == "scalp":
-            t["ladder"], t["trail_pct"] = [[t["ladder"][0][0], 0.25], [200.0, 1.0]], 10.0
+            t["ladder"], t["trail_pct"] = [[7.0, 0.25], [200.0, 1.0]], 10.0
     return ts
 
 
@@ -213,51 +206,7 @@ class Market(unittest.TestCase):
         self.assertIn("nothere", self.market.rug_missing)
 
 
-    def test_an_ask_at_the_live_bots_moment_gets_the_live_answer_failures_too(self):
-        m, t = mint(8), START + 100.0
-        rows = [{"k": "rug", "t": t + 0.43, "m": m, "ok": False, "why": "prefetch", "ms": 430},      # asked at t
-                {"k": "rug", "t": t + 5.38, "m": m, "ok": True, "why": "fire", "ms": 380, "holders": 9, "top1": 3.0,
-                 "top10": 3.0, "top": [3.0], "risks": [], "insiders": 0},                            # asked at t + 5
-                {"k": "rug", "t": t + 40.2, "m": m, "ok": True, "why": "prefetch", "ms": 200, "holders": 30, "top1": 15.0,
-                 "top10": 15.0, "top": [15.0], "risks": [], "insiders": 0}]                          # asked at t + 40
-        tape = R.tape_of(R.synth_coin(m, START, [1.0], rug=None) + rows)
-        market = R.ReplayMarket(tape, R.SimClock(t), START + 3600, {}, rug_latency_s=0.4)
-        self.assertEqual(market.rug_answer(m, t), (t + 0.43, None))                   # live's failure, when it came
-        land, rep = market.rug_answer(m, t + 5.0)
-        self.assertEqual((land, rep["totalHolders"]), (t + 5.38, 9))                   # live's answer, its latency
-        land, rep = market.rug_answer(m, t + 20.0)                                      # a moment live never asked
-        self.assertEqual((land, rep["totalHolders"]), (t + 20.4, 9))                   # the latest report, 0.4 s later
-        land, rep = market.rug_answer(m, t + 40.0)
-        self.assertEqual((round(land, 6), rep["totalHolders"]), (round(t + 40.2, 6), 30))   # not the older report
-        self.assertEqual((market.stats["rug_same_ask"], market.stats["rug_failed"]), (3, 1))
-
-
 class Feeds(unittest.TestCase):
-    def test_a_failed_uri_and_rugchecks_links_replay_the_way_live_took_them(self):
-        # live: the uri failed at +2 s, RugCheck was asked for its copy of the metadata, and the loop took the links
-        # from that report at +2.43 s ("meta" with src "rugcheck" and the "rug" line, the same turn)
-        m = mint(9)
-        recs = R.synth_coin(m, START, [1.0, 2.0], meta=False, rug=None) + [
-            {"k": "meta", "t": START + 2.0, "m": m, "ok": False, "x": "", "tg": "", "web": "", "xk": "", "src": "", "ms": 2000},
-            {"k": "rug", "t": START + 2.43, "m": m, "ok": True, "why": "meta", "ms": 430, "holders": 9, "top1": 3.0,
-             "top10": 3.0, "top": [3.0], "risks": [], "insiders": 0},
-            {"k": "meta", "t": START + 2.43, "m": m, "ok": True, "x": "", "tg": "https://t.me/" + m, "web": "", "xk": "",
-             "src": "rugcheck", "ms": None}]
-        tape = R.tape_of(recs)
-        rep = tape.rugs[m][0][1]
-        self.assertEqual(bot.Night.np_rug_meta(None, rep)["telegram"], "https://t.me/" + m)    # the engine's own read
-        clock = R.SimClock(START)
-        ctx = R.Context(tape, clock, R.ReplayMarket(tape, clock, START + 60, {}))
-        feeds = R.ReplayFeeds(ctx, START, START + 60)
-        feeds.fetch_meta(m, "")
-        got = []
-        while clock.t < START + 3:
-            ev = feeds.get(0.25)
-            if ev is not None and ev["kind"] == "meta":
-                got.append((round(ev["t"] - START, 3), ev["ok"], ev.get("telegram")))
-        self.assertEqual(got, [(2.0, False, "")])                       # the uri's failure, like live: no links yet
-        self.assertEqual(ctx.market.rug_answer(m, START + 2.0)[0], START + 2.43)
-
     def test_events_come_at_their_time_curves_only_while_watched_and_metadata_when_asked(self):
         a, b = mint(1), mint(2)
         recs = R.synth_coin(a, START + 5, [1.0, 2.0, 3.0]) + R.synth_coin(b, START + 6, [1.5, 2.5]) + \
@@ -312,7 +261,7 @@ class Replays(unittest.TestCase):
         res = R.replay(tape, base_cfg(), keep_log=True)
         self.assertEqual(len(res["trades"]), 1, res["log"])
         tr = res["trades"][0]
-        self.assertEqual((tr["why"], tr["tier"], tr["blind"]), ("TP +%g%%" % first_step(base_cfg()), "scalp", False))
+        self.assertEqual((tr["why"], tr["tier"], tr["blind"]), ("TP +7%", "scalp", False))
         self.assertTrue(any("curve maths 0.0% off Jupiter" in line for line in res["log"]))
         # by hand: $10 a trade (10 % of $100), 0.001 SOL of fees an order at SOL $200, pump.fun's 1.25 % each way,
         # the 1 % haircut each way, on the trigger reading (3.3 SOL in) and the next one (+30 %)
@@ -399,14 +348,11 @@ class Grid(unittest.TestCase):
         base = bot.load_config(bot.CONFIG)
         t = lambda c, name: next(x for x in bot.holdplan.tiers_from_cfg(c) if x["name"] == name)
         c = bt.apply(base, {"tp_x": 2.0, "trail_x": 1.5, "time_stop_x": 0.5})
-        self.assertEqual(t(c, "runner")["ladder"], [[g * 2.0, f] for g, f in t(base, "runner")["ladder"]])
-        self.assertEqual(t(base, "runner")["ladder"][1:], [[20.0, 0.5], [60.0, 1.0]])     # x2: 40 and 120
-        self.assertEqual((t(c, "swing")["trail_pct"], t(c, "moon")["time_stop_min"]),
-                         (t(base, "swing")["trail_pct"] * 1.5, t(base, "moon")["time_stop_min"] * 0.5))
-        self.assertEqual(t(bt.apply(base, {"scalp_tp": 15.0}), "scalp")["ladder"], [[15.0, 1.0]])
+        self.assertEqual(t(c, "runner")["ladder"], [[14.0, 0.34], [40.0, 0.5], [120.0, 1.0]])
+        self.assertEqual((t(c, "swing")["trail_pct"], t(c, "moon")["time_stop_min"]), (9.0, 10.0))
+        self.assertEqual(t(bt.apply(base, {"scalp_tp": 10.0}), "scalp")["ladder"], [[10.0, 1.0]])
         sc = t(bt.apply(base, {"scalp_frac": 0.5}), "scalp")
-        tp = first_step(base)
-        self.assertEqual((sc["ladder"], sc["trail_pct"]), ([[tp, 0.5], [max(20.0, 3 * tp), 1.0]], t(base, "swing")["trail_pct"]))
+        self.assertEqual((sc["ladder"], sc["trail_pct"]), ([[7.0, 0.5], [21.0, 1.0]], 6.0))
         sw = t(bt.apply(base, {"swing_tp": 10.0, "swing_frac": 0.25}), "swing")
         self.assertEqual(sw["ladder"], [[10.0, 0.25], [25.0, 1.0]])
         c = bt.apply(base, {"np_min_sol": 4.0, "stop_pct": -10.0})
@@ -433,7 +379,7 @@ def pump_coins(n, at0, every, peak, kind="p", **kw):
 
 class WalkForward(unittest.TestCase):
     def test_a_known_rule_wins_a_pump_that_pays_only_with_a_trailing_exit(self):
-        # 2 h of coins that run +60 % after the trigger and bleed back: the scalp's first step nets a few % after
+        # 2 h of coins that run +60 % after the trigger and bleed back: the +7 % scalp nets about nothing after
         # the costs (the -0.4 SOL steps of the bleed are no dump); the trailing rest catches most of the run
         coins = pump_coins(140, 5, 50, 60)
         tape = R.tape_of(R.synth_tape(START, coins, minutes=120))
