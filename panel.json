@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T15:09:01Z",
+ "updated": "2026-11-26T15:09:32Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 85.18,
- "equity": 85.18,
+ "balance": 80.18,
+ "equity": 85.11,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 28,
-  "checked": 28,
+  "flagged": 29,
+  "checked": 29,
   "filtered": 3,
-  "lines": 515,
+  "lines": 522,
   "last_rug": {
-   "coin": "ONCE",
+   "coin": "TRENCHS",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "VP64",
-   "why": "momentum",
-   "t": "2026-11-26T11:47:33Z"
-  },
   {
    "coin": "GT6",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "ONCE",
    "why": "momentum",
    "t": "2026-11-26T15:01:16Z"
+  },
+  {
+   "coin": "TRENCHS",
+   "why": "momentum",
+   "t": "2026-11-26T15:09:32Z"
   }
  ],
  "curve": [
@@ -1528,12 +1528,65 @@
   [
    1795705693,
    85.18
+  ],
+  [
+   1795705753,
+   85.18
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "TRENCHS",
+   "mint": "GS9TDnsDkjS9JpoodeYzu4TvnmdfDY3GHmyfujjJpump",
+   "cost": 5.0,
+   "value": 4.93,
+   "pnl_pct": -1.4,
+   "opened": "2026-11-26T15:09:32Z",
+   "url": "https://pump.fun/coin/GS9TDnsDkjS9JpoodeYzu4TvnmdfDY3GHmyfujjJpump",
+   "reason": "momentum · 14.2 SOL in · 11/16 buys (69%) · +117% since launch · mcap 61 SOL · 47 s old",
+   "size_pct": 5.9,
+   "entry_price": 4.36024e-06,
+   "price": 4.36024e-06,
+   "slip": 1.76,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "swing",
+    "score": 4,
+    "parts": [
+     "X",
+     "web",
+     "inflow 14.2 SOL"
+    ],
+    "ladder": [
+     [
+      10.0,
+      0.5
+     ],
+     [
+      20.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 6.0
+   },
+   "tier": "swing",
+   "score": 4,
+   "steps": 0,
+   "age_s": 47,
+   "mcap_sol": 60.7,
+   "dev_pct": 0.0,
+   "sol_in": 14.2,
+   "hist": [
+    4.36024e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "ZEROCAST",
@@ -1954,69 +2007,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T12:24:22Z",
-   "time": "13:24:22",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 8 watched · 10 rejected (mayhem mode 5, dev bought 4, dump 1) · closest YONTAMA: buys 4/6 · buy share 44%/65%",
-   "n": 316
-  },
-  {
-   "t": "2026-11-26T12:25:23Z",
-   "time": "13:25:23",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 8 watched · 9 rejected (mayhem mode 4, dev bought 3, dump 1) · closest YONTAMA: buy share 60%/65%",
-   "n": 317
-  },
-  {
-   "t": "2026-11-26T12:26:24Z",
-   "time": "13:26:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 3 watched · 8 rejected (mayhem mode 5, dev bought 2, serial launcher 1) · closest gta6PC: SOL in 0.1/2.5 · rise +0%/+12%",
-   "n": 318
-  },
-  {
-   "t": "2026-11-26T12:27:24Z",
-   "time": "13:27:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.6 a minute · 6 watched · 9 rejected (mayhem mode 4, dev bought 3, serial launcher 2) · closest Duvemas: too young: 1 s (min 45 s)",
-   "n": 319
-  },
-  {
-   "t": "2026-11-26T12:28:25Z",
-   "time": "13:28:25",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 7 watched · 11 rejected (mayhem mode 5, dev bought 4, serial launcher 2) · closest VICE: too young: 5 s (min 45 s)",
-   "n": 320
-  },
-  {
-   "t": "2026-11-26T12:29:26Z",
-   "time": "13:29:26",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 8 watched · 11 rejected (dev bought 4, mayhem mode 4, dump 2) · closest BIGTIMEB: SOL in 1.8/2.5 · buys 5/6 · rise +12%/+12%",
-   "n": 321
-  },
-  {
-   "t": "2026-11-26T12:30:26Z",
-   "time": "13:30:26",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.6 a minute · 5 watched · 12 rejected (mayhem mode 6, dev bought 3, dump 2) · closest BIGTIMEB: SOL in 2.4/2.5",
-   "n": 322
-  },
   {
    "t": "2026-11-26T12:31:27Z",
    "time": "13:31:27",
@@ -3753,6 +3743,69 @@
    "action": "scan",
    "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (no symbol or name 1)",
    "n": 515
+  },
+  {
+   "t": "2026-11-26T15:09:19Z",
+   "time": "16:09:19",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 12 watched · 3 rejected (dump 1, dev bought 1, no symbol or name 1) · closest TRENCHS: too young: 26 s (min 45 s)",
+   "n": 516
+  },
+  {
+   "t": "2026-11-26T15:09:32Z",
+   "time": "16:09:32",
+   "agent": "SCANNER",
+   "coin": "TRENCHS",
+   "action": "flag",
+   "text": "momentum · 14.2 SOL in · 11/16 buys (69%) · +117% since launch · mcap 61 SOL · 47 s old",
+   "n": 517
+  },
+  {
+   "t": "2026-11-26T15:09:32Z",
+   "time": "16:09:32",
+   "agent": "RUG CHECK",
+   "coin": "TRENCHS",
+   "action": "pass",
+   "text": "PASS · 30 holders · top holder 4.9% · top 10 22% (curve left out)",
+   "n": 518
+  },
+  {
+   "t": "2026-11-26T15:09:32Z",
+   "time": "16:09:32",
+   "agent": "LEARNER",
+   "coin": "TRENCHS",
+   "action": "explore",
+   "text": "explore · 1 in 5 skips is bought at half size · past trades like this lost avg 11.6% · hour:day -16.9% over 11",
+   "n": 519
+  },
+  {
+   "t": "2026-11-26T15:09:32Z",
+   "time": "16:09:32",
+   "agent": "SIZER",
+   "coin": "TRENCHS",
+   "action": "size",
+   "text": "10% of $85.18 x0.50 LEARNER = $4.26, raised to the $5.00 minimum: $5.00",
+   "n": 520
+  },
+  {
+   "t": "2026-11-26T15:09:32Z",
+   "time": "16:09:32",
+   "agent": "EXECUTOR",
+   "coin": "TRENCHS",
+   "action": "enter",
+   "text": "ENTER TRENCHS at 0.0000043602 · slip 1.8% · first in · 0.4 s after the trigger · 47 s after launch · curve maths 0.4% off Jupiter",
+   "n": 521
+  },
+  {
+   "t": "2026-11-26T15:09:32Z",
+   "time": "16:09:32",
+   "agent": "NEWS",
+   "coin": "TRENCHS",
+   "action": "plan",
+   "text": "hold plan · 4/10 (X, web, inflow 14.2 SOL) · swing: +10 → +20",
+   "n": 522
   }
  ],
  "nights": [
@@ -3795,7 +3848,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 17 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3803,24 +3856,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 13,
-    "last_event_age_s": 3.2,
+    "events": 21,
+    "last_event_age_s": 4.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 36,
-    "last_event_age_s": 1.9,
+    "events": 73,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 10,
-    "last_event_age_s": 16.3,
+    "events": 17,
+    "last_event_age_s": 3.5,
     "errors": 0,
     "last_error": null
    }
@@ -3828,19 +3881,19 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 66,
-  "first_in_last_ms": 66,
+  "first_in_ms": 67.5,
+  "first_in_last_ms": 374,
   "exit_ms": 32,
   "exit_last_ms": 22,
-  "launch_to_entry_s": 24,
-  "creates_per_min": 2.2,
-  "watching": 9,
-  "followed": 10
+  "launch_to_entry_s": 25.0,
+  "creates_per_min": 3.8,
+  "watching": 13,
+  "followed": 17
  },
  "learner": {
   "samples": 106,
   "skipped": 16,
-  "explored": 3,
+  "explored": 4,
   "min_samples": 8,
   "best": [
    {
@@ -3880,46 +3933,190 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 44,
+   "sent": 78,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 54,
+   "sent": 88,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DAQ",
+   "name": "Daq",
+   "mint": "DRfkFHCSEh1uSyCiDc76jNNjenoKrMPZjogBkc1hpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Lanceurpump",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "AIRBNB",
+   "name": "AirbnbCoin",
+   "mint": "6jAfUGGrJdRR2x78yyzDULcHKSeU9mYsjaiAqRfVYTHF",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/UseGiftSol",
+   "tg": false,
+   "web": "https://usegift.co/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "pairless",
+   "name": "pairless",
+   "mint": "2u3XSF7do1mLeJ57Q65vy6BYYrnVP2B8dd9v8o8vpump",
+   "age_s": 5,
+   "sol_in": 5.59,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 39.3,
+   "mcap_sol": 41.6,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/StepCoinsol8/status/2125970097281908737",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "$HIPER",
+   "name": "BTC2 HiPER",
+   "mint": "Spt4vh6h8L9oieEzfzHwSTg7QF6Ji5d3rKiz5B8pump",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SOVRA",
+   "name": "Sovra",
+   "mint": "7SQZR3ZPZnG15cETXAAEAEcdv5GiyRZAQFxTxC7zpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.4,
+   "dev_pct": 4.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/sovra_money",
+   "tg": false,
+   "web": "https://t.co/k9gdNHjw6w",
+   "status": "watching",
+   "why": "too young: 6 s (min 45 s)"
+  },
+  {
+   "symbol": "THUG",
+   "name": "Thugcoin",
+   "mint": "BTQ4D94LBEk3VrJPHWyh1MiYMQ5AezRrYGdhHSg4aPjY",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/UseGiftSol",
+   "tg": false,
+   "web": "https://usegift.co/",
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "MEMEDUCK",
+   "name": "MEMEDUCK",
+   "mint": "8DivPVqFLzTJ6Q4Uw1ueN6sZmGRR2ehdXBB6CpK1SDF7",
+   "age_s": 22,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Chao24366278867",
+   "tg": false,
+   "web": "https://pump.fun/profile/UncleLiquidityX",
+   "status": "watching",
+   "why": "too young: 6 s (min 45 s)"
+  },
+  {
+   "symbol": "pairless",
+   "name": "pairless",
+   "mint": "41A5VMwvBsiAfzdkEb9sjKYmGUWRPXpxENXubijnzK9W",
+   "age_s": 23,
+   "sol_in": -1.52,
+   "buys": 7,
+   "sells": 9,
+   "rise_pct": -9.0,
+   "mcap_sol": 30.9,
+   "dev_pct": 9.9,
+   "big_sell": 3.07,
+   "x": "https://x.com/StepCoinsol8/status/2125970097281908737",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
    "symbol": "TRENCHS",
    "name": "Trench Series",
    "mint": "GS9TDnsDkjS9JpoodeYzu4TvnmdfDY3GHmyfujjJpump",
-   "age_s": 16,
-   "sol_in": 11.81,
-   "buys": 6,
-   "sells": 2,
-   "rise_pct": 94.2,
-   "mcap_sol": 54.3,
+   "age_s": 47,
+   "sol_in": 14.2,
+   "buys": 11,
+   "sells": 5,
+   "rise_pct": 117.1,
+   "mcap_sol": 60.7,
    "dev_pct": 0.0,
-   "big_sell": 0.95,
+   "big_sell": 1.42,
    "x": "https://x.com/TrenchSeriesTV",
    "tg": false,
    "web": "https://trenchseries.app/",
-   "status": "watching",
-   "why": "too young: 14 s (min 45 s)"
+   "status": "entered",
+   "why": "momentum · 14.2 SOL in · 11/16 buys (69%) · +117% since launch · mcap 61 SOL · 47 s old"
   },
   {
    "symbol": "Pair",
    "name": "Pair",
    "mint": "3ZrNCNTsV1cj3zUzJLSDbnhMRVfAvTNat8KoxALgpump",
-   "age_s": 18,
-   "sol_in": -0.37,
-   "buys": 4,
-   "sells": 7,
-   "rise_pct": -2.4,
-   "mcap_sol": 29.1,
+   "age_s": 50,
+   "sol_in": -0.64,
+   "buys": 6,
+   "sells": 9,
+   "rise_pct": -4.1,
+   "mcap_sol": 28.6,
    "dev_pct": 3.4,
    "big_sell": 8.16,
    "x": "https://x.com/genyrational/status/2125969928398291430",
@@ -3932,7 +4129,7 @@
    "symbol": "GRAVITA",
    "name": "Gravita",
    "mint": "5EuqJwqSNc91PZ5QFRi1bUu9HSH7KBNjfgxKHVyF6bY3",
-   "age_s": 20,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3950,7 +4147,7 @@
    "symbol": "GRAVITA",
    "name": "Gravita",
    "mint": "667ssD2G46hDTaaGbWNo9tVjRRv6pZNd2uJTHrwB35H9",
-   "age_s": 20,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3968,7 +4165,7 @@
    "symbol": "GRAVITA",
    "name": "Gravita",
    "mint": "DmxFK7SZBQ1CA8MYT3wcmhj4524jXd52tUjFfgaxgjdp",
-   "age_s": 20,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3986,7 +4183,7 @@
    "symbol": "GRAVITA",
    "name": "Gravita",
    "mint": "3fikVcuh94KTXrLULJRxBCSwgRgNjuiRfj2joA3W4Vo4",
-   "age_s": 20,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4004,7 +4201,7 @@
    "symbol": "GRAVITA",
    "name": "Gravita",
    "mint": "5xGpedAGPoDhuPT5U7Xs55DHRsjZSVLMqAmv91EAGgPY",
-   "age_s": 21,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4022,7 +4219,7 @@
    "symbol": "AI",
    "name": "AI",
    "mint": "FjShkHskqSNbEHJARAwU7DncVxD6R2zxyubvQmoubdKv",
-   "age_s": 29,
+   "age_s": 61,
    "sol_in": -0.45,
    "buys": 1,
    "sells": 5,
@@ -4040,7 +4237,7 @@
    "symbol": "AMAZON",
    "name": "Juff Buzos",
    "mint": "YLxGVcMfXhiYmWdnFmQkTmiNn8JiH2FqgF1Yp8Cv7Vb",
-   "age_s": 34,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4058,7 +4255,7 @@
    "symbol": "BOND",
    "name": "Pattinson Bond",
    "mint": "HRSjpFYQuT7eA4dfCKEdTE3TBpgteZvpp6HpF6YYpump",
-   "age_s": 35,
+   "age_s": 66,
    "sol_in": -1.25,
    "buys": 2,
    "sells": 2,
@@ -4076,7 +4273,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BvgLZyGdPq3PLzwrpzX6ZEHXYy4K26PoPmYNfeEHpump",
-   "age_s": 42,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
