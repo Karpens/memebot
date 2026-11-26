@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:02:53Z",
+ "updated": "2026-11-26T09:03:21Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 88.92,
@@ -24,7 +24,7 @@
   "flagged": 2,
   "checked": 2,
   "filtered": 0,
-  "lines": 30,
+  "lines": 31,
   "last_rug": {
    "coin": "BST",
    "pass": true
@@ -98,6 +98,10 @@
   [
    1795683724,
    98.48
+  ],
+  [
+   1795683784,
+   98.45
   ]
  ],
  "position_pct": 10.0,
@@ -115,16 +119,14 @@
    "reason": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
    "size_pct": 10.0,
    "entry_price": 2.53912e-06,
-   "price": 2.46615e-06,
+   "price": 2.46552e-06,
    "slip": 3.15,
    "tp1_done": false,
    "strategy": "new_pairs",
    "plan": {
     "tier": "scalp",
-    "score": 1,
-    "parts": [
-     "buys 87%"
-    ],
+    "score": 0,
+    "parts": [],
     "ladder": [
      [
       7.0,
@@ -136,7 +138,7 @@
     "trail_pct": 0.0
    },
    "tier": "scalp",
-   "score": 1,
+   "score": 0,
    "steps": 0,
    "age_s": 141,
    "mcap_sol": 34.9,
@@ -464,6 +466,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 4 watched · 4 rejected (dev bought 4) · closest ECHINUS: SOL in 0.1/2.5 · buys 3/6 · rise +0%/+12%",
    "n": 30
+  },
+  {
+   "t": "2026-11-26T09:03:21Z",
+   "time": "10:03:21",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 5 watched · 7 rejected (dev bought 5, mayhem mode 2) · closest $HATCH: SOL in 0.1/2.5 · buys 2/6 · rise +1%/+12%",
+   "n": 31
   }
  ],
  "nights": [
@@ -484,7 +495,8 @@
   "https://api.rugcheck.xyz/v1/tokens/4i5y8ULNaqLR7VyvGDmXDHcik3HYDZsAeWYstRLNpump/report: HTTP 400",
   "https://api.rugcheck.xyz/v1/tokens/B2DmhVebKQK7yEDg9ciiTtRNBKecixotvqf4q2h3Zofz/report: HTTP 400",
   "https://api.rugcheck.xyz/v1/tokens/B9DUYgrprvF54aQwq8kJwcpnHQiCVbPshutpLcZe6Hhi/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/4J92JE5xcbRGpPqEHfmTgdmdkgGEcubR9RZfz1xYpump/report: HTTP 400"
+  "https://api.rugcheck.xyz/v1/tokens/4J92JE5xcbRGpPqEHfmTgdmdkgGEcubR9RZfz1xYpump/report: HTTP 400",
+  "https://api.rugcheck.xyz/v1/tokens/hKUgymSK1q8wc4nokx7TvQ7jV84FvR1SLqpxDYpb8Dh/report: HTTP 400"
  ],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
@@ -499,7 +511,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 11 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -507,26 +519,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 57,
-    "last_event_age_s": 17.4,
+    "events": 59,
+    "last_event_age_s": 11.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1069,
-    "last_event_age_s": 0.3,
+    "events": 1115,
+    "last_event_age_s": 1.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 46,
-    "last_event_age_s": 20.2,
-    "errors": 30,
-    "last_error": "195.26.231.33: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)"
+    "events": 47,
+    "last_event_age_s": 20.5,
+    "errors": 31,
+    "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
@@ -539,7 +551,7 @@
   "launch_to_entry_s": 77.5,
   "creates_per_min": 3.0,
   "watching": 5,
-  "followed": 10
+  "followed": 11
  },
  "learner": {
   "samples": 96,
@@ -584,23 +596,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 887,
+   "sent": 917,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 887,
+   "sent": 917,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RUGA",
+   "name": "Rug Attempt",
+   "mint": "8VLnf2tGx1gXVkrvYXq8ke8FQbvbgHgPsDh3i2yCAeWW",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "KING",
+   "name": "Justice For King",
+   "mint": "hKUgymSK1q8wc4nokx7TvQ7jV84FvR1SLqpxDYpb8Dh",
+   "age_s": 22,
+   "sol_in": 6.39,
+   "buys": 11,
+   "sells": 10,
+   "rise_pct": 42.4,
+   "mcap_sol": 48.4,
+   "dev_pct": 9.9,
+   "big_sell": 1.55,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
    "symbol": "FERSPE",
    "name": "Feral Specter",
    "mint": "EenPg9W7PqEmvXfZNZWABRHSKLnChfXdkCV1vonDpump",
-   "age_s": 17,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -618,30 +666,30 @@
    "symbol": "Epstein",
    "name": "Jeffery Epstein",
    "mint": "98DdnueLybZJpe7gRHZeAamWw4LZ8N4K452SmLhepump",
-   "age_s": 20,
-   "sol_in": -1.4,
+   "age_s": 48,
+   "sol_in": -1.97,
    "buys": 2,
-   "sells": 6,
-   "rise_pct": -8.6,
-   "mcap_sol": 29.0,
+   "sells": 11,
+   "rise_pct": -12.0,
+   "mcap_sol": 28.0,
    "dev_pct": 6.6,
    "big_sell": 0.41,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in -1.4/2.5 · buys 2/6 · buy share 25%/65% · rise -9%/+12%"
+   "why": "SOL in -2.0/2.5 · buys 2/6 · buy share 15%/65% · rise -12%/+12%"
   },
   {
    "symbol": "BASKET",
    "name": "BasketDAO",
    "mint": "HrwSJkrGy5Rzpa7TbkhsDbMxr2UQaBUrMeXXS7D2pump",
-   "age_s": 23,
-   "sol_in": 6.91,
-   "buys": 6,
-   "sells": 12,
-   "rise_pct": 46.1,
-   "mcap_sol": 49.7,
+   "age_s": 51,
+   "sol_in": 6.74,
+   "buys": 7,
+   "sells": 14,
+   "rise_pct": 44.9,
+   "mcap_sol": 49.3,
    "dev_pct": 10.0,
    "big_sell": 0.87,
    "x": false,
@@ -654,7 +702,7 @@
    "symbol": "KEVIN",
    "name": "Kevin The Turkey",
    "mint": "6Ww73xLqewGFs7m3aPKFJxpB9vQrq6yZRFm5YkuYF1cs",
-   "age_s": 45,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -672,7 +720,7 @@
    "symbol": "Cakecoin",
    "name": "Cakecoin",
    "mint": "8fsE8KSQoP88pb8p4QAS2hD6jxDZ6rkZ8c9rMrkLpump",
-   "age_s": 50,
+   "age_s": 78,
    "sol_in": -1.91,
    "buys": 6,
    "sells": 8,
@@ -690,10 +738,10 @@
    "symbol": "Drone",
    "name": "The Drone",
    "mint": "HaEJjty5CtGEWHR7H7H6snR77ecKsgHfTUKHPWaypump",
-   "age_s": 54,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 2,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
@@ -702,18 +750,18 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 2/6 · buy share 50%/65% · rise +0%/+12%"
   },
   {
    "symbol": "MOMO",
    "name": "Momocoin",
    "mint": "FuZps63GuQUMWufpwCqbX8jwcN1TYVCfgKSTMEmfpump",
-   "age_s": 56,
-   "sol_in": 2.47,
-   "buys": 17,
-   "sells": 16,
-   "rise_pct": 15.4,
-   "mcap_sol": 39.4,
+   "age_s": 84,
+   "sol_in": 2.48,
+   "buys": 18,
+   "sells": 17,
+   "rise_pct": 15.5,
+   "mcap_sol": 39.5,
    "dev_pct": 10.2,
    "big_sell": 1.24,
    "x": "https://x.com/ZzzzzSol/status/2125877703362408829",
@@ -726,10 +774,10 @@
    "symbol": "ECHINUS",
    "name": "Echinus",
    "mint": "2D1giJ765Bo5D94m5iiym4Lmb1QmYDDQwzKER2ZEpump",
-   "age_s": 105,
-   "sol_in": -0.98,
+   "age_s": 133,
+   "sol_in": -0.99,
    "buys": 3,
-   "sells": 3,
+   "sells": 4,
    "rise_pct": -6.3,
    "mcap_sol": 28.0,
    "dev_pct": 3.4,
@@ -738,18 +786,18 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in -1.0/2.5 · buys 3/6 · buy share 50%/65% · rise -6%/+12%"
+   "why": "SOL in -1.0/2.5 · buys 3/6 · buy share 43%/65% · rise -6%/+12%"
   },
   {
    "symbol": "pnp-lean",
    "name": "pnp-lean",
    "mint": "AfJBDMQ9NYtDssHK22xZ9v3SubrrR1kczzaQA1sQb5rB",
-   "age_s": 109,
-   "sol_in": 31.59,
-   "buys": 52,
-   "sells": 43,
-   "rise_pct": 262.6,
-   "mcap_sol": 137.5,
+   "age_s": 137,
+   "sol_in": 25.11,
+   "buys": 56,
+   "sells": 52,
+   "rise_pct": 195.4,
+   "mcap_sol": 112.0,
    "dev_pct": 15.2,
    "big_sell": 4.56,
    "x": "https://x.com/MarioPrezldente/status/2125877484151583095",
@@ -762,7 +810,7 @@
    "symbol": "$HATCH",
    "name": "HATCH",
    "mint": "5Q9VwLKFA4dgqGyc8ckzXyUxZEbp8TeMMghpKYBRpump",
-   "age_s": 132,
+   "age_s": 160,
    "sol_in": 0.1,
    "buys": 2,
    "sells": 1,
@@ -780,7 +828,7 @@
    "symbol": "BST",
    "name": "bastion",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "age_s": 202,
+   "age_s": 230,
    "sol_in": 2.48,
    "buys": 13,
    "sells": 4,
