@@ -35,42 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T12:05:39Z",
-    "time": "13:05:39",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 12.4 a minute · 8 watched · 10 rejected (dev bought 7, serial launcher 2, mayhem mode 1) · closest ADOG: too young: 0 s (min 45 s)",
-    "n": 290
-   },
-   {
-    "t": "2026-11-26T12:06:40Z",
-    "time": "13:06:40",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.6 a minute · 7 watched · 10 rejected (dev bought 7, serial launcher 2, mayhem mode 1) · closest ADOG: too young: 0 s (min 45 s)",
-    "n": 291
-   },
-   {
-    "t": "2026-11-26T12:07:08Z",
-    "time": "13:07:08",
-    "agent": "SCANNER",
-    "coin": "Pinky",
-    "action": "migrate",
-    "text": "migrated: the curve is complete (pump-amm)",
-    "n": 292
-   },
-   {
-    "t": "2026-11-26T12:07:40Z",
-    "time": "13:07:40",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.6 a minute · 7 watched · 9 rejected (dev bought 5, dump 2, serial launcher 1) · closest NOFLOAT: SOL in 1.3/2.5 · buy share 64%/65% · rise +8%/+12%",
-    "n": 293
-   },
-   {
     "t": "2026-11-26T12:08:41Z",
     "time": "13:08:41",
     "agent": "SCANNER",
@@ -5433,6 +5397,42 @@
     "action": "scan",
     "text": "new pairs · 7.4 a minute · 7 watched · 14 rejected (mayhem mode 6, serial launcher 4, dump 1) · closest FORU: too young: 18 s (min 45 s)",
     "n": 889
+   },
+   {
+    "t": "2026-11-26T19:44:31Z",
+    "time": "20:44:31",
+    "agent": "SCANNER",
+    "coin": "FORU",
+    "action": "flag",
+    "text": "momentum · 16.3 SOL in · 26/40 buys (65%) · +132% since launch · mcap 69 SOL · 51 s old",
+    "n": 890
+   },
+   {
+    "t": "2026-11-26T19:44:31Z",
+    "time": "20:44:31",
+    "agent": "RUG CHECK",
+    "coin": "FORU",
+    "action": "pass",
+    "text": "PASS · 37 holders · top holder 3.4% · top 10 17% (curve left out)",
+    "n": 891
+   },
+   {
+    "t": "2026-11-26T19:44:31Z",
+    "time": "20:44:31",
+    "agent": "LEARNER",
+    "coin": "FORU",
+    "action": "skip",
+    "text": "skip · past trades like this lost avg 12.7% · hour:day -16.7% over 16",
+    "n": 892
+   },
+   {
+    "t": "2026-11-26T19:44:31Z",
+    "time": "20:44:31",
+    "agent": "LEARNER",
+    "coin": "FORU",
+    "action": "shadow",
+    "text": "SHADOW FORU · not bought (learner skip) · followed as if bought: $8.35 at 0.0000050766 (curve maths, every cost) · same exits, outside the book",
+    "n": 893
    }
   ],
   "trades": [
@@ -6081,16 +6081,11 @@
   "streak": 10,
   "cooldown_until": 1795718396.474651,
   "scans": 0,
-  "flagged": 54,
-  "checked": 41,
+  "flagged": 55,
+  "checked": 42,
   "filtered": 8,
-  "lines": 889,
+  "lines": 893,
   "flags": [
-   {
-    "coin": "MANTLE",
-    "why": "momentum",
-    "t": "2026-11-26T18:32:05Z"
-   },
    {
     "coin": "CALLUPB",
     "why": "momentum",
@@ -6125,6 +6120,11 @@
     "coin": "FCAT",
     "why": "momentum",
     "t": "2026-11-26T19:41:30Z"
+   },
+   {
+    "coin": "FORU",
+    "why": "momentum",
+    "t": "2026-11-26T19:44:31Z"
    }
   ],
   "curve": [
@@ -8530,7 +8530,7 @@
    ]
   ],
   "last_rug": {
-   "coin": "WHO",
+   "coin": "FORU",
    "pass": true
   },
   "np_said": 1795722239.257675,
@@ -9193,11 +9193,13 @@
     "weight": 0.5
    }
   ],
-  "open": []
+  "open": [
+   "FORU"
+  ]
  },
  "learner_summary": {
   "samples": 108,
-  "skipped": 22,
+  "skipped": 23,
   "explored": 5,
   "min_samples": 8,
   "best": [
