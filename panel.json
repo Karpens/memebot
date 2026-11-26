@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T18:18:57Z",
+ "updated": "2026-11-26T18:19:26Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 45,
   "checked": 37,
   "filtered": 8,
-  "lines": 767,
+  "lines": 768,
   "last_rug": {
    "coin": "COFOUNDERS",
    "pass": true
@@ -2288,6 +2288,10 @@
   [
    1795717093,
    84.53
+  ],
+  [
+   1795717153,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2762,15 +2766,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T15:41:39Z",
-   "time": "16:41:39",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 3 watched · 4 rejected (mayhem mode 2, dev bought 1, dump 1) · closest MEMEDAQ: SOL in 0.1/2.5 · buys 4/6 · rise +1%/+12%",
-   "n": 568
-  },
   {
    "t": "2026-11-26T15:42:39Z",
    "time": "16:42:39",
@@ -4561,6 +4556,15 @@
    "action": "scan",
    "text": "new pairs · 5.8 a minute · 4 watched · 12 rejected (dev bought 4, no symbol or name 3, dump 2) · closest MANTLE: too young: 4 s (min 45 s)",
    "n": 767
+  },
+  {
+   "t": "2026-11-26T18:19:17Z",
+   "time": "19:19:17",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.6 a minute · 5 watched · 9 rejected (dev bought 3, dump 2, mayhem mode 2) · closest optimizer: SOL in 0.0/2.5 · buys 5/6 · buy share 56%/65% · rise +0%/+12%",
+   "n": 768
   }
  ],
  "nights": [
@@ -4603,7 +4607,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4611,15 +4615,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 843,
-    "last_event_age_s": 4.5,
+    "events": 847,
+    "last_event_age_s": 10.5,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11779,
+    "events": 11843,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -4627,8 +4631,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 598,
-    "last_event_age_s": 4.4,
+    "events": 601,
+    "last_event_age_s": 9.4,
     "errors": 46,
     "last_error": "localhost:3000: ConnectionRefusedError: [Errno 111] Connection refused"
    }
@@ -4641,9 +4645,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 5.2,
+  "creates_per_min": 5.6,
   "watching": 4,
-  "followed": 9
+  "followed": 10
  },
  "learner": {
   "samples": 107,
@@ -4689,23 +4693,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7875,
+   "sent": 7906,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7909,
+   "sent": 7940,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TEST",
+   "name": "Test",
+   "mint": "BfQC1QvoTrUt6CzFyKMBVUxMBq8WXMH8FyRGuAvFS5CM",
+   "age_s": 10,
+   "sol_in": 0.03,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://tryuser.fun/trade/BfQC1QvoTrUt6CzFyKMBVUxMBq8WXMH8FyRGuAvFS5CM",
+   "status": "watching",
+   "why": "too young: 10 s (min 45 s)"
+  },
+  {
+   "symbol": "NOTWORRY",
+   "name": "notworry",
+   "mint": "EdvKWx28C3WECwrz2swnpBWKgKrnAJSkkDC8z9tu2Qzp",
+   "age_s": 18,
+   "sol_in": -2.96,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -17.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 9.6,
+   "big_sell": 2.96,
+   "x": "https://x.com/AutismCapital/status/2126017923940835447",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.6% (max 8%)",
+   "why": "dev bought 9.6% (max 8%)"
+  },
+  {
+   "symbol": "CLA",
+   "name": "Cat Labs Act",
+   "mint": "Di4fFoWbafRQ5YozM7vBYndrcotQ3QVdpS6pZbb5pump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "ROCK",
+   "name": "Rock Dogs",
+   "mint": "BNkfpqJz4FWna3ufVK5cz9V5HZypv3DmUL7d4pVT9yy1",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
    "symbol": "UNMISTAKABLE",
    "name": "The Unmistakable",
    "mint": "ttT3PhcYPUHonXUMzHFZTF79fwhXJBcUiUcCC1qpump",
-   "age_s": 4,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -4723,7 +4799,7 @@
    "symbol": "?",
    "name": "",
    "mint": "5hNHUraHDiBynv45eAtNwpLvzUY8RBfyEVzgbyMCvxUW",
-   "age_s": 45,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4741,25 +4817,25 @@
    "symbol": "MANTLE",
    "name": "Mantle",
    "mint": "8wZntyfdmoEZgu38nV8hNPYLv8iFcm9vsHkcJDBspump",
-   "age_s": 47,
-   "sol_in": 38.81,
-   "buys": 28,
-   "sells": 10,
-   "rise_pct": 407.3,
-   "mcap_sol": 151.3,
+   "age_s": 76,
+   "sol_in": -0.87,
+   "buys": 33,
+   "sells": 17,
+   "rise_pct": -5.5,
+   "mcap_sol": 28.2,
    "dev_pct": 3.4,
-   "big_sell": 1.02,
+   "big_sell": 43.96,
    "x": "https://x.com/i/status/2124206158848430270",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "mcap 151 SOL (max 70)"
+   "status": "rejected: dump: 44.0 SOL sold",
+   "why": "dump: 44.0 SOL sold"
   },
   {
    "symbol": "George",
    "name": "ジョージ",
    "mint": "FztFx8HhqkotKWLza2o9YFcynmvzcunM9QneRuH2pump",
-   "age_s": 70,
+   "age_s": 99,
    "sol_in": -2.17,
    "buys": 3,
    "sells": 7,
@@ -4777,7 +4853,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "2KKytLjgGDM7LASM7Bk4m3jqawP5GUgf6QjBNB1tpump",
-   "age_s": 73,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4795,7 +4871,7 @@
    "symbol": "optimizer",
    "name": "optimizer",
    "mint": "2qrjGW2ADVkq2Ch9hrwwsRaw6ypoe8udd6HypyYjpump",
-   "age_s": 75,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 5,
    "sells": 4,
@@ -4813,7 +4889,7 @@
    "symbol": "PAIRS",
    "name": "Pairs",
    "mint": "57X7z1w84gDVrmmLqAfY2JcbRNKkvGcHVi3mXPibWPzu",
-   "age_s": 77,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4831,12 +4907,12 @@
    "symbol": "AMEND",
    "name": "Amend",
    "mint": "5TjnKpGTyFQsP7VTKKyNTtAxYvmGCw88p4nbjRaPpump",
-   "age_s": 90,
-   "sol_in": -6.29,
-   "buys": 8,
+   "age_s": 119,
+   "sol_in": -5.06,
+   "buys": 9,
    "sells": 18,
-   "rise_pct": -29.7,
-   "mcap_sol": 33.0,
+   "rise_pct": -24.4,
+   "mcap_sol": 35.5,
    "dev_pct": 24.5,
    "big_sell": 3.24,
    "x": "https://x.com/amendrememe/status/2126017401544429676?s=20",
@@ -4849,7 +4925,7 @@
    "symbol": "George",
    "name": "喬治",
    "mint": "dRskvKywSVFvSJ7B9fPaqifop7RdSExarJybSLZpump",
-   "age_s": 150,
+   "age_s": 179,
    "sol_in": -0.29,
    "buys": 3,
    "sells": 9,
@@ -4862,60 +4938,6 @@
    "web": "https://x.com/i/status/2125882157344428308",
    "status": "rejected: dev bought 10.2% (max 8%)",
    "why": "dev bought 10.2% (max 8%)"
-  },
-  {
-   "symbol": "NED",
-   "name": "Ned Luke",
-   "mint": "AWxdzMVeVPyt1i9LCcyec6Q16ivA1MpWYWCkzZVPuAKB",
-   "age_s": 154,
-   "sol_in": -0.1,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/Dexerto/status/2126017046177570901",
-   "tg": false,
-   "web": "https://x.com/Dexerto/status/2126017046177570901",
-   "status": "watching",
-   "why": "SOL in -0.1/2.5 · buys 2/6 · buy share 40%/65% · rise -1%/+12%"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "EJwRNK4bZnkoEkZSDCxb5nmNDqRbZjrq5i27foqLC8Su",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "god",
-   "name": "god",
-   "mint": "F569bctso91VTETLsXE22cGWoCvp8yXRwkrgA2pCpump",
-   "age_s": 167,
-   "sol_in": -2.71,
-   "buys": 2,
-   "sells": 11,
-   "rise_pct": -15.8,
-   "mcap_sol": 28.4,
-   "dev_pct": 9.6,
-   "big_sell": 1.12,
-   "x": false,
-   "tg": false,
-   "web": "https://www.instagram.com/p/DgNufd2yOTx/",
-   "status": "rejected: dev bought 9.6% (max 8%)",
-   "why": "dev bought 9.6% (max 8%)"
   }
  ],
  "strategies": [
