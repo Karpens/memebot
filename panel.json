@@ -1,53 +1,83 @@
 {
- "updated": "2026-11-26T01:59:42Z",
+ "updated": "2026-11-26T02:01:36Z",
  "mode": "paper",
  "start_balance": 70.0,
- "balance": 22.83,
- "equity": 56.34,
+ "balance": 33.64,
+ "equity": 56.7,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
+  "NEWS",
   "RUG CHECK",
   "SIZER",
+  "EXECUTOR",
   "RISK",
-  "EXIT",
-  "JOURNAL",
-  "NEWS"
+  "LOGGER"
  ],
  "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $70. I will not be watching. Trade fast, log every decision so I can read it in the morning.\n\nUNIVERSE\n- Only fresh DEX pairs: launched or migrated in the last 6 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $15k, minimum 5m volume $5k, at least 150 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 20 seconds: new pairs, volume spikes (>2.5x 1h average), buy/sell ratio above 60% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 45%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 20% of the balance per trade, never less than $5.\n4. RISK - at most 4 open positions and 40 trades a night, a 15 minute pause after 3 losses in a row, no new entries in the last 15 minutes, stop for the night at -40%.\n5. EXIT - sell half at +30%, trail the rest 15% below the peak, stop loss at -18%, out after 20 minutes unless up 5%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n7. NEWS - follows what people promote: the coin's X and Telegram, DexScreener boosts, the GeckoTerminal and DexScreener trending lists. Trending or boosted counts as a signal.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n",
  "night": {
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 267,
+  "scans": 270,
   "flagged": 10,
-  "checked": 27
+  "checked": 27,
+  "filtered": null,
+  "lines": 2,
+  "last_rug": null
  },
+ "flags": [],
+ "curve": [
+  [
+   1795658452,
+   57.16
+  ]
+ ],
+ "position_pct": 20.0,
+ "slip_cap": 10.0,
  "live": true,
  "positions": [
   {
-   "symbol": "Pumpcat",
-   "cost": 11.68,
-   "value": 10.48,
-   "pnl_pct": -10.3,
-   "opened": "2026-11-26T01:40:25Z",
-   "url": "https://dexscreener.com/solana/4j4q8fc5y3iazhqrzjmti95jeuqk38yx397q2depxwnf"
-  },
-  {
    "symbol": "NORFEATH",
    "cost": 11.87,
-   "value": 11.23,
-   "pnl_pct": -5.4,
+   "value": 11.2,
+   "pnl_pct": -5.6,
    "opened": "2026-11-26T01:44:12Z",
-   "url": "https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj"
+   "url": "https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj",
+   "reason": "",
+   "size_pct": null,
+   "entry_price": 0.0005822015915178945,
+   "price": 0.0005510141916978986,
+   "slip": 0.77,
+   "tp1_done": false,
+   "hist": [
+    0.0005633669310421195,
+    0.0005597455569299024,
+    0.0005550131813205262,
+    0.000547627563542931,
+    0.0005510141916978986
+   ]
   },
   {
    "symbol": "UHI",
    "cost": 11.83,
-   "value": 11.8,
-   "pnl_pct": -0.3,
+   "value": 11.86,
+   "pnl_pct": 0.2,
    "opened": "2026-11-26T01:44:34Z",
-   "url": "https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl"
+   "url": "https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl",
+   "reason": "",
+   "size_pct": null,
+   "entry_price": 0.0010136662826193312,
+   "price": 0.0010190498249834721,
+   "slip": 1.89,
+   "tp1_done": false,
+   "hist": [
+    0.0010370310213511813,
+    0.0010419820764471792,
+    0.0010390399046901863,
+    0.0010252404014576,
+    0.0010190498249834721
+   ]
   }
  ],
  "trades": [
@@ -86,6 +116,23 @@
    "pnl_pct": -1.6,
    "why": "po 20 min len +1 %",
    "url": "https://dexscreener.com/solana/cchpignpbwf65nfsl3d8h4m4rwdprzh8lpcatynurxqg"
+  },
+  {
+   "symbol": "Pumpcat",
+   "mint": "5CPiu3nmhYWWnj6BfebvMzqqwPUBm8UzBtNGW4cEpump",
+   "opened": "2026-11-26T01:40:25Z",
+   "closed": "2026-11-26T02:00:52Z",
+   "cost": 11.68,
+   "proceeds": 10.81,
+   "pnl": -0.87,
+   "pnl_pct": -7.5,
+   "why": "20 min, only -5%",
+   "url": "https://dexscreener.com/solana/4j4q8fc5y3iazhqrzjmti95jeuqk38yx397q2depxwnf",
+   "reason": "",
+   "size_pct": null,
+   "entry_price": 0.00041832389546861675,
+   "exit_price": 0.00039810728725090083,
+   "slip": 0.75
   }
  ],
  "log": [
@@ -784,6 +831,22 @@
    "coin": null,
    "action": "scan",
    "text": "95 nových coinov, 93 párov, 3 spĺňa pravidlá."
+  },
+  {
+   "t": "2026-11-26T02:00:52Z",
+   "time": "03:00:52",
+   "agent": "RISK",
+   "coin": null,
+   "action": "pause",
+   "text": "4 losses in a row · 15 min pause"
+  },
+  {
+   "t": "2026-11-26T02:00:52Z",
+   "time": "03:00:52",
+   "agent": "EXECUTOR",
+   "coin": "Pumpcat",
+   "action": "exit",
+   "text": "EXIT Pumpcat $-0.87 (-8%) · 20 min, only -5%"
   }
  ],
  "nights": [
@@ -801,10 +864,6 @@
   }
  ],
  "errors": [
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
  ]
 }
