@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:23:12Z",
+ "updated": "2026-11-26T17:23:46Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 40,
   "checked": 35,
   "filtered": 7,
-  "lines": 696,
+  "lines": 697,
   "last_rug": {
    "coin": "CUBE",
    "pass": true
@@ -2064,6 +2064,10 @@
   [
    1795713733,
    84.53
+  ],
+  [
+   1795713793,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2538,15 +2542,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T14:55:57Z",
-   "time": "15:55:57",
-   "agent": "LEARNER",
-   "coin": "FLINT",
-   "action": "skip",
-   "text": "skip · past trades like this lost avg 11.3% · hour:day -16.9% over 11, news:0-2 -16.9% over 11",
-   "n": 497
-  },
   {
    "t": "2026-11-26T14:56:39Z",
    "time": "15:56:39",
@@ -4337,6 +4332,15 @@
    "action": "scan",
    "text": "new pairs · 4.6 a minute · 1 watched · 11 rejected (serial launcher 5, mayhem mode 2, dev bought 1) · closest ARCHIE: SOL in 0.2/2.5 · buys 1/6 · buy share 33%/65% · rise +1%/+12%",
    "n": 696
+  },
+  {
+   "t": "2026-11-26T17:23:45Z",
+   "time": "18:23:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 2 watched · 11 rejected (serial launcher 4, mayhem mode 4, dump 2) · closest ARCHIE: SOL in 0.2/2.5 · buys 1/6 · buy share 33%/65% · rise +1%/+12%",
+   "n": 697
   }
  ],
  "nights": [
@@ -4379,7 +4383,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4387,24 +4391,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 421,
-    "last_event_age_s": 15.0,
+    "events": 425,
+    "last_event_age_s": 2.3,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5402,
-    "last_event_age_s": 0.9,
+    "events": 5440,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 312,
-    "last_event_age_s": 14.7,
+    "events": 314,
+    "last_event_age_s": 8.7,
     "errors": 20,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4417,9 +4421,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 4.0,
-  "watching": 1,
-  "followed": 7
+  "creates_per_min": 4.2,
+  "watching": 2,
+  "followed": 8
  },
  "learner": {
   "samples": 107,
@@ -4465,23 +4469,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4315,
+   "sent": 4351,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4349,
+   "sent": 4385,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$EVIL",
+   "name": "EVIL EH 30",
+   "mint": "7Wn1Lwgc52enFkVdAdsiF3Szfhf5W6JL1adwA7QYpump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "CBI",
+   "name": "Cool boi",
+   "mint": "99abYUyqDvkutvg7uqHDjHhSNsJoVaTAEsvBoiuMpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "NIO2.0",
+   "name": "Nigga Its Over 2.0",
+   "mint": "56CJB4Zphp8fq6AkPuhSDxsVDXhwWJniiJWfYbRqn1yR",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/idofentanyl/status/2087206048780157268",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "Labezo",
+   "name": "Labezo",
+   "mint": "DMVwzwrjeijUz6FH1CkzKScHhk7zv4zRxcQtXVk5pump",
+   "age_s": 17,
+   "sol_in": -2.17,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -13.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 7.2,
+   "big_sell": 2.17,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 2.2 SOL sold",
+   "why": "dump: 2.2 SOL sold"
+  },
+  {
    "symbol": "BASEJAK",
    "name": "basejak",
    "mint": "4M5Ro9hjSv4q3dRUg4YSi5fUavYEt3zyQrUggLsgsedf",
-   "age_s": 14,
+   "age_s": 48,
    "sol_in": -1.95,
    "buys": 2,
    "sells": 1,
@@ -4499,7 +4575,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "Cujkct1bV9oDoPoLosK1EzBDyt1tyMv5jx1V2v9upump",
-   "age_s": 41,
+   "age_s": 75,
    "sol_in": -0.03,
    "buys": 2,
    "sells": 1,
@@ -4517,7 +4593,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Fb7EFPynN1XSfsnBh1UaP3Sm8k4aRU6C4JwpVmsfLoat",
-   "age_s": 69,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4535,7 +4611,7 @@
    "symbol": "LYRA",
    "name": "LYRA the Prism Queen",
    "mint": "9H3HYfb9BxscEmieYXeeUm1qa57N24tMCasL4rGGpump",
-   "age_s": 77,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4553,7 +4629,7 @@
    "symbol": "fl",
    "name": "bob",
    "mint": "GZTuemrWmxYZPEAnz4oJfpRbfBuzKrQdwrvZSgr7pump",
-   "age_s": 105,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4571,12 +4647,12 @@
    "symbol": "PVE",
    "name": "PVE",
    "mint": "FLkBshUoapVVxZTvn9R4TLRCE5bS3Jk7GMRFoATGpump",
-   "age_s": 114,
-   "sol_in": 58.66,
-   "buys": 57,
-   "sells": 55,
-   "rise_pct": 752.0,
-   "mcap_sol": 247.4,
+   "age_s": 148,
+   "sol_in": 60.68,
+   "buys": 69,
+   "sells": 71,
+   "rise_pct": 790.8,
+   "mcap_sol": 258.7,
    "dev_pct": 2.0,
    "big_sell": 5.01,
    "x": "https://x.com/PVEtech/status/2126003292262019543?a=w9ruEZzUAYicnN0Mp-A&s=20",
@@ -4589,7 +4665,7 @@
    "symbol": "GREENBEANS",
    "name": "GREENBEANS",
    "mint": "4V7R1jRLFN8mokvxkLzZv64GUmc8SeccLswxJVzVpump",
-   "age_s": 117,
+   "age_s": 151,
    "sol_in": 0.08,
    "buys": 7,
    "sells": 0,
@@ -4607,7 +4683,7 @@
    "symbol": "ARCHIE",
    "name": "Archie",
    "mint": "3NH54zGdEvmEZHuzA3DUD2ZHcBqhECHEeQujwHdZurVf",
-   "age_s": 124,
+   "age_s": 158,
    "sol_in": 0.16,
    "buys": 1,
    "sells": 2,
@@ -4625,7 +4701,7 @@
    "symbol": "TAP",
    "name": "Tap Cat",
    "mint": "6hrZVpqAHW5H4v7tjXLHFBGVwjQBotmr9yCFeXCB8BDb",
-   "age_s": 144,
+   "age_s": 178,
    "sol_in": -0.13,
    "buys": 0,
    "sells": 2,
@@ -4638,42 +4714,6 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "EIM",
-   "name": "encrypted internet money",
-   "mint": "A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 6036.3,
-   "dev_pct": 100.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "HORSE",
-   "name": "Grey Horse",
-   "mint": "FbLDf4NCTtg7qbpW2rVaRE8dRUtxPCeSro5iJyjaQj73",
-   "age_s": 163,
-   "sol_in": -0.09,
-   "buys": 0,
-   "sells": 2,
-   "rise_pct": -0.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.3,
-   "big_sell": 0.04,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
