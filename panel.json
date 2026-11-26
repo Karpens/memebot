@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T13:48:46Z",
+ "updated": "2026-11-26T13:49:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 25,
   "checked": 25,
   "filtered": 2,
-  "lines": 420,
+  "lines": 421,
   "last_rug": {
    "coin": "EUTO",
    "pass": true
@@ -1208,6 +1208,10 @@
   [
    1795700893,
    85.18
+  ],
+  [
+   1795700953,
+   85.18
   ]
  ],
  "position_pct": 10.0,
@@ -1634,15 +1638,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T11:10:14Z",
-   "time": "12:10:14",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 0 watched · 10 rejected (mayhem mode 4, dev bought 2, no symbol or name 2)",
-   "n": 221
-  },
   {
    "t": "2026-11-26T11:11:14Z",
    "time": "12:11:14",
@@ -3433,6 +3428,15 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 5 watched · 11 rejected (serial launcher 9, dev bought 1, mayhem mode 1) · closest RAINOUTA: too young: 23 s (min 45 s)",
    "n": 420
+  },
+  {
+   "t": "2026-11-26T13:49:04Z",
+   "time": "14:49:04",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.8 a minute · 6 watched · 8 rejected (serial launcher 4, mayhem mode 4) · closest ONLYFRENS: too young: 0 s (min 45 s)",
+   "n": 421
   }
  ],
  "nights": [
@@ -3475,7 +3479,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3483,15 +3487,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 573,
-    "last_event_age_s": 2.5,
+    "events": 577,
+    "last_event_age_s": 12.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11996,
+    "events": 12074,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -3499,8 +3503,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 403,
-    "last_event_age_s": 43.4,
+    "events": 404,
+    "last_event_age_s": 12.3,
     "errors": 23,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3513,9 +3517,9 @@
   "exit_ms": 32,
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
-  "creates_per_min": 4.4,
-  "watching": 5,
-  "followed": 12
+  "creates_per_min": 4.8,
+  "watching": 4,
+  "followed": 8
  },
  "learner": {
   "samples": 106,
@@ -3560,23 +3564,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5850,
+   "sent": 5880,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5850,
+   "sent": 5880,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ONLYFRENS",
+   "name": "OnlyFrens",
+   "mint": "9U6ErnxA3PPnADQjjWJJz9bMjQur5hk9ZNjmD6NQpump",
+   "age_s": 12,
+   "sol_in": 3.0,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 20.6,
+   "mcap_sol": 35.1,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/onlyfrenslol/status/2125949950714319110",
+   "tg": false,
+   "web": "https://onlyfrens.lol/",
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
+   "symbol": "S1",
+   "name": "s1",
+   "mint": "4ywyuhfmWDcaYprYsfFLF9VqpHdzfFDDZzDNC1Yzpump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "ARTCOIN",
+   "name": "ARTCOIN",
+   "mint": "4feahCpFUjE1MTwPS6Kso3A9sYBnhkKWi8yDBHZHXNzB",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "CLA",
    "name": "Cat Labs Act",
    "mint": "DVBRCMdeVfr3zr3F6ykcbAUozSnrao85P9HnmDF4pump",
-   "age_s": 2,
+   "age_s": 30,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3594,7 +3652,7 @@
    "symbol": "Keys",
    "name": "Jupiter Keys",
    "mint": "6TFx4vAAzzoh1vjZpABovTbc8kXyqaqFLNrE34xmpump",
-   "age_s": 43,
+   "age_s": 71,
    "sol_in": 0.26,
    "buys": 2,
    "sells": 0,
@@ -3612,14 +3670,14 @@
    "symbol": "$PairCover",
    "name": "Pair Cover",
    "mint": "5aFg6odzhfnZw3DDEW8Qn1WBbty7pSyqUXhktXaFpump",
-   "age_s": 55,
-   "sol_in": 0.01,
+   "age_s": 83,
+   "sol_in": -0.1,
    "buys": 3,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.2,
+   "sells": 1,
+   "rise_pct": -0.6,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.11,
    "x": false,
    "tg": false,
    "web": false,
@@ -3630,7 +3688,7 @@
    "symbol": "MONEYA",
    "name": "Money Williams",
    "mint": "7QKAHiqnG4ofXoZmwPtZWCdTQdhq1Wy1p9aqL1Tepump",
-   "age_s": 80,
+   "age_s": 108,
    "sol_in": 0.27,
    "buys": 2,
    "sells": 2,
@@ -3648,7 +3706,7 @@
    "symbol": "S1",
    "name": "s1",
    "mint": "HecpyQbnMyZZcBeMAVQu7DnzXWdJQPrdV1MSahrepump",
-   "age_s": 86,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3666,7 +3724,7 @@
    "symbol": "Cody",
    "name": "Codycoin",
    "mint": "DnTBWGv8gsdaxJENG5vqCNs8jXtSqDcqLBKigS44yY6d",
-   "age_s": 105,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3684,7 +3742,7 @@
    "symbol": "231321",
    "name": "122321",
    "mint": "9A2JNnELizZUbvQiZhu1FV4pWLU7x9pr75C8GGVDCYHD",
-   "age_s": 148,
+   "age_s": 176,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 1,
@@ -3702,7 +3760,7 @@
    "symbol": "GIGA",
    "name": "BLOCK ZERO TAX TO HOLDERS",
    "mint": "FE1Z9CbEm3bAJDwivQzmEXTWRtHFH5tHqHnsJN9dpump",
-   "age_s": 150,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -3720,7 +3778,7 @@
    "symbol": "GIGA",
    "name": "BLOCK ZERO TAX TO HOLDERS",
    "mint": "2djCVrzDKr8c1ozXhKdprZFTTeuetQ3NJACrh7Ytpump",
-   "age_s": 150,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -3733,96 +3791,6 @@
    "web": "https://launchonshare.xyz/#/",
    "status": "rejected: serial launcher: 6 more coins in 60 min",
    "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "RAINOUTA",
-   "name": "Thanksgiving Rainout",
-   "mint": "FMLvKbABHhABj3gGWVyhVtjwfTSG31536NEhXSVopump",
-   "age_s": 153,
-   "sol_in": 1.3,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 8.5,
-   "mcap_sol": 32.8,
-   "dev_pct": 4.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://www.wfmz.com/news/area/lehighvalley/northampton-county/nazareth-northampton-area/two-annual-thanksgiving-day-games-postponed-due-to-incoming-severe-weather/article_d827b72c-b822-4e6f-9eb5-a62a",
-   "status": "watching",
-   "why": "too young: 23 s (min 45 s)"
-  },
-  {
-   "symbol": "duk",
-   "name": "duk",
-   "mint": "14fKvL1d2pJLmAUF6VJXpsjhgM9gAB3hJzgZeH55pump",
-   "age_s": 156,
-   "sol_in": -0.05,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": -0.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.2,
-   "big_sell": 0.05,
-   "x": "https://x.com/justdukfun/status/2125882614338715649?a=QJymwBEFuGAaS4nBSPY&s=20",
-   "tg": false,
-   "web": "https://duk.fun/",
-   "status": "watching",
-   "why": "SOL in -0.0/2.5 · buys 3/6 · buy share 60%/65% · rise -0%/+12%"
-  },
-  {
-   "symbol": "Rolo",
-   "name": "The McDonalds Horse",
-   "mint": "68nxBYwTPs6StVAEih4N39cBtGN5pkhrEm8b7QW1539N",
-   "age_s": 174,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -96.2,
-   "mcap_sol": 1.1,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/positivityofx/status/2125948940315144639",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "GIGA",
-   "name": "BLOCK ZERO TAX TO HOLDERS",
-   "mint": "AL2XsjjkLfJVYjZnPLHVzdnKzZBLc8C2yJ9CqdYxpump",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.2,
-   "x": "https://x.com/trysharepad/status/2125944007746306246?a=mW1V1JY8dcWp8RCfE9I&s=20",
-   "tg": false,
-   "web": "https://launchonshare.xyz/#/",
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "GIGA",
-   "name": "BLOCK ZERO TAX TO HOLDERS",
-   "mint": "5pxRt724dcsAUhYA2woCfHrYwGZL845WRsZGpW1Qpump",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/trysharepad/status/2125944007746306246?a=mW1V1JY8dcWp8RCfE9I&s=20",
-   "tg": false,
-   "web": "https://launchonshare.xyz/#/",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
   }
  ],
  "strategies": [
