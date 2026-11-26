@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T13:06:32Z",
+ "updated": "2026-11-26T13:07:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.18,
@@ -24,7 +24,7 @@
   "flagged": 24,
   "checked": 24,
   "filtered": 2,
-  "lines": 373,
+  "lines": 374,
   "last_rug": {
    "coin": "REMY",
    "pass": true
@@ -1466,15 +1466,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T10:41:55Z",
-   "time": "11:41:55",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 5 watched · 5 rejected (dev bought 4, dump 1) · closest STARSHIP: SOL in 1.2/2.5 · buys 3/6 · buy share 50%/65% · rise +8%/+12%",
-   "n": 174
-  },
   {
    "t": "2026-11-26T10:42:48Z",
    "time": "11:42:48",
@@ -3265,6 +3256,15 @@
    "action": "scan",
    "text": "new pairs · 5.4 a minute · 5 watched · 11 rejected (dev bought 5, mayhem mode 3, serial launcher 2) · closest COUNTERCAT: too young: 13 s (min 45 s)",
    "n": 373
+  },
+  {
+   "t": "2026-11-26T13:06:41Z",
+   "time": "14:06:41",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.4 a minute · 5 watched · 8 rejected (mayhem mode 4, dev bought 2, dump 1) · closest TICKBACK: too young: 4 s (min 45 s)",
+   "n": 374
   }
  ],
  "nights": [
@@ -3307,7 +3307,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3315,24 +3315,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 305,
-    "last_event_age_s": 16.7,
+    "events": 308,
+    "last_event_age_s": 22.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6524,
-    "last_event_age_s": 1.0,
+    "events": 6601,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 205,
-    "last_event_age_s": 32.3,
+    "events": 208,
+    "last_event_age_s": 22.2,
     "errors": 14,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3346,8 +3346,8 @@
   "exit_last_ms": 22,
   "launch_to_entry_s": 24,
   "creates_per_min": 5.2,
-  "watching": 3,
-  "followed": 8
+  "watching": 6,
+  "followed": 9
  },
  "learner": {
   "samples": 106,
@@ -3392,23 +3392,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3153,
+   "sent": 3187,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3153,
+   "sent": 3187,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Elonmas",
+   "name": "Elonmas",
+   "mint": "E4UL2z6RiDj4CRQi2ix3UNJHcyNuff5xJb369RHb2e8z",
+   "age_s": 22,
+   "sol_in": -0.99,
+   "buys": 1,
+   "sells": 4,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 1.0,
+   "x": "https://x.com/i/status/2125828695890006306",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 7 s (min 45 s)"
+  },
+  {
+   "symbol": "TICKBACK",
+   "name": "Tickback",
+   "mint": "EFqeZA4FvEiyBuZrNv16Mq3hAa3bjNzDnbNt2XX3pump",
+   "age_s": 27,
+   "sol_in": 4.3,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 30.1,
+   "mcap_sol": 37.8,
+   "dev_pct": 2.1,
+   "big_sell": 1.98,
+   "x": "https://x.com/Tickbackwtf/status/2125939215649427523",
+   "tg": false,
+   "web": "https://tickback.wtf",
+   "status": "watching",
+   "why": "too young: 6 s (min 45 s)"
+  },
+  {
+   "symbol": "TEST",
+   "name": "test",
+   "mint": "GApma7eWF2iNstZRTfLDYQxEg6DaZdVVPooYGXhtpump",
+   "age_s": 30,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 4 s (min 45 s)"
+  },
+  {
    "symbol": "DSTAR",
    "name": "Dogstar",
    "mint": "qn79JgAK4RSvgU4scHdHzyG4E5Zz9jHBpTdfgv9pump",
-   "age_s": 16,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3426,7 +3480,7 @@
    "symbol": "Pinky",
    "name": "The Tiny Buffalo",
    "mint": "5qbif2gNCGW7wW3x91QG9UVJCaWemYxVfrMJGYVbpump",
-   "age_s": 32,
+   "age_s": 64,
    "sol_in": 1.69,
    "buys": 2,
    "sells": 0,
@@ -3444,12 +3498,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "EzjCsxdyPzhh3hgWk4fMmFv3hkKJ66m1vPzaNfoLpump",
-   "age_s": 39,
-   "sol_in": 18.08,
+   "age_s": 71,
+   "sol_in": 17.77,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 137.3,
-   "mcap_sol": 82.5,
+   "sells": 3,
+   "rise_pct": 134.4,
+   "mcap_sol": 81.5,
    "dev_pct": 11.1,
    "big_sell": 0.49,
    "x": "https://x.com/nvidianewsroom",
@@ -3462,7 +3516,7 @@
    "symbol": "ZTITS",
    "name": "zTits",
    "mint": "4nkEnRrPGPSRQ11tr84skiX2nbKF2hvKNiabP8refPZW",
-   "age_s": 62,
+   "age_s": 94,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3480,7 +3534,7 @@
    "symbol": "DACTY",
    "name": "DACYT COIN",
    "mint": "CM55FpPwcjpst9gAk4Hut6DP49PMnsiMAUjdJA6Dpump",
-   "age_s": 66,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3498,7 +3552,7 @@
    "symbol": "COUNTERCAT",
    "name": "Counter Cat",
    "mint": "EPYMiimXszo2ZrmCLCpaY7Vg7E7gyXDeV4QjDJ3xpump",
-   "age_s": 91,
+   "age_s": 123,
    "sol_in": 0.27,
    "buys": 3,
    "sells": 2,
@@ -3516,7 +3570,7 @@
    "symbol": "ads",
    "name": "ads Chicksland",
    "mint": "HHBzkM6qwrs8BF2fDLYxxbZfEFPp6TEcvqCvJgmypump",
-   "age_s": 100,
+   "age_s": 132,
    "sol_in": 0.02,
    "buys": 3,
    "sells": 1,
@@ -3534,7 +3588,7 @@
    "symbol": "TRUMPCOIN",
    "name": "TRUMPP",
    "mint": "4rNnKg34F3zVBTsr8KeaPT87VttXxKNtDa7yi1nxpump",
-   "age_s": 104,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3552,7 +3606,7 @@
    "symbol": "PACINO",
    "name": "Ham pacino",
    "mint": "5oT95z9yPe9bcoB7cuEtsCSkneYtRv82u1wnivyupump",
-   "age_s": 106,
+   "age_s": 138,
    "sol_in": -5.33,
    "buys": 6,
    "sells": 8,
@@ -3570,7 +3624,7 @@
    "symbol": "CLM",
    "name": "Cat Labs M",
    "mint": "7bBHtU6XNBVdsciePADiTEFScw55MaiY9n21G7LDpump",
-   "age_s": 116,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3583,42 +3637,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "SWARM",
-   "name": "TRADINGSWARM.FUN",
-   "mint": "EqTYof8bsL7johmntq5gi48w6sYnvL2VYCFErUb7pump",
-   "age_s": 166,
-   "sol_in": 6.56,
-   "buys": 11,
-   "sells": 4,
-   "rise_pct": 46.9,
-   "mcap_sol": 43.6,
-   "dev_pct": 3.2,
-   "big_sell": 2.41,
-   "x": "https://x.com/tradingswarmfun/status/2125938339291533450",
-   "tg": false,
-   "web": "https://tradingswarm.fun/",
-   "status": "rejected: dump: 2.4 SOL sold",
-   "why": "dump: 2.4 SOL sold"
-  },
-  {
-   "symbol": "Inus",
-   "name": "Inus",
-   "mint": "9T4HCuTFFKttXZx9swZ184HFa2k4Duk7nqCdEKdxTCvJ",
-   "age_s": 172,
-   "sol_in": -1.67,
-   "buys": 5,
-   "sells": 24,
-   "rise_pct": -9.9,
-   "mcap_sol": 30.6,
-   "dev_pct": 9.9,
-   "big_sell": 2.68,
-   "x": "https://x.com/StepCoinsol8/status/2125938507038548023",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.9% (max 8%)",
-   "why": "dev bought 9.9% (max 8%)"
   }
  ],
  "strategies": [
