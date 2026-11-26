@@ -8,6 +8,10 @@ name: Meme Bot
 # runs, a scheduled run waits as the one pending run of the group and the next job's dispatch takes
 # its place, so it starts the bot again only when the chain broke (a failed or cancelled job). The
 # Run workflow button starts it any time ("anytime" for a test outside the session).
+# The tapes (memedata/tapes, the recorder's lines for the backtester: memebot/recorder.py) are NOT committed:
+# saved every 30 s they would store the growing hour again each time (about 2 MB of history per tape hour,
+# forever, fetched by every job). Each job uploads its own as the artifact tapes-<run id>-<attempt>, kept 14
+# days; memebot/backtest.py --data DIR reads a folder of them (one subfolder per job).
 
 on:
   schedule:
@@ -52,12 +56,13 @@ jobs:
           git config --global user.name "memebot"
           git config --global user.email "memebot@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin meme-data > /dev/null; then
-            git fetch -q origin meme-data
+            git fetch -q --depth 1 origin meme-data         # the tip: the bot never reads the branch's history
             git worktree add -q --detach memedata origin/meme-data
           else
             git worktree add -q --detach memedata
-            cd memedata && git checkout -q --orphan meme-data && git rm -rfq .
+            ( cd memedata && git checkout -q --orphan meme-data && git rm -rfq . )
           fi
+          echo "tapes/" >> "$(git -C memedata rev-parse --git-path info/exclude)"   # an artifact, never a commit
 
       - name: The night
         env:
@@ -85,3 +90,13 @@ jobs:
           # still the session (more than 10 minutes before its end; always, when it runs 24/7)? then the next job takes over
           LEFT=$(python3 -c "import sys, datetime; sys.path.insert(0, 'memebot'); import bot; c = bot.load_config(); s = bot.session_of(datetime.datetime.utcnow(), c); print(bot.ALWAYS_LEFT if bot.always_on(c) else (int(s[2]) if s else 0))")
           if [ "$LEFT" -gt 10 ]; then gh workflow run memebot.yml --ref "$GITHUB_REF_NAME"; echo "next job started ($LEFT min left)"; fi
+
+      - name: The tapes for the backtester (an artifact, kept 14 days; not in git)
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: tapes-${{ github.run_id }}-${{ github.run_attempt }}
+          path: memedata/tapes/
+          retention-days: 14
+          if-no-files-found: ignore

@@ -56,5 +56,22 @@ Repozitár je verejný, preto sú minúty GitHub Actions zadarmo. Tlačidlo Run
 workflow ho spustí hneď (s „anytime“ aj cez deň). Vypneš ho premennou
 `MEMEBOT_OFF=true`. Dáta ukladá do vetvy `meme-data`.
 
+## Pásky a backtest
+
+Bot zapisuje, čo New Pairs videl a urobil (každý nový coin, čítania krivky,
+RugCheck, rozhodnutia, nákupy a predaje), do `DATA/tapes/` po hodinách UTC
+(`memebot/recorder.py`). Do vetvy `meme-data` nejdú: pri ukladaní každých
+30 s by história rástla asi o 2 MB za hodinu pásky. Každý job ich nahrá ako
+artefakt `tapes-<run id>-<pokus>`, ktorý GitHub drží 14 dní. Backtest na nich:
+
+```
+gh run download <run id> -n tapes-<run id>-1 -D DIR/tapes/<run id>   # pre každý job
+python3 memebot/backtest.py --data DIR --out report.json
+```
+
+Backtest odporučí zmenu len vtedy, keď nové pravidlo porazí doterajšie na tých
+istých coinoch viac, ako dovolí náhoda, aj na čase, ktorý pri výbere nevidel.
+Aj tak je to len náznak, nie sľub: je to papier na papieri.
+
 Nie je to finančné poradenstvo. Väčšina nových meme coinov stratí väčšinu
 hodnoty za pár hodín.
