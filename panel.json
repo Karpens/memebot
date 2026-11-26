@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:51:52Z",
+ "updated": "2026-11-26T17:52:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 44,
   "checked": 37,
   "filtered": 8,
-  "lines": 735,
+  "lines": 736,
   "last_rug": {
    "coin": "COFOUNDERS",
    "pass": true
@@ -2180,6 +2180,10 @@
   [
    1795715473,
    84.53
+  ],
+  [
+   1795715533,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2654,15 +2658,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T15:20:26Z",
-   "time": "16:20:26",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.0 a minute · 6 watched · 14 rejected (serial launcher 7, dev bought 3, mayhem mode 3) · closest RWAFFLE: too young: 14 s (min 45 s)",
-   "n": 536
-  },
   {
    "t": "2026-11-26T15:20:47Z",
    "time": "16:20:47",
@@ -4453,6 +4448,15 @@
    "action": "scan",
    "text": "new pairs · 5.4 a minute · 4 watched · 9 rejected (dev bought 2, dump 2, mayhem mode 2) · closest CHILL: buy share 50%/65%",
    "n": 735
+  },
+  {
+   "t": "2026-11-26T17:52:01Z",
+   "time": "18:52:01",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.8 a minute · 4 watched · 8 rejected (dump 2, mayhem mode 2, no symbol or name 2) · closest REGGIE: too young: 6 s (min 45 s)",
+   "n": 736
   }
  ],
  "nights": [
@@ -4495,7 +4499,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4503,24 +4507,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 617,
-    "last_event_age_s": 27.6,
+    "events": 620,
+    "last_event_age_s": 3.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7784,
-    "last_event_age_s": 0.1,
+    "events": 7846,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 438,
-    "last_event_age_s": 28.2,
+    "events": 440,
+    "last_event_age_s": 25.9,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4535,7 +4539,7 @@
   "launch_to_entry_s": 25.0,
   "creates_per_min": 5.4,
   "watching": 3,
-  "followed": 7
+  "followed": 8
  },
  "learner": {
   "samples": 107,
@@ -4581,13 +4585,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6145,
+   "sent": 6179,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6179,
+   "sent": 6213,
    "errors": 0,
    "last_error": null
   }
@@ -4596,8 +4600,62 @@
   {
    "symbol": "?",
    "name": "",
+   "mint": "4Qpqjqm2o1n8XDuNL9SCzbFgVbmZoBoVL362JZXrJwY2",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "FIND",
+   "name": "Find The Coin",
+   "mint": "9Cn1xLCb9BBjYHzNWDoqRbnC6a3KR63oJVCEPtbcpump",
+   "age_s": 25,
+   "sol_in": 0.12,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 0.8,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 22 s (min 45 s)"
+  },
+  {
+   "symbol": "REGGIE",
+   "name": "Reggie the turkey",
+   "mint": "5t4sGPJ9wA7onEdr1e3q9viAWhkqzuaTHVTYhVkFpump",
+   "age_s": 29,
+   "sol_in": 2.13,
+   "buys": 5,
+   "sells": 11,
+   "rise_pct": 13.6,
+   "mcap_sol": 36.6,
+   "dev_pct": 7.3,
+   "big_sell": 2.37,
+   "x": "https://x.com/ellengu18/status/2126011062071734285?a=cCQ4ZofJHkF2K2KmZxE&s=20",
+   "tg": false,
+   "web": "https://boards.4chan.org/tv/thread/224444939",
+   "status": "rejected: dump: 2.4 SOL sold",
+   "why": "dump: 2.4 SOL sold"
+  },
+  {
+   "symbol": "?",
+   "name": "",
    "mint": "HNs22D4MipGxu77pRpPMeTRYKBX97S1BDYHN3GyYpump",
-   "age_s": 27,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4615,12 +4673,12 @@
    "symbol": "wishbone",
    "name": "wishbone",
    "mint": "31TFtLgP5D8zQcaGFH3besKmTu36wqc4wEiM25zbpump",
-   "age_s": 28,
-   "sol_in": 21.86,
-   "buys": 15,
-   "sells": 12,
-   "rise_pct": 162.4,
-   "mcap_sol": 101.3,
+   "age_s": 60,
+   "sol_in": 14.95,
+   "buys": 29,
+   "sells": 25,
+   "rise_pct": 102.8,
+   "mcap_sol": 78.3,
    "dev_pct": 16.0,
    "big_sell": 5.5,
    "x": "https://x.com/wishbonetek/status/2126010802800840836",
@@ -4633,7 +4691,7 @@
    "symbol": "BGT",
    "name": "BEAT BY A GIRL TRADER",
    "mint": "AbztP3AZ4izQNwPdVzzLZbJpRv67vPDzpYnVdZTNpump",
-   "age_s": 45,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4651,7 +4709,7 @@
    "symbol": "SNØW",
    "name": "SnøwMan",
    "mint": "6oHxvWcjFbq6vjwbxwq9o6KBL4vqJTeMDaZwZyMupump",
-   "age_s": 73,
+   "age_s": 105,
    "sol_in": 0.05,
    "buys": 4,
    "sells": 1,
@@ -4669,7 +4727,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BY8P3PH2FidbNxUshFJePvYGtDsy3NoHQgG5oCu46L9M",
-   "age_s": 107,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4687,7 +4745,7 @@
    "symbol": "HOLD",
    "name": "Hold Earn Ripen",
    "mint": "BcMgPmFcufhzQxDab4NdhTYqXm9E9kTneqyuJxcTpump",
-   "age_s": 114,
+   "age_s": 146,
    "sol_in": -0.59,
    "buys": 3,
    "sells": 4,
@@ -4705,7 +4763,7 @@
    "symbol": "Life",
    "name": "Solana ruined my life",
    "mint": "5zynj4huezsJC9e4PmPD7pELdNLRhFCSQUMKQLTqpump",
-   "age_s": 115,
+   "age_s": 147,
    "sol_in": -0.19,
    "buys": 2,
    "sells": 1,
@@ -4723,7 +4781,7 @@
    "symbol": "FuckCented",
    "name": "Rape",
    "mint": "F4VbU5tzxVeLV6nTj3gfB5erMN3tzUzWdXxRNTKgpump",
-   "age_s": 137,
+   "age_s": 169,
    "sol_in": -0.34,
    "buys": 2,
    "sells": 2,
@@ -4741,12 +4799,12 @@
    "symbol": "LOS",
    "name": "League of Solana",
    "mint": "4FUZVEmP3mti9eygSrBeRNRx5kBLGDGDWAzHLGtmpump",
-   "age_s": 145,
-   "sol_in": 11.47,
-   "buys": 31,
-   "sells": 30,
-   "rise_pct": 86.5,
-   "mcap_sol": 57.0,
+   "age_s": 177,
+   "sol_in": 16.07,
+   "buys": 36,
+   "sells": 34,
+   "rise_pct": 128.6,
+   "mcap_sol": 70.0,
    "dev_pct": 4.7,
    "big_sell": 5.09,
    "x": "https://x.com/leagueofsolanaa",
@@ -4759,7 +4817,7 @@
    "symbol": "$SOBER",
    "name": "Sober Tooth",
    "mint": "Cn3fa3GXtjpbXZMQH3TBrq7PABBJxJHaXeuLywc6pump",
-   "age_s": 147,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4772,24 +4830,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "CHILL",
-   "name": "Stoner Walk",
-   "mint": "2VKmhMwdqcedJWnFRBHivSPjhbC9VFXjWtHod7wmpump",
-   "age_s": 174,
-   "sol_in": 2.88,
-   "buys": 6,
-   "sells": 6,
-   "rise_pct": 19.3,
-   "mcap_sol": 36.1,
-   "dev_pct": 4.2,
-   "big_sell": 0.76,
-   "x": "https://x.com/search?q=stoner%20walk&src=typed_query&f=live",
-   "tg": false,
-   "web": "https://x.com/search?q=stoner%20walk&src=typed_query&f=live",
-   "status": "watching",
-   "why": "buy share 50%/65%"
   }
  ],
  "strategies": [
