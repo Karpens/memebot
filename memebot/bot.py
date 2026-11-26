@@ -569,9 +569,7 @@ class Night(object):
             # honeypot: what the coins this buys would sell for right away
             pos = self.buy(mint, fx, size - self.fee_usd(sol_usd), sol_usd, decimals)
             if not pos:
-                self.log("RUG CHECK", fx["symbol"], "reject", "Jupiter nedá cenu na nákup.")
-                n["entered"].append(mint)
-                continue
+                continue                                # no quote right now: the next scan tries again
             back = self.sell_quote(pos, pos["raw"], sol_usd)
             loss = (1 - back / pos["cost"]) * 100 if back is not None else 100.0
             if back is None or loss > cfg["max_roundtrip_loss_pct"]:
@@ -597,6 +595,9 @@ class Night(object):
             return
         seen["inside"] += 1
         rep = self.rug(mint, now)
+        if rep is None:                                 # RugCheck did not answer: the next scan asks again
+            self.state["rug_cache"].pop(mint, None)
+            return
         hold = self.state["holders"].setdefault(mint, [])
         ok_rug, bad, nh = rug_check(rep, cfg)
         if nh and (not hold or now - hold[-1][0] >= 60):
