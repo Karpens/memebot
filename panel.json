@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T18:30:55Z",
+ "updated": "2026-11-26T18:31:28Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 46,
   "checked": 38,
   "filtered": 8,
-  "lines": 785,
+  "lines": 786,
   "last_rug": {
    "coin": "UFOVAULT",
    "pass": true
@@ -2336,6 +2336,10 @@
   [
    1795717813,
    84.53
+  ],
+  [
+   1795717873,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2810,15 +2814,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T15:52:44Z",
-   "time": "16:52:44",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 4 watched · 7 rejected (mayhem mode 3, dump 2, dev bought 1) · closest CO: too young: 0 s (min 45 s)",
-   "n": 586
-  },
   {
    "t": "2026-11-26T15:53:45Z",
    "time": "16:53:45",
@@ -4609,6 +4604,15 @@
    "action": "scan",
    "text": "new pairs · 9.0 a minute · 5 watched · 22 rejected (serial launcher 9, mayhem mode 7, dump 3) · closest MANTLE: too young: 11 s (min 45 s)",
    "n": 785
+  },
+  {
+   "t": "2026-11-26T18:31:22Z",
+   "time": "19:31:22",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 9.0 a minute · 5 watched · 22 rejected (serial launcher 10, mayhem mode 8, dev bought 2) · closest MANTLE: too young: 14 s (min 45 s)",
+   "n": 786
   }
  ],
  "nights": [
@@ -4653,7 +4657,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll failing · 38 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4661,24 +4665,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 965,
-    "last_event_age_s": 0.1,
+    "events": 967,
+    "last_event_age_s": 19.3,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
+    "connected": false,
     "events": 13507,
-    "last_event_age_s": 0.2,
-    "errors": 0,
-    "last_error": null
+    "last_event_age_s": 33.2,
+    "errors": 5,
+    "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 685,
-    "last_event_age_s": 3.8,
+    "events": 687,
+    "last_event_age_s": 28.5,
     "errors": 54,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4691,9 +4695,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 9.8,
-  "watching": 4,
-  "followed": 19
+  "creates_per_min": 8.8,
+  "watching": 5,
+  "followed": 17
  },
  "learner": {
   "samples": 107,
@@ -4739,23 +4743,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8639,
+   "sent": 8675,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8673,
+   "sent": 8709,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SENTAI",
+   "name": "Sent AI Labs",
+   "mint": "3CUErqYUdN4hvzoer996z4rFTsYUcj7u2Ex5etALpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.0,
+   "dev_pct": 5.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Criminul",
+   "name": "Criminul",
+   "mint": "3xUX3weRwKX33yCSvUHVvAD6i6kphbyv2Cn4M7nB22P1",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "Nothing",
    "name": "Nothing",
    "mint": "6r811UEaxNBc4csCj7hKGbyizE4GiqwjyeEGKCxSpump",
-   "age_s": 0,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4773,7 +4813,7 @@
    "symbol": "Barron",
    "name": "Official Barron Trump",
    "mint": "F7YzX3NnBGRTMgzN4FgUcsRAedjSKjbBf3VheKTUpump",
-   "age_s": 4,
+   "age_s": 37,
    "sol_in": 0.61,
    "buys": 1,
    "sells": 0,
@@ -4791,7 +4831,7 @@
    "symbol": "CALLUPB",
    "name": "Prepare to Be Called Up",
    "mint": "CaJSUQeFkMVsgpFJx6gMSfQk4TkqZYiTQvDbNwFDpump",
-   "age_s": 12,
+   "age_s": 45,
    "sol_in": 0.54,
    "buys": 2,
    "sells": 0,
@@ -4809,7 +4849,7 @@
    "symbol": "MANTLE",
    "name": "Mantle",
    "mint": "ABaWRoCuZ5poxUDiQN4SdheB24tqg7TV8TW4qjeppump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 5.62,
    "buys": 13,
    "sells": 1,
@@ -4827,7 +4867,7 @@
    "symbol": "MONEKO",
    "name": "MONEKO",
    "mint": "As3L9An8Wom8Xh9uSgFe5XMmGBpvGBttvSRjacnJuzZt",
-   "age_s": 19,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4845,7 +4885,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "4B1KaqGAuvcU4Lz8N12nLLowxqL4zN9xHpAwKbdv2RRS",
-   "age_s": 23,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4863,7 +4903,7 @@
    "symbol": "Crime",
    "name": "Crimecoin",
    "mint": "3UKWJyiSLGUJXmMaKZC9Sf777hkVpFf1y7crjsfqFLbm",
-   "age_s": 23,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4881,7 +4921,7 @@
    "symbol": "WHAT",
    "name": "What?",
    "mint": "GhadUxSSWohfnuow1CyS4GMJ54Xa5fffr2WPnxYwHVkH",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4899,7 +4939,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "CcC3MfLt63Ryfs3TnfSBuz769zTPibjxarT2fg6rpump",
-   "age_s": 29,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4917,7 +4957,7 @@
    "symbol": "MANTLE",
    "name": "Mantle",
    "mint": "HtBg46yQ5BFu43eWCXQueBJu3pbqRTGmjtomWXzGpump",
-   "age_s": 44,
+   "age_s": 77,
    "sol_in": 0.45,
    "buys": 14,
    "sells": 6,
@@ -4935,7 +4975,7 @@
    "symbol": "OFFL",
    "name": "Offledger",
    "mint": "5cBuR3ShTfVDWBtazp2TgZzev7eNYfjB7i8etppnpump",
-   "age_s": 45,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4953,7 +4993,7 @@
    "symbol": "GSD",
    "name": "rdg",
    "mint": "5ksYR8erJyJ65Gmr3x9NBWhzWUGSmSmjkUBv6gXJavQh",
-   "age_s": 51,
+   "age_s": 84,
    "sol_in": 0.15,
    "buys": 2,
    "sells": 0,
@@ -4971,7 +5011,7 @@
    "symbol": "CI",
    "name": "Crime Inu",
    "mint": "5nTqTCTeUXWxZCZV27Hfoj6xums4XAaVS8ydrgt3amgp",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4989,7 +5029,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "XndfSkR2tWv9kUMfRAFBxcmEqjHbqDTkeaoUgkVpump",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5007,7 +5047,7 @@
    "symbol": "QUILL",
    "name": "Quill Street",
    "mint": "6RE5rLYBUCrXwLLE6ALkPTnthzLtNptMVFyKcasoTAoY",
-   "age_s": 79,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -5025,7 +5065,7 @@
    "symbol": "PINO",
    "name": "CHRISTMAS ELPINO",
    "mint": "8YiZbaga2DMhZteu2HWVHqEKa6SA2kQ9HmqnvCv7pump",
-   "age_s": 87,
+   "age_s": 120,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5043,7 +5083,7 @@
    "symbol": "Criminul",
    "name": "Criminul",
    "mint": "he1iusmfkpAdwvxLNGV8Y1iSbj4rUy6yMhEA3fotn9A",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5061,7 +5101,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "7jP6cU7oZvVVjGW67YbkBbsbi5bojJpYjDHokx9Upump",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5074,42 +5114,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "BYHOW",
-   "name": "By How Much",
-   "mint": "AGLBAtsszfdN5v6tG7yP3vpBnsnkDtJHV3MDH6yRpump",
-   "age_s": 100,
-   "sol_in": -0.59,
-   "buys": 4,
-   "sells": 3,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 0.83,
-   "x": false,
-   "tg": false,
-   "web": "https://sports.yahoo.com/college-football/articles/espn-makes-unusual-score-prediction-115028479.html?mint=",
-   "status": "watching",
-   "why": "too young: 29 s (min 45 s)"
-  },
-  {
-   "symbol": "BALLER",
-   "name": "balls",
-   "mint": "Ch5ehCq2bQBH796q9RfQV3XubRzD9NPsNcuPLqpHMDyd",
-   "age_s": 131,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/@bouncyjet",
-   "tg": false,
-   "web": "https://tryuser.fun/trade/Ch5ehCq2bQBH796q9RfQV3XubRzD9NPsNcuPLqpHMDyd",
-   "status": "rejected: serial launcher: 28 more coins in 60 min",
-   "why": "serial launcher: 28 more coins in 60 min"
   }
  ],
  "strategies": [
