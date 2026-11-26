@@ -87,6 +87,7 @@ DEFAULTS = {
     "np_rug_bad_risks": ["rugged tokens", "single holder ownership"],   # risk names that reject
     # the entry trigger: momentum, first in
     "np_max_age_s": 180,
+    "np_min_age_s": 0,              # no entry before this age (s): the first seconds are the snipers' and the dev's
     "np_min_sol": 3.0,              # real SOL gained in the curve since the create
     "np_min_buys": 8,               # readings where the real SOL went up
     "np_min_buy_share": 0.7,        # ... as a share of the readings that moved
@@ -903,6 +904,11 @@ def _momentum(coin, cfg, t):
     cap_age = _c(cfg, "np_max_age_s")
     if age > cap_age + EPS:
         return False, "too old: %d s (max %s s)" % (math.ceil(age), _g(cap_age))
+    min_age = _c(cfg, "np_min_age_s")
+    if age < min_age - EPS:
+        # the live morning of 2026-11-26: 5 of 6 entries 10-25 s after the launch lost, 3 of them to a dump of
+        # 2.9-4.4 SOL within seconds (-25 to -29 %): the launch's own buyers selling into the first momentum
+        return False, "too young: %d s (min %s s)" % (int(age), _g(min_age))
     miss = []
     need_sol, need_buys = _c(cfg, "np_min_sol"), int(math.ceil(_c(cfg, "np_min_buys") - EPS))
     need_share, need_rise = _c(cfg, "np_min_buy_share"), _c(cfg, "np_min_rise_pct")
