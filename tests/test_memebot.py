@@ -1116,6 +1116,7 @@ class Speed(unittest.TestCase):
                      "buys under %.0f%% of the last %d minutes" % (c["fade_buy_ratio"] * 100, c["fade_window_s"] / 60),
                      "pump.fun's fee is about %g%% each way" % c["curve_fee_pct"],
                      "the %g%% latency haircut each way" % c["latency_slip_pct"],
+                     "Run around the clock, 24/7" if mb.always_on(c) else
                      "everything sold by 06:%02d" % (60 - c["flat_before_end_min"])):
             self.assertIn(text, p)
         for t, ladder in (("swing", [[7, 0.5], [20, 1]]), ("runner", [[7, 0.34], [20, 0.5], [60, 1]]),
