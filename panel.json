@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:55:46Z",
+ "updated": "2026-11-26T19:56:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -24,7 +24,7 @@
   "flagged": 56,
   "checked": 42,
   "filtered": 8,
-  "lines": 907,
+  "lines": 908,
   "last_rug": {
    "coin": "FORU",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795686961,
-   87.76
-  ],
   [
    1795687021,
    87.76
@@ -2472,6 +2468,10 @@
   [
    1795722913,
    83.48
+  ],
+  [
+   1795722973,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2994,15 +2994,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T17:32:50Z",
-   "time": "18:32:50",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 7 watched · 11 rejected (mayhem mode 5, dump 2, serial launcher 2) · closest Pairs: too young: 5 s (min 45 s)",
-   "n": 708
-  },
   {
    "t": "2026-11-26T17:33:50Z",
    "time": "18:33:50",
@@ -4793,6 +4784,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 2 watched · 6 rejected (serial launcher 4, mayhem mode 2) · closest Jensen: SOL in 0.4/2.5 · rise +3%/+12%",
    "n": 907
+  },
+  {
+   "t": "2026-11-26T19:56:06Z",
+   "time": "20:56:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 2 watched · 10 rejected (serial launcher 5, mayhem mode 4, dump 1) · closest Jensen: SOL in 0.4/2.5 · rise +3%/+12%",
+   "n": 908
   }
  ],
  "nights": [
@@ -4837,7 +4837,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4845,24 +4845,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1713,
-    "last_event_age_s": 1.5,
+    "events": 1717,
+    "last_event_age_s": 1.8,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22940,
-    "last_event_age_s": 0.8,
+    "events": 22987,
+    "last_event_age_s": 0.3,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1186,
-    "last_event_age_s": 8.0,
+    "events": 1189,
+    "last_event_age_s": 1.2,
     "errors": 110,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -4876,8 +4876,8 @@
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
   "creates_per_min": 4.2,
-  "watching": 2,
-  "followed": 7
+  "watching": 4,
+  "followed": 11
  },
  "learner": {
   "samples": 108,
@@ -4923,23 +4923,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14061,
+   "sent": 14096,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14095,
+   "sent": 14130,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FEYES",
+   "name": "Fomo Eyes",
+   "mint": "492K7iRnCQVF1EqiToWLNjAcV2YRKe9RaHzRVpTkpump",
+   "age_s": 1,
+   "sol_in": 11.66,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 87.8,
+   "mcap_sol": 57.8,
+   "dev_pct": 5.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "IT",
+   "name": "It’s Thanksgiving",
+   "mint": "HndedbPB5VW6LqVdWJUVQ1zThZWR786e5TzyYkhUpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.2,
+   "x": "https://x.com/DonaldJTrumpJr/status/2126042335741927488",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
+   "symbol": "PLATE",
+   "name": "Thanksgiving Plate",
+   "mint": "HG1V4ete73XsJmpso4k9RkQBNgsXoWtaQASxBtmgh1rh",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -97.0,
+   "mcap_sol": 0.8,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 32 more coins in 60 min",
+   "why": "serial launcher: 32 more coins in 60 min"
+  },
+  {
+   "symbol": "Fomo Coin",
+   "name": "Fear Of Missing Out",
+   "mint": "8GxEJwiu6EbmCicTkNgtyviNrMaBZQsBqYFsPieXpump",
+   "age_s": 31,
+   "sol_in": 0.03,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.2,
+   "mcap_sol": 29.5,
+   "dev_pct": 2.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/thealexmorgan15/status/2126041670147879009?a=jJBC3rCgQnCrf7GG2dw&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "BIBI",
    "name": "BIBI MODE",
    "mint": "35LXgYfMJvZAgYzKD11F1UbVQ2DVYUokHWXmtLoEpump",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4957,7 +5029,7 @@
    "symbol": "$HELL",
    "name": "HELL'S FAVORITE DAUGHTER",
    "mint": "91X8gmEvrL8MLNEPw1MXLPUSSwYtTaFnuXyuXHQVpump",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4975,7 +5047,7 @@
    "symbol": "VINDOG",
    "name": "Vendetta Dog",
    "mint": "KCq4bB7BT1hCx4oKkjGJAfcGC5wHRtdabEBzHdwpump",
-   "age_s": 8,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4993,12 +5065,12 @@
    "symbol": "QUANT",
    "name": "Quant",
    "mint": "6UKJicZ6BNZckfRBF9h6gYv6f8EuaJrJkpfZ2pnZpump",
-   "age_s": 36,
-   "sol_in": 4.79,
-   "buys": 6,
-   "sells": 12,
-   "rise_pct": 32.7,
-   "mcap_sol": 40.8,
+   "age_s": 69,
+   "sol_in": 5.54,
+   "buys": 8,
+   "sells": 16,
+   "rise_pct": 38.3,
+   "mcap_sol": 42.5,
    "dev_pct": 5.0,
    "big_sell": 2.36,
    "x": "https://x.com/askquantdotfun",
@@ -5011,7 +5083,7 @@
    "symbol": "PINU",
    "name": "Pumpfun INU",
    "mint": "6VqaVGMq7eLUcrq83nYrcHm6kZRBcsDp9GUpCcsupump",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5029,14 +5101,14 @@
    "symbol": "UNCLE",
    "name": "Uncle Sam",
    "mint": "8C4T2UBREr8QGS1Qp8k2abgjGvTNL6sgP6mnaKET455T",
-   "age_s": 47,
-   "sol_in": 3.02,
+   "age_s": 80,
+   "sol_in": 0.02,
    "buys": 9,
-   "sells": 6,
-   "rise_pct": 21.2,
-   "mcap_sol": 33.9,
+   "sells": 16,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.5,
+   "big_sell": 1.18,
    "x": false,
    "tg": false,
    "web": false,
@@ -5047,7 +5119,7 @@
    "symbol": "EtheronAl",
    "name": "EtheronAl",
    "mint": "EWi2Rb4dMo5ZguJiYJW5zTUiA1nRzkE4hkKLDNumpump",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": 0.15,
    "buys": 1,
    "sells": 0,
@@ -5065,7 +5137,7 @@
    "symbol": "$MIND",
    "name": "Mind the Malfoy",
    "mint": "6cyXe51WV4Nns43YpyJtvbm7pDDy65L84ETBUrQvpump",
-   "age_s": 86,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5083,7 +5155,7 @@
    "symbol": "KIDSTBL",
    "name": "Still At The Kids Table",
    "mint": "2LwG4cYhrsjsk1d9yduoYGqBrwTQZsL6DRwJCRn5dg4q",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.03,
    "buys": 1,
    "sells": 0,
@@ -5101,7 +5173,7 @@
    "symbol": "$MIND",
    "name": "Mind the Malfoy",
    "mint": "5EYq7ujBjYxrWQeXjcC18M74UwFfWSDATZ78VJhspump",
-   "age_s": 121,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5119,7 +5191,7 @@
    "symbol": "Jensen",
    "name": "Chip Giving",
    "mint": "GYHSkKCEhjmsJrfWDyEwWkoDiHLBbPrWvVxu7opcpump",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": 0.41,
    "buys": 9,
    "sells": 0,
