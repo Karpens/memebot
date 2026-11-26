@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T04:53:29Z",
+ "updated": "2026-11-26T04:53:59Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 70.3,
@@ -20,13 +20,13 @@
   "id": "2026-11-25",
   "start_equity": 100.0,
   "started": "2026-11-26T02:36:46Z",
-  "scans": 909,
-  "flagged": 55,
-  "checked": 225,
+  "scans": 915,
+  "flagged": 57,
+  "checked": 237,
   "filtered": 5,
-  "lines": 533,
+  "lines": 538,
   "last_rug": {
-   "coin": "Grodia",
+   "coin": "NORFEATH",
    "pass": true
   }
  },
@@ -37,19 +37,9 @@
    "t": "2026-11-26T04:33:31Z"
   },
   {
-   "coin": "NORFEATH",
-   "why": "trending",
-   "t": "2026-11-26T04:43:04Z"
-  },
-  {
    "coin": "PUMPCHAN",
    "why": "trending",
    "t": "2026-11-26T04:43:09Z"
-  },
-  {
-   "coin": "Grodia",
-   "why": "trending",
-   "t": "2026-11-26T04:43:40Z"
   },
   {
    "coin": "UHI",
@@ -70,6 +60,16 @@
    "coin": "call.fun",
    "why": "holders +34%",
    "t": "2026-11-26T04:53:29Z"
+  },
+  {
+   "coin": "NORFEATH",
+   "why": "trending",
+   "t": "2026-11-26T04:53:34Z"
+  },
+  {
+   "coin": "Grodia",
+   "why": "trending",
+   "t": "2026-11-26T04:53:44Z"
   }
  ],
  "curve": [
@@ -611,6 +611,10 @@
   ],
   [
    1795668764,
+   70.3
+  ],
+  [
+   1795668824,
    70.3
   ]
  ],
@@ -1471,46 +1475,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T04:05:41Z",
-   "time": "05:05:41",
-   "agent": "RISK",
-   "coin": null,
-   "action": "pause",
-   "text": "6 losses in a row · 2 min pause"
-  },
-  {
-   "t": "2026-11-26T04:05:41Z",
-   "time": "05:05:41",
-   "agent": "EXECUTOR",
-   "coin": "Grodia",
-   "action": "exit",
-   "text": "EXIT Grodia $-0.70 (-9%) · stop -7%"
-  },
-  {
-   "t": "2026-11-26T04:05:41Z",
-   "time": "05:05:41",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "scanned 48 new coins · 48 pairs · 1 pass the rules"
-  },
-  {
-   "t": "2026-11-26T04:06:42Z",
-   "time": "05:06:42",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "scanned 48 new coins · 48 pairs · 1 pass the rules"
-  },
-  {
-   "t": "2026-11-26T04:07:33Z",
-   "time": "05:07:33",
-   "agent": "RISK",
-   "coin": null,
-   "action": "pause",
-   "text": "7 losses in a row · 2 min pause"
-  },
   {
    "t": "2026-11-26T04:07:33Z",
    "time": "05:07:33",
@@ -3229,6 +3193,51 @@
    "action": "reject",
    "text": "FAIL · LP locked only 0% · risk: Large Amount of LP Unlocked",
    "n": 533
+  },
+  {
+   "t": "2026-11-26T04:53:34Z",
+   "time": "05:53:34",
+   "agent": "SCANNER",
+   "coin": "NORFEATH",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $57.2k · 5m $5.0k · buys 59% · trending · boosted",
+   "n": 534
+  },
+  {
+   "t": "2026-11-26T04:53:34Z",
+   "time": "05:53:34",
+   "agent": "NEWS",
+   "coin": "NORFEATH",
+   "action": "news",
+   "text": "promo: X @flynorfeather · web · 100 boosts · trending",
+   "n": 535
+  },
+  {
+   "t": "2026-11-26T04:53:44Z",
+   "time": "05:53:44",
+   "agent": "SCANNER",
+   "coin": "Grodia",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $77.8k · 5m $2.6k · buys 60% · trending · boosted",
+   "n": 536
+  },
+  {
+   "t": "2026-11-26T04:53:44Z",
+   "time": "05:53:44",
+   "agent": "NEWS",
+   "coin": "Grodia",
+   "action": "news",
+   "text": "promo: X @thegrodia · web · 100 boosts · trending",
+   "n": 537
+  },
+  {
+   "t": "2026-11-26T04:53:59Z",
+   "time": "05:53:59",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 88 new coins · 88 pairs · 4 pass the rules",
+   "n": 538
   }
  ],
  "nights": [],
@@ -3253,7 +3262,7 @@
   "scan_sec": 5,
   "gt_sec": 20,
   "feed": "jupiter · scan 5s · live 1s",
-  "last_scan_ms": 489,
+  "last_scan_ms": 112,
   "watch_ms": 1,
   "scans_per_min": 12,
   "feeds": [
@@ -3306,13 +3315,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2203,
+   "sent": 2235,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2203,
+   "sent": 2235,
    "errors": 0,
    "last_error": null
   }
