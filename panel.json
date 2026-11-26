@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:00:26Z",
+ "updated": "2026-11-26T22:00:58Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.97,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 67,
-  "checked": 48,
+  "flagged": 68,
+  "checked": 49,
   "filtered": 9,
-  "lines": 1082,
+  "lines": 1088,
   "last_rug": {
-   "coin": "KITE",
+   "coin": "JOUST",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TOPH",
-   "why": "momentum",
-   "t": "2026-11-26T20:30:35Z"
-  },
   {
    "coin": "GTA 6",
    "why": "momentum",
@@ -70,13 +65,14 @@
    "coin": "ZeroBlock",
    "why": "momentum",
    "t": "2026-11-26T21:36:18Z"
+  },
+  {
+   "coin": "JOUST",
+   "why": "momentum",
+   "t": "2026-11-26T22:00:48Z"
   }
  ],
  "curve": [
-  [
-   1795694401,
-   85.94
-  ],
   [
    1795694461,
    85.94
@@ -2472,6 +2468,10 @@
   [
    1795730367,
    82.97
+  ],
+  [
+   1795730427,
+   82.97
   ]
  ],
  "position_pct": 10.0,
@@ -3036,60 +3036,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T19:39:56Z",
-   "time": "20:39:56",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 6 watched · 17 rejected (mayhem mode 9, serial launcher 4, dev bought 3) · closest sexnvid: too young: 11 s (min 45 s)",
-   "n": 883
-  },
-  {
-   "t": "2026-11-26T19:40:56Z",
-   "time": "20:40:56",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.4 a minute · 8 watched · 16 rejected (mayhem mode 7, serial launcher 5, dev bought 3) · closest FCAT: too young: 13 s (min 45 s)",
-   "n": 884
-  },
-  {
-   "t": "2026-11-26T19:41:30Z",
-   "time": "20:41:30",
-   "agent": "SCANNER",
-   "coin": "FCAT",
-   "action": "flag",
-   "text": "momentum · 10.2 SOL in · 12/18 buys (67%) · +79% since launch · mcap 50 SOL · 50 s old",
-   "n": 885
-  },
-  {
-   "t": "2026-11-26T19:41:30Z",
-   "time": "20:41:30",
-   "agent": "RUG CHECK",
-   "coin": "FCAT",
-   "action": "wait",
-   "text": "waiting: 16 holders for 10.2 SOL in (0.64 SOL a holder, max 0.5) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
-   "n": 886
-  },
-  {
-   "t": "2026-11-26T19:41:57Z",
-   "time": "20:41:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.4 a minute · 9 watched · 14 rejected (mayhem mode 7, serial launcher 5, dev bought 1) · closest FCAT: buy share 59%/65%",
-   "n": 887
-  },
-  {
-   "t": "2026-11-26T19:42:58Z",
-   "time": "20:42:58",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.2 a minute · 6 watched · 14 rejected (mayhem mode 6, serial launcher 4, dump 2) · closest BURNCOIN: too young: 2 s (min 45 s)",
-   "n": 888
-  },
   {
    "t": "2026-11-26T19:43:59Z",
    "time": "20:43:59",
@@ -4835,6 +4781,60 @@
    "action": "tape",
    "text": "tape 2026-11-26T21 · 632 lines (436 curve readings) · 0.1 MB · 51 coins",
    "n": 1082
+  },
+  {
+   "t": "2026-11-26T22:00:37Z",
+   "time": "23:00:37",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 14.0 a minute · 22 watched · 22 rejected (serial launcher 14, dev bought 3, mayhem mode 3) · closest JOUST: too young: 33 s (min 45 s)",
+   "n": 1083
+  },
+  {
+   "t": "2026-11-26T22:00:48Z",
+   "time": "23:00:48",
+   "agent": "SCANNER",
+   "coin": "JOUST",
+   "action": "flag",
+   "text": "momentum · 10.2 SOL in · 22/30 buys (73%) · +78% since launch · mcap 51 SOL · 45 s old",
+   "n": 1084
+  },
+  {
+   "t": "2026-11-26T22:00:48Z",
+   "time": "23:00:48",
+   "agent": "RUG CHECK",
+   "coin": "JOUST",
+   "action": "pass",
+   "text": "PASS · 44 holders · top holder 1.9% · top 10 13% (curve left out)",
+   "n": 1085
+  },
+  {
+   "t": "2026-11-26T22:00:48Z",
+   "time": "23:00:48",
+   "agent": "LEARNER",
+   "coin": "JOUST",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 10.6% · news:0-2 -17.2% over 14.5, tier:scalp -17.2% over 14.5",
+   "n": 1086
+  },
+  {
+   "t": "2026-11-26T22:00:48Z",
+   "time": "23:00:48",
+   "agent": "LEARNER",
+   "coin": "JOUST",
+   "action": "shadow",
+   "text": "SHADOW JOUST · not bought (learner skip) · followed as if bought: $8.30 at 0.0000037442 (curve maths, every cost) · same exits, outside the book",
+   "n": 1087
+  },
+  {
+   "t": "2026-11-26T22:00:57Z",
+   "time": "23:00:57",
+   "agent": "LEARNER",
+   "coin": "JOUST",
+   "action": "shadow",
+   "text": "SHADOW JOUST would have made -45.8% (dump: 9.6 SOL sold) · learned x0.5 · tier:scalp now avg -18.1% over 15",
+   "n": 1088
   }
  ],
  "nights": [
@@ -4877,7 +4877,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 45 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 47 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4885,24 +4885,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 73,
-    "last_event_age_s": 0.1,
+    "events": 80,
+    "last_event_age_s": 4.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 526,
-    "last_event_age_s": 0.7,
+    "events": 614,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 60,
-    "last_event_age_s": 2.6,
+    "events": 68,
+    "last_event_age_s": 4.1,
     "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4915,13 +4915,13 @@
   "exit_ms": 34.5,
   "exit_last_ms": 44,
   "launch_to_entry_s": 36.0,
-  "creates_per_min": 13.8,
-  "watching": 21,
+  "creates_per_min": 14.2,
+  "watching": 20,
   "followed": 40
  },
  "learner": {
   "samples": 109,
-  "skipped": 27,
+  "skipped": 28,
   "explored": 6,
   "min_samples": 8,
   "best": [
@@ -4949,37 +4949,37 @@
    },
    {
     "label": "tier:scalp",
-    "n": 14,
-    "avg": -17.2
+    "n": 15,
+    "avg": -18.1
    },
    {
     "label": "news:0-2",
-    "n": 14,
-    "avg": -17.2
+    "n": 15,
+    "avg": -18.1
    }
   ],
-  "shadows": 11
+  "shadows": 12
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 319,
+   "sent": 353,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 319,
+   "sent": 353,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "dot",
-   "name": "ELON INTERACTED",
-   "mint": "DpCLoPcWjxcpkQpBcmzPBTFWsSpu5Y2dyVahJwYwpump",
-   "age_s": 0,
+   "symbol": "CECHO274",
+   "name": "Conga Echo #274",
+   "mint": "J9R4FZ163QtiBVn1uWNVDcdpkZ8i67UfwoCbekZVnMRR",
+   "age_s": 4,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4987,7 +4987,133 @@
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
+   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
+   "tg": false,
+   "web": "https://conga.monster",
+   "status": "rejected: serial launcher: 28 more coins in 60 min",
+   "why": "serial launcher: 28 more coins in 60 min"
+  },
+  {
+   "symbol": "CDISCO273",
+   "name": "Conga Disco #273",
+   "mint": "76Ds34AL9KA2sKgfy7LUYrDhM8HJAAt5NUwvrtPdCG21",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
+   "tg": false,
+   "web": "https://conga.monster",
+   "status": "rejected: serial launcher: 27 more coins in 60 min",
+   "why": "serial launcher: 27 more coins in 60 min"
+  },
+  {
+   "symbol": "CDANCE272",
+   "name": "Conga Dance #272",
+   "mint": "6nT6snpx4Nt8Pjg5L5BDwhgVx9WPUUDxGoqpkruKy45C",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
+   "tg": false,
+   "web": "https://conga.monster",
+   "status": "rejected: serial launcher: 26 more coins in 60 min",
+   "why": "serial launcher: 26 more coins in 60 min"
+  },
+  {
+   "symbol": "SO",
+   "name": "Somali unc",
+   "mint": "7JUqQQnGEDhBQGqnxiRznw1tr7UmNkNQ3YCY4kfCpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.6,
+   "dev_pct": 6.3,
+   "big_sell": 0.0,
    "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "BEAN",
+   "name": "Bean",
+   "mint": "rHVqbvdu8Y7sz5QAU8SsKDLhNEuM6WrFEY8ofjypump",
+   "age_s": 20,
+   "sol_in": 3.97,
+   "buys": 7,
+   "sells": 4,
+   "rise_pct": 27.5,
+   "mcap_sol": 37.5,
+   "dev_pct": 2.8,
+   "big_sell": 4.2,
+   "x": "https://x.com/bean_onpf/status/2126073495448678542?a=0CI6IB-VLynOqQiTtwU&s=20",
+   "tg": false,
+   "web": "https://www.justbean.fun/",
+   "status": "rejected: dump: 4.2 SOL sold",
+   "why": "dump: 4.2 SOL sold"
+  },
+  {
+   "symbol": "ENU",
+   "name": "Encrypted Inu",
+   "mint": "CWS2NB2XMoKtQ5att7EFjnvey6GGYtKRzB8oPZbLCfrt",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 30.4,
+   "mcap_sol": 36.5,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/ratwizardx/status/2126073568144277530",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "BALLROOM",
+   "name": "Conga Ballroom #271",
+   "mint": "7Y23DrJJ67132jzwapnK5YCRE1apBtxnhqdZFkKSGVRX",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
+   "tg": false,
+   "web": "https://conga.monster",
+   "status": "rejected: serial launcher: 25 more coins in 60 min",
+   "why": "serial launcher: 25 more coins in 60 min"
+  },
+  {
+   "symbol": "dot",
+   "name": "ELON INTERACTED",
+   "mint": "DpCLoPcWjxcpkQpBcmzPBTFWsSpu5Y2dyVahJwYwpump",
+   "age_s": 32,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/elonmusk/status/2126063139339059274",
    "tg": false,
    "web": false,
    "status": "rejected: serial launcher: 3 more coins in 60 min",
@@ -4997,7 +5123,7 @@
    "symbol": "CSTEP270",
    "name": "Conga Step #270",
    "mint": "25tSLs3QuyvfLb6fBomKcnemEazGiqi572vbX3HNcfer",
-   "age_s": 2,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5015,7 +5141,7 @@
    "symbol": "SHOE",
    "name": "Joust Horseshoe",
    "mint": "77XdKdfm74GfDine5wZt73kpSExtt5poF8ymycEatWfU",
-   "age_s": 9,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5033,7 +5159,7 @@
    "symbol": "STEED",
    "name": "Joust Steed",
    "mint": "4ZwkJGLc1KTQBccXtL9bwfLzLGWmZAQd3xmbiYvnmSsg",
-   "age_s": 9,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5051,7 +5177,7 @@
    "symbol": "PLUME",
    "name": "Joust Plume",
    "mint": "HiNBuw38GiEMUpmGtbViWF3otdDgzG176nD7pxesj6sY",
-   "age_s": 9,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5069,7 +5195,7 @@
    "symbol": "PRIZE",
    "name": "Joust Prize",
    "mint": "HVtFwUbh6oJE48dszhNPkHJMq5j2UQNDxbguLMw7g48z",
-   "age_s": 9,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5087,7 +5213,7 @@
    "symbol": "HELM",
    "name": "Joust Helm",
    "mint": "GmqHHUXvgrQMSmX6WAUBrUXchaaSsPFxqH31H9w551b2",
-   "age_s": 10,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5105,7 +5231,7 @@
    "symbol": "LANCE",
    "name": "Joust Lance",
    "mint": "3ct4HmfR5FZNWY6khEDWYN6JYkieZ1bLwWEvJ6rg6MGx",
-   "age_s": 10,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5123,7 +5249,7 @@
    "symbol": "PURSE",
    "name": "Joust Purse",
    "mint": "9o8tFsFocnq1xcPa75UnFtZ5NiuwhGzUNVgD8tnjniVj",
-   "age_s": 10,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5141,7 +5267,7 @@
    "symbol": "HORN",
    "name": "Joust Horn",
    "mint": "CviyZFNu4P3dCXM8D7CwZe67yeGR3NbucNtY1bc4oNGX",
-   "age_s": 10,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5159,7 +5285,7 @@
    "symbol": "CROSS",
    "name": "Joust Cross",
    "mint": "HqVvu38D26c53uxodhCTNtN5JMcGF94fQf4veENYuqzQ",
-   "age_s": 11,
+   "age_s": 43,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5177,7 +5303,7 @@
    "symbol": "SIR",
    "name": "Joust Sir",
    "mint": "6XTsVfwS1xUSxTXhXPbw6vzSWhbtZkoUS2Z2czjngkXw",
-   "age_s": 12,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5195,7 +5321,7 @@
    "symbol": "Jesus",
    "name": "Official Jesus Christ",
    "mint": "39tDhVYmMJQCj1svsA5bwCRd8gZqSdF3AbAqZH2wpump",
-   "age_s": 12,
+   "age_s": 44,
    "sol_in": -0.76,
    "buys": 1,
    "sells": 6,
@@ -5208,138 +5334,32 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "CNIGHTS269",
-   "name": "Conga Nights #269",
-   "mint": "6TGXxkJ9rW75QMRzorcpyuPCeLxwR5KPnH8u27Bh2jVX",
-   "age_s": 13,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 23 more coins in 60 min",
-   "why": "serial launcher: 23 more coins in 60 min"
-  },
-  {
-   "symbol": "EvilEh30",
-   "name": "EvilEh30",
-   "mint": "6Vpmg5tkdHVCGxENexbrCCrzna5yCBQb3L9hw7Yibe9X",
-   "age_s": 17,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -100.0,
-   "mcap_sol": 0.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/i/status/2126073493242671237",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
-  },
-  {
-   "symbol": "STILLGO268",
-   "name": "Still Going #268",
-   "mint": "9jNir3W2PLwAc3PVeaCjGtaf9Z31q4V7qjNwMG7XBvzj",
-   "age_s": 21,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2125964152170577972",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 22 more coins in 60 min",
-   "why": "serial launcher: 22 more coins in 60 min"
-  },
-  {
-   "symbol": "FRIOB",
-   "name": "Mais Frio",
-   "mint": "DSaNgiUo2zfZTuoroFWeBjBTphquGcEJcBMqvABgpump",
-   "age_s": 22,
-   "sol_in": -1.41,
-   "buys": 2,
-   "sells": 4,
-   "rise_pct": -8.8,
-   "mcap_sol": 28.1,
-   "dev_pct": 5.0,
-   "big_sell": 2.16,
-   "x": false,
-   "tg": false,
-   "web": "https://sapo.pt/artigo/lenglet-e-a-final-da-europa-league-temos-condicoes-para-la-chegar-6b0864fbed7962199d344a91?mint=",
-   "status": "rejected: dump: 2.2 SOL sold",
-   "why": "dump: 2.2 SOL sold"
-  },
-  {
-   "symbol": "JOUST",
-   "name": "Joust",
-   "mint": "5zYvniZefLtKsd7gA1J1Ro2iLuPadxys943Fgy6unYsY",
-   "age_s": 23,
-   "sol_in": 7.5,
-   "buys": 9,
-   "sells": 1,
-   "rise_pct": 55.5,
-   "mcap_sol": 44.6,
-   "dev_pct": 1.4,
-   "big_sell": 0.25,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 22 s (min 45 s)"
-  },
-  {
-   "symbol": "SUPERFIONA",
-   "name": "SuperFIONA",
-   "mint": "DiWoJXw3uc2SGAJdgjQqtVyUpTTnt5m9yMsYnEGLewDN",
-   "age_s": 26,
-   "sol_in": 0.86,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 5.5,
-   "mcap_sol": 33.1,
-   "dev_pct": 6.1,
-   "big_sell": 0.0,
-   "x": "https://x.com/superFIONA_sol/status/2125952727419396557",
-   "tg": false,
-   "web": true,
-   "status": "watching",
-   "why": "too young: 4 s (min 45 s)"
-  },
-  {
-   "symbol": "UNC",
-   "name": "FULL UNC",
-   "mint": "3oVpbjvdVXevFRDjhSgfgYnkjBMeh5M8zxcDtq3tpump",
-   "age_s": 27,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/MikeIsaac/status/2126073437613707266",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "JOUST",
+   "mint": "5zYvniZefLtKsd7gA1J1Ro2iLuPadxys943Fgy6unYsY",
+   "status": "closed",
+   "kind": "learner",
+   "why": "learner skip",
+   "opened": "2026-11-26T22:00:48Z",
+   "cost": 8.3,
+   "pnl_pct": -45.8,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 45,
+   "sol_in": 10.16,
+   "closed": "2026-11-26T22:00:57Z",
+   "exit": "dump: 9.6 SOL sold",
+   "pnl": -3.8,
+   "weight": 0.5
+  },
   {
    "symbol": "KITE",
    "mint": "3aFPMQqQ8vcL675kYpPsvdkEWaSxBL7eEPaHf6NKyvc3",
@@ -5562,16 +5582,16 @@
   }
  ],
  "shadow_stats": {
-  "n": 11,
+  "n": 12,
   "wins": 2,
-  "win_rate": 18.2,
-  "mean_pnl_pct": -12.21,
+  "win_rate": 16.7,
+  "mean_pnl_pct": -15.01,
   "open": 0,
   "learner": {
-   "n": 11,
+   "n": 12,
    "wins": 2,
-   "win_rate": 18.2,
-   "mean_pnl_pct": -12.21
+   "win_rate": 16.7,
+   "mean_pnl_pct": -15.01
   },
   "risk": {
    "n": 0,
