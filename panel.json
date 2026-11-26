@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:02:26Z",
+ "updated": "2026-11-26T10:02:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.76,
@@ -24,7 +24,7 @@
   "flagged": 11,
   "checked": 11,
   "filtered": 1,
-  "lines": 121,
+  "lines": 122,
   "last_rug": {
    "coin": "BACKER",
    "pass": true
@@ -1690,6 +1690,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 2 watched · 4 rejected (dev bought 2, dump 1, mayhem mode 1) · closest SENDOF: buy share 56%/65%",
    "n": 121
+  },
+  {
+   "t": "2026-11-26T10:02:35Z",
+   "time": "11:02:35",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (dev bought 2, dump 1, mayhem mode 1)",
+   "n": 122
   }
  ],
  "nights": [
@@ -1738,7 +1747,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 3 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1746,24 +1755,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 131,
-    "last_event_age_s": 42.0,
+    "events": 133,
+    "last_event_age_s": 8.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1807,
-    "last_event_age_s": 0.1,
+    "events": 1858,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 93,
-    "last_event_age_s": 143.9,
+    "connected": true,
+    "events": 95,
+    "last_event_age_s": 8.0,
     "errors": 75,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -1776,9 +1785,9 @@
   "exit_ms": 32.0,
   "exit_last_ms": 32,
   "launch_to_entry_s": 19.5,
-  "creates_per_min": 2.4,
-  "watching": 0,
-  "followed": 4
+  "creates_per_min": 2.2,
+  "watching": 1,
+  "followed": 3
  },
  "learner": {
   "samples": 103,
@@ -1823,23 +1832,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1751,
+   "sent": 1784,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1751,
+   "sent": 1784,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TRUMP",
+   "name": "I Am Not Corrupt",
+   "mint": "2kTvvwCRrWsWg7TtrgAakR8vDfR9r6MtvuTao1RApump",
+   "age_s": 8,
+   "sol_in": 0.63,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": 4.0,
+   "mcap_sol": 33.0,
+   "dev_pct": 6.6,
+   "big_sell": 2.35,
+   "x": "https://x.com/chiggaquant/status/2125893022751551890",
+   "tg": false,
+   "web": "https://youtu.be/yuL7Ac6W2rk?si=p-EWeZ6syUeWs6a_&t=21",
+   "status": "rejected: dump: 2.3 SOL sold",
+   "why": "dump: 2.3 SOL sold"
+  },
+  {
+   "symbol": "yarl",
+   "name": "yarl",
+   "mint": "gTXGaxKHb5ZwwFjZh5nmS2NCafXDdBvZgYPHPJXpump",
+   "age_s": 20,
+   "sol_in": 10.22,
+   "buys": 6,
+   "sells": 10,
+   "rise_pct": 78.9,
+   "mcap_sol": 51.0,
+   "dev_pct": 1.0,
+   "big_sell": 1.69,
+   "x": "https://x.com/yarlonpfx/status/2125892896562073857",
+   "tg": false,
+   "web": "https://archive.4plebs.org/s4s/search/text/yarl/order/asc",
+   "status": "watching",
+   "why": "too young: 20 s (min 45 s)"
+  },
+  {
    "symbol": "SOL",
    "name": "Drip on the beach",
    "mint": "HT64xfYfbyKFrze4YPMeyLA5Xq9a3V9bbBVGzy2SFEsb",
-   "age_s": 41,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1857,7 +1902,7 @@
    "symbol": "LMAO",
    "name": "LMAO",
    "mint": "p7sxNUGqHwxydHtcoeKrNyukwTYxN3oKkFz6sEKpump",
-   "age_s": 99,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1875,12 +1920,12 @@
    "symbol": "PELAGO",
    "name": "Pelago Chain",
    "mint": "9zgrwK3S9Dv2gzsRJpM5cicFapKvsZ7n1425hYqspump",
-   "age_s": 145,
-   "sol_in": 23.84,
-   "buys": 48,
-   "sells": 28,
-   "rise_pct": 191.0,
-   "mcap_sol": 103.1,
+   "age_s": 176,
+   "sol_in": 24.79,
+   "buys": 54,
+   "sells": 35,
+   "rise_pct": 200.7,
+   "mcap_sol": 106.6,
    "dev_pct": 12.0,
    "big_sell": 2.62,
    "x": false,
@@ -1888,60 +1933,6 @@
    "web": false,
    "status": "rejected: dev bought 12.0% (max 8%)",
    "why": "dev bought 12.0% (max 8%)"
-  },
-  {
-   "symbol": "joe",
-   "name": "joe",
-   "mint": "9wBnKoMvTjz1SaeNjHJ3SLYhKwzZrZpMbWuQijocBT3Q",
-   "age_s": 152,
-   "sol_in": -2.31,
-   "buys": 6,
-   "sells": 10,
-   "rise_pct": -13.5,
-   "mcap_sol": 29.4,
-   "dev_pct": 9.9,
-   "big_sell": 2.63,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.9% (max 8%)",
-   "why": "dev bought 9.9% (max 8%)"
-  },
-  {
-   "symbol": "gob",
-   "name": "gob",
-   "mint": "6Y6ZyxUWmsSYPw1KayAj4Gb8ydxXwbGGTDCaQiBepump",
-   "age_s": 160,
-   "sol_in": 38.35,
-   "buys": 59,
-   "sells": 42,
-   "rise_pct": 400.7,
-   "mcap_sol": 149.4,
-   "dev_pct": 3.4,
-   "big_sell": 5.46,
-   "x": "https://x.com/onchainmidas_/status/2125891718474047946",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dump: 4.3 SOL sold",
-   "why": "dump: 4.3 SOL sold"
-  },
-  {
-   "symbol": "SENDOF",
-   "name": "Sendof",
-   "mint": "DQQjWvRTqjD8snKqPiVxj6XZmyJ4WuRdaAZNZTxxpump",
-   "age_s": 175,
-   "sol_in": 13.16,
-   "buys": 33,
-   "sells": 25,
-   "rise_pct": 102.9,
-   "mcap_sol": 60.5,
-   "dev_pct": 3.4,
-   "big_sell": 3.26,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dump: 3.3 SOL sold",
-   "why": "dump: 3.3 SOL sold"
   }
  ],
  "strategies": [
