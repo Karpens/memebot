@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:03:04Z",
+ "updated": "2026-11-26T11:03:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 16,
   "checked": 16,
   "filtered": 1,
-  "lines": 204,
+  "lines": 205,
   "last_rug": {
    "coin": "NODIVO",
    "pass": true
@@ -889,15 +889,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:05:18Z",
-   "time": "10:05:18",
-   "agent": "SCANNER",
-   "coin": "ZEROCAST",
-   "action": "flag",
-   "text": "momentum · 4.6 SOL in · 6/9 buys (67%) · +32% since launch · mcap 40 SOL · 10 s old",
-   "n": 5
-  },
   {
    "t": "2026-11-26T09:05:18Z",
    "time": "10:05:18",
@@ -2688,6 +2679,15 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 8 watched · 5 rejected (serial launcher 3, dump 1, mayhem mode 1) · closest DUET: too young: 33 s (min 45 s)",
    "n": 204
+  },
+  {
+   "t": "2026-11-26T11:03:09Z",
+   "time": "12:03:09",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 8 watched · 4 rejected (dump 1, serial launcher 1, mayhem mode 1) · closest SENSEI: too young: 8 s (min 45 s)",
+   "n": 205
   }
  ],
  "nights": [
@@ -2740,24 +2740,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 94,
-    "last_event_age_s": 2.2,
+    "events": 95,
+    "last_event_age_s": 17.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1742,
-    "last_event_age_s": 5.6,
+    "events": 1748,
+    "last_event_age_s": 10.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 66,
-    "last_event_age_s": 7.5,
+    "connected": true,
+    "events": 67,
+    "last_event_age_s": 17.3,
     "errors": 12,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2770,7 +2770,7 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 3.8,
+  "creates_per_min": 3.6,
   "watching": 8,
   "followed": 10
  },
@@ -2817,27 +2817,45 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1296,
+   "sent": 1332,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1296,
+   "sent": 1332,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SLB",
+   "name": "Silicon Labs B",
+   "mint": "DFjPPib6FZN5SR9e4Ch9JFcq9KNFgoySaYV5gqTApump",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
    "symbol": "SENSEI",
    "name": "Sensei Meow",
    "mint": "78X3FExAixS7KrFj2R55CqXUtkcC472RfAzJvdM1pump",
-   "age_s": 8,
+   "age_s": 42,
    "sol_in": 0.29,
-   "buys": 1,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 1.9,
+   "rise_pct": 2.0,
    "mcap_sol": 28.6,
    "dev_pct": 0.1,
    "big_sell": 0.0,
@@ -2845,17 +2863,17 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 8 s (min 45 s)"
   },
   {
    "symbol": "BOOB$",
    "name": "Bobs&Vagina",
    "mint": "7mSqwPn2NndsLeipHtie91ZLEaaVTXuPqyCCQmPCpump",
-   "age_s": 10,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 44,
+   "sol_in": 0.02,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.9,
    "dev_pct": 1.7,
    "big_sell": 0.0,
@@ -2863,13 +2881,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 4 s (min 45 s)"
+   "why": "too young: 33 s (min 45 s)"
   },
   {
    "symbol": "NEKO",
    "name": "NEKO",
    "mint": "7pXrPomw6iL1aM6wcsAY5gcaTH7YwjdE3Lk3vVZtocqr",
-   "age_s": 11,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2887,7 +2905,7 @@
    "symbol": "?",
    "name": "",
    "mint": "7cVKuAsLttwadsWDgjRmwS8eEvxhji9ne6dVoUN9pump",
-   "age_s": 27,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2905,7 +2923,7 @@
    "symbol": "X-Coin",
    "name": "X-Coin",
    "mint": "7Qb9Bms3YJH5pF8cuUc3c1n2NQ6uYfzfLXku1tAEpump",
-   "age_s": 60,
+   "age_s": 94,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -2923,7 +2941,7 @@
    "symbol": "CAODINIU",
    "name": "CAO DI NIU",
    "mint": "54tCdY8PHLHYxqhwLgTMMbpdkvm4n9jTMYMMbNYMpump",
-   "age_s": 63,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2941,25 +2959,25 @@
    "symbol": "DUET",
    "name": "Duet",
    "mint": "HbUe9KgSAX7tqtxE2s6WPTs2NFY14QrXKBdizXqopump",
-   "age_s": 103,
-   "sol_in": -0.22,
+   "age_s": 137,
+   "sol_in": -0.99,
    "buys": 7,
-   "sells": 12,
-   "rise_pct": -1.4,
-   "mcap_sol": 29.4,
+   "sells": 13,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 1.77,
    "x": "https://x.com/DuetFun/status/2125907733203284443",
    "tg": false,
    "web": "https://useduet.fun/",
    "status": "watching",
-   "why": "SOL in -0.2/2.5 · buy share 37%/65% · rise -1%/+12%"
+   "why": "SOL in -1.0/2.5 · buy share 35%/65% · rise -6%/+12%"
   },
   {
    "symbol": "Yaranaika",
    "name": "DO IT DUVE",
    "mint": "2mMKCnkH5MBrf4PhnYAbMcNUw3qk13CZccVaXEt4PRki",
-   "age_s": 135,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2977,7 +2995,7 @@
    "symbol": "Yaranaika",
    "name": "DO IT DUVE",
    "mint": "7FktEt2iQsggntp43kgKS5aiNvcvd5R8vqMzrakFpMAy",
-   "age_s": 135,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2995,7 +3013,7 @@
    "symbol": "Yaranaika",
    "name": "DO IT DUVE",
    "mint": "mWykuTH9cHL6RDgKT7bgmHUDeAVpcsv6XwqQmfPz1Wb",
-   "age_s": 136,
+   "age_s": 170,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3013,7 +3031,7 @@
    "symbol": "WHATS",
    "name": "What's your favorite My Little P",
    "mint": "2H1ui29AMSnwQDMbjnFvv5sxLRpPaavRvWJu9JPHurjy",
-   "age_s": 141,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3026,24 +3044,6 @@
    "web": "https://boards.4chan.org/mlp/thread/43741699",
    "status": "watching",
    "why": "too young: 0 s (min 45 s)"
-  },
-  {
-   "symbol": "clanker",
-   "name": "clanker",
-   "mint": "5L61GPrPTzWFX97EtVJEjigGGEHMsUbmXE7tCs71pump",
-   "age_s": 157,
-   "sol_in": -0.92,
-   "buys": 15,
-   "sells": 29,
-   "rise_pct": -5.8,
-   "mcap_sol": 28.1,
-   "dev_pct": 3.4,
-   "big_sell": 4.17,
-   "x": "https://x.com/Milsaftermils/status/2125905825906532388",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dump: 2.2 SOL sold",
-   "why": "dump: 2.2 SOL sold"
   }
  ],
  "strategies": [
