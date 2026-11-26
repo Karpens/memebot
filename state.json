@@ -360,6 +360,24 @@
     "action": "scan",
     "text": "new pairs · 18.8 a minute · 5 watched · 45 rejected (serial launcher 28, mayhem mode 9, dump 5) · closest FINALA: too young: 1 s (min 45 s)",
     "n": 35
+   },
+   {
+    "t": "2026-11-26T23:23:15Z",
+    "time": "00:23:15",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 15.6 a minute · 3 watched · 38 rejected (serial launcher 20, mayhem mode 10, dump 6) · closest RAAS: too young: 29 s (min 45 s)",
+    "n": 36
+   },
+   {
+    "t": "2026-11-26T23:23:24Z",
+    "time": "00:23:24",
+    "agent": "LEARNER",
+    "coin": "67HAO",
+    "action": "shadow",
+    "text": "SHADOW 67HAO would have made -3.1% (5 min, only +1%) · learned x0.5 · np:dev:0-2 now avg -13.6% over 12.5",
+    "n": 37
    }
   ],
   "trades": [],
@@ -370,7 +388,7 @@
   "flagged": 3,
   "checked": 1,
   "filtered": 0,
-  "lines": 35,
+  "lines": 37,
   "flags": [
    {
     "coin": "BRIGHTA",
@@ -490,7 +508,12 @@
    "coin": "67HAO",
    "pass": true
   },
-  "np_said": 1795735334.474529
+  "np_said": 1795735395.47452,
+  "shadow": {
+   "n": 1,
+   "wins": 0,
+   "sum": -3.1
+  }
  },
  "last_night": {
   "id": "2026-11-26",
@@ -9179,14 +9202,14 @@
   }
  },
  "shadow": {
-  "n": 14,
+  "n": 15,
   "wins": 2,
-  "sum": -198.5,
+  "sum": -201.6,
   "by": {
    "learner": {
-    "n": 14,
+    "n": 15,
     "wins": 2,
-    "sum": -198.5
+    "sum": -201.6
    },
    "risk": {
     "n": 0,
@@ -9474,11 +9497,29 @@
     "exit": "5 min, only -1%",
     "pnl": -0.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "67HAO",
+    "mint": "4kydyovWy2GopaZFEd4YE26kQ6dQkrWr3cFYwJ1rpump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T23:18:09Z",
+    "cost": 8.23,
+    "pnl_pct": -3.1,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 140,
+    "sol_in": 9.96,
+    "closed": "2026-11-26T23:23:24Z",
+    "exit": "5 min, only +1%",
+    "pnl": -0.26,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "67HAO"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 110,
@@ -9519,6 +9560,6 @@
     "avg": -17.5
    }
   ],
-  "shadows": 14
+  "shadows": 15
  }
 }
