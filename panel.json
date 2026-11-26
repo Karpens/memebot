@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:04:05Z",
+ "updated": "2026-11-26T11:04:42Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 16,
   "checked": 16,
   "filtered": 1,
-  "lines": 205,
+  "lines": 206,
   "last_rug": {
    "coin": "NODIVO",
    "pass": true
@@ -893,15 +893,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:05:18Z",
-   "time": "10:05:18",
-   "agent": "RUG CHECK",
-   "coin": "ZEROCAST",
-   "action": "pass",
-   "text": "PASS · 11 holders · top holder 3.2% · top 10 11% (curve left out)",
-   "n": 6
-  },
   {
    "t": "2026-11-26T09:05:18Z",
    "time": "10:05:18",
@@ -2692,6 +2683,15 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 8 watched · 4 rejected (dump 1, serial launcher 1, mayhem mode 1) · closest SENSEI: too young: 8 s (min 45 s)",
    "n": 205
+  },
+  {
+   "t": "2026-11-26T11:04:10Z",
+   "time": "12:04:10",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 4 watched · 6 rejected (serial launcher 2, mayhem mode 2, no symbol or name 1) · closest SENSEI: SOL in 0.3/2.5 · buys 3/6 · rise +2%/+12%",
+   "n": 206
   }
  ],
  "nights": [
@@ -2744,24 +2744,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 97,
-    "last_event_age_s": 21.4,
+    "events": 99,
+    "last_event_age_s": 5.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1749,
-    "last_event_age_s": 13.6,
+    "events": 1752,
+    "last_event_age_s": 3.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 67,
-    "last_event_age_s": 44.3,
+    "events": 68,
+    "last_event_age_s": 5.6,
     "errors": 12,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2774,7 +2774,7 @@
   "exit_ms": 32,
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.8,
   "watching": 4,
   "followed": 6
  },
@@ -2821,23 +2821,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1360,
+   "sent": 1400,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1360,
+   "sent": 1400,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "konnichiwa",
+   "name": "konnichiwaa",
+   "mint": "9pwNw37rWTt2CSkGXriAVBmVRmhBUWNeZxywpiiWpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/solana/status/2125896648756985892",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
+   "symbol": "YARANAIKA",
+   "name": "Yaranaika",
+   "mint": "5o86gv7ifuTtL3GecNuDhDzKsNwyNv4XvDS5EA8Djstv",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "OVPRINT",
    "name": "Overprint",
    "mint": "A9itQT8SR5t5ZV2PT81dmzwY4rCYiERy7sriwoJJZRfY",
-   "age_s": 21,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2855,7 +2891,7 @@
    "symbol": "SLB",
    "name": "Silicon Labs B",
    "mint": "7SJvwF58Agwo1wryKn6nwWBpkHPwwZ1tLHmeGiuBpump",
-   "age_s": 23,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2873,7 +2909,7 @@
    "symbol": "SLB",
    "name": "Silicon Labs B",
    "mint": "DFjPPib6FZN5SR9e4Ch9JFcq9KNFgoySaYV5gqTApump",
-   "age_s": 44,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -2891,14 +2927,14 @@
    "symbol": "SENSEI",
    "name": "Sensei Meow",
    "mint": "78X3FExAixS7KrFj2R55CqXUtkcC472RfAzJvdM1pump",
-   "age_s": 69,
-   "sol_in": 0.3,
+   "age_s": 106,
+   "sol_in": 0.29,
    "buys": 3,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 2.0,
    "mcap_sol": 28.6,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -2909,7 +2945,7 @@
    "symbol": "BOOB$",
    "name": "Bobs&Vagina",
    "mint": "7mSqwPn2NndsLeipHtie91ZLEaaVTXuPqyCCQmPCpump",
-   "age_s": 71,
+   "age_s": 108,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -2927,7 +2963,7 @@
    "symbol": "NEKO",
    "name": "NEKO",
    "mint": "7pXrPomw6iL1aM6wcsAY5gcaTH7YwjdE3Lk3vVZtocqr",
-   "age_s": 72,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2945,7 +2981,7 @@
    "symbol": "?",
    "name": "",
    "mint": "7cVKuAsLttwadsWDgjRmwS8eEvxhji9ne6dVoUN9pump",
-   "age_s": 88,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2963,7 +2999,7 @@
    "symbol": "X-Coin",
    "name": "X-Coin",
    "mint": "7Qb9Bms3YJH5pF8cuUc3c1n2NQ6uYfzfLXku1tAEpump",
-   "age_s": 121,
+   "age_s": 158,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -2981,7 +3017,7 @@
    "symbol": "CAODINIU",
    "name": "CAO DI NIU",
    "mint": "54tCdY8PHLHYxqhwLgTMMbpdkvm4n9jTMYMMbNYMpump",
-   "age_s": 124,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2994,24 +3030,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "DUET",
-   "name": "Duet",
-   "mint": "HbUe9KgSAX7tqtxE2s6WPTs2NFY14QrXKBdizXqopump",
-   "age_s": 164,
-   "sol_in": -0.99,
-   "buys": 7,
-   "sells": 13,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 1.77,
-   "x": "https://x.com/DuetFun/status/2125907733203284443",
-   "tg": false,
-   "web": "https://useduet.fun/",
-   "status": "watching",
-   "why": "SOL in -1.0/2.5 · buy share 35%/65% · rise -6%/+12%"
   }
  ],
  "strategies": [
