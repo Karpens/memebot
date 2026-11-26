@@ -535,8 +535,9 @@ class Poller(unittest.TestCase):
         self.assertEqual(len(set(self.rpc.calls[0]["keys"]) | set(self.rpc.calls[1]["keys"])), 150)
         evs = events(self.q)
         e = [x for x in evs if x["mint"] == "m007"][0]
-        self.assertEqual(sorted(e), ["complete", "key", "kind", "mint", "price_sol", "rsol", "rtok", "slot", "src", "t",
-                                     "vsol", "vtok"])
+        self.assertEqual(sorted(e), ["complete", "disc_ok", "key", "kind", "mint", "price_sol", "rsol", "rtok", "slot",
+                                     "src", "t", "vsol", "vtok"])
+        self.assertIs(e["disc_ok"], True)                                           # a pump.fun BondingCurve account
         self.assertEqual((e["kind"], e["key"], e["vsol"], e["vtok"], e["slot"], e["src"], e["complete"]),
                          ("curve", "km007", VSOL0 + 7, VTOK0, 100, "poll", False))
         self.assertAlmostEqual(e["price_sol"], 2.796e-08, delta=1e-11)
@@ -552,6 +553,15 @@ class Poller(unittest.TestCase):
         self.assertEqual((self.p.calls, self.p.ok, self.p.errors), (8, 8, 0))
         self.assertTrue(self.p.status()["connected"])
         self.assertIn("Mozilla/5.0", self.rpc.calls[0]["ua"])
+
+    def test_an_account_that_is_not_a_bonding_curve_says_so(self):
+        """The first dry run read a coin whose key was not a pump.fun curve as +4050 %: the event now carries
+        disc_ok (the Anchor discriminator of account:BondingCurve) and newpairs.py rejects such a coin."""
+        self.add(1)
+        key = next(iter(self.p.watched().values()))
+        self.rpc.accounts[key] = b"\x01" * 8 + account()[8:]
+        self.assertEqual(self.p.poll(), 1)
+        self.assertIs(events(self.q)[0]["disc_ok"], False)
 
     def test_429_pauses_for_its_retry_after(self):
         self.add(2)

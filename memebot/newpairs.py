@@ -78,6 +78,7 @@ DEFAULTS = {
     "np_dump_sol": 2.0,             # one sell this big since launch rejects; after entry it exits
     "np_need_social": True,         # at least one of X, Telegram, website in the metadata
     "np_serial_window_min": 60,     # a creator who launched another coin this recently: serial
+    "np_serial_max": 0,             # other launches by the same creator allowed in that window
     # RUG CHECK, RugCheck's report (fetched by the bot in a worker thread)
     "np_rug_timeout_s": 3.0,        # no report this fast: no entry on this reading (caller's timer)
     "np_rug_cache_s": 30,           # the caller keeps a report this long
@@ -86,6 +87,7 @@ DEFAULTS = {
     "np_rug_bad_risks": ["rugged tokens", "single holder ownership"],   # risk names that reject
     # the entry trigger: momentum, first in
     "np_max_age_s": 180,
+    "np_min_age_s": 0,              # no entry before this age (s): the first seconds are the snipers' and the dev's
     "np_min_sol": 3.0,              # real SOL gained in the curve since the create
     "np_min_buys": 8,               # readings where the real SOL went up
     "np_min_buy_share": 0.7,        # ... as a share of the readings that moved
@@ -591,6 +593,12 @@ class Watchlist(object):
         coin = self.get(mint)
         if coin is None:
             return None
+        if isinstance(reading, dict) and reading.get("disc_ok") is False:
+            # the account is not a pump.fun bonding curve (another launchpad, or a key we were sent wrong): its
+            # bytes read as reserves are nonsense (a "+4050 %" coin in the dry run), so it is never traded
+            if coin.status == WATCHING:
+                self.reject(coin, "not a pump.fun bonding curve")
+            return None
         r = read_curve(reading)
         if r is None:
             # a migrated curve can read with its reserves zeroed (feeds.py still sends it): the
@@ -770,7 +778,7 @@ def cheap_check(coin, cfg=None):
     cap = _c(cfg, "np_max_dev_pct")
     if coin.dev_pct > cap + EPS:
         bad.append("dev bought %.1f%% (max %s%%)" % (coin.dev_pct, _g(cap)))
-    if coin.serial > 0:
+    if coin.serial > max(0, int(_c(cfg, "np_serial_max"))):
         bad.append("serial launcher: %d more coin%s in %s min" % (
             coin.serial, "" if coin.serial == 1 else "s", _g(_c(cfg, "np_serial_window_min"))))
     if _on(cfg, "np_need_social") and coin.meta is not None and not has_social(coin.meta):
@@ -896,6 +904,11 @@ def _momentum(coin, cfg, t):
     cap_age = _c(cfg, "np_max_age_s")
     if age > cap_age + EPS:
         return False, "too old: %d s (max %s s)" % (math.ceil(age), _g(cap_age))
+    min_age = _c(cfg, "np_min_age_s")
+    if age < min_age - EPS:
+        # the live morning of 2026-11-26: 5 of 6 entries 10-25 s after the launch lost, 3 of them to a dump of
+        # 2.9-4.4 SOL within seconds (-25 to -29 %): the launch's own buyers selling into the first momentum
+        return False, "too young: %d s (min %s s)" % (int(age), _g(min_age))
     miss = []
     need_sol, need_buys = _c(cfg, "np_min_sol"), int(math.ceil(_c(cfg, "np_min_buys") - EPS))
     need_share, need_rise = _c(cfg, "np_min_buy_share"), _c(cfg, "np_min_rise_pct")

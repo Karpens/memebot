@@ -19,7 +19,7 @@ The agents, written as rules (the prompt in memebot/prompt.txt says the same in 
                 never trades.
   2. NEWS       the coin's X, Telegram and website (its metadata), the curve's momentum (SOL in, the
                 share of buys) and, for migrated pairs, boosts and the trending lists: a NEWS score
-                0-10 that picks the hold plan (+7 % scalp ... +100 % moon), read again every
+                0-10 that picks the hold plan (+10 % scalp ... +100 % moon), read again every
                 news_refresh_sec while the coin is held.
   3. RUG CHECK  RugCheck's report (rug history of the creator, one holder or the top 10 holding too
                 much, insiders, danger risks; for migrated pairs also mint and freeze authority and
@@ -43,6 +43,11 @@ Live every second: the loop waits on the feeds' queue at most 0.25 s at a time, 
 (prices, exits, time stops, the scanner) every watch_sec, and each second goes out as an MQTT
 message to free public brokers (the page subscribes over WebSocket). The files (state.json,
 panel.json) are written every 5 s and after each trade; git takes them every 30 s as before.
+
+The tape (memebot/recorder.py): every create, curve reading, RugCheck summary, trigger, decision and
+fill goes to DIR/tapes/YYYY-MM-DDTHH.jsonl (one file per UTC hour, written by its own thread every
+5 s), and a coin that came near a trigger stays polled rec_follow_s after its launch, so a replay can
+try other rules on what really happened. A replay is still not a real trade.
 
     python3 memebot/bot.py run --data DIR                 # the night's session, 23:00 to 07:00
     python3 memebot/bot.py run --data DIR --minutes 15 --anytime     # a short run at any hour
@@ -225,6 +230,16 @@ DEFAULTS = {
     "news_refresh_sec": 30,             # held coins' NEWS read again this often
     "fade_buy_ratio": 0.45,             # fading: buys under this share of the last 5 minutes ...
     "fade_window_s": 300,               # ... (this window)
+    # the TAPE RECORDER (memebot/recorder.py, the same defaults there): what New Pairs saw and did, to
+    # <data>/tapes/YYYY-MM-DDTHH.jsonl for a replay backtester. It never trades and never waits for the disk.
+    "rec_on": True,                     # MEMEBOT_REC=0 in the environment turns it off too
+    "rec_follow_s": 900,                # a coin near a trigger (half the SOL and buys) stays polled this long after
+                                        # its create, past np_watch_s, so its exits can be replayed ...
+    "rec_follow_exit_s": 300,           # ... a bought one also this long after its last sale
+    "rec_max_follow": 60,               # such coins at most, and never more curves polled in all than
+    "rec_max_keys": 100,                # one getMultipleAccounts call takes (the watch list, held coins in it, first)
+    "rec_max_mb_hour": 20.0,            # an hour's tape takes no more curve readings past this
+    "rec_keep_days": 7,                 # older tapes are deleted when a run starts
 }
 
 AGENTS = ["SCANNER", "NEWS", "RUG CHECK", "SIZER", "EXECUTOR", "RISK", "LEARNER", "LOGGER"]
@@ -275,6 +290,8 @@ holdplan, PLAN_OFF = load_part("plan", ("news_score", "new_plan", "tiers_from_cf
 newpairs, NEWPAIRS_OFF = load_part("newpairs", ("Watchlist", "Coin", "rug_check_np", "exit_signal", "labels",
                                                 "news_info", "stale", "row", "first_in_text", "rug_text"))
 feeds_mod, FEEDS_OFF = load_part("feeds", ("Feeds", "socials"))
+# the tape recorder for the backtester (a broken recorder.py: no tape, the trading goes on)
+recorder, RECORDER_OFF = load_part("recorder", ("Recorder", "load_tapes"))
 
 
 # ---------------------------------------------------------------- settings and files
@@ -418,6 +435,19 @@ def local(now_utc, tz):
         return now_utc + datetime.timedelta(hours=1)
     aware = now_utc.replace(tzinfo=datetime.timezone.utc).astimezone(ZoneInfo(tz))
     return aware.replace(tzinfo=None)
+
+
+ALWAYS_LEFT = 10 ** 6                    # minutes "left" in an always-on session: it never ends
+
+
+def always_on(cfg):
+    """session_start == session_end (e.g. 00:00 → 00:00): the bot trades around the clock. Each calendar day
+    (Bratislava) is its own "night" in the book and the page; positions carry over midnight, nothing is
+    sold for the day's end, and every job of the workflow starts the next one."""
+    try:
+        return hhmm(cfg["session_start"]) == hhmm(cfg["session_end"])
+    except (KeyError, TypeError, ValueError):
+        return False
 
 
 def session_of(now_utc, cfg):
@@ -949,6 +979,7 @@ class Night(object):
         self.feed_down_at = None                        # since when PumpPortal is down
         self.fill_note = ""                             # how the last sale was priced, for its log line
         self.quote_out = 0                              # the last quote's outAmount (before the haircut)
+        self.rec = None                                 # the tape recorder (attach() starts it with the feeds)
         if self.wl is not None:
             for mint, pos in st["positions"].items():   # a restart keeps the book: held new pairs are watched again
                 if pos.get("strategy") == "new_pairs":
@@ -1084,6 +1115,7 @@ class Night(object):
             lat = max(0.0, self.wall() - t0)
             self.np_speed_add("exit", lat * 1000)
             tail += " · out · %.1f s after the reading" % lat
+        self.rec_call("sell", mint, pos, frac, why, got, raw, sol_usd, lat, self.fill_note)
         if frac >= 0.999:
             pnl = pos["sold_usd"] - pos["cost"]
             n = self.state["night"]
@@ -1095,7 +1127,7 @@ class Night(object):
                      "strategy": pos.get("strategy") or "migrated"}
             plan = pos.get("plan")
             if isinstance(plan, dict):
-                # steps: the ladder steps sold, this sale too when it is the ladder's last ("TP +7%" on a scalp)
+                # steps: the ladder steps sold, this sale too when it is the ladder's last ("TP +10%" on a scalp)
                 last = int(f(take.get("steps"), 1)) if isinstance(take, dict) and take.get("kind") == "take" else 0
                 trade.update(tier=plan.get("entry_tier") or plan.get("tier"), score=plan.get("entry_score"),
                              steps=int(f(plan.get("sold"))) + last, plan=holdplan.panel_plan(plan) if holdplan else None)
@@ -1126,7 +1158,7 @@ class Night(object):
             pos["raw"] -= raw
             pos["tokens_ui"] = pos["raw"] / 10.0 ** pos["decimals"]
             pos["tp1_done"] = True
-            if isinstance(take, dict):                  # a ladder step: "TP +7% · sold 34% for $3.40 · stop to break-even"
+            if isinstance(take, dict):                  # a ladder step: "TP +10% · sold 34% for $3.40 · stop to break-even"
                 steps = int(f(take.get("steps"), 1))
                 text = "%s · sold %.0f%%%s for %s" % (take.get("why") or "TP", frac * 100,
                                                       " (%d steps)" % steps if steps > 1 else "", usd(got))
@@ -1563,6 +1595,7 @@ class Night(object):
         if self.wl is None:
             return
         if feeds is not None:
+            self.rec_start()
             for mint in self.wl.held():
                 coin = self.wl.get(mint)
                 if coin is not None and coin.curve:
@@ -1591,8 +1624,67 @@ class Night(object):
         self.log(agent, coin, action, text)
         return True
 
+    # the tape recorder (memebot/recorder.py): one guarded call per hook; it never trades, never waits for
+    # the disk (a writer thread does), and its first error switches it off for the run, said once
+    def rec_start(self):
+        if self.rec is not None or recorder is None or not self.cfg.get("rec_on", True) \
+                or os.environ.get("MEMEBOT_REC", "1") == "0":
+            return
+        try:
+            self.rec = recorder.Recorder(os.path.join(self.dir, "tapes"), self.cfg, wl=self.wl, clock=self.epoch,
+                                         log=lambda text: self.log("LOGGER", None, "tape", text),
+                                         stats=self.np_rec_stats,
+                                         pool_accounts=getattr(newpairs, "_curve_accounts", None),
+                                         start={"bal": self.state.get("balance"), "mem": self.mem,
+                                                "held": len(self.state.get("positions") or {})})
+        except Exception as e:                          # noqa: BLE001 - no tape, the night goes on
+            self.rec = None
+            self.log("LOGGER", None, "error", "tape recorder off: %s: %s" % (type(e).__name__, str(e)[:160]))
+
+    def rec_call(self, name, *args):
+        """rec.<name>(*args), never raising into the loop. -> its answer, or None (off, or it failed)."""
+        rec = self.rec
+        if rec is None:
+            return None
+        try:
+            return getattr(rec, name)(*args)
+        except Exception as e:                          # noqa: BLE001 - a tape is never worth a trade
+            self.rec = None
+            follows = []
+            try:
+                follows = list(rec.follow)
+                rec.close(0, "off")                     # what it has goes to its writer; nobody waits for it
+            except Exception:                           # noqa: BLE001
+                pass
+            for m in follows:                           # the curves it kept polled go: the poller is the exits'
+                if self.wl is not None and self.wl.get(m) is None:
+                    self.np_call("unwatch", m)
+            text = "tape recorder off: %s: %s: %s · the trading goes on, without a tape" % (
+                name, type(e).__name__, str(e)[:160])
+            self.m.errors.append(text)
+            self.log("LOGGER", None, "error", text)
+            return None
+
+    def np_rec_tick(self):
+        """The recorder's step (after each batch of events and each 1 s step): its decisions, the follow list,
+        the hand-off to its writer. The curves it lets go are unwatched, never one the watch list has."""
+        if self.rec is not None and self.sol_px:
+            self.rec_call("sol", self.sol_px[1])
+        for m in self.rec_call("tick", self.epoch()) or ():
+            if self.wl.get(m) is None:
+                self.np_call("unwatch", m)
+
+    def np_rec_stats(self):
+        """The heartbeat's numbers: SOL's dollar price, the poller's good calls (a gap in them is a gap in the
+        tape), the curves polled, the coins held."""
+        poller = getattr(self.feeds, "poller", None)
+        return {"sol": self.sol_px[1] if self.sol_px else None, "poll_ok": getattr(poller, "ok", None),
+                "poll_calls": getattr(poller, "calls", None), "poll_ms": getattr(poller, "last_ms", None),
+                "watched": len(self.np_call("watched") or {}), "held": len(self.wl.held())}
+
     def np_unwatch(self, mint):
-        self.np_call("unwatch", mint)
+        if not self.rec_call("keep", mint):             # the recorder may keep it polled (rec_follow_s)
+            self.np_call("unwatch", mint)
         for d in (self.np_fired, self.np_hold, self.np_win, self.news_at, self.np_meta_rug):
             d.pop(mint, None)
 
@@ -1635,11 +1727,13 @@ class Night(object):
                 self.say_once("np_error_said", text, "LOGGER", None, "error", text, every=60)
         self.np_reports(minutes_left)
         self.np_touch()
+        self.np_rec_tick()
         return len(evs)
 
     def np_event(self, ev, minutes_left):
         if not isinstance(ev, dict):
             return
+        self.rec_call("event", ev)                      # on the tape as it came (create, curve, meta, ...)
         kind = ev.get("kind") or ev.get("txType")
         if kind == "curve":
             self.np_curve(ev, minutes_left)
@@ -1807,13 +1901,14 @@ class Night(object):
 
     def np_rug_take(self, mint, fut):
         """A finished RugCheck call into the cache -> the report, or None (failed, or for another coin)."""
-        self.np_jobs.pop(mint, None)
+        job = self.np_jobs.pop(mint, None)
         try:
             rep = fut.result(timeout=0)
         except Exception:                               # noqa: BLE001 - HTTP errors come back as None already
             rep = None
         rep = rep if isinstance(rep, dict) and rep.get("mint") == mint else None
         self.np_rug[mint] = {"at": self.epoch(), "report": rep}
+        self.rec_call("rug", mint, rep, job[2] if job else None, job[1] if job else None)
         return rep
 
     def np_rug_get(self, mint):
@@ -1847,6 +1942,7 @@ class Night(object):
                     continue
                 del self.np_meta_rug[mint]
                 self.wl.on_meta(mint, links)            # {}: RugCheck read the metadata, it has no link
+                self.rec_call("event", dict(links, kind="meta", mint=mint, ok=True, source="rugcheck"))
                 self.np_judge(coin, now, minutes_left)
                 continue
             fired = self.np_fired.pop(mint, None)
@@ -1894,6 +1990,7 @@ class Night(object):
         why = self.why_no_entries(minutes_left, {}) or self.np_job_why()
         if why:
             self.say_once("risk_said", why, "RISK", coin.symbol, "skip", "no entry: %s" % why)
+            self.rec_call("decide", mint, "risk", why)
             self.wl.retry(coin)
             return
         if ("fire", mint, coin.trigger_t) not in self.np_said:
@@ -1903,6 +2000,7 @@ class Night(object):
             n["flags"] = ([x for x in n.get("flags", []) if x.get("coin") != coin.symbol]
                           + [{"coin": coin.symbol, "why": "momentum", "t": self.ts()}])[-8:]
             self.log("SCANNER", coin.symbol, "flag", coin.why)
+            self.rec_call("fire", coin)
         rep = self.np_rug_get(mint)
         ok, bad, holders = newpairs.rug_check_np(rep, coin, cfg)
         if ok is None:                                  # no report yet: np_reports() goes on when it lands
@@ -2005,6 +2103,7 @@ class Night(object):
             newpairs.first_in_text(coin, wall),
             ("curve maths %.1f%% off Jupiter" % worst) if worst != float("inf") else "curve maths not checked"))
         self.log("NEWS", coin.symbol, "plan", holdplan.plan_text(plan))
+        self.rec_call("enter", mint, pos, coin, sol_usd)
 
     def np_job_why(self):
         """RISK at the job's end (a night is two GitHub jobs, and the next one starts minutes later): no new
@@ -2110,9 +2209,22 @@ class Night(object):
         cfg = self.cfg
         if not (f(plan.get("sold")) > 0 or f(plan.get("step")) > 0):
             return cfg
-        tokens, entry = f(pos.get("tokens_ui")), f(pos.get("entry_price"))
-        if not (tokens > 0 and entry > 0 and sol_usd > 0):
+        level = self.np_even_gain(pos, coin, sol_usd)
+        if level is None:
             return cfg
+        floor = f(cfg.get("breakeven_pct"), 1.0)
+        top = f(plan.get("done_gain"))
+        be = max(floor, min(level, top) if top > floor else floor)
+        return dict(cfg, breakeven_pct=round(be, 3))
+
+    def np_even_gain(self, pos, coin, sol_usd):
+        """The price gain (% over the entry price) at which selling everything still held now leaves the whole
+        trade at 0 after every cost: pump.fun's fee and the price impact by the curve maths, the latency
+        haircut, the order's network and priority fees, the steps already sold counted. None when unknown."""
+        cfg = self.cfg
+        tokens, entry = f(pos.get("tokens_ui")), f(pos.get("entry_price"))
+        if not (tokens > 0 and entry > 0 and f(sol_usd) > 0):
+            return None
         fee = f(cfg.get("curve_fee_pct"), 1.25)
         k = 1 - fee / 100.0                             # what a sale brings of the price, the curve's impact aside
         if coin is not None and f(coin.vsol) > 0 and f(coin.vtok) > 0 and f(coin.price) > 0:
@@ -2121,11 +2233,7 @@ class Night(object):
                 k = got / (tokens * coin.price)
         k *= 1 - f(cfg.get("latency_slip_pct"), 1.0) / 100.0
         need = f(pos.get("cost")) - f(pos.get("sold_usd")) + self.fee_usd(sol_usd, pos)
-        level = (need / (tokens * k) / entry - 1) * 100 if k > 0 else 0.0
-        floor = f(cfg.get("breakeven_pct"), 1.0)
-        top = f(plan.get("done_gain"))
-        be = max(floor, min(level, top) if top > floor else floor)
-        return dict(cfg, breakeven_pct=round(be, 3))
+        return (need / (tokens * k) / entry - 1) * 100 if k > 0 else None
 
     def np_late_exit(self, pos, plan, coin, gain, held):
         """Two exits for a coin going nowhere (or a full book of them would stop the night's entries): its
@@ -2198,7 +2306,11 @@ class Night(object):
         pos["plan"] = plan
         if note:
             self.log("NEWS", pos["symbol"], "replan", note)
-        return plan, holdplan.fade_exit(plan.get("entry_score"), info, gain, cfg)
+        # "in profit" is counted in dollars: the gain must clear the trade's costs (np_even_gain), or a fading
+        # exit would book a loss while saying it took a profit
+        even = self.np_even_gain(pos, coin, self.sol_usd())
+        fcfg = dict(cfg, fade_min_gain_pct=max(f(cfg.get("fade_min_gain_pct"), 0.0), even if even is not None else 0.0))
+        return plan, holdplan.fade_exit(plan.get("entry_score"), info, gain, fcfg)
 
     def np_stale(self):
         """Held new pairs without a curve reading for np_stale_s (or not watched at all): Jupiter prices them."""
@@ -2242,6 +2354,7 @@ class Night(object):
         self.np_summary(now)
         self.np_health(now)
         self.np_speed_view(now)
+        self.np_rec_tick()
 
     def np_summary(self, now):
         """SCANNER once a minute: what the New Pairs column shows (each coin is a row on the page, not a line)."""
@@ -2347,6 +2460,7 @@ class Night(object):
             if pool is not None:
                 pool.shutdown(wait=False, cancel_futures=True)
                 setattr(self, name, None)
+        self.rec_call("close")                          # the tape's last lines to disk (rec_close_wait_s at most)
 
     def sol_read(self):
         """SOL in dollars from the market (Jupiter, then DexScreener: up to 4 s each when they hang), or 0."""
@@ -2584,7 +2698,7 @@ def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=
     except OSError:
         prompt = ""
     return {"updated": at, "mode": "paper", "start_balance": cfg["start_balance"], "balance": round(state["balance"], 2),
-            "equity": round(eq, 2), "session": "%s → %s" % (cfg["session_start"], cfg["session_end"]),
+            "equity": round(eq, 2), "session": "24/7" if always_on(cfg) else "%s → %s" % (cfg["session_start"], cfg["session_end"]),
             "agents": AGENTS, "prompt": prompt, "night": {k: n.get(k) for k in NIGHT_KEYS},
             "flags": (n.get("flags") or [])[-8:], "curve": (n.get("curve") or [])[-600:],
             "position_pct": cfg["position_pct"], "slip_cap": cfg["max_roundtrip_loss_pct"],
@@ -3055,6 +3169,8 @@ def run(data_dir, cfg, minutes=None, anytime=False, market=None, now_fn=utc_now,
             if s is None:                # a test run: its own night, closed at its end
                 s = (local(now, cfg["timezone"]).date().isoformat() + "-test", 0, 24 * 60)
             night_id, _, left = s
+            if always_on(cfg) and not night_id.endswith("-test"):
+                left = ALWAYS_LEFT                      # no end of the day: no last-10-minutes rule, no sale at 23:55
             if bot is None:
                 bot = Night(data_dir, cfg, market, now, out)
                 live = live if live is not None else live_for(cfg)
@@ -3129,6 +3245,7 @@ def run(data_dir, cfg, minutes=None, anytime=False, market=None, now_fn=utc_now,
             if not bot.state["positions"]:
                 bot.close_night()
         bot.publish(prices, live, seq + 1, memo, force=True)
+        bot.rec_call("close")                           # an end-of-test sale's tape lines too
     if live is not None:
         live.stop()
     return night_id

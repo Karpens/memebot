@@ -225,13 +225,26 @@ class FakeFeeds(object):
         return True
 
 
+# hold-spec.md's tiers as the user first set them (the first step at +7 %): the engine tests below walk these.
+# config.json and plan.DEFAULT_TIERS moved the first step to +10 % for the costs (tests/test_levers.py).
+SPEC_TIERS = [
+    {"name": "scalp", "min_score": 0, "ladder": [[7.0, 1.0]], "trail_pct": 0.0, "time_stop_min": 5.0},
+    {"name": "swing", "min_score": 3, "ladder": [[7.0, 0.5], [20.0, 1.0]], "trail_pct": 6.0, "time_stop_min": 10.0},
+    {"name": "runner", "min_score": 5, "ladder": [[7.0, 0.34], [20.0, 0.5], [60.0, 1.0]], "trail_pct": 10.0,
+     "time_stop_min": 15.0},
+    {"name": "moon", "min_score": 7, "ladder": [[7.0, 0.25], [20.0, 0.34], [60.0, 0.5], [100.0, 1.0]],
+     "trail_pct": 15.0, "time_stop_min": 20.0},
+]
+
+
 def np_cfg(**kw):
-    """The New Pairs settings of config.json, on the code's defaults."""
+    """The New Pairs settings of config.json as they were when these tests were written (the +7 % first step and
+    $3 orders at the least; tests/test_levers.py runs today's config.json), on the code's defaults."""
     c = mb.load_config(None)
     c.update(strategies=["new_pairs"], start_balance=100.0, position_pct=10.0, max_open=8, max_trades_per_night=250,
              loss_streak=5, cooldown_min=2, reenter_min=5, no_entries_last_min=10, stop_pct=-7.0, tp1_pct=7.0,
              tp1_sell_frac=1.0, time_stop_min=5, time_stop_below_pct=2.0, min_order_usd=3.0,
-             hold_tiers=json.loads(json.dumps(plan.DEFAULT_TIERS)), breakeven_pct=1.0, news_refresh_sec=30,
+             hold_tiers=json.loads(json.dumps(SPEC_TIERS)), breakeven_pct=1.0, news_refresh_sec=30,
              fade_buy_ratio=0.45)
     c.update(kw)
     return c
@@ -279,7 +292,8 @@ class Engine(unittest.TestCase):
 
     def read(self, n, mint, rsol, **kw):
         self.slot += 1
-        self.turn(n, reading(mint, rsol, self.slot, **kw), **{k: v for k, v in kw.items() if k in ("sec", "left")})
+        self.turn(n, reading(mint, rsol, self.slot, **{k: v for k, v in kw.items() if k not in ("sec", "left")}),
+                  **{k: v for k, v in kw.items() if k in ("sec", "left")})
 
     def launch(self, n, mint, path, social=(False, True, False), sym=None, report=None, **kw):
         """A create, its metadata, its readings; RugCheck has a clean report. -> the turn it was bought on."""

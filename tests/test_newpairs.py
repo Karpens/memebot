@@ -837,3 +837,72 @@ class Garbage(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DryRunFixes(unittest.TestCase):
+    """What the first dry run on GitHub Actions showed (2026-11-26): every coin was rejected (socials, a second
+    launch by the same creator), and a coin whose account was not a pump.fun curve read as +4050 %."""
+
+    def wl(self, **kw):
+        cfg = dict(npm.DEFAULTS)
+        cfg.update(kw)
+        return npm.Watchlist(cfg), cfg
+
+    def create(self, mint, creator="dev1", t=0.0):
+        return {"txType": "create", "mint": mint, "symbol": mint.upper(), "name": mint, "traderPublicKey": creator,
+                "initialBuy": 10_000_000.0, "solAmount": 0.3, "bondingCurveKey": "curve-" + mint,
+                "vTokensInBondingCurve": 1_062_000_000.0, "vSolInBondingCurve": 30.3, "marketCapSol": 28.5,
+                "uri": "", "is_mayhem_mode": False, "pool": "pump", "_rx": t}
+
+    def test_one_other_launch_is_allowed_when_np_serial_max_is_1(self):
+        wl, cfg = self.wl(np_serial_max=1)
+        wl.on_create(self.create("aaa"), 0.0)
+        b = wl.on_create(self.create("bbb"), 60.0)
+        ok, why = npm.cheap_check(b, cfg)
+        self.assertFalse(any(w.startswith("serial launcher") for w in why), why)
+        c = wl.on_create(self.create("ccc"), 120.0)
+        ok, why = npm.cheap_check(c, cfg)
+        self.assertTrue(any(w.startswith("serial launcher: 2 more coins") for w in why), why)
+
+    def test_the_default_still_rejects_a_second_launch(self):
+        wl, cfg = self.wl()
+        wl.on_create(self.create("aaa"), 0.0)
+        b = wl.on_create(self.create("bbb"), 60.0)
+        self.assertTrue(any(w.startswith("serial launcher") for w in npm.cheap_check(b, cfg)[1]))
+
+    def test_no_social_link_is_no_rejection_when_not_needed(self):
+        wl, cfg = self.wl(np_need_social=False)
+        c = wl.on_create(self.create("aaa"), 0.0)
+        wl.on_meta("aaa", {"name": "a"})
+        self.assertNotIn("no social link", npm.cheap_check(c, cfg)[1])
+
+    def test_an_account_that_is_not_a_pump_fun_curve_is_rejected_and_never_read(self):
+        wl, cfg = self.wl()
+        c = wl.on_create(self.create("aaa"), 0.0)
+        r = {"kind": "curve", "mint": "aaa", "vtok": int(1e15), "vsol": int(1e12), "rtok": 0, "rsol": int(9e11),
+             "price_sol": 1e-3, "complete": False, "slot": 5, "disc_ok": False}
+        self.assertIsNone(wl.on_curve("aaa", r, 1.0))
+        self.assertTrue(c.status.startswith("rejected: not a pump.fun bonding curve"), c.status)
+        self.assertEqual(c.readings, 0)
+
+    def test_no_entry_before_np_min_age_s(self):
+        """The live morning: entries 10-25 s after the launch were dumped on. With np_min_age_s 45 the same
+        momentum fires only once the coin is 45 s old, if it still holds then."""
+        wl, cfg = self.wl(np_min_age_s=45, np_need_social=False)
+        c = wl.on_create(self.create("aaa"), 0.0)
+        slot, rsol = 1, 0.0
+        fired = []
+        for k in range(1, 61):                                  # a reading a second, all buys, up 0.1 SOL each
+            rsol += 0.1
+            r = {"kind": "curve", "mint": "aaa", "vsol": int((30.0 + rsol) * 1e9), "vtok": int(32.2e9 / (30.0 + rsol) * 1e6),
+                 "rtok": 0, "rsol": int(rsol * 1e9), "price_sol": 0.0, "complete": False, "slot": slot}
+            r["price_sol"] = (r["vsol"] / 1e9) / (r["vtok"] / 1e6)
+            slot += 1
+            wl.on_curve("aaa", r, float(k))
+            ok, why = npm.trigger(c, cfg, float(k))
+            if ok:
+                fired.append(k)
+            elif k < 45 and c.sol_in >= 2.5:
+                self.assertTrue(why.startswith("too young"), why)
+        self.assertTrue(fired and fired[0] == 45, fired)
+

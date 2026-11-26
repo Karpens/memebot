@@ -1,26 +1,37 @@
 """Meme Bot's NEWS hold plan: how far a coin may run before it is sold, decided by its NEWS score.
 
-The base exit is +7 % (the scalp tier: everything is sold there). When the NEWS is strong, part
+The base exit is +10 % (the scalp tier: everything is sold there). When the NEWS is strong, part
 of the coin is held for +20 / +60 / +100 %:
 
     score  tier    ladder (gain %, fraction of what is LEFT to sell)       trail   time stop
-    0-2    scalp   +7 all                                                    -     5 min
-    3-4    swing   +7 50 %, +20 all                                         6 %    10 min
-    5-6    runner  +7 34 %, +20 50 %, +60 all                              10 %    15 min
-    7+     moon    +7 25 %, +20 34 %, +60 50 %, +100 all                   15 %    20 min
+    0-2    scalp   +10 all                                                   -     5 min
+    3-4    swing   +10 50 %, +20 all                                        6 %    10 min
+    5-6    runner  +10 34 %, +20 50 %, +60 all                             10 %    15 min
+    7+     moon    +10 25 %, +20 34 %, +60 50 %, +100 all                  15 %    20 min
 
 Before the first step: the hard stop (stop_pct, -7 %) and the tier's time stop (out after N
 minutes unless +2 %). After the first step: no time stop, the stop for the rest moves to
-break-even (entry +breakeven_pct, 1 %) so a winner never turns into a loser, and a trailing stop
-trail % under the peak (on price) also applies. While holding, the NEWS is read again every
-news_refresh_sec: the score may move the coin up or down a tier (replan), and a coin whose buyers
-left while its news faded is sold when it is in profit (fading).
+break-even (entry +breakeven_pct, 1 %; bot.py raises it to where the whole trade is at 0 after
+every cost) so a winner never turns into a loser, and a trailing stop trail % under the peak (on
+price) also applies. While holding, the NEWS is read again every news_refresh_sec: the score may
+move the coin up or down a tier (replan), and a coin whose buyers left while its news faded is
+sold when it is in profit (fading).
 
-Honest maths: a paper round trip costs about 2-3 % on a migrated pool (pool fee, price impact, the
-1 % latency haircut each way, network fees) and about 4-5 % on the pump.fun curve (1.25 % fee each
-way + the haircut + priority fees). So +7 % nets about +2-5 % and the -7 % stop costs about -9 to
--11 %: scalps alone need well over half the trades to reach +7 %. The ladder and the LEARNER are
-what can tilt it.
+Honest maths (the engine's own cost model, memebot/bot.py, checked against the first New Pairs
+trades on GitHub Actions, 2026-11-26, SOL at $71): pump.fun's fee 1.25 % each way, the 1 % latency
+haircut each way, the curve's price impact (about 0.4 % each way for a $10 order on a curve with
+35 SOL of virtual reserves) and 0.001 SOL of network and priority fees an order ($0.07, 0.7 % of a
+$10 order each way). A round trip at an unchanged price costs about 6.5 %. Gains are counted from
+the fill price, which already holds the buy's costs, so a sale breaks even at about +4 %. The
+first step used to be +7 %: it booked about +2.7 % (the live HOGZ trade +1.9 %: its sale filled
+1.9 % under the reading), and after a partial +7 % sale the rest's break-even-after-costs stop sat
+at +2.4 to +4 %, a normal pullback under the step. At +10 % the step books about +5.6 % sold
+whole, and the rest's stop is +1 to +3 %, 7 to 9 points under the step. The stop: -7 % books
+about -10.8 %, and the live stops gapped past it (readings of -8, -9 and -13 % booked -12, -13 and
+-16 %). So a scalp still needs 2 trades in 3 to reach +10 % before the stop (+5.6 against -10.8;
+with the live gaps and the HOGZ fill, +3.7 against -13.8: 4 in 5). No exit makes a coin-toss entry
+pay: on a random walk every exit plan loses about the 6.5 % round trip. The ladder's later steps
+(+20 / +60 / +100), the entry rules and the LEARNER are what can tilt it.
 
 Pure functions on small dicts (the plan lives on the position in state.json), standard library
 only, no I/O; garbage in (None, NaN, negative, text) never raises.
@@ -30,7 +41,7 @@ only, no I/O; garbage in (None, NaN, negative, text) never raises.
             "sol_in": 7.2, "buys": 14, "sells": 3}             # the curve's momentum since launch
     score, parts = news_score(info, cfg)
     plan = new_plan(score, parts, tiers_from_cfg(cfg), cfg)    # at entry, kept on the position
-    plan_text(plan)        # "hold plan · 5/10 (X, Telegram, trending, buys 70%) · runner: +7 → +20 → +60"
+    plan_text(plan)        # "hold plan · 5/10 (X, Telegram, trending, buys 70%) · runner: +10 → +20 → +60"
     # every price reading of a held coin, same loop turn:
     track(plan, gain_pct, cfg)                                 # the peak and the stop for the panel
     d = decide_exit(plan, gain_pct, peak_gain_pct, held_min, cfg)
@@ -42,15 +53,17 @@ only, no I/O; garbage in (None, NaN, negative, text) never raises.
 
 import math
 
-# The tiers of hold-spec.md, lowest first. A ladder step is [gain %, fraction of what is LEFT to
-# sell]: runner sells 34 % at +7, then 50 % of the rest at +20, then all of it at +60.
+# The tiers, lowest first. A ladder step is [gain %, fraction of what is LEFT to sell]: runner
+# sells 34 % at +10, then 50 % of the rest at +20, then all of it at +60. hold-spec.md had the first
+# step at +7 %; it moved to +10 % for the costs (the module's docstring has the arithmetic): the
+# shares and the later steps are the user's. config.json's hold_tiers are the same (a test checks).
 # trail_pct 0 means no trailing stop (the scalp sells everything at its only step anyway).
 DEFAULT_TIERS = [
-    {"name": "scalp", "min_score": 0, "ladder": [[7.0, 1.0]], "trail_pct": 0.0, "time_stop_min": 5.0},
-    {"name": "swing", "min_score": 3, "ladder": [[7.0, 0.5], [20.0, 1.0]], "trail_pct": 6.0, "time_stop_min": 10.0},
-    {"name": "runner", "min_score": 5, "ladder": [[7.0, 0.34], [20.0, 0.5], [60.0, 1.0]], "trail_pct": 10.0,
+    {"name": "scalp", "min_score": 0, "ladder": [[10.0, 1.0]], "trail_pct": 0.0, "time_stop_min": 5.0},
+    {"name": "swing", "min_score": 3, "ladder": [[10.0, 0.5], [20.0, 1.0]], "trail_pct": 6.0, "time_stop_min": 10.0},
+    {"name": "runner", "min_score": 5, "ladder": [[10.0, 0.34], [20.0, 0.5], [60.0, 1.0]], "trail_pct": 10.0,
      "time_stop_min": 15.0},
-    {"name": "moon", "min_score": 7, "ladder": [[7.0, 0.25], [20.0, 0.34], [60.0, 0.5], [100.0, 1.0]],
+    {"name": "moon", "min_score": 7, "ladder": [[10.0, 0.25], [20.0, 0.34], [60.0, 0.5], [100.0, 1.0]],
      "trail_pct": 15.0, "time_stop_min": 20.0},
 ]
 
@@ -73,7 +86,7 @@ CFG = {
     "news_curve_buy_ratio": 0.80,  # buy share of curve readings (the entry already needs 0.70)
 }
 MAX_SCORE = 10
-EPS = 1e-9                         # boundaries are inclusive (+7.0 % is +7 %), floats or not
+EPS = 1e-9                         # boundaries are inclusive (+10.0 % is +10 %), floats or not
 FULL = 1 - 1e-6                    # a fraction this close to 1 sells everything
 
 # what a lost score part means, for the log ("downgrade runner → swing (boosts gone)")
@@ -321,7 +334,7 @@ def pick_tier(score, tiers=None):
 
 
 def ladder_text(ladder):
-    """"+7 → +20 → +60"."""
+    """"+10 → +20 → +60"."""
     return " → ".join("+%g" % g for g, _ in _ladder(ladder)) or "-"
 
 
@@ -467,7 +480,7 @@ def mark_step(plan, step=None, cfg=None):
 
 
 def take_text(d):
-    """The EXECUTOR line for a ladder sale: "TP +7% · sold 34% · stop to break-even"."""
+    """The EXECUTOR line for a ladder sale: "TP +10% · sold 34% · stop to break-even"."""
     if not isinstance(d, dict):
         return ""
     sold = "sold %.0f%%" % (min(1.0, max(0.0, f(d.get("frac")))) * 100)
@@ -478,7 +491,7 @@ def take_text(d):
 
 
 def plan_text(plan):
-    """The NEWS line at entry: "hold plan · 5/10 (X, Telegram, trending, buys 70%) · runner: +7 → +20 → +60"."""
+    """The NEWS line at entry: "hold plan · 5/10 (X, Telegram, trending, buys 70%) · runner: +10 → +20 → +60"."""
     if not isinstance(plan, dict):
         return "hold plan · none"
     parts = _parts(plan.get("parts"))
@@ -530,7 +543,7 @@ def replan(plan, new_score, new_parts, gain_pct, cfg=None):
     changes when the score now picks another one:
     - steps already sold stay sold: on the new ladder every step at or below the highest gain sold
       counts as done, except a step that sells everything (the coin is still held). Upgrade swing
-      (sold at +7) → runner: next +20 sells 50 %. Downgrade moon (sold +7 and +20) → swing: next
+      (sold at +10) → runner: next +20 sells 50 %. Downgrade moon (sold +10 and +20) → swing: next
       is swing's +20 that sells the rest;
     - a downgrade whose next step the gain has already passed says "sell now" in the note: call
       decide_exit on the same reading and it sells that step;
