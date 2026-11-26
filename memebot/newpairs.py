@@ -14,8 +14,13 @@ and asks it what to do. Garbage in (None, NaN, text, wrong types) never raises.
     wl.touch(now)                            # each good poll round: an unchanged curve is still fresh
     act, why = wl.judge(coin, now)           # "reject" | "wait" | "fire" (cheap_check, then trigger)
     ok, why, holders = rug_check_np(report, coin, cfg)    # on "fire" (report None when not in yet)
-        # ok None: no report -> no entry now, judge fires again on the next reading
+        # ok None: no report, or a report that sees too few wallets holding the coin ("waiting: RugCheck
+        #   sees 3 holders (min 10)", "waiting: 6 holders for 3.3 SOL in (0.55 SOL a holder, max 0.5)")
+        #   -> no entry now, judge fires again on the next reading
         # ok False: wl.reject(coin, why[0]) (judge does it on the next reading if the bot doesn't)
+    keep = rug_cache_s(report, coin, cfg)    # how long the bot may reuse that report for this coin's entry:
+        # np_rug_recheck_s for a report that leaves it waiting (ask again soon), else np_rug_cache_s
+    rug_waiting(coin)                        # True while the coin waits for RugCheck to see enough holders
     # learner skip -> wl.reject(coin, "learner: skip"); book full or paused -> wl.retry(coin)
     wl.mark_entered(mint, now)               # after the paper fill, same loop turn
     why = exit_signal(coin, cfg)             # every reading of a held coin: None or "dump: 3.1 SOL sold"
@@ -24,10 +29,14 @@ and asks it what to do. Garbage in (None, NaN, text, wrong types) never raises.
     panel["watch"] = wl.rows(now)
 
 judge() fires once per trigger: on the reading where all the entry rules first hold. It fires again on
-a later reading only while the bot had no RugCheck verdict for the coin (no report in time: "try again
-on the next reading"), after wl.retry(), or when the rules lapsed and hold again (a new trigger). A
-coin that passed RugCheck and was not bought (the LEARNER said skip) is not offered again while the
-rules keep holding, so the learner is asked once per trigger, not once per reading (still: reject it).
+a later reading only while the bot had no RugCheck verdict for the coin (no report in time, or a report
+that sees too few holders: "try again on the next reading"), after wl.retry(), or when the rules lapsed and
+hold again (a new trigger). Whether the trigger's SOL came from enough WALLETS is RugCheck's to say (its
+holders, rug_check_np: np_max_sol_per_holder), never the curve readings': a buy reading is a poll, and the
+poll rate is not the number of buyers. On a fire judge() rejects only a single buy READING bigger than
+np_max_buy_sol (concentration(); off by default). A coin that passed RugCheck and was not bought (the
+LEARNER said skip) is not offered again while the rules keep holding, so the learner is asked once per
+trigger, not once per reading (still: reject it).
 
 A reading is the decoded bonding-curve account (decode_curve() below, or the feed's own decode):
 {"vsol", "vtok", "rsol", "complete", "slot"} in lamports and raw token units, or in SOL and whole
@@ -85,6 +94,31 @@ DEFAULTS = {
     "np_max_holder_pct": 12.0,      # one holder other than the curve above this rejects
     "np_max_top10_pct": 35.0,       # the top 10 holders, the curve left out
     "np_rug_bad_risks": ["rugged tokens", "single holder ownership"],   # risk names that reject
+    # RugCheck must SEE the holders before its holder checks mean anything. The live morning of 2026-11-26
+    # (measured BEFORE the 45 s age floor, np_min_age_s, was on: 7 of the 10 entries fired at 10-25 s): 7 of the
+    # 10 entries passed on a report with 0-4 holders (6 of them at 13-25 s, when RugCheck had not indexed the coin
+    # yet, so "top holder 0 %" was an empty list, not a spread-out coin; real reports count the holders by about
+    # 22 s; MEME at 134 s with 4), and all 4 dumps were among those 7. Under the age floor 3 of those 4 (STOREB, TANOSHIMI, KIDSTOCK) dumped before 45 s, where
+    # cheap_check's np_dump_sol already rejects them; the holder rules' own live evidence is MEME (134 s, 4
+    # holders, then a -28 % dump) and the waits of BST (8 holders, -9 %) and YARL (9, -14 %). rug_holders()
+    # counts the WALLETS HOLDING the coin: RugCheck's totalHolders counts every open token account, the empty ones
+    # of wallets that sold out included (real reports: 7 accounts, 5 of them empty, 1 wallet holding), so it is
+    # cut by the empty accounts and the curve's it lists. Fewer than np_min_holders is no PASS but "waiting" (no
+    # entry on this reading, ask again in np_rug_recheck_s). 0 turns it off. Eleven trades fit no number: the
+    # tapes decide.
+    "np_min_holders": 10,
+    "np_rug_recheck_s": 4.0,        # a report that leaves the coin waiting is asked for again after this (the
+                                    # caller's np_rug_get: rug_cache_s()), not the 30 s cache: RugCheck's
+                                    # index catches up in seconds; one call a coin every 4 s while it fires
+    # CONCENTRATION, by RugCheck's wallets: at most this many SOL in (since the launch) for each wallet holding
+    # the coin, or "waiting" as above ("waiting: 6 holders for 3.3 SOL in (0.55 SOL a holder, max 0.5)"): with
+    # 10 holders at most 5 SOL, 16 holders for 7.8 SOL. Why: the live dumps sold 2.9-4.4 SOL out of 3.3-4.3 SOL
+    # in: a handful of early wallets held it all and sold into the first pump. Wallets, not curve readings: a
+    # buy reading is one poll that saw the SOL rise, and how many buyers land in one poll depends on the poll
+    # rate (0.5 s while a coin is held, 1 s otherwise), not on the coin. What it does not catch: one big wallet
+    # among many small ones (the average stays low); np_max_holder_pct (12 %) catches a wallet from about 4 SOL
+    # bought early. 0.5 is a guess from the mechanism, not a fit: the grid tries 0.35, 0.8 and off (0).
+    "np_max_sol_per_holder": 0.5,
     # the entry trigger: momentum, first in
     "np_max_age_s": 180,
     "np_min_age_s": 0,              # no entry before this age (s): the first seconds are the snipers' and the dev's
@@ -93,6 +127,12 @@ DEFAULTS = {
     "np_min_buy_share": 0.7,        # ... as a share of the readings that moved
     "np_min_rise_pct": 15.0,        # price above the create price
     "np_max_mcap_sol": 70.0,        # well before the curve completes (about 400 SOL of mcap)
+    # one buy READING above this many SOL rejects the coin when its trigger fires ("concentrated: one buy of
+    # 2.4 SOL (max 2)"); 0: off. Off by default: the first reading holds the launch's snipers (UZIM: 4.5 SOL,
+    # then +163 %), and RugCheck's top holder (np_max_holder_pct) judges the real wallets. A reading's size
+    # also grows with the poll interval (several buys in one poll). A backtest lever (2 SOL = np_dump_sol: one
+    # wallet that can sell a "dump" by itself)
+    "np_max_buy_sol": 0.0,
     # held coins
     "np_stale_s": 5.0,              # no fresh reading this long while holding: Jupiter price (caller)
 }
@@ -314,7 +354,7 @@ class Coin(object):
         "vsol0": START_VSOL, "price0": START_VSOL / START_VTOK, "rsol0": 0.0,
         "vsol": START_VSOL, "vtok": START_VTOK, "rsol": 0.0, "price": START_VSOL / START_VTOK,
         "complete": False, "slot": None, "readings": 0, "last_t": 0.0, "age_s": 0.0,
-        "buys": 0, "sells": 0, "sell_max": 0.0, "last_sell": 0.0, "sell_max_held": 0.0,
+        "buys": 0, "sells": 0, "sell_max": 0.0, "last_sell": 0.0, "sell_max_held": 0.0, "buy_max": 0.0,
         "meta": None, "serial": 0, "status": WATCHING, "why": "", "trigger_t": None,
         "entry_t": None, "entry_price": None, "exit_t": None, "rug": None, "rearm": False,
     }
@@ -323,6 +363,7 @@ class Coin(object):
     BOUNDS = {"vsol0": (MIN_VSOL, MAX_VSOL), "vsol": (MIN_VSOL, MAX_VSOL), "vtok": (MIN_VTOK, MAX_VTOK),
               "rsol0": (0.0, MAX_VSOL), "rsol": (0.0, MAX_VSOL), "dev_sol": (0.0, MAX_VSOL),
               "sell_max": (0.0, MAX_VSOL), "last_sell": (0.0, MAX_VSOL), "sell_max_held": (0.0, MAX_VSOL),
+              "buy_max": (0.0, MAX_VSOL),
               "dev_tokens": (0.0, 1e12), "dev_pct": (0.0, 1e5), "age_s": (0.0, 2 * MAX_T),
               "buys": (0, MAX_N), "sells": (0, MAX_N), "readings": (0, MAX_N), "serial": (0, MAX_N),
               "slot": (0, 2 ** 63)}
@@ -403,8 +444,11 @@ def _rug_doc(x):
     if not isinstance(x, dict):
         return None
     ok = x.get("ok") if isinstance(x.get("ok"), bool) else None
-    return {"ok": ok, "reasons": _reasons(x.get("reasons")), "holders": int(_clamp(f(x.get("holders")), 0, 1e9)),
-            "top1_pct": _clamp(f(x.get("top1_pct")), 0.0, 100.0), "top10_pct": _clamp(f(x.get("top10_pct")), 0.0, 1000.0)}
+    d = {"ok": ok, "reasons": _reasons(x.get("reasons")), "holders": int(_clamp(f(x.get("holders")), 0, 1e9)),
+         "top1_pct": _clamp(f(x.get("top1_pct")), 0.0, 100.0), "top10_pct": _clamp(f(x.get("top10_pct")), 0.0, 1000.0)}
+    if ok is None and x.get("wait") is True:
+        d["wait"] = True                            # "waiting: RugCheck sees N holders"
+    return d
 
 
 def _dev_tokens(ev):
@@ -476,6 +520,7 @@ def apply_reading(coin, r, now):
         return _completed(coin, r["slot"], now)
     if d > MOVE:
         coin.buys += 1
+        coin.buy_max = max(coin.buy_max, d)         # the biggest buy reading (the first one holds the snipers)
     elif d < -MOVE:
         coin.sells += 1
         coin.last_sell = -d
@@ -664,6 +709,10 @@ class Watchlist(object):
         coin.why = why
         if not fire:
             return "wait", why
+        ok, bad = concentration(coin, self.cfg)
+        if not ok:                                  # one buy reading bigger than np_max_buy_sol: never bought
+            self.reject(coin, bad)
+            return "reject", bad
         if first or coin.rearm or rug.get("ok") is not True:
             coin.rearm = False                      # first fire, retry(), or no RugCheck verdict yet
             return "fire", why
@@ -812,6 +861,91 @@ def _curve_accounts(report, coin):
     return out
 
 
+def _holder_pcts(report, coin):
+    """The top holders' % (desc), the curve and pool accounts left out."""
+    skip = _curve_accounts(report, coin)
+    pcts = []
+    for h in report.get("topHolders") if isinstance(report.get("topHolders"), list) else []:
+        if not isinstance(h, dict) or _key(h.get("address")) in skip or _key(h.get("owner")) in skip:
+            continue
+        p = f(h.get("pct"))
+        if p > 0:
+            pcts.append(min(p, 100.0))
+    pcts.sort(reverse=True)
+    return pcts
+
+
+def holder_counts(report, coin=None):
+    """What a RugCheck report lists, the account kinds counted: {"holding": accounts with a balance (pct > 0),
+    "empty": accounts with none (a wallet that sold out and did not close its account: RugCheck lists them with
+    amount 0), "curve": the curve's and the pools' accounts (_curve_accounts), "total": its totalHolders (every
+    open token account, the empty ones and the curve's included; 0 while RugCheck has not counted)}."""
+    out = {"holding": 0, "empty": 0, "curve": 0, "total": 0}
+    if not isinstance(report, dict):
+        return out
+    skip = _curve_accounts(report, coin)
+    for h in report.get("topHolders") if isinstance(report.get("topHolders"), list) else []:
+        if not isinstance(h, dict):
+            continue
+        if _key(h.get("address")) in skip or _key(h.get("owner")) in skip:
+            out["curve"] += 1
+        elif f(h.get("pct")) > 0:
+            out["holding"] += 1
+        else:
+            out["empty"] += 1
+    out["total"] = int(max(0.0, min(1e9, f(report.get("totalHolders")))))
+    return out
+
+
+def rug_holders(report, coin=None):
+    """How many WALLETS hold the coin by a RugCheck report: its totalHolders less the empty and the curve's
+    accounts it lists, or the holding accounts it lists when that is more (RugCheck lists at most 20 accounts,
+    the biggest first: when it lists all of them, both are the same count; when there are more, the accounts it
+    does not list may be empty too, so this is an upper bound; while totalHolders is still 0, the list). Real
+    reports of 2026-11-26: 7 accounts, 5 empty, the curve's and 1 wallet holding -> 1, not 7. 0 for no report:
+    a brand-new coin's report often lists nothing yet (RugCheck has not indexed it), not "spread out"."""
+    if not isinstance(report, dict) or not report.get("mint"):
+        return 0
+    c = holder_counts(report, coin)
+    return max(c["holding"], c["total"] - c["empty"] - c["curve"])
+
+
+def _short_of_holders(holders, coin, cfg):
+    """None when `holders` wallets are enough for the coin's entry, else the "waiting: ..." words: fewer than
+    np_min_holders ("waiting: RugCheck sees 3 holders (min 10)"), or more than np_max_sol_per_holder SOL in (since
+    the launch) for each of them ("waiting: 6 holders for 3.3 SOL in (0.55 SOL a holder, max 0.5)")."""
+    need = int(math.ceil(_c(cfg, "np_min_holders") - EPS))
+    if need > 0 and holders < need:
+        return "waiting: RugCheck sees %d holder%s (min %d)" % (holders, "" if holders == 1 else "s", need)
+    cap = _c(cfg, "np_max_sol_per_holder")
+    sol = coin.sol_in if isinstance(coin, Coin) else 0.0
+    if cap > 0 and sol > 0 and sol > cap * holders + EPS:
+        if holders <= 0:
+            return "waiting: RugCheck sees no holder for %.1f SOL in (max %s SOL a holder)" % (sol, _g(cap))
+        return "waiting: %d holder%s for %.1f SOL in (%.2f SOL a holder, max %s)" % (
+            holders, "" if holders == 1 else "s", sol, sol / holders, _g(cap))
+    return None
+
+
+def rug_cache_s(report, coin=None, cfg=None):
+    """How long (s) the bot may keep using this report for the coin's entry before asking RugCheck again:
+    np_rug_recheck_s when it leaves the coin waiting (too few holders seen, or too much SOL a holder: RugCheck's
+    index catches up within seconds and new buyers come, so the next look must be a fresh report, not the same
+    one for 30 s), else np_rug_cache_s. bot.py's np_rug_get() reads it in place of np_rug_cache_s (the prefetch
+    keeps the 30 s: only a coin whose trigger holds is asked again, one call every np_rug_recheck_s at most)."""
+    keep = max(0.0, _c(cfg, "np_rug_cache_s"))
+    if isinstance(report, dict) and report.get("mint") and _short_of_holders(rug_holders(report, coin), coin, cfg):
+        return min(keep, max(0.5, _c(cfg, "np_rug_recheck_s")))
+    return keep
+
+
+def rug_waiting(coin):
+    """True while the coin's last RugCheck verdict was "waiting: ..." (no FAIL, too few holders seen for its
+    entry): the bot asks again after np_rug_recheck_s and may judge the coin as soon as that lands."""
+    r = coin.rug if isinstance(coin, Coin) else None
+    return isinstance(r, dict) and r.get("ok") is None and r.get("wait") is True
+
+
 def rug_check_np(report, coin, cfg=None):
     """(ok, reasons, holders) from a RugCheck report for a coin on its curve. ok is None when there
     is no usable report (None, or one for another mint): no entry now, but no reject either. It
@@ -819,6 +953,11 @@ def rug_check_np(report, coin, cfg=None):
     coin, a "danger" risk, risk names in np_rug_bad_risks ("Creator history of rugged tokens",
     "Single holder ownership"), one holder other than the curve above np_max_holder_pct, the top
     10 above np_max_top10_pct (the curve and its token account left out), graph insiders.
+    A report with none of those that sees too few wallets holding the coin (rug_holders) is no PASS either:
+    ok None, "waiting: RugCheck sees 3 holders (min 10)" (its holder checks judged an empty or half-indexed
+    list) or "waiting: 6 holders for 3.3 SOL in (0.55 SOL a holder, max 0.5)" (a few wallets hold all the SOL
+    that came in: they can sell it back at once); the bot asks again after np_rug_recheck_s (rug_cache_s) while
+    the trigger holds.
     pump.fun coins have mint and freeze authority revoked and no LP, so those are not read. The
     holder figures land on coin.rug for the log (rug_text)."""
     if not isinstance(report, dict) or not report.get("mint"):
@@ -836,15 +975,7 @@ def rug_check_np(report, coin, cfg=None):
         low = name.lower()
         if str(r.get("level") or "").lower() == "danger" or any(n in low for n in names):
             bad.append("risk: %s" % name)
-    skip = _curve_accounts(report, coin)
-    pcts = []
-    for h in report.get("topHolders") if isinstance(report.get("topHolders"), list) else []:
-        if not isinstance(h, dict) or _key(h.get("address")) in skip or _key(h.get("owner")) in skip:
-            continue
-        p = f(h.get("pct"))
-        if p > 0:
-            pcts.append(min(p, 100.0))
-    pcts.sort(reverse=True)
+    pcts = _holder_pcts(report, coin)
     top1, top10 = (pcts[0] if pcts else 0.0), sum(pcts[:10])
     cap1, cap10 = _c(cfg, "np_max_holder_pct"), _c(cfg, "np_max_top10_pct")
     if top1 > cap1 + EPS:
@@ -854,7 +985,13 @@ def rug_check_np(report, coin, cfg=None):
     insiders = int(max(0.0, f(report.get("graphInsidersDetected"))))
     if insiders > 0:
         bad.append("%d insider%s (graph)" % (insiders, "" if insiders == 1 else "s"))
-    holders = int(max(0.0, min(1e9, f(report.get("totalHolders")))))
+    holders = rug_holders(report, coin)
+    why = None if bad else _short_of_holders(holders, coin, cfg)
+    if why is not None:
+        if isinstance(coin, Coin):
+            coin.rug = {"ok": None, "wait": True, "reasons": [why], "holders": holders,
+                        "top1_pct": round(top1, 2), "top10_pct": round(top10, 2)}
+        return None, [why], holders
     if isinstance(coin, Coin):
         coin.rug = {"ok": not bad, "reasons": list(bad), "holders": holders,
                     "top1_pct": round(top1, 2), "top10_pct": round(top10, 2)}
@@ -864,8 +1001,10 @@ def rug_check_np(report, coin, cfg=None):
 def _no_report(coin, why):
     """(None, [why], 0): no verdict. The OVERRIDES: no report in time -> no entry on this reading,
     try again on the next; so ok is None (not False) and the coin is not rejected. A FAIL already
-    on the coin stays."""
-    if isinstance(coin, Coin) and not (isinstance(coin.rug, dict) and coin.rug.get("ok") is False):
+    on the coin stays, and so does a "waiting" verdict (the report that saw too few holders) while
+    RugCheck is asked again: the last thing RugCheck said about the coin, for the log and rug_waiting()."""
+    if isinstance(coin, Coin) and not (isinstance(coin.rug, dict) and (
+            coin.rug.get("ok") is False or rug_waiting(coin))):
         coin.rug = {"ok": None, "reasons": [why], "holders": 0, "top1_pct": 0.0, "top10_pct": 0.0}
     return None, [why], 0
 
@@ -931,6 +1070,19 @@ def _momentum(coin, cfg, t):
         coin.sol_in, coin.buys, coin.buys + coin.sells, coin.buy_share * 100, coin.rise_pct, coin.mcap_sol, age)
 
 
+def concentration(coin, cfg=None):
+    """(ok, why): no single buy READING above np_max_buy_sol ("concentrated: one buy of 2.4 SOL (max 2)"; 0, the
+    default: off). Judged when the trigger fires (Watchlist.judge rejects the coin for good on a False). The SOL
+    a WALLET put in is RugCheck's to judge (rug_check_np: np_max_sol_per_holder), not the readings': a reading
+    is a poll, and the poll rate is not the number of buyers."""
+    if not isinstance(coin, Coin):
+        return False, "no coin"
+    big = _c(cfg, "np_max_buy_sol")
+    if big > 0 and coin.buy_max > big + EPS:
+        return False, "concentrated: one buy of %.1f SOL (max %s)" % (coin.buy_max, _g(big))
+    return True, None
+
+
 def exit_signal(coin, cfg=None):
     """None, or why a held new pair must be sold at once (first out): one sell of np_dump_sol or
     more since the entry ("dump: 3.1 SOL sold"), or the curve completed ("migrating: take it":
@@ -963,13 +1115,22 @@ def _bucket(v, edges):
     return edges[-1][1]
 
 
+# the concentration families (learner.py must list them in KNOWN, or it drops them), both from RugCheck's PASS at
+# the entry: the SOL in for each wallet holding the coin, and how many wallets hold it. Both entry rules cut at
+# 0.5 SOL and 10 holders by default, so the buckets past the cut ("np:solh:.5-1", "np:holders:<10") only fill
+# under a looser config.
+NP_SOLHOLD = [(0.25, "np:solh:<.25"), (0.5, "np:solh:.25-.5"), (1.0, "np:solh:.5-1"), (0, "np:solh:1+")]
+NP_HOLDERS = [(10, "np:holders:<10"), (20, "np:holders:10-20"), (40, "np:holders:20-40"), (0, "np:holders:40+")]
+
+
 def labels(coin, meta=None, plan=None, hour=None):
     """The LEARNER's labels for a new pair at entry (stable strings): "np:dev:0-2|2-5|5-8",
-    "np:sol:3-6|6-12|12+", "np:buys:70-80|80-90|90+", "np:age:<30s|30-90s|90s+", one
-    "np:social:x|tg|web" per link or "np:social:none", "news:0-2|3-4|5-6|7+" and "tier:<name>"
-    from the hold plan (the entry's), and the learner's hour block ("hour:03-05", "hour:day") when
-    the bot passes the hour in Bratislava. Values outside the entry rules (a looser config) get
-    "8+", "<3" or "<70"."""
+    "np:sol:3-6|6-12|12+", "np:buys:70-80|80-90|90+", "np:age:<30s|30-90s|90s+", after RugCheck's PASS
+    "np:solh:<.25|.25-.5|.5-1|1+" (SOL in for each wallet holding it) and "np:holders:<10|10-20|20-40|40+"
+    (the wallets holding it), one "np:social:x|tg|web" per link or "np:social:none",
+    "news:0-2|3-4|5-6|7+" and "tier:<name>" from the hold plan (the entry's), and the learner's hour
+    block ("hour:03-05", "hour:day") when the bot passes the hour in Bratislava. Values outside the
+    entry rules (a looser config) get "8+", "<3", "<70", ".5-1" or "<10"."""
     out = []
     if isinstance(coin, Coin):
         dev = coin.dev_pct
@@ -978,6 +1139,12 @@ def labels(coin, meta=None, plan=None, hour=None):
         out.append("np:buys:" + _bucket(coin.buy_share * 100, [(70, "<70"), (80, "70-80"), (90, "80-90"), (0, "90+")]))
         age = (coin.entry_t - coin.t0) if coin.entry_t is not None else coin.age_s
         out.append("np:age:" + _bucket(age, [(30, "<30s"), (90, "30-90s"), (0, "90s+")]))
+        r = coin.rug if isinstance(coin.rug, dict) else {}
+        if r.get("ok") is True:
+            held = f(r.get("holders"))
+            if held > 0:                            # at most the bucket's top (the rule's 0.5 passes: ".25-.5")
+                out.append(_bucket(max(0.0, coin.sol_in) / held - 2 * EPS, NP_SOLHOLD))
+            out.append(_bucket(held, NP_HOLDERS))
     m = meta if isinstance(meta, dict) else (coin.meta if isinstance(coin, Coin) else None)
     if isinstance(m, dict) and not any(k in m for k in ("x", "tg", "web")):
         m = socials(m)                              # a raw metadata JSON

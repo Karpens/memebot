@@ -89,7 +89,8 @@ class Tapes(unittest.TestCase):
             rep = tape.rugs[mint(1)][0][1]
             coin = bot.newpairs.Coin(mint=mint(1), curve="curve-" + mint(1))
             ok, why, holders = bot.newpairs.rug_check_np(rep, coin, bot.load_config(bot.CONFIG))
-            self.assertEqual((ok, holders, coin.rug["top1_pct"], coin.rug["top10_pct"]), (True, 14, 3.0, 6.5))
+            # 14 token accounts, the curve's among them: 13 wallets, on the summary line as in the whole report
+            self.assertEqual((ok, holders, coin.rug["top1_pct"], coin.rug["top10_pct"]), (True, 13, 3.0, 6.5))
         create = [e for e in v1.events if e[2] == "create"][0][4]
         self.assertEqual(create["traderPublicKey"], "dev-" + mint(1))     # the serial-launcher check needs it
 
@@ -103,8 +104,11 @@ class Tapes(unittest.TestCase):
                    "insiders": 0}, False, "risk: Low liquidity"),
                  ({"ok": True, "holders": 9, "top1": 3.0, "top10": 3.0, "top": [3.0], "risks": [], "insiders": 2},
                   False, "2 insiders"),
+                 ({"ok": True, "holders": 12, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0},
+                  True, None),
+                 # the same report seeing 9 holders: no PASS but a wait (np_min_holders 10: tests/test_entry_quality.py)
                  ({"ok": True, "holders": 9, "top1": 6.0, "top10": 30.0, "top": [6.0] * 5, "risks": [], "insiders": 0},
-                  True, None)]
+                  None, "waiting: RugCheck sees 9 holders")]
         for fields, want, why in cases:
             rep = R.rug_report_of(fields, "mmm")
             ok, bad, _ = bot.newpairs.rug_check_np(rep, bot.newpairs.Coin(mint="mmm", curve="cv"), cfg)

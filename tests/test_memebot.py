@@ -1125,6 +1125,15 @@ class Speed(unittest.TestCase):
                      "buys under %.0f%% of the last %d minutes" % (c["fade_buy_ratio"] * 100, c["fade_window_s"] / 60),
                      "pump.fun's fee is about %g%% each way" % c["curve_fee_pct"],
                      "the %g%% latency haircut each way" % c["latency_slip_pct"],
+                     # entry quality (newpairs.py): RugCheck must see the holders, the SOL must come from enough buys
+                     "no insiders, and at least %d holders seen, a holder being a wallet that holds the coin" %
+                     c["np_min_holders"],
+                     "RugCheck is asked again every %g seconds while the trigger holds" % c["np_rug_recheck_s"],
+                     "at most %g SOL in for each holder" % c["np_max_sol_per_holder"],
+                     # the SHADOW trades (bot.py np_shadow_*)
+                     "Coins it skips, and those RISK blocks, are followed as shadow trades, up to %d at once" %
+                     c["shadow_max_open"],
+                     "teaches it at %s the weight of a real trade" % {0.5: "half", 1.0: "full"}[c["shadow_weight"]],
                      "Run around the clock, 24/7" if mb.always_on(c) else
                      "everything sold by 06:%02d" % (60 - c["flat_before_end_min"])):
             self.assertIn(text, p)
@@ -1134,6 +1143,9 @@ class Speed(unittest.TestCase):
                           ("moon", [[10, 0.25], [20, 0.34], [60, 0.5], [100, 1]])):
             self.assertEqual(tiers[t]["ladder"], ladder)
         self.assertEqual((c["tp1_sell_frac"], c["watch_sec"]), (1.0, 1))                # "the whole profit"; not tick_sec
+        # the words that hold only for these settings: the one-buy cap off, shadows on, RISK's blocks shadowed too
+        self.assertEqual((c["np_max_buy_sol"], c["shadow_on"], c["shadow_on_risk"]), (0.0, True, True))
+        self.assertIn("One buy reading's size is not capped on its own", p)
 
     def test_tick_sec_is_read_as_watch_sec(self):
         path = os.path.join(self.dir, "c.json")

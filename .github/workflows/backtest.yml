@@ -1,0 +1,99 @@
+name: Backtest
+
+# The walk-forward backtest (memebot/backtest.py) on the live bot's recorded tapes, on GitHub's runners. Run it from
+# the Actions tab (Backtest, Run workflow) or: gh workflow run backtest.yml -f hours=24 -f grid=default -f split=0.7
+#   1. memebot/fetch_tapes.py downloads the artifacts tapes-<run id>-<attempt> that memebot.yml's jobs upload when
+#      they end (kept 14 days), those of the jobs that ended in the last `hours` hours, into tapes/<run>-<attempt>/
+#      (the REST API with this job's own token: permissions actions: read). Only the live bot's own runs (schedule
+#      and workflow_dispatch on the default branch: never a pull request's run), the newest first and at most
+#      500 MB unzipped in all (--max-mb): the backtest keeps the whole tape in memory, about 23x its size with the
+#      runner's 4 workers, and 500 MB of it stays under the runner's 16 GB. At the recorder's cap of 20 MB an hour
+#      that is about a day of tape; quieter hours fit more. None found: it says so, and the run ends green without
+#      a backtest (the job running now uploads its tapes only when it ends).
+#   2. memebot/backtest.py --data tapes replays the New Pairs rules through the bot's own engine: the grid ranked on
+#      the first `split` of the time range, the top configs judged against the base on the held-out rest.
+#   3. The report's summary goes into the log and the job's summary page (the decision, the top configs, the
+#      held-out results, the live check, the tape's gaps); report.json (with fetched.json: what was downloaded) is
+#      the artifact backtest-<run id>, kept 30 days.
+# Read-only: it never pushes (contents: read), never fetches or writes the meme-data branch, never runs the live bot
+# or its recorder (MEMEBOT_REC=0), never publishes on the live channel (MEMEBOT_LIVE=0) and never changes
+# config.json: a "change" in the report is a hint for a person to judge. Paper on paper: a pass on the held-out
+# part is a hint, not a promise.
+
+on:
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: "Tapes of the jobs that ended in the last N hours; the newest 500 MB unzipped at most (about a day of busy tape, memory is the limit)"
+        required: false
+        default: "24"
+      grid:
+        description: "default (backtest.py's grid) or the path of a JSON grid file in the repository"
+        required: false
+        default: "default"
+      split:
+        description: "The first part's share of the time range, ranked on (0.1 to 0.95); the rest is held out"
+        required: false
+        default: "0.7"
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      MEMEBOT_LIVE: "0"                    # never the live channel
+      MEMEBOT_REC: "0"                     # never a new tape
+      MEMEBOT_FEEDS: "0"                   # never a live feed
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false       # the token is not left in git's config: nothing here pushes
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: The tapes (the artifacts tapes-<run id>-<attempt> of memebot.yml)
+        id: tapes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HOURS: ${{ inputs.hours }}
+        run: |
+          python3 memebot/fetch_tapes.py fetch --repo "$GITHUB_REPOSITORY" --workflow memebot.yml \
+            --hours "${HOURS:-24}" --max-mb 500 --out tapes --manifest fetched.json \
+            --md "$GITHUB_STEP_SUMMARY" --github-output "$GITHUB_OUTPUT"
+
+      # --budget-min: no first-part replay starts after 200 minutes (the grid tries one lever at a time first, then
+      # mixes), so the held-out replays and the live check still fit in the job's 350 minutes on a long tape
+      - name: The backtest (memebot/backtest.py)
+        if: steps.tapes.outputs.count != '0'
+        env:
+          GRID: ${{ inputs.grid }}
+          SPLIT: ${{ inputs.split }}
+        run: |
+          python3 memebot/backtest.py --data tapes --grid "${GRID:-default}" --split "${SPLIT:-0.7}" \
+            --budget-min 200 --out report.json
+
+      - name: The report in the log and on the summary page
+        if: always() && steps.tapes.outcome == 'success' && steps.tapes.outputs.count != '0'
+        run: python3 memebot/fetch_tapes.py summary report.json --md "$GITHUB_STEP_SUMMARY"
+
+      - name: The report (artifact backtest-<run id>, kept 30 days)
+        if: always() && hashFiles('report.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-${{ github.run_id }}
+          path: |
+            report.json
+            fetched.json
+          retention-days: 30
+          if-no-files-found: ignore

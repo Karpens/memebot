@@ -81,6 +81,15 @@ DEFAULT_GRID = {
     "np_min_rise_pct": [8.0, 18.0, 25.0],
     "np_max_age_s": [60, 120],
     "np_max_dev_pct": [4.0],
+    # ENTRY QUALITY against the early-buyer dump (newpairs.py, defaults 10 holders, 0.5 SOL in a holder, one-buy
+    # rule off; no value below is a default, so none replays the base again; 0 turns a rule off). Both holder rules
+    # wait for a RugCheck report that sees enough wallets: a coin the replay waits for longer than the live bot did
+    # finds no newer report on the tape (the live bot stopped asking) and goes unbought (replay.py counts it as
+    # "unjudged", like a coin with no report); a looser value is judged on the reports the live bot asked for at
+    # the fire and every np_rug_recheck_s while it waited, so on tapes recorded with these rules on.
+    "np_min_holders": [0, 5, 20],
+    "np_max_sol_per_holder": [0, 0.35, 0.8],
+    "np_max_buy_sol": [1.5, 2.5, 4.0],
     "position_pct": [5.0, 15.0, 20.0],
     "max_open": [4, 12],
     "stop_pct": [-5.0, -10.0, -15.0],
@@ -558,7 +567,10 @@ ASSUMPTIONS = [
     "No look-ahead: every event is seen at or after its recorded time; RugCheck reports only from their recorded "
     "time; the held-out part is never used to rank.",
     "What the live bot did not record is missing, not neutral: a coin it let go at its create has no readings (it "
-    "cannot trigger here) and a coin it never asked RugCheck about has no report (not bought, like live with none). "
+    "cannot trigger here) and a coin it never asked RugCheck about has no report (not bought, like live with none); "
+    "a coin waiting for RugCheck to see enough holders (np_min_holders, np_max_sol_per_holder) longer than the live "
+    "bot waited finds no fresher report for its recheck (the live bot stopped asking: it goes unbought, "
+    "\"rug_stale\"; only a report that would still leave it waiting counts so). "
     "A looser entry rule's extra trades are therefore simply not in its replay, winners and losers alike: it looks "
     "like the base, not better and not worse. Each config's \"unjudged\" counts those coins; a config with more of "
     "them than the base, beyond 10 % of its held-out trades, is not recommended.",

@@ -19,6 +19,8 @@ one JSON object a line: "k" (the kind), "t" (epoch seconds), "m" (the mint) and 
     sol               the SOL/USD the live bot priced with, at each change (older tapes: hb "sol"); the replay's
                       engine prices with the same at the same moment
     fire / dec / buy / sell    the live bot's own decisions and fills (a live-vs-replay check; never replayed)
+    shadow            the live bot's SHADOW trades (coins not bought, followed for its LEARNER): kept with the live
+                      lines, never a trade (the engine makes its own shadows from the readings)
     gone / migrate    passed through to the engine as feed events
 
 The generic names work too (curve with slot / vsol / vtok / rsol / complete, meta twitter / telegram / website, rug
@@ -57,8 +59,12 @@ missing, not neutral. A looser entry rule finds coins the live bot let go at onc
 trigger here) or never asked RugCheck about ("no report": no entry, like live): the extra trades the rule would
 make are simply not in the replay, winners and losers alike, so such a rule looks like the base, not better or
 worse ("unseen" and "rug_missing" in the stats count those coins; backtest.py will not recommend a config with
-many of them). A hold longer than the recorder's follow-up (rec_follow_s, 15 minutes after launch) finds no
-readings (blind exits). Paper money, no guarantee: a replay that made money is a hint, not a promise.
+many of them). The same for a RugCheck recheck (newpairs: a report that leaves the coin waiting, too few wallets
+holding it for np_min_holders or np_max_sol_per_holder, is asked for again after np_rug_recheck_s): when the replay
+waits longer than the live bot did, the tape has no fresher report, the coin goes unbought, and "rug_stale" counts it
+(in "unjudged" too); a report handed out again that would not leave it waiting is not stale. A hold longer than the recorder's
+follow-up (rec_follow_s, 15 minutes after launch) finds no readings (blind exits). Paper money, no guarantee: a
+replay that made money is a hint, not a promise.
 
     python3 memebot/replay.py --data DIR [--since ISO] [--until ISO] [--config FILE] [--set key=json ...] [--out FILE]
                               [--live-check]
@@ -185,7 +191,7 @@ CREATE, CURVE, MIGRATE, GONE = "create", "curve", "migrate", "curve_gone"
 KINDS = {"c": CURVE, "curve": CURVE, "create": CREATE, "migrate": MIGRATE, "gone": GONE, "curve_gone": GONE,
          "meta": "meta", "rug": "rug", "sol": "sol", "fire": "trigger", "trigger": "trigger", "dec": "decision",
          "decision": "decision", "buy": "fill", "sell": "fill", "fill": "fill", "follow": "follow", "end": "end",
-         "gap": "gap", "start": "start", "hb": "hb", "stop": "stop"}
+         "gap": "gap", "start": "start", "hb": "hb", "stop": "stop", "shadow": "shadow"}
 SYSTEM = ("start", "hb", "stop")
 DROP = ("k", "kind", "t", "ts", "m", "mint")
 # per kind: the recorder's short field -> the feed event's field
@@ -588,9 +594,12 @@ def rug_report_of(fields, mint):
     """A RugCheck report the engine reads (newpairs.rug_check_np) from a tape "rug" line, or None (a failed ask):
       - the whole report under "report", or its kept fields inline (topHolders, risks, ...): as it is;
       - the recorder's summary (version 1: "ok", "holders", "top1", "top10", "top" = the top holders' % with the
-        curve and pools left out, "risks" = [[name, level], ...], "insiders", "rugged"): rebuilt into the few
-        fields rug_check_np() reads (a holder per % in "top", the risks with their levels), so the engine's own
-        rules (np_max_holder_pct, np_max_top10_pct, the bad risk names, insiders) judge it again;
+        curve and pools left out, "risks" = [[name, level], ...], "insiders", "rugged"; since the holder count of
+        wallets: "held", "empty", "curve" = the accounts it listed by kind): rebuilt into the few fields
+        rug_check_np() reads (a holder per % in "top", then as many holding, empty and curve accounts as the line
+        counted: recorder.holder_list, the risks with their levels), so the engine's own rules (np_max_holder_pct,
+        np_max_top10_pct, the bad risk names, insiders, the holders: newpairs.rug_holders) judge it again. A line
+        recorded before "held" counts its "holders" (totalHolders) as before: max(holders, the top it lists);
       - a short {"ok", "reasons", "top1_pct", "top10_pct"} summary: one holder at top1_pct, the rest of the top
         10 in nine equal parts, a "danger" risk per reason when it said FAIL."""
     if not isinstance(fields, dict) or fields.get("ok") is False and not any(
@@ -617,9 +626,11 @@ def rug_report_of(fields, mint):
             elif isinstance(r, str):
                 risks.append({"name": r, "level": ""})
         rep = {"rugged": bool(fields.get("rugged")), "risks": risks,
-               "topHolders": [{"address": "replay-h%d" % i, "owner": "replay-h%d" % i, "pct": p} for i, p in enumerate(pcts)],
+               "topHolders": bot.recorder.holder_list(pcts, fields.get("held"), fields.get("empty") or 0,
+                                                  fields.get("curve") or 0),
                "totalHolders": int(num(fields.get("holders")) or 0),
-               "graphInsidersDetected": int(num(fields.get("insiders")) or 0), "markets": [], "knownAccounts": {}}
+               "graphInsidersDetected": int(num(fields.get("insiders")) or 0),
+               "markets": bot.recorder.rebuilt_markets(fields), "knownAccounts": {}}
     elif any(k in fields for k in ("ok", "top1_pct", "top10_pct", "reasons")):
         top1 = max(0.0, num(fields.get("top1_pct")) or 0.0)
         top10 = max(top1, num(fields.get("top10_pct")) or top1)
@@ -851,6 +862,31 @@ class ReplayMarket(object):
         self.source = "replay"
         self.stats = collections.Counter()
         self.rug_missing = set()            # mints RugCheck was asked about with no report on the tape
+        # mints the engine asked again while that report left them WAITING (too few holders for the entry: the
+        # recheck of newpairs.rug_cache_s) and the tape could only answer with that same report: the live bot never
+        # asked then. Unless the coin was bought in the end, its result is unknown ("unjudged"). A report handed out
+        # again that would not leave the coin waiting (an ordinary ask after the 30 s cache, a RISK retry: the
+        # latest report by now, the replay's policy) is no reason to doubt the result
+        self.rug_stale = set()
+        self.rug_given = {}                 # mint -> recorded times of the reports handed out
+        self.waits = None                   # fn(mint, report) -> True when that report leaves the coin waiting now
+
+    def _handed(self, mint, t, rep=None):
+        seen = self.rug_given.setdefault(mint, set())
+        if t in seen and self._waits(mint, rep):
+            self.rug_stale.add(mint)
+            self.stats["rug_stale"] += 1
+        seen.add(t)
+
+    def _waits(self, mint, rep):
+        """Whether the report leaves the coin waiting for its holders now (replay() wires the engine's judgement;
+        without it, never: no coin is doubted on a guess)."""
+        if self.waits is None or not isinstance(rep, dict):
+            return False
+        try:
+            return bool(self.waits(mint, rep))
+        except Exception:                   # noqa: BLE001 - a doubt, never a crash
+            return False
 
     def at(self):
         return min(self.clock.t, self.horizon)
@@ -914,7 +950,7 @@ class ReplayMarket(object):
         (RugCheck's real latency; a replay in step with the live run asks when live did). Any other moment: the
         latest report recorded by now + rug_latency_s, landing then; else the first one recorded within rug_wait_s
         (RugCheck's own timeout: it lands then, never before the report existed); else None ("no report", never
-        invented)."""
+        invented). A report handed out to this coin before, handed out again, marks it rug_stale (see __init__)."""
         self.stats["rug_asks"] += 1
         reps = self.tape.rugs.get(mint) or []
         for t, rep, ask in reps:
@@ -922,6 +958,8 @@ class ReplayMarket(object):
                 self.stats["rug_same_ask"] += 1
                 if rep is None:
                     self.stats["rug_failed"] += 1
+                else:
+                    self._handed(mint, t, rep)
                 return max(t, now), copy.deepcopy(rep)
         land = min(now + self.rug_latency, self.horizon)
         best = None
@@ -929,9 +967,9 @@ class ReplayMarket(object):
             if rep is None:
                 continue
             if t <= land + EPS:
-                best = (land, rep)
+                best = (land, rep, t)
             elif best is None and t <= now + self.rug_wait + EPS and t <= self.horizon:
-                best = (t, rep)
+                best = (t, rep, t)
                 break
             else:
                 break
@@ -939,6 +977,7 @@ class ReplayMarket(object):
             self.rug_missing.add(mint)
             self.stats["rug_none"] += 1
             return land, None
+        self._handed(mint, best[2], best[1])
         return best[0], copy.deepcopy(best[1])
 
     def rug_report(self, mint, timeout=20):
@@ -1256,6 +1295,19 @@ def engine(cls):
             bot.Night = real
 
 
+def rug_waits(night, mint, rep):
+    """Whether RugCheck's report leaves the engine's coin waiting for its holders now (newpairs.rug_check_np's
+    "waiting: ..." on a copy of the coin: the real one keeps its own verdict). False when the coin is not watched."""
+    wl = getattr(night, "wl", None)
+    coin = wl.get(mint) if wl is not None else None
+    if coin is None:
+        return False
+    np = bot.newpairs
+    c = np.Coin.from_dict(coin.to_dict())
+    ok = np.rug_check_np(rep, c, night.cfg)[0]
+    return ok is None and np.rug_waiting(c)
+
+
 TRADE_KEYS = ("symbol", "mint", "opened", "closed", "cost", "proceeds", "pnl", "pnl_pct", "why", "tier", "score",
               "steps", "age_s", "mcap_sol", "dev_pct", "sol_in", "fill", "size_pct", "exit_ms", "slip")
 
@@ -1299,6 +1351,7 @@ def replay(tape, cfg, since=None, until=None, job_min=340.0, job_gap_s=120.0, ru
     clock = SimClock(since)
     market = ReplayMarket(tape, clock, until, cfg, rug_latency_s=rug_latency_s, fill_delay_s=fill_delay_s)
     ctx = Context(tape, clock, market)
+    market.waits = lambda mint, rep: rug_waits(ctx.night, mint, rep)
     cls = night_class(ctx)
     own = data_dir is None
     data_dir = data_dir or tempfile.mkdtemp(prefix="memebot-replay-")
@@ -1351,11 +1404,14 @@ def replay(tape, cfg, since=None, until=None, job_min=340.0, job_gap_s=120.0, ru
                 or tape.gap_in(mint, tape.created.get(mint, to if to is not None else te), te + 1.0)))
             rows.append(row)
         stats = dict(market.stats)
+        bought = {tr.get("mint") for tr in trades} | set(state.get("positions") or {})
+        stale = market.rug_stale - bought               # asked again, nothing newer on the tape, never bought
         stats.update(sim_s=round(until - since, 1), wall_s=round(time.monotonic() - wall, 2), jobs=jobs,
                      events=ctx.delivered, rug_missing=len(market.rug_missing), unseen=len(ctx.unseen),
+                     rug_stale=len(stale),
                      # coins this config would have judged on data the tape does not have (no readings, no
-                     # RugCheck report): its result on them is unknown, not "no trade"
-                     unjudged=len(ctx.unseen | market.rug_missing),
+                     # RugCheck report, no fresher report for a recheck): its result on them is unknown, not "no trade"
+                     unjudged=len(ctx.unseen | market.rug_missing | stale),
                      sol_from_tape=bool(tape.sol[0]), max_event_t=ctx.last_event_t if ctx.delivered else None)
         stats["creates"] = ctx.creates
         return {"trades": rows, "open": open_, "start_equity": start_eq, "end_equity": round(end_eq, 4),
@@ -1368,6 +1424,10 @@ def replay(tape, cfg, since=None, until=None, job_min=340.0, job_gap_s=120.0, ru
 # ---------------------------------------------------------------- live against replay
 
 LIVE_SKIP = ("rec_", "live_")           # recorded settings a live check does not take over
+# rules a run's start line does not name did not exist in the code that run traded with: a live check replays such a
+# run with them off (the SHADOW trades; the entry-quality rules of newpairs.py), so a tape recorded before them is
+# replayed as it was traded. bot.DEFAULTS names every one, so every start line since carries its value
+LIVE_OFF = {"shadow_on": False, "np_min_holders": 0, "np_max_sol_per_holder": 0.0, "np_max_buy_sol": 0.0}
 
 
 def live_check(tape, cfg, since=None, until=None, **opts):
@@ -1389,6 +1449,8 @@ def live_check(tape, cfg, since=None, until=None, **opts):
     def own(line):
         c = copy.deepcopy(cfg)
         c.update({k: copy.deepcopy(v) for k, v in (line or {}).items() if not k.startswith(LIVE_SKIP)})
+        if line is not None:                        # a run from before a rule: replayed without it (LIVE_OFF)
+            c.update({k: off for k, off in LIVE_OFF.items() if k not in line})
         return c
 
     first = runs[0] if runs and runs[0]["t"] is not None else None
@@ -1668,9 +1730,10 @@ def synth_coin(mint, t0, path, symbol=None, dev_sol=0.3, social=(False, False, F
         risks = [["Creator history of rugged tokens", "danger"]] if rug == "rugged" else []
         top = [3.0, 2.0, 1.5]
         if v1:
+            # as the recorder writes it now: 14 token accounts, the curve's and 13 wallets holding it (3 in "top")
             recs.append({"k": "rug", "t": round(t0 + 2.0, 3), "m": mint, "ok": True, "why": "prefetch", "ms": 350,
-                         "holders": 14, "top1": top[0], "top10": sum(top), "top": top, "risks": risks, "insiders": 0,
-                         "rugged": False, "score": 1})
+                         "holders": 14, "top1": top[0], "top10": sum(top), "top": top, "held": 3, "empty": 0,
+                         "curve": 1, "risks": risks, "insiders": 0, "rugged": False, "score": 1})
         else:
             th = [{"address": "curve-ata-" + mint, "owner": "curve-" + mint, "pct": 80.0}] + \
                  [{"address": "h%d-%s" % (i, mint), "owner": "o%d-%s" % (i, mint), "pct": p} for i, p in enumerate(top)]

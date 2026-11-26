@@ -410,12 +410,17 @@ class StreamFeeds(object):
                                            "complete": False, "slot": slot, "src": "poll", "t": t})
 
 
-def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None):
+def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None, extra=None, memory=None):
     """bot.run() on the stream with config.json (live channel off, the recorder on; over: settings changed for this
     run) -> the live run's trades (this run's day). clock: go on from another run's clock; tag: a letter for this
-    stream's mints (two runs on one data dir need different coins)."""
+    stream's mints (two runs on one data dir need different coins); extra: more coins, extra(t_start) -> [SimCoin];
+    memory: the LEARNER's memory.json before the run (learner.py's dict)."""
     clock = clock or Clock(START)
     coins = make_stream(seed, minutes, clock.epoch())
+    if extra is not None:
+        coins = sorted(coins + list(extra(clock.epoch())), key=lambda c: c.t0)
+    if memory is not None:
+        bot.learner.save(os.path.join(data_dir, "memory.json"), memory)
     if tag:
         for c in coins:
             old, c.mint = c.mint, tag + c.mint[1:]
@@ -444,6 +449,61 @@ def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None):
     return list((st.get("night") or {}).get("trades") or []), cfg
 
 
+def clean_report(mint, holders, top, empty=None):
+    """A clean report: the curve's account and the top holders' %, totalHolders `holders` (accounts it does not all
+    list); with `empty`, a complete list as the real API gives under 20 accounts: `holders` wallets holding the coin
+    (the top ones, the rest at 0.3 %), `empty` accounts of wallets that sold out, the curve's, all counted."""
+    th = [{"address": "curve-ata-" + mint, "owner": "curve-" + mint, "pct": 80.0, "insider": False}]
+    pcts = list(top) if empty is None else list(top)[:holders] + [0.3] * max(0, holders - len(top))
+    th += [{"address": "h%d-%s" % (k, mint), "owner": "o%d-%s" % (k, mint), "pct": p, "insider": False}
+           for k, p in enumerate(pcts)]
+    if empty is not None:
+        th += [{"address": "e%d-%s" % (k, mint), "owner": "eo%d-%s" % (k, mint), "pct": 0, "amount": 0, "insider": False}
+               for k in range(empty)]
+    return {"mint": mint, "rugged": False, "risks": [], "topHolders": th,
+            "totalHolders": holders if empty is None else len(th),
+            "graphInsidersDetected": 0, "markets": [], "knownAccounts": {}, "score_normalised": 5, "fileMeta": {}}
+
+
+def planted(t_start):
+    """Three coins planted in the stream (made up, shaped by the live morning of 2026-11-26):
+      BIGFEW  six big buys (0.9 SOL each) from 40 s on, then one wallet sells 3.0 SOL about 2 s after the trigger
+              (STOREB's kind: -25 % live); RugCheck lists 10 wallets holding it and 8 empty accounts of early flippers
+              (19 accounts with the curve's): 5.4 SOL over 10 wallets at the trigger, over 0.5 a holder: it waits
+      CROWD   many small buys (0.12-0.28 SOL), 25 holders, then a run
+      SKIPME  a crowd pump whose creator bought 6.4 % of the supply ("np:dev:5-8"), 20 holders"""
+    rng = random.Random(5)
+    out = []
+    t0 = t_start + 300.0
+    c = SimCoin("pbigfew".ljust(40, "x") + "pump", t0, "BIGFEW", 0.3, "dev-bigfew", kind="planted/dump")
+    c.links, c.meta_s = (False, True, False), 0.09
+    for k in range(6):
+        c.trades.append((t0 + 40.2 + k, 0.9))
+    c.trades.append((t0 + 47.1, -3.0))
+    flow(rng, c, t0 + 52, t0 + 200, 0.3, 0.35, 0.05, 0.3)
+    c.report = clean_report(c.mint, 10, (4.0, 3.0, 2.5), empty=8)
+    out.append(c)
+    for name, at, dev, links, holders, top, run in (("CROWD", 600.0, 0.2, (True, True, False), 25, (3.0, 2.5, 2.0, 1.5),
+                                                     (240, 1.6, 0.8)),
+                                                    ("SKIPME", 900.0, 1.9, (False, True, True), 20, (3.5, 2.0, 1.5),
+                                                     (200, 1.8, 0.85))):
+        t0 = t_start + at
+        c = SimCoin(("p" + name.lower()).ljust(40, "x") + "pump", t0, name, dev, "dev-" + name.lower(),
+                    kind="planted/" + name.lower())
+        c.links, c.meta_s = links, 0.08
+        t = t0 + 12.0
+        while t < t0 + 58.0:
+            c.trades.append((t, rng.uniform(0.12, 0.28)))
+            t += rng.uniform(1.3, 2.2)
+        flow(rng, c, t0 + 58, t0 + run[0], run[1], run[2], 0.1, 0.5)
+        flow(rng, c, t0 + run[0], t0 + 500, 0.5, 0.33, 0.05, 0.4)
+        c.report = clean_report(c.mint, holders, top)
+        out.append(c)
+    for c in out:
+        c.finish()
+    return out
+
+
 class LiveAgainstReplay(unittest.TestCase):
     def run_live(self, minutes, seed, jup):
         d = tempfile.mkdtemp()
@@ -454,7 +514,9 @@ class LiveAgainstReplay(unittest.TestCase):
     def test_the_replay_of_the_tapes_makes_the_live_runs_trades_to_the_cent(self):
         # Jupiter = the curve maths on the last reading (live: "curve maths 0.0% off Jupiter"): the same trades
         d, live, cfg = self.run_live(45, 11, "reading")
-        self.assertGreaterEqual(len(live), 20)
+        # 22 before the entry-quality rules (np_min_holders: the stream's reports see 4-39 wallets; the SOL a holder):
+        # fewer with them, and the replay must make those very trades, waits included
+        self.assertGreaterEqual(len(live), 18)
         tape = R.read_tape(d)
         s = tape.summary()
         self.assertEqual((s["bad_lines"], s["unknown_kinds"], len(tape.runs)), (0, {}, 1))
@@ -487,7 +549,7 @@ class LiveAgainstReplay(unittest.TestCase):
         # Jupiter = the TRUE curve at the quote (trades after the last poll in it): the replay has only the
         # readings, so its fills, and with them a stop's or a step's level, can differ; the entries cannot
         d, live, cfg = self.run_live(30, 13, "true")
-        self.assertGreaterEqual(len(live), 12)
+        self.assertGreaterEqual(len(live), 10)                          # fewer with the entry-quality rules on
         chk = R.live_check(R.read_tape(d), bot.load_config(bot.CONFIG))
         self.assertEqual((chk["live"], chk["replay"], chk["same_entry"]), (len(live), len(live), len(live)))
         self.assertGreaterEqual(chk["same_exit"], len(live) // 2)
@@ -512,7 +574,9 @@ class LiveAgainstReplay(unittest.TestCase):
                 self.assertTrue(t["blind"], t)
             else:
                 self.assertFalse(t["blind"], t)
-        self.assertGreaterEqual(sum(1 for t in res["trades"] if key(t) in same), len(live) * 3 // 4)
+        # most still the same (13 of 19 with the entry-quality rules and the SHADOW lines: which coins the 1.5 MB cap
+        # cuts moves with both; on a whole tape the replay makes all 19, test_the_replay_of_the_tapes_...)
+        self.assertGreaterEqual(sum(1 for t in res["trades"] if key(t) in same), len(live) * 2 // 3)
         self.assertFalse([t for t in res["trades"] if not t["blind"] and not tape.covered(t["mint"], R.ts_epoch(t["closed"]) - 1)])
         rep = bt.backtest(tape=tape, grid={"combos": []}, cfg=bot.load_config(bot.CONFIG), jobs=1, min_trades=3,
                           live_check=False)
@@ -562,10 +626,83 @@ class LiveAgainstReplay(unittest.TestCase):
         tape = R.read_tape(d, since, lookback_s=R.lookback_for(d, since))
         chk = R.live_check(tape, bot.load_config(bot.CONFIG), since)
         n = len(tape.live_trades(since))
-        self.assertGreaterEqual(n, 10)
+        self.assertGreaterEqual(n, 7)                                   # fewer with the entry-quality rules on
         self.assertEqual((chk["live"], chk["same_entry"], chk["same_exit"]), (n, n, n))
         self.assertAlmostEqual(chk["replay_pnl"], chk["live_pnl"], delta=0.05)
         self.assertEqual(chk["warmup_from"], R.iso(t0))
+
+    def test_entry_quality_and_shadows_end_to_end(self):
+        """The new rules on the live engine, the tape, the replay and the backtest at once: BIGFEW (5.4 SOL over 10
+        wallets at its trigger, its 8 empty accounts no holders) waits for RugCheck, is asked about at its fire (that
+        report is on the tape), is rejected by its dump and gets no SHADOW; CROWD is bought; SKIPME, which a primed
+        LEARNER memory skips (np:dev:5-8 -20 % over 12), is followed as a SHADOW whose result teaches the LEARNER at half
+        weight and never enters the book; the replay of the tape makes the same trades and the same LEARNER memory,
+        and a replay with the concentration rule off buys BIGFEW into its dump (judged on the report the live bot
+        asked for at the fire: the adversarial review found such a coin once had none)."""
+        d = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, d, True)
+        mem0 = bot.learner.fresh()
+        for _ in range(12):
+            bot.learner.update(mem0, ["np:dev:5-8"], -20.0)
+        live, cfg = live_run(d, 30, 11, "reading", extra=planted, memory=mem0)
+        st = bot.read_json(os.path.join(d, "state.json"), {})
+        log = st["night"]["decisions"]
+        mints = {c.sym: c.mint for c in planted(0.0)}
+        said = lambda sym: [(r["agent"], r["action"]) for r in log if r.get("coin") == sym]     # noqa: E731
+        self.assertEqual(said("BIGFEW"), [("SCANNER", "flag"), ("RUG CHECK", "wait")])
+        self.assertRegex([r["text"] for r in log if r.get("coin") == "BIGFEW"][1],
+                         r"^waiting: 10 holders for \d\.\d SOL in \(0\.\d\d SOL a holder, max 0\.5\) · no entry")
+        self.assertIn(("EXECUTOR", "enter"), said("CROWD"))
+        self.assertEqual(said("SKIPME")[:4], [("SCANNER", "flag"), ("RUG CHECK", "pass"), ("LEARNER", "skip"),
+                                              ("LEARNER", "shadow")])
+        # the real book: the cash adds up, each trade is its proceeds less its cost, no shadow in it
+        self.assertGreaterEqual(len(live), 8)
+        self.assertEqual(st["positions"], {})                           # the job's last minute sold everything
+        for t in live:
+            self.assertAlmostEqual(t["pnl"], t["proceeds"] - t["cost"], delta=0.0101)
+        self.assertAlmostEqual(st["balance"], 100.0 + sum(t["pnl"] for t in live), delta=0.005 * len(live))
+        traded = {t["mint"] for t in live}
+        self.assertIn(mints["CROWD"], traded)
+        self.assertFalse({mints["BIGFEW"], mints["SKIPME"]} & traded)
+        sh = st["shadow"]
+        self.assertEqual((sh["n"], sh["by"]["learner"]["n"], [r["symbol"] for r in sh["closed"]]), (1, 1, ["SKIPME"]))
+        mem = bot.learner.load(os.path.join(d, "memory.json"))
+        self.assertEqual((mem["samples"], mem["shadows"]), (12 + len(live), 1))
+        self.assertAlmostEqual(mem["labels"]["np:dev:5-8"]["n"], 12.5)
+        self.assertAlmostEqual(mem["labels"]["np:dev:5-8"]["sum"], -240 + 0.5 * sh["closed"][0]["pnl_pct"], places=6)
+        self.assertTrue(any(k.startswith("np:solh:") for k in mem["labels"]))
+        self.assertTrue(any(k.startswith("np:holders:") for k in mem["labels"]))
+        # the tape, the replay, the live check
+        tape = R.read_tape(d)
+        s = tape.summary()
+        self.assertEqual((s["bad_lines"], s["unknown_kinds"], s["lines"].get("shadow")), (0, {}, 3))   # open, sell, sell
+        start = tape.live_start()
+        self.assertEqual((start["cfg"]["np_min_holders"], start["cfg"]["np_max_sol_per_holder"], start["cfg"]["shadow_on"]),
+                         (10, 0.5, True))
+        # BIGFEW's RugCheck report on the tape (the prefetch's, under 4 s old at its fire: the one its wait was judged
+        # on), with the accounts by kind: what lets the replay below judge the looser lever
+        rugs = [x for _, path in bot.recorder.tape_files(os.path.join(d, "tapes")) for x in bot.recorder.read_lines(path)
+                if x.get("k") == "rug" and x.get("m") == mints["BIGFEW"] and x.get("ok")]
+        self.assertTrue(rugs)
+        self.assertEqual({(x["holders"], x["held"], x["empty"], x["curve"]) for x in rugs}, {(19, 10, 8, 1)})
+        res = R.replay(tape, cfg, memory=start["mem"])
+        key = lambda t: (t["mint"], t["opened"], t["closed"], t["why"], round(t["pnl"], 2))     # noqa: E731
+        self.assertEqual(sorted(key(t) for t in res["trades"]), sorted(key(t) for t in live))
+        self.assertEqual(json.dumps(res["memory"]["labels"], sort_keys=True), json.dumps(mem["labels"], sort_keys=True))
+        chk = R.live_check(tape, bot.load_config(bot.CONFIG))
+        self.assertEqual((chk["live"], chk["same_entry"], chk["same_exit"], chk["only_live"], chk["only_replay"]),
+                         (len(live), len(live), len(live), [], []))
+        # the levers on the same tape: without the concentration rule BIGFEW is bought and sold into its dump
+        loose = R.replay(tape, dict(cfg, np_max_sol_per_holder=0), memory=start["mem"])
+        big = [t for t in loose["trades"] if t["mint"] == mints["BIGFEW"]]
+        self.assertEqual(len(big), 1)
+        self.assertTrue(big[0]["why"].startswith("dump: "), big[0])
+        self.assertLess(big[0]["pnl_pct"], -15)
+        self.assertEqual(loose["stats"]["rug_missing"], res["stats"]["rug_missing"])     # it had its report
+        rep = bt.backtest(tape=tape, grid={"combos": [{"np_max_sol_per_holder": 0}, {"np_min_holders": 0}]},
+                          cfg=bot.load_config(bot.CONFIG), jobs=1, min_trades=3)
+        self.assertEqual(rep["grid"]["configs"], 3)
+        self.assertEqual((rep["live_check"]["same_entry"], rep["live_check"]["same_exit"]), (len(live), len(live)))
 
     def test_backtest_on_the_tapes_with_its_live_check(self):
         d, live, cfg = self.run_live(20, 11, "reading")
@@ -578,6 +715,52 @@ class LiveAgainstReplay(unittest.TestCase):
         self.assertEqual((chk["live"], chk["same_entry"], chk["same_exit"]), (len(live), len(live), len(live)))
         self.assertTrue(any(line.startswith("live check: %d live trades" % len(live)) for line in rep["lines"]))
         json.dumps(R.json_safe(rep), allow_nan=False)
+
+
+def live_memory():
+    """The live LEARNER of 2026-11-26: it skips about 80 % of the triggers (hour:day and news:0-2, -17 % over 10)."""
+    mem = bot.learner.fresh()
+    for _ in range(10):
+        bot.learner.update(mem, ["hour:day", "news:0-2"], -17.0)
+    return mem
+
+
+class ShadowsLeaveTheRealBookAlone(unittest.TestCase):
+    """The adversarial review's findings, on the whole chain: an open SHADOW once switched every curve to the held
+    coins' 0.5 s polls (and the entry rules count buy READINGS), and once asked Jupiter on the real book's quotes;
+    both changed which real coins were bought. With shadow_weight 0 (shadows open and close but teach nothing) the
+    real trades and the SCANNER's rejects must be those of a run without shadows."""
+
+    def run_book(self, over):
+        d = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, d, True)
+        live, _ = live_run(d, 60, 13, "reading", over=over, memory=live_memory())
+        st = bot.read_json(os.path.join(d, "state.json"), {})
+        rejects = sorted(r["coin"] for r in st["night"]["decisions"] if r["agent"] == "SCANNER" and r["action"] == "reject")
+        return [(t["symbol"], t["opened"], t["why"], round(t["pnl"], 4)) for t in live], rejects, st
+
+    def test_shadows_that_teach_nothing_leave_the_real_trades_alone(self):
+        off = self.run_book({"shadow_on": False})
+        on = self.run_book({"shadow_weight": 0.0, "shadow_on_risk": False})
+        self.assertGreater(on[2]["shadow"]["n"], 0)                     # shadows did open and close
+        self.assertGreater(len(off[0]), 0)
+        self.assertEqual(on[:2], off[:2])
+
+
+class RugStale(unittest.TestCase):
+    """replay.py's "rug_stale" (a coin waiting for its holders that the tape has no fresher report for) once marked every
+    coin handed a report twice, ordinary asks after the cache included, and so made the backtest turn levers down as
+    "unjudged" for a false reason. With no holder rule nothing can wait: nothing is stale."""
+
+    def test_no_holder_rule_no_stale_coin(self):
+        d = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, d, True)
+        live, cfg = live_run(d, 45, 11, "reading")
+        tape = R.read_tape(d)
+        res = R.replay(tape, dict(cfg, np_min_holders=0, np_max_sol_per_holder=0, shadow_on=False),
+                       memory=tape.live_start().get("mem"))
+        self.assertGreater(res["stats"]["rug_asks"], len({m for m in tape.rugs}))      # coins asked again
+        self.assertEqual((res["stats"]["rug_stale"], res["stats"]["unjudged"]), (0, 0))
 
 
 if __name__ == "__main__":

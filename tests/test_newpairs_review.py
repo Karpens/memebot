@@ -641,6 +641,46 @@ class Config(unittest.TestCase):
                      "leaves the whole trade without a loss after its fees"):
             self.assertIn(text, p)
 
+    def test_config_json_says_the_entry_quality_rules_and_the_shadows(self):
+        """Every new key in config.json with the code's own default (bot.DEFAULTS, and newpairs.DEFAULTS for the entry
+        rules: a key missing from config.json changes nothing), its Slovak note, and the prompt's words for it."""
+        c = mb.load_config()
+        with open(mb.CONFIG, encoding="utf-8") as fh:
+            raw = json.load(fh)
+        npd = mb.newpairs.DEFAULTS
+        for k, v in (("np_min_holders", 10), ("np_rug_recheck_s", 4.0), ("np_max_sol_per_holder", 0.5),
+                     ("np_max_buy_sol", 0.0)):
+            self.assertEqual((raw[k], mb.DEFAULTS[k], npd[k]), (v, v, v), k)
+        for k, v in (("shadow_on", True), ("shadow_on_risk", True), ("shadow_usd", 0.0), ("shadow_weight", 0.5),
+                     ("shadow_max_open", 20)):
+            self.assertEqual((raw[k], mb.DEFAULTS[k]), (v, v), k)
+            self.assertEqual(type(raw[k]), type(mb.DEFAULTS[k]), k)
+        # gone: a shadow never asks Jupiter (np_shadow_open), and the per-buy-reading cap became the per-holder one
+        for k in ("shadow_jup_keep", "np_max_sol_per_buy"):
+            self.assertNotIn(k, raw)
+            self.assertNotIn(k, mb.DEFAULTS)
+        self.assertEqual(c["np_min_buys"], 6)
+        for k in ("np_min_holders", "np_rug_recheck_s", "np_max_sol_per_holder", "np_max_buy_sol", "np_rug_cache_s",
+                  "np_min_age_s", "np_dump_sol"):
+            self.assertIn(k, raw["_entry"])
+        for k in ("np_min_holders", "np_rug_recheck_s", "np_max_sol_per_holder", "np_max_buy_sol"):
+            self.assertIn(k, raw["_new_pairs"])
+        for k in ("shadow_on_risk", "shadow_usd", "shadow_weight", "shadow_max_open"):
+            self.assertIn(k, raw["_shadow"])
+        self.assertIn("Jupitera sa tieň nikdy nepýta", raw["_shadow"])
+        self.assertIn("shadow_weight", raw["_learner"])
+        for note in (raw["_entry"], raw["_shadow"]):                           # the honest part of each note
+            self.assertIn("nie fit", note)
+        self.assertIn("sa nesleduje ani ako tieňový obchod", raw["_entry"])
+        self.assertIn("Tieňový obchod nedostane minca, ktorú zamietnu pravidlá vstupu", raw["_shadow"])
+        with open(mb.PROMPT, encoding="utf-8") as fh:
+            p = fh.read()
+        for text in ("A report that sees fewer is not a pass yet", "at most 0.5 SOL in for each holder",
+                     "Counted in wallets, never in curve readings", "never in the book", "gets no shadow",
+                     "never a Jupiter quote", "the SOL in for each holder and the holders RugCheck saw",
+                     "before today's 45 second minimum age"):
+            self.assertIn(text, p)
+
 
 if __name__ == "__main__":
     unittest.main()

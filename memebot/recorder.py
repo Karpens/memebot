@@ -18,8 +18,11 @@ np_watch_s window, until rec_follow_s after its create (a bought coin also rec_f
 last sale), so exits can be replayed on what the price did next. At most rec_max_follow such coins, and
 never more than rec_max_keys curves polled in all (one getMultipleAccounts call of 100 accounts): the
 bot's watch list, and with it every coin the bot holds, always counts first; among the followed coins a
-bought one goes before a fired one before a near one, the newest first. Coins far from any trigger are
-on the tape only for the bot's own np_watch_s.
+bought one goes before a fired one before a near one, the newest first. A coin the bot keeps polled itself
+(the kept hook: an open SHADOW trade, bot.py) is followed whatever its rank and never dropped while kept (the
+bot caps them at shadow_max_open), its readings ranked over the watched and followed coins' and under a REAL held
+coin's (SHARE "shadow"): a replay runs the shadow on the very readings the live one had, and a full hour drops a
+shadow's readings before a real position's. Coins far from any trigger are on the tape only for the bot's own np_watch_s.
 
 Files: <data>/tapes/YYYY-MM-DDTHH.jsonl, one per UTC hour (the hour of each line's "t"). They are NOT git data:
 the workflow's 30 s saver leaves tapes/ out of the meme-data commits (each save would have stored the growing
@@ -31,8 +34,8 @@ few microseconds) and handed every rec_flush_s (5 s) to ONE writer thread that d
 appends, the size of an hour already on disk, deleting tapes older than rec_keep_days at start). A slow or full
 disk only delays that thread; its queue is bounded (rec_max_queue_mb), what does not fit is dropped and counted
 as LOST (hb "lost"). An hour's file has a size cap, rec_max_mb_hour, and when it fills, what goes first is ranked
-(SHARE): the followed coins' curve readings stop at 60 % of the cap, the watched coins' at 80 %, the held coins'
-(and the other coin lines: creates, RugCheck, decisions, fills) at 100 %; the lines that say what the tape
+(SHARE): the followed coins' curve readings stop at 60 % of the cap, the watched coins' at 80 %, an open shadow
+trade's at 90 %, the held coins' (and the other coin lines: creates, RugCheck, decisions, fills) at 100 %; the lines that say what the tape
 covers (start, hb, follow, end, gap, stop) have room up to 110 %. A coin's first missing reading leaves a "gap"
 line, so a replay knows its curve is unknown from then on (until its next reading), never "flat"; a line lost
 without such a mark (the queue, or a coin line at 100 %) is counted in hb "lost", and a replay treats the whole
@@ -77,13 +80,19 @@ on every coin line:
       "quote" (Jupiter) or "curve" (the curve maths fallback); final true on the last sale, with the
       trade's pnl / pnl_pct; lat_ms from the reading that decided it to the fill (null when none did).
   {"k":"follow","m","t","until","why"}   the bot's watch ended, the recorder keeps the curve polled until
-      "until"; why "traded" | "fired" | "near".
+      "until"; why "traded" | "fired" | "near" | "shadow" (an open SHADOW trade: polled until it closes, past
+      "until" if need be; its "end" line says when).
   {"k":"end","m","t","why"}   the curve is no longer polled: why "watch" (the bot's np_watch_s, not
       followed), "follow" (the follow time is over), "cap" (made room), "gone" (the account closed),
       "complete" (migrated), "stop" (the run ended), "off" (the recorder stopped after an error).
   {"k":"gap","m","t"}   the hour's tape was full (rec_max_mb_hour, SHARE): this coin's curve readings from t on are
       NOT on the tape until its next "c" line (it may have moved: a replay treats it as not covered, never flat).
   {"k":"gone","m","t"}  the curve account read as null 3 times;  {"k":"migrate","m","t","pool"}
+  {"k":"shadow","m","t","act",...}   a SHADOW trade (bot.py: a coin that fired and passed RugCheck but was not bought,
+      followed as if it had been, for the LEARNER; never in the book): act "open" (kind "learner" | "risk", why, usd,
+      raw, px, px_sol, sol, fill "quote" | "curve", tier, score, learn), "sell" (frac, raw, usd, why, fill, final, px;
+      pnl / pnl_pct on the final one) or "drop" (why: it was bought for real). Never a "buy" or "sell" line: those are
+      the live trades a replay is checked against (replay.py keeps it with the live lines, never as a trade).
 Lines without "m": {"k":"start","t","v":2,"cfg":{...}[,"bal","held","mem"]} (a run started: the settings it traded
 with, the book's cash, the positions it carried over, the LEARNER's memory then),
 {"k":"sol","t","usd"} the SOL/USD the bot prices with, each time it changes (the replay prices with the same),
@@ -139,7 +148,9 @@ NAME = re.compile(r"^(\d{4})-(\d{2})-(\d{2})T(\d{2})\.jsonl$")
 # readings stop first, then the watched coins', the held coins' last, with the other coin lines (creates,
 # RugCheck, decisions, fills); the lines that say what the tape covers have room past it (a few per coin and a
 # heartbeat every 10 s: bounded)
-SHARE = {"follow": 0.6, "watch": 0.8, "held": 1.0, "line": 1.0, "mark": 1.1}
+# an open SHADOW's readings (the kept hook) are dropped at 90 %: after the watched coins' (they decide the replay's
+# LEARNER memory), before a REAL held coin's, whose exits a replay must see to the last reading
+SHARE = {"follow": 0.6, "watch": 0.8, "shadow": 0.9, "held": 1.0, "line": 1.0, "mark": 1.1}
 MARKS = ("start", "hb", "follow", "end", "gap", "stop")
 EPS = 1e-9
 MB = 1e6
@@ -152,7 +163,7 @@ CFG_KEYS = ("curve_fee_pct", "latency_slip_pct", "network_fee_sol", "priority_fe
             "night_stop_pct", "dump_loss_pct", "loss_streak", "cooldown_min", "reenter_min", "max_trades_per_night", "no_entries_last_min",
             "flat_before_end_min", "job_no_entries_min", "job_flat_min", "watch_sec", "feed_wait_sec", "sol_price_sec",
             "quote_timeout_s", "strategies", "session_start", "session_end", "timezone")
-CFG_PREFIX = ("np_", "rec_", "news_", "learn_")
+CFG_PREFIX = ("np_", "rec_", "news_", "learn_", "shadow_")
 
 
 # ---------------------------------------------------------------- small helpers (garbage in never raises)
@@ -276,21 +287,31 @@ def append(path, data):
 
 
 def rug_summary(rep, curve=None, skip=()):
-    """A RugCheck report -> the tape's summary (None when it is no report): the holders, the top holders'
-    % with the curve and pool accounts (skip) left out, the risks' names and levels, insiders, rugged."""
+    """A RugCheck report -> the tape's summary (None when it is no report): the holders (its totalHolders: every
+    open token account), the top holders' % with the curve and pool accounts (skip) left out, the accounts it
+    lists by kind ("held": with a balance, "empty": none, "curve": the curve's and the pools'; newpairs.py
+    holder_counts(), so a replay counts the wallets holding the coin as the live bot did), the risks' names and
+    levels, insiders, rugged."""
     if not isinstance(rep, dict) or not rep.get("mint"):
         return None
     skip = set(s for s in (skip or ()) if isinstance(s, str))
     if isinstance(curve, str) and curve:
         skip.add(curve)
     pcts = []
+    held = empty = cur = 0
     th = rep.get("topHolders")
     for h in th if isinstance(th, list) else []:
-        if not isinstance(h, dict) or h.get("address") in skip or h.get("owner") in skip:
+        if not isinstance(h, dict):
+            continue
+        if h.get("address") in skip or h.get("owner") in skip:
+            cur += 1
             continue
         p = _num(h.get("pct"))
         if p is not None and p > 0:
             pcts.append(min(float(p), 100.0))
+            held += 1
+        else:
+            empty += 1
     pcts.sort(reverse=True)
     risks = []
     rs = rep.get("risks")
@@ -298,9 +319,34 @@ def rug_summary(rep, curve=None, skip=()):
         if isinstance(r, dict):
             risks.append([_s(r.get("name"), 80) or "unnamed", _s(r.get("level"), 16)])
     return {"holders": int(max(0.0, min(1e9, _f(rep.get("totalHolders"))))), "top1": round(pcts[0], 2) if pcts else 0.0,
-            "top10": round(sum(pcts[:10]), 2), "top": [round(p, 2) for p in pcts[:10]], "risks": risks[:12],
+            "top10": round(sum(pcts[:10]), 2), "top": [round(p, 2) for p in pcts[:10]], "held": held, "empty": empty,
+            "curve": cur, "risks": risks[:12],
             "insiders": int(max(0.0, min(1e6, _f(rep.get("graphInsidersDetected"))))),
             "rugged": _yes(rep.get("rugged")), "score": _r(rep.get("score_normalised"), 2)}
+
+
+TAPE_CURVE = "tape-curve"       # the rebuilt report's stand-in for the curve's accounts (a market of its own)
+
+
+def holder_list(top, held=None, empty=0, curve=0):
+    """A "rug" line's holders -> RugCheck's topHolders shape: the top holders' % ("top"), then (lines that have
+    "held") as many more holding accounts as "held" says (a tiny %: after the top 10, so top1 / top10 stay the
+    line's), "empty" accounts with 0 % and "curve" accounts of TAPE_CURVE (rebuilt_markets() makes it the curve):
+    newpairs.rug_holders() then counts the wallets holding the coin as it did live."""
+    pos = [float(p) for p in top if _num(p) is not None and float(p) > 0]
+    out = [{"address": "holder-%d" % i, "owner": "owner-%d" % i, "pct": p} for i, p in enumerate(pos)]
+    if held is None:
+        return out
+    n = int(_f(held))
+    out += [{"address": "holder-%d" % i, "owner": "owner-%d" % i, "pct": 1e-9} for i in range(len(out), n)]
+    out += [{"address": "empty-%d" % i, "owner": "empty-%d" % i, "pct": 0.0} for i in range(int(_f(empty)))]
+    out += [{"address": "curve-%d" % i, "owner": TAPE_CURVE, "pct": 0.0} for i in range(int(_f(curve)))]
+    return out
+
+
+def rebuilt_markets(line):
+    """The rebuilt report's "markets": the TAPE_CURVE stand-in when the line counted curve accounts."""
+    return [{"pubkey": TAPE_CURVE}] if isinstance(line, dict) and _f(line.get("curve")) > 0 else []
 
 
 def rug_report(line, mint=None):
@@ -312,8 +358,9 @@ def rug_report(line, mint=None):
     top = [p for p in line.get("top") or [] if _num(p) is not None]
     return {"mint": mint or line.get("m"), "rugged": bool(line.get("rugged")), "totalHolders": _f(line.get("holders")),
             "graphInsidersDetected": _f(line.get("insiders")), "score_normalised": line.get("score"),
-            "risks": [{"name": r[0], "level": r[1]} for r in risks], "markets": [], "knownAccounts": {},
-            "topHolders": [{"address": "holder-%d" % i, "owner": "owner-%d" % i, "pct": p} for i, p in enumerate(top)]}
+            "risks": [{"name": r[0], "level": r[1]} for r in risks], "markets": rebuilt_markets(line),
+            "knownAccounts": {},
+            "topHolders": holder_list(top, line.get("held"), line.get("empty") or 0, line.get("curve") or 0)}
 
 
 class _Coin(object):
@@ -354,6 +401,8 @@ class Recorder(object):
     rec.rug(mint, report, why, asked)   # a RugCheck call that finished (report None: it failed)
     rec.fire(coin); rec.decide(mint, d, why); rec.enter(mint, pos, coin, sol_usd)
     rec.sell(mint, pos, frac, why, usd, raw, sol_usd, lat_s, note)
+    rec.shadow(mint, act, doc)          # a SHADOW trade's open / sell / drop
+    rec.kept = fn() -> mints            # the coins the bot keeps polled itself (its open shadows): always followed
     keep = rec.keep(mint)               # the bot lets a coin go: True when the recorder keeps it polled
     for m in rec.tick(now): unwatch(m)  # after each batch of events and each 1 s step
     rec.close()                         # the run ends: everything still polled gets its "end", then the disk
@@ -372,6 +421,9 @@ class Recorder(object):
         self.write = write or append
         self.coins = {}                 # mint -> _Coin
         self.follow = {}                # mint -> True: kept polled after the bot let it go
+        self.kept = None                # fn() -> the mints the bot keeps polled itself after its watch list let them
+                                        # go (its open SHADOW trades): followed first, never dropped while kept, their
+                                        # readings ranked "shadow" (SHARE): under a real held coin's, over the rest
         self.release = []               # mints to unwatch (the next tick hands them to the bot)
         # the loop thread's buffer, by hour file
         self.pending = {}
@@ -504,6 +556,8 @@ class Recorder(object):
         c = self.wl.get(r.mint) if self.wl is not None else None
         if c is not None:
             return "held" if getattr(c, "status", None) == "entered" else "watch"
+        if r.following and self.kept is not None and r.mint in self._kept():
+            return "shadow"                             # an open shadow: under a real held coin, over the rest
         return "follow" if r.following else "watch"
 
     def _get(self, mint):
@@ -659,6 +713,16 @@ class Recorder(object):
                         fill="curve" if "curve maths" in str(note or "") else "quote", final=final,
                         lat_ms=int(lat_v * 1000) if lat_v is not None else None, **kw)
 
+    def shadow(self, mint, act, doc=None):
+        """A SHADOW trade's line (act "open" | "sell" | "drop", doc its fields): a coin the bot did not buy and follows
+        as if it had, for its LEARNER. Its own kind: a "buy" or "sell" line would read as a live trade."""
+        r = self._get(mint)
+        if r is None:
+            return
+        kw = {str(k)[:24]: _clean(v) for k, v in (doc if isinstance(doc, dict) else {}).items()
+              if k not in ("k", "m", "t", "act")}
+        self._coin_line(r, "shadow", self._now(), act=_s(act, 12), **kw)
+
     def sol(self, usd):
         """The SOL/USD the bot prices with: a "sol" line each time it changes (every sol_price_sec at most)."""
         v = _num(usd)
@@ -681,6 +745,19 @@ class Recorder(object):
     def _room(self):
         n = len(self.wl.coins) if self.wl is not None else 0
         return max(0, min(int(_f(self.cfg.get("rec_max_follow"), 60)), int(_f(self.cfg.get("rec_max_keys"), 100)) - n))
+
+    def _kept(self):
+        """The mints the bot keeps polled itself (the kept hook: its open SHADOW trades), or an empty set."""
+        if self.kept is None:
+            return frozenset()
+        try:
+            return frozenset(m for m in (self.kept() or ()) if isinstance(m, str))
+        except Exception:                               # noqa: BLE001 - the bot's hook: the follow-up as before
+            return frozenset()
+
+    def _held_on(self, r, kept):
+        """A followed coin the bot still keeps polled (an open shadow) and whose curve is still there."""
+        return r.mint in kept and not (r.gone or r.complete)
 
     def _end(self, r, why, now=None):
         if r.ended:
@@ -710,27 +787,29 @@ class Recorder(object):
             r.near = True
         if r.following:
             return True
-        why = self._why_not(r, now)
+        kept = self._kept()
+        held = self._held_on(r, kept)                   # the bot keeps it polled (a shadow): followed, whatever else
+        why = None if held else self._why_not(r, now)
         if why is not None:
             self._end(r, why, now)
             return False
         if len(self.follow) >= self._room():
-            victim = self._victim()
-            if victim is None or (victim.prio(), victim.t0) >= (r.prio(), r.t0):
+            victim = self._victim(kept)
+            if not held and (victim is None or (victim.prio(), victim.t0) >= (r.prio(), r.t0)):
                 self._end(r, "cap", now)
                 return False
-            self._unfollow(victim, "cap", now)
+            if victim is not None:
+                self._unfollow(victim, "cap", now)
         self.follow[mint] = True
         r.following = True
         self._coin_line(r, "follow", now, until=round(r.until(self.cfg), TD),
-                        why="traded" if r.traded else "fired" if r.fired else "near")
+                        why="shadow" if held else "traded" if r.traded else "fired" if r.fired else "near")
         return True
 
-    def _victim(self):
-        """The followed coin to drop first: the lowest priority, then the oldest."""
-        if not self.follow:
-            return None
-        return min((self.coins[m] for m in self.follow), key=lambda x: (x.prio(), x.t0))
+    def _victim(self, kept=frozenset()):
+        """The followed coin to drop first: the lowest priority, then the oldest; never one the bot keeps (kept)."""
+        rs = [self.coins[m] for m in self.follow if not self._held_on(self.coins[m], kept)]
+        return min(rs, key=lambda x: (x.prio(), x.t0)) if rs else None
 
     def _unfollow(self, r, why, now):
         self.follow.pop(r.mint, None)
@@ -773,13 +852,17 @@ class Recorder(object):
                              _f(self.cfg.get("rec_follow_s"), 900), int(_f(self.cfg.get("rec_max_follow"), 60))))
         self._sync(now)
         room = self._room()
+        kept = self._kept()
         for m in list(self.follow):
             r = self.coins[m]
-            why = self._why_not(r, now)
+            why = None if self._held_on(r, kept) else self._why_not(r, now)
             if why is not None:
                 self._unfollow(r, why, now)
         while len(self.follow) > room:
-            self._unfollow(self._victim(), "cap", now)
+            victim = self._victim(kept)
+            if victim is None:                          # only the bot's own shadows left: they stay (bot.py caps them)
+                break
+            self._unfollow(victim, "cap", now)
         self._hour(now)
         if now - self.hb_at >= _f(self.cfg.get("rec_hb_s"), 10.0):
             self.hb_at = now

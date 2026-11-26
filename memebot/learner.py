@@ -14,7 +14,17 @@ only. Never rename a label: the memory would silently forget what it learned und
     labels = features(fx, holders, slip_pct, signals, hour)   # at entry, kept on the position
     d = decide(mem, labels, cfg)                              # buy / skip / explore, and a size mult
     update(mem, labels, pnl_pct)                              # when the trade closes
+    update(mem, labels, pnl_pct, weight=0.5, shadow=True)     # a SHADOW trade closes (bot.py: a coin not bought)
     summary(mem)                                              # what the page shows
+
+Weights (WEIGHTS): a SHADOW trade is a coin the bot did not buy (the LEARNER skipped it, or RISK said no
+entry) that bot.py followed as if it had: the same exits on the same curve readings, priced like a real fill,
+never in the book. Without them the LEARNER, which skips most triggers, would learn almost only from the coins
+it still buys. A shadow is paper on paper (no failed or late transaction; by the curve maths it sells at the
+very reading that decided the sale: a little rosy on fast stops and dumps), so it counts `weight` of a trade (the bot's
+shadow_weight, 0.5), at most a whole one: every sum in its labels takes weight x its P&L and n grows by
+weight. Fractional counts were already in the file (FORGET_AT fades n), so memory.json keeps "v": 1 and the
+code before weights reads it as it is (it only drops the "shadows" count, which it does not know).
 """
 
 import datetime
@@ -50,22 +60,29 @@ DAY = "hour:day"                        # --anytime test runs, kept apart from t
 
 # New Pairs (memebot/newpairs.py labels(), on the pump.fun curve) and the NEWS hold plan (memebot/plan.py):
 # the creator's initial buy, the real SOL in since launch, the buy share of the curve readings, the age at
-# entry, the coin's links, the NEWS score bucket and the hold plan's tier at entry. Fixed sets like the
+# entry, the coin's links, the SOL in for each wallet holding it and how many wallets hold it (RugCheck's PASS), the
+# NEWS score bucket and the hold plan's tier at entry. Fixed sets like the
 # others, so the memory stays bounded (a tier renamed in config.json's hold_tiers is not learned).
 NP_DEV = ("np:dev:0-2", "np:dev:2-5", "np:dev:5-8", "np:dev:8+")
 NP_SOL = ("np:sol:<3", "np:sol:3-6", "np:sol:6-12", "np:sol:12+")
 NP_BUYS = ("np:buys:<70", "np:buys:70-80", "np:buys:80-90", "np:buys:90+")
 NP_AGE = ("np:age:<30s", "np:age:30-90s", "np:age:90s+")
 NP_SOCIAL = ("np:social:x", "np:social:tg", "np:social:web", "np:social:none")
+# entry quality (newpairs.py NP_SOLHOLD, NP_HOLDERS), from RugCheck's PASS at the entry: the SOL in for each wallet
+# holding the coin, and how many wallets hold it. The entry rules cut at 0.5 SOL and 10 holders by default, so ".5-1",
+# "1+" and "<10" fill only under a looser config (a backtest lever); SHADOW trades carry them too
+NP_SOLHOLD = ("np:solh:<.25", "np:solh:.25-.5", "np:solh:.5-1", "np:solh:1+")
+NP_HOLDERS = ("np:holders:<10", "np:holders:10-20", "np:holders:20-40", "np:holders:40+")
 NEWS = ("news:0-2", "news:3-4", "news:5-6", "news:7+")
 TIERS = ("tier:scalp", "tier:swing", "tier:runner", "tier:moon", "tier:base")
 
 KNOWN = frozenset([lab for table in (LIQ, VOL5, BUYS, AGE, HOLDERS, SLIP) for _, lab in table]
                   + [lab for _, lab in DEXES + SIGNALS] + [OTHER_DEX] + list(SOCIAL)
                   + list(NIGHT_HOURS.values()) + [DAY]
-                  + list(NP_DEV + NP_SOL + NP_BUYS + NP_AGE + NP_SOCIAL + NEWS + TIERS))
+                  + list(NP_DEV + NP_SOL + NP_BUYS + NP_AGE + NP_SOCIAL + NP_SOLHOLD + NP_HOLDERS + NEWS + TIERS))
 
 K, MIN_N = 10, 8
+WEIGHTS = True                          # update() takes weight= and shadow= (bot.py checks before it learns a shadow)
 CFG = {"learn_skip_pct": -6.0, "learn_explore_every": 5, "learn_k": 10, "learn_min_n": 8,
        "learn_mult_min": 0.5, "learn_mult_max": 1.5}
 MULT_PER = 20.0                         # size x (1 + score / 20): buckets that made +10 % a trade buy 1.5x
@@ -144,7 +161,17 @@ def _ensure(mem):
         mem["labels"] = {}
     for key in ("samples", "skipped", "explored", "skip_run"):
         mem[key] = _count(mem.get(key))
+    if "shadows" in mem:                        # only once a shadow was learned: a fresh memory stays as it was
+        mem["shadows"] = _count(mem.get("shadows"))
     mem.setdefault("v", 1)
+
+
+def _weight(w):
+    """A trade's weight in its labels: 1 for None (a real trade), else a number in [0, 1] (0 or garbage: nothing)."""
+    if w is None:
+        return 1.0
+    v = _num(w)
+    return 0.0 if v is None else min(1.0, max(0.0, v))
 
 
 def _gate(k, min_n):
@@ -219,20 +246,25 @@ def features(fx, holders, slip_pct, signals, hour):
 
 # ---------------------------------------------------------------- learning and scoring
 
-def update(mem, labels, pnl_pct):
-    """A closed trade: its P&L % (fees included) goes into every label it had at entry."""
-    pnl, labels = _num(pnl_pct), _labels(labels)
-    if not isinstance(mem, dict) or pnl is None or not labels:
+def update(mem, labels, pnl_pct, weight=None, shadow=False):
+    """A closed trade: its P&L % (fees included) goes into every label it had at entry. weight (None: 1, a real
+    trade) is what the trade counts for, in [0, 1]: n grows by it, sum by weight x P&L (a SHADOW trade: the bot's
+    shadow_weight, 0.5). shadow: counted in mem["shadows"], not in "samples" (the page's "closed trades")."""
+    pnl, labels, w = _num(pnl_pct), _labels(labels), _weight(weight)
+    if not isinstance(mem, dict) or pnl is None or not labels or w <= 0:
         return
     _ensure(mem)
     pnl = max(-PNL_CAP, min(PNL_CAP, pnl))
-    mem["samples"] += 1
+    if shadow:
+        mem["shadows"] = _count(mem.get("shadows")) + 1
+    else:
+        mem["samples"] += 1
     for lab in labels:
         st = _clean_stat(mem["labels"].get(lab)) or {"n": 0.0, "sum": 0.0, "sumsq": 0.0, "wins": 0.0}
-        st["n"] += 1
-        st["sum"] += pnl
-        st["sumsq"] += pnl * pnl
-        st["wins"] += 1 if pnl > 0 else 0
+        st["n"] += w
+        st["sum"] += w * pnl
+        st["sumsq"] += w * pnl * pnl
+        st["wins"] += w if pnl > 0 else 0
         if st["n"] > FORGET_AT:                 # the mean stays, the weight of old trades fades
             fade = FORGET_AT / st["n"]
             st = {k: v * fade for k, v in st.items()}
@@ -252,7 +284,12 @@ def _rows(mem, labels, k, min_n):
 def _why(rows, s):
     """The two labels that pull the score its way: the worst two of a bad score, the best two of a good one."""
     rows = sorted(rows, key=lambda r: (r[3], r[0]) if s < 0 else (-r[3], r[0]))[:2]
-    return ", ".join("%s %+.1f%% over %d" % (lab, mean, round(n)) for lab, n, mean, _ in rows)
+    return ", ".join("%s %+.1f%% over %s" % (lab, mean, _n(n)) for lab, n, mean, _ in rows)
+
+
+def _n(n):
+    """A label's trade count for the log: 13, or 10.5 once SHADOW trades (weight 0.5) are in it."""
+    return "%g" % round(n, 1)
 
 
 def score(mem, labels, k=K, min_n=MIN_N):
@@ -321,7 +358,7 @@ def learned(mem, labels):
     if not rows:
         return ""
     lab, n, mean, _ = max(rows, key=lambda r: (abs(r[3]), r[0]))
-    return "%s now avg %+.1f%% over %d" % (lab, mean, round(n))
+    return "%s now avg %+.1f%% over %s" % (lab, mean, _n(n))
 
 
 def _row_doc(row):
@@ -331,15 +368,19 @@ def _row_doc(row):
 def summary(mem, k=None, min_n=None):
     """What the page shows: counts, and the best and worst labels by shrunk mean (only labels with
     min_n trades; avg is the plain mean). k and min_n default to what the last decide() used.
-    Best and worst never show the same label: with fewer than 6 labels they share them out."""
+    Best and worst never show the same label: with fewer than 6 labels they share them out. "shadows" (the
+    SHADOW trades learned) is there once there are any; n in best / worst counts them by their weight."""
     m = mem if isinstance(mem, dict) else {}
     k, min_n = _gate(m.get("k") if k is None else k, m.get("min_n") if min_n is None else min_n)
     rows = sorted(_rows(m, [lab for lab in _table(m) if lab in KNOWN], k, min_n), key=lambda r: (-r[3], r[0]))
     half = (len(rows) + 1) // 2
-    return {"samples": _count(m.get("samples")), "skipped": _count(m.get("skipped")),
-            "explored": _count(m.get("explored")), "min_samples": min_n,
-            "best": [_row_doc(r) for r in rows[:min(3, half)]],
-            "worst": [_row_doc(r) for r in rows[half:][::-1][:3]]}
+    out = {"samples": _count(m.get("samples")), "skipped": _count(m.get("skipped")),
+           "explored": _count(m.get("explored")), "min_samples": min_n,
+           "best": [_row_doc(r) for r in rows[:min(3, half)]],
+           "worst": [_row_doc(r) for r in rows[half:][::-1][:3]]}
+    if _count(m.get("shadows")):                # the SHADOW trades learned (weighted), once there are any
+        out["shadows"] = _count(m.get("shadows"))
+    return out
 
 
 # ---------------------------------------------------------------- the memory file
@@ -351,6 +392,8 @@ def _repair(doc):
     mem = fresh()
     for key in ("samples", "skipped", "explored", "skip_run"):
         mem[key] = _count(doc.get(key))
+    if _count(doc.get("shadows")):
+        mem["shadows"] = _count(doc.get("shadows"))
     for lab, st in _table(doc).items():
         st = _clean_stat(st)
         if lab in KNOWN and st:

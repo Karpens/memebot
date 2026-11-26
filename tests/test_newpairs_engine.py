@@ -245,7 +245,10 @@ def np_cfg(**kw):
              loss_streak=5, cooldown_min=2, reenter_min=5, no_entries_last_min=10, stop_pct=-7.0, tp1_pct=7.0,
              tp1_sell_frac=1.0, time_stop_min=5, time_stop_below_pct=2.0, min_order_usd=3.0,
              hold_tiers=json.loads(json.dumps(SPEC_TIERS)), breakeven_pct=1.0, news_refresh_sec=30,
-             fade_buy_ratio=0.45)
+             fade_buy_ratio=0.45,
+             # no SOL-a-holder wait (newpairs.rug_check_np, tests/test_entry_quality.py): rug_report() lists 3 wallets
+             # of 14 accounts (13 holders), and RUNNER, the probe's UZIM, brings 9-11 SOL; these tests are about the rest
+             np_max_sol_per_holder=0.0)
     c.update(kw)
     return c
 
@@ -336,7 +339,7 @@ class Engine(unittest.TestCase):
         self.assertIn("first in · 0.0 s after the trigger · 8 s after launch", enter)
         self.assertIn("hold plan · 5/10 (X, Telegram, web, inflow 6.5 SOL, buys 100%) · runner: +7 → +20 → +60",
                       self.lines(n, "NEWS"))
-        self.assertTrue(any(t.startswith("PASS · 14 holders") for t in self.lines(n, "RUG CHECK")))
+        self.assertTrue(any(t.startswith("PASS · 13 holders") for t in self.lines(n, "RUG CHECK")))
         self.assertTrue(any(t.startswith("momentum · 6.5 SOL in · 8/8 buys") for t in self.lines(n, "SCANNER")))
         self.assertEqual(n.state["night"]["np_speed"]["first_in"], [0])
         self.assertIn("np:sol:6-12", pos["learn"])

@@ -124,6 +124,10 @@ class Features(unittest.TestCase):
             "np:buys:<70", "np:buys:70-80", "np:buys:80-90", "np:buys:90+",
             "np:age:<30s", "np:age:30-90s", "np:age:90s+",
             "np:social:x", "np:social:tg", "np:social:web", "np:social:none",
+            # entry quality, from RugCheck's PASS: the SOL in for each wallet holding the coin, and how many hold it
+            # (newpairs NP_SOLHOLD, NP_HOLDERS)
+            "np:solh:<.25", "np:solh:.25-.5", "np:solh:.5-1", "np:solh:1+",
+            "np:holders:<10", "np:holders:10-20", "np:holders:20-40", "np:holders:40+",
             "news:0-2", "news:3-4", "news:5-6", "news:7+",
             "tier:scalp", "tier:swing", "tier:runner", "tier:moon", "tier:base"]))
         self.assertTrue(all(len(lab) <= 16 and lab.count(":") == (2 if lab.startswith("np:") else 1)

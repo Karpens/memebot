@@ -35,6 +35,20 @@ LIVE = {"Drone": (10.0, 8.80, 2.65657945e-06 / 2.89468886e-06, 40.8),
         "BST": (9.88, 8.96, 2.40038822e-06 / 2.53912081e-06, 34.9),
         "HOGZ": (9.66, 9.84, 3.45314642e-06 / 3.19595579e-06, 43.9)}
 LIVE_PNL = [-16.2, 1.9, -9.3, -13.1, -25.3, -26.1, -29.1, -12.0]      # their pnl_pct, Drone last
+# every coin that fired the trigger that morning (the live log), PRE-FLOOR: those triggers fired before config.json's
+# 45 s minimum age (np_min_age_s) was on. SOL in, buy readings, the holders RugCheck's report saw at the fire (its
+# totalHolders: empty accounts counted, "0 holders": not indexed yet), the result in % of the 10 bought (None: the
+# LEARNER skipped it), the age at the entry and, for the 4 dumps, the age of the dump sale and its SOL
+MORNING = [("Drone", 3.8, 7, 0, -12), ("BST", 2.5, 13, 8, -9), ("ZEROCAST", 4.6, 6, 11, -16), ("HOGZ", 7.6, 6, 0, 2),
+           ("SWARM", 6.1, 6, 0, -13), ("STOREB", 3.3, 6, 0, -25), ("KIDSTOCK", 3.3, 6, 3, -26),
+           ("TANOSHIMI", 3.3, 6, 0, -29), ("YARL", 2.9, 9, 9, -14), ("MEME", 4.3, 6, 4, -28),
+           ("SALECOIN", 9.4, 6, 0, None), ("OFTANIA", 4.1, 6, 0, None), ("Oro", 3.0, 7, 7, None),
+           ("BACKER", 6.8, 8, 13, None), ("TIPPD", 7.1, 7, 7, None), ("TICKZ", 7.8, 21, 30, None),
+           ("AISLE", 3.3, 9, 7, None), ("NODIVO", 10.6, 9, 5, None), ("MARU", 3.6, 6, 10, None),
+           ("SPRAYZ", 7.8, 18, 31, None), ("VP64", 6.6, 7, 10, None)]
+ENTRY_AGE = {"Drone": 13, "BST": 141, "ZEROCAST": 10, "HOGZ": 14, "SWARM": 18, "STOREB": 25, "KIDSTOCK": 20,
+             "TANOSHIMI": 23, "YARL": 45, "MEME": 134}
+DUMPS = {"STOREB": (25 + 3, 2.9), "KIDSTOCK": (20 + 18, 3.9), "TANOSHIMI": (23 + 3, 4.4), "MEME": (134 + 6, 3.1)}
 
 
 class Book(object):
@@ -425,6 +439,72 @@ class Words(unittest.TestCase):
             sk(r["rt"]), sk(r[7]), sk(r[10]), sk(r[-7])), note)
         for text in ("night_stop_pct -30 %", "min_order_usd 5", "position_pct zostáva 10", "learn_skip_pct -3,5"):
             self.assertIn(text, note)
+
+    def test_the_entry_note_says_what_the_rules_do_to_the_live_morning(self):
+        """config.json's _entry note and the prompt count the morning of 2026-11-26 by newpairs.py's own rules with
+        today's config, and say plainly that those triggers fired before the 45 s age floor: under the floor, 3 of the
+        4 dumps came before 45 s (np_dump_sol rejects them there), so the new rules' own evidence is MEME and the waits
+        of BST and YARL; the morning's holder counts (RugCheck's totalHolders then: empty accounts counted) are an
+        upper bound of the wallets."""
+        npm = mb.newpairs
+        bt = load("memebot", "backtest")
+        with open(mb.CONFIG, encoding="utf-8") as fh:
+            note = json.load(fh)["_entry"]
+        with open(mb.PROMPT, encoding="utf-8") as fh:
+            p = fh.read()
+        sk2 = lambda x: ("%g" % x).replace(".", ",")                            # noqa: E731 - "0,35"
+        floor = CONFIG["np_min_age_s"]
+        self.assertEqual(floor, 45)
+        verdict = {}
+        for sym, sol, buys, holders, pnl in MORNING:
+            c = npm.Coin(mint=sym.lower(), symbol=sym, rsol0=0.0, rsol=sol, buys=buys)
+            rep = {"mint": c.mint, "risks": [], "topHolders": [], "totalHolders": holders}
+            ok, why, _ = npm.rug_check_np(rep, c, CONFIG)
+            verdict[sym] = "pass" if ok else "fail" if ok is False else (
+                "conc" if why[0].startswith("waiting: %d holders for" % holders) else "holders")
+        bought = [s_ for s_, _, _, _, pnl in MORNING if pnl is not None]
+        pnl = {s_: v for s_, _, _, _, v in MORNING}
+        holders = {s_: h for s_, _, _, h, _ in MORNING}
+        self.assertEqual((len(MORNING), len(bought), len(DUMPS)), (21, 10, 4))
+        # the age floor: 7 of the 10 entries fired before it; 3 of the 4 dumps sold before it (the dump rule rejects)
+        pre = [s_ for s_ in bought if ENTRY_AGE[s_] < floor]
+        early_dumps = sorted(s_ for s_, (at, sol) in DUMPS.items() if at < floor and sol >= CONFIG["np_dump_sol"])
+        self.assertEqual((len(pre), early_dumps), (7, ["KIDSTOCK", "STOREB", "TANOSHIMI"]))
+        self.assertIn("7 z 10 pred vekovou hranicou np_min_age_s 45 s", note)
+        self.assertIn("3 z tých 4 dumpov (STOREB, TANOSHIMI, KIDSTOCK) prišli pred 45 s, kde ich už zamietne np_dump_sol",
+                      note)
+        # what is left as the new rules' own live evidence: the entries at or past the floor, all of them waits
+        late = sorted((s_ for s_ in bought if ENTRY_AGE[s_] >= floor), key=lambda x: ENTRY_AGE[x])
+        self.assertEqual(late, ["YARL", "MEME", "BST"])
+        self.assertTrue(all(verdict[s_] == "holders" for s_ in late))
+        self.assertIn("MEME (%d s, %d držitelia, dump %d %%) a čakanie BST (%d držiteľov, %d %%) a YARL (%d, %d %%)" % (
+            ENTRY_AGE["MEME"], holders["MEME"], pnl["MEME"], holders["BST"], pnl["BST"], holders["YARL"], pnl["YARL"]),
+            note)
+        # all 21 by today's rules on the counts RugCheck saw then
+        passed = [s_ for s_, _, _, _, _ in MORNING if verdict[s_] == "pass"]
+        conc = [s_ for s_, _, _, _, _ in MORNING if verdict[s_] == "conc"]
+        wait = [s_ for s_, _, _, _, _ in MORNING if verdict[s_] == "holders"]
+        self.assertEqual(passed, ["ZEROCAST", "TICKZ", "MARU", "SPRAYZ"])
+        self.assertTrue(set(DUMPS) <= set(wait) and "HOGZ" in wait)
+        per = {s_: sol / holders[s_] for s_, sol, _, _, _ in MORNING if s_ in conc}
+        self.assertIn("by %d prešli hneď (ZEROCAST %d %%, MARU, TICKZ, SPRAYZ), %d by čakali pre koncentráciu (%s SOL na "
+                      "držiteľa) a %d na držiteľov (%d z %d vstupov: všetky %d dumpy aj HOGZ" % (
+                          len(passed), pnl["ZEROCAST"], len(conc),
+                          ", ".join("%s %s" % (s_, sk2(round(per[s_], 2))) for s_ in conc), len(wait),
+                          len([s_ for s_ in wait if s_ in bought]), len(bought), len(DUMPS)), note)
+        thin = [s_ for s_ in bought if holders[s_] <= 4]
+        self.assertTrue(set(DUMPS) <= set(thin))
+        self.assertIn("%d z %d vstupov prešlo RugCheckom na správe, ktorá videla 0 až 4 držiteľov" % (len(thin), len(bought)),
+                      note)
+        self.assertIn("%d of the first %d live entries passed on 0-4 holders, and all %d dumps were among them; 6 of "
+                      "those 7 came at 13-25 seconds, before today's 45 second minimum age, which by itself keeps out 3 "
+                      "of the 4 dumps" % (len(thin), len(bought), len(DUMPS)), p)
+        self.assertEqual(sorted(ENTRY_AGE[s_] for s_ in thin)[:6], [13, 14, 18, 20, 23, 25])
+        self.assertIn("the fourth, MEME, came at %d seconds with %d holders" % (ENTRY_AGE["MEME"], holders["MEME"]), p)
+        g = bt.DEFAULT_GRID
+        self.assertIn("np_min_holders %s, np_max_sol_per_holder %s, np_max_buy_sol %s" % tuple(
+            " / ".join(sk2(v) for v in g[k]) for k in ("np_min_holders", "np_max_sol_per_holder", "np_max_buy_sol")),
+            note)
 
 
 if __name__ == "__main__":

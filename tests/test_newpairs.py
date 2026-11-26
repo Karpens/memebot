@@ -88,6 +88,10 @@ def report(mint, curve, holders=(1.1, 0.9, 0.6), risks=(), insiders=0, rugged=Fa
 # 49 SOL market cap: all the entry rules hold for the first time there (reading 8 has 7 buys).
 UZIM_RSOL = [5.2, 5.9, 6.4, 6.1, 7.0, 7.8, 8.3, 8.3, 9.1, 8.6, 9.9, 12.0, 15.5, 19.8, 23.0, 27.1]
 UZIM_FIRE = 10
+# the trigger's own rules, without RugCheck's SOL-a-holder wait: UZIM's 9.2-11 SOL in against the 13 wallets report()
+# sees (0.7-0.9 SOL a holder) is over np_max_sol_per_holder's 0.5. The tests that use this are about when the trigger
+# fires and what a report says; the concentration rule is tested in tests/test_entry_quality.py.
+TRIGGER = dict(npm.DEFAULTS, np_max_sol_per_holder=0.0)
 
 
 def uzim(wl, meta=SOCIAL):
@@ -229,7 +233,7 @@ class Readings(unittest.TestCase):
         """FOLIO as the probe saw it: 14 pushes from 14.36 to 18.14 SOL of real reserves (+18 % between
         the first and the last push, but +114 % from the create at the first one). It fires once, at
         the 8th buy, 67 SOL of mcap: just under the 70 cap that the 12th push passes."""
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = wl.on_create(FOLIO, T0)
         wl.on_meta(c.mint, {"twitter": "https://x.com/usefolio"})
         first = None
@@ -292,7 +296,7 @@ class Readings(unittest.TestCase):
 
 class Trigger(unittest.TestCase):
     def test_uzim_fires_exactly_once_at_the_right_reading(self):
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl)
         fired, whys = [], []
         for i, rs in enumerate(UZIM_RSOL):
@@ -318,7 +322,7 @@ class Trigger(unittest.TestCase):
         self.assertEqual(npm.exit_signal(c, npm.DEFAULTS), "dump: 3.2 SOL sold")
 
     def test_no_rugcheck_report_yet_fires_again_on_the_next_reading(self):
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl)
         acts = []
         for i, rs in enumerate(UZIM_RSOL[:13]):
@@ -334,7 +338,7 @@ class Trigger(unittest.TestCase):
     def test_no_report_is_no_verdict_and_the_next_reading_fires(self):
         """The OVERRIDES: no RugCheck report in time -> no entry on this reading, try again on the
         next. rug_check_np says so with ok None (a False would read as a FAIL and reject for good)."""
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl)
         acts = []
         for i, rs in enumerate(UZIM_RSOL[:13]):
@@ -343,7 +347,7 @@ class Trigger(unittest.TestCase):
             acts.append(act)
             if act == "fire":
                 rep = None if i == UZIM_FIRE else report(c.mint, c.curve)     # the report comes a reading late
-                ok, why, n = npm.rug_check_np(rep, c, npm.DEFAULTS)
+                ok, why, n = npm.rug_check_np(rep, c, TRIGGER)
                 if ok is None:
                     self.assertEqual((why, n, c.status, npm.rug_text(c)),
                                      (["no RugCheck report"], 0, "watching", "no RugCheck report"))
@@ -361,7 +365,7 @@ class Trigger(unittest.TestCase):
         do not ask again (the learner's "1 in 5 skips is explored" would buy it 4 readings later).
         retry() offers it again; a RugCheck FAIL nobody acted on rejects it at the next judge."""
         slow = UZIM_RSOL[:UZIM_FIRE + 1] + [10.3, 10.7, 11.1, 11.5, 11.9, 12.3, 12.7]   # the rules hold 8 readings
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl)
         acts = []
         for i, rs in enumerate(slow):
@@ -369,12 +373,12 @@ class Trigger(unittest.TestCase):
             act, why = wl.judge(c, t_of(i))
             acts.append(act[0])
             if act == "fire":
-                self.assertTrue(npm.rug_check_np(report(c.mint, c.curve), c, npm.DEFAULTS)[0])    # PASS, then a skip
+                self.assertTrue(npm.rug_check_np(report(c.mint, c.curve), c, TRIGGER)[0])    # PASS, then a skip
             if i == 14:
                 wl.retry(c)                                                # the book was full: try again
         self.assertEqual("".join(acts[UZIM_FIRE:]), "fwwwwfww")
         self.assertEqual((c.status, c.why), ("watching", "fired, not bought"))
-        bad = npm.Watchlist(dict(npm.DEFAULTS))
+        bad = npm.Watchlist(dict(TRIGGER))
         d = uzim(bad)
         for i, rs in enumerate(UZIM_RSOL[:UZIM_FIRE + 1]):
             bad.on_curve(d.mint, reading(rs, slot=100 + i), t_of(i))
@@ -389,7 +393,7 @@ class Trigger(unittest.TestCase):
         """Fired with no report, then sells broke the rules, then they held again 5 s later: the fill
         is 0.2 s after THAT trigger, not 5.8 s after the stale one."""
         path = UZIM_RSOL[:UZIM_FIRE + 1] + [9.0, 8.2, 7.4, 9.6, 10.4, 11.2, 12.0, 12.8, 13.6, 14.4, 15.2]
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl)
         acts = ""
         for i, rs in enumerate(path):
@@ -406,16 +410,16 @@ class Trigger(unittest.TestCase):
         self.assertEqual(npm.first_in_text(c, t_of(17) + 0.2), "first in · 0.2 s after the trigger · 16 s after launch")
 
     def test_it_waits_for_the_socials_and_rejects_without_them(self):
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl, meta=False)
         for i, rs in enumerate(UZIM_RSOL[:UZIM_FIRE + 1]):
             wl.on_curve(c.mint, reading(rs), t_of(i))
         self.assertEqual(wl.judge(c, t_of(UZIM_FIRE)), ("wait", "socials not read yet"))
         wl.on_meta(c.mint, {"twitter": "https://x.com/uzimonkey"})
         self.assertEqual(wl.judge(c, t_of(UZIM_FIRE))[0], "fire")
-        bare = npm.Watchlist(dict(npm.DEFAULTS))
+        bare = npm.Watchlist(dict(TRIGGER))
         d = uzim(bare, meta=None)                                          # every gateway failed
-        wl_off = npm.Watchlist(dict(npm.DEFAULTS, np_need_social=False))
+        wl_off = npm.Watchlist(dict(TRIGGER, np_need_social=False))
         e = uzim(wl_off, meta=False)
         for i, rs in enumerate(UZIM_RSOL[:UZIM_FIRE + 1]):
             bare.on_curve(d.mint, reading(rs), t_of(i))
@@ -426,7 +430,7 @@ class Trigger(unittest.TestCase):
         self.assertEqual(wl_off.judge(e, t_of(UZIM_FIRE))[0], "fire")
 
     def test_too_late_too_big_too_old(self):
-        cfgs = dict(npm.DEFAULTS)
+        cfgs = dict(TRIGGER)
         wl = npm.Watchlist(cfgs)
         c = uzim(wl)
         steps = [5.2, 9.0, 12.0, 15.0, 18.0, 19.0, 20.0, 21.0]             # 8 buys, but the mcap passed 70
@@ -519,8 +523,9 @@ class RugCheck(unittest.TestCase):
 
     def test_a_clean_report_passes_without_the_curve(self):
         ok, why, n = self.check(report(self.m, self.k, holders=(2.3, 1.4, 0.9, 0.8)))
-        self.assertEqual((ok, why, n), (True, [], 14))                     # the curve's 92 % is left out
-        self.assertEqual(npm.rug_text(self.c), "PASS · 14 holders · top holder 2.3% · top 10 5% (curve left out)")
+        # the curve's 92 % is left out, and so is its account from the count: 14 token accounts, 13 wallets
+        self.assertEqual((ok, why, n), (True, [], 13))
+        self.assertEqual(npm.rug_text(self.c), "PASS · 13 holders · top holder 2.3% · top 10 5% (curve left out)")
 
     def test_creator_history_and_single_holder_risks(self):
         hist = {"name": "Creator history of rugged tokens", "level": "warn", "description": "x"}
@@ -536,7 +541,7 @@ class RugCheck(unittest.TestCase):
         self.assertEqual(self.check(scamsem)[1], ["risk: Creator history of rugged tokens",
                                                    "risk: Single holder ownership"])
         self.assertTrue(self.check(scamsem, dict(npm.DEFAULTS, np_rug_bad_risks=[]))[0])
-        self.assertEqual(npm.rug_text(self.c), "PASS · 14 holders · top holder 1.1% · top 10 3% (curve left out)")
+        self.assertEqual(npm.rug_text(self.c), "PASS · 13 holders · top holder 1.1% · top 10 3% (curve left out)")
 
     def test_an_18_percent_holder_top_10_and_insiders(self):
         self.assertEqual(self.check(report(self.m, self.k, holders=(18.0, 2.0)))[:2],
@@ -615,7 +620,7 @@ class Watching(unittest.TestCase):
         self.assertIsNone(wl.on_create(create("xa"), T0 + 300))          # a create seen once stays seen
 
     def test_rows_for_the_panel(self):
-        wl = npm.Watchlist(dict(npm.DEFAULTS))
+        wl = npm.Watchlist(dict(TRIGGER))
         c = uzim(wl)
         f_ = wl.on_create(FOLIO, T0 + 5)
         wl.on_meta(f_.mint, {"twitter": "https://x.com/i/status/123", "telegram": "null", "website": "javascript:alert(1)"})
@@ -652,7 +657,7 @@ class Watching(unittest.TestCase):
         plan = {"tier": "runner", "score": 5, "parts": ["X", "Telegram", "inflow 9.2 SOL"]}
         self.assertEqual(npm.labels(c, c.meta, plan, hour=3),
                          ["np:dev:2-5", "np:sol:6-12", "np:buys:80-90", "np:age:<30s", "np:social:x", "np:social:tg",
-                          "news:5-6", "tier:runner", "hour:03-05"])
+                          "news:5-6", "tier:runner", "hour:03-05"])            # no RugCheck PASS: no holder labels
         six = wl.on_create(create("six", dev_sol=dev_buy_for_pct(6.0)), T0)
         six.rsol, six.buys, six.age_s = six.rsol0 + 13.0, 19, 95.0
         self.assertEqual(npm.labels(six, {"website": "https://six.fun"}, {"tier": "moon", "score": 8, "entry_score": 7}),

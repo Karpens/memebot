@@ -73,5 +73,29 @@ Backtest odporučí zmenu len vtedy, keď nové pravidlo porazí doterajšie na 
 istých coinoch viac, ako dovolí náhoda, aj na čase, ktorý pri výbere nevidel.
 Aj tak je to len náznak, nie sľub: je to papier na papieri.
 
+### Backtest na GitHube
+
+Workflow **Backtest** (`.github/workflows/backtest.yml`) to urobí sám: Actions →
+Backtest → Run workflow, alebo
+
+```
+gh workflow run backtest.yml -f hours=24 -f grid=default -f split=0.7
+```
+
+`memebot/fetch_tapes.py` stiahne artefakty `tapes-*` jobov Meme Bota, ktoré
+skončili za posledných `hours` hodín, do `tapes/<run id>-<pokus>/`, potom beží
+`backtest.py --data tapes`. Berie len vlastné behy bota (schedule a
+workflow_dispatch na hlavnej vetve, nikdy beh pull requestu, ani z forku),
+najnovšie najprv a spolu najviac 500 MB rozbalených pások (`--max-mb`):
+backtest drží celú pásku v pamäti, s 4 workermi asi 23-násobok jej veľkosti,
+takže pri plnej páske (20 MB za hodinu) je to asi deň. Artefakt, ktorý sa
+nestiahne celý, preskočí s varovaním a ostatné použije. Rozhodnutie (KEEP / CHANGE), najlepšie konfigurácie
+na prvej časti aj na odloženej časti, live check a medzery v páskach vypíše do
+logu a na stránku súhrnu jobu; `report.json` uloží ako artefakt
+`backtest-<run id>` (30 dní). Keď pásky nie sú (job, ktorý práve beží, ich nahrá
+až na konci), povie to a skončí zelene. Nič nemení: nepíše do `meme-data`, nespúšťa
+bota, nevysiela na živý kanál a `config.json` nemení ani pri CHANGE; to je návrh
+pre človeka.
+
 Nie je to finančné poradenstvo. Väčšina nových meme coinov stratí väčšinu
 hodnoty za pár hodín.

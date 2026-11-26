@@ -16,20 +16,26 @@ Two strategies (config.json "strategies"):
 The agents, written as rules (the prompt in memebot/prompt.txt says the same in words):
   1. SCANNER    new pairs: every pump.fun create, watched for np_watch_s; migrated pairs: fresh DEX
                 pairs, their liquidity, volume, buys against sells and holder growth. It flags, it
-                never trades.
+                never trades (with np_max_buy_sol, a trigger whose one buy reading was that big is rejected
+                there for good; off by default).
   2. NEWS       the coin's X, Telegram and website (its metadata), the curve's momentum (SOL in, the
                 share of buys) and, for migrated pairs, boosts and the trending lists: a NEWS score
                 0-10 that picks the hold plan (+10 % scalp ... +100 % moon), read again every
                 news_refresh_sec while the coin is held.
   3. RUG CHECK  RugCheck's report (rug history of the creator, one holder or the top 10 holding too
                 much, insiders, danger risks; for migrated pairs also mint and freeze authority and
-                the LP) and a sell simulation on Jupiter (a honeypot can't be sold).
+                the LP) and a sell simulation on Jupiter (a honeypot can't be sold). A new pair's report
+                that sees fewer than np_min_holders wallets holding it, or more than np_max_sol_per_holder
+                SOL in for each, is no PASS but a wait, asked again after np_rug_recheck_s while the trigger
+                holds (newpairs.rug_cache_s).
   4. SIZER      how much of the balance goes into a coin.
   5. EXECUTOR   the paper fills: a Jupiter quote for the amount, less a latency haircut and the fees.
   6. RISK       how many positions and trades a night, a loss streak pause, a stop for the night.
   7. LEARNER    learns from the bot's own closed trades (memebot/learner.py, memory.json in the
                 data dir): a coin that looks like past losers is skipped, every 5th such skip is
-                bought at half size, and the size of any other buy follows the past results.
+                bought at half size, and the size of any other buy follows the past results. A new pair
+                it skips (or RISK blocks) after a RugCheck PASS is followed as a SHADOW trade: the same
+                exits on the same readings, outside the book, learned at shadow_weight (np_shadow_*).
   8. LOGGER     every decision with its reason, and the morning report.
 
 Paper trading: no wallet and no key. Every buy and sell is priced by a real Jupiter quote for that
@@ -175,6 +181,33 @@ DEFAULTS = {
     "learn_min_n": 8,                   # a bucket counts in the score from this many trades on
     "learn_mult_min": 0.5,              # any other buy is sized x(1 + score / 20), between these two
     "learn_mult_max": 1.5,
+    # SHADOW TRADES, so the LEARNER keeps learning (New Pairs). A coin whose trigger fired and that passed RugCheck,
+    # but was not bought because the LEARNER skipped it (or, with shadow_on_risk, because RISK said no entry: the
+    # pause after a losing streak, a full book, the night stop, the dump guard), is followed as if it had been
+    # bought: a position of shadow_usd priced by the curve maths with every cost of a real fill (pump.fun's fee, the
+    # impact, the latency haircut, the fees: the maths each real entry is checked against Jupiter by, 0.0 % off on the
+    # live fills), run by the very same exit code (np_exit: the plan, the ladder, the stops, the dump and migration
+    # exits, the time stops) on its curve's readings in the same loop turn, in a book of its own that never touches
+    # the real one (balance, positions, trades, RISK, the loss streak, the night's counts) nor anything a real trade
+    # needs: it never asks Jupiter (a failed quote would rest Jupiter's quotes for the next real entry, and a quote
+    # on the loop holds every held coin's next reading) and never changes the curves' poll rate (the entry rules
+    # count buy readings, so the poll rate must follow the real book only). When it closes, its P&L % after every
+    # cost goes into the LEARNER's buckets with weight shadow_weight. Why: the live morning of 2026-11-26 the
+    # LEARNER skipped about 80 % of the triggers (hour:day -17 % over 10, news:0-2 -17 % over 10), and a LEARNER that
+    # buys almost nothing learns almost nothing (1 in 5 skips bought at the minimum): a bucket that went bad on 10
+    # trades would stay bad for good. A shadow is still paper on paper: no failed or late transaction, no honeypot
+    # sell simulation (it asks no quote; a pump.fun curve buys back by its maths), it sells at the very reading that
+    # decided the sale, where a real sale fills a moment later (the live HOGZ sale filled 1.9 % under its reading),
+    # and while no real coin is held its readings come curve_idle_sec (1 s) apart, not 0.5 s: a fast stop or dump
+    # can be decided a reading later. Rosy on some exits, late on others: hence half a real trade's weight, a guess
+    # from that mechanism, not a fit (eleven trades fit nothing).
+    "shadow_on": True,
+    "shadow_on_risk": True,             # RISK's "no entry" followed too (not the session's or a job's last minutes)
+    "shadow_usd": 0.0,                  # the nominal order; 0: what the SIZER would size now (position_pct of the
+                                        # equity, at least min_order_usd), never cut to the cash
+    "shadow_weight": 0.5,               # a shadow's weight in the LEARNER's buckets (a real trade: 1; 0: not learned)
+    "shadow_max_open": 20,              # shadows at once; their curves stay polled while open (rec_max_keys: the
+                                        # watch list first, then the shadows, then the recorder's follow-up)
     # paper costs
     "network_fee_sol": 0.0005,
     "latency_slip_pct": 1.0,
@@ -202,6 +235,19 @@ DEFAULTS = {
     "np_max_holder_pct": 12.0,          # one holder other than the curve
     "np_max_top10_pct": 35.0,           # the top 10, the curve left out
     "np_rug_bad_risks": ["rugged tokens", "single holder ownership"],
+    # ENTRY QUALITY (newpairs.py has the reasons in full): RugCheck must see enough WALLETS holding the coin (its
+    # empty accounts and the curve's left out) for the SOL that came in. The live morning of 2026-11-26, measured
+    # before the 45 s age floor: 7 of the 10 entries passed RugCheck on a report that saw 0-4 holders (not indexed
+    # yet) and all 4 dumps were among them (2.9-4.4 SOL sold out of 3.3-4.3 SOL in: a handful of early wallets);
+    # under the floor 3 of those dumps come before 45 s (np_dump_sol rejects them), and the rules' own evidence is
+    # MEME, BST and YARL. Eleven trades fit no number: these are guesses from that mechanism, every one a backtest
+    # lever (backtest.py DEFAULT_GRID), for the tapes to judge
+    "np_min_holders": 10,               # fewer wallets holding the coin by RugCheck's report: no PASS, "waiting"
+    "np_rug_recheck_s": 4.0,            # ... and it is asked for again after this, not reused for np_rug_cache_s
+    "np_max_sol_per_holder": 0.5,       # more SOL in than this for each wallet holding it: "waiting" the same way
+                                        # (0: off); never a SHADOW while it waits
+    "np_max_buy_sol": 0.0,              # one buy reading above this many SOL rejects for good when it fires (0: off;
+                                        # the first reading holds the launch's snipers, RugCheck judges wallets)
     "np_max_age_s": 180,                # the trigger, first in: within this many seconds of the launch
     "np_min_sol": 3.0,                  # real SOL in since the launch
     "np_min_buys": 8,                   # readings with the real SOL up
@@ -924,6 +970,64 @@ def usd(x):
     return ("$%.2f" % x) if abs(x) < 1000 else ("$%.1fk" % (x / 1000.0))
 
 
+# SHADOW TRADES in state.json ("shadow") and on the page (Night.np_shadow_*): counts and the last closed ones only.
+# The open shadows live in memory: a restart drops them (the log says so), and nothing here can break a load.
+SHADOW_ROWS = 20                        # the closed shadows the panel lists and state.json keeps
+SHADOW_KINDS = ("learner", "risk")      # why it was not bought: the LEARNER skipped it, or RISK said no entry
+
+
+def shadow_stat(x):
+    """{"n", "wins", "sum" (of the P&L %)} back from state.json, repaired."""
+    x = x if isinstance(x, dict) else {}
+    n = int(max(0.0, min(1e9, f(x.get("n")))))
+    return {"n": n, "wins": int(min(n, max(0.0, f(x.get("wins"))))), "sum": round(max(-1e9, min(1e9, f(x.get("sum")))), 4)}
+
+
+def shadow_cell(v):
+    """A shadow row's value from state.json: short text, a finite number, a bool or None (anything else: None)."""
+    if v is None or isinstance(v, bool):
+        return v
+    if isinstance(v, str):
+        return v[:120]
+    if isinstance(v, (int, float)):
+        return v if math.isfinite(v) else None
+    return None
+
+
+def shadow_book(x):
+    """state.json's "shadow" back, repaired (a missing, old or hand-edited one starts over: it is a count and a view,
+    never the book): {"n", "wins", "sum", "by": {"learner": {..}, "risk": {..}}, "closed": [the last SHADOW_ROWS
+    rows], "open": [the symbols open at the last save]}."""
+    x = x if isinstance(x, dict) else {}
+    out = shadow_stat(x)
+    by = x.get("by") if isinstance(x.get("by"), dict) else {}
+    out["by"] = {k: shadow_stat(by.get(k)) for k in SHADOW_KINDS}
+    rows = x.get("closed") if isinstance(x.get("closed"), list) else []
+    out["closed"] = [{str(k)[:24]: shadow_cell(v) for k, v in list(r.items())[:30]}
+                     for r in rows[-SHADOW_ROWS:] if isinstance(r, dict)]
+    opened = x.get("open") if isinstance(x.get("open"), list) else []
+    out["open"] = [s[:24] for s in opened[:100] if isinstance(s, str)]
+    return out
+
+
+def shadow_view(book, open_rows=None):
+    """(panel "shadows": the open ones (open_rows, the Night's) then the last closed ones, newest first; panel
+    "shadow_stats": the closed shadows' n, wins, win rate % and mean P&L % after every cost, all of them and by why
+    they were not bought ("learner", "risk"), and how many are open). The stats count every shadow since state.json
+    has them, not one night's."""
+    book = shadow_book(book)
+
+    def stat(s):
+        n = s["n"]
+        return {"n": n, "wins": s["wins"], "win_rate": round(s["wins"] * 100.0 / n, 1) if n else None,
+                "mean_pnl_pct": round(s["sum"] / n, 2) if n else None}
+    opened = list(open_rows or [])
+    stats = dict(stat(book), open=len(opened))
+    for k in SHADOW_KINDS:
+        stats[k] = stat(book["by"][k])
+    return opened + list(reversed(book["closed"])), stats
+
+
 def skip_wait_min(cfg):
     """Minutes a coin the LEARNER skipped waits before the scanner looks at it again: reenter_min,
     like a coin after its exit, but 20 when that is under a minute (-1 means never again tonight
@@ -982,6 +1086,13 @@ class Night(object):
         self.fill_note = ""                             # how the last sale was priced, for its log line
         self.quote_out = 0                              # the last quote's outAmount (before the haircut)
         self.rec = None                                 # the tape recorder (attach() starts it with the feeds)
+        # SHADOW TRADES (np_shadow_*): coins not bought, followed as if they had been, in memory only (a restart
+        # drops the open ones and says so); state.json keeps their counts and the last closed ones (st["shadow"])
+        self.shadows = {}                               # mint -> a shadow position (a real position's fields)
+        self.np_shadow_wl = newpairs.Watchlist(cfg) if self.wl is not None else None    # each shadow's own coin
+        self.np_shadowed = {}                           # mint -> when it was shadowed: one shadow a coin a run
+        st["shadow"] = shadow_book(st.get("shadow"))
+        self.shadow_lost = st["shadow"].pop("open", [])   # open at the last save: dropped (said in begin())
         if self.wl is not None:
             for mint, pos in st["positions"].items():   # a restart keeps the book: held new pairs are watched again
                 if pos.get("strategy") == "new_pairs":
@@ -1025,6 +1136,10 @@ class Night(object):
                 night_id, usd(st["balance"]), len(AGENTS), self.cfg["session_start"], self.cfg["session_end"]))
         if self.mem_off and not self.mem_said:          # said here: the night's log exists now
             self.learner_off(self.mem_off)
+        if self.shadow_lost:                            # the shadows a restart dropped (memory only), said once
+            lost, self.shadow_lost = self.shadow_lost, []
+            self.log("LEARNER", None, "shadow", "SHADOW %d open shadow trade%s dropped by the restart, not learned: %s" % (
+                len(lost), "" if len(lost) == 1 else "s", ", ".join(lost[:8]) + (" ..." if len(lost) > 8 else "")))
         if self.wl is None and "new_pairs" in strategies(self.cfg) and "np_off" not in self.np_said:
             self.np_said["np_off"] = self.epoch()       # config.json asks for New Pairs, a module is missing
             self.log("LOGGER", None, "off", "new pairs off: %s · the night goes on without them" % np_off_why(self.cfg))
@@ -1061,6 +1176,12 @@ class Night(object):
         raw = int(int(q["outAmount"]) * (1 - self.cfg["latency_slip_pct"] / 100.0))
         if raw <= 0:
             return None
+        self.quote_out = int(q["outAmount"])           # before the haircut: the curve maths is checked against it
+        return self.position(mint, fx, usd_in, raw, decimals, reason, fee_sol, f(q.get("priceImpactPct")) * 100, sol_usd)
+
+    def position(self, mint, fx, usd_in, raw, decimals, reason, fee_sol, impact_pct, sol_usd):
+        """A new position's record: usd_in bought raw token units (after the haircut), the order's fee on top of
+        the cost (buy(), and a SHADOW's entry by the curve maths)."""
         tokens_ui = raw / 10.0 ** decimals
         fee = {} if fee_sol is None else {"fee_sol": fee_sol}
         cost = usd_in + self.fee_usd(sol_usd, fee)
@@ -1068,10 +1189,13 @@ class Night(object):
                "raw": raw, "decimals": decimals, "tokens_ui": tokens_ui, "cost": round(cost, 4),
                "entry_price": usd_in / tokens_ui, "opened": self.ts(), "peak": usd_in / tokens_ui,
                "last": usd_in / tokens_ui, "tp1_done": False, "sold_usd": 0.0, "reason": reason,
-               "hist": [usd_in / tokens_ui], "impact_pct": round(f(q.get("priceImpactPct")) * 100, 2)}
+               "hist": [usd_in / tokens_ui], "impact_pct": round(impact_pct, 2)}
         pos.update(fee)
-        self.quote_out = int(q["outAmount"])           # before the haircut: the curve maths is checked against it
         return pos
+
+    def sale_usd(self, sol, sol_usd, pos):
+        """Dollars a sale that brings `sol` SOL leaves: less the latency haircut and the order's network fee."""
+        return sol * sol_usd * (1 - self.cfg["latency_slip_pct"] / 100.0) - self.fee_usd(sol_usd, pos)
 
     def sell_quote(self, pos, raw, sol_usd, sim=False):
         """USD a paper sale of raw token units brings, after fees and the haircut, or None (no route). A
@@ -1085,7 +1209,7 @@ class Night(object):
             return self.np_curve_sale(pos, raw, sol_usd)
         sol = int(q["outAmount"]) / 1e9
         self.quote_out = int(q["outAmount"])
-        return sol * sol_usd * (1 - self.cfg["latency_slip_pct"] / 100.0) - self.fee_usd(sol_usd, pos)
+        return self.sale_usd(sol, sol_usd, pos)
 
     def close_part(self, mint, frac, why, sol_usd, take=None, t_reading=None):
         """Sells frac of what is left of a position. take: plan.py's ladder decision (its log line);
@@ -1653,7 +1777,11 @@ class Night(object):
             return None
 
     def np_holding(self):
-        """The curves are polled every curve_poll_sec while a new pair is held, else curve_idle_sec."""
+        """The curves are polled every curve_poll_sec while a new pair is held, else curve_idle_sec. The REAL book
+        only: the poll rate is every watched coin's, and the entry rules count buy READINGS (np_min_buys, the buy
+        share), so an open SHADOW must not change it, or a shadow would change which real coins are bought. A
+        shadow's readings come at whatever rate the real book sets (1 s apart while nothing real is held): a fast
+        stop or dump can be decided a reading later than a held coin's would be; shadow_weight discounts that."""
         self.np_call("set_holding", any(p.get("strategy") == "new_pairs" for p in self.state["positions"].values()))
 
     def np_once(self, key, agent, coin, action, text):
@@ -1679,6 +1807,11 @@ class Night(object):
         except Exception as e:                          # noqa: BLE001 - no tape, the night goes on
             self.rec = None
             self.log("LOGGER", None, "error", "tape recorder off: %s: %s" % (type(e).__name__, str(e)[:160]))
+            return
+        try:                                            # it follows the open shadows' coins (their readings on the
+            self.rec.kept = lambda: list(self.shadows)  # tape, in rec_max_keys); a recorder without the hook just
+        except Exception:                               # noqa: BLE001 - keeps the attribute
+            pass
 
     def rec_call(self, name, *args):
         """rec.<name>(*args), never raising into the loop. -> its answer, or None (off, or it failed)."""
@@ -1696,7 +1829,7 @@ class Night(object):
             except Exception:                           # noqa: BLE001
                 pass
             for m in follows:                           # the curves it kept polled go: the poller is the exits'
-                if self.wl is not None and self.wl.get(m) is None:
+                if self.wl is not None and self.wl.get(m) is None and m not in self.shadows:
                     self.np_call("unwatch", m)
             text = "tape recorder off: %s: %s: %s · the trading goes on, without a tape" % (
                 name, type(e).__name__, str(e)[:160])
@@ -1710,7 +1843,7 @@ class Night(object):
         if self.rec is not None and self.sol_px:
             self.rec_call("sol", self.sol_px[1])
         for m in self.rec_call("tick", self.epoch()) or ():
-            if self.wl.get(m) is None:
+            if self.wl.get(m) is None and m not in self.shadows:     # an open shadow keeps its curve
                 self.np_call("unwatch", m)
 
     def np_rec_stats(self):
@@ -1719,12 +1852,13 @@ class Night(object):
         poller = getattr(self.feeds, "poller", None)
         return {"sol": self.sol_px[1] if self.sol_px else None, "poll_ok": getattr(poller, "ok", None),
                 "poll_calls": getattr(poller, "calls", None), "poll_ms": getattr(poller, "last_ms", None),
-                "watched": len(self.np_call("watched") or {}), "held": len(self.wl.held())}
+                "watched": len(self.np_call("watched") or {}), "held": len(self.wl.held()), "shadows": len(self.shadows)}
 
     def np_unwatch(self, mint):
-        if not self.rec_call("keep", mint):             # the recorder may keep it polled (rec_follow_s)
+        shadow = mint in self.shadows                   # an open shadow keeps its curve polled, and its NEWS window
+        if not self.rec_call("keep", mint) and not shadow:      # the recorder may keep it polled (rec_follow_s)
             self.np_call("unwatch", mint)
-        for d in (self.np_fired, self.np_hold, self.np_win, self.news_at, self.np_meta_rug):
+        for d in (self.np_fired, self.np_hold, self.np_meta_rug) + (() if shadow else (self.np_win, self.news_at)):
             d.pop(mint, None)
 
     def np_t(self, ev):
@@ -1865,23 +1999,25 @@ class Night(object):
             return
         t = self.np_t(ev)
         coin = self.wl.on_curve(mint, ev, t)
-        if coin is None:
-            return
-        if self.np_held(mint):
+        if coin is not None and self.np_held(mint):
             pos = self.state["positions"][mint]
             pos["moved_t"] = t                          # readings come only when the reserves changed: a trade
             self.np_window(mint, coin, t)
             self.np_exit(mint, coin, t, minutes_left, reading=True)
-        else:
+        elif coin is not None:
             self.np_judge(coin, t, minutes_left)
+        if mint in self.shadows:                        # a SHADOW's exits on the same reading, after the book's
+            self.np_shadow_safe("np_shadow_curve", mint, ev, t, minutes_left)
 
     def np_held(self, mint):
         """A position New Pairs holds (the migrated strategy's coins have exits of their own)."""
         return (self.state["positions"].get(mint) or {}).get("strategy") == "new_pairs"
 
     def np_migrate(self, ev, minutes_left):
-        """PumpPortal: a coin finished its curve. A held one is sold into the curve's last state."""
+        """PumpPortal: a coin finished its curve. A held one is sold into the curve's last state (a SHADOW too)."""
         mint = ev.get("mint")
+        if isinstance(mint, str) and mint in self.shadows:
+            self.np_shadow_safe("np_shadow_end", mint, ev, minutes_left)
         coin = self.wl.on_migrate(mint, self.epoch()) if isinstance(mint, str) else None
         if coin is None:
             return
@@ -1893,8 +2029,10 @@ class Night(object):
         """The curve account read as null 3 times: a held coin counts as migrated, a watched one that had
         readings is dropped. A watched coin that never had one is not: a load-balanced RPC node may not have
         seen a brand-new account yet (feeds.py: "closed, or not there yet"); its first reading comes when it
-        does, or the watch list's expiry lets it go at np_watch_s."""
+        does, or the watch list's expiry lets it go at np_watch_s. A SHADOW counts as migrated like a held coin."""
         mint = ev.get("mint")
+        if isinstance(mint, str) and mint in self.shadows:
+            self.np_shadow_safe("np_shadow_end", mint, ev, minutes_left)
         if self.np_held(mint):
             coin = self.wl.on_migrate(mint, self.epoch())
             self.np_exit(mint, coin, self.np_t(ev), minutes_left)
@@ -1911,11 +2049,17 @@ class Night(object):
             if pos.get("strategy") != "new_pairs":
                 self.wl.reject(coin, "held already (migrated)")
             return
-        act, _ = self.wl.judge(coin, t)
+        act, why = self.wl.judge(coin, t)
         if act == "fire":
             self.np_fire(coin, t, minutes_left)
         elif act == "wait" and coin.status == "watching":
             self.np_prefetch(coin)
+        elif act == "reject" and str(why).startswith("concentrated"):
+            # the trigger held, but one buy reading was bigger than np_max_buy_sol (newpairs.concentration): said
+            # once (a reject is for good), never bought and never a SHADOW: the rule is about the coin
+            self.np_once(("concentrated", coin.mint), "SCANNER", coin.symbol, "reject",
+                         "%s · the trigger held, not bought: a buyer that big can sell it all back into the curve "
+                         "at once" % why)
 
     # RugCheck on worker threads: asked when a coin is half way to its trigger, kept np_rug_cache_s
     def np_rug_ask(self, mint, why):
@@ -1954,10 +2098,13 @@ class Night(object):
         """The coin's RugCheck report: a cached one under np_rug_cache_s, or the call on its way when it has
         finished (asked now if need be). Never waited for: this thread runs every held coin's exits, so a
         slow RugCheck must not hold them. None: no report yet (no entry on this reading; the call wakes the
-        loop when it lands, and np_reports() buys then if it came within np_rug_timeout_s of the trigger)."""
+        loop when it lands, and np_reports() buys then if it came within np_rug_timeout_s of the trigger). A
+        report that leaves the coin waiting (too few holders seen for its entry) is kept np_rug_recheck_s only
+        (newpairs.rug_cache_s): the coin's next fire asks RugCheck again, one call a coin every 4 s at most and only
+        while its trigger holds (the prefetch keeps np_rug_cache_s)."""
         cfg, now = self.cfg, self.epoch()
         c = self.np_rug.get(mint)
-        if c and c["report"] is not None and now - c["at"] < f(cfg.get("np_rug_cache_s"), 30):
+        if c and c["report"] is not None and now - c["at"] < newpairs.rug_cache_s(c["report"], self.wl.get(mint), cfg):
             return c["report"]
         fut = self.np_rug_ask(mint, "fire")
         if fut is None:
@@ -1966,7 +2113,9 @@ class Night(object):
 
     def np_reports(self, minutes_left):
         """RugCheck calls that finished: into the cache; a coin waiting for its metadata gets it, a coin
-        that fired without a report goes on now if the report came within np_rug_timeout_s."""
+        that fired without a report goes on now if the report came within np_rug_timeout_s, and a coin whose last
+        report saw too few holders (newpairs.rug_waiting: its recheck) is judged again whenever the new one lands
+        (judge() fires only while the trigger still holds)."""
         now, cfg = self.epoch(), self.cfg
         for mint, job in list(self.np_jobs.items()):
             if not job[0].done():
@@ -1985,7 +2134,8 @@ class Night(object):
                 self.np_judge(coin, now, minutes_left)
                 continue
             fired = self.np_fired.pop(mint, None)
-            if fired is not None and now - fired <= f(cfg.get("np_rug_timeout_s"), 3.0) and coin.status == "watching":
+            if fired is not None and coin.status == "watching" and (
+                    now - fired <= f(cfg.get("np_rug_timeout_s"), 3.0) or newpairs.rug_waiting(coin)):
                 self.np_judge(coin, now, minutes_left)
         keep = 2 * max(f(cfg.get("np_rug_cache_s"), 30), f(cfg.get("np_rug_retry_s"), 5))
         for m in [m for m, c in self.np_rug.items() if now - c["at"] > keep]:
@@ -2013,6 +2163,8 @@ class Night(object):
         if isinstance(ok, int) and not isinstance(ok, bool) and ok > (self.poll_ok or 0):
             self.poll_ok = ok
             self.wl.touch(self.epoch(), self.wl.held())
+            if self.shadows and self.np_shadow_wl is not None:      # the shadows' curves are polled too
+                self.np_shadow_wl.touch(self.epoch())
 
     def np_fire(self, coin, t, minutes_left):
         """FIRST IN: the trigger fired on reading t. RISK, RUG CHECK (the report the prefetch asked for;
@@ -2031,6 +2183,7 @@ class Night(object):
             self.say_once("risk_said", why, "RISK", coin.symbol, "skip", "no entry: %s" % why)
             self.rec_call("decide", mint, "risk", why)
             self.wl.retry(coin)
+            self.np_shadow_safe("np_shadow_risk", coin, why, minutes_left)    # shadow_on_risk: a SHADOW if it passes RugCheck
             return
         if ("fire", mint, coin.trigger_t) not in self.np_said:
             self.np_said[("fire", mint, coin.trigger_t)] = now
@@ -2044,6 +2197,10 @@ class Night(object):
         ok, bad, holders = newpairs.rug_check_np(rep, coin, cfg)
         if ok is None:                                  # no report yet: np_reports() goes on when it lands
             self.np_fired.setdefault(mint, now)
+            if newpairs.rug_waiting(coin):              # too few holders for its entry: no PASS, no shadow either
+                self.np_once(("rug wait", mint), "RUG CHECK", coin.symbol, "wait",
+                             "%s · no entry until RugCheck sees enough: asked again every %g s while the trigger "
+                             "holds" % (newpairs.rug_text(coin), f(cfg.get("np_rug_recheck_s"), 4.0)))
             return
         self.np_fired.pop(mint, None)
         n["checked"] = n.get("checked", 0) + 1
@@ -2057,13 +2214,11 @@ class Night(object):
         if ("rug pass", mint) not in self.np_said:
             self.np_said[("rug pass", mint)] = now
             self.log("RUG CHECK", coin.symbol, "pass", newpairs.rug_text(coin))
-        # NEWS: the coin's links and the curve's momentum -> the hold plan
-        score, parts = holdplan.news_score(newpairs.news_info(coin), cfg)
-        plan = holdplan.new_plan(score, parts, holdplan.tiers_from_cfg(cfg), cfg)
-        labels = newpairs.labels(coin, None, plan, local(self.now, cfg["timezone"]).hour)
+        plan, labels = self.np_entry_plan(coin)        # NEWS: the hold plan; the LEARNER's labels
         d, explore = self.learn_decide(labels, coin.symbol)
         if d is not None and d["action"] == "skip":
             self.wl.reject(coin, "learner: skip")
+            self.np_shadow_safe("np_shadow_open", coin, plan, labels, "learner", "learner skip")   # still followed: a SHADOW
             return
         mult = d["mult"] if d is not None else 1.0
         sol_usd = self.sol_usd()
@@ -2093,28 +2248,18 @@ class Night(object):
             qwhy = getattr(self.m, "quote_why", None) or "no Jupiter route"
             self.say_once("np_quote_said", qwhy, "EXECUTOR", coin.symbol, "wait", "no buy yet: %s" % qwhy, every=60)
             return
-        sol_in = (pos["cost"] - self.fee_usd(sol_usd, pos)) / sol_usd   # the SOL the buy quote was for
-        buy_out = self.quote_out                        # its tokens, before the haircut
-        check = {"buy_pct": self.np_diff(curve_buy_tokens(coin.vsol, coin.vtok, sol_in, f(cfg.get("curve_fee_pct"), 1.25)),
-                                          buy_out / 1e6), "sell_pct": None}
-        back = self.sell_quote(pos, pos["raw"], sol_usd, sim=True)
-        if back is None and (getattr(self.m, "quote_why", None) or "").startswith("Jupiter"):
+        check, bad = self.np_sell_sim(pos, coin, sol_usd)
+        if bad == "jupiter":
             self.np_hold[mint] = now + 3                # Jupiter resting or its minute full: not a honeypot
             self.wl.retry(coin)
             return
-        # honeypot: what the two quotes alone lose, the SOL back for these tokens against the SOL in (pump.fun's
-        # fee and the price impact both ways, about 3 %), never the haircut and the fixed fees, which are the
-        # same for every coin and only big on a small order (a $5 explore at SOL $250: 10 % of it)
-        loss = (1 - self.quote_out / 1e9 * (buy_out / float(pos["raw"])) / sol_in) * 100 if back is not None else 100.0
-        if back is None or loss > cfg["max_roundtrip_loss_pct"]:
-            self.log("RUG CHECK", coin.symbol, "reject", "sell simulation: %s" % (
-                "can't sell (honeypot?)" if back is None else "would lose %.0f%% at once on the quotes" % loss))
+        if bad:
+            self.log("RUG CHECK", coin.symbol, "reject", "sell simulation: %s" % bad)
             self.wl.reject(coin, "sell simulation")
             n["filtered"] = n.get("filtered", 0) + 1
             n["last_rug"] = {"coin": coin.symbol, "pass": False}
             return
-        check["sell_pct"] = self.np_diff(curve_sell_sol(coin.vsol, coin.vtok, pos["raw"] / 1e6,
-                                                        f(cfg.get("curve_fee_pct"), 1.25)), self.quote_out / 1e9)
+        self.np_shadow_safe("np_shadow_drop", mint, "bought for real")    # a RISK shadow of it: the real trade teaches now
         if labels:
             pos["learn"] = labels
         pos.update({"strategy": "new_pairs", "plan": plan, "age_s": int(coin.age_s), "mcap_sol": round(coin.mcap_sol, 1),
@@ -2142,6 +2287,36 @@ class Night(object):
             ("curve maths %.1f%% off Jupiter" % worst) if worst != float("inf") else "curve maths not checked"))
         self.log("NEWS", coin.symbol, "plan", holdplan.plan_text(plan))
         self.rec_call("enter", mint, pos, coin, sol_usd)
+
+    def np_entry_plan(self, coin):
+        """NEWS at an entry (a real one or a SHADOW's): the coin's links and the curve's momentum -> (the hold plan,
+        the LEARNER's labels of the coin now)."""
+        cfg = self.cfg
+        score, parts = holdplan.news_score(newpairs.news_info(coin), cfg)
+        plan = holdplan.new_plan(score, parts, holdplan.tiers_from_cfg(cfg), cfg)
+        return plan, newpairs.labels(coin, None, plan, local(self.now, cfg["timezone"]).hour)
+
+    def np_sell_sim(self, pos, coin, sol_usd):
+        """The honeypot test after a buy quote (the last quote: buy() set quote_out): Jupiter's sale of the tokens
+        it got, right away. -> (the curve maths against both quotes {"buy_pct", "sell_pct"}, None when it passed,
+        "jupiter" when Jupiter gave no answer now (resting, its minute full: no verdict), else why it fails). What
+        the two quotes alone lose, the SOL back for these tokens against the SOL in (pump.fun's fee and the price
+        impact both ways, about 3 %), never the haircut and the fixed fees, which are the same for every coin and
+        only big on a small order (a $5 explore at SOL $250: 10 % of it)."""
+        cfg = self.cfg
+        fee = f(cfg.get("curve_fee_pct"), 1.25)
+        sol_in = (pos["cost"] - self.fee_usd(sol_usd, pos)) / sol_usd   # the SOL the buy quote was for
+        buy_out = self.quote_out                        # its tokens, before the haircut
+        check = {"buy_pct": self.np_diff(curve_buy_tokens(coin.vsol, coin.vtok, sol_in, fee), buy_out / 1e6),
+                 "sell_pct": None}
+        back = self.sell_quote(pos, pos["raw"], sol_usd, sim=True)
+        if back is None and (getattr(self.m, "quote_why", None) or "").startswith("Jupiter"):
+            return check, "jupiter"
+        loss = (1 - self.quote_out / 1e9 * (buy_out / float(pos["raw"])) / sol_in) * 100 if back is not None else 100.0
+        if back is None or loss > cfg["max_roundtrip_loss_pct"]:
+            return check, "can't sell (honeypot?)" if back is None else "would lose %.0f%% at once on the quotes" % loss
+        check["sell_pct"] = self.np_diff(curve_sell_sol(coin.vsol, coin.vtok, pos["raw"] / 1e6, fee), self.quote_out / 1e9)
+        return check, None
 
     def np_job_why(self):
         """RISK at the job's end (a night is two GitHub jobs, and the next one starts minutes later): no new
@@ -2173,19 +2348,22 @@ class Night(object):
         self.fill_note = " · by the curve maths (Jupiter: %s; it was %.1f%% off a quote at the entry)" % (
             getattr(self.m, "quote_why", None) or "no quote", max(diffs))
         pos["fill"] = "curve"
-        return sol * sol_usd * (1 - self.cfg["latency_slip_pct"] / 100.0) - self.fee_usd(sol_usd, pos)
+        return self.sale_usd(sol, sol_usd, pos)
 
-    def np_exit(self, mint, coin, t, minutes_left, px_usd=None, reading=False):
+    def np_exit(self, mint, coin, t, minutes_left, px_usd=None, reading=False, shadow=False):
         """FIRST OUT: one held new pair against its rules, on the reading that came at t (t None: no reading
         decided it, the 1 s step's pass or Jupiter's price): the end of the night (and of a job the next one
         takes over), the dump and migration exits (newpairs), the NEWS refresh when it is due (np_news:
         replan, fading), then the hold plan (plan.py: the hard stop, the ladder, the tier's time stop,
         break-even and the trailing stop after the first step), decided after the replan, then the two
         exits for a coin going nowhere (np_late_exit). Only an exit a reading's price decided is timed
-        from that reading (exit_ms, "out · 0.2 s after the reading"); the clock's exits are not reactions."""
-        pos = self.state["positions"].get(mint)
+        from that reading (exit_ms, "out · 0.2 s after the reading"); the clock's exits are not reactions.
+        shadow: a SHADOW trade's (self.shadows, coin its own copy of the coin): these very rules, its sales by
+        np_shadow_sell in close_part's place, never the book."""
+        pos = (self.shadows if shadow else self.state["positions"]).get(mint)
         if pos is None:
             return
+        sell = self.np_shadow_sell if shadow else self.close_part
         cfg = self.cfg
         sol_usd = self.sol_usd()
         if not sol_usd:
@@ -2217,15 +2395,16 @@ class Night(object):
         else:
             why, timed = (newpairs.exit_signal(coin, cfg) if coin is not None else None), True
         if why:
-            self.close_part(mint, 1.0, why, sol_usd, t_reading=t if timed else None)
+            sell(mint, 1.0, why, sol_usd, t_reading=t if timed else None)
             return
         if coin is not None and self.epoch() - self.news_at.setdefault(mint, self.epoch()) >= \
                 f(cfg.get("news_refresh_sec"), 30):
             self.news_at[mint] = self.epoch()
             plan, fade = self.np_news(mint, pos, coin, gain, pcfg)
             if fade:
-                self.log("NEWS", pos["symbol"], "fade", fade["why"])
-                self.close_part(mint, 1.0, fade["why"], sol_usd)
+                if not shadow:
+                    self.log("NEWS", pos["symbol"], "fade", fade["why"])
+                sell(mint, 1.0, fade["why"], sol_usd)
                 return
         d = holdplan.decide_exit(plan, gain, peak, held, pcfg) or self.np_late_exit(pos, plan, coin, gain, held)
         if d is None:
@@ -2233,8 +2412,8 @@ class Night(object):
             return
         tr = t if d.get("kind") in ("stop", "take", "trail", "breakeven") else None
         if d.get("final") or f(d.get("frac")) >= 0.999:
-            self.close_part(mint, 1.0, d["why"], sol_usd, take=d, t_reading=tr)
-        elif self.close_part(mint, d["frac"], d["why"], sol_usd, take=d, t_reading=tr):
+            sell(mint, 1.0, d["why"], sol_usd, take=d, t_reading=tr)
+        elif sell(mint, d["frac"], d["why"], sol_usd, take=d, t_reading=tr):
             holdplan.mark_step(plan, d, pcfg)
             holdplan.track(plan, gain, self.np_plan_cfg(pos, plan, coin, sol_usd))   # the stop for what is left
 
@@ -2342,7 +2521,7 @@ class Night(object):
         score, parts = holdplan.news_score(info, cfg)
         plan, note = holdplan.replan(pos.get("plan"), score, parts, gain, pcfg or cfg)
         pos["plan"] = plan
-        if note:
+        if note and not pos.get("shadow"):              # a SHADOW's replans are not the night's news
             self.log("NEWS", pos["symbol"], "replan", note)
         # "in profit" is counted in dollars: the gain must clear the trade's costs (np_even_gain), or a fading
         # exit would book a loss while saying it took a profit
@@ -2389,6 +2568,7 @@ class Night(object):
             else:
                 pos.pop("stale_said", None)
             self.np_exit(mint, coin, None, minutes_left, px_usd=px)    # no reading decided these: not timed
+        self.np_shadow_safe("np_shadow_second", minutes_left)
         self.np_summary(now)
         self.np_health(now)
         self.np_speed_view(now)
@@ -2500,6 +2680,320 @@ class Night(object):
                 setattr(self, name, None)
         self.rec_call("close")                          # the tape's last lines to disk (rec_close_wait_s at most)
 
+    # ---- SHADOW TRADES (DEFAULTS "shadow_*"): a coin whose trigger fired, that passed RugCheck and was not bought
+    # (the LEARNER skipped it; with shadow_on_risk, RISK said no entry) is followed as if it had been. Its position
+    # has a real position's fields and lives in self.shadows; its coin is a copy in self.np_shadow_wl, entered there
+    # (the dump exit counts the sells since its own entry, the stale guard and the poller's touches work on it); and
+    # np_exit() runs it by the very rules of a held coin on the same readings, after the book's. Its sales go through
+    # np_shadow_sell(), never close_part(): the balance, the positions, the trades, RISK's counts, the loss streak and
+    # the night's counts never see it. When it closes, the LEARNER learns its P&L % with shadow_weight. Paper on
+    # paper: a shadow that made money says the LEARNER may have skipped a winner, not that it would have been one.
+    def np_shadow_safe(self, name, *args):
+        """self.<name>(*args) for a SHADOW hook in the real paths (np_fire, a reading, the 1 s step, the panel): a
+        shadow's error must never cost a real trade or the exits' step. The first one switches the shadows off for the
+        run, said once: the open ones are dropped (not learned) and their curves let go; the trading goes on."""
+        if self.np_shadow_wl is None:
+            return None
+        try:
+            return getattr(self, name)(*args)
+        except Exception as e:                          # noqa: BLE001 - paper on paper is never worth a real trade
+            mints, self.np_shadow_wl = list(self.shadows), None
+            self.shadows.clear()
+            for m in mints:
+                try:
+                    self.np_shadow_release(m)
+                except Exception:                       # noqa: BLE001
+                    pass
+            text = "shadow trades off: %s: %s: %s · %d open dropped, not learned · the trading goes on" % (
+                name, type(e).__name__, str(e)[:160], len(mints))
+            self.m.errors.append(text)
+            self.log("LEARNER", None, "error", text)
+            return None
+
+    def np_shadow_why_not(self, mint):
+        """None when a shadow of mint may open now, else why not: "off", "already" (open now, or shadowed once this
+        run: one a coin), or the cap: shadow_max_open, and rec_max_keys less np_max_watch (the curves one poll call
+        still takes beside a full watch list: a shadow keeps its curve polled after the watch list lets it go)."""
+        cfg = self.cfg
+        if self.np_shadow_wl is None or not cfg.get("shadow_on", True):
+            return "off"
+        if mint in self.shadows or mint in self.np_shadowed:
+            return "already"
+        most = min(int(f(cfg.get("shadow_max_open"), 20)),
+                   int(f(cfg.get("rec_max_keys"), 100)) - int(f(cfg.get("np_max_watch"), 40)))
+        if len(self.shadows) >= most:
+            return "%d shadows open (max %d)" % (len(self.shadows), max(0, most))
+        return None
+
+    def np_shadow_usd(self):
+        """A shadow's nominal order: shadow_usd, or (0) what the SIZER would size now, position_pct of the equity and
+        at least min_order_usd (never cut to the cash: a shadow spends none)."""
+        cfg = self.cfg
+        fixed = f(cfg.get("shadow_usd"), 0.0)
+        if fixed > 0:
+            return fixed
+        return max(f(cfg.get("min_order_usd"), 5.0), self.equity({}) * f(cfg.get("position_pct"), 10.0) / 100.0)
+
+    def np_shadow_open(self, coin, plan, labels, kind, why):
+        """A SHADOW of a coin np_fire() did not buy after it passed RugCheck (kind "learner": the LEARNER skipped it;
+        "risk": RISK said no entry, why). Priced as a real entry of np_shadow_usd() on the reading that fired, by the
+        curve maths with every cost (np_shadow_curve_buy), never by Jupiter: a shadow's quote would share the real
+        book's Jupiter (its free minute, and the rest after a failure: Market.quote_pause, 10-60 s with no quote at
+        all, so the next REAL entry would wait) and its loop time. So it gets no honeypot sell simulation either.
+        plan and labels: the entry's (np_entry_plan). -> the shadow, or None."""
+        mint, cfg = coin.mint, self.cfg
+        no = self.np_shadow_why_not(mint)
+        if no is not None:
+            if no not in ("off", "already"):
+                self.say_once("shadow_said", no, "LEARNER", coin.symbol, "shadow", "SHADOW %s not followed: %s" % (
+                    coin.symbol, no))
+            return None
+        sol_usd = self.sol_usd()
+        if not sol_usd or not f(coin.price) > 0:
+            return None
+        now = self.epoch()
+        self.np_shadowed[mint] = now
+        fee_sol = f(cfg.get("network_fee_sol"), 0.0005) + f(cfg.get("priority_fee_sol"), 0.0)
+        usd_in = self.np_shadow_usd() - fee_sol * sol_usd    # as np_fire: the order's fee inside its size
+        fx = {"symbol": coin.symbol or "?", "name": coin.name, "url": "https://pump.fun/coin/%s" % mint}
+        pos = self.np_shadow_curve_buy(coin, fx, usd_in, sol_usd, fee_sol) if usd_in > 0 else None
+        sc = newpairs.Coin.from_dict(coin.to_dict()) if pos is not None else None
+        if sc is None or not self.np_shadow_wl.adopt(sc):
+            return None
+        self.np_shadow_wl.mark_entered(sc, now, coin.price)
+        pos.update({"strategy": "new_pairs", "plan": plan, "age_s": int(coin.age_s), "mcap_sol": round(coin.mcap_sol, 1),
+                    "dev_pct": round(coin.dev_pct, 2), "sol_in": round(coin.sol_in, 2), "moved_t": now,
+                    "shadow": kind, "shadow_why": str(why or kind)[:120]})
+        if labels:
+            pos["learn"] = labels
+        self.shadows[mint] = pos
+        self.np_win[mint] = [[coin.t0, 0, 0, coin.rsol0], [now, coin.buys, coin.sells, coin.rsol]]
+        self.news_at[mint] = now
+        self.log("LEARNER", coin.symbol, "shadow", "SHADOW %s · not bought (%s) · followed as if bought: %s at %s (curve "
+                                                   "maths, every cost) · same exits, outside the book" % (
+                     coin.symbol, pos["shadow_why"], usd(pos["cost"]), ("%.10f" % pos["entry_price"]).rstrip("0")))
+        plan_doc = plan if isinstance(plan, dict) else {}
+        self.np_rec_shadow(mint, "open", {"kind": kind, "why": pos["shadow_why"], "usd": pos["cost"], "raw": pos["raw"],
+                                          "px": pos["entry_price"], "px_sol": coin.price, "sol": sol_usd,
+                                          "fill": pos.get("fill"), "tier": plan_doc.get("entry_tier") or plan_doc.get("tier"),
+                                          "score": plan_doc.get("entry_score"), "learn": labels})
+        return pos
+
+    def np_shadow_curve_buy(self, coin, fx, usd_in, sol_usd, fee_sol):
+        """A shadow's entry by the curve maths on the reading that fired: usd_in of SOL through pump.fun's fee and the
+        curve's price impact (curve_buy_tokens: the maths each real entry checks against Jupiter, 0.0 % off on the
+        live fills), less the latency haircut, the order's network and priority fees on top: buy()'s costs. -> the
+        position, or None."""
+        cfg = self.cfg
+        fee = f(cfg.get("curve_fee_pct"), 1.25)
+        sol = usd_in / sol_usd
+        got = curve_buy_tokens(coin.vsol, coin.vtok, sol, fee)
+        raw = int(got * 1e6 * (1 - cfg["latency_slip_pct"] / 100.0))
+        if not (usd_in > 0 and raw > 0 and f(coin.price) > 0):
+            return None
+        spot = sol * (1 - fee / 100.0) / coin.price     # the tokens at the reading's price, the fee paid
+        pos = self.position(coin.mint, fx, usd_in, raw, 6, coin.why, fee_sol, max(0.0, (1 - got / spot) * 100), sol_usd)
+        pos["fill"] = "curve"
+        return pos
+
+    def np_shadow_risk(self, coin, why, minutes_left):
+        """RISK said no entry (np_fire, why): with shadow_on_risk, a coin that passes RugCheck, as a real entry would
+        have to, is followed as a SHADOW ("risk"); never at the session's or a job's end (nothing is bought there,
+        RISK or not). The report is the one the prefetch asked for; none yet: np_reports() judges the coin again when
+        it lands (np_fired) and RISK sends it here again. Quiet: no RUG CHECK line, no night count (RISK said why)."""
+        cfg, mint = self.cfg, coin.mint
+        if not cfg.get("shadow_on_risk", True) or minutes_left <= cfg["no_entries_last_min"] \
+                or self.np_job_why() is not None:
+            return
+        no = self.np_shadow_why_not(mint)
+        if no is not None:                              # off, shadowed already, or the cap (said, no RugCheck call)
+            if no not in ("off", "already"):
+                self.say_once("shadow_said", no, "LEARNER", coin.symbol, "shadow", "SHADOW %s not followed: %s" % (
+                    coin.symbol, no))
+            return
+        # a FAIL opens nothing: coin.rug says it, and judge() rejects the coin on its next reading
+        ok = newpairs.rug_check_np(self.np_rug_get(mint), coin, cfg)[0]
+        if ok is None:                                  # no report yet (or not one to judge on): when it lands
+            self.np_fired.setdefault(mint, self.epoch())
+        elif ok:
+            plan, labels = self.np_entry_plan(coin)
+            self.np_shadow_open(coin, plan, labels, "risk", why)
+
+    def np_shadow_curve(self, mint, ev, t, minutes_left):
+        """A curve reading of a SHADOW's coin: into its own copy, then its exits (np_exit), as a held coin's."""
+        sc = self.np_shadow_wl.on_curve(mint, ev, t)
+        pos = self.shadows.get(mint)
+        if sc is None or pos is None:
+            return
+        pos["moved_t"] = t                              # readings come only when the reserves changed: a trade
+        self.np_window(mint, sc, t)
+        self.np_exit(mint, sc, t, minutes_left, reading=True, shadow=True)
+
+    def np_shadow_end(self, mint, ev, minutes_left):
+        """PumpPortal's migrate, or the curve account gone: a SHADOW is sold into its curve's last state, as a held coin."""
+        sc = self.np_shadow_wl.on_migrate(mint, self.epoch())
+        if sc is not None:
+            self.np_exit(mint, sc, self.np_t(ev), minutes_left, shadow=True)
+
+    def np_shadow_second(self, minutes_left):
+        """The 1 s step's part for the SHADOWS (np_second): the time stops and the clock's other exits, as a held coin's.
+        One without a reading for np_stale_s keeps its last price: a real coin asks Jupiter's price v3 then, a shadow
+        never spends Jupiter's budget on that (its quiet-curve exit still comes)."""
+        if self.np_shadow_wl is None:
+            return
+        now = self.epoch()
+        for mint in list(self.shadows):
+            pos, sc = self.shadows.get(mint), self.np_shadow_wl.get(mint)
+            if pos is None:
+                continue
+            px = None
+            if sc is None or newpairs.stale(sc, self.cfg, now):
+                px = pos.get("last") or pos["entry_price"]
+            self.np_exit(mint, sc, None, minutes_left, px_usd=px, shadow=True)    # no reading decided these
+        self.np_shadow_wl.expire(now)
+        for m in [m for m, t in self.np_shadowed.items() if now - t > 3600 and m not in self.shadows]:
+            del self.np_shadowed[m]                     # a coin fires within np_max_age_s of its launch at most
+
+    def np_shadow_sale(self, pos, coin, raw, sol_usd):
+        """What selling raw of a SHADOW would bring after every cost: the curve maths on the shadow's last reading,
+        pump.fun's fee and the impact (curve_sell_sol), the latency haircut and the order's fees (sale_usd), never a
+        Jupiter quote (np_shadow_open says why). The curve maths prices the reading that decided the sale, as the
+        real curve-maths fallback does; a real sale fills a moment later (the live HOGZ sale 1.9 % under its
+        reading). -> (dollars, "curve") or (None, None)."""
+        if raw <= 0 or not sol_usd:
+            return None, None
+        if coin is None or not (f(coin.vsol) > 0 and f(coin.vtok) > 0):
+            return None, None
+        sol = curve_sell_sol(coin.vsol, coin.vtok, raw / 10.0 ** pos.get("decimals", 6), f(self.cfg.get("curve_fee_pct"), 1.25))
+        return (self.sale_usd(sol, sol_usd, pos), "curve") if sol > 0 else (None, None)
+
+    def np_shadow_sell(self, mint, frac, why, sol_usd, take=None, t_reading=None):
+        """close_part() for a SHADOW (np_exit's sale when shadow): frac of what is left, priced by np_shadow_sale(), the
+        same arithmetic on the shadow's own record (raw, tokens, sold_usd, the first step done); the last sale closes it
+        (np_shadow_close). A sale with no price at all waits 5 s, as a real one. -> True when it sold."""
+        pos = self.shadows.get(mint)
+        if pos is None:
+            return False
+        raw = pos["raw"] if frac >= 0.999 else int(pos["raw"] * frac)
+        got, fill = self.np_shadow_sale(pos, self.np_shadow_wl.get(mint), raw, sol_usd)
+        if got is None:
+            pos["retry_at"] = self.epoch() + 5
+            return False
+        pos["sold_usd"] += got
+        if pos.get("fill") != fill:
+            pos["fill"] = "mixed"                       # Jupiter's quotes and the curve maths both priced it
+        final = frac >= 0.999
+        doc = {"frac": round(frac, 4), "raw": raw, "usd": got, "why": why, "fill": fill, "final": final, "px": pos.get("last")}
+        if final:
+            pnl = pos["sold_usd"] - pos["cost"]
+            doc.update(pnl=round(pnl, 4), pnl_pct=round(pnl / pos["cost"] * 100, 2) if pos["cost"] > 0 else None)
+        self.np_rec_shadow(mint, "sell", doc)
+        if final:
+            self.np_shadow_close(mint, why, take)
+            return True
+        pos["raw"] -= raw
+        pos["tokens_ui"] = pos["raw"] / 10.0 ** pos["decimals"]
+        pos["tp1_done"] = True
+        return True
+
+    def np_shadow_close(self, mint, why, take=None):
+        """A SHADOW sold to the last token: its P&L % after every cost (as a trade's pnl_pct) teaches the LEARNER with
+        shadow_weight, goes into the shadow counts and the panel's last closed, and the log says what it would have
+        made. -> the closed row."""
+        pos = self.shadows.pop(mint, None)
+        if pos is None:
+            return None
+        self.np_shadow_wl.drop(mint)
+        cost = f(pos.get("cost"))
+        pnl = f(pos.get("sold_usd")) - cost
+        pnl_pct = round(pnl / cost * 100, 1) if cost > 0 else 0.0
+        row = self.np_shadow_row(mint, pos)
+        last = int(f(take.get("steps"), 1)) if isinstance(take, dict) and take.get("kind") == "take" else 0
+        text, w = self.np_shadow_learn(pos, pnl_pct)
+        row.update(status="closed", closed=self.ts(), exit=str(why)[:120], pnl=round(pnl, 2), pnl_pct=pnl_pct,
+                   steps=row["steps"] + last, weight=w)
+        book = self.state["shadow"]
+        night = self.state.get("night")
+        tonight = shadow_stat(night.get("shadow")) if isinstance(night, dict) else None   # this night's own counts
+        for st in (book, book["by"]["risk" if pos.get("shadow") == "risk" else "learner"], tonight):
+            if st is None:
+                continue
+            st["n"] += 1
+            st["wins"] += 1 if pnl > 0 else 0
+            st["sum"] = round(st["sum"] + pnl_pct, 4)
+        if tonight is not None:
+            night["shadow"] = tonight                   # the morning report's figure (report_text): this night only
+        book["closed"] = (book["closed"] + [row])[-SHADOW_ROWS:]
+        self.log("LEARNER", pos["symbol"], "shadow", "SHADOW %s would have made %+.1f%% (%s) · %s" % (
+            pos["symbol"], pnl_pct, why, text))
+        self.np_shadow_release(mint)
+        return row
+
+    def np_shadow_learn(self, pos, pnl_pct):
+        """The LEARNER learns a closed shadow: learner.update(labels, P&L %, weight=shadow_weight, shadow=True). -> (the
+        log's words, the weight it learned with: 0 when it did not)."""
+        w = min(1.0, max(0.0, f(self.cfg.get("shadow_weight"), 0.5)))
+        if self.mem is None:
+            return "not learned (LEARNER off)", 0.0
+        if not pos.get("learn"):
+            return "not learned (no labels)", 0.0
+        if w <= 0:
+            return "not learned (shadow_weight 0)", 0.0
+        if not getattr(learner, "WEIGHTS", False):      # a learner.py without weights would count it as a whole trade
+            return "not learned (learner.py takes no weights)", 0.0
+        self.learn("update", self.mem, pos["learn"], pnl_pct, w, True)
+        if self.mem is None:                            # update() failed: the LEARNER is out (its line says why)
+            return "not learned (LEARNER off)", 0.0
+        self.learn_save()
+        said = self.learn("learned", self.mem, pos["learn"])
+        return "learned x%g%s" % (w, " · " + said if said else ""), w
+
+    def np_shadow_drop(self, mint, why):
+        """A SHADOW ends without a result (why: "bought for real": from now on the real trade teaches the LEARNER): out
+        of the shadow book, not learned, said in the log."""
+        pos = self.shadows.pop(mint, None)
+        if pos is None:
+            return
+        self.np_shadow_wl.drop(mint)
+        self.log("LEARNER", pos["symbol"], "shadow", "SHADOW %s dropped: %s · not learned" % (pos["symbol"], why))
+        self.np_rec_shadow(mint, "drop", {"why": why})
+        self.np_shadow_release(mint)
+
+    def np_shadow_release(self, mint):
+        """A shadow that closed or dropped lets its curve go, unless the watch list still has the coin (its expiry lets
+        it go) or the recorder follows it (its tick lets it go). Its NEWS window goes."""
+        for d in (self.np_win, self.news_at):
+            d.pop(mint, None)
+        if self.wl is not None and self.wl.get(mint) is not None:
+            return
+        if self.rec is not None and mint in (getattr(self.rec, "follow", None) or {}):
+            return
+        self.np_call("unwatch", mint)
+
+    def np_shadow_row(self, mint, pos):
+        """A shadow as the panel lists it; an open one with its mark now (the price, the sale's costs not taken)."""
+        plan = pos.get("plan") if isinstance(pos.get("plan"), dict) else {}
+        cost = f(pos.get("cost"))
+        mark = f(pos.get("tokens_ui")) * f(pos.get("last")) + f(pos.get("sold_usd"))
+        return {"symbol": pos.get("symbol"), "mint": mint, "status": "open", "kind": pos.get("shadow"),
+                "why": pos.get("shadow_why"), "opened": pos.get("opened"), "cost": round(cost, 2),
+                "pnl_pct": round((mark / cost - 1) * 100, 1) if cost > 0 else None,
+                "tier": plan.get("entry_tier") or plan.get("tier"), "score": plan.get("entry_score"),
+                "steps": int(f(plan.get("sold"))), "fill": pos.get("fill"), "age_s": pos.get("age_s"),
+                "sol_in": pos.get("sol_in")}
+
+    def np_shadow_rows(self):
+        """The open SHADOWS for the panel, the newest first."""
+        return [self.np_shadow_row(m, p) for m, p in sorted(self.shadows.items(), key=lambda kv: str(kv[1].get("opened")),
+                                                            reverse=True)]
+
+    def np_rec_shadow(self, mint, act, doc):
+        """A SHADOW's line on the tape ({"k": "shadow", "act": "open" | "sell" | "drop", ...}) when the recorder has
+        the hook (an older recorder.py: no line, nothing else changes). Never a "buy" or "sell" line: a replay's live
+        check compares those with the real trades."""
+        if self.rec is not None and callable(getattr(self.rec, "shadow", None)):
+            self.rec_call("shadow", mint, act, doc)
+
     def sol_read(self):
         """SOL in dollars from the market (Jupiter, then DexScreener: up to 4 s each when they hang), or 0."""
         try:
@@ -2567,10 +3061,13 @@ class Night(object):
         if self.wl is not None:
             self.np_speed_view(self.epoch())            # a trade's own panel has its latency
         return panel(self.state, self.cfg, prices or {}, self.ts(), self.m.errors[-5:], speed=self.speed,
-                     live_stats=self.live.stats() if self.live is not None else None, watch=self.np_rows())
+                     live_stats=self.live.stats() if self.live is not None else None, watch=self.np_rows(),
+                     shadows=self.np_shadow_safe("np_shadow_rows"))
 
     def save(self, prices=None, doc=None):
         self.np_sync()
+        # the open SHADOWS by name only: a restart drops them and says which (begin())
+        self.state["shadow"]["open"] = [str(p.get("symbol") or "?")[:24] for p in self.shadows.values()]
         doc = doc or self.panel_doc(prices)
         write_json(os.path.join(self.dir, "state.json"), self.state)
         write_json(os.path.join(self.dir, "panel.json"), doc)
@@ -2724,12 +3221,15 @@ def stream_view(cfg, on=None):
             "ws": [b["ws"] for b in cfg.get("live_brokers") or [] if b.get("ws")]}
 
 
-def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=None):
+def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=None, shadows=None):
     """What the page shows: the prompt, the balance, the night's log, open positions, trades, and
     "watch": the New Pairs being watched now (newpairs.row(): symbol, name, mint, age_s, sol_in, buys,
-    sells, rise_pct, mcap_sol, dev_pct, big_sell, x, tg, web, status, why), newest first, 20 at most."""
+    sells, rise_pct, mcap_sol, dev_pct, big_sell, x, tg, web, status, why), newest first, 20 at most.
+    "shadows": the SHADOW trades (coins not bought, followed for the LEARNER: Night.np_shadow_row(), the open ones
+    from `shadows` then the last 20 closed) and "shadow_stats" (shadow_view()): never part of the balance or trades."""
     n = state.get("night") or state.get("last_night") or {}
     pos, eq = positions_view(state, prices)
+    shadow_rows, shadow_stats = shadow_view(state.get("shadow"), shadows)
     try:
         with open(PROMPT, encoding="utf-8") as fh:
             prompt = fh.read()
@@ -2744,7 +3244,8 @@ def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=
             "log": (n.get("decisions") or [])[-200:], "nights": state.get("nights", [])[-30:], "errors": list(errors),
             "stream": stream_view(cfg, None if live_stats is None else True), "speed": speed_view(cfg, speed),
             "learner": state.get("learner_summary") or None, "live_stats": dict(live_stats or {}),
-            "watch": list(watch or [])[:20], "strategies": strategies(cfg)}
+            "watch": list(watch or [])[:20], "strategies": strategies(cfg),
+            "shadows": shadow_rows, "shadow_stats": shadow_stats}
 
 
 SPEED_COUNTERS = ("watch_ms", "last_scan_ms", "scans_per_min", "creates_per_min", "watching", "followed")
@@ -3140,6 +3641,22 @@ def report_text(state):
     for t in trades:
         lines.append("- %s: %s → %s (%+.0f %%), %s" % (t["symbol"], usd(t["cost"]), usd(t["proceeds"]), t["pnl_pct"], t["why"]))
     lines += ["", "Skenov %d, označených %d." % (n.get("scans", 0), n.get("flagged", 0))]
+    # the SHADOW trades of THIS night (closed in it: night["shadow"]), and apart from them, said as such, every one
+    # since state.json began ("shadow": the page's all-time stats); a night without shadows says so only when
+    # earlier nights had some
+    tonight, ever = shadow_stat(n.get("shadow")), shadow_book(state.get("shadow"))
+    if tonight["n"] or ever["n"]:
+        what = ("Tieňové obchody tejto noci (mince, ktoré bot nekúpil, sledované ako keby ich kúpil, len pre LEARNER; "
+                "nie sú v zostatku ani v obchodoch): ")
+        if tonight["n"]:
+            what += "spolu %d, v zisku %d, priemer %+.1f %% po nákladoch." % (
+                tonight["n"], tonight["wins"], tonight["sum"] / tonight["n"])
+        else:
+            what += "žiadne."
+        if ever["n"] and ever["n"] != tonight["n"]:     # (a repaired state.json may have lost the all-time count)
+            what += " Od začiatku (všetky noci): %d, v zisku %d, priemer %+.1f %%." % (
+                ever["n"], ever["wins"], ever["sum"] / ever["n"])
+        lines.append(what)
     return "\n".join(lines) + "\n"
 
 
