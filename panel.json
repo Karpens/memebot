@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T09:20:30Z",
+ "updated": "2026-11-26T09:20:57Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 90.39,
- "equity": 90.39,
+ "balance": 87.76,
+ "equity": 87.76,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,12 +21,12 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 5,
-  "checked": 5,
+  "flagged": 6,
+  "checked": 6,
   "filtered": 0,
-  "lines": 56,
+  "lines": 64,
   "last_rug": {
-   "coin": "KIDSTOCK",
+   "coin": "TANOSHIMI",
    "pass": true
   }
  },
@@ -55,6 +55,11 @@
    "coin": "KIDSTOCK",
    "why": "momentum",
    "t": "2026-11-26T09:16:27Z"
+  },
+  {
+   "coin": "TANOSHIMI",
+   "why": "momentum",
+   "t": "2026-11-26T09:20:54Z"
   }
  ],
  "curve": [
@@ -121,6 +126,10 @@
   [
    1795684796,
    90.39
+  ],
+  [
+   1795684856,
+   90.09
   ]
  ],
  "position_pct": 10.0,
@@ -374,6 +383,48 @@
    "dev_pct": 3.25,
    "sol_in": 3.29,
    "exit_ms": 30
+  },
+  {
+   "symbol": "TANOSHIMI",
+   "mint": "CckKzqbY76EwpQf7f163CSFfq7gqHMzXwQGqhNENpump",
+   "opened": "2026-11-26T09:20:54Z",
+   "closed": "2026-11-26T09:20:57Z",
+   "cost": 9.04,
+   "proceeds": 6.41,
+   "pnl": -2.63,
+   "pnl_pct": -29.1,
+   "why": "dump: 4.4 SOL sold",
+   "url": "https://pump.fun/coin/CckKzqbY76EwpQf7f163CSFfq7gqHMzXwQGqhNENpump",
+   "reason": "momentum · 3.3 SOL in · 6/6 buys (100%) · +22% since launch · mcap 38 SOL · 23 s old",
+   "size_pct": 10.0,
+   "entry_price": 2.741161975971574e-06,
+   "exit_price": 2.0323847440035507e-06,
+   "slip": 1.61,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 1,
+    "parts": [
+     "buys 100%"
+    ],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 23,
+   "mcap_sol": 37.6,
+   "dev_pct": 5.05,
+   "sol_in": 3.33,
+   "exit_ms": 31
   }
  ],
  "log": [
@@ -880,6 +931,78 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 2 watched · 7 rejected (dev bought 4, serial launcher 1, no symbol or name 1) · closest ZAPE: SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%",
    "n": 56
+  },
+  {
+   "t": "2026-11-26T09:20:54Z",
+   "time": "10:20:54",
+   "agent": "SCANNER",
+   "coin": "TANOSHIMI",
+   "action": "flag",
+   "text": "momentum · 3.3 SOL in · 6/6 buys (100%) · +22% since launch · mcap 38 SOL · 23 s old",
+   "n": 57
+  },
+  {
+   "t": "2026-11-26T09:20:54Z",
+   "time": "10:20:54",
+   "agent": "RUG CHECK",
+   "coin": "TANOSHIMI",
+   "action": "pass",
+   "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
+   "n": 58
+  },
+  {
+   "t": "2026-11-26T09:20:54Z",
+   "time": "10:20:54",
+   "agent": "SIZER",
+   "coin": "TANOSHIMI",
+   "action": "size",
+   "text": "10% of $90.39 = $9.04",
+   "n": 59
+  },
+  {
+   "t": "2026-11-26T09:20:54Z",
+   "time": "10:20:54",
+   "agent": "EXECUTOR",
+   "coin": "TANOSHIMI",
+   "action": "enter",
+   "text": "ENTER TANOSHIMI at 0.0000027412 · slip 1.6% · first in · 0.1 s after the trigger · 23 s after launch · curve maths 0.0% off Jupiter",
+   "n": 60
+  },
+  {
+   "t": "2026-11-26T09:20:54Z",
+   "time": "10:20:54",
+   "agent": "NEWS",
+   "coin": "TANOSHIMI",
+   "action": "plan",
+   "text": "hold plan · 1/10 (buys 100%) · scalp: +7",
+   "n": 61
+  },
+  {
+   "t": "2026-11-26T09:20:57Z",
+   "time": "10:20:57",
+   "agent": "RISK",
+   "coin": null,
+   "action": "pause",
+   "text": "5 losses in a row · 2 min pause",
+   "n": 62
+  },
+  {
+   "t": "2026-11-26T09:20:57Z",
+   "time": "10:20:57",
+   "agent": "EXECUTOR",
+   "coin": "TANOSHIMI",
+   "action": "exit",
+   "text": "EXIT TANOSHIMI $-2.63 (-29%) · dump: 4.4 SOL sold · out · 0.0 s after the reading",
+   "n": 63
+  },
+  {
+   "t": "2026-11-26T09:20:57Z",
+   "time": "10:20:57",
+   "agent": "LEARNER",
+   "coin": "TANOSHIMI",
+   "action": "learn",
+   "text": "learned · np:sol:3-6 now avg -21.7% over 5",
+   "n": 64
   }
  ],
  "nights": [
@@ -930,42 +1053,42 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 83,
-    "last_event_age_s": 0.6,
+    "events": 85,
+    "last_event_age_s": 4.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 969,
-    "last_event_age_s": 2.5,
+    "events": 987,
+    "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 56,
-    "last_event_age_s": 14.0,
-    "errors": 41,
+    "events": 59,
+    "last_event_age_s": 1.9,
+    "errors": 43,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 65,
-  "first_in_last_ms": 69,
-  "exit_ms": 32,
-  "exit_last_ms": 30,
-  "launch_to_entry_s": 19,
-  "creates_per_min": 4.2,
-  "watching": 4,
+  "first_in_ms": 65.0,
+  "first_in_last_ms": 65,
+  "exit_ms": 32.0,
+  "exit_last_ms": 32,
+  "launch_to_entry_s": 19.5,
+  "creates_per_min": 4.6,
+  "watching": 3,
   "followed": 8
  },
  "learner": {
-  "samples": 102,
+  "samples": 103,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
@@ -988,60 +1111,96 @@
   ],
   "worst": [
    {
-    "label": "slip:1-2",
-    "n": 12,
-    "avg": -8.4
+    "label": "tier:scalp",
+    "n": 8,
+    "avg": -16.1
    },
    {
-    "label": "social:x",
-    "n": 40,
-    "avg": -6.6
+    "label": "news:0-2",
+    "n": 8,
+    "avg": -16.1
    },
    {
-    "label": "dex:pumpswap",
-    "n": 40,
-    "avg": -6.6
+    "label": "hour:day",
+    "n": 8,
+    "avg": -16.1
    }
   ]
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1011,
+   "sent": 1042,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1011,
+   "sent": 1042,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "TANOSHIMI",
-   "name": "Enjoy the Expo",
-   "mint": "CckKzqbY76EwpQf7f163CSFfq7gqHMzXwQGqhNENpump",
-   "age_s": 0,
+   "symbol": "spaceX",
+   "name": "spaceXXX18+",
+   "mint": "CFrNDCz8fsC3E2k7dyUoYW2TkF4Td8ErDANVPNXspump",
+   "age_s": 3,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 30.8,
-   "dev_pct": 5.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.2,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "BODL",
+   "name": "BODL",
+   "mint": "EWXB3eTbwVD9detDF1owBbxQZGZkyY1d52DpANb3qWCG",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -100.0,
+   "mcap_sol": 0.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/ThomasKDunne/status/2125882381726851454",
+   "tg": false,
+   "web": "https://www.congress.gov/bill/119th-congress/house-bill/8957/text",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "TANOSHIMI",
+   "name": "Enjoy the Expo",
+   "mint": "CckKzqbY76EwpQf7f163CSFfq7gqHMzXwQGqhNENpump",
+   "age_s": 27,
+   "sol_in": -1.11,
+   "buys": 6,
+   "sells": 1,
+   "rise_pct": -6.9,
+   "mcap_sol": 28.6,
+   "dev_pct": 5.0,
+   "big_sell": 4.44,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "exited: dump: 4.4 SOL sold",
+   "why": "dump: 4.4 SOL sold"
   },
   {
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "EPTr1REMLymXJxsam9eAa7X6W9HXi1qeJfr1c3k2pump",
-   "age_s": 1,
+   "age_s": 28,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1059,7 +1218,7 @@
    "symbol": "SilverSurf",
    "name": "Silver Surfer",
    "mint": "5hyWEp5npMkvfqTp2hbiMFLY48VvNwayEM4aG8edpump",
-   "age_s": 2,
+   "age_s": 28,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1077,32 +1236,32 @@
    "symbol": "ASTRAR",
    "name": "Ad Astra Rocket",
    "mint": "8kcYvK4xa9m1q7a5opzauUVzEX4cVP4WuaBfZkfZEGNK",
-   "age_s": 16,
-   "sol_in": 0.7,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 4.7,
-   "mcap_sol": 29.4,
+   "age_s": 42,
+   "sol_in": 0.97,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 6.6,
+   "mcap_sol": 29.9,
    "dev_pct": 0.2,
    "big_sell": 1.98,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.7/2.5 · buys 2/6 · rise +5%/+12%"
+   "why": "SOL in 1.0/2.5 · buys 4/6 · rise +7%/+12%"
   },
   {
    "symbol": "Solana",
    "name": "Solana",
    "mint": "EHGeLJw8Dr19CvFtv3qArtQBTR4JNfZWgupMPWRP3bwq",
-   "age_s": 37,
-   "sol_in": 7.43,
+   "age_s": 64,
+   "sol_in": 3.02,
    "buys": 8,
-   "sells": 8,
-   "rise_pct": 50.0,
-   "mcap_sol": 50.9,
+   "sells": 11,
+   "rise_pct": 19.1,
+   "mcap_sol": 40.4,
    "dev_pct": 9.9,
-   "big_sell": 1.26,
+   "big_sell": 4.04,
    "x": false,
    "tg": false,
    "web": false,
@@ -1113,10 +1272,10 @@
    "symbol": "ZAPE",
    "name": "Zebra Ape",
    "mint": "7kXycsRawenbrFEqhxCExTPwGLiyiunS46dYHxLipump",
-   "age_s": 69,
+   "age_s": 96,
    "sol_in": 0.02,
    "buys": 2,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 0.1,
    "mcap_sol": 28.2,
    "dev_pct": 0.4,
@@ -1131,11 +1290,11 @@
    "symbol": "Liuliu",
    "name": "Liuliu",
    "mint": "g8EkT9EFcei6YJqvfCc7mUU7x4HVUzwd5zNVnshpump",
-   "age_s": 146,
-   "sol_in": -0.89,
+   "age_s": 173,
+   "sol_in": -0.91,
    "buys": 5,
-   "sells": 3,
-   "rise_pct": -5.7,
+   "sells": 5,
+   "rise_pct": -5.8,
    "mcap_sol": 28.1,
    "dev_pct": 3.4,
    "big_sell": 0.99,
@@ -1143,13 +1302,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in -0.9/2.5 · buys 5/6 · buy share 62%/65% · rise -6%/+12%"
+   "why": "SOL in -0.9/2.5 · buys 5/6 · buy share 50%/65% · rise -6%/+12%"
   },
   {
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "AATBKBK2skYF5WT42i155ucQwNBzr3fusCUWizHXpump",
-   "age_s": 148,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1167,7 +1326,7 @@
    "symbol": "PNP",
    "name": "P≠NP",
    "mint": "BPLtrtoU4itcojqShuB8PoKVyYiAnSy2miAJCsXVNZZr",
-   "age_s": 148,
+   "age_s": 175,
    "sol_in": -1.04,
    "buys": 9,
    "sells": 15,
@@ -1175,42 +1334,6 @@
    "mcap_sol": 31.6,
    "dev_pct": 9.6,
    "big_sell": 3.68,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.6% (max 8%)",
-   "why": "dev bought 9.6% (max 8%)"
-  },
-  {
-   "symbol": "ANOUSH",
-   "name": "ANOUSH NEMATZEDEH",
-   "mint": "6MCZsUWy1DDnFZdnrYLaWTwxfM4XPzypE2KyM5BpSvUK",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 139050.2,
-   "mcap_sol": 38905.0,
-   "dev_pct": 0.0,
-   "big_sell": 275.76,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/6MCZsUWy1DDnFZdnrYLaWTwxfM4XPzypE2KyM5BpSvUK",
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "TRUMPMAS",
-   "name": "Trumpmas",
-   "mint": "GgX5idwEjyn2Aeu4VmhQVpjHC4Exieyyh28CnFoMYe7v",
-   "age_s": 164,
-   "sol_in": -2.23,
-   "buys": 3,
-   "sells": 9,
-   "rise_pct": -13.1,
-   "mcap_sol": 29.3,
-   "dev_pct": 9.6,
-   "big_sell": 2.83,
    "x": false,
    "tg": false,
    "web": false,
