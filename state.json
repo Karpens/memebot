@@ -37,15 +37,6 @@
    {
     "t": "2026-11-26T12:33:55Z",
     "time": "13:33:55",
-    "agent": "SCANNER",
-    "coin": "SATNA",
-    "action": "flag",
-    "text": "momentum · 9.3 SOL in · 19/23 buys (83%) · +72% since launch · mcap 48 SOL · 45 s old",
-    "n": 327
-   },
-   {
-    "t": "2026-11-26T12:33:55Z",
-    "time": "13:33:55",
     "agent": "RUG CHECK",
     "coin": "SATNA",
     "action": "pass",
@@ -5433,6 +5424,15 @@
     "action": "shadow",
     "text": "SHADOW AT8 · not bought (learner skip) · followed as if bought: $8.35 at 0.0000031736 (curve maths, every cost) · same exits, outside the book",
     "n": 926
+   },
+   {
+    "t": "2026-11-26T20:09:22Z",
+    "time": "21:09:22",
+    "agent": "LEARNER",
+    "coin": "AT8",
+    "action": "shadow",
+    "text": "SHADOW AT8 would have made +16.7% (TP +20%) · learned x0.5 · hour:day now avg -15.1% over 17",
+    "n": 927
    }
   ],
   "trades": [
@@ -6084,7 +6084,7 @@
   "flagged": 57,
   "checked": 43,
   "filtered": 8,
-  "lines": 926,
+  "lines": 927,
   "flags": [
    {
     "coin": "AFK",
@@ -8594,9 +8594,9 @@
    "at": 1795696593.636054
   },
   "shadow": {
-   "n": 7,
-   "wins": 1,
-   "sum": -90.9
+   "n": 8,
+   "wins": 2,
+   "sum": -74.2
   }
  },
  "last_night": {
@@ -9056,14 +9056,14 @@
   }
  },
  "shadow": {
-  "n": 7,
-  "wins": 1,
-  "sum": -90.9,
+  "n": 8,
+  "wins": 2,
+  "sum": -74.2,
   "by": {
    "learner": {
-    "n": 7,
-    "wins": 1,
-    "sum": -90.9
+    "n": 8,
+    "wins": 2,
+    "sum": -74.2
    },
    "risk": {
     "n": 0,
@@ -9211,11 +9211,29 @@
     "exit": "trailing stop 6% off the top (peak +17%)",
     "pnl": 0.31,
     "weight": 0.5
+   },
+   {
+    "symbol": "AT8",
+    "mint": "2EUHE1LM8sATDQgTD4cBybd3g54MEimNtTpYaHiGpump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T20:09:12Z",
+    "cost": 8.35,
+    "pnl_pct": 16.7,
+    "tier": "swing",
+    "score": 3,
+    "steps": 2,
+    "fill": "curve",
+    "age_s": 45,
+    "sol_in": 7.37,
+    "closed": "2026-11-26T20:09:22Z",
+    "exit": "TP +20%",
+    "pnl": 1.39,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "AT8"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 108,
@@ -9241,11 +9259,6 @@
   ],
   "worst": [
    {
-    "label": "hour:day",
-    "n": 16,
-    "avg": -16.1
-   },
-   {
     "label": "tier:scalp",
     "n": 12,
     "avg": -17.3
@@ -9254,8 +9267,13 @@
     "label": "news:0-2",
     "n": 12,
     "avg": -17.3
+   },
+   {
+    "label": "hour:day",
+    "n": 17,
+    "avg": -15.1
    }
   ],
-  "shadows": 7
+  "shadows": 8
  }
 }
