@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:34:03Z",
+ "updated": "2026-11-26T09:34:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.76,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 9,
-  "checked": 9,
+  "flagged": 10,
+  "checked": 10,
   "filtered": 1,
-  "lines": 85,
+  "lines": 89,
   "last_rug": {
-   "coin": "OFTANIA",
+   "coin": "Oro",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HOGZ",
-   "why": "momentum",
-   "t": "2026-11-26T09:05:39Z"
-  },
   {
    "coin": "SWARM",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "OFTANIA",
    "why": "momentum",
    "t": "2026-11-26T09:24:15Z"
+  },
+  {
+   "coin": "Oro",
+   "why": "momentum",
+   "t": "2026-11-26T09:34:24Z"
   }
  ],
  "curve": [
@@ -1254,6 +1254,42 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 2 watched · 4 rejected (serial launcher 1, dump 1, no symbol or name 1) · closest $PFW: SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%",
    "n": 85
+  },
+  {
+   "t": "2026-11-26T09:34:17Z",
+   "time": "10:34:17",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 3 watched · 5 rejected (serial launcher 2, dump 1, no symbol or name 1) · closest Oro: SOL in 0.3/2.5 · buys 2/6 · buy share 50%/65% · rise +2%/+12%",
+   "n": 86
+  },
+  {
+   "t": "2026-11-26T09:34:24Z",
+   "time": "10:34:24",
+   "agent": "SCANNER",
+   "coin": "Oro",
+   "action": "flag",
+   "text": "momentum · 3.0 SOL in · 7/9 buys (78%) · +19% since launch · mcap 39 SOL · 14 s old",
+   "n": 87
+  },
+  {
+   "t": "2026-11-26T09:34:24Z",
+   "time": "10:34:24",
+   "agent": "RUG CHECK",
+   "coin": "Oro",
+   "action": "pass",
+   "text": "PASS · 7 holders · top holder 8.0% · top 10 14% (curve left out)",
+   "n": 88
+  },
+  {
+   "t": "2026-11-26T09:34:24Z",
+   "time": "10:34:24",
+   "agent": "LEARNER",
+   "coin": "Oro",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 9.9% · hour:day -16.1% over 8, news:0-2 -16.1% over 8",
+   "n": 89
   }
  ],
  "nights": [
@@ -1300,7 +1336,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1308,25 +1344,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 149,
-    "last_event_age_s": 9.0,
+    "events": 151,
+    "last_event_age_s": 4.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1391,
-    "last_event_age_s": 4.7,
+    "events": 1411,
+    "last_event_age_s": 1.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 104,
-    "last_event_age_s": 6.9,
-    "errors": 70,
+    "events": 106,
+    "last_event_age_s": 2.8,
+    "errors": 71,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -1340,11 +1376,11 @@
   "launch_to_entry_s": 19.5,
   "creates_per_min": 2.4,
   "watching": 2,
-  "followed": 5
+  "followed": 7
  },
  "learner": {
   "samples": 103,
-  "skipped": 2,
+  "skipped": 3,
   "explored": 0,
   "min_samples": 8,
   "best": [
@@ -1385,23 +1421,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1880,
+   "sent": 1916,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1880,
+   "sent": 1916,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Earl",
+   "name": "Thanksgiving Parade Mascot",
+   "mint": "E34kKQ3T4g1Z6q7uauGuCH6gWg5mZQTMFryR7hLzpump",
+   "age_s": 4,
+   "sol_in": 5.95,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 39.3,
+   "mcap_sol": 47.1,
+   "dev_pct": 9.7,
+   "big_sell": 0.86,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.7% (max 8%)",
+   "why": "dev bought 9.7% (max 8%)"
+  },
+  {
+   "symbol": "Oro",
+   "name": "Oro",
+   "mint": "43RKdEKmgz2Dhb7ZacUCknc4BkMjo8XYvqxFLm6fpump",
+   "age_s": 28,
+   "sol_in": 2.54,
+   "buys": 12,
+   "sells": 5,
+   "rise_pct": 16.3,
+   "mcap_sol": 37.9,
+   "dev_pct": 7.9,
+   "big_sell": 2.55,
+   "x": "https://x.com/Smelter_Szan/status/2125883297121329617",
+   "tg": false,
+   "web": "https://www.binance.com/en/square/post/33579986450881",
+   "status": "rejected: learner: skip",
+   "why": "learner: skip"
+  },
+  {
    "symbol": "ZEREBLAST",
    "name": "ZEREBLAST",
    "mint": "CFZoPJB9J5hX5ZhFDRqM8c1jbkDF1BusJfCo4tXFpump",
-   "age_s": 9,
+   "age_s": 43,
    "sol_in": -0.89,
    "buys": 1,
    "sells": 1,
@@ -1419,7 +1491,7 @@
    "symbol": "DIGVEGAS",
    "name": "Under Vegas",
    "mint": "96fpB3f94362poryB7CFm9tshsZsVc6XfLfA94yhpump",
-   "age_s": 37,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -1437,7 +1509,7 @@
    "symbol": "$PFW",
    "name": "PeaceForWorld",
    "mint": "CYrNo3ct8g8k35Z5S2drgSPBNe1c6G5LCCE4p6qkpump",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -1455,7 +1527,7 @@
    "symbol": "$OPM",
    "name": "Open Market",
    "mint": "Eqa1gDUPfGyX1cZJ9Nk1Tv8Cyticns559Vg7AD9opump",
-   "age_s": 63,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1473,7 +1545,7 @@
    "symbol": "?",
    "name": "",
    "mint": "DLGkDBaCTF8nxcY7maTsPvDqDtyg3gRKH2rsLLM3pump",
-   "age_s": 99,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1491,7 +1563,7 @@
    "symbol": "ZEREBLAST",
    "name": "ZEREBLAST",
    "mint": "3Roempqxs43dFKDoEdASLhPGQuF8JTqca6uNcdd6pump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": -0.73,
    "buys": 2,
    "sells": 4,
@@ -1509,7 +1581,7 @@
    "symbol": "TAGPAD",
    "name": "TagsPad",
    "mint": "HDcm8C1iuL4Kaq8rg9Dpq3MZFgYj1WALeS6kHPb1vCBY",
-   "age_s": 118,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
