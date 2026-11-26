@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T01:48:54Z",
+ "updated": "2026-11-26T01:51:00Z",
  "mode": "paper",
  "start_balance": 70.0,
- "balance": 8.46,
- "equity": 57.83,
+ "balance": 22.83,
+ "equity": 57.6,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -19,41 +19,33 @@
   "id": "2026-11-25",
   "start_equity": 70.0,
   "started": "2026-11-25T22:03:25Z",
-  "scans": 241,
-  "flagged": 8,
-  "checked": 8
+  "scans": 247,
+  "flagged": 9,
+  "checked": 12
  },
  "live": true,
  "positions": [
   {
-   "symbol": "MONEY",
-   "cost": 14.61,
-   "value": 14.73,
-   "pnl_pct": 0.8,
-   "opened": "2026-11-26T01:29:04Z",
-   "url": "https://dexscreener.com/solana/cchpignpbwf65nfsl3d8h4m4rwdprzh8lpcatynurxqg"
-  },
-  {
    "symbol": "Pumpcat",
    "cost": 11.68,
-   "value": 11.98,
-   "pnl_pct": 2.6,
+   "value": 12.18,
+   "pnl_pct": 4.3,
    "opened": "2026-11-26T01:40:25Z",
    "url": "https://dexscreener.com/solana/4j4q8fc5y3iazhqrzjmti95jeuqk38yx397q2depxwnf"
   },
   {
    "symbol": "NORFEATH",
    "cost": 11.87,
-   "value": 12.39,
-   "pnl_pct": 4.3,
+   "value": 11.61,
+   "pnl_pct": -2.2,
    "opened": "2026-11-26T01:44:12Z",
    "url": "https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj"
   },
   {
    "symbol": "UHI",
    "cost": 11.83,
-   "value": 10.27,
-   "pnl_pct": -13.2,
+   "value": 10.98,
+   "pnl_pct": -7.2,
    "opened": "2026-11-26T01:44:34Z",
    "url": "https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl"
   }
@@ -82,6 +74,18 @@
    "pnl_pct": -39.9,
    "why": "stop -43 %",
    "url": "https://dexscreener.com/solana/hw4jf8lfw2ycf4wzscvb8zq4bekeeyhy8pyc4br6gvcl"
+  },
+  {
+   "symbol": "MONEY",
+   "mint": "DeACAbp2GMzapB6Z2K8qdkTZupmNbKc6EZx9bnbCpump",
+   "opened": "2026-11-26T01:29:04Z",
+   "closed": "2026-11-26T01:49:04Z",
+   "cost": 14.61,
+   "proceeds": 14.37,
+   "pnl": -0.24,
+   "pnl_pct": -1.6,
+   "why": "po 20 min len +1 %",
+   "url": "https://dexscreener.com/solana/cchpignpbwf65nfsl3d8h4m4rwdprzh8lpcatynurxqg"
   }
  ],
  "log": [
@@ -652,6 +656,78 @@
    "coin": null,
    "action": "scan",
    "text": "52 nových coinov, 50 párov, 4 spĺňa pravidlá."
+  },
+  {
+   "t": "2026-11-26T01:49:04Z",
+   "time": "02:49:04",
+   "agent": "RISK",
+   "coin": null,
+   "action": "pause",
+   "text": "3 straty po sebe: 15 min bez nových vstupov."
+  },
+  {
+   "t": "2026-11-26T01:49:04Z",
+   "time": "02:49:04",
+   "agent": "EXIT",
+   "coin": "MONEY",
+   "action": "sell",
+   "text": "Predané (po 20 min len +1 %): $14.37, $-0.24 (-2 %)."
+  },
+  {
+   "t": "2026-11-26T01:49:24Z",
+   "time": "02:49:24",
+   "agent": "SCANNER",
+   "coin": "TAXMAN",
+   "action": "flag",
+   "text": "raydium, likvidita $16.8k, 5 min $5.6k, nákupy 60 % (držitelia +16 %)."
+  },
+  {
+   "t": "2026-11-26T01:49:24Z",
+   "time": "02:49:24",
+   "agent": "NEWS",
+   "coin": "TAXMAN",
+   "action": "news",
+   "text": "Propagácia: X @taxmandotrun, web."
+  },
+  {
+   "t": "2026-11-26T01:49:24Z",
+   "time": "02:49:24",
+   "agent": "RISK",
+   "coin": "TAXMAN",
+   "action": "skip",
+   "text": "Bez vstupu: pauza po sérii strát."
+  },
+  {
+   "t": "2026-11-26T01:49:46Z",
+   "time": "02:49:46",
+   "agent": "RISK",
+   "coin": "TAXMAN",
+   "action": "skip",
+   "text": "Bez vstupu: pauza po sérii strát."
+  },
+  {
+   "t": "2026-11-26T01:50:07Z",
+   "time": "02:50:07",
+   "agent": "RISK",
+   "coin": "TAXMAN",
+   "action": "skip",
+   "text": "Bez vstupu: pauza po sérii strát."
+  },
+  {
+   "t": "2026-11-26T01:50:27Z",
+   "time": "02:50:27",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "52 nových coinov, 50 párov, 4 spĺňa pravidlá."
+  },
+  {
+   "t": "2026-11-26T01:50:27Z",
+   "time": "02:50:27",
+   "agent": "RISK",
+   "coin": "TAXMAN",
+   "action": "skip",
+   "text": "Bez vstupu: pauza po sérii strát."
   }
  ],
  "nights": [
@@ -669,6 +745,7 @@
   }
  ],
  "errors": [
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
