@@ -2,38 +2,49 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap">
 <style>
-/* One light terminal sheet, as in the video: a white app card, a prompt card with a heavy black
-   rule, mono text, grey chips and one black Run pill. Single deliberate light look. */
+/* Two screens, one light terminal look: the prompt card (Run), then the night's terminal, a
+   desktop dashboard (agents left, live flow, trade, console, result, log) scaled to fit a phone.
+   Single deliberate light theme. */
 :root {
   color-scheme: light;
-  --page: #f4f4f5;
+  --page: #f1f2f4;
   --card: #ffffff;
-  --ink: #0c0c0f;
-  --muted: #6b6b76;
-  --line: #e4e4e8;
+  --ink: #0c0c10;
+  --muted: #6b7280;
+  --line: #e4e5e9;
   --chip: #f1f1f4;
-  --up: #0f8a4a;
-  --down: #c8312b;
+  --teal: #0f766e;
+  --orange: #ea580c;
+  --red: #e11d48;
+  --purple: #7c3aed;
+  --green: #15803d;
+  --blue: #2563eb;
+  --amber: #b45309;
+  --cyan: #0e7490;
   --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --z: 1;
 }
 body { background: var(--page); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 600px; margin: 0 auto; padding-block: 20px 40px;
+.wrap { max-width: 1060px; margin: 0 auto; padding-block: 16px 32px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- screen 1: the prompt */
+.promptview { max-width: 600px; margin: 0 auto; }
 .app { background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
-header { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.app header { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
 .logo { width: 44px; height: 44px; border-radius: 11px; background: var(--ink); display: grid; place-items: center; flex: none; }
 .who { min-width: 0; flex: 1 1 230px; }
 .who h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
 .who p { margin: 3px 0 0; font: 400 11.5px/1.3 var(--mono); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pill { font: 500 11.5px/1 var(--mono); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; white-space: nowrap; }
-main { padding: 16px; display: grid; gap: 16px; }
-.prompt { border: 1.6px solid var(--ink); border-radius: 16px; display: flex; flex-direction: column; min-height: 520px; }
+.app main { padding: 16px; }
+.prompt { border: 1.6px solid var(--ink); border-radius: 16px; display: flex; flex-direction: column; min-height: 480px; }
 .bar { display: flex; justify-content: space-between; gap: 10px; padding: 12px 14px 4px; font: 400 11px/1.4 var(--mono); color: var(--muted); flex-wrap: wrap; }
-.bar span:first-child::before { content: ""; display: inline-block; width: 9px; height: 11px; margin-right: 7px; vertical-align: -1px;
-  border: 1px solid currentColor; border-radius: 1.5px; }
 .text { flex: 1; padding: 6px 14px 14px; font: 400 12.6px/1.62 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0; }
 .text b { font-weight: 700; }
 .foot { display: flex; align-items: center; gap: 8px; padding: 12px 14px 14px; flex-wrap: wrap; }
@@ -41,304 +52,593 @@ main { padding: 16px; display: grid; gap: 16px; }
 .run { margin-left: auto; font: 700 15px/1 var(--sans); color: #fff; background: var(--ink); border: 0; border-radius: 999px;
   padding: 12px 18px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .run:hover { background: #2a2a31; }
-.run:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-.run[disabled] { opacity: .55; cursor: default; }
+.msg { margin-top: 12px; padding: 10px 14px; border-radius: 12px; font: 400 12px/1.5 var(--mono); background: var(--chip); }
+.msg.bad { color: var(--red); }
 
-.session { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
-.status { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap;
-  font: 500 11.5px/1.3 var(--mono); }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
-.dot.live { background: var(--up); box-shadow: 0 0 0 4px rgba(15,138,74,.14); }
-.status .right { margin-left: auto; color: var(--muted); }
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
-.stat { padding: 12px 14px; min-width: 0; }
-.stat + .stat { border-left: 1px solid var(--line); }
-.stat small { display: block; font: 400 10.5px/1.2 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
-.stat strong { display: block; margin-top: 4px; font: 700 18px/1.15 var(--sans); font-variant-numeric: tabular-nums; }
-.up { color: var(--up); } .down { color: var(--down); }
-.log { max-height: 380px; overflow-y: auto; padding: 10px 14px 14px; font: 400 11.5px/1.6 var(--mono); }
-.row { display: grid; grid-template-columns: 58px 76px minmax(0, 1fr); gap: 8px; padding: 2px 0; }
-.row .t { color: var(--muted); font-variant-numeric: tabular-nums; }
-.row .a { font-weight: 700; }
-.row .x { min-width: 0; overflow-wrap: anywhere; }
-.row .x b { font-weight: 700; }
-.a.SCANNER { color: #2457d6; } .a.RUG { color: #b5470f; } .a.SIZER { color: var(--up); } .a.RISK { color: #8a5a00; }
-.a.EXIT { color: #7a2fc0; } .a.JOURNAL { color: var(--muted); }
-.empty { padding: 18px 14px; color: var(--muted); font: 400 12px/1.6 var(--mono); }
-h2 { margin: 0; padding: 14px 14px 6px; font: 700 12px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-table { width: 100%; border-collapse: collapse; font: 400 12px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
-th, td { text-align: left; padding: 7px 14px; border-top: 1px solid var(--line); white-space: nowrap; }
-th { font-weight: 500; color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; }
-td.num, th.num { text-align: right; }
-.scroll { overflow-x: auto; }
-.note { font: 400 11px/1.6 var(--mono); color: var(--muted); padding: 0 4px; }
-.msg { padding: 10px 14px; border-bottom: 1px solid var(--line); font: 400 12px/1.5 var(--mono); background: var(--chip); }
-.msg.bad { color: var(--down); }
-@media (max-width: 440px) {
-  .row { grid-template-columns: 50px minmax(0, 1fr); }
-  .row .a { grid-column: 2; }
-  .row .x { grid-column: 2; }
-  .stat strong { font-size: 16px; }
-}
+/* ---------- screen 2: the terminal, a 1000px desktop dashboard scaled to the screen */
+.termview { zoom: var(--z); }
+.term { width: 1000px; margin: 0 auto; background: #f8f9fa; border: 1px solid #d9dbe0; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 10px 30px rgba(20, 20, 30, .08); font-family: var(--mono); }
+.titlebar { display: grid; grid-template-columns: 90px 1fr auto; align-items: center; padding: 10px 14px; background: #fbfbfc; border-bottom: 1px solid var(--line); }
+.lights { display: flex; gap: 7px; }
+.lights i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.lights i:nth-child(1) { background: #ff5f57; } .lights i:nth-child(2) { background: #febc2e; } .lights i:nth-child(3) { background: #28c840; }
+.titlebar .t { text-align: center; font: 500 12px/1 var(--mono); color: #5b6070; }
+.badge { font: 600 11px/1 var(--mono); border: 1.5px solid currentColor; border-radius: 7px; padding: 5px 8px; white-space: nowrap; background: #fff; }
+.badge.o { color: var(--orange); } .badge.g { color: var(--green); } .badge.r { color: var(--red); } .badge.p { color: var(--purple); }
+.badge.b { color: var(--blue); } .badge.k { color: var(--ink); } .badge.t { color: var(--cyan); } .badge.a { color: var(--amber); }
+.badge.mut { color: var(--muted); }
+.back { border: 0; background: none; color: var(--muted); font: 500 11px/1 var(--mono); cursor: pointer; padding: 4px 6px; }
+
+.hero { display: grid; grid-template-columns: 112px 1fr 330px; gap: 22px; align-items: center; padding: 18px 22px; border-bottom: 1px solid var(--line); background: #fff; }
+.avatar { width: 104px; height: 104px; border-radius: 50%; background: #fff; border: 1px solid var(--line); display: grid; place-items: center;
+  box-shadow: inset 0 -6px 14px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.06); }
+.hero h1 { margin: 0; font: 800 38px/1.05 var(--mono); letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.hero h1 span { color: var(--teal); }
+.status { margin-top: 8px; font: 500 17px/1.2 var(--mono); color: #9a3412; display: flex; align-items: center; gap: 9px; }
+.status .d { width: 10px; height: 10px; border-radius: 50%; background: #9ca3af; }
+.status.on .d { background: var(--orange); animation: pulse 1.6s infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+.last { display: inline-block; margin-top: 10px; font: 600 13px/1 var(--mono); color: var(--green); border: 1.5px solid #86efac; background: #f0fdf4; border-radius: 6px; padding: 7px 10px; }
+.last.r { color: var(--red); border-color: #fda4af; background: #fff1f2; }
+.last.o { color: var(--orange); border-color: #fdba74; background: #fff7ed; }
+.tag { margin-top: 8px; font: 400 13px/1.2 var(--mono); color: var(--muted); }
+.nums { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+.num strong { display: block; font: 800 34px/1 var(--mono); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.num small { display: block; margin-top: 4px; font: 400 12px/1 var(--mono); color: var(--muted); }
+.num.g strong { color: var(--green); } .num.r strong { color: var(--red); }
+
+.body { display: grid; grid-template-columns: 300px 1fr; gap: 14px; padding: 14px; }
+.colhead { display: flex; justify-content: space-between; font: 500 11.5px/1 var(--mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; padding: 4px 6px 10px; }
+.agents { display: grid; gap: 8px; align-content: start; }
+.agent { display: grid; grid-template-columns: 40px 1fr auto; gap: 4px 12px; padding: 12px; border: 1.5px solid transparent; border-radius: 14px; background: transparent; transition: background .3s, border-color .3s, box-shadow .3s; }
+.agent.on { background: #fff; border-color: var(--ac); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ac) 14%, transparent), 0 6px 18px color-mix(in srgb, var(--ac) 18%, transparent); }
+.icon { width: 40px; height: 40px; border-radius: 10px; background: var(--ac); display: grid; place-items: center; grid-row: span 2; }
+.agent h3 { margin: 0; font: 800 17px/1.1 var(--mono); color: var(--ac); letter-spacing: -0.01em; }
+.agent .sub { font: 400 12px/1.3 var(--sans); color: #4b5563; grid-column: 2 / 4; }
+.agent .badge { align-self: start; }
+.agent .say { grid-column: 1 / 4; margin-top: 6px; font: 600 12.5px/1.3 var(--sans); color: var(--ac); }
+.agent .det { grid-column: 1 / 4; font: 400 12px/1.4 var(--mono); color: #374151; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.main { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; min-width: 0; }
+.cardhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; font: 500 11.5px/1 var(--mono); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+.cardhead em { font-style: normal; text-transform: none; letter-spacing: 0; }
+
+.lane { display: flex; gap: 10px; overflow: hidden; }
+.coin { display: flex; align-items: center; gap: 8px; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 7px 10px; min-width: 150px; background: #fff; position: relative; }
+.coin:first-child { border-color: #fdba74; box-shadow: 0 0 0 3px #fff7ed; }
+.coin b { font: 700 14px/1 var(--mono); }
+.coin small { display: block; margin-top: 3px; font: 400 11px/1 var(--mono); color: var(--muted); }
+.coin .dot { position: absolute; top: 8px; right: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+.av { width: 20px; height: 20px; border-radius: 50%; color: #fff; display: grid; place-items: center; font: 700 10px/1 var(--sans); flex: none; }
+.flow { position: relative; height: 190px; margin-top: 6px; }
+.flow svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.node { position: absolute; top: 46px; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; background: #fff; }
+.node.rug { left: 90px; border: 3px solid var(--red); box-shadow: 0 0 0 6px #ffe4e6; }
+.node.exe { right: 70px; border: 3px solid var(--green); box-shadow: 0 0 0 8px #dcfce7, 0 0 30px #86efac; }
+.nlabel { position: absolute; top: 144px; width: 170px; text-align: center; font: 600 12px/1.25 var(--mono); }
+.nlabel.rug { left: 51px; color: var(--red); } .nlabel.exe { right: 31px; color: var(--green); }
+.pathlabel { position: absolute; top: 112px; left: 0; right: 0; text-align: center; font: 400 12px/1 var(--mono); color: var(--muted); }
+.spark { position: absolute; top: 4px; left: 230px; right: 190px; height: 40px; }
+.sparklabel { position: absolute; top: 2px; left: 230px; font: 500 11.5px/1 var(--mono); color: var(--muted); }
+.sparkpct { position: absolute; top: 2px; right: 190px; font: 600 11.5px/1 var(--mono); }
+.mover { position: absolute; top: 88px; width: 9px; height: 9px; border-radius: 50%; background: var(--green); opacity: 0; }
+.flow.live .mover { animation: move 3.2s linear infinite; }
+.flow.live .mover:nth-of-type(2) { animation-delay: 1.07s; } .flow.live .mover:nth-of-type(3) { animation-delay: 2.13s; }
+@keyframes move { 0% { left: 190px; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { left: calc(100% - 170px); opacity: 0; } }
+.boxes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 8px; }
+.box { border: 1.5px solid var(--bc); border-radius: 12px; padding: 10px 12px; }
+.box small { display: block; font: 600 11px/1 var(--mono); color: var(--bc); letter-spacing: .06em; text-transform: uppercase; }
+.box small::before { content: "◆ "; font-size: 9px; }
+.box strong { display: block; margin-top: 6px; font: 800 24px/1 var(--mono); font-variant-numeric: tabular-nums; }
+.box span { display: block; margin-top: 4px; font: 400 11px/1 var(--mono); color: var(--muted); }
+.box.r { --bc: var(--red); } .box.p { --bc: var(--purple); } .box.o { --bc: var(--orange); } .box.b { --bc: var(--blue); }
+.box.b strong.up { color: var(--green); } .box.b strong.down { color: var(--red); }
+
+.row2 { display: grid; grid-template-columns: 1fr 1.25fr; gap: 12px; }
+.tradehead { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.tradehead b { font: 800 24px/1 var(--mono); }
+.kv { display: grid; grid-template-columns: 80px 1fr; gap: 6px 10px; font: 400 13px/1.35 var(--mono); }
+.kv span:nth-child(odd) { color: #4b5563; }
+.kv .reason { grid-column: 1 / 3; font-size: 12px; }
+.kv .reason i { font-style: normal; color: var(--orange); }
+.livepct { font: 700 16px/1 var(--mono); margin-left: auto; }
+.console { font: 400 12.5px/1.65 var(--mono); }
+.console .l { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.console .l.dim { color: #9ca3af; padding-left: 18px; }
+.console .l.ent { color: var(--green); } .console .l.ext { color: var(--ink); } .console .l.bad { color: var(--red); }
+.cursor { display: inline-block; width: 9px; height: 15px; background: var(--green); vertical-align: -3px; animation: pulse 1s steps(1) infinite; }
+
+.result { display: grid; grid-template-columns: 1fr 220px; gap: 16px; align-items: center; }
+.bars { display: grid; grid-template-columns: 60px 1fr; gap: 10px 12px; align-items: center; font: 500 13px/1 var(--mono); }
+.track { height: 8px; border-radius: 8px; background: #e5e7eb; position: relative; }
+.track .fill { position: absolute; inset: 0 auto 0 0; border-radius: 8px; background: var(--green); }
+.track .fill.down { background: var(--red); }
+.track .pin { position: absolute; top: -4px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: #6b7280; }
+.wl { grid-column: 2; font: 700 16px/1 var(--mono); }
+.wl .g { color: var(--green); } .wl .r { color: var(--red); }
+.money { text-align: right; font: 400 12px/1.4 var(--mono); color: var(--muted); }
+.money strong { display: block; font: 800 22px/1.25 var(--mono); color: var(--ink); }
+.curve { width: 100%; height: 44px; margin-top: 8px; display: block; }
+
+.logtable .lrow { display: grid; grid-template-columns: 60px 90px 1fr auto; gap: 12px; align-items: center; padding: 9px 8px; border-top: 1px solid #f1f2f4; }
+.logtable .lrow.now { background: #fff7ed; border-left: 3px solid var(--orange); }
+.logtable .time { font: 500 14px/1 var(--mono); color: #374151; font-variant-numeric: tabular-nums; }
+.logtable .kind { font: 600 12px/1 var(--mono); text-align: center; border: 1.5px solid currentColor; border-radius: 7px; padding: 6px 0; }
+.logtable .kind.enter { color: var(--orange); background: #fff7ed; } .logtable .kind.exit { color: var(--green); background: #f0fdf4; }
+.logtable .kind.fail { color: var(--red); background: #fff1f2; }
+.logtable .what { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.logtable .what b { font: 700 15px/1.1 var(--mono); }
+.logtable .what small { display: block; font: 400 12px/1.3 var(--mono); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.logtable .amt { font: 700 15px/1 var(--mono); text-align: right; white-space: nowrap; }
+.amt.size { color: var(--orange); } .amt.up { color: var(--green); } .amt.down { color: var(--red); }
+.strike { text-decoration: line-through; color: #9ca3af; }
+.empty { padding: 14px 8px; color: var(--muted); font: 400 12.5px/1.6 var(--mono); }
+.foottxt { padding: 10px 16px 14px; font: 400 11px/1.6 var(--mono); color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--line); background: #fbfbfc; }
+.foottxt a { color: var(--ink); }
+.termmsg { margin: 0 14px 12px; }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 </style>
 
 <div class="wrap">
-  <div class="app">
-    <header>
-      <div class="logo" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="4" y="9" width="3.4" height="9" rx="1" fill="#fff"/>
-          <rect x="10.3" y="5" width="3.4" height="13" rx="1" fill="#fff"/>
-          <rect x="16.6" y="11" width="3.4" height="7" rx="1" fill="#fff"/>
-          <path d="M5.7 9V6.5M12 5V3M18.3 11V8.6M5.7 18v2M12 18v2.5M18.3 18v1.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="who">
-        <h1>Meme Bot</h1>
-        <p>new session · overnight trading prompt</p>
-      </div>
-      <span class="pill">solana · fresh memes</span>
-    </header>
-    <main>
-      <section class="prompt" aria-label="The bot's prompt">
-        <div class="bar"><span>meme-bot-overnight.prompt</span><span id="count"></span></div>
-        <div class="text" id="prompt"></div>
-        <div class="foot">
-          <span class="chip" id="agents">6 agents</span>
-          <span class="chip" id="start">start $70</span>
-          <span class="chip" id="window">23:00 → 07:00</span>
-          <button class="run" id="run" type="button">Run <span aria-hidden="true">↑</span></button>
+  <!-- screen 1: the prompt -->
+  <section class="promptview" id="promptview">
+    <div class="app">
+      <header>
+        <div class="logo" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="9" width="3.4" height="9" rx="1" fill="#fff"/><rect x="10.3" y="5" width="3.4" height="13" rx="1" fill="#fff"/>
+            <rect x="16.6" y="11" width="3.4" height="7" rx="1" fill="#fff"/>
+            <path d="M5.7 9V6.5M12 5V3M18.3 11V8.6M5.7 18v2M12 18v2.5M18.3 18v1.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
         </div>
-      </section>
-
-      <section class="session" id="session" aria-live="polite">
-        <div class="status"><span class="dot" id="dot"></span><span id="state">paper · no real money</span><span class="right" id="updated"></span></div>
-        <div class="stats">
-          <div class="stat"><small>balance</small><strong id="balance">$70.00</strong></div>
-          <div class="stat"><small>tonight</small><strong id="pnl">$0.00</strong></div>
-          <div class="stat"><small>trades</small><strong id="trades">0</strong></div>
-        </div>
+        <div class="who"><h1>Meme Bot</h1><p>new session · overnight trading prompt</p></div>
+        <span class="pill">solana · fresh memes</span>
+      </header>
+      <main>
+        <section class="prompt" aria-label="The bot's prompt">
+          <div class="bar"><span>meme-bot-overnight.prompt</span><span id="count"></span></div>
+          <div class="text" id="prompt"></div>
+          <div class="foot">
+            <span class="chip" id="agentsChip">7 agents</span>
+            <span class="chip" id="startChip">start $70</span>
+            <span class="chip" id="windowChip">23:00 → 07:00</span>
+            <button class="run" id="run" type="button">Run <span aria-hidden="true">↑</span></button>
+          </div>
+        </section>
         <div class="msg" id="msg" hidden></div>
-        <div class="log" id="log"><div class="empty">Press Run to start the bot. Every decision of the six agents shows up here, with its reason.</div></div>
-      </section>
+      </main>
+    </div>
+  </section>
 
-      <section class="session" id="posbox" hidden>
-        <h2>Open positions</h2>
-        <div class="scroll"><table><thead><tr><th>coin</th><th class="num">in</th><th class="num">now</th><th class="num">pnl</th></tr></thead><tbody id="pos"></tbody></table></div>
-      </section>
+  <!-- screen 2: the terminal -->
+  <section class="termview" id="termview" hidden>
+    <div class="term">
+      <div class="titlebar">
+        <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="t">Meme Bot Terminal — overnight · fresh-meme mode · log first</div>
+        <div style="display:flex;gap:8px;align-items:center"><button class="back" id="back" type="button">← prompt</button><span class="badge o">paper · live</span></div>
+      </div>
 
-      <section class="session" id="tradebox" hidden>
-        <h2>Closed trades</h2>
-        <div class="scroll"><table><thead><tr><th>coin</th><th class="num">in</th><th class="num">out</th><th class="num">pnl</th><th>why</th></tr></thead><tbody id="tradelist"></tbody></table></div>
-      </section>
+      <div class="hero">
+        <div class="avatar" aria-hidden="true">
+          <svg width="58" height="58" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="9" width="3.4" height="9" rx="1" fill="#0c0c10"/><rect x="10.3" y="5" width="3.4" height="13" rx="1" fill="#0c0c10"/>
+            <rect x="16.6" y="11" width="3.4" height="7" rx="1" fill="#0c0c10"/>
+            <path d="M5.7 9V6.5M12 5V3M18.3 11V8.6M5.7 18v2M12 18v2.5M18.3 18v1.8" stroke="#0c0c10" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1><span>Meme Bot</span> Terminal <span class="badge o" style="font-size:12px">v1.0-night</span></h1>
+          <div class="status" id="status"><span class="d"></span><span id="statusText">idle</span></div>
+          <div class="last" id="lastAction">waiting for the night</div>
+          <div class="tag">every trade gets a reason</div>
+        </div>
+        <div class="nums">
+          <div class="num"><strong id="bal">$70.00</strong><small>balance</small></div>
+          <div class="num"><strong id="ntrades">0</strong><small>trades</small></div>
+          <div class="num g"><strong id="wins">0</strong><small>wins</small></div>
+          <div class="num r"><strong id="losses">0</strong><small>losses</small></div>
+        </div>
+      </div>
 
-      <section class="session" id="nightbox" hidden>
-        <h2>Nights</h2>
-        <div class="scroll"><table><thead><tr><th>night</th><th class="num">start</th><th class="num">end</th><th class="num">pnl</th><th class="num">trades</th></tr></thead><tbody id="nights"></tbody></table></div>
-      </section>
-      <p class="note">Paper trading: every buy and sell is priced by a real Jupiter quote on Solana, with fees. No wallet, no real money. Not financial advice: most new meme coins lose most of their value within hours.</p>
-    </main>
-  </div>
+      <div class="msg termmsg" id="tmsg" hidden></div>
+
+      <div class="body">
+        <div>
+          <div class="colhead"><span>Agents</span><span id="online">7 online</span></div>
+          <div class="agents" id="agents"></div>
+        </div>
+        <div class="main">
+          <div class="card">
+            <div class="cardhead"><span>Live flow · scan → check → size → exec → log</span><em id="checked">checked 0</em></div>
+            <div class="lane" id="lane"></div>
+            <div class="flow" id="flow">
+              <svg viewBox="0 0 660 190" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M30 0 C 60 30, 110 40, 136 60" stroke="#d1d5db" stroke-dasharray="3 4" fill="none"/>
+                <path d="M210 0 C 200 30, 170 44, 150 60" stroke="#d1d5db" stroke-dasharray="3 4" fill="none"/>
+                <path d="M390 0 C 330 40, 220 52, 170 70" stroke="#e5e7eb" stroke-dasharray="3 4" fill="none"/>
+                <path d="M228 92 L 520 92" stroke="#9ca3af" stroke-dasharray="2 6" fill="none"/>
+                <circle cx="290" cy="92" r="4" fill="#16a34a"/><circle cx="380" cy="92" r="4" fill="#16a34a"/><circle cx="470" cy="92" r="4" fill="#16a34a"/>
+              </svg>
+              <span class="sparklabel" id="sparkLabel"></span><span class="sparkpct" id="sparkPct"></span>
+              <svg class="spark" id="spark" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <div class="node rug" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 3 L22 20 H2 Z" fill="#e11d48"/><rect x="11" y="9" width="2" height="6" fill="#fff"/><rect x="11" y="16.5" width="2" height="2" fill="#fff"/></svg>
+              </div>
+              <div class="nlabel rug" id="rugLabel">RUG CHECK<br>waiting</div>
+              <i class="mover"></i><i class="mover"></i><i class="mover"></i>
+              <div class="pathlabel">pass → size → enter</div>
+              <div class="node exe" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" fill="#15803d"/><rect x="9" y="8" width="2" height="8" fill="#fff"/><rect x="13" y="8" width="2" height="8" fill="#fff"/></svg>
+              </div>
+              <div class="nlabel exe" id="exeLabel">EXECUTOR<br>idle</div>
+            </div>
+            <div class="boxes">
+              <div class="box r"><small>Filtered</small><strong id="bFiltered">0</strong><span id="bFilteredSub">by rug check</span></div>
+              <div class="box p"><small>Sizer</small><strong id="bSize">20% eq</strong><span id="bSizeSub">$0.00</span></div>
+              <div class="box o"><small>Logger</small><strong id="bLine">line #0</strong><span>each with a reason</span></div>
+              <div class="box b"><small>Equity</small><strong id="bEq">$0.00</strong><span>last close</span></div>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="card" id="tradeCard">
+              <div class="cardhead"><span>Trade · entry vs exit</span><span class="badge g" id="tradeState">open</span></div>
+              <div id="trade"><div class="empty">No trade yet tonight.</div></div>
+            </div>
+            <div class="card">
+              <div class="cardhead"><span style="text-transform:none;color:var(--ink);font-weight:600">$ tail -f night.log</span><em id="lines">0 lines</em></div>
+              <div class="console" id="console"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead"><span>Result · start vs now</span><em id="window">one night · 23:00 → 07:00</em></div>
+            <div class="result">
+              <div>
+                <div class="bars">
+                  <span>START</span><div class="track"><span class="pin"></span></div>
+                  <span>NOW</span><div class="track"><span class="fill" id="nowFill" style="width:50%"></span></div>
+                  <span></span><div class="wl"><span class="g" id="wl_w">0 W</span> / <span class="r" id="wl_l">0 L</span></div>
+                </div>
+                <svg class="curve" id="curve" viewBox="0 0 300 44" preserveAspectRatio="none" aria-hidden="true"></svg>
+              </div>
+              <div class="money"><strong id="mStart">$70.00</strong><strong id="mNow">$70.00</strong>paper trades · real Jupiter quotes</div>
+            </div>
+          </div>
+
+          <div class="card logtable">
+            <div class="cardhead"><span>Log</span><em><span class="strike">would you long this?</span> → reading the log</em></div>
+            <div id="logrows"><div class="empty">The night's entries and exits show up here, each with its reason.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="foottxt"><span>Paper trading: no wallet, no real money. Not financial advice: most new meme coins lose most of their value within hours.</span><span>live: <a href="https://karpens.github.io/memebot/">karpens.github.io/memebot</a></span></div>
+    </div>
+  </section>
 </div>
 
-<script id="data" type="application/json">{"updated":"2026-11-25T21:28:33Z","mode":"paper","start_balance":70.0,"balance":70.0,"equity":70.0,"session":"23:00 → 07:00","agents":["SCANNER","RUG CHECK","SIZER","RISK","EXIT","JOURNAL"],"prompt":"You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $70. I will not be watching. Log every decision so I can read it in the morning.\n\nUNIVERSE\n- Only fresh DEX pairs: launched or migrated in the last 6 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $40k, minimum 5m volume $25k, at least 300 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - watches new pairs, volume spikes (>5x 1h average), buy/sell ratio above 70% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 35%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 25% of the balance per trade, never less than $5.\n4. RISK - at most 3 open positions and 12 trades a night, a 30 minute pause after 3 losses in a row, no new entries in the last 30 minutes, stop for the night at -35%.\n5. EXIT - sell half at +50%, trail the rest 20% below the peak, stop loss at -25%, out after 45 minutes unless up 10%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n","night":{"id":"2026-11-25-test","start_equity":70.0,"started":"2026-11-25T21:25:30Z","scans":3,"flagged":0,"checked":0},"live":false,"positions":[],"trades":[],"log":[{"t":"2026-11-25T21:25:30Z","time":"22:25:30","agent":"JOURNAL","coin":null,"action":"start","text":"Noc 2026-11-25-test: zostatok $70.00, 6 agentov, 23:00 až 07:00."},{"t":"2026-11-25T21:25:30Z","time":"22:25:30","agent":"SCANNER","coin":null,"action":"scan","text":"92 nových coinov, 92 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T21:28:33Z","time":"22:28:33","agent":"JOURNAL","coin":null,"action":"end","text":"Koniec testu: $70.00."}],"nights":[{"id":"2026-11-25-test","start":70.0,"end":70.0,"pnl":0.0,"trades":0,"wins":0,"best":0,"worst":0,"flagged":0,"scans":3}],"errors":[]}</script>
+<script id="data" type="application/json">{"updated":"2026-11-26T05:55:01Z","mode":"paper","start_balance":100.0,"balance":61.33,"equity":61.33,"session":"23:00 → 07:00","agents":["SCANNER","NEWS","RUG CHECK","SIZER","EXECUTOR","RISK","LEARNER","LOGGER"],"prompt":"You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $100. I will not be watching. Trade a lot, trade fast, and log every decision so I can read it in the morning.\n\nUNIVERSE\n- Fresh DEX pairs: launched or migrated in the last 12 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $8k, minimum 5m volume $2k, at least 100 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 5 seconds: new pairs, volume spikes (>2x 1h average), buy/sell ratio above 55% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 50%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 10% of the balance per trade, never less than $3.\n4. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row, no new entries in the last 10 minutes, stop for the night at -50%. A coin can be traded again 5 minutes after its exit.\n5. EXIT - watches every open position every second: take the whole profit at +7%, stop loss at -7%, out after 5 minutes unless up 2%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n7. NEWS - follows what people promote: the coin's X and Telegram, DexScreener boosts, the GeckoTerminal and DexScreener trending lists. Trending or boosted counts as a signal.\n8. LEARNER - learns from its own closed trades, by what each coin looked like at entry (liquidity, volume, buyers, age, holders, DEX, socials, signals, slippage, hour). If past trades like this one lost 6% or more on average, it skips the coin and looks at it again 5 minutes later, like a coin after its exit; every 5th such skip is bought at half size to check. Otherwise it sizes from 0.5x to 1.5x by how such trades did.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n","night":{"id":"2026-11-25","start_equity":100.0,"started":"2026-11-26T02:36:46Z","scans":1637,"flagged":77,"checked":410,"filtered":8,"lines":788,"last_rug":{"coin":"NORFEATH","pass":true}},"flags":[{"coin":"call.fun","why":"holders +34%","t":"2026-11-26T04:53:29Z"},{"coin":"2","why":"volume 2.0x","t":"2026-11-26T04:54:19Z"},{"coin":"FRITZ","why":"holders +55%","t":"2026-11-26T05:06:39Z"},{"coin":"UHI","why":"trending","t":"2026-11-26T05:36:04Z"},{"coin":"Grodia","why":"trending","t":"2026-11-26T05:43:20Z"},{"coin":"Elonmas","why":"holders +75%","t":"2026-11-26T05:47:35Z"},{"coin":"PUMPCHAN","why":"trending","t":"2026-11-26T05:47:55Z"},{"coin":"NORFEATH","why":"trending","t":"2026-11-26T05:52:55Z"}],"curve":[[1795660606,99.86],[1795660666,98.05],[1795660728,97.61],[1795660789,97.44],[1795660851,97.45],[1795660913,96.79],[1795660974,96.29],[1795661035,94.96],[1795661095,94.7],[1795661156,95.35],[1795661219,94.5],[1795661281,93.7],[1795661344,92.92],[1795661406,92.44],[1795661466,92.19],[1795661528,91.96],[1795661589,91.96],[1795661649,91.71],[1795661710,91.07],[1795661771,90.34],[1795661831,89.82],[1795661892,89.82],[1795661954,90.14],[1795662014,90.46],[1795662077,90.43],[1795662139,90.85],[1795662201,90.67],[1795662261,89.75],[1795662321,89.72],[1795662383,90.94],[1795662443,91.5],[1795662504,91.5],[1795662564,91.23],[1795662627,91.04],[1795662688,90.44],[1795662749,90.67],[1795662811,89.84],[1795662871,90.22],[1795662932,89.92],[1795662993,89.37],[1795663053,89.4],[1795663115,88.14],[1795663177,87.92],[1795663239,87.72],[1795663300,87.75],[1795663360,87.5],[1795663421,86.91],[1795663481,86.74],[1795663541,86.53],[1795663603,87.02],[1795663664,87.02],[1795663724,86.86],[1795663786,86.52],[1795663847,86.4],[1795663909,86.48],[1795663971,85.2],[1795664032,84.16],[1795664093,84.12],[1795664153,83.1],[1795664214,83.1],[1795664276,83.1],[1795664338,82.84],[1795664401,82.48],[1795664461,82.5],[1795664521,82.31],[1795664582,82.18],[1795664644,82.92],[1795664704,82.77],[1795664765,82.77],[1795664826,82.77],[1795664886,82.77],[1795664946,81.94],[1795665008,81.53],[1795665070,81.5],[1795665132,81.44],[1795665193,81.33],[1795665253,81.57],[1795665315,81.07],[1795665375,80.79],[1795665437,81.06],[1795665498,80.28],[1795665561,79.65],[1795665622,79.59],[1795665683,79.65],[1795665745,79.73],[1795665806,79.21],[1795665868,79.1],[1795665928,79.14],[1795665989,78.69],[1795666050,79.01],[1795666111,78.82],[1795666173,78.82],[1795666233,78.46],[1795666294,77.91],[1795666355,77.31],[1795666417,77.3],[1795666479,76.98],[1795666540,77.05],[1795666601,77.04],[1795666662,77.16],[1795666724,76.98],[1795666784,77.09],[1795666844,76.82],[1795666904,76.02],[1795666964,75.47],[1795667024,75.86],[1795667084,75.92],[1795667144,76.42],[1795667204,76.03],[1795667264,75.88],[1795667324,74.55],[1795667384,74.29],[1795667444,74.32],[1795667504,74.23],[1795667564,73.93],[1795667624,73.37],[1795667684,73.17],[1795667744,73.07],[1795667804,72.78],[1795667864,72.4],[1795667924,72.21],[1795667984,72.1],[1795668044,72.13],[1795668104,72.15],[1795668164,72.02],[1795668224,72.02],[1795668284,71.78],[1795668344,71.51],[1795668404,71.68],[1795668464,71.42],[1795668524,70.53],[1795668584,70.33],[1795668644,70.45],[1795668704,70.5],[1795668764,70.3],[1795668824,70.3],[1795668884,70.33],[1795668944,70.08],[1795669004,70.78],[1795669064,70.69],[1795669124,70.9],[1795669184,70.95],[1795669244,70.82],[1795669304,70.68],[1795669364,70.59],[1795669424,69.91],[1795669484,69.74],[1795669544,70.09],[1795669604,69.88],[1795669664,69.77],[1795669724,69.5],[1795669784,69.31],[1795669844,68.15],[1795669904,67.7],[1795669964,67.7],[1795670024,67.56],[1795670084,67.51],[1795670144,67.25],[1795670204,66.97],[1795670264,66.28],[1795670324,66.03],[1795670384,66.22],[1795670444,65.67],[1795670504,65.44],[1795670564,65.44],[1795670624,65.27],[1795670684,65.23],[1795670744,65.45],[1795670804,65.36],[1795670864,64.96],[1795670924,64.16],[1795670984,64.22],[1795671044,64.24],[1795671104,64.23],[1795671164,64.23],[1795671224,63.21],[1795671284,63.34],[1795671344,63.44],[1795671404,63.02],[1795671464,62.82],[1795671524,62.4],[1795671584,62.34],[1795671644,62.15],[1795671704,62.16],[1795671764,62.06],[1795671824,62.06],[1795671884,61.65],[1795671944,61.48],[1795672004,61.61],[1795672064,61.65],[1795672124,61.45],[1795672184,61.64],[1795672244,61.52],[1795672304,61.48],[1795672364,61.41],[1795672424,61.33],[1795672484,61.33]],"position_pct":10.0,"slip_cap":10.0,"live":false,"positions":[],"trades":[{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T03:58:18Z","closed":"2026-11-26T03:58:32Z","cost":8.03,"proceeds":7.29,"pnl":-0.74,"pnl_pct":-9.2,"why":"stop -7%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 60% · trending · boosted","size_pct":10.0,"entry_price":0.001109800201287698,"exit_price":0.0010282785025038565,"slip":1.59},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T03:57:43Z","closed":"2026-11-26T04:02:54Z","cost":8.04,"proceeds":7.99,"pnl":-0.05,"pnl_pct":-0.6,"why":"5 min, only +1%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 75% · trending · boosted","size_pct":10.0,"entry_price":0.0011300143939500253,"exit_price":0.001144562726437033,"slip":0.48},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:00:08Z","closed":"2026-11-26T04:05:22Z","cost":7.96,"proceeds":7.91,"pnl":-0.04,"pnl_pct":-0.6,"why":"5 min, only +2%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 69% · trending · boosted · holders +5%","size_pct":10.0,"entry_price":0.0012624588189350616,"exit_price":0.0012819000055348652,"slip":1.65},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T04:03:39Z","closed":"2026-11-26T04:05:41Z","cost":7.92,"proceeds":7.22,"pnl":-0.7,"pnl_pct":-8.9,"why":"stop -7%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 62% · trending · boosted","size_pct":10.0,"entry_price":0.0011443455464704786,"exit_price":0.001064136836463067,"slip":1.81},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T04:02:28Z","closed":"2026-11-26T04:07:33Z","cost":7.97,"proceeds":7.96,"pnl":-0.02,"pnl_pct":-0.2,"why":"5 min, only +2%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 67% · trending · boosted","size_pct":10.0,"entry_price":0.0005518423019105673,"exit_price":0.0005618890848960379,"slip":0.89},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:10:28Z","closed":"2026-11-26T04:12:18Z","cost":7.86,"proceeds":6.98,"pnl":-0.89,"pnl_pct":-11.3,"why":"stop -8%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 64% · trending · boosted · holders +6%","size_pct":10.0,"entry_price":0.0012547086102290043,"exit_price":0.0011518909512740916,"slip":0.28},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T04:09:39Z","closed":"2026-11-26T04:14:39Z","cost":7.88,"proceeds":7.35,"pnl":-0.53,"pnl_pct":-6.7,"why":"5 min, only -3%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 73% · trending · boosted · holders +12%","size_pct":10.0,"entry_price":0.0011201538014176473,"exit_price":0.0010814773822968445,"slip":0.73},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T04:10:52Z","closed":"2026-11-26T04:15:53Z","cost":7.85,"proceeds":7.56,"pnl":-0.29,"pnl_pct":-3.6,"why":"5 min, only -1%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 62% · trending · boosted","size_pct":10.0,"entry_price":0.0010326684468901974,"exit_price":0.0010258628343478469,"slip":1.81},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T04:14:31Z","closed":"2026-11-26T04:21:20Z","cost":7.73,"proceeds":7.48,"pnl":-0.25,"pnl_pct":-3.2,"why":"6 min, only +1%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 67% · trending · boosted","size_pct":10.0,"entry_price":0.0005960248660295695,"exit_price":0.0006011226272397497,"slip":2.0},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T04:19:42Z","closed":"2026-11-26T04:22:23Z","cost":7.72,"proceeds":7.0,"pnl":-0.72,"pnl_pct":-9.3,"why":"stop -7%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 73% · trending · boosted · holders +6%","size_pct":10.0,"entry_price":0.0010661269789207482,"exit_price":0.0009872662768941713,"slip":1.68},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:18:01Z","closed":"2026-11-26T04:23:01Z","cost":7.72,"proceeds":7.38,"pnl":-0.34,"pnl_pct":-4.4,"why":"5 min, only -1%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 69% · trending · boosted","size_pct":10.0,"entry_price":0.0011426496475338424,"exit_price":0.001127079787117656,"slip":0.66},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T04:20:57Z","closed":"2026-11-26T04:24:53Z","cost":7.67,"proceeds":8.09,"pnl":0.41,"pnl_pct":5.4,"why":"+9%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 57% · trending · boosted","size_pct":10.0,"entry_price":0.0010028968924217928,"exit_price":0.0010909954896307105,"slip":0.76},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T04:26:22Z","closed":"2026-11-26T04:27:50Z","cost":6.86,"proceeds":6.01,"pnl":-0.85,"pnl_pct":-12.4,"why":"stop -10%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 60% · trending · boosted","size_pct":9.0,"entry_price":0.0006285550949581024,"exit_price":0.0005627749384281111,"slip":0.79},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:28:02Z","closed":"2026-11-26T04:28:03Z","cost":6.56,"proceeds":6.24,"pnl":-0.32,"pnl_pct":-4.8,"why":"stop -7%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 72% · trending · boosted · holders +9%","size_pct":8.8,"entry_price":0.0013469823385302408,"exit_price":0.001251,"slip":0.66},{"symbol":"ccat","mint":"3jAB5ksB13Kgm2Q39NU6d2USUxBy2f9LaTvyay6Gpump","opened":"2026-11-26T04:25:02Z","closed":"2026-11-26T04:30:02Z","cost":6.88,"proceeds":6.3,"pnl":-0.57,"pnl_pct":-8.4,"why":"5 min, only -6%","url":"https://dexscreener.com/solana/e4bkvrut7rhe2njs4hqsa7z2kqpjyb58nmphj2vbtgbp","reason":"buys 74% · volume 7.2x","size_pct":9.0,"entry_price":4.417622620729897e-05,"exit_price":4.1520345946804287e-05,"slip":0.09},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T04:27:27Z","closed":"2026-11-26T04:32:27Z","cost":6.85,"proceeds":6.31,"pnl":-0.55,"pnl_pct":-8.0,"why":"5 min, only -5%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 77% · trending · boosted","size_pct":9.0,"entry_price":0.0010350182310650384,"exit_price":0.0009857209426597526,"slip":0.7},{"symbol":"TEEETHY","mint":"BbC8hVHJ2bo6xFcGh2X6zcMiv1T1rznQd3qWoxXApump","opened":"2026-11-26T04:33:31Z","closed":"2026-11-26T04:34:05Z","cost":6.2,"proceeds":5.61,"pnl":-0.6,"pnl_pct":-9.6,"why":"stop -7%","url":"https://dexscreener.com/solana/38p8ddr9uw8ffd5bnabho4hps5f9okwfjk3gs1g9t7kx","reason":"buys 57% · holders +1042%","size_pct":8.4,"entry_price":0.00010400304028048167,"exit_price":9.632288861085495e-05,"slip":2.36},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T04:33:01Z","closed":"2026-11-26T04:38:01Z","cost":6.24,"proceeds":5.84,"pnl":-0.4,"pnl_pct":-6.4,"why":"5 min, only -3%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 58% · trending · boosted","size_pct":8.4,"entry_price":0.0005972394611726498,"exit_price":0.0005791002318493862,"slip":0.69},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:33:06Z","closed":"2026-11-26T04:38:06Z","cost":6.23,"proceeds":5.74,"pnl":-0.5,"pnl_pct":-8.0,"why":"5 min, only -5%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 73% · trending · boosted","size_pct":8.4,"entry_price":0.0013848490941832943,"exit_price":0.001318839889792592,"slip":0.59},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T04:33:36Z","closed":"2026-11-26T04:38:36Z","cost":6.2,"proceeds":5.95,"pnl":-0.24,"pnl_pct":-4.0,"why":"5 min, only -1%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 58% · trending · boosted","size_pct":8.4,"entry_price":0.0011631235647458758,"exit_price":0.0011553218868874488,"slip":1.77},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T04:37:29Z","closed":"2026-11-26T04:42:29Z","cost":6.07,"proceeds":5.9,"pnl":-0.18,"pnl_pct":-2.9,"why":"5 min, only -0%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 76% · trending · boosted · holders +8%","size_pct":8.3,"entry_price":0.0009968526056287324,"exit_price":0.0009942429913144275,"slip":0.86},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T04:44:29Z","closed":"2026-11-26T04:47:51Z","cost":6.11,"proceeds":5.48,"pnl":-0.63,"pnl_pct":-10.3,"why":"stop -9%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 60% · trending · boosted","size_pct":8.5,"entry_price":0.0011153723428522875,"exit_price":0.001018215709126725,"slip":0.5},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T04:45:19Z","closed":"2026-11-26T04:48:30Z","cost":6.09,"proceeds":5.55,"pnl":-0.55,"pnl_pct":-9.0,"why":"stop -7%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 55% · trending · boosted","size_pct":8.5,"entry_price":0.000635476157726347,"exit_price":0.0005885820524296184,"slip":0.74},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:44:29Z","closed":"2026-11-26T04:49:29Z","cost":6.11,"proceeds":5.89,"pnl":-0.22,"pnl_pct":-3.6,"why":"5 min, only -1%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 63% · trending · boosted · holders +7%","size_pct":8.5,"entry_price":0.0013925937584792724,"exit_price":0.0013735923574357937,"slip":0.51},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T04:47:34Z","closed":"2026-11-26T04:52:34Z","cost":6.08,"proceeds":5.75,"pnl":-0.32,"pnl_pct":-5.3,"why":"5 min, only -3%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 83% · trending · boosted · holders +6%","size_pct":8.5,"entry_price":0.0010392387178128396,"exit_price":0.0010079826141672907,"slip":0.61},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T04:54:34Z","closed":"2026-11-26T04:56:54Z","cost":5.8,"proceeds":6.03,"pnl":0.23,"pnl_pct":4.0,"why":"+8%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 56% · trending · boosted","size_pct":8.3,"entry_price":0.0006192660856575371,"exit_price":0.0006680140462138527,"slip":0.88},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T04:54:34Z","closed":"2026-11-26T04:57:54Z","cost":5.81,"proceeds":6.05,"pnl":0.23,"pnl_pct":4.0,"why":"+8%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 57% · trending · boosted · holders +5%","size_pct":8.3,"entry_price":0.0015953848814861749,"exit_price":0.0017168407293099144,"slip":1.45},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T04:54:39Z","closed":"2026-11-26T05:00:15Z","cost":5.77,"proceeds":5.98,"pnl":0.2,"pnl_pct":3.5,"why":"+7%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 58% · trending · boosted","size_pct":8.3,"entry_price":0.0011255586194533422,"exit_price":0.001205063080168165,"slip":0.67},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T04:57:39Z","closed":"2026-11-26T05:02:39Z","cost":5.95,"proceeds":5.65,"pnl":-0.29,"pnl_pct":-5.0,"why":"5 min, only -2%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 85% · trending · boosted","size_pct":8.4,"entry_price":0.001115824772082409,"exit_price":0.0010953056560913212,"slip":1.6},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T05:01:59Z","closed":"2026-11-26T05:02:51Z","cost":6.11,"proceeds":5.5,"pnl":-0.61,"pnl_pct":-9.9,"why":"stop -8%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 56% · trending · boosted","size_pct":8.6,"entry_price":0.0006587283086570376,"exit_price":0.0006075230198847589,"slip":2.04},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T05:02:59Z","closed":"2026-11-26T05:07:59Z","cost":5.93,"proceeds":5.57,"pnl":-0.37,"pnl_pct":-6.2,"why":"5 min, only -3%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 64% · trending · boosted · volume 2.7x","size_pct":8.5,"entry_price":0.001555027460005912,"exit_price":0.001509477074096183,"slip":1.54},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T05:06:04Z","closed":"2026-11-26T05:10:36Z","cost":5.96,"proceeds":5.13,"pnl":-0.84,"pnl_pct":-14.0,"why":"stop -11%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 55% · trending · boosted","size_pct":8.5,"entry_price":0.0010882097226673254,"exit_price":0.0009690252408897649,"slip":0.74},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T05:07:54Z","closed":"2026-11-26T05:10:45Z","cost":5.94,"proceeds":5.33,"pnl":-0.61,"pnl_pct":-10.2,"why":"stop -8%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 58% · trending · boosted","size_pct":8.5,"entry_price":0.0006568454490022409,"exit_price":0.0006072059954573281,"slip":1.9},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T05:07:44Z","closed":"2026-11-26T05:10:54Z","cost":5.95,"proceeds":5.4,"pnl":-0.55,"pnl_pct":-9.3,"why":"stop -7%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 66% · trending · boosted","size_pct":8.5,"entry_price":0.0011182092610090742,"exit_price":0.0010363314210575755,"slip":0.62},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T05:15:39Z","closed":"2026-11-26T05:17:09Z","cost":5.51,"proceeds":4.85,"pnl":-0.66,"pnl_pct":-12.0,"why":"stop -9%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 61% · trending · boosted","size_pct":8.2,"entry_price":0.0010811284649376962,"exit_price":0.0009855540026238673,"slip":0.69},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T05:13:04Z","closed":"2026-11-26T05:18:04Z","cost":5.52,"proceeds":5.11,"pnl":-0.42,"pnl_pct":-7.6,"why":"5 min, only -5%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 57% · trending · boosted · holders +8%","size_pct":8.2,"entry_price":0.0014699354385034858,"exit_price":0.001390969699060148,"slip":0.0},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T05:15:49Z","closed":"2026-11-26T05:18:36Z","cost":5.49,"proceeds":4.85,"pnl":-0.64,"pnl_pct":-11.7,"why":"stop -8%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 62% · trending · boosted","size_pct":8.2,"entry_price":0.0006730076510333329,"exit_price":0.0006164476814883699,"slip":0.75},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T05:15:59Z","closed":"2026-11-26T05:20:57Z","cost":5.48,"proceeds":4.94,"pnl":-0.54,"pnl_pct":-9.9,"why":"stop -8%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 63% · trending · boosted","size_pct":8.2,"entry_price":0.001100338983851345,"exit_price":0.0010146843278425104,"slip":0.67},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T05:23:39Z","closed":"2026-11-26T05:27:27Z","cost":5.05,"proceeds":4.52,"pnl":-0.53,"pnl_pct":-10.6,"why":"stop -7%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 58% · trending · boosted","size_pct":7.7,"entry_price":0.0006029330657978129,"exit_price":0.0005578599187405192,"slip":1.61},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T05:23:09Z","closed":"2026-11-26T05:28:09Z","cost":5.05,"proceeds":4.95,"pnl":-0.11,"pnl_pct":-2.1,"why":"5 min, only +1%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 68% · trending · boosted","size_pct":7.7,"entry_price":0.001460490409446789,"exit_price":0.0014810294070722913,"slip":1.53},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T05:22:59Z","closed":"2026-11-26T05:28:15Z","cost":5.08,"proceeds":4.61,"pnl":-0.48,"pnl_pct":-9.4,"why":"stop -7%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 61% · trending · boosted","size_pct":7.8,"entry_price":0.0010670426905305995,"exit_price":0.0009912645724156999,"slip":0.69},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T05:25:59Z","closed":"2026-11-26T05:30:59Z","cost":5.09,"proceeds":5.01,"pnl":-0.09,"pnl_pct":-1.7,"why":"5 min, only +2%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 64% · trending · boosted","size_pct":7.8,"entry_price":0.0010733569322765792,"exit_price":0.0010906043222303635,"slip":0.45},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T05:33:19Z","closed":"2026-11-26T05:33:42Z","cost":4.94,"proceeds":4.17,"pnl":-0.77,"pnl_pct":-15.6,"why":"stop -14%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 60% · trending · boosted","size_pct":7.7,"entry_price":0.0010548381949546726,"exit_price":0.0009122313132345774,"slip":1.95},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T05:32:59Z","closed":"2026-11-26T05:37:48Z","cost":4.94,"proceeds":4.27,"pnl":-0.67,"pnl_pct":-13.5,"why":"stop -10%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 64% · trending · boosted","size_pct":7.7,"entry_price":0.000594571623495065,"exit_price":0.0005346446020251926,"slip":0.75},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T05:36:04Z","closed":"2026-11-26T05:39:45Z","cost":4.88,"proceeds":4.34,"pnl":-0.55,"pnl_pct":-11.2,"why":"stop -8%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 67% · trending · boosted","size_pct":7.7,"entry_price":0.0012020731872232262,"exit_price":0.0011085987271576285,"slip":1.51},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T05:37:16Z","closed":"2026-11-26T05:42:16Z","cost":4.82,"proceeds":4.63,"pnl":-0.19,"pnl_pct":-3.9,"why":"5 min, only -0%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 77% · trending · boosted","size_pct":7.7,"entry_price":0.0014449425627200464,"exit_price":0.0014415944457007585,"slip":0.49},{"symbol":"NORFEATH","mint":"3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump","opened":"2026-11-26T05:44:20Z","closed":"2026-11-26T05:45:12Z","cost":4.6,"proceeds":4.16,"pnl":-0.44,"pnl_pct":-9.6,"why":"stop -7%","url":"https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj","reason":"buys 63% · trending · boosted","size_pct":7.4,"entry_price":0.0005576114938190057,"exit_price":0.0005185516647897328,"slip":1.92},{"symbol":"UHI","mint":"Bnw5JRPek5JvJhzUiB9yrs2cmzt4bLeFqSRzDzSppump","opened":"2026-11-26T05:44:50Z","closed":"2026-11-26T05:49:50Z","cost":4.62,"proceeds":4.41,"pnl":-0.21,"pnl_pct":-4.5,"why":"5 min, only -1%","url":"https://dexscreener.com/solana/g9xgqagycgf5qkkjvc4bvtltaosv4kr2taymchfwfstl","reason":"buys 68% · trending · boosted","size_pct":7.5,"entry_price":0.001233714014531176,"exit_price":0.0012242452167437572,"slip":1.67},{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-26T05:44:20Z","closed":"2026-11-26T05:50:15Z","cost":4.64,"proceeds":4.8,"pnl":0.16,"pnl_pct":3.5,"why":"+8%","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve","reason":"buys 60% · trending · boosted","size_pct":7.5,"entry_price":0.0008711598957211676,"exit_price":0.0009374895437039677,"slip":0.73},{"symbol":"PUMPCHAN","mint":"Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump","opened":"2026-11-26T05:47:55Z","closed":"2026-11-26T05:52:55Z","cost":4.54,"proceeds":4.3,"pnl":-0.24,"pnl_pct":-5.4,"why":"5 min, only -3%","url":"https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb","reason":"buys 82% · trending · boosted","size_pct":7.4,"entry_price":0.0014622921229736666,"exit_price":0.0014233468119644608,"slip":0.96}],"log":[{"t":"2026-11-26T05:06:04Z","time":"06:06:04","agent":"SIZER","coin":"Grodia","action":"size","text":"10% of $69.99 x0.85 LEARNER = $5.96","n":589},{"t":"2026-11-26T05:06:04Z","time":"06:06:04","agent":"EXECUTOR","coin":"Grodia","action":"enter","text":"ENTER Grodia at 0.0010882097 · slip 0.7% · buys 55% · trending · boosted","n":590},{"t":"2026-11-26T05:06:39Z","time":"06:06:39","agent":"SCANNER","coin":"FRITZ","action":"flag","text":"flagged · pumpswap · liq $21.2k · 5m $18.4k · buys 59% · holders +55%","n":591},{"t":"2026-11-26T05:06:39Z","time":"06:06:39","agent":"NEWS","coin":"FRITZ","action":"news","text":"promo: X @FritztheHippo · web","n":592},{"t":"2026-11-26T05:06:39Z","time":"06:06:39","agent":"RUG CHECK","coin":"FRITZ","action":"reject","text":"FAIL · 16 insiders","n":593},{"t":"2026-11-26T05:06:59Z","time":"06:06:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 67 new coins · 67 pairs · 2 pass the rules","n":594},{"t":"2026-11-26T05:07:44Z","time":"06:07:44","agent":"SCANNER","coin":"UHI","action":"flag","text":"flagged · pumpswap · liq $76.4k · 5m $4.3k · buys 66% · trending · boosted","n":595},{"t":"2026-11-26T05:07:44Z","time":"06:07:44","agent":"NEWS","coin":"UHI","action":"news","text":"promo: X @UHICoinX · web · 100 boosts · trending","n":596},{"t":"2026-11-26T05:07:44Z","time":"06:07:44","agent":"LEARNER","coin":"UHI","action":"buy","text":"buy · score -2.9% · size x0.85 · hour:05-07 -5.1% over 26, dex:pumpswap -5.0% over 20","n":597},{"t":"2026-11-26T05:07:44Z","time":"06:07:44","agent":"SIZER","coin":"UHI","action":"size","text":"10% of $69.81 x0.85 LEARNER = $5.95","n":598},{"t":"2026-11-26T05:07:44Z","time":"06:07:44","agent":"EXECUTOR","coin":"UHI","action":"enter","text":"ENTER UHI at 0.0011182093 · slip 0.6% · buys 66% · trending · boosted","n":599},{"t":"2026-11-26T05:07:54Z","time":"06:07:54","agent":"SCANNER","coin":"NORFEATH","action":"flag","text":"flagged · pumpswap · liq $57.5k · 5m $2.6k · buys 58% · trending · boosted","n":600},{"t":"2026-11-26T05:07:54Z","time":"06:07:54","agent":"NEWS","coin":"NORFEATH","action":"news","text":"promo: X @flynorfeather · web · 100 boosts · trending","n":601},{"t":"2026-11-26T05:07:54Z","time":"06:07:54","agent":"LEARNER","coin":"NORFEATH","action":"buy","text":"buy · score -3.0% · size x0.85 · hour:05-07 -5.1% over 26, dex:pumpswap -5.0% over 20","n":602},{"t":"2026-11-26T05:07:54Z","time":"06:07:54","agent":"SIZER","coin":"NORFEATH","action":"size","text":"10% of $69.74 x0.85 LEARNER = $5.94","n":603},{"t":"2026-11-26T05:07:54Z","time":"06:07:54","agent":"EXECUTOR","coin":"NORFEATH","action":"enter","text":"ENTER NORFEATH at 0.0006568454 · slip 1.9% · buys 58% · trending · boosted","n":604},{"t":"2026-11-26T05:07:59Z","time":"06:07:59","agent":"EXECUTOR","coin":"PUMPCHAN","action":"exit","text":"EXIT PUMPCHAN $-0.37 (-6%) · 5 min, only -3%","n":605},{"t":"2026-11-26T05:07:59Z","time":"06:07:59","agent":"LEARNER","coin":"PUMPCHAN","action":"learn","text":"learned · hour:05-07 now avg -5.1% over 27","n":606},{"t":"2026-11-26T05:07:59Z","time":"06:07:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 65 new coins · 65 pairs · 1 pass the rules","n":607},{"t":"2026-11-26T05:08:59Z","time":"06:08:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 84 new coins · 84 pairs · 3 pass the rules","n":608},{"t":"2026-11-26T05:09:59Z","time":"06:09:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 91 new coins · 91 pairs · 2 pass the rules","n":609},{"t":"2026-11-26T05:10:36Z","time":"06:10:36","agent":"EXECUTOR","coin":"Grodia","action":"exit","text":"EXIT Grodia $-0.84 (-14%) · stop -11%","n":610},{"t":"2026-11-26T05:10:36Z","time":"06:10:36","agent":"LEARNER","coin":"Grodia","action":"learn","text":"learned · hour:05-07 now avg -5.4% over 28","n":611},{"t":"2026-11-26T05:10:45Z","time":"06:10:45","agent":"RISK","coin":null,"action":"pause","text":"5 losses in a row · 2 min pause","n":612},{"t":"2026-11-26T05:10:45Z","time":"06:10:45","agent":"EXECUTOR","coin":"NORFEATH","action":"exit","text":"EXIT NORFEATH $-0.61 (-10%) · stop -8%","n":613},{"t":"2026-11-26T05:10:45Z","time":"06:10:45","agent":"LEARNER","coin":"NORFEATH","action":"learn","text":"learned · hour:05-07 now avg -5.6% over 29","n":614},{"t":"2026-11-26T05:10:54Z","time":"06:10:54","agent":"RISK","coin":null,"action":"pause","text":"6 losses in a row · 2 min pause","n":615},{"t":"2026-11-26T05:10:54Z","time":"06:10:54","agent":"EXECUTOR","coin":"UHI","action":"exit","text":"EXIT UHI $-0.55 (-9%) · stop -7%","n":616},{"t":"2026-11-26T05:10:54Z","time":"06:10:54","agent":"LEARNER","coin":"UHI","action":"learn","text":"learned · hour:05-07 now avg -5.7% over 30","n":617},{"t":"2026-11-26T05:10:59Z","time":"06:10:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 4 pass the rules","n":618},{"t":"2026-11-26T05:11:59Z","time":"06:11:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 87 new coins · 87 pairs · 2 pass the rules","n":619},{"t":"2026-11-26T05:12:59Z","time":"06:12:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 107 new coins · 107 pairs · 1 pass the rules","n":620},{"t":"2026-11-26T05:13:04Z","time":"06:13:04","agent":"SCANNER","coin":"PUMPCHAN","action":"flag","text":"flagged · pumpswap · liq $86.0k · 5m $3.6k · buys 57% · trending · boosted · holders +8%","n":621},{"t":"2026-11-26T05:13:04Z","time":"06:13:04","agent":"NEWS","coin":"PUMPCHAN","action":"news","text":"promo: X @PumpChanMeme · web · 30 boosts · trending","n":622},{"t":"2026-11-26T05:13:04Z","time":"06:13:04","agent":"LEARNER","coin":"PUMPCHAN","action":"buy","text":"buy · score -3.7% · size x0.82 · hour:05-07 -5.7% over 30, dex:pumpswap -5.8% over 24","n":623},{"t":"2026-11-26T05:13:04Z","time":"06:13:04","agent":"SIZER","coin":"PUMPCHAN","action":"size","text":"10% of $67.70 x0.82 LEARNER = $5.52","n":624},{"t":"2026-11-26T05:13:04Z","time":"06:13:04","agent":"EXECUTOR","coin":"PUMPCHAN","action":"enter","text":"ENTER PUMPCHAN at 0.0014699354 · slip 0.0% · buys 57% · trending · boosted · holders +8%","n":625},{"t":"2026-11-26T05:13:59Z","time":"06:13:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 1 pass the rules","n":626},{"t":"2026-11-26T05:14:59Z","time":"06:14:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 7 pass the rules","n":627},{"t":"2026-11-26T05:15:39Z","time":"06:15:39","agent":"LEARNER","coin":"Grodia","action":"buy","text":"buy · score -3.7% · size x0.82 · hour:05-07 -5.7% over 30, dex:pumpswap -5.8% over 24","n":628},{"t":"2026-11-26T05:15:39Z","time":"06:15:39","agent":"SIZER","coin":"Grodia","action":"size","text":"10% of $67.53 x0.82 LEARNER = $5.51","n":629},{"t":"2026-11-26T05:15:39Z","time":"06:15:39","agent":"EXECUTOR","coin":"Grodia","action":"enter","text":"ENTER Grodia at 0.0010811285 · slip 0.7% · buys 61% · trending · boosted","n":630},{"t":"2026-11-26T05:15:49Z","time":"06:15:49","agent":"LEARNER","coin":"NORFEATH","action":"buy","text":"buy · score -3.7% · size x0.82 · hour:05-07 -5.7% over 30, dex:pumpswap -5.8% over 24","n":631},{"t":"2026-11-26T05:15:49Z","time":"06:15:49","agent":"SIZER","coin":"NORFEATH","action":"size","text":"10% of $67.33 x0.82 LEARNER = $5.49","n":632},{"t":"2026-11-26T05:15:49Z","time":"06:15:49","agent":"EXECUTOR","coin":"NORFEATH","action":"enter","text":"ENTER NORFEATH at 0.0006730077 · slip 0.8% · buys 62% · trending · boosted","n":633},{"t":"2026-11-26T05:15:59Z","time":"06:15:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 88 new coins · 88 pairs · 7 pass the rules","n":634},{"t":"2026-11-26T05:15:59Z","time":"06:15:59","agent":"LEARNER","coin":"UHI","action":"buy","text":"buy · score -3.7% · size x0.82 · hour:05-07 -5.7% over 30, dex:pumpswap -5.8% over 24","n":635},{"t":"2026-11-26T05:15:59Z","time":"06:15:59","agent":"SIZER","coin":"UHI","action":"size","text":"10% of $67.13 x0.82 LEARNER = $5.48","n":636},{"t":"2026-11-26T05:15:59Z","time":"06:15:59","agent":"EXECUTOR","coin":"UHI","action":"enter","text":"ENTER UHI at 0.001100339 · slip 0.7% · buys 63% · trending · boosted","n":637},{"t":"2026-11-26T05:16:59Z","time":"06:16:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 99 new coins · 99 pairs · 2 pass the rules","n":638},{"t":"2026-11-26T05:17:09Z","time":"06:17:09","agent":"RISK","coin":null,"action":"pause","text":"7 losses in a row · 2 min pause","n":639},{"t":"2026-11-26T05:17:09Z","time":"06:17:09","agent":"EXECUTOR","coin":"Grodia","action":"exit","text":"EXIT Grodia $-0.66 (-12%) · stop -9%","n":640},{"t":"2026-11-26T05:17:09Z","time":"06:17:09","agent":"LEARNER","coin":"Grodia","action":"learn","text":"learned · hour:05-07 now avg -5.9% over 31","n":641},{"t":"2026-11-26T05:17:59Z","time":"06:17:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":642},{"t":"2026-11-26T05:18:04Z","time":"06:18:04","agent":"RISK","coin":null,"action":"pause","text":"8 losses in a row · 2 min pause","n":643},{"t":"2026-11-26T05:18:04Z","time":"06:18:04","agent":"EXECUTOR","coin":"PUMPCHAN","action":"exit","text":"EXIT PUMPCHAN $-0.42 (-8%) · 5 min, only -5%","n":644},{"t":"2026-11-26T05:18:04Z","time":"06:18:04","agent":"LEARNER","coin":"PUMPCHAN","action":"learn","text":"learned · hour:05-07 now avg -6.0% over 32","n":645},{"t":"2026-11-26T05:18:36Z","time":"06:18:36","agent":"RISK","coin":null,"action":"pause","text":"9 losses in a row · 2 min pause","n":646},{"t":"2026-11-26T05:18:36Z","time":"06:18:36","agent":"EXECUTOR","coin":"NORFEATH","action":"exit","text":"EXIT NORFEATH $-0.64 (-12%) · stop -8%","n":647},{"t":"2026-11-26T05:18:36Z","time":"06:18:36","agent":"LEARNER","coin":"NORFEATH","action":"learn","text":"learned · hour:05-07 now avg -6.1% over 33","n":648},{"t":"2026-11-26T05:18:59Z","time":"06:18:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":649},{"t":"2026-11-26T05:19:59Z","time":"06:19:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 87 new coins · 86 pairs · 2 pass the rules","n":650},{"t":"2026-11-26T05:20:57Z","time":"06:20:57","agent":"RISK","coin":null,"action":"pause","text":"10 losses in a row · 2 min pause","n":651},{"t":"2026-11-26T05:20:57Z","time":"06:20:57","agent":"EXECUTOR","coin":"UHI","action":"exit","text":"EXIT UHI $-0.54 (-10%) · stop -8%","n":652},{"t":"2026-11-26T05:20:57Z","time":"06:20:57","agent":"LEARNER","coin":"UHI","action":"learn","text":"learned · hour:05-07 now avg -6.2% over 34","n":653},{"t":"2026-11-26T05:20:59Z","time":"06:20:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 104 new coins · 104 pairs · 3 pass the rules","n":654},{"t":"2026-11-26T05:21:59Z","time":"06:21:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 66 new coins · 66 pairs · 3 pass the rules","n":655},{"t":"2026-11-26T05:22:14Z","time":"06:22:14","agent":"SCANNER","coin":"Grodia","action":"flag","text":"flagged · pumpswap · liq $76.0k · 5m $4.3k · buys 62% · trending · boosted","n":656},{"t":"2026-11-26T05:22:14Z","time":"06:22:14","agent":"NEWS","coin":"Grodia","action":"news","text":"promo: X @thegrodia · web · 100 boosts · trending","n":657},{"t":"2026-11-26T05:22:14Z","time":"06:22:14","agent":"RISK","coin":"Grodia","action":"skip","text":"no entry: pause after a losing streak","n":658},{"t":"2026-11-26T05:22:59Z","time":"06:22:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 67 new coins · 67 pairs · 4 pass the rules","n":659},{"t":"2026-11-26T05:22:59Z","time":"06:22:59","agent":"LEARNER","coin":"Grodia","action":"buy","text":"buy · score -4.5% · size x0.78 · hour:05-07 -6.2% over 34, dex:pumpswap -6.5% over 28","n":660},{"t":"2026-11-26T05:22:59Z","time":"06:22:59","agent":"SIZER","coin":"Grodia","action":"size","text":"10% of $65.44 x0.78 LEARNER = $5.08","n":661},{"t":"2026-11-26T05:22:59Z","time":"06:22:59","agent":"EXECUTOR","coin":"Grodia","action":"enter","text":"ENTER Grodia at 0.0010670427 · slip 0.7% · buys 61% · trending · boosted","n":662},{"t":"2026-11-26T05:23:09Z","time":"06:23:09","agent":"SCANNER","coin":"PUMPCHAN","action":"flag","text":"flagged · pumpswap · liq $85.5k · 5m $7.6k · buys 68% · trending · boosted","n":663},{"t":"2026-11-26T05:23:09Z","time":"06:23:09","agent":"NEWS","coin":"PUMPCHAN","action":"news","text":"promo: X @PumpChanMeme · web · 30 boosts · trending","n":664},{"t":"2026-11-26T05:23:09Z","time":"06:23:09","agent":"LEARNER","coin":"PUMPCHAN","action":"buy","text":"buy · score -4.5% · size x0.77 · hour:05-07 -6.2% over 34, dex:pumpswap -6.5% over 28","n":665},{"t":"2026-11-26T05:23:09Z","time":"06:23:09","agent":"SIZER","coin":"PUMPCHAN","action":"size","text":"10% of $65.27 x0.77 LEARNER = $5.05","n":666},{"t":"2026-11-26T05:23:09Z","time":"06:23:09","agent":"EXECUTOR","coin":"PUMPCHAN","action":"enter","text":"ENTER PUMPCHAN at 0.0014604904 · slip 1.5% · buys 68% · trending · boosted","n":667},{"t":"2026-11-26T05:23:39Z","time":"06:23:39","agent":"SCANNER","coin":"NORFEATH","action":"flag","text":"flagged · pumpswap · liq $56.6k · 5m $4.4k · buys 58% · trending · boosted","n":668},{"t":"2026-11-26T05:23:39Z","time":"06:23:39","agent":"NEWS","coin":"NORFEATH","action":"news","text":"promo: X @flynorfeather · web · 100 boosts · trending","n":669},{"t":"2026-11-26T05:23:39Z","time":"06:23:39","agent":"LEARNER","coin":"NORFEATH","action":"buy","text":"buy · score -4.5% · size x0.77 · hour:05-07 -6.2% over 34, dex:pumpswap -6.5% over 28","n":670},{"t":"2026-11-26T05:23:39Z","time":"06:23:39","agent":"SIZER","coin":"NORFEATH","action":"size","text":"10% of $65.26 x0.77 LEARNER = $5.05","n":671},{"t":"2026-11-26T05:23:39Z","time":"06:23:39","agent":"EXECUTOR","coin":"NORFEATH","action":"enter","text":"ENTER NORFEATH at 0.0006029331 · slip 1.6% · buys 58% · trending · boosted","n":672},{"t":"2026-11-26T05:23:59Z","time":"06:23:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 85 new coins · 85 pairs · 2 pass the rules","n":673},{"t":"2026-11-26T05:24:59Z","time":"06:24:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 102 new coins · 102 pairs · 2 pass the rules","n":674},{"t":"2026-11-26T05:25:59Z","time":"06:25:59","agent":"SCANNER","coin":"UHI","action":"flag","text":"flagged · pumpswap · liq $72.6k · 5m $4.9k · buys 64% · trending · boosted","n":675},{"t":"2026-11-26T05:25:59Z","time":"06:25:59","agent":"NEWS","coin":"UHI","action":"news","text":"promo: X @UHICoinX · web · 100 boosts · trending","n":676},{"t":"2026-11-26T05:25:59Z","time":"06:25:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 69 new coins · 69 pairs · 2 pass the rules","n":677},{"t":"2026-11-26T05:25:59Z","time":"06:25:59","agent":"LEARNER","coin":"UHI","action":"buy","text":"buy · score -4.5% · size x0.78 · hour:05-07 -6.2% over 34, dex:pumpswap -6.5% over 28","n":678},{"t":"2026-11-26T05:25:59Z","time":"06:25:59","agent":"SIZER","coin":"UHI","action":"size","text":"10% of $65.54 x0.78 LEARNER = $5.09","n":679},{"t":"2026-11-26T05:25:59Z","time":"06:25:59","agent":"EXECUTOR","coin":"UHI","action":"enter","text":"ENTER UHI at 0.0010733569 · slip 0.5% · buys 64% · trending · boosted","n":680},{"t":"2026-11-26T05:26:59Z","time":"06:26:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":681},{"t":"2026-11-26T05:27:27Z","time":"06:27:27","agent":"RISK","coin":null,"action":"pause","text":"11 losses in a row · 2 min pause","n":682},{"t":"2026-11-26T05:27:27Z","time":"06:27:27","agent":"EXECUTOR","coin":"NORFEATH","action":"exit","text":"EXIT NORFEATH $-0.53 (-11%) · stop -7%","n":683},{"t":"2026-11-26T05:27:27Z","time":"06:27:27","agent":"LEARNER","coin":"NORFEATH","action":"learn","text":"learned · hour:05-07 now avg -6.4% over 35","n":684},{"t":"2026-11-26T05:27:59Z","time":"06:27:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 87 new coins · 87 pairs · 4 pass the rules","n":685},{"t":"2026-11-26T05:28:09Z","time":"06:28:09","agent":"RISK","coin":null,"action":"pause","text":"12 losses in a row · 2 min pause","n":686},{"t":"2026-11-26T05:28:09Z","time":"06:28:09","agent":"EXECUTOR","coin":"PUMPCHAN","action":"exit","text":"EXIT PUMPCHAN $-0.11 (-2%) · 5 min, only +1%","n":687},{"t":"2026-11-26T05:28:09Z","time":"06:28:09","agent":"LEARNER","coin":"PUMPCHAN","action":"learn","text":"learned · hour:05-07 now avg -6.2% over 36","n":688},{"t":"2026-11-26T05:28:15Z","time":"06:28:15","agent":"RISK","coin":null,"action":"pause","text":"13 losses in a row · 2 min pause","n":689},{"t":"2026-11-26T05:28:15Z","time":"06:28:15","agent":"EXECUTOR","coin":"Grodia","action":"exit","text":"EXIT Grodia $-0.48 (-9%) · stop -7%","n":690},{"t":"2026-11-26T05:28:15Z","time":"06:28:15","agent":"LEARNER","coin":"Grodia","action":"learn","text":"learned · hour:05-07 now avg -6.3% over 37","n":691},{"t":"2026-11-26T05:28:59Z","time":"06:28:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 101 new coins · 101 pairs · 7 pass the rules","n":692},{"t":"2026-11-26T05:29:59Z","time":"06:29:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":693},{"t":"2026-11-26T05:30:59Z","time":"06:30:59","agent":"RISK","coin":null,"action":"pause","text":"14 losses in a row · 2 min pause","n":694},{"t":"2026-11-26T05:30:59Z","time":"06:30:59","agent":"EXECUTOR","coin":"UHI","action":"exit","text":"EXIT UHI $-0.09 (-2%) · 5 min, only +2%","n":695},{"t":"2026-11-26T05:30:59Z","time":"06:30:59","agent":"LEARNER","coin":"UHI","action":"learn","text":"learned · hour:05-07 now avg -6.2% over 38","n":696},{"t":"2026-11-26T05:30:59Z","time":"06:30:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":697},{"t":"2026-11-26T05:31:59Z","time":"06:31:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 87 new coins · 86 pairs · 5 pass the rules","n":698},{"t":"2026-11-26T05:32:29Z","time":"06:32:29","agent":"RISK","coin":"NORFEATH","action":"skip","text":"no entry: pause after a losing streak","n":699},{"t":"2026-11-26T05:32:59Z","time":"06:32:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 107 new coins · 106 pairs · 6 pass the rules","n":700},{"t":"2026-11-26T05:32:59Z","time":"06:32:59","agent":"LEARNER","coin":"NORFEATH","action":"buy","text":"buy · score -4.6% · size x0.77 · hour:05-07 -6.2% over 38, dex:pumpswap -6.4% over 32","n":701},{"t":"2026-11-26T05:32:59Z","time":"06:32:59","agent":"SIZER","coin":"NORFEATH","action":"size","text":"10% of $64.23 x0.77 LEARNER = $4.94","n":702},{"t":"2026-11-26T05:32:59Z","time":"06:32:59","agent":"EXECUTOR","coin":"NORFEATH","action":"enter","text":"ENTER NORFEATH at 0.0005945716 · slip 0.8% · buys 64% · trending · boosted","n":703},{"t":"2026-11-26T05:33:19Z","time":"06:33:19","agent":"SCANNER","coin":"Grodia","action":"flag","text":"flagged · pumpswap · liq $74.4k · 5m $4.1k · buys 60% · trending · boosted","n":704},{"t":"2026-11-26T05:33:19Z","time":"06:33:19","agent":"NEWS","coin":"Grodia","action":"news","text":"promo: X @thegrodia · web · 100 boosts · trending","n":705},{"t":"2026-11-26T05:33:19Z","time":"06:33:19","agent":"LEARNER","coin":"Grodia","action":"buy","text":"buy · score -4.6% · size x0.77 · hour:05-07 -6.2% over 38, dex:pumpswap -6.4% over 32","n":706},{"t":"2026-11-26T05:33:19Z","time":"06:33:19","agent":"SIZER","coin":"Grodia","action":"size","text":"10% of $63.94 x0.77 LEARNER = $4.94","n":707},{"t":"2026-11-26T05:33:19Z","time":"06:33:19","agent":"EXECUTOR","coin":"Grodia","action":"enter","text":"ENTER Grodia at 0.0010548382 · slip 1.9% · buys 60% · trending · boosted","n":708},{"t":"2026-11-26T05:33:42Z","time":"06:33:42","agent":"RISK","coin":null,"action":"pause","text":"15 losses in a row · 2 min pause","n":709},{"t":"2026-11-26T05:33:42Z","time":"06:33:42","agent":"EXECUTOR","coin":"Grodia","action":"exit","text":"EXIT Grodia $-0.77 (-16%) · stop -14%","n":710},{"t":"2026-11-26T05:33:42Z","time":"06:33:42","agent":"LEARNER","coin":"Grodia","action":"learn","text":"learned · hour:05-07 now avg -6.5% over 39","n":711},{"t":"2026-11-26T05:33:59Z","time":"06:33:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 69 new coins · 69 pairs · 3 pass the rules","n":712},{"t":"2026-11-26T05:34:59Z","time":"06:34:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 87 new coins · 87 pairs · 3 pass the rules","n":713},{"t":"2026-11-26T05:35:59Z","time":"06:35:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 98 new coins · 98 pairs · 3 pass the rules","n":714},{"t":"2026-11-26T05:36:04Z","time":"06:36:04","agent":"SCANNER","coin":"UHI","action":"flag","text":"flagged · pumpswap · liq $79.0k · 5m $6.0k · buys 67% · trending · boosted","n":715},{"t":"2026-11-26T05:36:04Z","time":"06:36:04","agent":"NEWS","coin":"UHI","action":"news","text":"promo: X @UHICoinX · web · 100 boosts · trending","n":716},{"t":"2026-11-26T05:36:04Z","time":"06:36:04","agent":"LEARNER","coin":"UHI","action":"buy","text":"buy · score -4.6% · size x0.77 · hour:05-07 -6.5% over 39, dex:pumpswap -6.7% over 33","n":717},{"t":"2026-11-26T05:36:04Z","time":"06:36:04","agent":"SIZER","coin":"UHI","action":"size","text":"10% of $63.44 x0.77 LEARNER = $4.88","n":718},{"t":"2026-11-26T05:36:04Z","time":"06:36:04","agent":"EXECUTOR","coin":"UHI","action":"enter","text":"ENTER UHI at 0.0012020732 · slip 1.5% · buys 67% · trending · boosted","n":719},{"t":"2026-11-26T05:36:59Z","time":"06:36:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 69 new coins · 69 pairs · 2 pass the rules","n":720},{"t":"2026-11-26T05:37:16Z","time":"06:37:16","agent":"SCANNER","coin":"PUMPCHAN","action":"flag","text":"flagged · pumpswap · liq $85.3k · 5m $2.0k · buys 77% · trending · boosted","n":721},{"t":"2026-11-26T05:37:16Z","time":"06:37:16","agent":"NEWS","coin":"PUMPCHAN","action":"news","text":"promo: X @PumpChanMeme · web · 30 boosts · trending","n":722},{"t":"2026-11-26T05:37:16Z","time":"06:37:16","agent":"LEARNER","coin":"PUMPCHAN","action":"buy","text":"buy · score -4.7% · size x0.76 · hour:05-07 -6.5% over 39, dex:pumpswap -6.7% over 33","n":723},{"t":"2026-11-26T05:37:16Z","time":"06:37:16","agent":"SIZER","coin":"PUMPCHAN","action":"size","text":"10% of $62.97 x0.77 LEARNER = $4.82","n":724},{"t":"2026-11-26T05:37:16Z","time":"06:37:16","agent":"EXECUTOR","coin":"PUMPCHAN","action":"enter","text":"ENTER PUMPCHAN at 0.0014449426 · slip 0.5% · buys 77% · trending · boosted","n":725},{"t":"2026-11-26T05:37:48Z","time":"06:37:48","agent":"RISK","coin":null,"action":"pause","text":"16 losses in a row · 2 min pause","n":726},{"t":"2026-11-26T05:37:48Z","time":"06:37:48","agent":"EXECUTOR","coin":"NORFEATH","action":"exit","text":"EXIT NORFEATH $-0.67 (-14%) · stop -10%","n":727},{"t":"2026-11-26T05:37:48Z","time":"06:37:48","agent":"LEARNER","coin":"NORFEATH","action":"learn","text":"learned · social:x now avg -6.9% over 34","n":728},{"t":"2026-11-26T05:37:59Z","time":"06:37:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":729},{"t":"2026-11-26T05:38:44Z","time":"06:38:44","agent":"RISK","coin":"Grodia","action":"skip","text":"no entry: pause after a losing streak","n":730},{"t":"2026-11-26T05:38:59Z","time":"06:38:59","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 88 new coins · 88 pairs · 4 pass the rules","n":731},{"t":"2026-11-26T05:39:45Z","time":"06:39:45","agent":"RISK","coin":null,"action":"pause","text":"17 losses in a row · 2 min pause","n":732},{"t":"2026-11-26T05:39:45Z","time":"06:39:45","agent":"EXECUTOR","coin":"UHI","action":"exit","text":"EXIT UHI $-0.55 (-11%) · stop -8%","n":733},{"t":"2026-11-26T05:39:45Z","time":"06:39:45","agent":"LEARNER","coin":"UHI","action":"learn","text":"learned · social:x now avg -7.0% over 35","n":734},{"t":"2026-11-26T05:40:04Z","time":"06:40:04","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 104 new coins · 104 pairs · 6 pass the rules","n":735},{"t":"2026-11-26T05:41:05Z","time":"06:41:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 70 new coins · 70 pairs · 4 pass the rules","n":736},{"t":"2026-11-26T05:42:05Z","time":"06:42:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 89 new coins · 89 pairs · 3 pass the rules","n":737},{"t":"2026-11-26T05:42:16Z","time":"06:42:16","agent":"RISK","coin":null,"action":"pause","text":"18 losses in a row · 2 min pause","n":738},{"t":"2026-11-26T05:42:16Z","time":"06:42:16","agent":"EXECUTOR","coin":"PUMPCHAN","action":"exit","text":"EXIT PUMPCHAN $-0.19 (-4%) · 5 min, only -0%","n":739},{"t":"2026-11-26T05:42:16Z","time":"06:42:16","agent":"LEARNER","coin":"PUMPCHAN","action":"learn","text":"learned · social:x now avg -6.9% over 36","n":740},{"t":"2026-11-26T05:42:50Z","time":"06:42:50","agent":"SCANNER","coin":"NORFEATH","action":"flag","text":"flagged · pumpswap · liq $52.8k · 5m $4.9k · buys 63% · trending · boosted","n":741},{"t":"2026-11-26T05:42:50Z","time":"06:42:50","agent":"NEWS","coin":"NORFEATH","action":"news","text":"promo: X @flynorfeather · web · 100 boosts · trending","n":742},{"t":"2026-11-26T05:43:05Z","time":"06:43:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 105 new coins · 105 pairs · 4 pass the rules","n":743},{"t":"2026-11-26T05:43:20Z","time":"06:43:20","agent":"SCANNER","coin":"Grodia","action":"flag","text":"flagged · pumpswap · liq $69.1k · 5m $4.9k · buys 58% · trending · boosted","n":744},{"t":"2026-11-26T05:43:20Z","time":"06:43:20","agent":"NEWS","coin":"Grodia","action":"news","text":"promo: X @thegrodia · web · 100 boosts · trending","n":745},{"t":"2026-11-26T05:43:45Z","time":"06:43:45","agent":"RISK","coin":"Grodia","action":"skip","text":"no entry: pause after a losing streak","n":746},{"t":"2026-11-26T05:44:05Z","time":"06:44:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 4 pass the rules","n":747},{"t":"2026-11-26T05:44:20Z","time":"06:44:20","agent":"LEARNER","coin":"Grodia","action":"buy","text":"buy · score -5.1% · size x0.75 · dex:pumpswap -6.9% over 36, social:x -6.9% over 36","n":748},{"t":"2026-11-26T05:44:20Z","time":"06:44:20","agent":"SIZER","coin":"Grodia","action":"size","text":"10% of $62.06 x0.75 LEARNER = $4.64","n":749},{"t":"2026-11-26T05:44:20Z","time":"06:44:20","agent":"EXECUTOR","coin":"Grodia","action":"enter","text":"ENTER Grodia at 0.0008711599 · slip 0.7% · buys 60% · trending · boosted","n":750},{"t":"2026-11-26T05:44:20Z","time":"06:44:20","agent":"LEARNER","coin":"NORFEATH","action":"buy","text":"buy · score -5.2% · size x0.74 · dex:pumpswap -6.9% over 36, social:x -6.9% over 36","n":751},{"t":"2026-11-26T05:44:20Z","time":"06:44:20","agent":"SIZER","coin":"NORFEATH","action":"size","text":"10% of $62.02 x0.74 LEARNER = $4.60","n":752},{"t":"2026-11-26T05:44:20Z","time":"06:44:20","agent":"EXECUTOR","coin":"NORFEATH","action":"enter","text":"ENTER NORFEATH at 0.0005576115 · slip 1.9% · buys 63% · trending · boosted","n":753},{"t":"2026-11-26T05:44:50Z","time":"06:44:50","agent":"LEARNER","coin":"UHI","action":"buy","text":"buy · score -5.0% · size x0.75 · dex:pumpswap -6.9% over 36, social:x -6.9% over 36","n":754},{"t":"2026-11-26T05:44:50Z","time":"06:44:50","agent":"SIZER","coin":"UHI","action":"size","text":"10% of $61.64 x0.75 LEARNER = $4.62","n":755},{"t":"2026-11-26T05:44:50Z","time":"06:44:50","agent":"EXECUTOR","coin":"UHI","action":"enter","text":"ENTER UHI at 0.001233714 · slip 1.7% · buys 68% · trending · boosted","n":756},{"t":"2026-11-26T05:45:05Z","time":"06:45:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 88 new coins · 88 pairs · 2 pass the rules","n":757},{"t":"2026-11-26T05:45:12Z","time":"06:45:12","agent":"RISK","coin":null,"action":"pause","text":"19 losses in a row · 2 min pause","n":758},{"t":"2026-11-26T05:45:12Z","time":"06:45:12","agent":"EXECUTOR","coin":"NORFEATH","action":"exit","text":"EXIT NORFEATH $-0.44 (-10%) · stop -7%","n":759},{"t":"2026-11-26T05:45:12Z","time":"06:45:12","agent":"LEARNER","coin":"NORFEATH","action":"learn","text":"learned · social:x now avg -7.0% over 37","n":760},{"t":"2026-11-26T05:46:05Z","time":"06:46:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 106 new coins · 106 pairs · 4 pass the rules","n":761},{"t":"2026-11-26T05:47:05Z","time":"06:47:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 68 pairs · 3 pass the rules","n":762},{"t":"2026-11-26T05:47:35Z","time":"06:47:35","agent":"SCANNER","coin":"Elonmas","action":"flag","text":"flagged · pumpswap · liq $21.4k · 5m $18.6k · buys 58% · holders +75%","n":763},{"t":"2026-11-26T05:47:35Z","time":"06:47:35","agent":"NEWS","coin":"Elonmas","action":"news","text":"promo: X @2125815882312204626 · web","n":764},{"t":"2026-11-26T05:47:35Z","time":"06:47:35","agent":"RUG CHECK","coin":"Elonmas","action":"reject","text":"FAIL · 20 insiders","n":765},{"t":"2026-11-26T05:47:55Z","time":"06:47:55","agent":"SCANNER","coin":"PUMPCHAN","action":"flag","text":"flagged · pumpswap · liq $85.0k · 5m $2.1k · buys 82% · trending · boosted","n":766},{"t":"2026-11-26T05:47:55Z","time":"06:47:55","agent":"NEWS","coin":"PUMPCHAN","action":"news","text":"promo: X @PumpChanMeme · web · 30 boosts · trending","n":767},{"t":"2026-11-26T05:47:55Z","time":"06:47:55","agent":"LEARNER","coin":"PUMPCHAN","action":"buy","text":"buy · score -5.3% · size x0.74 · dex:pumpswap -7.0% over 37, social:x -7.0% over 37","n":768},{"t":"2026-11-26T05:47:55Z","time":"06:47:55","agent":"SIZER","coin":"PUMPCHAN","action":"size","text":"10% of $61.58 x0.74 LEARNER = $4.54","n":769},{"t":"2026-11-26T05:47:55Z","time":"06:47:55","agent":"EXECUTOR","coin":"PUMPCHAN","action":"enter","text":"ENTER PUMPCHAN at 0.0014622921 · slip 1.0% · buys 82% · trending · boosted","n":770},{"t":"2026-11-26T05:48:05Z","time":"06:48:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 86 new coins · 86 pairs · 3 pass the rules","n":771},{"t":"2026-11-26T05:49:05Z","time":"06:49:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 105 new coins · 105 pairs · 3 pass the rules","n":772},{"t":"2026-11-26T05:49:50Z","time":"06:49:50","agent":"RISK","coin":null,"action":"pause","text":"20 losses in a row · 2 min pause","n":773},{"t":"2026-11-26T05:49:50Z","time":"06:49:50","agent":"EXECUTOR","coin":"UHI","action":"exit","text":"EXIT UHI $-0.21 (-4%) · 5 min, only -1%","n":774},{"t":"2026-11-26T05:49:50Z","time":"06:49:50","agent":"LEARNER","coin":"UHI","action":"learn","text":"learned · social:x now avg -6.9% over 38","n":775},{"t":"2026-11-26T05:50:05Z","time":"06:50:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 67 new coins · 67 pairs · 3 pass the rules","n":776},{"t":"2026-11-26T05:50:15Z","time":"06:50:15","agent":"EXECUTOR","coin":"Grodia","action":"exit","text":"EXIT Grodia +$0.16 (+4%) · +8%","n":777},{"t":"2026-11-26T05:50:15Z","time":"06:50:15","agent":"LEARNER","coin":"Grodia","action":"learn","text":"learned · social:x now avg -6.7% over 39","n":778},{"t":"2026-11-26T05:50:15Z","time":"06:50:15","agent":"RISK","coin":"NORFEATH","action":"skip","text":"no entry: last 10 min: no new entries","n":779},{"t":"2026-11-26T05:51:05Z","time":"06:51:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 87 new coins · 86 pairs · 3 pass the rules","n":780},{"t":"2026-11-26T05:52:05Z","time":"06:52:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 106 new coins · 105 pairs · 3 pass the rules","n":781},{"t":"2026-11-26T05:52:55Z","time":"06:52:55","agent":"EXECUTOR","coin":"PUMPCHAN","action":"exit","text":"EXIT PUMPCHAN $-0.24 (-5%) · 5 min, only -3%","n":782},{"t":"2026-11-26T05:52:55Z","time":"06:52:55","agent":"LEARNER","coin":"PUMPCHAN","action":"learn","text":"learned · social:x now avg -6.6% over 40","n":783},{"t":"2026-11-26T05:52:55Z","time":"06:52:55","agent":"SCANNER","coin":"NORFEATH","action":"flag","text":"flagged · pumpswap · liq $52.8k · 5m $3.6k · buys 64% · trending · boosted","n":784},{"t":"2026-11-26T05:52:55Z","time":"06:52:55","agent":"NEWS","coin":"NORFEATH","action":"news","text":"promo: X @flynorfeather · web · 100 boosts · trending","n":785},{"t":"2026-11-26T05:53:05Z","time":"06:53:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 68 new coins · 67 pairs · 3 pass the rules","n":786},{"t":"2026-11-26T05:54:05Z","time":"06:54:05","agent":"SCANNER","coin":null,"action":"scan","text":"scanned 86 new coins · 85 pairs · 4 pass the rules","n":787},{"t":"2026-11-26T05:55:00Z","time":"06:55:00","agent":"LOGGER","coin":null,"action":"end","text":"end of night · $61.33","n":788}],"nights":[{"id":"2026-11-25","start":100.0,"end":61.33,"pnl":-38.67,"trades":97,"wins":18,"best":1.22,"worst":-2.11,"flagged":77,"scans":1637}],"errors":["https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429","https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429","https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429","https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429","https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"],"stream":{"topic":"memebot/00ade2c3a60b7da8","enabled":true,"ws":["wss://broker.hivemq.com:8884/mqtt","wss://broker.emqx.io:8084/mqtt"]},"speed":{"watch_sec":1,"tick_sec":1,"scan_sec":5,"gt_sec":20,"feed":"jupiter · scan 5s · live 1s","last_scan_ms":108,"watch_ms":112,"scans_per_min":12,"feeds":["geckoterminal","dexscreener","rugcheck","jupiter"]},"learner":{"samples":95,"skipped":0,"explored":0,"min_samples":8,"best":[{"label":"sig:holders","n":8,"avg":-4.9},{"label":"buys:65-80","n":11,"avg":-6.6},{"label":"vol5:5-20k","n":14,"avg":-6.0}],"worst":[{"label":"social:x","n":40,"avg":-6.6},{"label":"dex:pumpswap","n":40,"avg":-6.6},{"label":"hour:05-07","n":46,"avg":-6.4}]},"live_stats":{"broker.hivemq.com":{"connected":true,"sent":6159,"errors":0,"last_error":null},"broker.emqx.io":{"connected":true,"sent":6159,"errors":0,"last_error":null}}}</script>
 <script>
 (function () {
   var GH = "github", OWNER = "Karpens", REPO = "memebot", WF = "memebot.yml";
+  var RAW = "https://raw.githubusercontent.com/" + OWNER + "/" + REPO + "/meme-data/panel.json";
+  var ACTIONS = "https://github.com/" + OWNER + "/" + REPO + "/actions/workflows/" + WF;
   var D = {};
   try { D = JSON.parse(document.getElementById("data").textContent); } catch (e) { D = {}; }
   var $ = function (id) { return document.getElementById(id); };
-  function money(x) {
-    x = Number(x) || 0;
-    var s = Math.abs(x) >= 1000 ? "$" + (Math.abs(x) / 1000).toFixed(1) + "k" : "$" + Math.abs(x).toFixed(2);
-    return (x < 0 ? "-" : "") + s;
-  }
-  function signed(x) { x = Number(x) || 0; return (x > 0 ? "+" : "") + money(x); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
-  function say(text, bad) { var m = $("msg"); m.hidden = !text; m.textContent = text || ""; m.className = "msg" + (bad ? " bad" : ""); }
+  function money(x) { x = Number(x) || 0; var a = Math.abs(x); return (x < 0 ? "-" : "") + "$" + (a >= 1000 ? (a / 1000).toFixed(1) + "k" : a.toFixed(2)); }
+  function signed(x) { x = Number(x) || 0; return (x > 0 ? "+" : "") + money(x); }
+  function tz(iso, sec) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    if (isNaN(d)) return "";
+    try { return new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Bratislava", hour: "2-digit", minute: "2-digit", second: sec ? "2-digit" : undefined, hour12: false }).format(d); }
+    catch (e) { return d.toISOString().slice(11, sec ? 19 : 16); }
+  }
+  var COLORS = ["#7c3aed", "#ea580c", "#2563eb", "#e11d48", "#0f766e", "#b45309", "#15803d"];
+  function avatar(sym) {
+    var s = String(sym || "?"), h = 0;
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    var a = el("span", "av", s.replace(/^\$/, "").charAt(0).toUpperCase() || "?");
+    a.style.background = COLORS[h % COLORS.length];
+    return a;
+  }
+  function tick(sym) { return "$" + String(sym || "?").replace(/^\$/, ""); }
 
-  // the prompt, headings in bold (from the page's own copy; the bot's data may bring a newer one)
+  // ---------- screen 1
   function showPrompt(prompt) {
-    var box = $("prompt");
-    box.textContent = "";
-    prompt.replace(/\s+$/, "").split("\n").forEach(function (line, i, all) {
-      if (/^[A-Z][A-Z ]+$/.test(line.trim())) { box.appendChild(el("b", null, line)); }
-      else { box.appendChild(document.createTextNode(line)); }
+    var box = $("prompt"); box.textContent = "";
+    String(prompt || "").replace(/\s+$/, "").split("\n").forEach(function (line, i, all) {
+      if (/^[A-Z][A-Z ]+$/.test(line.trim())) box.appendChild(el("b", null, line)); else box.appendChild(document.createTextNode(line));
       if (i < all.length - 1) box.appendChild(document.createTextNode("\n"));
     });
-    $("count").textContent = prompt.length + " chars · " + (prompt.trim() ? prompt.trim().split(/\s+/).length : 0) + " words";
+    var p = String(prompt || "");
+    $("count").textContent = p.length + " chars · " + (p.trim() ? p.trim().split(/\s+/).length : 0) + " words";
+  }
+  function say(id, text, bad) { var m = $(id); m.hidden = !text; m.textContent = text || ""; m.className = "msg" + (id === "tmsg" ? " termmsg" : "") + (bad ? " bad" : ""); }
+
+  // ---------- screen 2
+  var AG = [
+    { k: "SCANNER", c: "--orange", sub: "new pairs + volume + holders", say: "flags only, never trades",
+      icon: '<rect x="8" y="7" width="2.6" height="10" rx="1" fill="#fff"/><rect x="13.4" y="7" width="2.6" height="10" rx="1" fill="#fff"/>' },
+    { k: "NEWS", c: "--cyan", sub: "trending + boosts + X / Telegram", say: "follows what people promote",
+      icon: '<path d="M6 7h12M6 12h12M6 17h8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>' },
+    { k: "RUG CHECK", c: "--red", sub: "filters suspicious tokens", say: "nothing executes before a pass",
+      icon: '<path d="M12 5 L20 19 H4 Z" fill="#fff"/><rect x="11" y="10" width="2" height="5" fill="var(--red)"/><rect x="11" y="16" width="2" height="1.8" fill="var(--red)"/>' },
+    { k: "SIZER", c: "--purple", sub: "sizes from account equity", say: "never trades a fixed ticket",
+      icon: '<path d="M12 4 L20 12 L12 20 L4 12 Z" fill="#fff"/><rect x="10" y="9.5" width="1.6" height="5" fill="var(--purple)"/><rect x="12.6" y="9.5" width="1.6" height="5" fill="var(--purple)"/>' },
+    { k: "EXECUTOR", c: "--green", sub: "opens + closes, tracks slip", say: "every fill is a real quote",
+      icon: '<rect x="8" y="7" width="2.6" height="10" rx="1" fill="#fff"/><rect x="13.4" y="7" width="2.6" height="10" rx="1" fill="#fff"/>' },
+    { k: "RISK", c: "--amber", sub: "limits, streaks, night stop", say: "knows when to sit out",
+      icon: '<path d="M12 4 L19 7 V12 C19 16 16 19 12 20 C8 19 5 16 5 12 V7 Z" fill="#fff"/>' },
+    { k: "LOGGER", c: "--orange", sub: "writes every decision", say: "no trade without a reason",
+      icon: '<path d="M12 4 L19 8 V16 L12 20 L5 16 V8 Z" fill="#fff"/><rect x="10" y="9.5" width="1.6" height="5" fill="var(--orange)"/><rect x="12.6" y="9.5" width="1.6" height="5" fill="var(--orange)"/>' },
+    { k: "EQUITY", c: "--blue", sub: "balance + curve", say: "updates on every close",
+      icon: '<path d="M12 4 C15 9 18 11 18 14.5 A6 6 0 0 1 6 14.5 C6 11 9 9 12 4 Z" fill="#fff"/>' },
+    { k: "YOU", c: "--ink", sub: "read the log at 7am", say: "stopped asking, started reading",
+      icon: '<rect x="8" y="7" width="2.6" height="10" rx="1" fill="#fff"/><rect x="13.4" y="7" width="2.6" height="10" rx="1" fill="#fff"/>' },
+  ];
+  var cards = {};
+  AG.forEach(function (a) {
+    var c = el("div", "agent"); c.style.setProperty("--ac", "var(" + a.c + ")");
+    var ic = el("div", "icon"); ic.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none">' + a.icon + "</svg>";
+    var h = el("h3", null, a.k), b = el("span", "badge", "");
+    var sub = el("div", "sub", a.sub), sy = el("div", "say", a.say), det = el("div", "det", "–");
+    c.appendChild(ic); c.appendChild(h); c.appendChild(b); c.appendChild(sub); c.appendChild(sy); c.appendChild(det);
+    $("agents").appendChild(c);
+    cards[a.k] = { el: c, badge: b, det: det };
+  });
+  function agent(k, badge, cls, det) { var c = cards[k]; c.badge.textContent = badge; c.badge.className = "badge " + cls; c.det.textContent = det; }
+
+  function lastOf(log, agentName, action) {
+    for (var i = log.length - 1; i >= 0; i--) {
+      var r = log[i];
+      if ((!agentName || r.agent === agentName) && (!action || r.action === action)) return r;
+    }
+    return null;
+  }
+  function sparkPath(vals, w, h) {
+    if (!vals || vals.length < 2) return "";
+    var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals), span = (hi - lo) || 1;
+    return vals.map(function (v, i) { return (i ? "L" : "M") + (i / (vals.length - 1) * w).toFixed(1) + " " + (h - 4 - (v - lo) / span * (h - 8)).toFixed(1); }).join(" ");
   }
 
-  function row(r) {
-    var div = el("div", "row");
-    div.appendChild(el("span", "t", (r.time || "").slice(0, 5)));
-    div.appendChild(el("span", "a " + String(r.agent || "").split(" ")[0], r.agent || ""));
-    var x = el("span", "x");
-    if (r.coin) { x.appendChild(el("b", null, r.coin + " ")); }
-    x.appendChild(document.createTextNode(r.text || ""));
-    div.appendChild(x);
-    return div;
-  }
-
-  var shownLog = "";
+  var clock = null;
   function render(doc) {
     D = doc || {};
     if (D.prompt) showPrompt(D.prompt);
-    $("agents").textContent = ((D.agents || []).length || 6) + " agents";
-    $("start").textContent = "start " + money(D.start_balance || 70).replace(".00", "");
-    if (D.session) $("window").textContent = D.session;
-    var night = D.night || {};
-    var trades = D.trades || [];
-    var eq = D.equity != null ? Number(D.equity) : Number(D.start_balance || 70);
-    var pnl = eq - (Number(night.start_equity) || Number(D.start_balance) || 0);
-    $("balance").textContent = money(eq);
-    var p = $("pnl"); p.textContent = signed(pnl); p.className = pnl > 0 ? "up" : pnl < 0 ? "down" : "";
-    $("trades").textContent = String(trades.length);
+    $("agentsChip").textContent = ((D.agents || []).length || 7) + " agents";
+    $("startChip").textContent = "start " + money(D.start_balance || 70).replace(".00", "");
+    if (D.session) { $("windowChip").textContent = D.session; $("window").textContent = "one night · " + D.session; }
+    var night = D.night || {}, log = D.log || [], trades = D.trades || [], pos = D.positions || [];
+    var start = Number(night.start_equity) || Number(D.start_balance) || 70;
+    var eq = D.equity != null ? Number(D.equity) : start;
+    var wins = trades.filter(function (t) { return t.pnl > 0; }).length, losses = trades.filter(function (t) { return t.pnl < 0; }).length;
     var fresh = D.updated && (Date.now() - new Date(D.updated).getTime()) < 6 * 60 * 1000;
     var running = !!(D.live && fresh);
-    $("dot").className = "dot" + (running ? " live" : "");
-    $("state").textContent = (running ? "running · " : "") + "night " + (night.id || "–") + " · paper";
-    if (D.updated) {
-      var d = new Date(D.updated);
-      $("updated").textContent = isNaN(d) ? "" : "updated " + d.toLocaleTimeString("sk-SK", { hour: "2-digit", minute: "2-digit", hour12: false });
+
+    // hero
+    $("bal").textContent = money(eq);
+    $("ntrades").textContent = String(trades.length + pos.length);
+    $("wins").textContent = String(wins); $("losses").textContent = String(losses);
+    $("status").className = "status" + (running ? " on" : "");
+    clearInterval(clock);
+    var setClock = function () { $("statusText").textContent = running ? "running · " + tz(new Date().toISOString(), true) : (D.live ? "paused · last update " + tz(D.updated) : "idle · night " + (night.id || "–") + " ended"); };
+    setClock(); if (running) clock = setInterval(setClock, 1000);
+    var la = lastOf(log, "EXECUTOR") || lastOf(log, "RUG CHECK") || lastOf(log, "SCANNER", "flag");
+    var last = $("lastAction");
+    if (la) {
+      var verb = { enter: "ENTERED", exit: "EXITED", take: "TOOK PROFIT", pass: "PASSED", reject: "FILTERED", flag: "FLAGGED", stuck: "RETRYING" }[la.action] || la.action.toUpperCase();
+      last.textContent = la.agent + " · " + verb + " " + tick(la.coin);
+      last.className = "last" + (la.action === "reject" ? " r" : la.action === "flag" ? " o" : "");
+    } else { last.textContent = "waiting for the night"; last.className = "last o"; }
+
+    // agents
+    var active = log.length ? log[log.length - 1].agent : null;
+    var flags = D.flags || [];
+    var scan = lastOf(log, "SCANNER", "scan"), news = lastOf(log, "NEWS"), rug = night.last_rug, risk = lastOf(log, "RISK");
+    var open = pos[pos.length - 1];
+    agent("SCANNER", "SCAN", "o", flags.length ? "next " + tick(flags[flags.length - 1].coin) + " · " + flags[flags.length - 1].why : (scan ? scan.text : "–"));
+    agent("NEWS", "READ", "t", news ? tick(news.coin) + " " + news.text : "–");
+    agent("RUG CHECK", rug ? (rug.pass ? "PASS" : "FAIL") : "WAIT", rug && !rug.pass ? "r" : "r", rug ? (rug.pass ? "passed " : "failed ") + tick(rug.coin) : "–");
+    agent("SIZER", open ? "SIZE" : "IDLE", "p", (D.position_pct || 20) + "% of " + money(eq));
+    agent("EXECUTOR", open ? "LIVE" : "IDLE", "g", open ? "LONG " + tick(open.symbol) + " slip " + (open.slip != null ? open.slip + "%" : "–") : "slip cap " + (D.slip_cap || 10) + "%");
+    agent("RISK", risk && /pause|stop/.test(risk.text) ? "PAUSE" : "OK", "a", risk ? risk.text : pos.length + " open · " + trades.length + " closed");
+    agent("LOGGER", "WRITE", "o", "line #" + (night.lines || log.length) + (log.length ? " · " + (log[log.length - 1].action || "") + " " + (log[log.length - 1].coin ? tick(log[log.length - 1].coin) : "") : ""));
+    agent("EQUITY", "UPDATE", "b", money(eq) + " · " + trades.length + " closes");
+    agent("YOU", "READING", "k", (night.lines || log.length) + " lines to read");
+    AG.forEach(function (a) { cards[a.k].el.classList.toggle("on", a.k === active || (active === "JOURNAL" && a.k === "LOGGER")); });
+    $("online").textContent = (AG.length - 2) + " online";
+
+    // live flow
+    $("checked").textContent = "checked " + (night.checked || 0);
+    var lane = $("lane"); lane.textContent = "";
+    flags.slice().reverse().slice(0, 4).forEach(function (fl) {
+      var c = el("div", "coin"); c.appendChild(avatar(fl.coin));
+      var t = el("div"); t.appendChild(el("b", null, tick(fl.coin))); t.appendChild(el("small", null, fl.why)); c.appendChild(t);
+      c.appendChild(el("span", "dot")); lane.appendChild(c);
+    });
+    if (!flags.length) lane.appendChild(el("div", "empty", scan ? scan.text : "scanning fresh pairs…"));
+    $("rugLabel").innerHTML = ""; $("rugLabel").appendChild(document.createTextNode("RUG CHECK"));
+    $("rugLabel").appendChild(el("br")); $("rugLabel").appendChild(document.createTextNode(rug ? (rug.pass ? "PASS " : "FAIL ") + tick(rug.coin) : "waiting"));
+    $("exeLabel").innerHTML = ""; $("exeLabel").appendChild(document.createTextNode("EXECUTOR"));
+    $("exeLabel").appendChild(el("br")); $("exeLabel").appendChild(document.createTextNode(open ? "LIVE " + tick(open.symbol) : "idle"));
+    $("flow").classList.toggle("live", running);
+    var sp = $("spark"); sp.innerHTML = "";
+    if (open && open.hist && open.hist.length > 1) {
+      var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", sparkPath(open.hist, 100, 40)); path.setAttribute("fill", "none");
+      path.setAttribute("stroke", open.pnl_pct >= 0 ? "#15803d" : "#e11d48"); path.setAttribute("stroke-width", "2"); path.setAttribute("vector-effect", "non-scaling-stroke");
+      sp.appendChild(path);
+      $("sparkLabel").textContent = tick(open.symbol) + " live";
+      $("sparkPct").textContent = (open.pnl_pct > 0 ? "+" : "") + open.pnl_pct + "%"; $("sparkPct").style.color = open.pnl_pct >= 0 ? "var(--green)" : "var(--red)";
+    } else { $("sparkLabel").textContent = ""; $("sparkPct").textContent = ""; }
+    $("bFiltered").textContent = String(night.filtered || 0);
+    $("bFilteredSub").textContent = (night.flagged || 0) + " flagged · " + (night.scans || 0) + " scans";
+    $("bSize").textContent = (open && open.size_pct != null ? Math.round(open.size_pct) : (D.position_pct || 20)) + "% eq";
+    $("bSizeSub").textContent = open ? money(open.cost) : money(eq * (D.position_pct || 20) / 100);
+    $("bLine").textContent = "line #" + (night.lines || log.length);
+    var lc = trades[trades.length - 1];
+    $("bEq").textContent = lc ? signed(lc.pnl) : "$0.00"; $("bEq").className = lc ? (lc.pnl >= 0 ? "up" : "down") : "";
+
+    // trade card: the newest open position, else the last closed trade
+    var tr = $("trade"); tr.textContent = "";
+    var t = open || lc;
+    $("tradeState").textContent = open ? "open" : (lc ? "closed" : "–");
+    $("tradeState").className = "badge " + (open ? "g" : "mut");
+    if (t) {
+      var head = el("div", "tradehead"); head.appendChild(avatar(t.symbol)); head.appendChild(el("b", null, tick(t.symbol)));
+      head.appendChild(el("span", "badge g", "LONG"));
+      var pct = open ? open.pnl_pct : t.pnl_pct, lp = el("span", "livepct", (pct > 0 ? "+" : "") + pct + "%" + (open ? " live" : ""));
+      lp.style.color = pct >= 0 ? "var(--green)" : "var(--red)"; head.appendChild(lp); tr.appendChild(head);
+      var kv = el("div", "kv");
+      var price = function (x) { return x == null ? "–" : (x < 0.01 ? Number(x).toPrecision(4) : Number(x).toFixed(4)); };
+      [["entry", price(t.entry_price)], ["exit", open ? "open" : price(t.exit_price)], ["slip", (t.slip != null ? t.slip : "–") + "%"],
+       ["size", (t.size_pct != null ? Math.round(t.size_pct) : "–") + "% of equity"]].forEach(function (p) { kv.appendChild(el("span", null, p[0])); kv.appendChild(el("span", null, p[1])); });
+      var rs = el("span", "reason"); rs.appendChild(el("i", null, "reason: ")); rs.appendChild(document.createTextNode(t.reason || "signal"));
+      kv.appendChild(rs);
+      if (!open) { var w = el("span", "reason"); w.appendChild(el("i", null, "exit: ")); w.appendChild(document.createTextNode(t.why + " · " + signed(t.pnl))); kv.appendChild(w); }
+      tr.appendChild(kv);
+    } else { tr.appendChild(el("div", "empty", "No trade yet tonight.")); }
+
+    // console
+    var con = $("console"); con.textContent = "";
+    log.slice(-9).forEach(function (r) {
+      var cls = r.action === "enter" ? "ent" : r.action === "reject" ? "bad" : r.action === "exit" || r.action === "take" ? "ext" : "";
+      con.appendChild(el("div", "l " + cls, (r.time || "").slice(0, 5) + " " + (r.coin ? tick(r.coin) + " " : "") + (r.text || "")));
+    });
+    con.appendChild(el("span", "cursor"));
+    $("lines").textContent = (night.lines || log.length) + " lines";
+
+    // result
+    $("mStart").textContent = money(start); $("mNow").textContent = money(eq);
+    var f = $("nowFill"); f.style.width = Math.max(3, Math.min(100, eq / Math.max(start, eq) * 100)) + "%"; f.className = "fill" + (eq < start ? " down" : "");
+    $("wl_w").textContent = wins + " W"; $("wl_l").textContent = losses + " L";
+    var cv = $("curve"); cv.innerHTML = "";
+    var pts = (D.curve || []).map(function (p) { return p[1]; });
+    if (pts.length > 1) {
+      var cp = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      cp.setAttribute("d", sparkPath(pts, 300, 44)); cp.setAttribute("fill", "none"); cp.setAttribute("stroke", eq >= start ? "#15803d" : "#e11d48");
+      cp.setAttribute("stroke-width", "2"); cp.setAttribute("vector-effect", "non-scaling-stroke"); cv.appendChild(cp);
     }
-    // the log: newest at the bottom, kept where the reader is
-    var log = D.log || [];
-    var key = log.length + ":" + (log.length ? log[log.length - 1].t + log[log.length - 1].text : "");
-    if (key !== shownLog && log.length) {
-      shownLog = key;
-      var out = $("log"), atEnd = out.scrollTop + out.clientHeight >= out.scrollHeight - 20;
-      out.textContent = "";
-      log.forEach(function (r) { out.appendChild(row(r)); });
-      if (atEnd || !out.dataset.seen) out.scrollTop = out.scrollHeight;
-      out.dataset.seen = "1";
-    }
-    // positions, trades, nights
-    var pos = D.positions || [];
-    $("posbox").hidden = !pos.length;
-    var tb = $("pos"); tb.textContent = "";
-    pos.forEach(function (q) {
-      var tr = el("tr");
-      tr.appendChild(el("td", null, q.symbol));
-      tr.appendChild(el("td", "num", money(q.cost)));
-      tr.appendChild(el("td", "num", money(q.value)));
-      tr.appendChild(el("td", "num " + (q.pnl_pct >= 0 ? "up" : "down"), (q.pnl_pct > 0 ? "+" : "") + q.pnl_pct + " %"));
-      tb.appendChild(tr);
+
+    // the log table: entries and exits, the newest last
+    var ev = [];
+    trades.forEach(function (x) { ev.push({ t: x.opened, k: "enter", s: x.symbol, r: x.reason || "signal", a: "size " + (x.size_pct != null ? Math.round(x.size_pct) : "–") + "%", c: "size" });
+      ev.push({ t: x.closed, k: "exit", s: x.symbol, r: x.why, a: signed(x.pnl), c: x.pnl >= 0 ? "up" : "down" }); });
+    pos.forEach(function (x) { ev.push({ t: x.opened, k: "enter", s: x.symbol, r: x.reason || "signal", a: "size " + (x.size_pct != null ? Math.round(x.size_pct) : "–") + "%", c: "size" }); });
+    ev.sort(function (a, b) { return a.t < b.t ? -1 : a.t > b.t ? 1 : 0; });
+    var lr = $("logrows"); lr.textContent = "";
+    ev.slice(-8).forEach(function (e, i, all) {
+      var row = el("div", "lrow" + (i === all.length - 1 ? " now" : ""));
+      row.appendChild(el("span", "time", tz(e.t)));
+      row.appendChild(el("span", "kind " + e.k, e.k.toUpperCase()));
+      var w = el("div", "what"); w.appendChild(avatar(e.s));
+      var tx = el("div"); tx.style.minWidth = "0"; tx.appendChild(el("b", null, tick(e.s))); tx.appendChild(el("small", null, "reason: " + e.r)); w.appendChild(tx);
+      row.appendChild(w); row.appendChild(el("span", "amt " + e.c, e.a)); lr.appendChild(row);
     });
-    $("tradebox").hidden = !trades.length;
-    tb = $("tradelist"); tb.textContent = "";
-    trades.slice().reverse().forEach(function (t) {
-      var tr = el("tr");
-      tr.appendChild(el("td", null, t.symbol));
-      tr.appendChild(el("td", "num", money(t.cost)));
-      tr.appendChild(el("td", "num", money(t.proceeds)));
-      tr.appendChild(el("td", "num " + (t.pnl >= 0 ? "up" : "down"), signed(t.pnl)));
-      tr.appendChild(el("td", null, t.why));
-      tb.appendChild(tr);
-    });
-    var ns = (D.nights || []).slice().reverse();
-    $("nightbox").hidden = !ns.length;
-    tb = $("nights"); tb.textContent = "";
-    ns.forEach(function (n) {
-      var tr = el("tr");
-      tr.appendChild(el("td", null, n.id));
-      tr.appendChild(el("td", "num", money(n.start)));
-      tr.appendChild(el("td", "num", money(n.end)));
-      tr.appendChild(el("td", "num " + (n.pnl >= 0 ? "up" : "down"), signed(n.pnl)));
-      tr.appendChild(el("td", "num", String(n.trades)));
-      tb.appendChild(tr);
-    });
+    if (!ev.length) lr.appendChild(el("div", "empty", "The night's entries and exits show up here, each with its reason."));
     return running;
   }
-  render(D);
 
-  // the GitHub connector returns a file as a resource block beside a short text line
+  // ---------- screens and scaling
+  function fit() {
+    var w = document.documentElement.clientWidth - 32;
+    document.documentElement.style.setProperty("--z", String(Math.min(1, w / 1000)));
+  }
+  window.addEventListener("resize", fit); fit();
+  function show(term) {
+    $("promptview").hidden = term; $("termview").hidden = !term;
+    try { localStorage.setItem("memebot-view", term ? "term" : "prompt"); } catch (e) {}
+    window.scrollTo(0, 0);
+  }
+  $("back").addEventListener("click", function () { show(false); });
+
+  render(D);
+  var startTerm = false;
+  try { startTerm = localStorage.getItem("memebot-view") === "term"; } catch (e) {}
+  show(startTerm);
+
+  // ---------- live data: the public repository outside claude.ai, the GitHub connector inside
+  var onWeb = !(window.claude && window.claude.use);
+  function poll() {
+    fetch(RAW + "?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (doc) { if (doc) { render(doc); say("tmsg", ""); } })
+      .catch(function () { say("tmsg", "Can't load the bot's data from GitHub right now. Trying again in a minute.", true); });
+  }
+  if (onWeb) { poll(); setInterval(poll, 60000); }
+
   function fileJson(result) {
-    var blocks = (result && result.content) || [];
-    var tries = [];
+    var blocks = (result && result.content) || [], tries = [];
     blocks.forEach(function (b) {
       if (!b) return;
       if (b.resource && typeof b.resource.text === "string") tries.push(b.resource.text);
       if (b.resource && typeof b.resource.blob === "string") { try { tries.push(decodeURIComponent(escape(atob(b.resource.blob)))); } catch (e) {} }
       if (typeof b.text === "string") { tries.push(b.text); var i = b.text.indexOf("{"); if (i > 0) tries.push(b.text.slice(i)); }
     });
-    if (result && typeof result.payload === "object" && result.payload && result.payload.log) return result.payload;
-    for (var k = 0; k < tries.length; k++) {
-      try { var v = JSON.parse(tries[k]); if (v && typeof v === "object" && ("log" in v || "balance" in v)) return v; } catch (e) {}
-    }
+    for (var k = 0; k < tries.length; k++) { try { var v = JSON.parse(tries[k]); if (v && typeof v === "object" && ("log" in v || "balance" in v)) return v; } catch (e) {} }
     return null;
   }
-
   function nightNow() {
-    try {
-      var h = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Bratislava", hour: "2-digit", hour12: false }).format(new Date()));
-      return h >= 23 || h < 7;
-    } catch (e) { return false; }
+    try { var h = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Bratislava", hour: "2-digit", hour12: false }).format(new Date())); return h >= 23 || h < 7; }
+    catch (e) { return false; }
   }
-
   function fixFor(err) {
     var c = err && err.code;
-    if (c === "server_not_connected") return "Pridaj konektor GitHub v claude.ai: Settings → Connectors.";
-    if (c === "needs_reauth") return "Znova pripoj GitHub v claude.ai: Settings → Connectors.";
-    if (c === "not_in_manifest" || c === "approval_required" || c === "consent_required") return "Stránka potrebuje tvoj súhlas s konektorom GitHub. Stlač Run znova a povoľ ho.";
-    if (c === "selection_required") return "Vyber, ktorý konektor GitHub má stránka použiť (claude.ai sa pýta).";
-    if (c === "blocked_by_policy") return "Konektor GitHub je pre túto stránku zablokovaný nastavením organizácie.";
-    return "GitHub teraz neodpovedá (" + (c || "chyba") + "). Skús o chvíľu.";
+    if (c === "server_not_connected") return "Add the GitHub connector in claude.ai: Settings → Connectors. Live page: karpens.github.io/memebot";
+    if (c === "needs_reauth") return "Reconnect GitHub in claude.ai: Settings → Connectors.";
+    if (c === "not_in_manifest" || c === "approval_required" || c === "consent_required") return "The page needs your OK for the GitHub connector: press Run again and allow it.";
+    return "GitHub doesn't answer through the connector (" + (c || "error") + "). The live page always works: karpens.github.io/memebot";
   }
-
   var mcp = null, watching = null;
   function watch() {
     if (!mcp || watching) return;
-    watching = mcp.watchTool(GH, "get_file_contents",
-      { owner: OWNER, repo: REPO, path: "panel.json", ref: "refs/heads/meme-data" },
+    watching = mcp.watchTool(GH, "get_file_contents", { owner: OWNER, repo: REPO, path: "panel.json", ref: "refs/heads/meme-data" },
       function (ev) {
-        if (ev.type === "data") {
-          var doc = fileJson(ev.result);
-          if (doc) { render(doc); if ($("msg").dataset.kind === "start") say(""); }
-        } else if (ev.error && ev.error.code !== "tool_error" && ev.error.code !== "server_unavailable") {
-          say(fixFor(ev.error), true);
-        }
+        if (ev.type === "data") { var doc = fileJson(ev.result); if (doc) { render(doc); say("tmsg", ""); } }
+        else if (ev.error && ev.error.code !== "tool_error" && ev.error.code !== "server_unavailable") say("tmsg", fixFor(ev.error), true);
       }, { refetchInterval: 60000 });
   }
 
   var busy = false;
   $("run").addEventListener("click", function () {
+    show(true);
     if (busy) return;
-    if (!mcp) {
-      say("Táto stránka bota spustí cez tvoj konektor GitHub, ten tu teraz nie je dostupný. Bot sa dá spustiť aj na GitHube: Actions → Meme Bot → Run workflow.", true);
+    var running = D.live && D.updated && (Date.now() - new Date(D.updated).getTime()) < 6 * 60 * 1000;
+    if (onWeb) {
+      if (!running) say("tmsg", "The bot runs by itself every night 23:00 → 07:00. To start it now: GitHub → Actions → Meme Bot → Run workflow (" + ACTIONS + ").");
       return;
     }
+    if (!mcp) { if (!running) say("tmsg", "Live page: karpens.github.io/memebot · the bot runs by itself every night 23:00 → 07:00."); return; }
     busy = true;
-    $("run").disabled = true;
     var night = nightNow();
-    say("Pozerám, či bot už beží…");
     mcp.callTool(GH, "actions_list", { method: "list_workflow_runs", owner: OWNER, repo: REPO, resource_id: WF, perPage: 5 })
       .then(function (r) {
         var runs = ((r.payload || {}).workflow_runs) || [];
         var on = runs.filter(function (x) { return x.status === "in_progress" || x.status === "queued" || x.status === "pending" || x.status === "waiting"; });
-        if (on.length) { say("Bot už beží na GitHube. Záznam sa obnovuje každú minútu."); watch(); return null; }
+        if (on.length) { watch(); return null; }
         return mcp.callTool(GH, "actions_run_trigger", { method: "run_workflow", owner: OWNER, repo: REPO, workflow_id: WF, ref: "main",
           inputs: night ? {} : { anytime: "true", minutes: "60" } }).then(function () {
-          say(night ? "Bot štartuje na GitHube a pobeží do 07:00. Prvé rozhodnutia tu budú o 1 až 2 minúty."
-                    : "Bot štartuje na GitHube na 60 minút (skúška cez deň). Prvé rozhodnutia tu budú o 1 až 2 minúty.");
-          $("msg").dataset.kind = "start";
+          say("tmsg", night ? "Starting the bot on GitHub until 07:00. First decisions in 1 to 2 minutes." : "Starting a 60 minute test on GitHub. First decisions in 1 to 2 minutes.");
           watch();
         });
       })
-      .catch(function (err) { say(fixFor(err), true); })
-      .then(function () { busy = false; $("run").disabled = false; });
+      .catch(function (err) { say("tmsg", fixFor(err), true); })
+      .then(function () { busy = false; });
   });
 
-  if (window.claude && window.claude.use) {
+  if (!onWeb) {
     window.claude.use("mcp").then(function (m) {
       mcp = m;
       if (!mcp) return;
       return window.claude.use("permissions").then(function (perm) {
-        if (!perm) { return; }
-        return Promise.resolve(perm.state("mcp:" + GH)).catch(function () { return "unavailable"; }).then(function (st) {
-          if (st === "granted") watch();       // already allowed: keep the page live from the start
-        });
+        if (!perm) return;
+        return Promise.resolve(perm.state("mcp:" + GH)).catch(function () { return "unavailable"; }).then(function (st) { if (st === "granted") watch(); });
       });
     }).catch(function () { mcp = null; });
   }

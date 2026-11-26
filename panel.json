@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T05:54:40Z",
+ "updated": "2026-11-26T05:55:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 61.33,
@@ -20,11 +20,11 @@
   "id": "2026-11-25",
   "start_equity": 100.0,
   "started": "2026-11-26T02:36:46Z",
-  "scans": 1634,
+  "scans": 1637,
   "flagged": 77,
-  "checked": 407,
+  "checked": 410,
   "filtered": 8,
-  "lines": 787,
+  "lines": 788,
   "last_rug": {
    "coin": "NORFEATH",
    "pass": true
@@ -856,11 +856,15 @@
   [
    1795672424,
    61.33
+  ],
+  [
+   1795672484,
+   61.33
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
- "live": true,
+ "live": false,
  "positions": [],
  "trades": [
   {
@@ -1715,15 +1719,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T05:06:04Z",
-   "time": "06:06:04",
-   "agent": "LEARNER",
-   "coin": "Grodia",
-   "action": "buy",
-   "text": "buy · score -3.0% · size x0.85 · hour:05-07 -5.1% over 26, dex:pumpswap -5.0% over 20",
-   "n": 588
-  },
   {
    "t": "2026-11-26T05:06:04Z",
    "time": "06:06:04",
@@ -3514,9 +3509,31 @@
    "action": "scan",
    "text": "scanned 86 new coins · 85 pairs · 4 pass the rules",
    "n": 787
+  },
+  {
+   "t": "2026-11-26T05:55:00Z",
+   "time": "06:55:00",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "end",
+   "text": "end of night · $61.33",
+   "n": 788
   }
  ],
- "nights": [],
+ "nights": [
+  {
+   "id": "2026-11-25",
+   "start": 100.0,
+   "end": 61.33,
+   "pnl": -38.67,
+   "trades": 97,
+   "wins": 18,
+   "best": 1.22,
+   "worst": -2.11,
+   "flagged": 77,
+   "scans": 1637
+  }
+ ],
  "errors": [
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
@@ -3538,8 +3555,8 @@
   "scan_sec": 5,
   "gt_sec": 20,
   "feed": "jupiter · scan 5s · live 1s",
-  "last_scan_ms": 103,
-  "watch_ms": 0,
+  "last_scan_ms": 108,
+  "watch_ms": 112,
   "scans_per_min": 12,
   "feeds": [
    "geckoterminal",
@@ -3591,13 +3608,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6137,
+   "sent": 6159,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6137,
+   "sent": 6159,
    "errors": 0,
    "last_error": null
   }
