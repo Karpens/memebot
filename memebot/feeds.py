@@ -64,9 +64,11 @@ PUMPPORTAL_URL = "wss://pumpportal.fun/api/data"
 PUMP_SUBS = ({"method": "subscribeNewToken"}, {"method": "subscribeMigration"})     # free; trade streams need a key
 RPC_HTTP = "https://api.mainnet-beta.solana.com"
 RPC_WS = "wss://api.mainnet-beta.solana.com"
-# The live probe: ipfs.io answers 403 (a Cloudflare challenge) to the runner, so it goes last.
-IPFS_GATEWAYS = ("https://dweb.link/ipfs/", "https://gateway.pinata.cloud/ipfs/", "https://cloudflare-ipfs.com/ipfs/",
-                 "https://ipfs.io/ipfs/")
+# The live probes from GitHub Actions (2026-11-26, memebot/probe_meta.py): filebase answered 5 of 5 (median 107 ms),
+# 4everland 4 of 5; dweb.link, w3s.link, nftstorage.link and ipfs.io answer 403, gateway.pinata.cloud times out,
+# cloudflare-ipfs.com no longer resolves. pump.fun's own pinata gateway answers some. The order is the probe's.
+IPFS_GATEWAYS = ("https://ipfs.filebase.io/ipfs/", "https://4everland.io/ipfs/", "https://pump.mypinata.cloud/ipfs/",
+                 "https://dweb.link/ipfs/", "https://ipfs.io/ipfs/")
 UA = "Mozilla/5.0 (meme-bot paper trader)"
 BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
               "Chrome/131.0.0.0 Safari/537.36")
