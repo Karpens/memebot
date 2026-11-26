@@ -35,51 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T10:48:08Z",
-    "time": "11:48:08",
-    "agent": "LEARNER",
-    "coin": "AISLE",
-    "action": "skip",
-    "text": "skip · past trades like this lost avg 10.2% · hour:day -15.9% over 9",
-    "n": 187
-   },
-   {
-    "t": "2026-11-26T10:48:27Z",
-    "time": "11:48:27",
-    "agent": "SCANNER",
-    "coin": "NODIVO",
-    "action": "flag",
-    "text": "momentum · 10.6 SOL in · 9/13 buys (69%) · +80% since launch · mcap 54 SOL · 45 s old",
-    "n": 188
-   },
-   {
-    "t": "2026-11-26T10:48:27Z",
-    "time": "11:48:27",
-    "agent": "RUG CHECK",
-    "coin": "NODIVO",
-    "action": "pass",
-    "text": "PASS · 5 holders · top holder 3.4% · top 10 5% (curve left out)",
-    "n": 189
-   },
-   {
-    "t": "2026-11-26T10:48:27Z",
-    "time": "11:48:27",
-    "agent": "LEARNER",
-    "coin": "NODIVO",
-    "action": "skip",
-    "text": "skip · past trades like this lost avg 10.2% · hour:day -15.9% over 9",
-    "n": 190
-   },
-   {
-    "t": "2026-11-26T10:49:03Z",
-    "time": "11:49:03",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.4 a minute · 13 watched · 10 rejected (dev bought 3, learner: skip 3, dump 2) · closest CHOCOBTC: SOL in 0.0/2.5 · rise +0%/+12%",
-    "n": 191
-   },
-   {
     "t": "2026-11-26T10:50:03Z",
     "time": "11:50:03",
     "agent": "SCANNER",
@@ -5433,6 +5388,51 @@
     "action": "scan",
     "text": "new pairs · 9.0 a minute · 5 watched · 22 rejected (serial launcher 10, mayhem mode 8, dev bought 2) · closest MANTLE: too young: 14 s (min 45 s)",
     "n": 786
+   },
+   {
+    "t": "2026-11-26T18:32:05Z",
+    "time": "19:32:05",
+    "agent": "SCANNER",
+    "coin": "MANTLE",
+    "action": "flag",
+    "text": "momentum · 8.2 SOL in · 14/15 buys (93%) · +60% since launch · mcap 48 SOL · 85 s old",
+    "n": 787
+   },
+   {
+    "t": "2026-11-26T18:32:06Z",
+    "time": "19:32:06",
+    "agent": "RUG CHECK",
+    "coin": "MANTLE",
+    "action": "wait",
+    "text": "waiting: RugCheck sees 2 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
+    "n": 788
+   },
+   {
+    "t": "2026-11-26T18:32:15Z",
+    "time": "19:32:15",
+    "agent": "SCANNER",
+    "coin": "CALLUPB",
+    "action": "flag",
+    "text": "momentum · 3.1 SOL in · 6/7 buys (86%) · +21% since launch · mcap 36 SOL · 92 s old",
+    "n": 789
+   },
+   {
+    "t": "2026-11-26T18:32:15Z",
+    "time": "19:32:15",
+    "agent": "RUG CHECK",
+    "coin": "CALLUPB",
+    "action": "wait",
+    "text": "waiting: RugCheck sees 3 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
+    "n": 790
+   },
+   {
+    "t": "2026-11-26T18:32:23Z",
+    "time": "19:32:23",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.6 a minute · 1 watched · 21 rejected (serial launcher 8, mayhem mode 7, dump 3) · closest Criminul: SOL in -0.0/2.5 · buys 0/6 · buy share 0%/65% · rise +0%/+12%",
+    "n": 791
    }
   ],
   "trades": [
@@ -6020,21 +6020,11 @@
   "streak": 9,
   "cooldown_until": 1795705942.269275,
   "scans": 0,
-  "flagged": 46,
+  "flagged": 48,
   "checked": 38,
   "filtered": 8,
-  "lines": 786,
+  "lines": 791,
   "flags": [
-   {
-    "coin": "CUBE",
-    "why": "momentum",
-    "t": "2026-11-26T17:01:32Z"
-   },
-   {
-    "coin": "MONANGAI",
-    "why": "momentum",
-    "t": "2026-11-26T17:02:39Z"
-   },
    {
     "coin": "breaddawg",
     "why": "momentum",
@@ -6064,6 +6054,16 @@
     "coin": "UFOVAULT",
     "why": "momentum",
     "t": "2026-11-26T18:28:50Z"
+   },
+   {
+    "coin": "MANTLE",
+    "why": "momentum",
+    "t": "2026-11-26T18:32:05Z"
+   },
+   {
+    "coin": "CALLUPB",
+    "why": "momentum",
+    "t": "2026-11-26T18:32:15Z"
    }
   ],
   "curve": [
@@ -8334,13 +8334,17 @@
    [
     1795717873,
     84.53
+   ],
+   [
+    1795717933,
+    84.53
    ]
   ],
   "last_rug": {
    "coin": "UFOVAULT",
    "pass": true
   },
-  "np_said": 1795717882.257783,
+  "np_said": 1795717943.257731,
   "np_speed": {
    "first_in": [
     74,
