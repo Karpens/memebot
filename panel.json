@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:25:48Z",
+ "updated": "2026-11-26T16:26:21Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 36,
   "checked": 33,
   "filtered": 6,
-  "lines": 624,
+  "lines": 625,
   "last_rug": {
    "coin": "moztach",
    "pass": false
@@ -1836,6 +1836,10 @@
   [
    1795710313,
    84.53
+  ],
+  [
+   1795710373,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2310,15 +2314,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T13:53:06Z",
-   "time": "14:53:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 10 watched · 13 rejected (mayhem mode 4, dev bought 3, serial launcher 3) · closest DS: too young: 12 s (min 45 s)",
-   "n": 425
-  },
   {
    "t": "2026-11-26T13:54:07Z",
    "time": "14:54:07",
@@ -4109,6 +4104,15 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 6 watched · 5 rejected (dump 1, serial launcher 1, dev bought 1) · closest SHARES: too young: 7 s (min 45 s)",
    "n": 624
+  },
+  {
+   "t": "2026-11-26T16:26:14Z",
+   "time": "17:26:14",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 8 watched · 6 rejected (mayhem mode 3, serial launcher 1, dev bought 1) · closest CREEP: too young: 2 s (min 45 s)",
+   "n": 625
   }
  ],
  "nights": [
@@ -4151,7 +4155,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4159,24 +4163,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 73,
-    "last_event_age_s": 15.4,
+    "events": 76,
+    "last_event_age_s": 10.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 934,
-    "last_event_age_s": 0.3,
+    "events": 973,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 51,
-    "last_event_age_s": 27.2,
+    "events": 52,
+    "last_event_age_s": 8.3,
     "errors": 3,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4189,8 +4193,8 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 4.2,
-  "watching": 7,
+  "creates_per_min": 3.6,
+  "watching": 8,
   "followed": 10
  },
  "learner": {
@@ -4237,23 +4241,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 650,
+   "sent": 685,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 684,
+   "sent": 719,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CREEP",
+   "name": "CREEPER",
+   "mint": "8iz9R8N83rZaQb8pGmLwzRVdzBMeg323bVQZTR42pump",
+   "age_s": 10,
+   "sol_in": 4.63,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 33.1,
+   "mcap_sol": 37.6,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/CREEPER_world1",
+   "tg": "https://t.me/Creeperhood",
+   "web": "https://creeper.world/",
+   "status": "watching",
+   "why": "too young: 9 s (min 45 s)"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "JA8scqViwtLnENV9qnaPnXjvEE23tbj5QGFUBhZHjzM2",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 35.8,
+   "dev_pct": 12.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "WIKI",
+   "name": "WIKIPEDIA",
+   "mint": "F8BzMWevbh63i8XbynxAvQQuJQcWqgK43MWmsM2mpump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "VISION",
    "name": "Superhuman Vision",
    "mint": "tT65RFnD8FZ6nJhUnuYrSd6RasAfZJppxkYzN1ppump",
-   "age_s": 15,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4271,28 +4329,28 @@
    "symbol": "NORFEATH",
    "name": "Norfeather",
    "mint": "zzFvivBbQKn9MGiXzicRxDdA5d1A5Fpfux1VeQrpump",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": 0.98,
-   "buys": 3,
-   "sells": 0,
+   "buys": 4,
+   "sells": 1,
    "rise_pct": 6.7,
    "mcap_sol": 29.8,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/flynorfeather",
    "tg": false,
    "web": "https://norfeather.lol",
    "status": "watching",
-   "why": "too young: 18 s (min 45 s)"
+   "why": "SOL in 1.0/2.5 · buys 4/6 · rise +7%/+12%"
   },
   {
    "symbol": "hhh",
    "name": "husssss!",
    "mint": "2WoYXE54gYKAca9AB4Yx6PAVKQCuJKUrGXBGYxu1pump",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.08,
-   "buys": 4,
-   "sells": 0,
+   "buys": 5,
+   "sells": 1,
    "rise_pct": 0.6,
    "mcap_sol": 28.1,
    "dev_pct": 0.0,
@@ -4301,49 +4359,49 @@
    "tg": false,
    "web": "https://i.kym-cdn.com/entries/icons/original/000/057/795/husscover1_.jpg",
    "status": "watching",
-   "why": "too young: 26 s (min 45 s)"
+   "why": "SOL in 0.1/2.5 · buys 5/6 · rise +1%/+12%"
   },
   {
    "symbol": "SHARES",
    "name": "SHARES",
    "mint": "HBuN7FwXE3w9MJVxh7zc6Wy5e4XRyxXQMKHMDqp3pump",
-   "age_s": 45,
-   "sol_in": -0.21,
+   "age_s": 78,
+   "sol_in": -0.34,
    "buys": 5,
-   "sells": 2,
-   "rise_pct": -1.4,
-   "mcap_sol": 28.7,
+   "sells": 3,
+   "rise_pct": -2.2,
+   "mcap_sol": 28.4,
    "dev_pct": 2.1,
    "big_sell": 0.62,
    "x": "https://x.com/GetFastShares",
    "tg": false,
    "web": "https://getfastshares.com/",
    "status": "watching",
-   "why": "too young: 30 s (min 45 s)"
+   "why": "SOL in -0.3/2.5 · buys 5/6 · buy share 62%/65% · rise -2%/+12%"
   },
   {
    "symbol": "GOONDAQ",
    "name": "GOONDAQ",
    "mint": "AbzigCnWCyagC45dWUaVEVUcJDeAa9h6XbAHgR1Bpump",
-   "age_s": 56,
-   "sol_in": 0.99,
-   "buys": 5,
+   "age_s": 89,
+   "sol_in": 1.11,
+   "buys": 7,
    "sells": 1,
-   "rise_pct": 6.7,
-   "mcap_sol": 29.9,
+   "rise_pct": 7.5,
+   "mcap_sol": 30.1,
    "dev_pct": 0.1,
    "big_sell": 0.2,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 27 s (min 45 s)"
+   "why": "SOL in 1.1/2.5 · rise +7%/+12%"
   },
   {
    "symbol": "HUANGBACK",
    "name": "Huang Back",
    "mint": "5QQRCXSEudAEDkZeurszTUqLGLKhSeJB9ESWWNwgpump",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -4361,7 +4419,7 @@
    "symbol": "Uncrackable",
    "name": "Uncrackable Coin",
    "mint": "Hd5iGujzZ2vLNu1PHQ4vx3Ub55VZohKnXYXra6zfHeqv",
-   "age_s": 61,
+   "age_s": 94,
    "sol_in": -4.94,
    "buys": 1,
    "sells": 6,
@@ -4379,7 +4437,7 @@
    "symbol": "wiener",
    "name": "wienercoin",
    "mint": "HQz5X9pw2V1UvV4Z7TAwYEtogomMMtuQSTMwPkgJzUFt",
-   "age_s": 63,
+   "age_s": 96,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4397,25 +4455,25 @@
    "symbol": "bobby",
    "name": "bobby",
    "mint": "J6docizcSrxtJV85CKvWx6wAfJicnjR1vkTdnq2NLQJ1",
-   "age_s": 106,
-   "sol_in": 0.08,
+   "age_s": 139,
+   "sol_in": 0.03,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.5,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": "https://x.com/i/status/2125988954021478827",
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 11 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
   },
   {
    "symbol": "HONK",
    "name": "GOOSE",
    "mint": "9BrvPdZv6tUgv6fb77Mj1uoE9nTagLCn1jXy15iCpump",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4433,7 +4491,7 @@
    "symbol": "JAKE",
    "name": "Jake The Turkey",
    "mint": "A7QjQq7vAARVxeL9gSaP2msWkaVLUXpZ41SfFjHnpump",
-   "age_s": 128,
+   "age_s": 161,
    "sol_in": -0.7,
    "buys": 4,
    "sells": 7,
@@ -4446,24 +4504,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in -0.7/2.5 · buys 4/6 · buy share 36%/65% · rise -4%/+12%"
-  },
-  {
-   "symbol": "DOPL",
-   "name": "Dopple",
-   "mint": "EU97zvR2kCRZ6sdqAPjinSni2USB2vAadd6XGg3zpump",
-   "age_s": 172,
-   "sol_in": 2.11,
-   "buys": 13,
-   "sells": 17,
-   "rise_pct": 14.3,
-   "mcap_sol": 33.2,
-   "dev_pct": 2.0,
-   "big_sell": 5.7,
-   "x": "https://x.com/walletdoppel",
-   "tg": false,
-   "web": "https://usedoppel.xyz",
-   "status": "rejected: dump: 5.7 SOL sold",
-   "why": "dump: 5.7 SOL sold"
   }
  ],
  "strategies": [
