@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T05:12:49Z",
+ "updated": "2026-11-26T05:13:24Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 67.7,
- "equity": 67.7,
+ "balance": 62.17,
+ "equity": 67.63,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -20,13 +20,13 @@
   "id": "2026-11-25",
   "start_equity": 100.0,
   "started": "2026-11-26T02:36:46Z",
-  "scans": 1139,
-  "flagged": 64,
-  "checked": 261,
+  "scans": 1146,
+  "flagged": 65,
+  "checked": 262,
   "filtered": 7,
-  "lines": 619,
+  "lines": 625,
   "last_rug": {
-   "coin": "NORFEATH",
+   "coin": "PUMPCHAN",
    "pass": true
   }
  },
@@ -47,11 +47,6 @@
    "t": "2026-11-26T04:54:19Z"
   },
   {
-   "coin": "PUMPCHAN",
-   "why": "trending",
-   "t": "2026-11-26T04:54:34Z"
-  },
-  {
    "coin": "Grodia",
    "why": "trending",
    "t": "2026-11-26T05:06:04Z"
@@ -70,6 +65,11 @@
    "coin": "NORFEATH",
    "why": "trending",
    "t": "2026-11-26T05:07:54Z"
+  },
+  {
+   "coin": "PUMPCHAN",
+   "why": "trending",
+   "t": "2026-11-26T05:13:04Z"
   }
  ],
  "curve": [
@@ -697,7 +697,46 @@
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "PUMPCHAN",
+   "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
+   "cost": 5.52,
+   "value": 5.46,
+   "pnl_pct": -1.2,
+   "opened": "2026-11-26T05:13:04Z",
+   "url": "https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb",
+   "reason": "buys 57% · trending · boosted · holders +8%",
+   "size_pct": 8.2,
+   "entry_price": 0.0014699354385034858,
+   "price": 0.0014624218059345203,
+   "slip": 0.0,
+   "tp1_done": false,
+   "hist": [
+    0.0014699354385034858,
+    0.001451,
+    0.001451,
+    0.001446,
+    0.001446,
+    0.001446,
+    0.001446,
+    0.001446,
+    0.001446,
+    0.001446,
+    0.001446,
+    0.001448312960991473,
+    0.001448312960991473,
+    0.001448312960991473,
+    0.0014481294427636088,
+    0.0014481294427636088,
+    0.0014481294427636088,
+    0.0014624218059345203,
+    0.0014624218059345203,
+    0.0014624218059345203,
+    0.0014624218059345203
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "Grodia",
@@ -1551,60 +1590,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T04:28:02Z",
-   "time": "05:28:02",
-   "agent": "LEARNER",
-   "coin": "PUMPCHAN",
-   "action": "buy",
-   "text": "buy · score -2.5% · size x0.87 · hour:05-07 -5.3% over 9",
-   "n": 420
-  },
-  {
-   "t": "2026-11-26T04:28:02Z",
-   "time": "05:28:02",
-   "agent": "SIZER",
-   "coin": "PUMPCHAN",
-   "action": "size",
-   "text": "10% of $74.98 x0.88 LEARNER = $6.56",
-   "n": 421
-  },
-  {
-   "t": "2026-11-26T04:28:02Z",
-   "time": "05:28:02",
-   "agent": "EXECUTOR",
-   "coin": "PUMPCHAN",
-   "action": "enter",
-   "text": "ENTER PUMPCHAN at 0.0013469823 · slip 0.7% · buys 72% · trending · boosted · holders +9%",
-   "n": 422
-  },
-  {
-   "t": "2026-11-26T04:28:03Z",
-   "time": "05:28:03",
-   "agent": "EXECUTOR",
-   "coin": "PUMPCHAN",
-   "action": "exit",
-   "text": "EXIT PUMPCHAN $-0.32 (-5%) · stop -7%",
-   "n": 423
-  },
-  {
-   "t": "2026-11-26T04:28:03Z",
-   "time": "05:28:03",
-   "agent": "LEARNER",
-   "coin": "PUMPCHAN",
-   "action": "learn",
-   "text": "learned · hour:05-07 now avg -5.2% over 10",
-   "n": 424
-  },
-  {
-   "t": "2026-11-26T04:28:17Z",
-   "time": "05:28:17",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "scanned 107 new coins · 107 pairs · 2 pass the rules",
-   "n": 425
-  },
   {
    "t": "2026-11-26T04:29:17Z",
    "time": "05:29:17",
@@ -3350,13 +3335,67 @@
    "action": "scan",
    "text": "scanned 87 new coins · 87 pairs · 2 pass the rules",
    "n": 619
+  },
+  {
+   "t": "2026-11-26T05:12:59Z",
+   "time": "06:12:59",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 107 new coins · 107 pairs · 1 pass the rules",
+   "n": 620
+  },
+  {
+   "t": "2026-11-26T05:13:04Z",
+   "time": "06:13:04",
+   "agent": "SCANNER",
+   "coin": "PUMPCHAN",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $86.0k · 5m $3.6k · buys 57% · trending · boosted · holders +8%",
+   "n": 621
+  },
+  {
+   "t": "2026-11-26T05:13:04Z",
+   "time": "06:13:04",
+   "agent": "NEWS",
+   "coin": "PUMPCHAN",
+   "action": "news",
+   "text": "promo: X @PumpChanMeme · web · 30 boosts · trending",
+   "n": 622
+  },
+  {
+   "t": "2026-11-26T05:13:04Z",
+   "time": "06:13:04",
+   "agent": "LEARNER",
+   "coin": "PUMPCHAN",
+   "action": "buy",
+   "text": "buy · score -3.7% · size x0.82 · hour:05-07 -5.7% over 30, dex:pumpswap -5.8% over 24",
+   "n": 623
+  },
+  {
+   "t": "2026-11-26T05:13:04Z",
+   "time": "06:13:04",
+   "agent": "SIZER",
+   "coin": "PUMPCHAN",
+   "action": "size",
+   "text": "10% of $67.70 x0.82 LEARNER = $5.52",
+   "n": 624
+  },
+  {
+   "t": "2026-11-26T05:13:04Z",
+   "time": "06:13:04",
+   "agent": "EXECUTOR",
+   "coin": "PUMPCHAN",
+   "action": "enter",
+   "text": "ENTER PUMPCHAN at 0.0014699354 · slip 0.0% · buys 57% · trending · boosted · holders +8%",
+   "n": 625
   }
  ],
  "nights": [],
  "errors": [
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/trending_pools: HTTP 429",
+  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
   "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
  ],
@@ -3374,8 +3413,8 @@
   "scan_sec": 5,
   "gt_sec": 20,
   "feed": "jupiter · scan 5s · live 1s",
-  "last_scan_ms": 109,
-  "watch_ms": 1,
+  "last_scan_ms": 251,
+  "watch_ms": 60,
   "scans_per_min": 12,
   "feeds": [
    "geckoterminal",
@@ -3427,13 +3466,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3446,
+   "sent": 3484,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3446,
+   "sent": 3484,
    "errors": 0,
    "last_error": null
   }
