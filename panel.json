@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:19:01Z",
+ "updated": "2026-11-26T12:19:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 21,
   "checked": 21,
   "filtered": 2,
-  "lines": 305,
+  "lines": 306,
   "last_rug": {
    "coin": "VP64",
    "pass": true
@@ -848,6 +848,10 @@
   [
    1795695493,
    85.94
+  ],
+  [
+   1795695553,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -1232,15 +1236,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:47:25Z",
-   "time": "10:47:25",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 3 watched · 8 rejected (mayhem mode 4, dev bought 3, serial launcher 1) · closest Fame MMA: SOL in 0.0/2.5 · buys 5/6 · buy share 62%/65% · rise +0%/+12%",
-   "n": 106
-  },
   {
    "t": "2026-11-26T09:48:25Z",
    "time": "10:48:25",
@@ -3031,6 +3026,15 @@
    "action": "scan",
    "text": "new pairs · 0.6 a minute · 2 watched · 1 rejected (mayhem mode 1) · closest UBE: too young: 1 s (min 45 s)",
    "n": 305
+  },
+  {
+   "t": "2026-11-26T12:19:20Z",
+   "time": "13:19:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.0 a minute · 3 watched · 2 rejected (dev bought 1, mayhem mode 1) · closest ELONGIVING: too young: 11 s (min 45 s)",
+   "n": 306
   }
  ],
  "nights": [
@@ -3073,7 +3077,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3081,15 +3085,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 5,
-    "last_event_age_s": 0.7,
+    "events": 7,
+    "last_event_age_s": 6.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5,
+    "events": 12,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -3097,8 +3101,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 0.7,
+    "events": 5,
+    "last_event_age_s": 6.1,
     "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3111,9 +3115,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 1.0,
+  "creates_per_min": 1.4,
   "watching": 3,
-  "followed": 4
+  "followed": 5
  },
  "learner": {
   "samples": 105,
@@ -3158,41 +3162,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 115,
+   "sent": 152,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 115,
+   "sent": 152,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "ELONGIVING",
-   "name": "Elon Thanksgiving",
-   "mint": "2jLyY2SiF7gnPy61vEiWgJiFKcBF95Hen45EFCqHN2Lf",
-   "age_s": 0,
-   "sol_in": 2.81,
-   "buys": 1,
+   "symbol": "Pinky",
+   "name": "The Tiny Buffalo",
+   "mint": "DXCBNdpnTYvmBYHwSzQVUphvVNHnqCtRQVXSxXRCpump",
+   "age_s": 6,
+   "sol_in": 0.76,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 1.5,
+   "mcap_sol": 310.0,
+   "dev_pct": 74.8,
+   "big_sell": 0.12,
+   "x": "https://x.com/AaronFlynnX/status/2125923632904094001",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 74.8% (max 8%)",
+   "why": "dev bought 74.8% (max 8%)"
+  },
+  {
+   "symbol": "PIPI",
+   "name": "PIPI LABS",
+   "mint": "3yuHVXEUibnDCXz8BShmoho13sHcyKFtvh9EmeoQpump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
    "sells": 0,
-   "rise_pct": 19.5,
-   "mcap_sol": 33.8,
-   "dev_pct": 0.7,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "ELONGIVING",
+   "name": "Elon Thanksgiving",
+   "mint": "2jLyY2SiF7gnPy61vEiWgJiFKcBF95Hen45EFCqHN2Lf",
+   "age_s": 34,
+   "sol_in": 2.9,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 20.2,
+   "mcap_sol": 34.0,
+   "dev_pct": 0.7,
+   "big_sell": 0.19,
+   "x": false,
+   "tg": false,
+   "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 11 s (min 45 s)"
   },
   {
    "symbol": "CJ",
    "name": "CJ",
    "mint": "B8Dd8r821zjkU5MJtjChwN3FRGKHzLnQ9f1mWXKk3MTE",
-   "age_s": 18,
+   "age_s": 52,
    "sol_in": -3.0,
    "buys": 0,
    "sells": 1,
@@ -3210,7 +3250,7 @@
    "symbol": "Xmas",
    "name": "X-mas",
    "mint": "5WzRCbMjcSvqP3q4WuB6D2Q1dBTh5Fw3sFwUxKdZQ54q",
-   "age_s": 50,
+   "age_s": 84,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3228,7 +3268,7 @@
    "symbol": "UBE",
    "name": "Universal Basic Equity",
    "mint": "DjDsruVKXmBSfA86jXFyqd7To8yD2DxwYBKDZGREZDot",
-   "age_s": 79,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3246,7 +3286,7 @@
    "symbol": "PIPI",
    "name": "PIPI LABS",
    "mint": "8tq1kJwXvDPAgS3SynPxvQXsu2aGUYAeeEAAeLnTpump",
-   "age_s": 101,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
