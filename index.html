@@ -1,0 +1,366 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Meme Bot</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* One light terminal sheet, as in the video: a white app card, a prompt card with a heavy black
+   rule, mono text, grey chips and one black Run pill. Single deliberate light look. */
+:root {
+  color-scheme: light;
+  --page: #f4f4f5;
+  --card: #ffffff;
+  --ink: #0c0c0f;
+  --muted: #6b6b76;
+  --line: #e4e4e8;
+  --chip: #f1f1f4;
+  --up: #0f8a4a;
+  --down: #c8312b;
+  --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+body { background: var(--page); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 600px; margin: 0 auto; padding-block: 20px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.app { background: var(--card); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+header { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.logo { width: 44px; height: 44px; border-radius: 11px; background: var(--ink); display: grid; place-items: center; flex: none; }
+.who { min-width: 0; flex: 1 1 230px; }
+.who h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.who p { margin: 3px 0 0; font: 400 11.5px/1.3 var(--mono); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pill { font: 500 11.5px/1 var(--mono); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; white-space: nowrap; }
+main { padding: 16px; display: grid; gap: 16px; }
+.prompt { border: 1.6px solid var(--ink); border-radius: 16px; display: flex; flex-direction: column; min-height: 520px; }
+.bar { display: flex; justify-content: space-between; gap: 10px; padding: 12px 14px 4px; font: 400 11px/1.4 var(--mono); color: var(--muted); flex-wrap: wrap; }
+.bar span:first-child::before { content: ""; display: inline-block; width: 9px; height: 11px; margin-right: 7px; vertical-align: -1px;
+  border: 1px solid currentColor; border-radius: 1.5px; }
+.text { flex: 1; padding: 6px 14px 14px; font: 400 12.6px/1.62 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0; }
+.text b { font-weight: 700; }
+.foot { display: flex; align-items: center; gap: 8px; padding: 12px 14px 14px; flex-wrap: wrap; }
+.chip { font: 400 11px/1 var(--mono); background: var(--chip); border-radius: 999px; padding: 8px 12px; }
+.run { margin-left: auto; font: 700 15px/1 var(--sans); color: #fff; background: var(--ink); border: 0; border-radius: 999px;
+  padding: 12px 18px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+.run:hover { background: #2a2a31; }
+.run:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.run[disabled] { opacity: .55; cursor: default; }
+
+.session { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.status { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); flex-wrap: wrap;
+  font: 500 11.5px/1.3 var(--mono); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+.dot.live { background: var(--up); box-shadow: 0 0 0 4px rgba(15,138,74,.14); }
+.status .right { margin-left: auto; color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.stat { padding: 12px 14px; min-width: 0; }
+.stat + .stat { border-left: 1px solid var(--line); }
+.stat small { display: block; font: 400 10.5px/1.2 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.stat strong { display: block; margin-top: 4px; font: 700 18px/1.15 var(--sans); font-variant-numeric: tabular-nums; }
+.up { color: var(--up); } .down { color: var(--down); }
+.log { max-height: 380px; overflow-y: auto; padding: 10px 14px 14px; font: 400 11.5px/1.6 var(--mono); }
+.row { display: grid; grid-template-columns: 58px 76px minmax(0, 1fr); gap: 8px; padding: 2px 0; }
+.row .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+.row .a { font-weight: 700; }
+.row .x { min-width: 0; overflow-wrap: anywhere; }
+.row .x b { font-weight: 700; }
+.a.SCANNER { color: #2457d6; } .a.RUG { color: #b5470f; } .a.SIZER { color: var(--up); } .a.RISK { color: #8a5a00; }
+.a.EXIT { color: #7a2fc0; } .a.JOURNAL { color: var(--muted); }
+.empty { padding: 18px 14px; color: var(--muted); font: 400 12px/1.6 var(--mono); }
+h2 { margin: 0; padding: 14px 14px 6px; font: 700 12px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; font: 400 12px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 14px; border-top: 1px solid var(--line); white-space: nowrap; }
+th { font-weight: 500; color: var(--muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; }
+td.num, th.num { text-align: right; }
+.scroll { overflow-x: auto; }
+.note { font: 400 11px/1.6 var(--mono); color: var(--muted); padding: 0 4px; margin: 0; }
+.note a { color: var(--ink); }
+.msg { padding: 10px 14px; border-bottom: 1px solid var(--line); font: 400 12px/1.5 var(--mono); background: var(--chip); }
+.msg.bad { color: var(--down); }
+@media (max-width: 440px) {
+  .row { grid-template-columns: 50px minmax(0, 1fr); }
+  .row .a { grid-column: 2; }
+  .row .x { grid-column: 2; }
+  .stat strong { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <div class="app">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="4" y="9" width="3.4" height="9" rx="1" fill="#fff"/>
+          <rect x="10.3" y="5" width="3.4" height="13" rx="1" fill="#fff"/>
+          <rect x="16.6" y="11" width="3.4" height="7" rx="1" fill="#fff"/>
+          <path d="M5.7 9V6.5M12 5V3M18.3 11V8.6M5.7 18v2M12 18v2.5M18.3 18v1.8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="who">
+        <h1>Meme Bot</h1>
+        <p>new session · overnight trading prompt</p>
+      </div>
+      <span class="pill">solana · fresh memes</span>
+    </header>
+    <main>
+      <section class="prompt" aria-label="The bot's prompt">
+        <div class="bar"><span>meme-bot-overnight.prompt</span><span id="count"></span></div>
+        <div class="text" id="prompt"></div>
+        <div class="foot">
+          <span class="chip" id="agents">6 agents</span>
+          <span class="chip" id="start">start $70</span>
+          <span class="chip" id="window">23:00 → 07:00</span>
+          <button class="run" id="run" type="button">Run <span aria-hidden="true">↑</span></button>
+        </div>
+      </section>
+
+      <section class="session" id="session" aria-live="polite">
+        <div class="status"><span class="dot" id="dot"></span><span id="state">paper · no real money</span><span class="right" id="updated"></span></div>
+        <div class="stats">
+          <div class="stat"><small>balance</small><strong id="balance">$70.00</strong></div>
+          <div class="stat"><small>tonight</small><strong id="pnl">$0.00</strong></div>
+          <div class="stat"><small>trades</small><strong id="trades">0</strong></div>
+        </div>
+        <div class="msg" id="msg" hidden></div>
+        <div class="log" id="log"><div class="empty">Press Run to start the bot. Every decision of the six agents shows up here, with its reason.</div></div>
+      </section>
+
+      <section class="session" id="posbox" hidden>
+        <h2>Open positions</h2>
+        <div class="scroll"><table><thead><tr><th>coin</th><th class="num">in</th><th class="num">now</th><th class="num">pnl</th></tr></thead><tbody id="pos"></tbody></table></div>
+      </section>
+
+      <section class="session" id="tradebox" hidden>
+        <h2>Closed trades</h2>
+        <div class="scroll"><table><thead><tr><th>coin</th><th class="num">in</th><th class="num">out</th><th class="num">pnl</th><th>why</th></tr></thead><tbody id="tradelist"></tbody></table></div>
+      </section>
+
+      <section class="session" id="nightbox" hidden>
+        <h2>Nights</h2>
+        <div class="scroll"><table><thead><tr><th>night</th><th class="num">start</th><th class="num">end</th><th class="num">pnl</th><th class="num">trades</th></tr></thead><tbody id="nights"></tbody></table></div>
+      </section>
+      <p class="note">Live page, refreshed every minute: <a href="https://karpens.github.io/memebot/">karpens.github.io/memebot</a></p>
+      <p class="note">Paper trading: every buy and sell is priced by a real Jupiter quote on Solana, with fees. No wallet, no real money. Not financial advice: most new meme coins lose most of their value within hours.</p>
+    </main>
+  </div>
+</div>
+
+<script id="data" type="application/json">{"updated":"2026-11-26T01:30:25Z","mode":"paper","start_balance":70.0,"balance":43.84,"equity":58.82,"session":"23:00 → 07:00","agents":["SCANNER","RUG CHECK","SIZER","RISK","EXIT","JOURNAL"],"prompt":"You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $70. I will not be watching. Log every decision so I can read it in the morning.\n\nUNIVERSE\n- Only fresh DEX pairs: launched or migrated in the last 6 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $40k, minimum 5m volume $25k, at least 300 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - watches new pairs, volume spikes (>5x 1h average), buy/sell ratio above 70% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 35%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 25% of the balance per trade, never less than $5.\n4. RISK - at most 3 open positions and 12 trades a night, a 30 minute pause after 3 losses in a row, no new entries in the last 30 minutes, stop for the night at -35%.\n5. EXIT - sell half at +50%, trail the rest 20% below the peak, stop loss at -25%, out after 45 minutes unless up 10%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n","night":{"id":"2026-11-25","start_equity":70.0,"started":"2026-11-25T22:03:25Z","scans":205,"flagged":4,"checked":4},"live":true,"positions":[{"symbol":"MONEY","cost":14.61,"value":14.98,"pnl_pct":2.5,"opened":"2026-11-26T01:29:04Z","url":"https://dexscreener.com/solana/cchpignpbwf65nfsl3d8h4m4rwdprzh8lpcatynurxqg"}],"trades":[{"symbol":"Grodia","mint":"6HS1aeSk7osT5B1CzLp1HTRTAweFr5wurfMHS4vppump","opened":"2026-11-25T22:48:00Z","closed":"2026-11-25T23:06:56Z","cost":17.5,"proceeds":12.43,"pnl":-5.07,"pnl_pct":-29.0,"why":"stop -27 %","url":"https://dexscreener.com/solana/7wnxyps79whx7vx8ncrkdhqafiyvbqzbbuqrrdkmrbve"},{"symbol":"AMD","mint":"2ndz2hhsxDFgU1sQHi8Qjro7KRrTPgen1NJdUtNDpump","opened":"2026-11-25T23:46:42Z","closed":"2026-11-25T23:50:46Z","cost":16.23,"proceeds":9.75,"pnl":-6.48,"pnl_pct":-39.9,"why":"stop -43 %","url":"https://dexscreener.com/solana/hw4jf8lfw2ycf4wzscvb8zq4bekeeyhy8pyc4br6gvcl"}],"log":[{"t":"2026-11-25T22:03:25Z","time":"23:03:25","agent":"JOURNAL","coin":null,"action":"start","text":"Noc 2026-11-25: zostatok $70.00, 6 agentov, 23:00 až 07:00."},{"t":"2026-11-25T22:03:25Z","time":"23:03:25","agent":"SCANNER","coin":null,"action":"scan","text":"93 nových coinov, 93 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:08:30Z","time":"23:08:30","agent":"SCANNER","coin":null,"action":"scan","text":"92 nových coinov, 91 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:13:34Z","time":"23:13:34","agent":"SCANNER","coin":null,"action":"scan","text":"87 nových coinov, 86 párov, 2 spĺňa pravidlá."},{"t":"2026-11-25T22:18:38Z","time":"23:18:38","agent":"SCANNER","coin":null,"action":"scan","text":"89 nových coinov, 89 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:20:39Z","time":"23:20:39","agent":"SCANNER","coin":"MONEY","action":"flag","text":"pumpswap, likvidita $87.8k, 5 min $70.7k, nákupy 70 % (držitelia +175 %)."},{"t":"2026-11-25T22:20:39Z","time":"23:20:39","agent":"RUG CHECK","coin":"MONEY","action":"reject","text":"Neprešiel: top 10 držiteľov má 36 %."},{"t":"2026-11-25T22:23:41Z","time":"23:23:41","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 87 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:28:46Z","time":"23:28:46","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 88 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:33:50Z","time":"23:33:50","agent":"SCANNER","coin":null,"action":"scan","text":"89 nových coinov, 88 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $51.1k, 5 min $9.2k)."},{"t":"2026-11-25T22:38:54Z","time":"23:38:54","agent":"SCANNER","coin":null,"action":"scan","text":"89 nových coinov, 87 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:43:58Z","time":"23:43:58","agent":"SCANNER","coin":null,"action":"scan","text":"86 nových coinov, 85 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:48:00Z","time":"23:48:00","agent":"SCANNER","coin":"Grodia","action":"flag","text":"pumpswap, likvidita $74.2k, 5 min $122.6k, nákupy 70 % (držitelia +154 %)."},{"t":"2026-11-25T22:48:00Z","time":"23:48:00","agent":"SIZER","coin":"Grodia","action":"buy","text":"Kúpené za $17.50 (25 % zostatku), cena $0.00110941, dopad 1.1 %."},{"t":"2026-11-25T22:49:02Z","time":"23:49:02","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 87 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:54:05Z","time":"23:54:05","agent":"SCANNER","coin":null,"action":"scan","text":"83 nových coinov, 82 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T22:59:09Z","time":"23:59:09","agent":"SCANNER","coin":null,"action":"scan","text":"87 nových coinov, 85 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $52.5k, 5 min $6.2k)."},{"t":"2026-11-25T23:04:13Z","time":"00:04:13","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 88 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T23:06:56Z","time":"00:06:56","agent":"EXIT","coin":"Grodia","action":"sell","text":"Predané (stop -27 %): $12.43, $-5.07 (-29 %)."},{"t":"2026-11-25T23:09:18Z","time":"00:09:18","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 88 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $55.8k, 5 min $8.5k)."},{"t":"2026-11-25T23:14:21Z","time":"00:14:21","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 87 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $54.7k, 5 min $8.4k)."},{"t":"2026-11-25T23:19:24Z","time":"00:19:24","agent":"SCANNER","coin":null,"action":"scan","text":"70 nových coinov, 70 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $60.9k, 5 min $8.4k)."},{"t":"2026-11-25T23:24:28Z","time":"00:24:28","agent":"SCANNER","coin":null,"action":"scan","text":"86 nových coinov, 86 párov, 2 spĺňa pravidlá."},{"t":"2026-11-25T23:29:31Z","time":"00:29:31","agent":"SCANNER","coin":null,"action":"scan","text":"87 nových coinov, 87 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $60.6k, 5 min $8.6k)."},{"t":"2026-11-25T23:34:34Z","time":"00:34:34","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 88 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $63.5k, 5 min $8.9k)."},{"t":"2026-11-25T23:39:38Z","time":"00:39:38","agent":"SCANNER","coin":null,"action":"scan","text":"72 nových coinov, 70 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $54.3k, 5 min $16.3k)."},{"t":"2026-11-25T23:44:41Z","time":"00:44:41","agent":"SCANNER","coin":null,"action":"scan","text":"85 nových coinov, 83 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $53.0k, 5 min $12.6k)."},{"t":"2026-11-25T23:46:42Z","time":"00:46:42","agent":"SCANNER","coin":"AMD","action":"flag","text":"pumpswap, likvidita $41.4k, 5 min $26.5k, nákupy 77 % (držitelia +164 %)."},{"t":"2026-11-25T23:46:42Z","time":"00:46:42","agent":"SIZER","coin":"AMD","action":"buy","text":"Kúpené za $16.23 (25 % zostatku), cena $0.00046404, dopad 1.9 %."},{"t":"2026-11-25T23:49:45Z","time":"00:49:45","agent":"SCANNER","coin":null,"action":"scan","text":"86 nových coinov, 86 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T23:50:46Z","time":"00:50:46","agent":"EXIT","coin":"AMD","action":"sell","text":"Predané (stop -43 %): $9.75, $-6.48 (-40 %)."},{"t":"2026-11-25T23:54:49Z","time":"00:54:49","agent":"SCANNER","coin":null,"action":"scan","text":"86 nových coinov, 86 párov, 1 spĺňa pravidlá."},{"t":"2026-11-25T23:59:53Z","time":"00:59:53","agent":"SCANNER","coin":null,"action":"scan","text":"87 nových coinov, 86 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $55.6k, 5 min $9.3k)."},{"t":"2026-11-26T00:04:57Z","time":"01:04:57","agent":"SCANNER","coin":null,"action":"scan","text":"86 nových coinov, 85 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T00:10:01Z","time":"01:10:01","agent":"SCANNER","coin":null,"action":"scan","text":"87 nových coinov, 86 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T00:15:04Z","time":"01:15:04","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 87 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T00:20:08Z","time":"01:20:08","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 87 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T00:25:11Z","time":"01:25:11","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 87 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T00:30:15Z","time":"01:30:15","agent":"SCANNER","coin":null,"action":"scan","text":"90 nových coinov, 69 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T00:35:19Z","time":"01:35:19","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 70 párov, 3 spĺňa pravidlá."},{"t":"2026-11-26T00:40:23Z","time":"01:40:23","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 85 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $54.2k, 5 min $13.7k)."},{"t":"2026-11-26T00:45:28Z","time":"01:45:28","agent":"SCANNER","coin":null,"action":"scan","text":"88 nových coinov, 75 párov, 0 spĺňa pravidlá (najbližšie Optimus: likvidita $106.4k, 5 min $20.6k)."},{"t":"2026-11-26T00:50:31Z","time":"01:50:31","agent":"SCANNER","coin":null,"action":"scan","text":"78 nových coinov, 66 párov, 0 spĺňa pravidlá (najbližšie NORFEATH: likvidita $53.6k, 5 min $9.6k)."},{"t":"2026-11-26T00:55:35Z","time":"01:55:35","agent":"SCANNER","coin":null,"action":"scan","text":"90 nových coinov, 84 párov, 1 spĺňa pravidlá."},{"t":"2026-11-26T01:00:40Z","time":"02:00:40","agent":"SCANNER","coin":null,"action":"scan","text":"76 nových coinov, 75 párov, 2 spĺňa pravidlá."},{"t":"2026-11-26T01:05:44Z","time":"02:05:44","agent":"SCANNER","coin":null,"action":"scan","text":"91 nových coinov, 88 párov, 3 spĺňa pravidlá."},{"t":"2026-11-26T01:10:49Z","time":"02:10:49","agent":"SCANNER","coin":null,"action":"scan","text":"90 nových coinov, 87 párov, 2 spĺňa pravidlá."},{"t":"2026-11-26T01:15:53Z","time":"02:15:53","agent":"SCANNER","coin":null,"action":"scan","text":"92 nových coinov, 88 párov, 2 spĺňa pravidlá."},{"t":"2026-11-26T01:20:57Z","time":"02:20:57","agent":"SCANNER","coin":null,"action":"scan","text":"84 nových coinov, 81 párov, 2 spĺňa pravidlá."},{"t":"2026-11-26T01:26:01Z","time":"02:26:01","agent":"SCANNER","coin":null,"action":"scan","text":"75 nových coinov, 73 párov, 2 spĺňa pravidlá."},{"t":"2026-11-26T01:29:04Z","time":"02:29:04","agent":"SCANNER","coin":"MONEY","action":"flag","text":"pumpswap, likvidita $62.6k, 5 min $78.7k, nákupy 70 % (držitelia +65 %)."},{"t":"2026-11-26T01:29:04Z","time":"02:29:04","agent":"SIZER","coin":"MONEY","action":"buy","text":"Kúpené za $14.61 (25 % zostatku), cena $0.00071935, dopad 0.5 %."}],"nights":[{"id":"2026-11-25-test","start":70.0,"end":70.0,"pnl":0.0,"trades":0,"wins":0,"best":0,"worst":0,"flagged":0,"scans":3}],"errors":[]}</script>
+<script>
+(function () {
+  var GH = "github", OWNER = "Karpens", REPO = "memebot", WF = "memebot.yml";
+  var D = {};
+  try { D = JSON.parse(document.getElementById("data").textContent); } catch (e) { D = {}; }
+  var $ = function (id) { return document.getElementById(id); };
+  function money(x) {
+    x = Number(x) || 0;
+    var s = Math.abs(x) >= 1000 ? "$" + (Math.abs(x) / 1000).toFixed(1) + "k" : "$" + Math.abs(x).toFixed(2);
+    return (x < 0 ? "-" : "") + s;
+  }
+  function signed(x) { x = Number(x) || 0; return (x > 0 ? "+" : "") + money(x); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function say(text, bad) { var m = $("msg"); m.hidden = !text; m.textContent = text || ""; m.className = "msg" + (bad ? " bad" : ""); }
+
+  // the prompt, headings in bold (from the page's own copy; the bot's data may bring a newer one)
+  function showPrompt(prompt) {
+    var box = $("prompt");
+    box.textContent = "";
+    prompt.replace(/\s+$/, "").split("\n").forEach(function (line, i, all) {
+      if (/^[A-Z][A-Z ]+$/.test(line.trim())) { box.appendChild(el("b", null, line)); }
+      else { box.appendChild(document.createTextNode(line)); }
+      if (i < all.length - 1) box.appendChild(document.createTextNode("\n"));
+    });
+    $("count").textContent = prompt.length + " chars · " + (prompt.trim() ? prompt.trim().split(/\s+/).length : 0) + " words";
+  }
+
+  function row(r) {
+    var div = el("div", "row");
+    div.appendChild(el("span", "t", (r.time || "").slice(0, 5)));
+    div.appendChild(el("span", "a " + String(r.agent || "").split(" ")[0], r.agent || ""));
+    var x = el("span", "x");
+    if (r.coin) { x.appendChild(el("b", null, r.coin + " ")); }
+    x.appendChild(document.createTextNode(r.text || ""));
+    div.appendChild(x);
+    return div;
+  }
+
+  var shownLog = "";
+  function render(doc) {
+    D = doc || {};
+    if (D.prompt) showPrompt(D.prompt);
+    $("agents").textContent = ((D.agents || []).length || 6) + " agents";
+    $("start").textContent = "start " + money(D.start_balance || 70).replace(".00", "");
+    if (D.session) $("window").textContent = D.session;
+    var night = D.night || {};
+    var trades = D.trades || [];
+    var eq = D.equity != null ? Number(D.equity) : Number(D.start_balance || 70);
+    var pnl = eq - (Number(night.start_equity) || Number(D.start_balance) || 0);
+    $("balance").textContent = money(eq);
+    var p = $("pnl"); p.textContent = signed(pnl); p.className = pnl > 0 ? "up" : pnl < 0 ? "down" : "";
+    $("trades").textContent = String(trades.length);
+    var fresh = D.updated && (Date.now() - new Date(D.updated).getTime()) < 6 * 60 * 1000;
+    var running = !!(D.live && fresh);
+    $("dot").className = "dot" + (running ? " live" : "");
+    $("state").textContent = (running ? "running · " : "") + "night " + (night.id || "–") + " · paper";
+    if (D.updated) {
+      var d = new Date(D.updated);
+      $("updated").textContent = isNaN(d) ? "" : "updated " + d.toLocaleTimeString("sk-SK", { hour: "2-digit", minute: "2-digit", hour12: false });
+    }
+    // the log: newest at the bottom, kept where the reader is
+    var log = D.log || [];
+    var key = log.length + ":" + (log.length ? log[log.length - 1].t + log[log.length - 1].text : "");
+    if (key !== shownLog && log.length) {
+      shownLog = key;
+      var out = $("log"), atEnd = out.scrollTop + out.clientHeight >= out.scrollHeight - 20;
+      out.textContent = "";
+      log.forEach(function (r) { out.appendChild(row(r)); });
+      if (atEnd || !out.dataset.seen) out.scrollTop = out.scrollHeight;
+      out.dataset.seen = "1";
+    }
+    // positions, trades, nights
+    var pos = D.positions || [];
+    $("posbox").hidden = !pos.length;
+    var tb = $("pos"); tb.textContent = "";
+    pos.forEach(function (q) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, q.symbol));
+      tr.appendChild(el("td", "num", money(q.cost)));
+      tr.appendChild(el("td", "num", money(q.value)));
+      tr.appendChild(el("td", "num " + (q.pnl_pct >= 0 ? "up" : "down"), (q.pnl_pct > 0 ? "+" : "") + q.pnl_pct + " %"));
+      tb.appendChild(tr);
+    });
+    $("tradebox").hidden = !trades.length;
+    tb = $("tradelist"); tb.textContent = "";
+    trades.slice().reverse().forEach(function (t) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, t.symbol));
+      tr.appendChild(el("td", "num", money(t.cost)));
+      tr.appendChild(el("td", "num", money(t.proceeds)));
+      tr.appendChild(el("td", "num " + (t.pnl >= 0 ? "up" : "down"), signed(t.pnl)));
+      tr.appendChild(el("td", null, t.why));
+      tb.appendChild(tr);
+    });
+    var ns = (D.nights || []).slice().reverse();
+    $("nightbox").hidden = !ns.length;
+    tb = $("nights"); tb.textContent = "";
+    ns.forEach(function (n) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, n.id));
+      tr.appendChild(el("td", "num", money(n.start)));
+      tr.appendChild(el("td", "num", money(n.end)));
+      tr.appendChild(el("td", "num " + (n.pnl >= 0 ? "up" : "down"), signed(n.pnl)));
+      tr.appendChild(el("td", "num", String(n.trades)));
+      tb.appendChild(tr);
+    });
+    return running;
+  }
+  render(D);
+
+  // the GitHub connector returns a file as a resource block beside a short text line
+  function fileJson(result) {
+    var blocks = (result && result.content) || [];
+    var tries = [];
+    blocks.forEach(function (b) {
+      if (!b) return;
+      if (b.resource && typeof b.resource.text === "string") tries.push(b.resource.text);
+      if (b.resource && typeof b.resource.blob === "string") { try { tries.push(decodeURIComponent(escape(atob(b.resource.blob)))); } catch (e) {} }
+      if (typeof b.text === "string") { tries.push(b.text); var i = b.text.indexOf("{"); if (i > 0) tries.push(b.text.slice(i)); }
+    });
+    if (result && typeof result.payload === "object" && result.payload && result.payload.log) return result.payload;
+    for (var k = 0; k < tries.length; k++) {
+      try { var v = JSON.parse(tries[k]); if (v && typeof v === "object" && ("log" in v || "balance" in v)) return v; } catch (e) {}
+    }
+    return null;
+  }
+
+  function nightNow() {
+    try {
+      var h = Number(new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Bratislava", hour: "2-digit", hour12: false }).format(new Date()));
+      return h >= 23 || h < 7;
+    } catch (e) { return false; }
+  }
+
+  function fixFor(err) {
+    var c = err && err.code;
+    if (c === "server_not_connected") return "Pridaj konektor GitHub v claude.ai: Settings → Connectors.";
+    if (c === "needs_reauth") return "Znova pripoj GitHub v claude.ai: Settings → Connectors.";
+    if (c === "not_in_manifest" || c === "approval_required" || c === "consent_required") return "Stránka potrebuje tvoj súhlas s konektorom GitHub. Stlač Run znova a povoľ ho.";
+    if (c === "selection_required") return "Vyber, ktorý konektor GitHub má stránka použiť (claude.ai sa pýta).";
+    if (c === "blocked_by_policy") return "Konektor GitHub je pre túto stránku zablokovaný nastavením organizácie.";
+    return "GitHub teraz neodpovedá (" + (c || "chyba") + "). Skús o chvíľu.";
+  }
+
+  var mcp = null, watching = null;
+  function watch() {
+    if (!mcp || watching) return;
+    watching = mcp.watchTool(GH, "get_file_contents",
+      { owner: OWNER, repo: REPO, path: "panel.json", ref: "refs/heads/meme-data" },
+      function (ev) {
+        if (ev.type === "data") {
+          var doc = fileJson(ev.result);
+          if (doc) { render(doc); if ($("msg").dataset.kind === "start") say(""); }
+        } else if (ev.error && ev.error.code !== "tool_error" && ev.error.code !== "server_unavailable") {
+          say(fixFor(ev.error), true);
+        }
+      }, { refetchInterval: 60000 });
+  }
+
+  // outside claude.ai (the GitHub Pages copy): the public repository's data, read every minute
+  var RAW = "https://raw.githubusercontent.com/" + OWNER + "/" + REPO + "/meme-data/panel.json";
+  var ACTIONS = "https://github.com/" + OWNER + "/" + REPO + "/actions/workflows/" + WF;
+  var onWeb = !(window.claude && window.claude.use);
+  function poll() {
+    fetch(RAW + "?t=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (doc) { if (doc) { render(doc); if (!$("msg").classList.contains("bad")) say(""); } })
+      .catch(function () { say("Dáta sa teraz nedajú načítať z GitHubu. Skúsim znova o minútu.", true); });
+  }
+  if (onWeb) { poll(); setInterval(poll, 60000); }
+
+  var busy = false;
+  $("run").addEventListener("click", function () {
+    if (busy) return;
+    if (onWeb) {
+      say("Bot beží každú noc sám. Na spustenie hneď otvor GitHub Actions a klikni Run workflow.");
+      window.open(ACTIONS, "_blank", "noopener");
+      return;
+    }
+    if (!mcp) {
+      say("Táto stránka bota spustí cez tvoj konektor GitHub, ten tu teraz nie je dostupný. Bot sa dá spustiť aj na GitHube: Actions → Meme Bot → Run workflow.", true);
+      return;
+    }
+    busy = true;
+    $("run").disabled = true;
+    var night = nightNow();
+    say("Pozerám, či bot už beží…");
+    mcp.callTool(GH, "actions_list", { method: "list_workflow_runs", owner: OWNER, repo: REPO, resource_id: WF, perPage: 5 })
+      .then(function (r) {
+        var runs = ((r.payload || {}).workflow_runs) || [];
+        var on = runs.filter(function (x) { return x.status === "in_progress" || x.status === "queued" || x.status === "pending" || x.status === "waiting"; });
+        if (on.length) { say("Bot už beží na GitHube. Záznam sa obnovuje každú minútu."); watch(); return null; }
+        return mcp.callTool(GH, "actions_run_trigger", { method: "run_workflow", owner: OWNER, repo: REPO, workflow_id: WF, ref: "main",
+          inputs: night ? {} : { anytime: "true", minutes: "60" } }).then(function () {
+          say(night ? "Bot štartuje na GitHube a pobeží do 07:00. Prvé rozhodnutia tu budú o 1 až 2 minúty."
+                    : "Bot štartuje na GitHube na 60 minút (skúška cez deň). Prvé rozhodnutia tu budú o 1 až 2 minúty.");
+          $("msg").dataset.kind = "start";
+          watch();
+        });
+      })
+      .catch(function (err) { say(fixFor(err), true); })
+      .then(function () { busy = false; $("run").disabled = false; });
+  });
+
+  if (window.claude && window.claude.use) {
+    window.claude.use("mcp").then(function (m) {
+      mcp = m;
+      if (!mcp) return;
+      return window.claude.use("permissions").then(function (perm) {
+        if (!perm) { return; }
+        return Promise.resolve(perm.state("mcp:" + GH)).catch(function () { return "unavailable"; }).then(function (st) {
+          if (st === "granted") watch();       // already allowed: keep the page live from the start
+        });
+      });
+    }).catch(function () { mcp = null; });
+  }
+})();
+</script>
+</body></html>
