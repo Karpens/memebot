@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:01:37Z",
+ "updated": "2026-11-26T16:02:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 35,
   "checked": 32,
   "filtered": 5,
-  "lines": 595,
+  "lines": 596,
   "last_rug": {
    "coin": "mrpompsik",
    "pass": false
@@ -2215,15 +2215,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-26T13:26:11Z",
-   "time": "14:26:11",
-   "agent": "LEARNER",
-   "coin": "EUTO",
-   "action": "skip",
-   "text": "skip · past trades like this lost avg 11.6% · hour:day -16.9% over 11",
-   "n": 396
-  },
-  {
    "t": "2026-11-26T13:26:52Z",
    "time": "14:26:52",
    "agent": "SCANNER",
@@ -4013,6 +4004,15 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 11 watched · 7 rejected (serial launcher 4, no symbol or name 2, dev bought 1) · closest METERD: too young: 34 s (min 45 s)",
    "n": 595
+  },
+  {
+   "t": "2026-11-26T16:01:50Z",
+   "time": "17:01:50",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.4 a minute · 7 watched · 3 rejected (serial launcher 1, dump 1, no symbol or name 1) · closest Carpad: too young: 10 s (min 45 s)",
+   "n": 596
   }
  ],
  "nights": [
@@ -4060,7 +4060,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4068,24 +4068,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 365,
-    "last_event_age_s": 9.3,
+    "events": 367,
+    "last_event_age_s": 2.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5882,
-    "last_event_age_s": 2.1,
+    "events": 5915,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 281,
-    "last_event_age_s": 9.2,
+    "events": 283,
+    "last_event_age_s": 2.6,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4098,9 +4098,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 5.4,
-  "watching": 6,
-  "followed": 8
+  "creates_per_min": 5.6,
+  "watching": 7,
+  "followed": 9
  },
  "learner": {
   "samples": 107,
@@ -4146,27 +4146,63 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3405,
+   "sent": 3434,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3415,
+   "sent": 3444,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TURKEY",
+   "name": "The Slow Cook",
+   "mint": "9aTnKFNxi3PAQGhoNxcjyMcFbootwPYF6yWKZRvzpump",
+   "age_s": 2,
+   "sol_in": -1.46,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -9.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 5.8,
+   "big_sell": 1.78,
+   "x": "https://x.com/BigManJimmi/status/2125983264980525275?a=a36ee9Zh2oRQEsSPpuU&s=20",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
+   "symbol": "Carpad",
+   "name": "Carpad",
+   "mint": "J1DfNuWaVyApfkCCtx1m3z5SoSjAMisyH17L6k4qCAR",
+   "age_s": 25,
+   "sol_in": 38.28,
+   "buys": 7,
+   "sells": 9,
+   "rise_pct": 412.7,
+   "mcap_sol": 146.0,
+   "dev_pct": 1.0,
+   "big_sell": 0.66,
+   "x": "https://x.com/carpadfun",
+   "tg": false,
+   "web": "https://carpad.fun/",
+   "status": "watching",
+   "why": "too young: 25 s (min 45 s)"
+  },
+  {
    "symbol": "TY",
    "name": "ty",
    "mint": "49JR1D5vjMS4LXehDDnWbVSJom7ZRgT1BkP3zUmHqfyY",
-   "age_s": 9,
-   "sol_in": -1.98,
-   "buys": 1,
+   "age_s": 36,
+   "sol_in": -1.93,
+   "buys": 2,
    "sells": 3,
-   "rise_pct": -12.0,
+   "rise_pct": -11.7,
    "mcap_sol": 28.0,
    "dev_pct": 6.6,
    "big_sell": 3.79,
@@ -4180,30 +4216,30 @@
    "symbol": "MGF",
    "name": "MeganFox2.0",
    "mint": "95RMqxTLArPmfLRy2Fw5F6UFNtQ1toiTfmyuWi6Spump",
-   "age_s": 30,
-   "sol_in": 0.01,
-   "buys": 3,
+   "age_s": 57,
+   "sol_in": 0.05,
+   "buys": 6,
    "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
    "dev_pct": 0.1,
    "big_sell": 0.05,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 21 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · rise +0%/+12%"
   },
   {
    "symbol": "kibblers",
    "name": "kibblers",
    "mint": "GuQgwuD7a6UknYNomh561k3aFYvSoo4wQYAm57W4pump",
-   "age_s": 43,
-   "sol_in": 0.3,
-   "buys": 4,
+   "age_s": 70,
+   "sol_in": 0.4,
+   "buys": 5,
    "sells": 1,
-   "rise_pct": 1.9,
-   "mcap_sol": 30.9,
+   "rise_pct": 2.6,
+   "mcap_sol": 31.1,
    "dev_pct": 4.2,
    "big_sell": 0.01,
    "x": false,
@@ -4216,7 +4252,7 @@
    "symbol": "?",
    "name": "",
    "mint": "6aM2gwcq9XPD3uphr5UjGJi6BKQm9bc4kFMiEY8tpump",
-   "age_s": 51,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4234,7 +4270,7 @@
    "symbol": "kibblings",
    "name": "kibblings",
    "mint": "AnL4xLmYtmoFP8E5s375kMBBcrox9wq4qpErxdZDpump",
-   "age_s": 82,
+   "age_s": 109,
    "sol_in": -0.64,
    "buys": 3,
    "sells": 1,
@@ -4252,25 +4288,25 @@
    "symbol": "METERD",
    "name": "METERD",
    "mint": "7tZUog5DKmGecm4qnyGZCYps1hiWWUncJ1BRu4Fspump",
-   "age_s": 85,
-   "sol_in": 12.75,
-   "buys": 12,
-   "sells": 20,
-   "rise_pct": 101.1,
-   "mcap_sol": 58.1,
+   "age_s": 112,
+   "sol_in": 12.59,
+   "buys": 14,
+   "sells": 22,
+   "rise_pct": 99.7,
+   "mcap_sol": 57.6,
    "dev_pct": 1.7,
    "big_sell": 0.41,
    "x": "https://x.com/usemeterd/status/2124576647760285838",
    "tg": "https://t.me/meterd",
    "web": "https://usemeterd.com",
    "status": "watching",
-   "why": "buy share 38%/65%"
+   "why": "buy share 39%/65%"
   },
   {
    "symbol": "SECONDS",
    "name": "Second Plate",
    "mint": "CXm5sj2ARBnjMbsgxAsbaGzUJmwcax273go8khUtpump",
-   "age_s": 129,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -4288,7 +4324,7 @@
    "symbol": "kibblengto",
    "name": "kibblengto",
    "mint": "DfToDiXgbL4MuaTZVEq3CFP1feqNQLpDMBh4gJffpump",
-   "age_s": 146,
+   "age_s": 173,
    "sol_in": -0.27,
    "buys": 5,
    "sells": 2,
@@ -4301,24 +4337,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in -0.3/2.5 · buys 5/6 · rise -2%/+12%"
-  },
-  {
-   "symbol": "PAIRINU",
-   "name": "Pair Inu",
-   "mint": "7MeF74PFkdbBhfnqiiJfFNJHJizsE1Up59BKrG7tpump",
-   "age_s": 153,
-   "sol_in": 0.17,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": 1.1,
-   "mcap_sol": 28.5,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.2/2.5 · buys 5/6 · buy share 62%/65% · rise +1%/+12%"
   }
  ],
  "strategies": [
