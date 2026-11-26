@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T08:56:07Z",
+ "updated": "2026-11-26T08:56:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 100.0,
@@ -24,7 +24,7 @@
   "flagged": 0,
   "checked": 0,
   "filtered": 0,
-  "lines": 10,
+  "lines": 12,
   "last_rug": null
  },
  "flags": [],
@@ -157,6 +157,24 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 4 watched · 8 rejected (dev bought 5, mayhem mode 2, dump 1) · closest SELFIECATS: buy share 36%/65%",
    "n": 10
+  },
+  {
+   "t": "2026-11-26T08:56:18Z",
+   "time": "09:56:18",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 6 watched · 6 rejected (dev bought 4, mayhem mode 2) · closest Reveal: SOL in 1.9/2.5 · buys 2/6 · buy share 22%/65%",
+   "n": 11
+  },
+  {
+   "t": "2026-11-26T08:56:30Z",
+   "time": "09:56:30",
+   "agent": "SCANNER",
+   "coin": "WIENER",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 12
   }
  ],
  "nights": [
@@ -190,7 +208,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -198,15 +216,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 35,
-    "last_event_age_s": 6.7,
+    "events": 37,
+    "last_event_age_s": 4.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 616,
+    "events": 624,
     "last_event_age_s": 1.5,
     "errors": 0,
     "last_error": null
@@ -215,7 +233,7 @@
     "name": "metadata",
     "connected": false,
     "events": 28,
-    "last_event_age_s": 4.6,
+    "last_event_age_s": 32.6,
     "errors": 21,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -228,9 +246,9 @@
   "exit_ms": null,
   "exit_last_ms": null,
   "launch_to_entry_s": null,
-  "creates_per_min": 4.0,
-  "watching": 6,
-  "followed": 10
+  "creates_per_min": 3.6,
+  "watching": 5,
+  "followed": 8
  },
  "learner": {
   "samples": 95,
@@ -275,41 +293,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 451,
+   "sent": 481,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 451,
+   "sent": 481,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "Xpeng",
-   "name": "GoldenXpeng",
-   "mint": "6WVjdQefn74tT2my73WSLDAZNM5SDffseo2xeSZqpump",
-   "age_s": 6,
+   "symbol": "BABYATX",
+   "name": "Baby Atx",
+   "mint": "Fm2BhuG7rmdRj6hUy2F6UB7YBTQjLN1jCpV6TycTpump",
+   "age_s": 9,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Xpeng",
+   "name": "GoldenXpeng",
+   "mint": "6WVjdQefn74tT2my73WSLDAZNM5SDffseo2xeSZqpump",
+   "age_s": 34,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.02,
+   "x": false,
+   "tg": false,
+   "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 0/6 · buy share 0%/65% · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
   },
   {
    "symbol": "BYN",
    "name": "ByteNest",
    "mint": "GXSrR6pDUKTkGvP4wKnDrwsqU1GUQUgubHhmzpqUpump",
-   "age_s": 29,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -327,7 +363,7 @@
    "symbol": "Elonmas",
    "name": "Elonmas",
    "mint": "4s8gxURHgFuW8tagNTLqqwLiju9EdUt4ZCcHSQfTpump",
-   "age_s": 40,
+   "age_s": 68,
    "sol_in": 0.23,
    "buys": 1,
    "sells": 0,
@@ -345,10 +381,10 @@
    "symbol": "Elonxmas",
    "name": "SpaceXmas",
    "mint": "7qdeje8Zvwy2rEQttbadqz36VrF4RQQJ2AqypWYZpump",
-   "age_s": 41,
-   "sol_in": 0.01,
+   "age_s": 69,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 2,
+   "sells": 3,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
@@ -357,18 +393,18 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 1/6 · buy share 33%/65% · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 1/6 · buy share 25%/65% · rise +0%/+12%"
   },
   {
    "symbol": "thanksgiving",
    "name": "thanksgiving",
    "mint": "csn2qjRyAmEPzMog7wCJLUbGP5abwoa2guMpEUtzyMZ",
-   "age_s": 51,
-   "sol_in": -4.82,
+   "age_s": 79,
+   "sol_in": -4.94,
    "buys": 2,
-   "sells": 12,
-   "rise_pct": -25.7,
-   "mcap_sol": 28.2,
+   "sells": 13,
+   "rise_pct": -26.3,
+   "mcap_sol": 28.0,
    "dev_pct": 15.2,
    "big_sell": 4.22,
    "x": "https://x.com/MarioPrezldente/status/2125876024634388782",
@@ -381,7 +417,7 @@
    "symbol": "UML",
    "name": "Ur Mom Labs",
    "mint": "7N4RfpiEDME4K1W8agQwZHDk9ST6GUZDBxnJ8rEzpump",
-   "age_s": 57,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -396,28 +432,10 @@
    "why": "mayhem mode"
   },
   {
-   "symbol": "WIENER",
-   "name": "wienercoin",
-   "mint": "8BDkDfj3ZUvcG9caGzF2XnHfwg7K6fjfKKDvX6SCpump",
-   "age_s": 63,
-   "sol_in": 0.17,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 0.3,
-   "mcap_sol": 303.9,
-   "dev_pct": 74.7,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 74.7% (max 8%)",
-   "why": "dev bought 74.7% (max 8%)"
-  },
-  {
    "symbol": "GNTR2",
    "name": "Gain Triple 2",
    "mint": "5csnZyzaj45FmwUBG95gfav5cthGdYAoeYW1e4i248g5",
-   "age_s": 132,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -435,7 +453,7 @@
    "symbol": "PCAT",
    "name": "PERPCAT",
    "mint": "B2DmhVebKQK7yEDg9ciiTtRNBKecixotvqf4q2h3Zofz",
-   "age_s": 135,
+   "age_s": 163,
    "sol_in": 1.69,
    "buys": 6,
    "sells": 5,
@@ -453,7 +471,7 @@
    "symbol": "Katherine",
    "name": "The Space Baby",
    "mint": "CXEy11DBXq6nZdYrfHe2ujVea7FjfH6vD35tM4ggyZAM",
-   "age_s": 137,
+   "age_s": 165,
    "sol_in": -4.94,
    "buys": 4,
    "sells": 11,
@@ -471,7 +489,7 @@
    "symbol": "CGBJ",
    "name": "CGBJ",
    "mint": "Hzp9crraEABSmLXLdiPRtHHGGUCBtVmTRdAc7Ciepump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": -3.46,
    "buys": 8,
    "sells": 11,
@@ -484,24 +502,6 @@
    "web": false,
    "status": "rejected: dev bought 11.1% (max 8%)",
    "why": "dev bought 11.1% (max 8%)"
-  },
-  {
-   "symbol": "Reveal",
-   "name": "Scientist Reveal The",
-   "mint": "EukQWy5tPezF7vrhR9TkjbHkgvvTUnwhq3UR46qkpump",
-   "age_s": 152,
-   "sol_in": 1.95,
-   "buys": 2,
-   "sells": 7,
-   "rise_pct": 12.9,
-   "mcap_sol": 33.7,
-   "dev_pct": 3.4,
-   "big_sell": 0.59,
-   "x": "https://x.com/shinglepetite/status/2125875060267446735",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 1.9/2.5 · buys 2/6 · buy share 22%/65%"
   }
  ],
  "strategies": [
