@@ -97,7 +97,7 @@ DEFAULTS = {
     "slippage_bps": 300,
 }
 
-AGENTS = ["SCANNER", "RUG CHECK", "SIZER", "RISK", "EXIT", "JOURNAL", "NEWS"]
+AGENTS = ["SCANNER", "NEWS", "RUG CHECK", "SIZER", "EXECUTOR", "RISK", "LOGGER"]
 
 
 class MemeError(Exception):
@@ -316,13 +316,13 @@ def pair_facts(p, now_ms):
 def universe_ok(fx, cfg):
     """None when the pair is in the universe, else why not."""
     if fx["dex"] not in cfg["dexes"]:
-        return "burza %s nie je v zozname" % fx["dex"]
+        return "dex %s not in the list" % fx["dex"]
     if fx["age_min"] > cfg["max_age_h"] * 60:
-        return "pár je starší ako %g h" % cfg["max_age_h"]
+        return "pair older than %g h" % cfg["max_age_h"]
     if fx["liquidity"] < cfg["min_liquidity_usd"]:
-        return "likvidita %s pod %s" % (usd(fx["liquidity"]), usd(cfg["min_liquidity_usd"]))
+        return "liquidity %s under %s" % (usd(fx["liquidity"]), usd(cfg["min_liquidity_usd"]))
     if fx["vol5"] < cfg["min_volume_5m_usd"]:
-        return "objem za 5 min %s pod %s" % (usd(fx["vol5"]), usd(cfg["min_volume_5m_usd"]))
+        return "5m volume %s under %s" % (usd(fx["vol5"]), usd(cfg["min_volume_5m_usd"]))
     return None
 
 
@@ -333,17 +333,17 @@ def scanner_signals(fx, holders_hist, cfg, now, trending=()):
     RPC provider: not in this bot.)"""
     sig = []
     if fx.get("mint") and fx["mint"] in trending:
-        sig.append("trenduje")
+        sig.append("trending")
     if fx.get("boosts"):
-        sig.append("boost na DexScreeneri")
+        sig.append("boosted")
     if fx["spike"] >= cfg["volume_spike_x"]:
-        sig.append("objem %.1fx priemeru" % fx["spike"])
+        sig.append("volume %.1fx" % fx["spike"])
     hist = [(t, n) for t, n in holders_hist if now - t >= cfg["holder_growth_min"] * 60]
     if hist and holders_hist:
         t0, n0 = hist[-1]
         n1 = holders_hist[-1][1]
         if n0 > 0 and (n1 - n0) / float(n0) * 100 >= cfg["holder_growth_pct"]:
-            sig.append("držitelia +%.0f %%" % ((n1 - n0) / float(n0) * 100))
+            sig.append("holders +%.0f%%" % ((n1 - n0) / float(n0) * 100))
     ok = fx["buy_ratio"] >= cfg["min_buy_ratio"] and bool(sig)
     return ok, sig
 
@@ -359,10 +359,10 @@ def news_text(fx, trending=()):
     if fx.get("web"):
         bits.append("web")
     if fx.get("boosts"):
-        bits.append("%d boostov na DexScreeneri" % fx["boosts"])
+        bits.append("%d boosts" % fx["boosts"])
     if fx.get("mint") in trending:
-        bits.append("v trendoch GeckoTerminal/DexScreener")
-    return ("Propagácia: %s." % ", ".join(bits)) if bits else "Bez X, Telegramu aj webu: anonymný coin."
+        bits.append("trending")
+    return ("promo: %s" % " · ".join(bits)) if bits else "no X, Telegram or web: anonymous"
 
 
 def rug_check(report, cfg):
@@ -370,19 +370,19 @@ def rug_check(report, cfg):
     under max_dev_pct, top 10 holders (pool accounts left out) under max_top10_pct, no insiders
     or bundle, LP burned or locked, no danger risk, at least min_holders holders."""
     if not isinstance(report, dict) or not report.get("mint"):
-        return False, ["RugCheck nemá správu"], 0
+        return False, ["no RugCheck report"], 0
     bad = []
     tok = report.get("token") or {}
     if report.get("rugged"):
         bad.append("RugCheck: rugged")
     if report.get("mintAuthority") or tok.get("mintAuthority"):
-        bad.append("mint authority je otvorená")
+        bad.append("mint authority open")
     if report.get("freezeAuthority") or tok.get("freezeAuthority"):
-        bad.append("freeze authority je otvorená")
+        bad.append("freeze authority open")
     supply = f(tok.get("supply"))
     dev = f(report.get("creatorBalance"))
     if supply > 0 and dev / supply * 100 > cfg["max_dev_pct"]:
-        bad.append("dev peňaženka má %.1f %%" % (dev / supply * 100))
+        bad.append("dev holds %.1f%%" % (dev / supply * 100))
     pools = set()
     lp_pct = []
     for mk in report.get("markets") or []:
@@ -404,19 +404,19 @@ def rug_check(report, cfg):
                and h.get("address") not in pools and h.get("owner") not in pools]
     top10 = sum(f(h.get("pct")) for h in holders[:10])
     if top10 > cfg["max_top10_pct"]:
-        bad.append("top 10 držiteľov má %.0f %%" % top10)
+        bad.append("top 10 hold %.0f%%" % top10)
     insiders = int(f(report.get("graphInsidersDetected"))) + sum(1 for h in holders[:10] if h.get("insider"))
     if insiders > cfg["max_insiders"]:
-        bad.append("insideri: %d" % insiders)
+        bad.append("%d insiders" % insiders)
     if not lp_pct or max(lp_pct) < cfg["min_lp_locked_pct"]:
-        bad.append("LP zamknuté len na %.0f %%" % (max(lp_pct) if lp_pct else 0))
+        bad.append("LP locked only %.0f%%" % (max(lp_pct) if lp_pct else 0))
     for r in report.get("risks") or []:
         name = str(r.get("name") or "")
         if str(r.get("level") or "").lower() == "danger" or "bundle" in name.lower():
-            bad.append("riziko: %s" % name)
+            bad.append("risk: %s" % name)
     n = int(f(report.get("totalHolders")))
     if n < cfg["min_holders"]:
-        bad.append("len %d držiteľov (treba %d)" % (n, cfg["min_holders"]))
+        bad.append("only %d holders (needs %d)" % (n, cfg["min_holders"]))
     return not bad, bad, n
 
 
@@ -463,14 +463,16 @@ class Night(object):
         if not st.get("night"):
             st["night"] = {"id": night_id, "start_equity": round(self.equity({}), 2), "started": self.ts(),
                            "decisions": [], "trades": [], "entered": [], "streak": 0, "cooldown_until": 0,
-                           "scans": 0, "flagged": 0, "checked": 0}
-            self.log("JOURNAL", None, "start", "Noc %s: zostatok %s, 6 agentov, %s až %s." % (
-                night_id, usd(st["balance"]), self.cfg["session_start"], self.cfg["session_end"]))
+                           "scans": 0, "flagged": 0, "checked": 0, "filtered": 0, "lines": 0, "flags": [],
+                           "curve": [], "last_rug": None}
+            self.log("LOGGER", None, "start", "night %s · start %s · %d agents · %s → %s" % (
+                night_id, usd(st["balance"]), len(AGENTS), self.cfg["session_start"], self.cfg["session_end"]))
 
     def log(self, agent, coin, action, text):
         n = self.state.get("night") or {}
         row = {"t": self.ts(), "time": self.clock(), "agent": agent, "coin": coin, "action": action, "text": text}
         n.setdefault("decisions", []).append(row)
+        n["lines"] = n.get("lines", 0) + 1
         del n["decisions"][:-600]
         self.out("%s %-9s %-10s %s" % (row["time"], agent, coin or "", text))
 
@@ -485,7 +487,7 @@ class Night(object):
     def fee_usd(self, sol_usd):
         return self.cfg["network_fee_sol"] * sol_usd
 
-    def buy(self, mint, fx, usd_in, sol_usd, decimals):
+    def buy(self, mint, fx, usd_in, sol_usd, decimals, reason=""):
         """A paper buy priced by Jupiter's quote for this amount. -> position or None."""
         lamports = usd_in / sol_usd * 1e9
         q = self.m.quote(SOL, mint, lamports, self.cfg["slippage_bps"])
@@ -499,8 +501,8 @@ class Night(object):
         return {"mint": mint, "symbol": fx["symbol"], "name": fx["name"], "url": fx.get("url"),
                 "raw": raw, "decimals": decimals, "tokens_ui": tokens_ui, "cost": round(cost, 4),
                 "entry_price": usd_in / tokens_ui, "opened": self.ts(), "peak": usd_in / tokens_ui,
-                "last": usd_in / tokens_ui, "tp1_done": False, "sold_usd": 0.0,
-                "impact_pct": round(f(q.get("priceImpactPct")) * 100, 2)}
+                "last": usd_in / tokens_ui, "tp1_done": False, "sold_usd": 0.0, "reason": reason,
+                "hist": [usd_in / tokens_ui], "impact_pct": round(f(q.get("priceImpactPct")) * 100, 2)}
 
     def sell_quote(self, pos, raw, sol_usd):
         """USD a paper sale of raw token units brings, after fees and the haircut, or None (no route)."""
@@ -515,7 +517,7 @@ class Night(object):
         raw = pos["raw"] if frac >= 0.999 else int(pos["raw"] * frac)
         got = self.sell_quote(pos, raw, sol_usd)
         if got is None:
-            self.log("EXIT", pos["symbol"], "stuck", "Predaj nejde (Jupiter nemá cestu): %s. Skúsim znova." % why)
+            self.log("EXECUTOR", pos["symbol"], "stuck", "can't sell (no Jupiter route): %s · retrying" % why)
             return False
         self.state["balance"] += got
         pos["sold_usd"] += got
@@ -524,22 +526,23 @@ class Night(object):
             n = self.state["night"]
             trade = {"symbol": pos["symbol"], "mint": mint, "opened": pos["opened"], "closed": self.ts(),
                      "cost": round(pos["cost"], 2), "proceeds": round(pos["sold_usd"], 2), "pnl": round(pnl, 2),
-                     "pnl_pct": round(pnl / pos["cost"] * 100, 1), "why": why, "url": pos.get("url")}
+                     "pnl_pct": round(pnl / pos["cost"] * 100, 1), "why": why, "url": pos.get("url"),
+                     "reason": pos.get("reason", ""), "size_pct": pos.get("size_pct"),
+                     "entry_price": pos["entry_price"], "exit_price": pos.get("last"), "slip": pos.get("impact_pct")}
             n["trades"].append(trade)
             n["streak"] = n["streak"] + 1 if pnl < 0 else 0
             if n["streak"] >= self.cfg["loss_streak"]:
                 n["cooldown_until"] = self.epoch() + self.cfg["cooldown_min"] * 60
-                self.log("RISK", None, "pause", "%d straty po sebe: %d min bez nových vstupov." % (
+                self.log("RISK", None, "pause", "%d losses in a row · %d min pause" % (
                     n["streak"], self.cfg["cooldown_min"]))
             del self.state["positions"][mint]
-            self.log("EXIT", pos["symbol"], "sell", "Predané (%s): %s, %s (%+.0f %%)." % (
-                why, usd(pos["sold_usd"]), ("+" if pnl >= 0 else "") + usd(pnl), trade["pnl_pct"]))
+            self.log("EXECUTOR", pos["symbol"], "exit", "EXIT %s %s (%+.0f%%) · %s" % (
+                pos["symbol"], ("+" if pnl >= 0 else "") + usd(pnl), trade["pnl_pct"], why))
         else:
             pos["raw"] -= raw
             pos["tokens_ui"] = pos["raw"] / 10.0 ** pos["decimals"]
             pos["tp1_done"] = True
-            self.log("EXIT", pos["symbol"], "take", "Prvý cieľ: predaná %.0f %% pozície za %s (%s)." % (
-                frac * 100, usd(got), why))
+            self.log("EXECUTOR", pos["symbol"], "take", "TP %s · sold %.0f%% for %s" % (why, frac * 100, usd(got)))
         return True
 
     # ---- the agents, one tick
@@ -558,31 +561,33 @@ class Night(object):
             pos["peak"] = max(pos["peak"], px)
             chg = (px / pos["entry_price"] - 1) * 100
             held = (self.now - datetime.datetime.strptime(pos["opened"], "%Y-%m-%dT%H:%M:%SZ")).total_seconds() / 60
+            pos.setdefault("hist", []).append(px)
+            del pos["hist"][:-60]
             if minutes_left <= cfg["flat_before_end_min"]:
-                self.close_part(mint, 1.0, "koniec noci", sol_usd)
+                self.close_part(mint, 1.0, "end of night", sol_usd)
             elif chg <= cfg["stop_pct"]:
-                self.close_part(mint, 1.0, "stop %+.0f %%" % chg, sol_usd)
+                self.close_part(mint, 1.0, "stop %+.0f%%" % chg, sol_usd)
             elif not pos["tp1_done"] and chg >= cfg["tp1_pct"]:
-                self.close_part(mint, cfg["tp1_sell_frac"], "%+.0f %%" % chg, sol_usd)
+                self.close_part(mint, cfg["tp1_sell_frac"], "%+.0f%%" % chg, sol_usd)
             elif pos["tp1_done"] and px <= pos["peak"] * (1 - cfg["trail_pct"] / 100.0):
-                self.close_part(mint, 1.0, "trailing stop %.0f %% od vrcholu" % cfg["trail_pct"], sol_usd)
+                self.close_part(mint, 1.0, "trailing stop %.0f%% off the top" % cfg["trail_pct"], sol_usd)
             elif held >= cfg["time_stop_min"] and chg < cfg["time_stop_below_pct"] and not pos["tp1_done"]:
-                self.close_part(mint, 1.0, "po %d min len %+.0f %%" % (held, chg), sol_usd)
+                self.close_part(mint, 1.0, "%d min, only %+.0f%%" % (held, chg), sol_usd)
 
     def why_no_entries(self, minutes_left, prices):
         n, cfg = self.state["night"], self.cfg
         if minutes_left <= cfg["no_entries_last_min"]:
-            return "posledných %d min bez nových vstupov" % cfg["no_entries_last_min"]
+            return "last %d min: no new entries" % cfg["no_entries_last_min"]
         if len(n["trades"]) + len(self.state["positions"]) >= cfg["max_trades_per_night"]:
-            return "noc má už %d obchodov" % cfg["max_trades_per_night"]
+            return "%d trades tonight (max)" % cfg["max_trades_per_night"]
         if len(self.state["positions"]) >= cfg["max_open"]:
-            return "otvorené %d pozície (najviac)" % cfg["max_open"]
+            return "%d positions open (max)" % cfg["max_open"]
         start = n["start_equity"] or 1
         dd = (self.equity(prices) / start - 1) * 100
         if dd <= cfg["night_stop_pct"]:
-            return "noc je %+.0f %%: stop na noc" % dd
+            return "night at %+.0f%%: stopped for the night" % dd
         if self.epoch() < n.get("cooldown_until", 0):
-            return "pauza po sérii strát"
+            return "pause after a losing streak"
         return None
 
     def scan(self, prices, minutes_left):
@@ -603,40 +608,45 @@ class Night(object):
                 self.m.errors.append("%s: %s: %s" % (mint, type(e).__name__, e))
         inside, near = seen["inside"], seen["near"]
         if n["scans"] % 5 == 1:                         # what the scanner sees, every 5 minutes
-            self.log("SCANNER", None, "scan", "%d nových coinov, %d párov, %d spĺňa pravidlá%s." % (
+            self.log("SCANNER", None, "scan", "scanned %d new coins · %d pairs · %d pass the rules%s" % (
                 len(mints), len(pairs), inside, "" if inside or not near else
-                " (najbližšie %s: likvidita %s, 5 min %s)" % (near["symbol"], usd(near["liquidity"]), usd(near["vol5"]))))
+                " · closest %s liq %s, 5m %s" % (near["symbol"], usd(near["liquidity"]), usd(near["vol5"]))))
         for fx, mint, rep in sorted(ready, key=lambda r: -r[0]["vol5"]):
             why = self.why_no_entries(minutes_left, prices)
             if why:
                 last = n.get("risk_said") or {}
                 if last.get("why") != why or self.epoch() - last.get("at", 0) >= 300:   # once in 5 minutes
                     n["risk_said"] = {"why": why, "at": self.epoch()}
-                    self.log("RISK", fx["symbol"], "skip", "Bez vstupu: %s." % why)
+                    self.log("RISK", fx["symbol"], "skip", "no entry: %s" % why)
                 break
             if not sol_usd:
                 break
             decimals = int(f(((rep or {}).get("token") or {}).get("decimals"), 6))
             size = min(self.state["balance"], self.equity(prices) * cfg["position_pct"] / 100.0)
             if size < cfg["min_order_usd"]:
-                self.log("SIZER", fx["symbol"], "skip", "Na vstup ostáva len %s." % usd(size))
+                self.log("SIZER", fx["symbol"], "skip", "only %s left to size" % usd(size))
                 break
             # honeypot: what the coins this buys would sell for right away
-            pos = self.buy(mint, fx, size - self.fee_usd(sol_usd), sol_usd, decimals)
+            pos = self.buy(mint, fx, size - self.fee_usd(sol_usd), sol_usd, decimals, fx.get("reason", ""))
             if not pos:
                 continue                                # no quote right now: the next scan tries again
             back = self.sell_quote(pos, pos["raw"], sol_usd)
             loss = (1 - back / pos["cost"]) * 100 if back is not None else 100.0
             if back is None or loss > cfg["max_roundtrip_loss_pct"]:
-                self.log("RUG CHECK", fx["symbol"], "reject", "Simulovaný predaj: %s." % (
-                    "nejde predať (honeypot?)" if back is None else "stratil by hneď %.0f %%" % loss))
+                self.log("RUG CHECK", fx["symbol"], "reject", "sell simulation: %s" % (
+                    "can't sell (honeypot?)" if back is None else "would lose %.0f%% at once" % loss))
                 n["entered"].append(mint)
+                n["filtered"] = n.get("filtered", 0) + 1
+                n["last_rug"] = {"coin": fx["symbol"], "pass": False}
                 continue
+            eq = self.equity(prices)
+            pos["size_pct"] = round(pos["cost"] / eq * 100, 1) if eq else None
             self.state["balance"] -= pos["cost"]
             self.state["positions"][mint] = pos
             n["entered"].append(mint)
-            self.log("SIZER", fx["symbol"], "buy", "Kúpené za %s (%.0f %% zostatku), cena %s, dopad %.1f %%." % (
-                usd(pos["cost"]), cfg["position_pct"], ("$%.8f" % pos["entry_price"]).rstrip("0"), pos["impact_pct"]))
+            self.log("SIZER", fx["symbol"], "size", "%.0f%% of %s = %s" % (cfg["position_pct"], usd(eq), usd(pos["cost"])))
+            self.log("EXECUTOR", fx["symbol"], "enter", "ENTER %s at %s · slip %.1f%% · %s" % (
+                fx["symbol"], ("%.10f" % pos["entry_price"]).rstrip("0"), pos["impact_pct"], pos.get("reason") or "signal"))
 
     def consider(self, mint, p, now, ready, seen):
         """SCANNER and RUG CHECK on one pair: a coin that passes both goes into ready."""
@@ -661,18 +671,27 @@ class Night(object):
         flag, sig = scanner_signals(fx, hold, cfg, now, getattr(self, "trend", ()))
         if not flag:
             return
+        fx["reason"] = " · ".join(["buys %.0f%%" % (fx["buy_ratio"] * 100)] + sig)
         fs = n.setdefault("flag_seen", {})
         if now - fs.get(mint, 0) >= 600:                 # a flag is written once in 10 minutes
             fs[mint] = now
             n["flagged"] += 1
-            self.log("SCANNER", fx["symbol"], "flag", "%s, likvidita %s, 5 min %s, nákupy %.0f %% (%s)." % (
-                fx["dex"], usd(fx["liquidity"]), usd(fx["vol5"]), fx["buy_ratio"] * 100, ", ".join(sig)))
+            self.log("SCANNER", fx["symbol"], "flag", "flagged · %s · liq %s · 5m %s · %s" % (
+                fx["dex"], usd(fx["liquidity"]), usd(fx["vol5"]), fx["reason"]))
             self.log("NEWS", fx["symbol"], "news", news_text(fx, getattr(self, "trend", ())))
+            n["flags"] = ([x for x in n.get("flags", []) if x.get("coin") != fx["symbol"]]
+                          + [{"coin": fx["symbol"], "why": sig[0] if sig else "buys", "t": self.ts()}])[-8:]
         n["checked"] += 1
         if not ok_rug:
-            self.log("RUG CHECK", fx["symbol"], "reject", "Neprešiel: %s." % "; ".join(bad[:3]))
+            self.log("RUG CHECK", fx["symbol"], "reject", "FAIL · %s" % " · ".join(bad[:3]))
             n["entered"].append(mint)                   # not checked again tonight
+            n["filtered"] = n.get("filtered", 0) + 1
+            n["last_rug"] = {"coin": fx["symbol"], "pass": False}
             return
+        if not n.get("rug_passed", {}).get(mint):
+            n.setdefault("rug_passed", {})[mint] = True
+            self.log("RUG CHECK", fx["symbol"], "pass", "PASS · mint & freeze revoked · LP locked · %d holders" % nh)
+        n["last_rug"] = {"coin": fx["symbol"], "pass": True}
         ready.append((fx, mint, rep))
 
     def rug(self, mint, now):
@@ -708,6 +727,12 @@ class Night(object):
         self.manage(prices, minutes_left)
         if scan and minutes_left > self.cfg["flat_before_end_min"]:
             self.scan(prices, minutes_left)
+        n = self.state.get("night")
+        if n is not None:
+            curve = n.setdefault("curve", [])
+            if not curve or self.epoch() - curve[-1][0] >= 60:
+                curve.append([int(self.epoch()), round(self.equity(prices), 2)])
+                del curve[:-600]
         self.save(prices)
         return prices
 
@@ -746,7 +771,9 @@ def panel(state, cfg, prices, at, errors=()):
         eq += val
         pos.append({"symbol": p["symbol"], "cost": round(p["cost"], 2), "value": round(val + p.get("sold_usd", 0), 2),
                     "pnl_pct": round(((val + p.get("sold_usd", 0)) / p["cost"] - 1) * 100, 1), "opened": p["opened"],
-                    "url": p.get("url")})
+                    "url": p.get("url"), "reason": p.get("reason", ""), "size_pct": p.get("size_pct"),
+                    "entry_price": p["entry_price"], "price": px, "slip": p.get("impact_pct"),
+                    "tp1_done": p.get("tp1_done"), "hist": (p.get("hist") or [])[-60:]})
     try:
         with open(PROMPT, encoding="utf-8") as fh:
             prompt = fh.read()
@@ -755,7 +782,10 @@ def panel(state, cfg, prices, at, errors=()):
     return {"updated": at, "mode": "paper", "start_balance": cfg["start_balance"], "balance": round(state["balance"], 2),
             "equity": round(eq, 2), "session": "%s → %s" % (cfg["session_start"], cfg["session_end"]),
             "agents": AGENTS, "prompt": prompt, "night": {k: n.get(k) for k in ("id", "start_equity", "started", "scans",
-                                                                              "flagged", "checked")},
+                                                                              "flagged", "checked", "filtered", "lines",
+                                                                              "last_rug")},
+            "flags": (n.get("flags") or [])[-8:], "curve": (n.get("curve") or [])[-600:],
+            "position_pct": cfg["position_pct"], "slip_cap": cfg["max_roundtrip_loss_pct"],
             "live": bool(state.get("night")), "positions": pos, "trades": (n.get("trades") or [])[-50:],
             "log": (n.get("decisions") or [])[-200:], "nights": state.get("nights", [])[-30:], "errors": list(errors)}
 
@@ -818,10 +848,10 @@ def run(data_dir, cfg, minutes=None, anytime=False, market=None, now_fn=utc_now,
         try:
             bot.tick(left, scan=do_scan)
         except Exception as e:                          # noqa: BLE001 - log it, keep the night going
-            bot.log("JOURNAL", None, "error", "Chyba v kroku (%s: %s), bot pokračuje." % (type(e).__name__, e))
+            bot.log("LOGGER", None, "error", "error in a step (%s: %s) · going on" % (type(e).__name__, e))
             bot.save()
         if s and left <= cfg["flat_before_end_min"] and not bot.state["positions"] and not anytime:
-            bot.log("JOURNAL", None, "end", "Koniec noci: %s." % usd(bot.equity({})))
+            bot.log("LOGGER", None, "end", "end of night · %s" % usd(bot.equity({})))
             bot.close_night()
             bot.save()
             break
@@ -832,8 +862,8 @@ def run(data_dir, cfg, minutes=None, anytime=False, market=None, now_fn=utc_now,
         sol_usd = (prices.get(SOL) or {}).get("usd")
         for mint in list(bot.state["positions"]):
             if sol_usd:
-                bot.close_part(mint, 1.0, "koniec testu", sol_usd)
-        bot.log("JOURNAL", None, "end", "Koniec testu: %s." % usd(bot.equity(prices)))
+                bot.close_part(mint, 1.0, "end of test", sol_usd)
+        bot.log("LOGGER", None, "end", "end of test · %s" % usd(bot.equity(prices)))
         if not bot.state["positions"]:
             bot.close_night()
         bot.save(prices)
