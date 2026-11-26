@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T16:15:55Z",
+ "updated": "2026-11-26T16:16:28Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 35,
   "checked": 32,
   "filtered": 5,
-  "lines": 611,
+  "lines": 612,
   "last_rug": {
    "coin": "mrpompsik",
    "pass": false
@@ -1796,6 +1796,10 @@
   [
    1795709713,
    84.53
+  ],
+  [
+   1795709773,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2270,15 +2274,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T13:40:01Z",
-   "time": "14:40:01",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.2 a minute · 1 watched · 26 rejected (serial launcher 18, dev bought 4, dump 2) · closest CARNAGEC: too young: 31 s (min 45 s)",
-   "n": 412
-  },
   {
    "t": "2026-11-26T13:41:01Z",
    "time": "14:41:01",
@@ -4069,6 +4064,15 @@
    "action": "scan",
    "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest Biodrones: no curve reading yet",
    "n": 611
+  },
+  {
+   "t": "2026-11-26T16:16:07Z",
+   "time": "17:16:07",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.8 a minute · 2 watched · 2 rejected (dump 1, mayhem mode 1) · closest INU: too young: 1 s (min 45 s)",
+   "n": 612
   }
  ],
  "nights": [
@@ -4111,7 +4115,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 2 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4119,23 +4123,23 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 8.5,
+    "events": 11,
+    "last_event_age_s": 9.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 9,
-    "last_event_age_s": 7.9,
+    "events": 43,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 2,
+    "events": 8,
     "last_event_age_s": 8.3,
     "errors": 0,
     "last_error": null
@@ -4149,9 +4153,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 0.6,
-  "watching": 1,
-  "followed": 2
+  "creates_per_min": 1.8,
+  "watching": 4,
+  "followed": 8
  },
  "learner": {
   "samples": 107,
@@ -4197,23 +4201,131 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19,
+   "sent": 54,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 53,
+   "sent": 88,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RICH",
+   "name": "RICH",
+   "mint": "Bg3yXgXSUr7Bm2VRxWGcXoda35orVHSidgoyjxG9pump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.6,
+   "dev_pct": 1.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/richsoldev",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "JAKE",
+   "name": "Jake The Turkey",
+   "mint": "5Vk5FuQtXyGaZJEAVSowPw4apLtTUa3ZLpzdBVvzpump",
+   "age_s": 15,
+   "sol_in": 0.89,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 5.7,
+   "mcap_sol": 32.5,
+   "dev_pct": 5.0,
+   "big_sell": 1.74,
+   "x": "https://x.com/AK42Wmode/status/2125986895196758125",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 11 s (min 45 s)"
+  },
+  {
+   "symbol": "Yes",
+   "name": "Will this Coin go up?",
+   "mint": "6ZuqrXuj6hMygE5gmwXBvd3avQuucvYz58e1wNf8pump",
+   "age_s": 15,
+   "sol_in": 0.59,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 1.2,
+   "mcap_sol": 296.8,
+   "dev_pct": 74.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/solidintel_x/status/2125983731596816612",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 74.2% (max 8%)",
+   "why": "dev bought 74.2% (max 8%)"
+  },
+  {
+   "symbol": "GrokBot",
+   "name": "GrokBot.Coach",
+   "mint": "Ci1CtoHqLaJydx2MEW7z1t2F96SdUwifZ5LkwYuYrsEe",
+   "age_s": 16,
+   "sol_in": -4.26,
+   "buys": 4,
+   "sells": 8,
+   "rise_pct": -21.7,
+   "mcap_sol": 33.1,
+   "dev_pct": 20.1,
+   "big_sell": 4.8,
+   "x": "https://x.com/BrianRoemmele/status/2125986961299321098",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 20.1% (max 8%)",
+   "why": "dev bought 20.1% (max 8%)"
+  },
+  {
+   "symbol": "ape",
+   "name": "apeonputer",
+   "mint": "HQV6ngKuF4UBNrE7UdCLFMEQ89mCpCRkNXYCqZnz4ohS",
+   "age_s": 18,
+   "sol_in": -2.0,
+   "buys": 2,
+   "sells": 7,
+   "rise_pct": -11.7,
+   "mcap_sol": 30.0,
+   "dev_pct": 9.9,
+   "big_sell": 2.41,
+   "x": "https://x.com/StepCoinsol8/status/2125986493118210445",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
+   "symbol": "INU",
+   "name": "SUPER INU",
+   "mint": "3pSf2WXMfbUkBe947KWvryuEtqTHTCnd5KaUxUw9N1R3",
+   "age_s": 25,
+   "sol_in": 0.4,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 2.7,
+   "mcap_sol": 28.9,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
    "symbol": "TMBF3",
    "name": "This Must Be Fak3",
    "mint": "9z6PGoywufoE2TuYAfBQGgaeFW8p8WJq9tP2xReg961d",
-   "age_s": 8,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4231,7 +4343,7 @@
    "symbol": "DOLLASIGN",
    "name": "BIGJUSTICEINU",
    "mint": "3HNXHYraXzJEjvK5Y51YU74ALiuJqMU9cZuU31B3pump",
-   "age_s": 33,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4249,12 +4361,12 @@
    "symbol": "Biodrones",
    "name": "Pigeon Drones",
    "mint": "FzxAYCMVLaBBAQbsNUbymbMyVetm9rPDjj9iucUdpump",
-   "age_s": 48,
-   "sol_in": -1.63,
-   "buys": 4,
-   "sells": 4,
-   "rise_pct": -9.9,
-   "mcap_sol": 28.6,
+   "age_s": 81,
+   "sol_in": -1.19,
+   "buys": 5,
+   "sells": 6,
+   "rise_pct": -7.3,
+   "mcap_sol": 29.4,
    "dev_pct": 6.6,
    "big_sell": 4.56,
    "x": "https://x.com/melsdevs/status/2125986672860926090?a=dj3Mfp_q3YyJMBylDjg&s=20",
