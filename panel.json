@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T18:37:42Z",
+ "updated": "2026-11-26T18:38:13Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 84.53,
- "equity": 84.53,
+ "balance": 83.48,
+ "equity": 83.48,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 49,
-  "checked": 38,
+  "flagged": 50,
+  "checked": 39,
   "filtered": 8,
-  "lines": 798,
+  "lines": 807,
   "last_rug": {
-   "coin": "UFOVAULT",
+   "coin": "AFK",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "pawzkie",
-   "why": "momentum",
-   "t": "2026-11-26T17:36:03Z"
-  },
   {
    "coin": "COFOUNDERS",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "Baco",
    "why": "momentum",
    "t": "2026-11-26T18:34:00Z"
+  },
+  {
+   "coin": "AFK",
+   "why": "momentum",
+   "t": "2026-11-26T18:37:49Z"
   }
  ],
  "curve": [
@@ -2364,6 +2364,10 @@
   [
    1795718233,
    84.53
+  ],
+  [
+   1795718293,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2835,90 +2839,57 @@
    "dev_pct": 0.0,
    "sol_in": 14.2,
    "exit_ms": 39
+  },
+  {
+   "symbol": "AFK",
+   "mint": "B6MXUydYLpDb11bWaNzvv8tTe9kMw9VDgKeT6WMmpump",
+   "opened": "2026-11-26T18:37:50Z",
+   "closed": "2026-11-26T18:37:56Z",
+   "cost": 5.0,
+   "proceeds": 3.95,
+   "pnl": -1.05,
+   "pnl_pct": -21.0,
+   "why": "dump: 2.5 SOL sold",
+   "url": "https://pump.fun/coin/B6MXUydYLpDb11bWaNzvv8tTe9kMw9VDgKeT6WMmpump",
+   "reason": "momentum · 3.6 SOL in · 10/11 buys (91%) · +25% since launch · mcap 36 SOL · 46 s old",
+   "size_pct": 5.9,
+   "entry_price": 2.591106940579112e-06,
+   "exit_price": 2.165379182954629e-06,
+   "slip": 2.06,
+   "strategy": "new_pairs",
+   "tier": "swing",
+   "score": 3,
+   "steps": 0,
+   "plan": {
+    "tier": "swing",
+    "score": 3,
+    "parts": [
+     "X",
+     "web",
+     "buys 91%"
+    ],
+    "ladder": [
+     [
+      10.0,
+      0.5
+     ],
+     [
+      20.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 6.0
+   },
+   "age_s": 45,
+   "mcap_sol": 35.5,
+   "dev_pct": 0.84,
+   "sol_in": 3.58,
+   "exit_ms": 89
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T16:04:53Z",
-   "time": "17:04:53",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 6 watched · 12 rejected (dump 4, dev bought 3, serial launcher 2) · closest WAVING: too young: 29 s (min 45 s)",
-   "n": 599
-  },
-  {
-   "t": "2026-11-26T16:05:53Z",
-   "time": "17:05:53",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 6 watched · 14 rejected (serial launcher 5, dump 4, dev bought 4) · closest LOOP: too young: 0 s (min 45 s)",
-   "n": 600
-  },
-  {
-   "t": "2026-11-26T16:06:54Z",
-   "time": "17:06:54",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.8 a minute · 9 watched · 16 rejected (serial launcher 7, dev bought 5, dump 2) · closest LOOP: buys 5/6",
-   "n": 601
-  },
-  {
-   "t": "2026-11-26T16:07:55Z",
-   "time": "17:07:55",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.6 a minute · 8 watched · 20 rejected (serial launcher 8, dev bought 5, dump 4) · closest PEAR: too young: 32 s (min 45 s)",
-   "n": 602
-  },
-  {
-   "t": "2026-11-26T16:08:56Z",
-   "time": "17:08:56",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.6 a minute · 10 watched · 18 rejected (dev bought 6, serial launcher 5, dump 4) · closest PEAR: too young: 32 s (min 45 s)",
-   "n": 603
-  },
-  {
-   "t": "2026-11-26T16:09:56Z",
-   "time": "17:09:56",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.0 a minute · 9 watched · 15 rejected (dev bought 6, serial launcher 4, dump 3) · closest CARPAD: too young: 2 s (min 45 s)",
-   "n": 604
-  },
-  {
-   "t": "2026-11-26T16:10:57Z",
-   "time": "17:10:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.4 a minute · 7 watched · 14 rejected (dev bought 6, dump 3, serial launcher 3) · closest WASTED: too young: 15 s (min 45 s)",
-   "n": 605
-  },
-  {
-   "t": "2026-11-26T16:11:57Z",
-   "time": "17:11:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 7 watched · 8 rejected (dev bought 5, serial launcher 1, dump 1) · closest COPYCAT: too young: 5 s (min 45 s)",
-   "n": 606
-  },
-  {
-   "t": "2026-11-26T16:12:58Z",
-   "time": "17:12:58",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 6 watched · 7 rejected (dev bought 3, dump 2, mayhem mode 1) · closest sol: SOL in 0.2/2.5 · rise +1%/+12%",
-   "n": 607
-  },
   {
    "t": "2026-11-26T16:13:59Z",
    "time": "17:13:59",
@@ -4637,6 +4608,87 @@
    "action": "scan",
    "text": "new pairs · 11.0 a minute · 13 watched · 21 rejected (dev bought 8, mayhem mode 8, serial launcher 4) · closest Autopsy: buy share 48%/65%",
    "n": 798
+  },
+  {
+   "t": "2026-11-26T18:37:49Z",
+   "time": "19:37:49",
+   "agent": "SCANNER",
+   "coin": "AFK",
+   "action": "flag",
+   "text": "momentum · 3.6 SOL in · 10/11 buys (91%) · +25% since launch · mcap 36 SOL · 45 s old",
+   "n": 799
+  },
+  {
+   "t": "2026-11-26T18:37:50Z",
+   "time": "19:37:50",
+   "agent": "RUG CHECK",
+   "coin": "AFK",
+   "action": "pass",
+   "text": "PASS · 14 holders · top holder 2.0% · top 10 10% (curve left out)",
+   "n": 800
+  },
+  {
+   "t": "2026-11-26T18:37:50Z",
+   "time": "19:37:50",
+   "agent": "LEARNER",
+   "coin": "AFK",
+   "action": "explore",
+   "text": "explore · 1 in 5 skips is bought at half size · past trades like this lost avg 11.9% · hour:day -16.2% over 14",
+   "n": 801
+  },
+  {
+   "t": "2026-11-26T18:37:50Z",
+   "time": "19:37:50",
+   "agent": "SIZER",
+   "coin": "AFK",
+   "action": "size",
+   "text": "10% of $84.53 x0.50 LEARNER = $4.23, raised to the $5.00 minimum: $5.00",
+   "n": 802
+  },
+  {
+   "t": "2026-11-26T18:37:50Z",
+   "time": "19:37:50",
+   "agent": "EXECUTOR",
+   "coin": "AFK",
+   "action": "enter",
+   "text": "ENTER AFK at 0.0000025911 · slip 2.1% · first in · 0.5 s after the trigger · 46 s after launch · curve maths 0.0% off Jupiter",
+   "n": 803
+  },
+  {
+   "t": "2026-11-26T18:37:50Z",
+   "time": "19:37:50",
+   "agent": "NEWS",
+   "coin": "AFK",
+   "action": "plan",
+   "text": "hold plan · 3/10 (X, web, buys 91%) · swing: +10 → +20",
+   "n": 804
+  },
+  {
+   "t": "2026-11-26T18:37:56Z",
+   "time": "19:37:56",
+   "agent": "RISK",
+   "coin": null,
+   "action": "pause",
+   "text": "10 losses in a row · 2 min pause",
+   "n": 805
+  },
+  {
+   "t": "2026-11-26T18:37:56Z",
+   "time": "19:37:56",
+   "agent": "EXECUTOR",
+   "coin": "AFK",
+   "action": "exit",
+   "text": "EXIT AFK $-1.05 (-21%) · dump: 2.5 SOL sold · out · 0.1 s after the reading",
+   "n": 806
+  },
+  {
+   "t": "2026-11-26T18:37:56Z",
+   "time": "19:37:56",
+   "agent": "LEARNER",
+   "coin": "AFK",
+   "action": "learn",
+   "text": "learned · np:sol:3-6 now avg -22.5% over 7",
+   "n": 807
   }
  ],
  "nights": [
@@ -4681,7 +4733,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 49 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 51 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4689,44 +4741,44 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1033,
-    "last_event_age_s": 16.7,
+    "events": 1039,
+    "last_event_age_s": 8.6,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14082,
-    "last_event_age_s": 0.3,
+    "events": 14134,
+    "last_event_age_s": 1.2,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 739,
-    "last_event_age_s": 16.7,
-    "errors": 58,
-    "last_error": "ipfs.io: HTTP 403"
+    "events": 743,
+    "last_event_age_s": 9.1,
+    "errors": 59,
+    "last_error": "metadata.j7tracker.io: gaierror: [Errno -2] Name or service not known"
    }
   ],
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 67.5,
-  "first_in_last_ms": 374,
-  "exit_ms": 32.5,
-  "exit_last_ms": 39,
-  "launch_to_entry_s": 25.0,
-  "creates_per_min": 10.8,
-  "watching": 12,
-  "followed": 25
+  "first_in_ms": 69,
+  "first_in_last_ms": 477,
+  "exit_ms": 33,
+  "exit_last_ms": 89,
+  "launch_to_entry_s": 26,
+  "creates_per_min": 11.0,
+  "watching": 14,
+  "followed": 27
  },
  "learner": {
-  "samples": 107,
+  "samples": 108,
   "skipped": 20,
-  "explored": 4,
+  "explored": 5,
   "min_samples": 8,
   "best": [
    {
@@ -4748,8 +4800,8 @@
   "worst": [
    {
     "label": "hour:day",
-    "n": 14,
-    "avg": -16.2
+    "n": 15,
+    "avg": -16.5
    },
    {
     "label": "tier:scalp",
@@ -4767,23 +4819,131 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9072,
+   "sent": 9109,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9106,
+   "sent": 9143,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CBI",
+   "name": "Cool boi",
+   "mint": "B7Y355dvwih4k9AmFC1dZUpYPHv6BgaPY1D49zMmpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "2011",
+   "name": "JUPITER2011",
+   "mint": "4c7sytNF8vRJai6ZjdDET8YuTR6ng2s1RioBbbc8pump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "RWA",
+   "name": "Real World Asses",
+   "mint": "AUnJff86E14r3MVcn34GcCKTkPLxjfXte2kRmYGEgc5f",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "SENTAI",
+   "name": "Sent AI Labs",
+   "mint": "7HEH6JNat5J5EEMLMS7F5x6Jh9MAxomQo2TPTncZpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.0,
+   "dev_pct": 5.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "MANTLE",
+   "name": "Mantle",
+   "mint": "BZiPXqTKJ8pABYNJiN86NSGTWmMbqa8ZZtAnf9qzpump",
+   "age_s": 22,
+   "sol_in": 9.49,
+   "buys": 18,
+   "sells": 1,
+   "rise_pct": 63.7,
+   "mcap_sol": 58.6,
+   "dev_pct": 12.5,
+   "big_sell": 0.37,
+   "x": "https://x.com/i/status/2124206158848430270",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 12.5% (max 8%)",
+   "why": "dev bought 12.5% (max 8%)"
+  },
+  {
+   "symbol": "TC",
+   "name": "TurkeyCoin",
+   "mint": "9UgUiQkRvD3Ld9R5uV6wcwjFdJ1PeBHUaJsmyD4Npump",
+   "age_s": 22,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 16 s (min 45 s)"
+  },
+  {
    "symbol": "MANTLE",
    "name": "Mantle",
    "mint": "FNwY4wJCRwtf5o7fnUMkWNFGMbzgPKkaawaKxZA1pump",
-   "age_s": 16,
+   "age_s": 47,
    "sol_in": -3.95,
    "buys": 2,
    "sells": 1,
@@ -4801,7 +4961,7 @@
    "symbol": "NWI",
    "name": "NotWorthIt",
    "mint": "CGmRmva7eBANtEvn4z5ggPmMexga2sMjoCjiLQEZpump",
-   "age_s": 19,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4819,7 +4979,7 @@
    "symbol": "MANTLE",
    "name": "Mantle",
    "mint": "HBzd4FD5hyHzG65grtXRfZGCx4ufpjmKfg7kNWYJpump",
-   "age_s": 28,
+   "age_s": 59,
    "sol_in": -3.95,
    "buys": 1,
    "sells": 2,
@@ -4837,7 +4997,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "4Tss5TS9X9SPoRfKPmR3ktKuPbjrbmLGjHgYSKwQpump",
-   "age_s": 34,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4855,25 +5015,25 @@
    "symbol": "MEOWI",
    "name": "MEOWI",
    "mint": "Bwwc9n2mPn1k5rGv6UjAudiPPYmQpSzYevddjdmHpump",
-   "age_s": 36,
-   "sol_in": 1.34,
+   "age_s": 67,
+   "sol_in": 1.28,
    "buys": 2,
-   "sells": 5,
-   "rise_pct": 8.8,
-   "mcap_sol": 33.0,
+   "sells": 7,
+   "rise_pct": 8.4,
+   "mcap_sol": 32.8,
    "dev_pct": 4.2,
    "big_sell": 0.24,
    "x": "https://x.com/meowi_org",
    "tg": false,
    "web": "https://meowi.org",
    "status": "watching",
-   "why": "too young: 32 s (min 45 s)"
+   "why": "SOL in 1.3/2.5 · buys 2/6 · buy share 22%/65% · rise +8%/+12%"
   },
   {
    "symbol": "LANA",
    "name": "Lana",
    "mint": "2ck5P5tGNLQQ5PLRerunXSJmpHY7MCC8ULZfeYv5CnbL",
-   "age_s": 36,
+   "age_s": 67,
    "sol_in": 0.13,
    "buys": 2,
    "sells": 3,
@@ -4891,7 +5051,7 @@
    "symbol": "DWE",
    "name": "Doge Wif Elon",
    "mint": "J3FoD4NWKAHKJb4FG4T3EaheKmX9sHxridDYnM3dJhLh",
-   "age_s": 37,
+   "age_s": 68,
    "sol_in": 3.04,
    "buys": 2,
    "sells": 2,
@@ -4909,27 +5069,27 @@
    "symbol": "AFK",
    "name": "AFK King",
    "mint": "B6MXUydYLpDb11bWaNzvv8tTe9kMw9VDgKeT6WMmpump",
-   "age_s": 38,
-   "sol_in": 3.33,
-   "buys": 9,
-   "sells": 1,
-   "rise_pct": 23.2,
-   "mcap_sol": 35.0,
+   "age_s": 69,
+   "sol_in": 0.94,
+   "buys": 10,
+   "sells": 4,
+   "rise_pct": 6.3,
+   "mcap_sol": 30.2,
    "dev_pct": 0.8,
-   "big_sell": 0.01,
+   "big_sell": 2.52,
    "x": "https://x.com/afkkingfun",
    "tg": false,
    "web": "https://afkking.top/",
-   "status": "watching",
-   "why": "too young: 33 s (min 45 s)"
+   "status": "exited: dump: 2.5 SOL sold",
+   "why": "dump: 2.5 SOL sold"
   },
   {
    "symbol": "GBBL",
    "name": "GOBBLE",
    "mint": "FcUnmZwctagJSgFTYsGogbboHkVjBa861w6ehDYFpump",
-   "age_s": 43,
+   "age_s": 74,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
@@ -4939,13 +5099,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
   },
   {
    "symbol": "MANTLE",
    "name": "Mantle",
    "mint": "mKcgwJiJFx9AUDqUc9qh9BBRfzVYRrJoV1aUq8epump",
-   "age_s": 43,
+   "age_s": 74,
    "sol_in": -3.95,
    "buys": 2,
    "sells": 2,
@@ -4963,25 +5123,25 @@
    "symbol": "TARINGA",
    "name": "TARINGA",
    "mint": "6eMqSDngpgo4zq8k7CbHrZ1yTw8uJGUCFdXqCNdkpump",
-   "age_s": 49,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
+   "age_s": 80,
+   "sol_in": -0.29,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -1.9,
+   "mcap_sol": 28.0,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 0.3,
    "x": "https://x.com/taringa?lang=es",
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "SOL in -0.3/2.5 · buys 1/6 · buy share 50%/65% · rise -2%/+12%"
   },
   {
    "symbol": "FORU",
    "name": "foru.family",
    "mint": "CqQFmowqy9FaP5XXwYe9ftLHVD7pkdU2oyX3FXaCpump",
-   "age_s": 50,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -4999,7 +5159,7 @@
    "symbol": "Maya",
    "name": "MayacatCoin",
    "mint": "39oe72UW36o9mZvsy2eBZWLN7gXDfxpB17cDfH6nkdQn",
-   "age_s": 55,
+   "age_s": 86,
    "sol_in": -1.18,
    "buys": 2,
    "sells": 4,
@@ -5017,7 +5177,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "F6oaqnsnKioM3o8gUVQGnX5xhrWzbPWUGoN1xbU2pump",
-   "age_s": 73,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5030,114 +5190,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "CBI",
-   "name": "Cool boi",
-   "mint": "8MYk17R5k7PKbqaoQzxmj5DChcpgRCm7ckQiyEtDpump",
-   "age_s": 83,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "ZROOL",
-   "name": "Official Zrool Coin",
-   "mint": "21zv7iJsTEd5Z2onhicQkZYxXTybFh7LpqZnrA3gpump",
-   "age_s": 91,
-   "sol_in": -0.29,
-   "buys": 10,
-   "sells": 25,
-   "rise_pct": -1.8,
-   "mcap_sol": 33.2,
-   "dev_pct": 9.6,
-   "big_sell": 3.73,
-   "x": "https://x.com/TheRealZrool",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.6% (max 8%)",
-   "why": "dev bought 9.6% (max 8%)"
-  },
-  {
-   "symbol": "MANTLE",
-   "name": "Mantle",
-   "mint": "81AJTVFt3C63e7smb6A8Yq3xg73ogwVdeEjZrUMhpump",
-   "age_s": 93,
-   "sol_in": -3.84,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": -21.4,
-   "mcap_sol": 28.2,
-   "dev_pct": 12.5,
-   "big_sell": 4.35,
-   "x": "https://x.com/i/status/2124206158848430270",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 12.5% (max 8%)",
-   "why": "dev bought 12.5% (max 8%)"
-  },
-  {
-   "symbol": "MANTLE",
-   "name": "Mantle",
-   "mint": "Ga4PYjst1E4DXRBVxd86nvB7EESjBYCeQAJikRUGpump",
-   "age_s": 106,
-   "sol_in": 0.09,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": 0.6,
-   "mcap_sol": 29.1,
-   "dev_pct": 1.7,
-   "big_sell": 0.19,
-   "x": "https://x.com/i/status/2124206158848430270",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.1/2.5 · buys 4/6 · rise +1%/+12%"
-  },
-  {
-   "symbol": "MANTLE",
-   "name": "Mantle",
-   "mint": "5rrjtuTAdXie94ZKStkVLB4Y9BEJSGqJQUyRhKoupump",
-   "age_s": 114,
-   "sol_in": -3.95,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -21.9,
-   "mcap_sol": 28.0,
-   "dev_pct": 12.5,
-   "big_sell": 4.44,
-   "x": "https://x.com/i/status/2124206158848430270",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 12.5% (max 8%)",
-   "why": "dev bought 12.5% (max 8%)"
-  },
-  {
-   "symbol": "Autopsy",
-   "name": "Autopsy",
-   "mint": "wo53sQYANUejVrrurASFFMA13uT6dTpQjhPZJdDszfu",
-   "age_s": 119,
-   "sol_in": 4.4,
-   "buys": 14,
-   "sells": 14,
-   "rise_pct": 30.9,
-   "mcap_sol": 38.0,
-   "dev_pct": 2.0,
-   "big_sell": 0.45,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "buy share 50%/65%"
   }
  ],
  "strategies": [
