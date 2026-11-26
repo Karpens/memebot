@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:47:11Z",
+ "updated": "2026-11-26T11:47:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 20,
-  "checked": 20,
+  "flagged": 21,
+  "checked": 21,
   "filtered": 2,
-  "lines": 267,
+  "lines": 271,
   "last_rug": {
-   "coin": "SPRAYZ",
+   "coin": "VP64",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TIPPD",
-   "why": "momentum",
-   "t": "2026-11-26T10:09:59Z"
-  },
   {
    "coin": "TICKZ",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "SPRAYZ",
    "why": "momentum",
    "t": "2026-11-26T11:45:43Z"
+  },
+  {
+   "coin": "VP64",
+   "why": "momentum",
+   "t": "2026-11-26T11:47:33Z"
   }
  ],
  "curve": [
@@ -1108,42 +1108,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:22:57Z",
-   "time": "10:22:57",
-   "agent": "RUG CHECK",
-   "coin": "SOLFORGE",
-   "action": "reject",
-   "text": "FAIL · risk: Mint Authority still enabled · a holder has 29.2% (max 12%) · top 10 hold 60% (max 35%) · 524 insiders (graph)",
-   "n": 68
-  },
-  {
-   "t": "2026-11-26T09:23:10Z",
-   "time": "10:23:10",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 1 watched · 17 rejected (serial launcher 6, mayhem mode 5, dev bought 4) · closest ASTRAR: SOL in 0.0/2.5 · buys 4/6 · buy share 57%/65% · rise +0%/+12%",
-   "n": 69
-  },
-  {
-   "t": "2026-11-26T09:23:21Z",
-   "time": "10:23:21",
-   "agent": "SCANNER",
-   "coin": "SALECOIN",
-   "action": "flag",
-   "text": "momentum · 9.4 SOL in · 6/9 buys (67%) · +68% since launch · mcap 52 SOL · 9 s old",
-   "n": 70
-  },
-  {
-   "t": "2026-11-26T09:23:21Z",
-   "time": "10:23:21",
-   "agent": "RUG CHECK",
-   "coin": "SALECOIN",
-   "action": "pass",
-   "text": "PASS · 0 holders · top holder 0.0% · top 10 0% (curve left out)",
-   "n": 71
-  },
   {
    "t": "2026-11-26T09:23:21Z",
    "time": "10:23:21",
@@ -2907,6 +2871,42 @@
    "action": "migrate",
    "text": "migrated: the curve is complete (pump-amm)",
    "n": 267
+  },
+  {
+   "t": "2026-11-26T11:47:31Z",
+   "time": "12:47:31",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.4 a minute · 4 watched · 14 rejected (serial launcher 5, dev bought 3, mayhem mode 3) · closest VP64: too young: 31 s (min 45 s)",
+   "n": 268
+  },
+  {
+   "t": "2026-11-26T11:47:33Z",
+   "time": "12:47:33",
+   "agent": "SCANNER",
+   "coin": "VP64",
+   "action": "flag",
+   "text": "momentum · 6.6 SOL in · 7/8 buys (88%) · +47% since launch · mcap 44 SOL · 50 s old",
+   "n": 269
+  },
+  {
+   "t": "2026-11-26T11:47:33Z",
+   "time": "12:47:33",
+   "agent": "RUG CHECK",
+   "coin": "VP64",
+   "action": "pass",
+   "text": "PASS · 10 holders · top holder 5.2% · top 10 18% (curve left out)",
+   "n": 270
+  },
+  {
+   "t": "2026-11-26T11:47:33Z",
+   "time": "12:47:33",
+   "agent": "LEARNER",
+   "coin": "VP64",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 11.4% · hour:day -17.1% over 10",
+   "n": 271
   }
  ],
  "nights": [
@@ -2952,7 +2952,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 14 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2960,24 +2960,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 301,
-    "last_event_age_s": 8.5,
+    "events": 303,
+    "last_event_age_s": 5.5,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4884,
-    "last_event_age_s": 0.6,
+    "events": 4922,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 204,
-    "last_event_age_s": 29.2,
+    "events": 206,
+    "last_event_age_s": 5.4,
     "errors": 18,
     "last_error": "sajad.my: timeout after 2 s"
    }
@@ -2990,13 +2990,13 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 6.8,
-  "watching": 4,
-  "followed": 13
+  "creates_per_min": 6.2,
+  "watching": 3,
+  "followed": 14
  },
  "learner": {
   "samples": 105,
-  "skipped": 10,
+  "skipped": 11,
   "explored": 2,
   "min_samples": 8,
   "best": [
@@ -3037,23 +3037,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4115,
+   "sent": 4150,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4115,
+   "sent": 4150,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Trump",
+   "name": "The Lame Duck",
+   "mint": "BkSzsSGmXgQ65GbvzW1vCrxP7jE6XbrEtzhVj56Ym6qm",
+   "age_s": 5,
+   "sol_in": 1.83,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 10.7,
+   "mcap_sol": 42.0,
+   "dev_pct": 15.2,
+   "big_sell": 3.01,
+   "x": "https://x.com/mjfree/status/2125919009417625801",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
+   "symbol": "VP64",
+   "name": "VicePump64",
+   "mint": "AYMk9ianZS2SGvPAZuXDDFrkNA23zFnQJbNcBpLStQok",
+   "age_s": 19,
+   "sol_in": 2.58,
+   "buys": 2,
+   "sells": 10,
+   "rise_pct": 17.9,
+   "mcap_sol": 33.0,
+   "dev_pct": 0.0,
+   "big_sell": 2.81,
+   "x": "https://x.com/EXRDEV",
+   "tg": false,
+   "web": "https://x.com/i/communities/2016274259132481559",
+   "status": "rejected: dump: 2.8 SOL sold",
+   "why": "dump: 2.8 SOL sold"
+  },
+  {
    "symbol": "GEORGE",
    "name": "George",
    "mint": "HgH1zetiFWLf76cmqi6an6m28WZTFyV9mNhfmjyJnbZj",
-   "age_s": 13,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3071,25 +3107,25 @@
    "symbol": "VP64",
    "name": "VicePump64",
    "mint": "HjprtYRHEigXDqhqqbLkUdv3FdsCPEHN7hknrgn6iwFN",
-   "age_s": 29,
-   "sol_in": 6.59,
-   "buys": 5,
+   "age_s": 62,
+   "sol_in": 6.69,
+   "buys": 8,
    "sells": 1,
-   "rise_pct": 46.7,
-   "mcap_sol": 44.4,
+   "rise_pct": 47.4,
+   "mcap_sol": 44.6,
    "dev_pct": 4.1,
    "big_sell": 0.03,
    "x": "https://x.com/EXRDEV",
    "tg": false,
    "web": "https://x.com/i/communities/2016274259132481559",
-   "status": "watching",
-   "why": "too young: 28 s (min 45 s)"
+   "status": "rejected: learner: skip",
+   "why": "learner: skip"
   },
   {
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "FEehYACR9DsqMW2ViiMBgt2s3zHV1eAosFtvpMXXpump",
-   "age_s": 37,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3107,7 +3143,7 @@
    "symbol": "CJ",
    "name": "CJ",
    "mint": "8GJAqUUWrc9R1LGWdEPB2UfZFHKz6W55zm6gfVTwKEby",
-   "age_s": 44,
+   "age_s": 77,
    "sol_in": -4.0,
    "buys": 1,
    "sells": 1,
@@ -3125,7 +3161,7 @@
    "symbol": "Pinky",
    "name": "DON'T FEED DUVE 40% BUY THE OG",
    "mint": "BHsD5HLSidTu3eZHgKQgdsvL2zHF6kopyDAsmMDJNUf9",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3143,7 +3179,7 @@
    "symbol": "Pinky",
    "name": "DON'T FEED DUVE 40% BUY THE OG",
    "mint": "7QcJtPMTpct62Kh31rw5LEr8u3UQMnuxgqJV2Ad87uEC",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3161,7 +3197,7 @@
    "symbol": "GSU",
    "name": "Galaxy S27 Ultra",
    "mint": "2FwXGJKzYRYqMsZWg8xHci6Y7gcqXrX6qVD3SgrTJY4e",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3179,7 +3215,7 @@
    "symbol": "PINKY",
    "name": "PINKY",
    "mint": "2ENEwfcm2X3otV8voZ1n5TuPQJGarvzBhwiGftvLMByc",
-   "age_s": 75,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3197,7 +3233,7 @@
    "symbol": "Pinky",
    "name": "DON'T FEED DUVE 40% BUY THE OG",
    "mint": "9h5QkqxdPoJpzxSauFY3PKb4drvxdQFBJLJEfBLymqLX",
-   "age_s": 102,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3215,7 +3251,7 @@
    "symbol": "Pinky",
    "name": "DON'T FEED DUVE 40% BUY THE OG",
    "mint": "4hnhXoj4ExQK3K2kd9jm7w5tYPxfQLoVzq1cCKocbB41",
-   "age_s": 102,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3233,7 +3269,7 @@
    "symbol": "Pinky",
    "name": "DON'T FEED DUVE 40% BUY THE OG",
    "mint": "5SmVhC7QEhUyW8ZqEsV5DNdLrmvRWUzhTradmmbVzCZD",
-   "age_s": 105,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3251,7 +3287,7 @@
    "symbol": "Pinky",
    "name": "DON'T FEED DUVE 40% BUY THE OG",
    "mint": "2opRM7y3zfj5BpkPNKhTuedESssPGeq6yV2wCg8pD2xG",
-   "age_s": 105,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3269,7 +3305,7 @@
    "symbol": "DBMH",
    "name": "DragonBall MiHao",
    "mint": "JFMrApmpTszugxPw6dv48FhPR9F3rkfsxG8Y3NFpump",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": 0.21,
    "buys": 5,
    "sells": 2,
@@ -3287,7 +3323,7 @@
    "symbol": "GTC",
    "name": "Grand Theft Crypto",
    "mint": "3Tg6YnNrfPdFfsY14MaNsDMWLseAyrUDS3myJtbaJN6f",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3305,12 +3341,12 @@
    "symbol": "SPRAYZ",
    "name": "Sprayz",
    "mint": "mbTASFpiKuHePmVNYBg4FsrESiTMh5uY81kvPeoPukq",
-   "age_s": 134,
-   "sol_in": 8.28,
-   "buys": 56,
-   "sells": 35,
-   "rise_pct": 62.8,
-   "mcap_sol": 45.5,
+   "age_s": 167,
+   "sol_in": 8.73,
+   "buys": 67,
+   "sells": 44,
+   "rise_pct": 66.6,
+   "mcap_sol": 46.6,
    "dev_pct": 0.0,
    "big_sell": 1.54,
    "x": "https://x.com/Sprayz_xyz",
@@ -3323,7 +3359,7 @@
    "symbol": "AI",
    "name": "Animal Influencers",
    "mint": "Er2K56FoLefChuuWhPucxpTYHwLWbAaEMs3pyzNKpump",
-   "age_s": 135,
+   "age_s": 168,
    "sol_in": -2.71,
    "buys": 9,
    "sells": 21,
@@ -3336,42 +3372,6 @@
    "web": "https://x.com/Iiice_coffee/status/2125352894140740048",
    "status": "rejected: dev bought 15.2% (max 8%)",
    "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "QI",
-   "name": "QuantumInu",
-   "mint": "5achrJL9heLw1XHGa1tHB2Fi8KGPNydRk3T1csRhB1ZN",
-   "age_s": 149,
-   "sol_in": -4.93,
-   "buys": 5,
-   "sells": 5,
-   "rise_pct": -26.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 4.93,
-   "x": "https://x.com/FirstSquawk/status/2125918565513805837",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 15.2% (max 8%)",
-   "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "$AGB",
-   "name": "Agentic B COIN",
-   "mint": "rbnr5FP2crb1BP7QZ59gXoZcQRo2Y7y8W9TWkRUpump",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
