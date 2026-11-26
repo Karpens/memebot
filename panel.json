@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T04:52:59Z",
+ "updated": "2026-11-26T04:53:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 70.3,
@@ -20,27 +20,17 @@
   "id": "2026-11-25",
   "start_equity": 100.0,
   "started": "2026-11-26T02:36:46Z",
-  "scans": 903,
-  "flagged": 53,
-  "checked": 217,
-  "filtered": 3,
-  "lines": 527,
+  "scans": 909,
+  "flagged": 55,
+  "checked": 225,
+  "filtered": 5,
+  "lines": 533,
   "last_rug": {
    "coin": "Grodia",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MCAP",
-   "why": "holders +25%",
-   "t": "2026-11-26T03:32:21Z"
-  },
-  {
-   "coin": "ccat",
-   "why": "volume 4.2x",
-   "t": "2026-11-26T04:21:57Z"
-  },
   {
    "coin": "TEEETHY",
    "why": "holders +1042%",
@@ -70,6 +60,16 @@
    "coin": "alx",
    "why": "holders +8%",
    "t": "2026-11-26T04:49:14Z"
+  },
+  {
+   "coin": "GOTF",
+   "why": "holders +10%",
+   "t": "2026-11-26T04:53:29Z"
+  },
+  {
+   "coin": "call.fun",
+   "why": "holders +34%",
+   "t": "2026-11-26T04:53:29Z"
   }
  ],
  "curve": [
@@ -1471,54 +1471,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T04:03:39Z",
-   "time": "05:03:39",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "scanned 49 new coins · 49 pairs · 2 pass the rules"
-  },
-  {
-   "t": "2026-11-26T04:03:39Z",
-   "time": "05:03:39",
-   "agent": "SIZER",
-   "coin": "Grodia",
-   "action": "size",
-   "text": "10% of $79.24 = $7.92"
-  },
-  {
-   "t": "2026-11-26T04:03:39Z",
-   "time": "05:03:39",
-   "agent": "EXECUTOR",
-   "coin": "Grodia",
-   "action": "enter",
-   "text": "ENTER Grodia at 0.0011443455 · slip 1.8% · buys 62% · trending · boosted"
-  },
-  {
-   "t": "2026-11-26T04:04:41Z",
-   "time": "05:04:41",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "scanned 48 new coins · 48 pairs · 1 pass the rules"
-  },
-  {
-   "t": "2026-11-26T04:05:22Z",
-   "time": "05:05:22",
-   "agent": "RISK",
-   "coin": null,
-   "action": "pause",
-   "text": "5 losses in a row · 2 min pause"
-  },
-  {
-   "t": "2026-11-26T04:05:22Z",
-   "time": "05:05:22",
-   "agent": "EXECUTOR",
-   "coin": "PUMPCHAN",
-   "action": "exit",
-   "text": "EXIT PUMPCHAN $-0.04 (-1%) · 5 min, only +2%"
-  },
   {
    "t": "2026-11-26T04:05:41Z",
    "time": "05:05:41",
@@ -3223,6 +3175,60 @@
    "action": "scan",
    "text": "scanned 70 new coins · 70 pairs · 4 pass the rules",
    "n": 527
+  },
+  {
+   "t": "2026-11-26T04:53:29Z",
+   "time": "05:53:29",
+   "agent": "SCANNER",
+   "coin": "GOTF",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $39.2k · 5m $13.6k · buys 57% · holders +10%",
+   "n": 528
+  },
+  {
+   "t": "2026-11-26T04:53:29Z",
+   "time": "05:53:29",
+   "agent": "NEWS",
+   "coin": "GOTF",
+   "action": "news",
+   "text": "no X, Telegram or web: anonymous",
+   "n": 529
+  },
+  {
+   "t": "2026-11-26T04:53:29Z",
+   "time": "05:53:29",
+   "agent": "RUG CHECK",
+   "coin": "GOTF",
+   "action": "reject",
+   "text": "FAIL · LP locked only 0% · risk: Large Amount of LP Unlocked",
+   "n": 530
+  },
+  {
+   "t": "2026-11-26T04:53:29Z",
+   "time": "05:53:29",
+   "agent": "SCANNER",
+   "coin": "call.fun",
+   "action": "flag",
+   "text": "flagged · pumpswap · liq $18.0k · 5m $3.7k · buys 86% · holders +34%",
+   "n": 531
+  },
+  {
+   "t": "2026-11-26T04:53:29Z",
+   "time": "05:53:29",
+   "agent": "NEWS",
+   "coin": "call.fun",
+   "action": "news",
+   "text": "no X, Telegram or web: anonymous",
+   "n": 532
+  },
+  {
+   "t": "2026-11-26T04:53:29Z",
+   "time": "05:53:29",
+   "agent": "RUG CHECK",
+   "coin": "call.fun",
+   "action": "reject",
+   "text": "FAIL · LP locked only 0% · risk: Large Amount of LP Unlocked",
+   "n": 533
   }
  ],
  "nights": [],
@@ -3247,8 +3253,8 @@
   "scan_sec": 5,
   "gt_sec": 20,
   "feed": "jupiter · scan 5s · live 1s",
-  "last_scan_ms": 106,
-  "watch_ms": 0,
+  "last_scan_ms": 489,
+  "watch_ms": 1,
   "scans_per_min": 12,
   "feeds": [
    "geckoterminal",
@@ -3300,13 +3306,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2171,
+   "sent": 2203,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2171,
+   "sent": 2203,
    "errors": 0,
    "last_error": null
   }
