@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T10:06:07Z",
+ "updated": "2026-11-26T10:06:33Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 83.37,
- "equity": 87.56,
+ "balance": 87.14,
+ "equity": 87.14,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 12,
   "checked": 12,
   "filtered": 1,
-  "lines": 131,
+  "lines": 134,
   "last_rug": {
    "coin": "YARL",
    "pass": true
@@ -325,58 +325,7 @@
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [
-  {
-   "symbol": "YARL",
-   "mint": "J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
-   "cost": 4.39,
-   "value": 4.19,
-   "pnl_pct": -4.5,
-   "opened": "2026-11-26T10:04:54Z",
-   "url": "https://pump.fun/coin/J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
-   "reason": "momentum · 2.9 SOL in · 9/13 buys (69%) · +20% since launch · mcap 34 SOL · 45 s old",
-   "size_pct": 5.0,
-   "entry_price": 2.50456e-06,
-   "price": 2.43111e-06,
-   "slip": 2.22,
-   "tp1_done": false,
-   "strategy": "new_pairs",
-   "plan": {
-    "tier": "scalp",
-    "score": 1.5,
-    "parts": [
-     "X post",
-     "web"
-    ],
-    "ladder": [
-     [
-      7.0,
-      1.0
-     ]
-    ],
-    "step": 0,
-    "stop_pct": -7.0,
-    "trail_pct": 0.0
-   },
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "age_s": 45,
-   "mcap_sol": 34.2,
-   "dev_pct": 1.0,
-   "sol_in": 2.9,
-   "hist": [
-    2.50456e-06,
-    2.44449e-06,
-    2.44958e-06,
-    2.43878e-06,
-    2.42791e-06,
-    2.4411e-06,
-    2.44077e-06,
-    2.43046e-06
-   ]
-  }
- ],
+ "positions": [],
  "trades": [
   {
    "symbol": "ZEROCAST",
@@ -666,6 +615,49 @@
    "dev_pct": 5.05,
    "sol_in": 3.33,
    "exit_ms": 31
+  },
+  {
+   "symbol": "YARL",
+   "mint": "J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
+   "opened": "2026-11-26T10:04:54Z",
+   "closed": "2026-11-26T10:06:33Z",
+   "cost": 4.39,
+   "proceeds": 3.77,
+   "pnl": -0.61,
+   "pnl_pct": -14.0,
+   "why": "stop -9%",
+   "url": "https://pump.fun/coin/J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
+   "reason": "momentum · 2.9 SOL in · 9/13 buys (69%) · +20% since launch · mcap 34 SOL · 45 s old",
+   "size_pct": 5.0,
+   "entry_price": 2.5045623285762054e-06,
+   "exit_price": 2.285869879588065e-06,
+   "slip": 2.22,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 1.5,
+    "parts": [
+     "X post",
+     "web"
+    ],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 45,
+   "mcap_sol": 34.2,
+   "dev_pct": 1.0,
+   "sol_in": 2.9,
+   "exit_ms": 75
   }
  ],
  "log": [
@@ -1847,6 +1839,33 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 5 watched · 3 rejected (dump 1, serial launcher 1, mayhem mode 1) · closest ClashofCla: too young: 31 s (min 45 s)",
    "n": 131
+  },
+  {
+   "t": "2026-11-26T10:06:33Z",
+   "time": "11:06:33",
+   "agent": "RISK",
+   "coin": null,
+   "action": "pause",
+   "text": "6 losses in a row · 2 min pause",
+   "n": 132
+  },
+  {
+   "t": "2026-11-26T10:06:33Z",
+   "time": "11:06:33",
+   "agent": "EXECUTOR",
+   "coin": "YARL",
+   "action": "exit",
+   "text": "EXIT YARL $-0.61 (-14%) · stop -9% · out · 0.1 s after the reading",
+   "n": 133
+  },
+  {
+   "t": "2026-11-26T10:06:33Z",
+   "time": "11:06:33",
+   "agent": "LEARNER",
+   "coin": "YARL",
+   "action": "learn",
+   "text": "learned · tier:scalp now avg -15.9% over 9",
+   "n": 134
   }
  ],
  "nights": [
@@ -1895,7 +1914,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1903,24 +1922,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 145,
-    "last_event_age_s": 5.1,
+    "events": 148,
+    "last_event_age_s": 3.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2064,
-    "last_event_age_s": 1.4,
+    "events": 2100,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 105,
-    "last_event_age_s": 4.7,
+    "events": 106,
+    "last_event_age_s": 12.7,
     "errors": 82,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -1930,15 +1949,15 @@
   ],
   "first_in_ms": 65,
   "first_in_last_ms": 224,
-  "exit_ms": 32.0,
-  "exit_last_ms": 32,
+  "exit_ms": 32,
+  "exit_last_ms": 75,
   "launch_to_entry_s": 20,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.4,
   "watching": 6,
-  "followed": 10
+  "followed": 11
  },
  "learner": {
-  "samples": 103,
+  "samples": 104,
   "skipped": 4,
   "explored": 1,
   "min_samples": 8,
@@ -1962,46 +1981,82 @@
   "worst": [
    {
     "label": "tier:scalp",
-    "n": 8,
-    "avg": -16.1
+    "n": 9,
+    "avg": -15.9
    },
    {
     "label": "news:0-2",
-    "n": 8,
-    "avg": -16.1
+    "n": 9,
+    "avg": -15.9
    },
    {
     "label": "hour:day",
-    "n": 8,
-    "avg": -16.1
+    "n": 9,
+    "avg": -15.9
    }
   ]
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1988,
+   "sent": 2017,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1988,
+   "sent": 2017,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "?",
+   "name": "",
+   "mint": "AwXiDPcUdRrzN93XT5fPZKo7c1jnnfySasKe3HSapump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "SCAT",
+   "name": "Struggle Cat",
+   "mint": "UQyF5KVQBNVmt4TRUGtS9TGL96E7rfxGDSm7kUDpump",
+   "age_s": 12,
+   "sol_in": 4.28,
+   "buys": 8,
+   "sells": 8,
+   "rise_pct": 22.6,
+   "mcap_sol": 60.6,
+   "dev_pct": 26.6,
+   "big_sell": 6.23,
+   "x": "https://x.com/etquantz/status/2125893646624903523",
+   "tg": false,
+   "web": "https://x.com/Meowversetwt/status/2125726223628148754?a=O-Qr7_Mo485DELFWiG8&s=20",
+   "status": "rejected: dev bought 26.6% (max 8%)",
+   "why": "dev bought 26.6% (max 8%)"
+  },
+  {
    "symbol": "Turkey",
    "name": "PepewifTurkey",
    "mint": "FtFcN1ZbvQp1GiqcyPRHXb6AjRYL6BRwRrNC8ex3Lo64",
-   "age_s": 5,
-   "sol_in": 1.83,
+   "age_s": 31,
+   "sol_in": -1.44,
    "buys": 1,
-   "sells": 4,
-   "rise_pct": 10.7,
-   "mcap_sol": 42.0,
+   "sells": 7,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
    "dev_pct": 15.2,
    "big_sell": 3.01,
    "x": "https://x.com/MarioPrezldente/status/2125893833552720372",
@@ -2014,12 +2069,12 @@
    "symbol": "ty",
    "name": "ty",
    "mint": "AXtkquNr1hvnE2UR2Shus2yvsw8BUhBPjgfS9dtaAQNW",
-   "age_s": 7,
-   "sol_in": 2.2,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": 13.8,
-   "mcap_sol": 38.6,
+   "age_s": 33,
+   "sol_in": 0.22,
+   "buys": 9,
+   "sells": 12,
+   "rise_pct": 1.3,
+   "mcap_sol": 34.4,
    "dev_pct": 9.9,
    "big_sell": 2.61,
    "x": false,
@@ -2032,7 +2087,7 @@
    "symbol": "SAVPIR",
    "name": "Savage Piranha",
    "mint": "BZpvTdoLhyKkqAM7vXM58XeF5CGbtrJV6tq836wKpump",
-   "age_s": 13,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2050,7 +2105,7 @@
    "symbol": "YEE",
    "name": "Yee",
    "mint": "9rer9SqWvktsxaop6Bybof2xiqgqpn1EVk7wi8b8pump",
-   "age_s": 19,
+   "age_s": 45,
    "sol_in": 0.12,
    "buys": 2,
    "sells": 0,
@@ -2068,7 +2123,7 @@
    "symbol": "BISCUITZESTY",
    "name": "Zesty Biscuit",
    "mint": "qjcB1HkLamMGx5jQZdn4igK27E4KRLPXG3iGrWYdsmz",
-   "age_s": 36,
+   "age_s": 62,
    "sol_in": 0.03,
    "buys": 1,
    "sells": 0,
@@ -2086,7 +2141,7 @@
    "symbol": "ClashofCla",
    "name": "ClashofClans",
    "mint": "A26sC8Deqri5fxhR9Cyh6Fb9r8TzBz3zyEqbTSXopump",
-   "age_s": 74,
+   "age_s": 100,
    "sol_in": 1.55,
    "buys": 6,
    "sells": 1,
@@ -2104,7 +2159,7 @@
    "symbol": "YEE",
    "name": "Yeecoin",
    "mint": "5bsikE3AS3YT9dNPYxsBbX7PtVUnzKT5BPGUWHtLpump",
-   "age_s": 82,
+   "age_s": 108,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -2122,12 +2177,12 @@
    "symbol": "S42",
    "name": "DON'T PANIC - SpaceX",
    "mint": "bquFUeYe6qDFP5wyY9uPFdcsrH3FRzes679TF6xpump",
-   "age_s": 85,
-   "sol_in": 0.0,
-   "buys": 2,
+   "age_s": 111,
+   "sol_in": 0.01,
+   "buys": 3,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.01,
    "x": false,
@@ -2140,7 +2195,7 @@
    "symbol": "PLCS",
    "name": "PL Cluster Smoke",
    "mint": "9eU1xBEZPHhUq4f8my1dBvEeU7WfcUtJ4RG3tmJvYZmr",
-   "age_s": 113,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -2158,7 +2213,7 @@
    "symbol": "SVI",
    "name": "Sla Vs Inda",
    "mint": "4NjHX35kSKS3uTRrLUtkf3FbBrLs4u8gA92Actkw5HBL",
-   "age_s": 114,
+   "age_s": 140,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -2176,25 +2231,25 @@
    "symbol": "YARL",
    "name": "yarl",
    "mint": "J5Gq5uGmtzCvb5FWmDcL5r5BQfXjr4QUkR75en77pump",
-   "age_s": 118,
-   "sol_in": 2.91,
-   "buys": 12,
-   "sells": 8,
-   "rise_pct": 20.1,
-   "mcap_sol": 34.2,
+   "age_s": 144,
+   "sol_in": 1.91,
+   "buys": 13,
+   "sells": 10,
+   "rise_pct": 13.0,
+   "mcap_sol": 32.2,
    "dev_pct": 1.0,
-   "big_sell": 0.3,
+   "big_sell": 1.0,
    "x": "https://x.com/yarlonpfx/status/2125892896562073857",
    "tg": false,
    "web": "https://archive.4plebs.org/s4s/search/text/yarl/order/asc",
-   "status": "entered",
-   "why": "momentum · 2.9 SOL in · 9/13 buys (69%) · +20% since launch · mcap 34 SOL · 45 s old"
+   "status": "exited: stop -9%",
+   "why": "stop -9%"
   },
   {
    "symbol": "LMAO",
    "name": "LMAO",
    "mint": "7MYYv9U3ChJeA4zn2YsYwYVpcehHfx7YWEH4gSdipump",
-   "age_s": 138,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
