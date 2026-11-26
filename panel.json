@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:09:05Z",
+ "updated": "2026-11-26T17:09:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 40,
   "checked": 35,
   "filtered": 7,
-  "lines": 681,
+  "lines": 682,
   "last_rug": {
    "coin": "CUBE",
    "pass": true
@@ -2008,6 +2008,10 @@
   [
    1795712893,
    84.53
+  ],
+  [
+   1795712953,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2482,15 +2486,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T14:44:04Z",
-   "time": "15:44:04",
-   "agent": "SCANNER",
-   "coin": "Simyo",
-   "action": "migrate",
-   "text": "migrated: the curve is complete (pump-amm)",
-   "n": 482
-  },
   {
    "t": "2026-11-26T14:44:33Z",
    "time": "15:44:33",
@@ -4281,6 +4276,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 5 watched · 7 rejected (serial launcher 2, dump 2, dev bought 2) · closest KOENIGSEGG: too young: 10 s (min 45 s)",
    "n": 681
+  },
+  {
+   "t": "2026-11-26T17:09:36Z",
+   "time": "18:09:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 4 watched · 7 rejected (serial launcher 2, dump 2, dev bought 2) · closest ATOMIC: too young: 27 s (min 45 s)",
+   "n": 682
   }
  ],
  "nights": [
@@ -4331,15 +4335,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 337,
-    "last_event_age_s": 8.7,
+    "events": 338,
+    "last_event_age_s": 5.0,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4332,
+    "events": 4354,
     "last_event_age_s": 1.1,
     "errors": 0,
     "last_error": null
@@ -4347,8 +4351,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 247,
-    "last_event_age_s": 8.2,
+    "events": 248,
+    "last_event_age_s": 4.9,
     "errors": 19,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4361,8 +4365,8 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 3.8,
-  "watching": 5,
+  "creates_per_min": 3.0,
+  "watching": 4,
   "followed": 10
  },
  "learner": {
@@ -4409,41 +4413,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3413,
+   "sent": 3449,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3447,
+   "sent": 3483,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TRADING",
+   "name": "MEME TRADER",
+   "mint": "DhWAJ3jM1kH5mcBCG2PJWt7GYZNw2x5mckJsqUEwpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "ATOMIC",
    "name": "Atomic",
    "mint": "HsBJKDWfdraaPfQCSxCmnFCs3joUF69rqHoScUg7pump",
-   "age_s": 8,
-   "sol_in": 2.61,
-   "buys": 2,
+   "age_s": 41,
+   "sol_in": 3.22,
+   "buys": 3,
    "sells": 0,
-   "rise_pct": 17.8,
-   "mcap_sol": 34.3,
+   "rise_pct": 22.2,
+   "mcap_sol": 35.5,
    "dev_pct": 2.1,
    "big_sell": 0.0,
    "x": "https://x.com/tryAtomic_Sol/status/2125999913498763369?a=SdSRCZZgn-g6gkcD4YE&s=20",
    "tg": false,
    "web": "https://atomicsol.xyz",
    "status": "watching",
-   "why": "too young: 3 s (min 45 s)"
+   "why": "too young: 27 s (min 45 s)"
   },
   {
    "symbol": "OVEN",
    "name": "Mr. Oven",
    "mint": "FLdYqxDqcg8WnAecQwNKqVSMZ2U5yBhkiejEQvNipump",
-   "age_s": 31,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -4461,29 +4483,29 @@
    "symbol": "JANTA",
    "name": "Jimmy Santa",
    "mint": "3mmaLtL3ZzrA9xuX6Dke55LMMAVufHq6DHDyYFfgpump",
-   "age_s": 41,
-   "sol_in": 0.03,
+   "age_s": 74,
+   "sol_in": -0.96,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.2,
-   "mcap_sol": 29.9,
+   "sells": 2,
+   "rise_pct": -6.1,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.99,
    "x": "https://x.com/JimmySantaSOL",
    "tg": false,
    "web": "https://jimmysanta.lol/",
    "status": "watching",
-   "why": "too young: 9 s (min 45 s)"
+   "why": "SOL in -1.0/2.5 · buys 2/6 · buy share 50%/65% · rise -6%/+12%"
   },
   {
    "symbol": "Rogir",
    "name": "Rogir",
    "mint": "7Puax9draaJAKNHicgWh69SvN3aktPCY1MVNv9bMpump",
-   "age_s": 45,
+   "age_s": 78,
    "sol_in": -2.17,
    "buys": 0,
-   "sells": 1,
-   "rise_pct": -13.0,
+   "sells": 2,
+   "rise_pct": -13.1,
    "mcap_sol": 28.0,
    "dev_pct": 7.2,
    "big_sell": 2.17,
@@ -4497,14 +4519,14 @@
    "symbol": "PRIMIS",
    "name": "Primis Protocol",
    "mint": "8Dyd7kV1nD7h5jgCA41BnjWcNfVhteNuLn33ZD2Cpump",
-   "age_s": 78,
-   "sol_in": 9.33,
+   "age_s": 111,
+   "sol_in": -1.86,
    "buys": 9,
-   "sells": 4,
-   "rise_pct": 64.4,
-   "mcap_sol": 55.9,
+   "sells": 9,
+   "rise_pct": -10.9,
+   "mcap_sol": 30.3,
    "dev_pct": 10.0,
-   "big_sell": 1.99,
+   "big_sell": 9.17,
    "x": "https://x.com/primisprotocol",
    "tg": false,
    "web": false,
@@ -4515,7 +4537,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AKBMXyeBEk2zjtmVuBsKWknuLEjESo18XxSPVqxAkAry",
-   "age_s": 82,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4533,14 +4555,14 @@
    "symbol": "BF",
    "name": "Black Friday",
    "mint": "CWXjNztnK2KZ1jsbw8hJZphojbtFPwojBqrzCoFApump",
-   "age_s": 89,
-   "sol_in": 0.02,
+   "age_s": 122,
+   "sol_in": -2.45,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 32.8,
+   "sells": 2,
+   "rise_pct": -14.5,
+   "mcap_sol": 28.0,
    "dev_pct": 8.2,
-   "big_sell": 0.0,
+   "big_sell": 2.47,
    "x": "https://x.com/ripedevonchain/status/2125999908075307285",
    "tg": false,
    "web": "https://x.com/ripedevonchain/status/2125999908075307285",
@@ -4551,7 +4573,7 @@
    "symbol": "INUPAD",
    "name": "InuPad",
    "mint": "6f6ariLAsooMtiv3peEhq2AUATWNwJRhCdLUVQGwpump",
-   "age_s": 106,
+   "age_s": 139,
    "sol_in": -1.92,
    "buys": 1,
    "sells": 1,
@@ -4569,7 +4591,7 @@
    "symbol": "Kuro",
    "name": "inspired by dogecoin????",
    "mint": "D1AAdook9z224k3Kd99A6AS8NHGLZcmzmWt1vCfjpump",
-   "age_s": 138,
+   "age_s": 171,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 2,
@@ -4587,11 +4609,11 @@
    "symbol": "Kuro",
    "name": "inspired by dogecoin????",
    "mint": "8rhYcrBQfMkbhzszEX1iN263x2vZvis8bUxtVwfhpump",
-   "age_s": 139,
-   "sol_in": 0.0,
+   "age_s": 172,
+   "sol_in": -0.0,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
+   "sells": 3,
+   "rise_pct": -0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.29,
@@ -4600,24 +4622,6 @@
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "KOENIGSEGG",
-   "name": "Koenigsegg",
-   "mint": "3Lqy8H9rx9b9beJKC9hvjXGB3DpqPmrJnSAKCHeWpump",
-   "age_s": 167,
-   "sol_in": 0.3,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 2.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.3/2.5 · buys 3/6 · rise +2%/+12%"
   }
  ],
  "strategies": [
