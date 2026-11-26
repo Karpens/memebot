@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:46:09Z",
+ "updated": "2026-11-26T17:46:36Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 43,
+  "flagged": 44,
   "checked": 37,
   "filtered": 8,
-  "lines": 728,
+  "lines": 730,
   "last_rug": {
    "coin": "COFOUNDERS",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "moztach",
-   "why": "momentum",
-   "t": "2026-11-26T16:22:13Z"
-  },
   {
    "coin": "skewerz",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "COFOUNDERS",
    "why": "momentum",
    "t": "2026-11-26T17:38:57Z"
+  },
+  {
+   "coin": "NOTHING",
+   "why": "momentum",
+   "t": "2026-11-26T17:46:22Z"
   }
  ],
  "curve": [
@@ -2156,6 +2156,10 @@
   [
    1795715113,
    84.53
+  ],
+  [
+   1795715173,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2630,24 +2634,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T15:13:21Z",
-   "time": "16:13:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.0 a minute · 14 watched · 9 rejected (serial launcher 4, dev bought 3, dump 2) · closest NOPAL: too young: 43 s (min 45 s)",
-   "n": 529
-  },
-  {
-   "t": "2026-11-26T15:14:22Z",
-   "time": "16:14:22",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.2 a minute · 15 watched · 9 rejected (serial launcher 5, dump 2, dev bought 1) · closest Glub: too young: 38 s (min 45 s)",
-   "n": 530
-  },
   {
    "t": "2026-11-26T15:15:23Z",
    "time": "16:15:23",
@@ -4429,6 +4415,24 @@
    "action": "scan",
    "text": "new pairs · 5.4 a minute · 5 watched · 8 rejected (serial launcher 3, dev bought 2, no symbol or name 2) · closest NOTHING: buy share 65%/65%",
    "n": 728
+  },
+  {
+   "t": "2026-11-26T17:46:22Z",
+   "time": "18:46:22",
+   "agent": "SCANNER",
+   "coin": "NOTHING",
+   "action": "flag",
+   "text": "momentum · 12.3 SOL in · 13/20 buys (65%) · +99% since launch · mcap 56 SOL · 105 s old",
+   "n": 729
+  },
+  {
+   "t": "2026-11-26T17:46:22Z",
+   "time": "18:46:22",
+   "agent": "RUG CHECK",
+   "coin": "NOTHING",
+   "action": "wait",
+   "text": "waiting: 11 holders for 12.3 SOL in (1.12 SOL a holder, max 0.5) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
+   "n": 730
   }
  ],
  "nights": [
@@ -4471,7 +4475,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4479,24 +4483,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 587,
-    "last_event_age_s": 7.3,
+    "events": 588,
+    "last_event_age_s": 1.2,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7422,
-    "last_event_age_s": 0.5,
+    "events": 7443,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 417,
-    "last_event_age_s": 7.2,
+    "events": 418,
+    "last_event_age_s": 0.6,
     "errors": 28,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4509,9 +4513,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 5.6,
+  "creates_per_min": 5.8,
   "watching": 7,
-  "followed": 12
+  "followed": 13
  },
  "learner": {
   "samples": 107,
@@ -4557,41 +4561,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5780,
+   "sent": 5809,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5814,
+   "sent": 5843,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WATER",
+   "name": "After Math",
+   "mint": "GjwxEfV2eokrYqNYLEk6uKzsYeinenXWGd2ba9ikpump",
+   "age_s": 1,
+   "sol_in": 0.87,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 5.9,
+   "mcap_sol": 29.7,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/therealescape",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
    "symbol": "VANTA",
    "name": "VANTA",
    "mint": "iPGBdyH4hNuUgR1WMRGbuBDoy6Wg1TU8NzWuTTipump",
-   "age_s": 7,
-   "sol_in": 0.3,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 2.0,
-   "mcap_sol": 29.5,
+   "age_s": 34,
+   "sol_in": 0.08,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 0.5,
+   "mcap_sol": 29.0,
    "dev_pct": 1.7,
-   "big_sell": 0.0,
+   "big_sell": 0.3,
    "x": "https://x.com/VantaPrivacy",
    "tg": false,
    "web": "https://vantanetwork.xyz/",
    "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
+   "why": "too young: 34 s (min 45 s)"
   },
   {
    "symbol": "AFOX",
    "name": "ALPHA FOx",
    "mint": "5bGbyriJbZj1K5GLtWqn6P46gqgbLH8ebaQm8Zbepump",
-   "age_s": 7,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4609,9 +4631,9 @@
    "symbol": "$LOKIDOG",
    "name": "Loki's Dog",
    "mint": "BHD4g9BwWXuwUx9P24KCgyyYyfF81rLZbgWSebh9pump",
-   "age_s": 9,
+   "age_s": 36,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.3,
@@ -4621,13 +4643,13 @@
    "tg": false,
    "web": "https://ephemeral-mermaid-280779.netlify.app/",
    "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
+   "why": "too young: 18 s (min 45 s)"
   },
   {
    "symbol": "KYM",
    "name": "KYM-Tan",
    "mint": "7D2FRKgh8KwESYjjgMHFVQNngriZr8tcAPPB765pump",
-   "age_s": 56,
+   "age_s": 83,
    "sol_in": -0.4,
    "buys": 6,
    "sells": 13,
@@ -4645,11 +4667,11 @@
    "symbol": "NOR",
    "name": "NOR AGENT",
    "mint": "BJpRVTqY6CN9BAevVe3Vd8Ajr26fmW7zDSS8eV74jbid",
-   "age_s": 61,
-   "sol_in": 0.04,
-   "buys": 2,
+   "age_s": 88,
+   "sol_in": 0.05,
+   "buys": 3,
    "sells": 0,
-   "rise_pct": 0.2,
+   "rise_pct": 0.3,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -4657,31 +4679,31 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 3/6 · rise +0%/+12%"
   },
   {
    "symbol": "back",
    "name": "Jensen back",
    "mint": "H7qBigr3omxwnDvM8G5HKbVf7MF67Vrgmm6AZqYtpump",
-   "age_s": 68,
-   "sol_in": 1.8,
+   "age_s": 95,
+   "sol_in": -1.57,
    "buys": 11,
-   "sells": 1,
-   "rise_pct": 11.7,
-   "mcap_sol": 35.1,
+   "sells": 3,
+   "rise_pct": -9.6,
+   "mcap_sol": 28.4,
    "dev_pct": 6.1,
-   "big_sell": 0.3,
+   "big_sell": 3.36,
    "x": "https://x.com/ndtv/status/2126004355774173513",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "too young: 35 s (min 45 s)"
+   "status": "rejected: dump: 3.4 SOL sold",
+   "why": "dump: 3.4 SOL sold"
   },
   {
    "symbol": "GINNOCENT",
    "name": "GUILTY OR INNOCENT",
    "mint": "AaCLPuV1r6y6qMkYLGYKTLVQGGJK8B9opTadHZnZpump",
-   "age_s": 72,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4699,7 +4721,7 @@
    "symbol": "HOLD",
    "name": "Hold",
    "mint": "8brkR9fgpY5rhysUFbpXLLy2mBykAUBtfnha9BPqpump",
-   "age_s": 79,
+   "age_s": 106,
    "sol_in": -0.39,
    "buys": 1,
    "sells": 1,
@@ -4717,28 +4739,28 @@
    "symbol": "NOTHING",
    "name": "Nothing Happened",
    "mint": "ATaUUX9wdXWDWfKkdDVdEBE69KoVmHzSs2mfRjr4pump",
-   "age_s": 92,
-   "sol_in": 11.72,
-   "buys": 12,
-   "sells": 7,
-   "rise_pct": 92.9,
-   "mcap_sol": 54.5,
+   "age_s": 119,
+   "sol_in": 13.02,
+   "buys": 14,
+   "sells": 8,
+   "rise_pct": 105.1,
+   "mcap_sol": 57.9,
    "dev_pct": 0.5,
    "big_sell": 1.25,
    "x": "https://x.com/nothinghpondsol",
    "tg": false,
    "web": "https://nothinghappened.fun/",
    "status": "watching",
-   "why": "buy share 63%/65%"
+   "why": "buy share 64%/65%"
   },
   {
    "symbol": "ERIC",
    "name": "ERIC",
    "mint": "9ReiEh3Rc9DZB7REC9vD7RBTwW8D12hvTnAr86NRpump",
-   "age_s": 107,
+   "age_s": 134,
    "sol_in": 0.02,
    "buys": 3,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
@@ -4753,7 +4775,7 @@
    "symbol": "?",
    "name": "",
    "mint": "8az54ZHU6GQnk2EqNdSk2TXEDtmyLwBHZbzDoRvXgA5k",
-   "age_s": 114,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4771,7 +4793,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4u6jqC7BbAjkercbskrmLuXTuMuHqSfFDidhHgjhbXwA",
-   "age_s": 132,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4789,7 +4811,7 @@
    "symbol": "PXLTURKEY",
    "name": "Pixel Turkey",
    "mint": "2qrVJe725cNqMv3hJbHUDzmrEHYdfMQycAfqo8LQpump",
-   "age_s": 133,
+   "age_s": 160,
    "sol_in": 2.33,
    "buys": 8,
    "sells": 3,
@@ -4807,7 +4829,7 @@
    "symbol": "Cancer",
    "name": "LIVI",
    "mint": "66tK1LoGRZrLuSYCM2cBoUvP2hXrc1PWyYZZncDzpump",
-   "age_s": 134,
+   "age_s": 161,
    "sol_in": -0.39,
    "buys": 2,
    "sells": 2,
@@ -4825,11 +4847,11 @@
    "symbol": "og",
    "name": "og clan",
    "mint": "FRsaaZQrLL6mLPYLNJJ5KburJewoyHBpZBywMtM1pump",
-   "age_s": 136,
-   "sol_in": 0.03,
+   "age_s": 163,
+   "sol_in": 0.02,
    "buys": 3,
-   "sells": 4,
-   "rise_pct": 0.2,
+   "sells": 5,
+   "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.01,
@@ -4837,13 +4859,13 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 3/6 · buy share 43%/65% · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 3/6 · buy share 38%/65% · rise +0%/+12%"
   },
   {
    "symbol": "LAURA",
    "name": "laura",
    "mint": "C85vPMP4h4MzHTafr7a1vpSYew2A33uf4KMWdtpWUVjk",
-   "age_s": 138,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
