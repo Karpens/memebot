@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:00:47Z",
+ "updated": "2026-11-26T09:01:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 98.8,
@@ -24,7 +24,7 @@
   "flagged": 1,
   "checked": 1,
   "filtered": 0,
-  "lines": 23,
+  "lines": 24,
   "last_rug": {
    "coin": "Drone",
    "pass": true
@@ -84,6 +84,10 @@
   ],
   [
    1795683604,
+   98.8
+  ],
+  [
+   1795683664,
    98.8
   ]
  ],
@@ -342,6 +346,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 1 watched · 3 rejected (dev bought 2, mayhem mode 1) · closest BST: SOL in 1.7/2.5 · rise +11%/+12%",
    "n": 23
+  },
+  {
+   "t": "2026-11-26T09:01:20Z",
+   "time": "10:01:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 3 watched · 2 rejected (dev bought 2) · closest BST: SOL in 1.9/2.5",
+   "n": 24
   }
  ],
  "nights": [
@@ -377,7 +390,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -385,25 +398,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 48,
-    "last_event_age_s": 6.8,
+    "events": 50,
+    "last_event_age_s": 12.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 862,
-    "last_event_age_s": 0.9,
+    "events": 893,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 38,
-    "last_event_age_s": 4.7,
-    "errors": 27,
+    "events": 40,
+    "last_event_age_s": 10.6,
+    "errors": 28,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -415,9 +428,9 @@
   "exit_ms": 13,
   "exit_last_ms": 13,
   "launch_to_entry_s": 13,
-  "creates_per_min": 2.6,
-  "watching": 2,
-  "followed": 5
+  "creates_per_min": 2.8,
+  "watching": 3,
+  "followed": 6
  },
  "learner": {
   "samples": 96,
@@ -462,23 +475,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 752,
+   "sent": 787,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 752,
+   "sent": 787,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ECHINUS",
+   "name": "Echinus",
+   "mint": "2D1giJ765Bo5D94m5iiym4Lmb1QmYDDQwzKER2ZEpump",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.44,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
+  },
+  {
+   "symbol": "pnp-lean",
+   "name": "pnp-lean",
+   "mint": "AfJBDMQ9NYtDssHK22xZ9v3SubrrR1kczzaQA1sQb5rB",
+   "age_s": 16,
+   "sol_in": 10.42,
+   "buys": 6,
+   "sells": 7,
+   "rise_pct": 68.5,
+   "mcap_sol": 63.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.01,
+   "x": "https://x.com/MarioPrezldente/status/2125877484151583095",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
    "symbol": "$HATCH",
    "name": "HATCH",
    "mint": "5Q9VwLKFA4dgqGyc8ckzXyUxZEbp8TeMMghpKYBRpump",
-   "age_s": 6,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -496,30 +545,30 @@
    "symbol": "BST",
    "name": "bastion",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "age_s": 76,
-   "sol_in": 1.74,
-   "buys": 11,
+   "age_s": 109,
+   "sol_in": 1.93,
+   "buys": 12,
    "sells": 1,
-   "rise_pct": 11.6,
-   "mcap_sol": 33.3,
+   "rise_pct": 12.9,
+   "mcap_sol": 33.7,
    "dev_pct": 3.4,
    "big_sell": 0.17,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 1.7/2.5 · rise +12%/+12%"
+   "why": "SOL in 1.9/2.5"
   },
   {
    "symbol": "pnp-lean",
    "name": "pnp-lean",
    "mint": "HFUghbvCktb26nKgfvz9ZmthVgd2Uidx3FrM1xMDm3CK",
-   "age_s": 85,
-   "sol_in": -0.15,
+   "age_s": 118,
+   "sol_in": -0.58,
    "buys": 2,
-   "sells": 8,
-   "rise_pct": -0.9,
-   "mcap_sol": 37.6,
+   "sells": 9,
+   "rise_pct": -3.3,
+   "mcap_sol": 36.7,
    "dev_pct": 15.2,
    "big_sell": 1.78,
    "x": "https://x.com/shawmakesmagic/status/2125876922424897556",
@@ -532,12 +581,12 @@
    "symbol": "Drone",
    "name": "The Drone",
    "mint": "27ZPtFUss1VtEpnppVDNJY6rtn63TKMeeMDojx31pump",
-   "age_s": 113,
-   "sol_in": 4.19,
-   "buys": 24,
-   "sells": 20,
-   "rise_pct": 27.5,
-   "mcap_sol": 41.6,
+   "age_s": 146,
+   "sol_in": 4.14,
+   "buys": 26,
+   "sells": 23,
+   "rise_pct": 27.2,
+   "mcap_sol": 41.5,
    "dev_pct": 7.9,
    "big_sell": 2.46,
    "x": "https://x.com/joeroganhq/status/2125876631218884784",
@@ -545,42 +594,6 @@
    "web": false,
    "status": "exited: stop -8%",
    "why": "stop -8%"
-  },
-  {
-   "symbol": "UML",
-   "name": "Ur Mom Labs",
-   "mint": "CTsQM8K5mtWnF1fFujibzRckcZJecANHjdpmVMbepump",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GTA 6",
-   "name": "GTA 6 Updates",
-   "mint": "4J92JE5xcbRGpPqEHfmTgdmdkgGEcubR9RZfz1xYpump",
-   "age_s": 173,
-   "sol_in": 46.14,
-   "buys": 61,
-   "sells": 27,
-   "rise_pct": 466.1,
-   "mcap_sol": 196.8,
-   "dev_pct": 11.1,
-   "big_sell": 0.91,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 11.1% (max 8%)",
-   "why": "dev bought 11.1% (max 8%)"
   }
  ],
  "strategies": [
