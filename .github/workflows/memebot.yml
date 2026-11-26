@@ -65,7 +65,7 @@ jobs:
             ( cd memedata && git add -A && { git diff --cached --quiet || git commit -q -m "meme-data: $(date -u +%Y-%m-%dT%H:%M:%SZ)"; } \
               && for i in 1 2 3; do git push -q origin HEAD:meme-data && break; sleep $((i * 5)); done ) || true
           }
-          ( sleep 45; save; while sleep 120; do save; done ) &      # the page reads it every minute
+          ( sleep 20; save; while sleep 30; do save; done ) &       # the live page reads it every 15 seconds
           SAVER=$!
           ARGS="--minutes ${MINUTES:-340}"
           [ "$ANYTIME" = "true" ] && ARGS="$ARGS --anytime"
