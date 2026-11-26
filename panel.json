@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T04:18:54Z",
+ "updated": "2026-11-26T04:19:31Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 61.67,
- "equity": 76.81,
+ "equity": 77.06,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -12,18 +12,19 @@
   "SIZER",
   "EXECUTOR",
   "RISK",
+  "LEARNER",
   "LOGGER"
  ],
- "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $100. I will not be watching. Trade a lot, trade fast, and log every decision so I can read it in the morning.\n\nUNIVERSE\n- Fresh DEX pairs: launched or migrated in the last 12 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $8k, minimum 5m volume $2k, at least 100 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 10 seconds: new pairs, volume spikes (>2x 1h average), buy/sell ratio above 55% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 50%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 10% of the balance per trade, never less than $3.\n4. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row, no new entries in the last 10 minutes, stop for the night at -50%. A coin can be traded again 5 minutes after its exit.\n5. EXIT - take the whole profit at +7%, stop loss at -7%, out after 5 minutes unless up 2%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n7. NEWS - follows what people promote: the coin's X and Telegram, DexScreener boosts, the GeckoTerminal and DexScreener trending lists. Trending or boosted counts as a signal.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n",
+ "prompt": "You are Meme Bot, an overnight meme-coin trading terminal on Solana. Run from 23:00 to 07:00 with a starting balance of $100. I will not be watching. Trade a lot, trade fast, and log every decision so I can read it in the morning.\n\nUNIVERSE\n- Fresh DEX pairs: launched or migrated in the last 12 hours (pump.fun, Raydium, Meteora).\n- Minimum liquidity $8k, minimum 5m volume $2k, at least 100 holders.\n- Skip anything with a frozen mint, open mint authority, or LP unlocked.\n\nAGENTS\n1. SCANNER - every 5 seconds: new pairs, volume spikes (>2x 1h average), buy/sell ratio above 55% and holder growth. It flags only, it never trades.\n2. RUG CHECK - dev wallet under 5%, top 10 holders under 50%, no insiders or bundled launch, LP burned or locked, no honeypot on sell simulation. Nothing else gets through.\n3. SIZER - 10% of the balance per trade, never less than $3.\n4. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row, no new entries in the last 10 minutes, stop for the night at -50%. A coin can be traded again 5 minutes after its exit.\n5. EXIT - watches every open position every second: take the whole profit at +7%, stop loss at -7%, out after 5 minutes unless up 2%, everything sold by 06:55.\n6. JOURNAL - every decision with its reason, and a morning report.\n7. NEWS - follows what people promote: the coin's X and Telegram, DexScreener boosts, the GeckoTerminal and DexScreener trending lists. Trending or boosted counts as a signal.\n8. LEARNER - learns from its own closed trades, by what each coin looked like at entry (liquidity, volume, buyers, age, holders, DEX, socials, signals, slippage, hour). If past trades like this one lost 6% or more on average, it skips the coin and looks at it again 5 minutes later, like a coin after its exit; every 5th such skip is bought at half size to check. Otherwise it sizes from 0.5x to 1.5x by how such trades did.\n\nPaper mode: every fill is a real Jupiter quote. No wallet, no real money.\n",
  "night": {
   "id": "2026-11-25",
   "start_equity": 100.0,
   "started": "2026-11-26T02:36:46Z",
-  "scans": 505,
+  "scans": 508,
   "flagged": 40,
   "checked": 118,
   "filtered": 2,
-  "lines": 374,
+  "lines": 375,
   "last_rug": {
    "coin": "PUMPCHAN",
    "pass": true
@@ -483,15 +484,16 @@
  "positions": [
   {
    "symbol": "NORFEATH",
+   "mint": "3gmFG4sFDJErDV8pacFrL2uUPXeGJTYLjfRy4hFypump",
    "cost": 7.73,
-   "value": 7.82,
-   "pnl_pct": 1.1,
+   "value": 8.05,
+   "pnl_pct": 4.1,
    "opened": "2026-11-26T04:14:31Z",
    "url": "https://dexscreener.com/solana/fuzscatzzst9rzmtt2pcdlppj1ikyc5lgdnjytfwyqdj",
    "reason": "buys 67% · trending · boosted",
    "size_pct": 10.0,
    "entry_price": 0.0005960248660295695,
-   "price": 0.0006055198150298564,
+   "price": 0.0006235355764541717,
    "slip": 2.0,
    "tp1_done": false,
    "hist": [
@@ -554,20 +556,37 @@
     0.0006091423802909359,
     0.0006091423802909359,
     0.0006163918596328829,
-    0.0006055198150298564
+    0.0006055198150298564,
+    0.0006143011033170313,
+    0.0006143011033170313,
+    0.0006143011033170313,
+    0.0006143011033170313,
+    0.0006162921937248417,
+    0.0006162921937248417,
+    0.0006162921937248417,
+    0.0006160219537129607,
+    0.0006160219537129607,
+    0.0006160219537129607,
+    0.0006160106005200594,
+    0.0006160106005200594,
+    0.0006160106005200594,
+    0.0006235355764541717,
+    0.0006235355764541717,
+    0.0006235355764541717
    ]
   },
   {
    "symbol": "PUMPCHAN",
+   "mint": "Fo2HAwr7ZAUM2bSZ7MWSi16e3aWGpbw5MsUDYCttpump",
    "cost": 7.72,
-   "value": 7.33,
-   "pnl_pct": -5.1,
+   "value": 7.35,
+   "pnl_pct": -4.9,
    "opened": "2026-11-26T04:18:01Z",
    "url": "https://dexscreener.com/solana/ddcyemq9bkyqtc93djkwah6vamkcjvsocuvgv29q7teb",
    "reason": "buys 69% · trending · boosted",
    "size_pct": 10.0,
    "entry_price": 0.0011426496475338424,
-   "price": 0.0010891418759678086,
+   "price": 0.001092253636608165,
    "slip": 0.66,
    "tp1_done": false,
    "hist": [
@@ -587,7 +606,23 @@
     0.0011073192686989382,
     0.0011073192686989382,
     0.0010891418759678086,
-    0.0010891418759678086
+    0.0010891418759678086,
+    0.0010942467370028972,
+    0.0010942467370028972,
+    0.0010942467370028972,
+    0.0010942467370028972,
+    0.0010930069205093652,
+    0.0010930069205093652,
+    0.0010930069205093652,
+    0.0010926129371626916,
+    0.0010926129371626916,
+    0.0010926129371626916,
+    0.001092253636608165,
+    0.001092253636608165,
+    0.001092253636608165,
+    0.001092253636608165,
+    0.001092253636608165,
+    0.001092253636608165
    ]
   }
  ],
@@ -1444,14 +1479,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T03:17:36Z",
-   "time": "04:17:36",
-   "agent": "SIZER",
-   "coin": "MCAP",
-   "action": "size",
-   "text": "10% of $89.40 = $8.94"
-  },
   {
    "t": "2026-11-26T03:17:36Z",
    "time": "04:17:36",
@@ -3043,14 +3070,69 @@
    "coin": "PUMPCHAN",
    "action": "enter",
    "text": "ENTER PUMPCHAN at 0.0011426496 · slip 0.7% · buys 69% · trending · boosted"
+  },
+  {
+   "t": "2026-11-26T04:19:16Z",
+   "time": "05:19:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "scanned 105 new coins · 105 pairs · 1 pass the rules",
+   "n": 375
   }
  ],
  "nights": [],
- "errors": [
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429",
-  "https://api.geckoterminal.com/api/v2/networks/solana/new_pools: HTTP 429"
- ]
+ "errors": [],
+ "stream": {
+  "topic": "memebot/00ade2c3a60b7da8",
+  "enabled": true,
+  "ws": [
+   "wss://broker.hivemq.com:8884/mqtt",
+   "wss://broker.emqx.io:8084/mqtt"
+  ]
+ },
+ "speed": {
+  "watch_sec": 1,
+  "tick_sec": 1,
+  "scan_sec": 5,
+  "gt_sec": 20,
+  "feed": "jupiter · scan 5s · live 1s",
+  "last_scan_ms": 132,
+  "watch_ms": 0,
+  "scans_per_min": 3,
+  "feeds": [
+   "geckoterminal",
+   "dexscreener",
+   "rugcheck",
+   "jupiter"
+  ]
+ },
+ "learner": {
+  "samples": 55,
+  "skipped": 0,
+  "explored": 0,
+  "min_samples": 8,
+  "best": [
+   {
+    "label": "hour:03-05",
+    "n": 49,
+    "avg": -4.6
+   }
+  ],
+  "worst": []
+ },
+ "live_stats": {
+  "broker.hivemq.com": {
+   "connected": true,
+   "sent": 16,
+   "errors": 0,
+   "last_error": null
+  },
+  "broker.emqx.io": {
+   "connected": true,
+   "sent": 16,
+   "errors": 0,
+   "last_error": null
+  }
+ }
 }
