@@ -431,12 +431,22 @@ class Coverage(Base):
             self.assertEqual(mk.holes[0][:2], (t0 + 50.0, t0 + (70.0 if len(poll) > 1 else 60.0)), poll)
             self.assertIsNone(tr, "an order into the outage filled on the stale state: %s" % poll)
             self.assertEqual(why, "not polled at the fill")
-        # 6 good calls of 10 is no hole, nor the stretch after a failed call once the poller caught up
+        # 6 good calls of 10 is no hole (a slow poller, no silence), nor a quick failed call the next round answered a
+        # second later (9 of 10: 1 s unaccounted), nor the stretch after it; a time-out (5 good of 6, 5 s missing) is
         tp = Tape()
-        tp.poll = {hb: (6, 6), hb + 10: (9, 10), hb + 20: (10, 10)}
+        tp.poll = {hb: (6, 6), hb + 10: (9, 10), hb + 20: (10, 10), hb + 30: (5, 6), hb + 40: (10, 10)}
         tp.coin(mint(1), t0, path)
         _, mk, _ = views_of(tp.write(self.folder("ok")), cfg)
-        self.assertEqual([(a - t0, b - t0) for a, b, _ in mk.holes], [(60.0, 70.0)])   # only the failed call's
+        self.assertEqual([(a - t0, b - t0) for a, b, _ in mk.holes], [(80.0, 90.0)])   # only the time-out's
+        self.assertEqual(mk.poll_stretches["failed_call"], 2)
+        self.assertEqual(mk.poll_stretches["hole"], 1)
+        # the edge: a failed call with exactly 3 s unaccounted is a hole, with 2 s it is not
+        for good, hole in ((7, True), (8, False)):
+            tp = Tape()
+            tp.poll = {hb: (good, good + 1)}
+            tp.coin(mint(1), t0, path)
+            _, mk, _ = views_of(tp.write(self.folder("edge%d" % good)), cfg)
+            self.assertEqual(bool(mk.holes), hole, good)
 
     def test_a_curve_that_completes_while_held_is_sold_into_its_last_state_and_counted_apart(self):
         tp = Tape()
