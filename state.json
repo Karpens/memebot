@@ -35,33 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T09:05:18Z",
-    "time": "10:05:18",
-    "agent": "NEWS",
-    "coin": "ZEROCAST",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +7",
-    "n": 9
-   },
-   {
-    "t": "2026-11-26T09:05:28Z",
-    "time": "10:05:28",
-    "agent": "EXECUTOR",
-    "coin": "ZEROCAST",
-    "action": "exit",
-    "text": "EXIT ZEROCAST $-1.59 (-16%) · stop -13% · out · 0.0 s after the reading",
-    "n": 10
-   },
-   {
-    "t": "2026-11-26T09:05:28Z",
-    "time": "10:05:28",
-    "agent": "LEARNER",
-    "coin": "ZEROCAST",
-    "action": "learn",
-    "text": "learned · tier:scalp now avg -14.1% over 2",
-    "n": 11
-   },
-   {
     "t": "2026-11-26T09:05:39Z",
     "time": "10:05:39",
     "agent": "SCANNER",
@@ -5433,6 +5406,33 @@
     "action": "scan",
     "text": "new pairs · 5.0 a minute · 6 watched · 9 rejected (serial launcher 3, dev bought 2, dump 2) · closest ROSA: SOL in 1.6/2.5 · buys 3/6 · rise +10%/+12%",
     "n": 608
+   },
+   {
+    "t": "2026-11-26T16:15:06Z",
+    "time": "17:15:06",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "feed",
+    "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+    "n": 609
+   },
+   {
+    "t": "2026-11-26T16:15:06Z",
+    "time": "17:15:06",
+    "agent": "LOGGER",
+    "coin": null,
+    "action": "tape",
+    "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+    "n": 610
+   },
+   {
+    "t": "2026-11-26T16:15:07Z",
+    "time": "17:15:07",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest Biodrones: no curve reading yet",
+    "n": 611
    }
   ],
   "trades": [
@@ -6023,7 +6023,7 @@
   "flagged": 35,
   "checked": 32,
   "filtered": 5,
-  "lines": 608,
+  "lines": 611,
   "flags": [
    {
     "coin": "ONCE",
@@ -7786,13 +7786,17 @@
    [
     1795709653,
     84.53
+   ],
+   [
+    1795709713,
+    84.53
    ]
   ],
   "last_rug": {
    "coin": "mrpompsik",
    "pass": false
   },
-  "np_said": 1795709639.202071,
+  "np_said": 1795709707.257652,
   "np_speed": {
    "first_in": [
     74,
@@ -8310,6 +8314,46 @@
    "27ZPtFUss1VtEpnppVDNJY6rtn63TKMeeMDojx31pump": 1795683864.182113
   }
  },
+ "shadow": {
+  "n": 1,
+  "wins": 0,
+  "sum": -11.0,
+  "by": {
+   "learner": {
+    "n": 1,
+    "wins": 0,
+    "sum": -11.0
+   },
+   "risk": {
+    "n": 0,
+    "wins": 0,
+    "sum": 0.0
+   }
+  },
+  "closed": [
+   {
+    "symbol": "PXCT",
+    "mint": "54TQX2PJfkjr4FKKtWg3jZ7Sf2azkFw5CRF9xWzipump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T15:31:09Z",
+    "cost": 8.45,
+    "pnl_pct": -11.0,
+    "tier": "runner",
+    "score": 5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 178,
+    "sol_in": 12.89,
+    "closed": "2026-11-26T15:31:35Z",
+    "exit": "stop -7%",
+    "pnl": -0.93,
+    "weight": 0.5
+   }
+  ],
+  "open": []
+ },
  "learner_summary": {
   "samples": 107,
   "skipped": 17,
@@ -8350,45 +8394,5 @@
    }
   ],
   "shadows": 1
- },
- "shadow": {
-  "n": 1,
-  "wins": 0,
-  "sum": -11.0,
-  "by": {
-   "learner": {
-    "n": 1,
-    "wins": 0,
-    "sum": -11.0
-   },
-   "risk": {
-    "n": 0,
-    "wins": 0,
-    "sum": 0.0
-   }
-  },
-  "closed": [
-   {
-    "symbol": "PXCT",
-    "mint": "54TQX2PJfkjr4FKKtWg3jZ7Sf2azkFw5CRF9xWzipump",
-    "status": "closed",
-    "kind": "learner",
-    "why": "learner skip",
-    "opened": "2026-11-26T15:31:09Z",
-    "cost": 8.45,
-    "pnl_pct": -11.0,
-    "tier": "runner",
-    "score": 5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 178,
-    "sol_in": 12.89,
-    "closed": "2026-11-26T15:31:35Z",
-    "exit": "stop -7%",
-    "pnl": -0.93,
-    "weight": 0.5
-   }
-  ],
-  "open": []
  }
 }
