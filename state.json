@@ -35,24 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T15:27:31Z",
-    "time": "16:27:31",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.2 a minute · 5 watched · 12 rejected (serial launcher 6, dump 2, mayhem mode 2) · closest STN: buys 5/6",
-    "n": 546
-   },
-   {
-    "t": "2026-11-26T15:28:32Z",
-    "time": "16:28:32",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.2 a minute · 7 watched · 7 rejected (serial launcher 2, dump 2, dev bought 1) · closest PXCT: too young: 18 s (min 45 s)",
-    "n": 547
-   },
-   {
     "t": "2026-11-26T15:28:58Z",
     "time": "16:28:58",
     "agent": "SCANNER",
@@ -5433,6 +5415,24 @@
     "action": "scan",
     "text": "new pairs · 4.0 a minute · 5 watched · 5 rejected (mayhem mode 2, dump 1, dev bought 1) · closest LILY: SOL in 0.1/2.5 · buys 3/6 · buy share 43%/65% · rise +1%/+12%",
     "n": 1145
+   },
+   {
+    "t": "2026-11-26T22:33:57Z",
+    "time": "23:33:57",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.2 a minute · 5 watched · 11 rejected (mayhem mode 6, dev bought 3, serial launcher 2) · closest pepe: SOL in 0.1/2.5 · buys 2/6 · rise +0%/+12%",
+    "n": 1146
+   },
+   {
+    "t": "2026-11-26T22:34:01Z",
+    "time": "23:34:01",
+    "agent": "LEARNER",
+    "coin": "BTC",
+    "action": "shadow",
+    "text": "SHADOW BTC would have made -5.2% (5 min, only -1%) · learned x0.5 · np:sol:3-6 now avg -21.9% over 9",
+    "n": 1147
    }
   ],
   "trades": [
@@ -6192,7 +6192,7 @@
   "flagged": 74,
   "checked": 54,
   "filtered": 11,
-  "lines": 1145,
+  "lines": 1147,
   "flags": [
    {
     "coin": "ZeroBlock",
@@ -8641,7 +8641,7 @@
    "coin": "BTC",
    "pass": true
   },
-  "np_said": 1795732377.474341,
+  "np_said": 1795732437.474382,
   "np_speed": {
    "first_in": [
     74,
@@ -8710,9 +8710,9 @@
    "at": 1795729944.247738
   },
   "shadow": {
-   "n": 13,
+   "n": 14,
    "wins": 2,
-   "sum": -193.3
+   "sum": -198.5
   }
  },
  "last_night": {
@@ -9172,14 +9172,14 @@
   }
  },
  "shadow": {
-  "n": 13,
+  "n": 14,
   "wins": 2,
-  "sum": -193.3,
+  "sum": -198.5,
   "by": {
    "learner": {
-    "n": 13,
+    "n": 14,
     "wins": 2,
-    "sum": -193.3
+    "sum": -198.5
    },
    "risk": {
     "n": 0,
@@ -9447,11 +9447,29 @@
     "exit": "stop -9%",
     "pnl": -1.08,
     "weight": 0.5
+   },
+   {
+    "symbol": "BTC",
+    "mint": "HyYL3aoftuyS5PcfNfpKYvCFv7siWABhEQ2PaejSVfyK",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T22:29:01Z",
+    "cost": 8.23,
+    "pnl_pct": -5.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 47,
+    "sol_in": 5.47,
+    "closed": "2026-11-26T22:34:01Z",
+    "exit": "5 min, only -1%",
+    "pnl": -0.43,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "BTC"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 110,
@@ -9478,20 +9496,20 @@
   "worst": [
    {
     "label": "np:sol:3-6",
-    "n": 8,
-    "avg": -22.9
+    "n": 9,
+    "avg": -21.9
    },
    {
     "label": "tier:scalp",
     "n": 16,
-    "avg": -17.9
+    "avg": -17.5
    },
    {
     "label": "news:0-2",
     "n": 16,
-    "avg": -17.9
+    "avg": -17.5
    }
   ],
-  "shadows": 13
+  "shadows": 14
  }
 }
