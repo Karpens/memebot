@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T09:01:48Z",
+ "updated": "2026-11-26T09:02:19Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 98.8,
- "equity": 98.8,
+ "balance": 88.92,
+ "equity": 98.47,
  "session": "23:00 → 07:00",
  "agents": [
   "SCANNER",
@@ -21,12 +21,12 @@
   "start_equity": 100.0,
   "started": "2026-11-26T08:49:04Z",
   "scans": 0,
-  "flagged": 1,
-  "checked": 1,
+  "flagged": 2,
+  "checked": 2,
   "filtered": 0,
-  "lines": 24,
+  "lines": 29,
   "last_rug": {
-   "coin": "Drone",
+   "coin": "BST",
    "pass": true
   }
  },
@@ -35,6 +35,11 @@
    "coin": "Drone",
    "why": "momentum",
    "t": "2026-11-26T08:59:07Z"
+  },
+  {
+   "coin": "BST",
+   "why": "momentum",
+   "t": "2026-11-26T09:01:52Z"
   }
  ],
  "curve": [
@@ -89,12 +94,59 @@
   [
    1795683664,
    98.8
+  ],
+  [
+   1795683724,
+   98.48
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "BST",
+   "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
+   "cost": 9.88,
+   "value": 9.55,
+   "pnl_pct": -3.4,
+   "opened": "2026-11-26T09:01:53Z",
+   "url": "https://pump.fun/coin/9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
+   "reason": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
+   "size_pct": 10.0,
+   "entry_price": 2.53912e-06,
+   "price": 2.47142e-06,
+   "slip": 3.15,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 1,
+    "parts": [
+     "buys 93%"
+    ],
+    "ladder": [
+     [
+      7.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -7.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "age_s": 141,
+   "mcap_sol": 34.9,
+   "dev_pct": 3.42,
+   "sol_in": 2.51,
+   "hist": [
+    2.53912e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "Drone",
@@ -355,6 +407,51 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 3 watched · 2 rejected (dev bought 2) · closest BST: SOL in 1.9/2.5",
    "n": 24
+  },
+  {
+   "t": "2026-11-26T09:01:52Z",
+   "time": "10:01:52",
+   "agent": "SCANNER",
+   "coin": "BST",
+   "action": "flag",
+   "text": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old",
+   "n": 25
+  },
+  {
+   "t": "2026-11-26T09:01:53Z",
+   "time": "10:01:53",
+   "agent": "RUG CHECK",
+   "coin": "BST",
+   "action": "pass",
+   "text": "PASS · 8 holders · top holder 8.0% · top 10 9% (curve left out)",
+   "n": 26
+  },
+  {
+   "t": "2026-11-26T09:01:53Z",
+   "time": "10:01:53",
+   "agent": "SIZER",
+   "coin": "BST",
+   "action": "size",
+   "text": "10% of $98.80 = $9.88",
+   "n": 27
+  },
+  {
+   "t": "2026-11-26T09:01:53Z",
+   "time": "10:01:53",
+   "agent": "EXECUTOR",
+   "coin": "BST",
+   "action": "enter",
+   "text": "ENTER BST at 0.0000025391 · slip 3.1% · first in · 0.5 s after the trigger · 141 s after launch · curve maths 0.0% off Jupiter",
+   "n": 28
+  },
+  {
+   "t": "2026-11-26T09:01:53Z",
+   "time": "10:01:53",
+   "agent": "NEWS",
+   "coin": "BST",
+   "action": "plan",
+   "text": "hold plan · 1/10 (buys 93%) · scalp: +7",
+   "n": 29
   }
  ],
  "nights": [
@@ -390,7 +487,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 9 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -398,24 +495,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 50,
-    "last_event_age_s": 40.7,
+    "events": 54,
+    "last_event_age_s": 11.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 919,
-    "last_event_age_s": 2.1,
+    "events": 987,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 40,
-    "last_event_age_s": 38.6,
+    "connected": true,
+    "events": 44,
+    "last_event_age_s": 11.6,
     "errors": 28,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -423,14 +520,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 27,
-  "first_in_last_ms": 27,
+  "first_in_ms": 276.0,
+  "first_in_last_ms": 525,
   "exit_ms": 13,
   "exit_last_ms": 13,
-  "launch_to_entry_s": 13,
-  "creates_per_min": 2.2,
-  "watching": 3,
-  "followed": 6
+  "launch_to_entry_s": 77.5,
+  "creates_per_min": 2.4,
+  "watching": 4,
+  "followed": 9
  },
  "learner": {
   "samples": 96,
@@ -475,23 +572,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 817,
+   "sent": 851,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 817,
+   "sent": 851,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "KEVIN",
+   "name": "Kevin The Turkey",
+   "mint": "6Ww73xLqewGFs7m3aPKFJxpB9vQrq6yZRFm5YkuYF1cs",
+   "age_s": 11,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/ThomasKDunne/status/2125867917191315703",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
+  },
+  {
+   "symbol": "Cakecoin",
+   "name": "Cakecoin",
+   "mint": "8fsE8KSQoP88pb8p4QAS2hD6jxDZ6rkZ8c9rMrkLpump",
+   "age_s": 16,
+   "sol_in": -1.83,
+   "buys": 6,
+   "sells": 7,
+   "rise_pct": -10.8,
+   "mcap_sol": 30.1,
+   "dev_pct": 9.6,
+   "big_sell": 2.0,
+   "x": "https://x.com/Zeeko__Dev/status/2125877707955466437",
+   "tg": false,
+   "web": "https://www.urbandictionary.com/define.php?term=cake",
+   "status": "rejected: dev bought 9.6% (max 8%)",
+   "why": "dev bought 9.6% (max 8%)"
+  },
+  {
+   "symbol": "Drone",
+   "name": "The Drone",
+   "mint": "HaEJjty5CtGEWHR7H7H6snR77ecKsgHfTUKHPWaypump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.2,
+   "x": "https://x.com/joeroganhq/status/2125876631218884784",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
+  },
+  {
+   "symbol": "MOMO",
+   "name": "Momocoin",
+   "mint": "FuZps63GuQUMWufpwCqbX8jwcN1TYVCfgKSTMEmfpump",
+   "age_s": 22,
+   "sol_in": 2.65,
+   "buys": 9,
+   "sells": 14,
+   "rise_pct": 16.6,
+   "mcap_sol": 39.8,
+   "dev_pct": 10.2,
+   "big_sell": 1.24,
+   "x": "https://x.com/ZzzzzSol/status/2125877703362408829",
+   "tg": false,
+   "web": "https://x.com/momonosekaiii/status/2124635969639125488",
+   "status": "rejected: dev bought 10.2% (max 8%)",
+   "why": "dev bought 10.2% (max 8%)"
+  },
+  {
    "symbol": "ECHINUS",
    "name": "Echinus",
    "mint": "2D1giJ765Bo5D94m5iiym4Lmb1QmYDDQwzKER2ZEpump",
-   "age_s": 40,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -509,14 +678,14 @@
    "symbol": "pnp-lean",
    "name": "pnp-lean",
    "mint": "AfJBDMQ9NYtDssHK22xZ9v3SubrrR1kczzaQA1sQb5rB",
-   "age_s": 44,
-   "sol_in": 11.43,
-   "buys": 17,
-   "sells": 17,
-   "rise_pct": 76.2,
-   "mcap_sol": 66.8,
+   "age_s": 75,
+   "sol_in": 22.87,
+   "buys": 28,
+   "sells": 31,
+   "rise_pct": 173.8,
+   "mcap_sol": 103.8,
    "dev_pct": 15.2,
-   "big_sell": 3.01,
+   "big_sell": 4.56,
    "x": "https://x.com/MarioPrezldente/status/2125877484151583095",
    "tg": false,
    "web": false,
@@ -527,10 +696,10 @@
    "symbol": "$HATCH",
    "name": "HATCH",
    "mint": "5Q9VwLKFA4dgqGyc8ckzXyUxZEbp8TeMMghpKYBRpump",
-   "age_s": 67,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 28.3,
    "dev_pct": 0.7,
@@ -539,31 +708,31 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%"
+   "why": "SOL in 0.0/2.5 · buys 1/6 · buy share 50%/65% · rise +0%/+12%"
   },
   {
    "symbol": "BST",
    "name": "bastion",
    "mint": "9TZwiBfi2BPTUpFsjwGmDRh75XNZ1RkgamVzcuEFpump",
-   "age_s": 137,
-   "sol_in": 1.93,
-   "buys": 12,
+   "age_s": 168,
+   "sol_in": 2.51,
+   "buys": 13,
    "sells": 1,
-   "rise_pct": 12.9,
-   "mcap_sol": 33.7,
+   "rise_pct": 16.8,
+   "mcap_sol": 34.9,
    "dev_pct": 3.4,
    "big_sell": 0.17,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "SOL in 1.9/2.5"
+   "status": "entered",
+   "why": "momentum · 2.5 SOL in · 13/14 buys (93%) · +17% since launch · mcap 35 SOL · 141 s old"
   },
   {
    "symbol": "pnp-lean",
    "name": "pnp-lean",
    "mint": "HFUghbvCktb26nKgfvz9ZmthVgd2Uidx3FrM1xMDm3CK",
-   "age_s": 146,
+   "age_s": 177,
    "sol_in": -0.58,
    "buys": 2,
    "sells": 9,
@@ -576,24 +745,6 @@
    "web": false,
    "status": "rejected: dev bought 15.2% (max 8%)",
    "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "Drone",
-   "name": "The Drone",
-   "mint": "27ZPtFUss1VtEpnppVDNJY6rtn63TKMeeMDojx31pump",
-   "age_s": 174,
-   "sol_in": 5.34,
-   "buys": 28,
-   "sells": 26,
-   "rise_pct": 35.7,
-   "mcap_sol": 44.2,
-   "dev_pct": 7.9,
-   "big_sell": 2.46,
-   "x": "https://x.com/joeroganhq/status/2125876631218884784",
-   "tg": false,
-   "web": false,
-   "status": "exited: stop -8%",
-   "why": "stop -8%"
   }
  ],
  "strategies": [
