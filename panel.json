@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:28:51Z",
+ "updated": "2026-11-26T09:29:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.76,
@@ -24,7 +24,7 @@
   "flagged": 9,
   "checked": 9,
   "filtered": 1,
-  "lines": 80,
+  "lines": 81,
   "last_rug": {
    "coin": "OFTANIA",
    "pass": true
@@ -167,6 +167,10 @@
   ],
   [
    1795685276,
+   87.76
+  ],
+  [
+   1795685336,
    87.76
   ]
  ],
@@ -1185,6 +1189,15 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 4 watched · 7 rejected (dev bought 2, serial launcher 2, mayhem mode 2) · closest 40: SOL in 0.0/2.5 · buys 1/6 · rise +0%/+12%",
    "n": 80
+  },
+  {
+   "t": "2026-11-26T09:29:13Z",
+   "time": "10:29:13",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.0 a minute · 8 watched · 9 rejected (mayhem mode 5, serial launcher 3, dump 1) · closest VICE: buys 2/6 · buy share 33%/65%",
+   "n": 81
   }
  ],
  "nights": [
@@ -1231,7 +1244,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1239,25 +1252,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 131,
-    "last_event_age_s": 13.6,
+    "events": 134,
+    "last_event_age_s": 16.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1351,
-    "last_event_age_s": 6.0,
+    "events": 1355,
+    "last_event_age_s": 3.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 94,
-    "last_event_age_s": 19.4,
-    "errors": 63,
+    "events": 96,
+    "last_event_age_s": 18.5,
+    "errors": 65,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -1269,9 +1282,9 @@
   "exit_ms": 32.0,
   "exit_last_ms": 32,
   "launch_to_entry_s": 19.5,
-  "creates_per_min": 4.6,
-  "watching": 7,
-  "followed": 11
+  "creates_per_min": 5.0,
+  "watching": 8,
+  "followed": 12
  },
  "learner": {
   "samples": 103,
@@ -1316,23 +1329,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1548,
+   "sent": 1578,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1548,
+   "sent": 1578,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "HjkHyf5GeMLNBc6WSrZaRMLRoyBdG7nVMqQFGVNspump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Purple",
+   "name": "Color Purple.",
+   "mint": "CD266wQ8NeAg4GYCvEqBmRwifUWWUg2PNUvfkEUBpump",
+   "age_s": 20,
+   "sol_in": -0.01,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.2,
+   "big_sell": 0.01,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
+   "symbol": "TEST",
+   "name": "test",
+   "mint": "9r3QUhHrokXpcG4A7PtpwJvDgf1mFt6pAMPMBSJhkGRA",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "SOL in 0.0/2.5 · buys 0/6 · buy share 0%/65% · rise +0%/+12%"
+  },
+  {
    "symbol": "DOGE",
    "name": "GTA 6",
    "mint": "BtTRs3zGwcPtXJAtuveiLqYcafkG9ju3RfbnxS6zpump",
-   "age_s": 13,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1350,7 +1417,7 @@
    "symbol": "$HODLH",
    "name": "HODLHuang",
    "mint": "8brgRW9FMeAniSAVHDUaV9hsQ2yzHE4v9wjph85epump",
-   "age_s": 21,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -1368,7 +1435,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "4n48ekmP7CWCaSbJt5dVErDY7psktspU9MPb3hkepump",
-   "age_s": 33,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1386,7 +1453,7 @@
    "symbol": "ORO",
    "name": "Orocoin",
    "mint": "4U3HYp4VsUfkVvuN2iWTshsVotgf5mDuLLe2wHF2A3Ma",
-   "age_s": 33,
+   "age_s": 61,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -1404,7 +1471,7 @@
    "symbol": "BRAINPEEK",
    "name": "Brain Peek",
    "mint": "7mupQpPgqLCVXJaRpC4tmrXjQJnWiFFzHJKD4s1tN3jk",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 2,
@@ -1422,7 +1489,7 @@
    "symbol": "VICE",
    "name": "ViceVault",
    "mint": "CpomJyKY5BE8RbQ3vhmJ8rPDZwi61enFHkWusLMTpump",
-   "age_s": 38,
+   "age_s": 66,
    "sol_in": 4.9,
    "buys": 2,
    "sells": 4,
@@ -1440,7 +1507,7 @@
    "symbol": "EUREKAHAM",
    "name": "Eureka Hamster",
    "mint": "HvKbWBbnVr7mJMWYhpfYYUHptUc39U4SLrTrEqPhiEJn",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 2,
@@ -1458,7 +1525,7 @@
    "symbol": "Copytrader",
    "name": "Copytrader",
    "mint": "35u4uHmBEZTQqcC8ZfGMGbC4EGrqgZbHtwLtPTmNfqvr",
-   "age_s": 77,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1476,7 +1543,7 @@
    "symbol": "SPRD2",
    "name": "Spread Two",
    "mint": "2ShndkvqSc6mUPSVEQak7b74VG13SfL9kwvs4TJzinVm",
-   "age_s": 79,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1494,7 +1561,7 @@
    "symbol": "asf",
    "name": "ws",
    "mint": "ARNdp8HkbY7MCfWwpWqHNymy8iB4zb5ez2R7kEtZpump",
-   "age_s": 86,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -1512,7 +1579,7 @@
    "symbol": "PPV",
    "name": "Pay Per View",
    "mint": "BhNKx1s1nHU3GCRsZrgKjC2eYBgRij72uWrNnY8hZijU",
-   "age_s": 95,
+   "age_s": 123,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -1530,7 +1597,7 @@
    "symbol": "ASIM",
    "name": "Asim",
    "mint": "FWYSKoVqK6afJMAbpGXcj8vyMxziePRTRpafTt8upump",
-   "age_s": 139,
+   "age_s": 167,
    "sol_in": -0.81,
    "buys": 2,
    "sells": 4,
@@ -1548,7 +1615,7 @@
    "symbol": "40",
    "name": "E-Fattie",
    "mint": "BKMnCCobSyyc4tgotoAsjyEM7Y5QpDaqn7cdJp2hNWp6",
-   "age_s": 144,
+   "age_s": 172,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -1566,7 +1633,7 @@
    "symbol": "Nhc",
    "name": "Ni hao cat",
    "mint": "GBUnFHUTZ3mvMBouW7FSTJN3wt6dEyhPnZbMiXaRpump",
-   "age_s": 146,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1579,24 +1646,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "Trencher",
-   "name": "Trencher",
-   "mint": "GQ9Z5dJpcytkmELhiN4YUUvRxSK64xabXEGHmgMNXzAR",
-   "age_s": 164,
-   "sol_in": -3.06,
-   "buys": 2,
-   "sells": 7,
-   "rise_pct": -17.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.9,
-   "big_sell": 2.35,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 9.9% (max 8%)",
-   "why": "dev bought 9.9% (max 8%)"
   }
  ],
  "strategies": [
