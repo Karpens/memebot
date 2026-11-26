@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:20:36Z",
+ "updated": "2026-11-26T12:21:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -21,21 +21,16 @@
   "start_equity": 98.46,
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
-  "flagged": 21,
-  "checked": 21,
+  "flagged": 22,
+  "checked": 22,
   "filtered": 2,
-  "lines": 308,
+  "lines": 312,
   "last_rug": {
-   "coin": "VP64",
+   "coin": "GT6",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TICKZ",
-   "why": "momentum",
-   "t": "2026-11-26T10:47:22Z"
-  },
   {
    "coin": "AISLE",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "VP64",
    "why": "momentum",
    "t": "2026-11-26T11:47:33Z"
+  },
+  {
+   "coin": "GT6",
+   "why": "momentum",
+   "t": "2026-11-26T12:20:46Z"
   }
  ],
  "curve": [
@@ -1240,42 +1240,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:50:27Z",
-   "time": "10:50:27",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 9 watched · 6 rejected (dump 3, serial launcher 1, dev bought 1) · closest $Maniac: SOL in 0.0/2.5 · buys 4/6 · rise +0%/+12%",
-   "n": 109
-  },
-  {
-   "t": "2026-11-26T09:51:28Z",
-   "time": "10:51:28",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.8 a minute · 4 watched · 8 rejected (dump 3, dev bought 2, serial launcher 1) · closest GARDENA: too young: 23 s (min 45 s)",
-   "n": 110
-  },
-  {
-   "t": "2026-11-26T09:52:29Z",
-   "time": "10:52:29",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.8 a minute · 3 watched · 9 rejected (dev bought 5, dump 2, mayhem mode 1) · closest BIGWKND: too young: 10 s (min 45 s)",
-   "n": 111
-  },
-  {
-   "t": "2026-11-26T09:53:06Z",
-   "time": "10:53:06",
-   "agent": "SCANNER",
-   "coin": "YEE",
-   "action": "migrate",
-   "text": "migrated: the curve is complete (pump-amm)",
-   "n": 112
-  },
   {
    "t": "2026-11-26T09:53:29Z",
    "time": "10:53:29",
@@ -3039,6 +3003,42 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 4 watched · 6 rejected (dev bought 3, dump 1, mayhem mode 1) · closest GT6: too young: 20 s (min 45 s)",
    "n": 308
+  },
+  {
+   "t": "2026-11-26T12:20:39Z",
+   "time": "13:20:39",
+   "agent": "SCANNER",
+   "coin": "DUMPCHAN",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 309
+  },
+  {
+   "t": "2026-11-26T12:20:46Z",
+   "time": "13:20:46",
+   "agent": "SCANNER",
+   "coin": "GT6",
+   "action": "flag",
+   "text": "momentum · 8.4 SOL in · 12/14 buys (86%) · +61% since launch · mcap 49 SOL · 46 s old",
+   "n": 310
+  },
+  {
+   "t": "2026-11-26T12:20:46Z",
+   "time": "13:20:46",
+   "agent": "RUG CHECK",
+   "coin": "GT6",
+   "action": "pass",
+   "text": "PASS · 11 holders · top holder 5.5% · top 10 24% (curve left out)",
+   "n": 311
+  },
+  {
+   "t": "2026-11-26T12:20:46Z",
+   "time": "13:20:46",
+   "agent": "LEARNER",
+   "coin": "GT6",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 11.4% · hour:day -17.1% over 10",
+   "n": 312
   }
  ],
  "nights": [
@@ -3081,7 +3081,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 9 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3089,26 +3089,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 14,
-    "last_event_age_s": 2.4,
+    "events": 19,
+    "last_event_age_s": 17.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 82,
-    "last_event_age_s": 0.2,
+    "events": 149,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 10,
-    "last_event_age_s": 2.4,
-    "errors": 1,
-    "last_error": "ipfs.io: HTTP 403"
+    "events": 14,
+    "last_event_age_s": 16.9,
+    "errors": 2,
+    "last_error": "159.223.19.217:4141: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -3119,13 +3119,13 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 2.6,
-  "watching": 5,
-  "followed": 9
+  "creates_per_min": 3.4,
+  "watching": 2,
+  "followed": 10
  },
  "learner": {
   "samples": 105,
-  "skipped": 11,
+  "skipped": 12,
   "explored": 2,
   "min_samples": 8,
   "best": [
@@ -3166,27 +3166,81 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 217,
+   "sent": 254,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 217,
+   "sent": 254,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "nyanturkey",
+   "name": "nyanturkey",
+   "mint": "5GEqArxC2iS9iVv9QCbh9wMYAEryCJj43BBaV4K1RLY8",
+   "age_s": 17,
+   "sol_in": 0.59,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": 3.4,
+   "mcap_sol": 39.2,
+   "dev_pct": 15.2,
+   "big_sell": 3.01,
+   "x": "https://x.com/NyanCat/status/2125927701366308876",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
+   "symbol": "さん",
+   "name": "San",
+   "mint": "EHRNC9nkAADT5udpTFCPoo5QDTcgFZ61sGqzTaGjMqU4",
+   "age_s": 18,
+   "sol_in": 3.74,
+   "buys": 4,
+   "sells": 5,
+   "rise_pct": 23.9,
+   "mcap_sol": 42.1,
+   "dev_pct": 9.9,
+   "big_sell": 1.31,
+   "x": "https://x.com/StepCoinsol8/status/2125927724824871191",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
+   "symbol": "NYAN",
+   "name": "Nyan Turkey",
+   "mint": "2eejhDQuZN6aW9jCKXKmQXpP8ShzULny5SnFVf8xchnz",
+   "age_s": 28,
+   "sol_in": -3.93,
+   "buys": 0,
+   "sells": 5,
+   "rise_pct": -21.2,
+   "mcap_sol": 29.9,
+   "dev_pct": 15.2,
+   "big_sell": 1.28,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
    "symbol": "xsmart",
    "name": "xmass",
    "mint": "BJ2GMhzzzrn5xNxHrbxz1kRD9EzfkoX3tya5LGJ4pump",
-   "age_s": 2,
+   "age_s": 37,
    "sol_in": 0.05,
-   "buys": 1,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.3,
+   "rise_pct": 0.4,
    "mcap_sol": 28.1,
    "dev_pct": 0.1,
    "big_sell": 0.0,
@@ -3194,20 +3248,20 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 2 s (min 45 s)"
+   "why": "too young: 4 s (min 45 s)"
   },
   {
    "symbol": "FLOW",
    "name": "Flow",
    "mint": "CSuqK3KiUJJUbSvrxbb97EyENxz4t2hZTrnWYzojpump",
-   "age_s": 28,
-   "sol_in": 38.66,
-   "buys": 12,
-   "sells": 14,
-   "rise_pct": 343.8,
-   "mcap_sol": 168.3,
+   "age_s": 63,
+   "sol_in": 40.94,
+   "buys": 32,
+   "sells": 27,
+   "rise_pct": 371.7,
+   "mcap_sol": 178.9,
    "dev_pct": 15.2,
-   "big_sell": 2.42,
+   "big_sell": 2.74,
    "x": "https://x.com/Flow_OTC/status/2125927405412110345",
    "tg": false,
    "web": "https://flowotc.app/",
@@ -3218,7 +3272,7 @@
    "symbol": "QRESI",
    "name": "QUANTUM RESISTANT",
    "mint": "CEpT79iebjoEd1ZYTtYTk5UThhwiMcqkFEoa3UHiUeHM",
-   "age_s": 29,
+   "age_s": 64,
    "sol_in": -2.96,
    "buys": 1,
    "sells": 1,
@@ -3236,25 +3290,25 @@
    "symbol": "GT6",
    "name": "GT6Vapor",
    "mint": "2PfFUA6apw8P8je67v1nd1nFHa4PdwY8TVxoaTx45gAG",
-   "age_s": 36,
-   "sol_in": 8.53,
-   "buys": 10,
-   "sells": 1,
-   "rise_pct": 62.1,
-   "mcap_sol": 49.0,
+   "age_s": 71,
+   "sol_in": 8.82,
+   "buys": 15,
+   "sells": 3,
+   "rise_pct": 64.5,
+   "mcap_sol": 49.8,
    "dev_pct": 4.1,
-   "big_sell": 0.01,
+   "big_sell": 0.26,
    "x": "https://x.com/EXRDEV",
    "tg": false,
    "web": "https://x.com/i/communities/2016274259132481559",
-   "status": "watching",
-   "why": "too young: 29 s (min 45 s)"
+   "status": "rejected: learner: skip",
+   "why": "learner: skip"
   },
   {
    "symbol": "?",
    "name": "",
    "mint": "AQersggvEZo11i1yWPfBGkBguEY8iwvN5NgavorGpump",
-   "age_s": 58,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3272,12 +3326,12 @@
    "symbol": "PS",
    "name": "Pink Sheets",
    "mint": "6CkojbfEMwuzi2BDy6uzFGFqiVaxGnEQ2qt9qHJspump",
-   "age_s": 58,
-   "sol_in": 5.1,
+   "age_s": 93,
+   "sol_in": 3.21,
    "buys": 13,
-   "sells": 10,
-   "rise_pct": 36.9,
-   "mcap_sol": 38.3,
+   "sells": 15,
+   "rise_pct": 22.5,
+   "mcap_sol": 34.3,
    "dev_pct": 0.0,
    "big_sell": 8.26,
    "x": "https://x.com/pinksheetdotfun",
@@ -3290,7 +3344,7 @@
    "symbol": "PIPI",
    "name": "PIPI LABS",
    "mint": "3yuHVXEUibnDCXz8BShmoho13sHcyKFtvh9EmeoQpump",
-   "age_s": 70,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3308,7 +3362,7 @@
    "symbol": "ELONGIVING",
    "name": "Elon Thanksgiving",
    "mint": "2jLyY2SiF7gnPy61vEiWgJiFKcBF95Hen45EFCqHN2Lf",
-   "age_s": 95,
+   "age_s": 130,
    "sol_in": 2.9,
    "buys": 3,
    "sells": 4,
@@ -3326,7 +3380,7 @@
    "symbol": "CJ",
    "name": "CJ",
    "mint": "B8Dd8r821zjkU5MJtjChwN3FRGKHzLnQ9f1mWXKk3MTE",
-   "age_s": 113,
+   "age_s": 148,
    "sol_in": -3.0,
    "buys": 0,
    "sells": 1,
@@ -3339,42 +3393,6 @@
    "web": "https://libertycity.net/files/gta-san-andreas/230801-cj-santa-claus.html",
    "status": "rejected: dev bought 9.8% (max 8%)",
    "why": "dev bought 9.8% (max 8%)"
-  },
-  {
-   "symbol": "Xmas",
-   "name": "X-mas",
-   "mint": "5WzRCbMjcSvqP3q4WuB6D2Q1dBTh5Fw3sFwUxKdZQ54q",
-   "age_s": 145,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -99.9,
-   "mcap_sol": 0.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 4 s (min 45 s)"
-  },
-  {
-   "symbol": "UBE",
-   "name": "Universal Basic Equity",
-   "mint": "DjDsruVKXmBSfA86jXFyqd7To8yD2DxwYBKDZGREZDot",
-   "age_s": 174,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -99.9,
-   "mcap_sol": 0.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/lilbruhfish/status/2125926954218213727",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
   }
  ],
  "strategies": [
