@@ -420,6 +420,19 @@ def local(now_utc, tz):
     return aware.replace(tzinfo=None)
 
 
+ALWAYS_LEFT = 10 ** 6                    # minutes "left" in an always-on session: it never ends
+
+
+def always_on(cfg):
+    """session_start == session_end (e.g. 00:00 → 00:00): the bot trades around the clock. Each calendar day
+    (Bratislava) is its own "night" in the book and the page; positions carry over midnight, nothing is
+    sold for the day's end, and every job of the workflow starts the next one."""
+    try:
+        return hhmm(cfg["session_start"]) == hhmm(cfg["session_end"])
+    except (KeyError, TypeError, ValueError):
+        return False
+
+
 def session_of(now_utc, cfg):
     """(night id, minutes into the session, minutes left) or None outside the session. The night
     is named after the evening it starts: 23:00 on the 25th to 07:00 on the 26th is 2026-11-25."""
@@ -2597,7 +2610,7 @@ def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=
     except OSError:
         prompt = ""
     return {"updated": at, "mode": "paper", "start_balance": cfg["start_balance"], "balance": round(state["balance"], 2),
-            "equity": round(eq, 2), "session": "%s → %s" % (cfg["session_start"], cfg["session_end"]),
+            "equity": round(eq, 2), "session": "24/7" if always_on(cfg) else "%s → %s" % (cfg["session_start"], cfg["session_end"]),
             "agents": AGENTS, "prompt": prompt, "night": {k: n.get(k) for k in NIGHT_KEYS},
             "flags": (n.get("flags") or [])[-8:], "curve": (n.get("curve") or [])[-600:],
             "position_pct": cfg["position_pct"], "slip_cap": cfg["max_roundtrip_loss_pct"],
@@ -3068,6 +3081,8 @@ def run(data_dir, cfg, minutes=None, anytime=False, market=None, now_fn=utc_now,
             if s is None:                # a test run: its own night, closed at its end
                 s = (local(now, cfg["timezone"]).date().isoformat() + "-test", 0, 24 * 60)
             night_id, _, left = s
+            if always_on(cfg) and not night_id.endswith("-test"):
+                left = ALWAYS_LEFT                      # no end of the day: no last-10-minutes rule, no sale at 23:55
             if bot is None:
                 bot = Night(data_dir, cfg, market, now, out)
                 live = live if live is not None else live_for(cfg)

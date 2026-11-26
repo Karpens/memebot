@@ -635,7 +635,7 @@ class Config(unittest.TestCase):
             p = fh.read()
         for text in ("Out when the curve has had no trade for %g minutes" % c["np_quiet_min"],
                      "after twice that time, out unless the first step was reached",
-                     "the last %d minutes of the first one" % c["job_no_entries_min"],
+                     "the last %d minutes of a job" % c["job_no_entries_min"],
                      "sold in its last minute", "on the two quotes alone",
                      "a trade that sold its first step is not one",
                      "leaves the whole trade without a loss after its fees"):

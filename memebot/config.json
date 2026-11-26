@@ -1,12 +1,12 @@
 {
-  "_about": "Meme Bot na papieri: nočné obchodovanie meme coinov na Solane. Hlavná stratégia je NEW PAIRS (stĺpec „New Pairs“ v Axiom Pulse): úplne nové mince z pump.fun v prvých sekundách až minútach, ešte na bonding curve. Prvý dnu a prvý von: vstup v tom istom kole slučky ako čítanie krivky, ktoré spustí signál, výstup v tom istom kole ako čítanie, ktoré prekročí stop alebo cieľ. Štart $100, 10 % na obchod, výstup na +7 % (alebo rebrík +20 / +60 / +100 %, keď sú NEWS silné), stop -7 %. Hodnoty sú pravidlá zo súboru prompt.txt. Bez peňaženky a bez skutočných peňazí.",
+  "_about": "Meme Bot na papieri: obchodovanie meme coinov na Solane nonstop, 24/7 (session_start = session_end; každý deň je v knihe a na stránke samostatná „noc“, pozície prechádzajú cez polnoc). Hlavná stratégia je NEW PAIRS (stĺpec „New Pairs“ v Axiom Pulse): úplne nové mince z pump.fun v prvých sekundách až minútach, ešte na bonding curve. Prvý dnu a prvý von: vstup v tom istom kole slučky ako čítanie krivky, ktoré spustí signál, výstup v tom istom kole ako čítanie, ktoré prekročí stop alebo cieľ. Štart $100, 10 % na obchod, výstup na +7 % (alebo rebrík +20 / +60 / +100 %, keď sú NEWS silné), stop -7 %. Hodnoty sú pravidlá zo súboru prompt.txt. Bez peňaženky a bez skutočných peňazí.",
   "strategies": [
     "new_pairs"
   ],
   "_strategies": "new_pairs: nové páry na krivke pump.fun (hlavná). migrated: starší skener párov z DexScreener a GeckoTerminal (vypnutý; zapne sa pridaním \"migrated\" do zoznamu).",
   "start_balance": 100.0,
-  "session_start": "23:00",
-  "session_end": "07:00",
+  "session_start": "00:00",
+  "session_end": "00:00",
   "timezone": "Europe/Bratislava",
   "watch_sec": 1,
   "_new_pairs": "NEW PAIRS: každý nový coin z PumpPortal sa sleduje np_watch_s sekúnd (najviac np_max_watch naraz), krivka sa číta jedným dávkovým getMultipleAccounts každých curve_poll_sec s, keď niečo drží, inak curve_idle_sec. Vstup, keď do np_max_age_s sekúnd od vzniku: aspoň np_min_sol SOL pritieklo, aspoň np_min_buys nákupných čítaní a np_min_buy_share z pohybov, cena aspoň np_min_rise_pct % nad štartom, trhová hodnota najviac np_max_mcap_sol SOL. RUG CHECK: nákup tvorcu najviac np_max_dev_pct %, žiadny predaj nad np_dump_sol SOL, sociálne odkazy nie sú povinné (zvyšujú skóre NEWS, np_need_social), nie mayhem mode, len skutočná bonding curve pump.fun, nie tvorca s viac ako np_serial_max ďalšími coinmi za np_serial_window_min min, a správa RugCheck do np_rug_timeout_s s (jeden držiteľ najviac np_max_holder_pct %, top 10 najviac np_max_top10_pct %, žiadni insideri, žiadne riziko „danger“). Plnenie podľa kotácie Jupiter; matematika krivky (poplatok curve_fee_pct %) len ako záloha, ak bola pri vstupe do np_validate_pct % od kotácie. Noc sú dve úlohy GitHubu: v posledných job_no_entries_min min úlohy, ktorú prevezme ďalšia, sa nové páry nekupujú a v jej poslednej job_flat_min min sa držané predajú (medzi úlohami nikto nestráži výstupy).",

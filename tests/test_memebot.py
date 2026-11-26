@@ -400,6 +400,25 @@ class Run(unittest.TestCase):
         m.fresh.append("aaa")
         return m
 
+    def test_around_the_clock_the_day_rolls_over_at_midnight_without_a_sale(self):
+        """session 00:00 → 00:00 (24/7): a coin held at 23:58 is not sold for the day's end, the run goes on
+        past midnight, the day closes into nights and the next day starts with the coin still held."""
+        c = cfg(time_stop_min=999, session_start="00:00", session_end="00:00")
+        self.assertTrue(mb.always_on(c))
+        self.assertFalse(mb.always_on(cfg()))
+        start = datetime.datetime(2026, 11, 25, 22, 50)                           # 23:50 in Bratislava
+        self.assertEqual(mb.session_of(start, c)[0], "2026-11-25")
+        now, sleep = self.clock(start)
+        night = mb.run(self.dir, c, minutes=15, market=self.market(start), now_fn=now, sleep=sleep,
+                       out=lambda *a: None)
+        st = mb.read_json(os.path.join(self.dir, "state.json"), {})
+        self.assertEqual(night, "2026-11-26")                                       # it ran on into the next day
+        self.assertEqual(st["nights"][-1]["id"], "2026-11-25")                      # the day before is closed
+        self.assertEqual(st["night"]["id"], "2026-11-26")
+        self.assertEqual(len(st["positions"]), 1)                                   # held over midnight
+        self.assertFalse(any(t["why"] == "end of night" for n in (st.get("last_night") or {},) for t in n.get("trades", [])))
+        self.assertEqual(mb.panel(st, c, {}, "x")["session"], "24/7")
+
     def test_a_night_runs_to_its_end_and_a_test_run_sells_at_its_end(self):
         start = datetime.datetime(2026, 11, 26, 5, 0)                             # 06:00, an hour left
         now, sleep = self.clock(start)
