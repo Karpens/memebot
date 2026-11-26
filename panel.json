@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T12:17:59Z",
+ "updated": "2026-11-26T12:18:32Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 21,
   "checked": 21,
   "filtered": 2,
-  "lines": 304,
+  "lines": 305,
   "last_rug": {
    "coin": "VP64",
    "pass": true
@@ -844,6 +844,10 @@
   [
    1795695433,
    85.94
+  ],
+  [
+   1795695493,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -1228,15 +1232,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:46:25Z",
-   "time": "10:46:25",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 3 watched · 8 rejected (mayhem mode 7, dev bought 1) · closest Fame MMA: too young: 31 s (min 45 s)",
-   "n": 105
-  },
   {
    "t": "2026-11-26T09:47:25Z",
    "time": "10:47:25",
@@ -3027,6 +3022,15 @@
    "action": "scan",
    "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (mayhem mode 1)",
    "n": 304
+  },
+  {
+   "t": "2026-11-26T12:18:20Z",
+   "time": "13:18:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.6 a minute · 2 watched · 1 rejected (mayhem mode 1) · closest UBE: too young: 1 s (min 45 s)",
+   "n": 305
   }
  ],
  "nights": [
@@ -3069,7 +3073,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 1 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 2 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3077,26 +3081,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2,
-    "last_event_age_s": 17.1,
+    "events": 3,
+    "last_event_age_s": 21.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1,
-    "last_event_age_s": 16.8,
+    "events": 2,
+    "last_event_age_s": 20.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1,
-    "last_event_age_s": 15.5,
-    "errors": 0,
-    "last_error": null
+    "connected": false,
+    "events": 2,
+    "last_event_age_s": 16.9,
+    "errors": 1,
+    "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
@@ -3107,9 +3111,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 0.4,
-  "watching": 1,
-  "followed": 1
+  "creates_per_min": 0.6,
+  "watching": 2,
+  "followed": 2
  },
  "learner": {
   "samples": 105,
@@ -3154,23 +3158,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 49,
+   "sent": 85,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 49,
+   "sent": 85,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Xmas",
+   "name": "X-mas",
+   "mint": "5WzRCbMjcSvqP3q4WuB6D2Q1dBTh5Fw3sFwUxKdZQ54q",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -99.9,
+   "mcap_sol": 0.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 4 s (min 45 s)"
+  },
+  {
    "symbol": "UBE",
    "name": "Universal Basic Equity",
    "mint": "DjDsruVKXmBSfA86jXFyqd7To8yD2DxwYBKDZGREZDot",
-   "age_s": 17,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3188,7 +3210,7 @@
    "symbol": "PIPI",
    "name": "PIPI LABS",
    "mint": "8tq1kJwXvDPAgS3SynPxvQXsu2aGUYAeeEAAeLnTpump",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
