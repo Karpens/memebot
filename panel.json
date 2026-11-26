@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:15:42Z",
+ "updated": "2026-11-26T19:16:13Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -24,7 +24,7 @@
   "flagged": 53,
   "checked": 41,
   "filtered": 8,
-  "lines": 858,
+  "lines": 859,
   "last_rug": {
    "coin": "WHO",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795684556,
-   92.81
-  ],
   [
    1795684616,
    90.39
@@ -2472,6 +2468,10 @@
   [
    1795720513,
    83.48
+  ],
+  [
+   1795720573,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2994,15 +2994,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T16:57:28Z",
-   "time": "17:57:28",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 6 watched · 11 rejected (dev bought 8, mayhem mode 2, dump 1) · closest HEAVYA: SOL in 1.9/2.5 · buys 5/6 · buy share 62%/65%",
-   "n": 659
-  },
   {
    "t": "2026-11-26T16:58:20Z",
    "time": "17:58:20",
@@ -4793,6 +4784,15 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 3 watched · 7 rejected (serial launcher 3, dev bought 1, dump 1) · closest PLAZA: too young: 27 s (min 45 s)",
    "n": 858
+  },
+  {
+   "t": "2026-11-26T19:15:43Z",
+   "time": "20:15:43",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 2 watched · 8 rejected (dump 3, serial launcher 2, dev bought 1) · closest PAN: too young: 1 s (min 45 s)",
+   "n": 859
   }
  ],
  "nights": [
@@ -4837,7 +4837,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4845,25 +4845,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1393,
-    "last_event_age_s": 14.2,
+    "events": 1398,
+    "last_event_age_s": 7.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19689,
+    "events": 19780,
     "last_event_age_s": 0.1,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1002,
-    "last_event_age_s": 16.1,
-    "errors": 83,
+    "connected": false,
+    "events": 1007,
+    "last_event_age_s": 3.7,
+    "errors": 84,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -4875,9 +4875,9 @@
   "exit_ms": 33,
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
-  "creates_per_min": 4.0,
-  "watching": 2,
-  "followed": 8
+  "creates_per_min": 4.4,
+  "watching": 4,
+  "followed": 12
  },
  "learner": {
   "samples": 108,
@@ -4923,23 +4923,113 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11502,
+   "sent": 11535,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11536,
+   "sent": 11569,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GI",
+   "name": "Goon Inu",
+   "mint": "7uNys9PS67FWR4b5RZEtGjLhDS1p1pJBPxpvkqrQtNH9",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -58.8,
+   "mcap_sol": 11.5,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 35 more coins in 60 min",
+   "why": "serial launcher: 35 more coins in 60 min"
+  },
+  {
+   "symbol": "KITTY",
+   "name": "KITTY DIAMOND HANDS 🐱 Prime",
+   "mint": "E9r9i9bk49s56MH4Xz8uh7mobbR58oJkmWDjzDXhRJMD",
+   "age_s": 12,
+   "sol_in": 0.04,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://www.google.com",
+   "status": "watching",
+   "why": "too young: 10 s (min 45 s)"
+  },
+  {
+   "symbol": "VICE",
+   "name": "ViceVault",
+   "mint": "PhJXYGvxf1UroCL9V37ntWqnu23ew7infbX74tbpump",
+   "age_s": 23,
+   "sol_in": -2.82,
+   "buys": 14,
+   "sells": 5,
+   "rise_pct": -16.4,
+   "mcap_sol": 28.2,
+   "dev_pct": 9.6,
+   "big_sell": 20.17,
+   "x": "https://x.com/vicevaultdotfun",
+   "tg": false,
+   "web": "https://vicevault.fun/",
+   "status": "rejected: dev bought 9.6% (max 8%)",
+   "why": "dev bought 9.6% (max 8%)"
+  },
+  {
+   "symbol": "LANA",
+   "name": "Lana",
+   "mint": "68DbWdDjMRBCHibWHz2JQUHG6SCtMjTesxMaz5TE6zZV",
+   "age_s": 28,
+   "sol_in": 0.19,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 1.3,
+   "mcap_sol": 28.5,
+   "dev_pct": 0.4,
+   "big_sell": 0.07,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 19 s (min 45 s)"
+  },
+  {
+   "symbol": "SRALLY",
+   "name": "Santa Rally",
+   "mint": "Gm3KKefhfM2BWym6zxixFcngMX51CRCjKB1tnRGepk2H",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
-   "age_s": 14,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4957,30 +5047,30 @@
    "symbol": "PAN",
    "name": "Pan Baobao",
    "mint": "AR2JdJEW3zpjug7nUacjr1ETrXMB1ihRhtdjVb3frzsK",
-   "age_s": 16,
-   "sol_in": 0.25,
+   "age_s": 47,
+   "sol_in": 0.14,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 1.7,
-   "mcap_sol": 28.6,
+   "sells": 2,
+   "rise_pct": 1.0,
+   "mcap_sol": 28.4,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.07,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
+   "why": "too young: 28 s (min 45 s)"
   },
   {
    "symbol": "PREDEAL",
    "name": "PreDeal",
    "mint": "BktUPxBkqeSYXzeqMaTYrdxT3J6pDge1ix5TzsGfpump",
-   "age_s": 21,
-   "sol_in": -0.43,
+   "age_s": 52,
+   "sol_in": -0.94,
    "buys": 3,
-   "sells": 3,
-   "rise_pct": -2.8,
-   "mcap_sol": 29.0,
+   "sells": 6,
+   "rise_pct": -6.0,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 2.01,
    "x": "https://x.com/predealvc",
@@ -4993,12 +5083,12 @@
    "symbol": "KURO",
    "name": "KURO",
    "mint": "7zrjFLFWNSow2SRE5hqr9UCSstk3qfn523jps3nupump",
-   "age_s": 29,
-   "sol_in": -1.21,
+   "age_s": 60,
+   "sol_in": -1.34,
    "buys": 19,
-   "sells": 5,
-   "rise_pct": -7.2,
-   "mcap_sol": 31.3,
+   "sells": 8,
+   "rise_pct": -8.0,
+   "mcap_sol": 31.1,
    "dev_pct": 9.6,
    "big_sell": 17.12,
    "x": "https://x.com/kuroshibtoken",
@@ -5011,7 +5101,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "21Wtvha8np36GGxtkCsEUwghDqgHW8NNMkjMymBcpump",
-   "age_s": 47,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5029,14 +5119,14 @@
    "symbol": "BNIPG",
    "name": "Beanie Penguin Boss",
    "mint": "F2H1ZJXKjLJJSuRo8dYmqF4vYyRELobDzynL7Xx52Ee4",
-   "age_s": 66,
-   "sol_in": 0.35,
+   "age_s": 97,
+   "sol_in": 0.31,
    "buys": 5,
-   "sells": 0,
-   "rise_pct": 2.4,
-   "mcap_sol": 28.7,
+   "sells": 2,
+   "rise_pct": 2.1,
+   "mcap_sol": 28.6,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.03,
    "x": "https://x.com/polymarketbro",
    "tg": "https://t.me/PolymarketBroAlerts",
    "web": "https://polymarketbro.com/coin-lab/bnipg/",
@@ -5047,7 +5137,7 @@
    "symbol": "PLAZA",
    "name": "Plaza",
    "mint": "Hnyt3kJ1RXYpKCMYEfbSom61K2AJsiuA6NhSUgHnpump",
-   "age_s": 92,
+   "age_s": 123,
    "sol_in": 1.12,
    "buys": 6,
    "sells": 5,
@@ -5065,7 +5155,7 @@
    "symbol": "BFI",
    "name": "Black Friday Inteligince",
    "mint": "AMar4wLp6xbW6597K8Mc3nWdrVu1Ztski7tMJYPepump",
-   "age_s": 98,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5083,11 +5173,11 @@
    "symbol": "titi",
    "name": "titi",
    "mint": "FuuWodEZffGdChMyduyYDCdynKgUzP2nHCP7tGdSpump",
-   "age_s": 148,
+   "age_s": 179,
    "sol_in": 0.07,
    "buys": 3,
-   "sells": 1,
-   "rise_pct": 0.5,
+   "sells": 2,
+   "rise_pct": 0.4,
    "mcap_sol": 28.1,
    "dev_pct": 0.0,
    "big_sell": 2.44,
@@ -5096,24 +5186,6 @@
    "web": false,
    "status": "rejected: dump: 2.4 SOL sold",
    "why": "dump: 2.4 SOL sold"
-  },
-  {
-   "symbol": "vDino",
-   "name": "Venice Dino",
-   "mint": "2XvbHKAN5aaafYpPvcuAj3paCn9tSRzP3Pwaec1e3p7E",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -58.8,
-   "mcap_sol": 11.5,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 34 more coins in 60 min",
-   "why": "serial launcher: 34 more coins in 60 min"
   }
  ],
  "strategies": [
