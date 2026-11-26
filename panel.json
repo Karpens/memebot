@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:21:57Z",
+ "updated": "2026-11-26T11:22:28Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 18,
   "checked": 18,
   "filtered": 1,
-  "lines": 235,
+  "lines": 237,
   "last_rug": {
    "coin": "MARU",
    "pass": true
@@ -620,6 +620,10 @@
   [
    1795692061,
    85.94
+  ],
+  [
+   1795692121,
+   85.94
   ]
  ],
  "position_pct": 10.0,
@@ -1004,24 +1008,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:14:04Z",
-   "time": "10:14:04",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.8 a minute · 4 watched · 16 rejected (serial launcher 10, mayhem mode 4, dump 1) · closest GOATLON: SOL in 0.0/2.5 · buys 0/6 · buy share 0%/65% · rise -100%/+12%",
-   "n": 36
-  },
-  {
-   "t": "2026-11-26T09:15:04Z",
-   "time": "10:15:04",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 6 watched · 12 rejected (serial launcher 7, mayhem mode 4, dev bought 1) · closest STOREB: buys 3/6",
-   "n": 37
-  },
   {
    "t": "2026-11-26T09:15:09Z",
    "time": "10:15:09",
@@ -2803,6 +2789,24 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 2 watched · 8 rejected (dev bought 3, mayhem mode 2, serial launcher 1) · closest Hikikomori: buy share 58%/65%",
    "n": 235
+  },
+  {
+   "t": "2026-11-26T11:22:19Z",
+   "time": "12:22:19",
+   "agent": "SCANNER",
+   "coin": "SAM",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 236
+  },
+  {
+   "t": "2026-11-26T11:22:20Z",
+   "time": "12:22:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 3 watched · 8 rejected (dev bought 4, mayhem mode 2, dump 1) · closest KIES: too young: 3 s (min 45 s)",
+   "n": 237
   }
  ],
  "nights": [
@@ -2848,7 +2852,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 9 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2856,15 +2860,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 178,
-    "last_event_age_s": 7.7,
+    "events": 182,
+    "last_event_age_s": 9.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3070,
+    "events": 3112,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -2872,8 +2876,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 120,
-    "last_event_age_s": 7.5,
+    "events": 122,
+    "last_event_age_s": 9.8,
     "errors": 15,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2888,7 +2892,7 @@
   "launch_to_entry_s": 22.0,
   "creates_per_min": 4.2,
   "watching": 3,
-  "followed": 10
+  "followed": 9
  },
  "learner": {
   "samples": 105,
@@ -2933,41 +2937,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2504,
+   "sent": 2537,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2504,
+   "sent": 2537,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Sanae",
+   "name": "Official Sanae Coin",
+   "mint": "5yhbxCBC5VDCiptxuMHCMhY66yX14pURXaXS48Rutw4v",
+   "age_s": 12,
+   "sol_in": 17.47,
+   "buys": 8,
+   "sells": 4,
+   "rise_pct": 133.6,
+   "mcap_sol": 79.3,
+   "dev_pct": 9.9,
+   "big_sell": 5.09,
+   "x": "https://x.com/StepCoinsol8/status/2125912791311593914",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 9.9% (max 8%)",
+   "why": "dev bought 9.9% (max 8%)"
+  },
+  {
    "symbol": "Hachikō",
    "name": "Hachikōcoin",
    "mint": "CXBz64DLJtPxc1UsZXE6awsa6MKEpcWqu6YCv8n9pump",
-   "age_s": 7,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "age_s": 38,
+   "sol_in": -0.25,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": -1.6,
+   "mcap_sol": 29.3,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.52,
    "x": "https://x.com/Mikemarroquiin/status/2125912751327629741?a=ZqdsQO30A_GyQitIzDM&s=20",
    "tg": false,
    "web": "https://en.wikipedia.org/wiki/Hachik%C5%8D",
    "status": "watching",
-   "why": "too young: 3 s (min 45 s)"
+   "why": "too young: 26 s (min 45 s)"
   },
   {
    "symbol": "Hikikomori",
    "name": "Hikikomori",
    "mint": "7ZGE5nD2fQNjzDXUfA6HkCBoenQvmBP8RiEgfhBVaSDE",
-   "age_s": 15,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2985,7 +3007,7 @@
    "symbol": "KIES",
    "name": "Kiescoin",
    "mint": "Cg38rsZ2yp6kENjR4Pb66e4mWA19gaLxJ324kXs9pump",
-   "age_s": 24,
+   "age_s": 55,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -3003,12 +3025,12 @@
    "symbol": "Hikikomori",
    "name": "ひきこもり",
    "mint": "51FZxnj6PnVrjVGYbZCHBtqV1isfhhGTAzLWyj6VJ5d1",
-   "age_s": 26,
-   "sol_in": -1.44,
+   "age_s": 57,
+   "sol_in": -4.35,
    "buys": 2,
-   "sells": 5,
-   "rise_pct": -8.1,
-   "mcap_sol": 34.9,
+   "sells": 6,
+   "rise_pct": -23.3,
+   "mcap_sol": 29.1,
    "dev_pct": 15.2,
    "big_sell": 3.17,
    "x": "https://x.com/constructoooor/status/2125912802359386269",
@@ -3021,7 +3043,7 @@
    "symbol": "$AGB",
    "name": "Agentic B COIN",
    "mint": "5hJrGRgd6afsBV2Q7mZMU3ZRvES6aAdLCnK272MRpump",
-   "age_s": 78,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3039,7 +3061,7 @@
    "symbol": "Titcoin",
    "name": "ティットコイン",
    "mint": "FHYYoJGdA8VpoRncHq2ke2Xx5YhU7yGeff7XmAHedKv5",
-   "age_s": 93,
+   "age_s": 124,
    "sol_in": -1.58,
    "buys": 5,
    "sells": 9,
@@ -3057,7 +3079,7 @@
    "symbol": "JAPAN",
    "name": "Japancoin",
    "mint": "7Z7s3jLk4P8HWUh1H14DeQYC3L64uEWuYaGLMDJ3pump",
-   "age_s": 115,
+   "age_s": 146,
    "sol_in": -1.2,
    "buys": 2,
    "sells": 5,
@@ -3075,7 +3097,7 @@
    "symbol": "FIONA",
    "name": "Fiona",
    "mint": "3UkSASZ3G5HcHAeSfAFBBFdh5G62UtjfoTiUYYmzdh6y",
-   "age_s": 130,
+   "age_s": 161,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 1,
@@ -3093,12 +3115,12 @@
    "symbol": "cyber",
    "name": "cyber",
    "mint": "DADs794EcsM4y6V8rVac9nbTCqkewNpzU9A4uFANpump",
-   "age_s": 130,
-   "sol_in": 55.68,
-   "buys": 50,
-   "sells": 57,
-   "rise_pct": 705.8,
-   "mcap_sol": 229.6,
+   "age_s": 161,
+   "sol_in": 58.04,
+   "buys": 64,
+   "sells": 67,
+   "rise_pct": 750.7,
+   "mcap_sol": 242.3,
    "dev_pct": 1.0,
    "big_sell": 3.79,
    "x": "https://x.com/cyberonpf/status/2125912138283622849",
@@ -3106,78 +3128,6 @@
    "web": "https://www.thecyberpump.fun/",
    "status": "rejected: dump: 2.3 SOL sold",
    "why": "dump: 2.3 SOL sold"
-  },
-  {
-   "symbol": "$AGB",
-   "name": "Agentic B COIN",
-   "mint": "5hmrWyvaBjPz4uEQn2cTp1dr4FC6LG6uhSGC4ZDpump",
-   "age_s": 156,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Hikikomori",
-   "name": "引きこもり",
-   "mint": "8XiFNzxMn6fTA1aeWDGUPr3nx9rMfrgnE6Twwfbwpump",
-   "age_s": 168,
-   "sol_in": 6.81,
-   "buys": 17,
-   "sells": 19,
-   "rise_pct": 48.8,
-   "mcap_sol": 44.4,
-   "dev_pct": 3.4,
-   "big_sell": 3.59,
-   "x": "https://x.com/catalyst100x/status/2125912178289185046",
-   "tg": false,
-   "web": "https://en.wikipedia.org/wiki/Hikikomori",
-   "status": "rejected: dump: 3.6 SOL sold",
-   "why": "dump: 3.6 SOL sold"
-  },
-  {
-   "symbol": "LOn",
-   "name": "mask moon",
-   "mint": "Er771so675DTHS9eAeAfozmd6bGG7w1xrsSkxjvgpump",
-   "age_s": 172,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "5ZQMdP2xREcXrZcF8FjibaMtgHrUyTVRWXjvXvvqpump",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
