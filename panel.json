@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T11:36:08Z",
+ "updated": "2026-11-26T11:36:43Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 85.94,
@@ -24,7 +24,7 @@
   "flagged": 18,
   "checked": 18,
   "filtered": 1,
-  "lines": 250,
+  "lines": 251,
   "last_rug": {
    "coin": "MARU",
    "pass": true
@@ -1064,15 +1064,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T09:16:45Z",
-   "time": "10:16:45",
-   "agent": "EXECUTOR",
-   "coin": "KIDSTOCK",
-   "action": "exit",
-   "text": "EXIT KIDSTOCK $-2.42 (-26%) · dump: 3.9 SOL sold · out · 0.0 s after the reading",
-   "n": 51
-  },
   {
    "t": "2026-11-26T09:16:45Z",
    "time": "10:16:45",
@@ -2863,6 +2854,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 4 watched · 5 rejected (dev bought 2, dump 1, serial launcher 1) · closest POMPOM: too young: 44 s (min 45 s)",
    "n": 250
+  },
+  {
+   "t": "2026-11-26T11:36:28Z",
+   "time": "12:36:28",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 5 watched · 5 rejected (mayhem mode 3, dev bought 2) · closest POMPOM: too young: 44 s (min 45 s)",
+   "n": 251
   }
  ],
  "nights": [
@@ -2916,24 +2916,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 241,
-    "last_event_age_s": 0.9,
+    "events": 245,
+    "last_event_age_s": 11.9,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4216,
-    "last_event_age_s": 1.8,
+    "events": 4241,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 162,
-    "last_event_age_s": 7.1,
+    "events": 165,
+    "last_event_age_s": 11.9,
     "errors": 17,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2946,7 +2946,7 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 22.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.4,
   "watching": 5,
   "followed": 7
  },
@@ -2993,23 +2993,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3410,
+   "sent": 3447,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3410,
+   "sent": 3447,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SAM",
+   "name": "SAM COIN",
+   "mint": "7xWrRpqNiunNunnxEpTGB7pgiyQWhMfrDLxAbiCYpump",
+   "age_s": 11,
+   "sol_in": 0.1,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.6,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
+   "symbol": "ASCEND",
+   "name": "ASCEND",
+   "mint": "EhACZFFB8d7JcYXUKyGrmYNbA8uPX2J8j1JMqKS2NRYY",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "蛙",
+   "name": "蛙",
+   "mint": "42ZW9XcQdEUQbtqsrDg1SYCUurW4qWhq5etcNx1FqYbP",
+   "age_s": 24,
+   "sol_in": -0.47,
+   "buys": 6,
+   "sells": 7,
+   "rise_pct": -2.6,
+   "mcap_sol": 36.9,
+   "dev_pct": 15.2,
+   "big_sell": 1.93,
+   "x": "https://x.com/MarioPrezldente/status/2125916552839278633",
+   "tg": false,
+   "web": "https://x.com/etquantz/status/2125916008917389326",
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
+   "symbol": "ACAT",
+   "name": "Ascend Cat",
+   "mint": "EvswTTaU7dnASkoQqEgG4DPkM4FQ92vCuSeTKL6rBiC6",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://ascend-production-0718a28d.up.railway.app/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "beer",
    "name": "beer",
    "mint": "4FHJQP6g7iXv34tXzx4bS8HcVn4fquZMpY3hkBSWpump",
-   "age_s": 0,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3027,25 +3099,25 @@
    "symbol": "たかし",
    "name": "Takashi Kotegawa",
    "mint": "DY3na3PKkbc8pgNZXhPqi8Ldsdkd7N9wHstgMTg3pump",
-   "age_s": 7,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 42,
+   "sol_in": 3.54,
+   "buys": 4,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "rise_pct": 25.0,
+   "mcap_sol": 35.0,
    "dev_pct": 0.1,
    "big_sell": 0.0,
    "x": "https://x.com/ramentrade/status/2125916429610369365",
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 5 s (min 45 s)"
+   "why": "too young: 32 s (min 45 s)"
   },
   {
    "symbol": "ANIME",
    "name": "Anime",
    "mint": "FivCWrDksye4ZxcBwKxwXvYtNMoDUBX8mposaM2npump",
-   "age_s": 116,
+   "age_s": 151,
    "sol_in": -0.4,
    "buys": 2,
    "sells": 4,
@@ -3063,7 +3135,7 @@
    "symbol": "PussyCoin",
    "name": "PUSSY",
    "mint": "4jZDbLzRUs8Fr74LdbASCDJ545HRacwsNcoSauGtpump",
-   "age_s": 120,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3081,7 +3153,7 @@
    "symbol": "POMPOM",
    "name": "Pompompurin",
    "mint": "6kugramUEtacMbcJ5KoYHUkQmrPG66aYTiiEGCYHpump",
-   "age_s": 120,
+   "age_s": 155,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,
@@ -3099,7 +3171,7 @@
    "symbol": "HBHC",
    "name": "Handsome Boy Hacking Club",
    "mint": "DPdc2yU46aPPmRVrDnjwKWoBpZ74D3q6bq6uCFgop1Hj",
-   "age_s": 142,
+   "age_s": 177,
    "sol_in": -4.94,
    "buys": 7,
    "sells": 19,
@@ -3112,60 +3184,6 @@
    "web": false,
    "status": "rejected: dev bought 15.2% (max 8%)",
    "why": "dev bought 15.2% (max 8%)"
-  },
-  {
-   "symbol": "TERAFAB",
-   "name": "Terafab",
-   "mint": "4kx6hAZphAJQPrxnHHesDM2kbFw4zK3zhxcmFzWEvAFq",
-   "age_s": 145,
-   "sol_in": 0.08,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.5,
-   "mcap_sol": 28.5,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/beffjezos/status/2125915849878097928",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
-  },
-  {
-   "symbol": "WINU",
-   "name": "ShibaWarriorInu",
-   "mint": "G9H63aGNQAEM75NL41tKzQgHDvzsXm64wbKuGJ76pump",
-   "age_s": 166,
-   "sol_in": 0.0,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.5,
-   "big_sell": 0.25,
-   "x": "https://x.com/Shibtoken",
-   "tg": false,
-   "web": "https://shibatoken.com",
-   "status": "watching",
-   "why": "SOL in 0.0/2.5 · buys 3/6 · buy share 50%/65% · rise +0%/+12%"
-  },
-  {
-   "symbol": "YEE",
-   "name": "ORO SANTA COIN",
-   "mint": "GGx2zxME4JssrTFZje9s2C6Jo7FhBAAGLgqzHAYupump",
-   "age_s": 171,
-   "sol_in": 0.01,
-   "buys": 4,
-   "sells": 3,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
