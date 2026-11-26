@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-26T12:34:11Z",
+ "updated": "2026-11-26T12:34:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.94,
- "equity": 85.75,
+ "equity": 85.65,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 23,
   "checked": 23,
   "filtered": 2,
-  "lines": 332,
+  "lines": 333,
   "last_rug": {
    "coin": "SATNA",
    "pass": true
@@ -908,6 +908,10 @@
   [
    1795696393,
    85.94
+  ],
+  [
+   1795696453,
+   85.61
   ]
  ],
  "position_pct": 10.0,
@@ -918,23 +922,22 @@
    "symbol": "SATNA",
    "mint": "BFtzMjo2kHDiqgAuvspKaXU8ofF5LBpyhDydxCLepump",
    "cost": 5.0,
-   "value": 4.81,
-   "pnl_pct": -3.8,
+   "value": 4.71,
+   "pnl_pct": -5.8,
    "opened": "2026-11-26T12:33:55Z",
    "url": "https://pump.fun/coin/BFtzMjo2kHDiqgAuvspKaXU8ofF5LBpyhDydxCLepump",
    "reason": "momentum · 9.3 SOL in · 19/23 buys (83%) · +72% since launch · mcap 48 SOL · 45 s old",
    "size_pct": 5.8,
    "entry_price": 3.4801e-06,
-   "price": 3.3972e-06,
+   "price": 3.32391e-06,
    "slip": 0.0,
    "tp1_done": false,
    "strategy": "new_pairs",
    "plan": {
     "tier": "scalp",
-    "score": 2,
+    "score": 1,
     "parts": [
-     "inflow 9.3 SOL",
-     "buys 83%"
+     "inflow 8.8 SOL"
     ],
     "ladder": [
      [
@@ -947,7 +950,7 @@
     "trail_pct": 0.0
    },
    "tier": "scalp",
-   "score": 2,
+   "score": 1,
    "steps": 0,
    "age_s": 45,
    "mcap_sol": 48.1,
@@ -957,7 +960,12 @@
     3.4801e-06,
     3.39773e-06,
     3.40282e-06,
-    3.3972e-06
+    3.3972e-06,
+    3.31881e-06,
+    3.2953e-06,
+    3.3072e-06,
+    3.30685e-06,
+    3.32392e-06
    ]
   }
  ],
@@ -1339,15 +1347,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T10:06:33Z",
-   "time": "11:06:33",
-   "agent": "EXECUTOR",
-   "coin": "YARL",
-   "action": "exit",
-   "text": "EXIT YARL $-0.61 (-14%) · stop -9% · out · 0.1 s after the reading",
-   "n": 133
-  },
   {
    "t": "2026-11-26T10:06:33Z",
    "time": "11:06:33",
@@ -3138,6 +3137,15 @@
    "action": "plan",
    "text": "hold plan · 2/10 (inflow 9.3 SOL, buys 83%) · scalp: +10",
    "n": 332
+  },
+  {
+   "t": "2026-11-26T12:34:28Z",
+   "time": "13:34:28",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.0 a minute · 3 watched · 9 rejected (mayhem mode 4, serial launcher 3, dev bought 2) · closest HIPPO: too young: 8 s (min 45 s)",
+   "n": 333
   }
  ],
  "nights": [
@@ -3180,7 +3188,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 22 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3188,15 +3196,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 101,
-    "last_event_age_s": 9.9,
+    "events": 103,
+    "last_event_age_s": 9.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1882,
+    "events": 1961,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -3204,8 +3212,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 66,
-    "last_event_age_s": 14.7,
+    "events": 67,
+    "last_event_age_s": 9.1,
     "errors": 9,
     "last_error": "dpaste.org: HTTP 403"
    }
@@ -3218,8 +3226,8 @@
   "exit_ms": 32.5,
   "exit_last_ms": 45,
   "launch_to_entry_s": 24,
-  "creates_per_min": 5.4,
-  "watching": 3,
+  "creates_per_min": 5.2,
+  "watching": 4,
   "followed": 9
  },
  "learner": {
@@ -3265,23 +3273,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1085,
+   "sent": 1121,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1085,
+   "sent": 1121,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FIFA",
+   "name": "fifa",
+   "mint": "HhEaJE4BpJC7KEy7eUtkmhA5VrHkvr1GodN33gtPpump",
+   "age_s": 9,
+   "sol_in": 0.26,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.8,
+   "dev_pct": 0.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
+   "symbol": "BI",
+   "name": "BI",
+   "mint": "AakRw8a1ZVgPKY1b9hUtdbhcpYVvjJpCxSwJR9iHRQ8e",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "痞痞兔",
    "name": "PIPI LABS",
    "mint": "HR6mpxXn5pBgpd5a3i6x9R9MXwMaQqWfE54sXKTbpump",
-   "age_s": 9,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3299,7 +3343,7 @@
    "symbol": "LARPMAS",
    "name": "LARPMAS",
    "mint": "81Nf7bojpJeYF9DPWrMN2GTTb4aQkwwaMLqwtDnZpump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 0,
@@ -3317,11 +3361,11 @@
    "symbol": "arigato",
    "name": "cat trader",
    "mint": "5iHGGUXqGAYjBgoeod8nmwKkRe1uCjKteW88Wqoepump",
-   "age_s": 31,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 64,
+   "sol_in": 0.02,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
    "big_sell": 0.0,
@@ -3335,7 +3379,7 @@
    "symbol": "CBI",
    "name": "Cool boi",
    "mint": "7AWqzsMMbbLVzLtyyiCQ8tL3bp8nneEN5EHbq9T7pump",
-   "age_s": 43,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3353,12 +3397,12 @@
    "symbol": "SATNA",
    "name": "SATNA KLAUSE",
    "mint": "BFtzMjo2kHDiqgAuvspKaXU8ofF5LBpyhDydxCLepump",
-   "age_s": 61,
-   "sol_in": 9.33,
-   "buys": 20,
-   "sells": 6,
-   "rise_pct": 71.9,
-   "mcap_sol": 48.1,
+   "age_s": 94,
+   "sol_in": 8.9,
+   "buys": 22,
+   "sells": 9,
+   "rise_pct": 68.2,
+   "mcap_sol": 47.0,
    "dev_pct": 0.0,
    "big_sell": 1.19,
    "x": false,
@@ -3371,7 +3415,7 @@
    "symbol": "DUCKNALD",
    "name": "ducknald",
    "mint": "JB1S3kDzK8riXMyqrSqaBvMGszSB2kccodDQCFZpo8J5",
-   "age_s": 63,
+   "age_s": 96,
    "sol_in": -1.87,
    "buys": 1,
    "sells": 13,
@@ -3389,7 +3433,7 @@
    "symbol": "SAITAMA",
    "name": "さいたまトークン",
    "mint": "6XxrtfobL9EJDasgZuRhxDy7mC7PXx21NsBFuF423cTF",
-   "age_s": 85,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3407,25 +3451,25 @@
    "symbol": "ONCEA",
    "name": "Once and Done",
    "mint": "3CgbvVGc7pGJJvTpQUTHLrmPCMRs4zVMjqsv1jbEpump",
-   "age_s": 109,
-   "sol_in": -0.31,
+   "age_s": 142,
+   "sol_in": -1.23,
    "buys": 3,
-   "sells": 4,
-   "rise_pct": -1.9,
-   "mcap_sol": 30.2,
+   "sells": 5,
+   "rise_pct": -7.6,
+   "mcap_sol": 28.4,
    "dev_pct": 5.0,
-   "big_sell": 0.51,
+   "big_sell": 0.92,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 33 s (min 45 s)"
+   "why": "SOL in -1.2/2.5 · buys 3/6 · buy share 38%/65% · rise -8%/+12%"
   },
   {
    "symbol": "HIPPO",
    "name": "Baby Hippo",
    "mint": "EBvS7Mb3e7fQkM3NB69tMirE6KutGfNSGCWLM2XsBy2H",
-   "age_s": 113,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -3443,7 +3487,7 @@
    "symbol": "痞痞兔",
    "name": "PIPI LABS",
    "mint": "HBGjM8gyYrxntzJ5wcuuD2oxwjfBkNJbAty4dVHLpump",
-   "age_s": 124,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3461,12 +3505,12 @@
    "symbol": "SAITAMA",
    "name": "さいたまトークン",
    "mint": "T6wtf42QybibBXmbYU8shb4KEeVUPc7T7Pw2PtKpump",
-   "age_s": 145,
-   "sol_in": 50.69,
-   "buys": 72,
-   "sells": 62,
-   "rise_pct": 454.7,
-   "mcap_sol": 241.1,
+   "age_s": 178,
+   "sol_in": 57.69,
+   "buys": 103,
+   "sells": 80,
+   "rise_pct": 546.3,
+   "mcap_sol": 281.0,
    "dev_pct": 21.2,
    "big_sell": 3.32,
    "x": "https://x.com/Sizeyon/status/2125930486060953685",
@@ -3474,24 +3518,6 @@
    "web": "https://www.ownerpet.net/up/u2/read.php?p=1&q=125&s=4",
    "status": "rejected: dev bought 21.2% (max 8%)",
    "why": "dev bought 21.2% (max 8%)"
-  },
-  {
-   "symbol": "Elonmas",
-   "name": "Elonmas",
-   "mint": "4GUcBdc9MuRAYJKnK3TYmRzGsDPCkXZNRH8m8WTJLBUP",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -99.9,
-   "mcap_sol": 0.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
   }
  ],
  "strategies": [
