@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T20:22:53Z",
+ "updated": "2026-11-26T20:23:22Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -24,7 +24,7 @@
   "flagged": 58,
   "checked": 44,
   "filtered": 9,
-  "lines": 942,
+  "lines": 943,
   "last_rug": {
    "coin": "Conga",
    "pass": false
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795688581,
-   87.14
-  ],
   [
    1795688641,
    87.14
@@ -2472,6 +2468,10 @@
   [
    1795724533,
    83.48
+  ],
+  [
+   1795724593,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -2994,15 +2994,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T17:57:04Z",
-   "time": "18:57:04",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.2 a minute · 6 watched · 24 rejected (serial launcher 17, mayhem mode 4, dump 2) · closest $DUMPLING: too young: 14 s (min 45 s)",
-   "n": 743
-  },
   {
    "t": "2026-11-26T17:58:05Z",
    "time": "18:58:05",
@@ -4793,6 +4784,15 @@
    "action": "scan",
    "text": "new pairs · 6.6 a minute · 6 watched · 14 rejected (serial launcher 7, dump 3, dev bought 2) · closest 37: too young: 16 s (min 45 s)",
    "n": 942
+  },
+  {
+   "t": "2026-11-26T20:23:20Z",
+   "time": "21:23:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.4 a minute · 6 watched · 14 rejected (serial launcher 8, dump 2, dev bought 2) · closest PULL: too young: 2 s (min 45 s)",
+   "n": 943
   }
  ],
  "nights": [
@@ -4837,7 +4837,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4845,24 +4845,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1938,
-    "last_event_age_s": 5.3,
+    "events": 1941,
+    "last_event_age_s": 3.0,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26069,
-    "last_event_age_s": 0.5,
+    "events": 26106,
+    "last_event_age_s": 1.2,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1332,
-    "last_event_age_s": 4.8,
+    "events": 1335,
+    "last_event_age_s": 2.4,
     "errors": 127,
     "last_error": "n.uguu.se: too slow (over 2 s)"
    }
@@ -4875,9 +4875,9 @@
   "exit_ms": 33,
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
-  "creates_per_min": 6.2,
-  "watching": 5,
-  "followed": 15
+  "creates_per_min": 6.4,
+  "watching": 6,
+  "followed": 17
  },
  "learner": {
   "samples": 108,
@@ -4923,23 +4923,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15792,
+   "sent": 15823,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15826,
+   "sent": 15857,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PHIL",
+   "name": "Nigga Phil",
+   "mint": "GDoJDVyvFCNNMTBvgAsnTJFCVQ3iJL5duwCPR1ywpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://linktr.ee/JeanPhilanthrope",
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
+   "symbol": "PULL",
+   "name": "Pull",
+   "mint": "AWW9zSVEp5Z88E8ogCiZ57tqLaoSSrk2KoYJMDgwpump",
+   "age_s": 8,
+   "sol_in": 1.59,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 10.8,
+   "mcap_sol": 31.2,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": "https://x.com/usepullagent",
+   "tg": false,
+   "web": "https://usepullagent.xyz/",
+   "status": "watching",
+   "why": "too young: 2 s (min 45 s)"
+  },
+  {
+   "symbol": "PTD",
+   "name": "Pet The Dog",
+   "mint": "5fdmi6jKq7c29JxdUgetHdMSfB8YH8hn8zEsyDFJpump",
+   "age_s": 15,
+   "sol_in": 2.88,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 17.7,
+   "mcap_sol": 42.1,
+   "dev_pct": 12.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/mar_ko3/status/2126047401056071702?a=mxPaMzNv0CGcoYjMBqo&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 12.5% (max 8%)",
+   "why": "dev bought 12.5% (max 8%)"
+  },
+  {
    "symbol": "HATER",
    "name": "Certified Hater Energy",
    "mint": "8RQfPVRjT6aC5CjpYq5F1wk5PMPRuXkzA6T8GmcBqXRz",
-   "age_s": 5,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4957,7 +5011,7 @@
    "symbol": "FEYES",
    "name": "Fomo Eyes",
    "mint": "3vGQMnghB6r6ABoQPnR5gf4copYvTz2vDgyWM2vUpump",
-   "age_s": 19,
+   "age_s": 48,
    "sol_in": -1.98,
    "buys": 3,
    "sells": 4,
@@ -4975,7 +5029,7 @@
    "symbol": "?",
    "name": "",
    "mint": "8wCczTx3jYVjtzwEcaPn2wYJRbkexneutGkZsMTVsUPF",
-   "age_s": 25,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4993,7 +5047,7 @@
    "symbol": "ATLAS",
    "name": "Token Atlas",
    "mint": "Fcnf7LwRa76PF92Q7rjQ7GW3zT1QW4SSPog3tXBuZwmb",
-   "age_s": 38,
+   "age_s": 67,
    "sol_in": 1.97,
    "buys": 3,
    "sells": 1,
@@ -5011,14 +5065,14 @@
    "symbol": "VI",
    "name": "Virus inu",
    "mint": "5WENhoLDFjs3WWgn4Xwar7ti35BdQqKLNcx8ozcbpump",
-   "age_s": 41,
-   "sol_in": 0.0,
+   "age_s": 70,
+   "sol_in": -0.1,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": false,
    "tg": false,
    "web": false,
@@ -5029,7 +5083,7 @@
    "symbol": "LIGHTS",
    "name": "Red Lights",
    "mint": "3usbG7cAAEDwvWMpac4RqNuXokAWTj6qWdPs3TWxtPtg",
-   "age_s": 60,
+   "age_s": 89,
    "sol_in": 0.04,
    "buys": 3,
    "sells": 4,
@@ -5047,7 +5101,7 @@
    "symbol": "FREG",
    "name": "freg",
    "mint": "iVB6KhkS51hwsVWUDvYA9EFA6oC4oMExHWtxxcbpump",
-   "age_s": 85,
+   "age_s": 114,
    "sol_in": 0.26,
    "buys": 1,
    "sells": 0,
@@ -5065,7 +5119,7 @@
    "symbol": "PUMP",
    "name": "pump app",
    "mint": "qM7ngxw8edWymHnsoJBzarpDkmfV5kF6VtkUgQZfVYs",
-   "age_s": 88,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5083,7 +5137,7 @@
    "symbol": "MFC",
    "name": "My first coin",
    "mint": "7o4VfXbAQXZtxD7wqT9HhgmHuw9pwbyMtJmJHmqrpump",
-   "age_s": 99,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5101,7 +5155,7 @@
    "symbol": "IN4K",
    "name": "Caught In 4K",
    "mint": "7m3tY8Pjr4jAPuoTVFWacw5EpPyNQnkJLn8ryJT5JBqm",
-   "age_s": 107,
+   "age_s": 136,
    "sol_in": 0.05,
    "buys": 1,
    "sells": 1,
@@ -5119,7 +5173,7 @@
    "symbol": "37",
    "name": "37 Million",
    "mint": "9nk57MqcVErnBeWZJNQAPszw6eSf6Ez5sLGTN7qB8sar",
-   "age_s": 111,
+   "age_s": 140,
    "sol_in": 0.58,
    "buys": 6,
    "sells": 2,
@@ -5137,12 +5191,12 @@
    "symbol": "guys",
    "name": "the little guys",
    "mint": "HuMvXthQKFYw1zvzdYJnQvqZVEfptZbCzR7m51gNShRu",
-   "age_s": 115,
-   "sol_in": 1.6,
+   "age_s": 144,
+   "sol_in": -1.98,
    "buys": 4,
-   "sells": 6,
-   "rise_pct": 10.3,
-   "mcap_sol": 35.0,
+   "sells": 7,
+   "rise_pct": -12.0,
+   "mcap_sol": 28.0,
    "dev_pct": 6.6,
    "big_sell": 5.2,
    "x": "https://x.com/legitnarratives/status/2126048542812778775",
@@ -5155,7 +5209,7 @@
    "symbol": "kitty",
    "name": "kitty",
    "mint": "2RK7ZznYC4sDxLRgoRLeg7NPbC4ZeK5XZWgxub7kpump",
-   "age_s": 130,
+   "age_s": 159,
    "sol_in": 0.23,
    "buys": 7,
    "sells": 0,
@@ -5173,7 +5227,7 @@
    "symbol": "Meng Lan",
    "name": "Meng Lan",
    "mint": "GBeL9bAM1TB9tHH9xF6HWV4ZvM7sLCNWMkq87Vmzpump",
-   "age_s": 137,
+   "age_s": 166,
    "sol_in": 0.32,
    "buys": 3,
    "sells": 0,
@@ -5191,7 +5245,7 @@
    "symbol": "ZOD",
    "name": "Zod Cards",
    "mint": "2TetGKuSg98d4apjuW69sXCnvMbSzsGeJUYkQXtDpump",
-   "age_s": 145,
+   "age_s": 174,
    "sol_in": -0.37,
    "buys": 4,
    "sells": 6,
@@ -5209,7 +5263,7 @@
    "symbol": "GREED",
    "name": "The Daily Jawbreaker",
    "mint": "3txiKmq61LeBSr8ZRsV7sUBXzPzbkfeeav99aLHCpump",
-   "age_s": 147,
+   "age_s": 176,
    "sol_in": 0.33,
    "buys": 2,
    "sells": 0,
@@ -5222,24 +5276,6 @@
    "web": false,
    "status": "watching",
    "why": "too young: 31 s (min 45 s)"
-  },
-  {
-   "symbol": "micro",
-   "name": "microcoin",
-   "mint": "3Voo8MBeT7vMKvQ8tAjSWFCCwkRuFpNpgMybsES2XwSW",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": -99.9,
-   "mcap_sol": 0.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/genyrational/status/2126048423639916928",
-   "tg": false,
-   "web": "https://x.com/cannibalyyysm/status/2091678062949658876",
-   "status": "rejected: serial launcher: 33 more coins in 60 min",
-   "why": "serial launcher: 33 more coins in 60 min"
   }
  ],
  "strategies": [
