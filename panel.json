@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:52:52Z",
+ "updated": "2026-11-26T17:53:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 84.53,
@@ -24,7 +24,7 @@
   "flagged": 44,
   "checked": 37,
   "filtered": 8,
-  "lines": 736,
+  "lines": 737,
   "last_rug": {
    "coin": "COFOUNDERS",
    "pass": true
@@ -2184,6 +2184,10 @@
   [
    1795715533,
    84.53
+  ],
+  [
+   1795715593,
+   84.53
   ]
  ],
  "position_pct": 10.0,
@@ -2658,15 +2662,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T15:20:47Z",
-   "time": "16:20:47",
-   "agent": "SCANNER",
-   "coin": "CHESS",
-   "action": "flag",
-   "text": "momentum · 6.2 SOL in · 6/8 buys (75%) · +42% since launch · mcap 46 SOL · 142 s old",
-   "n": 537
-  },
   {
    "t": "2026-11-26T15:20:47Z",
    "time": "16:20:47",
@@ -4457,6 +4452,15 @@
    "action": "scan",
    "text": "new pairs · 5.8 a minute · 4 watched · 8 rejected (dump 2, mayhem mode 2, no symbol or name 2) · closest REGGIE: too young: 6 s (min 45 s)",
    "n": 736
+  },
+  {
+   "t": "2026-11-26T17:53:02Z",
+   "time": "18:53:02",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 4 watched · 8 rejected (no symbol or name 4, dev bought 1, dump 1) · closest FLOP: too young: 3 s (min 45 s)",
+   "n": 737
   }
  ],
  "nights": [
@@ -4499,7 +4503,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4507,26 +4511,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 624,
-    "last_event_age_s": 1.7,
+    "events": 628,
+    "last_event_age_s": 6.3,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7891,
+    "events": 7956,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 442,
-    "last_event_age_s": 3.8,
-    "errors": 29,
-    "last_error": "ipfs.io: HTTP 403"
+    "connected": false,
+    "events": 445,
+    "last_event_age_s": 2.3,
+    "errors": 30,
+    "last_error": "d.uguu.se: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -4537,9 +4541,9 @@
   "exit_ms": 32.5,
   "exit_last_ms": 39,
   "launch_to_entry_s": 25.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 4.8,
   "watching": 5,
-  "followed": 8
+  "followed": 9
  },
  "learner": {
   "samples": 107,
@@ -4585,23 +4589,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6209,
+   "sent": 6243,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6243,
+   "sent": 6277,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WISHBONE",
+   "name": "wishbone",
+   "mint": "9CcQSihrADqrmFki5xCwsA7J6rYJ5SDZfDiDKthY13yY",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.6,
+   "dev_pct": 4.8,
+   "big_sell": 0.44,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 6 s (min 45 s)"
+  },
+  {
+   "symbol": "TRUMP2.0",
+   "name": "OFFICIAL TRUMP 2.0",
+   "mint": "HDiGMAGFgnYhysW3EzerqQxuGxAthuKRUnQ3Fcfdpump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/realDonaldTrump",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 15.2% (max 8%)",
+   "why": "dev bought 15.2% (max 8%)"
+  },
+  {
+   "symbol": "BEEMAS",
+   "name": "BEEMAS",
+   "mint": "8nDRzjgdMCwoXEb9PpQ86UodGUMxCKRCV5VWimFpump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "8smvontwhqJnp1UPYe6V7kGsFyo5CbFBA7NVMrXu9WVK",
-   "age_s": 3,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4619,7 +4677,7 @@
    "symbol": "SEXI",
    "name": "SpaceXAITesla",
    "mint": "3fkTbdvRbTfcsL7qdL8yp74GxYJ1pbzKieU79XX3fLQb",
-   "age_s": 4,
+   "age_s": 36,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4637,10 +4695,10 @@
    "symbol": "FLOP",
    "name": "FLOP",
    "mint": "3zWnAgQd3RxGhPsUet4fX5X6dPWuDGYJekFx7ZhJpump",
-   "age_s": 11,
+   "age_s": 43,
    "sol_in": 8.01,
    "buys": 2,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 59.7,
    "mcap_sol": 45.8,
    "dev_pct": 1.3,
@@ -4649,13 +4707,13 @@
    "tg": false,
    "web": "https://flop.finance/fr/",
    "status": "watching",
-   "why": "too young: 3 s (min 45 s)"
+   "why": "too young: 27 s (min 45 s)"
   },
   {
    "symbol": "?",
    "name": "",
    "mint": "4Qpqjqm2o1n8XDuNL9SCzbFgVbmZoBoVL362JZXrJwY2",
-   "age_s": 31,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4673,28 +4731,28 @@
    "symbol": "FIND",
    "name": "Find The Coin",
    "mint": "9Cn1xLCb9BBjYHzNWDoqRbnC6a3KR63oJVCEPtbcpump",
-   "age_s": 53,
-   "sol_in": 0.12,
+   "age_s": 85,
+   "sol_in": -0.18,
    "buys": 4,
-   "sells": 0,
-   "rise_pct": 0.8,
-   "mcap_sol": 28.7,
+   "sells": 1,
+   "rise_pct": -1.2,
+   "mcap_sol": 28.2,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 0.3,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 22 s (min 45 s)"
+   "why": "SOL in -0.2/2.5 · buys 4/6 · rise -1%/+12%"
   },
   {
    "symbol": "REGGIE",
    "name": "Reggie the turkey",
    "mint": "5t4sGPJ9wA7onEdr1e3q9viAWhkqzuaTHVTYhVkFpump",
-   "age_s": 57,
+   "age_s": 89,
    "sol_in": -1.99,
    "buys": 5,
-   "sells": 15,
+   "sells": 16,
    "rise_pct": -12.0,
    "mcap_sol": 28.3,
    "dev_pct": 7.3,
@@ -4709,7 +4767,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HNs22D4MipGxu77pRpPMeTRYKBX97S1BDYHN3GyYpump",
-   "age_s": 87,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4727,12 +4785,12 @@
    "symbol": "wishbone",
    "name": "wishbone",
    "mint": "31TFtLgP5D8zQcaGFH3besKmTu36wqc4wEiM25zbpump",
-   "age_s": 88,
-   "sol_in": 20.25,
-   "buys": 44,
-   "sells": 33,
-   "rise_pct": 147.8,
-   "mcap_sol": 95.7,
+   "age_s": 120,
+   "sol_in": 27.07,
+   "buys": 57,
+   "sells": 47,
+   "rise_pct": 212.5,
+   "mcap_sol": 120.7,
    "dev_pct": 16.0,
    "big_sell": 5.5,
    "x": "https://x.com/wishbonetek/status/2126010802800840836",
@@ -4745,7 +4803,7 @@
    "symbol": "BGT",
    "name": "BEAT BY A GIRL TRADER",
    "mint": "AbztP3AZ4izQNwPdVzzLZbJpRv67vPDzpYnVdZTNpump",
-   "age_s": 105,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4763,7 +4821,7 @@
    "symbol": "SNØW",
    "name": "SnøwMan",
    "mint": "6oHxvWcjFbq6vjwbxwq9o6KBL4vqJTeMDaZwZyMupump",
-   "age_s": 133,
+   "age_s": 165,
    "sol_in": 0.05,
    "buys": 4,
    "sells": 1,
@@ -4776,60 +4834,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in 0.1/2.5 · buys 4/6 · rise +0%/+12%"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "BY8P3PH2FidbNxUshFJePvYGtDsy3NoHQgG5oCu46L9M",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 1.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "HOLD",
-   "name": "Hold Earn Ripen",
-   "mint": "BcMgPmFcufhzQxDab4NdhTYqXm9E9kTneqyuJxcTpump",
-   "age_s": 174,
-   "sol_in": -0.59,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 7.58,
-   "x": "https://x.com/Ripenfun/status/2126010200499122391",
-   "tg": false,
-   "web": "https://ripen.lol",
-   "status": "rejected: dump: 7.6 SOL sold",
-   "why": "dump: 7.6 SOL sold"
-  },
-  {
-   "symbol": "Life",
-   "name": "Solana ruined my life",
-   "mint": "5zynj4huezsJC9e4PmPD7pELdNLRhFCSQUMKQLTqpump",
-   "age_s": 175,
-   "sol_in": -0.19,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": -1.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.7,
-   "big_sell": 0.3,
-   "x": "https://x.com/GeraldDevor/status/2126007702233186455",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 17 s (min 45 s)"
   }
  ],
  "strategies": [
