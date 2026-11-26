@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T10:36:49Z",
+ "updated": "2026-11-26T10:37:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.14,
@@ -24,7 +24,7 @@
   "flagged": 13,
   "checked": 13,
   "filtered": 1,
-  "lines": 168,
+  "lines": 169,
   "last_rug": {
    "coin": "TIPPD",
    "pass": true
@@ -439,6 +439,10 @@
   ],
   [
    1795689361,
+   87.14
+  ],
+  [
+   1795689421,
    87.14
   ]
  ],
@@ -2292,6 +2296,15 @@
    "action": "scan",
    "text": "new pairs · 5.6 a minute · 7 watched · 3 rejected (dev bought 2, serial launcher 1) · closest cock: SOL in 2.0/2.5 · buys 5/6 · buy share 62%/65%",
    "n": 168
+  },
+  {
+   "t": "2026-11-26T10:36:53Z",
+   "time": "11:36:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 6 watched · 4 rejected (dev bought 3, serial launcher 1) · closest cock: SOL in 2.0/2.5",
+   "n": 169
   }
  ],
  "nights": [
@@ -2340,7 +2353,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 9 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2348,25 +2361,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 297,
-    "last_event_age_s": 26.8,
+    "events": 300,
+    "last_event_age_s": 9.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4091,
+    "events": 4129,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 218,
-    "last_event_age_s": 24.6,
-    "errors": 164,
+    "connected": true,
+    "events": 220,
+    "last_event_age_s": 18.9,
+    "errors": 165,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -2379,8 +2392,8 @@
   "exit_last_ms": 75,
   "launch_to_entry_s": 20,
   "creates_per_min": 3.2,
-  "watching": 5,
-  "followed": 9
+  "watching": 6,
+  "followed": 10
  },
  "learner": {
   "samples": 104,
@@ -2425,23 +2438,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3949,
+   "sent": 3979,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3949,
+   "sent": 3979,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WORTHLESS",
+   "name": "Worthless Coin",
+   "mint": "DeNmTAQ1Fx4VgCbPB3wLiAMYdJUHeuFsCsrVgyxCpump",
+   "age_s": 19,
+   "sol_in": 0.62,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": 3.9,
+   "mcap_sol": 33.0,
+   "dev_pct": 6.6,
+   "big_sell": 1.21,
+   "x": "https://x.com/chiggaquant/status/2125901617203409296",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "JALEEL",
+   "name": "Jaleel",
+   "mint": "E4xcN9yf4hWGTUwGxNUY2gTxsnYCVnhbQhG1qmWFiFma",
+   "age_s": 24,
+   "sol_in": 0.09,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 0.6,
+   "mcap_sol": 28.5,
+   "dev_pct": 0.7,
+   "big_sell": 0.31,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 17 s (min 45 s)"
+  },
+  {
    "symbol": "JOCK",
    "name": "Jock Dog",
    "mint": "HKMYgAFacg5qNzZmADsLaJwuLNAct8xeegWZ6SsDMeEW",
-   "age_s": 26,
+   "age_s": 54,
    "sol_in": 0.15,
    "buys": 2,
    "sells": 2,
@@ -2459,7 +2508,7 @@
    "symbol": "Maneki",
    "name": "Maneki Neko",
    "mint": "Eg4Whf4NKPW9AsAw7wgEhz8dUetKhhZ56VpqNUAiTvSy",
-   "age_s": 32,
+   "age_s": 60,
    "sol_in": -4.7,
    "buys": 4,
    "sells": 7,
@@ -2477,14 +2526,14 @@
    "symbol": "RSA",
    "name": "RSA cryptosystem",
    "mint": "H352QoFCTwnPrVBr8whGiTMe7cHtAK77DYK7y79pump",
-   "age_s": 34,
-   "sol_in": 27.26,
-   "buys": 17,
-   "sells": 17,
-   "rise_pct": 225.1,
-   "mcap_sol": 116.4,
+   "age_s": 62,
+   "sol_in": 3.08,
+   "buys": 25,
+   "sells": 36,
+   "rise_pct": 19.0,
+   "mcap_sol": 42.6,
    "dev_pct": 12.5,
-   "big_sell": 3.1,
+   "big_sell": 6.43,
    "x": "https://x.com/KingChillxyz/status/2125901381588668593",
    "tg": false,
    "web": "https://x.com/i/trending/2125496391958921248",
@@ -2495,25 +2544,25 @@
    "symbol": "ENRIQUE",
    "name": "Enrique",
    "mint": "2ic6DpfRs9o13rcX5qpKnqBQCo5qUCu58hwyHP1yYVi6",
-   "age_s": 61,
-   "sol_in": 0.17,
+   "age_s": 89,
+   "sol_in": 0.14,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": 1.1,
-   "mcap_sol": 28.5,
+   "sells": 3,
+   "rise_pct": 0.9,
+   "mcap_sol": 28.4,
    "dev_pct": 0.4,
    "big_sell": 0.26,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 17 s (min 45 s)"
+   "why": "SOL in 0.1/2.5 · buys 2/6 · buy share 40%/65% · rise +1%/+12%"
   },
   {
    "symbol": "ALIEN",
    "name": "Alien Egg",
    "mint": "5LAeZnNfa9fSWnMS8YX8MYrU4ici9s3zwq7A3jteTYKw",
-   "age_s": 92,
+   "age_s": 120,
    "sol_in": 0.12,
    "buys": 1,
    "sells": 3,
@@ -2531,11 +2580,11 @@
    "symbol": "cock",
    "name": "cock trader coin",
    "mint": "3Z5SCLL9FjzArbPWyHpsUseqf4xxeK9BimEK4s79pump",
-   "age_s": 118,
-   "sol_in": 2.0,
-   "buys": 6,
+   "age_s": 146,
+   "sol_in": 2.02,
+   "buys": 7,
    "sells": 3,
-   "rise_pct": 13.8,
+   "rise_pct": 13.9,
    "mcap_sol": 31.9,
    "dev_pct": 0.1,
    "big_sell": 0.83,
@@ -2549,7 +2598,7 @@
    "symbol": "SAND",
    "name": "Sand Fox",
    "mint": "EG7gR3VpGXWfdNPG3SquhBNJcJxvMn9iHCtCJdnHnycg",
-   "age_s": 121,
+   "age_s": 149,
    "sol_in": -0.28,
    "buys": 1,
    "sells": 4,
@@ -2567,7 +2616,7 @@
    "symbol": "STRUGGLECAT",
    "name": "Struggle Cat",
    "mint": "CPcuGvUuFsKPndhoJuALzYWo7omDt7j6tPpZspvipump",
-   "age_s": 147,
+   "age_s": 175,
    "sol_in": -2.22,
    "buys": 12,
    "sells": 17,
@@ -2580,24 +2629,6 @@
    "web": "https://x.com/i/status/2125726223628148754",
    "status": "rejected: dev bought 9.6% (max 8%)",
    "why": "dev bought 9.6% (max 8%)"
-  },
-  {
-   "symbol": "Cloak",
-   "name": "PumpCloak",
-   "mint": "8KPJoSxafBPmdmbhD7knTUH3eYcNShdqFQSveXmR8MY7",
-   "age_s": 156,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 4050.1,
-   "mcap_sol": 1160.3,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
   }
  ],
  "strategies": [
