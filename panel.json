@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T09:35:50Z",
+ "updated": "2026-11-26T09:36:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 87.76,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 10,
   "filtered": 1,
-  "lines": 91,
+  "lines": 92,
   "last_rug": {
    "coin": "Oro",
    "pass": true
@@ -195,6 +195,10 @@
   ],
   [
    1795685701,
+   87.76
+  ],
+  [
+   1795685761,
    87.76
   ]
  ],
@@ -1312,6 +1316,15 @@
    "action": "scan",
    "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest BUZZCUT: too young: 0 s (min 45 s)",
    "n": 91
+  },
+  {
+   "t": "2026-11-26T09:36:18Z",
+   "time": "10:36:18",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.8 a minute · 3 watched · 1 rejected (dump 1) · closest PRB: too young: 1 s (min 45 s)",
+   "n": 92
   }
  ],
  "nights": [
@@ -1340,7 +1353,9 @@
    "scans": 0
   }
  ],
- "errors": [],
+ "errors": [
+  "https://api.rugcheck.xyz/v1/tokens/6k2zv2ArmkXaomk5uy4QpvpL21yFTpz73gLfk92Npump/report: HTTP 400"
+ ],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -1354,7 +1369,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 1 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1362,25 +1377,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1,
-    "last_event_age_s": 34.1,
+    "events": 4,
+    "last_event_age_s": 11.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 9.9,
+    "events": 15,
+    "last_event_age_s": 5.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": false,
-    "events": 1,
-    "last_event_age_s": 31.8,
-    "errors": 1,
+    "events": 4,
+    "last_event_age_s": 9.6,
+    "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -1392,9 +1407,9 @@
   "exit_ms": 32.0,
   "exit_last_ms": 32,
   "launch_to_entry_s": 19.5,
-  "creates_per_min": 0.2,
-  "watching": 1,
-  "followed": 1
+  "creates_per_min": 0.8,
+  "watching": 3,
+  "followed": 4
  },
  "learner": {
   "samples": 103,
@@ -1439,26 +1454,80 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 53,
+   "sent": 83,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 53,
+   "sent": 83,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BATON",
+   "name": "Baton",
+   "mint": "D2NFomBgh18DGBH7FSBUNkB5NwWruRWRwYPXTAmtpump",
+   "age_s": 11,
+   "sol_in": 5.19,
+   "buys": 5,
+   "sells": 1,
+   "rise_pct": 36.7,
+   "mcap_sol": 39.9,
+   "dev_pct": 2.2,
+   "big_sell": 2.22,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 2.2 SOL sold",
+   "why": "dump: 2.2 SOL sold"
+  },
+  {
+   "symbol": "TOOSOON",
+   "name": "Early Confetti",
+   "mint": "6k2zv2ArmkXaomk5uy4QpvpL21yFTpz73gLfk92Npump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 17 s (min 45 s)"
+  },
+  {
+   "symbol": "PRB",
+   "name": "probe",
+   "mint": "96R668CBk9EVXibzqD9wupcF434PLwSL3tGMb1ps2Hs",
+   "age_s": 25,
+   "sol_in": 0.04,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
    "symbol": "BUZZCUT",
    "name": "Leaf Barber",
    "mint": "2zvxxfs2JR3C5vE5dEMxPmhyGiPraDZWzSVPeQAepump",
-   "age_s": 34,
+   "age_s": 62,
    "sol_in": 0.0,
-   "buys": 2,
-   "sells": 1,
+   "buys": 3,
+   "sells": 2,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
@@ -1467,7 +1536,7 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 24 s (min 45 s)"
+   "why": "SOL in 0.0/2.5 · buys 3/6 · buy share 60%/65% · rise +0%/+12%"
   }
  ],
  "strategies": [
