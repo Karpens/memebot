@@ -35,42 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T11:11:14Z",
-    "time": "12:11:14",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.4 a minute · 2 watched · 10 rejected (dev bought 4, mayhem mode 3, serial launcher 2) · closest DaWae: too young: 0 s (min 45 s)",
-    "n": 222
-   },
-   {
-    "t": "2026-11-26T11:12:14Z",
-    "time": "12:12:14",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.6 a minute · 3 watched · 6 rejected (serial launcher 2, dev bought 2, dump 1) · closest FLUSH: too young: 10 s (min 45 s)",
-    "n": 223
-   },
-   {
-    "t": "2026-11-26T11:13:14Z",
-    "time": "12:13:14",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.6 a minute · 5 watched · 6 rejected (dev bought 2, mayhem mode 2, serial launcher 1) · closest Salaryman: too young: 34 s (min 45 s)",
-    "n": 224
-   },
-   {
-    "t": "2026-11-26T11:14:15Z",
-    "time": "12:14:15",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.4 a minute · 4 watched · 6 rejected (mayhem mode 2, dump 1, dev bought 1) · closest HUSS: SOL in 0.0/2.5 · buys 4/6 · rise +0%/+12%",
-    "n": 225
-   },
-   {
     "t": "2026-11-26T11:15:16Z",
     "time": "12:15:16",
     "agent": "SCANNER",
@@ -5433,6 +5397,42 @@
     "action": "scan",
     "text": "new pairs · 11.0 a minute · 10 watched · 21 rejected (dev bought 7, serial launcher 6, mayhem mode 6) · closest GHOST: buy share 64%/65%",
     "n": 821
+   },
+   {
+    "t": "2026-11-26T18:45:57Z",
+    "time": "19:45:57",
+    "agent": "SCANNER",
+    "coin": "WHO",
+    "action": "flag",
+    "text": "momentum · 3.1 SOL in · 10/14 buys (71%) · +21% since launch · mcap 37 SOL · 49 s old",
+    "n": 822
+   },
+   {
+    "t": "2026-11-26T18:45:57Z",
+    "time": "19:45:57",
+    "agent": "RUG CHECK",
+    "coin": "WHO",
+    "action": "pass",
+    "text": "PASS · 10 holders · top holder 2.5% · top 10 9% (curve left out)",
+    "n": 823
+   },
+   {
+    "t": "2026-11-26T18:45:57Z",
+    "time": "19:45:57",
+    "agent": "LEARNER",
+    "coin": "WHO",
+    "action": "skip",
+    "text": "skip · past trades like this lost avg 12.0% · hour:day -16.4% over 15.5, news:0-2 -16.8% over 12",
+    "n": 824
+   },
+   {
+    "t": "2026-11-26T18:45:57Z",
+    "time": "19:45:57",
+    "agent": "LEARNER",
+    "coin": "WHO",
+    "action": "shadow",
+    "text": "SHADOW WHO · not bought (learner skip) · followed as if bought: $8.35 at 0.0000027085 (curve maths, every cost) · same exits, outside the book",
+    "n": 825
    }
   ],
   "trades": [
@@ -6081,16 +6081,11 @@
   "streak": 10,
   "cooldown_until": 1795718396.474651,
   "scans": 0,
-  "flagged": 51,
-  "checked": 40,
+  "flagged": 52,
+  "checked": 41,
   "filtered": 8,
-  "lines": 821,
+  "lines": 825,
   "flags": [
-   {
-    "coin": "NOTHING",
-    "why": "momentum",
-    "t": "2026-11-26T17:46:22Z"
-   },
    {
     "coin": "FLOP",
     "why": "momentum",
@@ -6125,6 +6120,11 @@
     "coin": "Jerly",
     "why": "momentum",
     "t": "2026-11-26T18:42:34Z"
+   },
+   {
+    "coin": "WHO",
+    "why": "momentum",
+    "t": "2026-11-26T18:45:57Z"
    }
   ],
   "curve": [
@@ -8454,7 +8454,7 @@
    ]
   ],
   "last_rug": {
-   "coin": "Jerly",
+   "coin": "WHO",
    "pass": true
   },
   "np_said": 1795718728.257822,
@@ -9097,11 +9097,13 @@
     "weight": 0.5
    }
   ],
-  "open": []
+  "open": [
+   "WHO"
+  ]
  },
  "learner_summary": {
   "samples": 108,
-  "skipped": 21,
+  "skipped": 22,
   "explored": 5,
   "min_samples": 8,
   "best": [
