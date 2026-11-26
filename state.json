@@ -35,33 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T12:35:16Z",
-    "time": "13:35:16",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "8 losses in a row · 2 min pause",
-    "n": 334
-   },
-   {
-    "t": "2026-11-26T12:35:16Z",
-    "time": "13:35:16",
-    "agent": "EXECUTOR",
-    "coin": "SATNA",
-    "action": "exit",
-    "text": "EXIT SATNA $-0.76 (-15%) · stop -10% · out · 0.0 s after the reading",
-    "n": 335
-   },
-   {
-    "t": "2026-11-26T12:35:16Z",
-    "time": "13:35:16",
-    "agent": "LEARNER",
-    "coin": "SATNA",
-    "action": "learn",
-    "text": "learned · tier:scalp now avg -16.9% over 11",
-    "n": 336
-   },
-   {
     "t": "2026-11-26T12:35:28Z",
     "time": "13:35:28",
     "agent": "SCANNER",
@@ -5433,6 +5406,33 @@
     "action": "scan",
     "text": "new pairs · 6.8 a minute · 8 watched · 17 rejected (mayhem mode 8, dev bought 5, serial launcher 2) · closest Conga: buys 4/6 · buy share 57%/65%",
     "n": 933
+   },
+   {
+    "t": "2026-11-26T20:16:06Z",
+    "time": "21:16:06",
+    "agent": "SCANNER",
+    "coin": "Conga",
+    "action": "flag",
+    "text": "momentum · 9.6 SOL in · 12/18 buys (67%) · +75% since launch · mcap 49 SOL · 115 s old",
+    "n": 934
+   },
+   {
+    "t": "2026-11-26T20:16:06Z",
+    "time": "21:16:06",
+    "agent": "RUG CHECK",
+    "coin": "Conga",
+    "action": "reject",
+    "text": "FAIL · risk: Creator history of rugged tokens",
+    "n": 935
+   },
+   {
+    "t": "2026-11-26T20:16:15Z",
+    "time": "21:16:15",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.0 a minute · 8 watched · 18 rejected (mayhem mode 8, dev bought 4, serial launcher 2) · closest BAGS: too young: 6 s (min 45 s)",
+    "n": 936
    }
   ],
   "trades": [
@@ -6081,16 +6081,11 @@
   "streak": 10,
   "cooldown_until": 1795718396.474651,
   "scans": 0,
-  "flagged": 57,
-  "checked": 43,
-  "filtered": 8,
-  "lines": 933,
+  "flagged": 58,
+  "checked": 44,
+  "filtered": 9,
+  "lines": 936,
   "flags": [
-   {
-    "coin": "AFK",
-    "why": "momentum",
-    "t": "2026-11-26T18:37:49Z"
-   },
    {
     "coin": "Jerly",
     "why": "momentum",
@@ -6125,13 +6120,14 @@
     "coin": "AT8",
     "why": "momentum",
     "t": "2026-11-26T20:09:12Z"
+   },
+   {
+    "coin": "Conga",
+    "why": "momentum",
+    "t": "2026-11-26T20:16:06Z"
    }
   ],
   "curve": [
-   [
-    1795688161,
-    87.14
-   ],
    [
     1795688221,
     87.14
@@ -8527,13 +8523,17 @@
    [
     1795724113,
     83.48
+   ],
+   [
+    1795724173,
+    83.48
    ]
   ],
   "last_rug": {
-   "coin": "AT8",
-   "pass": true
+   "coin": "Conga",
+   "pass": false
   },
-  "np_said": 1795724114.257756,
+  "np_said": 1795724175.257782,
   "np_speed": {
    "first_in": [
     74,
