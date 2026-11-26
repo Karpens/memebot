@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:34:59Z",
+ "updated": "2026-11-26T19:35:26Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 83.48,
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795685701,
-   87.76
-  ],
   [
    1795685761,
    87.76
@@ -2472,6 +2468,10 @@
   [
    1795721653,
    83.48
+  ],
+  [
+   1795721713,
+   83.48
   ]
  ],
  "position_pct": 10.0,
@@ -4839,30 +4839,30 @@
   "gt_sec": 20,
   "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 0,
+  "watch_ms": 1,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1558,
-    "last_event_age_s": 10.3,
-    "errors": 2,
-    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
+    "events": 1560,
+    "last_event_age_s": 1.9,
+    "errors": 3,
+    "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21472,
-    "last_event_age_s": 0.7,
+    "events": 21480,
+    "last_event_age_s": 1.6,
     "errors": 8,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1110,
-    "last_event_age_s": 5.8,
+    "connected": true,
+    "events": 1111,
+    "last_event_age_s": 12.9,
     "errors": 98,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4875,9 +4875,9 @@
   "exit_ms": 33,
   "exit_last_ms": 89,
   "launch_to_entry_s": 26,
-  "creates_per_min": 5.4,
+  "creates_per_min": 5.2,
   "watching": 5,
-  "followed": 12
+  "followed": 13
  },
  "learner": {
   "samples": 108,
@@ -4923,23 +4923,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12734,
+   "sent": 12762,
    "errors": 2,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12768,
+   "sent": 12796,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "usaciv",
+   "name": "usaciv",
+   "mint": "6S3Th9xy9QRFzomk6UiRBzFtVtdomU6J9SUJiHAAtyo",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
+   "symbol": "USACIV",
+   "name": "USA Civilization",
+   "mint": "8ri8tKEY3NGffRX7GqxLjBniSVdkjjmhGuLLWNEbAACb",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -99.9,
+   "mcap_sol": 0.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/elonmusk/status/2126036921734553740",
+   "tg": false,
+   "web": "https://karpathy.ai/usaciv/",
+   "status": "rejected: serial launcher: 40 more coins in 60 min",
+   "why": "serial launcher: 40 more coins in 60 min"
+  },
+  {
    "symbol": "GI",
    "name": "Goon Inu",
    "mint": "BUMzszgkTfrFUjMz89LKpZ5LkHKyQ6J2Z76Pk8E4CG5F",
-   "age_s": 10,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4957,7 +4993,7 @@
    "symbol": "USACIV",
    "name": "Usaciv",
    "mint": "48GpFPuswBfLTwPEAA2yagtEk7XoUiwKGw2sWySa9SW5",
-   "age_s": 13,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4975,12 +5011,12 @@
    "symbol": "SOLANA",
    "name": "Solana changed my life",
    "mint": "GsXHbmh3Tz6wEQtTgHi74VpDknEvaXuFerCy9nYSPGiB",
-   "age_s": 60,
-   "sol_in": 0.39,
-   "buys": 19,
-   "sells": 17,
-   "rise_pct": 2.1,
-   "mcap_sol": 43.2,
+   "age_s": 87,
+   "sol_in": 0.15,
+   "buys": 20,
+   "sells": 18,
+   "rise_pct": 0.8,
+   "mcap_sol": 42.7,
    "dev_pct": 20.1,
    "big_sell": 7.22,
    "x": "https://x.com/solana/status/2126036747964555555",
@@ -4993,7 +5029,7 @@
    "symbol": "DDD",
    "name": "Destroy Dick December",
    "mint": "5S8ocdu6fTMVS7b2Y4fpUj3Hm3S2ToZuhf6pzQPBpump",
-   "age_s": 70,
+   "age_s": 97,
    "sol_in": 6.37,
    "buys": 8,
    "sells": 6,
@@ -5011,7 +5047,7 @@
    "symbol": "WAVEM",
    "name": "Wave Map",
    "mint": "97zcjryTQB3SpWPnSpdDZmzah6cJ6fc5K9iFnf3x3pPp",
-   "age_s": 72,
+   "age_s": 99,
    "sol_in": -0.49,
    "buys": 3,
    "sells": 2,
@@ -5029,7 +5065,7 @@
    "symbol": "PLUSHTRUMP",
    "name": "Plush Trump",
    "mint": "8qwt9PLcU8b6WtscWKJrurVfBp2RxA3HKfPG2tPqpump",
-   "age_s": 75,
+   "age_s": 102,
    "sol_in": 0.23,
    "buys": 4,
    "sells": 2,
@@ -5047,7 +5083,7 @@
    "symbol": "SPDCHK",
    "name": "Speed Check",
    "mint": "AAPLAAzKfDRWo8fa6JWuDGshC2G2jAFkXHoh6KVMTFEv",
-   "age_s": 78,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -5065,7 +5101,7 @@
    "symbol": "PUMPINU",
    "name": "Pumpfun INU",
    "mint": "GJSdVycNGiGxPaNn3GNiM62LZs6FnN1aN64uHVBYpump",
-   "age_s": 80,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5083,7 +5119,7 @@
    "symbol": "NFA",
    "name": "Non Financial Algo",
    "mint": "CRVnXJHLGMvwWC6u7UmeMPA4h1Jg1c8L3P2ZATVSkya7",
-   "age_s": 80,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5101,7 +5137,7 @@
    "symbol": "catato",
    "name": "catato",
    "mint": "79Ey5xePFgUYwD46WaAtSBoegmQvALMGCdRoBeYUpump",
-   "age_s": 94,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5119,7 +5155,7 @@
    "symbol": "MAINCH",
    "name": "Main Character Walks In",
    "mint": "DWwVdXpJAUemB1ANbNVpdVCvP1bohHZ5L5ZBYmawZ3p2",
-   "age_s": 124,
+   "age_s": 151,
    "sol_in": 0.03,
    "buys": 2,
    "sells": 0,
@@ -5137,7 +5173,7 @@
    "symbol": "Horse",
    "name": "Flying Horse",
    "mint": "AWqxG2JvaG1E7hVkQ2fXSHT2pkyi1HE8WyigJSUepump",
-   "age_s": 127,
+   "age_s": 154,
    "sol_in": 0.32,
    "buys": 3,
    "sells": 0,
@@ -5155,7 +5191,7 @@
    "symbol": "jj",
    "name": "jj",
    "mint": "49UpTre6STsnsyAWxxQyi6hRBZkJMXgVpXRF6yYZpump",
-   "age_s": 131,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5173,7 +5209,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BzDo5H8QzqEBFQDxUUAv4V4op4BFhTgsxqoeugA6wsyq",
-   "age_s": 134,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5191,7 +5227,7 @@
    "symbol": "FLOAT",
    "name": "FLOAT",
    "mint": "BmjGrav3MvG4VR3vCfdu25sPskgfiU4Vu58KgSsLZUn4",
-   "age_s": 149,
+   "age_s": 176,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -5204,42 +5240,6 @@
    "web": "https://clonepump.fun",
    "status": "watching",
    "why": "too young: 0 s (min 45 s)"
-  },
-  {
-   "symbol": "SENTAI",
-   "name": "Sent AI Labs",
-   "mint": "FyUG2hes43CQ69m35NeUWCoDdeqvGG1zShqjSQV2pump",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.0,
-   "dev_pct": 5.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GENERA",
-   "name": "Genera Network",
-   "mint": "HKeiCfXn6T8fRfUAypSuUvzm7h26HL8dcQTpzQfnVcxm",
-   "age_s": 176,
-   "sol_in": -1.21,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -7.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 4.2,
-   "big_sell": 1.21,
-   "x": "https://x.com/GeneraNetwork",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in -1.2/2.5 · buys 0/6 · buy share 0%/65% · rise -8%/+12%"
   }
  ],
  "strategies": [
