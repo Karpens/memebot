@@ -609,7 +609,10 @@ class Night(object):
         for fx, mint, rep in sorted(ready, key=lambda r: -r[0]["vol5"]):
             why = self.why_no_entries(minutes_left, prices)
             if why:
-                self.log("RISK", fx["symbol"], "skip", "Bez vstupu: %s." % why)
+                last = n.get("risk_said") or {}
+                if last.get("why") != why or self.epoch() - last.get("at", 0) >= 300:   # once in 5 minutes
+                    n["risk_said"] = {"why": why, "at": self.epoch()}
+                    self.log("RISK", fx["symbol"], "skip", "Bez vstupu: %s." % why)
                 break
             if not sol_usd:
                 break

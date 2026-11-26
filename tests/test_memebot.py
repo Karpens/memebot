@@ -237,6 +237,10 @@ class Night(unittest.TestCase):
         n.tick(400)
         self.assertNotIn("bbb", n.state["positions"])                              # paused after the loss
         self.assertIn("pauza", [d["text"] for d in n.state["night"]["decisions"] if d["agent"] == "RISK"][-1])
+        for k in range(3):                                                         # the same reason: written once
+            self.night(T0 + datetime.timedelta(minutes=5, seconds=20 * k)).tick(400)
+        n = self.night(T0 + datetime.timedelta(minutes=6))
+        self.assertEqual(sum(1 for d in n.state["night"]["decisions"] if d["agent"] == "RISK" and "pauza po" in d["text"]), 1)
 
     def test_time_stop_and_the_end_of_the_night(self):
         self.coin("aaa")
