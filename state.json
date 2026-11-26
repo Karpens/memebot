@@ -35,51 +35,6 @@
   "started": "2026-11-26T09:04:56Z",
   "decisions": [
    {
-    "t": "2026-11-26T15:16:24Z",
-    "time": "16:16:24",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.4 a minute · 8 watched · 9 rejected (dev bought 3, mayhem mode 3, dump 2) · closest Glub: buy share 57%/65%",
-    "n": 532
-   },
-   {
-    "t": "2026-11-26T15:17:24Z",
-    "time": "16:17:24",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 9.2 a minute · 10 watched · 12 rejected (serial launcher 4, dev bought 3, dump 2) · closest COMPUCOIN: too young: 15 s (min 45 s)",
-    "n": 533
-   },
-   {
-    "t": "2026-11-26T15:18:25Z",
-    "time": "16:18:25",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.4 a minute · 7 watched · 18 rejected (serial launcher 8, dev bought 4, mayhem mode 4) · closest COMPUCOIN: too young: 44 s (min 45 s)",
-    "n": 534
-   },
-   {
-    "t": "2026-11-26T15:19:25Z",
-    "time": "16:19:25",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.2 a minute · 7 watched · 18 rejected (serial launcher 8, dev bought 4, dump 3) · closest CHESS: buys 4/6",
-    "n": 535
-   },
-   {
-    "t": "2026-11-26T15:20:26Z",
-    "time": "16:20:26",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.0 a minute · 6 watched · 14 rejected (serial launcher 7, dev bought 3, mayhem mode 3) · closest RWAFFLE: too young: 14 s (min 45 s)",
-    "n": 536
-   },
-   {
     "t": "2026-11-26T15:20:47Z",
     "time": "16:20:47",
     "agent": "SCANNER",
@@ -5433,6 +5388,51 @@
     "action": "wait",
     "text": "waiting: RugCheck sees 5 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
     "n": 1131
+   },
+   {
+    "t": "2026-11-26T22:27:38Z",
+    "time": "23:27:38",
+    "agent": "RUG CHECK",
+    "coin": "PFE",
+    "action": "pass",
+    "text": "PASS · 29 holders · top holder 5.5% · top 10 24% (curve left out)",
+    "n": 1132
+   },
+   {
+    "t": "2026-11-26T22:27:38Z",
+    "time": "23:27:38",
+    "agent": "LEARNER",
+    "coin": "PFE",
+    "action": "skip",
+    "text": "skip · past trades like this lost avg 8.5% · np:social:x -13.8% over 9.5, np:solh:.25-.5 -13.1% over 8",
+    "n": 1133
+   },
+   {
+    "t": "2026-11-26T22:27:38Z",
+    "time": "23:27:38",
+    "agent": "LEARNER",
+    "coin": "PFE",
+    "action": "shadow",
+    "text": "SHADOW PFE · not bought (learner skip) · followed as if bought: $8.23 at 0.000004159 (curve maths, every cost) · same exits, outside the book",
+    "n": 1134
+   },
+   {
+    "t": "2026-11-26T22:27:49Z",
+    "time": "23:27:49",
+    "agent": "LEARNER",
+    "coin": "PFE",
+    "action": "shadow",
+    "text": "SHADOW PFE would have made -13.2% (stop -9%) · learned x0.5 · np:buys:70-80 now avg -17.5% over 6.5",
+    "n": 1135
+   },
+   {
+    "t": "2026-11-26T22:27:54Z",
+    "time": "23:27:54",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.0 a minute · 5 watched · 17 rejected (serial launcher 6, mayhem mode 6, dev bought 3) · closest GRG: too young: 21 s (min 45 s)",
+    "n": 1136
    }
   ],
   "trades": [
@@ -6190,9 +6190,9 @@
   "cooldown_until": 1795731622.817321,
   "scans": 0,
   "flagged": 73,
-  "checked": 52,
+  "checked": 53,
   "filtered": 11,
-  "lines": 1131,
+  "lines": 1136,
   "flags": [
    {
     "coin": "SSANTA",
@@ -8638,10 +8638,10 @@
    ]
   ],
   "last_rug": {
-   "coin": "BLACKHOLE",
-   "pass": false
+   "coin": "PFE",
+   "pass": true
   },
-  "np_said": 1795732013.474383,
+  "np_said": 1795732074.474355,
   "np_speed": {
    "first_in": [
     74,
@@ -8710,9 +8710,9 @@
    "at": 1795729944.247738
   },
   "shadow": {
-   "n": 12,
+   "n": 13,
    "wins": 2,
-   "sum": -180.1
+   "sum": -193.3
   }
  },
  "last_night": {
@@ -9172,14 +9172,14 @@
   }
  },
  "shadow": {
-  "n": 12,
+  "n": 13,
   "wins": 2,
-  "sum": -180.1,
+  "sum": -193.3,
   "by": {
    "learner": {
-    "n": 12,
+    "n": 13,
     "wins": 2,
-    "sum": -180.1
+    "sum": -193.3
    },
    "risk": {
     "n": 0,
@@ -9427,13 +9427,33 @@
     "exit": "dump: 9.6 SOL sold",
     "pnl": -3.8,
     "weight": 0.5
+   },
+   {
+    "symbol": "PFE",
+    "mint": "DghrNteN4txoLpt13GVmtiwz6Rjt8cfBxKpk3iXSpump",
+    "status": "closed",
+    "kind": "learner",
+    "why": "learner skip",
+    "opened": "2026-11-26T22:27:38Z",
+    "cost": 8.23,
+    "pnl_pct": -13.2,
+    "tier": "swing",
+    "score": 4,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 111,
+    "sol_in": 12.04,
+    "closed": "2026-11-26T22:27:49Z",
+    "exit": "stop -9%",
+    "pnl": -1.08,
+    "weight": 0.5
    }
   ],
   "open": []
  },
  "learner_summary": {
   "samples": 110,
-  "skipped": 28,
+  "skipped": 29,
   "explored": 7,
   "min_samples": 8,
   "best": [
@@ -9470,6 +9490,6 @@
     "avg": -17.9
    }
   ],
-  "shadows": 12
+  "shadows": 13
  }
 }

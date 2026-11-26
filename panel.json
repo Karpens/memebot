@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T22:27:32Z",
+ "updated": "2026-11-26T22:28:00Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.3,
@@ -22,12 +22,12 @@
   "started": "2026-11-26T09:04:56Z",
   "scans": 0,
   "flagged": 73,
-  "checked": 52,
+  "checked": 53,
   "filtered": 11,
-  "lines": 1131,
+  "lines": 1136,
   "last_rug": {
-   "coin": "BLACKHOLE",
-   "pass": false
+   "coin": "PFE",
+   "pass": true
   }
  },
  "flags": [
@@ -3079,51 +3079,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-26T20:14:13Z",
-   "time": "21:14:13",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.0 a minute · 7 watched · 16 rejected (mayhem mode 8, dev bought 4, serial launcher 2) · closest Conga: too young: 1 s (min 45 s)",
-   "n": 932
-  },
-  {
-   "t": "2026-11-26T20:15:14Z",
-   "time": "21:15:14",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.8 a minute · 8 watched · 17 rejected (mayhem mode 8, dev bought 5, serial launcher 2) · closest Conga: buys 4/6 · buy share 57%/65%",
-   "n": 933
-  },
-  {
-   "t": "2026-11-26T20:16:06Z",
-   "time": "21:16:06",
-   "agent": "SCANNER",
-   "coin": "Conga",
-   "action": "flag",
-   "text": "momentum · 9.6 SOL in · 12/18 buys (67%) · +75% since launch · mcap 49 SOL · 115 s old",
-   "n": 934
-  },
-  {
-   "t": "2026-11-26T20:16:06Z",
-   "time": "21:16:06",
-   "agent": "RUG CHECK",
-   "coin": "Conga",
-   "action": "reject",
-   "text": "FAIL · risk: Creator history of rugged tokens",
-   "n": 935
-  },
-  {
-   "t": "2026-11-26T20:16:15Z",
-   "time": "21:16:15",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.0 a minute · 8 watched · 18 rejected (mayhem mode 8, dev bought 4, serial launcher 2) · closest BAGS: too young: 6 s (min 45 s)",
-   "n": 936
-  },
-  {
    "t": "2026-11-26T20:17:16Z",
    "time": "21:17:16",
    "agent": "SCANNER",
@@ -4877,6 +4832,51 @@
    "action": "wait",
    "text": "waiting: RugCheck sees 5 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
    "n": 1131
+  },
+  {
+   "t": "2026-11-26T22:27:38Z",
+   "time": "23:27:38",
+   "agent": "RUG CHECK",
+   "coin": "PFE",
+   "action": "pass",
+   "text": "PASS · 29 holders · top holder 5.5% · top 10 24% (curve left out)",
+   "n": 1132
+  },
+  {
+   "t": "2026-11-26T22:27:38Z",
+   "time": "23:27:38",
+   "agent": "LEARNER",
+   "coin": "PFE",
+   "action": "skip",
+   "text": "skip · past trades like this lost avg 8.5% · np:social:x -13.8% over 9.5, np:solh:.25-.5 -13.1% over 8",
+   "n": 1133
+  },
+  {
+   "t": "2026-11-26T22:27:38Z",
+   "time": "23:27:38",
+   "agent": "LEARNER",
+   "coin": "PFE",
+   "action": "shadow",
+   "text": "SHADOW PFE · not bought (learner skip) · followed as if bought: $8.23 at 0.000004159 (curve maths, every cost) · same exits, outside the book",
+   "n": 1134
+  },
+  {
+   "t": "2026-11-26T22:27:49Z",
+   "time": "23:27:49",
+   "agent": "LEARNER",
+   "coin": "PFE",
+   "action": "shadow",
+   "text": "SHADOW PFE would have made -13.2% (stop -9%) · learned x0.5 · np:buys:70-80 now avg -17.5% over 6.5",
+   "n": 1135
+  },
+  {
+   "t": "2026-11-26T22:27:54Z",
+   "time": "23:27:54",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 8.0 a minute · 5 watched · 17 rejected (serial launcher 6, mayhem mode 6, dev bought 3) · closest GRG: too young: 21 s (min 45 s)",
+   "n": 1136
   }
  ],
  "nights": [
@@ -4919,7 +4919,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4927,15 +4927,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 398,
-    "last_event_age_s": 1.1,
+    "events": 400,
+    "last_event_age_s": 23.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2953,
+    "events": 3007,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -4943,8 +4943,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 315,
-    "last_event_age_s": 1.0,
+    "events": 317,
+    "last_event_age_s": 23.6,
     "errors": 8,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4957,13 +4957,13 @@
   "exit_ms": 36,
   "exit_last_ms": 180,
   "launch_to_entry_s": 46,
-  "creates_per_min": 8.0,
-  "watching": 7,
-  "followed": 17
+  "creates_per_min": 7.6,
+  "watching": 4,
+  "followed": 15
  },
  "learner": {
   "samples": 110,
-  "skipped": 28,
+  "skipped": 29,
   "explored": 7,
   "min_samples": 8,
   "best": [
@@ -5000,46 +5000,82 @@
     "avg": -17.9
    }
   ],
-  "shadows": 12
+  "shadows": 13
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2053,
+   "sent": 2083,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2053,
+   "sent": 2083,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "READ",
+   "name": "THIS WILL CRIME BTW",
+   "mint": "A2QBoypfqqHqcPWXgHGGW9wAbyuMpsRrL4Hrvkn1pump",
+   "age_s": 23,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/keemotrades/status/2126078160647098792",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 20 more coins in 60 min",
+   "why": "serial launcher: 20 more coins in 60 min"
+  },
+  {
+   "symbol": "READ",
+   "name": "THIS WILL CRIME BTW",
+   "mint": "24BJ7TLbEktm8HfCp9nrkNH44K9JASvrjitL3cHkpump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/keemotrades/status/2126078160647098792",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 19 more coins in 60 min",
+   "why": "serial launcher: 19 more coins in 60 min"
+  },
+  {
    "symbol": "GRG",
    "name": "Georgia voters",
    "mint": "AvAiUn6HeBaEXTRReKUeen7fsyB84DMBeozoRrkxpump",
-   "age_s": 1,
-   "sol_in": 19.2,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 162.3,
-   "mcap_sol": 78.2,
+   "age_s": 29,
+   "sol_in": 16.96,
+   "buys": 6,
+   "sells": 8,
+   "rise_pct": 139.5,
+   "mcap_sol": 71.4,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.65,
    "x": "https://x.com/polymarket/status/2126080253843972188",
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 0 s (min 45 s)"
+   "why": "too young: 25 s (min 45 s)"
   },
   {
    "symbol": "SOL",
    "name": "Sol The Cat",
    "mint": "3vV22ebNe2YsxsjtZFEo4pCHXbzpsv4rYj9k8EnEoAsD",
-   "age_s": 6,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5057,7 +5093,7 @@
    "symbol": "READ",
    "name": "THIS WILL CRIME BTW",
    "mint": "EmVPKbk6oCa2gRvBScPNAntJuNJatNyPnUcBywCKpump",
-   "age_s": 10,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5075,7 +5111,7 @@
    "symbol": "READ",
    "name": "THIS WILL CRIME BTW",
    "mint": "3iJQxRee6ftp1vnAMGZLHWkS1ZuKf7LpJGNtok72pump",
-   "age_s": 12,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5093,7 +5129,7 @@
    "symbol": "KIDBUU",
    "name": "KID BUU",
    "mint": "26sgRqwNeNmGJf3roCqZq9YwChMypYXPG4QKPUegpump",
-   "age_s": 19,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5111,7 +5147,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "4VSK8L1YNR3ycd7ThNSeK3gDdTrinEL4cTy2Keq7pump",
-   "age_s": 20,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5129,7 +5165,7 @@
    "symbol": "READ",
    "name": "THIS WILL CRIME BTW",
    "mint": "3BSL1thkzekenQFGexxM3QdY1CmXGf4K29iUSFpPpump",
-   "age_s": 58,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5147,7 +5183,7 @@
    "symbol": "sol",
    "name": "Keys",
    "mint": "8cCiseVnZZPn8Pw7LUCbos3kBbaQxComXX8JPm9Jpump",
-   "age_s": 61,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5165,7 +5201,7 @@
    "symbol": "PILGRIM",
    "name": "Pilgrim Meat",
    "mint": "3aET124EBQm7BoLVMjTkuiEoBUdmf73sKRzyy49Cpump",
-   "age_s": 71,
+   "age_s": 99,
    "sol_in": 2.32,
    "buys": 2,
    "sells": 0,
@@ -5183,7 +5219,7 @@
    "symbol": "$AURA",
    "name": "AURACOIN",
    "mint": "HVDxqKzznuPCpggZ1d1Tav2VshhswbYaZm4Bs3ZJpump",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5201,7 +5237,7 @@
    "symbol": "test",
    "name": "test",
    "mint": "TjwPHzMFwQd4mioZUQSM7NF4jDSs4zV4AC6h2rnzRDx",
-   "age_s": 76,
+   "age_s": 104,
    "sol_in": -4.2,
    "buys": 0,
    "sells": 4,
@@ -5219,7 +5255,7 @@
    "symbol": "ECHO",
    "name": "ECHO AI (NEW)",
    "mint": "6zjnvUzQxdjx5KX7f1hZ8hXbWYo5oBUGX1o9uN4spump",
-   "age_s": 88,
+   "age_s": 116,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 0,
@@ -5237,7 +5273,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "Aq8ChEashburaqi8yjmqhG5o9mfQmxvSCx1tFP7fpump",
-   "age_s": 94,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5255,7 +5291,7 @@
    "symbol": "$MOTH",
    "name": "MOTH",
    "mint": "BztLSLnGMKkjhzWZcPyWVYnd8MYVjXvQj11HAKJnpump",
-   "age_s": 103,
+   "age_s": 131,
    "sol_in": 1.76,
    "buys": 1,
    "sells": 0,
@@ -5273,7 +5309,7 @@
    "symbol": "White",
    "name": "White",
    "mint": "8imKQUEL5NQfbH1jLc1D2cBnTZqDfs7AaPXdjUh8pump",
-   "age_s": 105,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5291,25 +5327,25 @@
    "symbol": "PFE",
    "name": "Live Until Alon Interviews Me",
    "mint": "DghrNteN4txoLpt13GVmtiwz6Rjt8cfBxKpk3iXSpump",
-   "age_s": 105,
-   "sol_in": 11.55,
-   "buys": 10,
-   "sells": 4,
-   "rise_pct": 89.1,
-   "mcap_sol": 55.7,
+   "age_s": 133,
+   "sol_in": 10.6,
+   "buys": 12,
+   "sells": 6,
+   "rise_pct": 80.7,
+   "mcap_sol": 53.2,
    "dev_pct": 2.8,
    "big_sell": 1.74,
    "x": "https://x.com/a1lon9",
    "tg": false,
    "web": "https://x.com/a1lon9/status/2126050363178426504?a=oyzZBSiRe5bt1t4ho0c&s=20",
-   "status": "watching",
-   "why": "momentum · 11.6 SOL in · 10/14 buys (71%) · +89% since launch · mcap 56 SOL · 105 s old"
+   "status": "rejected: learner: skip",
+   "why": "learner: skip"
   },
   {
    "symbol": "POCHI",
    "name": "MULTIMILLIONS , CREATOR PUSHING",
    "mint": "DuKk5CXU6n9rr2V7Lzp6mPXFuEERo5XLYtXnmrqwpump",
-   "age_s": 107,
+   "age_s": 135,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 3,
@@ -5327,12 +5363,12 @@
    "symbol": "GREMLINX",
    "name": "GREMLINX",
    "mint": "5UAUFfbFiaiMG4i5EzAbz8vWodcLfNeWaiQHzFzvpump",
-   "age_s": 122,
-   "sol_in": 5.57,
-   "buys": 10,
-   "sells": 10,
-   "rise_pct": 38.1,
-   "mcap_sol": 43.3,
+   "age_s": 150,
+   "sol_in": 9.63,
+   "buys": 12,
+   "sells": 11,
+   "rise_pct": 69.7,
+   "mcap_sol": 53.3,
    "dev_pct": 6.0,
    "big_sell": 2.96,
    "x": "https://x.com/gremlinxCLICK",
@@ -5340,48 +5376,32 @@
    "web": "https://gremlinx.click",
    "status": "rejected: dump: 3.0 SOL sold",
    "why": "dump: 3.0 SOL sold"
-  },
-  {
-   "symbol": "MOKEY",
-   "name": "Quantum MOKEY",
-   "mint": "FBTRLbeGktJJgKgKge9MoFyMooVhzGSa9BUQxQe2oxuq",
-   "age_s": 151,
-   "sol_in": 0.16,
-   "buys": 13,
-   "sells": 5,
-   "rise_pct": 1.1,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/MOKEY_SOL",
-   "tg": "https://t.me/MOKEYSOL",
-   "web": "https://mokey.club/",
-   "status": "watching",
-   "why": "SOL in 0.2/2.5 · rise +1%/+12%"
-  },
-  {
-   "symbol": "$SDOGE",
-   "name": "Snowball Doge",
-   "mint": "71aQRqoKUeWEqfoPVudf2E5k1uPWVRFRtaw34nPupump",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.6,
-   "dev_pct": 1.3,
-   "big_sell": 0.39,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "too young: 14 s (min 45 s)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "PFE",
+   "mint": "DghrNteN4txoLpt13GVmtiwz6Rjt8cfBxKpk3iXSpump",
+   "status": "closed",
+   "kind": "learner",
+   "why": "learner skip",
+   "opened": "2026-11-26T22:27:38Z",
+   "cost": 8.23,
+   "pnl_pct": -13.2,
+   "tier": "swing",
+   "score": 4,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 111,
+   "sol_in": 12.04,
+   "closed": "2026-11-26T22:27:49Z",
+   "exit": "stop -9%",
+   "pnl": -1.08,
+   "weight": 0.5
+  },
   {
    "symbol": "JOUST",
    "mint": "5zYvniZefLtKsd7gA1J1Ro2iLuPadxys943Fgy6unYsY",
@@ -5624,16 +5644,16 @@
   }
  ],
  "shadow_stats": {
-  "n": 12,
+  "n": 13,
   "wins": 2,
-  "win_rate": 16.7,
-  "mean_pnl_pct": -15.01,
+  "win_rate": 15.4,
+  "mean_pnl_pct": -14.87,
   "open": 0,
   "learner": {
-   "n": 12,
+   "n": 13,
    "wins": 2,
-   "win_rate": 16.7,
-   "mean_pnl_pct": -15.01
+   "win_rate": 15.4,
+   "mean_pnl_pct": -14.87
   },
   "risk": {
    "n": 0,
