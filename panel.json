@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T01:57:40Z",
+ "updated": "2026-11-27T01:58:11Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 72.13,
- "equity": 72.13,
+ "balance": 64.92,
+ "equity": 71.87,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 24,
-  "checked": 20,
+  "flagged": 25,
+  "checked": 21,
   "filtered": 3,
-  "lines": 360,
+  "lines": 365,
   "last_rug": {
-   "coin": "SQUIRELL",
+   "coin": "HPD",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BHSL",
-   "why": "snipe",
-   "t": "2026-11-27T01:49:33Z"
-  },
   {
    "coin": "cap",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SQUIRELL",
    "why": "snipe",
    "t": "2026-11-27T01:56:57Z"
+  },
+  {
+   "coin": "HPD",
+   "why": "snipe",
+   "t": "2026-11-27T01:57:50Z"
   }
  ],
  "curve": [
@@ -780,12 +780,61 @@
   [
    1795744613,
    74.11
+  ],
+  [
+   1795744673,
+   72.33
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "HPD",
+   "mint": "E7EtgRs2opd5RQxQMKyKJV5WARUzLYTRDSV2pjjCpump",
+   "cost": 7.21,
+   "value": 6.96,
+   "pnl_pct": -3.5,
+   "opened": "2026-11-27T01:57:50Z",
+   "url": "https://pump.fun/coin/E7EtgRs2opd5RQxQMKyKJV5WARUzLYTRDSV2pjjCpump",
+   "reason": "snipe · first reading 0.3 s after the create · 0.7 SOL in · +5% since the create · mcap 29 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.15199e-06,
+   "price": 2.09657e-06,
+   "slip": 0.32,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 1,
+    "parts": [
+     "X"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 29.4,
+   "dev_pct": 0.05,
+   "sol_in": 0.74,
+   "hist": [
+    2.15199e-06,
+    2.23394e-06,
+    2.09657e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "BAOBAO",
@@ -1463,51 +1512,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-27T00:58:06Z",
-   "time": "01:58:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 8 watched · 10 rejected (mayhem mode 4, dev bought 3, dump 2) · closest Jshock: too young: 36 s (min 45 s)",
-   "n": 161
-  },
-  {
-   "t": "2026-11-27T00:59:07Z",
-   "time": "01:59:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 7 watched · 11 rejected (dev bought 4, mayhem mode 4, dump 2) · closest USFF: too young: 40 s (min 45 s)",
-   "n": 162
-  },
-  {
-   "t": "2026-11-27T01:00:00Z",
-   "time": "02:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-27T00 · 9503 lines (7507 curve readings) · 1.6 MB · 408 coins",
-   "n": 163
-  },
-  {
-   "t": "2026-11-27T01:00:07Z",
-   "time": "02:00:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.8 a minute · 2 watched · 7 rejected (mayhem mode 4, dev bought 3) · closest USFF: SOL in 2.0/2.5 · buy share 39%/65%",
-   "n": 164
-  },
-  {
-   "t": "2026-11-27T01:01:07Z",
-   "time": "02:01:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 6 watched · 5 rejected (mayhem mode 3, dev bought 2) · closest USFF: SOL in 0.9/2.5 · buy share 37%/65% · rise +6%/+12%",
-   "n": 165
-  },
   {
    "t": "2026-11-27T01:02:08Z",
    "time": "02:02:08",
@@ -3262,6 +3266,51 @@
    "action": "learn",
    "text": "learned · tier:scalp now avg -7.9% over 22.5",
    "n": 360
+  },
+  {
+   "t": "2026-11-27T01:57:50Z",
+   "time": "02:57:50",
+   "agent": "SCANNER",
+   "coin": "HPD",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.7 SOL in · +5% since the create · mcap 29 SOL",
+   "n": 361
+  },
+  {
+   "t": "2026-11-27T01:57:50Z",
+   "time": "02:57:50",
+   "agent": "SIZER",
+   "coin": "HPD",
+   "action": "size",
+   "text": "10% of $72.13 = $7.21",
+   "n": 362
+  },
+  {
+   "t": "2026-11-27T01:57:50Z",
+   "time": "02:57:50",
+   "agent": "EXECUTOR",
+   "coin": "HPD",
+   "action": "enter",
+   "text": "ENTER HPD at 0.000002152 · slip 0.3% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter: no Jupiter route · 0.0 s) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 363
+  },
+  {
+   "t": "2026-11-27T01:57:50Z",
+   "time": "02:57:50",
+   "agent": "NEWS",
+   "coin": "HPD",
+   "action": "plan",
+   "text": "hold plan · 1/10 (X) · scalp: +10",
+   "n": 364
+  },
+  {
+   "t": "2026-11-27T01:57:54Z",
+   "time": "02:57:54",
+   "agent": "LEARNER",
+   "coin": "YO",
+   "action": "shadow",
+   "text": "SHADOW YO would have made -8.1% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -7.9% over 23",
+   "n": 365
   }
  ],
  "nights": [
@@ -3302,7 +3351,9 @@
    "scans": 0
   }
  ],
- "errors": [],
+ "errors": [
+  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400"
+ ],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -3316,7 +3367,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 43 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 40 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3324,24 +3375,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 85,
-    "last_event_age_s": 7.3,
+    "events": 90,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 950,
-    "last_event_age_s": 0.0,
+    "events": 999,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 68,
-    "last_event_age_s": 7.3,
+    "events": 72,
+    "last_event_age_s": 3.5,
     "errors": 2,
     "last_error": "example.com: HTTP 404"
    }
@@ -3349,14 +3400,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 1,
-  "first_in_last_ms": 1,
+  "first_in_ms": 1.0,
+  "first_in_last_ms": 34,
   "exit_ms": 45.0,
   "exit_last_ms": 38,
-  "launch_to_entry_s": 1,
-  "creates_per_min": 10.4,
+  "launch_to_entry_s": 0.5,
+  "creates_per_min": 11.0,
   "watching": 0,
-  "followed": 24
+  "followed": 22
  },
  "learner": {
   "samples": 14,
@@ -3367,12 +3418,12 @@
    {
     "label": "snipe · np:social:x",
     "n": 14,
-    "avg": -5.0
+    "avg": -5.1
    },
    {
     "label": "snipe · np:buys:90+",
-    "n": 11,
-    "avg": -6.6
+    "n": 12,
+    "avg": -6.7
    },
    {
     "label": "snipe · np:buys:<70",
@@ -3383,12 +3434,12 @@
   "worst": [
    {
     "label": "snipe · tier:scalp",
-    "n": 22,
+    "n": 23,
     "avg": -7.9
    },
    {
     "label": "snipe · news:0-2",
-    "n": 22,
+    "n": 23,
     "avg": -7.9
    },
    {
@@ -3397,29 +3448,119 @@
     "avg": -9.3
    }
   ],
-  "shadows": 19,
+  "shadows": 20,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 723,
+   "sent": 759,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 723,
+   "sent": 759,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MAGPIE",
+   "name": "HELLO MR MAGPIE",
+   "mint": "6VSoe2SW1xJT3gSMLHchANr3ojYo6qbLhhQ3qKWNpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "YO",
+   "name": "TOGI FUNDED THIS FIRST CHECK",
+   "mint": "ByLrBs3YqiMq9pEuLU2UojDuto8JWyYmewczFpLnZBAb",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/DegenDiddy/status/2126132945262092663",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 27 more coins in 60 min",
+   "why": "serial launcher: 27 more coins in 60 min"
+  },
+  {
+   "symbol": "YO",
+   "name": "TOGI FUNDED THIS FIRST CHECK",
+   "mint": "C2KmxGBoW4P9D6RchGage1ysHu36wfZf6MAqhjE6Ybea",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/DegenDiddy/status/2126132945262092663",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 26 more coins in 60 min",
+   "why": "serial launcher: 26 more coins in 60 min"
+  },
+  {
+   "symbol": "YO",
+   "name": "TOGI FUNDED THIS FIRST CHECK",
+   "mint": "D2Y4ddUck3aV6T7BRGGXuEqZMWjGHhLXF3FymSy4P52q",
+   "age_s": 9,
+   "sol_in": 0.16,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 1.1,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/DegenDiddy/status/2126132945262092663",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 25 more coins in 60 min",
+   "why": "serial launcher: 25 more coins in 60 min"
+  },
+  {
+   "symbol": "HPD",
+   "name": "The Frontrun Bull",
+   "mint": "E7EtgRs2opd5RQxQMKyKJV5WARUzLYTRDSV2pjjCpump",
+   "age_s": 21,
+   "sol_in": 0.74,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 5.0,
+   "mcap_sol": 29.4,
+   "dev_pct": 0.1,
+   "big_sell": 0.99,
+   "x": "https://x.com/harrypauldavies",
+   "tg": false,
+   "web": false,
+   "status": "entered",
+   "why": "snipe · first reading 0.3 s after the create · 0.7 SOL in · +5% since the create · mcap 29 SOL"
+  },
+  {
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "2EBNiV3zua38x3nudnHBX9okLVuqrJkpd9eAHcd5NDYx",
-   "age_s": 7,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3437,7 +3578,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "7FVp82FZESfiBY2KAc18ev6eHDXq8j7tFoYwR4poLgMj",
-   "age_s": 7,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3455,7 +3596,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "Fkb4CbRsP63t7kjjW5gGteEZYXvu5wWyM7MhWsCNBtRt",
-   "age_s": 7,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3473,7 +3614,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "5oX7Ao7DC9W9SKkfnJqWFhwuTN2MxJF7nK2css57GYyK",
-   "age_s": 28,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3491,7 +3632,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "BCQHpFVsAiBxhg9YpLPJBzj77dUo823K52PEUESPyFjP",
-   "age_s": 28,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3509,7 +3650,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "44CSwC4Qr4eWyyNb1URnyjrs5DkwBqD2pPsEx396XJMg",
-   "age_s": 28,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3527,7 +3668,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "CLJx5pv9pwnmwq3UnTkMeCWsCtetRXV74pcVbGZt4ZEH",
-   "age_s": 29,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3545,7 +3686,7 @@
    "symbol": "JUGGYYYY",
    "name": "JYUYGGGY",
    "mint": "ER4meUczhQdxdeYe8an6oHurTmzekBzQfmQrKSpApump",
-   "age_s": 43,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3563,12 +3704,12 @@
    "symbol": "SQUIRELL",
    "name": "Squirell Coin",
    "mint": "8EULck41GmfACox1kKQ2i6b52c4jdU6ogaxrhLrvpump",
-   "age_s": 43,
-   "sol_in": 11.88,
-   "buys": 12,
-   "sells": 16,
-   "rise_pct": 91.4,
-   "mcap_sol": 57.1,
+   "age_s": 74,
+   "sol_in": 10.22,
+   "buys": 21,
+   "sells": 21,
+   "rise_pct": 76.9,
+   "mcap_sol": 52.8,
    "dev_pct": 3.4,
    "big_sell": 3.14,
    "x": "https://x.com/elonmusk/status/1856522886728822907",
@@ -3581,7 +3722,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "4JVVWm2sQ3qThW6MxNuxCzvsshrk1Yv8B2hJqBVGWZCh",
-   "age_s": 43,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3599,7 +3740,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "7YdoYvtzns5WYg7ETwXaMQZ1LnXqhw7poEkkk3qzvsxN",
-   "age_s": 47,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3617,7 +3758,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "2LLnaPeWVU1vhTRroaDdLe4SPhpKwxr3gVfcfwhTF22X",
-   "age_s": 50,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3635,7 +3776,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "3Kyb285zRbvRasxzheuRmDEQ7VyuBD49MmGEN1fbypQ1",
-   "age_s": 53,
+   "age_s": 84,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3653,12 +3794,12 @@
    "symbol": "shitcoin",
    "name": "oh shitcoin",
    "mint": "F44jAkCSS5oKNwPosBawYVuda5MyTt2s48mgJQdMpump",
-   "age_s": 57,
-   "sol_in": 1.09,
+   "age_s": 88,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 2,
-   "rise_pct": 7.4,
-   "mcap_sol": 30.0,
+   "sells": 3,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 1.19,
    "x": "https://x.com/search?q=from%3Atoly%20oh%20shit%20coin&src=typed_query&f=live",
@@ -3671,7 +3812,7 @@
    "symbol": "fine",
    "name": "this is fine",
    "mint": "5TQdkRy8R8uMZxHrttdfwvQTJxGABZquWtNuraNZpump",
-   "age_s": 59,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3684,118 +3825,12 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "fine",
-   "name": "this is fine",
-   "mint": "FSruLWvTsGJJLeiSTHchTzpW5geGZXD1nYRJ8Sdapump",
-   "age_s": 61,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Polymarket/status/2126130224748208266?a=Twy-d4srP9mDa9TS4OU&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "TOGI",
-   "name": "OG 6 MONTHS + FEES",
-   "mint": "46PTp8x4c1F3iSx8NrxGv3vq6YLoZFSCZYMa5qEbYAzs",
-   "age_s": 112,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/jeromedev11/status/2071295052228255794",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "Kuroshiro",
-   "name": "Kuroshiro",
-   "mint": "8JjhrukV5Q8TWMyY82YiKdSTavbLw1PA7xvXTPERpump",
-   "age_s": 121,
-   "sol_in": 0.12,
-   "buys": 19,
-   "sells": 25,
-   "rise_pct": 0.8,
-   "mcap_sol": 30.1,
-   "dev_pct": 3.4,
-   "big_sell": 3.65,
-   "x": "https://x.com/Kuroshironft",
-   "tg": false,
-   "web": "https://www.kuroshiro.xyz/",
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "GrenCAT",
-   "name": "green cat",
-   "mint": "BWgZ7R1kWLFJniSmAvg5ew1g2qii33kmGoK2DfQhpump",
-   "age_s": 121,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "TOGI",
-   "name": "OG 6 MONTHS + FEES",
-   "mint": "4GLVu1Hfuvg26TvgD8KubUz8F3c16FBLz7pXgCoGk27u",
-   "age_s": 124,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/jeromedev11/status/2071295052228255794",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
-  {
-   "symbol": "YO",
-   "mint": "9JSPVrtgbK8yWt9dPA4efxmEs7ZvC3UcZR1kcuLUyNSd",
-   "status": "open",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T01:53:53Z",
-   "cost": 7.53,
-   "pnl_pct": -4.7,
-   "tier": "scalp",
-   "score": 0.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.2
-  },
   {
    "symbol": "Harrymas",
    "mint": "AN9uU6G2y6e1eEKoE99XfvSNKc7CoP2BrNaMsb4bpump",
@@ -3811,6 +3846,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "YO",
+   "mint": "9JSPVrtgbK8yWt9dPA4efxmEs7ZvC3UcZR1kcuLUyNSd",
+   "status": "closed",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T01:53:53Z",
+   "cost": 7.53,
+   "pnl_pct": -8.1,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.2,
+   "closed": "2026-11-27T01:57:54Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -0.61,
+   "weight": 0.5
   },
   {
    "symbol": "TOGI",
@@ -4191,34 +4246,14 @@
    "exit": "stop -11%",
    "pnl": -1.14,
    "weight": 0.5
-  },
-  {
-   "symbol": "CRYTAX",
-   "mint": "5TMMW3SUiVRTtqcYuvyCFcXtVDkf3JQXqKVMLvVTpump",
-   "status": "closed",
-   "kind": "learner",
-   "why": "learner skip",
-   "opened": "2026-11-27T00:10:42Z",
-   "cost": 8.23,
-   "pnl_pct": 3.8,
-   "tier": "swing",
-   "score": 4.5,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 45,
-   "sol_in": 6.46,
-   "closed": "2026-11-27T00:14:21Z",
-   "exit": "trailing stop 6% off the top (peak +13%)",
-   "pnl": 0.31,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 35,
+  "n": 36,
   "wins": 7,
-  "win_rate": 20.0,
-  "mean_pnl_pct": -8.67,
-  "open": 2,
+  "win_rate": 19.4,
+  "mean_pnl_pct": -8.65,
+  "open": 1,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -4226,10 +4261,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 19,
+   "n": 20,
    "wins": 4,
-   "win_rate": 21.1,
-   "mean_pnl_pct": -5.56
+   "win_rate": 20.0,
+   "mean_pnl_pct": -5.69
   }
  }
 }
