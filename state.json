@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:45:13Z",
-    "time": "09:45:13",
-    "agent": "LEARNER",
-    "coin": "CUPIA",
-    "action": "shadow",
-    "text": "SHADOW CUPIA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023398 (curve maths, every cost) · same exits, outside the book",
-    "n": 3580
-   },
-   {
     "t": "2026-11-27T08:45:25Z",
     "time": "09:45:25",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 3.4 a minute · 0 watched · 11 rejected (snipe not bought: trades tonight 6, mayhem mode 4, no symbol or name 1)",
     "n": 4179
+   },
+   {
+    "t": "2026-11-27T10:39:41Z",
+    "time": "11:39:41",
+    "agent": "LEARNER",
+    "coin": "SOFLOW",
+    "action": "shadow",
+    "text": "SHADOW SOFLOW would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 237.5",
+    "n": 4180
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4179,
+  "lines": 4180,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795775958.645356,
   "shadow": {
-   "n": 854,
+   "n": 855,
    "wins": 192,
-   "sum": -6752.2
+   "sum": -6759.4
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 868,
+  "n": 869,
   "wins": 194,
-  "sum": -6950.7,
+  "sum": -6957.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 852,
+    "n": 853,
     "wins": 191,
-    "sum": -6752.9
+    "sum": -6760.1
    }
   },
   "closed": [
-   {
-    "symbol": "Gudetama",
-    "mint": "BJZvNJyyKjMgrptpobMYsLNHPSUv6jqiYyK5UetZpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:22:58Z",
-    "cost": 36.2,
-    "pnl_pct": -13.3,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.33,
-    "closed": "2026-11-27T10:27:49Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -4.81,
-    "weight": 0.5
-   },
    {
     "symbol": "Holdball",
     "mint": "BaGzZcAj4UM6Mx8kELhtMdyt2VQztvwGckQv6zNepump",
@@ -31743,11 +31723,30 @@
     "exit": "TP +10%",
     "pnl": 2.39,
     "weight": 0.5
+   },
+   {
+    "symbol": "SOFLOW",
+    "mint": "HXKF438idKV3aeoXMdTx2BhSxjpC2gB2kf5uNbQQUz6Y",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:36:34Z",
+    "cost": 36.2,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T10:39:41Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.59,
+    "weight": 0.5
    }
   ],
   "open": [
    "BURN",
-   "SOFLOW",
    "Wonald",
    "rice"
   ]
@@ -31791,7 +31790,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 852,
+  "shadows": 853,
   "memory": "snipe"
  }
 }
