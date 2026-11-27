@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:58:47Z",
+ "updated": "2026-11-27T06:59:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2985,
+  "lines": 2986,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -1983,6 +1983,10 @@
   ],
   [
    1795762673,
+   361.97
+  ],
+  [
+   1795762733,
    361.97
   ]
  ],
@@ -4252,15 +4256,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T06:20:55Z",
-   "time": "07:20:55",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: trades tonight 8, mayhem mode 4, serial launcher 3)",
-   "n": 2786
-  },
-  {
    "t": "2026-11-27T06:21:27Z",
    "time": "07:21:27",
    "agent": "LEARNER",
@@ -6050,6 +6045,15 @@
    "action": "scan",
    "text": "new pairs · 5.4 a minute · 0 watched · 10 rejected (mayhem mode 6, snipe not bought: trades tonight 3, serial launcher 1)",
    "n": 2985
+  },
+  {
+   "t": "2026-11-27T06:58:58Z",
+   "time": "07:58:58",
+   "agent": "LEARNER",
+   "coin": "FRQCY",
+   "action": "shadow",
+   "text": "SHADOW FRQCY · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002128 (curve maths, every cost) · same exits, outside the book",
+   "n": 2986
   }
  ],
  "nights": [
@@ -6110,7 +6114,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6118,15 +6122,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1511,
-    "last_event_age_s": 18.3,
+    "events": 1513,
+    "last_event_age_s": 11.2,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 43651,
+    "events": 43687,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6134,8 +6138,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 970,
-    "last_event_age_s": 18.1,
+    "events": 971,
+    "last_event_age_s": 17.9,
     "errors": 86,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6148,9 +6152,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 3
+  "followed": 4
  },
  "learner": {
   "samples": 249,
@@ -6197,28 +6201,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20582,
+   "sent": 20612,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20581,
+   "sent": 20611,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "$404",
-   "name": "404 Frog",
-   "mint": "AeCMpJLZDMAZk8TvoULwJE1Vdv3V8wSGsYvKxAEjpump",
-   "age_s": 18,
+   "symbol": "30X",
+   "name": "30XCOIN",
+   "mint": "Gy3P9Yhvjip2c1rHmYVGWe7gcJWZevBCdecdXec4pump",
+   "age_s": 11,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.3,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "FRQCY",
+   "name": "FREQUENCY",
+   "mint": "5zKMBPETj7JPkqNkH5HxELkQC7oxigAKsABtBBsSpump",
+   "age_s": 18,
+   "sol_in": 0.08,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.5,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "$404",
+   "name": "404 Frog",
+   "mint": "AeCMpJLZDMAZk8TvoULwJE1Vdv3V8wSGsYvKxAEjpump",
+   "age_s": 46,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.4,
    "dev_pct": 0.7,
    "big_sell": 0.0,
    "x": false,
@@ -6231,7 +6271,7 @@
    "symbol": "EAD",
    "name": "EMOTIONAL ABUSE DEFENCE PROJECT",
    "mint": "42knXCTgMUCuMgBeWkHdVcmmVV9aDemdgDHDGQiupump",
-   "age_s": 32,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6249,7 +6289,7 @@
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "6bd1MqXv5mj4weQ7qv7eNMvXYWtuwFZaZmJpARPFpump",
-   "age_s": 79,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6267,7 +6307,7 @@
    "symbol": "BTC",
    "name": "bitcoin",
    "mint": "3JQN4EJT5P6Q6vNizQUgGCwkmX9c7y25RL5U2bkNpump",
-   "age_s": 91,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6285,7 +6325,7 @@
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "6NfTybCMxqajz887eXu9HDBYeLd39NB3YyTQeTvupump",
-   "age_s": 123,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6303,7 +6343,7 @@
    "symbol": "SIRIUS",
    "name": "Sirius",
    "mint": "DM58i4naRZQdExbqjAST2pcm3wJcVqUCsbpV8oDHpump",
-   "age_s": 126,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6321,7 +6361,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "Fz5d57nUmXVsZdDKPfVUt4p1Cxuu52Xndky2mMcnpump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6340,6 +6380,22 @@
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "FRQCY",
+   "mint": "5zKMBPETj7JPkqNkH5HxELkQC7oxigAKsABtBBsSpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:58:58Z",
+   "cost": 36.2,
+   "pnl_pct": -3.8,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.05
+  },
   {
    "symbol": "BTC",
    "mint": "3JQN4EJT5P6Q6vNizQUgGCwkmX9c7y25RL5U2bkNpump",
@@ -6794,7 +6850,7 @@
   "wins": 74,
   "win_rate": 18.1,
   "mean_pnl_pct": -8.99,
-  "open": 3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
