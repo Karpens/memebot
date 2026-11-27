@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T18:31:21Z",
-    "time": "19:31:21",
-    "agent": "LEARNER",
-    "coin": "OBSP",
-    "action": "shadow",
-    "text": "SHADOW OBSP would have made -14.9% (stop -10%) · learned x0.5 · np:buys:90+ now avg -8.0% over 300",
-    "n": 5545
-   },
-   {
-    "t": "2026-11-27T18:31:40Z",
-    "time": "19:31:40",
-    "agent": "LEARNER",
-    "coin": "sticks",
-    "action": "shadow",
-    "text": "SHADOW sticks · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021941 (curve maths, every cost) · same exits, outside the book",
-    "n": 5546
-   },
-   {
     "t": "2026-11-27T18:31:54Z",
     "time": "19:31:54",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW TOS would have made +53.2% (TP +10%) · learned x0.5 · np:social:none now avg -8.5% over 300",
     "n": 6144
+   },
+   {
+    "t": "2026-11-27T19:40:32Z",
+    "time": "20:40:32",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.2 a minute · 0 watched · 15 rejected (snipe not bought: night at open  9, mayhem mode 4, serial launcher 1)",
+    "n": 6145
+   },
+   {
+    "t": "2026-11-27T19:40:56Z",
+    "time": "20:40:56",
+    "agent": "LEARNER",
+    "coin": "$CANDLE",
+    "action": "shadow",
+    "text": "SHADOW $CANDLE would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
+    "n": 6146
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6144,
+  "lines": 6146,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795772414,
-    59.14
-   ],
    [
     1795772474,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795808388,
     59.14
+   ],
+   [
+    1795808448,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795808371.443419,
+  "np_said": 1795808432.443404,
   "shadow": {
-   "n": 1631,
+   "n": 1632,
    "wins": 351,
-   "sum": -12662.6
+   "sum": -12669.8
   },
   "np_speed": {
    "first_in": [
@@ -31911,9 +31911,9 @@
   }
  },
  "shadow": {
-  "n": 1645,
+  "n": 1646,
   "wins": 353,
-  "sum": -12861.1,
+  "sum": -12868.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31921,32 +31921,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1629,
+    "n": 1630,
     "wins": 350,
-    "sum": -12663.3
+    "sum": -12670.5
    }
   },
   "closed": [
-   {
-    "symbol": "CT",
-    "mint": "AUMP1VC2Th654LFA5yUW56cnz5hgK5Ea2tVpvSQ3pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T19:34:41Z",
-    "cost": 5.91,
-    "pnl_pct": -16.7,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.38,
-    "closed": "2026-11-27T19:34:42Z",
-    "exit": "stop -12%",
-    "pnl": -0.99,
-    "weight": 0.5
-   },
    {
     "symbol": "DUE",
     "mint": "CfXHZfQDaLmH8m7JMA15DM4s4Q6pLumBwPsXmcdoiScD",
@@ -32326,6 +32306,26 @@
     "exit": "TP +10%",
     "pnl": 3.15,
     "weight": 0.5
+   },
+   {
+    "symbol": "$CANDLE",
+    "mint": "5rVH77wsLwyqTxsPDCvBpqKcKdh4QKreBhKzbGinpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T19:37:56Z",
+    "cost": 5.91,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T19:40:56Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.43,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32334,7 +32334,6 @@
    "engn",
    "TURK",
    "FIONA",
-   "$CANDLE",
    "JUP2011",
    "Coffee",
    "Monk"
@@ -32379,7 +32378,7 @@
     "avg": -9.1
    }
   ],
-  "shadows": 1837,
+  "shadows": 1838,
   "memory": "snipe"
  }
 }
