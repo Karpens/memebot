@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T18:31:54Z",
-    "time": "19:31:54",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.8 a minute · 0 watched · 19 rejected (snipe not bought: night at open  10, mayhem mode 4, no symbol or name 3)",
-    "n": 5547
-   },
-   {
-    "t": "2026-11-27T18:32:15Z",
-    "time": "19:32:15",
-    "agent": "LEARNER",
-    "coin": "SpaceX",
-    "action": "shadow",
-    "text": "SHADOW SpaceX · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000061564 (curve maths, every cost) · same exits, outside the book",
-    "n": 5548
-   },
-   {
     "t": "2026-11-27T18:32:29Z",
     "time": "19:32:29",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW $CANDLE would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
     "n": 6146
+   },
+   {
+    "t": "2026-11-27T19:41:02Z",
+    "time": "20:41:02",
+    "agent": "LEARNER",
+    "coin": "SSD",
+    "action": "shadow",
+    "text": "SHADOW SSD · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020753 (curve maths, every cost) · same exits, outside the book",
+    "n": 6147
+   },
+   {
+    "t": "2026-11-27T19:41:15Z",
+    "time": "20:41:15",
+    "agent": "LEARNER",
+    "coin": "FIONA",
+    "action": "shadow",
+    "text": "SHADOW FIONA would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -8.1% over 300",
+    "n": 6148
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6146,
+  "lines": 6148,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795808432.443404,
   "shadow": {
-   "n": 1632,
+   "n": 1633,
    "wins": 351,
-   "sum": -12669.8
+   "sum": -12677.7
   },
   "np_speed": {
    "first_in": [
@@ -31911,9 +31911,9 @@
   }
  },
  "shadow": {
-  "n": 1646,
+  "n": 1647,
   "wins": 353,
-  "sum": -12868.3,
+  "sum": -12876.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31921,32 +31921,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1630,
+    "n": 1631,
     "wins": 350,
-    "sum": -12670.5
+    "sum": -12678.4
    }
   },
   "closed": [
-   {
-    "symbol": "DUE",
-    "mint": "CfXHZfQDaLmH8m7JMA15DM4s4Q6pLumBwPsXmcdoiScD",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T19:31:05Z",
-    "cost": 5.91,
-    "pnl_pct": -12.3,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T19:34:47Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.73,
-    "weight": 0.5
-   },
    {
     "symbol": "BENG",
     "mint": "CE5kWtL3K6wjzUajNTArqzsBiaJE3YCMdCPsTkk7HuLs",
@@ -32326,6 +32306,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "FIONA",
+    "mint": "FuaxNJmEAs6mPJfLQUxHuXDjbsCmsUT8s3eEM6X4wD1i",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T19:37:53Z",
+    "cost": 5.91,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T19:41:15Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.47,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32333,10 +32333,10 @@
    "GTC",
    "engn",
    "TURK",
-   "FIONA",
    "JUP2011",
    "Coffee",
-   "Monk"
+   "Monk",
+   "SSD"
   ]
  },
  "learner_summary": {
@@ -32378,7 +32378,7 @@
     "avg": -9.1
    }
   ],
-  "shadows": 1838,
+  "shadows": 1839,
   "memory": "snipe"
  }
 }
