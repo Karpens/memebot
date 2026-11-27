@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:26:45Z",
+ "updated": "2026-11-27T09:27:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3787,
+  "lines": 3789,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795735560,
-   82.3
-  ],
   [
    1795735620,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795771574,
    361.97
+  ],
+  [
+   1795771634,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:46:12Z",
-   "time": "09:46:12",
-   "agent": "LEARNER",
-   "coin": "Bntrcain",
-   "action": "shadow",
-   "text": "SHADOW Bntrcain would have made -6.6% (5 min, only -3%) · learned x0.5 · np:social:none now avg -9.7% over 185",
-   "n": 3588
-  },
-  {
-   "t": "2026-11-27T08:46:12Z",
-   "time": "09:46:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 0 watched · 20 rejected (snipe not bought: trades tonight 10, mayhem mode 6, serial launcher 4)",
-   "n": 3589
-  },
-  {
    "t": "2026-11-27T08:46:20Z",
    "time": "09:46:20",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 10 rejected (snipe not bought: trades tonight 6, serial launcher 2, mayhem mode 2)",
    "n": 3787
+  },
+  {
+   "t": "2026-11-27T09:27:00Z",
+   "time": "10:27:00",
+   "agent": "RISK",
+   "coin": "CHAPOA",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 3788
+  },
+  {
+   "t": "2026-11-27T09:27:00Z",
+   "time": "10:27:00",
+   "agent": "LEARNER",
+   "coin": "CHAPOA",
+   "action": "shadow",
+   "text": "SHADOW CHAPOA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023382 (curve maths, every cost) · same exits, outside the book",
+   "n": 3789
   }
  ],
  "nights": [
@@ -6592,7 +6592,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6600,25 +6600,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 596,
-    "last_event_age_s": 30.8,
+    "events": 597,
+    "last_event_age_s": 19.0,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15264,
+    "events": 15320,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 342,
-    "last_event_age_s": 29.3,
-    "errors": 18,
+    "connected": false,
+    "events": 343,
+    "last_event_age_s": 14.6,
+    "errors": 19,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -6630,9 +6630,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 8
+  "followed": 7
  },
  "learner": {
   "samples": 249,
@@ -6679,23 +6679,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7621,
+   "sent": 7657,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7632,
+   "sent": 7668,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CHAPOA",
+   "name": "Chapo Down",
+   "mint": "35KBbBvHJrFV89jPKacKYmT33VmLiAbbAZAHwgp9pump",
+   "age_s": 18,
+   "sol_in": 0.32,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 2.1,
+   "mcap_sol": 30.3,
+   "dev_pct": 3.1,
+   "big_sell": 0.91,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "FRYERA",
    "name": "Turkey Fryer Fire",
    "mint": "HVMxQRi9XBjFv8eANBLqX9LSS4UhJeDoiz6gicH9pump",
-   "age_s": 30,
+   "age_s": 64,
    "sol_in": -0.84,
    "buys": 3,
    "sells": 1,
@@ -6713,7 +6731,7 @@
    "symbol": "100k",
    "name": "100k mc",
    "mint": "G3nNFmCJqNUaAqJbTRh1ii1qhYjvncrGbET1WGipump",
-   "age_s": 49,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6731,12 +6749,12 @@
    "symbol": "GIFT",
    "name": "Gift",
    "mint": "Hmje3XvJnptF8PSjRjrXcHLw8dv2Xambda8bRaDdpump",
-   "age_s": 67,
-   "sol_in": 24.96,
-   "buys": 20,
-   "sells": 28,
-   "rise_pct": 235.6,
-   "mcap_sol": 93.8,
+   "age_s": 101,
+   "sol_in": 25.23,
+   "buys": 26,
+   "sells": 32,
+   "rise_pct": 238.9,
+   "mcap_sol": 94.8,
    "dev_pct": 0.0,
    "big_sell": 3.8,
    "x": "https://x.com/giftsolfun",
@@ -6749,7 +6767,7 @@
    "symbol": "BLACK",
    "name": "BLACK FRIDAY",
    "mint": "2m3BDDmYNxB7crsEQrDHJ9roUHhot7zSc2LbNvJ3pump",
-   "age_s": 67,
+   "age_s": 101,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6767,7 +6785,7 @@
    "symbol": "PISSBALL",
    "name": "PISS BALL",
    "mint": "DLRVaeuaKtc8LUJLNHYnF41UyhSkyUG37NjU2xd6WLpw",
-   "age_s": 100,
+   "age_s": 134,
    "sol_in": 0.2,
    "buys": 2,
    "sells": 0,
@@ -6785,12 +6803,12 @@
    "symbol": "AKARI",
    "name": "Akari",
    "mint": "Hppm8zqJqNjY3vM9umXMijjwtk3bxhWtMDD8FKc4pump",
-   "age_s": 101,
-   "sol_in": 9.69,
-   "buys": 37,
-   "sells": 21,
-   "rise_pct": 65.6,
-   "mcap_sol": 58.7,
+   "age_s": 135,
+   "sol_in": 13.99,
+   "buys": 44,
+   "sells": 24,
+   "rise_pct": 100.0,
+   "mcap_sol": 70.9,
    "dev_pct": 12.0,
    "big_sell": 2.69,
    "x": "https://x.com/akarifigure/status/2126245332983918997",
@@ -6803,7 +6821,7 @@
    "symbol": "Rockstar",
    "name": "Rockstar Games",
    "mint": "H1XssMLY7gGEqTfbNkEhGUMhefDLgwqnjeGA7sQ5pump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 1,
@@ -6821,12 +6839,12 @@
    "symbol": "Christ",
    "name": "The Nietzschean Man",
    "mint": "DZuyygeKUBR2FhNh3YeDTmqbsAjZttRhGhcCGGmeKrHf",
-   "age_s": 125,
-   "sol_in": -1.53,
-   "buys": 3,
-   "sells": 9,
-   "rise_pct": -8.6,
-   "mcap_sol": 34.7,
+   "age_s": 159,
+   "sol_in": -1.36,
+   "buys": 4,
+   "sells": 10,
+   "rise_pct": -7.7,
+   "mcap_sol": 35.0,
    "dev_pct": 15.2,
    "big_sell": 3.21,
    "x": false,
@@ -6834,48 +6852,28 @@
    "web": "https://www.instagram.com/p/DgPWZ9wjWdq/",
    "status": "rejected: serial launcher: 7 more coins in 60 min",
    "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "Pickle",
-   "name": "Gambling Deer",
-   "mint": "GKKH9EHquen47BcTKbDa7zixtu4p1KNLtSBBw57npump",
-   "age_s": 159,
-   "sol_in": -0.76,
-   "buys": 10,
-   "sells": 14,
-   "rise_pct": -4.9,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.7,
-   "big_sell": 29.46,
-   "x": "https://x.com/slndr3000/status/2126245155615248895?a=wLwKFcgF85SFb4VuLLI&s=20",
-   "tg": false,
-   "web": "https://www.instagram.com/reel/DgOQN7vhtmT/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "CHARLIE",
-   "name": "Charlie Brown",
-   "mint": "HfLVPMUkhfcgApBHDNfb5MbCZk2u3vqnAX9RBBf5ttM6",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 4027.4,
-   "mcap_sol": 1154.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/danny8080/status/2126245608008638489",
-   "tg": false,
-   "web": "https://usepaid.app/token/FdRQXLWM42dZAUjkKfxyeLYoKDEmZEJvZeHU2dm7FKRR",
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "CHAPOA",
+   "mint": "35KBbBvHJrFV89jPKacKYmT33VmLiAbbAZAHwgp9pump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:27:00Z",
+   "cost": 36.2,
+   "pnl_pct": -5.0,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.49
+  },
   {
    "symbol": "PISSBALL",
    "mint": "DLRVaeuaKtc8LUJLNHYnF41UyhSkyUG37NjU2xd6WLpw",
@@ -7314,7 +7312,7 @@
   "wins": 151,
   "win_rate": 21.0,
   "mean_pnl_pct": -8.49,
-  "open": 2,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
