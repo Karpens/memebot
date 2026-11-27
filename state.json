@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:53:39Z",
-    "time": "05:53:39",
-    "agent": "LEARNER",
-    "coin": "Mike",
-    "action": "shadow",
-    "text": "SHADOW Mike · not bought (pause after a losing streak) · followed as if bought: $22.18 at 0.0000026151 (curve maths, every cost) · same exits, outside the book",
-    "n": 2103
-   },
-   {
-    "t": "2026-11-27T04:53:44Z",
-    "time": "05:53:44",
-    "agent": "LEARNER",
-    "coin": "Mike",
-    "action": "shadow",
-    "text": "SHADOW Mike would have made +6.2% (TP +10%) · learned x0.5 · np:age:<30s now avg -10.3% over 298.5",
-    "n": 2104
-   },
-   {
     "t": "2026-11-27T04:53:47Z",
     "time": "05:53:47",
     "agent": "RISK",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW spxc would have made -5.9% (5 min, only -2%) · learned x0.5 · np:dev:0-2 now avg -9.4% over 177.5",
     "n": 2702
+   },
+   {
+    "t": "2026-11-27T05:59:19Z",
+    "time": "06:59:19",
+    "agent": "LEARNER",
+    "coin": "BAHAT",
+    "action": "shadow",
+    "text": "SHADOW BAHAT would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.9% over 174.5",
+    "n": 2703
+   },
+   {
+    "t": "2026-11-27T05:59:24Z",
+    "time": "06:59:24",
+    "agent": "LEARNER",
+    "coin": "PUMP",
+    "action": "shadow",
+    "text": "SHADOW PUMP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021774 (curve maths, every cost) · same exits, outside the book",
+    "n": 2704
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2702,
+  "lines": 2704,
   "flags": [
    {
     "coin": "Kibo",
@@ -21019,9 +21019,9 @@
   },
   "np_said": 1795759122.780849,
   "shadow": {
-   "n": 290,
+   "n": 291,
    "wins": 50,
-   "sum": -2585.3
+   "sum": -2593.1
   },
   "np_speed": {
    "first_in": [
@@ -30604,9 +30604,9 @@
   }
  },
  "shadow": {
-  "n": 304,
+  "n": 305,
   "wins": 52,
-  "sum": -2783.8,
+  "sum": -2791.6,
   "by": {
    "learner": {
     "n": 16,
@@ -30614,32 +30614,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 288,
+    "n": 289,
     "wins": 49,
-    "sum": -2586.0
+    "sum": -2593.8
    }
   },
   "closed": [
-   {
-    "symbol": "SIMYO",
-    "mint": "G3cYnFcbj2pd5Xm64VrV6meEYx5rrDHuhLMAgGfqpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:31:24Z",
-    "cost": 39.88,
-    "pnl_pct": -16.3,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.99,
-    "closed": "2026-11-27T05:32:04Z",
-    "exit": "stop -13%",
-    "pnl": -6.52,
-    "weight": 0.5
-   },
    {
     "symbol": "Kibo",
     "mint": "EqGMVSpViUXzxwu3sNxZocJLhPYEGUu7kRLJEKiDpump",
@@ -31019,12 +30999,32 @@
     "exit": "5 min, only -2%",
     "pnl": -2.13,
     "weight": 0.5
+   },
+   {
+    "symbol": "BAHAT",
+    "mint": "GJxqfKGhs6Pt4LVkjEYMEpEspoo2hV4KdsNbNRMaiqoF",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:56:19Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T05:59:19Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.83,
+    "weight": 0.5
    }
   ],
   "open": [
    "RUNNER",
    "FLASHER",
-   "BAHAT"
+   "PUMP"
   ]
  },
  "learner_summary": {
@@ -31066,7 +31066,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 288,
+  "shadows": 289,
   "memory": "snipe"
  }
 }
