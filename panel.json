@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:52:58Z",
+ "updated": "2026-11-27T09:53:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3933,
+  "lines": 3934,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795737120,
-   82.3
-  ],
   [
    1795737180,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795773134,
    361.97
+  ],
+  [
+   1795773194,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:14:41Z",
-   "time": "10:14:41",
-   "agent": "LEARNER",
-   "coin": "Flyball",
-   "action": "shadow",
-   "text": "SHADOW Flyball would have made -18.2% (stop -15%) · learned x0.5 · np:age:<30s now avg -8.3% over 300",
-   "n": 3734
-  },
-  {
    "t": "2026-11-27T09:14:42Z",
    "time": "10:14:42",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "scan",
    "text": "new pairs · 7.4 a minute · 1 watched · 15 rejected (snipe not bought: trades tonight 7, mayhem mode 5, serial launcher 3) · closest RINGCAT: no curve reading yet",
    "n": 3933
+  },
+  {
+   "t": "2026-11-27T09:53:14Z",
+   "time": "10:53:14",
+   "agent": "LEARNER",
+   "coin": "SUGZ",
+   "action": "shadow",
+   "text": "SHADOW SUGZ · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021483 (curve maths, every cost) · same exits, outside the book",
+   "n": 3934
   }
  ],
  "nights": [
@@ -6592,7 +6592,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6600,15 +6600,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 732,
-    "last_event_age_s": 29.3,
+    "events": 734,
+    "last_event_age_s": 14.7,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17902,
+    "events": 17949,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -6616,8 +6616,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 424,
-    "last_event_age_s": 29.3,
+    "events": 425,
+    "last_event_age_s": 14.4,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6631,8 +6631,8 @@
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 7.4,
-  "watching": 1,
-  "followed": 10
+  "watching": 0,
+  "followed": 8
  },
  "learner": {
   "samples": 249,
@@ -6679,30 +6679,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9295,
+   "sent": 9326,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9306,
+   "sent": 9337,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SUGZ",
+   "name": "SUGZ",
+   "mint": "6gAVqX3uaZh1RoKzRGPjuqQzRW6j3AAYuGhdBFsnpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/sugzcoin",
+   "tg": false,
+   "web": "https://www.sugzstudio.com/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "EatT7cKX18WFwLR59Bg4xFZYZTNNmwahSr6iNJ39pump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "Bateleur",
    "name": "Aura Farming Bird",
    "mint": "CW4eHVtu548HvEneQzAKDqLaiK9hyFPkaj7rY9Ltpump",
-   "age_s": 29,
-   "sol_in": 12.96,
-   "buys": 14,
-   "sells": 12,
-   "rise_pct": 90.9,
-   "mcap_sol": 68.4,
+   "age_s": 58,
+   "sol_in": 7.64,
+   "buys": 30,
+   "sells": 21,
+   "rise_pct": 50.1,
+   "mcap_sol": 53.7,
    "dev_pct": 12.5,
-   "big_sell": 1.03,
+   "big_sell": 1.67,
    "x": "https://x.com/slndr3000/status/2126252788166295603?a=Owf6O4Z6EFLgxMb4kVI&s=20",
    "tg": false,
    "web": "https://www.instagram.com/reels/DgOfMHKSdDg/",
@@ -6713,7 +6749,7 @@
    "symbol": "HEARTC",
    "name": "Heart List",
    "mint": "4Ucfx9TfJV9q8MFH2bSuFSxhf8229miDM8QgfFVBpump",
-   "age_s": 44,
+   "age_s": 73,
    "sol_in": -0.95,
    "buys": 4,
    "sells": 2,
@@ -6731,7 +6767,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "7LTna2AutfbttTsPnM3TMupdXrk6YMhPpmi6dY7apump",
-   "age_s": 62,
+   "age_s": 91,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6749,10 +6785,10 @@
    "symbol": "DUET",
    "name": "Duet",
    "mint": "6g3Dso6Q2foDngmbA2Ay312WodribrGQSJRRyuKYpump",
-   "age_s": 62,
-   "sol_in": -0.98,
-   "buys": 8,
-   "sells": 8,
+   "age_s": 91,
+   "sol_in": -0.97,
+   "buys": 9,
+   "sells": 10,
    "rise_pct": -6.2,
    "mcap_sol": 28.0,
    "dev_pct": 3.4,
@@ -6767,7 +6803,7 @@
    "symbol": "BI",
    "name": "Baton Inu",
    "mint": "6ATk9UVSuJZ2gcTeXnJ8k8Zw6R15X8M9j3Pb8PkLQZqL",
-   "age_s": 92,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6785,7 +6821,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "FE3QYRGahoabAZcun8ttcQvsAmdeikoskCLKTL8Spump",
-   "age_s": 97,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6803,7 +6839,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "JB8CdyG1GySx6qeBFqywtthA2a1EijZ3aR2XGvRFpump",
-   "age_s": 115,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6821,7 +6857,7 @@
    "symbol": "SANDWICH",
    "name": "Ice cream sandwich assistant",
    "mint": "HetVfkpD2n8VjoreBeraMDNuK5ynDhsQPp3Zq4kEpump",
-   "age_s": 116,
+   "age_s": 145,
    "sol_in": 0.46,
    "buys": 2,
    "sells": 3,
@@ -6839,7 +6875,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "4EqyCvobddKzBt4tEtUfGES2kWMAMGCqEJ8RTq4Fpump",
-   "age_s": 150,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6857,7 +6893,7 @@
    "symbol": "TODD",
    "name": "todd",
    "mint": "5QghyQkmXjpBRKptsZQrwKLo3YfUNPvpY1NLQCxfpump",
-   "age_s": 150,
+   "age_s": 179,
    "sol_in": 0.37,
    "buys": 3,
    "sells": 1,
@@ -6875,7 +6911,7 @@
    "symbol": "Scxuball",
    "name": "Svreuall",
    "mint": "BsTtwiWkAtnfN6Rc27Xz8tQvC7aqRR68oE6ny6oBpump",
-   "age_s": 150,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 4,
    "sells": 3,
@@ -6888,66 +6924,28 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "Solana",
-   "name": "Solana the Nyala Calf",
-   "mint": "BT9o6oPY4qsvR6WXenoVqoaYQrzVTRXvzLJKaU9cEkfq",
-   "age_s": 161,
-   "sol_in": -4.94,
-   "buys": 6,
-   "sells": 13,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 3.28,
-   "x": "https://x.com/MarioPrezldente/status/2126252259214492153",
-   "tg": false,
-   "web": "https://comofriend.org/support/name-the-calf",
-   "status": "rejected: serial launcher: 7 more coins in 60 min",
-   "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "RINGCAT",
-   "name": "ringcat",
-   "mint": "3SRkoC2WtnELZKiaqzNm6hVJeVzSd6y7FXoYnZoK3Yhg",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
-  },
-  {
-   "symbol": "Rice",
-   "name": "Rice",
-   "mint": "dUo4JucWcPvM3AKoabQ46zswbwsdd9Q2GG6Dytcpump",
-   "age_s": 179,
-   "sol_in": -0.99,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 1.88,
-   "x": "https://x.com/TrenchbullDevs/status/2126251858805284897?a=LM4AfVsRQf16iGw54-o&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "SUGZ",
+   "mint": "6gAVqX3uaZh1RoKzRGPjuqQzRW6j3AAYuGhdBFsnpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:53:14Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0
+  },
   {
    "symbol": "SANDWICH",
    "mint": "HetVfkpD2n8VjoreBeraMDNuK5ynDhsQPp3Zq4kEpump",
@@ -6956,7 +6954,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:51:03Z",
    "cost": 36.2,
-   "pnl_pct": -8.1,
+   "pnl_pct": -8.2,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -6972,7 +6970,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:50:28Z",
    "cost": 36.2,
-   "pnl_pct": -3.2,
+   "pnl_pct": -3.3,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -7402,7 +7400,7 @@
   "wins": 169,
   "win_rate": 21.8,
   "mean_pnl_pct": -8.25,
-  "open": 3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
