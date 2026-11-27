@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T05:40:36Z",
+ "updated": "2026-11-27T05:41:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 329.81,
- "equity": 364.51,
+ "equity": 364.5,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 249,
   "checked": 245,
   "filtered": 5,
-  "lines": 2576,
+  "lines": 2578,
   "last_rug": {
    "coin": "Gygax",
    "pass": true
@@ -1672,6 +1672,10 @@
   [
    1795757993,
    370.91
+  ],
+  [
+   1795758053,
+   364.51
   ]
  ],
  "position_pct": 10.0,
@@ -1682,14 +1686,14 @@
    "symbol": "Asami",
    "mint": "eNkxp4cK7cLkHe1xeGVWtnxNy7TVKJAyiegjTWppump",
    "cost": 38.57,
-   "value": 34.7,
-   "pnl_pct": -10.0,
+   "value": 34.69,
+   "pnl_pct": -10.1,
    "opened": "2026-11-27T05:38:38Z",
    "url": "https://pump.fun/coin/eNkxp4cK7cLkHe1xeGVWtnxNy7TVKJAyiegjTWppump",
    "reason": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.26431e-06,
-   "price": 2.0413e-06,
+   "price": 2.04041e-06,
    "slip": 1.65,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -3983,24 +3987,6 @@
   {
    "t": "2026-11-27T05:25:54Z",
    "time": "06:25:54",
-   "agent": "SIZER",
-   "coin": "ATTNX",
-   "action": "size",
-   "text": "10% of $453.13 = $45.31",
-   "n": 2377
-  },
-  {
-   "t": "2026-11-27T05:25:54Z",
-   "time": "06:25:54",
-   "agent": "EXECUTOR",
-   "coin": "ATTNX",
-   "action": "enter",
-   "text": "ENTER ATTNX at 0.0000024039 · slip 1.9% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 4 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-   "n": 2378
-  },
-  {
-   "t": "2026-11-27T05:25:54Z",
-   "time": "06:25:54",
    "agent": "NEWS",
    "coin": "ATTNX",
    "action": "plan",
@@ -5779,6 +5765,24 @@
    "action": "learn",
    "text": "learned · np:buys:<70 now avg -9.8% over 169",
    "n": 2576
+  },
+  {
+   "t": "2026-11-27T05:40:41Z",
+   "time": "06:40:41",
+   "agent": "LEARNER",
+   "coin": "SANTA",
+   "action": "shadow",
+   "text": "SHADOW SANTA would have made -29.1% (dump: 4.5 SOL sold) · learned x0.5 · np:social:none now avg -9.9% over 133.5",
+   "n": 2577
+  },
+  {
+   "t": "2026-11-27T05:40:48Z",
+   "time": "06:40:48",
+   "agent": "LEARNER",
+   "coin": "SantaHat",
+   "action": "shadow",
+   "text": "SHADOW SantaHat · not bought (pause after a losing streak) · followed as if bought: $36.45 at 0.0000033064 (curve maths, every cost) · same exits, outside the book",
+   "n": 2578
   }
  ],
  "nights": [
@@ -5841,32 +5845,32 @@
   "gt_sec": 20,
   "feed": "pumpportal live · curve poll 0.5 s · 34 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 33,
+  "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1123,
-    "last_event_age_s": 0.4,
+    "events": 1125,
+    "last_event_age_s": 14.3,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35488,
-    "last_event_age_s": 0.1,
+    "events": 35526,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 758,
-    "last_event_age_s": 0.4,
-    "errors": 74,
-    "last_error": "ipfs.io: HTTP 403"
+    "connected": false,
+    "events": 760,
+    "last_event_age_s": 10.1,
+    "errors": 75,
+    "last_error": "ar-io.dev: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -5879,7 +5883,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 10
+  "followed": 9
  },
  "learner": {
   "samples": 236,
@@ -5900,7 +5904,7 @@
    {
     "label": "snipe · hour:05-07",
     "n": 130,
-    "avg": -6.1
+    "avg": -6.2
    }
   ],
   "worst": [
@@ -5920,36 +5924,72 @@
     "avg": -15.4
    }
   ],
-  "shadows": 274,
+  "shadows": 275,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15553,
+   "sent": 15583,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15552,
+   "sent": 15582,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HORD",
+   "name": "The Hoarder",
+   "mint": "GrAJBMwV36qu1xddArLV73qfyFotLHpKKYvvcxUobit1",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "SantaHat",
+   "name": "Santa Hat Cult",
+   "mint": "8CBFRocgDKEdEwmfzxThcWB2gHoo8BiUeq7b6RQfcpeF",
+   "age_s": 16,
+   "sol_in": 6.19,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 44.0,
+   "mcap_sol": 42.9,
+   "dev_pct": 3.4,
+   "big_sell": 0.33,
+   "x": "https://x.com/elonmahskk/status/2126189474384412813",
+   "tg": false,
+   "web": "https://x.com/elonmahskk/status/2126189474384412813",
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
    "symbol": "SantaHat",
    "name": "Santa Hat Cult",
    "mint": "C95NQFnfy7qtF1fjcnUySoRiopT4h5wsiLn4H6zv4M41",
-   "age_s": 0,
-   "sol_in": 4.85,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 29.7,
-   "mcap_sol": 49.2,
+   "age_s": 28,
+   "sol_in": -1.22,
+   "buys": 7,
+   "sells": 9,
+   "rise_pct": -6.9,
+   "mcap_sol": 35.3,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 3.01,
    "x": "https://x.com/ddddddd8a/status/2126189366728966364",
    "tg": false,
    "web": "https://axiom.trade/pulse?chains=sol&pulseChains=sol&trackerChains=sol&discoverChains=sol",
@@ -5960,14 +6000,14 @@
    "symbol": "SANTA",
    "name": "Santa Hat Cult",
    "mint": "2vQNHn27afQ5tXCri9LMHQup7L9fc4TCVc8gLnNmpump",
-   "age_s": 6,
-   "sol_in": 1.5,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 9.3,
-   "mcap_sol": 36.9,
+   "age_s": 34,
+   "sol_in": -2.81,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": -16.3,
+   "mcap_sol": 28.2,
    "dev_pct": 9.6,
-   "big_sell": 0.0,
+   "big_sell": 4.51,
    "x": "https://x.com/ddddddd8a/status/2126189366728966364",
    "tg": false,
    "web": "https://x.com/ddddddd8a/status/2126189366728966364",
@@ -5978,7 +6018,7 @@
    "symbol": "?",
    "name": "",
    "mint": "7JPv1sddgVgiwXumHK3xH5TQNBBPMw1JHNBkbDcYpump",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5996,7 +6036,7 @@
    "symbol": "MELTY",
    "name": "MELTY",
    "mint": "TKKnamtQmVLfhDp6rmFpQi1X6yVL1f8ztXV2xLLpump",
-   "age_s": 14,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6014,7 +6054,7 @@
    "symbol": "Gygax",
    "name": "Gygax",
    "mint": "HtH3HrP9TJChvxKLhbrtJ3N7QqJSnvQqwC34zKGRpump",
-   "age_s": 78,
+   "age_s": 106,
    "sol_in": -1.0,
    "buys": 3,
    "sells": 7,
@@ -6032,7 +6072,7 @@
    "symbol": "NOMERO",
    "name": "NOMERO",
    "mint": "7grYi1AkomiUxfQkqfbuotrN7W3LqohjsBKkxR9oLCUB",
-   "age_s": 110,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6050,7 +6090,7 @@
    "symbol": "GAYANAL",
    "name": "GAYANAL",
    "mint": "AeWCmDz9SaVxCEgBJK5m6eVo4usVDnvFsFzWfzvMpump",
-   "age_s": 110,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6068,7 +6108,7 @@
    "symbol": "Asami",
    "name": "Asami Animates",
    "mint": "eNkxp4cK7cLkHe1xeGVWtnxNy7TVKJAyiegjTWppump",
-   "age_s": 118,
+   "age_s": 146,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 4,
@@ -6086,7 +6126,7 @@
    "symbol": "Fallout",
    "name": "Fallout",
    "mint": "FJemaukYfhF8rkGfFheJSK1dKzzgfKZwFVUhfyJFpump",
-   "age_s": 150,
+   "age_s": 178,
    "sol_in": -1.02,
    "buys": 6,
    "sells": 7,
@@ -6099,60 +6139,6 @@
    "web": false,
    "status": "exited: stop -14%",
    "why": "stop -14%"
-  },
-  {
-   "symbol": "BFC",
-   "name": "Black Friday Coin",
-   "mint": "6pFn2MwQX5J51eputtQ1HhNjdFp3gZ4mAVrer6Ldpump",
-   "age_s": 163,
-   "sol_in": 5.39,
-   "buys": 112,
-   "sells": 139,
-   "rise_pct": 37.6,
-   "mcap_sol": 41.5,
-   "dev_pct": 4.0,
-   "big_sell": 13.3,
-   "x": "https://x.com/Blackfridayonpf",
-   "tg": false,
-   "web": false,
-   "status": "exited: TP +20%",
-   "why": "TP +20%"
-  },
-  {
-   "symbol": "Kibo",
-   "name": "きぼ",
-   "mint": "Agh91aexhfJ2FYfeDWw42mPdV2EXiQPyvp5m1ahpump",
-   "age_s": 176,
-   "sol_in": -2.96,
-   "buys": 3,
-   "sells": 8,
-   "rise_pct": -17.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.6,
-   "big_sell": 2.01,
-   "x": "https://x.com/SpringDeploys/status/2126188660382994931?a=JKDfsB-N0LPHkC9-pQk&s=20",
-   "tg": false,
-   "web": "https://www.youtube.com/watch?v=mlQv2GUDHGk",
-   "status": "exited: stop -12%",
-   "why": "stop -12%"
-  },
-  {
-   "symbol": "wufmas",
-   "name": "wufmas",
-   "mint": "BC9B2xZhAa24Rq8rSXvs7MEdbMyMeFSiueJQiaUMpump",
-   "age_s": 207,
-   "sol_in": 0.15,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": 1.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "exited: curve quiet for 3 min (no trade)",
-   "why": "curve quiet for 3 min (no trade)"
   }
  ],
  "strategies": [
@@ -6160,20 +6146,40 @@
  ],
  "shadows": [
   {
+   "symbol": "SantaHat",
+   "mint": "8CBFRocgDKEdEwmfzxThcWB2gHoo8BiUeq7b6RQfcpeF",
+   "status": "open",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T05:40:48Z",
+   "cost": 36.45,
+   "pnl_pct": -5.4,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 6.52
+  },
+  {
    "symbol": "SANTA",
    "mint": "2vQNHn27afQ5tXCri9LMHQup7L9fc4TCVc8gLnNmpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
    "opened": "2026-11-27T05:40:30Z",
    "cost": 36.61,
-   "pnl_pct": -3.8,
+   "pnl_pct": -29.1,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 1.5
+   "sol_in": 1.5,
+   "closed": "2026-11-27T05:40:41Z",
+   "exit": "dump: 4.5 SOL sold",
+   "pnl": -10.66,
+   "weight": 0.5
   },
   {
    "symbol": "$2SHARES",
@@ -6554,33 +6560,13 @@
    "exit": "TP +10%",
    "pnl": 3.13,
    "weight": 0.5
-  },
-  {
-   "symbol": "Simyo",
-   "mint": "kuoU7eTJGiTzSN5dsQL5WKFtrBADvmvQN1Yy2nLpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T05:03:21Z",
-   "cost": 21.23,
-   "pnl_pct": -17.9,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T05:03:56Z",
-   "exit": "stop -15%",
-   "pnl": -3.79,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 290,
+  "n": 291,
   "wins": 50,
   "win_rate": 17.2,
-  "mean_pnl_pct": -9.16,
+  "mean_pnl_pct": -9.23,
   "open": 1,
   "learner": {
    "n": 16,
@@ -6589,10 +6575,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 274,
+   "n": 275,
    "wins": 47,
-   "win_rate": 17.2,
-   "mean_pnl_pct": -8.97
+   "win_rate": 17.1,
+   "mean_pnl_pct": -9.04
   }
  }
 }

@@ -13,7 +13,7 @@
    "entry_price": 2.264308235264666e-06,
    "opened": "2026-11-27T05:38:38Z",
    "peak": 2.264308235264666e-06,
-   "last": 2.041299247042661e-06,
+   "last": 2.0404096467608474e-06,
    "tp1_done": false,
    "sold_usd": 0.0,
    "reason": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL · fill curve",
@@ -95,7 +95,7 @@
     "complete": false,
     "slot": 474436200,
     "readings": 6,
-    "last_t": 1795758036.733054,
+    "last_t": 1795758064.565406,
     "age_s": 88.33694577217102,
     "buys": 1,
     "sells": 4,
@@ -198,24 +198,6 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
-   {
-    "t": "2026-11-27T04:39:08Z",
-    "time": "05:39:08",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "13 losses in a row · 2 min pause",
-    "n": 1977
-   },
-   {
-    "t": "2026-11-27T04:39:08Z",
-    "time": "05:39:08",
-    "agent": "EXECUTOR",
-    "coin": "GOLD",
-    "action": "exit",
-    "text": "EXIT GOLD $-0.95 (-4%) · 5 min, only +0%",
-    "n": 1978
-   },
    {
     "t": "2026-11-27T04:39:08Z",
     "time": "05:39:08",
@@ -5597,6 +5579,24 @@
     "action": "learn",
     "text": "learned · np:buys:<70 now avg -9.8% over 169",
     "n": 2576
+   },
+   {
+    "t": "2026-11-27T05:40:41Z",
+    "time": "06:40:41",
+    "agent": "LEARNER",
+    "coin": "SANTA",
+    "action": "shadow",
+    "text": "SHADOW SANTA would have made -29.1% (dump: 4.5 SOL sold) · learned x0.5 · np:social:none now avg -9.9% over 133.5",
+    "n": 2577
+   },
+   {
+    "t": "2026-11-27T05:40:48Z",
+    "time": "06:40:48",
+    "agent": "LEARNER",
+    "coin": "SantaHat",
+    "action": "shadow",
+    "text": "SHADOW SantaHat · not bought (pause after a losing streak) · followed as if bought: $36.45 at 0.0000033064 (curve maths, every cost) · same exits, outside the book",
+    "n": 2578
    }
   ],
   "trades": [
@@ -18714,7 +18714,7 @@
   "flagged": 249,
   "checked": 245,
   "filtered": 5,
-  "lines": 2576,
+  "lines": 2578,
   "flags": [
    {
     "coin": "NAYA",
@@ -20357,6 +20357,10 @@
    [
     1795757993,
     370.91
+   ],
+   [
+    1795758053,
+    364.51
    ]
   ],
   "last_rug": {
@@ -20365,9 +20369,9 @@
   },
   "np_said": 1795758031.780895,
   "shadow": {
-   "n": 276,
+   "n": 277,
    "wins": 48,
-   "sum": -2457.3
+   "sum": -2486.4
   },
   "np_speed": {
    "first_in": [
@@ -29904,9 +29908,9 @@
   }
  },
  "shadow": {
-  "n": 290,
+  "n": 291,
   "wins": 50,
-  "sum": -2655.8,
+  "sum": -2684.9,
   "by": {
    "learner": {
     "n": 16,
@@ -29914,32 +29918,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 274,
+    "n": 275,
     "wins": 47,
-    "sum": -2458.0
+    "sum": -2487.1
    }
   },
   "closed": [
-   {
-    "symbol": "Simyo",
-    "mint": "kuoU7eTJGiTzSN5dsQL5WKFtrBADvmvQN1Yy2nLpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:03:21Z",
-    "cost": 21.23,
-    "pnl_pct": -17.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T05:03:56Z",
-    "exit": "stop -15%",
-    "pnl": -3.79,
-    "weight": 0.5
-   },
    {
     "symbol": "TOKEN22",
     "mint": "Ba4CtEeHg7gdpK2cAjbjja5wyqynC4Xc7cDubCBvpump",
@@ -30319,10 +30303,30 @@
     "exit": "5 min, only -4%",
     "pnl": -3.15,
     "weight": 0.5
+   },
+   {
+    "symbol": "SANTA",
+    "mint": "2vQNHn27afQ5tXCri9LMHQup7L9fc4TCVc8gLnNmpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T05:40:30Z",
+    "cost": 36.61,
+    "pnl_pct": -29.1,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.5,
+    "closed": "2026-11-27T05:40:41Z",
+    "exit": "dump: 4.5 SOL sold",
+    "pnl": -10.66,
+    "weight": 0.5
    }
   ],
   "open": [
-   "SANTA"
+   "SantaHat"
   ]
  },
  "learner_summary": {
@@ -30344,7 +30348,7 @@
    {
     "label": "snipe · hour:05-07",
     "n": 130,
-    "avg": -6.1
+    "avg": -6.2
    }
   ],
   "worst": [
@@ -30364,7 +30368,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 274,
+  "shadows": 275,
   "memory": "snipe"
  }
 }
