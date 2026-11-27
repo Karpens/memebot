@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T04:22:26Z",
+ "updated": "2026-11-27T04:22:55Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 279.34,
@@ -24,7 +24,7 @@
   "flagged": 164,
   "checked": 160,
   "filtered": 5,
-  "lines": 1836,
+  "lines": 1837,
   "last_rug": {
    "coin": "SILVER",
    "pass": true
@@ -1359,6 +1359,10 @@
   ],
   [
    1795753313,
+   279.34
+  ],
+  [
+   1795753373,
    279.34
   ]
  ],
@@ -3615,15 +3619,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T03:52:04Z",
-   "time": "04:52:04",
-   "agent": "LEARNER",
-   "coin": "NITRUMP",
-   "action": "shadow",
-   "text": "SHADOW NITRUMP · not bought (pause after a losing streak) · followed as if bought: $39.55 at 0.0000021396 (curve maths, every cost) · same exits, outside the book",
-   "n": 1637
-  },
-  {
    "t": "2026-11-27T03:52:05Z",
    "time": "04:52:05",
    "agent": "LEARNER",
@@ -5413,6 +5408,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 3 rejected (snipe not bought: pause after a  2, serial launcher 1)",
    "n": 1836
+  },
+  {
+   "t": "2026-11-27T04:22:41Z",
+   "time": "05:22:41",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 1 rejected (serial launcher 1)",
+   "n": 1837
   }
  ],
  "nights": [
@@ -5473,7 +5477,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5481,15 +5485,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 827,
-    "last_event_age_s": 33.3,
+    "events": 829,
+    "last_event_age_s": 10.7,
     "errors": 3,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21252,
+    "events": 21346,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -5497,8 +5501,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 566,
-    "last_event_age_s": 192.6,
+    "events": 567,
+    "last_event_age_s": 21.3,
     "errors": 55,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5511,9 +5515,9 @@
   "exit_ms": 35.0,
   "exit_last_ms": 34,
   "launch_to_entry_s": 0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 1.6,
   "watching": 0,
-  "followed": 0
+  "followed": 1
  },
  "learner": {
   "samples": 152,
@@ -5560,18 +5564,37 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10342,
+   "sent": 10373,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10341,
+   "sent": 10372,
    "errors": 0,
    "last_error": null
   }
  },
- "watch": [],
+ "watch": [
+  {
+   "symbol": "RI",
+   "name": "Riceinu",
+   "mint": "5Ue7fY5YMjvguhnjTqSXBcaJcANNdhmogDpyARZwHg5q",
+   "age_s": 21,
+   "sol_in": -0.96,
+   "buys": 6,
+   "sells": 8,
+   "rise_pct": -5.4,
+   "mcap_sol": 35.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.01,
+   "x": "https://x.com/MarioPrezldente/status/2126169786157834746",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  }
+ ],
  "strategies": [
   "new_pairs"
  ],
