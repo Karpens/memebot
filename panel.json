@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:13:08Z",
+ "updated": "2026-11-27T01:13:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 6,
   "filtered": 3,
-  "lines": 177,
+  "lines": 178,
   "last_rug": {
    "coin": "RDB",
    "pass": false
@@ -2259,6 +2259,15 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 1 watched · 6 rejected (mayhem mode 3, serial launcher 1, dump 1) · closest PISSILE: too young: 0 s (min 45 s)",
    "n": 177
+  },
+  {
+   "t": "2026-11-27T01:13:14Z",
+   "time": "02:13:14",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 1 watched · 6 rejected (serial launcher 2, mayhem mode 2, dump 1) · closest DOLLY: too young: 36 s (min 45 s)",
+   "n": 178
   }
  ],
  "nights": [
@@ -2316,7 +2325,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2324,24 +2333,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1690,
-    "last_event_age_s": 23.7,
+    "events": 1695,
+    "last_event_age_s": 4.7,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22441,
-    "last_event_age_s": 2.7,
+    "events": 22450,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1072,
-    "last_event_age_s": 30.0,
+    "connected": true,
+    "events": 1074,
+    "last_event_age_s": 6.5,
     "errors": 38,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2356,7 +2365,7 @@
   "launch_to_entry_s": 47,
   "creates_per_min": 3.2,
   "watching": 1,
-  "followed": 4
+  "followed": 6
  },
  "learner": {
   "samples": 111,
@@ -2402,23 +2411,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12631,
+   "sent": 12662,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12631,
+   "sent": 12662,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GillTail",
+   "name": "The Smiling Gill-Tail",
+   "mint": "E45Tc3TKVFbALJV6jYwvpdwRKFdTrtbrWGicjYpmpump",
+   "age_s": 6,
+   "sol_in": 4.75,
+   "buys": 2,
+   "sells": 4,
+   "rise_pct": 30.4,
+   "mcap_sol": 45.4,
+   "dev_pct": 11.1,
+   "big_sell": 1.45,
+   "x": "https://x.com/slndr3000/status/2126122186943480122?a=_Gs956IUlXOi3_f2RRQ&s=20",
+   "tg": false,
+   "web": "https://x.com/zach_l_J/status/2125926758172266860?a=OLxHM086Zp1YUAtBDl8&s=20",
+   "status": "rejected: dev bought 11.1% (max 8%)",
+   "why": "dev bought 11.1% (max 8%)"
+  },
+  {
+   "symbol": "VIPER",
+   "name": "DeadBullLabs",
+   "mint": "C8XnENQ1QnnSJr8BBA7CwrXD4TLAL76eMnDQcYfppump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Rodrigo",
+   "name": "Rodrigo Cat",
+   "mint": "9cv6ze25wJUKu2BTzR8utLM1DoyC2Rjz3iyfihsopump",
+   "age_s": 16,
+   "sol_in": 0.11,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/search?q=2RCPgtPY1Z1JuY1vhchwSwwR3TvQgLnwzhQY9YZRYYhm",
+   "tg": false,
+   "web": "https://pagesix.com/2026/11/26/society/nyc-bodega-cat-from-olivia-rodrigo-music-video-up-for-adoption-as-beloved-grocer-closes/?utm_medium=social&utm_campaign=capost&utm_source=twitter",
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
    "symbol": "vrl",
    "name": "VRL",
    "mint": "9fBZyBLdfQgq6KECQjTwfHTGBwD3gXp9zqauUPdypump",
-   "age_s": 23,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2436,7 +2499,7 @@
    "symbol": "SpaceXCoin",
    "name": "SpaceXCoin",
    "mint": "DjEtnnHto8HKtCu7wSDnkV5P7Trk1qz29JjwNugp23T2",
-   "age_s": 34,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2454,7 +2517,7 @@
    "symbol": "DOLLY",
    "name": "Nietzschean Turkey",
    "mint": "BRbxyLFePVwv6fqErdhtEvexuWPPBJVvMBYud8wWpump",
-   "age_s": 39,
+   "age_s": 68,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 2,
@@ -2472,14 +2535,14 @@
    "symbol": "AV",
    "name": "Avengers Doomsday",
    "mint": "BwJLpVwBNPXijXx4wsPQ1WJpuHcikEeaDUYFCH89pump",
-   "age_s": 50,
-   "sol_in": 0.33,
+   "age_s": 79,
+   "sol_in": 0.17,
    "buys": 3,
-   "sells": 0,
-   "rise_pct": 2.2,
-   "mcap_sol": 28.6,
+   "sells": 1,
+   "rise_pct": 1.1,
+   "mcap_sol": 28.3,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.16,
    "x": "https://x.com/Marvel/status/2124867197336261061",
    "tg": false,
    "web": false,
@@ -2490,7 +2553,7 @@
    "symbol": "?",
    "name": "",
    "mint": "8zR4nMoEXGnEMbgD4s55jYGyeTbG6gNmtk4MxFyspump",
-   "age_s": 64,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2508,7 +2571,7 @@
    "symbol": "PHR",
    "name": "Phrixus",
    "mint": "GBY46f88WcPPcP8qEX8rgtioQNSMQjBqPRTzUACwpump",
-   "age_s": 99,
+   "age_s": 128,
    "sol_in": -0.57,
    "buys": 2,
    "sells": 5,
@@ -2526,7 +2589,7 @@
    "symbol": "VC",
    "name": "PUMPFUN VC",
    "mint": "JCaT6k7fEM6KxgHMAsFWsT8fVqZDmSVqQkswVMCBpump",
-   "age_s": 142,
+   "age_s": 171,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
