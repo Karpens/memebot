@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:36:11Z",
+ "updated": "2026-11-27T10:36:45Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4163,
+  "lines": 4165,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795739700,
-   82.3
-  ],
   [
    1795739760,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795775714,
    361.97
+  ],
+  [
+   1795775774,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:00:22Z",
-   "time": "11:00:22",
-   "agent": "LEARNER",
-   "coin": "baoCat",
-   "action": "shadow",
-   "text": "SHADOW baoCat · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021367 (curve maths, every cost) · same exits, outside the book",
-   "n": 3964
-  },
-  {
-   "t": "2026-11-27T10:00:38Z",
-   "time": "11:00:38",
-   "agent": "LEARNER",
-   "coin": "alon",
-   "action": "shadow",
-   "text": "SHADOW alon · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024339 (curve maths, every cost) · same exits, outside the book",
-   "n": 3965
-  },
-  {
    "t": "2026-11-27T10:00:38Z",
    "time": "11:00:38",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW NVIDIA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000061292 (curve maths, every cost) · same exits, outside the book",
    "n": 4163
+  },
+  {
+   "t": "2026-11-27T10:36:16Z",
+   "time": "11:36:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 9 rejected (mayhem mode 4, snipe not bought: trades tonight 3, serial launcher 1)",
+   "n": 4164
+  },
+  {
+   "t": "2026-11-27T10:36:34Z",
+   "time": "11:36:34",
+   "agent": "LEARNER",
+   "coin": "SOFLOW",
+   "action": "shadow",
+   "text": "SHADOW SOFLOW · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.00000213 (curve maths, every cost) · same exits, outside the book",
+   "n": 4165
   }
  ],
  "nights": [
@@ -6605,24 +6605,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1042,
-    "last_event_age_s": 5.0,
+    "events": 1043,
+    "last_event_age_s": 11.2,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22328,
-    "last_event_age_s": 0.1,
+    "events": 22381,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 623,
-    "last_event_age_s": 4.9,
+    "events": 624,
+    "last_event_age_s": 10.6,
     "errors": 27,
     "last_error": "195.26.231.33: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)"
    }
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 5
+  "followed": 4
  },
  "learner": {
   "samples": 249,
@@ -6684,30 +6684,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12055,
+   "sent": 12091,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12066,
+   "sent": 12102,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SOFLOW",
+   "name": "SEGFAULT Nº 002 StackOverflow",
+   "mint": "HXKF438idKV3aeoXMdTx2BhSxjpC2gB2kf5uNbQQUz6Y",
+   "age_s": 11,
+   "sol_in": 0.11,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "4Pq4AYk9uope9ifBzFvhrou1RXHUKadVPNjdafoUpump",
-   "age_s": 4,
-   "sol_in": 18.19,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 138.3,
-   "mcap_sol": 82.9,
+   "age_s": 38,
+   "sol_in": 18.58,
+   "buys": 12,
+   "sells": 5,
+   "rise_pct": 141.9,
+   "mcap_sol": 84.1,
    "dev_pct": 11.1,
-   "big_sell": 0.0,
+   "big_sell": 0.49,
    "x": false,
    "tg": false,
    "web": false,
@@ -6718,12 +6736,12 @@
    "symbol": "420tekk2",
    "name": "420tekk!",
    "mint": "BuNJvQjje3AuMXPAJz9jNuvsL8mzMS9j9GUDEfDgATs5",
-   "age_s": 14,
-   "sol_in": -1.6,
+   "age_s": 48,
+   "sol_in": -1.68,
    "buys": 1,
-   "sells": 3,
-   "rise_pct": -9.8,
-   "mcap_sol": 28.1,
+   "sells": 4,
+   "rise_pct": -10.3,
+   "mcap_sol": 28.0,
    "dev_pct": 5.7,
    "big_sell": 1.7,
    "x": "https://x.com/420tekk/status/2126257033376837786?a=D9i_YKjr_cDz6YxQCV4&s=20",
@@ -6736,7 +6754,7 @@
    "symbol": "MACAW",
    "name": "The Macaw",
    "mint": "4p4rNDCHNH78ZjmqQaLeq31pxTRPvn67aqGEGT1QUaiS",
-   "age_s": 36,
+   "age_s": 70,
    "sol_in": -1.44,
    "buys": 1,
    "sells": 4,
@@ -6754,7 +6772,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HstjSQzgbvQjxvUhhuc6Prgji16d1SaQzwSGysqXPPar",
-   "age_s": 55,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6772,7 +6790,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "DEUGzgkt3U68Z4j7M1h7bbsRGYTA7Mf1cxHxPsNEpump",
-   "age_s": 63,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6790,7 +6808,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "FV3HRyDCfutssja7EXLny7WysMij1x1JSTBgmz4vpump",
-   "age_s": 110,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6808,7 +6826,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "6xoapgiaT6NbQ3gFLf3yT3pqsPAvFV546zymGQwnpump",
-   "age_s": 143,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6821,66 +6839,28 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "FLOPCAT",
-   "name": "Flip-Flop CAT",
-   "mint": "BCpTPtucgTykAWtr5fDu1sJ8qtXcbQNb2AZybbXfpump",
-   "age_s": 164,
-   "sol_in": 14.1,
-   "buys": 68,
-   "sells": 56,
-   "rise_pct": 103.8,
-   "mcap_sol": 68.8,
-   "dev_pct": 9.7,
-   "big_sell": 3.48,
-   "x": "https://x.com/Big_Kandle/status/2126262450672832959",
-   "tg": false,
-   "web": "https://x.com/JudithTheHR/status/2125994363826389125?s=20",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "oBBQioZJNVK6ULNwYSZ9p224fp27pSfHYBf2sSapump",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.8,
-   "dev_pct": 6.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Struggle",
-   "name": "Struggle Cat",
-   "mint": "YMKGSmUHvXCSiN8MVhAFZ6hse9tx13i4mYvUUsXpump",
-   "age_s": 176,
-   "sol_in": -8.19,
-   "buys": 7,
-   "sells": 15,
-   "rise_pct": -36.9,
-   "mcap_sol": 31.2,
-   "dev_pct": 26.6,
-   "big_sell": 5.79,
-   "x": "https://x.com/SERKOpfs/status/2126263028077539361",
-   "tg": false,
-   "web": "https://x.com/Meowversetwt/status/2125726223628148754?a=O-Qr7_Mo485DELFWiG8&s=20",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "SOFLOW",
+   "mint": "HXKF438idKV3aeoXMdTx2BhSxjpC2gB2kf5uNbQQUz6Y",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:36:34Z",
+   "cost": 36.2,
+   "pnl_pct": -3.3,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "NVIDIA",
    "mint": "4Pq4AYk9uope9ifBzFvhrou1RXHUKadVPNjdafoUpump",
@@ -6889,7 +6869,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:36:07Z",
    "cost": 36.2,
-   "pnl_pct": -1.1,
+   "pnl_pct": 0.4,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -7335,7 +7315,7 @@
   "wins": 192,
   "win_rate": 22.2,
   "mean_pnl_pct": -8.03,
-  "open": 3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
