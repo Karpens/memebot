@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T09:22:33Z",
-    "time": "10:22:33",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.0 a minute · 0 watched · 5 rejected (snipe not bought: trades tonight 4, serial launcher 1)",
-    "n": 3766
-   },
-   {
-    "t": "2026-11-27T09:22:56Z",
-    "time": "10:22:56",
-    "agent": "LEARNER",
-    "coin": "dogscountZ",
-    "action": "shadow",
-    "text": "SHADOW dogscountZ · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024269 (curve maths, every cost) · same exits, outside the book",
-    "n": 3767
-   },
-   {
     "t": "2026-11-27T09:22:58Z",
     "time": "10:22:58",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 6.2 a minute · 0 watched · 18 rejected (snipe not bought: trades tonight 9, serial launcher 4, mayhem mode 3)",
     "n": 4365
+   },
+   {
+    "t": "2026-11-27T11:11:50Z",
+    "time": "12:11:50",
+    "agent": "LEARNER",
+    "coin": "VORCHARD",
+    "action": "shadow",
+    "text": "SHADOW VORCHARD would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.0% over 252",
+    "n": 4366
+   },
+   {
+    "t": "2026-11-27T11:11:58Z",
+    "time": "12:11:58",
+    "agent": "LEARNER",
+    "coin": "broke",
+    "action": "shadow",
+    "text": "SHADOW broke · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023674 (curve maths, every cost) · same exits, outside the book",
+    "n": 4367
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4365,
+  "lines": 4367,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795777897.645418,
   "shadow": {
-   "n": 926,
+   "n": 927,
    "wins": 210,
-   "sum": -6881.2
+   "sum": -6889.1
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 940,
+  "n": 941,
   "wins": 212,
-  "sum": -7079.7,
+  "sum": -7087.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 924,
+    "n": 925,
     "wins": 209,
-    "sum": -6881.9
+    "sum": -6889.8
    }
   },
   "closed": [
-   {
-    "symbol": "SHARBOR",
-    "mint": "8Md73Qrgi5D7feDj4xtw7uf4b1T6U1AvgT8vvG7tpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T11:00:44Z",
-    "cost": 36.2,
-    "pnl_pct": -6.7,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T11:05:44Z",
-    "exit": "5 min, only -3%",
-    "pnl": -2.43,
-    "weight": 0.5
-   },
    {
     "symbol": "trump",
     "mint": "6Veds12VSCdp9WBZb3Rq9XXjpnjFfaS6a7625VZRuMp",
@@ -31743,16 +31723,36 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.16,
     "weight": 0.5
+   },
+   {
+    "symbol": "VORCHARD",
+    "mint": "AKx5B3nyBhLt1Mv3vWrnRoJE9WCryGtQ9RHmnJASpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T11:06:50Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T11:11:50Z",
+    "exit": "5 min, only -4%",
+    "pnl": -2.87,
+    "weight": 0.5
    }
   ],
   "open": [
    "SUNHAZE",
-   "VORCHARD",
    "Wonald",
    "TLAOS",
    "HAROLD",
    "HACKED",
-   "HCA"
+   "HCA",
+   "broke"
   ]
  },
  "learner_summary": {
@@ -31794,7 +31794,7 @@
     "avg": -9.0
    }
   ],
-  "shadows": 924,
+  "shadows": 925,
   "memory": "snipe"
  }
 }
