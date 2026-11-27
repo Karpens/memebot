@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:50:06Z",
-    "time": "07:50:06",
-    "agent": "LEARNER",
-    "coin": "GTA6",
-    "action": "shadow",
-    "text": "SHADOW GTA6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026927 (curve maths, every cost) · same exits, outside the book",
-    "n": 2928
-   },
-   {
     "t": "2026-11-27T06:50:11Z",
     "time": "07:50:11",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW FIRE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021274 (curve maths, every cost) · same exits, outside the book",
     "n": 3527
+   },
+   {
+    "t": "2026-11-27T08:37:22Z",
+    "time": "09:37:22",
+    "agent": "LEARNER",
+    "coin": "ROADSTER",
+    "action": "shadow",
+    "text": "SHADOW ROADSTER would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.7% over 207.5",
+    "n": 3528
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3527,
+  "lines": 3528,
   "flags": [
    {
     "coin": "Kibo",
@@ -21651,9 +21651,9 @@
   },
   "np_said": 1795768627.64528,
   "shadow": {
-   "n": 602,
+   "n": 603,
    "wins": 127,
-   "sum": -4935.9
+   "sum": -4943.7
   },
   "np_speed": {
    "first_in": [
@@ -31236,9 +31236,9 @@
   }
  },
  "shadow": {
-  "n": 616,
+  "n": 617,
   "wins": 129,
-  "sum": -5134.4,
+  "sum": -5142.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31246,32 +31246,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 600,
+    "n": 601,
     "wins": 126,
-    "sum": -4936.6
+    "sum": -4944.4
    }
   },
   "closed": [
-   {
-    "symbol": "TOPBLAST",
-    "mint": "C5ciduapCv1gsM74o7MZKveWKQMbKN7nSmSg1Kk2pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:29:31Z",
-    "cost": 36.2,
-    "pnl_pct": -22.0,
-    "tier": "swing",
-    "score": 3,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 6.12,
-    "closed": "2026-11-27T08:29:33Z",
-    "exit": "dump: 3.0 SOL sold",
-    "pnl": -7.95,
-    "weight": 0.5
-   },
    {
     "symbol": "PRIVATE",
     "mint": "JC93c8j4QgEZGr4G2bBXoc4F516rZok5wvgNb1Ydpump",
@@ -31651,10 +31631,29 @@
     "exit": "TP +20%",
     "pnl": 10.86,
     "weight": 0.5
+   },
+   {
+    "symbol": "ROADSTER",
+    "mint": "AzveWh4dchYveMpCaAgzE3qaiFiZYSvads7SrNKMpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:32:48Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T08:37:22Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.82,
+    "weight": 0.5
    }
   ],
   "open": [
-   "ROADSTER",
    "tt",
    "baomac",
    "SANT",
@@ -31703,7 +31702,7 @@
     "avg": -11.3
    }
   ],
-  "shadows": 600,
+  "shadows": 601,
   "memory": "snipe"
  }
 }
