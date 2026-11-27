@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:43:20Z",
+ "updated": "2026-11-27T01:43:53Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 6,
   "filtered": 3,
-  "lines": 208,
+  "lines": 209,
   "last_rug": {
    "coin": "RDB",
    "pass": false
@@ -787,15 +787,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T23:05:04Z",
-   "time": "00:05:04",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.4 a minute · 3 watched · 16 rejected (serial launcher 8, mayhem mode 5, dump 2) · closest WINCULT: too young: 25 s (min 45 s)",
-   "n": 9
-  },
   {
    "t": "2026-11-26T23:06:04Z",
    "time": "00:06:04",
@@ -2586,6 +2577,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 3 watched · 8 rejected (dev bought 3, mayhem mode 3, serial launcher 2) · closest LOOP: too young: 6 s (min 45 s)",
    "n": 208
+  },
+  {
+   "t": "2026-11-27T01:43:31Z",
+   "time": "02:43:31",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 2 watched · 4 rejected (mayhem mode 3, dev bought 1) · closest PEPEMAS: too young: 0 s (min 45 s)",
+   "n": 209
   }
  ],
  "nights": [
@@ -2644,7 +2644,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2652,24 +2652,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1840,
-    "last_event_age_s": 43.6,
+    "events": 1843,
+    "last_event_age_s": 3.8,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23927,
+    "events": 23961,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1175,
-    "last_event_age_s": 65.1,
+    "connected": true,
+    "events": 1177,
+    "last_event_age_s": 15.8,
     "errors": 47,
     "last_error": "d.uguu.se: too slow (over 2 s)"
    }
@@ -2682,9 +2682,9 @@
   "exit_ms": 109,
   "exit_last_ms": 109,
   "launch_to_entry_s": 47,
-  "creates_per_min": 2.4,
+  "creates_per_min": 3.0,
   "watching": 2,
-  "followed": 3
+  "followed": 5
  },
  "learner": {
   "samples": 111,
@@ -2730,23 +2730,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14559,
+   "sent": 14594,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14559,
+   "sent": 14594,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Disney",
+   "name": "Disney",
+   "mint": "31twuwsNeXcmdUrrEHXR97d8Qe7KA5g69psYd2QGpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "TOE-G",
+   "name": "TOE-G",
+   "mint": "5E6DJ5i8MUwUK97Y1ci2QausKiqjGZQoRq8oyNgobHyc",
+   "age_s": 15,
+   "sol_in": -4.14,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": -21.7,
+   "mcap_sol": 31.4,
+   "dev_pct": 17.7,
+   "big_sell": 2.48,
+   "x": "https://x.com/ShaneStoffer/status/2126129729514406383",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 17.7% (max 8%)",
+   "why": "dev bought 17.7% (max 8%)"
+  },
+  {
+   "symbol": "PROTON",
+   "name": "Proton",
+   "mint": "HMFZy2a9UciNedhwVtwpW96csKuhm8FsqSAe6Kxapump",
+   "age_s": 19,
+   "sol_in": 0.06,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 0.4,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
    "symbol": "PLINE",
    "name": "POWERLINE",
    "mint": "6TWfx4Dx1F3mpKcjCzQUumST7a47ptqoTSEzG5B3pump",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2764,7 +2818,7 @@
    "symbol": "Disney",
    "name": "Disney",
    "mint": "CbgfLvXXiPdqXWh9ELwv6LSiSH5VVhrynrYZPfKpump",
-   "age_s": 62,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2782,25 +2836,25 @@
    "symbol": "LOOP",
    "name": "Infinite Loop",
    "mint": "CqcLXMTZkodX9bNAwFCVp8S4vzHHf3KYMdKgFyGxtCWp",
-   "age_s": 67,
-   "sol_in": 0.06,
+   "age_s": 100,
+   "sol_in": -0.43,
    "buys": 4,
-   "sells": 1,
-   "rise_pct": 0.4,
-   "mcap_sol": 29.0,
+   "sells": 2,
+   "rise_pct": -2.8,
+   "mcap_sol": 28.1,
    "dev_pct": 1.7,
-   "big_sell": 0.02,
+   "big_sell": 0.49,
    "x": false,
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "SOL in 0.1/2.5 · buys 4/6 · rise +0%/+12%"
+   "why": "SOL in -0.4/2.5 · buys 4/6 · rise -3%/+12%"
   },
   {
    "symbol": "Cate",
    "name": "Catecoin",
    "mint": "4BrzEXSicMXB8CZ9U9ZYGgAhAvDWnSvnwneQWFtWjm2d",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": -6.16,
    "buys": 2,
    "sells": 7,
@@ -2818,7 +2872,7 @@
    "symbol": "PEPEMAS",
    "name": "PEPEMAS",
    "mint": "EqUf9QtDiemNbmpyNKZpUv1Vs34bDfvwr3yN5LJ5pump",
-   "age_s": 144,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2831,24 +2885,6 @@
    "web": false,
    "status": "watching",
    "why": "too young: 0 s (min 45 s)"
-  },
-  {
-   "symbol": "XMRPAD",
-   "name": "XMRPAD",
-   "mint": "5tjpu9tzbY6TCUKiAuPLonceDQtCNsoWo1YRaHS1pump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
