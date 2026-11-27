@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:37:09Z",
-    "time": "06:37:09",
-    "agent": "EXECUTOR",
-    "coin": "wufmas",
-    "action": "enter",
-    "text": "ENTER wufmas at 0.0000021445 · slip 1.7% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 4 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2522
-   },
-   {
-    "t": "2026-11-27T05:37:09Z",
-    "time": "06:37:09",
-    "agent": "NEWS",
-    "coin": "wufmas",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 2523
-   },
-   {
     "t": "2026-11-27T05:37:24Z",
     "time": "06:37:24",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (mayhem mode 5, snipe not bought: trades tonight 3, serial launcher 1)",
     "n": 3121
+   },
+   {
+    "t": "2026-11-27T07:25:13Z",
+    "time": "08:25:13",
+    "agent": "LEARNER",
+    "coin": "TOGI",
+    "action": "shadow",
+    "text": "SHADOW TOGI would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 158.5",
+    "n": 3122
+   },
+   {
+    "t": "2026-11-27T07:25:34Z",
+    "time": "08:25:34",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.2 a minute · 0 watched · 10 rejected (mayhem mode 7, snipe not bought: trades tonight 2, serial launcher 1)",
+    "n": 3123
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3121,
+  "lines": 3123,
   "flags": [
    {
     "coin": "Kibo",
@@ -21361,11 +21361,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795764274.780797,
+  "np_said": 1795764334.780866,
   "shadow": {
-   "n": 448,
+   "n": 449,
    "wins": 86,
-   "sum": -3713.2
+   "sum": -3721.1
   },
   "np_speed": {
    "first_in": [
@@ -30948,9 +30948,9 @@
   }
  },
  "shadow": {
-  "n": 462,
+  "n": 463,
   "wins": 88,
-  "sum": -3911.7,
+  "sum": -3919.6,
   "by": {
    "learner": {
     "n": 16,
@@ -30958,32 +30958,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 446,
+    "n": 447,
     "wins": 85,
-    "sum": -3713.9
+    "sum": -3721.8
    }
   },
   "closed": [
-   {
-    "symbol": "DIVE",
-    "mint": "4cNRcfCfvn3XSm9yS1N3cmviCUdcKxfTXyv2ubntpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:12:15Z",
-    "cost": 36.2,
-    "pnl_pct": 26.3,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 1.87,
-    "closed": "2026-11-27T07:12:20Z",
-    "exit": "TP +10%",
-    "pnl": 9.53,
-    "weight": 0.5
-   },
    {
     "symbol": "puter",
     "mint": "3H26zhTKkwznFD679tHwPBv1UDaQbgSXk5ze5wuTpump",
@@ -31363,11 +31343,29 @@
     "exit": "TP +10%",
     "pnl": 2.17,
     "weight": 0.5
+   },
+   {
+    "symbol": "TOGI",
+    "mint": "5XnvbbWWPEsKvy8D6QE47uSbvMTRfbsUGARDXLEVpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:21:22Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T07:25:13Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.85,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "TOGI"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 249,
@@ -31408,7 +31406,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 446,
+  "shadows": 447,
   "memory": "snipe"
  }
 }
