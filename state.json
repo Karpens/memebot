@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T17:42:08Z",
-    "time": "18:42:08",
-    "agent": "RISK",
-    "coin": "IceBall",
-    "action": "skip",
-    "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "n": 5074
-   },
-   {
-    "t": "2026-11-27T17:42:08Z",
-    "time": "18:42:08",
-    "agent": "LEARNER",
-    "coin": "IceBall",
-    "action": "shadow",
-    "text": "SHADOW IceBall · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000009584 (curve maths, every cost) · same exits, outside the book",
-    "n": 5075
-   },
-   {
     "t": "2026-11-27T17:42:16Z",
     "time": "18:42:16",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW NUGGET · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002066 (curve maths, every cost) · same exits, outside the book",
     "n": 5673
+   },
+   {
+    "t": "2026-11-27T18:47:34Z",
+    "time": "19:47:34",
+    "agent": "LEARNER",
+    "coin": "BARTIZAN",
+    "action": "shadow",
+    "text": "SHADOW BARTIZAN · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000023455 (curve maths, every cost) · same exits, outside the book",
+    "n": 5674
+   },
+   {
+    "t": "2026-11-27T18:47:50Z",
+    "time": "19:47:50",
+    "agent": "LEARNER",
+    "coin": "SLOP",
+    "action": "shadow",
+    "text": "SHADOW SLOP would have made -20.1% (dump: 2.3 SOL sold) · learned x0.5 · np:social:none now avg -8.7% over 300",
+    "n": 5675
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5673,
+  "lines": 5675,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795769234,
-    59.14
-   ],
    [
     1795769294,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795805208,
     59.14
+   ],
+   [
+    1795805268,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795805222.443431,
   "shadow": {
-   "n": 1437,
+   "n": 1438,
    "wins": 315,
-   "sum": -11098.0
+   "sum": -11118.1
   },
   "np_speed": {
    "first_in": [
@@ -31895,9 +31895,9 @@
   }
  },
  "shadow": {
-  "n": 1451,
+  "n": 1452,
   "wins": 317,
-  "sum": -11296.5,
+  "sum": -11316.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31905,32 +31905,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1435,
+    "n": 1436,
     "wins": 314,
-    "sum": -11098.7
+    "sum": -11118.8
    }
   },
   "closed": [
-   {
-    "symbol": "DAMIEN",
-    "mint": "BMiN7vZvxPDEzUbijaoh3zPLJHuHYW5pwMG6VMURpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T18:39:54Z",
-    "cost": 5.91,
-    "pnl_pct": -12.3,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.89,
-    "closed": "2026-11-27T18:42:56Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.73,
-    "weight": 0.5
-   },
    {
     "symbol": "JOY",
     "mint": "BF4f3pdWxiYMMmyFekaCkFEYxGvCPCr7HxhH1YFjpump",
@@ -32310,14 +32290,34 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.69,
     "weight": 0.5
+   },
+   {
+    "symbol": "SLOP",
+    "mint": "GhaVUPxFYfLRD2b18k1aoJKFo4DSaKRe8xq3X6supump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T18:46:36Z",
+    "cost": 5.91,
+    "pnl_pct": -20.1,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T18:47:50Z",
+    "exit": "dump: 2.3 SOL sold",
+    "pnl": -1.19,
+    "weight": 0.5
    }
   ],
   "open": [
    "rusmr",
    "epsteinmas",
-   "SLOP",
    "insert",
-   "NUGGET"
+   "NUGGET",
+   "BARTIZAN"
   ]
  },
  "learner_summary": {
@@ -32359,7 +32359,7 @@
     "avg": -8.7
    }
   ],
-  "shadows": 1643,
+  "shadows": 1644,
   "memory": "snipe"
  }
 }
