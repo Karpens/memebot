@@ -49,24 +49,6 @@
    {
     "t": "2026-11-27T05:04:27Z",
     "time": "06:04:27",
-    "agent": "SIZER",
-    "coin": "LILPUMP",
-    "action": "size",
-    "text": "10% of $211.58 = $21.16",
-    "n": 2165
-   },
-   {
-    "t": "2026-11-27T05:04:27Z",
-    "time": "06:04:27",
-    "agent": "EXECUTOR",
-    "coin": "LILPUMP",
-    "action": "enter",
-    "text": "ENTER LILPUMP at 0.0000026106 · slip 0.8% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2166
-   },
-   {
-    "t": "2026-11-27T05:04:27Z",
-    "time": "06:04:27",
     "agent": "NEWS",
     "coin": "LILPUMP",
     "action": "plan",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 2.0 a minute · 0 watched · 5 rejected (serial launcher 3, snipe not bought: trades tonight 1, mayhem mode 1)",
     "n": 2764
+   },
+   {
+    "t": "2026-11-27T06:15:52Z",
+    "time": "07:15:52",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 2.6 a minute · 0 watched · 8 rejected (serial launcher 6, snipe not bought: trades tonight 1, mayhem mode 1)",
+    "n": 2765
+   },
+   {
+    "t": "2026-11-27T06:16:04Z",
+    "time": "07:16:04",
+    "agent": "LEARNER",
+    "coin": "LAB",
+    "action": "shadow",
+    "text": "SHADOW LAB would have made -16.2% (stop -13%) · learned x0.5 · np:social:web now avg -8.9% over 168.5",
+    "n": 2766
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2764,
+  "lines": 2766,
   "flags": [
    {
     "coin": "Kibo",
@@ -21075,17 +21075,21 @@
    [
     1795760093,
     361.97
+   ],
+   [
+    1795760153,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795760091.780898,
+  "np_said": 1795760152.780832,
   "shadow": {
-   "n": 312,
+   "n": 313,
    "wins": 52,
-   "sum": -2713.3
+   "sum": -2729.5
   },
   "np_speed": {
    "first_in": [
@@ -30668,9 +30672,9 @@
   }
  },
  "shadow": {
-  "n": 326,
+  "n": 327,
   "wins": 54,
-  "sum": -2911.8,
+  "sum": -2928.0,
   "by": {
    "learner": {
     "n": 16,
@@ -30678,32 +30682,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 310,
+    "n": 311,
     "wins": 51,
-    "sum": -2714.0
+    "sum": -2730.2
    }
   },
   "closed": [
-   {
-    "symbol": "RUNNER",
-    "mint": "DnAnHDxm11WEKY3GGAh5MeagJRJ1nAMzpiGXGFf6pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T05:54:07Z",
-    "cost": 36.33,
-    "pnl_pct": -3.6,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:00:24Z",
-    "exit": "6 min, only +1%",
-    "pnl": -1.31,
-    "weight": 0.5
-   },
    {
     "symbol": "PUMP",
     "mint": "4gTHZhq4LtBWZ1wDCd2LUYHeANLC1GgAmFPJBC8mpump",
@@ -31083,11 +31067,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.79,
     "weight": 0.5
+   },
+   {
+    "symbol": "LAB",
+    "mint": "4NETVSHc1pJYpE3cgZ67xu81zPTmnLwWP2fqbY4Bpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:14:15Z",
+    "cost": 36.2,
+    "pnl_pct": -16.2,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.44,
+    "closed": "2026-11-27T06:16:04Z",
+    "exit": "stop -13%",
+    "pnl": -5.88,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "LAB"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 249,
@@ -31097,8 +31099,8 @@
   "best": [
    {
     "label": "snipe · hour:day",
-    "n": 9,
-    "avg": -5.4
+    "n": 10,
+    "avg": -6.0
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -31128,7 +31130,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 310,
+  "shadows": 311,
   "memory": "snipe"
  }
 }
