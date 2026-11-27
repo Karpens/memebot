@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:02:58Z",
-    "time": "11:02:58",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.0 a minute · 0 watched · 18 rejected (snipe not bought: trades tonight 7, serial launcher 6, mayhem mode 3)",
-    "n": 3976
-   },
-   {
     "t": "2026-11-27T10:03:19Z",
     "time": "11:03:19",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW Rockstar would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 218",
     "n": 4575
+   },
+   {
+    "t": "2026-11-27T11:41:12Z",
+    "time": "12:41:12",
+    "agent": "LEARNER",
+    "coin": "LCE",
+    "action": "shadow",
+    "text": "SHADOW LCE would have made +4.9% (TP +10%) · learned x0.5 · np:social:none now avg -8.5% over 218.5",
+    "n": 4576
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4575,
+  "lines": 4576,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795743600,
-    80.34
-   ],
    [
     1795743660,
     80.34
@@ -10161,6 +10157,10 @@
    [
     1795779627,
     59.14
+   ],
+   [
+    1795779687,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795779636.028893,
   "shadow": {
-   "n": 1009,
-   "wins": 229,
-   "sum": -7429.8
+   "n": 1010,
+   "wins": 230,
+   "sum": -7424.9
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 17,
+   "readings": 19,
    "coins": 3,
    "followed": 0,
    "mints": [
@@ -31807,9 +31807,9 @@
   }
  },
  "shadow": {
-  "n": 1023,
-  "wins": 231,
-  "sum": -7628.3,
+  "n": 1024,
+  "wins": 232,
+  "sum": -7623.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31817,32 +31817,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1007,
-    "wins": 228,
-    "sum": -7430.5
+    "n": 1008,
+    "wins": 229,
+    "sum": -7425.6
    }
   },
   "closed": [
-   {
-    "symbol": "SWARM",
-    "mint": "HTCTeH2Np37eEuV69AVtZnF1Sff9hGWAdPXDd9LXQm5U",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T11:30:19Z",
-    "cost": 36.2,
-    "pnl_pct": -17.5,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T11:31:23Z",
-    "exit": "stop -14%",
-    "pnl": -6.34,
-    "weight": 0.5
-   },
    {
     "symbol": "Mаcaw",
     "mint": "DKZN7puQnwQccCKYQe2hHGKN5P6xKrS5XuMzz6yCpump",
@@ -32222,6 +32202,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "LCE",
+    "mint": "8DGtcCvDczPBT3qfpxRi8ExCJ7SuvL2pc9TA3mPgpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T11:40:21Z",
+    "cost": 5.91,
+    "pnl_pct": 4.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.09,
+    "closed": "2026-11-27T11:41:12Z",
+    "exit": "TP +10%",
+    "pnl": 0.29,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32230,7 +32230,6 @@
    "MINT",
    "DIH",
    "SET",
-   "LCE",
    "LDGR",
    "CHOKINGCAT",
    "BFriday",
@@ -32277,7 +32276,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1215,
+  "shadows": 1216,
   "memory": "snipe"
  }
 }
