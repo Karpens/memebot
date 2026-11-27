@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:36:12Z",
+ "updated": "2026-11-27T09:36:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3840,
+  "lines": 3841,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795736100,
-   82.3
-  ],
   [
    1795736160,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795772114,
    361.97
+  ],
+  [
+   1795772174,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:56:02Z",
-   "time": "09:56:02",
-   "agent": "LEARNER",
-   "coin": "CINU",
-   "action": "shadow",
-   "text": "SHADOW CINU · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021398 (curve maths, every cost) · same exits, outside the book",
-   "n": 3641
-  },
-  {
    "t": "2026-11-27T08:56:14Z",
    "time": "09:56:14",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "shadow",
    "text": "SHADOW SLEEVE would have made -17.8% (stop -14%) · learned x0.5 · np:sol:3-6 now avg -11.7% over 65.5",
    "n": 3840
+  },
+  {
+   "t": "2026-11-27T09:36:42Z",
+   "time": "10:36:42",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 13 rejected (snipe not bought: trades tonight 6, mayhem mode 5, serial launcher 2)",
+   "n": 3841
   }
  ],
  "nights": [
@@ -6592,32 +6592,32 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 0,
+  "watch_ms": 1,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 632,
-    "last_event_age_s": 8.4,
+    "events": 634,
+    "last_event_age_s": 5.3,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16277,
-    "last_event_age_s": 0.8,
+    "events": 16377,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 366,
-    "last_event_age_s": 8.3,
+    "events": 367,
+    "last_event_age_s": 30.5,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,7 +6630,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 3.8,
   "watching": 0,
   "followed": 8
  },
@@ -6679,28 +6679,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8225,
+   "sent": 8259,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8236,
+   "sent": 8270,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GAYCOIN",
+   "name": "GAYCOIN",
+   "mint": "7R5s5AbT9JZGBzyQfjBoTXVbHVruwQ95jSnwJG9rpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.5,
+   "dev_pct": 2.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "RI",
+   "name": "Rice Inu",
+   "mint": "CgymCR4Zoi5PaPJQJUracBkpLEqFJ5YrnPb5kXwn89sJ",
+   "age_s": 30,
+   "sol_in": 0.16,
+   "buys": 7,
+   "sells": 11,
+   "rise_pct": 0.9,
+   "mcap_sol": 38.3,
+   "dev_pct": 15.2,
+   "big_sell": 3.0,
+   "x": "https://x.com/therealchaseeb/status/2126248558173323738",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
    "symbol": "SLEEVE",
    "name": "sleeve",
    "mint": "G5REZS4vSsPBzNvhACwdYfMEwiFzxy8Z6FLJz6YFpump",
-   "age_s": 8,
-   "sol_in": 1.92,
-   "buys": 1,
-   "sells": 5,
-   "rise_pct": 12.9,
-   "mcap_sol": 32.8,
+   "age_s": 40,
+   "sol_in": 0.93,
+   "buys": 2,
+   "sells": 7,
+   "rise_pct": 6.1,
+   "mcap_sol": 30.9,
    "dev_pct": 2.1,
    "big_sell": 1.14,
    "x": "https://x.com/tryysleeve/status/2126248037035196921?a=srwHLV3C_l6OglkH--w&s=20",
@@ -6713,7 +6749,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "Gs51M5AYJqaj82b16Do3iGJpJcd4bP48gWg55AiGpump",
-   "age_s": 16,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6731,12 +6767,12 @@
    "symbol": "EDEN",
    "name": "Eden",
    "mint": "2Y2vGqsSY6jedKjWqBhK3weotW6zFB3i4pXqU3fApump",
-   "age_s": 32,
-   "sol_in": -3.35,
-   "buys": 7,
-   "sells": 13,
-   "rise_pct": -13.8,
-   "mcap_sol": 58.6,
+   "age_s": 64,
+   "sol_in": -13.95,
+   "buys": 11,
+   "sells": 29,
+   "rise_pct": -50.7,
+   "mcap_sol": 33.5,
    "dev_pct": 38.5,
    "big_sell": 3.37,
    "x": "https://x.com/Edentradedotfun/status/2126248480935211196?a=i9GqW81RKSALGJjaQzw&s=20",
@@ -6749,7 +6785,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "7wSDW4rqS2dAhXPxJKHSF2aFSEVCKcJsWy7ypJeupump",
-   "age_s": 39,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6767,7 +6803,7 @@
    "symbol": "RING",
    "name": "The RING",
    "mint": "7LSoKQHnRbJ5wexDYSKJuN2on2JS9H283HNvfRxoy5DJ",
-   "age_s": 68,
+   "age_s": 100,
    "sol_in": 1.56,
    "buys": 3,
    "sells": 2,
@@ -6785,7 +6821,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "CvtuN4VdpFLTYR9yzBUQeeiV5QLfmA7DsXw3MWSApump",
-   "age_s": 70,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6803,12 +6839,12 @@
    "symbol": "nothing",
    "name": "nothing to lose",
    "mint": "wnBjuYqLa1N4XgqksscUzboortGjqJjq4FKoWu5CqK7",
-   "age_s": 81,
-   "sol_in": -4.64,
+   "age_s": 113,
+   "sol_in": -4.94,
    "buys": 4,
-   "sells": 7,
-   "rise_pct": -24.8,
-   "mcap_sol": 28.5,
+   "sells": 8,
+   "rise_pct": -26.3,
+   "mcap_sol": 28.0,
    "dev_pct": 15.2,
    "big_sell": 3.2,
    "x": "https://x.com/ihavemotionnn/status/2126248245147861292",
@@ -6821,7 +6857,7 @@
    "symbol": "$cat",
    "name": "猫",
    "mint": "BQhEfxmE8w1uv1FcyZHY4NgCChDtZTEr4ozAn9jipump",
-   "age_s": 87,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6839,7 +6875,7 @@
    "symbol": "Supabase",
    "name": "Supabase",
    "mint": "8j84EbVFej5rXLwfYG9nK834uNp2TJMofTnXG9ompump",
-   "age_s": 88,
+   "age_s": 120,
    "sol_in": -0.59,
    "buys": 2,
    "sells": 2,
@@ -6857,14 +6893,14 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "G1EFW7yHWRdqotAfuP6mcgzvJ9APEwGT3qk1Ybuipump",
-   "age_s": 134,
-   "sol_in": 20.55,
-   "buys": 50,
-   "sells": 34,
-   "rise_pct": 160.6,
-   "mcap_sol": 90.6,
+   "age_s": 166,
+   "sol_in": 21.08,
+   "buys": 61,
+   "sells": 42,
+   "rise_pct": 165.7,
+   "mcap_sol": 92.4,
    "dev_pct": 11.1,
-   "big_sell": 0.34,
+   "big_sell": 0.4,
    "x": "https://x.com/gtasix_",
    "tg": false,
    "web": "https://www.rockstargames.com/VI",
@@ -6875,7 +6911,7 @@
    "symbol": "BOUNCEA",
    "name": "Bounce Back Brisbane",
    "mint": "EBPkj2PidoAug8vpKj5gj65sPx7cVxMWSHmFK3Kspump",
-   "age_s": 145,
+   "age_s": 177,
    "sol_in": -0.95,
    "buys": 3,
    "sells": 5,
@@ -6886,24 +6922,6 @@
    "x": false,
    "tg": false,
    "web": "https://www.theguardian.com/sport/live/2026/nov/27/australia-v-england-third-mens-twenty20-international-live?mint=",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "DWPA",
-   "name": "DWP Offline",
-   "mint": "C4qnxZ5MYR2cgxkUQssJA6LvfZq1uPGkzZsoTZNRpump",
-   "age_s": 173,
-   "sol_in": -0.89,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -5.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.3,
-   "big_sell": 1.78,
-   "x": false,
-   "tg": false,
-   "web": "https://www.gov.uk/government/news/temporary-disruption-to-some-dwp-online-services?mint=",
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   }
@@ -6952,10 +6970,10 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:33:58Z",
    "cost": 36.2,
-   "pnl_pct": 8.3,
+   "pnl_pct": 8.8,
    "tier": "swing",
    "score": 4,
-   "steps": 0,
+   "steps": 1,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 17.59
