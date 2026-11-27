@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:09:04Z",
+ "updated": "2026-11-27T10:09:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4010,
+  "lines": 4011,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795738080,
-   82.3
-  ],
   [
    1795738140,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795774094,
    361.97
+  ],
+  [
+   1795774154,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:31:38Z",
-   "time": "10:31:38",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 6 rejected (snipe not bought: trades tonight 5, mayhem mode 1)",
-   "n": 3811
-  },
-  {
    "t": "2026-11-27T09:31:40Z",
    "time": "10:31:40",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "scan",
    "text": "new pairs · 8.4 a minute · 1 watched · 34 rejected (serial launcher 24, snipe not bought: trades tonight 7, mayhem mode 3) · closest USFF: no curve reading yet",
    "n": 4010
+  },
+  {
+   "t": "2026-11-27T10:09:06Z",
+   "time": "11:09:06",
+   "agent": "LEARNER",
+   "coin": "WIC",
+   "action": "shadow",
+   "text": "SHADOW WIC would have made -14.3% (stop -11%) · learned x0.5 · np:social:none now avg -9.4% over 216",
+   "n": 4011
   }
  ],
  "nights": [
@@ -6599,21 +6599,21 @@
   "gt_sec": 20,
   "feed": "pumpportal live · curve poll 1 s · 44 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 1,
+  "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 861,
-    "last_event_age_s": 1.0,
+    "events": 864,
+    "last_event_age_s": 5.5,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19311,
+    "events": 19371,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
@@ -6621,8 +6621,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 524,
-    "last_event_age_s": 1.0,
+    "events": 525,
+    "last_event_age_s": 5.4,
     "errors": 27,
     "last_error": "195.26.231.33: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)"
    }
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 8.6,
+  "creates_per_min": 8.8,
   "watching": 0,
-  "followed": 33
+  "followed": 32
  },
  "learner": {
   "samples": 249,
@@ -6678,29 +6678,83 @@
     "avg": -11.1
    }
   ],
-  "shadows": 785,
+  "shadows": 786,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10323,
+   "sent": 10358,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10334,
+   "sent": 10369,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "baoCat",
+   "name": "CAT FAT",
+   "mint": "oDF7NfLGcf7BWdG4RYcpPftFeXVVhgoPd4Xawefpump",
+   "age_s": 5,
+   "sol_in": 0.06,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.4,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/pip0pkajou/status/2122673788135542983",
+   "tg": false,
+   "web": "https://www.thesun.co.uk/news/41062177/fat-leopard-old-diet/",
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "HHtK2sCXhXdrAraLbMjHNfe15J24HvufYvT45G3spump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "DOOYET",
+   "name": "Doomed Yeti",
+   "mint": "Agi5ZEXrV4dbLhfEK7wrHBAMaPDsvEQtCEVwg7F9pump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "CONGA60",
    "name": "Conga #60",
    "mint": "5Lsux67ZbiH5DmFXCzWvq5SBooq3ZRd4sB46gbAZt9G5",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6718,12 +6772,12 @@
    "symbol": "USFF",
    "name": "USFF",
    "mint": "Ceqka38bh2Gj9gxqXLtu3ai9F2uPA9bpLmgphPaopump",
-   "age_s": 2,
-   "sol_in": -5.92,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -85.7,
-   "mcap_sol": 6.1,
+   "age_s": 35,
+   "sol_in": -5.84,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": -85.3,
+   "mcap_sol": 6.2,
    "dev_pct": 20.1,
    "big_sell": 5.92,
    "x": false,
@@ -6736,7 +6790,7 @@
    "symbol": "CONGA59",
    "name": "Conga #59",
    "mint": "4kTnVV9cmkzyREuhGzvzZSHFnWP4mvcUpB7ETAtBPLfa",
-   "age_s": 6,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6754,7 +6808,7 @@
    "symbol": "CONGA58",
    "name": "Conga #58",
    "mint": "ByCbSrn9FJwUyzdqp32PDu3xxkxpae87fMpny8xqanzF",
-   "age_s": 11,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6772,12 +6826,12 @@
    "symbol": "WIC",
    "name": "Winter is Coming",
    "mint": "H6WMFfy3EWiJhLTUhHAw3oiiRwpxasjqmLHRSb33pump",
-   "age_s": 13,
-   "sol_in": -0.85,
+   "age_s": 46,
+   "sol_in": -1.98,
    "buys": 0,
-   "sells": 2,
-   "rise_pct": -5.3,
-   "mcap_sol": 30.1,
+   "sells": 8,
+   "rise_pct": -12.0,
+   "mcap_sol": 28.0,
    "dev_pct": 6.6,
    "big_sell": 0.46,
    "x": false,
@@ -6790,7 +6844,7 @@
    "symbol": "CONGA57",
    "name": "Conga #57",
    "mint": "83ugFMe2Moo94iatmW4KKUHri7y2gdL1rKnESHRFtjGg",
-   "age_s": 16,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6808,7 +6862,7 @@
    "symbol": "CONGA56",
    "name": "Conga #56",
    "mint": "mAYhQ6fDbZmVRSQjUWwwV9JEcc7YfoEYDaZZLCkSCvm",
-   "age_s": 18,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6826,12 +6880,12 @@
    "symbol": "WIC",
    "name": "Winter is Coming",
    "mint": "54T3CT2ky7nQrZVipXitsajS8TYqVKBk5ZttZiKPpump",
-   "age_s": 21,
-   "sol_in": 30.49,
-   "buys": 13,
-   "sells": 8,
-   "rise_pct": 229.4,
-   "mcap_sol": 143.2,
+   "age_s": 54,
+   "sol_in": 24.84,
+   "buys": 27,
+   "sells": 27,
+   "rise_pct": 176.9,
+   "mcap_sol": 120.4,
    "dev_pct": 21.2,
    "big_sell": 4.24,
    "x": "https://x.com/Sizeyon/status/2126256876664787219",
@@ -6844,7 +6898,7 @@
    "symbol": "CONGA55",
    "name": "Conga #55",
    "mint": "3WLNmmWyrRVUgPh2Y4QARSVQqrhbqBJeAeGJZa7Zu3Ej",
-   "age_s": 26,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6862,7 +6916,7 @@
    "symbol": "CONGA54",
    "name": "Conga #54",
    "mint": "AM2hLD3AzZJbwRj9bJ9v8YoxbJnaCSqDePUGEsss3uBp",
-   "age_s": 31,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6880,7 +6934,7 @@
    "symbol": "CONGA53",
    "name": "Conga #53",
    "mint": "AUCdffnhFxr5guYygrk5vh5BhU8WZmzJDcJq4dLQ2kg5",
-   "age_s": 36,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6898,7 +6952,7 @@
    "symbol": "CONGA52",
    "name": "Conga #52",
    "mint": "FpEh2GuUwUwmNXB8KHKzzHWmH8415zu44GCbhvjrCXkH",
-   "age_s": 41,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6916,7 +6970,7 @@
    "symbol": "ROLLIE",
    "name": "Rollie",
    "mint": "3CRXNUp6cTWB8ssYVkf7YzeWGSA4UvqeYExiYujhpump",
-   "age_s": 44,
+   "age_s": 77,
    "sol_in": 0.79,
    "buys": 1,
    "sells": 1,
@@ -6934,7 +6988,7 @@
    "symbol": "CONGA51",
    "name": "Conga #51",
    "mint": "3X7coiXxJycKjkENUbaBqeo4F9ftsqoqZTcekVLRQss9",
-   "age_s": 46,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6952,7 +7006,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "F6g1z4xEsTpkiq9MoygwXAvRazbZeFYotEtvfdnepump",
-   "age_s": 48,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6970,7 +7024,7 @@
    "symbol": "CONGA50",
    "name": "Conga #50",
    "mint": "4Gr7gVsXFQyoSHQC3P29ZkCnCFmLKERXedbjEwMirCsa",
-   "age_s": 51,
+   "age_s": 84,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6988,7 +7042,7 @@
    "symbol": "WIZ",
    "name": "Broke Wizard",
    "mint": "CfCSp2WLTN7ZbdQ2D5GfNmorVtvK11oGoYc27Ao4AcnY",
-   "age_s": 54,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -7001,82 +7055,12 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "CONGA49",
-   "name": "Conga #49",
-   "mint": "3WF76GEyrUQ6n8PTFExqmrxXo6CAPNb3iJAh4Cf4HqZ4",
-   "age_s": 56,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2126249976246218898",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 44 more coins in 60 min",
-   "why": "serial launcher: 44 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA48",
-   "name": "Conga #48",
-   "mint": "6qooZA1nWP3GG5TbVYPdpefCn1tGLuUbXh25rzy6hzAU",
-   "age_s": 61,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2126249976246218898",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 43 more coins in 60 min",
-   "why": "serial launcher: 43 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA47",
-   "name": "Conga #47",
-   "mint": "GPH34q2EGvJFZ3eyExuSxGeaDe6N5ErQSWZUdS2Dxj45",
-   "age_s": 66,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2126249976246218898",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 42 more coins in 60 min",
-   "why": "serial launcher: 42 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
-  {
-   "symbol": "WIC",
-   "mint": "H6WMFfy3EWiJhLTUhHAw3oiiRwpxasjqmLHRSb33pump",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:08:52Z",
-   "cost": 36.2,
-   "pnl_pct": -9.0,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0
-  },
   {
    "symbol": "ROLLIE",
    "mint": "3CRXNUp6cTWB8ssYVkf7YzeWGSA4UvqeYExiYujhpump",
@@ -7117,7 +7101,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:07:11Z",
    "cost": 36.2,
-   "pnl_pct": -3.9,
+   "pnl_pct": -4.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7156,6 +7140,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.07
+  },
+  {
+   "symbol": "WIC",
+   "mint": "H6WMFfy3EWiJhLTUhHAw3oiiRwpxasjqmLHRSb33pump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:08:52Z",
+   "cost": 36.2,
+   "pnl_pct": -14.3,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T10:09:06Z",
+   "exit": "stop -11%",
+   "pnl": -5.17,
+   "weight": 0.5
   },
   {
    "symbol": "WIC",
@@ -7536,34 +7540,14 @@
    "exit": "TP +20%",
    "pnl": 6.21,
    "weight": 0.5
-  },
-  {
-   "symbol": "baoCat",
-   "mint": "GjuStaG19dbuvmhsG7hVfoaGK4XtLCHiHfsGtKKwpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:54:51Z",
-   "cost": 36.2,
-   "pnl_pct": -7.8,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 0.02,
-   "closed": "2026-11-27T09:59:51Z",
-   "exit": "5 min, only -4%",
-   "pnl": -2.82,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 801,
+  "n": 802,
   "wins": 176,
-  "win_rate": 22.0,
-  "mean_pnl_pct": -8.16,
-  "open": 6,
+  "win_rate": 21.9,
+  "mean_pnl_pct": -8.17,
+  "open": 5,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -7571,10 +7555,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 785,
+   "n": 786,
    "wins": 173,
    "win_rate": 22.0,
-   "mean_pnl_pct": -8.07
+   "mean_pnl_pct": -8.08
   }
  }
 }

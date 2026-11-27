@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:14:32Z",
-    "time": "09:14:32",
-    "agent": "LEARNER",
-    "coin": "哈基米",
-    "action": "shadow",
-    "text": "SHADOW 哈基米 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021286 (curve maths, every cost) · same exits, outside the book",
-    "n": 3411
-   },
-   {
     "t": "2026-11-27T08:14:56Z",
     "time": "09:14:56",
     "agent": "SCANNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 8.4 a minute · 1 watched · 34 rejected (serial launcher 24, snipe not bought: trades tonight 7, mayhem mode 3) · closest USFF: no curve reading yet",
     "n": 4010
+   },
+   {
+    "t": "2026-11-27T10:09:06Z",
+    "time": "11:09:06",
+    "agent": "LEARNER",
+    "coin": "WIC",
+    "action": "shadow",
+    "text": "SHADOW WIC would have made -14.3% (stop -11%) · learned x0.5 · np:social:none now avg -9.4% over 216",
+    "n": 4011
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4010,
+  "lines": 4011,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795738080,
-    82.3
-   ],
    [
     1795738140,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795774094,
     361.97
+   ],
+   [
+    1795774154,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795774142.645329,
   "shadow": {
-   "n": 787,
+   "n": 788,
    "wins": 174,
-   "sum": -6335.7
+   "sum": -6350.0
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 801,
+  "n": 802,
   "wins": 176,
-  "sum": -6534.2,
+  "sum": -6548.5,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 785,
+    "n": 786,
     "wins": 173,
-    "sum": -6336.4
+    "sum": -6350.7
    }
   },
   "closed": [
-   {
-    "symbol": "baoCat",
-    "mint": "GjuStaG19dbuvmhsG7hVfoaGK4XtLCHiHfsGtKKwpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:54:51Z",
-    "cost": 36.2,
-    "pnl_pct": -7.8,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.02,
-    "closed": "2026-11-27T09:59:51Z",
-    "exit": "5 min, only -4%",
-    "pnl": -2.82,
-    "weight": 0.5
-   },
    {
     "symbol": "RICE",
     "mint": "CD8mCjFtTmUse3m4cJQPE2XqoWHVusPPGuPYEQqVpump",
@@ -31743,6 +31723,26 @@
     "exit": "TP +20%",
     "pnl": 11.28,
     "weight": 0.5
+   },
+   {
+    "symbol": "WIC",
+    "mint": "H6WMFfy3EWiJhLTUhHAw3oiiRwpxasjqmLHRSb33pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:08:52Z",
+    "cost": 36.2,
+    "pnl_pct": -14.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T10:09:06Z",
+    "exit": "stop -11%",
+    "pnl": -5.17,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31750,8 +31750,7 @@
    "SHAT",
    "$Suki",
    "WIZ",
-   "ROLLIE",
-   "WIC"
+   "ROLLIE"
   ]
  },
  "learner_summary": {
@@ -31793,7 +31792,7 @@
     "avg": -11.1
    }
   ],
-  "shadows": 785,
+  "shadows": 786,
   "memory": "snipe"
  }
 }
