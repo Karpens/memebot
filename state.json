@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:08:23Z",
-    "time": "08:08:23",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.8 a minute · 0 watched · 25 rejected (snipe not bought: trades tonight 11, serial launcher 7, mayhem mode 7)",
-    "n": 3042
-   },
-   {
-    "t": "2026-11-27T07:08:30Z",
-    "time": "08:08:30",
-    "agent": "LEARNER",
-    "coin": "TOGI",
-    "action": "shadow",
-    "text": "SHADOW TOGI would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.1% over 203.5",
-    "n": 3043
-   },
-   {
-    "t": "2026-11-27T07:08:31Z",
-    "time": "08:08:31",
-    "agent": "LEARNER",
-    "coin": "TOGI",
-    "action": "shadow",
-    "text": "SHADOW TOGI would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.1% over 204",
-    "n": 3044
-   },
-   {
     "t": "2026-11-27T07:08:34Z",
     "time": "08:08:34",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW CINU · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021398 (curve maths, every cost) · same exits, outside the book",
     "n": 3641
+   },
+   {
+    "t": "2026-11-27T08:56:14Z",
+    "time": "09:56:14",
+    "agent": "LEARNER",
+    "coin": "HUSH",
+    "action": "shadow",
+    "text": "SHADOW HUSH would have made -53.0% (dump: 15.1 SOL sold) · learned x0.5 · tier:swing now avg -12.2% over 50",
+    "n": 3642
+   },
+   {
+    "t": "2026-11-27T08:56:16Z",
+    "time": "09:56:16",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.0 a minute · 0 watched · 8 rejected (snipe not bought: trades tonight 3, serial launcher 2, mayhem mode 2)",
+    "n": 3643
+   },
+   {
+    "t": "2026-11-27T08:56:36Z",
+    "time": "09:56:36",
+    "agent": "LEARNER",
+    "coin": "ANTS",
+    "action": "shadow",
+    "text": "SHADOW ANTS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021292 (curve maths, every cost) · same exits, outside the book",
+    "n": 3644
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3641,
+  "lines": 3644,
   "flags": [
    {
     "coin": "Kibo",
@@ -21715,17 +21715,21 @@
    [
     1795769714,
     361.97
+   ],
+   [
+    1795769774,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795769716.645314,
+  "np_said": 1795769776.645318,
   "shadow": {
-   "n": 650,
+   "n": 651,
    "wins": 138,
-   "sum": -5374.1
+   "sum": -5427.1
   },
   "np_speed": {
    "first_in": [
@@ -31308,9 +31312,9 @@
   }
  },
  "shadow": {
-  "n": 664,
+  "n": 665,
   "wins": 140,
-  "sum": -5572.6,
+  "sum": -5625.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31318,32 +31322,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 648,
+    "n": 649,
     "wins": 137,
-    "sum": -5374.8
+    "sum": -5427.8
    }
   },
   "closed": [
-   {
-    "symbol": "DISCOUNT",
-    "mint": "7mNwQBndDnFYsEdPKtQq5UnDLWpp5vDHyEi58ZRXpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:46:20Z",
-    "cost": 36.2,
-    "pnl_pct": -20.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.05,
-    "closed": "2026-11-27T08:46:36Z",
-    "exit": "stop -18%",
-    "pnl": -7.56,
-    "weight": 0.5
-   },
    {
     "symbol": "Sale",
     "mint": "A2mxs82N8quJaKwqWcRHMMphReFUPoeKBB91EdF7pump",
@@ -31723,13 +31707,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.38,
     "weight": 0.5
+   },
+   {
+    "symbol": "HUSH",
+    "mint": "4GUGA3nyeeLuQcg8FYpygjb6NNXYJ6PBYLZttEVSpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:55:57Z",
+    "cost": 36.2,
+    "pnl_pct": -53.0,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 8.25,
+    "closed": "2026-11-27T08:56:14Z",
+    "exit": "dump: 15.1 SOL sold",
+    "pnl": -19.18,
+    "weight": 0.5
    }
   ],
   "open": [
    "$RGOD",
    "Big Cuck",
-   "HUSH",
-   "CINU"
+   "CINU",
+   "ANTS"
   ]
  },
  "learner_summary": {
@@ -31739,14 +31743,14 @@
   "min_samples": 8,
   "best": [
    {
-    "label": "snipe · np:sol:6-12",
-    "n": 60,
-    "avg": -5.2
-   },
-   {
     "label": "snipe · hour:01-03",
     "n": 32,
     "avg": -5.7
+   },
+   {
+    "label": "snipe · np:sol:6-12",
+    "n": 60,
+    "avg": -5.6
    },
    {
     "label": "snipe · np:dev:5-8",
@@ -31761,17 +31765,17 @@
     "avg": -12.8
    },
    {
-    "label": "snipe · hour:03-05",
-    "n": 212,
-    "avg": -10.9
-   },
-   {
     "label": "snipe · tier:swing",
     "n": 50,
-    "avg": -11.7
+    "avg": -12.2
+   },
+   {
+    "label": "snipe · news:3-4",
+    "n": 50,
+    "avg": -12.2
    }
   ],
-  "shadows": 648,
+  "shadows": 649,
   "memory": "snipe"
  }
 }
