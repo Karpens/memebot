@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:55:34Z",
-    "time": "08:55:34",
-    "agent": "LEARNER",
-    "coin": "What If",
-    "action": "shadow",
-    "text": "SHADOW What If · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002146 (curve maths, every cost) · same exits, outside the book",
-    "n": 3292
-   },
-   {
     "t": "2026-11-27T07:55:49Z",
     "time": "08:55:49",
     "agent": "SCANNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW Insider · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035575 (curve maths, every cost) · same exits, outside the book",
     "n": 3891
+   },
+   {
+    "t": "2026-11-27T09:46:12Z",
+    "time": "10:46:12",
+    "agent": "LEARNER",
+    "coin": "Insider",
+    "action": "shadow",
+    "text": "SHADOW Insider would have made -16.9% (stop -14%) · learned x0.5 · np:sol:3-6 now avg -11.7% over 67",
+    "n": 3892
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3891,
+  "lines": 3892,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795736700,
-    82.3
-   ],
    [
     1795736760,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795772714,
     361.97
+   ],
+   [
+    1795772774,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795772748.64534,
   "shadow": {
-   "n": 742,
+   "n": 743,
    "wins": 160,
-   "sum": -6137.4
+   "sum": -6154.3
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 756,
+  "n": 757,
   "wins": 162,
-  "sum": -6335.9,
+  "sum": -6352.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 740,
+    "n": 741,
     "wins": 159,
-    "sum": -6138.1
+    "sum": -6155.0
    }
   },
   "closed": [
-   {
-    "symbol": "EDEN",
-    "mint": "2Y2vGqsSY6jedKjWqBhK3weotW6zFB3i4pXqU3fApump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:35:40Z",
-    "cost": 36.2,
-    "pnl_pct": -20.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.43,
-    "closed": "2026-11-27T09:35:47Z",
-    "exit": "dump: 3.4 SOL sold",
-    "pnl": -7.55,
-    "weight": 0.5
-   },
    {
     "symbol": "SLEEVE",
     "mint": "G5REZS4vSsPBzNvhACwdYfMEwiFzxy8Z6FLJz6YFpump",
@@ -31743,6 +31723,26 @@
     "exit": "5 min, only -3%",
     "pnl": -2.57,
     "weight": 0.5
+   },
+   {
+    "symbol": "Insider",
+    "mint": "5VLv3f9WnCsViP7qrdouChrAEQvZ6RKNSaZPUvCPpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:46:09Z",
+    "cost": 36.2,
+    "pnl_pct": -16.9,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 5.82,
+    "closed": "2026-11-27T09:46:12Z",
+    "exit": "stop -14%",
+    "pnl": -6.11,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31751,8 +31751,7 @@
    "BAI",
    "PCEO",
    "COAL",
-   "90%OFF",
-   "Insider"
+   "90%OFF"
   ]
  },
  "learner_summary": {
@@ -31780,7 +31779,7 @@
   "worst": [
    {
     "label": "snipe · np:sol:3-6",
-    "n": 66,
+    "n": 67,
     "avg": -11.7
    },
    {
@@ -31794,7 +31793,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 740,
+  "shadows": 741,
   "memory": "snipe"
  }
 }

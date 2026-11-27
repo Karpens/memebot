@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:46:11Z",
+ "updated": "2026-11-27T09:46:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3891,
+  "lines": 3892,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795736700,
-   82.3
-  ],
   [
    1795736760,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795772714,
    361.97
+  ],
+  [
+   1795772774,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:06:46Z",
-   "time": "10:06:46",
-   "agent": "LEARNER",
-   "coin": "BUNZ",
-   "action": "shadow",
-   "text": "SHADOW BUNZ would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 192",
-   "n": 3692
-  },
-  {
    "t": "2026-11-27T09:07:24Z",
    "time": "10:07:24",
    "agent": "SCANNER",
@@ -6538,6 +6529,15 @@
    "action": "shadow",
    "text": "SHADOW Insider · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035575 (curve maths, every cost) · same exits, outside the book",
    "n": 3891
+  },
+  {
+   "t": "2026-11-27T09:46:12Z",
+   "time": "10:46:12",
+   "agent": "LEARNER",
+   "coin": "Insider",
+   "action": "shadow",
+   "text": "SHADOW Insider would have made -16.9% (stop -14%) · learned x0.5 · np:sol:3-6 now avg -11.7% over 67",
+   "n": 3892
   }
  ],
  "nights": [
@@ -6592,24 +6592,24 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 1,
+  "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 684,
-    "last_event_age_s": 2.7,
+    "events": 686,
+    "last_event_age_s": 21.5,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17269,
-    "last_event_age_s": 0.7,
+    "events": 17310,
+    "last_event_age_s": 1.7,
     "errors": 0,
     "last_error": null
    },
@@ -6617,7 +6617,7 @@
     "name": "metadata",
     "connected": true,
     "events": 393,
-    "last_event_age_s": 2.5,
+    "last_event_age_s": 31.5,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,7 +6630,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.4,
+  "creates_per_min": 5.0,
   "watching": 1,
   "followed": 5
  },
@@ -6659,7 +6659,7 @@
   "worst": [
    {
     "label": "snipe · np:sol:3-6",
-    "n": 66,
+    "n": 67,
     "avg": -11.7
    },
    {
@@ -6673,36 +6673,72 @@
     "avg": -11.7
    }
   ],
-  "shadows": 740,
+  "shadows": 741,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8862,
+   "sent": 8893,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8873,
+   "sent": 8904,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Dug",
+   "name": "Dug",
+   "mint": "4UXocM9WhifzG7uWuGjWDHRQyzFxQ4UNpCaMy5iCpump",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "EfmN2jtutG6g6g3SHdmoRs3rMFsiqXeM1oHdSF4Zpump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "Insider",
    "name": "Insider Coin",
    "mint": "5VLv3f9WnCsViP7qrdouChrAEQvZ6RKNSaZPUvCPpump",
-   "age_s": 2,
-   "sol_in": 5.27,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 34.5,
-   "mcap_sol": 45.4,
+   "age_s": 31,
+   "sol_in": -0.4,
+   "buys": 4,
+   "sells": 11,
+   "rise_pct": -2.4,
+   "mcap_sol": 32.9,
    "dev_pct": 9.6,
-   "big_sell": 0.55,
+   "big_sell": 1.8,
    "x": "https://x.com/Zeeko__Dev/status/2126251195450679720",
    "tg": false,
    "web": "https://x.com/i/trending/2125910097083691514",
@@ -6713,7 +6749,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "6cbEfn6ejjFvG6drLz2aEiyDBS2T6sdLjJBcY9iKpump",
-   "age_s": 16,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6731,7 +6767,7 @@
    "symbol": "CONGA3",
    "name": "Conga #3",
    "mint": "EfcQWKT9EW8U1bTriwwCByPhmr4fEHeZWYp5Sd88FcLE",
-   "age_s": 17,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6749,7 +6785,7 @@
    "symbol": "90%OFF",
    "name": "BLACK FRIDAY",
    "mint": "BBgDHUJ2WcZfuhhph3FZVbWHdpnrF3TJZXfrpcjypump",
-   "age_s": 60,
+   "age_s": 89,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6767,7 +6803,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "6cWzKR83dRx6Q4BnYjLzwjtxtWQ3RmAt6pVr336hpump",
-   "age_s": 61,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6785,7 +6821,7 @@
    "symbol": "COAL",
    "name": "Coal In My Wallet",
    "mint": "AxKHMh8QdYMpYp1KXjmn8Dt9d2VYokUuQzas37CWpump",
-   "age_s": 97,
+   "age_s": 126,
    "sol_in": 0.27,
    "buys": 2,
    "sells": 0,
@@ -6803,7 +6839,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "9f2skRGzEvFjJ1Kz9j2Pkg8JxJNvyhrsj3Cjjsj1pump",
-   "age_s": 105,
+   "age_s": 134,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6821,12 +6857,12 @@
    "symbol": "PCEO",
    "name": "PANIC CEO",
    "mint": "9eLEFwnCwThAW8i47GnHRfAB8igBh33o8kBbdn1bpump",
-   "age_s": 119,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 148,
+   "sol_in": 0.02,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": false,
@@ -6839,7 +6875,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "2RyTHVZJGT7GJ8DWV57YiY2NSdw4SzehA6ed2scNpump",
-   "age_s": 120,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6857,103 +6893,13 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "7iuzGDjsHCqDgiknMmKdedzCmvk8SA12yE3DYTGDpump",
-   "age_s": 121,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.2,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "Gxv9sV8EVA7sqcy6WtY84vEu4PRKzw4CgwHSzvX6teeJ",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "HEMCNf8wzJU4A8YGV8tqfv88XrAsd7iabT5JBk3cpump",
-   "age_s": 154,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GAYCOIN",
-   "name": "GAYCOIN",
-   "mint": "LyRbfDtrcFRDQG6tEWYUxyf5zDsx7x3Y4w6JwTPpump",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.1,
-   "dev_pct": 2.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "$cat",
-   "name": "猫",
-   "mint": "4WzvNwpRQKW9BRdYiuxX5GrosVR1khvctA9NDVVtpump",
-   "age_s": 173,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "DERP",
-   "name": "DERPCAT",
-   "mint": "8DzY1Doh2j3tBkNtXMd3vNhsoB34op9TsYtZiQfrpump",
-   "age_s": 177,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6967,22 +6913,6 @@
  ],
  "shadows": [
   {
-   "symbol": "Insider",
-   "mint": "5VLv3f9WnCsViP7qrdouChrAEQvZ6RKNSaZPUvCPpump",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:46:09Z",
-   "cost": 36.2,
-   "pnl_pct": -6.3,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 5.82
-  },
-  {
    "symbol": "90%OFF",
    "mint": "BBgDHUJ2WcZfuhhph3FZVbWHdpnrF3TJZXfrpcjypump",
    "status": "open",
@@ -6990,7 +6920,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:45:10Z",
    "cost": 36.2,
-   "pnl_pct": -3.8,
+   "pnl_pct": -3.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7022,7 +6952,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:44:12Z",
    "cost": 36.2,
-   "pnl_pct": -3.9,
+   "pnl_pct": -3.8,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7054,7 +6984,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:42:24Z",
    "cost": 36.2,
-   "pnl_pct": -9.9,
+   "pnl_pct": -10.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7070,13 +7000,33 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:42:09Z",
    "cost": 36.2,
-   "pnl_pct": -7.3,
+   "pnl_pct": -8.0,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.79
+  },
+  {
+   "symbol": "Insider",
+   "mint": "5VLv3f9WnCsViP7qrdouChrAEQvZ6RKNSaZPUvCPpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:46:09Z",
+   "cost": 36.2,
+   "pnl_pct": -16.9,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 5.82,
+   "closed": "2026-11-27T09:46:12Z",
+   "exit": "stop -14%",
+   "pnl": -6.11,
+   "weight": 0.5
   },
   {
    "symbol": "table",
@@ -7457,34 +7407,14 @@
    "exit": "stop -14%",
    "pnl": -6.45,
    "weight": 0.5
-  },
-  {
-   "symbol": "EDEN",
-   "mint": "2Y2vGqsSY6jedKjWqBhK3weotW6zFB3i4pXqU3fApump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:35:40Z",
-   "cost": 36.2,
-   "pnl_pct": -20.9,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 5.43,
-   "closed": "2026-11-27T09:35:47Z",
-   "exit": "dump: 3.4 SOL sold",
-   "pnl": -7.55,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 756,
+  "n": 757,
   "wins": 162,
   "win_rate": 21.4,
-  "mean_pnl_pct": -8.38,
-  "open": 7,
+  "mean_pnl_pct": -8.39,
+  "open": 6,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -7492,10 +7422,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 740,
+   "n": 741,
    "wins": 159,
    "win_rate": 21.5,
-   "mean_pnl_pct": -8.29
+   "mean_pnl_pct": -8.31
   }
  }
 }
