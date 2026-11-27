@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:29:02Z",
-    "time": "07:29:02",
-    "agent": "LEARNER",
-    "coin": "UPDOG",
-    "action": "shadow",
-    "text": "SHADOW UPDOG · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0054286384 (curve maths, every cost) · same exits, outside the book",
-    "n": 2828
-   },
-   {
     "t": "2026-11-27T06:29:08Z",
     "time": "07:29:08",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (mayhem mode 9, snipe not bought: trades tonight 3)",
     "n": 3427
+   },
+   {
+    "t": "2026-11-27T08:19:32Z",
+    "time": "09:19:32",
+    "agent": "LEARNER",
+    "coin": "哈基米",
+    "action": "shadow",
+    "text": "SHADOW 哈基米 would have made -7.6% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.6% over 239",
+    "n": 3428
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3427,
+  "lines": 3428,
   "flags": [
    {
     "coin": "Kibo",
@@ -21567,6 +21567,10 @@
    [
     1795767494,
     361.97
+   ],
+   [
+    1795767554,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21575,9 +21579,9 @@
   },
   "np_said": 1795767540.645278,
   "shadow": {
-   "n": 566,
+   "n": 567,
    "wins": 115,
-   "sum": -4687.3
+   "sum": -4694.9
   },
   "np_speed": {
    "first_in": [
@@ -31160,9 +31164,9 @@
   }
  },
  "shadow": {
-  "n": 580,
+  "n": 581,
   "wins": 117,
-  "sum": -4885.8,
+  "sum": -4893.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31170,32 +31174,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 564,
+    "n": 565,
     "wins": 114,
-    "sum": -4688.0
+    "sum": -4695.6
    }
   },
   "closed": [
-   {
-    "symbol": "JENSEN",
-    "mint": "BoYZED7EbyE8jDrofPgCay9Wk64PNLsU4KjTQGG3pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:07:20Z",
-    "cost": 36.2,
-    "pnl_pct": -10.7,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.7,
-    "closed": "2026-11-27T08:10:34Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.89,
-    "weight": 0.5
-   },
    {
     "symbol": "PRICD",
     "mint": "2HyKK5h8njSpxoo7J2N7cxJmSVf7shcxNFjtgFxVpump",
@@ -31575,11 +31559,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.74,
     "weight": 0.5
+   },
+   {
+    "symbol": "哈基米",
+    "mint": "BFYmqFYcZzhUnuqUSKsKBxiRrKEKrujpENbiAjukmFkv",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:14:32Z",
+    "cost": 36.2,
+    "pnl_pct": -7.6,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.02,
+    "closed": "2026-11-27T08:19:32Z",
+    "exit": "5 min, only -4%",
+    "pnl": -2.74,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Ant",
-   "哈基米"
+   "Ant"
   ]
  },
  "learner_summary": {
@@ -31621,7 +31624,7 @@
     "avg": -11.4
    }
   ],
-  "shadows": 564,
+  "shadows": 565,
   "memory": "snipe"
  }
 }
