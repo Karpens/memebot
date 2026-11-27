@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T00:20:32Z",
+ "updated": "2026-11-27T00:21:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.3,
@@ -24,7 +24,7 @@
   "flagged": 7,
   "checked": 3,
   "filtered": 1,
-  "lines": 109,
+  "lines": 110,
   "last_rug": {
    "coin": "CRYTAX",
    "pass": true
@@ -390,6 +390,10 @@
   ],
   [
    1795738800,
+   82.3
+  ],
+  [
+   1795738860,
    82.3
   ]
  ],
@@ -1379,6 +1383,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 2 watched · 8 rejected (mayhem mode 4, serial launcher 2, dev bought 1) · closest GHOST: too young: 1 s (min 45 s)",
    "n": 109
+  },
+  {
+   "t": "2026-11-27T00:20:45Z",
+   "time": "01:20:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 1 watched · 10 rejected (mayhem mode 5, dump 2, serial launcher 1) · closest FF: SOL in 0.6/2.5 · rise +4%/+12%",
+   "n": 110
   }
  ],
  "nights": [
@@ -1436,7 +1449,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1444,24 +1457,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1276,
-    "last_event_age_s": 4.0,
+    "events": 1278,
+    "last_event_age_s": 6.6,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17021,
-    "last_event_age_s": 1.2,
+    "events": 17070,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 894,
-    "last_event_age_s": 48.6,
+    "events": 896,
+    "last_event_age_s": 6.4,
     "errors": 27,
     "last_error": "liqfun.xyz: gaierror: [Errno -5] No address associated with hostname"
    }
@@ -1476,7 +1489,7 @@
   "launch_to_entry_s": null,
   "creates_per_min": 3.2,
   "watching": 2,
-  "followed": 4
+  "followed": 6
  },
  "learner": {
   "samples": 110,
@@ -1522,23 +1535,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9269,
+   "sent": 9299,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9269,
+   "sent": 9299,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "snowy owl",
+   "name": "snowy owl",
+   "mint": "HVJHfbs2BfLpau41dFDAzCJT6Y2YJ74kSjCWmNKXpump",
+   "age_s": 6,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "niggy",
+   "name": "niggy",
+   "mint": "3mZ3b1dcUnGDypGGt18Y44KHr6WLT9NmbUM3LHwGpump",
+   "age_s": 25,
+   "sol_in": 37.46,
+   "buys": 19,
+   "sells": 5,
+   "rise_pct": 387.9,
+   "mcap_sol": 145.5,
+   "dev_pct": 3.4,
+   "big_sell": 2.22,
+   "x": "https://x.com/PunchingCat/status/2126108748158808158",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 2.2 SOL sold",
+   "why": "dump: 2.2 SOL sold"
+  },
+  {
    "symbol": "cap",
    "name": "dog wif cap",
    "mint": "AmJPPGrj5cjDGLM5CsR2w62EDa8VTMTEJ9m7Ph1Npump",
-   "age_s": 3,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1556,7 +1605,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "6rjbzZBnZtEMUpLvpCTSWXtqKQe1ZLmGHbZ1UAZNpump",
-   "age_s": 12,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1574,7 +1623,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "ADJPGgxckQQYJhQjvV1nvN3WHCew2LCtjwppxUVcpump",
-   "age_s": 46,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1592,7 +1641,7 @@
    "symbol": "Veynt",
    "name": "Veynt Launcher",
    "mint": "61FrkESvC9maSPie7u31LfVBvPt6B2kfvPcw4KJJpump",
-   "age_s": 48,
+   "age_s": 77,
    "sol_in": -3.95,
    "buys": 0,
    "sells": 2,
@@ -1610,25 +1659,25 @@
    "symbol": "GHOST",
    "name": "Ghostdesk",
    "mint": "CtiY6XYC8VYAqVvNe88iRJtuBiQybzgxVPkx5L3upump",
-   "age_s": 52,
-   "sol_in": 2.37,
+   "age_s": 81,
+   "sol_in": -0.77,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 16.0,
-   "mcap_sol": 34.1,
+   "sells": 2,
+   "rise_pct": -4.9,
+   "mcap_sol": 28.0,
    "dev_pct": 2.7,
-   "big_sell": 0.0,
+   "big_sell": 2.37,
    "x": "https://x.com/tryghostdesk",
    "tg": false,
    "web": "https://ghostdesk.digital/",
-   "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
+   "status": "rejected: dump: 2.4 SOL sold",
+   "why": "dump: 2.4 SOL sold"
   },
   {
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "DGw4omSWVNTHqXEQZMaTjQN1sboFNcnn2KKeF52zpump",
-   "age_s": 117,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1646,9 +1695,9 @@
    "symbol": "FF",
    "name": "Family Friendly Coin",
    "mint": "q5JgkyZE6wJbpAoLSuiGj9kn6tLFtFfY2Yn3cLZpump",
-   "age_s": 128,
+   "age_s": 157,
    "sol_in": 0.64,
-   "buys": 9,
+   "buys": 11,
    "sells": 1,
    "rise_pct": 4.3,
    "mcap_sol": 29.2,
@@ -1664,7 +1713,7 @@
    "symbol": "?",
    "name": "",
    "mint": "FcoDQE1273uYEfP2xUivP8QXHGjvYswqLg7fiqwfLoat",
-   "age_s": 132,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1682,7 +1731,7 @@
    "symbol": "RICK",
    "name": "Gucci Rick",
    "mint": "3vH2KCgG1sC5P3ajkXXd3PZ7X2R29xDo5Zzy71CRpump",
-   "age_s": 135,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1700,7 +1749,7 @@
    "symbol": "McCoin",
    "name": "McDonalds Coin",
    "mint": "2dRYp1JDmW5Ws8CPMxG3tL4HNxP3oPhBwG2eXcA4iZ3J",
-   "age_s": 142,
+   "age_s": 171,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1713,24 +1762,6 @@
    "web": "https://youtu.be/V6VtUQVOJ8Q?t=5",
    "status": "rejected: serial launcher: 8 more coins in 60 min",
    "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "FOMOPUG",
-   "name": "Fomo PUG",
-   "mint": "EggHc3YCnXN5nWsqbkdTv8cwvwVUK3UBUGDSsBAbpump",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
