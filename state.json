@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T02:45:40Z",
-    "time": "03:45:40",
-    "agent": "EXECUTOR",
-    "coin": "SHALLOW",
-    "action": "exit",
-    "text": "EXIT SHALLOW $-8.73 (-11%) · curve quiet for 3 min (no trade)",
-    "n": 879
-   },
-   {
-    "t": "2026-11-27T02:45:40Z",
-    "time": "03:45:40",
-    "agent": "LEARNER",
-    "coin": "SHALLOW",
-    "action": "learn",
-    "text": "learned · np:social:none now avg -14.5% over 39.5",
-    "n": 880
-   },
-   {
-    "t": "2026-11-27T02:45:46Z",
-    "time": "03:45:46",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.6 a minute · 0 watched · 6 rejected (mayhem mode 5, serial launcher 1)",
-    "n": 881
-   },
-   {
     "t": "2026-11-27T02:46:05Z",
     "time": "03:46:05",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 6.0 a minute · 0 watched · 17 rejected (snipe not bought: pause after a  11, serial launcher 4, mayhem mode 2)",
     "n": 1478
+   },
+   {
+    "t": "2026-11-27T03:40:39Z",
+    "time": "04:40:39",
+    "agent": "LEARNER",
+    "coin": "33kryptic",
+    "action": "shadow",
+    "text": "SHADOW 33kryptic would have made -15.0% (stop -11%) · learned x0.5 · hour:03-05 now avg -11.1% over 171",
+    "n": 1479
+   },
+   {
+    "t": "2026-11-27T03:40:39Z",
+    "time": "04:40:39",
+    "agent": "LEARNER",
+    "coin": "Keesual",
+    "action": "shadow",
+    "text": "SHADOW Keesual · not bought (pause after a losing streak) · followed as if bought: $43.87 at 0.0000023292 (curve maths, every cost) · same exits, outside the book",
+    "n": 1480
+   },
+   {
+    "t": "2026-11-27T03:40:49Z",
+    "time": "04:40:49",
+    "agent": "LEARNER",
+    "coin": "NVIDIA",
+    "action": "shadow",
+    "text": "SHADOW NVIDIA would have made +11.8% (TP +20%) · learned x0.5 · hour:03-05 now avg -11.0% over 171.5",
+    "n": 1481
    }
   ],
   "trades": [
@@ -12364,7 +12364,7 @@
   "flagged": 136,
   "checked": 132,
   "filtered": 5,
-  "lines": 1478,
+  "lines": 1481,
   "flags": [
    {
     "coin": "FADE",
@@ -13527,6 +13527,10 @@
    [
     1795750793,
     440.51
+   ],
+   [
+    1795750853,
+    438.65
    ]
   ],
   "last_rug": {
@@ -13535,9 +13539,9 @@
   },
   "np_said": 1795750818.780769,
   "shadow": {
-   "n": 158,
-   "wins": 29,
-   "sum": -1550.4
+   "n": 160,
+   "wins": 30,
+   "sum": -1553.6
   },
   "np_speed": {
    "first_in": [
@@ -22682,9 +22686,9 @@
   }
  },
  "shadow": {
-  "n": 172,
-  "wins": 31,
-  "sum": -1748.9,
+  "n": 174,
+  "wins": 32,
+  "sum": -1752.1,
   "by": {
    "learner": {
     "n": 16,
@@ -22692,52 +22696,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 156,
-    "wins": 28,
-    "sum": -1551.1
+    "n": 158,
+    "wins": 29,
+    "sum": -1554.3
    }
   },
   "closed": [
-   {
-    "symbol": "BOND",
-    "mint": "FzvAJrM9wHLSD97SEdDWVbnTg6bpcivj6q6GrtFEpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:23:16Z",
-    "cost": 51.39,
-    "pnl_pct": -25.3,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 7.49,
-    "closed": "2026-11-27T03:23:16Z",
-    "exit": "dump: 3.8 SOL sold",
-    "pnl": -12.99,
-    "weight": 0.5
-   },
-   {
-    "symbol": "DRAGONS",
-    "mint": "D7RdJ29nwVbAJ6qKwwSegRpKdut13V7FRBWkG26Mpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:19:50Z",
-    "cost": 52.66,
-    "pnl_pct": -9.2,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T03:23:18Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -4.84,
-    "weight": 0.5
-   },
    {
     "symbol": "AIRBALL",
     "mint": "LSLTFJmqxBXjsTAd5jSj1ukGMjJ8kDxULR44SoPpump",
@@ -23097,15 +23061,54 @@
     "exit": "TP +10%",
     "pnl": 3.01,
     "weight": 0.5
+   },
+   {
+    "symbol": "33kryptic",
+    "mint": "2LDseHrSaVjMcYJDtU1Usyi16tvjyvyLgSPwk6hjpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T03:38:05Z",
+    "cost": 44.79,
+    "pnl_pct": -15.0,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.03,
+    "closed": "2026-11-27T03:40:39Z",
+    "exit": "stop -11%",
+    "pnl": -6.72,
+    "weight": 0.5
+   },
+   {
+    "symbol": "NVIDIA",
+    "mint": "5TKRxmY8pWDvMAcjKYWFkQpvzARE9v5PT5tkwcAvpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T03:38:25Z",
+    "cost": 44.59,
+    "pnl_pct": 11.8,
+    "tier": "swing",
+    "score": 3,
+    "steps": 2,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 17.81,
+    "closed": "2026-11-27T03:40:49Z",
+    "exit": "TP +20%",
+    "pnl": 5.25,
+    "weight": 0.5
    }
   ],
   "open": [
-   "33kryptic",
    "USDTz.sol",
    "SOLCAT",
-   "NVIDIA",
    "TITAN",
-   "tras"
+   "tras",
+   "Keesual"
   ]
  },
  "learner_summary": {
@@ -23134,12 +23137,12 @@
    {
     "label": "snipe · tier:swing",
     "n": 12,
-    "avg": -18.0
+    "avg": -16.7
    },
    {
     "label": "snipe · news:3-4",
     "n": 12,
-    "avg": -18.0
+    "avg": -16.7
    },
    {
     "label": "snipe · np:social:none",
@@ -23147,7 +23150,7 @@
     "avg": -12.5
    }
   ],
-  "shadows": 156,
+  "shadows": 158,
   "memory": "snipe"
  }
 }
