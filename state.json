@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:30:55Z",
-    "time": "06:30:55",
-    "agent": "RISK",
-    "coin": "Libre",
-    "action": "skip",
-    "text": "no entry: pause after a losing streak",
-    "n": 2457
-   },
-   {
-    "t": "2026-11-27T05:30:55Z",
-    "time": "06:30:55",
-    "agent": "LEARNER",
-    "coin": "Libre",
-    "action": "shadow",
-    "text": "SHADOW Libre · not bought (pause after a losing streak) · followed as if bought: $40.25 at 0.0000022017 (curve maths, every cost) · same exits, outside the book",
-    "n": 2458
-   },
-   {
     "t": "2026-11-27T05:30:59Z",
     "time": "06:30:59",
     "agent": "EXECUTOR",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 6.6 a minute · 0 watched · 22 rejected (snipe not bought: trades tonight 10, serial launcher 7, mayhem mode 5)",
     "n": 3056
+   },
+   {
+    "t": "2026-11-27T07:09:50Z",
+    "time": "08:09:50",
+    "agent": "LEARNER",
+    "coin": "Basance",
+    "action": "shadow",
+    "text": "SHADOW Basance · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.00000218 (curve maths, every cost) · same exits, outside the book",
+    "n": 3057
+   },
+   {
+    "t": "2026-11-27T07:10:04Z",
+    "time": "08:10:04",
+    "agent": "LEARNER",
+    "coin": "Hierberos",
+    "action": "shadow",
+    "text": "SHADOW Hierberos would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.7% over 194.5",
+    "n": 3058
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3056,
+  "lines": 3058,
   "flags": [
    {
     "coin": "Kibo",
@@ -21291,6 +21291,10 @@
    [
     1795763333,
     361.97
+   ],
+   [
+    1795763393,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21299,9 +21303,9 @@
   },
   "np_said": 1795763364.780871,
   "shadow": {
-   "n": 424,
+   "n": 425,
    "wins": 79,
-   "sum": -3712.2
+   "sum": -3720.0
   },
   "np_speed": {
    "first_in": [
@@ -30884,9 +30888,9 @@
   }
  },
  "shadow": {
-  "n": 438,
+  "n": 439,
   "wins": 81,
-  "sum": -3910.7,
+  "sum": -3918.5,
   "by": {
    "learner": {
     "n": 16,
@@ -30894,32 +30898,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 422,
+    "n": 423,
     "wins": 78,
-    "sum": -3712.9
+    "sum": -3720.7
    }
   },
   "closed": [
-   {
-    "symbol": "DOJO",
-    "mint": "5Trv6g9X86WxcdoayciKV9aBP8c6rmq6weBdvauRpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:02:18Z",
-    "cost": 36.2,
-    "pnl_pct": 8.1,
-    "tier": "swing",
-    "score": 3,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 11.11,
-    "closed": "2026-11-27T07:02:22Z",
-    "exit": "dump: 2.8 SOL sold",
-    "pnl": 2.93,
-    "weight": 0.5
-   },
    {
     "symbol": "Halfcoin",
     "mint": "4XSBXBVRCg7PhSC98nPjmBKjRBC5A4so2nSH9RSapump",
@@ -31299,11 +31283,31 @@
     "exit": "trailing stop 6% off the top (peak +17%)",
     "pnl": 3.12,
     "weight": 0.5
+   },
+   {
+    "symbol": "Hierberos",
+    "mint": "9ugok1EHECYkW1ZjrHzBWbiBr2P6mYpbuV5bTufepump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:07:03Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": -0.47,
+    "closed": "2026-11-27T07:10:04Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.83,
+    "weight": 0.5
    }
   ],
   "open": [
    "vigil",
-   "Hierberos"
+   "Basance"
   ]
  },
  "learner_summary": {
@@ -31345,7 +31349,7 @@
     "avg": -13.6
    }
   ],
-  "shadows": 422,
+  "shadows": 423,
   "memory": "snipe"
  }
 }
