@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:54:20Z",
-    "time": "11:54:20",
-    "agent": "LEARNER",
-    "coin": "INUMAS",
-    "action": "shadow",
-    "text": "SHADOW INUMAS would have made -8.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.2% over 300",
-    "n": 4266
-   },
-   {
-    "t": "2026-11-27T10:54:26Z",
-    "time": "11:54:26",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.8 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 6, mayhem mode 3, serial launcher 2)",
-    "n": 4267
-   },
-   {
     "t": "2026-11-27T10:55:26Z",
     "time": "11:55:26",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 8.0 a minute · 0 watched · 23 rejected (snipe not bought: night at open  15, mayhem mode 3, no bonding curve key 3)",
     "n": 4865
+   },
+   {
+    "t": "2026-11-27T17:18:41Z",
+    "time": "18:18:41",
+    "agent": "LEARNER",
+    "coin": "SM",
+    "action": "shadow",
+    "text": "SHADOW SM · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022662 (curve maths, every cost) · same exits, outside the book",
+    "n": 4866
+   },
+   {
+    "t": "2026-11-27T17:18:42Z",
+    "time": "18:18:42",
+    "agent": "LEARNER",
+    "coin": "KITT",
+    "action": "shadow",
+    "text": "SHADOW KITT would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -7.7% over 254.5",
+    "n": 4867
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4865,
+  "lines": 4867,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795799894.443412,
   "shadow": {
-   "n": 1112,
+   "n": 1113,
    "wins": 253,
-   "sum": -8164.4
+   "sum": -8172.4
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 110,
+   "readings": 111,
    "coins": 38,
    "followed": 0,
    "mints": [
@@ -31842,9 +31842,9 @@
   }
  },
  "shadow": {
-  "n": 1126,
+  "n": 1127,
   "wins": 255,
-  "sum": -8362.9,
+  "sum": -8370.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31852,32 +31852,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1110,
+    "n": 1111,
     "wins": 252,
-    "sum": -8165.1
+    "sum": -8173.1
    }
   },
   "closed": [
-   {
-    "symbol": "Rockstar",
-    "mint": "DF131dyUJoHg3We23JUNsW7eJV7GX3e3icJ2PoAXpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:05:14Z",
-    "cost": 5.91,
-    "pnl_pct": 8.7,
-    "tier": "swing",
-    "score": 4,
-    "steps": 2,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 17.91,
-    "closed": "2026-11-27T17:08:35Z",
-    "exit": "TP +20%",
-    "pnl": 0.51,
-    "weight": 0.5
-   },
    {
     "symbol": "ELEPHANT",
     "mint": "DZz2TLEjg2x8HTZmye7A4ARGs8uXTkFMUCL4JgbFpump",
@@ -32257,15 +32237,35 @@
     "exit": "dump: 6.8 SOL sold",
     "pnl": -2.29,
     "weight": 0.5
+   },
+   {
+    "symbol": "KITT",
+    "mint": "8Uih3T5Qrx17VTMur3FppdQQajXbhFvL1323MeJNvywp",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:14:13Z",
+    "cost": 5.91,
+    "pnl_pct": -8.0,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.1,
+    "closed": "2026-11-27T17:18:42Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.47,
+    "weight": 0.5
    }
   ],
   "open": [
-   "KITT",
    "juan",
    "GOTGTA",
    "hyalis",
    "SPLITCOIN",
-   "SCHAN"
+   "SCHAN",
+   "SM"
   ]
  },
  "learner_summary": {
@@ -32307,7 +32307,7 @@
     "avg": -8.4
    }
   ],
-  "shadows": 1318,
+  "shadows": 1319,
   "memory": "snipe"
  }
 }
