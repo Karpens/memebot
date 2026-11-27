@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:54:59Z",
-    "time": "05:54:59",
-    "agent": "EXECUTOR",
-    "coin": "SANTABALL",
-    "action": "exit",
-    "text": "EXIT SANTABALL $-1.66 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 2119
-   },
-   {
-    "t": "2026-11-27T04:54:59Z",
-    "time": "05:54:59",
-    "agent": "LEARNER",
-    "coin": "SANTABALL",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -10.9% over 145.5",
-    "n": 2120
-   },
-   {
     "t": "2026-11-27T04:55:02Z",
     "time": "05:55:02",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW PRS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021481 (curve maths, every cost) · same exits, outside the book",
     "n": 2718
+   },
+   {
+    "t": "2026-11-27T06:03:12Z",
+    "time": "07:03:12",
+    "agent": "LEARNER",
+    "coin": "JBL",
+    "action": "shadow",
+    "text": "SHADOW JBL · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000036251 (curve maths, every cost) · same exits, outside the book",
+    "n": 2719
+   },
+   {
+    "t": "2026-11-27T06:03:13Z",
+    "time": "07:03:13",
+    "agent": "LEARNER",
+    "coin": "JBL",
+    "action": "shadow",
+    "text": "SHADOW JBL would have made -15.8% (stop -12%) · learned x0.5 · np:age:<30s now avg -8.4% over 300",
+    "n": 2720
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2718,
+  "lines": 2720,
   "flags": [
    {
     "coin": "Kibo",
@@ -21035,9 +21035,9 @@
   },
   "np_said": 1795759364.780858,
   "shadow": {
-   "n": 294,
+   "n": 295,
    "wins": 50,
-   "sum": -2615.5
+   "sum": -2631.3
   },
   "np_speed": {
    "first_in": [
@@ -30620,9 +30620,9 @@
   }
  },
  "shadow": {
-  "n": 308,
+  "n": 309,
   "wins": 52,
-  "sum": -2814.0,
+  "sum": -2829.8,
   "by": {
    "learner": {
     "n": 16,
@@ -30630,32 +30630,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 292,
+    "n": 293,
     "wins": 49,
-    "sum": -2616.2
+    "sum": -2632.0
    }
   },
   "closed": [
-   {
-    "symbol": "Halfbrick",
-    "mint": "2ZzAkNeui4kVELBcr44aSca4Go3vuChtEjAbMmufpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:31:59Z",
-    "cost": 39.57,
-    "pnl_pct": -10.0,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T05:36:53Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.94,
-    "weight": 0.5
-   },
    {
     "symbol": "$2SHARES",
     "mint": "77NLgeBcWvFFT6TqwEzJmTusaCQHbunz5JgtcjHhpump",
@@ -31035,6 +31015,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -3.69,
     "weight": 0.5
+   },
+   {
+    "symbol": "JBL",
+    "mint": "A5niPcd8joUAYWH1j4aJBZE7mjuU8KZNRLNP9Q3vpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:03:12Z",
+    "cost": 36.2,
+    "pnl_pct": -15.8,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.87,
+    "closed": "2026-11-27T06:03:13Z",
+    "exit": "stop -12%",
+    "pnl": -5.71,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31085,7 +31085,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 292,
+  "shadows": 293,
   "memory": "snipe"
  }
 }

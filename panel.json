@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:03:11Z",
+ "updated": "2026-11-27T06:03:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2718,
+  "lines": 2720,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4032,24 +4032,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T05:37:04Z",
-   "time": "06:37:04",
-   "agent": "LEARNER",
-   "coin": "$2SHARES",
-   "action": "shadow",
-   "text": "SHADOW $2SHARES would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.9% over 164",
-   "n": 2519
-  },
-  {
-   "t": "2026-11-27T05:37:09Z",
-   "time": "06:37:09",
-   "agent": "SCANNER",
-   "coin": "wufmas",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2520
-  },
-  {
    "t": "2026-11-27T05:37:09Z",
    "time": "06:37:09",
    "agent": "SIZER",
@@ -5830,6 +5812,24 @@
    "action": "shadow",
    "text": "SHADOW PRS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021481 (curve maths, every cost) · same exits, outside the book",
    "n": 2718
+  },
+  {
+   "t": "2026-11-27T06:03:12Z",
+   "time": "07:03:12",
+   "agent": "LEARNER",
+   "coin": "JBL",
+   "action": "shadow",
+   "text": "SHADOW JBL · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000036251 (curve maths, every cost) · same exits, outside the book",
+   "n": 2719
+  },
+  {
+   "t": "2026-11-27T06:03:13Z",
+   "time": "07:03:13",
+   "agent": "LEARNER",
+   "coin": "JBL",
+   "action": "shadow",
+   "text": "SHADOW JBL would have made -15.8% (stop -12%) · learned x0.5 · np:age:<30s now avg -8.4% over 300",
+   "n": 2720
   }
  ],
  "nights": [
@@ -5890,7 +5890,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5899,15 +5899,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 1204,
-    "last_event_age_s": 0.3,
+    "last_event_age_s": 27.3,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 37141,
-    "last_event_age_s": 0.6,
+    "events": 37205,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
@@ -5915,7 +5915,7 @@
     "name": "metadata",
     "connected": true,
     "events": 806,
-    "last_event_age_s": 0.1,
+    "last_event_age_s": 27.1,
     "errors": 79,
     "last_error": "ar-io.dev: too slow (over 2 s)"
    }
@@ -5928,9 +5928,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
-  "watching": 1,
-  "followed": 7
+  "creates_per_min": 2.6,
+  "watching": 0,
+  "followed": 6
  },
  "learner": {
   "samples": 249,
@@ -5971,19 +5971,19 @@
     "avg": -15.4
    }
   ],
-  "shadows": 292,
+  "shadows": 293,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17032,
+   "sent": 17061,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17031,
+   "sent": 17060,
    "errors": 0,
    "last_error": null
   }
@@ -5993,32 +5993,32 @@
    "symbol": "JBL",
    "name": "Jacket Booted Lobster",
    "mint": "A5niPcd8joUAYWH1j4aJBZE7mjuU8KZNRLNP9Q3vpump",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 39.0,
+   "age_s": 27,
+   "sol_in": 10.59,
+   "buys": 13,
+   "sells": 11,
+   "rise_pct": 68.7,
+   "mcap_sol": 65.8,
    "dev_pct": 16.5,
-   "big_sell": 0.0,
+   "big_sell": 2.77,
    "x": "https://x.com/twaniimals/status/2126194536464740577",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
   },
   {
    "symbol": "PRS",
    "name": "Perspolis",
    "mint": "uxYzHXmNBmPeUAkKzvXJLWPbuvJ4ubUazaEtmdZpump",
-   "age_s": 4,
-   "sol_in": 0.05,
+   "age_s": 31,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.3,
-   "mcap_sol": 28.3,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": false,
    "tg": "https://t.me/prscoin_official",
    "web": "https://prscoin.holder7677.workers.dev",
@@ -6029,7 +6029,7 @@
    "symbol": "BGO",
    "name": "BIG GUYS ONLY",
    "mint": "DqLYToubzud6He8dWMtqfG1rY8aWSTcL4iNsZ2UDpump",
-   "age_s": 6,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6047,7 +6047,7 @@
    "symbol": "PILLOWLINE",
    "name": "Pillow Line",
    "mint": "GkJmjPG7JwWanqeXG3Xfm3jTNxNq7xMhUXgmfqYXpump",
-   "age_s": 18,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6065,7 +6065,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "5UkdQwGdJtatPRG6KLgkdw2xSkp8FtjV9r9XNH4kpump",
-   "age_s": 19,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6083,14 +6083,14 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "FnpXQR1EgTjxYgR3rqibKGxWtgX69J8DaHuL2FCLpump",
-   "age_s": 37,
-   "sol_in": 0.02,
+   "age_s": 64,
+   "sol_in": -0.1,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.2,
+   "sells": 1,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.12,
    "x": "https://x.com/Humanevolvd/status/2126168800261242945?s=46",
    "tg": false,
    "web": false,
@@ -6101,7 +6101,7 @@
    "symbol": "BGO",
    "name": "BIG GUYS ONLY",
    "mint": "G6bk3Ary2sv5JFbEiYQauAs61RB9aFUpTpK76kyBpump",
-   "age_s": 43,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6119,7 +6119,7 @@
    "symbol": "cz",
    "name": "cz",
    "mint": "EWkZ6f8K7bVnFP5Wv2JfCocAvRkK6wdSSqkJpHFmQom1",
-   "age_s": 82,
+   "age_s": 109,
    "sol_in": -4.4,
    "buys": 2,
    "sells": 8,
@@ -6137,33 +6137,15 @@
    "symbol": "BONCOIN",
    "name": "Bon",
    "mint": "DLMqsQSw6ESMMArJVsLtCM8mxwrtfFitaVVkLv1Kpump",
-   "age_s": 148,
+   "age_s": 175,
    "sol_in": 0.15,
-   "buys": 12,
-   "sells": 10,
+   "buys": 13,
+   "sells": 11,
    "rise_pct": 1.0,
    "mcap_sol": 28.3,
    "dev_pct": 0.1,
    "big_sell": 0.04,
    "x": "https://x.com/CoachPatNFT/status/2126193179133083777",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "INUX",
-   "name": "Turbo Alien Shiba Inux",
-   "mint": "EKF94BbUarB82sDBtiiKb77UkV5MrQzm9EL9BVHQM6Y",
-   "age_s": 165,
-   "sol_in": 0.01,
-   "buys": 12,
-   "sells": 5,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.05,
-   "x": "https://x.com/search?q=%24INUX&f=live",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
@@ -6182,7 +6164,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:03:08Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -4.3,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -6214,7 +6196,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:02:35Z",
    "cost": 36.2,
-   "pnl_pct": -3.9,
+   "pnl_pct": -4.7,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6269,6 +6251,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "JBL",
+   "mint": "A5niPcd8joUAYWH1j4aJBZE7mjuU8KZNRLNP9Q3vpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:03:12Z",
+   "cost": 36.2,
+   "pnl_pct": -15.8,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 3.87,
+   "closed": "2026-11-27T06:03:13Z",
+   "exit": "stop -12%",
+   "pnl": -5.71,
+   "weight": 0.5
   },
   {
    "symbol": "PUMP",
@@ -6649,33 +6651,13 @@
    "exit": "5 min, only -4%",
    "pnl": -3.15,
    "weight": 0.5
-  },
-  {
-   "symbol": "Halfbrick",
-   "mint": "2ZzAkNeui4kVELBcr44aSca4Go3vuChtEjAbMmufpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T05:31:59Z",
-   "cost": 39.57,
-   "pnl_pct": -10.0,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T05:36:53Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -3.94,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 308,
+  "n": 309,
   "wins": 52,
-  "win_rate": 16.9,
-  "mean_pnl_pct": -9.14,
+  "win_rate": 16.8,
+  "mean_pnl_pct": -9.16,
   "open": 6,
   "learner": {
    "n": 16,
@@ -6684,10 +6666,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 292,
+   "n": 293,
    "wins": 49,
-   "win_rate": 16.8,
-   "mean_pnl_pct": -8.96
+   "win_rate": 16.7,
+   "mean_pnl_pct": -8.98
   }
  }
 }
