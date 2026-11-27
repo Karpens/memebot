@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:39:10Z",
+ "updated": "2026-11-27T01:39:39Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 6,
   "filtered": 3,
-  "lines": 204,
+  "lines": 205,
   "last_rug": {
    "coin": "RDB",
    "pass": false
@@ -771,15 +771,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T23:01:45Z",
-   "time": "00:01:45",
-   "agent": "SCANNER",
-   "coin": "JUBAO",
-   "action": "migrate",
-   "text": "migrated: the curve is complete (pump-amm)",
-   "n": 5
-  },
   {
    "t": "2026-11-26T23:02:02Z",
    "time": "00:02:02",
@@ -2570,6 +2561,15 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 2 watched · 10 rejected (mayhem mode 4, serial launcher 3, dev bought 2) · closest ALL: SOL in 0.4/2.5 · buys 4/6 · rise +2%/+12%",
    "n": 204
+  },
+  {
+   "t": "2026-11-27T01:39:29Z",
+   "time": "02:39:29",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 5 rejected (mayhem mode 3, dev bought 1, serial launcher 1)",
+   "n": 205
   }
  ],
  "nights": [
@@ -2628,7 +2628,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2636,24 +2636,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1827,
-    "last_event_age_s": 12.9,
+    "events": 1830,
+    "last_event_age_s": 0.1,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23700,
-    "last_event_age_s": 3.6,
+    "events": 23709,
+    "last_event_age_s": 4.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1167,
-    "last_event_age_s": 117.7,
+    "connected": true,
+    "events": 1168,
+    "last_event_age_s": 5.2,
     "errors": 46,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2667,7 +2667,7 @@
   "exit_last_ms": 109,
   "launch_to_entry_s": 47,
   "creates_per_min": 4.2,
-  "watching": 0,
+  "watching": 1,
   "followed": 3
  },
  "learner": {
@@ -2714,23 +2714,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14293,
+   "sent": 14324,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14293,
+   "sent": 14324,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "urcoin",
+   "name": "Not SPCX narr",
+   "mint": "3e6YUX37DyEvVbPs76bL9gwf5Y9dYADAMoqhixz2pump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
+   "symbol": "FLOWB",
+   "name": "Flow Base",
+   "mint": "4sAQPo2wsEtsgKHUi5k15VHSM1vK4sqboEaff6RUiBJJ",
+   "age_s": 5,
+   "sol_in": 0.02,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 0 s (min 45 s)"
+  },
+  {
    "symbol": "Disney",
    "name": "Disney",
    "mint": "34FfRW4o5FyE1G52iVVcQbczJTSf5iKQU2354BpFpump",
-   "age_s": 12,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2748,7 +2784,7 @@
    "symbol": "PROTON",
    "name": "Proton",
    "mint": "5QCBsuEA1m7KaCMHrwSZLW1jGCfzFix1weqGPGbjpump",
-   "age_s": 70,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2766,7 +2802,7 @@
    "symbol": "Disney",
    "name": "Disney",
    "mint": "B9iCWd5d24BmXHCEVx238Q1dbiZQjJBMfF6eRDuNpump",
-   "age_s": 73,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2784,7 +2820,7 @@
    "symbol": "Dragon",
    "name": "Dragoncoin",
    "mint": "CEpJ8RNxuzNUSQRCRwBh2teLK5SBRGv9dQcU89YDsiZF",
-   "age_s": 122,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2797,60 +2833,6 @@
    "web": false,
    "status": "rejected: serial launcher: 13 more coins in 60 min",
    "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "TOGI",
-   "name": "Togi Coin",
-   "mint": "5EYmH7A1fgSmh74ZSHsptWWRcxZSKiFXBPZrDkqMpump",
-   "age_s": 154,
-   "sol_in": -9.38,
-   "buys": 9,
-   "sells": 29,
-   "rise_pct": -41.5,
-   "mcap_sol": 28.9,
-   "dev_pct": 26.6,
-   "big_sell": 5.2,
-   "x": "https://x.com/drkwyd/status/2126127950756012380",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 26.6% (max 8%)",
-   "why": "dev bought 26.6% (max 8%)"
-  },
-  {
-   "symbol": "SJP",
-   "name": "SJP",
-   "mint": "612dGpcwkfDjuPc1dCkhXRDgRfdFmtzNrCK9wfZ7pump",
-   "age_s": 173,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SNOWTRUCK",
-   "name": "Truck In Snow",
-   "mint": "5VX2tneMRKMHRgbXc6t2viP4eSEG2gJPdohy33GJpump",
-   "age_s": 175,
-   "sol_in": 0.87,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 1.8,
-   "mcap_sol": 310.7,
-   "dev_pct": 74.8,
-   "big_sell": 0.03,
-   "x": "https://x.com/MarioNawfal/status/2126123130959884547",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 74.8% (max 8%)",
-   "why": "dev bought 74.8% (max 8%)"
   }
  ],
  "strategies": [
