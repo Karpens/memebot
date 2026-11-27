@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:55:04Z",
-    "time": "06:55:04",
-    "agent": "EXECUTOR",
-    "coin": "PILLY",
-    "action": "exit",
-    "text": "EXIT PILLY $-4.96 (-14%) · curve quiet for 3 min (no trade)",
-    "n": 2683
-   },
-   {
-    "t": "2026-11-27T05:55:04Z",
-    "time": "06:55:04",
-    "agent": "LEARNER",
-    "coin": "PILLY",
-    "action": "learn",
-    "text": "learned · np:buys:<70 now avg -9.9% over 173.5",
-    "n": 2684
-   },
-   {
     "t": "2026-11-27T05:55:26Z",
     "time": "06:55:26",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW BO6 would have made -7.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 168.5",
     "n": 3282
+   },
+   {
+    "t": "2026-11-27T07:54:14Z",
+    "time": "08:54:14",
+    "agent": "LEARNER",
+    "coin": "MEET",
+    "action": "shadow",
+    "text": "SHADOW MEET would have made -7.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.7% over 203",
+    "n": 3283
+   },
+   {
+    "t": "2026-11-27T07:54:21Z",
+    "time": "08:54:21",
+    "agent": "LEARNER",
+    "coin": "GOATCHASE",
+    "action": "shadow",
+    "text": "SHADOW GOATCHASE would have made -7.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.7% over 226",
+    "n": 3284
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3282,
+  "lines": 3284,
   "flags": [
    {
     "coin": "Kibo",
@@ -21467,6 +21467,10 @@
    [
     1795765994,
     361.97
+   ],
+   [
+    1795766054,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21475,9 +21479,9 @@
   },
   "np_said": 1795766028.645285,
   "shadow": {
-   "n": 506,
+   "n": 508,
    "wins": 97,
-   "sum": -4213.4
+   "sum": -4228.7
   },
   "np_speed": {
    "first_in": [
@@ -31060,9 +31064,9 @@
   }
  },
  "shadow": {
-  "n": 520,
+  "n": 522,
   "wins": 99,
-  "sum": -4411.9,
+  "sum": -4427.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31070,52 +31074,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 504,
+    "n": 506,
     "wins": 96,
-    "sum": -4214.1
+    "sum": -4229.4
    }
   },
   "closed": [
-   {
-    "symbol": "1RING2RULE",
-    "mint": "ATb8TbCYFsAigumqS1UHKrn4baf5LFJ83wrfm869pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:37:56Z",
-    "cost": 36.2,
-    "pnl_pct": -7.8,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T07:40:56Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.84,
-    "weight": 0.5
-   },
-   {
-    "symbol": "GYM",
-    "mint": "9Qqr5GtAUpNGMXckTademeAbAEZ3i9xekA6Lg99r87Qi",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:40:59Z",
-    "cost": 36.2,
-    "pnl_pct": -33.9,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T07:41:01Z",
-    "exit": "dump: 5.8 SOL sold",
-    "pnl": -12.27,
-    "weight": 0.5
-   },
    {
     "symbol": "milhoa",
     "mint": "GWJ2RZQ74HYeSpNSWYMmqK4P8hdnXZmYphtwFvv3pump",
@@ -31475,12 +31439,50 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.58,
     "weight": 0.5
+   },
+   {
+    "symbol": "MEET",
+    "mint": "GZzxuZ2pP2NLUUNkSucieV35ug8grTNxKPSDBGNW4Cso",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:51:13Z",
+    "cost": 36.2,
+    "pnl_pct": -7.7,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": -0.1,
+    "closed": "2026-11-27T07:54:14Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.79,
+    "weight": 0.5
+   },
+   {
+    "symbol": "GOATCHASE",
+    "mint": "2SJ6SRT4YcbaY85ZRvqzGanAY39Njx9ynvQeF2zsmCxS",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:50:10Z",
+    "cost": 36.2,
+    "pnl_pct": -7.6,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T07:54:21Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.76,
+    "weight": 0.5
    }
   ],
   "open": [
-   "GOATCHASE",
    "GTA 6",
-   "MEET",
    "1RING2RULE",
    "PRAYSTATION",
    "TRUE",
@@ -31527,7 +31529,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 504,
+  "shadows": 506,
   "memory": "snipe"
  }
 }
