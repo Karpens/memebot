@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:43:58Z",
-    "time": "11:43:58",
-    "agent": "LEARNER",
-    "coin": "NİMİS1",
-    "action": "shadow",
-    "text": "SHADOW NİMİS1 would have made -17.2% (stop -14%) · learned x0.5 · np:age:<30s now avg -7.8% over 300",
-    "n": 4200
-   },
-   {
-    "t": "2026-11-27T10:44:04Z",
-    "time": "11:44:04",
-    "agent": "LEARNER",
-    "coin": "TUBEA",
-    "action": "shadow",
-    "text": "SHADOW TUBEA would have made +10.3% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.2% over 239",
-    "n": 4201
-   },
-   {
     "t": "2026-11-27T10:44:15Z",
     "time": "11:44:15",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 4.8 a minute · 0 watched · 13 rejected (snipe not bought: night at open  11, serial launcher 1, mayhem mode 1)",
     "n": 4799
+   },
+   {
+    "t": "2026-11-27T17:09:24Z",
+    "time": "18:09:24",
+    "agent": "LEARNER",
+    "coin": "ELEPHANT",
+    "action": "shadow",
+    "text": "SHADOW ELEPHANT would have made -10.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:sol:3-6 now avg -12.3% over 78",
+    "n": 4800
+   },
+   {
+    "t": "2026-11-27T17:09:30Z",
+    "time": "18:09:30",
+    "agent": "SCANNER",
+    "coin": "cataclysm",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 0.0695 is not 30 + real SOL 0 (off -29.93 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 78 odd readings from 22 coins tonight",
+    "n": 4801
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4799,
+  "lines": 4801,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795763333,
-    59.14
-   ],
    [
     1795763393,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795799307,
     59.14
+   ],
+   [
+    1795799367,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795799343.028921,
   "shadow": {
-   "n": 1093,
+   "n": 1094,
    "wins": 249,
-   "sum": -8020.3
+   "sum": -8030.7
   },
   "np_speed": {
    "first_in": [
@@ -23110,8 +23110,8 @@
    ]
   },
   "odd": {
-   "readings": 77,
-   "coins": 21,
+   "readings": 78,
+   "coins": 22,
    "followed": 0,
    "mints": [
     "ERGxdPAhVciioVVK2cfaozyse99vgxkP8TBwvzrJpump",
@@ -23134,7 +23134,8 @@
     "6iAvWEvFcET3yvKokAh2tBnDDEd2PZ1JeECgy2dGfd3Z",
     "FJ3wrkmoPmBup5UW8HQeAzJf1BtXGD5zxvRrbBvgm6bq",
     "G5tjKbp1hYNrVdYxF3AjTPcdv6qkhpXG8mtngTsELUCf",
-    "4oHnuAkzWd2LxPEQnuu2Eqh2uroPiHwibFmT4nabQNVJ"
+    "4oHnuAkzWd2LxPEQnuu2Eqh2uroPiHwibFmT4nabQNVJ",
+    "7CdDNsuiJTdFPcbd2QAFyobX7qkEg8ry1QJsEQX2ddcX"
    ]
   }
  },
@@ -31825,9 +31826,9 @@
   }
  },
  "shadow": {
-  "n": 1107,
+  "n": 1108,
   "wins": 251,
-  "sum": -8218.8,
+  "sum": -8229.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31835,32 +31836,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1091,
+    "n": 1092,
     "wins": 248,
-    "sum": -8021.0
+    "sum": -8031.4
    }
   },
   "closed": [
-   {
-    "symbol": "CORN",
-    "mint": "5BJ5UpRGXovaK9FtGKugWyBBvbLxksWeE8sdtEaTpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T16:59:12Z",
-    "cost": 5.91,
-    "pnl_pct": -7.5,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T17:03:55Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.44,
-    "weight": 0.5
-   },
    {
     "symbol": "PEEK0",
     "mint": "4MvTMyCWnyZDiLRwA34UuvAA2zFjcxxT4Tgs5B6upump",
@@ -32240,10 +32221,29 @@
     "exit": "TP +20%",
     "pnl": 0.51,
     "weight": 0.5
+   },
+   {
+    "symbol": "ELEPHANT",
+    "mint": "DZz2TLEjg2x8HTZmye7A4ARGs8uXTkFMUCL4JgbFpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:04:33Z",
+    "cost": 5.91,
+    "pnl_pct": -10.4,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.96,
+    "closed": "2026-11-27T17:09:24Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.61,
+    "weight": 0.5
    }
   ],
   "open": [
-   "ELEPHANT",
    "OrangeCorn",
    "CoomCatFat",
    "SNOW",
@@ -32292,7 +32292,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1299,
+  "shadows": 1300,
   "memory": "snipe"
  }
 }
