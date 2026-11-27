@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:00:22Z",
-    "time": "20:00:22",
-    "agent": "LEARNER",
-    "coin": "Fuckcoin",
-    "action": "shadow",
-    "text": "SHADOW Fuckcoin would have made -14.6% (stop -10%) · learned x0.5 · tier:scalp now avg -8.2% over 300",
-    "n": 5781
-   },
-   {
-    "t": "2026-11-27T19:00:22Z",
-    "time": "20:00:22",
-    "agent": "LEARNER",
-    "coin": "SANITARY",
-    "action": "shadow",
-    "text": "SHADOW SANITARY would have made -10.3% (5 min, only -6%) · learned x0.5 · np:social:none now avg -8.7% over 300",
-    "n": 5782
-   },
-   {
     "t": "2026-11-27T19:00:39Z",
     "time": "20:00:39",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Apple would have made -8.9% (dump: 2.9 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.9% over 224.5",
     "n": 6380
+   },
+   {
+    "t": "2026-11-27T20:12:49Z",
+    "time": "21:12:49",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.4 a minute · 0 watched · 23 rejected (snipe not bought: night at open  8, mayhem mode 7, serial launcher 4)",
+    "n": 6381
+   },
+   {
+    "t": "2026-11-27T20:13:10Z",
+    "time": "21:13:10",
+    "agent": "LEARNER",
+    "coin": "calloutball",
+    "action": "shadow",
+    "text": "SHADOW calloutball would have made -7.5% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -7.9% over 300",
+    "n": 6382
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6380,
+  "lines": 6382,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795774334,
-    59.14
-   ],
    [
     1795774394,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795810308,
     59.14
+   ],
+   [
+    1795810368,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795810308.443568,
+  "np_said": 1795810369.44354,
   "shadow": {
-   "n": 1727,
+   "n": 1728,
    "wins": 377,
-   "sum": -13282.3
+   "sum": -13289.8
   },
   "np_speed": {
    "first_in": [
@@ -31920,9 +31920,9 @@
   }
  },
  "shadow": {
-  "n": 1741,
+  "n": 1742,
   "wins": 379,
-  "sum": -13480.8,
+  "sum": -13488.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31930,32 +31930,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1725,
+    "n": 1726,
     "wins": 376,
-    "sum": -13283.0
+    "sum": -13290.5
    }
   },
   "closed": [
-   {
-    "symbol": "LMTEST",
-    "mint": "B6zGf9kSytu9tvQBVXT3eBuBzFDeqALXjT7Xam1kawZp",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:00:53Z",
-    "cost": 5.91,
-    "pnl_pct": -6.6,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T20:05:53Z",
-    "exit": "5 min, only -2%",
-    "pnl": -0.39,
-    "weight": 0.5
-   },
    {
     "symbol": "Apple",
     "mint": "2rYom2XjVa8tKn7U9GxgkWAydUh4dpHnyHWJ73ozpump",
@@ -32335,10 +32315,29 @@
     "exit": "dump: 2.9 SOL sold",
     "pnl": -0.53,
     "weight": 0.5
+   },
+   {
+    "symbol": "calloutball",
+    "mint": "CTg91p9VmpzcovXJpSzvMFAWVNJbLu8h2qUMreajpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:10:09Z",
+    "cost": 5.91,
+    "pnl_pct": -7.5,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T20:13:10Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.44,
+    "weight": 0.5
    }
   ],
   "open": [
-   "calloutball",
    "calloutball",
    "HADESCOIN",
    "⚔️",
@@ -32384,7 +32383,7 @@
     "avg": -8.9
    }
   ],
-  "shadows": 1933,
+  "shadows": 1934,
   "memory": "snipe"
  }
 }
