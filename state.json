@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:26:09Z",
-    "time": "06:26:09",
-    "agent": "EXECUTOR",
-    "coin": "CHAD",
-    "action": "enter",
-    "text": "ENTER CHAD at 0.0000021576 · slip 2.0% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 5 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2382
-   },
-   {
-    "t": "2026-11-27T05:26:09Z",
-    "time": "06:26:09",
-    "agent": "NEWS",
-    "coin": "CHAD",
-    "action": "plan",
-    "text": "hold plan · 1.5/10 (X post, web) · scalp: +10",
-    "n": 2383
-   },
-   {
-    "t": "2026-11-27T05:26:19Z",
-    "time": "06:26:19",
-    "agent": "EXECUTOR",
-    "coin": "Framehush",
-    "action": "exit",
-    "text": "EXIT Framehush $-2.71 (-13%) · 5 min, only -9%",
-    "n": 2384
-   },
-   {
     "t": "2026-11-27T05:26:19Z",
     "time": "06:26:19",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW 1RING2RULE would have made -7.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 190.5",
     "n": 2981
+   },
+   {
+    "t": "2026-11-27T06:57:15Z",
+    "time": "07:57:15",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.0 a minute · 0 watched · 13 rejected (mayhem mode 7, snipe not bought: trades tonight 5, serial launcher 1)",
+    "n": 2982
+   },
+   {
+    "t": "2026-11-27T06:57:17Z",
+    "time": "07:57:17",
+    "agent": "LEARNER",
+    "coin": "BTC",
+    "action": "shadow",
+    "text": "SHADOW BTC · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021212 (curve maths, every cost) · same exits, outside the book",
+    "n": 2983
+   },
+   {
+    "t": "2026-11-27T06:57:42Z",
+    "time": "07:57:42",
+    "agent": "LEARNER",
+    "coin": "$POSSUM",
+    "action": "shadow",
+    "text": "SHADOW $POSSUM would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 191",
+    "n": 2984
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2981,
+  "lines": 2984,
   "flags": [
    {
     "coin": "Kibo",
@@ -21249,11 +21249,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795762574.780895,
+  "np_said": 1795762635.780845,
   "shadow": {
-   "n": 394,
+   "n": 395,
    "wins": 72,
-   "sum": -3471.3
+   "sum": -3479.1
   },
   "np_speed": {
    "first_in": [
@@ -30836,9 +30836,9 @@
   }
  },
  "shadow": {
-  "n": 408,
+  "n": 409,
   "wins": 74,
-  "sum": -3669.8,
+  "sum": -3677.6,
   "by": {
    "learner": {
     "n": 16,
@@ -30846,32 +30846,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 392,
+    "n": 393,
     "wins": 71,
-    "sum": -3472.0
+    "sum": -3479.8
    }
   },
   "closed": [
-   {
-    "symbol": "USFF",
-    "mint": "FPMKrVryiXzKmbgrPkUmkARf447vmN89JVptYqSbpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:50:34Z",
-    "cost": 36.2,
-    "pnl_pct": -22.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": -0.59,
-    "closed": "2026-11-27T06:50:34Z",
-    "exit": "stop -12%",
-    "pnl": -8.01,
-    "weight": 0.5
-   },
    {
     "symbol": "safgc",
     "mint": "HGxZc7psrtSePMeufERQNVxjResvMytJT1iDjNnzpump",
@@ -31251,12 +31231,32 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.79,
     "weight": 0.5
+   },
+   {
+    "symbol": "$POSSUM",
+    "mint": "3kNLn6arRfFDNqsTesqrTGjrG2TDaavu8oeY7WBkpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:54:42Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:57:42Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.82,
+    "weight": 0.5
    }
   ],
   "open": [
    "D&D",
-   "$POSSUM",
-   "SIRIUS"
+   "SIRIUS",
+   "BTC"
   ]
  },
  "learner_summary": {
@@ -31298,7 +31298,7 @@
     "avg": -13.4
    }
   ],
-  "shadows": 392,
+  "shadows": 393,
   "memory": "snipe"
  }
 }
