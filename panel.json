@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T04:15:03Z",
+ "updated": "2026-11-27T04:15:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 288.78,
@@ -24,7 +24,7 @@
   "flagged": 162,
   "checked": 158,
   "filtered": 5,
-  "lines": 1789,
+  "lines": 1790,
   "last_rug": {
    "coin": "QHMQLRV",
    "pass": true
@@ -3587,15 +3587,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T03:46:52Z",
-   "time": "04:46:52",
-   "agent": "LEARNER",
-   "coin": "SunCoin",
-   "action": "learn",
-   "text": "learned · hour:03-05 now avg -10.3% over 188",
-   "n": 1590
-  },
-  {
    "t": "2026-11-27T03:47:20Z",
    "time": "04:47:20",
    "agent": "SCANNER",
@@ -5385,6 +5376,15 @@
    "action": "shadow",
    "text": "SHADOW test · not bought (pause after a losing streak) · followed as if bought: $28.88 at 0.0000028468 (curve maths, every cost) · same exits, outside the book",
    "n": 1789
+  },
+  {
+   "t": "2026-11-27T04:15:09Z",
+   "time": "05:15:09",
+   "agent": "LEARNER",
+   "coin": "test",
+   "action": "shadow",
+   "text": "SHADOW test would have made -31.3% (dump: 4.9 SOL sold) · learned x0.5 · np:social:none now avg -11.8% over 95.5",
+   "n": 1790
   }
  ],
  "nights": [
@@ -5429,7 +5429,7 @@
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
-  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
+  "https://api.rugcheck.xyz/v1/tokens/6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC/report: HTTP 502",
   "https://api.rugcheck.xyz/v1/tokens/6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC/report: HTTP 502"
  ],
  "stream": {
@@ -5445,7 +5445,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5454,14 +5454,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 800,
-    "last_event_age_s": 1.9,
+    "last_event_age_s": 33.9,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19991,
+    "events": 20032,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -5470,7 +5470,7 @@
     "name": "metadata",
     "connected": false,
     "events": 548,
-    "last_event_age_s": 1.0,
+    "last_event_age_s": 33.0,
     "errors": 52,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5485,7 +5485,7 @@
   "launch_to_entry_s": 0,
   "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 5
+  "followed": 4
  },
  "learner": {
   "samples": 150,
@@ -5526,19 +5526,19 @@
     "avg": -17.3
    }
   ],
-  "shadows": 206,
+  "shadows": 207,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9864,
+   "sent": 9898,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9863,
+   "sent": 9897,
    "errors": 0,
    "last_error": null
   }
@@ -5548,14 +5548,14 @@
    "symbol": "test",
    "name": "test",
    "mint": "6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC",
-   "age_s": 1,
-   "sol_in": 0.0,
+   "age_s": 33,
+   "sol_in": -4.94,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.9,
+   "sells": 1,
+   "rise_pct": -26.3,
+   "mcap_sol": 28.0,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 4.94,
    "x": false,
    "tg": false,
    "web": false,
@@ -5566,7 +5566,7 @@
    "symbol": "ROLN",
    "name": "Rolana",
    "mint": "9r5Pspu8rNG8kkNhmDiyQWyssxCPJwAuxd2mXWwopump",
-   "age_s": 41,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5584,12 +5584,12 @@
    "symbol": "BBC",
    "name": "Beanie Babies Coin",
    "mint": "6qvY2pTt9z1R9ksYpMtVJwuQTHZp5Nef1wLydwsAaYTb",
-   "age_s": 63,
-   "sol_in": -6.13,
+   "age_s": 95,
+   "sol_in": -6.42,
    "buys": 2,
-   "sells": 6,
-   "rise_pct": -30.8,
-   "mcap_sol": 28.5,
+   "sells": 7,
+   "rise_pct": -32.1,
+   "mcap_sol": 28.0,
    "dev_pct": 18.9,
    "big_sell": 3.24,
    "x": "https://x.com/83fs732ts8236/status/2126167629136044508",
@@ -5602,12 +5602,12 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "AgBxPNBFmBks58rtVnp2ZW5WHtE2968qTPWgDEvbpump",
-   "age_s": 97,
-   "sol_in": 26.9,
-   "buys": 56,
-   "sells": 47,
-   "rise_pct": 213.2,
-   "mcap_sol": 118.8,
+   "age_s": 129,
+   "sol_in": 27.72,
+   "buys": 68,
+   "sells": 59,
+   "rise_pct": 221.6,
+   "mcap_sol": 122.0,
    "dev_pct": 15.2,
    "big_sell": 2.99,
    "x": "https://x.com/humanevolvd/status/2126167397958877607?a=Zd1DwaL0UeUtuOBeM2I&s=46",
@@ -5620,7 +5620,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BYd8rB8Dyx3q13gpuqpRD9m5NFwdfSjrjJjarWBTpump",
-   "age_s": 140,
+   "age_s": 172,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5633,24 +5633,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "QI",
-   "name": "QuantumInu",
-   "mint": "5qZLmDg2sC31tBRC4mU6xtsNaq7FkPhKf3AaG9yjWy4b",
-   "age_s": 159,
-   "sol_in": -3.2,
-   "buys": 53,
-   "sells": 55,
-   "rise_pct": -17.5,
-   "mcap_sol": 31.3,
-   "dev_pct": 15.2,
-   "big_sell": 5.22,
-   "x": "https://x.com/MarioPrezldente/status/2126167225547755929",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
   }
  ],
  "strategies": [
@@ -5660,18 +5642,22 @@
   {
    "symbol": "test",
    "mint": "6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
    "opened": "2026-11-27T04:15:02Z",
    "cost": 28.88,
-   "pnl_pct": -3.6,
+   "pnl_pct": -31.3,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 1,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T04:15:09Z",
+   "exit": "dump: 4.9 SOL sold",
+   "pnl": -9.05,
+   "weight": 0.5
   },
   {
    "symbol": "Christmas",
@@ -6052,34 +6038,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -3.21,
    "weight": 0.5
-  },
-  {
-   "symbol": "hugo",
-   "mint": "53P9VSrqUKFKV1hbCu3FXJ4MhmNee915PLnAMNjZpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T03:51:35Z",
-   "cost": 39.55,
-   "pnl_pct": -8.0,
-   "tier": "scalp",
-   "score": 0.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.73,
-   "closed": "2026-11-27T03:54:36Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -3.18,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 222,
+  "n": 223,
   "wins": 39,
-  "win_rate": 17.6,
-  "mean_pnl_pct": -9.36,
-  "open": 1,
+  "win_rate": 17.5,
+  "mean_pnl_pct": -9.46,
+  "open": 0,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6087,10 +6053,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 206,
+   "n": 207,
    "wins": 36,
-   "win_rate": 17.5,
-   "mean_pnl_pct": -9.13
+   "win_rate": 17.4,
+   "mean_pnl_pct": -9.24
   }
  }
 }

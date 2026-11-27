@@ -49,15 +49,6 @@
    {
     "t": "2026-11-27T03:13:44Z",
     "time": "04:13:44",
-    "agent": "EXECUTOR",
-    "coin": "DEXPAID",
-    "action": "exit",
-    "text": "EXIT DEXPAID $-18.92 (-33%) · dump: 6.7 SOL sold · by the curve maths (Jupiter: no Jupiter route; the entry was filled by it too) · out · 0.0 s after the reading",
-    "n": 1190
-   },
-   {
-    "t": "2026-11-27T03:13:44Z",
-    "time": "04:13:44",
     "agent": "LEARNER",
     "coin": "DEXPAID",
     "action": "learn",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW test · not bought (pause after a losing streak) · followed as if bought: $28.88 at 0.0000028468 (curve maths, every cost) · same exits, outside the book",
     "n": 1789
+   },
+   {
+    "t": "2026-11-27T04:15:09Z",
+    "time": "05:15:09",
+    "agent": "LEARNER",
+    "coin": "test",
+    "action": "shadow",
+    "text": "SHADOW test would have made -31.3% (dump: 4.9 SOL sold) · learned x0.5 · np:social:none now avg -11.8% over 95.5",
+    "n": 1790
    }
   ],
   "trades": [
@@ -13801,7 +13801,7 @@
   "flagged": 162,
   "checked": 158,
   "filtered": 5,
-  "lines": 1789,
+  "lines": 1790,
   "flags": [
    {
     "coin": "PCAT",
@@ -15112,9 +15112,9 @@
   },
   "np_said": 1795752876.780893,
   "shadow": {
-   "n": 208,
+   "n": 209,
    "wins": 37,
-   "sum": -1880.2
+   "sum": -1911.5
   },
   "np_speed": {
    "first_in": [
@@ -24350,9 +24350,9 @@
   }
  },
  "shadow": {
-  "n": 222,
+  "n": 223,
   "wins": 39,
-  "sum": -2078.7,
+  "sum": -2110.0,
   "by": {
    "learner": {
     "n": 16,
@@ -24360,32 +24360,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 206,
+    "n": 207,
     "wins": 36,
-    "sum": -1880.9
+    "sum": -1912.2
    }
   },
   "closed": [
-   {
-    "symbol": "hugo",
-    "mint": "53P9VSrqUKFKV1hbCu3FXJ4MhmNee915PLnAMNjZpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:51:35Z",
-    "cost": 39.55,
-    "pnl_pct": -8.0,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.73,
-    "closed": "2026-11-27T03:54:36Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.18,
-    "weight": 0.5
-   },
    {
     "symbol": "hugo",
     "mint": "84DyyqzR96kXJAAGRcdYetvuYxPzwU4Pf4DNFrYrpump",
@@ -24765,11 +24745,29 @@
     "exit": "dump: 2.9 SOL sold",
     "pnl": -3.87,
     "weight": 0.5
+   },
+   {
+    "symbol": "test",
+    "mint": "6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:15:02Z",
+    "cost": 28.88,
+    "pnl_pct": -31.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T04:15:09Z",
+    "exit": "dump: 4.9 SOL sold",
+    "pnl": -9.05,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "test"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 150,
@@ -24810,7 +24808,7 @@
     "avg": -17.3
    }
   ],
-  "shadows": 206,
+  "shadows": 207,
   "memory": "snipe"
  }
 }
