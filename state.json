@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:13:24Z",
-    "time": "06:13:24",
-    "agent": "EXECUTOR",
-    "coin": "NOLES",
-    "action": "exit",
-    "text": "EXIT NOLES $-2.07 (-10%) · curve quiet for 3 min (no trade)",
-    "n": 2211
-   },
-   {
-    "t": "2026-11-27T05:13:24Z",
-    "time": "06:13:24",
-    "agent": "LEARNER",
-    "coin": "NOLES",
-    "action": "learn",
-    "text": "learned · np:social:none now avg -11.0% over 113.5",
-    "n": 2212
-   },
-   {
     "t": "2026-11-27T05:13:26Z",
     "time": "06:13:26",
     "agent": "RISK",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW PAYSLIP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027032 (curve maths, every cost) · same exits, outside the book",
     "n": 2810
+   },
+   {
+    "t": "2026-11-27T06:25:50Z",
+    "time": "07:25:50",
+    "agent": "LEARNER",
+    "coin": "PAYSLIP",
+    "action": "shadow",
+    "text": "SHADOW PAYSLIP would have made -13.6% (stop -10%) · learned x0.5 · np:social:web now avg -8.8% over 172.5",
+    "n": 2811
+   },
+   {
+    "t": "2026-11-27T06:25:58Z",
+    "time": "07:25:58",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.8 a minute · 0 watched · 14 rejected (mayhem mode 7, snipe not bought: trades tonight 6, serial launcher 1)",
+    "n": 2812
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2810,
+  "lines": 2812,
   "flags": [
    {
     "coin": "Kibo",
@@ -21115,17 +21115,21 @@
    [
     1795760693,
     361.97
+   ],
+   [
+    1795760753,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795760697.780953,
+  "np_said": 1795760758.780851,
   "shadow": {
-   "n": 326,
+   "n": 327,
    "wins": 58,
-   "sum": -2747.3
+   "sum": -2760.9
   },
   "np_speed": {
    "first_in": [
@@ -30708,9 +30712,9 @@
   }
  },
  "shadow": {
-  "n": 340,
+  "n": 341,
   "wins": 60,
-  "sum": -2945.8,
+  "sum": -2959.4,
   "by": {
    "learner": {
     "n": 16,
@@ -30718,32 +30722,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 324,
+    "n": 325,
     "wins": 57,
-    "sum": -2748.0
+    "sum": -2761.6
    }
   },
   "closed": [
-   {
-    "symbol": "DORAICE",
-    "mint": "HjmXwuEnW222QKMuwqaatvJZMC6U6kcrrVTXhDBmpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:08:26Z",
-    "cost": 36.2,
-    "pnl_pct": -24.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.55,
-    "closed": "2026-11-27T06:08:34Z",
-    "exit": "dump: 2.4 SOL sold",
-    "pnl": -9.01,
-    "weight": 0.5
-   },
    {
     "symbol": "optimizer",
     "mint": "AsReuAgeFcXDHZEypDUHqg6Z35tzn9jq9yi4icu7pump",
@@ -31123,6 +31107,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -3.96,
     "weight": 0.5
+   },
+   {
+    "symbol": "PAYSLIP",
+    "mint": "22318LaWUt96VdzJZVfKcHjsqG22f5hEAYr6yBDMpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:25:39Z",
+    "cost": 36.2,
+    "pnl_pct": -13.6,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.32,
+    "closed": "2026-11-27T06:25:50Z",
+    "exit": "stop -10%",
+    "pnl": -4.91,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31130,8 +31134,7 @@
    "GHOST",
    "MEK",
    "BIBLE",
-   "CPM",
-   "PAYSLIP"
+   "CPM"
   ]
  },
  "learner_summary": {
@@ -31143,7 +31146,7 @@
    {
     "label": "snipe · hour:day",
     "n": 16,
-    "avg": -4.1
+    "avg": -4.4
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -31173,7 +31176,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 324,
+  "shadows": 325,
   "memory": "snipe"
  }
 }
