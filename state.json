@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-26T23:14:10Z",
-    "time": "00:14:10",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.6 a minute · 2 watched · 15 rejected (serial launcher 6, dev bought 3, no symbol or name 3) · closest HOPEG: SOL in 0.4/2.5 · buys 3/6 · buy share 60%/65% · rise +3%/+12%",
-    "n": 20
-   },
-   {
     "t": "2026-11-26T23:15:10Z",
     "time": "00:15:10",
     "agent": "SCANNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW SOLRIDERS · not bought (pause after a losing streak) · followed as if bought: $114.08 at 0.0000023304 (curve maths, every cost) · same exits, outside the book",
     "n": 619
+   },
+   {
+    "t": "2026-11-27T02:20:07Z",
+    "time": "03:20:07",
+    "agent": "LEARNER",
+    "coin": "E/ACC",
+    "action": "shadow",
+    "text": "SHADOW E/ACC would have made -18.6% (stop -13%) · learned x0.5 · np:buys:<70 now avg -12.3% over 32",
+    "n": 620
    }
   ],
   "trades": [
@@ -8049,7 +8049,7 @@
   "flagged": 56,
   "checked": 52,
   "filtered": 3,
-  "lines": 619,
+  "lines": 620,
   "flags": [
    {
     "coin": "Thanksgiving",
@@ -8888,6 +8888,10 @@
    [
     1795745933,
     1140.82
+   ],
+   [
+    1795745993,
+    1140.82
    ]
   ],
   "last_rug": {
@@ -8896,9 +8900,9 @@
   },
   "np_said": 1795745970.780908,
   "shadow": {
-   "n": 36,
+   "n": 37,
    "wins": 9,
-   "sum": -274.4
+   "sum": -293.0
   },
   "np_speed": {
    "first_in": [
@@ -17766,9 +17770,9 @@
   }
  },
  "shadow": {
-  "n": 50,
+  "n": 51,
   "wins": 11,
-  "sum": -472.9,
+  "sum": -491.5,
   "by": {
    "learner": {
     "n": 16,
@@ -17776,32 +17780,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 34,
+    "n": 35,
     "wins": 8,
-    "sum": -275.1
+    "sum": -293.7
    }
   },
   "closed": [
-   {
-    "symbol": "RCVPROOF",
-    "mint": "7H1mnmtUqDWMb5QJSWKGFpcCjH21PoSqbKjSNgjRVU3W",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T01:54:01Z",
-    "cost": 7.53,
-    "pnl_pct": -7.0,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T01:57:01Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.52,
-    "weight": 0.5
-   },
    {
     "symbol": "TOGI",
     "mint": "6oGbLjeox7sZzeeY6HVUStVWHfA3rJNHB2xpkQrvPYso",
@@ -18181,12 +18165,31 @@
     "exit": "dump: 11.4 SOL sold",
     "pnl": -59.8,
     "weight": 0.5
+   },
+   {
+    "symbol": "E/ACC",
+    "mint": "7nd9xwUFCphvoNNLa45WXLbBf7tLE99N29Mw1YyApump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T02:19:15Z",
+    "cost": 114.08,
+    "pnl_pct": -18.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T02:20:07Z",
+    "exit": "stop -13%",
+    "pnl": -21.27,
+    "weight": 0.5
    }
   ],
   "open": [
    "RIDERS",
    "Sol",
-   "E/ACC",
    "SOLRIDERS"
   ]
  },
@@ -18199,17 +18202,17 @@
    {
     "label": "snipe · np:dev:2-5",
     "n": 18,
-    "avg": 1.0
+    "avg": 0.4
    },
    {
     "label": "snipe · np:social:x",
     "n": 38,
-    "avg": -2.5
+    "avg": -2.7
    },
    {
     "label": "snipe · np:social:web",
     "n": 20,
-    "avg": -3.1
+    "avg": -3.5
    }
   ],
   "worst": [
@@ -18226,10 +18229,10 @@
    {
     "label": "snipe · np:buys:<70",
     "n": 32,
-    "avg": -12.2
+    "avg": -12.3
    }
   ],
-  "shadows": 34,
+  "shadows": 35,
   "memory": "snipe"
  }
 }
