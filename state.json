@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:58:17Z",
-    "time": "09:58:17",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.2 a minute · 0 watched · 11 rejected (snipe not bought: trades tonight 7, mayhem mode 3, serial launcher 1)",
-    "n": 3651
-   },
-   {
-    "t": "2026-11-27T08:58:58Z",
-    "time": "09:58:58",
-    "agent": "RISK",
-    "coin": "HUSH",
-    "action": "skip",
-    "text": "no entry: 250 trades tonight (max)",
-    "n": 3652
-   },
-   {
-    "t": "2026-11-27T08:58:58Z",
-    "time": "09:58:58",
-    "agent": "LEARNER",
-    "coin": "HUSH",
-    "action": "shadow",
-    "text": "SHADOW HUSH · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000042575 (curve maths, every cost) · same exits, outside the book",
-    "n": 3653
-   },
-   {
     "t": "2026-11-27T08:59:02Z",
     "time": "09:59:02",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW LEVYB would have made -7.9% (5 min, only -4%) · learned x0.5 · np:social:none now avg -9.1% over 232.5",
     "n": 4250
+   },
+   {
+    "t": "2026-11-27T10:52:25Z",
+    "time": "11:52:25",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.4 a minute · 0 watched · 16 rejected (snipe not bought: trades tonight 6, mayhem mode 5, serial launcher 4)",
+    "n": 4251
+   },
+   {
+    "t": "2026-11-27T10:52:34Z",
+    "time": "11:52:34",
+    "agent": "LEARNER",
+    "coin": "DROPPED",
+    "action": "shadow",
+    "text": "SHADOW DROPPED · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026712 (curve maths, every cost) · same exits, outside the book",
+    "n": 4252
+   },
+   {
+    "t": "2026-11-27T10:52:41Z",
+    "time": "11:52:41",
+    "agent": "LEARNER",
+    "coin": "One week",
+    "action": "shadow",
+    "text": "SHADOW One week would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.2% over 242.5",
+    "n": 4253
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4250,
+  "lines": 4253,
   "flags": [
    {
     "coin": "Kibo",
@@ -21741,11 +21741,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795776684.645368,
+  "np_said": 1795776745.645247,
   "shadow": {
-   "n": 881,
+   "n": 882,
    "wins": 198,
-   "sum": -6764.9
+   "sum": -6772.7
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 895,
+  "n": 896,
   "wins": 200,
-  "sum": -6963.4,
+  "sum": -6971.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 879,
+    "n": 880,
     "wins": 197,
-    "sum": -6765.6
+    "sum": -6773.4
    }
   },
   "closed": [
-   {
-    "symbol": "TUBEA",
-    "mint": "BsuxVHHCbEqPPXu3QsbZyXB3yRWtjjaSTLjqk76hpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:43:41Z",
-    "cost": 36.2,
-    "pnl_pct": 10.3,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T10:44:04Z",
-    "exit": "TP +10%",
-    "pnl": 3.72,
-    "weight": 0.5
-   },
    {
     "symbol": "VEIL",
     "mint": "CksR6wd2PxtaywdnpR1JLZc8AkNL7C3fZbKspCyqpump",
@@ -31743,16 +31723,36 @@
     "exit": "5 min, only -4%",
     "pnl": -2.88,
     "weight": 0.5
+   },
+   {
+    "symbol": "One week",
+    "mint": "FbDMro5dQ1jpa2KhrcoyFGmEajwYUjsbueZXXWvqpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:49:40Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T10:52:41Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.82,
+    "weight": 0.5
    }
   ],
   "open": [
    "HALLOWEEN",
    "PACKERS",
-   "One week",
    "BSC2",
    "FLOWERS",
    "INUMAS",
-   "$Kulkas"
+   "$Kulkas",
+   "DROPPED"
   ]
  },
  "learner_summary": {
@@ -31794,7 +31794,7 @@
     "avg": -9.2
    }
   ],
-  "shadows": 879,
+  "shadows": 880,
   "memory": "snipe"
  }
 }
