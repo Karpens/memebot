@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:18:34Z",
-    "time": "07:18:34",
-    "agent": "LEARNER",
-    "coin": "Mass",
-    "action": "shadow",
-    "text": "SHADOW Mass would have made -17.2% (stop -14%) · learned x0.5 · np:age:<30s now avg -8.3% over 300",
-    "n": 2775
-   },
-   {
-    "t": "2026-11-27T06:18:54Z",
-    "time": "07:18:54",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (mayhem mode 4, snipe not bought: trades tonight 3, serial launcher 2)",
-    "n": 2776
-   },
-   {
     "t": "2026-11-27T06:19:30Z",
     "time": "07:19:30",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.8 a minute · 0 watched · 17 rejected (mayhem mode 9, snipe not bought: trades tonight 7, serial launcher 1)",
     "n": 3374
+   },
+   {
+    "t": "2026-11-27T08:09:27Z",
+    "time": "09:09:27",
+    "agent": "LEARNER",
+    "coin": "PRICD",
+    "action": "shadow",
+    "text": "SHADOW PRICD · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024812 (curve maths, every cost) · same exits, outside the book",
+    "n": 3375
+   },
+   {
+    "t": "2026-11-27T08:09:43Z",
+    "time": "09:09:43",
+    "agent": "LEARNER",
+    "coin": "IRON",
+    "action": "shadow",
+    "text": "SHADOW IRON would have made -8.4% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.6% over 234.5",
+    "n": 3376
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3374,
+  "lines": 3376,
   "flags": [
    {
     "coin": "Kibo",
@@ -21527,6 +21527,10 @@
    [
     1795766894,
     361.97
+   ],
+   [
+    1795766954,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21535,9 +21539,9 @@
   },
   "np_said": 1795766934.64533,
   "shadow": {
-   "n": 544,
+   "n": 545,
    "wins": 109,
-   "sum": -4568.4
+   "sum": -4576.8
   },
   "np_speed": {
    "first_in": [
@@ -31120,9 +31124,9 @@
   }
  },
  "shadow": {
-  "n": 558,
+  "n": 559,
   "wins": 111,
-  "sum": -4766.9,
+  "sum": -4775.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31130,32 +31134,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 542,
+    "n": 543,
     "wins": 108,
-    "sum": -4569.1
+    "sum": -4577.5
    }
   },
   "closed": [
-   {
-    "symbol": "GIF",
-    "mint": "3iDvhMtbN71tVDrLMuNmvDWn4wyWjaKGuCCyEEsuVrEU",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:59:36Z",
-    "cost": 36.2,
-    "pnl_pct": -15.3,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 4.86,
-    "closed": "2026-11-27T07:59:39Z",
-    "exit": "stop -12%",
-    "pnl": -5.54,
-    "weight": 0.5
-   },
    {
     "symbol": "攀豹豹",
     "mint": "E7WgHkNctkxL4ceb1MFsdWvrna1sE3L59AkS8Ki3pump",
@@ -31535,14 +31519,34 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.86,
     "weight": 0.5
+   },
+   {
+    "symbol": "IRON",
+    "mint": "8itfiU317JTMbhdve6Q9UHNdG5shp23jywd5TsEU72Nn",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:04:43Z",
+    "cost": 36.2,
+    "pnl_pct": -8.4,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.09,
+    "closed": "2026-11-27T08:09:43Z",
+    "exit": "5 min, only -4%",
+    "pnl": -3.04,
+    "weight": 0.5
    }
   ],
   "open": [
-   "IRON",
    "NEXTHIUM",
    "GTA 6",
    "JENSEN",
-   "$RUG"
+   "$RUG",
+   "PRICD"
   ]
  },
  "learner_summary": {
@@ -31584,7 +31588,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 542,
+  "shadows": 543,
   "memory": "snipe"
  }
 }
