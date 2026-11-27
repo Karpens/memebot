@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T01:48:12Z",
+ "updated": "2026-11-27T01:48:47Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 56.32,
- "equity": 80.0,
+ "balance": 48.32,
+ "equity": 79.23,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 13,
-  "checked": 9,
+  "flagged": 14,
+  "checked": 10,
   "filtered": 3,
-  "lines": 228,
+  "lines": 232,
   "last_rug": {
-   "coin": "KITTY",
+   "coin": "DRAGON",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CRYTAX",
-   "why": "momentum",
-   "t": "2026-11-27T00:10:42Z"
-  },
   {
    "coin": "SH",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "KITTY",
    "why": "snipe",
    "t": "2026-11-27T01:47:44Z"
+  },
+  {
+   "coin": "DRAGON",
+   "why": "snipe",
+   "t": "2026-11-27T01:48:31Z"
   }
  ],
  "curve": [
@@ -761,7 +761,7 @@
    "reason": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill quote",
    "size_pct": 10.0,
    "entry_price": 2.05868e-06,
-   "price": 2.00579e-06,
+   "price": 2.00601e-06,
    "slip": 1.92,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -801,7 +801,7 @@
    "reason": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.07549e-06,
-   "price": 2.02162e-06,
+   "price": 2.02185e-06,
    "slip": 0.36,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -834,21 +834,24 @@
    "symbol": "KITTY",
    "mint": "DpLKESQRhPh47i9YuXxbV617bMjnjYvBJ8PRQJsdpump",
    "cost": 7.98,
-   "value": 8.19,
-   "pnl_pct": 2.7,
+   "value": 7.69,
+   "pnl_pct": -3.6,
    "opened": "2026-11-27T01:47:44Z",
    "url": "https://pump.fun/coin/DpLKESQRhPh47i9YuXxbV617bMjnjYvBJ8PRQJsdpump",
    "reason": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.05114e-06,
-   "price": 2.12459e-06,
+   "price": 1.99548e-06,
    "slip": 0.36,
    "tp1_done": false,
    "strategy": "new_pairs",
    "plan": {
     "tier": "scalp",
-    "score": 0,
-    "parts": [],
+    "score": 1.5,
+    "parts": [
+     "X post",
+     "web"
+    ],
     "ladder": [
      [
       10.0,
@@ -860,7 +863,7 @@
     "trail_pct": 0.0
    },
    "tier": "scalp",
-   "score": 0,
+   "score": 1.5,
    "steps": 0,
    "age_s": 0,
    "mcap_sol": 28.0,
@@ -871,7 +874,50 @@
     2.12486e-06,
     2.12342e-06,
     2.1219e-06,
-    2.12459e-06
+    2.12459e-06,
+    1.99548e-06
+   ]
+  },
+  {
+   "symbol": "DRAGON",
+   "mint": "2ehXAfFPyY2cSfEryDSZZLDTh8FBtBoqSV49C7Wupump",
+   "cost": 8.0,
+   "value": 7.72,
+   "pnl_pct": -3.5,
+   "opened": "2026-11-27T01:48:31Z",
+   "url": "https://pump.fun/coin/2ehXAfFPyY2cSfEryDSZZLDTh8FBtBoqSV49C7Wupump",
+   "reason": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.08921e-06,
+   "price": 2.03509e-06,
+   "slip": 0.36,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 0.5,
+    "parts": [
+     "X post"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.05,
+   "sol_in": 0.0,
+   "hist": [
+    2.08921e-06
    ]
   }
  ],
@@ -928,42 +974,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T23:18:11Z",
-   "time": "00:18:11",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 14.6 a minute · 7 watched · 38 rejected (serial launcher 24, mayhem mode 10, learner: skip 1) · closest TESTDD: too young: 22 s (min 45 s)",
-   "n": 29
-  },
-  {
-   "t": "2026-11-26T23:18:40Z",
-   "time": "00:18:40",
-   "agent": "SCANNER",
-   "coin": "AMUSEDA",
-   "action": "flag",
-   "text": "momentum · 4.5 SOL in · 6/6 buys (100%) · +31% since launch · mcap 39 SOL · 71 s old",
-   "n": 30
-  },
-  {
-   "t": "2026-11-26T23:18:41Z",
-   "time": "00:18:41",
-   "agent": "RUG CHECK",
-   "coin": "AMUSEDA",
-   "action": "wait",
-   "text": "waiting: RugCheck sees 3 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
-   "n": 31
-  },
-  {
-   "t": "2026-11-26T23:19:12Z",
-   "time": "00:19:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 16.2 a minute · 8 watched · 42 rejected (serial launcher 29, mayhem mode 9, dump 2) · closest QORO: too young: 14 s (min 45 s)",
-   "n": 32
-  },
   {
    "t": "2026-11-26T23:20:13Z",
    "time": "00:20:13",
@@ -2727,6 +2737,42 @@
    "action": "scan",
    "text": "new pairs · 1.0 a minute · 0 watched · 2 rejected (dump 1, mayhem mode 1)",
    "n": 228
+  },
+  {
+   "t": "2026-11-27T01:48:31Z",
+   "time": "02:48:31",
+   "agent": "SCANNER",
+   "coin": "DRAGON",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 229
+  },
+  {
+   "t": "2026-11-27T01:48:31Z",
+   "time": "02:48:31",
+   "agent": "SIZER",
+   "coin": "DRAGON",
+   "action": "size",
+   "text": "10% of $80.01 = $8.00",
+   "n": 230
+  },
+  {
+   "t": "2026-11-27T01:48:31Z",
+   "time": "02:48:31",
+   "agent": "EXECUTOR",
+   "coin": "DRAGON",
+   "action": "enter",
+   "text": "ENTER DRAGON at 0.0000020892 · slip 0.4% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 3 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 231
+  },
+  {
+   "t": "2026-11-27T01:48:31Z",
+   "time": "02:48:31",
+   "agent": "NEWS",
+   "coin": "DRAGON",
+   "action": "plan",
+   "text": "hold plan · 0.5/10 (X post) · scalp: +10",
+   "n": 232
   }
  ],
  "nights": [
@@ -2781,7 +2827,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 4 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 5 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2789,24 +2835,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 5,
-    "last_event_age_s": 5.9,
+    "events": 6,
+    "last_event_age_s": 16.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14,
-    "last_event_age_s": 1.3,
+    "events": 36,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 5.8,
+    "events": 5,
+    "last_event_age_s": 16.7,
     "errors": 0,
     "last_error": null
    }
@@ -2814,14 +2860,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 33.5,
+  "first_in_ms": 1,
   "first_in_last_ms": 1,
   "exit_ms": 109,
   "exit_last_ms": 109,
-  "launch_to_entry_s": 1.0,
-  "creates_per_min": 1.0,
+  "launch_to_entry_s": 1,
+  "creates_per_min": 1.2,
   "watching": 0,
-  "followed": 4
+  "followed": 5
  },
  "learner": {
   "samples": 0,
@@ -2835,28 +2881,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 90,
+   "sent": 130,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 90,
+   "sent": 130,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DRAGON",
+   "name": "Dragon riders",
+   "mint": "2ehXAfFPyY2cSfEryDSZZLDTh8FBtBoqSV49C7Wupump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Jdoanon/status/2126128926225567980?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2126128926225567980%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=",
+   "tg": false,
+   "web": false,
+   "status": "entered",
+   "why": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL"
+  },
+  {
    "symbol": "USFF",
    "name": "USFF",
    "mint": "FthK5dFbwpY2mS191pAko13XDtJzw1KKTK8ktREqpump",
-   "age_s": 5,
-   "sol_in": -10.07,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": -84.3,
-   "mcap_sol": 8.6,
+   "age_s": 40,
+   "sol_in": -11.86,
+   "buys": 18,
+   "sells": 9,
+   "rise_pct": -92.0,
+   "mcap_sol": 4.4,
    "dev_pct": 30.8,
    "big_sell": 10.01,
    "x": false,
@@ -2869,14 +2933,14 @@
    "symbol": "KITTY",
    "name": "Crysory99",
    "mint": "DpLKESQRhPh47i9YuXxbV617bMjnjYvBJ8PRQJsdpump",
-   "age_s": 29,
-   "sol_in": 0.94,
+   "age_s": 64,
+   "sol_in": -0.02,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": 6.3,
-   "mcap_sol": 29.8,
+   "sells": 3,
+   "rise_pct": -0.1,
+   "mcap_sol": 28.0,
    "dev_pct": 0.1,
-   "big_sell": 0.01,
+   "big_sell": 0.96,
    "x": "https://x.com/WikiWrite/status/2126130747023249795",
    "tg": false,
    "web": "https://www.tiktok.com/@crysory99?is_from_webapp=1&sender_device=pc",
@@ -2887,7 +2951,7 @@
    "symbol": "WORLD",
    "name": "The Crypto World",
    "mint": "5sJSfGd67Hkt3fXfpawZEuvwCT8rDuHrQm7NbuEdpump",
-   "age_s": 46,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2905,7 +2969,7 @@
    "symbol": "DOOM",
    "name": "Dr.Doom",
    "mint": "5b21EksNWqNzkRErVD49qE9jG7osRYLZfeLHwsbqpump",
-   "age_s": 47,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2923,7 +2987,7 @@
    "symbol": "Ghazal",
    "name": "Ghazal",
    "mint": "CBBZ4wK8YWT8fkXfm5QUqDYhoVLmmi17gwXfijXHpump",
-   "age_s": 63,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
