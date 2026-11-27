@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:48:56Z",
-    "time": "06:48:56",
-    "agent": "NEWS",
-    "coin": "XMAS",
-    "action": "plan",
-    "text": "hold plan · 3/10 (X, web, inflow 7.4 SOL) · swing: +10 → +20",
-    "n": 2644
-   },
-   {
-    "t": "2026-11-27T05:48:57Z",
-    "time": "06:48:57",
-    "agent": "EXECUTOR",
-    "coin": "XMAS",
-    "action": "exit",
-    "text": "EXIT XMAS $-15.73 (-41%) · dump: 7.2 SOL sold · out · 0.0 s after the reading",
-    "n": 2645
-   },
-   {
-    "t": "2026-11-27T05:48:57Z",
-    "time": "06:48:57",
-    "agent": "LEARNER",
-    "coin": "XMAS",
-    "action": "learn",
-    "text": "learned · tier:swing now avg -18.0% over 23.5",
-    "n": 2646
-   },
-   {
-    "t": "2026-11-27T05:49:37Z",
-    "time": "06:49:37",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.6 a minute · 0 watched · 9 rejected (mayhem mode 5, serial launcher 3, no symbol or name 1)",
-    "n": 2647
-   },
-   {
     "t": "2026-11-27T05:50:38Z",
     "time": "06:50:38",
     "agent": "SCANNER",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW PumpWeen would have made +6.7% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.6% over 201",
     "n": 3243
+   },
+   {
+    "t": "2026-11-27T07:47:32Z",
+    "time": "08:47:32",
+    "agent": "RISK",
+    "coin": "TEETER",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 3244
+   },
+   {
+    "t": "2026-11-27T07:47:32Z",
+    "time": "08:47:32",
+    "agent": "LEARNER",
+    "coin": "TEETER",
+    "action": "shadow",
+    "text": "SHADOW TEETER · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000046168 (curve maths, every cost) · same exits, outside the book",
+    "n": 3245
+   },
+   {
+    "t": "2026-11-27T07:47:34Z",
+    "time": "08:47:34",
+    "agent": "LEARNER",
+    "coin": "TEETER",
+    "action": "shadow",
+    "text": "SHADOW TEETER would have made -16.6% (dump: 2.4 SOL sold) · learned x0.5 · tier:swing now avg -12.6% over 36",
+    "n": 3246
+   },
+   {
+    "t": "2026-11-27T07:47:44Z",
+    "time": "08:47:44",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.0 a minute · 0 watched · 14 rejected (serial launcher 6, mayhem mode 5, snipe not bought: trades tonight 3)",
+    "n": 3247
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3243,
+  "lines": 3247,
   "flags": [
    {
     "coin": "Kibo",
@@ -21449,11 +21449,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795765604.645237,
+  "np_said": 1795765664.645328,
   "shadow": {
-   "n": 494,
+   "n": 495,
    "wins": 95,
-   "sum": -4097.3
+   "sum": -4113.9
   },
   "np_speed": {
    "first_in": [
@@ -22346,7 +22346,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795765241.302942
+   "at": 1795765652.738485
   }
  },
  "last_night": {
@@ -31036,9 +31036,9 @@
   }
  },
  "shadow": {
-  "n": 508,
+  "n": 509,
   "wins": 97,
-  "sum": -4295.8,
+  "sum": -4312.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31046,32 +31046,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 492,
+    "n": 493,
     "wins": 94,
-    "sum": -4098.0
+    "sum": -4114.6
    }
   },
   "closed": [
-   {
-    "symbol": "Joey",
-    "mint": "2arAUnBmehGdV3SsiYJZpaxSG3eA9rqK58oHCknzpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:37:38Z",
-    "cost": 36.2,
-    "pnl_pct": -16.4,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 8.33,
-    "closed": "2026-11-27T07:37:39Z",
-    "exit": "dump: 2.0 SOL sold",
-    "pnl": -5.95,
-    "weight": 0.5
-   },
    {
     "symbol": "SWIPE",
     "mint": "Fr2nmNWyYiVDSSXirw1wKSHj4dE2BvvGnN4gfAHcpump",
@@ -31451,6 +31431,26 @@
     "exit": "TP +10%",
     "pnl": 2.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "TEETER",
+    "mint": "Ae8pMEgDiQ4xmyAFnasTYTmb5PsnavKVipAbQuaXPrep",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:47:32Z",
+    "cost": 36.2,
+    "pnl_pct": -16.6,
+    "tier": "swing",
+    "score": 3.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 13.74,
+    "closed": "2026-11-27T07:47:34Z",
+    "exit": "dump: 2.4 SOL sold",
+    "pnl": -6.0,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31497,7 +31497,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 492,
+  "shadows": 493,
   "memory": "snipe"
  }
 }
