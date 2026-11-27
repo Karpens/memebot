@@ -49,33 +49,6 @@
    {
     "t": "2026-11-27T05:26:51Z",
     "time": "06:26:51",
-    "agent": "SCANNER",
-    "coin": "CINU",
-    "action": "flag",
-    "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 77 SOL",
-    "n": 2405
-   },
-   {
-    "t": "2026-11-27T05:26:51Z",
-    "time": "06:26:51",
-    "agent": "SIZER",
-    "coin": "CINU",
-    "action": "size",
-    "text": "10% of $432.81 = $43.28",
-    "n": 2406
-   },
-   {
-    "t": "2026-11-27T05:26:51Z",
-    "time": "06:26:51",
-    "agent": "EXECUTOR",
-    "coin": "CINU",
-    "action": "enter",
-    "text": "ENTER CINU at 0.0000058135 · slip 1.2% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 5 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2407
-   },
-   {
-    "t": "2026-11-27T05:26:51Z",
-    "time": "06:26:51",
     "agent": "NEWS",
     "coin": "CINU",
     "action": "plan",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 4.2 a minute · 0 watched · 16 rejected (snipe not bought: trades tonight 7, mayhem mode 6, serial launcher 2)",
     "n": 3004
+   },
+   {
+    "t": "2026-11-27T07:01:41Z",
+    "time": "08:01:41",
+    "agent": "RISK",
+    "coin": "TESTMINE",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 3005
+   },
+   {
+    "t": "2026-11-27T07:01:41Z",
+    "time": "08:01:41",
+    "agent": "LEARNER",
+    "coin": "TESTMINE",
+    "action": "shadow",
+    "text": "SHADOW TESTMINE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002742 (curve maths, every cost) · same exits, outside the book",
+    "n": 3006
+   },
+   {
+    "t": "2026-11-27T07:01:43Z",
+    "time": "08:01:43",
+    "agent": "LEARNER",
+    "coin": "TESTMINE",
+    "action": "shadow",
+    "text": "SHADOW TESTMINE would have made -26.6% (dump: 3.8 SOL sold) · learned x0.5 · np:social:none now avg -9.7% over 153.5",
+    "n": 3007
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3004,
+  "lines": 3007,
   "flags": [
    {
     "coin": "Kibo",
@@ -21259,6 +21259,10 @@
    [
     1795762853,
     361.97
+   ],
+   [
+    1795762913,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21267,9 +21271,9 @@
   },
   "np_said": 1795762877.780866,
   "shadow": {
-   "n": 403,
+   "n": 404,
    "wins": 73,
-   "sum": -3585.6
+   "sum": -3612.2
   },
   "np_speed": {
    "first_in": [
@@ -22162,7 +22166,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795762601.375682
+   "at": 1795762901.443612
   }
  },
  "last_night": {
@@ -30852,9 +30856,9 @@
   }
  },
  "shadow": {
-  "n": 417,
+  "n": 418,
   "wins": 75,
-  "sum": -3784.1,
+  "sum": -3810.7,
   "by": {
    "learner": {
     "n": 16,
@@ -30862,32 +30866,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 401,
+    "n": 402,
     "wins": 72,
-    "sum": -3586.3
+    "sum": -3612.9
    }
   },
   "closed": [
-   {
-    "symbol": "SNOWBALLER",
-    "mint": "7iximKkv64jVuAEN5nndhRd4sgzxrxBNWTpvmgBmpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:52:35Z",
-    "cost": 36.2,
-    "pnl_pct": -5.6,
-    "tier": "swing",
-    "score": 3,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 84.96,
-    "closed": "2026-11-27T06:52:35Z",
-    "exit": "migrating: take it",
-    "pnl": -2.03,
-    "weight": 0.5
-   },
    {
     "symbol": "DI",
     "mint": "2w5UKiCd1T2aCi76iv6SraoEcQvoLTijygUwUHWg55Mo",
@@ -31267,6 +31251,26 @@
     "exit": "stop -13%",
     "pnl": -6.08,
     "weight": 0.5
+   },
+   {
+    "symbol": "TESTMINE",
+    "mint": "4Rft7X6mWf4gX91sDcT6b4dzv8StsmQFqH2K8P2EvdUS",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:01:41Z",
+    "cost": 36.2,
+    "pnl_pct": -26.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 4.16,
+    "closed": "2026-11-27T07:01:43Z",
+    "exit": "dump: 3.8 SOL sold",
+    "pnl": -9.64,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31313,7 +31317,7 @@
     "avg": -13.6
    }
   ],
-  "shadows": 401,
+  "shadows": 402,
   "memory": "snipe"
  }
 }
