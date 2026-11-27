@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:37:15Z",
-    "time": "09:37:15",
-    "agent": "LEARNER",
-    "coin": "FIRE",
-    "action": "shadow",
-    "text": "SHADOW FIRE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021274 (curve maths, every cost) · same exits, outside the book",
-    "n": 3527
-   },
-   {
-    "t": "2026-11-27T08:37:22Z",
-    "time": "09:37:22",
-    "agent": "LEARNER",
-    "coin": "ROADSTER",
-    "action": "shadow",
-    "text": "SHADOW ROADSTER would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.7% over 207.5",
-    "n": 3528
-   },
-   {
     "t": "2026-11-27T08:37:54Z",
     "time": "09:37:54",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Holdball would have made -14.4% (stop -11%) · learned x0.5 · np:sol:3-6 now avg -10.5% over 73.5",
     "n": 4126
+   },
+   {
+    "t": "2026-11-27T10:27:49Z",
+    "time": "11:27:49",
+    "agent": "LEARNER",
+    "coin": "Gudetama",
+    "action": "shadow",
+    "text": "SHADOW Gudetama would have made -13.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:2-5 now avg -8.0% over 205",
+    "n": 4127
+   },
+   {
+    "t": "2026-11-27T10:28:11Z",
+    "time": "11:28:11",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.2 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 5, mayhem mode 4, serial launcher 2)",
+    "n": 4128
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4126,
+  "lines": 4128,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795739220,
-    82.3
-   ],
    [
     1795739280,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795775234,
     361.97
+   ],
+   [
+    1795775294,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795775231.64533,
+  "np_said": 1795775291.645358,
   "shadow": {
-   "n": 834,
+   "n": 835,
    "wins": 187,
-   "sum": -6563.1
+   "sum": -6576.4
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 848,
+  "n": 849,
   "wins": 189,
-  "sum": -6761.6,
+  "sum": -6774.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 832,
+    "n": 833,
     "wins": 186,
-    "sum": -6563.8
+    "sum": -6577.1
    }
   },
   "closed": [
-   {
-    "symbol": "HYTG",
-    "mint": "6i56wPusvB3xCPthF7D9c7NZP7EQJZYupeBJqY1tpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:18:26Z",
-    "cost": 36.2,
-    "pnl_pct": 10.6,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.94,
-    "closed": "2026-11-27T10:18:31Z",
-    "exit": "TP +10%",
-    "pnl": 3.84,
-    "weight": 0.5
-   },
    {
     "symbol": "SWEATER",
     "mint": "Hbmx7xvHPpDmmwjAAmbgrtQT43FdmaiDtndKCUC3jxG7",
@@ -31743,10 +31723,29 @@
     "exit": "stop -11%",
     "pnl": -5.2,
     "weight": 0.5
+   },
+   {
+    "symbol": "Gudetama",
+    "mint": "BJZvNJyyKjMgrptpobMYsLNHPSUv6jqiYyK5UetZpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:22:58Z",
+    "cost": 36.2,
+    "pnl_pct": -13.3,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.33,
+    "closed": "2026-11-27T10:27:49Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -4.81,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Gudetama",
    "KOKA",
    "chan",
    "NVIDIA",
@@ -31792,7 +31791,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 832,
+  "shadows": 833,
   "memory": "snipe"
  }
 }
