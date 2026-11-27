@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:41:45Z",
-    "time": "09:41:45",
-    "agent": "LEARNER",
-    "coin": "MITTS",
-    "action": "shadow",
-    "text": "SHADOW MITTS would have made -30.2% (dump: 5.0 SOL sold) · learned x0.5 · tier:swing now avg -10.7% over 48",
-    "n": 3558
-   },
-   {
-    "t": "2026-11-27T08:42:03Z",
-    "time": "09:42:03",
-    "agent": "LEARNER",
-    "coin": "ANSEM",
-    "action": "shadow",
-    "text": "SHADOW ANSEM would have made -8.5% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.6% over 249.5",
-    "n": 3559
-   },
-   {
     "t": "2026-11-27T08:42:10Z",
     "time": "09:42:10",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW TEST would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.3% over 224.5",
     "n": 4157
+   },
+   {
+    "t": "2026-11-27T10:34:14Z",
+    "time": "11:34:14",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.6 a minute · 0 watched · 14 rejected (mayhem mode 8, snipe not bought: trades tonight 5, serial launcher 1)",
+    "n": 4158
+   },
+   {
+    "t": "2026-11-27T10:34:17Z",
+    "time": "11:34:17",
+    "agent": "LEARNER",
+    "coin": "Hero",
+    "action": "shadow",
+    "text": "SHADOW Hero would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.3% over 236.5",
+    "n": 4159
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4157,
+  "lines": 4159,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795739580,
-    82.3
-   ],
    [
     1795739640,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795775594,
     361.97
+   ],
+   [
+    1795775654,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795775594.645248,
+  "np_said": 1795775654.64533,
   "shadow": {
-   "n": 847,
+   "n": 848,
    "wins": 190,
-   "sum": -6709.6
+   "sum": -6717.5
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 861,
+  "n": 862,
   "wins": 192,
-  "sum": -6908.1,
+  "sum": -6916.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 845,
+    "n": 846,
     "wins": 189,
-    "sum": -6710.3
+    "sum": -6718.2
    }
   },
   "closed": [
-   {
-    "symbol": "Slopmas",
-    "mint": "qkqDTxTdyqvGmWGuNMKFnYCtJag3Q8bQCkhr365pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:22:41Z",
-    "cost": 36.2,
-    "pnl_pct": 6.9,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 4.74,
-    "closed": "2026-11-27T10:22:44Z",
-    "exit": "TP +10%",
-    "pnl": 2.48,
-    "weight": 0.5
-   },
    {
     "symbol": "Sale",
     "mint": "6EzDMLpVaEnbryg5X7aEY3xaohuP27axjPDhME4Spump",
@@ -31743,10 +31723,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.88,
     "weight": 0.5
+   },
+   {
+    "symbol": "Hero",
+    "mint": "DxusdQTx8dYGSUC8UTJtM1DufK4k2UqiE3Dw4Lefpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:29:17Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T10:34:17Z",
+    "exit": "5 min, only -4%",
+    "pnl": -2.88,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Hero",
    "BURN",
    "Catfat"
   ]
@@ -31790,7 +31789,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 845,
+  "shadows": 846,
   "memory": "snipe"
  }
 }
