@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:34:59Z",
+ "updated": "2026-11-27T01:35:32Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 6,
   "filtered": 3,
-  "lines": 200,
+  "lines": 201,
   "last_rug": {
    "coin": "RDB",
    "pass": false
@@ -692,6 +692,10 @@
   [
    1795743240,
    80.34
+  ],
+  [
+   1795743300,
+   80.34
   ]
  ],
  "position_pct": 10.0,
@@ -751,15 +755,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T23:00:00Z",
-   "time": "00:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "start",
-   "text": "night 2026-11-27 · start $82.30 · 8 agents · 00:00 → 00:00",
-   "n": 1
-  },
   {
    "t": "2026-11-26T23:00:00Z",
    "time": "00:00:00",
@@ -2550,6 +2545,15 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 2 watched · 6 rejected (dump 2, dev bought 2, mayhem mode 2) · closest RETIRE: too young: 1 s (min 45 s)",
    "n": 200
+  },
+  {
+   "t": "2026-11-27T01:35:27Z",
+   "time": "02:35:27",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 7 watched · 5 rejected (dump 2, dev bought 2, mayhem mode 1) · closest BONKLET: too young: 8 s (min 45 s)",
+   "n": 201
   }
  ],
  "nights": [
@@ -2608,7 +2612,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2616,24 +2620,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1809,
-    "last_event_age_s": 13.6,
+    "events": 1813,
+    "last_event_age_s": 16.3,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23496,
-    "last_event_age_s": 0.6,
+    "events": 23537,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1155,
-    "last_event_age_s": 12.9,
+    "events": 1159,
+    "last_event_age_s": 16.1,
     "errors": 43,
     "last_error": "flowdotfun.com: gaierror: [Errno -5] No address associated with hostname"
    }
@@ -2646,9 +2650,9 @@
   "exit_ms": 109,
   "exit_last_ms": 109,
   "launch_to_entry_s": 47,
-  "creates_per_min": 3.0,
-  "watching": 4,
-  "followed": 7
+  "creates_per_min": 3.8,
+  "watching": 7,
+  "followed": 11
  },
  "learner": {
   "samples": 111,
@@ -2694,23 +2698,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14026,
+   "sent": 14061,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14026,
+   "sent": 14061,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "wocket",
+   "name": "wocket",
+   "mint": "ibqGRPwhbxt3SwXoXsrLT4vXLL4bkEJeW6fWVw8pump",
+   "age_s": 16,
+   "sol_in": -1.0,
+   "buys": 1,
+   "sells": 5,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.5,
+   "big_sell": 4.28,
+   "x": "https://x.com/Fullboxedquant/status/2126111126123364710",
+   "tg": false,
+   "web": "https://x.com/Fullboxedquant/status/2126111126123364710",
+   "status": "rejected: dump: 4.3 SOL sold",
+   "why": "dump: 4.3 SOL sold"
+  },
+  {
+   "symbol": "BONKLET",
+   "name": "BONKLET INU",
+   "mint": "HkrqFYUB1fGkvURniXPFQHtGnL7oAHMzcUYExvfmpump",
+   "age_s": 24,
+   "sol_in": 3.24,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 21.0,
+   "mcap_sol": 39.4,
+   "dev_pct": 7.9,
+   "big_sell": 0.54,
+   "x": "https://x.com/BonkletInu",
+   "tg": false,
+   "web": "https://bonklet-inu.citruspaper16.chatgpt.site",
+   "status": "watching",
+   "why": "too young: 8 s (min 45 s)"
+  },
+  {
+   "symbol": "530A",
+   "name": "hold and retire",
+   "mint": "FqwGeT7MDdmAuQqiWfqpfaeakozvgkDpivpjdm4PjNhG",
+   "age_s": 26,
+   "sol_in": -0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "PROTON",
+   "name": "Proton",
+   "mint": "41aWFKwjkWzmvDANDuZCKEDmQqFGkoN2grFZkW8wpump",
+   "age_s": 27,
+   "sol_in": 0.02,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
    "symbol": "FLOWB",
    "name": "Flow Base",
    "mint": "HPwYtUEEa1mQLsYkUF7Akw9uPiwSuYqPz93qtVUQCN4a",
-   "age_s": 13,
+   "age_s": 46,
    "sol_in": 0.27,
    "buys": 2,
    "sells": 0,
@@ -2728,7 +2804,7 @@
    "symbol": "OPNGX",
    "name": "ORDER PNG CANARY",
    "mint": "9rAkHsy6ZrQEdiJSe1cYEJ7RhrSkSiC2c5nVSUotXXUZ",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -2740,18 +2816,18 @@
    "tg": false,
    "web": false,
    "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
+   "why": "too young: 16 s (min 45 s)"
   },
   {
    "symbol": "LPI",
    "name": "Low Poly Inu",
    "mint": "DRZgYv3QFhFWLjvHy3WfnzdqsbUqk1HfTixyvgo4pump",
-   "age_s": 34,
-   "sol_in": 13.42,
-   "buys": 17,
-   "sells": 15,
-   "rise_pct": 96.3,
-   "mcap_sol": 68.3,
+   "age_s": 67,
+   "sol_in": 5.27,
+   "buys": 26,
+   "sells": 29,
+   "rise_pct": 34.0,
+   "mcap_sol": 46.6,
    "dev_pct": 11.1,
    "big_sell": 4.44,
    "x": "https://x.com/slndr3000/status/2126127446885880105?a=6z8C9GD4J_o6esJQaz0&s=20",
@@ -2764,7 +2840,7 @@
    "symbol": "RETIRE",
    "name": "Retire",
    "mint": "8UVtBnSm7sF8CDzKVfkjwdCDT1tT4Pp2ELxPaa6rmWzs",
-   "age_s": 46,
+   "age_s": 79,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 3,
@@ -2782,7 +2858,7 @@
    "symbol": "urcoin",
    "name": "ur coin",
    "mint": "DokoWjAGbVSKGmEo1GbfMg6T9ca1mVpWjQK4L2gTMmCv",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -2800,7 +2876,7 @@
    "symbol": "hairypair",
    "name": "hairy pair",
    "mint": "8HbvYZ5siBJCGVa7ibD5ioyuYHmo7RhVPyv1AuhUpump",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 2,
@@ -2818,7 +2894,7 @@
    "symbol": "SJP",
    "name": "SJP",
    "mint": "F1giunmY6YdhLGZ859RAxuVqhAPSCGYK48KPeTgwpump",
-   "age_s": 93,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2836,7 +2912,7 @@
    "symbol": "HOPE",
    "name": "Hopecoin",
    "mint": "GjuRkHdkovRMKwJkvHe9LFTCXjWsbVAKU2B5ensmpump",
-   "age_s": 110,
+   "age_s": 143,
    "sol_in": -0.75,
    "buys": 5,
    "sells": 8,
@@ -2849,24 +2925,6 @@
    "web": "https://www.prayerrequest.com/threads/hopecoin.5295222/",
    "status": "rejected: dump: 2.1 SOL sold",
    "why": "dump: 2.1 SOL sold"
-  },
-  {
-   "symbol": "UPVOTES",
-   "name": "Upvotes",
-   "mint": "5zhCoxHNpthjqcqGqi2pUhGwFM8RxWR5wAZfrVCApump",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
