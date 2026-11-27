@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T22:53:48Z",
+ "updated": "2026-11-27T22:54:22Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7702,
+  "lines": 7704,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795784007,
-   59.14
-  ],
   [
    1795784067,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795819968,
    59.14
+  ],
+  [
+   1795820046,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,24 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T22:26:11Z",
-   "time": "23:26:11",
-   "agent": "LEARNER",
-   "coin": "PEP",
-   "action": "shadow",
-   "text": "SHADOW PEP · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020921 (curve maths, every cost) · same exits, outside the book",
-   "n": 7503
-  },
-  {
-   "t": "2026-11-27T22:26:35Z",
-   "time": "23:26:35",
-   "agent": "SCANNER",
-   "coin": "SOL",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 4.292 is not 30 + real SOL 7.011e-05 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 782 odd readings from 208 coins tonight",
-   "n": 7504
-  },
-  {
    "t": "2026-11-27T22:26:36Z",
    "time": "23:26:36",
    "agent": "LEARNER",
@@ -6157,6 +6139,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1277 is not 30 + real SOL 0 (off +1247 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 882 odd readings from 228 coins tonight",
    "n": 7702
+  },
+  {
+   "t": "2026-11-27T22:54:06Z",
+   "time": "23:54:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 7703
+  },
+  {
+   "t": "2026-11-27T22:54:06Z",
+   "time": "23:54:06",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+   "n": 7704
   }
  ],
  "nights": [
@@ -6197,9 +6197,7 @@
    "scans": 0
   }
  ],
- "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/2ze2pmCNPC9fWyzUtsXYJCNPS56fLnJjUbTDKTinCCUM/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -6213,34 +6211,34 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal down · curve poll failing · 25 watched · ws off · odd curve readings 888 (228 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 0 watched · ws off · odd curve readings 888 (228 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
-    "connected": false,
-    "events": 2649,
-    "last_event_age_s": 9.1,
-    "errors": 4,
-    "last_error": "closed: no close frame received or sent"
+    "connected": true,
+    "events": 0,
+    "last_event_age_s": null,
+    "errors": 0,
+    "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": false,
-    "events": 42431,
-    "last_event_age_s": 0.0,
+    "events": 0,
+    "last_event_age_s": null,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1684,
-    "last_event_age_s": 9.1,
-    "errors": 104,
-    "last_error": "n.uguu.se: timeout after 2 s"
+    "connected": false,
+    "events": 0,
+    "last_event_age_s": null,
+    "errors": 0,
+    "last_error": null
    }
   ],
   "strategies": [
@@ -6251,9 +6249,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 7.0,
+  "creates_per_min": 0.0,
   "watching": 0,
-  "followed": 14,
+  "followed": 0,
   "odd_readings": 888,
   "odd_coins": 228
  },
@@ -6302,307 +6300,18 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21712,
+   "sent": 18,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21712,
+   "sent": 18,
    "errors": 0,
    "last_error": null
   }
  },
- "watch": [
-  {
-   "symbol": "SOLCAT",
-   "name": "Solana Cat",
-   "mint": "4FAhWmHGU4JJTBDADtaBS5SKRSxpgwm1RWvRrgpiisiS",
-   "age_s": 9,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 15 more coins in 60 min",
-   "why": "serial launcher: 15 more coins in 60 min"
-  },
-  {
-   "symbol": "KEYCAT",
-   "name": "Keyboard Cat",
-   "mint": "7XLginuJ2AWaBAw12WHqMPZ42CH5Dd51wE5dd3w3HTVb",
-   "age_s": 25,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "MCH",
-   "name": "MoonChacha",
-   "mint": "86pSzNE7i9hcb4mGoTcnVxLMoVzLnSLQaJztoNHFth5M",
-   "age_s": 35,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "SPEC",
-   "name": "Spectre",
-   "mint": "6DmC5KR6DF62Gfz5oe8uVkNFrQb5N3kdXpKswA7pump",
-   "age_s": 43,
-   "sol_in": 24.18,
-   "buys": 10,
-   "sells": 8,
-   "rise_pct": 212.8,
-   "mcap_sol": 96.2,
-   "dev_pct": 5.0,
-   "big_sell": 0.37,
-   "x": "https://x.com/gentexe/status/2126447882232590800?a=6tFY9hFRpZMvj-ABWXQ&s=46",
-   "tg": false,
-   "web": "https://spectretx.com/",
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "Nala",
-   "name": "The CashCat",
-   "mint": "AXWAq2QPwgcNQk98EausMkRNXwk2S5EbRLKJCL9ypump",
-   "age_s": 54,
-   "sol_in": 1.69,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 11.6,
-   "mcap_sol": 31.2,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/gettindevvy/status/2126445571003097371",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "pissball",
-   "name": "pissball",
-   "mint": "E8g1mLHMjU7Q93WxNgi88keRcdsAXF85S1rDxKd7pump",
-   "age_s": 55,
-   "sol_in": -0.26,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -1.7,
-   "mcap_sol": 29.8,
-   "dev_pct": 4.3,
-   "big_sell": 1.24,
-   "x": "https://x.com/pissballfun",
-   "tg": false,
-   "web": "https://pissball.fun",
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "NASDAQISTAN",
-   "name": "Nasdaqistan",
-   "mint": "7yHF6wTgykQ1KsXBBzMTuM9v3gaFLJKNUzYv6AYE2VAi",
-   "age_s": 62,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/FrFrFrFrrFrFrF/status/2126449166356287750",
-   "tg": false,
-   "web": "https://www.reddit.com/r/wallstreetbets/comments/1y71f8e/me_and_the_boys_trying_to_survive_another_week_in/",
-   "status": "rejected: serial launcher: 14 more coins in 60 min",
-   "why": "serial launcher: 14 more coins in 60 min"
-  },
-  {
-   "symbol": "MOOLAYER",
-   "name": "MOOLAYER",
-   "mint": "KBsYjzNyHXB8UrHVZ1VsTV8bfzoBXCCZRDjxDyuNrEa",
-   "age_s": 71,
-   "sol_in": -0.59,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 0.59,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "$TECC",
-   "name": "TRUMPEXECUTIONCOIN",
-   "mint": "HFEDeMEndY1jjzss18ipPx5pGoRVXYFg4iB4d1Lxpump",
-   "age_s": 75,
-   "sol_in": -0.25,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -1.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.9,
-   "big_sell": 0.55,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "Fenrir",
-   "name": "Alfa Wolf",
-   "mint": "4pywnjUKT9sLgTGFr42T6DVzcNUgs7U4HqxHH9Tspump",
-   "age_s": 82,
-   "sol_in": 14.23,
-   "buys": 24,
-   "sells": 28,
-   "rise_pct": 102.1,
-   "mcap_sol": 71.5,
-   "dev_pct": 11.9,
-   "big_sell": 2.48,
-   "x": "https://x.com/slndr3000/status/2126449074358362160?a=vcl7lRACMjqwxr8vewk&s=20",
-   "tg": false,
-   "web": "https://www.instagram.com/reel/DgPweL3FjwM/",
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "BABYCATE",
-   "name": "Baby Catecoin",
-   "mint": "CLFWsFgDZ4DUcoD7JfkbQSJNaUTrZe5oUw4tTPERpump",
-   "age_s": 89,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 53.9,
-   "dev_pct": 30.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Bcrypto00/status/2126448966086623399?a=EHHa23k-93jhvgLR5Mg&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 358.3 is not 30 + real SOL 175.6 (off +152.6 SOL)",
-   "why": "odd curve reading: virtual SOL 358.3 is not 30 + real SOL 175.6 (off +152.6 SOL)"
-  },
-  {
-   "symbol": "MOONGIRL",
-   "name": "moongirl",
-   "mint": "8i7Ux8UcWCTzx7w51q5eewGEdehNvyEDG3fTPCEQpump",
-   "age_s": 109,
-   "sol_in": 8.81,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": 65.7,
-   "mcap_sol": 48.5,
-   "dev_pct": 2.5,
-   "big_sell": 0.05,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "RLX",
-   "name": "ROLANA",
-   "mint": "HPcs3gpn7C3eY6VwSW9dwoWFjfY7itoT8K1iuywVpump",
-   "age_s": 136,
-   "sol_in": -0.59,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 0.69,
-   "x": "https://x.com/bitecong",
-   "tg": false,
-   "web": "https://www.roblox.com/games/100672735240325/Rolana",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "MOO",
-   "name": "SOLANA BULL",
-   "mint": "DG6vYC3fxGigZBRZxw19AvTCeKumNCnwaJPX7hf2pump",
-   "age_s": 153,
-   "sol_in": 0.37,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": 2.4,
-   "mcap_sol": 31.3,
-   "dev_pct": 4.7,
-   "big_sell": 0.83,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "TEST",
-   "name": "TEST",
-   "mint": "BG9vZsRc1ccjfHQRFYy6mHX5GMFFa1QoJFzySFmNHnUs",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "JENSENDOGE",
-   "name": "JENSEN DOGE",
-   "mint": "8RTLVok5uZ2j1peEGJJr6HEuzcWXs3K8Rm2RLWxcpump",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  }
- ],
+ "watch": [],
  "strategies": [
   "new_pairs"
  ],
