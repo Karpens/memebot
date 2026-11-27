@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:16:54Z",
+ "updated": "2026-11-27T09:17:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3743,
+  "lines": 3744,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795734960,
-   82.3
-  ],
   [
    1795735020,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795770974,
    361.97
+  ],
+  [
+   1795771034,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:39:37Z",
-   "time": "09:39:37",
-   "agent": "LEARNER",
-   "coin": "GUBBY",
-   "action": "shadow",
-   "text": "SHADOW GUBBY would have made +30.6% (TP +10%) · learned x0.5 · np:age:<30s now avg -7.9% over 300",
-   "n": 3544
-  },
-  {
    "t": "2026-11-27T08:40:00Z",
    "time": "09:40:00",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 0 watched · 10 rejected (snipe not bought: trades tonight 4, mayhem mode 4, serial launcher 2)",
    "n": 3743
+  },
+  {
+   "t": "2026-11-27T09:17:09Z",
+   "time": "10:17:09",
+   "agent": "LEARNER",
+   "coin": "Durag Dog",
+   "action": "shadow",
+   "text": "SHADOW Durag Dog · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021331 (curve maths, every cost) · same exits, outside the book",
+   "n": 3744
   }
  ],
  "nights": [
@@ -6592,7 +6592,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6600,24 +6600,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 569,
-    "last_event_age_s": 28.1,
+    "events": 571,
+    "last_event_age_s": 18.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14328,
-    "last_event_age_s": 2.9,
+    "events": 14380,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 321,
-    "last_event_age_s": 33.3,
+    "events": 323,
+    "last_event_age_s": 18.2,
     "errors": 18,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6632,7 +6632,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 5
+  "followed": 7
  },
  "learner": {
   "samples": 249,
@@ -6679,30 +6679,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6992,
+   "sent": 7027,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7003,
+   "sent": 7038,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Durag Dog",
+   "name": "ChiHu",
+   "mint": "3AYCZzj8sQhsKDf2dJQcYU1QYzQ5B2hd8nmnbhQUpump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "Gemma",
+   "name": "ジェマ",
+   "mint": "FHigR4sW5hzij8sX3qX4vjjS3ThNMcYSfWgPeopBpump",
+   "age_s": 24,
+   "sol_in": 9.35,
+   "buys": 6,
+   "sells": 12,
+   "rise_pct": 64.8,
+   "mcap_sol": 55.6,
+   "dev_pct": 9.6,
+   "big_sell": 1.77,
+   "x": "https://x.com/ZzzzzSol/status/2126243891712033243",
+   "tg": false,
+   "web": "https://x.com/i/status/2126142529473298695",
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
    "symbol": "baobabF",
    "name": "Cat Fat",
    "mint": "7W4SxgsQwJ9J7qWpKq9sizGM1WjEuwPAAwnWjrF2pump",
-   "age_s": 33,
-   "sol_in": 0.03,
+   "age_s": 66,
+   "sol_in": -0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.2,
+   "sells": 1,
+   "rise_pct": -0.0,
+   "mcap_sol": 28.1,
    "dev_pct": 0.3,
-   "big_sell": 0.0,
+   "big_sell": 0.03,
    "x": "https://x.com/pip0pkajou/status/2122673788135542983",
    "tg": false,
    "web": false,
@@ -6713,12 +6749,12 @@
    "symbol": "NotAlfa",
    "name": "NotAlfa",
    "mint": "BhjCvtiQJkHZoVKaAv6rQVcnJ9fKVCvBbZnBLSCkpump",
-   "age_s": 37,
-   "sol_in": 0.22,
-   "buys": 1,
+   "age_s": 70,
+   "sol_in": 0.42,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 1.4,
-   "mcap_sol": 30.2,
+   "rise_pct": 2.7,
+   "mcap_sol": 30.6,
    "dev_pct": 3.4,
    "big_sell": 0.0,
    "x": "https://x.com/Alfa_or_Not",
@@ -6731,7 +6767,7 @@
    "symbol": "BIG",
    "name": "GO BIG OR GO HOME",
    "mint": "4Wk3uxoAa7h2wTrWKUmTqQgt9UbgrvVJttnyasiapump",
-   "age_s": 62,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6749,7 +6785,7 @@
    "symbol": "Kai",
    "name": "Kai Ken",
    "mint": "9e8GZuX1jk5iF25ZKw4TKhhvF1tWdWKEAnRtJTHVpump",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6767,7 +6803,7 @@
    "symbol": "big",
    "name": "we go big",
    "mint": "5vm8DhT2VKDrNdwtsaDdG4oosUV9W93njyxaS7s8pump",
-   "age_s": 119,
+   "age_s": 152,
    "sol_in": -0.2,
    "buys": 1,
    "sells": 2,
@@ -6785,7 +6821,7 @@
    "symbol": "FLOPCAT",
    "name": "Flip Flop Tabby",
    "mint": "CEoswNdbuJQKCkSeCUxmyEph5AVbRPT9rNc4azW9hGXi",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": 0.14,
    "buys": 1,
    "sells": 0,
@@ -6803,7 +6839,7 @@
    "symbol": "RCAT",
    "name": "RingCat",
    "mint": "CyEqVvZ6RAFwtXGCSUwZnHpwS32TT5XyV13b64QHVpBp",
-   "age_s": 132,
+   "age_s": 165,
    "sol_in": 0.69,
    "buys": 1,
    "sells": 1,
@@ -6816,30 +6852,28 @@
    "web": "https://ringball.fun/coin/CyEqVvZ6RAFwtXGCSUwZnHpwS32TT5XyV13b64QHVpBp",
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "Kai",
-   "name": "Kai Ken",
-   "mint": "4YomM8kE6N37wuwwcqYBDX2XbWFCN9FY5ZkN6QXkpump",
-   "age_s": 160,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "Durag Dog",
+   "mint": "3AYCZzj8sQhsKDf2dJQcYU1QYzQ5B2hd8nmnbhQUpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:17:09Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "NotAlfa",
    "mint": "BhjCvtiQJkHZoVKaAv6rQVcnJ9fKVCvBbZnBLSCkpump",
@@ -6848,7 +6882,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:16:17Z",
    "cost": 36.2,
-   "pnl_pct": -3.9,
+   "pnl_pct": -2.7,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7294,7 +7328,7 @@
   "wins": 146,
   "win_rate": 20.8,
   "mean_pnl_pct": -8.55,
-  "open": 3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
