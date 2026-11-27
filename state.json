@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:15:09Z",
-    "time": "11:15:09",
-    "agent": "LEARNER",
-    "coin": "YO",
-    "action": "shadow",
-    "text": "SHADOW YO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021579 (curve maths, every cost) · same exits, outside the book",
-    "n": 4046
-   },
-   {
-    "t": "2026-11-27T10:15:11Z",
-    "time": "11:15:11",
-    "agent": "LEARNER",
-    "coin": "FLICE",
-    "action": "shadow",
-    "text": "SHADOW FLICE would have made -10.8% (5 min, only -7%) · learned x0.5 · np:buys:<70 now avg -9.3% over 230",
-    "n": 4047
-   },
-   {
-    "t": "2026-11-27T10:15:12Z",
-    "time": "11:15:12",
-    "agent": "LEARNER",
-    "coin": "YO",
-    "action": "shadow",
-    "text": "SHADOW YO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021314 (curve maths, every cost) · same exits, outside the book",
-    "n": 4048
-   },
-   {
     "t": "2026-11-27T10:15:16Z",
     "time": "11:15:16",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW ORDER · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022803 (curve maths, every cost) · same exits, outside the book",
     "n": 4645
+   },
+   {
+    "t": "2026-11-27T16:52:26Z",
+    "time": "17:52:26",
+    "agent": "LEARNER",
+    "coin": "ALBI",
+    "action": "shadow",
+    "text": "SHADOW ALBI · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022166 (curve maths, every cost) · same exits, outside the book",
+    "n": 4646
+   },
+   {
+    "t": "2026-11-27T16:52:37Z",
+    "time": "17:52:37",
+    "agent": "LEARNER",
+    "coin": "$PAWRUB",
+    "action": "shadow",
+    "text": "SHADOW $PAWRUB would have made -27.6% (dump: 4.2 SOL sold) · learned x0.5 · tier:scalp now avg -7.5% over 215",
+    "n": 4647
+   },
+   {
+    "t": "2026-11-27T16:52:53Z",
+    "time": "17:52:53",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.8 a minute · 0 watched · 34 rejected (snipe not bought: night at open  13, odd curve reading: virtual SOL i 10, mayhem mode 10)",
+    "n": 4648
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4645,
+  "lines": 4648,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795762313,
-    59.14
-   ],
    [
     1795762373,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795798287,
     59.14
+   ],
+   [
+    1795798347,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795798312.028919,
+  "np_said": 1795798373.028911,
   "shadow": {
-   "n": 1029,
+   "n": 1030,
    "wins": 236,
-   "sum": -7474.9
+   "sum": -7502.5
   },
   "np_speed": {
    "first_in": [
@@ -31819,9 +31819,9 @@
   }
  },
  "shadow": {
-  "n": 1043,
+  "n": 1044,
   "wins": 238,
-  "sum": -7673.4,
+  "sum": -7701.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31829,32 +31829,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1027,
+    "n": 1028,
     "wins": 235,
-    "sum": -7475.6
+    "sum": -7503.2
    }
   },
   "closed": [
-   {
-    "symbol": "LCE",
-    "mint": "8DGtcCvDczPBT3qfpxRi8ExCJ7SuvL2pc9TA3mPgpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T11:40:21Z",
-    "cost": 5.91,
-    "pnl_pct": 4.9,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.09,
-    "closed": "2026-11-27T11:41:12Z",
-    "exit": "TP +10%",
-    "pnl": 0.29,
-    "weight": 0.5
-   },
    {
     "symbol": "MINT",
     "mint": "HgYxKNCCDX774go3GenPPeRvndMug7SrGxyr2St5pump",
@@ -32234,18 +32214,38 @@
     "exit": "TP +10%",
     "pnl": 1.55,
     "weight": 0.5
+   },
+   {
+    "symbol": "$PAWRUB",
+    "mint": "6KDds3okhvCWpbzkHUxSCjBFX8opBM7o3JGaoU3ipump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T16:50:56Z",
+    "cost": 5.91,
+    "pnl_pct": -27.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.03,
+    "closed": "2026-11-27T16:52:37Z",
+    "exit": "dump: 4.2 SOL sold",
+    "pnl": -1.63,
+    "weight": 0.5
    }
   ],
   "open": [
    "SWIPEINU",
-   "$PAWRUB",
    "SIDOOR",
    "meao meao",
    "SWIPEINU",
    "CART",
    "MWG",
    "VECTOR",
-   "ORDER"
+   "ORDER",
+   "ALBI"
   ]
  },
  "learner_summary": {
@@ -32287,7 +32287,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1235,
+  "shadows": 1236,
   "memory": "snipe"
  }
 }
