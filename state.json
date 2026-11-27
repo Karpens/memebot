@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T09:09:57Z",
-    "time": "10:09:57",
-    "agent": "LEARNER",
-    "coin": "Flyball",
-    "action": "shadow",
-    "text": "SHADOW Flyball · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035122 (curve maths, every cost) · same exits, outside the book",
-    "n": 3710
-   },
-   {
     "t": "2026-11-27T09:09:58Z",
     "time": "10:09:58",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW BLACKED would have made -8.1% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.2% over 245.5",
     "n": 4309
+   },
+   {
+    "t": "2026-11-27T11:03:52Z",
+    "time": "12:03:52",
+    "agent": "LEARNER",
+    "coin": "NOPACE",
+    "action": "shadow",
+    "text": "SHADOW NOPACE would have made -1.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.1% over 246",
+    "n": 4310
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4309,
+  "lines": 4310,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795741380,
-    80.34
-   ],
    [
     1795741440,
     80.34
@@ -21735,6 +21731,10 @@
    [
     1795777394,
     361.97
+   ],
+   [
+    1795777454,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795777412.64538,
   "shadow": {
-   "n": 904,
+   "n": 905,
    "wins": 203,
-   "sum": -6948.0
+   "sum": -6949.8
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 918,
+  "n": 919,
   "wins": 205,
-  "sum": -7146.5,
+  "sum": -7148.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 902,
+    "n": 903,
     "wins": 202,
-    "sum": -6948.7
+    "sum": -6950.5
    }
   },
   "closed": [
-   {
-    "symbol": "BSC2",
-    "mint": "BFdDbTKsZsu1D4rWGnFCN7oK9EZjfdMqWfsJMxovMbud",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:50:05Z",
-    "cost": 36.2,
-    "pnl_pct": -8.8,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.1,
-    "closed": "2026-11-27T10:53:52Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.18,
-    "weight": 0.5
-   },
    {
     "symbol": "$Kulkas",
     "mint": "9EHdhw2oxQobTh8pesnU8RpkUvUAAzEFHvVr1E6hpump",
@@ -31743,10 +31723,29 @@
     "exit": "5 min, only -4%",
     "pnl": -2.92,
     "weight": 0.5
+   },
+   {
+    "symbol": "NOPACE",
+    "mint": "6Q79eCpkPKVgGF8Sds4QCwefud8gweV7dxtB4Bpwpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T11:00:38Z",
+    "cost": 36.2,
+    "pnl_pct": -1.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T11:03:52Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.64,
+    "weight": 0.5
    }
   ],
   "open": [
-   "NOPACE",
    "SHARBOR",
    "NVIDIA",
    "KAI",
@@ -31789,10 +31788,10 @@
    {
     "label": "snipe · np:buys:<70",
     "n": 246,
-    "avg": -9.2
+    "avg": -9.1
    }
   ],
-  "shadows": 902,
+  "shadows": 903,
   "memory": "snipe"
  }
 }
