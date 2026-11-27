@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:17:07Z",
-    "time": "08:17:07",
-    "agent": "LEARNER",
-    "coin": "tugi",
-    "action": "shadow",
-    "text": "SHADOW tugi would have made -16.3% (stop -13%) · learned x0.5 · np:social:none now avg -9.7% over 155.5",
-    "n": 3095
-   },
-   {
-    "t": "2026-11-27T07:17:12Z",
-    "time": "08:17:12",
-    "agent": "LEARNER",
-    "coin": "WALMART",
-    "action": "shadow",
-    "text": "SHADOW WALMART would have made -6.3% (5 min, only -2%) · learned x0.5 · np:social:none now avg -9.7% over 156",
-    "n": 3096
-   },
-   {
-    "t": "2026-11-27T07:17:30Z",
-    "time": "08:17:30",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.0 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 7, serial launcher 3, mayhem mode 2)",
-    "n": 3097
-   },
-   {
     "t": "2026-11-27T07:18:00Z",
     "time": "08:18:00",
     "agent": "RISK",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW GTA 6 would have made +5.4% (trailing stop 6% off the top (peak +15%)) · learned x0.5 · np:sol:12+ now avg -12.9% over 40",
     "n": 3694
+   },
+   {
+    "t": "2026-11-27T09:08:25Z",
+    "time": "10:08:25",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.0 a minute · 0 watched · 13 rejected (snipe not bought: trades tonight 8, mayhem mode 5)",
+    "n": 3695
+   },
+   {
+    "t": "2026-11-27T09:08:32Z",
+    "time": "10:08:32",
+    "agent": "LEARNER",
+    "coin": "dogscount",
+    "action": "shadow",
+    "text": "SHADOW dogscount · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024324 (curve maths, every cost) · same exits, outside the book",
+    "n": 3696
+   },
+   {
+    "t": "2026-11-27T09:08:33Z",
+    "time": "10:08:33",
+    "agent": "LEARNER",
+    "coin": "dogscount",
+    "action": "shadow",
+    "text": "SHADOW dogscount would have made -17.7% (stop -14%) · learned x0.5 · np:age:<30s now avg -8.2% over 300",
+    "n": 3697
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3694,
+  "lines": 3697,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795734420,
-    82.3
-   ],
    [
     1795734480,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795770434,
     361.97
+   ],
+   [
+    1795770494,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795770444.64529,
+  "np_said": 1795770505.645223,
   "shadow": {
-   "n": 668,
+   "n": 669,
    "wins": 143,
-   "sum": -5550.6
+   "sum": -5568.3
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 682,
+  "n": 683,
   "wins": 145,
-  "sum": -5749.1,
+  "sum": -5766.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 666,
+    "n": 667,
     "wins": 142,
-    "sum": -5551.3
+    "sum": -5569.0
    }
   },
   "closed": [
-   {
-    "symbol": "GTA 6",
-    "mint": "6PBVTFtMxCQXzd6iWkPPceS3qePzsCmR78N6jUsspump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:49:52Z",
-    "cost": 36.2,
-    "pnl_pct": -53.0,
-    "tier": "swing",
-    "score": 4,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 17.6,
-    "closed": "2026-11-27T08:53:56Z",
-    "exit": "dump: 17.2 SOL sold",
-    "pnl": -19.18,
-    "weight": 0.5
-   },
    {
     "symbol": "ATNEVN",
     "mint": "Gp51ikoh6D3pvCqmip6hpUm11TxLQRw36JLBChc3pump",
@@ -31743,6 +31723,26 @@
     "exit": "trailing stop 6% off the top (peak +15%)",
     "pnl": 1.95,
     "weight": 0.5
+   },
+   {
+    "symbol": "dogscount",
+    "mint": "BxHtuVnW5z5U7E7iH4hwDjjymTZM367UrRHeM7RaDQD9",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:08:32Z",
+    "cost": 36.2,
+    "pnl_pct": -17.7,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.28,
+    "closed": "2026-11-27T09:08:33Z",
+    "exit": "stop -14%",
+    "pnl": -6.41,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31793,7 +31793,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 666,
+  "shadows": 667,
   "memory": "snipe"
  }
 }
