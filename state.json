@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:18:13Z",
-    "time": "20:18:13",
-    "agent": "LEARNER",
-    "coin": "BEASTCARS",
-    "action": "shadow",
-    "text": "SHADOW BEASTCARS · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002073 (curve maths, every cost) · same exits, outside the book",
-    "n": 5937
-   },
-   {
-    "t": "2026-11-27T19:18:18Z",
-    "time": "20:18:18",
-    "agent": "LEARNER",
-    "coin": "BINGO",
-    "action": "shadow",
-    "text": "SHADOW BINGO · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000044948 (curve maths, every cost) · same exits, outside the book",
-    "n": 5938
-   },
-   {
     "t": "2026-11-27T19:18:20Z",
     "time": "20:18:20",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW SNUT would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
     "n": 6536
+   },
+   {
+    "t": "2026-11-27T20:31:44Z",
+    "time": "21:31:44",
+    "agent": "LEARNER",
+    "coin": "CHRISTMAS",
+    "action": "shadow",
+    "text": "SHADOW CHRISTMAS would have made -9.8% (5 min, only -5%) · learned x0.5 · np:dev:8+ now avg -8.8% over 231",
+    "n": 6537
+   },
+   {
+    "t": "2026-11-27T20:32:00Z",
+    "time": "21:32:00",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.8 a minute · 0 watched · 24 rejected (mayhem mode 14, snipe not bought: night at open  8, dump 1)",
+    "n": 6538
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6536,
+  "lines": 6538,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795775474,
-    59.14
-   ],
    [
     1795775534,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795811448,
     59.14
+   ],
+   [
+    1795811508,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795811459.443463,
+  "np_said": 1795811520.443362,
   "shadow": {
-   "n": 1788,
+   "n": 1789,
    "wins": 395,
-   "sum": -13357.0
+   "sum": -13366.8
   },
   "np_speed": {
    "first_in": [
@@ -31929,9 +31929,9 @@
   }
  },
  "shadow": {
-  "n": 1802,
+  "n": 1803,
   "wins": 397,
-  "sum": -13555.5,
+  "sum": -13565.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31939,32 +31939,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1786,
+    "n": 1787,
     "wins": 394,
-    "sum": -13357.7
+    "sum": -13367.5
    }
   },
   "closed": [
-   {
-    "symbol": "DTAD",
-    "mint": "7iPC8DyAZKb9zQiHWfG3atkrk61DZSfn1MZpTveapump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:21:06Z",
-    "cost": 5.91,
-    "pnl_pct": -7.4,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T20:26:06Z",
-    "exit": "5 min, only -3%",
-    "pnl": -0.44,
-    "weight": 0.5
-   },
    {
     "symbol": "cap",
     "mint": "7fQmEhnReU9mmaYsm6Pue1cdisvMrS5nXArsx1Eupump",
@@ -32344,10 +32324,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "CHRISTMAS",
+    "mint": "8sDCW6LWoVMjZsohUr5mBffxgAMYruVKGXHJtNhQpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:26:44Z",
+    "cost": 5.91,
+    "pnl_pct": -9.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.76,
+    "closed": "2026-11-27T20:31:44Z",
+    "exit": "5 min, only -5%",
+    "pnl": -0.58,
+    "weight": 0.5
    }
   ],
   "open": [
-   "CHRISTMAS",
    "$XMX",
    "Rockstar",
    "JASON",
@@ -32389,11 +32388,11 @@
    },
    {
     "label": "snipe · np:dev:8+",
-    "n": 230,
+    "n": 231,
     "avg": -8.8
    }
   ],
-  "shadows": 1994,
+  "shadows": 1995,
   "memory": "snipe"
  }
 }
