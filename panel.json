@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T20:47:43Z",
+ "updated": "2026-11-27T20:48:13Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6670,
+  "lines": 6673,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795776434,
-   59.14
-  ],
   [
    1795776494,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795812408,
    59.14
+  ],
+  [
+   1795812468,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,33 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T20:24:25Z",
-   "time": "21:24:25",
-   "agent": "LEARNER",
-   "coin": "PVE",
-   "action": "shadow",
-   "text": "SHADOW PVE · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000032931 (curve maths, every cost) · same exits, outside the book",
-   "n": 6471
-  },
-  {
-   "t": "2026-11-27T20:24:26Z",
-   "time": "21:24:26",
-   "agent": "LEARNER",
-   "coin": "Commeoit",
-   "action": "shadow",
-   "text": "SHADOW Commeoit would have made -16.7% (stop -12%) · learned x0.5 · np:dev:8+ now avg -8.8% over 228",
-   "n": 6472
-  },
-  {
-   "t": "2026-11-27T20:24:27Z",
-   "time": "21:24:27",
-   "agent": "LEARNER",
-   "coin": "חתול",
-   "action": "shadow",
-   "text": "SHADOW חתול · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020687 (curve maths, every cost) · same exits, outside the book",
-   "n": 6473
-  },
-  {
    "t": "2026-11-27T20:24:34Z",
    "time": "21:24:34",
    "agent": "LEARNER",
@@ -6157,6 +6130,33 @@
    "action": "shadow",
    "text": "SHADOW 3 would have made -19.0% (dump: 2.8 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.8% over 237.5",
    "n": 6670
+  },
+  {
+   "t": "2026-11-27T20:47:51Z",
+   "time": "21:47:51",
+   "agent": "RISK",
+   "coin": "SOMAD",
+   "action": "skip",
+   "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "n": 6671
+  },
+  {
+   "t": "2026-11-27T20:47:51Z",
+   "time": "21:47:51",
+   "agent": "LEARNER",
+   "coin": "SOMAD",
+   "action": "shadow",
+   "text": "SHADOW SOMAD · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002071 (curve maths, every cost) · same exits, outside the book",
+   "n": 6672
+  },
+  {
+   "t": "2026-11-27T20:48:07Z",
+   "time": "21:48:07",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.0 a minute · 0 watched · 15 rejected (snipe not bought: night at open  8, mayhem mode 7)",
+   "n": 6673
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 370 (133 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 370 (133 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,15 +6221,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1672,
-    "last_event_age_s": 2.7,
+    "events": 1675,
+    "last_event_age_s": 8.5,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25816,
+    "events": 25907,
     "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
@@ -6237,8 +6237,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1001,
-    "last_event_age_s": 2.6,
+    "events": 1002,
+    "last_event_age_s": 22.2,
     "errors": 56,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6251,9 +6251,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.4,
+  "creates_per_min": 5.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 370,
   "odd_coins": 133
  },
@@ -6302,30 +6302,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13661,
+   "sent": 13692,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13661,
+   "sent": 13692,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "att",
+   "name": "attention",
+   "mint": "DQmvqVw99oTqGB2yhr7PcetCCAF99k4RxCCtu9JZpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SOMAD",
+   "name": "I got so mad",
+   "mint": "FeHuxDMuFSL2emQKyx671P2L876vWTfMmuxUuXazpump",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.09,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "3",
    "name": "$3 and a dream",
    "mint": "3hJ9jXSBxiVeKC5ALo42pCzBbKHTbARQ9PV7iFFeftmM",
-   "age_s": 2,
-   "sol_in": -2.27,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -10.5,
-   "mcap_sol": 48.8,
+   "age_s": 32,
+   "sol_in": -6.03,
+   "buys": 4,
+   "sells": 7,
+   "rise_pct": -26.7,
+   "mcap_sol": 39.9,
    "dev_pct": 30.5,
-   "big_sell": 2.76,
+   "big_sell": 4.72,
    "x": "https://x.com/toly/status/2126417673416544563",
    "tg": false,
    "web": false,
@@ -6336,7 +6372,7 @@
    "symbol": "DROOL",
    "name": "Drool",
    "mint": "3DvEmRQRK5up7Qsya2Vt9gcZBUdbPhr1z54KowT8sAwz",
-   "age_s": 6,
+   "age_s": 36,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 1,
@@ -6354,7 +6390,7 @@
    "symbol": "UP",
    "name": "UP",
    "mint": "AZrY2UMgkWs9Hfxcp4bKuSbY8htAq7vC7pdq3CeVpump",
-   "age_s": 17,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6372,7 +6408,7 @@
    "symbol": "$SPENCER66",
    "name": "Spencer666",
    "mint": "Bpp3KQH76os6awW9joiBqot5xw3s7s8dthDbMwmupump",
-   "age_s": 28,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6390,10 +6426,10 @@
    "symbol": "DXMAS",
    "name": "DOOMXMAS",
    "mint": "2FtbxAd8r5RbEBZDTLEXogMafJBLau2Ea3RRxC3Rpump",
-   "age_s": 40,
-   "sol_in": 0.39,
-   "buys": 2,
-   "sells": 2,
+   "age_s": 70,
+   "sol_in": 0.4,
+   "buys": 4,
+   "sells": 4,
    "rise_pct": 2.6,
    "mcap_sol": 30.6,
    "dev_pct": 3.4,
@@ -6408,12 +6444,12 @@
    "symbol": "FoMo",
    "name": "FoMo The Gorilla",
    "mint": "1vBftTCx8zrDxQySBVBRfxQf4PTv3ZkRWaNewigpump",
-   "age_s": 47,
-   "sol_in": 0.11,
-   "buys": 10,
-   "sells": 9,
-   "rise_pct": 0.7,
-   "mcap_sol": 28.2,
+   "age_s": 77,
+   "sol_in": 0.09,
+   "buys": 15,
+   "sells": 13,
+   "rise_pct": 0.6,
+   "mcap_sol": 28.1,
    "dev_pct": 0.0,
    "big_sell": 0.03,
    "x": "https://x.com/BeaRexOfficial/status/2126415892938428442",
@@ -6426,7 +6462,7 @@
    "symbol": "SLOTH",
    "name": "Slothcoin",
    "mint": "9dSpHhunE8vPnosbJiK68zShhmhLeMg4DaUScAFgpump",
-   "age_s": 58,
+   "age_s": 88,
    "sol_in": 0.09,
    "buys": 2,
    "sells": 1,
@@ -6444,7 +6480,7 @@
    "symbol": "solona",
    "name": "Palestine (gaza)",
    "mint": "7KC3vMNH3arr6hwbAfN3WQLjBYTD8iyv3exy9jkvpump",
-   "age_s": 64,
+   "age_s": 94,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6462,7 +6498,7 @@
    "symbol": "34%",
    "name": "34percent",
    "mint": "2j1B6QqSJWQD4anVXud42wQQHukz5vA82KuRWCjKpump",
-   "age_s": 76,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6480,7 +6516,7 @@
    "symbol": "BF69420",
    "name": "BlackFriday69420",
    "mint": "AXzLJQBGQBdyJLUrUvbKg4x7oS4kyFscmcoyBpdDHH9B",
-   "age_s": 82,
+   "age_s": 112,
    "sol_in": -3.27,
    "buys": 22,
    "sells": 4,
@@ -6498,12 +6534,12 @@
    "symbol": "TILLY",
    "name": "HeyTilly",
    "mint": "4wZaSLtmUGcRkUdVz46hnRT8HwNhWRihfdY9iWxTiLLY",
-   "age_s": 89,
-   "sol_in": 23.96,
-   "buys": 33,
-   "sells": 36,
-   "rise_pct": 218.2,
-   "mcap_sol": 92.4,
+   "age_s": 119,
+   "sol_in": 23.23,
+   "buys": 38,
+   "sells": 46,
+   "rise_pct": 209.8,
+   "mcap_sol": 89.9,
    "dev_pct": 2.0,
    "big_sell": 1.82,
    "x": "https://x.com/heytillyfun",
@@ -6516,7 +6552,7 @@
    "symbol": "TOAD",
    "name": "The Toad Cat",
    "mint": "24K8dnktdJfwTbq2VSjBwvrgVSve5GyHDk2vqVCfpump",
-   "age_s": 101,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6534,7 +6570,7 @@
    "symbol": "FERSPE",
    "name": "Feral Specter",
    "mint": "NsRNX1TVMEa5k5D2dGjZRspdFLTPGXniexvySQhpump",
-   "age_s": 149,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6553,6 +6589,22 @@
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "SOMAD",
+   "mint": "FeHuxDMuFSL2emQKyx671P2L876vWTfMmuxUuXazpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T20:47:51Z",
+   "cost": 5.91,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.05
+  },
   {
    "symbol": "DROOL",
    "mint": "3DvEmRQRK5up7Qsya2Vt9gcZBUdbPhr1z54KowT8sAwz",
@@ -6577,7 +6629,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T20:47:03Z",
    "cost": 5.91,
-   "pnl_pct": -4.6,
+   "pnl_pct": -4.5,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6593,7 +6645,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T20:46:56Z",
    "cost": 5.91,
-   "pnl_pct": -3.7,
+   "pnl_pct": -3.8,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6625,7 +6677,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T20:43:46Z",
    "cost": 5.91,
-   "pnl_pct": -3.5,
+   "pnl_pct": -3.6,
    "tier": "scalp",
    "score": 1,
    "steps": 0,
@@ -7055,7 +7107,7 @@
   "wins": 416,
   "win_rate": 22.4,
   "mean_pnl_pct": -7.4,
-  "open": 6,
+  "open": 7,
   "learner": {
    "n": 16,
    "wins": 3,
