@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T23:14:10Z",
+ "updated": "2026-11-27T23:14:43Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 50.66,
- "equity": 56.08,
+ "balance": 39.46,
+ "equity": 55.8,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 20,
-  "checked": 20,
+  "flagged": 22,
+  "checked": 22,
   "filtered": 1,
-  "lines": 202,
+  "lines": 211,
   "last_rug": {
-   "coin": "HSTAPART",
+   "coin": "IPOY",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SSI",
-   "why": "snipe",
-   "t": "2026-11-27T23:04:38Z"
-  },
-  {
-   "coin": "金牛座",
-   "why": "snipe",
-   "t": "2026-11-27T23:05:26Z"
-  },
   {
    "coin": "BRAINROT",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "HSTAPART",
    "why": "snipe",
    "t": "2026-11-27T23:14:05Z"
+  },
+  {
+   "coin": "OMP",
+   "why": "snipe",
+   "t": "2026-11-27T23:14:18Z"
+  },
+  {
+   "coin": "IPOY",
+   "why": "snipe",
+   "t": "2026-11-27T23:14:43Z"
   }
  ],
  "curve": [
@@ -149,7 +149,7 @@
    "reason": "snipe · first reading 0.5 s after the create · -0.0 SOL in · -0% since the create · mcap 28 SOL · fill quote",
    "size_pct": 10.0,
    "entry_price": 2.04398e-06,
-   "price": 1.99344e-06,
+   "price": 1.99403e-06,
    "slip": 1.26,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -179,6 +179,89 @@
    "sol_in": -0.01,
    "hist": [
     2.04398e-06
+   ]
+  },
+  {
+   "symbol": "OMP",
+   "mint": "DnTRDkReSyoS4nZwwzjLXnJt4nHtNEfbx6DSrxcABJXb",
+   "cost": 5.61,
+   "value": 5.4,
+   "pnl_pct": -3.7,
+   "opened": "2026-11-27T23:14:18Z",
+   "url": "https://pump.fun/coin/DnTRDkReSyoS4nZwwzjLXnJt4nHtNEfbx6DSrxcABJXb",
+   "reason": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.04428e-06,
+   "price": 1.99403e-06,
+   "slip": 0.25,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 0,
+    "parts": [],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "sol_in": 0.0,
+   "hist": [
+    2.04428e-06
+   ]
+  },
+  {
+   "symbol": "IPOY",
+   "mint": "EmpaaU4GfDwtATGLnEzshVyLamXYED1ZwTfkgD6Mpump",
+   "cost": 5.59,
+   "value": 5.52,
+   "pnl_pct": -1.3,
+   "opened": "2026-11-27T23:14:43Z",
+   "url": "https://pump.fun/coin/EmpaaU4GfDwtATGLnEzshVyLamXYED1ZwTfkgD6Mpump",
+   "reason": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 33 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.39486e-06,
+   "price": 2.39486e-06,
+   "slip": 0.23,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 1.5,
+    "parts": [
+     "X post",
+     "web"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 32.8,
+   "dev_pct": 8.16,
+   "sol_in": 0.0,
+   "hist": [
+    2.39486e-06
    ]
   }
  ],
@@ -991,87 +1074,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-27T23:00:00Z",
-   "time": "00:00:00",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 0 watched · 22 rejected (snipe not bought: night at open  15, mayhem mode 5, serial launcher 2)",
-   "n": 3
-  },
-  {
-   "t": "2026-11-27T23:00:05Z",
-   "time": "00:00:05",
-   "agent": "LEARNER",
-   "coin": "me",
-   "action": "shadow",
-   "text": "SHADOW me would have made +7.1% (TP +10%) · learned x0.5 · np:dev:2-5 now avg -7.1% over 300",
-   "n": 4
-  },
-  {
-   "t": "2026-11-27T23:00:32Z",
-   "time": "00:00:32",
-   "agent": "LEARNER",
-   "coin": "SUPERMAN",
-   "action": "shadow",
-   "text": "SHADOW SUPERMAN would have made -13.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.5% over 300",
-   "n": 5
-  },
-  {
-   "t": "2026-11-27T23:00:40Z",
-   "time": "00:00:40",
-   "agent": "LEARNER",
-   "coin": "SUITCOIN",
-   "action": "shadow",
-   "text": "SHADOW SUITCOIN would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.5% over 300",
-   "n": 6
-  },
-  {
-   "t": "2026-11-27T23:00:43Z",
-   "time": "00:00:43",
-   "agent": "LEARNER",
-   "coin": null,
-   "action": "snipe",
-   "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
-   "n": 7
-  },
-  {
-   "t": "2026-11-27T23:00:43Z",
-   "time": "00:00:43",
-   "agent": "SCANNER",
-   "coin": "me",
-   "action": "flag",
-   "text": "snipe · first reading 2.7 s after the create · 20.8 SOL in · +181% since the create · mcap 83 SOL",
-   "n": 8
-  },
-  {
-   "t": "2026-11-27T23:00:43Z",
-   "time": "00:00:43",
-   "agent": "SIZER",
-   "coin": "me",
-   "action": "size",
-   "text": "10% of $59.14 = $5.91",
-   "n": 9
-  },
-  {
-   "t": "2026-11-27T23:00:43Z",
-   "time": "00:00:43",
-   "agent": "EXECUTOR",
-   "coin": "me",
-   "action": "enter",
-   "text": "ENTER me at 0.0000061021 · slip 2.2% · snipe · first in · 0.2 s after the first reading · 2 s after launch · fill quote · Jupiter 0.2 s · curve maths 0.9% off Jupiter · stop -10%",
-   "n": 10
-  },
-  {
-   "t": "2026-11-27T23:00:43Z",
-   "time": "00:00:43",
-   "agent": "NEWS",
-   "coin": "me",
-   "action": "plan",
-   "text": "hold plan · 2.5/10 (X post, inflow 20.8 SOL) · scalp: +10",
-   "n": 11
-  },
   {
    "t": "2026-11-27T23:00:44Z",
    "time": "00:00:44",
@@ -2790,6 +2792,87 @@
    "action": "scan",
    "text": "new pairs · 9.0 a minute · 0 watched · 27 rejected (mayhem mode 12, snipe not bought: pause after a  10, no symbol or name 2)",
    "n": 202
+  },
+  {
+   "t": "2026-11-27T23:14:18Z",
+   "time": "00:14:18",
+   "agent": "SCANNER",
+   "coin": "OMP",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 203
+  },
+  {
+   "t": "2026-11-27T23:14:18Z",
+   "time": "00:14:18",
+   "agent": "SIZER",
+   "coin": "OMP",
+   "action": "size",
+   "text": "10% of $56.08 = $5.61",
+   "n": 204
+  },
+  {
+   "t": "2026-11-27T23:14:18Z",
+   "time": "00:14:18",
+   "agent": "EXECUTOR",
+   "coin": "OMP",
+   "action": "enter",
+   "text": "ENTER OMP at 0.0000020443 · slip 0.2% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 205
+  },
+  {
+   "t": "2026-11-27T23:14:18Z",
+   "time": "00:14:18",
+   "agent": "NEWS",
+   "coin": "OMP",
+   "action": "plan",
+   "text": "hold plan · 0/10 (no news) · scalp: +10",
+   "n": 206
+  },
+  {
+   "t": "2026-11-27T23:14:33Z",
+   "time": "00:14:33",
+   "agent": "LEARNER",
+   "coin": "MACWIGGLE",
+   "action": "shadow",
+   "text": "SHADOW MACWIGGLE would have made +16.0% (TP +10%) · learned x0.5 · np:social:none now avg -7.8% over 300",
+   "n": 207
+  },
+  {
+   "t": "2026-11-27T23:14:43Z",
+   "time": "00:14:43",
+   "agent": "SCANNER",
+   "coin": "IPOY",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 33 SOL",
+   "n": 208
+  },
+  {
+   "t": "2026-11-27T23:14:43Z",
+   "time": "00:14:43",
+   "agent": "SIZER",
+   "coin": "IPOY",
+   "action": "size",
+   "text": "10% of $55.87 = $5.59",
+   "n": 209
+  },
+  {
+   "t": "2026-11-27T23:14:43Z",
+   "time": "00:14:43",
+   "agent": "EXECUTOR",
+   "coin": "IPOY",
+   "action": "enter",
+   "text": "ENTER IPOY at 0.0000023949 · slip 0.2% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 2 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 210
+  },
+  {
+   "t": "2026-11-27T23:14:43Z",
+   "time": "00:14:43",
+   "agent": "NEWS",
+   "coin": "IPOY",
+   "action": "plan",
+   "text": "hold plan · 1.5/10 (X post, web) · scalp: +10",
+   "n": 211
   }
  ],
  "nights": [
@@ -2859,7 +2942,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 39 watched · ws off · odd curve readings 14 (9 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 40 watched · ws off · odd curve readings 14 (9 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2867,39 +2950,39 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 163,
-    "last_event_age_s": 6.0,
+    "events": 170,
+    "last_event_age_s": 0.3,
     "errors": 1,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2436,
-    "last_event_age_s": 0.4,
+    "events": 2509,
+    "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 89,
-    "last_event_age_s": 5.7,
-    "errors": 2,
-    "last_error": "h.uguu.se: timeout after 2 s"
+    "events": 91,
+    "last_event_age_s": 0.0,
+    "errors": 3,
+    "last_error": "677f52d16e496cdc-146-70-142-132.serveousercontent.com: ConnectionResetError: [Errno 104] Connection reset by peer"
    }
   ],
   "strategies": [
    "new_pairs"
   ],
   "first_in_ms": 1,
-  "first_in_last_ms": 186,
+  "first_in_last_ms": 1,
   "exit_ms": 132.5,
   "exit_last_ms": 154,
   "launch_to_entry_s": 0,
-  "creates_per_min": 9.0,
+  "creates_per_min": 9.6,
   "watching": 0,
-  "followed": 15,
+  "followed": 17,
   "odd_readings": 14,
   "odd_coins": 9
  },
@@ -2942,29 +3025,137 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2484,
+  "shadows": 2485,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1332,
+   "sent": 1368,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1332,
+   "sent": 1368,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "IPOY",
+   "name": "IPOY",
+   "mint": "EmpaaU4GfDwtATGLnEzshVyLamXYED1ZwTfkgD6Mpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.8,
+   "dev_pct": 8.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/igetsjiggy6767/status/2126454680280781038",
+   "tg": false,
+   "web": "https://x.com/igetsjiggy6767/status/2126454680280781038",
+   "status": "entered",
+   "why": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 33 SOL"
+  },
+  {
+   "symbol": "Comeandsee",
+   "name": "The Chosen",
+   "mint": "JDTmw8g1wUcuro5MaPNtxE6w5CEqkcaj1FykvGkapump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "STEADY",
+   "name": "Steady",
+   "mint": "8B9oAXdftFWsoZEhN3XfR2roS9dMqJBqX84nNzfEstdy",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.8,
+   "dev_pct": 5.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "HYPE",
+   "name": "Hyperliquid",
+   "mint": "7zNcdRmmiMdZpQd8rJBLmRVsr57Xao6CeTpjo3ogpump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.8,
+   "dev_pct": 6.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Dutchman",
+   "name": "Flying DutchMan",
+   "mint": "45ZwhxGqZnpdcTVpaY5C4R7Nm1p5GMhBCkTPX38Rpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 44.6,
+   "dev_pct": 22.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "OMP",
+   "name": "OmniProbe",
+   "mint": "DnTRDkReSyoS4nZwwzjLXnJt4nHtNEfbx6DSrxcABJXb",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "entered",
+   "why": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL"
+  },
+  {
    "symbol": "HSTAPART",
    "name": "Hot Stage Partners",
    "mint": "Cb3MLhabZ1dWFSYkYWF4uBATPGgKV1x9NuHuyFhKSjdB",
-   "age_s": 5,
+   "age_s": 38,
    "sol_in": -0.01,
    "buys": 0,
    "sells": 1,
@@ -2982,14 +3173,14 @@
    "symbol": "DISABLED",
    "name": "Disabled Ship",
    "mint": "PnfJ4VvLA5PZHjxyC1NKPiNPJaaUGnZKP335g1cpump",
-   "age_s": 6,
-   "sol_in": 0.0,
+   "age_s": 39,
+   "sol_in": -0.99,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "sells": 1,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.99,
    "x": "https://x.com/Polymarket/status/2126454510562300387",
    "tg": false,
    "web": false,
@@ -3000,7 +3191,7 @@
    "symbol": "Dutchman",
    "name": "Flying DutchMan",
    "mint": "9PtYarUakkM9WhVEjzvFpZGyJm3tLzC4Py3E9V2cpump",
-   "age_s": 7,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3018,7 +3209,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "CERizA4TQKjBm13NPSLEPjUwSsY54sKyx28rNRgwpump",
-   "age_s": 18,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3036,7 +3227,7 @@
    "symbol": "Dutchman",
    "name": "Flying DutchMan",
    "mint": "Ce7DhugDmukKvFFjoYMsuXPL7s3Kjf5wNnfhBg3Vpump",
-   "age_s": 33,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3054,7 +3245,7 @@
    "symbol": "RAPTOSYND",
    "name": "Raptor Syndicate",
    "mint": "2SfTM9wzK2boCS9sD4Ss2h1PDGnxVFaFvhXEyYzo3fRM",
-   "age_s": 46,
+   "age_s": 78,
    "sol_in": -0.01,
    "buys": 0,
    "sells": 1,
@@ -3072,7 +3263,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "DfaBK2JcTpzPxC63P9jDHRHS5aGd6mpupwbHyRgJpump",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3090,7 +3281,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "Gjrhw4LbkmNtykUKDNeZtP2CE7U53u8M2Cj4vDKVpump",
-   "age_s": 59,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3108,14 +3299,14 @@
    "symbol": "CEO",
    "name": "Chief Executive Cat",
    "mint": "Y6h1oRQyrRn4PNsmHbwZYiYQEy2FwZgsazZzVrVpump",
-   "age_s": 61,
-   "sol_in": 1.91,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": 13.2,
-   "mcap_sol": 31.6,
+   "age_s": 94,
+   "sol_in": 0.01,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 1.19,
+   "big_sell": 1.92,
    "x": "https://x.com/nyoruki/status/2126453514817933562",
    "tg": false,
    "web": "https://www.floatlaunch.xyz/tokens/FfpFYBVWHHHmAvh67A1xrQxZNGvURSvMzUjyFNPfLoat",
@@ -3126,7 +3317,7 @@
    "symbol": "WW2",
    "name": "WW2 bear",
    "mint": "FxpHAUkNu5qvdPCumNrR7NaiFqhn1RpPXVrMkz2dpump",
-   "age_s": 63,
+   "age_s": 95,
    "sol_in": -0.59,
    "buys": 0,
    "sells": 1,
@@ -3144,12 +3335,12 @@
    "symbol": "MACWIGGLE",
    "name": "Macaroni Wiggle",
    "mint": "GFcpT84Pp7mSYm3gaarkxguZGwGgyhRSDoV3VVq4pump",
-   "age_s": 63,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 96,
+   "sol_in": 3.65,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "rise_pct": 25.0,
+   "mcap_sol": 37.3,
    "dev_pct": 3.4,
    "big_sell": 0.0,
    "x": "https://x.com/dollardeployer",
@@ -3162,7 +3353,7 @@
    "symbol": "Dutchman",
    "name": "Flying DutchMan",
    "mint": "Ew2x9kkEFhPGmouBnJeX6kJERqKFgFGuoMpTgB36pump",
-   "age_s": 65,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3180,7 +3371,7 @@
    "symbol": "MOONBCOLL",
    "name": "Moonbase Collective",
    "mint": "2QM7xuxaU1cNTbBoDWNMzfBVDY8Zb5hs5JFWwTn8Fuyq",
-   "age_s": 66,
+   "age_s": 98,
    "sol_in": -0.01,
    "buys": 0,
    "sells": 1,
@@ -3198,115 +3389,7 @@
    "symbol": "?",
    "name": "",
    "mint": "47iS3boFzh1H4ojukELW8XKDAyNea6XKssLgCTVrZrKT",
-   "age_s": 70,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 39.5,
-   "dev_pct": 17.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "SNP500",
-   "name": "Sock and Pussy 500",
-   "mint": "Hb7a3fnfjuPmSNFPF7jhrT8V73s8BTNd2DXv2dL9pump",
-   "age_s": 81,
-   "sol_in": 37.29,
-   "buys": 41,
-   "sells": 43,
-   "rise_pct": 390.7,
-   "mcap_sol": 143.6,
-   "dev_pct": 2.4,
-   "big_sell": 3.16,
-   "x": "https://x.com/PunchingCat/status/2126453519612019035",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "HYPE",
-   "name": "Hyperliquid",
-   "mint": "FswMZGPZ9EoUVZi1KFxhSPfxi9G7q3niS9Tt737pump",
-   "age_s": 87,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.8,
-   "dev_pct": 6.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "DUG",
-   "name": "DUG",
-   "mint": "DZzoNv7tFxSJ8eqH8dMWL4yQxDbtcu7c2455Ykw4pump",
-   "age_s": 93,
-   "sol_in": -0.86,
-   "buys": 6,
-   "sells": 20,
-   "rise_pct": -5.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.0,
-   "big_sell": 2.5,
-   "x": "https://x.com/MemeGreat9385/status/2126452355365519523",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "Dutchman",
-   "name": "Flying DutchMan",
-   "mint": "5avkQaTN6FTpwDFed3Wyt4HXhrbEpJ3o17whna3Qpump",
-   "age_s": 94,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 44.6,
-   "dev_pct": 22.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SNP500",
-   "name": "Sock and Pussy 500",
-   "mint": "5jpa7h3sf9sfFHtZpNYQ1kCLU53qbn3GVFWboGFPpump",
-   "age_s": 98,
-   "sol_in": -0.61,
-   "buys": 6,
-   "sells": 7,
-   "rise_pct": -4.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 17.62,
-   "x": "https://x.com/PunchingCat/status/2126453519612019035",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "3aeQ4jDFFpVQSaLLKxT2xyX3sGmvs3nNtYidWNZi1pu7",
-   "age_s": 99,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3340,22 +3423,6 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": -0.01
-  },
-  {
-   "symbol": "MACWIGGLE",
-   "mint": "GFcpT84Pp7mSYm3gaarkxguZGwGgyhRSDoV3VVq4pump",
-   "status": "open",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T23:13:07Z",
-   "cost": 5.63,
-   "pnl_pct": -3.8,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0
   },
   {
    "symbol": "MOONBCOLL",
@@ -3404,6 +3471,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "MACWIGGLE",
+   "mint": "GFcpT84Pp7mSYm3gaarkxguZGwGgyhRSDoV3VVq4pump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T23:13:07Z",
+   "cost": 5.63,
+   "pnl_pct": 16.0,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 1,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T23:14:33Z",
+   "exit": "TP +10%",
+   "pnl": 0.9,
+   "weight": 0.5
   },
   {
    "symbol": "NOVASTAT",
@@ -3784,34 +3871,14 @@
    "exit": "stop -13%",
    "pnl": -0.99,
    "weight": 0.5
-  },
-  {
-   "symbol": "MEOWRATIO",
-   "mint": "GkJZhUW9fLusZvDC1Vr3cKdUqMpJQaTs8G4stpWnYi78",
-   "status": "closed",
-   "kind": "risk",
-   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "opened": "2026-11-27T22:59:55Z",
-   "cost": 5.91,
-   "pnl_pct": -7.3,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 2,
-   "sol_in": 0.05,
-   "closed": "2026-11-27T23:03:31Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -0.43,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 2292,
-  "wins": 529,
+  "n": 2293,
+  "wins": 530,
   "win_rate": 23.1,
-  "mean_pnl_pct": -7.31,
-  "open": 5,
+  "mean_pnl_pct": -7.3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -3819,10 +3886,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 2276,
-   "wins": 526,
+   "n": 2277,
+   "wins": 527,
    "win_rate": 23.1,
-   "mean_pnl_pct": -7.28
+   "mean_pnl_pct": -7.27
   }
  }
 }
