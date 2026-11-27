@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T05:02:50Z",
+ "updated": "2026-11-27T05:03:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 212.31,
@@ -24,7 +24,7 @@
   "flagged": 194,
   "checked": 190,
   "filtered": 5,
-  "lines": 2152,
+  "lines": 2156,
   "last_rug": {
    "coin": "Simyo",
    "pass": true
@@ -1519,6 +1519,10 @@
   ],
   [
    1795755713,
+   212.31
+  ],
+  [
+   1795755773,
    212.31
   ]
  ],
@@ -3775,42 +3779,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T04:34:55Z",
-   "time": "05:34:55",
-   "agent": "RISK",
-   "coin": null,
-   "action": "pause",
-   "text": "11 losses in a row · 2 min pause",
-   "n": 1953
-  },
-  {
-   "t": "2026-11-27T04:34:55Z",
-   "time": "05:34:55",
-   "agent": "EXECUTOR",
-   "coin": "BaoBao",
-   "action": "exit",
-   "text": "EXIT BaoBao $-1.55 (-6%) · 5 min, only -2%",
-   "n": 1954
-  },
-  {
-   "t": "2026-11-27T04:34:55Z",
-   "time": "05:34:55",
-   "agent": "LEARNER",
-   "coin": "BaoBao",
-   "action": "learn",
-   "text": "learned · np:dev:0-2 now avg -11.5% over 132.5",
-   "n": 1955
-  },
-  {
-   "t": "2026-11-27T04:35:14Z",
-   "time": "05:35:14",
-   "agent": "LEARNER",
-   "coin": "money",
-   "action": "shadow",
-   "text": "SHADOW money · not bought (pause after a losing streak) · followed as if bought: $24.66 at 0.0000021058 (curve maths, every cost) · same exits, outside the book",
-   "n": 1956
-  },
-  {
    "t": "2026-11-27T04:35:29Z",
    "time": "05:35:29",
    "agent": "RISK",
@@ -5573,6 +5541,42 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 3 rejected (serial launcher 2, mayhem mode 1)",
    "n": 2152
+  },
+  {
+   "t": "2026-11-27T05:02:59Z",
+   "time": "06:02:59",
+   "agent": "LEARNER",
+   "coin": "$FROGZ",
+   "action": "shadow",
+   "text": "SHADOW $FROGZ · not bought (pause after a losing streak) · followed as if bought: $21.23 at 0.000002141 (curve maths, every cost) · same exits, outside the book",
+   "n": 2153
+  },
+  {
+   "t": "2026-11-27T05:03:06Z",
+   "time": "06:03:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (serial launcher 3, snipe not bought: pause after a  1, mayhem mode 1)",
+   "n": 2154
+  },
+  {
+   "t": "2026-11-27T05:03:12Z",
+   "time": "06:03:12",
+   "agent": "LEARNER",
+   "coin": "CTRL",
+   "action": "shadow",
+   "text": "SHADOW CTRL · not bought (pause after a losing streak) · followed as if bought: $21.23 at 0.0000021065 (curve maths, every cost) · same exits, outside the book",
+   "n": 2155
+  },
+  {
+   "t": "2026-11-27T05:03:17Z",
+   "time": "06:03:17",
+   "agent": "LEARNER",
+   "coin": "JAWCCC",
+   "action": "shadow",
+   "text": "SHADOW JAWCCC would have made -6.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -10.9% over 148",
+   "n": 2156
   }
  ],
  "nights": [
@@ -5641,24 +5645,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 959,
-    "last_event_age_s": 25.8,
+    "events": 963,
+    "last_event_age_s": 7.4,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27217,
-    "last_event_age_s": 0.7,
+    "events": 27300,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 657,
-    "last_event_age_s": 26.7,
+    "events": 659,
+    "last_event_age_s": 7.3,
     "errors": 64,
     "last_error": "gateway.irys.xyz: timeout after 2 s"
    }
@@ -5671,9 +5675,9 @@
   "exit_ms": 35.0,
   "exit_last_ms": 35,
   "launch_to_entry_s": 0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 4
+  "followed": 6
  },
  "learner": {
   "samples": 182,
@@ -5714,36 +5718,90 @@
     "avg": -17.2
    }
   ],
-  "shadows": 253,
+  "shadows": 254,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12991,
+   "sent": 13021,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12990,
+   "sent": 13020,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CTRL",
+   "name": "CONTROL",
+   "mint": "46pXDRwnoYt9Nwsd4FcXhTvb3zLrxeMEhdnimhPUpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
+   "symbol": "$FROGZ",
+   "name": "FROGZILLA",
+   "mint": "C42AsXmS6KBneZWs19zVttHFWQCPt2gFqr8Fup3gpump",
+   "age_s": 21,
+   "sol_in": 0.11,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
+   "symbol": "DOOB",
+   "name": "DOOBIE",
+   "mint": "EkUX8JgJbgsQes3w86RkAUApDv6QgREaeKYeTkkTpump",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "Chilling",
    "name": "Chilling",
    "mint": "GNfCRMZqmq1bqtrMzcrh9nGKcfNexe3jXEYnzwhpump",
-   "age_s": 26,
-   "sol_in": 17.36,
-   "buys": 17,
-   "sells": 7,
-   "rise_pct": 132.1,
-   "mcap_sol": 79.3,
+   "age_s": 54,
+   "sol_in": 19.8,
+   "buys": 35,
+   "sells": 14,
+   "rise_pct": 155.0,
+   "mcap_sol": 87.1,
    "dev_pct": 10.2,
-   "big_sell": 1.47,
+   "big_sell": 2.59,
    "x": "https://x.com/ZzzzzSol/status/2126179806957985837",
    "tg": false,
    "web": "https://x.com/Catsillyness/status/2126105285978640475?a=PPoayDPjApQNvKbTIAc&s=20",
@@ -5754,7 +5812,7 @@
    "symbol": "BEAST",
    "name": "MrBeast",
    "mint": "826cmxVUpozqapDwxZpcuU9tSdP3NoZ1k3jPER1Dpump",
-   "age_s": 45,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5772,12 +5830,12 @@
    "symbol": "DUNEUSSY",
    "name": "The Duneussy",
    "mint": "7ZpKyFjdLMU8rDe8AeCFQnVVkJhiNry6b7DeUcjvpump",
-   "age_s": 67,
-   "sol_in": 8.19,
-   "buys": 12,
-   "sells": 14,
-   "rise_pct": 62.0,
-   "mcap_sol": 45.3,
+   "age_s": 95,
+   "sol_in": 10.24,
+   "buys": 16,
+   "sells": 17,
+   "rise_pct": 79.9,
+   "mcap_sol": 50.3,
    "dev_pct": 0.0,
    "big_sell": 3.25,
    "x": "https://x.com/TrenchSage/status/2126179610563944858",
@@ -5790,12 +5848,12 @@
    "symbol": "Simyo",
    "name": "시묘일",
    "mint": "E459NYfKofxS29RZFz7UqnGdYWKp28WWATAKR165pump",
-   "age_s": 74,
-   "sol_in": 11.05,
-   "buys": 24,
-   "sells": 21,
-   "rise_pct": 81.1,
-   "mcap_sol": 57.5,
+   "age_s": 102,
+   "sol_in": 19.89,
+   "buys": 35,
+   "sells": 30,
+   "rise_pct": 163.1,
+   "mcap_sol": 83.6,
    "dev_pct": 6.6,
    "big_sell": 7.41,
    "x": "https://x.com/johnporkagency/status/2126179543098519823",
@@ -5810,20 +5868,56 @@
  ],
  "shadows": [
   {
-   "symbol": "JAWCCC",
-   "mint": "GYyN11yzNrg7uHgdj3gVhHpGCQ5sjjF2RLxxsxV9pump",
+   "symbol": "CTRL",
+   "mint": "46pXDRwnoYt9Nwsd4FcXhTvb3zLrxeMEhdnimhPUpump",
    "status": "open",
    "kind": "risk",
    "why": "pause after a losing streak",
-   "opened": "2026-11-27T04:58:36Z",
-   "cost": 21.57,
-   "pnl_pct": -3.4,
+   "opened": "2026-11-27T05:03:12Z",
+   "cost": 21.23,
+   "pnl_pct": -3.5,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "$FROGZ",
+   "mint": "C42AsXmS6KBneZWs19zVttHFWQCPt2gFqr8Fup3gpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T05:02:59Z",
+   "cost": 21.23,
+   "pnl_pct": -2.8,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0
+  },
+  {
+   "symbol": "JAWCCC",
+   "mint": "GYyN11yzNrg7uHgdj3gVhHpGCQ5sjjF2RLxxsxV9pump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T04:58:36Z",
+   "cost": 21.57,
+   "pnl_pct": -6.8,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T05:03:17Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -1.47,
+   "weight": 0.5
   },
   {
    "symbol": "Niggalo",
@@ -6204,34 +6298,14 @@
    "exit": "dump: 4.5 SOL sold",
    "pnl": -7.22,
    "weight": 0.5
-  },
-  {
-   "symbol": "RICE",
-   "mint": "JB41hUHMuPcKCoC2xmSGKozCu4rukwk1z6R2Z9Dya25q",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T04:35:29Z",
-   "cost": 24.66,
-   "pnl_pct": -6.9,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": -0.0,
-   "closed": "2026-11-27T04:39:36Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -1.69,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 269,
+  "n": 270,
   "wins": 46,
-  "win_rate": 17.1,
-  "mean_pnl_pct": -9.21,
-  "open": 1,
+  "win_rate": 17.0,
+  "mean_pnl_pct": -9.2,
+  "open": 2,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6239,10 +6313,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 253,
+   "n": 254,
    "wins": 43,
-   "win_rate": 17.0,
-   "mean_pnl_pct": -9.01
+   "win_rate": 16.9,
+   "mean_pnl_pct": -9.0
   }
  }
 }
