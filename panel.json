@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:58:04Z",
+ "updated": "2026-11-27T10:58:33Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4277,
+  "lines": 4279,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795741020,
-   80.34
-  ],
   [
    1795741080,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795777034,
    361.97
+  ],
+  [
+   1795777094,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:18:44Z",
-   "time": "11:18:44",
-   "agent": "LEARNER",
-   "coin": "YO",
-   "action": "shadow",
-   "text": "SHADOW YO would have made -9.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.3% over 287.5",
-   "n": 4078
-  },
-  {
-   "t": "2026-11-27T10:18:47Z",
-   "time": "11:18:47",
-   "agent": "LEARNER",
-   "coin": "Pobby",
-   "action": "shadow",
-   "text": "SHADOW Pobby · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027257 (curve maths, every cost) · same exits, outside the book",
-   "n": 4079
-  },
-  {
    "t": "2026-11-27T10:18:52Z",
    "time": "11:18:52",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW Sale would have made -16.9% (stop -14%) · learned x0.5 · tier:swing now avg -9.5% over 60.5",
    "n": 4277
+  },
+  {
+   "t": "2026-11-27T10:58:04Z",
+   "time": "11:58:04",
+   "agent": "LEARNER",
+   "coin": "WaltDisney",
+   "action": "shadow",
+   "text": "SHADOW WaltDisney · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022596 (curve maths, every cost) · same exits, outside the book",
+   "n": 4278
+  },
+  {
+   "t": "2026-11-27T10:58:28Z",
+   "time": "11:58:28",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 7 rejected (snipe not bought: trades tonight 3, serial launcher 2, no symbol or name 1)",
+   "n": 4279
   }
  ],
  "nights": [
@@ -6606,14 +6606,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 1147,
-    "last_event_age_s": 0.4,
+    "last_event_age_s": 29.4,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23863,
+    "events": 23922,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6622,7 +6622,7 @@
     "name": "metadata",
     "connected": true,
     "events": 677,
-    "last_event_age_s": 0.2,
+    "last_event_age_s": 29.2,
     "errors": 30,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6635,8 +6635,8 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
-  "watching": 1,
+  "creates_per_min": 1.8,
+  "watching": 0,
   "followed": 5
  },
  "learner": {
@@ -6684,13 +6684,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13452,
+   "sent": 13483,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13463,
+   "sent": 13494,
    "errors": 0,
    "last_error": null
   }
@@ -6700,30 +6700,30 @@
    "symbol": "WaltDisney",
    "name": "WaltDisneyWorld",
    "mint": "7H8WhkxLuWgUmkg6ArnzCgHAN8XTRNDJ5Sm2aBozpump",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.6,
+   "age_s": 29,
+   "sol_in": 0.94,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 6.2,
+   "mcap_sol": 31.5,
    "dev_pct": 3.1,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": "https://x.com/WaltDisneyWorld",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
   },
   {
    "symbol": "Sale",
    "name": "This coin is on sale",
    "mint": "8oAyjaGSibERagCzkY6kfKbaximQgaXyEdb1YCwupump",
-   "age_s": 35,
-   "sol_in": 10.39,
-   "buys": 20,
-   "sells": 10,
-   "rise_pct": 79.4,
-   "mcap_sol": 52.2,
+   "age_s": 64,
+   "sol_in": 23.13,
+   "buys": 35,
+   "sells": 21,
+   "rise_pct": 208.2,
+   "mcap_sol": 89.7,
    "dev_pct": 2.1,
    "big_sell": 15.57,
    "x": "https://x.com/0xBrangizz/status/2126268906029437097?a=fxT7SWf-o3wPF_ayYwI&s=20",
@@ -6736,14 +6736,14 @@
    "symbol": "WSP",
    "name": "WASUUUP",
    "mint": "56kieEnC8nQZJP17hjSsrybT3gor7RL2cnXqGcjgpump",
-   "age_s": 42,
-   "sol_in": 1.03,
-   "buys": 8,
-   "sells": 3,
-   "rise_pct": 4.5,
-   "mcap_sol": 70.0,
+   "age_s": 71,
+   "sol_in": 0.76,
+   "buys": 12,
+   "sells": 5,
+   "rise_pct": 3.3,
+   "mcap_sol": 69.2,
    "dev_pct": 38.0,
-   "big_sell": 0.09,
+   "big_sell": 0.42,
    "x": "https://x.com/WASUUUP_sool",
    "tg": false,
    "web": "https://wasuuup.co",
@@ -6754,7 +6754,7 @@
    "symbol": "GRAIN",
    "name": "Grain",
    "mint": "DE1VvYSVjAxYgg5nnhFXQXhL15ebH3ohE64fMQDYpump",
-   "age_s": 49,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6772,7 +6772,7 @@
    "symbol": "milisia",
    "name": "dog",
    "mint": "5TvonQUp2jPFBieob9m7pezqTZnjLeXv11Nd7Fg8neDf",
-   "age_s": 60,
+   "age_s": 89,
    "sol_in": -0.98,
    "buys": 4,
    "sells": 2,
@@ -6790,12 +6790,12 @@
    "symbol": "BLK",
    "name": "BlackCoin",
    "mint": "Fno8qZLcMd2MBpmwwTUvHHgixYHoKVb2dSs2vnAJ8WSB",
-   "age_s": 114,
-   "sol_in": 23.38,
-   "buys": 50,
-   "sells": 55,
-   "rise_pct": 178.6,
-   "mcap_sol": 105.7,
+   "age_s": 143,
+   "sol_in": 28.41,
+   "buys": 59,
+   "sells": 65,
+   "rise_pct": 228.7,
+   "mcap_sol": 124.7,
    "dev_pct": 15.2,
    "big_sell": 3.63,
    "x": "https://x.com/MarioPrezldente/status/2126268834705441044",
@@ -6808,7 +6808,7 @@
    "symbol": "?",
    "name": "",
    "mint": "GnZq2jsHBcHfivrH4qkr5TpyaEv7VHET6MJrvCPVqBLT",
-   "age_s": 115,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6828,6 +6828,22 @@
  ],
  "shadows": [
   {
+   "symbol": "WaltDisney",
+   "mint": "7H8WhkxLuWgUmkg6ArnzCgHAN8XTRNDJ5Sm2aBozpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:58:04Z",
+   "cost": 36.2,
+   "pnl_pct": 1.9,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.02
+  },
+  {
    "symbol": "WSP",
    "mint": "56kieEnC8nQZJP17hjSsrybT3gor7RL2cnXqGcjgpump",
    "status": "open",
@@ -6835,7 +6851,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:57:22Z",
    "cost": 36.2,
-   "pnl_pct": -3.0,
+   "pnl_pct": -4.1,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -7249,7 +7265,7 @@
   "wins": 202,
   "win_rate": 22.2,
   "mean_pnl_pct": -7.79,
-  "open": 1,
+  "open": 2,
   "learner": {
    "n": 16,
    "wins": 3,
