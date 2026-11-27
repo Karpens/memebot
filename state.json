@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:16:25Z",
-    "time": "06:16:25",
-    "agent": "EXECUTOR",
-    "coin": "Xmas",
-    "action": "exit",
-    "text": "EXIT Xmas +$7.77 (+37%) · TP +10% · out · 0.0 s after the reading",
-    "n": 2242
-   },
-   {
-    "t": "2026-11-27T05:16:25Z",
-    "time": "06:16:25",
-    "agent": "LEARNER",
-    "coin": "Xmas",
-    "action": "learn",
-    "text": "learned · np:age:<30s now avg -9.8% over 300",
-    "n": 2243
-   },
-   {
-    "t": "2026-11-27T05:16:26Z",
-    "time": "06:16:26",
-    "agent": "EXECUTOR",
-    "coin": "TESS",
-    "action": "exit",
-    "text": "EXIT TESS $-1.41 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 2244
-   },
-   {
     "t": "2026-11-27T05:16:26Z",
     "time": "06:16:26",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW cucu · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027072 (curve maths, every cost) · same exits, outside the book",
     "n": 2841
+   },
+   {
+    "t": "2026-11-27T06:30:27Z",
+    "time": "07:30:27",
+    "agent": "LEARNER",
+    "coin": "cucu",
+    "action": "shadow",
+    "text": "SHADOW cucu would have made -17.9% (stop -15%) · learned x0.5 · np:dev:0-2 now avg -9.0% over 192",
+    "n": 2842
+   },
+   {
+    "t": "2026-11-27T06:30:29Z",
+    "time": "07:30:29",
+    "agent": "LEARNER",
+    "coin": "CEDARCREEK",
+    "action": "shadow",
+    "text": "SHADOW CEDARCREEK · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024777 (curve maths, every cost) · same exits, outside the book",
+    "n": 2843
+   },
+   {
+    "t": "2026-11-27T06:30:36Z",
+    "time": "07:30:36",
+    "agent": "LEARNER",
+    "coin": "CEDARCREEK",
+    "action": "shadow",
+    "text": "SHADOW CEDARCREEK would have made -14.2% (stop -11%) · learned x0.5 · np:social:web now avg -8.8% over 176",
+    "n": 2844
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2841,
+  "lines": 2844,
   "flags": [
    {
     "coin": "Kibo",
@@ -21135,6 +21135,10 @@
    [
     1795760993,
     361.97
+   ],
+   [
+    1795761053,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21143,9 +21147,9 @@
   },
   "np_said": 1795761000.780882,
   "shadow": {
-   "n": 338,
+   "n": 340,
    "wins": 60,
-   "sum": -2847.7
+   "sum": -2879.8
   },
   "np_speed": {
    "first_in": [
@@ -30728,9 +30732,9 @@
   }
  },
  "shadow": {
-  "n": 352,
+  "n": 354,
   "wins": 62,
-  "sum": -3046.2,
+  "sum": -3078.3,
   "by": {
    "learner": {
     "n": 16,
@@ -30738,52 +30742,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 336,
+    "n": 338,
     "wins": 59,
-    "sum": -2848.4
+    "sum": -2880.5
    }
   },
   "closed": [
-   {
-    "symbol": "Simyo",
-    "mint": "EdvryKbXAZpPSjcMNcG5KPZxTE2paXb9bSafMBW4pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:20:23Z",
-    "cost": 36.2,
-    "pnl_pct": 12.7,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.27,
-    "closed": "2026-11-27T06:20:51Z",
-    "exit": "TP +10%",
-    "pnl": 4.61,
-    "weight": 0.5
-   },
-   {
-    "symbol": "CRASH-OUT",
-    "mint": "2mqbzfqFEYThDQGPtiGCKSKBJrj3Wpakqwr9qDzppump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:21:43Z",
-    "cost": 36.2,
-    "pnl_pct": -15.7,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 2.33,
-    "closed": "2026-11-27T06:21:45Z",
-    "exit": "stop -12%",
-    "pnl": -5.68,
-    "weight": 0.5
-   },
    {
     "symbol": "nothing",
     "mint": "2BC3PNq9C36k8QWezaibcuH4vT5Lo7P7h6GS2x3Gpump",
@@ -31143,6 +31107,46 @@
     "exit": "5 min, only -4%",
     "pnl": -2.95,
     "weight": 0.5
+   },
+   {
+    "symbol": "cucu",
+    "mint": "FvKr7jbyugs9suWvb88bBWPez88ntnSD891wVJerByAb",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:30:23Z",
+    "cost": 36.2,
+    "pnl_pct": -17.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 3.95,
+    "closed": "2026-11-27T06:30:27Z",
+    "exit": "stop -15%",
+    "pnl": -6.48,
+    "weight": 0.5
+   },
+   {
+    "symbol": "CEDARCREEK",
+    "mint": "Ds1aANqw4FiEJ8o3VyYsfqvtyyQCZM7S3UEFxybmpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:30:29Z",
+    "cost": 36.2,
+    "pnl_pct": -14.2,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.19,
+    "closed": "2026-11-27T06:30:36Z",
+    "exit": "stop -11%",
+    "pnl": -5.14,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31151,8 +31155,7 @@
    "CHUD",
    "MUSKY",
    "BIBLE",
-   "NVIDIAAI",
-   "cucu"
+   "NVIDIAAI"
   ]
  },
  "learner_summary": {
@@ -31162,14 +31165,14 @@
   "min_samples": 8,
   "best": [
    {
-    "label": "snipe · hour:day",
-    "n": 22,
-    "avg": -5.3
-   },
-   {
     "label": "snipe · np:sol:6-12",
     "n": 38,
     "avg": -4.9
+   },
+   {
+    "label": "snipe · hour:day",
+    "n": 23,
+    "avg": -5.7
    },
    {
     "label": "snipe · hour:01-03",
@@ -31194,7 +31197,7 @@
     "avg": -14.3
    }
   ],
-  "shadows": 336,
+  "shadows": 338,
   "memory": "snipe"
  }
 }
