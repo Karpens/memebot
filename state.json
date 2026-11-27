@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:54:04Z",
-    "time": "08:54:04",
-    "agent": "LEARNER",
-    "coin": "BO6",
-    "action": "shadow",
-    "text": "SHADOW BO6 would have made -7.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 168.5",
-    "n": 3282
-   },
-   {
     "t": "2026-11-27T07:54:14Z",
     "time": "08:54:14",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 5.6 a minute · 0 watched · 19 rejected (snipe not bought: trades tonight 9, mayhem mode 8, serial launcher 1)",
     "n": 3881
+   },
+   {
+    "t": "2026-11-27T09:43:32Z",
+    "time": "10:43:32",
+    "agent": "LEARNER",
+    "coin": "XMAS",
+    "action": "shadow",
+    "text": "SHADOW XMAS would have made +7.4% (dump: 1355.8 SOL sold) · learned x0.5 · np:sol:12+ now avg -11.7% over 43.5",
+    "n": 3882
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3881,
+  "lines": 3882,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795736520,
-    82.3
-   ],
    [
     1795736580,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795772534,
     361.97
+   ],
+   [
+    1795772594,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795772566.645346,
   "shadow": {
-   "n": 739,
-   "wins": 159,
-   "sum": -6129.8
+   "n": 740,
+   "wins": 160,
+   "sum": -6122.4
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 753,
-  "wins": 161,
-  "sum": -6328.3,
+  "n": 754,
+  "wins": 162,
+  "sum": -6320.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 737,
-    "wins": 158,
-    "sum": -6130.5
+    "n": 738,
+    "wins": 159,
+    "sum": -6123.1
    }
   },
   "closed": [
-   {
-    "symbol": "GTA6",
-    "mint": "AKkVoXg1m7KFZhq2Y3HrYzgsGGXnPMvLNhiok7T1pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:28:43Z",
-    "cost": 36.2,
-    "pnl_pct": -12.5,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.04,
-    "closed": "2026-11-27T09:33:43Z",
-    "exit": "5 min, only -9%",
-    "pnl": -4.54,
-    "weight": 0.5
-   },
    {
     "symbol": "BOUNCEA",
     "mint": "EBPkj2PidoAug8vpKj5gj65sPx7cVxMWSHmFK3Kspump",
@@ -31743,12 +31723,31 @@
     "exit": "TP +10%",
     "pnl": 4.82,
     "weight": 0.5
+   },
+   {
+    "symbol": "XMAS",
+    "mint": "4kAJ5WNpN84bG7eTJnhwV1wouguhLadewC5tLEajpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:41:33Z",
+    "cost": 36.2,
+    "pnl_pct": 7.4,
+    "tier": "swing",
+    "score": 4,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1153.09,
+    "closed": "2026-11-27T09:43:32Z",
+    "exit": "dump: 1355.8 SOL sold",
+    "pnl": 2.69,
+    "weight": 0.5
    }
   ],
   "open": [
    "SIM",
    "table",
-   "XMAS",
    "CMS",
    "FISH",
    "BAI"
@@ -31789,11 +31788,11 @@
    },
    {
     "label": "snipe · np:sol:12+",
-    "n": 43,
-    "avg": -11.9
+    "n": 44,
+    "avg": -11.7
    }
   ],
-  "shadows": 737,
+  "shadows": 738,
   "memory": "snipe"
  }
 }
