@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:30:30Z",
+ "updated": "2026-11-27T09:30:58Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3801,
+  "lines": 3803,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:48:29Z",
-   "time": "09:48:29",
-   "agent": "LEARNER",
-   "coin": "QUESTIONABLE",
-   "action": "shadow",
-   "text": "SHADOW QUESTIONABLE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024736 (curve maths, every cost) · same exits, outside the book",
-   "n": 3602
-  },
-  {
-   "t": "2026-11-27T08:48:52Z",
-   "time": "09:48:52",
-   "agent": "LEARNER",
-   "coin": "QUESTIONABLE",
-   "action": "shadow",
-   "text": "SHADOW QUESTIONABLE would have made -18.8% (dump: 4.2 SOL sold) · learned x0.5 · np:social:none now avg -9.6% over 187",
-   "n": 3603
-  },
-  {
    "t": "2026-11-27T08:48:53Z",
    "time": "09:48:53",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW CHAPOA would have made -8.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.5% over 202",
    "n": 3801
+  },
+  {
+   "t": "2026-11-27T09:30:38Z",
+   "time": "10:30:38",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 3 rejected (snipe not bought: trades tonight 1, dev bought 1, mayhem mode 1)",
+   "n": 3802
+  },
+  {
+   "t": "2026-11-27T09:30:43Z",
+   "time": "10:30:43",
+   "agent": "SCANNER",
+   "coin": "Estanislao",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 3803
   }
  ],
  "nights": [
@@ -6600,15 +6600,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 607,
-    "last_event_age_s": 8.6,
+    "events": 610,
+    "last_event_age_s": 0.2,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15664,
+    "events": 15719,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6616,8 +6616,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 348,
-    "last_event_age_s": 76.1,
+    "events": 349,
+    "last_event_age_s": 0.1,
     "errors": 19,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,9 +6630,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
-  "watching": 0,
-  "followed": 3
+  "creates_per_min": 2.0,
+  "watching": 1,
+  "followed": 2
  },
  "learner": {
   "samples": 249,
@@ -6679,23 +6679,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7861,
+   "sent": 7890,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7872,
+   "sent": 7901,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "snowman",
+   "name": "snowman",
+   "mint": "8NXEuFX1ukeQpxUvVRiAAkt8G68a1Y2wwN71zJyUpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "100k",
    "name": "100k mc",
    "mint": "CHTKnFYxkMxgf5UNYYpYJ3NV6wBSuhcYRv2VGL4hpump",
-   "age_s": 13,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6710,28 +6728,10 @@
    "why": "mayhem mode"
   },
   {
-   "symbol": "Estanislao",
-   "name": "The Blind Guardian",
-   "mint": "B7UshtxnfhD1fUK4mEurTvudsfW6M4nmF3yxCMS8pump",
-   "age_s": 76,
-   "sol_in": 5.75,
-   "buys": 13,
-   "sells": 6,
-   "rise_pct": 11.9,
-   "mcap_sol": 341.7,
-   "dev_pct": 74.8,
-   "big_sell": 0.15,
-   "x": "https://x.com/0xAliix/status/2126246154237259908",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 74.8% (max 70%)",
-   "why": "dev bought 74.8% (max 70%)"
-  },
-  {
    "symbol": "GTA6",
    "name": "GTA 6 x Solana",
    "mint": "AKkVoXg1m7KFZhq2Y3HrYzgsGGXnPMvLNhiok7T1pump",
-   "age_s": 107,
+   "age_s": 135,
    "sol_in": 0.31,
    "buys": 2,
    "sells": 3,
@@ -6742,24 +6742,6 @@
    "x": false,
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "REDZONEC",
-   "name": "Red Zone Path",
-   "mint": "HmshdhVvkDxYh6eyUJpsReymXyfPSUgfdsGaUTmYpump",
-   "age_s": 172,
-   "sol_in": -0.89,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": -5.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.1,
-   "big_sell": 1.96,
-   "x": false,
-   "tg": false,
-   "web": "https://dknetwork.draftkings.com/2026/11/26/xavier-worthy-fantasy-football-start-or-sit-advice-for-week-12/?mint=",
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   }
