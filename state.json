@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T21:13:40Z",
-    "time": "22:13:40",
-    "agent": "LEARNER",
-    "coin": "LABEL",
-    "action": "shadow",
-    "text": "SHADOW LABEL would have made -7.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.7% over 300",
-    "n": 6853
-   },
-   {
-    "t": "2026-11-27T21:13:44Z",
-    "time": "22:13:44",
-    "agent": "LEARNER",
-    "coin": "CHIPPY",
-    "action": "shadow",
-    "text": "SHADOW CHIPPY · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000033488 (curve maths, every cost) · same exits, outside the book",
-    "n": 6854
-   },
-   {
-    "t": "2026-11-27T21:13:48Z",
-    "time": "22:13:48",
-    "agent": "LEARNER",
-    "coin": "CHIPPY",
-    "action": "shadow",
-    "text": "SHADOW CHIPPY would have made -2.2% (dump: 4.3 SOL sold) · learned x0.5 · np:dev:2-5 now avg -7.4% over 300",
-    "n": 6855
-   },
-   {
     "t": "2026-11-27T21:14:10Z",
     "time": "22:14:10",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW DUG · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000023559 (curve maths, every cost) · same exits, outside the book",
     "n": 7452
+   },
+   {
+    "t": "2026-11-27T22:21:02Z",
+    "time": "23:21:02",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.4 a minute · 0 watched · 22 rejected (snipe not bought: night at open  10, serial launcher 6, mayhem mode 4)",
+    "n": 7453
+   },
+   {
+    "t": "2026-11-27T22:21:18Z",
+    "time": "23:21:18",
+    "agent": "SCANNER",
+    "coin": "bob",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1258 is not 30 + real SOL 0 (off +1228 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 716 odd readings from 194 coins tonight",
+    "n": 7454
+   },
+   {
+    "t": "2026-11-27T22:21:21Z",
+    "time": "23:21:21",
+    "agent": "LEARNER",
+    "coin": "DUG",
+    "action": "shadow",
+    "text": "SHADOW DUG would have made -17.8% (dump: 3.7 SOL sold) · learned x0.5 · np:social:none now avg -8.1% over 300",
+    "n": 7455
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7452,
+  "lines": 7455,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795818001.44343,
+  "np_said": 1795818062.443397,
   "shadow": {
-   "n": 2144,
+   "n": 2145,
    "wins": 491,
-   "sum": -15793.9
+   "sum": -15811.7
   },
   "np_speed": {
    "first_in": [
@@ -23110,8 +23110,8 @@
    ]
   },
   "odd": {
-   "readings": 713,
-   "coins": 193,
+   "readings": 718,
+   "coins": 194,
    "followed": 0,
    "mints": [
     "ERGxdPAhVciioVVK2cfaozyse99vgxkP8TBwvzrJpump",
@@ -23306,7 +23306,8 @@
     "GR1FTzfXfZNJaAeBGJvniudrxaJp2QoeAA1Csd5kpww5",
     "8im1KvHqzrvhbg7Ybw2R2sutiA9DHj5wuV26GJLCpump",
     "A4arJbmRU7mqxJ85gwojh84WrURtyNCaqtkizMKvpump",
-    "ArwabcAqwshRvjVtiViiUCpX3sNwRnTSfXYy3huApump"
+    "ArwabcAqwshRvjVtiViiUCpX3sNwRnTSfXYy3huApump",
+    "5zedH9ejwMU2XFn8Ebwz9m28DqLLCcUdEpjZQRqckFZV"
    ]
   },
   "shadow_said": {
@@ -32001,9 +32002,9 @@
   }
  },
  "shadow": {
-  "n": 2158,
+  "n": 2159,
   "wins": 493,
-  "sum": -15992.4,
+  "sum": -16010.2,
   "by": {
    "learner": {
     "n": 16,
@@ -32011,32 +32012,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2142,
+    "n": 2143,
     "wins": 490,
-    "sum": -15794.6
+    "sum": -15812.4
    }
   },
   "closed": [
-   {
-    "symbol": "GIGAJAK",
-    "mint": "DZfAtSibREoN8Xh1CZzuXACZchhtW3e9vC3zumrgEN6P",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T22:16:59Z",
-    "cost": 5.91,
-    "pnl_pct": -14.6,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 7.34,
-    "closed": "2026-11-27T22:17:00Z",
-    "exit": "stop -10%",
-    "pnl": -0.86,
-    "weight": 0.5
-   },
    {
     "symbol": "DEGODS",
     "mint": "GoDSb9pXkg7wRNEiXnxHwpbXPYXoRGtkwZaEWY2MaD8z",
@@ -32416,14 +32397,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.75,
     "weight": 0.5
+   },
+   {
+    "symbol": "DUG",
+    "mint": "13r3aW3QEW6gkpQ2hFA2GvVPsogJbL5Cn9Q2tYedW3KT",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:20:28Z",
+    "cost": 5.91,
+    "pnl_pct": -17.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.3,
+    "closed": "2026-11-27T22:21:21Z",
+    "exit": "dump: 3.7 SOL sold",
+    "pnl": -1.05,
+    "weight": 0.5
    }
   ],
   "open": [
    "DUCKIT",
    "PHENOMDAD",
    "GENNY",
-   "DZN",
-   "DUG"
+   "DZN"
   ]
  },
  "learner_summary": {
@@ -32462,10 +32462,10 @@
    {
     "label": "snipe · hour:23-01",
     "n": 32,
-    "avg": -10.1
+    "avg": -10.2
    }
   ],
-  "shadows": 2350,
+  "shadows": 2351,
   "memory": "snipe"
  }
 }
