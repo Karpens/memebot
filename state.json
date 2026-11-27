@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:17:47Z",
-    "time": "21:17:47",
-    "agent": "LEARNER",
-    "coin": "AVECKO",
-    "action": "shadow",
-    "text": "SHADOW AVECKO · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000023268 (curve maths, every cost) · same exits, outside the book",
-    "n": 6410
-   },
-   {
     "t": "2026-11-27T20:17:52Z",
     "time": "21:17:52",
     "agent": "SCANNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW Solanta · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000029024 (curve maths, every cost) · same exits, outside the book",
     "n": 7009
+   },
+   {
+    "t": "2026-11-27T21:31:08Z",
+    "time": "22:31:08",
+    "agent": "LEARNER",
+    "coin": "PORDFROG",
+    "action": "shadow",
+    "text": "SHADOW PORDFROG would have made -7.0% (5 min, only -2%) · learned x0.5 · np:social:none now avg -8.2% over 300",
+    "n": 7010
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7009,
+  "lines": 7010,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795815032.443396,
   "shadow": {
-   "n": 1966,
+   "n": 1967,
    "wins": 448,
-   "sum": -14322.9
+   "sum": -14329.9
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 456,
+   "readings": 457,
    "coins": 163,
    "followed": 0,
    "mints": [
@@ -31967,9 +31967,9 @@
   }
  },
  "shadow": {
-  "n": 1980,
+  "n": 1981,
   "wins": 450,
-  "sum": -14521.4,
+  "sum": -14528.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31977,32 +31977,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1964,
+    "n": 1965,
     "wins": 447,
-    "sum": -14323.6
+    "sum": -14330.6
    }
   },
   "closed": [
-   {
-    "symbol": "ru",
-    "mint": "F1g6RugiFXdGFQdKEvVMuTuA7knUp7Cz8THXb6HTpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:19:44Z",
-    "cost": 5.91,
-    "pnl_pct": -7.7,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T21:24:31Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.46,
-    "weight": 0.5
-   },
    {
     "symbol": "BURNIE",
     "mint": "LKPJWRXBDDtC3twuhZWnVMnTnXgvpJjqpB5u3v1pump",
@@ -32382,10 +32362,29 @@
     "exit": "TP +10%",
     "pnl": 0.49,
     "weight": 0.5
+   },
+   {
+    "symbol": "PORDFROG",
+    "mint": "BdNeMpmZT3rM9hzhhf6kxZk5FPjcZX5h61dPJrpVpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:26:08Z",
+    "cost": 5.91,
+    "pnl_pct": -7.0,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.25,
+    "closed": "2026-11-27T21:31:08Z",
+    "exit": "5 min, only -2%",
+    "pnl": -0.41,
+    "weight": 0.5
    }
   ],
   "open": [
-   "PORDFROG",
    "MoonBoy",
    "DCAT",
    "munboi",
@@ -32436,7 +32435,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 2172,
+  "shadows": 2173,
   "memory": "snipe"
  }
 }
