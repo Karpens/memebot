@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:37:56Z",
-    "time": "08:37:56",
-    "agent": "LEARNER",
-    "coin": "1RING2RULE",
-    "action": "shadow",
-    "text": "SHADOW 1RING2RULE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021232 (curve maths, every cost) · same exits, outside the book",
-    "n": 3198
-   },
-   {
     "t": "2026-11-27T07:38:14Z",
     "time": "08:38:14",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW GTA6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022877 (curve maths, every cost) · same exits, outside the book",
     "n": 3797
+   },
+   {
+    "t": "2026-11-27T09:29:05Z",
+    "time": "10:29:05",
+    "agent": "LEARNER",
+    "coin": "NUMBER",
+    "action": "shadow",
+    "text": "SHADOW NUMBER would have made +11.2% (TP +10%) · learned x0.5 · np:social:none now avg -9.5% over 201.5",
+    "n": 3798
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3797,
+  "lines": 3798,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795735680,
-    82.3
-   ],
    [
     1795735740,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795771694,
     361.97
+   ],
+   [
+    1795771754,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795771716.64527,
   "shadow": {
-   "n": 707,
-   "wins": 150,
-   "sum": -5913.5
+   "n": 708,
+   "wins": 151,
+   "sum": -5902.3
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 721,
-  "wins": 152,
-  "sum": -6112.0,
+  "n": 722,
+  "wins": 153,
+  "sum": -6100.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 705,
-    "wins": 149,
-    "sum": -5914.2
+    "n": 706,
+    "wins": 150,
+    "sum": -5903.0
    }
   },
   "closed": [
-   {
-    "symbol": "COUCHTANK",
-    "mint": "GbWxv9sNJLhRwY3muMMuKkGwDTnyRq84m2cYtctQpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:12:49Z",
-    "cost": 36.2,
-    "pnl_pct": -7.9,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T09:16:12Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.87,
-    "weight": 0.5
-   },
    {
     "symbol": "FLOPCAT",
     "mint": "CEoswNdbuJQKCkSeCUxmyEph5AVbRPT9rNc4azW9hGXi",
@@ -31743,12 +31723,31 @@
     "exit": "TP +10%",
     "pnl": 3.38,
     "weight": 0.5
+   },
+   {
+    "symbol": "NUMBER",
+    "mint": "ZV9rkp8JMB2ooW2H2t2oo1sdyuLK4mqPK1Rzeb2pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:27:25Z",
+    "cost": 36.2,
+    "pnl_pct": 11.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.15,
+    "closed": "2026-11-27T09:29:05Z",
+    "exit": "TP +10%",
+    "pnl": 4.05,
+    "weight": 0.5
    }
   ],
   "open": [
    "PISSBALL",
    "CHAPOA",
-   "NUMBER",
    "REDZONEC",
    "GTA6"
   ]
@@ -31792,7 +31791,7 @@
     "avg": -11.9
    }
   ],
-  "shadows": 705,
+  "shadows": 706,
   "memory": "snipe"
  }
 }
