@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T01:45:54Z",
+ "updated": "2026-11-27T01:47:09Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 80.34,
- "equity": 80.34,
+ "balance": 72.31,
+ "equity": 80.27,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -15,27 +15,22 @@
   "LEARNER",
   "LOGGER"
  ],
- "prompt": "You are Meme Bot, a meme-coin trading terminal on Solana. Run around the clock, 24/7, with a starting balance of $100. I will not be watching. Trade New Pairs, first in and first out: speed is the whole game. Log every decision so I can read it any time.\n\nSTRATEGY: NEW PAIRS\n- The \"New Pairs\" column of Axiom Pulse: brand-new pump.fun coins in their first seconds to minutes, still on the bonding curve.\n- Every new coin is watched for 180 seconds (40 at once, the oldest dropped first). Its bonding curve is read every 0.5 seconds while anything is held, every second otherwise.\n- Enter on the curve reading where, within 180 seconds of the launch, all of these hold: at least 2.5 SOL came in, at least 6 readings were buys and 65% of the moves, the price is at least 12% above the launch price, and the market cap is at most 70 SOL. Never before 45 seconds after the launch: the first seconds belong to the snipers and the dev, who sell into the first pump. Buy on that same reading.\n- Older migrated pairs (DexScreener, GeckoTerminal) are a second strategy, switched off.\n\nAGENTS\n1. SCANNER - watches every new pump.fun coin on PumpPortal's stream and reads its bonding curve: SOL in, buys against sells, the biggest sell, its age. It fires the entry trigger; it never trades. One buy reading's size is not capped on its own: the first one holds the launch's snipers.\n2. NEWS - reads the coin's socials (X, Telegram, website, from its metadata; a coin without any is allowed but scores lower) and the curve's momentum (SOL in, the share of buys) into a NEWS score from 0 to 10 and picks the hold plan from it. While a coin is held it reads them again every 30 seconds and may move the plan up or down.\n3. RUG CHECK - the creator bought at most 8% of the supply, no single sell of 2 SOL or more, no mayhem-mode launch, no account that is not a pump.fun bonding curve, no creator with 2 or more other launches in the last 60 minutes, and a RugCheck report within 3 seconds: no rug history, no danger risk, no single holder above 12%, the top 10 holders at most 35% (the curve left out), no insiders, and at least 10 holders seen, a holder being a wallet that holds the coin (RugCheck's own count includes the empty accounts of wallets that sold out; those and the curve's are taken off). A report that sees fewer is not a pass yet: in a coin's first seconds RugCheck has not indexed it, and an empty holder list looks spread out (7 of the first 10 live entries passed on 0-4 holders, and all 4 dumps were among them; 6 of those 7 came at 13-25 seconds, before today's 45 second minimum age, which by itself keeps out 3 of the 4 dumps, since they dumped before 45 seconds; the fourth, MEME, came at 134 seconds with 4 holders). The SOL that came in must come from enough of them too: at most 0.5 SOL in for each holder (10 holders for 5 SOL, 16 for 7.8 SOL), since the live dumps sold 2.9-4.4 SOL out of 3.3-4.3 SOL in: a handful of early wallets held it all. Counted in wallets, never in curve readings, whose count depends on how often the curve is read. No entry then: RugCheck is asked again every 4 seconds while the trigger holds. A sell simulation on Jupiter may lose at most 10% on the two quotes alone (no honeypot; the haircut and the fixed fees are the same for every coin).\n4. SIZER - 10% of the balance per trade, never less than $5; the LEARNER moves it between 0.5x and 1.5x, and a half-size buy under a $100 book is raised to the $5 minimum (at $86 that is 0.58x; the log line says so). A $5 order costs more: about 7.6% a round trip against 6.6% for $10, so +10% nets about +4.4% and the -7% stop costs about -12%. Ten percent of $100 is about 0.14 SOL: an order's fixed fees and the curve's price impact together are within 0.1% of their cheapest there (about 0.2 SOL), so bigger orders would not be cheaper, only riskier. Under $5 the fixed fee is over 1.4% of an order each way, so under a $50 book it buys nothing.\n5. EXECUTOR - fills every buy and sale at a real Jupiter quote for the amount, less a 1% latency haircut and the network and priority fees. The curve's own maths fills a sale only when Jupiter fails and that maths matched a Jupiter quote at the entry. It logs how fast it was: \"first in · 1.2 s after the trigger · 38 s after launch\" and \"out · 0.3 s after the reading\".\n6. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row (a trade that sold its first step is not one), no new entries in the last 10 minutes, stop for the night at -30%, and no new entry that could take the night past it: the open positions count at what they would sell for, and each of them and the new order could lose another 30% in one dump (the live dumps took 25-29%), so the deeper the day, the fewer positions it may hold. The -30% is where buying stops; the positions already held can still take the day a little past it. Each calendar day is one book (a \"night\" on the page) and positions carry over midnight. The bot runs in jobs of 5 h 40 min, each starting the next: no new pairs are bought in the last 5 minutes of a job and what it holds is sold in its last minute, since nobody watches the exits until the next job starts.\n7. LEARNER - learns from its own closed trades, by what each coin looked like at entry (the creator's buy, SOL in, the share of buys, the SOL in for each holder and the holders RugCheck saw, its age, its socials, the NEWS score, the hold plan, the hour). If past trades like this one lost 3.5% or more on average (counting 5 imaginary flat trades: a coin bought at random loses the 6.5% round trip, and 8 such trades average -4% that way, past the line), it skips the coin; every 5th such skip is bought at half size to check (never under the $5 minimum). Otherwise it sizes from 0.5x to 1.5x by how such trades did. Coins it skips, and those RISK blocks, are followed as shadow trades, up to 20 at once: priced by the curve's own maths with every cost of a real buy (never a Jupiter quote: that is the real trades'), sold by the same exits on the same readings, never in the book; each one's result after costs teaches it at half the weight of a real trade (paper on paper: no failed or late transaction, no sell simulation). A coin the entry rules reject (RugCheck, one buy too big) gets no shadow, and neither does one while RugCheck sees too few of its holders.\n8. LOGGER - every decision with its reason, and a morning report.\n\nEXITS - checked on every curve reading of a held coin, in the same loop turn\n- The base: take the whole profit at +10% (scalp, NEWS 0-2). It was +7%, but after the costs that left about +2.7% (+1.9% on the first live take) against stops that cost -11% to -16%; +10% leaves about +5.6%.\n- Strong NEWS holds part of it longer. Each step sells a share of what is left: swing (NEWS 3-4) 50% at +10% and the rest at +20%; runner (5-6) 34% at +10%, 50% at +20%, the rest at +60%; moon (7+) 25% at +10%, 34% at +20%, 50% at +60%, the rest at +100%.\n- Stop loss at -7% until the first step. After the first step the stop moves to break-even (+1%) or higher, to where selling the rest still leaves the whole trade without a loss after its fees, and a trailing stop follows the top (6%, 10% and 15% under it for swing, runner and moon).\n- Out after 5 minutes unless up 2% (10, 15 and 20 minutes for swing, runner and moon), before the first step only; after twice that time, out unless the first step was reached.\n- Out when the curve has had no trade for 3 minutes: a curve nobody trades keeps its price for good.\n- Out at once on a dump (one sell of 2 SOL or more after the entry) and when the curve completes (the migration: sold into the curve's last state).\n- Fading: buys under 45% of the last 5 minutes and a NEWS score 2 or more below the entry's: the rest is sold while in profit.\n\nPaper mode: no wallet, no real money. Honest maths, the engine's own (it priced the first live trades to the cent, SOL at $71): pump.fun's fee is about 1.25% each way, plus the 1% latency haircut each way, the curve's price impact (about 0.4% each way for $10) and 0.001 SOL of network and priority fees an order ($0.07, 0.7% of a $10 order each way): a round trip at an unchanged price costs about 6.5%. The gains and the stop are counted from the fill price, which already holds the buy's costs, so a sale breaks even at about +4%: +10% nets about +5.6% and the -7% stop costs about -11% (-12 to -16% when the price jumps past it between two readings, as the first stops did). A scalp needs about 2 trades in 3 to reach +10% before the stop, and on a random walk every exit plan loses about that 6.5% round trip: the entry rules, the hold ladder (+20, +60, +100% when the NEWS is strong) and the LEARNER are what can tilt it. Not financial advice.\n",
+ "prompt": "You are Meme Bot, a meme-coin trading terminal on Solana. Run around the clock, 24/7, with a starting balance of $100. I will not be watching. Snipe New Pairs: buy a brand-new coin as soon as you see it, sell at a 10% loss, and take the profit by your own exits. Log every decision so I can read it any time.\n\nSTRATEGY: NEW PAIRS, SNIPE MODE\n- The \"New Pairs\" column of Axiom Pulse: brand-new pump.fun coins in their first seconds, still on the bonding curve.\n- Every new coin is watched for 180 seconds (40 at once, the oldest dropped first). Its bonding curve is read every 0.5 seconds while anything is held, every second otherwise.\n- Buy on the coin's first curve reading, about 1-2 seconds after the launch, when that reading came within 10 seconds of the launch, the bot decides within those 10 seconds too, and the cheap checks below pass. No momentum trigger, no minimum age, no wait for RugCheck: a coin a second old is not on RugCheck yet. Each coin once: a coin not bought on its first reading (RISK said no, too little cash) is never bought later.\n- Why the bot used to wait 45 seconds: on the first live morning the entries 10-25 seconds after the launch lost, 3 of them to a dump of 2.9-4.4 SOL within seconds. The first seconds belong to the snipers and the dev, who sell into the first pump; a snipe buys right among them. Most new coins never move after their launch, so most snipes pay the round trip of about 6.6% or the stop.\n- The momentum entry (SOL in, buy readings, the rise, 45-180 seconds after the launch) is off while snipe mode is on.\n- Older migrated pairs (DexScreener, GeckoTerminal) are a second strategy, switched off.\n\nAGENTS\n1. SCANNER - watches every new pump.fun coin on PumpPortal's stream and reads its bonding curve: SOL in, buys against sells, the biggest sell, its age. It flags the snipe on the coin's first reading; it never trades.\n2. NEWS - reads the coin's socials (X, Telegram, website, from its metadata; a coin without any is allowed but scores lower) and the curve's momentum (SOL in, the share of buys) into a NEWS score from 0 to 10 and picks the hold plan from it. At the snipe the links are often not read yet and the curve has barely moved, so most snipes start as a scalp. While a coin is held it reads them again every 30 seconds and may move the plan up or down.\n3. RUG CHECK - only the checks that need no waiting, all known at the first reading: the creator bought at most 70% of the supply (the creator is a holder too), no single sell of 2 SOL or more, no mayhem-mode launch, no account that is not a pump.fun bonding curve, no creator with 2 or more other launches in the last 60 minutes, the curve not complete. A single holder may hold up to 70%, but at the first reading the only holder the bot knows is the creator: RugCheck's holder list does not exist yet and is not waited for. RugCheck is asked once, about 25 seconds after the launch of every snipe (held or already sold) and every snipe shadow, for the tape only: never a reason to buy or sell. When Jupiter quotes the buy, its sell simulation may lose at most 10% on the two quotes alone (no honeypot); with no answer from Jupiter for the simulation the buy goes through, the sale unchecked; a buy filled by the curve's maths has no sell simulation. On the page, every coin that reached the buy counts as checked (these checks, and the sell simulation on a quote) and a failed sell simulation as filtered.\n4. SIZER - 10% of the balance per trade, never less than $5; the LEARNER does not change it in snipe mode. A $5 order costs more: about 7.6% a round trip against 6.6% for $10, so +10% nets about +4.3% and the -10% stop costs about -15%. Under $5 the fixed fee is over 1.4% of an order each way, so under a $50 book it buys nothing.\n5. EXECUTOR - fills the buy at a real Jupiter quote for the amount when nothing is held and Jupiter has a route for the coin now. While a coin is held its exits come first: the buy asks Jupiter nothing (two quotes would hold a stop up to 3 seconds) and is filled by the curve's own maths at once. A coin a second or two old often has no route yet: then too. The curve's maths fills only the reading the bot holds when it decides, at most 1 second old and with no newer reading of the coin already in, never an earlier one: a slow Jupiter answer or a slow loop leaves the coin unbought. It counts every cost of a real fill (pump.fun's fee, the curve's price impact, the 1% latency haircut, the network and priority fees: the maths that matched Jupiter on the live fills) and assumes the order lands at that reading's state plus the 1% haircut, which is optimistic in a coin's first second, when the snipers' bundles land in the same blocks. The log and the buy line say \"fill curve\". A snipe the bot decides more than 10 seconds after the launch is not bought. A sale is filled at a Jupiter quote; when Jupiter fails, by the curve's maths if the entry was filled by it (never on reserves older than 5 seconds, except at the night's or a job's end, which the log says) or matched a Jupiter quote. It logs how fast it was: \"first in · 0.1 s after the first reading · 2 s after launch\" and \"out · 0.3 s after the reading\".\n6. RISK - up to 8 open positions and 250 trades a night, a 2 minute pause after 5 losses in a row (a trade that sold its first step is not one), no new entries in the last 10 minutes, stop for the night at -30%, and no new entry that could take the night past it: the open positions count at what they would sell for, and each of them and the new order could lose another 30% in one dump (the live dumps took 25-29%), so the deeper the day, the fewer positions it may hold. The -30% is where buying stops; the positions already held can still take the day a little past it. Each calendar day is one book (a \"night\" on the page) and positions carry over midnight. The bot runs in jobs of 5 h 40 min, each starting the next: no new pairs are bought in the last 5 minutes of a job and what it holds is sold in its last minute, since nobody watches the exits until the next job starts.\n7. LEARNER - in snipe mode it never skips a coin and never changes a size: every coin that passes the cheap checks is bought. It still learns from every closed snipe, by what the coin looked like at entry (the creator's buy, SOL in, the share of buys, its age, its socials, the NEWS score, the hold plan, the hour), in a memory of its own (memory_snipe.json) that the momentum strategy's LEARNER never reads, so its memory and its numbers on the page stay true (the page marks its labels \"snipe\"). Snipes that RISK blocks are followed as shadow trades, up to 20 at once: priced on that first reading by the curve's own maths with every cost of a real buy, the same -10% stop and exits on the same readings, never in the book; each one's result after costs teaches it at half the weight of a real trade (paper on paper: no failed or late transaction).\n8. LOGGER - every decision with its reason, and a morning report.\n\nEXITS - checked on every curve reading of a held coin, in the same loop turn\n- Stop loss at -10% until the first step (a sniped trade's own stop; the momentum strategy's is -7%). After the first step the stop moves to break-even (+1%) or higher, to where selling the rest still leaves the whole trade without a loss after its fees, and a trailing stop follows the top (6%, 10% and 15% under it for swing, runner and moon).\n- The profit is the bot's own exits: take the whole profit at +10% (scalp, NEWS 0-2); strong NEWS holds part of it longer, each step selling a share of what is left: swing (NEWS 3-4) 50% at +10% and the rest at +20%; runner (5-6) 34% at +10%, 50% at +20%, the rest at +60%; moon (7+) 25% at +10%, 34% at +20%, 50% at +60%, the rest at +100%.\n- Out after 5 minutes unless up 2% (10, 15 and 20 minutes for swing, runner and moon), before the first step only; after twice that time, out unless the first step was reached.\n- Out when the curve has had no trade for 3 minutes: a curve nobody trades keeps its price for good.\n- Out at once on a dump (one sell of 2 SOL or more after the entry) and when the curve completes (the migration: sold into the curve's last state).\n- Fading: buys under 45% of the last 5 minutes and a NEWS score 2 or more below the entry's: the rest is sold while in profit.\n\nPaper mode: no wallet, no real money. Honest maths, the engine's own (it priced the first live trades to the cent, SOL at $71): pump.fun's fee is about 1.25% each way, plus the 1% latency haircut each way, the curve's price impact (about 0.4% each way for $10) and 0.001 SOL of network and priority fees an order ($0.07, 0.7% of a $10 order each way): a $10 snipe's round trip at an unchanged price costs about 6.6%. The gains and the stop are counted from the fill price, which already holds the buy's costs: +10% nets about +5.6% and the -10% stop costs about -13.7% (more when the price jumps past it between two readings, as the first live stops did). A scalp needs about 7 trades in 10 to reach +10% before the stop, and on a random walk every exit plan loses about that round trip: only the coins themselves, the hold ladder (+20, +60, +100% when the NEWS is strong) and luck can tilt it. Not financial advice.\n",
  "night": {
   "id": "2026-11-27",
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 10,
-  "checked": 6,
+  "flagged": 11,
+  "checked": 7,
   "filtered": 3,
-  "lines": 211,
+  "lines": 219,
   "last_rug": {
-   "coin": "RDB",
-   "pass": false
+   "coin": "Ghazal",
+   "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "AMUSEDA",
-   "why": "momentum",
-   "t": "2026-11-26T23:18:40Z"
-  },
   {
    "coin": "INUHAO",
    "why": "momentum",
@@ -70,6 +65,11 @@
    "coin": "RDB",
    "why": "momentum",
    "t": "2026-11-27T00:51:00Z"
+  },
+  {
+   "coin": "Ghazal",
+   "why": "snipe",
+   "t": "2026-11-27T01:47:09Z"
   }
  ],
  "curve": [
@@ -736,12 +736,57 @@
   [
    1795743900,
    80.34
+  ],
+  [
+   1795744013,
+   80.34
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "Ghazal",
+   "mint": "CBBZ4wK8YWT8fkXfm5QUqDYhoVLmmi17gwXfijXHpump",
+   "cost": 8.03,
+   "value": 7.96,
+   "pnl_pct": -0.9,
+   "opened": "2026-11-27T01:47:09Z",
+   "url": "https://pump.fun/coin/CBBZ4wK8YWT8fkXfm5QUqDYhoVLmmi17gwXfijXHpump",
+   "reason": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill quote",
+   "size_pct": 10.0,
+   "entry_price": 2.05868e-06,
+   "price": 2.05868e-06,
+   "slip": 1.92,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 0,
+    "parts": [],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "age_s": 1,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.28,
+   "sol_in": 0.0,
+   "hist": [
+    2.05868e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "BAOBAO",
@@ -795,78 +840,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T23:08:06Z",
-   "time": "00:08:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.8 a minute · 4 watched · 28 rejected (serial launcher 20, mayhem mode 6, dump 1) · closest AFRICAN: too young: 27 s (min 45 s)",
-   "n": 12
-  },
-  {
-   "t": "2026-11-26T23:09:06Z",
-   "time": "00:09:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 10.0 a minute · 3 watched · 17 rejected (serial launcher 11, mayhem mode 4, dev bought 1) · closest BRIGHTA: too young: 19 s (min 45 s)",
-   "n": 13
-  },
-  {
-   "t": "2026-11-26T23:09:10Z",
-   "time": "00:09:10",
-   "agent": "SCANNER",
-   "coin": "BRIGHTA",
-   "action": "flag",
-   "text": "momentum · 2.6 SOL in · 6/8 buys (75%) · +17% since launch · mcap 36 SOL · 52 s old",
-   "n": 14
-  },
-  {
-   "t": "2026-11-26T23:09:10Z",
-   "time": "00:09:10",
-   "agent": "RUG CHECK",
-   "coin": "BRIGHTA",
-   "action": "wait",
-   "text": "waiting: RugCheck sees 3 holders (min 10) · no entry until RugCheck sees enough: asked again every 4 s while the trigger holds",
-   "n": 15
-  },
-  {
-   "t": "2026-11-26T23:10:06Z",
-   "time": "00:10:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 10.8 a minute · 3 watched · 21 rejected (serial launcher 13, dump 3, mayhem mode 3) · closest REVOLUCAO: too young: 29 s (min 45 s)",
-   "n": 16
-  },
-  {
-   "t": "2026-11-26T23:11:07Z",
-   "time": "00:11:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.8 a minute · 4 watched · 24 rejected (serial launcher 14, dump 4, mayhem mode 4) · closest REVOLUCAO: too young: 29 s (min 45 s)",
-   "n": 17
-  },
-  {
-   "t": "2026-11-26T23:12:08Z",
-   "time": "00:12:08",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.8 a minute · 4 watched · 18 rejected (serial launcher 8, no symbol or name 4, dump 3) · closest REVOLUCAO: too young: 29 s (min 45 s)",
-   "n": 18
-  },
-  {
-   "t": "2026-11-26T23:13:09Z",
-   "time": "00:13:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.2 a minute · 5 watched · 9 rejected (no symbol or name 3, dump 2, mayhem mode 2) · closest SECTOR: too young: 39 s (min 45 s)",
-   "n": 19
-  },
   {
    "t": "2026-11-26T23:14:10Z",
    "time": "00:14:10",
@@ -2594,6 +2567,78 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (serial launcher 1, dev bought 1, dump 1)",
    "n": 211
+  },
+  {
+   "t": "2026-11-27T01:46:53Z",
+   "time": "02:46:53",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+   "n": 212
+  },
+  {
+   "t": "2026-11-27T01:46:54Z",
+   "time": "02:46:54",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 213
+  },
+  {
+   "t": "2026-11-27T01:47:09Z",
+   "time": "02:47:09",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest Ghazal: no curve reading yet",
+   "n": 214
+  },
+  {
+   "t": "2026-11-27T01:47:09Z",
+   "time": "02:47:09",
+   "agent": "LEARNER",
+   "coin": null,
+   "action": "snipe",
+   "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
+   "n": 215
+  },
+  {
+   "t": "2026-11-27T01:47:09Z",
+   "time": "02:47:09",
+   "agent": "SCANNER",
+   "coin": "Ghazal",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 216
+  },
+  {
+   "t": "2026-11-27T01:47:09Z",
+   "time": "02:47:09",
+   "agent": "SIZER",
+   "coin": "Ghazal",
+   "action": "size",
+   "text": "10% of $80.34 = $8.03",
+   "n": 217
+  },
+  {
+   "t": "2026-11-27T01:47:09Z",
+   "time": "02:47:09",
+   "agent": "EXECUTOR",
+   "coin": "Ghazal",
+   "action": "enter",
+   "text": "ENTER Ghazal at 0.0000020587 · slip 1.9% · snipe · first in · 0.1 s after the first reading · 1 s after launch · fill quote · Jupiter 0.1 s · curve maths 0.0% off Jupiter · stop -10%",
+   "n": 218
+  },
+  {
+   "t": "2026-11-27T01:47:09Z",
+   "time": "02:47:09",
+   "agent": "NEWS",
+   "coin": "Ghazal",
+   "action": "plan",
+   "text": "hold plan · 0/10 (no news) · scalp: +10",
+   "n": 219
   }
  ],
  "nights": [
@@ -2634,11 +2679,7 @@
    "scans": 0
   }
  ],
- "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/8AXuZGKYjfj1f7nrZWCzvK7mYoqxPD21rvaMN9i6i9dJ/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/CrN98JeDUW2jViHLTXG4F4zNxbAuv9mPVs5wASknpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/9rAkHsy6ZrQEdiJSe1cYEJ7RhrSkSiC2c5nVSUotXXUZ/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -2652,7 +2693,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 1 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2660,101 +2701,69 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1851,
-    "last_event_age_s": 2.5,
-    "errors": 2,
-    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
+    "events": 1,
+    "last_event_age_s": 1.2,
+    "errors": 0,
+    "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24042,
-    "last_event_age_s": 0.5,
+    "events": 1,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1180,
-    "last_event_age_s": 8.1,
-    "errors": 47,
-    "last_error": "d.uguu.se: too slow (over 2 s)"
+    "events": 1,
+    "last_event_age_s": 1.0,
+    "errors": 0,
+    "last_error": null
    }
   ],
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 670,
-  "first_in_last_ms": 670,
+  "first_in_ms": 368.0,
+  "first_in_last_ms": 66,
   "exit_ms": 109,
   "exit_last_ms": 109,
-  "launch_to_entry_s": 47,
-  "creates_per_min": 2.8,
-  "watching": 2,
-  "followed": 5
+  "launch_to_entry_s": 24.0,
+  "creates_per_min": 0.2,
+  "watching": 0,
+  "followed": 1
  },
  "learner": {
-  "samples": 111,
-  "skipped": 32,
-  "explored": 8,
+  "samples": 0,
+  "skipped": 0,
+  "explored": 0,
   "min_samples": 8,
-  "best": [
-   {
-    "label": "sig:holders",
-    "n": 8,
-    "avg": -4.9
-   },
-   {
-    "label": "hour:03-05",
-    "n": 49,
-    "avg": -4.6
-   },
-   {
-    "label": "vol5:5-20k",
-    "n": 14,
-    "avg": -6.0
-   }
-  ],
-  "worst": [
-   {
-    "label": "np:sol:3-6",
-    "n": 9,
-    "avg": -21.9
-   },
-   {
-    "label": "tier:scalp",
-    "n": 16,
-    "avg": -17.5
-   },
-   {
-    "label": "news:0-2",
-    "n": 16,
-    "avg": -17.5
-   }
-  ],
-  "shadows": 16
+  "best": [],
+  "worst": [],
+  "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14723,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14723,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "GTP",
-   "name": "GIRL TRADERS PROJECT",
-   "mint": "9v6RcD2LXcBwYP4Hy45VMcGKFWggnSqhinw1fRjgpump",
-   "age_s": 2,
+   "symbol": "Ghazal",
+   "name": "Ghazal",
+   "mint": "CBBZ4wK8YWT8fkXfm5QUqDYhoVLmmi17gwXfijXHpump",
+   "age_s": 1,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2765,152 +2774,8 @@
    "x": false,
    "tg": false,
    "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "NT",
-   "name": "New trying",
-   "mint": "9YDLFuMDeWXSKRauWFzYdptdpfERH428yXduaW3Xpump",
-   "age_s": 3,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "PROC/SELF",
-   "name": "proc/self linux",
-   "mint": "5aaGHxxYaWFDnArLEFh2EmMsLMdmhEhxBKqcsq8zpump",
-   "age_s": 8,
-   "sol_in": 10.54,
-   "buys": 3,
-   "sells": 5,
-   "rise_pct": 79.9,
-   "mcap_sol": 53.2,
-   "dev_pct": 3.0,
-   "big_sell": 0.68,
-   "x": "https://x.com/procself/status/2126130209191543064",
-   "tg": false,
-   "web": "https://procself.lol",
-   "status": "watching",
-   "why": "too young: 7 s (min 45 s)"
-  },
-  {
-   "symbol": "Crysory99",
-   "name": "KITTY",
-   "mint": "H8aSdv7vN9H2H9U225ftdof9eZ2AvAqWPU5Ao39Zpump",
-   "age_s": 19,
-   "sol_in": 1.0,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 6.8,
-   "mcap_sol": 29.9,
-   "dev_pct": 0.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://www.tiktok.com/@crysory99?is_from_webapp=1&sender_device=pc",
-   "status": "watching",
-   "why": "too young: 13 s (min 45 s)"
-  },
-  {
-   "symbol": "PUMPERS",
-   "name": "AGENTIC TRADERS",
-   "mint": "AVWRBRdgDxaTDycBYdrAGwDBU28CdaX4K22GqwBopump",
-   "age_s": 31,
-   "sol_in": -0.14,
-   "buys": 3,
-   "sells": 6,
-   "rise_pct": -0.9,
-   "mcap_sol": 29.6,
-   "dev_pct": 3.4,
-   "big_sell": 7.46,
-   "x": "https://x.com/pumpersfunsol",
-   "tg": false,
-   "web": "https://www.agencypad.fun/coin/EzqmRgFZdLANFxDxAAjW8DGTznD9eytcRHYb6QAhfQiC",
-   "status": "rejected: dump: 7.5 SOL sold",
-   "why": "dump: 7.5 SOL sold"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "4HZcQvsgMhyWy5u7FPXoRu2ivgfpfFt4eCbDaJhWYniy",
-   "age_s": 62,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 30.7,
-   "dev_pct": 4.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "Disney",
-   "name": "Disney",
-   "mint": "31twuwsNeXcmdUrrEHXR97d8Qe7KA5g69psYd2QGpump",
-   "age_s": 124,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "TOE-G",
-   "name": "TOE-G",
-   "mint": "5E6DJ5i8MUwUK97Y1ci2QausKiqjGZQoRq8oyNgobHyc",
-   "age_s": 136,
-   "sol_in": -5.9,
-   "buys": 4,
-   "sells": 8,
-   "rise_pct": -30.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 17.7,
-   "big_sell": 2.48,
-   "x": "https://x.com/ShaneStoffer/status/2126129729514406383",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 17.7% (max 8%)",
-   "why": "dev bought 17.7% (max 8%)"
-  },
-  {
-   "symbol": "PROTON",
-   "name": "Proton",
-   "mint": "HMFZy2a9UciNedhwVtwpW96csKuhm8FsqSAe6Kxapump",
-   "age_s": 140,
-   "sol_in": 0.02,
-   "buys": 11,
-   "sells": 2,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.04,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
+   "status": "entered",
+   "why": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL"
   }
  ],
  "strategies": [
