@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:33:56Z",
-    "time": "06:33:56",
-    "agent": "LEARNER",
-    "coin": "DOOM",
-    "action": "learn",
-    "text": "learned · np:buys:<70 now avg -9.9% over 163",
-    "n": 2484
-   },
-   {
     "t": "2026-11-27T05:34:00Z",
     "time": "06:34:00",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW sms · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000043689 (curve maths, every cost) · same exits, outside the book",
     "n": 3083
+   },
+   {
+    "t": "2026-11-27T07:14:34Z",
+    "time": "08:14:34",
+    "agent": "LEARNER",
+    "coin": "sms",
+    "action": "shadow",
+    "text": "SHADOW sms would have made -14.3% (stop -11%) · learned x0.5 · tier:swing now avg -12.6% over 35",
+    "n": 3084
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3083,
+  "lines": 3084,
   "flags": [
    {
     "coin": "Kibo",
@@ -21311,6 +21311,10 @@
    [
     1795763633,
     361.97
+   ],
+   [
+    1795763693,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21319,9 +21323,9 @@
   },
   "np_said": 1795763668.780745,
   "shadow": {
-   "n": 433,
+   "n": 434,
    "wins": 83,
-   "sum": -3641.7
+   "sum": -3656.0
   },
   "np_speed": {
    "first_in": [
@@ -30904,9 +30908,9 @@
   }
  },
  "shadow": {
-  "n": 447,
+  "n": 448,
   "wins": 85,
-  "sum": -3840.2,
+  "sum": -3854.5,
   "by": {
    "learner": {
     "n": 16,
@@ -30914,32 +30918,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 431,
+    "n": 432,
     "wins": 82,
-    "sum": -3642.4
+    "sum": -3656.7
    }
   },
   "closed": [
-   {
-    "symbol": "Toegi",
-    "mint": "FdxE9ckrT9uX3qLbyqRJykWPCjn1L8GfQQkQV69Kpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:06:33Z",
-    "cost": 36.2,
-    "pnl_pct": -20.3,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 1.37,
-    "closed": "2026-11-27T07:07:03Z",
-    "exit": "stop -17%",
-    "pnl": -7.34,
-    "weight": 0.5
-   },
    {
     "symbol": "Crab",
     "mint": "CpTHwm14NDY8mER8XzQGvc3hD47ceqaBARfXhQYhpump",
@@ -31319,14 +31303,33 @@
     "exit": "dump: 2.9 SOL sold",
     "pnl": -8.52,
     "weight": 0.5
+   },
+   {
+    "symbol": "sms",
+    "mint": "2DdPkivL3axCVh4YAkpGjsz6VQKPym6Cyi1nUBsopump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:14:32Z",
+    "cost": 36.2,
+    "pnl_pct": -14.3,
+    "tier": "swing",
+    "score": 3.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 12.18,
+    "closed": "2026-11-27T07:14:34Z",
+    "exit": "stop -11%",
+    "pnl": -5.18,
+    "weight": 0.5
    }
   ],
   "open": [
    "WALMART",
    "PAPERSTAR",
    "TEETH",
-   "Turkey",
-   "sms"
+   "Turkey"
   ]
  },
  "learner_summary": {
@@ -31354,21 +31357,21 @@
   "worst": [
    {
     "label": "snipe · np:sol:12+",
-    "n": 27,
+    "n": 28,
     "avg": -13.0
    },
    {
     "label": "snipe · tier:swing",
-    "n": 34,
-    "avg": -12.5
+    "n": 35,
+    "avg": -12.6
    },
    {
     "label": "snipe · news:3-4",
-    "n": 34,
-    "avg": -12.5
+    "n": 35,
+    "avg": -12.6
    }
   ],
-  "shadows": 431,
+  "shadows": 432,
   "memory": "snipe"
  }
 }
