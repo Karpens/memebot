@@ -47,51 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:53:12Z",
-    "time": "05:53:12",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "5 losses in a row · 2 min pause",
-    "n": 2098
-   },
-   {
-    "t": "2026-11-27T04:53:12Z",
-    "time": "05:53:12",
-    "agent": "EXECUTOR",
-    "coin": "123Packers",
-    "action": "exit",
-    "text": "EXIT 123Packers $-0.73 (-3%) · dump: 2.5 SOL sold · out · 0.0 s after the reading",
-    "n": 2099
-   },
-   {
-    "t": "2026-11-27T04:53:12Z",
-    "time": "05:53:12",
-    "agent": "LEARNER",
-    "coin": "123Packers",
-    "action": "learn",
-    "text": "learned · np:age:<30s now avg -10.3% over 298",
-    "n": 2100
-   },
-   {
-    "t": "2026-11-27T04:53:32Z",
-    "time": "05:53:32",
-    "agent": "RISK",
-    "coin": "LAR",
-    "action": "skip",
-    "text": "no entry: pause after a losing streak",
-    "n": 2101
-   },
-   {
-    "t": "2026-11-27T04:53:32Z",
-    "time": "05:53:32",
-    "agent": "LEARNER",
-    "coin": "LAR",
-    "action": "shadow",
-    "text": "SHADOW LAR · not bought (pause after a losing streak) · followed as if bought: $22.18 at 0.0000022383 (curve maths, every cost) · same exits, outside the book",
-    "n": 2102
-   },
-   {
     "t": "2026-11-27T04:53:39Z",
     "time": "05:53:39",
     "agent": "LEARNER",
@@ -5445,6 +5400,51 @@
     "action": "shadow",
     "text": "SHADOW NWB would have made -15.1% (stop -11%) · learned x0.5 · np:social:web now avg -9.1% over 164",
     "n": 2697
+   },
+   {
+    "t": "2026-11-27T05:58:38Z",
+    "time": "06:58:38",
+    "agent": "RISK",
+    "coin": "ZANTA",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 2698
+   },
+   {
+    "t": "2026-11-27T05:58:38Z",
+    "time": "06:58:38",
+    "agent": "LEARNER",
+    "coin": "ZANTA",
+    "action": "shadow",
+    "text": "SHADOW ZANTA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035384 (curve maths, every cost) · same exits, outside the book",
+    "n": 2699
+   },
+   {
+    "t": "2026-11-27T05:58:39Z",
+    "time": "06:58:39",
+    "agent": "LEARNER",
+    "coin": "ZANTA",
+    "action": "shadow",
+    "text": "SHADOW ZANTA would have made +31.6% (TP +20%) · learned x0.5 · tier:swing now avg -16.9% over 24",
+    "n": 2700
+   },
+   {
+    "t": "2026-11-27T05:58:42Z",
+    "time": "06:58:42",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.6 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 4, mayhem mode 4, no symbol or name 1)",
+    "n": 2701
+   },
+   {
+    "t": "2026-11-27T05:58:55Z",
+    "time": "06:58:55",
+    "agent": "LEARNER",
+    "coin": "spxc",
+    "action": "shadow",
+    "text": "SHADOW spxc would have made -5.9% (5 min, only -2%) · learned x0.5 · np:dev:0-2 now avg -9.4% over 177.5",
+    "n": 2702
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2697,
+  "lines": 2702,
   "flags": [
    {
     "coin": "Kibo",
@@ -21007,17 +21007,21 @@
    [
     1795759073,
     361.97
+   ],
+   [
+    1795759133,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795759062.780846,
+  "np_said": 1795759122.780849,
   "shadow": {
-   "n": 288,
-   "wins": 49,
-   "sum": -2611.0
+   "n": 290,
+   "wins": 50,
+   "sum": -2585.3
   },
   "np_speed": {
    "first_in": [
@@ -21910,7 +21914,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795758784.986442
+   "at": 1795759118.052386
   }
  },
  "last_night": {
@@ -30600,9 +30604,9 @@
   }
  },
  "shadow": {
-  "n": 302,
-  "wins": 51,
-  "sum": -2809.5,
+  "n": 304,
+  "wins": 52,
+  "sum": -2783.8,
   "by": {
    "learner": {
     "n": 16,
@@ -30610,52 +30614,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 286,
-    "wins": 48,
-    "sum": -2611.7
+    "n": 288,
+    "wins": 49,
+    "sum": -2586.0
    }
   },
   "closed": [
-   {
-    "symbol": "BOUNCER",
-    "mint": "5FXjmVDpHn5a5Xc7fBMpCsws2cd2muFkAgP8GQWdBNCR",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:14:48Z",
-    "cost": 20.46,
-    "pnl_pct": 23.9,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 6.7,
-    "closed": "2026-11-27T05:14:49Z",
-    "exit": "TP +10%",
-    "pnl": 4.89,
-    "weight": 0.5
-   },
-   {
-    "symbol": "STITCH",
-    "mint": "5MpbnuG8F8SgvRMMaVdHgJCqimTg9VXY1B7a5a2DtZgR",
-    "status": "closed",
-    "kind": "risk",
-    "why": "8 positions open (max)",
-    "opened": "2026-11-27T05:28:32Z",
-    "cost": 44.05,
-    "pnl_pct": -8.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T05:31:32Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.57,
-    "weight": 0.5
-   },
    {
     "symbol": "SIMYO",
     "mint": "G3cYnFcbj2pd5Xm64VrV6meEYx5rrDHuhLMAgGfqpump",
@@ -31015,10 +30979,49 @@
     "exit": "stop -11%",
     "pnl": -5.45,
     "weight": 0.5
+   },
+   {
+    "symbol": "ZANTA",
+    "mint": "5JDrabd4L4wGDmd9XWFS3ZYvY1G4rFSyigEvFcB8pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:58:38Z",
+    "cost": 36.2,
+    "pnl_pct": 31.6,
+    "tier": "swing",
+    "score": 3,
+    "steps": 2,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 8.53,
+    "closed": "2026-11-27T05:58:39Z",
+    "exit": "TP +20%",
+    "pnl": 11.42,
+    "weight": 0.5
+   },
+   {
+    "symbol": "spxc",
+    "mint": "FcmaJbapvWS9Vqc7mu7HSppRoFpLuPSaUSigKAKvpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:53:55Z",
+    "cost": 36.33,
+    "pnl_pct": -5.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.15,
+    "closed": "2026-11-27T05:58:55Z",
+    "exit": "5 min, only -2%",
+    "pnl": -2.13,
+    "weight": 0.5
    }
   ],
   "open": [
-   "spxc",
    "RUNNER",
    "FLASHER",
    "BAHAT"
@@ -31033,7 +31036,7 @@
    {
     "label": "snipe · np:sol:6-12",
     "n": 36,
-    "avg": -5.5
+    "avg": -5.0
    },
    {
     "label": "snipe · hour:01-03",
@@ -31042,20 +31045,20 @@
    },
    {
     "label": "snipe · hour:05-07",
-    "n": 149,
-    "avg": -6.0
+    "n": 150,
+    "avg": -5.8
    }
   ],
   "worst": [
    {
     "label": "snipe · tier:swing",
     "n": 24,
-    "avg": -18.0
+    "avg": -16.9
    },
    {
     "label": "snipe · news:3-4",
     "n": 24,
-    "avg": -18.0
+    "avg": -16.9
    },
    {
     "label": "snipe · np:sol:12+",
@@ -31063,7 +31066,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 286,
+  "shadows": 288,
   "memory": "snipe"
  }
 }
