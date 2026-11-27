@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T08:25:20Z",
+ "updated": "2026-11-27T08:25:48Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3455,
+  "lines": 3456,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4600,15 +4600,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T07:49:51Z",
-   "time": "08:49:51",
-   "agent": "LEARNER",
-   "coin": "bad bih",
-   "action": "shadow",
-   "text": "SHADOW bad bih would have made -15.3% (stop -12%) · learned x0.5 · np:sol:3-6 now avg -11.2% over 52",
-   "n": 3256
-  },
-  {
    "t": "2026-11-27T07:50:10Z",
    "time": "08:50:10",
    "agent": "LEARNER",
@@ -6398,6 +6389,15 @@
    "action": "shadow",
    "text": "SHADOW GTA 6 would have made -67.6% (dump: 21.3 SOL sold) · learned x0.5 · np:sol:12+ now avg -13.5% over 34",
    "n": 3455
+  },
+  {
+   "t": "2026-11-27T08:25:39Z",
+   "time": "09:25:39",
+   "agent": "LEARNER",
+   "coin": "Huss",
+   "action": "shadow",
+   "text": "SHADOW Huss · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023463 (curve maths, every cost) · same exits, outside the book",
+   "n": 3456
   }
  ],
  "nights": [
@@ -6452,7 +6452,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6460,15 +6460,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 317,
-    "last_event_age_s": 18.2,
+    "events": 319,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6802,
+    "events": 6883,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
@@ -6476,8 +6476,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 174,
-    "last_event_age_s": 18.2,
+    "events": 176,
+    "last_event_age_s": 0.2,
     "errors": 14,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6490,9 +6490,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
-  "watching": 0,
-  "followed": 6
+  "creates_per_min": 3.4,
+  "watching": 1,
+  "followed": 7
  },
  "learner": {
   "samples": 249,
@@ -6539,23 +6539,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3699,
+   "sent": 3729,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3710,
+   "sent": 3740,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SOTGKS",
+   "name": "STONK",
+   "mint": "9QecFHJbFEZjrWLco2LTdcimAUSu9eGkCz2PEn4Spump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 76.9,
+   "dev_pct": 42.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Huss",
+   "name": "Official Huss",
+   "mint": "CBiK7Wz9iHHoRtwuzh95Y3mJkLLpnhPEuF3413DXpump",
+   "age_s": 9,
+   "sol_in": 0.76,
+   "buys": 1,
+   "sells": 3,
+   "rise_pct": 5.1,
+   "mcap_sol": 29.9,
+   "dev_pct": 1.0,
+   "big_sell": 0.41,
+   "x": "https://x.com/OffHussMeMe",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "PRIVATE",
    "name": "This Is Private Property",
    "mint": "JC93c8j4QgEZGr4G2bBXoc4F516rZok5wvgNb1Ydpump",
-   "age_s": 18,
+   "age_s": 46,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 1,
@@ -6573,7 +6609,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "G1NcsdHMUeD7SigN14Y1Q6nkxUozM7s4HtcCMRaFpump",
-   "age_s": 26,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6591,10 +6627,10 @@
    "symbol": "Floki",
    "name": "Floki Santa",
    "mint": "5iCN2XBZUehYeiL4AUhEdEQUQGdjkMXnjDPmpArNr2mF",
-   "age_s": 38,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": -99.9,
    "mcap_sol": 0.0,
    "dev_pct": 0.0,
@@ -6609,14 +6645,14 @@
    "symbol": "nothing",
    "name": "nothing to lose",
    "mint": "BKZ4DV2gqW2sGsLoceEuz7taJ8jDbTqC7iJJGKc9nSh1",
-   "age_s": 38,
-   "sol_in": 12.31,
-   "buys": 11,
-   "sells": 14,
-   "rise_pct": 82.9,
-   "mcap_sol": 69.4,
+   "age_s": 66,
+   "sol_in": -3.67,
+   "buys": 14,
+   "sells": 28,
+   "rise_pct": -19.9,
+   "mcap_sol": 30.4,
    "dev_pct": 15.2,
-   "big_sell": 1.83,
+   "big_sell": 5.12,
    "x": "https://x.com/MarioPrezldente/status/2126230719555043416",
    "tg": false,
    "web": false,
@@ -6627,7 +6663,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "EHsnxuX5D574gjn3DeETuE32JKR9LRKNdo2XYL5qpump",
-   "age_s": 57,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6645,7 +6681,7 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "5s9WFwbCBJLfrMSfzUeWJzgNeKRKNjSoaECJPUiApump",
-   "age_s": 68,
+   "age_s": 96,
    "sol_in": -3.29,
    "buys": 5,
    "sells": 4,
@@ -6663,7 +6699,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "FTujFZKHqJEKhDmfxwMjzBoRM67BH6X3TFYPnCxSpump",
-   "age_s": 79,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6681,7 +6717,7 @@
    "symbol": "Kai",
    "name": "Kai Ken",
    "mint": "Fiz8kvgxQXDm8tMAqjmHPnM5yoPYfa4z15UBSC9Mpump",
-   "age_s": 101,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6699,7 +6735,7 @@
    "symbol": "TIGERINU",
    "name": "Tiger Inu Clan",
    "mint": "UQGj3H5zSdrvv1rCwbBhLgvUKStCxXPfDYdqVRnpump",
-   "age_s": 109,
+   "age_s": 137,
    "sol_in": 0.73,
    "buys": 3,
    "sells": 1,
@@ -6717,7 +6753,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "HzodP9LJoQ3uSDNpfbWPD6wskb41VbbnJzXFLB8kpump",
-   "age_s": 121,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6735,7 +6771,7 @@
    "symbol": "GAMBLE",
    "name": "gamble",
    "mint": "3chnaKkNRDki6Hz8Ww8bkH29ZYck1ieyZK3bdW1Apump",
-   "age_s": 137,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6748,30 +6784,28 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "BUX",
-   "name": "Buxpad",
-   "mint": "8XEsL9U7Mcxpeiw4LeF4P96d9Kzf7hf6v5eixuFQpump",
-   "age_s": 178,
-   "sol_in": 14.12,
-   "buys": 37,
-   "sells": 42,
-   "rise_pct": 115.6,
-   "mcap_sol": 60.9,
-   "dev_pct": 0.5,
-   "big_sell": 3.17,
-   "x": "https://x.com/trybuxpad",
-   "tg": false,
-   "web": "https://trybuxpad.lol",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "Huss",
+   "mint": "CBiK7Wz9iHHoRtwuzh95Y3mJkLLpnhPEuF3413DXpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T08:25:39Z",
+   "cost": 36.2,
+   "pnl_pct": -6.6,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 1.21
+  },
   {
    "symbol": "PRIVATE",
    "mint": "JC93c8j4QgEZGr4G2bBXoc4F516rZok5wvgNb1Ydpump",
@@ -6780,7 +6814,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T08:25:03Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -4.1,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7210,7 +7244,7 @@
   "wins": 121,
   "win_rate": 20.5,
   "mean_pnl_pct": -8.42,
-  "open": 2,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
