@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T09:08:48Z",
-    "time": "10:08:48",
-    "agent": "LEARNER",
-    "coin": "DINOPOP",
-    "action": "shadow",
-    "text": "SHADOW DINOPOP would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 192.5",
-    "n": 3698
-   },
-   {
-    "t": "2026-11-27T09:08:53Z",
-    "time": "10:08:53",
-    "agent": "LEARNER",
-    "coin": "CPAI",
-    "action": "shadow",
-    "text": "SHADOW CPAI · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022747 (curve maths, every cost) · same exits, outside the book",
-    "n": 3699
-   },
-   {
     "t": "2026-11-27T09:08:54Z",
     "time": "10:08:54",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW NVIDIA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000061148 (curve maths, every cost) · same exits, outside the book",
     "n": 4297
+   },
+   {
+    "t": "2026-11-27T11:02:22Z",
+    "time": "12:02:22",
+    "agent": "LEARNER",
+    "coin": "WSP",
+    "action": "shadow",
+    "text": "SHADOW WSP would have made -2.0% (5 min, only +2%) · learned x0.5 · np:social:web now avg -7.9% over 300",
+    "n": 4298
+   },
+   {
+    "t": "2026-11-27T11:02:31Z",
+    "time": "12:02:31",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 5, serial launcher 3, no symbol or name 3)",
+    "n": 4299
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4297,
+  "lines": 4299,
   "flags": [
    {
     "coin": "Kibo",
@@ -21741,11 +21741,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795777291.645246,
+  "np_said": 1795777351.645359,
   "shadow": {
-   "n": 898,
+   "n": 899,
    "wins": 202,
-   "sum": -6886.5
+   "sum": -6888.5
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 912,
+  "n": 913,
   "wins": 204,
-  "sum": -7085.0,
+  "sum": -7087.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 896,
+    "n": 897,
     "wins": 201,
-    "sum": -6887.2
+    "sum": -6889.2
    }
   },
   "closed": [
-   {
-    "symbol": "mihao",
-    "mint": "5vqsD4vuTYFLRTbP7xxNQWQUc2LQ5fPRFsaDeRREpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:49:06Z",
-    "cost": 36.2,
-    "pnl_pct": 9.4,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.3,
-    "closed": "2026-11-27T10:51:08Z",
-    "exit": "TP +10%",
-    "pnl": 3.4,
-    "weight": 0.5
-   },
    {
     "symbol": "DI",
     "mint": "9FMDWWfZCz2QmipXDKjLV95bzQDpKpegt1JqwsXGpump",
@@ -31743,10 +31723,29 @@
     "exit": "stop -11%",
     "pnl": -5.26,
     "weight": 0.5
+   },
+   {
+    "symbol": "WSP",
+    "mint": "56kieEnC8nQZJP17hjSsrybT3gor7RL2cnXqGcjgpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:57:22Z",
+    "cost": 36.2,
+    "pnl_pct": -2.0,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.9,
+    "closed": "2026-11-27T11:02:22Z",
+    "exit": "5 min, only +2%",
+    "pnl": -0.71,
+    "weight": 0.5
    }
   ],
   "open": [
-   "WSP",
    "WaltDisney",
    "BLACKED",
    "SELLUP",
@@ -31794,7 +31793,7 @@
     "avg": -9.2
    }
   ],
-  "shadows": 896,
+  "shadows": 897,
   "memory": "snipe"
  }
 }
