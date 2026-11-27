@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T18:51:41Z",
-    "time": "19:51:41",
-    "agent": "LEARNER",
-    "coin": "TRUMP",
-    "action": "shadow",
-    "text": "SHADOW TRUMP would have made -7.1% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -8.1% over 300",
-    "n": 5712
-   },
-   {
-    "t": "2026-11-27T18:51:53Z",
-    "time": "19:51:53",
-    "agent": "LEARNER",
-    "coin": "GTC",
-    "action": "shadow",
-    "text": "SHADOW GTC · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021982 (curve maths, every cost) · same exits, outside the book",
-    "n": 5713
-   },
-   {
     "t": "2026-11-27T18:52:05Z",
     "time": "19:52:05",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW MILKERS · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022056 (curve maths, every cost) · same exits, outside the book",
     "n": 6311
+   },
+   {
+    "t": "2026-11-27T20:02:08Z",
+    "time": "21:02:08",
+    "agent": "LEARNER",
+    "coin": "DOGE2",
+    "action": "shadow",
+    "text": "SHADOW DOGE2 would have made -9.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
+    "n": 6312
+   },
+   {
+    "t": "2026-11-27T20:02:16Z",
+    "time": "21:02:16",
+    "agent": "LEARNER",
+    "coin": "TIREDFUN",
+    "action": "shadow",
+    "text": "SHADOW TIREDFUN · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021914 (curve maths, every cost) · same exits, outside the book",
+    "n": 6313
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6311,
+  "lines": 6313,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795809703.443431,
   "shadow": {
-   "n": 1699,
+   "n": 1700,
    "wins": 371,
-   "sum": -13101.7
+   "sum": -13110.8
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 310,
+   "readings": 311,
    "coins": 114,
    "followed": 0,
    "mints": [
@@ -31918,9 +31918,9 @@
   }
  },
  "shadow": {
-  "n": 1713,
+  "n": 1714,
   "wins": 373,
-  "sum": -13300.2,
+  "sum": -13309.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31928,32 +31928,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1697,
+    "n": 1698,
     "wins": 370,
-    "sum": -13102.4
+    "sum": -13111.5
    }
   },
   "closed": [
-   {
-    "symbol": "cupsey",
-    "mint": "C7iWXG4jotCdmrsVP3NHSemZ6zS3DrPLNjXF4Dmspump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T19:55:01Z",
-    "cost": 5.91,
-    "pnl_pct": -15.3,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.3,
-    "closed": "2026-11-27T19:55:49Z",
-    "exit": "stop -11%",
-    "pnl": -0.9,
-    "weight": 0.5
-   },
    {
     "symbol": "RICEBAG",
     "mint": "8DVVrGSbwZiBLMK9sndKsNi8KxqkNuAYHuDVUCGKpump",
@@ -32333,15 +32313,35 @@
     "exit": "TP +10%",
     "pnl": 0.7,
     "weight": 0.5
+   },
+   {
+    "symbol": "DOGE2",
+    "mint": "DVivaXpxG9cXXppQCddapBGf26R48UNi9cUWLw9gjnrY",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T19:58:22Z",
+    "cost": 5.91,
+    "pnl_pct": -9.1,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.3,
+    "closed": "2026-11-27T20:02:08Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.54,
+    "weight": 0.5
    }
   ],
   "open": [
-   "DOGE2",
    "GCAT",
    "Mememory",
    "LMTEST",
    "SPEDUP",
-   "MILKERS"
+   "MILKERS",
+   "TIREDFUN"
   ]
  },
  "learner_summary": {
@@ -32383,7 +32383,7 @@
     "avg": -9.0
    }
   ],
-  "shadows": 1905,
+  "shadows": 1906,
   "memory": "snipe"
  }
 }
