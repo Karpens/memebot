@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:55:56Z",
-    "time": "08:55:56",
-    "agent": "LEARNER",
-    "coin": "Thinker",
-    "action": "shadow",
-    "text": "SHADOW Thinker would have made -13.9% (stop -11%) · learned x0.5 · np:sol:12+ now avg -11.7% over 30",
-    "n": 3296
-   },
-   {
-    "t": "2026-11-27T07:56:14Z",
-    "time": "08:56:14",
-    "agent": "LEARNER",
-    "coin": "PRICD",
-    "action": "shadow",
-    "text": "SHADOW PRICD would have made -19.6% (dump: 2.2 SOL sold) · learned x0.5 · np:sol:<3 now avg -8.3% over 300",
-    "n": 3297
-   },
-   {
-    "t": "2026-11-27T07:56:17Z",
-    "time": "08:56:17",
-    "agent": "LEARNER",
-    "coin": "GTA 6",
-    "action": "shadow",
-    "text": "SHADOW GTA 6 would have made +7.6% (TP +10%) · learned x0.5 · tier:swing now avg -11.7% over 38",
-    "n": 3298
-   },
-   {
     "t": "2026-11-27T07:56:33Z",
     "time": "08:56:33",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW CMS would have made -12.2% (5 min, only -8%) · learned x0.5 · np:dev:0-2 now avg -8.5% over 270",
     "n": 3895
+   },
+   {
+    "t": "2026-11-27T09:47:28Z",
+    "time": "10:47:28",
+    "agent": "RISK",
+    "coin": "NBA",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 3896
+   },
+   {
+    "t": "2026-11-27T09:47:28Z",
+    "time": "10:47:28",
+    "agent": "LEARNER",
+    "coin": "NBA",
+    "action": "shadow",
+    "text": "SHADOW NBA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021349 (curve maths, every cost) · same exits, outside the book",
+    "n": 3897
+   },
+   {
+    "t": "2026-11-27T09:47:36Z",
+    "time": "10:47:36",
+    "agent": "LEARNER",
+    "coin": "BAI",
+    "action": "shadow",
+    "text": "SHADOW BAI would have made -11.3% (5 min, only -7%) · learned x0.5 · np:dev:0-2 now avg -8.5% over 270.5",
+    "n": 3898
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3895,
+  "lines": 3898,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795736760,
-    82.3
-   ],
    [
     1795736820,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795772774,
     361.97
+   ],
+   [
+    1795772834,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795772809.645314,
   "shadow": {
-   "n": 745,
+   "n": 746,
    "wins": 160,
-   "sum": -6180.0
+   "sum": -6191.3
   },
   "np_speed": {
    "first_in": [
@@ -22638,7 +22638,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795772544.932848
+   "at": 1795772848.976828
   }
  },
  "last_night": {
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 759,
+  "n": 760,
   "wins": 162,
-  "sum": -6378.5,
+  "sum": -6389.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 743,
+    "n": 744,
     "wins": 159,
-    "sum": -6180.7
+    "sum": -6192.0
    }
   },
   "closed": [
-   {
-    "symbol": "GTA 6",
-    "mint": "G1EFW7yHWRdqotAfuP6mcgzvJ9APEwGT3qk1Ybuipump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:33:58Z",
-    "cost": 36.2,
-    "pnl_pct": 5.8,
-    "tier": "swing",
-    "score": 4,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 17.59,
-    "closed": "2026-11-27T09:38:34Z",
-    "exit": "trailing stop 6% off the top (peak +17%)",
-    "pnl": 2.1,
-    "weight": 0.5
-   },
    {
     "symbol": "WCM",
     "mint": "H9aCb8VxirT8Xt2soGjQBvWG5ArVGuwS6GExNrk4pump",
@@ -31743,13 +31723,33 @@
     "exit": "5 min, only -8%",
     "pnl": -4.42,
     "weight": 0.5
+   },
+   {
+    "symbol": "BAI",
+    "mint": "Fp38oChj4aKn8LyQ6HVvPnezgTiTiUxJMe68Y5BJpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:42:36Z",
+    "cost": 36.2,
+    "pnl_pct": -11.3,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.64,
+    "closed": "2026-11-27T09:47:36Z",
+    "exit": "5 min, only -7%",
+    "pnl": -4.07,
+    "weight": 0.5
    }
   ],
   "open": [
-   "BAI",
    "PCEO",
    "COAL",
-   "90%OFF"
+   "90%OFF",
+   "NBA"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31791,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 743,
+  "shadows": 744,
   "memory": "snipe"
  }
 }
