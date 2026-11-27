@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:28:58Z",
-    "time": "21:28:58",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 8.6 a minute · 0 watched · 27 rejected (snipe not bought: night at open  13, mayhem mode 8, no symbol or name 4)",
-    "n": 6518
-   },
-   {
-    "t": "2026-11-27T20:29:02Z",
-    "time": "21:29:02",
-    "agent": "LEARNER",
-    "coin": "$XMX",
-    "action": "shadow",
-    "text": "SHADOW $XMX · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021192 (curve maths, every cost) · same exits, outside the book",
-    "n": 6519
-   },
-   {
-    "t": "2026-11-27T20:29:16Z",
-    "time": "21:29:16",
-    "agent": "LEARNER",
-    "coin": "BUENO",
-    "action": "shadow",
-    "text": "SHADOW BUENO · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000029879 (curve maths, every cost) · same exits, outside the book",
-    "n": 6520
-   },
-   {
     "t": "2026-11-27T20:29:16Z",
     "time": "21:29:16",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 2.326e+05 is not 30 + real SOL 1.278e+04 (off +2.198e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 606 odd readings from 176 coins tonight",
     "n": 7117
+   },
+   {
+    "t": "2026-11-27T21:44:13Z",
+    "time": "22:44:13",
+    "agent": "LEARNER",
+    "coin": "TUPAC",
+    "action": "shadow",
+    "text": "SHADOW TUPAC · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021115 (curve maths, every cost) · same exits, outside the book",
+    "n": 7118
+   },
+   {
+    "t": "2026-11-27T21:44:20Z",
+    "time": "22:44:20",
+    "agent": "LEARNER",
+    "coin": "SILLYBANDZ",
+    "action": "shadow",
+    "text": "SHADOW SILLYBANDZ · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020678 (curve maths, every cost) · same exits, outside the book",
+    "n": 7119
+   },
+   {
+    "t": "2026-11-27T21:44:21Z",
+    "time": "22:44:21",
+    "agent": "LEARNER",
+    "coin": "TripleH",
+    "action": "shadow",
+    "text": "SHADOW TripleH would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:8+ now avg -8.6% over 253.5",
+    "n": 7120
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7117,
+  "lines": 7120,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795815821.443418,
   "shadow": {
-   "n": 2006,
+   "n": 2007,
    "wins": 460,
-   "sum": -14578.2
+   "sum": -14585.5
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 606,
+   "readings": 613,
    "coins": 176,
    "followed": 0,
    "mints": [
@@ -31980,9 +31980,9 @@
   }
  },
  "shadow": {
-  "n": 2020,
+  "n": 2021,
   "wins": 462,
-  "sum": -14776.7,
+  "sum": -14784.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31990,32 +31990,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2004,
+    "n": 2005,
     "wins": 459,
-    "sum": -14578.9
+    "sum": -14586.2
    }
   },
   "closed": [
-   {
-    "symbol": "YMOON",
-    "mint": "rrWe7tMSHxR2exhFWtqYonUUUdeQX9uSVEdHuWBpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:34:23Z",
-    "cost": 5.91,
-    "pnl_pct": 8.2,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T21:36:40Z",
-    "exit": "TP +10%",
-    "pnl": 0.49,
-    "weight": 0.5
-   },
    {
     "symbol": "TCASH",
     "mint": "EVpiZ73NgPMUS9uT4W6uLqcer4XDaoE3PduoXofSzjAh",
@@ -32395,17 +32375,38 @@
     "exit": "TP +10%",
     "pnl": 1.23,
     "weight": 0.5
+   },
+   {
+    "symbol": "TripleH",
+    "mint": "BAXz7AvWqzgDdJF5R71WNRKB7s4Qj2mi7fpXCf5Dpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:41:05Z",
+    "cost": 5.91,
+    "pnl_pct": -7.3,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T21:44:21Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.43,
+    "weight": 0.5
    }
   ],
   "open": [
-   "TripleH",
    "MICHKOV",
    "$BREEZE",
    "PMPXMAS",
    "COAL",
    "METCALF",
    "NUUM",
-   "ZERO"
+   "ZERO",
+   "TUPAC",
+   "SILLYBANDZ"
   ]
  },
  "learner_summary": {
@@ -32443,11 +32444,11 @@
    },
    {
     "label": "snipe · np:dev:8+",
-    "n": 253,
+    "n": 254,
     "avg": -8.6
    }
   ],
-  "shadows": 2212,
+  "shadows": 2213,
   "memory": "snipe"
  }
 }
