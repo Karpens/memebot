@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:18:21Z",
-    "time": "09:18:21",
-    "agent": "LEARNER",
-    "coin": "中国牛",
-    "action": "shadow",
-    "text": "SHADOW 中国牛 would have made -8.3% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.6% over 238",
-    "n": 3425
-   },
-   {
-    "t": "2026-11-27T08:18:54Z",
-    "time": "09:18:54",
-    "agent": "LEARNER",
-    "coin": "MOBL",
-    "action": "shadow",
-    "text": "SHADOW MOBL would have made -7.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.9% over 176",
-    "n": 3426
-   },
-   {
-    "t": "2026-11-27T08:19:00Z",
-    "time": "09:19:00",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (mayhem mode 9, snipe not bought: trades tonight 3)",
-    "n": 3427
-   },
-   {
-    "t": "2026-11-27T08:19:32Z",
-    "time": "09:19:32",
-    "agent": "LEARNER",
-    "coin": "哈基米",
-    "action": "shadow",
-    "text": "SHADOW 哈基米 would have made -7.6% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.6% over 239",
-    "n": 3428
-   },
-   {
     "t": "2026-11-27T08:20:00Z",
     "time": "09:20:00",
     "agent": "SCANNER",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW WIZ would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.4% over 217.5",
     "n": 4024
+   },
+   {
+    "t": "2026-11-27T10:11:19Z",
+    "time": "11:11:19",
+    "agent": "RISK",
+    "coin": "LECEMA",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 4025
+   },
+   {
+    "t": "2026-11-27T10:11:19Z",
+    "time": "11:11:19",
+    "agent": "LEARNER",
+    "coin": "LECEMA",
+    "action": "shadow",
+    "text": "SHADOW LECEMA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028906 (curve maths, every cost) · same exits, outside the book",
+    "n": 4026
+   },
+   {
+    "t": "2026-11-27T10:11:33Z",
+    "time": "11:11:33",
+    "agent": "LEARNER",
+    "coin": "STOCKD",
+    "action": "shadow",
+    "text": "SHADOW STOCKD · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026384 (curve maths, every cost) · same exits, outside the book",
+    "n": 4027
+   },
+   {
+    "t": "2026-11-27T10:11:34Z",
+    "time": "11:11:34",
+    "agent": "LEARNER",
+    "coin": "STOCKD",
+    "action": "shadow",
+    "text": "SHADOW STOCKD would have made -14.2% (stop -11%) · learned x0.5 · np:social:web now avg -8.0% over 290.5",
+    "n": 4028
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4024,
+  "lines": 4028,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795738200,
-    82.3
-   ],
    [
     1795738260,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795774214,
     361.97
+   ],
+   [
+    1795774274,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795774263.64537,
   "shadow": {
-   "n": 794,
+   "n": 795,
    "wins": 175,
-   "sum": -6410.1
+   "sum": -6424.3
   },
   "np_speed": {
    "first_in": [
@@ -22638,7 +22638,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795773952.13
+   "at": 1795774279.180766
   }
  },
  "last_night": {
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 808,
+  "n": 809,
   "wins": 177,
-  "sum": -6608.6,
+  "sum": -6622.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 792,
+    "n": 793,
     "wins": 174,
-    "sum": -6410.8
+    "sum": -6425.0
    }
   },
   "closed": [
-   {
-    "symbol": "Bateleur",
-    "mint": "74zKwxLUSNDCnP5uVbvH2xx4ogav2gGwBYuvj9Qppump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:02:04Z",
-    "cost": 36.2,
-    "pnl_pct": 11.6,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.14,
-    "closed": "2026-11-27T10:02:07Z",
-    "exit": "TP +10%",
-    "pnl": 4.2,
-    "weight": 0.5
-   },
    {
     "symbol": "RECUR",
     "mint": "Cwkh5aTNMwc5iUTtYL4pcRbGXBZg9dwXAc1WjzCARECR",
@@ -31743,13 +31723,34 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.84,
     "weight": 0.5
+   },
+   {
+    "symbol": "STOCKD",
+    "mint": "mEosbm111uTcwZFU66fpSTVq3b1vEwkndy7TuP4pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:11:33Z",
+    "cost": 36.2,
+    "pnl_pct": -14.2,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 2.8,
+    "closed": "2026-11-27T10:11:34Z",
+    "exit": "stop -11%",
+    "pnl": -5.14,
+    "weight": 0.5
    }
   ],
   "open": [
    "ROLLIE",
    "FLOKI",
    "CAT",
-   "FLICE"
+   "FLICE",
+   "LECEMA"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31792,7 @@
     "avg": -11.1
    }
   ],
-  "shadows": 792,
+  "shadows": 793,
   "memory": "snipe"
  }
 }
