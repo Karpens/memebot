@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T03:33:31Z",
-    "time": "04:33:31",
-    "agent": "NEWS",
-    "coin": "CHRISTMAS",
-    "action": "plan",
-    "text": "hold plan · 0.5/10 (X post) · scalp: +10",
-    "n": 1391
-   },
-   {
-    "t": "2026-11-27T03:34:11Z",
-    "time": "04:34:11",
-    "agent": "EXECUTOR",
-    "coin": "LUMINARE",
-    "action": "exit",
-    "text": "EXIT LUMINARE +$2.82 (+6%) · TP +10% · out · 0.0 s after the reading",
-    "n": 1392
-   },
-   {
-    "t": "2026-11-27T03:34:11Z",
-    "time": "04:34:11",
-    "agent": "LEARNER",
-    "coin": "LUMINARE",
-    "action": "learn",
-    "text": "learned · hour:03-05 now avg -11.1% over 157.5",
-    "n": 1393
-   },
-   {
-    "t": "2026-11-27T03:34:13Z",
-    "time": "04:34:13",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.2 a minute · 0 watched · 9 rejected (serial launcher 6, mayhem mode 3)",
-    "n": 1394
-   },
-   {
     "t": "2026-11-27T03:34:32Z",
     "time": "04:34:32",
     "agent": "SCANNER",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW VERTI would have made -28.6% (dump: 4.5 SOL sold) · learned x0.5 · np:social:none now avg -11.5% over 103.5",
     "n": 1990
+   },
+   {
+    "t": "2026-11-27T04:40:53Z",
+    "time": "05:40:53",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.2 a minute · 0 watched · 11 rejected (snipe not bought: pause after a  6, mayhem mode 3, serial launcher 2)",
+    "n": 1991
+   },
+   {
+    "t": "2026-11-27T04:41:04Z",
+    "time": "05:41:04",
+    "agent": "LEARNER",
+    "coin": "mas",
+    "action": "shadow",
+    "text": "SHADOW mas would have made -16.5% (stop -13%) · learned x0.5 · np:age:<30s now avg -10.5% over 285.5",
+    "n": 1992
+   },
+   {
+    "t": "2026-11-27T04:41:07Z",
+    "time": "05:41:07",
+    "agent": "RISK",
+    "coin": "Christmas",
+    "action": "skip",
+    "text": "no entry: pause after a losing streak",
+    "n": 1993
+   },
+   {
+    "t": "2026-11-27T04:41:07Z",
+    "time": "05:41:07",
+    "agent": "LEARNER",
+    "coin": "Christmas",
+    "action": "shadow",
+    "text": "SHADOW Christmas · not bought (pause after a losing streak) · followed as if bought: $24.52 at 0.0000021558 (curve maths, every cost) · same exits, outside the book",
+    "n": 1994
    }
   ],
   "trades": [
@@ -14687,7 +14687,7 @@
   "flagged": 178,
   "checked": 174,
   "filtered": 5,
-  "lines": 1990,
+  "lines": 1994,
   "flags": [
    {
     "coin": "PENGUIN",
@@ -16090,17 +16090,21 @@
    [
     1795754393,
     245.2
+   ],
+   [
+    1795754453,
+    245.2
    ]
   ],
   "last_rug": {
    "coin": "DEALS",
    "pass": true
   },
-  "np_said": 1795754392.780842,
+  "np_said": 1795754453.780851,
   "shadow": {
-   "n": 240,
+   "n": 241,
    "wins": 41,
-   "sum": -2227.6
+   "sum": -2244.1
   },
   "np_speed": {
    "first_in": [
@@ -16700,7 +16704,7 @@
   },
   "risk_said": {
    "why": "pause after a losing streak",
-   "at": 1795754129.254119
+   "at": 1795754467.961085
   }
  },
  "last_night": {
@@ -25390,9 +25394,9 @@
   }
  },
  "shadow": {
-  "n": 254,
+  "n": 255,
   "wins": 43,
-  "sum": -2426.1,
+  "sum": -2442.6,
   "by": {
    "learner": {
     "n": 16,
@@ -25400,32 +25404,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 238,
+    "n": 239,
     "wins": 40,
-    "sum": -2228.3
+    "sum": -2244.8
    }
   },
   "closed": [
-   {
-    "symbol": "TINTR",
-    "mint": "arHWyKjffDVvMZsdhz4FULThNSPpwz1VXezGj1Ypump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T04:18:21Z",
-    "cost": 28.04,
-    "pnl_pct": -22.3,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 2.44,
-    "closed": "2026-11-27T04:20:29Z",
-    "exit": "dump: 2.6 SOL sold",
-    "pnl": -6.25,
-    "weight": 0.5
-   },
    {
     "symbol": "CallBall",
     "mint": "E6HLCi7xcszeLjb5H7155sVZvx1fqsDXjuXnzoipump",
@@ -25805,12 +25789,32 @@
     "exit": "dump: 4.5 SOL sold",
     "pnl": -7.01,
     "weight": 0.5
+   },
+   {
+    "symbol": "mas",
+    "mint": "8WJrNBD4jpY5Pg66hCuK6YsZRefzP6Bkw4ayAi8Jpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:40:06Z",
+    "cost": 24.52,
+    "pnl_pct": -16.5,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.99,
+    "closed": "2026-11-27T04:41:04Z",
+    "exit": "stop -13%",
+    "pnl": -4.05,
+    "weight": 0.5
    }
   ],
   "open": [
    "FLOP",
    "NVID",
-   "mas"
+   "Christmas"
   ]
  },
  "learner_summary": {
@@ -25852,7 +25856,7 @@
     "avg": -17.2
    }
   ],
-  "shadows": 238,
+  "shadows": 239,
   "memory": "snipe"
  }
 }
