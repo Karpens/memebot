@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T02:12:08Z",
-    "time": "03:12:08",
-    "agent": "EXECUTOR",
-    "coin": "CORNSUGAR",
-    "action": "enter",
-    "text": "ENTER CORNSUGAR at 0.0000021912 · slip 5.8% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 2 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 514
-   },
-   {
-    "t": "2026-11-27T02:12:08Z",
-    "time": "03:12:08",
-    "agent": "NEWS",
-    "coin": "CORNSUGAR",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 515
-   },
-   {
-    "t": "2026-11-27T02:12:24Z",
-    "time": "03:12:24",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.6 a minute · 0 watched · 9 rejected (mayhem mode 4, snipe not bought: pause after a  3, serial launcher 2)",
-    "n": 516
-   },
-   {
     "t": "2026-11-27T02:13:14Z",
     "time": "03:13:14",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW HEEDB would have made -14.6% (stop -10%) · learned x0.5 · np:dev:0-2 now avg -12.5% over 75.5",
     "n": 1113
+   },
+   {
+    "t": "2026-11-27T03:04:49Z",
+    "time": "04:04:49",
+    "agent": "LEARNER",
+    "coin": "REDZONEA",
+    "action": "shadow",
+    "text": "SHADOW REDZONEA would have made -10.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -13.8% over 54",
+    "n": 1114
+   },
+   {
+    "t": "2026-11-27T03:05:00Z",
+    "time": "04:05:00",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.8 a minute · 0 watched · 26 rejected (snipe not bought: pause after a  14, mayhem mode 6, serial launcher 5)",
+    "n": 1115
+   },
+   {
+    "t": "2026-11-27T03:05:05Z",
+    "time": "04:05:05",
+    "agent": "LEARNER",
+    "coin": "PEPR",
+    "action": "shadow",
+    "text": "SHADOW PEPR · not bought (pause after a losing streak) · followed as if bought: $59.79 at 0.0000021336 (curve maths, every cost) · same exits, outside the book",
+    "n": 1116
    }
   ],
   "trades": [
@@ -10601,7 +10601,7 @@
   "flagged": 103,
   "checked": 99,
   "filtered": 4,
-  "lines": 1113,
+  "lines": 1116,
   "flags": [
    {
     "coin": "J&A",
@@ -11620,17 +11620,21 @@
    [
     1795748633,
     607.24
+   ],
+   [
+    1795748693,
+    597.9
    ]
   ],
   "last_rug": {
    "coin": "mogmas",
    "pass": true
   },
-  "np_said": 1795748639.780907,
+  "np_said": 1795748700.780819,
   "shadow": {
-   "n": 101,
+   "n": 102,
    "wins": 21,
-   "sum": -1005.5
+   "sum": -1015.8
   },
   "np_speed": {
    "first_in": [
@@ -20662,9 +20666,9 @@
   }
  },
  "shadow": {
-  "n": 115,
+  "n": 116,
   "wins": 23,
-  "sum": -1204.0,
+  "sum": -1214.3,
   "by": {
    "learner": {
     "n": 16,
@@ -20672,32 +20676,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 99,
+    "n": 100,
     "wins": 20,
-    "sum": -1006.2
+    "sum": -1016.5
    }
   },
   "closed": [
-   {
-    "symbol": "BID",
-    "mint": "4BFoRWywZzyvvK11ndwct5xAGNhNxaquUXwsmJeMpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:00:19Z",
-    "cost": 62.08,
-    "pnl_pct": 8.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.24,
-    "closed": "2026-11-27T03:00:22Z",
-    "exit": "TP +10%",
-    "pnl": 5.51,
-    "weight": 0.5
-   },
    {
     "symbol": "Catyo",
     "mint": "Gj1Z8HjL8PKK2bMLTqRnVMsMdy5tiA6LwK9y5y1vpump",
@@ -21077,18 +21061,38 @@
     "exit": "stop -10%",
     "pnl": -8.74,
     "weight": 0.5
+   },
+   {
+    "symbol": "REDZONEA",
+    "mint": "2QcSajediym7vKo4woEZYtJzNJ6j5P74nzdKEMQ4pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T03:01:24Z",
+    "cost": 61.75,
+    "pnl_pct": -10.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.49,
+    "closed": "2026-11-27T03:04:49Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -6.35,
+    "weight": 0.5
    }
   ],
   "open": [
    "PCAT",
    "NVIDIA",
    "BUZZMI",
-   "REDZONEA",
    "GOO",
    "MINT",
    "OSTRA",
    "crimecat",
-   "PEPE"
+   "PEPE",
+   "PEPR"
   ]
  },
  "learner_summary": {
@@ -21130,7 +21134,7 @@
     "avg": -12.5
    }
   ],
-  "shadows": 99,
+  "shadows": 100,
   "memory": "snipe"
  }
 }
