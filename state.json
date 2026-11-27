@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:07:35Z",
-    "time": "06:07:35",
-    "agent": "EXECUTOR",
-    "coin": "MOTE",
-    "action": "exit",
-    "text": "EXIT MOTE $-2.63 (-12%) · curve quiet for 3 min (no trade)",
-    "n": 2177
-   },
-   {
-    "t": "2026-11-27T05:07:35Z",
-    "time": "06:07:35",
-    "agent": "LEARNER",
-    "coin": "MOTE",
-    "action": "learn",
-    "text": "learned · np:age:<30s now avg -10.2% over 300",
-    "n": 2178
-   },
-   {
-    "t": "2026-11-27T05:07:46Z",
-    "time": "06:07:46",
-    "agent": "LEARNER",
-    "coin": "TOKEN22",
-    "action": "shadow",
-    "text": "SHADOW TOKEN22 · not bought (pause after a losing streak) · followed as if bought: $20.88 at 0.0000032464 (curve maths, every cost) · same exits, outside the book",
-    "n": 2179
-   },
-   {
     "t": "2026-11-27T05:07:48Z",
     "time": "06:07:48",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (mayhem mode 4, snipe not bought: trades tonight 3, serial launcher 2)",
     "n": 2776
+   },
+   {
+    "t": "2026-11-27T06:19:30Z",
+    "time": "07:19:30",
+    "agent": "LEARNER",
+    "coin": "SUNCAT",
+    "action": "shadow",
+    "text": "SHADOW SUNCAT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021294 (curve maths, every cost) · same exits, outside the book",
+    "n": 2777
+   },
+   {
+    "t": "2026-11-27T06:19:46Z",
+    "time": "07:19:46",
+    "agent": "LEARNER",
+    "coin": "AI",
+    "action": "shadow",
+    "text": "SHADOW AI · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000033981 (curve maths, every cost) · same exits, outside the book",
+    "n": 2778
+   },
+   {
+    "t": "2026-11-27T06:19:51Z",
+    "time": "07:19:51",
+    "agent": "LEARNER",
+    "coin": "AI",
+    "action": "shadow",
+    "text": "SHADOW AI would have made -5.9% (dump: 2.1 SOL sold) · learned x0.5 · np:dev:0-2 now avg -9.1% over 187",
+    "n": 2779
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2776,
+  "lines": 2779,
   "flags": [
    {
     "coin": "Kibo",
@@ -21091,6 +21091,10 @@
    [
     1795760333,
     361.97
+   ],
+   [
+    1795760393,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21099,9 +21103,9 @@
   },
   "np_said": 1795760334.780967,
   "shadow": {
-   "n": 316,
+   "n": 317,
    "wins": 54,
-   "sum": -2723.6
+   "sum": -2729.5
   },
   "np_speed": {
    "first_in": [
@@ -30684,9 +30688,9 @@
   }
  },
  "shadow": {
-  "n": 330,
+  "n": 331,
   "wins": 56,
-  "sum": -2922.1,
+  "sum": -2928.0,
   "by": {
    "learner": {
     "n": 16,
@@ -30694,32 +30698,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 314,
+    "n": 315,
     "wins": 53,
-    "sum": -2724.3
+    "sum": -2730.2
    }
   },
   "closed": [
-   {
-    "symbol": "INUX",
-    "mint": "EKF94BbUarB82sDBtiiKb77UkV5MrQzm9EL9BVHQM6Y",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:00:27Z",
-    "cost": 36.2,
-    "pnl_pct": -8.0,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.04,
-    "closed": "2026-11-27T06:04:26Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.89,
-    "weight": 0.5
-   },
    {
     "symbol": "PEPSODENT",
     "mint": "7Z8jMpuB6ACpiVTcwETSyZqA8j7k3XuTyA7JXEYSpump",
@@ -31099,9 +31083,31 @@
     "exit": "stop -14%",
     "pnl": -6.21,
     "weight": 0.5
+   },
+   {
+    "symbol": "AI",
+    "mint": "F2je9UoZ2tY3bvmy89rGojGXqDo789V4RccGiYFEpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:19:46Z",
+    "cost": 36.2,
+    "pnl_pct": -5.9,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 7.7,
+    "closed": "2026-11-27T06:19:51Z",
+    "exit": "dump: 2.1 SOL sold",
+    "pnl": -2.12,
+    "weight": 0.5
    }
   ],
-  "open": []
+  "open": [
+   "SUNCAT"
+  ]
  },
  "learner_summary": {
   "samples": 249,
@@ -31111,13 +31117,13 @@
   "best": [
    {
     "label": "snipe · hour:day",
-    "n": 11,
-    "avg": -4.9
+    "n": 12,
+    "avg": -5.0
    },
    {
     "label": "snipe · np:sol:6-12",
-    "n": 36,
-    "avg": -4.7
+    "n": 37,
+    "avg": -4.8
    },
    {
     "label": "snipe · hour:01-03",
@@ -31142,7 +31148,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 314,
+  "shadows": 315,
   "memory": "snipe"
  }
 }
