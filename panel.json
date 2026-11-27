@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T04:24:00Z",
+ "updated": "2026-11-27T04:24:30Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 275.03,
- "equity": 275.03,
+ "balance": 247.53,
+ "equity": 272.92,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 166,
-  "checked": 162,
+  "flagged": 167,
+  "checked": 163,
   "filtered": 5,
-  "lines": 1850,
+  "lines": 1854,
   "last_rug": {
-   "coin": "SOLMAS",
+   "coin": "Shroud",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GTAIV",
-   "why": "snipe",
-   "t": "2026-11-27T04:01:23Z"
-  },
   {
    "coin": "CHANCLA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SOLMAS",
    "why": "snipe",
    "t": "2026-11-27T04:23:53Z"
+  },
+  {
+   "coin": "Shroud",
+   "why": "snipe",
+   "t": "2026-11-27T04:24:03Z"
   }
  ],
  "curve": [
@@ -1373,7 +1373,52 @@
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "Shroud",
+   "mint": "9D71xKY6fmWbqpjiQWdyWZsNMzaYcYDiJbiSuL6hpump",
+   "cost": 27.5,
+   "value": 25.4,
+   "pnl_pct": -7.7,
+   "opened": "2026-11-27T04:24:03Z",
+   "url": "https://pump.fun/coin/9D71xKY6fmWbqpjiQWdyWZsNMzaYcYDiJbiSuL6hpump",
+   "reason": "snipe · first reading 0.4 s after the create · -0.1 SOL in · -1% since the create · mcap 29 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.196e-06,
+   "price": 2.03326e-06,
+   "slip": 1.2,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 2,
+    "parts": [
+     "X",
+     "web"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 29.2,
+   "dev_pct": 2.75,
+   "sol_in": -0.14,
+   "hist": [
+    2.196e-06,
+    2.03326e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "EDGE",
@@ -3628,42 +3673,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T03:52:58Z",
-   "time": "04:52:58",
-   "agent": "LEARNER",
-   "coin": "CCAT",
-   "action": "shadow",
-   "text": "SHADOW CCAT · not bought (pause after a losing streak) · followed as if bought: $38.71 at 0.0000042689 (curve maths, every cost) · same exits, outside the book",
-   "n": 1651
-  },
-  {
-   "t": "2026-11-27T03:53:00Z",
-   "time": "04:53:00",
-   "agent": "LEARNER",
-   "coin": "CCAT",
-   "action": "shadow",
-   "text": "SHADOW CCAT would have made -19.5% (dump: 3.0 SOL sold) · learned x0.5 · hour:03-05 now avg -10.7% over 200",
-   "n": 1652
-  },
-  {
-   "t": "2026-11-27T03:53:24Z",
-   "time": "04:53:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 10.6 a minute · 1 watched · 29 rejected (serial launcher 20, snipe not bought: pause after a  9) · closest JADE: no curve reading yet",
-   "n": 1653
-  },
-  {
-   "t": "2026-11-27T03:53:25Z",
-   "time": "04:53:25",
-   "agent": "LEARNER",
-   "coin": "JADE",
-   "action": "shadow",
-   "text": "SHADOW JADE · not bought (pause after a losing streak) · followed as if bought: $38.71 at 0.0000021194 (curve maths, every cost) · same exits, outside the book",
-   "n": 1654
-  },
-  {
    "t": "2026-11-27T03:53:53Z",
    "time": "04:53:53",
    "agent": "LEARNER",
@@ -5426,6 +5435,42 @@
    "action": "learn",
    "text": "learned · tier:swing now avg -19.1% over 18",
    "n": 1850
+  },
+  {
+   "t": "2026-11-27T04:24:03Z",
+   "time": "05:24:03",
+   "agent": "SCANNER",
+   "coin": "Shroud",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · -0.1 SOL in · -1% since the create · mcap 29 SOL",
+   "n": 1851
+  },
+  {
+   "t": "2026-11-27T04:24:03Z",
+   "time": "05:24:03",
+   "agent": "SIZER",
+   "coin": "Shroud",
+   "action": "size",
+   "text": "10% of $275.03 = $27.50",
+   "n": 1852
+  },
+  {
+   "t": "2026-11-27T04:24:03Z",
+   "time": "05:24:03",
+   "agent": "EXECUTOR",
+   "coin": "Shroud",
+   "action": "enter",
+   "text": "ENTER Shroud at 0.000002196 · slip 1.2% · snipe · first in · 0.1 s after the first reading · 0 s after launch · fill curve (Jupiter: no Jupiter route · 0.1 s) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 1853
+  },
+  {
+   "t": "2026-11-27T04:24:03Z",
+   "time": "05:24:03",
+   "agent": "NEWS",
+   "coin": "Shroud",
+   "action": "plan",
+   "text": "hold plan · 2/10 (X, web) · scalp: +10",
+   "n": 1854
   }
  ],
  "nights": [
@@ -5467,10 +5512,10 @@
   }
  ],
  "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/HAGM38tbK22UUiZ1mkLxyG4kjb75vLSMgQVCmtGPpump/report: HTTP 502",
   "https://api.rugcheck.xyz/v1/tokens/7XRv6VUEpZsXvFEqykfbh6Pu4x2jDPH4geE8bqJhSWPw/report: HTTP 502",
   "https://api.rugcheck.xyz/v1/tokens/3ERbtuTPR4GpsY1DNG9otpfpCPVqMr1ZVRWUoWEupump/report: HTTP 502",
   "https://api.rugcheck.xyz/v1/tokens/6kjSGUudbxJQENFFMpFaZagpN9uwwkKLWhsi8YKupump/report: HTTP 502",
+  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400"
  ],
  "stream": {
@@ -5486,7 +5531,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5494,15 +5539,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 833,
-    "last_event_age_s": 7.5,
+    "events": 835,
+    "last_event_age_s": 20.8,
     "errors": 3,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21552,
+    "events": 21705,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -5510,8 +5555,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 571,
-    "last_event_age_s": 7.4,
+    "events": 573,
+    "last_event_age_s": 20.7,
     "errors": 55,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5519,14 +5564,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 1,
-  "first_in_last_ms": 32,
+  "first_in_ms": 1.0,
+  "first_in_last_ms": 56,
   "exit_ms": 35.0,
   "exit_last_ms": 35,
-  "launch_to_entry_s": 0,
-  "creates_per_min": 1.6,
+  "launch_to_entry_s": 0.0,
+  "creates_per_min": 1.4,
   "watching": 0,
-  "followed": 5
+  "followed": 7
  },
  "learner": {
   "samples": 154,
@@ -5573,28 +5618,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10449,
+   "sent": 10482,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10448,
+   "sent": 10481,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "UNI",
+   "name": "Uni the Robot",
+   "mint": "CN3sC1TgzMGLY9tLAqpg7ZQxAXsueg7wrn5zebTsf4yA",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -92.9,
+   "mcap_sol": 2.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/RT_Russia_/status/2126170119197888914",
+   "tg": false,
+   "web": "https://www.citizen.org/wp-content/uploads/Trump-meme-coin-foreign-gala.pdf#page=8",
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
+   "symbol": "Shroud",
+   "name": "Shroud",
+   "mint": "9D71xKY6fmWbqpjiQWdyWZsNMzaYcYDiJbiSuL6hpump",
+   "age_s": 27,
+   "sol_in": -0.79,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -5.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 2.8,
+   "big_sell": 0.65,
+   "x": "https://x.com/shroudfun",
+   "tg": false,
+   "web": "https://useshroud.fun",
+   "status": "entered",
+   "why": "snipe · first reading 0.4 s after the create · -0.1 SOL in · -1% since the create · mcap 29 SOL"
+  },
+  {
    "symbol": "SOLMAS",
    "name": "SOLMAS",
    "mint": "CrCPBGtD8p2p9ccNBKYm3E4roRJEW3wTN7yxnCLZpump",
-   "age_s": 7,
-   "sol_in": 11.79,
-   "buys": 4,
-   "sells": 4,
-   "rise_pct": 92.0,
-   "mcap_sol": 55.7,
+   "age_s": 37,
+   "sol_in": 12.06,
+   "buys": 20,
+   "sells": 21,
+   "rise_pct": 94.5,
+   "mcap_sol": 56.5,
    "dev_pct": 2.0,
    "big_sell": 3.74,
    "x": "https://x.com/SOLMASPF/status/2126170025065066671",
@@ -5607,7 +5688,7 @@
    "symbol": "o1",
    "name": "o1 Bot",
    "mint": "5EvGt7WyrUehSVhcSDL1LHr4xqJPLAQF9M6fmtM3pump",
-   "age_s": 15,
+   "age_s": 45,
    "sol_in": -0.36,
    "buys": 1,
    "sells": 3,
@@ -5625,7 +5706,7 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "7S9JxAa9VdevtAfAMnmZm81ko2nKZqQbCTUYefAmpump",
-   "age_s": 53,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5643,7 +5724,7 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "2nxb5m5bfGoDxLn3GTbmDaqsF4Qjw1FiHWdkLNUSpump",
-   "age_s": 54,
+   "age_s": 84,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5661,12 +5742,12 @@
    "symbol": "RI",
    "name": "Riceinu",
    "mint": "5Ue7fY5YMjvguhnjTqSXBcaJcANNdhmogDpyARZwHg5q",
-   "age_s": 86,
-   "sol_in": -4.06,
-   "buys": 8,
-   "sells": 11,
-   "rise_pct": -21.9,
-   "mcap_sol": 29.6,
+   "age_s": 116,
+   "sol_in": 7.87,
+   "buys": 16,
+   "sells": 17,
+   "rise_pct": 50.1,
+   "mcap_sol": 56.9,
    "dev_pct": 15.2,
    "big_sell": 3.01,
    "x": "https://x.com/MarioPrezldente/status/2126169786157834746",
