@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T21:05:29Z",
+ "updated": "2026-11-27T21:05:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6789,
+  "lines": 6791,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795777514,
-   59.14
-  ],
   [
    1795777574,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795813488,
    59.14
+  ],
+  [
+   1795813548,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,24 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T20:38:33Z",
-   "time": "21:38:33",
-   "agent": "LEARNER",
-   "coin": "nothing",
-   "action": "shadow",
-   "text": "SHADOW nothing would have made -8.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.8% over 300",
-   "n": 6590
-  },
-  {
-   "t": "2026-11-27T20:38:51Z",
-   "time": "21:38:51",
-   "agent": "LEARNER",
-   "coin": "$VICKI",
-   "action": "shadow",
-   "text": "SHADOW $VICKI would have made -6.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
-   "n": 6591
-  },
-  {
    "t": "2026-11-27T20:39:03Z",
    "time": "21:39:03",
    "agent": "SCANNER",
@@ -6157,6 +6139,24 @@
    "action": "scan",
    "text": "new pairs · 7.6 a minute · 0 watched · 18 rejected (snipe not bought: night at open  9, serial launcher 6, odd curve reading: virtual SOL i 2)",
    "n": 6789
+  },
+  {
+   "t": "2026-11-27T21:05:31Z",
+   "time": "22:05:31",
+   "agent": "LEARNER",
+   "coin": "moonpig",
+   "action": "shadow",
+   "text": "SHADOW moonpig · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000058336 (curve maths, every cost) · same exits, outside the book",
+   "n": 6790
+  },
+  {
+   "t": "2026-11-27T21:05:35Z",
+   "time": "22:05:35",
+   "agent": "LEARNER",
+   "coin": "moonpig",
+   "action": "shadow",
+   "text": "SHADOW moonpig would have made +11.0% (TP +20%) · learned x0.5 · np:buys:90+ now avg -7.2% over 300",
+   "n": 6791
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 381 (140 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 383 (140 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,15 +6221,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1796,
-    "last_event_age_s": 7.5,
+    "events": 1798,
+    "last_event_age_s": 22.2,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 28548,
+    "events": 28618,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -6237,8 +6237,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1089,
-    "last_event_age_s": 10.1,
+    "events": 1090,
+    "last_event_age_s": 26.3,
     "errors": 59,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6251,10 +6251,10 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 8.0,
+  "creates_per_min": 6.4,
   "watching": 0,
-  "followed": 16,
-  "odd_readings": 381,
+  "followed": 15,
+  "odd_readings": 383,
   "odd_coins": 140
  },
  "learner": {
@@ -6296,29 +6296,47 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2092,
+  "shadows": 2093,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14795,
+   "sent": 14825,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14795,
+   "sent": 14825,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "moonpig",
+   "name": "moonpig",
+   "mint": "2PMZ8AKJmG9VTx2PQiyofTNULeXtk2ecRSLYgXt3pump",
+   "age_s": 26,
+   "sol_in": 45.06,
+   "buys": 22,
+   "sells": 3,
+   "rise_pct": 513.8,
+   "mcap_sol": 177.3,
+   "dev_pct": 1.7,
+   "big_sell": 1.86,
+   "x": "https://x.com/MoonPig_PF/status/2126421870203285791",
+   "tg": false,
+   "web": "https://x.com/MoonPig_PF",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "NGA",
    "name": "NIGGA COIN",
    "mint": "FgoDhiTUMTEgEKjhxznWKvddybQoeWARaY5rV9oTpump",
-   "age_s": 7,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6336,7 +6354,7 @@
    "symbol": "$WANK",
    "name": "WAiNK",
    "mint": "CMLXX73BQMTAaU67F9C3WHJLtyd52bBuZSo4uAXHpump",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6354,11 +6372,11 @@
    "symbol": "HUS",
    "name": "Hustler Coin(huss huss)",
    "mint": "D7nPhLUskqsPB9toz1A5TLVMMsiDSP2cSiQ3EfHppump",
-   "age_s": 16,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 44,
+   "sol_in": 0.04,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.3,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -6372,14 +6390,14 @@
    "symbol": "MOONDOGE",
    "name": "MOONDOGE",
    "mint": "Ay7aru6gcyM19HjWT86bVYNDAArQLg5HePmMUfBzpump",
-   "age_s": 23,
-   "sol_in": 0.0,
+   "age_s": 51,
+   "sol_in": -0.15,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
+   "sells": 1,
+   "rise_pct": -1.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.15,
    "x": "https://x.com/elonmusk/status/1985373548840636724",
    "tg": false,
    "web": false,
@@ -6390,14 +6408,14 @@
    "symbol": "UNI",
    "name": "Spiky INU",
    "mint": "3Yf6wVx4EtxGMURX1CU7Q6EfBotjYGZsx6Eso5aopump",
-   "age_s": 26,
-   "sol_in": 6.34,
-   "buys": 9,
-   "sells": 0,
-   "rise_pct": 42.1,
-   "mcap_sol": 48.0,
+   "age_s": 54,
+   "sol_in": 6.82,
+   "buys": 12,
+   "sells": 1,
+   "rise_pct": 45.6,
+   "mcap_sol": 49.2,
    "dev_pct": 9.7,
-   "big_sell": 0.0,
+   "big_sell": 0.11,
    "x": "https://x.com/randycrush505/status/2126421447375806887?a=MUTEut6qWWyhFM6VhyA&s=20",
    "tg": false,
    "web": false,
@@ -6408,7 +6426,7 @@
    "symbol": "$BOBCAT",
    "name": "Bobcat",
    "mint": "HrXt5otRkZKQ6kSjCtrcyAc1Y2ULh1rQoAcu9jjTpump",
-   "age_s": 43,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6426,7 +6444,7 @@
    "symbol": "NIGGA",
    "name": "nigga oim",
    "mint": "FqpcTHcwKcv5PX1g1sBZ53Zffvg5ogNbU79rSxonWiwS",
-   "age_s": 47,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6444,7 +6462,7 @@
    "symbol": "ELON",
    "name": "Dogelon (Wormhole)",
    "mint": "HVr2mvzJcr18QgBUJmA8HN5z5qGm7UUGB3eHg6topump",
-   "age_s": 74,
+   "age_s": 102,
    "sol_in": -1.48,
    "buys": 1,
    "sells": 2,
@@ -6462,7 +6480,7 @@
    "symbol": "ANONPENGU",
    "name": "Anon Pengu",
    "mint": "CKfvKBxJ2tvGfsyym4b7ftCzq2E4ioxkF7FuyDgUD2bF",
-   "age_s": 83,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6480,7 +6498,7 @@
    "symbol": "ANONFROG",
    "name": "Anon Frog",
    "mint": "8h5inn2gkpqXtqm4HquqXPn3iWLVR2MTmjmRaCZENX8c",
-   "age_s": 89,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6498,7 +6516,7 @@
    "symbol": "ANONDOG",
    "name": "Anon Dog",
    "mint": "HCruWNxpgkqaRTGJG27SiaagbrEvDYaBmrXekyPVF3jx",
-   "age_s": 94,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6516,7 +6534,7 @@
    "symbol": "ANONCAT",
    "name": "Anon Cat",
    "mint": "2A3ohT9YVgWSWX3wHQegL8GLMNjwAut3Bokmwu1ufuTt",
-   "age_s": 101,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6534,12 +6552,12 @@
    "symbol": "ANON",
    "name": "Anonpad",
    "mint": "BVdoeTemCm1BioyEw7XExLf6VowFvbUNTuFvnAKcpump",
-   "age_s": 123,
-   "sol_in": 17.3,
-   "buys": 53,
-   "sells": 44,
-   "rise_pct": 117.4,
-   "mcap_sol": 89.8,
+   "age_s": 151,
+   "sol_in": 21.26,
+   "buys": 66,
+   "sells": 51,
+   "rise_pct": 150.6,
+   "mcap_sol": 103.5,
    "dev_pct": 19.0,
    "big_sell": 14.23,
    "x": "https://x.com/anonpadfun/status/2126418423123169651",
@@ -6552,12 +6570,12 @@
    "symbol": "Broke",
    "name": "Broke",
    "mint": "ABB1fw1nS8vJcHhjQc9W6xHRcRzAHekpxiRa2VVppump",
-   "age_s": 142,
-   "sol_in": 0.29,
-   "buys": 3,
+   "age_s": 170,
+   "sol_in": 0.34,
+   "buys": 5,
    "sells": 0,
-   "rise_pct": 1.9,
-   "mcap_sol": 28.7,
+   "rise_pct": 2.3,
+   "mcap_sol": 28.8,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": false,
@@ -6570,7 +6588,7 @@
    "symbol": "Mooner",
    "name": "Mooner",
    "mint": "6sdr32bN6Q9qfgyhtLpheVqXqZsw53Kjs1Vtwzb8pump",
-   "age_s": 147,
+   "age_s": 175,
    "sol_in": -0.54,
    "buys": 0,
    "sells": 2,
@@ -6588,7 +6606,7 @@
    "symbol": "UNI",
    "name": "Spiky UNI",
    "mint": "HnXoHrUv8oTx8FP4xz6rHGoqd8tQ7P1ZXeZoTPirpump",
-   "age_s": 147,
+   "age_s": 175,
    "sol_in": -3.88,
    "buys": 6,
    "sells": 3,
@@ -6599,42 +6617,6 @@
    "x": "https://x.com/randycrush505/status/2126421447375806887?a=U5zEiMasQ721Z2UE-lA&s=20",
    "tg": false,
    "web": "https://www.justonecookbook.com/uni-sea-urchin/",
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "moonbaby",
-   "name": "moonbaby",
-   "mint": "Fw2HCTeEgU6FxHSdCJLqhpaGScm9F2Dmqh8xkHbBpump",
-   "age_s": 158,
-   "sol_in": 0.39,
-   "buys": 5,
-   "sells": 5,
-   "rise_pct": 2.6,
-   "mcap_sol": 29.3,
-   "dev_pct": 1.0,
-   "big_sell": 1.34,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "MOONER",
-   "name": "MOOner",
-   "mint": "7c3aunybYKckTj9DBtexeAgS7L3RfWvLwvDzi49Cpump",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 32.8,
-   "dev_pct": 8.2,
-   "big_sell": 0.05,
-   "x": "https://x.com/KankiAlpha/status/2126421454837461396",
-   "tg": false,
-   "web": "https://x.com/KankiAlpha/status/2126421454837461396",
    "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
   }
@@ -6651,7 +6633,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T21:05:13Z",
    "cost": 5.91,
-   "pnl_pct": -3.7,
+   "pnl_pct": -3.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6667,7 +6649,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T21:03:07Z",
    "cost": 5.91,
-   "pnl_pct": -1.8,
+   "pnl_pct": -1.5,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6706,6 +6688,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "moonpig",
+   "mint": "2PMZ8AKJmG9VTx2PQiyofTNULeXtk2ecRSLYgXt3pump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T21:05:31Z",
+   "cost": 5.91,
+   "pnl_pct": 11.0,
+   "tier": "swing",
+   "score": 3.5,
+   "steps": 2,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 19.99,
+   "closed": "2026-11-27T21:05:35Z",
+   "exit": "TP +20%",
+   "pnl": 0.65,
+   "weight": 0.5
   },
   {
    "symbol": "UNI",
@@ -7086,33 +7088,13 @@
    "exit": "dump: 2.2 SOL sold",
    "pnl": -1.16,
    "weight": 0.5
-  },
-  {
-   "symbol": "MOON",
-   "mint": "2oUv2staAEhVQy3R6fZdAAeLLAgeLCrxNajii1Gqpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "opened": "2026-11-27T20:58:36Z",
-   "cost": 5.91,
-   "pnl_pct": -16.5,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 6.16,
-   "closed": "2026-11-27T20:58:39Z",
-   "exit": "dump: 2.0 SOL sold",
-   "pnl": -0.98,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 1900,
-  "wins": 427,
+  "n": 1901,
+  "wins": 428,
   "win_rate": 22.5,
-  "mean_pnl_pct": -7.39,
+  "mean_pnl_pct": -7.38,
   "open": 4,
   "learner": {
    "n": 16,
@@ -7121,10 +7103,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 1884,
-   "wins": 424,
+   "n": 1885,
+   "wins": 425,
    "win_rate": 22.5,
-   "mean_pnl_pct": -7.35
+   "mean_pnl_pct": -7.34
   }
  }
 }
