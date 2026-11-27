@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T09:47:45Z",
-    "time": "10:47:45",
-    "agent": "LEARNER",
-    "coin": "FBEACON",
-    "action": "shadow",
-    "text": "SHADOW FBEACON · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021418 (curve maths, every cost) · same exits, outside the book",
-    "n": 3899
-   },
-   {
-    "t": "2026-11-27T09:47:46Z",
-    "time": "10:47:46",
-    "agent": "LEARNER",
-    "coin": "NBA",
-    "action": "shadow",
-    "text": "SHADOW NBA would have made +26.2% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.4% over 218",
-    "n": 3900
-   },
-   {
     "t": "2026-11-27T09:47:49Z",
     "time": "10:47:49",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 4.0 a minute · 0 watched · 10 rejected (snipe not bought: trades tonight 6, serial launcher 2, mayhem mode 2)",
     "n": 4498
+   },
+   {
+    "t": "2026-11-27T11:28:54Z",
+    "time": "12:28:54",
+    "agent": "LEARNER",
+    "coin": "MICROWAVE",
+    "action": "shadow",
+    "text": "SHADOW MICROWAVE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000033781 (curve maths, every cost) · same exits, outside the book",
+    "n": 4499
+   },
+   {
+    "t": "2026-11-27T11:28:57Z",
+    "time": "12:28:57",
+    "agent": "LEARNER",
+    "coin": "MICROWAVE",
+    "action": "shadow",
+    "text": "SHADOW MICROWAVE would have made -23.2% (dump: 3.0 SOL sold) · learned x0.5 · np:social:web now avg -7.6% over 300",
+    "n": 4500
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4498,
+  "lines": 4500,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795742880,
-    80.34
-   ],
    [
     1795742940,
     80.34
@@ -21735,6 +21731,10 @@
    [
     1795778894,
     361.97
+   ],
+   [
+    1795778954,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795778927.645363,
   "shadow": {
-   "n": 985,
+   "n": 986,
    "wins": 225,
-   "sum": -7189.1
+   "sum": -7212.3
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 999,
+  "n": 1000,
   "wins": 227,
-  "sum": -7387.6,
+  "sum": -7410.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 983,
+    "n": 984,
     "wins": 224,
-    "sum": -7189.8
+    "sum": -7213.0
    }
   },
   "closed": [
-   {
-    "symbol": "REFUEL",
-    "mint": "2ZGXriR1UKSrfvqhzZwBatx8oYHZZd8aJf8NW7JDpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T11:24:29Z",
-    "cost": 36.2,
-    "pnl_pct": 33.0,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 9.41,
-    "closed": "2026-11-27T11:24:31Z",
-    "exit": "TP +10%",
-    "pnl": 11.95,
-    "weight": 0.5
-   },
    {
     "symbol": "TRUMP2.0",
     "mint": "FvxhEAk3ySTce6bq85gYvW8t1kzvi5zZxGL7JNmqpump",
@@ -31743,6 +31723,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.83,
     "weight": 0.5
+   },
+   {
+    "symbol": "MICROWAVE",
+    "mint": "AG3GUtp1bovwaWwY5Uf3fdD6GUzdjHEG899TUJvWpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T11:28:54Z",
+    "cost": 36.2,
+    "pnl_pct": -23.2,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 2.88,
+    "closed": "2026-11-27T11:28:57Z",
+    "exit": "dump: 3.0 SOL sold",
+    "pnl": -8.39,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31789,7 +31789,7 @@
     "avg": -8.8
    }
   ],
-  "shadows": 983,
+  "shadows": 984,
   "memory": "snipe"
  }
 }
