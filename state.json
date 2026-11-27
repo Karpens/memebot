@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:34:49Z",
-    "time": "06:34:49",
-    "agent": "NEWS",
-    "coin": "POLY",
-    "action": "plan",
-    "text": "hold plan · 1/10 (X) · scalp: +10",
-    "n": 2496
-   },
-   {
-    "t": "2026-11-27T05:34:54Z",
-    "time": "06:34:54",
-    "agent": "EXECUTOR",
-    "coin": "POLY",
-    "action": "exit",
-    "text": "EXIT POLY +$2.28 (+6%) · TP +10% · out · 0.0 s after the reading",
-    "n": 2497
-   },
-   {
     "t": "2026-11-27T05:34:54Z",
     "time": "06:34:54",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW tugi would have made -16.3% (stop -13%) · learned x0.5 · np:social:none now avg -9.7% over 155.5",
     "n": 3095
+   },
+   {
+    "t": "2026-11-27T07:17:12Z",
+    "time": "08:17:12",
+    "agent": "LEARNER",
+    "coin": "WALMART",
+    "action": "shadow",
+    "text": "SHADOW WALMART would have made -6.3% (5 min, only -2%) · learned x0.5 · np:social:none now avg -9.7% over 156",
+    "n": 3096
+   },
+   {
+    "t": "2026-11-27T07:17:30Z",
+    "time": "08:17:30",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.0 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 7, serial launcher 3, mayhem mode 2)",
+    "n": 3097
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3095,
+  "lines": 3097,
   "flags": [
    {
     "coin": "Kibo",
@@ -21329,11 +21329,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795763789.780855,
+  "np_said": 1795763850.780772,
   "shadow": {
-   "n": 437,
+   "n": 438,
    "wins": 83,
-   "sum": -3697.9
+   "sum": -3704.2
   },
   "np_speed": {
    "first_in": [
@@ -30916,9 +30916,9 @@
   }
  },
  "shadow": {
-  "n": 451,
+  "n": 452,
   "wins": 85,
-  "sum": -3896.4,
+  "sum": -3902.7,
   "by": {
    "learner": {
     "n": 16,
@@ -30926,32 +30926,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 435,
+    "n": 436,
     "wins": 82,
-    "sum": -3698.6
+    "sum": -3704.9
    }
   },
   "closed": [
-   {
-    "symbol": "RAKEBACK",
-    "mint": "qGjtJXGYVTkuNfC8Xv6ndLdwkUKWrb36H7Y57wApump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:08:34Z",
-    "cost": 36.2,
-    "pnl_pct": -18.0,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.85,
-    "closed": "2026-11-27T07:08:35Z",
-    "exit": "dump: 2.2 SOL sold",
-    "pnl": -6.51,
-    "weight": 0.5
-   },
    {
     "symbol": "TOGI",
     "mint": "5GGVMzdg5t7Q3qzjCwDgqdt9TM26fixAgwrjUjMpump",
@@ -31331,10 +31311,29 @@
     "exit": "stop -13%",
     "pnl": -5.9,
     "weight": 0.5
+   },
+   {
+    "symbol": "WALMART",
+    "mint": "A26R1MzLNpC6RdSK3hJV1J2qRNKvDv9BcJZro9pXpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:12:12Z",
+    "cost": 36.2,
+    "pnl_pct": -6.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T07:17:12Z",
+    "exit": "5 min, only -2%",
+    "pnl": -2.27,
+    "weight": 0.5
    }
   ],
   "open": [
-   "WALMART",
    "TEETH",
    "Turkey",
    "DARKF",
@@ -31382,7 +31381,7 @@
     "avg": -12.6
    }
   ],
-  "shadows": 435,
+  "shadows": 436,
   "memory": "snipe"
  }
 }
