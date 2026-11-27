@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T07:24:28Z",
+ "updated": "2026-11-27T07:25:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3119,
+  "lines": 3121,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -2087,6 +2087,10 @@
   ],
   [
    1795764233,
+   361.97
+  ],
+  [
+   1795764293,
    361.97
   ]
  ],
@@ -4356,24 +4360,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T06:47:49Z",
-   "time": "07:47:49",
-   "agent": "LEARNER",
-   "coin": "claws",
-   "action": "shadow",
-   "text": "SHADOW claws · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026048 (curve maths, every cost) · same exits, outside the book",
-   "n": 2920
-  },
-  {
-   "t": "2026-11-27T06:48:09Z",
-   "time": "07:48:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 0 watched · 24 rejected (mayhem mode 12, snipe not bought: trades tonight 9, serial launcher 3)",
-   "n": 2921
-  },
-  {
    "t": "2026-11-27T06:48:27Z",
    "time": "07:48:27",
    "agent": "LEARNER",
@@ -6154,6 +6140,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (mayhem mode 4, snipe not bought: trades tonight 3, serial launcher 2)",
    "n": 3119
+  },
+  {
+   "t": "2026-11-27T07:24:32Z",
+   "time": "08:24:32",
+   "agent": "RISK",
+   "coin": "NOTHING",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 3120
+  },
+  {
+   "t": "2026-11-27T07:24:34Z",
+   "time": "08:24:34",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (mayhem mode 5, snipe not bought: trades tonight 3, serial launcher 1)",
+   "n": 3121
   }
  ],
  "nights": [
@@ -6214,7 +6218,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6222,24 +6226,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1652,
-    "last_event_age_s": 12.6,
+    "events": 1656,
+    "last_event_age_s": 2.0,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 47317,
-    "last_event_age_s": 0.2,
+    "events": 47371,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1044,
-    "last_event_age_s": 95.6,
+    "connected": true,
+    "events": 1045,
+    "last_event_age_s": 29.9,
     "errors": 89,
     "last_error": "linkpairs.fun: too slow (over 2 s)"
    }
@@ -6252,7 +6256,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 3.2,
   "watching": 0,
   "followed": 3
  },
@@ -6301,23 +6305,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 22222,
+   "sent": 22257,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 22221,
+   "sent": 22256,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HLOVE",
+   "name": "HARSH LOVE",
+   "mint": "9PXrHtynWf5cGdKTLXr5TQBDb7ZDBcC6CvSAqZaapump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "GAYCOIN",
+   "name": "GAYCOIN",
+   "mint": "3DxMFfbDiDxQnzDkvMYeuDvXmwzVM6NsXqWnEN36pump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "NOTHING",
+   "name": "Launch Nothing",
+   "mint": "9PBVXxx7Hn72EJttB8X2besqJtbUvE4iN3Cc3ubUpump",
+   "age_s": 30,
+   "sol_in": 6.9,
+   "buys": 11,
+   "sells": 18,
+   "rise_pct": 34.0,
+   "mcap_sol": 79.6,
+   "dev_pct": 33.7,
+   "big_sell": 2.5,
+   "x": "https://x.com/Lnchnothingfun/status/2126215485155111037?a=zL7ZEG9iMixDuim96WQ&s=20",
+   "tg": false,
+   "web": "https://launchnothing.fun/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "3BenBtefPERBiUJhx9VTQf6WjpPf3QpK6CUJGJGgpump",
-   "age_s": 12,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6335,7 +6393,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "A2Bz1KE9h42WW2Kof5oxtLNuS64LKJGV9EVkbMTopump",
-   "age_s": 57,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6353,7 +6411,7 @@
    "symbol": "HLOVE",
    "name": "HARSH LOVE",
    "mint": "8KGkTRuqvS1twf18FTPKACn4dWmiEnCmDAvStJG6pump",
-   "age_s": 57,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6371,7 +6429,7 @@
    "symbol": "keko",
    "name": "keko",
    "mint": "DT4Ro69YA3vg5e4kMg6oPhPXBEkiBjASk9WLTdadQ9QC",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 5,
@@ -6389,7 +6447,7 @@
    "symbol": "mmrich",
    "name": "makemerich",
    "mint": "N4BsevBS1dDbDyMF6wXWW4c99v3JfpA3xiNCwzspump",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6407,7 +6465,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "v9KnpVLN8WVBiVTwBpyo36QvbzE1ukGq25vNdCMpump",
-   "age_s": 134,
+   "age_s": 167,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6425,35 +6483,17 @@
    "symbol": "LOS",
    "name": "League of Solana",
    "mint": "HX41A7Utuq1Wr2BB6Jmm6iH8XksvdRtfwtq18Ck1yQZD",
-   "age_s": 144,
-   "sol_in": 0.45,
+   "age_s": 177,
+   "sol_in": 0.0,
    "buys": 8,
-   "sells": 20,
-   "rise_pct": 3.0,
-   "mcap_sol": 28.8,
+   "sells": 22,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 3.18,
    "x": "https://x.com/leagueofsolanaa",
    "tg": false,
    "web": "https://leagueofsolana.fun/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "TCAT",
-   "name": "Tap Cat",
-   "mint": "8DoocwuKukTq9ZiioeSYEaUfRtYVthPTcAGF9cf6pump",
-   "age_s": 161,
-   "sol_in": 2.42,
-   "buys": 54,
-   "sells": 60,
-   "rise_pct": 16.2,
-   "mcap_sol": 34.7,
-   "dev_pct": 3.4,
-   "big_sell": 7.5,
-   "x": "https://x.com/uncquant/status/2126214870605709776",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   }
