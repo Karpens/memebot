@@ -2,9 +2,11 @@
 latency), no look-ahead (a tape cut right after a decision makes the same decision), the coverage (blind exits when
 the tape loses a coin, a completion sold into its last curve state; the poller's holes, by its own silences on the
 heartbeats and by the call counts on older tapes), the split by create time, the calibration against the bot's booked
-trades (a hand-made pair and the real engine's own tape), the PASS rule (a planted edge passes, noise does not) and
-the command line end to end. Offline: synthetic tapes written as JSONL in the recorder's format (memebot/recorder.py,
-version 2), made up for the tests and never a claim about real coins."""
+trades (a hand-made pair and the real engine's own tape), the PASS rule (a planted edge passes, noise does not),
+SNIPE (a new coin bought at its create line or its first curve reading: the tape's first reading only when it is the
+bot's first sight, the sniper's exit S1, the "First reading" report, pure noise from 1 s, every older row as it was
+without SNIPE) and the command line end to end. Offline: synthetic tapes written as JSONL in the recorder's format
+(memebot/recorder.py, version 2), made up for the tests and never a claim about real coins."""
 
 import contextlib
 import datetime
@@ -185,6 +187,18 @@ def decisions(folder):
     return {ek: {views[i].mint: t for i, t in d.items()} for ek, d in dec.items()}
 
 
+def snipe_row(ek):
+    """The rows SNIPE added: its rules and its base row (BASE-A first), all decided at a coin's first reading."""
+    return ek.startswith("SNIPE ") or ek.startswith("BASE-A first")
+
+
+def older_times(dec):
+    """The decision times of every entry rule but SNIPE's (sorted): the times the hole tests below sample their holes
+    from, as they did before SNIPE came (its first-reading decisions would move the sampled ones). Every cut there is
+    still checked on every rule, SNIPE's too."""
+    return sorted({t for ek, d in dec.items() if not snipe_row(ek) for t in d.values()})
+
+
 class Base(unittest.TestCase):
     def setUp(self):
         self.dir = tempfile.mkdtemp()
@@ -306,9 +320,10 @@ class NoLookAhead(Base):
         tp = self.rich_tape()
         full = decisions(tp.write(self.folder("full")))
         fams = {ek.split(" ")[0] for ek, d in full.items() if d}
-        for fam in ("SURV", "DIP", "ORG", "GRAD", "BRK", "MOM", "BASE-A", "BASE-B", "C0", "REF"):
+        for fam in ("SURV", "DIP", "ORG", "GRAD", "BRK", "MOM", "BASE-A", "BASE-B", "C0", "REF", "SNIPE"):
             self.assertIn(fam, fams, "no %s decision on the test tape: the test would prove nothing" % fam)
         self.assertTrue(full["MOM PB"] and full["MOM S5"] and full["MOM LOOSE"])
+        self.assertTrue(full["BASE-A first"] and full["SNIPE r<=10 d<=3"])
         times = sorted({t for d in full.values() for t in d.values()})
         rng = random.Random(9)
         cuts = sorted(set(rng.sample(times, min(12, len(times))) + [rng.uniform(START, tp.last) for _ in range(4)]))
@@ -339,7 +354,7 @@ class NoLookAhead(Base):
                 name = "%d%d" % (gaps, after)
                 plain = decisions(tp.write(self.folder("plain" + name)))
                 rng = random.Random(11)
-                picks = sorted(rng.sample(sorted({t for d in plain.values() for t in d.values()}), 8))
+                picks = sorted(rng.sample(older_times(plain), 8))
                 for k, t in enumerate(picks):
                     b = round(START + 10 * math.floor((t - START) / 10.0) + (10 if after else 0), 6)
                     if gaps:
@@ -356,7 +371,7 @@ class NoLookAhead(Base):
                 self.assertEqual(mk.poll_stretches["by_gaps" if gaps else "by_counts"], mk.poll_stretches["n"])
                 if not after:
                     self.assertNotEqual(full, plain, "the holes moved no decision: the test would prove nothing")
-                cuts = set(rng.sample(sorted({t for d in full.values() for t in d.values()}), 10))
+                cuts = set(rng.sample(older_times(full), 10))
                 cuts.update(t + 0.01 for t in picks)
                 for a, b in parts:
                     cuts.update((a + 0.05, b - 0.05, b + 0.05))
@@ -949,12 +964,25 @@ class PassRule(Base):
         f = next(f for f in edge["finalists"] if f["passes"])
         self.assertGreaterEqual(f["held"]["n"], 15)
         self.assertGreater(f["held"]["lower"], 0)
-        noise = st.study(planted_tape(edge=False).write(self.folder("noise")), split=0.7, boot=400, embargo_s=0.0)
+        # the study as it was before SNIPE (a --max-rules that cuts exactly its rows, the last in the grid)
+        folder = planted_tape(edge=False).write(self.folder("noise"))
+        noise = st.study(folder, split=0.7, boot=400, embargo_s=0.0, max_rules=older_cap())
         self.assertEqual(noise["verdict"]["pass"], [])
         self.assertEqual(noise["verdict"]["text"], "no rule beats costs on held-out data")
         # the base rows are there on both, never selected
         self.assertTrue(any(b["key"].startswith("BASE-B") for b in noise["base_rows"]))
         self.assertTrue(all(not f["key"].startswith(("BASE", "C0", "REF")) for f in noise["finalists"]))
+        # with SNIPE (the default --max-rules cuts nothing): the noise is after the trigger, and before it every coin
+        # of both tapes climbs 0.1 SOL a second from its first reading, an early edge planted in the noise tape too,
+        # which the SNIPE rows (bought at the create or the first reading, out by 30 s or on a take) find on held-out
+        # time; every older row's first-part numbers, the overlays and the shown ones as without them, none passes
+        full = st.study(folder, split=0.7, boot=400, embargo_s=0.0)
+        self.assertEqual(full["tried"]["left_out_by_cap"], 0)
+        self.assertEqual([k for k in full["verdict"]["pass"] if not k.startswith("SNIPE ")], [])
+        self.assertTrue(full["verdict"]["text"].startswith("PASS: SNIPE "), full["verdict"]["text"])
+        self.assertEqual([r for r in full["first_part"] if not snipe_row(r["key"])], noise["first_part"])
+        olds = lambda rp: sorted(f["key"] for f in rp["finalists"] if f["shown"] and f["family"] != "SNIPE")
+        self.assertEqual(olds(full), olds(noise))
 
     def test_every_ranked_combination_is_judged_on_held_out_time_not_only_the_top_ones(self):
         # coins every 120 s, two kinds in turn. M: the live trigger fires at 45 s; before the split it climbs on and
@@ -980,8 +1008,9 @@ class PassRule(Base):
                 pts += [(301.0 + k, round(1.8 + slope * (k + 1), 6)) for k in range(400)]
             tp.coin(mint(i), t0, pts, creator="dev%d" % i)
         rep = st.study(tp.write(self.folder()), split=0.7, boot=1000)
-        shown = [f for f in rep["finalists"] if f["shown"]]
+        shown = [f for f in rep["finalists"] if f["shown"] and f["family"] != "SNIPE"]      # SNIPE's best 5 apart
         self.assertEqual(len(shown), 15)
+        self.assertLessEqual(sum(1 for f in rep["finalists"] if f["shown"] and f["family"] == "SNIPE"), st.SNIPE_SHOWN)
         self.assertLessEqual({f["family"] for f in shown}, {"MOM", "Q"})        # the crowd: one family's copies
         self.assertTrue(all(not f["passes"] for f in shown))
         surv = [f for f in rep["finalists"] if f["passes"] and f["family"] == "SURV"]
@@ -991,6 +1020,529 @@ class PassRule(Base):
         self.assertTrue(rep["verdict"]["text"].startswith("PASS: "))
         self.assertTrue(all(f["key"] in rep["verdict"]["pass"] for f in surv))
         self.assertIn("every one of the %d ranked combinations judged" % rep["tried"]["ranked"], rep["markdown"])
+
+
+SNIPES = ("SNIPE any", "SNIPE r<=10", "SNIPE r<=30", "SNIPE r<=10 d<=3")    # decided at the first reading
+SNIPE_CREATE = "SNIPE create"                                                  # decided at the create line
+SNIPE_EXITS = ("X3_5", "X3_10", "X3_30", "X1@175", "S1")
+
+
+def rise(r, dev=0.3):
+    """The price's rise % at a reading of r real SOL over a create with the dev's dev SOL in (price = vsol^2 / K)."""
+    return ((30.0 + r) / (30.0 + dev)) ** 2 * 100 - 100
+
+
+def older_cap():
+    """The --max-rules that keeps exactly the rows SNIPE found (the older grid and the overlays' room): SNIPE's rows
+    come last, so this is the study as it was before them."""
+    combos, _ = st.build_grid()
+    return sum(1 for c in combos if not snipe_row(c["entry"])) + st.OVERLAY_ROOM
+
+
+def flat_from(age, r, n=60):
+    """(age, real SOL) readings from age on, one a second, 0.01 SOL more each: a curve that hardly moves."""
+    return [(age + k, round(r + 0.01 * k, 6)) for k in range(n)]
+
+
+class Snipe(Base):
+    """SNIPE: a new coin bought at its first curve reading on the create line and that reading only, or at the create
+    line itself (SNIPE create, filled on the first reading when it came by the fill); a first reading the tape did not
+    keep (a gap line, lost lines, a known hole) or that came late is no snipe; the orders fill on the next poll after
+    the latency like every other; S1, the sniper's exit, to the reading; out before an unfollowed coin leaves the
+    tape; the "First reading" report; the rows going through the held-out part and Bonferroni like the others, on
+    pure noise from about 1 s too; and the older rows' overlays and shown slots as they were without SNIPE."""
+
+    T0 = START + 30
+
+    def tape(self):
+        """-> (Tape, {name: mint}): coins every 300 s, each made to sit on one side of one filter."""
+        tp, c = Tape(), {}
+        at = lambda k: self.T0 + 300.0 * k
+        c["early"] = tp.coin(mint(1), at(0), ramp(0.3, 6.0, 0.1))                    # +0.7 % at 1 s
+        c["late"] = tp.coin(mint(2), at(1), [(4.0, 0.5)] + [(5.0 + k, round(0.6 + 0.1 * k, 6)) for k in range(40)])
+        c["bundle"] = tp.coin(mint(3), at(2), [(1.0, 5.6)] + [(2.0 + k, round(5.6 - 0.1 * (k + 1), 6))
+                                                           for k in range(50)])   # +38 % at 1 s, all of it back later
+        c["half"] = tp.coin(mint(4), at(3), [(1.0, 2.9)] + [(2.0 + k, round(2.9 + 0.1 * (k + 1), 6)) for k in range(40)])
+        c["dev"] = tp.coin(mint(5), at(4), [(1.0, 1.6)] + [(2.0 + k, round(1.6 + 0.1 * (k + 1), 6)) for k in range(40)],
+                           dev=1.5)                                                 # the dev bought 5.1 %
+        c["pump"] = tp.coin(mint(6), at(5), [(1.0, 0.4), (1.6, 12.0)] + [(2.0 + k, 12.0 + 0.1 * k) for k in range(40)])
+        c["skip"] = tp.coin(mint(7), at(6), ramp(0.3, 6.0, 0.1))
+        tp.add({"k": "dec", "m": c["skip"], "t": round(at(6) + 0.01, 6), "d": "skip", "why": "list full"})
+        c["done"] = tp.coin(mint(8), at(7), [0.4, 0.5], complete=0)                 # its first reading completes it
+        c["none"] = tp.coin(mint(9), at(8), [])                                     # never read
+        c["fill"] = tp.coin(mint(10), at(9), [(1.0, 0.4), (1.4, 0.8), (2.3, 1.5), (3.1, 2.0)] + [
+            (4.0 + k, round(2.0 + 0.1 * (k + 1), 6)) for k in range(30)])
+        c["mayhem"] = tp.coin(mint(11), at(10), ramp(0.3, 6.0, 0.1))               # skipped by its create's own check
+        next(x for x in tp.lines if x["k"] == "create" and x["m"] == c["mayhem"])["is_mayhem_mode"] = True
+        return tp, c
+
+    def test_a_snipe_decides_at_the_first_reading_on_the_create_and_that_reading_only(self):
+        tp, c = self.tape()
+        folder = tp.write(self.folder())
+        dec = decisions(folder)
+        views, mk, _ = views_of(folder)
+        first = {cv.mint: cv.ts[1] for cv in views if len(cv.ts) > 1}
+        self.assertAlmostEqual(first[c["late"]] - self.T0 - 300.0, 4.0)
+        want = {"SNIPE any": ("early", "late", "bundle", "half", "dev", "pump", "fill"),
+                "SNIPE r<=10": ("early", "late", "dev", "pump", "fill"),
+                "SNIPE r<=30": ("early", "late", "half", "dev", "pump", "fill"),
+                "SNIPE r<=10 d<=3": ("early", "late", "pump", "fill"),
+                "BASE-A first": ("early", "late", "bundle", "half", "dev", "pump", "fill")}
+        for ek, names in want.items():
+            self.assertEqual(dec[ek], {c[n]: first[c[n]] for n in names}, ek)    # at the first reading itself
+        # the filters on the create and the first reading only: a +38 % bundle that later gives it all back, a +18 %
+        # first reading that goes on up, a coin pumped +86 % 0.6 s after a quiet first reading
+        cv = {v.mint: v for v in views}
+        for n, r, dev in (("early", 0.4, 0.3), ("bundle", 5.6, 0.3), ("half", 2.9, 0.3), ("dev", 1.6, 1.5),
+                          ("pump", 0.4, 0.3)):
+            self.assertAlmostEqual(st.rise_at_first(cv[c[n]]), rise(r, dev), delta=1e-3, msg=n)
+        self.assertGreater(cv[c["dev"]].dev_pct, 3.0)
+        self.assertLess(cv[c["early"]].dev_pct, 3.0)
+        self.assertGreater(cv[c["pump"]].px[2] / cv[c["pump"]].px[0], 1.8)
+        # skipped at its create, complete at its first reading, never read: no decision anywhere in SNIPE
+        for n in ("skip", "done", "none", "mayhem"):
+            self.assertTrue(all(c[n] not in dec[ek] for ek in want), n)
+        self.assertEqual(cv[c["skip"]].skip, "list full")
+        self.assertEqual(cv[c["mayhem"]].skip, "mayhem mode")
+        self.assertTrue(cv[c["done"]].cx[1])
+        # SNIPE create: at the create line itself, on every coin the bot's checks at the create let through (all but
+        # the mayhem one); the line that says the bot skipped one for a full watch list comes after the create, so
+        # that one is decided on too (on a real tape such a coin has no reading: no fill, the next test)
+        names = ("early", "late", "bundle", "half", "dev", "pump", "skip", "done", "none", "fill")
+        self.assertEqual(dec[SNIPE_CREATE], {c[n]: cv[c[n]].t0 for n in names})
+
+    def test_a_snipe_at_the_create_line_fills_on_the_first_reading_when_it_came_by_the_fill(self):
+        # L 1 s, a poll 1 s: the order sent 1 s after the create fills on the first reading at or after then when one
+        # came by 2 s, else on the last state before then; the curve before the first reading is unknown (the
+        # create's own state is PumpPortal's, no reading), so a first reading after 2 s leaves the order unpriced,
+        # and so does a tape that lost lines (or capped the coin) between the send and that first reading
+        tp, t0 = Tape(), self.T0
+        climb = lambda a, r: [(a + k, round(r + 0.1 * (k + 1), 6)) for k in range(30)]
+        c = {"quick": tp.coin(mint(1), t0, [(0.6, 0.5), (1.4, 0.9), (2.3, 1.5)] + climb(3.0, 1.5)),
+             "quiet": tp.coin(mint(2), t0 + 300, [(0.6, 0.5)] + climb(5.0, 0.9)),
+             "on_time": tp.coin(mint(3), t0 + 600, [(1.8, 0.5)] + climb(3.0, 0.5)),
+             "slow": tp.coin(mint(4), t0 + 900, [(2.5, 0.5)] + climb(3.0, 0.5)),
+             "unread": tp.coin(mint(5), t0 + 1200, []),
+             # a lost-lines stretch (START + 1520, + 1530] (hb "lost" grows at + 1530): over the create of one coin
+             # but ended before its send, over the send of the other one, read first after it
+             "lost_before": tp.coin(mint(6), START + 1529.5, [(0.8, 0.5)] + climb(2.0, 0.5)),
+             "lost_over": tp.coin(mint(7), START + 1828.5, [(1.8, 0.5)] + climb(3.0, 0.5)),
+             "gapped": tp.coin(mint(8), t0 + 2100, [(1.5, 0.5)] + climb(3.0, 0.5), gap=0.5)}
+        tp.add({"k": "dec", "m": c["unread"], "t": round(t0 + 1200.01, 6), "d": "skip", "why": "list full"})
+        tp.lost += [(START + 1525, START + 1530), (START + 1825, START + 1830)]
+        folder = tp.write(self.folder())
+        dec = decisions(folder)[SNIPE_CREATE]
+        views, mk, cfg = views_of(folder)
+        cv = {v.mint: v for v in views}
+        self.assertEqual(dec, {m: cv[m].t0 for m in c.values()})       # the full list's skip line comes later
+        costs = st.Costs(cfg, 8.5)
+        sim = st.Sim(costs, 1.0, 1.0, 1.0, "next")
+        x5 = st.exit_policies(cfg)["X3_5"][0]
+        got = {n: st.simulate(cv[m], mk, cv[m].t0, x5, sim) for n, m in c.items()}
+        at = lambda n, a: next(i for i, t in enumerate(cv[c[n]].ts) if abs(t - cv[c[n]].t0 - a) < 1e-6)
+        for n, fill_age, i in (("quick", 1.4, at("quick", 1.4)), ("quiet", 1.0, 1), ("on_time", 1.8, 1),
+                               ("lost_before", 2.0, at("lost_before", 2.0))):
+            tr, why = got[n]
+            self.assertIsNone(why, n)
+            v = cv[c[n]]
+            self.assertAlmostEqual(tr.dec, v.t0)
+            self.assertAlmostEqual(tr.fill - v.t0, fill_age, delta=1e-6, msg=n)
+            tok, cost, _ = costs.buy(v.vs[i], v.vt[i], 71.0)                # on that reading's state, never index 0
+            fx = st.fill_index(v, tr.fill + 5.0 + 1.0, 1.0)
+            self.assertAlmostEqual(tr.pnl, (costs.sell(v.vs[fx], v.vt[fx], tok, 71.0) - cost) / cost * 100, places=9)
+        self.assertEqual({n: got[n][1] for n in ("slow", "unread", "lost_over", "gapped")},
+                         {"slow": "no reading by the fill", "unread": "not polled at the fill",
+                          "lost_over": "not polled at the fill", "gapped": "not polled at the fill"})
+        # --fill at (the last state at or before the send) and no latency: only a first reading by then prices it
+        self.assertEqual(st.simulate(cv[c["on_time"]], mk, cv[c["on_time"]].t0, x5, sim.but(mode="at"))[1],
+                         "no reading by the fill")
+        self.assertAlmostEqual(st.simulate(cv[c["quick"]], mk, cv[c["quick"]].t0, x5, sim.but(mode="at"))[0].fill,
+                               cv[c["quick"]].t0 + 1.0, delta=1e-6)
+        self.assertEqual(st.simulate(cv[c["on_time"]], mk, cv[c["on_time"]].t0, x5, sim.but(l_in=0.0))[1],
+                         "no reading by the fill")
+        self.assertAlmostEqual(st.simulate(cv[c["quick"]], mk, cv[c["quick"]].t0, x5, sim.but(l_in=0.0))[0].fill,
+                               cv[c["quick"]].t0 + 0.6, delta=1e-6)
+        # a create-time order is earlier than the first-reading one on the same coin: the poll at 1.4 s, not 2.3 s
+        tr1, _ = st.simulate(cv[c["quick"]], mk, st.first_reading_at(cv[c["quick"]], mk), x5, sim)
+        self.assertAlmostEqual(tr1.fill - got["quick"][0].fill, 2.3 - 1.4, delta=1e-6)
+
+    def test_a_first_reading_the_tape_did_not_keep_or_that_came_late_is_no_snipe(self):
+        # the tape's first reading is not the bot's first sight: (a) the hour cap left a "gap" line at 1 s, the next
+        # reading on the tape at 70 s; (b) the recorder lost lines (hb "lost" grew) over the stretch that held it, the
+        # first reading on the tape at 35 s; or no snipe: (c) nothing lost, but first read 15 s after the create;
+        # (d) first read at 190 s, past the watch window, the follow line only at 195 s (not polled then; polled
+        # from its next reading, which is not its first); (e) a normal coin read at 1 s
+        tp, t0 = Tape(), self.T0
+        c = {"gap": tp.coin(mint(1), t0, flat_from(70.0, 3.0), gap=1.0, follow=False),
+             "lost": tp.coin(mint(2), t0 + 300, flat_from(35.0, 0.5), follow=False),
+             "late": tp.coin(mint(3), t0 + 600, flat_from(15.0, 0.5), follow=False),
+             "past": tp.coin(mint(4), t0 + 900, [(190.0, 0.5), (191.0, 0.6), (196.0, 0.7), (197.0, 0.8)],
+                             follow=False, end=(300.0, "watch")),
+             "ok": tp.coin(mint(5), t0 + 1200, flat_from(1.0, 0.4), follow=False)}
+        tp.lost.append((t0 + 300, t0 + 320))
+        tp.add({"k": "follow", "m": c["past"], "t": round(t0 + 900 + 195.0, 6), "until": round(t0 + 1800, 6),
+                "why": "near"})
+        folder = tp.write(self.folder())
+        dec = decisions(folder)
+        views, mk, _ = views_of(folder)
+        cv = {v.mint: v for v in views}
+        for ek in SNIPES + ("BASE-A first",):
+            self.assertEqual(dec[ek], {c["ok"]: cv[c["ok"]].ts[1]}, ek)
+        self.assertAlmostEqual(cv[c["gap"]].ts[1] - t0, 70.0)
+        self.assertTrue(mk.hole_known(cv[c["lost"]].t0, cv[c["lost"]].ts[1], cv[c["lost"]].ts[1]))
+        self.assertTrue(cv[c["past"]].polled(mk, cv[c["past"]].ts[3]))           # polled at 196 s, not at 190 s
+        self.assertFalse(cv[c["past"]].polled(mk, cv[c["past"]].ts[1]))
+        self.assertEqual({n: st.first_reading_why(cv[m], mk)[1] for n, m in c.items()},
+                         {"gap": "gap", "lost": "tape hole", "late": "late", "past": "not polled", "ok": None})
+        self.assertEqual(st.SNIPE_MAX_DELAY_S, 10.0)
+        # a first reading inside the 10 s but not polled then (a 2 s watch window, the follow line 1 s later): no
+        # decision, not on the first reading nor on the next one (polled, but not the first)
+        tp2 = Tape(cfg=dict(CFG, np_watch_s=2))
+        m = tp2.coin(mint(6), t0, [(8.0, 0.5), (9.5, 0.6), (10.0, 0.7)] + flat_from(11.0, 0.8), follow=False,
+                     end=(300.0, "watch"))
+        tp2.add({"k": "follow", "m": m, "t": round(t0 + 9.0, 6), "until": round(t0 + 900, 6), "why": "near"})
+        dec2 = decisions(tp2.write(self.folder("watch2")))
+        self.assertTrue(all(m not in dec2[ek] for ek in SNIPES + ("BASE-A first",)))
+        views2, mk2, _ = views_of(self.folder("watch2"))
+        self.assertEqual(st.first_reading_why(views2[0], mk2), (None, "not polled"))
+        self.assertTrue(views2[0].polled(mk2, views2[0].ts[2]))
+        # the First reading report counts them apart, its numbers on the decidable coins only
+        fr = st.first_reading(views, mk)
+        self.assertEqual((fr["coins"], fr["watched"]), (1, 5))
+        self.assertEqual(fr["left_out"], {"no reading": 0, "complete": 0, "gap": 1, "tape hole": 1, "not polled": 1,
+                                          "late": 1})
+        self.assertEqual(fr["delay_s"], {"median": 1.0, "p90": 1.0})
+
+    def test_a_snipe_decision_never_looks_ahead_and_never_comes_before_the_first_reading(self):
+        tp, c = self.tape()
+        full = decisions(tp.write(self.folder("full")))
+        views, _, _ = views_of(self.folder("full"))
+        firsts = sorted(cv.ts[1] for cv in views if len(cv.ts) > 1)
+        cuts = set()
+        for t in firsts:
+            cuts.update((t - 0.01, t, t + 0.01, t + 0.7, t + 30.0))
+        for cv in views:                                # SNIPE create: the create line, the skip line 0.01 s later
+            cuts.update((cv.t0 - 0.01, cv.t0, cv.t0 + 0.005, cv.t0 + 0.01))
+        for k, cut in enumerate(sorted(cuts)):
+            part = decisions(tp.write(self.folder("cut%d" % k), until=cut))
+            for ek, d in full.items():
+                if not snipe_row(ek):
+                    continue
+                want = {m: t for m, t in d.items() if t <= cut + 1e-9}
+                self.assertEqual(part.get(ek, {}), want, "%s cut at %+.2f s" % (ek, cut - START))
+        self.assertTrue(full[SNIPE_CREATE])
+        # the snipers' overhang overlay (Q5) reads a coin's first 5 s: on a decision inside them it is unknown, never
+        # a look at the readings after the decision
+        cv = next(v for v in views if v.mint == c["early"])
+        self.assertIsNone(st.overlay("Q5", cv, cv.ts[1]))
+        self.assertIsNotNone(st.overlay("Q5", cv, cv.t0 + 60.0))
+
+    def test_a_snipe_fills_on_the_next_poll_after_the_latency(self):
+        tp, c = self.tape()
+        folder = tp.write(self.folder())
+        views, mk, cfg = views_of(folder)
+        cv = next(v for v in views if v.mint == c["fill"])
+        t0 = cv.t0
+        at = {round(t - t0, 1): i for i, t in enumerate(cv.ts)}
+        dec = decisions(folder)["SNIPE r<=10 d<=3"][c["fill"]]
+        self.assertAlmostEqual(dec, t0 + 1.0)
+        costs = st.Costs(cfg, 8.5)
+        sim = st.Sim(costs, 1.0, 1.0, 1.0, "next")
+        x5 = st.exit_policies(cfg)["X3_5"][0]
+        tr, why = st.simulate(cv, mk, dec, x5, sim)
+        self.assertIsNone(why)
+        self.assertAlmostEqual(tr.dec, t0 + 1.0)
+        self.assertAlmostEqual(tr.fill, t0 + 2.3)                  # sent at 2.0 s: the poll at 2.3 s, not 1.0 or 1.4
+        self.assertEqual(st.fill_index(cv, dec + 1.0, 1.0, "at"), at[1.4])          # --fill at: the last state then
+        tok, cost, _ = costs.buy(cv.vs[at[2.3]], cv.vt[at[2.3]], 71.0)
+        fx = st.fill_index(cv, t0 + 2.3 + 5.0 + 1.0, 1.0)                           # held 5 s, sold 1 s later
+        self.assertAlmostEqual(tr.pnl, (costs.sell(cv.vs[fx], cv.vt[fx], tok, 71.0) - cost) / cost * 100, places=9)
+        # at the deciding reading's own price (no latency) the same trade would have been cheaper on a rising curve
+        tr0, _ = st.simulate(cv, mk, dec, x5, sim.but(l_in=0.0, l_out=0.0))
+        self.assertAlmostEqual(tr0.fill, dec)
+        self.assertGreater(tr0.pnl, tr.pnl + 5.0)
+        # a quiet coin: read at 1 s, nothing until 6 s (change-only: the curve had not moved), so the order sent at
+        # 2 s fills on the last state then, which is the deciding reading's own; a reading by 3 s would have been it
+        tq = Tape()
+        q = tq.coin(mint(1), t0, [(1.0, 0.5), (6.0, 0.9), (7.0, 1.2)], follow=False)
+        vq, mq, _ = views_of(tq.write(self.folder("quiet")))
+        vq = vq[0]
+        dq = st.first_reading_at(vq, mq)
+        self.assertAlmostEqual(dq, t0 + 1.0, delta=1e-6)
+        self.assertEqual(st.fill_index(vq, dq + 1.0, 1.0, "next"), 1)
+        trq, why = st.simulate(vq, mq, dq, x5, sim)
+        self.assertIsNone(why)
+        self.assertAlmostEqual(trq.fill, t0 + 2.0, delta=1e-6)
+        tok, cost, _ = costs.buy(vq.vs[1], vq.vt[1], 71.0)
+        fx = st.fill_index(vq, t0 + 2.0 + 5.0 + 1.0, 1.0)
+        self.assertAlmostEqual(trq.pnl, (costs.sell(vq.vs[fx], vq.vt[fx], tok, 71.0) - cost) / cost * 100, places=9)
+        self.assertEqual(vq.mint, q)
+
+    def test_the_sniper_exit_s1_takes_at_25_stops_at_minus_15_on_the_bot_gain_and_is_out_30_s_after_the_fill(self):
+        tp = Tape()
+        t0 = self.T0
+        # readings every 0.5 s: the bot's gain moves about 0.7 % a reading up, 0.6 % down, so the first reading over a
+        # line is within a step of it and another line (+30 %, -20 %, the curve's gain) would be another reading
+        up = tp.coin(mint(1), t0, [(1.0, 0.4)] + [(1.5 + 0.5 * k, round(0.4 + 0.1 * (k + 1), 6)) for k in range(200)])
+        down = tp.coin(mint(2), t0 + 300, [(1.0, 6.0)] + [(1.5 + 0.5 * k, round(6.0 - 0.1 * (k + 1), 6))
+                                                         for k in range(55)])
+        flat = tp.coin(mint(3), t0 + 600, [(1.0, 0.4)] + [(2.0 + k, round(0.4 + 0.002 * (k + 1), 6))
+                                                         for k in range(60)])
+        views, mk, cfg = views_of(tp.write(self.folder()))
+        ex = st.exit_policies(cfg)
+        self.assertEqual([ex["X3_%d" % h][0].h for h in (5, 10, 30)], [5.0, 10.0, 30.0])
+        s1 = ex["S1"][0]
+        self.assertEqual((s1.basis, s1.tp, s1.sl, s1.t_max), ("bot", 25.0, -15.0, 30.0))
+        costs = st.Costs(cfg, 8.5)
+        sim = st.Sim(costs, 1.0, 1.0)
+        cv = {v.mint: v for v in views}
+        got = {}
+        for v in views:
+            dec = st.first_reading_at(v, mk)
+            self.assertAlmostEqual(dec, v.t0 + 1.0, delta=1e-6)
+            got[v.mint], why = st.simulate(v, mk, dec, s1, sim)
+            self.assertIsNone(why)
+        self.assertFalse(any(t.blind for t in got.values()))
+
+        def sale(v, j, tok, cost):
+            """Sold on the next poll 1 s after reading j's decision: (exit time, net %)."""
+            fx = st.fill_index(v, v.ts[j] + 1.0, 1.0)
+            return max(v.ts[j] + 1.0, v.ts[fx]), (costs.sell(v.vs[fx], v.vt[fx], tok, 71.0) - cost) / cost * 100
+
+        for m, line, why in ((up, 25.0, "take +25%"), (down, -15.0, "stop -15%")):
+            v, tr = cv[m], got[m]
+            fi = st.fill_index(v, tr.dec + 1.0, 1.0)
+            self.assertAlmostEqual(tr.fill, v.ts[fi])
+            tok, cost, epx = costs.buy(v.vs[fi], v.vt[fi], 71.0)
+            gain = lambda j: (v.px[j] * 71.0 / epx - 1) * 100                  # the bot's own gain, cost basis
+            over = (lambda g: g >= line) if line > 0 else (lambda g: g <= line)
+            j = next(j for j in range(fi + 1, len(v.ts)) if over(gain(j)))
+            self.assertFalse(over(gain(j - 1)))                                 # the reading before it not there
+            self.assertLess(abs(gain(j) - line), 1.0)                           # and a step past the line at most
+            self.assertLess(v.ts[j] - tr.fill, 30.0)
+            self.assertEqual(tr.why, why)
+            want_exit, want_pnl = sale(v, j, tok, cost)
+            self.assertAlmostEqual(tr.exit, want_exit, delta=1e-6)
+            self.assertAlmostEqual(tr.pnl, want_pnl, places=9)
+            curve = next(k for k in range(fi + 1, len(v.ts)) if over((v.px[k] / v.px[fi] - 1) * 100))
+            self.assertNotEqual(curve, j)                                       # the curve's gain would cross elsewhere
+        v, tr = cv[flat], got[flat]
+        self.assertEqual(tr.why, "time 30 s")
+        fx = st.fill_index(v, tr.fill + 30.0 + 1.0, 1.0)
+        self.assertAlmostEqual(tr.exit, max(tr.fill + 31.0, v.ts[fx]), delta=1e-6)    # the next poll then
+        fi = st.fill_index(v, tr.dec + 1.0, 1.0)
+        self.assertAlmostEqual(tr.fill, v.ts[fi])
+        tok, cost, _ = costs.buy(v.vs[fi], v.vt[fi], 71.0)
+        self.assertAlmostEqual(tr.pnl, (costs.sell(v.vs[fx], v.vt[fx], tok, 71.0) - cost) / cost * 100, places=9)
+
+    def test_a_snipe_on_a_coin_the_recorder_did_not_follow_is_out_before_it_leaves_the_tape(self):
+        # 40 coins, every second one a runner (near a trigger by 30 s: followed, climbing to 400 s), the others quiet
+        # (never near: their watch ends at 181 s). Every SNIPE exit is out by then (X1 at 175 s of age, as the BASE-A
+        # rows have it: the plain X1's 300 s time stop and 180 s quiet stop would hold a quiet coin past its end)
+        tp = Tape()
+        for i in range(40):
+            if i % 2:
+                path = [(1.0 + k, round(0.4 + 0.12 * k, 6)) for k in range(400)]
+            else:
+                path = [(1.0, 0.5), (20.0, 0.7), (60.0, 0.6), (120.0, 0.55), (170.0, 0.5)]
+            tp.coin(mint(i), START + 60 + i * 120.0, path, creator="dev%d" % i)
+        views, mk, cfg = views_of(tp.write(self.folder()))
+        self.assertEqual(sum(1 for v in views if v.follow_t is None), 20)
+        ex = st.exit_policies(cfg)
+        sim = st.Sim(st.Costs(cfg, 8.5), 1.0, 1.0)
+        combos, _ = st.build_grid()
+        rows = [c for c in combos if snipe_row(c["entry"])]
+        self.assertEqual({c["exit"] for c in rows}, set(SNIPE_EXITS))
+        for c in rows:
+            for v in views:
+                t = v.t0 if c["entry"] == SNIPE_CREATE else st.first_reading_at(v, mk)
+                tr, why = st.simulate(v, mk, t, ex[c["exit"]][0], sim)
+                self.assertIsNone(why, c["key"])
+                self.assertFalse(tr.blind, (c["key"], tr.why))
+                if v.follow_t is None:
+                    self.assertLessEqual(tr.exit - v.t0, 181.0)
+        # the plain X1 would have gone blind on every quiet coin
+        x1 = [st.simulate(v, mk, st.first_reading_at(v, mk), ex["X1"][0], sim)[0] for v in views]
+        self.assertEqual(sum(1 for t in x1 if t.blind), 20)
+        # the marks to market at +60 / +180 / +300 s count every trade, a mark past the tape at the blind sale there
+        # (the last state it knew), and say how many; the still polled ones alone (the followed runners) apart
+        held = [st.simulate(v, mk, st.first_reading_at(v, mk), ex["X3_5"][0], sim)[0] for v in views]
+        got = st.mtm(held, views, mk, sim)
+        for h in (60, 180, 300):
+            marks = [st.simulate(views[t.cv], mk, t.dec, st.Hold(h), sim)[0] for t in held]
+            polled = [t.pnl for t in marks if not t.blind]
+            self.assertEqual(got["+%ds" % h], {
+                "n": 40, "mean": st.rnd(math.fsum(t.pnl for t in marks) / 40, 3), "n_blind": 40 - len(polled),
+                "mean_polled": st.rnd(math.fsum(polled) / len(polled), 3)})
+        self.assertEqual([got[k]["n_blind"] for k in ("+60s", "+180s", "+300s")], [0, 20, 20])
+        self.assertLess(got["+180s"]["mean"], got["+180s"]["mean_polled"] - 50.0)     # the survivors alone: runners
+
+    def test_the_first_reading_report_on_a_planted_tape(self):
+        tp = Tape()
+        planted = ((1.0, 0.4), (2.0, 1.0), (3.0, 3.0), (4.0, 7.0), (10.0, 12.0))       # (its delay s, real SOL then)
+        for k, (d, r) in enumerate(planted):
+            tp.coin(mint(k), self.T0 + 300.0 * k, [(d, r)] + [(d + 1.0 + j, round(r + 0.1 * (j + 1), 6)) for j in range(9)])
+        m = tp.coin(mint(5), self.T0 + 1500, [(1.0, 20.0)])                        # skipped at its create: left out
+        tp.add({"k": "dec", "m": m, "t": round(self.T0 + 1500.01, 6), "d": "skip", "why": "list full"})
+        tp.coin(mint(6), self.T0 + 1800, [])                                       # never read
+        tp.coin(mint(7), self.T0 + 2100, [0.4], complete=0)                        # its first reading completes it
+        tp.coin(mint(8), self.T0 + 2400, [(12.0, 0.5), (13.0, 0.6)])               # first read at 12 s: late
+        views, mk, _ = views_of(tp.write(self.folder()))
+        fr = st.first_reading(views, mk, 2.0)
+        self.assertEqual((fr["coins"], fr["watched"]), (5, 8))
+        self.assertEqual(fr["left_out"], {"no reading": 1, "complete": 1, "gap": 0, "tape hole": 0, "not polled": 0,
+                                          "late": 1})
+        self.assertEqual(fr["max_delay_s"], 10.0)
+        self.assertEqual(fr["create_fill"], {"within_s": 2.0, "share": 0.4})        # read by 2 s: 1 s and 2 s
+        self.assertAlmostEqual(st.pctl([1.0, 2.0, 3.0, 4.0, 10.0], 0.9), 7.6)      # linear between the closest ranks
+        self.assertEqual(st.pctl([1.0, 2.0, 3.0, 4.0, 10.0], 0.5), st.median([1.0, 2.0, 3.0, 4.0, 10.0]))
+        self.assertEqual(fr["delay_s"], {"median": 3.0, "p90": 7.6})
+        rises = [rise(r) for _, r in planted]                                      # +0.7, +4.7, +18.6, +49.1, +92.1 %
+        self.assertEqual(fr["rise_pct"], {"median": round(rises[2], 2), "p75": round(rises[3], 2),
+                                          "p90": round(rises[3] + 0.6 * (rises[4] - rises[3]), 2), "share_50": 0.2,
+                                          "share_le_10": 0.4, "share_le_30": 0.6})
+        self.assertEqual(fr["real_sol"], {"median": 3.0, "p90": 10.0})
+        self.assertEqual(fr["sol_in_since_create"], {"median": 2.7, "p90": 9.7})   # the dev's 0.3 SOL out
+        self.assertIn("invisible to the tape", fr["note"])
+        rep = st.study(self.folder(), split=0.7, boot=50, max_rules=40)
+        self.assertEqual(rep["first_reading"], fr)                                 # L 1 s + a poll 1 s
+        md = rep["markdown"]
+        self.assertIn("**First reading** (the earliest the bot sees a coin's curve, a poll after its create line: the "
+                      "first-reading SNIPE rules' decision; of 8 watched coins 5 with a first reading a rule may decide "
+                      "on, 1 without one, 1 complete at it, 0 not on the tape (a gap line, lost lines or a known hole "
+                      "before it), 0 not polled then, 1 later than 10 s): 3.00 s after the create line (median; p90 "
+                      "7.60 s), within 2.0 s (L + a poll: a SNIPE create order is priced on it) on 40 %%; the price "
+                      "%+.1f %% over the create's state (median; p75 %+.1f %%, p90 %+.1f %%; +50 %% or more on 20 %% of "
+                      "them, at most +10 %% on 40 %%, +30 %% on 60 %%); real SOL in the curve 3.00 (median; p90 10.00), "
+                      "2.70 of it in since the create (p90 9.70); trades before the first reading (the launch block's "
+                      "snipers" % (rises[2], rises[3], fr["rise_pct"]["p90"]), md)
+        self.assertIn("are invisible to the tape", md)
+
+    def test_the_snipe_rows_come_last_and_the_older_rows_stay_as_they_were(self):
+        combos, ents = st.build_grid()
+        new = [c for c in combos if snipe_row(c["entry"])]
+        self.assertEqual(combos[-len(new):], new)                      # a smaller --max-rules cuts them first
+        self.assertEqual(len(new), 28)
+        rules = [c for c in new if c["selectable"]]
+        self.assertEqual(len(rules), 25)
+        self.assertEqual({c["entry"] for c in rules}, set(SNIPES) | {SNIPE_CREATE})
+        self.assertEqual({c["exit"] for c in rules}, set(SNIPE_EXITS))
+        self.assertTrue(all(c["kind"] == "rule" and c["family"] == "SNIPE" for c in rules))
+        base = [c for c in new if not c["selectable"]]
+        self.assertEqual([(c["key"], c["kind"], c["family"]) for c in base],
+                         [("BASE-A first | %s" % x, "base", "BASE-A") for x in ("X3_5", "X3_30", "X1@175")])
+        self.assertEqual(ents["BASE-A first"], ("BASE-A", {"first": True}))
+        self.assertEqual(ents["SNIPE r<=10 d<=3"], ("SNIPE", {"R": 10.0, "D": 3.0}))
+        self.assertEqual(ents[SNIPE_CREATE], ("SNIPE", {"at": "create"}))
+        self.assertLessEqual(len(combos), 300 - st.OVERLAY_ROOM)       # the default --max-rules tries every one
+        self.assertEqual(older_cap(), 256 + st.OVERLAY_ROOM)           # the grid before SNIPE: 256 rows
+        self.assertIn("or a decision inside them", st.RULES_NOTE["families"]["Q1-Q5"])
+
+    def test_the_snipe_rows_go_through_the_held_out_part_and_bonferroni_like_the_others(self):
+        # an early edge: every coin climbs from its first reading (1 s, +0.7 %) for a minute, then sits still
+        tp = Tape()
+        rng = random.Random(8)
+        for i in range(80):
+            slope = rng.uniform(0.15, 0.3)
+            tp.coin(mint(i), START + 60 + i * 120.0, [(1.0 + k, round(0.4 + slope * k, 6)) for k in range(61)],
+                    creator="dev%d" % i)
+        folder = tp.write(self.folder("edge"))
+        rep = st.study(folder, split=0.7, boot=300, embargo_s=0.0)
+        rows = {r["key"]: r for r in rep["first_part"]}
+        # the quality overlays stay on the two best older rules, as without SNIPE: at a first reading Q1, Q3, Q4 and
+        # Q5 are unknowable (no metadata or RugCheck line yet, Q5 inside the first 5 s) and Q2 repeats SNIPE's own
+        # dev filter; SNIPE ranks first here
+        self.assertEqual(rep["ranking"][0]["family"], "SNIPE")
+        older = [r["key"] for r in rep["ranking"] if r["family"] not in ("SNIPE", "Q")][:2]
+        srcs = sorted({r["key"].rsplit(" + ", 1)[0] for r in rep["first_part"]
+                       if r["family"] == "Q" and r["selectable"]})
+        self.assertEqual(srcs, sorted(older))
+        self.assertFalse([k for k in rows if k.startswith("SNIPE") and " + Q" in k])
+        # every older row's first-part numbers, the overlays and the shown ones as they were without SNIPE (a
+        # --max-rules that cuts exactly its rows); SNIPE's best 5 shown apart
+        cut = st.study(folder, split=0.7, boot=300, embargo_s=0.0, max_rules=older_cap())
+        self.assertEqual(cut["tried"]["left_out_by_cap"], 28)
+        self.assertEqual([r for r in rep["first_part"] if not snipe_row(r["key"])], cut["first_part"])
+        olds = lambda rp: sorted(f["key"] for f in rp["finalists"] if f["shown"] and f["family"] != "SNIPE")
+        self.assertEqual(olds(rep), olds(cut))
+        self.assertEqual(len(olds(cut)), 15)
+        snipe_shown = [f for f in rep["finalists"] if f["shown"] and f["family"] == "SNIPE"]
+        self.assertEqual(len(snipe_shown), st.SNIPE_SHOWN)
+        self.assertEqual(sorted(f["rank"] for f in snipe_shown),
+                         sorted(r["rank"] for r in rep["ranking"] if r["family"] == "SNIPE")[:st.SNIPE_SHOWN])
+        snipe = [k for k in rows if rows[k]["family"] == "SNIPE"]                # the overlays aside (family Q)
+        self.assertEqual(len(snipe), 25)
+        self.assertTrue(all(rows[k]["selectable"] and rows[k]["first"]["n"] >= 15 for k in snipe))
+        M = rep["tried"]["selectable"]
+        self.assertEqual(M, sum(1 for r in rep["first_part"] if r["selectable"]))
+        self.assertEqual(M, cut["tried"]["selectable"] + 25)
+        self.assertEqual(rep["tried"]["left_out_by_cap"], 0)
+        self.assertEqual(rep["tried"]["z"], round(st.zq(1 - 0.025 / M), 3))
+        judged = {r["key"]: r for r in rep["held_out"]["rows"]}
+        self.assertTrue(all(k in judged for k in snipe))                # every one judged on held-out time
+        held = {mint(i) for i in range(80) if START + 60 + i * 120.0 >= st.recorder._epoch(rep["settings"]["split_at"])}
+        passed = [f for f in rep["finalists"] if f["passes"] and f["family"] == "SNIPE"]
+        self.assertTrue(passed, rep["verdict"])
+        z = st.zq(1 - 0.025 / M)
+        for f in passed:
+            self.assertIn(f["key"], rep["verdict"]["pass"])
+            self.assertEqual(set(f["gates"]), {"held_out_n", "held_out_mean", "bonferroni_lower", "first_part_mean",
+                                               "blind_share", "latency_plus_2s", "complete_x085"})
+            self.assertGreater(f["held"]["se"], 0)
+            self.assertAlmostEqual(f["held"]["lower"], f["held"]["mean"] - z * f["held"]["se"], delta=0.01)
+            age = 0.0 if f["key"].startswith(SNIPE_CREATE) else 1.0
+            self.assertTrue(all(x["mint"] in held and x["age"] == age for x in f["trades"]), f["key"])
+        base = [b for b in rep["base_rows"] if b["key"].startswith("BASE-A first")]
+        self.assertEqual(len(base), 3)
+        self.assertTrue(all(b["held"]["n"] == judged["SNIPE any | X3_5"]["n"] for b in base))
+        self.assertTrue(all(not r["key"].startswith("BASE-A first") for r in rep["ranking"]))
+        self.assertIn("| BASE-A first / X3_5 |", rep["markdown"])
+        # the same climb before the first reading (the poller first saw each coin at 43 s, +30 % up already): no
+        # snipe at all, a first reading that late is none (counted late), and SNIPE create has nothing to fill on
+        tp = Tape()
+        for i in range(80):
+            r, path = 4.5, [(43.0, 4.5)]
+            for k in range(800):
+                r = max(0.3, min(40.0, r + rng.choice((-0.4, -0.2, 0.2, 0.4))))
+                path.append((44.0 + k, round(r, 6)))
+            tp.coin(mint(i), START + 60 + i * 120.0, path, creator="dev%d" % i)
+        rep = st.study(tp.write(self.folder("late")), split=0.7, boot=300, embargo_s=0.0)
+        self.assertEqual(rep["verdict"]["text"], "no rule beats costs on held-out data")
+        self.assertFalse([r for r in rep["first_part"] if snipe_row(r["key"]) and r["first"]["n"]])
+        self.assertEqual(rep["first_reading"]["coins"], 0)
+        self.assertEqual(rep["first_reading"]["left_out"]["late"], 80)
+        self.assertEqual(rep["tried"]["not_traded"].get("no reading by the fill"), 80 * len(SNIPE_EXITS))
+
+    def test_pure_noise_from_a_first_reading_at_about_1_s_passes_no_snipe_row(self):
+        # first read at 0.6, 1.0 or 1.5 s, then a walk with no drift: half the coins from 6-10 SOL (+41 to +74 % at
+        # the first reading) in 0.3 SOL steps, half from 0.6-1.4 SOL (+2 to +7 %, every filter passed) in 0.1 SOL
+        # steps, both far from the floor while a SNIPE trade is open (a walk bouncing off it would plant a drift)
+        tp = Tape()
+        rng = random.Random(5)
+        for i in range(120):
+            big = i % 2 == 0
+            r = rng.uniform(6.0, 10.0) if big else rng.uniform(0.6, 1.4)
+            step = 0.3 if big else 0.1
+            t = rng.choice((0.6, 1.0, 1.5))
+            path = [(t, round(r, 6))]
+            while t < 700:
+                t += rng.choice((0.5, 1.0, 1.0, 2.0))
+                r = max(0.05, min(40.0, r + rng.choice((-step, step))))
+                path.append((round(t, 3), round(r, 6)))
+            tp.coin(mint(i), START + 60 + i * 90.0, path, creator="dev%d" % i)
+        rep = st.study(tp.write(self.folder()), split=0.7, boot=300, embargo_s=0.0)
+        judged = {r["key"]: r for r in rep["held_out"]["rows"]}
+        for ek in SNIPES + (SNIPE_CREATE,):
+            for x in SNIPE_EXITS:
+                k = "%s | %s" % (ek, x)
+                self.assertIn(k, judged)                                # ranked, judged on held-out time
+                self.assertGreaterEqual(judged[k]["n"], 15, k)
+                self.assertFalse(judged[k]["passes"], k)
+                self.assertLess(judged[k]["mean"], 0.0, k)              # the costs, nothing to find
+        self.assertEqual(rep["verdict"]["pass"], [])
+        self.assertEqual(rep["verdict"]["text"], "no rule beats costs on held-out data")
+        self.assertAlmostEqual(rep["first_reading"]["delay_s"]["median"], 1.0)
+        self.assertEqual(rep["first_reading"]["coins"], 120)
 
 
 class SplitAndCalibration(Base):
