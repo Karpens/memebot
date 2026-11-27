@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T05:46:51Z",
+ "updated": "2026-11-27T05:47:26Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 377.04,
@@ -1696,6 +1696,10 @@
   [
    1795758353,
    368.59
+  ],
+  [
+   1795758413,
+   377.04
   ]
  ],
  "position_pct": 10.0,
@@ -5817,7 +5821,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5825,26 +5829,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1143,
-    "last_event_age_s": 4.1,
+    "events": 1145,
+    "last_event_age_s": 8.6,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35765,
-    "last_event_age_s": 0.0,
+    "events": 35792,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 769,
-    "last_event_age_s": 32.5,
-    "errors": 75,
-    "last_error": "ar-io.dev: too slow (over 2 s)"
+    "connected": false,
+    "events": 770,
+    "last_event_age_s": 3.0,
+    "errors": 76,
+    "last_error": "ar-io.dev: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -5855,9 +5859,9 @@
   "exit_ms": 35.0,
   "exit_last_ms": 35,
   "launch_to_entry_s": 0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 2
+  "followed": 3
  },
  "learner": {
   "samples": 240,
@@ -5904,23 +5908,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15961,
+   "sent": 15999,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15960,
+   "sent": 15998,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LOAF",
+   "name": "Stuck Sourdough",
+   "mint": "891aUZMbijEdvT7rFftbsDPMXrDpGVY7ph58H9Wg44ZR",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "AxSDJxWb12GCiDLkEwsberS97WkPcyd72A5fQyiSUU6X",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.2,
+   "dev_pct": 7.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "wind",
    "name": "wind",
    "mint": "GvYYWT9FUJy2Bptx8DjiGcQLWX8Eyu52VasTHAbBpump",
-   "age_s": 4,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5938,14 +5978,14 @@
    "symbol": "Boobscan",
    "name": "Boobscan",
    "mint": "HsGCgiKuUVnHjCEFkf81E6duCNCvh4AEN9HF5DWGpump",
-   "age_s": 32,
-   "sol_in": 7.56,
-   "buys": 12,
-   "sells": 3,
-   "rise_pct": 54.7,
-   "mcap_sol": 46.2,
+   "age_s": 67,
+   "sol_in": 3.52,
+   "buys": 15,
+   "sells": 10,
+   "rise_pct": 24.0,
+   "mcap_sol": 37.0,
    "dev_pct": 3.4,
-   "big_sell": 0.67,
+   "big_sell": 1.75,
    "x": "https://x.com/boobscaner",
    "tg": false,
    "web": "https://boobscan.xyz",
@@ -5956,7 +5996,7 @@
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "6dR8zkzJCYsSocUXiBTMoxfAjdL4cgNJGwbpzwjFpump",
-   "age_s": 42,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5974,12 +6014,12 @@
    "symbol": "senta",
    "name": "senta",
    "mint": "Akc1Zfhhnt7P2GdqJZ5RfyDBCE7aQwBEZTHJgW8Tpump",
-   "age_s": 59,
-   "sol_in": -3.44,
-   "buys": 21,
-   "sells": 30,
-   "rise_pct": -19.2,
-   "mcap_sol": 28.9,
+   "age_s": 94,
+   "sol_in": 1.91,
+   "buys": 28,
+   "sells": 33,
+   "rise_pct": 11.5,
+   "mcap_sol": 39.9,
    "dev_pct": 12.5,
    "big_sell": 2.98,
    "x": "https://x.com/KankiAlpha/status/2126190732587438267",
@@ -5992,7 +6032,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4L9PHKfmRsbaNd2PvGR6SVbqb7rh4Wxy6PK2v1Lqjrms",
-   "age_s": 117,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6010,7 +6050,7 @@
    "symbol": "SERVED",
    "name": "Dinner is Served",
    "mint": "3ndMnker7tyvUz9JUNrynTNkHisRbEPe7wtYFXeMpump",
-   "age_s": 145,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
