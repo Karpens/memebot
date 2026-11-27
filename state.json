@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T18:04:38Z",
-    "time": "19:04:38",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.6 a minute · 0 watched · 23 rejected (snipe not bought: night at open  11, serial launcher 4, no symbol or name 3)",
-    "n": 5263
-   },
-   {
     "t": "2026-11-27T18:04:40Z",
     "time": "19:04:40",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 6.2 a minute · 0 watched · 20 rejected (snipe not bought: night at open  9, mayhem mode 6, serial launcher 3)",
     "n": 5862
+   },
+   {
+    "t": "2026-11-27T19:10:21Z",
+    "time": "20:10:21",
+    "agent": "LEARNER",
+    "coin": "VOUCH",
+    "action": "shadow",
+    "text": "SHADOW VOUCH would have made -15.0% (stop -11%) · learned x0.5 · np:buys:90+ now avg -8.2% over 300",
+    "n": 5863
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5862,
+  "lines": 5863,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795770614,
-    59.14
-   ],
    [
     1795770674,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795806588,
     59.14
+   ],
+   [
+    1795806648,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795806616.443471,
   "shadow": {
-   "n": 1513,
+   "n": 1514,
    "wins": 329,
-   "sum": -11847.1
+   "sum": -11862.1
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 262,
+   "readings": 263,
    "coins": 98,
    "followed": 0,
    "mints": [
@@ -31902,9 +31902,9 @@
   }
  },
  "shadow": {
-  "n": 1527,
+  "n": 1528,
   "wins": 331,
-  "sum": -12045.6,
+  "sum": -12060.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31912,32 +31912,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1511,
+    "n": 1512,
     "wins": 328,
-    "sum": -11847.8
+    "sum": -11862.8
    }
   },
   "closed": [
-   {
-    "symbol": "BLK1",
-    "mint": "3fwhU9GzdA4odDS1hZpvBS9qieaMwdRNd1Y9n2kfpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T19:01:57Z",
-    "cost": 5.91,
-    "pnl_pct": 17.3,
-    "tier": "swing",
-    "score": 3,
-    "steps": 2,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 7.3,
-    "closed": "2026-11-27T19:05:30Z",
-    "exit": "TP +20%",
-    "pnl": 1.02,
-    "weight": 0.5
-   },
    {
     "symbol": "BACK",
     "mint": "BUAFR1xr7NaJZEoRUa5AjNvz5Upv3sP8CZ8rkt3aQXZM",
@@ -32317,6 +32297,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.58,
     "weight": 0.5
+   },
+   {
+    "symbol": "VOUCH",
+    "mint": "47fe1Gkb7H4X2wM8NiBAcLxcwJoWTbvbKyEvJfUzpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T19:10:13Z",
+    "cost": 5.91,
+    "pnl_pct": -15.0,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 11.47,
+    "closed": "2026-11-27T19:10:21Z",
+    "exit": "stop -11%",
+    "pnl": -0.89,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32325,8 +32325,7 @@
    "Ursus",
    "banana",
    "CAPTAIN",
-   "Grrrrrr",
-   "VOUCH"
+   "Grrrrrr"
   ]
  },
  "learner_summary": {
@@ -32347,7 +32346,7 @@
    },
    {
     "label": "snipe · np:sol:6-12",
-    "n": 87,
+    "n": 88,
     "avg": -5.3
    }
   ],
@@ -32368,7 +32367,7 @@
     "avg": -9.0
    }
   ],
-  "shadows": 1719,
+  "shadows": 1720,
   "memory": "snipe"
  }
 }
