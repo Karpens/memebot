@@ -1,5 +1,5 @@
 {
- "balance": 59.14196658740681,
+ "balance": 59.52016953490625,
  "positions": {},
  "nights": [
   {
@@ -102,30 +102,195 @@
     "action": "shadow",
     "text": "SHADOW SUPERMAN would have made -13.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.5% over 300",
     "n": 5
+   },
+   {
+    "t": "2026-11-27T23:00:40Z",
+    "time": "00:00:40",
+    "agent": "LEARNER",
+    "coin": "SUITCOIN",
+    "action": "shadow",
+    "text": "SHADOW SUITCOIN would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.5% over 300",
+    "n": 6
+   },
+   {
+    "t": "2026-11-27T23:00:43Z",
+    "time": "00:00:43",
+    "agent": "LEARNER",
+    "coin": null,
+    "action": "snipe",
+    "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
+    "n": 7
+   },
+   {
+    "t": "2026-11-27T23:00:43Z",
+    "time": "00:00:43",
+    "agent": "SCANNER",
+    "coin": "me",
+    "action": "flag",
+    "text": "snipe · first reading 2.7 s after the create · 20.8 SOL in · +181% since the create · mcap 83 SOL",
+    "n": 8
+   },
+   {
+    "t": "2026-11-27T23:00:43Z",
+    "time": "00:00:43",
+    "agent": "SIZER",
+    "coin": "me",
+    "action": "size",
+    "text": "10% of $59.14 = $5.91",
+    "n": 9
+   },
+   {
+    "t": "2026-11-27T23:00:43Z",
+    "time": "00:00:43",
+    "agent": "EXECUTOR",
+    "coin": "me",
+    "action": "enter",
+    "text": "ENTER me at 0.0000061021 · slip 2.2% · snipe · first in · 0.2 s after the first reading · 2 s after launch · fill quote · Jupiter 0.2 s · curve maths 0.9% off Jupiter · stop -10%",
+    "n": 10
+   },
+   {
+    "t": "2026-11-27T23:00:43Z",
+    "time": "00:00:43",
+    "agent": "NEWS",
+    "coin": "me",
+    "action": "plan",
+    "text": "hold plan · 2.5/10 (X post, inflow 20.8 SOL) · scalp: +10",
+    "n": 11
+   },
+   {
+    "t": "2026-11-27T23:00:44Z",
+    "time": "00:00:44",
+    "agent": "EXECUTOR",
+    "coin": "me",
+    "action": "exit",
+    "text": "EXIT me +$0.38 (+6%) · TP +10% · out · 0.1 s after the reading",
+    "n": 12
+   },
+   {
+    "t": "2026-11-27T23:00:44Z",
+    "time": "00:00:44",
+    "agent": "LEARNER",
+    "coin": "me",
+    "action": "learn",
+    "text": "learned · np:dev:2-5 now avg -7.1% over 300",
+    "n": 13
+   },
+   {
+    "t": "2026-11-27T23:01:00Z",
+    "time": "00:01:00",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.8 a minute · 0 watched · 19 rejected (snipe not bought: night at open  11, mayhem mode 6, serial launcher 1)",
+    "n": 14
    }
   ],
-  "trades": [],
+  "trades": [
+   {
+    "symbol": "me",
+    "mint": "HB3AVVPrxxjb9LKiKu99CAzRmh4g4Nv8oZuuxr7Ypump",
+    "opened": "2026-11-27T23:00:43Z",
+    "closed": "2026-11-27T23:00:44Z",
+    "cost": 5.91,
+    "proceeds": 6.29,
+    "pnl": 0.38,
+    "pnl_pct": 6.4,
+    "why": "TP +10%",
+    "url": "https://pump.fun/coin/HB3AVVPrxxjb9LKiKu99CAzRmh4g4Nv8oZuuxr7Ypump",
+    "reason": "snipe · first reading 2.7 s after the create · 20.8 SOL in · +181% since the create · mcap 83 SOL · fill quote",
+    "size_pct": 10.0,
+    "entry_price": 6.102092457777015e-06,
+    "exit_price": 6.7305962282343485e-06,
+    "slip": 2.22,
+    "strategy": "new_pairs",
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 1,
+    "plan": {
+     "tier": "scalp",
+     "score": 2.5,
+     "parts": [
+      "X post",
+      "inflow 20.8 SOL"
+     ],
+     "ladder": [
+      [
+       10.0,
+       1.0
+      ]
+     ],
+     "step": 0,
+     "stop_pct": -10.0,
+     "trail_pct": 0.0
+    },
+    "age_s": 2,
+    "mcap_sol": 82.5,
+    "dev_pct": 2.6,
+    "sol_in": 20.8,
+    "snipe": true,
+    "entry_fill": "quote",
+    "stop_pct": -10.0,
+    "exit_ms": 126,
+    "learn": [
+     "np:dev:2-5",
+     "np:sol:12+",
+     "np:buys:90+",
+     "np:age:<30s",
+     "np:social:x",
+     "news:0-2",
+     "tier:scalp",
+     "hour:23-01"
+    ]
+   }
+  ],
   "entered": [],
   "streak": 0,
   "cooldown_until": 0,
   "scans": 0,
-  "flagged": 0,
-  "checked": 0,
+  "flagged": 1,
+  "checked": 1,
   "filtered": 0,
-  "lines": 5,
-  "flags": [],
+  "lines": 14,
+  "flags": [
+   {
+    "coin": "me",
+    "why": "snipe",
+    "t": "2026-11-27T23:00:43Z"
+   }
+  ],
   "curve": [
    [
     1795820400,
     59.14
+   ],
+   [
+    1795820460,
+    59.52
    ]
   ],
-  "last_rug": null,
-  "np_said": 1795820400.960667,
+  "last_rug": {
+   "coin": "me",
+   "pass": true
+  },
+  "np_said": 1795820460.96078,
   "shadow": {
-   "n": 2,
+   "n": 3,
    "wins": 1,
-   "sum": -6.0
+   "sum": -13.3
+  },
+  "np_speed": {
+   "first_in": [
+    220
+   ],
+   "launch": [
+    3
+   ],
+   "exit": [
+    127
+   ]
+  },
+  "reenter": {
+   "HB3AVVPrxxjb9LKiKu99CAzRmh4g4Nv8oZuuxr7Ypump": 1795820744.513891
   }
  },
  "last_night": {
@@ -23437,9 +23602,9 @@
   }
  },
  "shadow": {
-  "n": 2267,
+  "n": 2268,
   "wins": 527,
-  "sum": -16283.6,
+  "sum": -16290.9,
   "by": {
    "learner": {
     "n": 16,
@@ -23447,32 +23612,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2251,
+    "n": 2252,
     "wins": 524,
-    "sum": -16085.8
+    "sum": -16093.1
    }
   },
   "closed": [
-   {
-    "symbol": "BEASTWN",
-    "mint": "A7UDEhZgk5PRXPJCLWy78P5fGFBXe4kJ9JG13qtfpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T22:48:37Z",
-    "cost": 5.91,
-    "pnl_pct": -6.6,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T22:52:48Z",
-    "exit": "the job ends · the next job takes over",
-    "pnl": -0.39,
-    "weight": 0.5
-   },
    {
     "symbol": "test",
     "mint": "A4Y22RLynLqKjmTF98fT9FNVd1dwZauKkZK9ymcXpump",
@@ -23852,11 +23997,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.77,
     "weight": 0.5
+   },
+   {
+    "symbol": "SUITCOIN",
+    "mint": "6RoqPytALfXCvZytuAx3urGpMiepbCDZ3RxM3YRHpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:57:40Z",
+    "cost": 5.91,
+    "pnl_pct": -7.3,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T23:00:40Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.43,
+    "weight": 0.5
    }
   ],
   "open": [
    "GLO",
-   "SUITCOIN",
    "Grok",
    "memekoin",
    "SARU",
@@ -23864,7 +24028,7 @@
   ]
  },
  "learner_summary": {
-  "samples": 36,
+  "samples": 37,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
@@ -23881,8 +24045,8 @@
    },
    {
     "label": "snipe · hour:23-01",
-    "n": 86,
-    "avg": -5.4
+    "n": 88,
+    "avg": -5.3
    }
   ],
   "worst": [
@@ -23902,7 +24066,7 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2459,
+  "shadows": 2460,
   "memory": "snipe"
  }
 }
