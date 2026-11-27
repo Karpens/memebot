@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:58:37Z",
+ "updated": "2026-11-27T09:59:09Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3950,
+  "lines": 3953,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4740,33 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:18:47Z",
-   "time": "10:18:47",
-   "agent": "LEARNER",
-   "coin": "DRAW",
-   "action": "shadow",
-   "text": "SHADOW DRAW would have made +9.9% (TP +10%) · learned x0.5 · np:social:web now avg -8.3% over 265",
-   "n": 3751
-  },
-  {
-   "t": "2026-11-27T09:19:08Z",
-   "time": "10:19:08",
-   "agent": "LEARNER",
-   "coin": "POKE",
-   "action": "shadow",
-   "text": "SHADOW POKE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022461 (curve maths, every cost) · same exits, outside the book",
-   "n": 3752
-  },
-  {
-   "t": "2026-11-27T09:19:31Z",
-   "time": "10:19:31",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (snipe not bought: trades tonight 4, serial launcher 2, mayhem mode 2)",
-   "n": 3753
-  },
-  {
    "t": "2026-11-27T09:19:42Z",
    "time": "10:19:42",
    "agent": "LEARNER",
@@ -6538,6 +6511,33 @@
    "action": "shadow",
    "text": "SHADOW TG would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 222.5",
    "n": 3950
+  },
+  {
+   "t": "2026-11-27T09:58:56Z",
+   "time": "10:58:56",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 7.0 a minute · 0 watched · 7 rejected (mayhem mode 3, snipe not bought: trades tonight 2, serial launcher 1)",
+   "n": 3951
+  },
+  {
+   "t": "2026-11-27T09:59:05Z",
+   "time": "10:59:05",
+   "agent": "RISK",
+   "coin": "RECUR",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 3952
+  },
+  {
+   "t": "2026-11-27T09:59:05Z",
+   "time": "10:59:05",
+   "agent": "LEARNER",
+   "coin": "RECUR",
+   "action": "shadow",
+   "text": "SHADOW RECUR · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028503 (curve maths, every cost) · same exits, outside the book",
+   "n": 3953
   }
  ],
  "nights": [
@@ -6596,7 +6596,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6604,24 +6604,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 779,
-    "last_event_age_s": 8.2,
+    "events": 781,
+    "last_event_age_s": 4.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18214,
-    "last_event_age_s": 0.3,
+    "events": 18249,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 459,
-    "last_event_age_s": 8.5,
+    "events": 460,
+    "last_event_age_s": 4.8,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6634,7 +6634,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 8.0,
+  "creates_per_min": 6.2,
   "watching": 0,
   "followed": 3
  },
@@ -6683,30 +6683,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9656,
+   "sent": 9690,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9667,
+   "sent": 9701,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RECUR",
+   "name": "Recur",
+   "mint": "FNtdCUMeQojj9RKtiW12BnHeAKkJv8JQoVURCn7Gpump",
+   "age_s": 4,
+   "sol_in": 4.32,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 29.8,
+   "mcap_sol": 38.7,
+   "dev_pct": 3.4,
+   "big_sell": 1.58,
+   "x": "https://x.com/RecurFun/status/2126254452667510800",
+   "tg": false,
+   "web": "https://userecur.fun/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "CXCDgJUoAhczMVfp4pMJNdtN7XdLkTzbbAEGhMwHpump",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "SOL",
    "name": "SOL the Sun Bear",
    "mint": "7dY3MvwQJEwniBBb5o4e2PqGdsZeJZGGrsCnqRzWpump",
-   "age_s": 8,
-   "sol_in": 15.44,
-   "buys": 4,
-   "sells": 4,
-   "rise_pct": 115.6,
-   "mcap_sol": 72.8,
+   "age_s": 40,
+   "sol_in": 16.16,
+   "buys": 18,
+   "sells": 18,
+   "rise_pct": 122.1,
+   "mcap_sol": 75.0,
    "dev_pct": 9.6,
-   "big_sell": 1.99,
+   "big_sell": 2.38,
    "x": "https://x.com/AxTrades32/status/2126254270488207805?a=JVtsuHuV3lfca7j7uE4&s=20",
    "tg": false,
    "web": false,
@@ -6717,7 +6753,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "F59mrwgyxXf4WVQtKjtzBn3WbwTV9Js8MBPJsLbepump",
-   "age_s": 84,
+   "age_s": 116,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6735,7 +6771,7 @@
    "symbol": "CALF",
    "name": "Cuddly Adorable Lovable Friend",
    "mint": "2b9domCA8g2SZkJmipZKXuTjqqNybGmzx3u6aJ1Bpump",
-   "age_s": 95,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6753,7 +6789,7 @@
    "symbol": "$TRUMP",
    "name": "TRUMP COIN",
    "mint": "8egwZj9nC6KVT5JPwHPdyyvLYwy5bD9aJHkfUak7pump",
-   "age_s": 129,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6771,7 +6807,7 @@
    "symbol": "JACKET",
    "name": "Jacket Inu",
    "mint": "Gh6SXqSChiizaaxjgvS9ugGM1SrDJskUjaiTki4uTRiX",
-   "age_s": 140,
+   "age_s": 172,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6789,7 +6825,7 @@
    "symbol": "WUGO",
    "name": "Wugo",
    "mint": "AdiZJtSUvfLYd6NgYaZtfK8wFi5VbNkKN3A9ui7Ppump",
-   "age_s": 140,
+   "age_s": 172,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6802,48 +6838,28 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "DVXEATA",
-   "name": "DecvBna,org",
-   "mint": "EbFvQKQuAZBeWPMqUwUNVio1V7kvcusPGsSJDEEDpump",
-   "age_s": 160,
-   "sol_in": 0.0,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 76.9,
-   "dev_pct": 42.6,
-   "big_sell": 0.33,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "2Mc3EKJ6Q7xvQw1pMCuiU8hjRNimHyuDfxTV6Qcqpump",
-   "age_s": 174,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "RECUR",
+   "mint": "FNtdCUMeQojj9RKtiW12BnHeAKkJv8JQoVURCn7Gpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:59:05Z",
+   "cost": 36.2,
+   "pnl_pct": -0.4,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 3.71
+  },
   {
    "symbol": "WUGO",
    "mint": "AdiZJtSUvfLYd6NgYaZtfK8wFi5VbNkKN3A9ui7Ppump",
@@ -6868,7 +6884,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:55:57Z",
    "cost": 36.2,
-   "pnl_pct": -3.4,
+   "pnl_pct": -3.3,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6884,7 +6900,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:54:51Z",
    "cost": 36.2,
-   "pnl_pct": -3.4,
+   "pnl_pct": -4.1,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -7298,7 +7314,7 @@
   "wins": 169,
   "win_rate": 21.7,
   "mean_pnl_pct": -8.26,
-  "open": 3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
