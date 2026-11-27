@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:54:30Z",
-    "time": "05:54:30",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "8 losses in a row · 2 min pause",
-    "n": 2115
-   },
-   {
-    "t": "2026-11-27T04:54:30Z",
-    "time": "05:54:30",
-    "agent": "EXECUTOR",
-    "coin": "QUACK3",
-    "action": "exit",
-    "text": "EXIT QUACK3 $-1.67 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 2116
-   },
-   {
-    "t": "2026-11-27T04:54:30Z",
-    "time": "05:54:30",
-    "agent": "LEARNER",
-    "coin": "QUACK3",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -11.0% over 144.5",
-    "n": 2117
-   },
-   {
-    "t": "2026-11-27T04:54:59Z",
-    "time": "05:54:59",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "9 losses in a row · 2 min pause",
-    "n": 2118
-   },
-   {
     "t": "2026-11-27T04:54:59Z",
     "time": "05:54:59",
     "agent": "EXECUTOR",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW Christmas · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021353 (curve maths, every cost) · same exits, outside the book",
     "n": 2714
+   },
+   {
+    "t": "2026-11-27T06:02:44Z",
+    "time": "07:02:44",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 2.2 a minute · 0 watched · 6 rejected (snipe not bought: trades tonight 4, serial launcher 1, mayhem mode 1)",
+    "n": 2715
+   },
+   {
+    "t": "2026-11-27T06:02:54Z",
+    "time": "07:02:54",
+    "agent": "LEARNER",
+    "coin": "PILLOWLINE",
+    "action": "shadow",
+    "text": "SHADOW PILLOWLINE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021285 (curve maths, every cost) · same exits, outside the book",
+    "n": 2716
+   },
+   {
+    "t": "2026-11-27T06:03:06Z",
+    "time": "07:03:06",
+    "agent": "LEARNER",
+    "coin": "PUMP",
+    "action": "shadow",
+    "text": "SHADOW PUMP would have made -10.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.9% over 140",
+    "n": 2717
+   },
+   {
+    "t": "2026-11-27T06:03:08Z",
+    "time": "07:03:08",
+    "agent": "LEARNER",
+    "coin": "PRS",
+    "action": "shadow",
+    "text": "SHADOW PRS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021481 (curve maths, every cost) · same exits, outside the book",
+    "n": 2718
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2714,
+  "lines": 2718,
   "flags": [
    {
     "coin": "Kibo",
@@ -21023,17 +21023,21 @@
    [
     1795759313,
     361.97
+   ],
+   [
+    1795759373,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795759303.780864,
+  "np_said": 1795759364.780858,
   "shadow": {
-   "n": 293,
+   "n": 294,
    "wins": 50,
-   "sum": -2605.3
+   "sum": -2615.5
   },
   "np_speed": {
    "first_in": [
@@ -30616,9 +30620,9 @@
   }
  },
  "shadow": {
-  "n": 307,
+  "n": 308,
   "wins": 52,
-  "sum": -2803.8,
+  "sum": -2814.0,
   "by": {
    "learner": {
     "n": 16,
@@ -30626,32 +30630,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 291,
+    "n": 292,
     "wins": 49,
-    "sum": -2606.0
+    "sum": -2616.2
    }
   },
   "closed": [
-   {
-    "symbol": "SNE",
-    "mint": "Dmiz4PDnsMz5aguxjXQzudGWKWQwgwDtz7ZJa2MRpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:32:19Z",
-    "cost": 39.57,
-    "pnl_pct": -18.3,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.89,
-    "closed": "2026-11-27T05:34:00Z",
-    "exit": "stop -15%",
-    "pnl": -7.25,
-    "weight": 0.5
-   },
    {
     "symbol": "Halfbrick",
     "mint": "2ZzAkNeui4kVELBcr44aSca4Go3vuChtEjAbMmufpump",
@@ -31031,14 +31015,35 @@
     "exit": "6 min, only +1%",
     "pnl": -1.31,
     "weight": 0.5
+   },
+   {
+    "symbol": "PUMP",
+    "mint": "4gTHZhq4LtBWZ1wDCd2LUYHeANLC1GgAmFPJBC8mpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:59:24Z",
+    "cost": 36.2,
+    "pnl_pct": -10.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.3,
+    "closed": "2026-11-27T06:03:06Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.69,
+    "weight": 0.5
    }
   ],
   "open": [
-   "PUMP",
    "PEPSODENT",
    "INUX",
    "BONCOIN",
-   "Christmas"
+   "Christmas",
+   "PILLOWLINE",
+   "PRS"
   ]
  },
  "learner_summary": {
@@ -31060,7 +31065,7 @@
    {
     "label": "snipe · hour:05-07",
     "n": 152,
-    "avg": -5.8
+    "avg": -5.9
    }
   ],
   "worst": [
@@ -31080,7 +31085,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 291,
+  "shadows": 292,
   "memory": "snipe"
  }
 }
