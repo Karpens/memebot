@@ -92,7 +92,7 @@
     "complete": false,
     "slot": 474437210,
     "readings": 2,
-    "last_t": 1795758318.28274,
+    "last_t": 1795758346.282685,
     "age_s": 55.53009057044983,
     "buys": 1,
     "sells": 1,
@@ -177,24 +177,6 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
-   {
-    "t": "2026-11-27T04:41:22Z",
-    "time": "05:41:22",
-    "agent": "NEWS",
-    "coin": "FDOT",
-    "action": "plan",
-    "text": "hold plan · 1.5/10 (X post, web) · scalp: +10",
-    "n": 1998
-   },
-   {
-    "t": "2026-11-27T04:41:53Z",
-    "time": "05:41:53",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.4 a minute · 1 watched · 11 rejected (snipe not bought: pause after a  6, mayhem mode 3, serial launcher 2) · closest QVQHMMB: no curve reading yet",
-    "n": 1999
-   },
    {
     "t": "2026-11-27T04:42:03Z",
     "time": "05:42:03",
@@ -5576,6 +5558,24 @@
     "action": "scan",
     "text": "new pairs · 3.6 a minute · 0 watched · 8 rejected (mayhem mode 4, snipe not bought: pause after a  3, serial launcher 1)",
     "n": 2597
+   },
+   {
+    "t": "2026-11-27T05:45:26Z",
+    "time": "06:45:26",
+    "agent": "LEARNER",
+    "coin": "HOOKAH",
+    "action": "shadow",
+    "text": "SHADOW HOOKAH would have made -7.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 170.5",
+    "n": 2598
+   },
+   {
+    "t": "2026-11-27T05:45:35Z",
+    "time": "06:45:35",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.2 a minute · 0 watched · 6 rejected (mayhem mode 3, serial launcher 1, snipe not bought: pause after a  1)",
+    "n": 2599
    }
   ],
   "trades": [
@@ -18748,7 +18748,7 @@
   "flagged": 250,
   "checked": 246,
   "filtered": 5,
-  "lines": 2597,
+  "lines": 2599,
   "flags": [
    {
     "coin": "wufmas",
@@ -20417,11 +20417,11 @@
    "coin": "ひな",
    "pass": true
   },
-  "np_said": 1795758275.7808,
+  "np_said": 1795758335.780836,
   "shadow": {
-   "n": 280,
+   "n": 281,
    "wins": 48,
-   "sum": -2535.6
+   "sum": -2543.3
   },
   "np_speed": {
    "first_in": [
@@ -29961,9 +29961,9 @@
   }
  },
  "shadow": {
-  "n": 294,
+  "n": 295,
   "wins": 50,
-  "sum": -2734.1,
+  "sum": -2741.8,
   "by": {
    "learner": {
     "n": 16,
@@ -29971,32 +29971,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 278,
+    "n": 279,
     "wins": 47,
-    "sum": -2536.3
+    "sum": -2544.0
    }
   },
   "closed": [
-   {
-    "symbol": "capmas",
-    "mint": "3VJJoqmqwmQEWEpxsnaH5geUJ3TuWu6ZEyupNJrBpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:08:48Z",
-    "cost": 20.88,
-    "pnl_pct": 6.8,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 10.54,
-    "closed": "2026-11-27T05:08:49Z",
-    "exit": "TP +10%",
-    "pnl": 1.43,
-    "weight": 0.5
-   },
    {
     "symbol": "WASB",
     "mint": "Fvsu4PLWK4zyXuUkAMs7BhDe9teaFAGhbPuzhZVipump",
@@ -30376,11 +30356,30 @@
     "exit": "stop -14%",
     "pnl": -6.48,
     "weight": 0.5
+   },
+   {
+    "symbol": "HOOKAH",
+    "mint": "HfVmqj5iXuA3LEfKh8m6bvhFWdWiMnkXv2URiMSEpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T05:42:04Z",
+    "cost": 36.45,
+    "pnl_pct": -7.7,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T05:45:26Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.81,
+    "weight": 0.5
    }
   ],
   "open": [
    "FOMO",
-   "HOOKAH",
    "Sinical"
   ]
  },
@@ -30402,7 +30401,7 @@
    },
    {
     "label": "snipe · hour:05-07",
-    "n": 133,
+    "n": 134,
     "avg": -6.4
    }
   ],
@@ -30423,7 +30422,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 278,
+  "shadows": 279,
   "memory": "snipe"
  }
 }
