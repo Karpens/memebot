@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:51:51Z",
-    "time": "06:51:51",
-    "agent": "SIZER",
-    "coin": "KLAUSE",
-    "action": "size",
-    "text": "10% of $363.93 = $36.39",
-    "n": 2657
-   },
-   {
-    "t": "2026-11-27T05:51:51Z",
-    "time": "06:51:51",
-    "agent": "EXECUTOR",
-    "coin": "KLAUSE",
-    "action": "enter",
-    "text": "ENTER KLAUSE at 0.000002687 · slip 1.4% · snipe · first in · 0.0 s after the first reading · 1 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2658
-   },
-   {
-    "t": "2026-11-27T05:51:51Z",
-    "time": "06:51:51",
-    "agent": "NEWS",
-    "coin": "KLAUSE",
-    "action": "plan",
-    "text": "hold plan · 1.5/10 (X post, web) · scalp: +10",
-    "n": 2659
-   },
-   {
     "t": "2026-11-27T05:51:55Z",
     "time": "06:51:55",
     "agent": "EXECUTOR",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW bad bih would have made -15.3% (stop -12%) · learned x0.5 · np:sol:3-6 now avg -11.2% over 52",
     "n": 3256
+   },
+   {
+    "t": "2026-11-27T07:50:10Z",
+    "time": "08:50:10",
+    "agent": "LEARNER",
+    "coin": "GOATCHASE",
+    "action": "shadow",
+    "text": "SHADOW GOATCHASE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021385 (curve maths, every cost) · same exits, outside the book",
+    "n": 3257
+   },
+   {
+    "t": "2026-11-27T07:50:19Z",
+    "time": "08:50:19",
+    "agent": "LEARNER",
+    "coin": "MITTS",
+    "action": "shadow",
+    "text": "SHADOW MITTS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000042904 (curve maths, every cost) · same exits, outside the book",
+    "n": 3258
+   },
+   {
+    "t": "2026-11-27T07:50:20Z",
+    "time": "08:50:20",
+    "agent": "LEARNER",
+    "coin": "MITTS",
+    "action": "shadow",
+    "text": "SHADOW MITTS would have made -19.3% (dump: 2.9 SOL sold) · learned x0.5 · tier:swing now avg -12.7% over 36.5",
+    "n": 3259
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3256,
+  "lines": 3259,
   "flags": [
    {
     "coin": "Kibo",
@@ -21451,6 +21451,10 @@
    [
     1795765754,
     361.97
+   ],
+   [
+    1795765814,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21459,9 +21463,9 @@
   },
   "np_said": 1795765786.645325,
   "shadow": {
-   "n": 499,
+   "n": 500,
    "wins": 96,
-   "sum": -4115.7
+   "sum": -4135.0
   },
   "np_speed": {
    "first_in": [
@@ -31044,9 +31048,9 @@
   }
  },
  "shadow": {
-  "n": 513,
+  "n": 514,
   "wins": 98,
-  "sum": -4314.2,
+  "sum": -4333.5,
   "by": {
    "learner": {
     "n": 16,
@@ -31054,32 +31058,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 497,
+    "n": 498,
     "wins": 95,
-    "sum": -4116.4
+    "sum": -4135.7
    }
   },
   "closed": [
-   {
-    "symbol": "kuko",
-    "mint": "4DcjGQZm4jFszQrpVmqB4dCqqUzmzk3FnFExV9VJH2bv",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:35:53Z",
-    "cost": 36.2,
-    "pnl_pct": -8.6,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.1,
-    "closed": "2026-11-27T07:38:54Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.13,
-    "weight": 0.5
-   },
    {
     "symbol": "ATX",
     "mint": "86rba6Q3JJSHN7oNwYQgKXbdm8qSNeZVCes9sdXKpump",
@@ -31459,10 +31443,31 @@
     "exit": "stop -12%",
     "pnl": -5.53,
     "weight": 0.5
+   },
+   {
+    "symbol": "MITTS",
+    "mint": "GvpBjmcXHpcHhfr3zgTAF6yRWheU2YudL4zppid5pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:50:19Z",
+    "cost": 36.2,
+    "pnl_pct": -19.3,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 11.9,
+    "closed": "2026-11-27T07:50:20Z",
+    "exit": "dump: 2.9 SOL sold",
+    "pnl": -6.99,
+    "weight": 0.5
    }
   ],
   "open": [
-   "SWARM"
+   "SWARM",
+   "GOATCHASE"
   ]
  },
  "learner_summary": {
@@ -31473,8 +31478,8 @@
   "best": [
    {
     "label": "snipe · np:sol:6-12",
-    "n": 50,
-    "avg": -4.7
+    "n": 51,
+    "avg": -4.9
    },
    {
     "label": "snipe · hour:01-03",
@@ -31491,12 +31496,12 @@
    {
     "label": "snipe · tier:swing",
     "n": 36,
-    "avg": -12.6
+    "avg": -12.7
    },
    {
     "label": "snipe · news:3-4",
     "n": 36,
-    "avg": -12.6
+    "avg": -12.7
    },
    {
     "label": "snipe · hour:03-05",
@@ -31504,7 +31509,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 497,
+  "shadows": 498,
   "memory": "snipe"
  }
 }
