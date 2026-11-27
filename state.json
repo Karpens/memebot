@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:07:03Z",
-    "time": "08:07:03",
-    "agent": "LEARNER",
-    "coin": "Hierberos",
-    "action": "shadow",
-    "text": "SHADOW Hierberos · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021546 (curve maths, every cost) · same exits, outside the book",
-    "n": 3037
-   },
-   {
-    "t": "2026-11-27T07:07:03Z",
-    "time": "08:07:03",
-    "agent": "LEARNER",
-    "coin": "Toegi",
-    "action": "shadow",
-    "text": "SHADOW Toegi would have made -20.3% (stop -17%) · learned x0.5 · np:sol:<3 now avg -8.5% over 300",
-    "n": 3038
-   },
-   {
     "t": "2026-11-27T07:07:22Z",
     "time": "08:07:22",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.2 a minute · 0 watched · 15 rejected (mayhem mode 7, snipe not bought: trades tonight 5, serial launcher 2)",
     "n": 3636
+   },
+   {
+    "t": "2026-11-27T08:55:10Z",
+    "time": "09:55:10",
+    "agent": "LEARNER",
+    "coin": "ATNEVN",
+    "action": "shadow",
+    "text": "SHADOW ATNEVN would have made -6.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 190",
+    "n": 3637
+   },
+   {
+    "t": "2026-11-27T08:55:16Z",
+    "time": "09:55:16",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.2 a minute · 0 watched · 11 rejected (mayhem mode 5, snipe not bought: trades tonight 3, serial launcher 2)",
+    "n": 3638
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3636,
+  "lines": 3638,
   "flags": [
    {
     "coin": "Kibo",
@@ -21711,17 +21711,21 @@
    [
     1795769654,
     361.97
+   ],
+   [
+    1795769714,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795769655.645346,
+  "np_said": 1795769716.645314,
   "shadow": {
-   "n": 649,
+   "n": 650,
    "wins": 138,
-   "sum": -5367.5
+   "sum": -5374.1
   },
   "np_speed": {
    "first_in": [
@@ -31304,9 +31308,9 @@
   }
  },
  "shadow": {
-  "n": 663,
+  "n": 664,
   "wins": 140,
-  "sum": -5566.0,
+  "sum": -5572.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31314,32 +31318,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 647,
+    "n": 648,
     "wins": 137,
-    "sum": -5368.2
+    "sum": -5374.8
    }
   },
   "closed": [
-   {
-    "symbol": "Bntrcain",
-    "mint": "5P3vDmENfY2aQqfvUueKvydcwYCw8CESMtSMbiDwpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:41:12Z",
-    "cost": 36.2,
-    "pnl_pct": -6.6,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.02,
-    "closed": "2026-11-27T08:46:12Z",
-    "exit": "5 min, only -3%",
-    "pnl": -2.4,
-    "weight": 0.5
-   },
    {
     "symbol": "DISCOUNT",
     "mint": "7mNwQBndDnFYsEdPKtQq5UnDLWpp5vDHyEi58ZRXpump",
@@ -31719,10 +31703,29 @@
     "exit": "dump: 17.2 SOL sold",
     "pnl": -19.18,
     "weight": 0.5
+   },
+   {
+    "symbol": "ATNEVN",
+    "mint": "Gp51ikoh6D3pvCqmip6hpUm11TxLQRw36JLBChc3pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:52:09Z",
+    "cost": 36.2,
+    "pnl_pct": -6.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T08:55:10Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.38,
+    "weight": 0.5
    }
   ],
   "open": [
-   "ATNEVN",
    "$RGOD"
   ]
  },
@@ -31765,7 +31768,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 647,
+  "shadows": 648,
   "memory": "snipe"
  }
 }
