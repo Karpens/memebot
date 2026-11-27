@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:23:33Z",
-    "time": "08:23:33",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (mayhem mode 4, snipe not bought: trades tonight 3, serial launcher 2)",
-    "n": 3119
-   },
-   {
-    "t": "2026-11-27T07:24:32Z",
-    "time": "08:24:32",
-    "agent": "RISK",
-    "coin": "NOTHING",
-    "action": "skip",
-    "text": "no entry: 250 trades tonight (max)",
-    "n": 3120
-   },
-   {
-    "t": "2026-11-27T07:24:34Z",
-    "time": "08:24:34",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (mayhem mode 5, snipe not bought: trades tonight 3, serial launcher 1)",
-    "n": 3121
-   },
-   {
     "t": "2026-11-27T07:25:13Z",
     "time": "08:25:13",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW RINGCAT would have made -3.9% (5 min, only +0%) · learned x0.5 · np:social:none now avg -9.7% over 195.5",
     "n": 3718
+   },
+   {
+    "t": "2026-11-27T09:11:15Z",
+    "time": "10:11:15",
+    "agent": "LEARNER",
+    "coin": "34",
+    "action": "shadow",
+    "text": "SHADOW 34 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021415 (curve maths, every cost) · same exits, outside the book",
+    "n": 3719
+   },
+   {
+    "t": "2026-11-27T09:11:26Z",
+    "time": "10:11:26",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.8 a minute · 0 watched · 17 rejected (snipe not bought: trades tonight 9, serial launcher 4, mayhem mode 4)",
+    "n": 3720
+   },
+   {
+    "t": "2026-11-27T09:11:34Z",
+    "time": "10:11:34",
+    "agent": "LEARNER",
+    "coin": "TPC",
+    "action": "shadow",
+    "text": "SHADOW TPC would have made -7.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 196",
+    "n": 3721
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3718,
+  "lines": 3721,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795734600,
-    82.3
-   ],
    [
     1795734660,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795770614,
     361.97
+   ],
+   [
+    1795770674,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795770625.64527,
+  "np_said": 1795770686.645236,
   "shadow": {
-   "n": 679,
+   "n": 680,
    "wins": 144,
-   "sum": -5685.2
+   "sum": -5692.8
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 693,
+  "n": 694,
   "wins": 146,
-  "sum": -5883.7,
+  "sum": -5891.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 677,
+    "n": 678,
     "wins": 143,
-    "sum": -5685.9
+    "sum": -5693.5
    }
   },
   "closed": [
-   {
-    "symbol": "ANTS",
-    "mint": "28ihAQUBGb3aztTFxqPA5vGhfDmfA6jUwj64zxL7PX33",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:56:36Z",
-    "cost": 36.2,
-    "pnl_pct": -7.1,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T09:01:36Z",
-    "exit": "5 min, only -3%",
-    "pnl": -2.58,
-    "weight": 0.5
-   },
    {
     "symbol": "Jesus",
     "mint": "5CwHTwLt251b38r7yevHkHKB88QNATjX1WbkRQHkpump",
@@ -31743,12 +31723,32 @@
     "exit": "5 min, only +0%",
     "pnl": -1.39,
     "weight": 0.5
+   },
+   {
+    "symbol": "TPC",
+    "mint": "6erdwvaCMK1oDoZYsmaehpdJnzuCWYmoABwtS7YFi7nL",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:06:36Z",
+    "cost": 36.2,
+    "pnl_pct": -7.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:11:34Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.76,
+    "weight": 0.5
    }
   ],
   "open": [
-   "TPC",
    "CPAI",
-   "BAH"
+   "BAH",
+   "34"
   ]
  },
  "learner_summary": {
@@ -31790,7 +31790,7 @@
     "avg": -11.8
    }
   ],
-  "shadows": 677,
+  "shadows": 678,
   "memory": "snipe"
  }
 }
