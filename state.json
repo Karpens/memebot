@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:21:45Z",
-    "time": "11:21:45",
-    "agent": "LEARNER",
-    "coin": "ZERO",
-    "action": "shadow",
-    "text": "SHADOW ZERO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000037206 (curve maths, every cost) · same exits, outside the book",
-    "n": 4095
-   },
-   {
-    "t": "2026-11-27T10:21:46Z",
-    "time": "11:21:46",
-    "agent": "LEARNER",
-    "coin": "Wonald",
-    "action": "shadow",
-    "text": "SHADOW Wonald · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000040829 (curve maths, every cost) · same exits, outside the book",
-    "n": 4096
-   },
-   {
     "t": "2026-11-27T10:21:47Z",
     "time": "11:21:47",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW AAC · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000030357 (curve maths, every cost) · same exits, outside the book",
     "n": 4694
+   },
+   {
+    "t": "2026-11-27T16:58:19Z",
+    "time": "17:58:19",
+    "agent": "LEARNER",
+    "coin": "Inu",
+    "action": "shadow",
+    "text": "SHADOW Inu would have made -12.5% (5 min, only -8%) · learned x0.5 · np:social:none now avg -8.4% over 227.5",
+    "n": 4695
+   },
+   {
+    "t": "2026-11-27T16:58:23Z",
+    "time": "17:58:23",
+    "agent": "LEARNER",
+    "coin": "AAC",
+    "action": "shadow",
+    "text": "SHADOW AAC would have made -37.3% (dump: 6.4 SOL sold) · learned x0.5 · np:sol:3-6 now avg -12.1% over 74.5",
+    "n": 4696
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4694,
+  "lines": 4696,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795762673,
-    59.14
-   ],
    [
     1795762733,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795798647,
     59.14
+   ],
+   [
+    1795798707,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795798675.028918,
   "shadow": {
-   "n": 1049,
+   "n": 1051,
    "wins": 239,
-   "sum": -7678.7
+   "sum": -7728.5
   },
   "np_speed": {
    "first_in": [
@@ -31821,9 +31821,9 @@
   }
  },
  "shadow": {
-  "n": 1063,
+  "n": 1065,
   "wins": 241,
-  "sum": -7877.2,
+  "sum": -7927.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31831,52 +31831,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1047,
+    "n": 1049,
     "wins": 238,
-    "sum": -7679.4
+    "sum": -7729.2
    }
   },
   "closed": [
-   {
-    "symbol": "$PAWRUB",
-    "mint": "6KDds3okhvCWpbzkHUxSCjBFX8opBM7o3JGaoU3ipump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T16:50:56Z",
-    "cost": 5.91,
-    "pnl_pct": -27.6,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.03,
-    "closed": "2026-11-27T16:52:37Z",
-    "exit": "dump: 4.2 SOL sold",
-    "pnl": -1.63,
-    "weight": 0.5
-   },
-   {
-    "symbol": "VECTOR",
-    "mint": "8gStGbocd9Z49RZfigvoPsJ68Hq5AsPFoj3PZxszpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T16:52:10Z",
-    "cost": 5.91,
-    "pnl_pct": -15.4,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 4,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T16:52:58Z",
-    "exit": "stop -11%",
-    "pnl": -0.91,
-    "weight": 0.5
-   },
    {
     "symbol": "ORDER",
     "mint": "FDQ78ZnrLK2jQgFo42vSMSinyvw2DgRfZ3eKweCdpump",
@@ -32236,18 +32196,56 @@
     "exit": "TP +10%",
     "pnl": 0.78,
     "weight": 0.5
+   },
+   {
+    "symbol": "Inu",
+    "mint": "Cthe8sRT2DbtL1BRSp4KGLh8YgDW4FVprGN6z4bKpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T16:53:19Z",
+    "cost": 5.91,
+    "pnl_pct": -12.5,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 3,
+    "sol_in": 0.03,
+    "closed": "2026-11-27T16:58:19Z",
+    "exit": "5 min, only -8%",
+    "pnl": -0.74,
+    "weight": 0.5
+   },
+   {
+    "symbol": "AAC",
+    "mint": "9RCSmAh1rAnyvvTHjmKwk5oJQXheVL1Qdg81vvqVpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T16:58:07Z",
+    "cost": 5.91,
+    "pnl_pct": -37.3,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 5.31,
+    "closed": "2026-11-27T16:58:23Z",
+    "exit": "dump: 6.4 SOL sold",
+    "pnl": -2.2,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Inu",
    "Sheeb",
    "BlueBoat",
    "$BOSSCAT",
    "ITSPVP",
    "MYCEL",
    "HOHOHO",
-   "MUSE",
-   "AAC"
+   "MUSE"
   ]
  },
  "learner_summary": {
@@ -32276,7 +32274,7 @@
    {
     "label": "snipe · np:sol:3-6",
     "n": 74,
-    "avg": -11.9
+    "avg": -12.1
    },
    {
     "label": "snipe · hour:03-05",
@@ -32289,7 +32287,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1255,
+  "shadows": 1257,
   "memory": "snipe"
  }
 }
