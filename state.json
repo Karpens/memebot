@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:53:00Z",
-    "time": "05:53:00",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.8 a minute · 0 watched · 6 rejected (mayhem mode 4, serial launcher 1, no symbol or name 1)",
-    "n": 2089
-   },
-   {
     "t": "2026-11-27T04:53:02Z",
     "time": "05:53:02",
     "agent": "SCANNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 11 rejected (snipe not bought: trades tonight 6, mayhem mode 3, serial launcher 2)",
     "n": 2688
+   },
+   {
+    "t": "2026-11-27T05:55:50Z",
+    "time": "06:55:50",
+    "agent": "LEARNER",
+    "coin": "DOOM",
+    "action": "shadow",
+    "text": "SHADOW DOOM would have made -14.1% (stop -10%) · learned x0.5 · np:social:none now avg -10.0% over 138.5",
+    "n": 2689
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2688,
+  "lines": 2689,
   "flags": [
    {
     "coin": "Kibo",
@@ -20995,6 +20995,10 @@
    [
     1795758893,
     363.27
+   ],
+   [
+    1795758953,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21003,9 +21007,9 @@
   },
   "np_said": 1795758941.780865,
   "shadow": {
-   "n": 284,
+   "n": 285,
    "wins": 48,
-   "sum": -2584.8
+   "sum": -2598.9
   },
   "np_speed": {
    "first_in": [
@@ -30588,9 +30592,9 @@
   }
  },
  "shadow": {
-  "n": 298,
+  "n": 299,
   "wins": 50,
-  "sum": -2783.3,
+  "sum": -2797.4,
   "by": {
    "learner": {
     "n": 16,
@@ -30598,32 +30602,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 282,
+    "n": 283,
     "wins": 47,
-    "sum": -2585.5
+    "sum": -2599.6
    }
   },
   "closed": [
-   {
-    "symbol": "NHC",
-    "mint": "8XpUGDsNkS4Vg8onTviVvBirG5MhrdGNgMnm1sQopump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:08:56Z",
-    "cost": 20.88,
-    "pnl_pct": 10.3,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T05:13:00Z",
-    "exit": "TP +10%",
-    "pnl": 2.16,
-    "weight": 0.5
-   },
    {
     "symbol": "debundle-0",
     "mint": "GVxhXgDAWthkCkoh1U8Ei2tK6kBWjSQ4fWH2FpLGpump",
@@ -31003,14 +30987,33 @@
     "exit": "dump: 2.1 SOL sold",
     "pnl": -6.03,
     "weight": 0.5
+   },
+   {
+    "symbol": "DOOM",
+    "mint": "6gzzZKWBu5YmkfP3bALRCx8mZLwB8ohriv7vt8wkpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:55:26Z",
+    "cost": 36.2,
+    "pnl_pct": -14.1,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.84,
+    "closed": "2026-11-27T05:55:50Z",
+    "exit": "stop -10%",
+    "pnl": -5.1,
+    "weight": 0.5
    }
   ],
   "open": [
    "Tittymas",
    "spxc",
    "RUNNER",
-   "FLASHER",
-   "DOOM"
+   "FLASHER"
   ]
  },
  "learner_summary": {
@@ -31031,7 +31034,7 @@
    },
    {
     "label": "snipe · hour:05-07",
-    "n": 147,
+    "n": 148,
     "avg": -6.0
    }
   ],
@@ -31052,7 +31055,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 282,
+  "shadows": 283,
   "memory": "snipe"
  }
 }
