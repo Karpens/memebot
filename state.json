@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:27:39Z",
-    "time": "20:27:39",
-    "agent": "LEARNER",
-    "coin": "FRGST",
-    "action": "shadow",
-    "text": "SHADOW FRGST · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000030999 (curve maths, every cost) · same exits, outside the book",
-    "n": 6049
-   },
-   {
-    "t": "2026-11-27T19:27:41Z",
-    "time": "20:27:41",
-    "agent": "LEARNER",
-    "coin": "FRGST",
-    "action": "shadow",
-    "text": "SHADOW FRGST would have made -14.5% (stop -10%) · learned x0.5 · np:sol:3-6 now avg -11.5% over 97",
-    "n": 6050
-   },
-   {
     "t": "2026-11-27T19:27:45Z",
     "time": "20:27:45",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 1074 is not 30 + real SOL 0 (off +1044 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 370 odd readings from 133 coins tonight",
     "n": 6648
+   },
+   {
+    "t": "2026-11-27T20:44:53Z",
+    "time": "21:44:53",
+    "agent": "LEARNER",
+    "coin": "MEMECARD",
+    "action": "shadow",
+    "text": "SHADOW MEMECARD would have made +4.8% (TP +10%) · learned x0.5 · np:dev:8+ now avg -8.9% over 235",
+    "n": 6649
+   },
+   {
+    "t": "2026-11-27T20:45:05Z",
+    "time": "21:45:05",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.2 a minute · 0 watched · 25 rejected (snipe not bought: night at open  17, no symbol or name 3, serial launcher 2)",
+    "n": 6650
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6648,
+  "lines": 6650,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795776254,
-    59.14
-   ],
    [
     1795776314,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795812228,
     59.14
+   ],
+   [
+    1795812288,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795812245.44341,
+  "np_said": 1795812305.44343,
   "shadow": {
-   "n": 1829,
-   "wins": 411,
-   "sum": -13464.1
+   "n": 1830,
+   "wins": 412,
+   "sum": -13459.3
   },
   "np_speed": {
    "first_in": [
@@ -31937,9 +31937,9 @@
   }
  },
  "shadow": {
-  "n": 1843,
-  "wins": 413,
-  "sum": -13662.6,
+  "n": 1844,
+  "wins": 414,
+  "sum": -13657.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31947,32 +31947,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1827,
-    "wins": 410,
-    "sum": -13464.8
+    "n": 1828,
+    "wins": 411,
+    "sum": -13460.0
    }
   },
   "closed": [
-   {
-    "symbol": "nothing",
-    "mint": "C27gsNghxwLGCys8CDNGTBpThMUSzyQRUtUsxAxmpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:33:39Z",
-    "cost": 5.91,
-    "pnl_pct": -8.3,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T20:38:33Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.49,
-    "weight": 0.5
-   },
    {
     "symbol": "$VICKI",
     "mint": "2GUs3PW55NvpGDAk6xscnLsgAHfvqRD1aW1Cubr3pump",
@@ -32352,6 +32332,26 @@
     "exit": "TP +20%",
     "pnl": 1.65,
     "weight": 0.5
+   },
+   {
+    "symbol": "MEMECARD",
+    "mint": "3YpRg4KyAJKhPpVMjzbvRembjYHdzVrkerPw5Xn9mQbR",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:44:22Z",
+    "cost": 5.91,
+    "pnl_pct": 4.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T20:44:53Z",
+    "exit": "TP +10%",
+    "pnl": 0.28,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32364,8 +32364,7 @@
    "THU",
    "Apple",
    "Nuki",
-   "SXSN",
-   "MEMECARD"
+   "SXSN"
   ]
  },
  "learner_summary": {
@@ -32403,11 +32402,11 @@
    },
    {
     "label": "snipe · np:dev:8+",
-    "n": 234,
+    "n": 235,
     "avg": -8.9
    }
   ],
-  "shadows": 2035,
+  "shadows": 2036,
   "memory": "snipe"
  }
 }
