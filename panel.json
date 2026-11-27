@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T20:58:43Z",
+ "updated": "2026-11-27T20:59:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6735,
+  "lines": 6736,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795777094,
-   59.14
-  ],
   [
    1795777154,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795813068,
    59.14
+  ],
+  [
+   1795813128,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,15 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T20:31:22Z",
-   "time": "21:31:22",
-   "agent": "LEARNER",
-   "coin": "SNUT",
-   "action": "shadow",
-   "text": "SHADOW SNUT would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
-   "n": 6536
-  },
-  {
    "t": "2026-11-27T20:31:44Z",
    "time": "21:31:44",
    "agent": "LEARNER",
@@ -6157,6 +6148,15 @@
    "action": "shadow",
    "text": "SHADOW MOON · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000023749 (curve maths, every cost) · same exits, outside the book",
    "n": 6735
+  },
+  {
+   "t": "2026-11-27T20:59:01Z",
+   "time": "21:59:01",
+   "agent": "LEARNER",
+   "coin": "MOON",
+   "action": "shadow",
+   "text": "SHADOW MOON would have made -19.6% (dump: 2.2 SOL sold) · learned x0.5 · np:social:none now avg -8.4% over 300",
+   "n": 6736
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 371 (134 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · odd curve readings 371 (134 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,16 +6221,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1747,
-    "last_event_age_s": 3.6,
+    "events": 1748,
+    "last_event_age_s": 15.0,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27665,
-    "last_event_age_s": 0.8,
+    "events": 27728,
+    "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
    },
@@ -6238,7 +6238,7 @@
     "name": "metadata",
     "connected": true,
     "events": 1049,
-    "last_event_age_s": 1.1,
+    "last_event_age_s": 29.1,
     "errors": 58,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6251,9 +6251,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 7.8,
+  "creates_per_min": 7.4,
   "watching": 0,
-  "followed": 11,
+  "followed": 9,
   "odd_readings": 371,
   "odd_coins": 134
  },
@@ -6296,36 +6296,54 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2073,
+  "shadows": 2074,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14363,
+   "sent": 14393,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14363,
+   "sent": 14393,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "MOON",
-   "name": "Moon",
-   "mint": "37v3uta8HGGFb2vyX1egrkd9ZVRSHMrQ7Pqrk6qgpump",
-   "age_s": 3,
+   "symbol": "DOOROC",
+   "name": "Doomed Rocket",
+   "mint": "S1Jj4e5zwYjcqnuiXWtJ83F3eMDqxU6VZszuC2Qpump",
+   "age_s": 14,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 32.2,
-   "dev_pct": 7.3,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "MOON",
+   "name": "Moon",
+   "mint": "37v3uta8HGGFb2vyX1egrkd9ZVRSHMrQ7Pqrk6qgpump",
+   "age_s": 31,
+   "sol_in": -2.19,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": -13.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 7.3,
+   "big_sell": 2.2,
    "x": "https://x.com/KankiAlpha/status/2126420422052986990",
    "tg": false,
    "web": "https://t.me/KankiCalls",
@@ -6336,7 +6354,7 @@
    "symbol": "$NGA",
    "name": "nga",
    "mint": "fcvBYBQniMmfSqLtAvhSwnPGUuhWTf2yn5hL1UQpump",
-   "age_s": 4,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6354,7 +6372,7 @@
    "symbol": "SLUSH",
    "name": "Slush Panic",
    "mint": "3g9JiR5BdzMpQtNMArMFmxfsdZMVbxvJGEJT2qffpump",
-   "age_s": 6,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6372,7 +6390,7 @@
    "symbol": "$cat",
    "name": "猫",
    "mint": "HHeFtb8LwnEzW6hAxhKh3RmanhdjzkBJ9L83gSqKpump",
-   "age_s": 7,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6390,12 +6408,12 @@
    "symbol": "MOON",
    "name": "Millionaires Out Of Nowhere",
    "mint": "2oUv2staAEhVQy3R6fZdAAeLLAgeLCrxNajii1Gqpump",
-   "age_s": 7,
-   "sol_in": 2.02,
-   "buys": 2,
-   "sells": 5,
-   "rise_pct": 12.3,
-   "mcap_sol": 40.2,
+   "age_s": 35,
+   "sol_in": -2.39,
+   "buys": 6,
+   "sells": 15,
+   "rise_pct": -13.6,
+   "mcap_sol": 31.0,
    "dev_pct": 12.5,
    "big_sell": 2.0,
    "x": "https://x.com/KankiAlpha/status/2126420422052986990",
@@ -6408,7 +6426,7 @@
    "symbol": "TOAD",
    "name": "The Toad Cat",
    "mint": "3fFuycXnqYmVQ6hfUzWs7womHjnqLXLwSJxN1PvVpump",
-   "age_s": 36,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6426,7 +6444,7 @@
    "symbol": "$cat",
    "name": "猫",
    "mint": "6BWhPqLKLL1jh1hdJydJMjWNE2RAueSu98TUS1ikpump",
-   "age_s": 36,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6444,7 +6462,7 @@
    "symbol": "DUMP",
    "name": "Donald Dump",
    "mint": "2nvFuUSLs5TjBgHzjr8o9BcbiqE1EW5qe3io6CmaDSvn",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": -6.86,
    "buys": 3,
    "sells": 8,
@@ -6462,12 +6480,12 @@
    "symbol": "LEMMA",
    "name": "Lemma",
    "mint": "HYJBexgASj57gvTnCkunbptteQsVDuBa8R2rnuRBpump",
-   "age_s": 44,
-   "sol_in": 22.94,
-   "buys": 11,
-   "sells": 16,
-   "rise_pct": 208.9,
-   "mcap_sol": 88.0,
+   "age_s": 72,
+   "sol_in": 25.32,
+   "buys": 18,
+   "sells": 21,
+   "rise_pct": 237.1,
+   "mcap_sol": 96.0,
    "dev_pct": 1.0,
    "big_sell": 2.29,
    "x": "https://x.com/lemmasol/status/2126123842053832852",
@@ -6480,7 +6498,7 @@
    "symbol": "$HUSS",
    "name": "HUSS HUSS HUSS",
    "mint": "E9PTBZ35vJtd1CSjHBaTawVYmCSrFq44WxzcgydDpump",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": 0.06,
    "buys": 3,
    "sells": 0,
@@ -6498,7 +6516,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "FAqFQ5xT4J2MJ3hBDN8tcaVZ3kjB8P8CNB6xyTevpump",
-   "age_s": 77,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6516,7 +6534,7 @@
    "symbol": "PLENTY",
    "name": "Mr. Plenty",
    "mint": "HeekUXEYm6VcKFpAYfz5v7vJniGTG4sStpxStW5wpump",
-   "age_s": 83,
+   "age_s": 111,
    "sol_in": -0.99,
    "buys": 4,
    "sells": 8,
@@ -6534,7 +6552,7 @@
    "symbol": "300k",
    "name": "MoonBoy at",
    "mint": "EtzhBbkNa7CsEnTZWfH9XA8jN8UzpoPmUwEX378kCDtx",
-   "age_s": 106,
+   "age_s": 134,
    "sol_in": -0.45,
    "buys": 0,
    "sells": 1,
@@ -6552,7 +6570,7 @@
    "symbol": "sol",
    "name": "goku coin",
    "mint": "H3FVakTJDfiFaZvJgPCMfRiqMzXjroZa5taG4Xhpump",
-   "age_s": 110,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6570,7 +6588,7 @@
    "symbol": "$cat",
    "name": "猫",
    "mint": "DRyodSvL3QbBngYSRJba7r8YS394VfnpcvRoT3aCpump",
-   "age_s": 113,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6588,7 +6606,7 @@
    "symbol": "MOONBOY",
    "name": "MoonBoy",
    "mint": "AF1b5QicguqwZk8dSqmQRHvFjUDU6EG6DSz6uTdfpump",
-   "age_s": 133,
+   "age_s": 161,
    "sol_in": -0.08,
    "buys": 0,
    "sells": 1,
@@ -6606,7 +6624,7 @@
    "symbol": "Outsidеrs",
    "name": "Outsidеrs",
    "mint": "3i7wfQ8rhfkVUdx66wPtAzHscPUvPSNELp19ttwqpump",
-   "age_s": 136,
+   "age_s": 164,
    "sol_in": -1.98,
    "buys": 2,
    "sells": 5,
@@ -6624,7 +6642,7 @@
    "symbol": "beer",
    "name": "beer",
    "mint": "6yB8EP2rx94z833r55iySMA2moyBpqBxBugPbZLupump",
-   "age_s": 146,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6642,7 +6660,7 @@
    "symbol": "$SPENCERTT",
    "name": "Spencertt",
    "mint": "iJyrmTTx733dp38gVrv8pThstfk1LVNRVWB4E4Jpump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6655,46 +6673,12 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "THORN",
-   "name": "Thorn",
-   "mint": "THoRg8xy9F1QQHfgpyXxZGingC3n544mC6a3GupZKhW",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
-  {
-   "symbol": "MOON",
-   "mint": "37v3uta8HGGFb2vyX1egrkd9ZVRSHMrQ7Pqrk6qgpump",
-   "status": "open",
-   "kind": "risk",
-   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "opened": "2026-11-27T20:58:40Z",
-   "cost": 5.91,
-   "pnl_pct": -3.6,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0
-  },
   {
    "symbol": "300k",
    "mint": "EtzhBbkNa7CsEnTZWfH9XA8jN8UzpoPmUwEX378kCDtx",
@@ -6742,6 +6726,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "MOON",
+   "mint": "37v3uta8HGGFb2vyX1egrkd9ZVRSHMrQ7Pqrk6qgpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T20:58:40Z",
+   "cost": 5.91,
+   "pnl_pct": -19.6,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T20:59:01Z",
+   "exit": "dump: 2.2 SOL sold",
+   "pnl": -1.16,
+   "weight": 0.5
   },
   {
    "symbol": "MOON",
@@ -7122,34 +7126,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -0.78,
    "weight": 0.5
-  },
-  {
-   "symbol": "PREACH",
-   "mint": "2aGaseWo2L5fEFkr1tW7zkofJK8Xse9wNhbezyNcpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "opened": "2026-11-27T20:49:07Z",
-   "cost": 5.91,
-   "pnl_pct": 4.9,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 0.13,
-   "closed": "2026-11-27T20:50:11Z",
-   "exit": "TP +10%",
-   "pnl": 0.29,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 1881,
+  "n": 1882,
   "wins": 421,
   "win_rate": 22.4,
   "mean_pnl_pct": -7.4,
-  "open": 4,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -7157,10 +7141,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 1865,
+   "n": 1866,
    "wins": 418,
    "win_rate": 22.4,
-   "mean_pnl_pct": -7.35
+   "mean_pnl_pct": -7.36
   }
  }
 }

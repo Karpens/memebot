@@ -49,15 +49,6 @@
    {
     "t": "2026-11-27T19:39:31Z",
     "time": "20:39:31",
-    "agent": "LEARNER",
-    "coin": "Monk",
-    "action": "shadow",
-    "text": "SHADOW Monk · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002078 (curve maths, every cost) · same exits, outside the book",
-    "n": 6136
-   },
-   {
-    "t": "2026-11-27T19:39:31Z",
-    "time": "20:39:31",
     "agent": "SCANNER",
     "coin": null,
     "action": "scan",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW MOON · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000023749 (curve maths, every cost) · same exits, outside the book",
     "n": 6735
+   },
+   {
+    "t": "2026-11-27T20:59:01Z",
+    "time": "21:59:01",
+    "agent": "LEARNER",
+    "coin": "MOON",
+    "action": "shadow",
+    "text": "SHADOW MOON would have made -19.6% (dump: 2.2 SOL sold) · learned x0.5 · np:social:none now avg -8.4% over 300",
+    "n": 6736
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6735,
+  "lines": 6736,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795777094,
-    59.14
-   ],
    [
     1795777154,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795813068,
     59.14
+   ],
+   [
+    1795813128,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795813092.443341,
   "shadow": {
-   "n": 1867,
+   "n": 1868,
    "wins": 419,
-   "sum": -13712.0
+   "sum": -13731.6
   },
   "np_speed": {
    "first_in": [
@@ -31938,9 +31938,9 @@
   }
  },
  "shadow": {
-  "n": 1881,
+  "n": 1882,
   "wins": 421,
-  "sum": -13910.5,
+  "sum": -13930.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31948,32 +31948,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1865,
+    "n": 1866,
     "wins": 418,
-    "sum": -13712.7
+    "sum": -13732.3
    }
   },
   "closed": [
-   {
-    "symbol": "PREACH",
-    "mint": "2aGaseWo2L5fEFkr1tW7zkofJK8Xse9wNhbezyNcpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:49:07Z",
-    "cost": 5.91,
-    "pnl_pct": 4.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.13,
-    "closed": "2026-11-27T20:50:11Z",
-    "exit": "TP +10%",
-    "pnl": 0.29,
-    "weight": 0.5
-   },
    {
     "symbol": "DROOL",
     "mint": "3DvEmRQRK5up7Qsya2Vt9gcZBUdbPhr1z54KowT8sAwz",
@@ -32353,13 +32333,32 @@
     "exit": "dump: 2.0 SOL sold",
     "pnl": -0.98,
     "weight": 0.5
+   },
+   {
+    "symbol": "MOON",
+    "mint": "37v3uta8HGGFb2vyX1egrkd9ZVRSHMrQ7Pqrk6qgpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:58:40Z",
+    "cost": 5.91,
+    "pnl_pct": -19.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T20:59:01Z",
+    "exit": "dump: 2.2 SOL sold",
+    "pnl": -1.16,
+    "weight": 0.5
    }
   ],
   "open": [
    "doge",
    "MoonCoin",
-   "300k",
-   "MOON"
+   "300k"
   ]
  },
  "learner_summary": {
@@ -32401,7 +32400,7 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2073,
+  "shadows": 2074,
   "memory": "snipe"
  }
 }
