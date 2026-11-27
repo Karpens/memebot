@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T11:00:38Z",
-    "time": "12:00:38",
-    "agent": "RISK",
-    "coin": "NOPACE",
-    "action": "skip",
-    "text": "no entry: 250 trades tonight (max)",
-    "n": 4289
-   },
-   {
-    "t": "2026-11-27T11:00:38Z",
-    "time": "12:00:38",
-    "agent": "LEARNER",
-    "coin": "NOPACE",
-    "action": "shadow",
-    "text": "SHADOW NOPACE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022642 (curve maths, every cost) · same exits, outside the book",
-    "n": 4290
-   },
-   {
     "t": "2026-11-27T11:00:44Z",
     "time": "12:00:44",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 7.6 a minute · 0 watched · 22 rejected (snipe not bought: night at open  11, serial launcher 4, mayhem mode 4)",
     "n": 4888
+   },
+   {
+    "t": "2026-11-27T17:21:37Z",
+    "time": "18:21:37",
+    "agent": "LEARNER",
+    "coin": "MEMECARD",
+    "action": "shadow",
+    "text": "SHADOW MEMECARD · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002346 (curve maths, every cost) · same exits, outside the book",
+    "n": 4889
+   },
+   {
+    "t": "2026-11-27T17:21:54Z",
+    "time": "18:21:54",
+    "agent": "LEARNER",
+    "coin": "MEMECARD",
+    "action": "shadow",
+    "text": "SHADOW MEMECARD would have made -15.6% (stop -11%) · learned x0.5 · np:buys:<70 now avg -8.4% over 242.5",
+    "n": 4890
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4888,
+  "lines": 4890,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795764053,
-    59.14
-   ],
    [
     1795764113,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795800048,
     59.14
+   ],
+   [
+    1795800108,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795800076.443363,
   "shadow": {
-   "n": 1120,
+   "n": 1121,
    "wins": 253,
-   "sum": -8261.8
+   "sum": -8277.4
   },
   "np_speed": {
    "first_in": [
@@ -31842,9 +31842,9 @@
   }
  },
  "shadow": {
-  "n": 1134,
+  "n": 1135,
   "wins": 255,
-  "sum": -8460.3,
+  "sum": -8475.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31852,32 +31852,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1118,
+    "n": 1119,
     "wins": 252,
-    "sum": -8262.5
+    "sum": -8278.1
    }
   },
   "closed": [
-   {
-    "symbol": "DUG",
-    "mint": "8hv29dZYGWLZqoGQobSamnyjEMKH9Y8WGgMALHrDpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:07:40Z",
-    "cost": 5.91,
-    "pnl_pct": -11.7,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.26,
-    "closed": "2026-11-27T17:12:21Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.69,
-    "weight": 0.5
-   },
    {
     "symbol": "TROOP",
     "mint": "HmmgjJFP4CdqmTfRJmj26rKpfDabXj5ZSXHmHjwp2tRx",
@@ -32257,6 +32237,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.21,
     "weight": 0.5
+   },
+   {
+    "symbol": "MEMECARD",
+    "mint": "36zoE2Ln3gF4poWhxAt8orfHspZLfCTnJhTwG2Gopump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:21:37Z",
+    "cost": 5.91,
+    "pnl_pct": -15.6,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T17:21:54Z",
+    "exit": "stop -11%",
+    "pnl": -0.92,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32310,7 +32310,7 @@
     "avg": -8.4
    }
   ],
-  "shadows": 1326,
+  "shadows": 1327,
   "memory": "snipe"
  }
 }
