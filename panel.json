@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T11:01:11Z",
+ "updated": "2026-11-27T11:01:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4292,
+  "lines": 4293,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795741200,
-   80.34
-  ],
   [
    1795741260,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795777214,
    361.97
+  ],
+  [
+   1795777274,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:21:32Z",
-   "time": "11:21:32",
-   "agent": "LEARNER",
-   "coin": "$KANA",
-   "action": "shadow",
-   "text": "SHADOW $KANA would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.4% over 221.5",
-   "n": 4093
-  },
-  {
    "t": "2026-11-27T10:21:43Z",
    "time": "11:21:43",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "shadow",
    "text": "SHADOW Safentra · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022952 (curve maths, every cost) · same exits, outside the book",
    "n": 4292
+  },
+  {
+   "t": "2026-11-27T11:01:31Z",
+   "time": "12:01:31",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: trades tonight 7, serial launcher 4, no symbol or name 4)",
+   "n": 4293
   }
  ],
  "nights": [
@@ -6597,7 +6597,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 1,
   "scans_per_min": 0,
@@ -6605,24 +6605,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1162,
-    "last_event_age_s": 2.0,
+    "events": 1164,
+    "last_event_age_s": 0.4,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24313,
-    "last_event_age_s": 0.6,
+    "events": 24398,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 687,
-    "last_event_age_s": 24.1,
+    "events": 688,
+    "last_event_age_s": 32.0,
     "errors": 31,
     "last_error": "iyjdx54xnlgesghz4cgwpewmiorbov6fiwnvnu2ss7i66qzgkfna.turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 10
+  "followed": 8
  },
  "learner": {
   "samples": 249,
@@ -6684,23 +6684,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13651,
+   "sent": 13686,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13662,
+   "sent": 13697,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "OPtL",
+   "name": "Optimezlife",
+   "mint": "GAaa3GHtaf8V18yD853AZ3wp6GuTjtzhmkBj7gdepump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.6,
+   "dev_pct": 1.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "nothing",
+   "name": "nothing to lose",
+   "mint": "6cyGS1STiSAGFGe5h65ZTzfisdFxzbQJPuNnkwUS8q9W",
+   "age_s": 32,
+   "sol_in": 16.65,
+   "buys": 14,
+   "sells": 13,
+   "rise_pct": 118.0,
+   "mcap_sol": 82.7,
+   "dev_pct": 15.2,
+   "big_sell": 2.64,
+   "x": "https://x.com/MarioPrezldente/status/2126270105483141235",
+   "tg": false,
+   "web": "https://nationaldaycalendar.com/celebrations/buy-nothing-day-first-shopping-day-after-thanksgiving",
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "3uW6dhqZS2n1PUP33sR1LQ65epu6k6JWJxHJe8DWpump",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6718,7 +6754,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AMqDH5R9p8XXZrSGQkjU1GyzmQ6RtDig4mRtjqSApump",
-   "age_s": 5,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6736,7 +6772,7 @@
    "symbol": "?",
    "name": "",
    "mint": "3zrfajzCRZdtoqDwjun77qzgsUJo8v2DhFDDrUdXpump",
-   "age_s": 7,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6754,7 +6790,7 @@
    "symbol": "Safentra",
    "name": "Safentra",
    "mint": "8HDMY4HPEmo5CYwDqUFm1vAfy9SPZZHWXuYwB8ejoZ3w",
-   "age_s": 26,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6772,7 +6808,7 @@
    "symbol": "SHARBOR",
    "name": "Sleepy Harbor",
    "mint": "8Md73Qrgi5D7feDj4xtw7uf4b1T6U1AvgT8vvG7tpump",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,
@@ -6790,7 +6826,7 @@
    "symbol": "NOPACE",
    "name": "All Pace Lineup",
    "mint": "6Q79eCpkPKVgGF8Sds4QCwefud8gweV7dxtB4Bpwpump",
-   "age_s": 33,
+   "age_s": 66,
    "sol_in": 1.03,
    "buys": 1,
    "sells": 0,
@@ -6808,12 +6844,12 @@
    "symbol": "USFF",
    "name": "USFF",
    "mint": "AHoawzKUQhEPP1ja9EZEwoQ9YDNJmocyg73GqQTtpump",
-   "age_s": 46,
-   "sol_in": -0.58,
+   "age_s": 79,
+   "sol_in": -0.68,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": -85.6,
-   "mcap_sol": 4.2,
+   "sells": 3,
+   "rise_pct": -86.2,
+   "mcap_sol": 4.0,
    "dev_pct": 2.4,
    "big_sell": 0.58,
    "x": false,
@@ -6826,7 +6862,7 @@
    "symbol": "Kibo",
    "name": "キボウ",
    "mint": "Cduv7RHL4bTuus62ZMr5dgMmtvh9K6GqT1buQq7q7Cxk",
-   "age_s": 94,
+   "age_s": 127,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -6844,7 +6880,7 @@
    "symbol": "?",
    "name": "",
    "mint": "D6Fkyz1cesaqrXMtbheCymxi4ChJXHhXXFLJscEnwBbc",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6862,7 +6898,7 @@
    "symbol": "SELLUP",
    "name": "Force the Sale",
    "mint": "6ZA8gKwgP4zv1ns3NxHYiycB1cYa2bJdxnDvxPiQpump",
-   "age_s": 122,
+   "age_s": 155,
    "sol_in": -0.21,
    "buys": 3,
    "sells": 2,
@@ -6880,12 +6916,12 @@
    "symbol": "orb",
    "name": "Orbweaver",
    "mint": "G8LapyqdpD6rMhYewS7kVjxJjvxd6vF5i3SCnzxFpump",
-   "age_s": 131,
-   "sol_in": 0.0,
+   "age_s": 164,
+   "sol_in": -0.89,
    "buys": 6,
-   "sells": 3,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.6,
+   "sells": 4,
+   "rise_pct": -5.7,
+   "mcap_sol": 28.0,
    "dev_pct": 3.1,
    "big_sell": 2.3,
    "x": "https://x.com/orbweaverworld",
@@ -6893,60 +6929,6 @@
    "web": "https://orbweaver.world",
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "BLACKED",
-   "name": "BLACKED",
-   "mint": "8c5Y9eQmsNEgrDcV5Bm3qCLm7c3WkjL9fhiz1mfEpump",
-   "age_s": 149,
-   "sol_in": 0.01,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.1,
-   "x": "https://x.com/MarioPrezldente/status/2126268834705441044",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "Nothing",
-   "name": "Nothing",
-   "mint": "Gqwo65Miiqpzciy7frML5afe8bEqz1RjbgbD7aeApump",
-   "age_s": 151,
-   "sol_in": 27.21,
-   "buys": 60,
-   "sells": 65,
-   "rise_pct": 233.2,
-   "mcap_sol": 112.5,
-   "dev_pct": 9.6,
-   "big_sell": 3.28,
-   "x": "https://x.com/Zeeko__Dev/status/2126269442812457077",
-   "tg": false,
-   "web": "https://nationaldaycalendar.com/celebrations/buy-nothing-day-first-shopping-day-after-thanksgiving",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "QUAGSIRE",
-   "name": "Quagsire",
-   "mint": "FZADwAH2LdsgzLsdBdixD9ES7wuNji78riCuEFSrpump",
-   "age_s": 155,
-   "sol_in": -0.49,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -3.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.7,
-   "big_sell": 0.49,
-   "x": "https://twitter.com/BillyM2k/status/2126268935414939653",
-   "tg": false,
-   "web": "https://bulbapedia.bulbagarden.net/wiki/Quagsire_(Pok%C3%A9mon)",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
@@ -7057,7 +7039,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:57:22Z",
    "cost": 36.2,
-   "pnl_pct": -1.1,
+   "pnl_pct": -0.5,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
