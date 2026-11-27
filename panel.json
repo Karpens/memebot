@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:45:27Z",
+ "updated": "2026-11-27T01:45:54Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 6,
   "filtered": 3,
-  "lines": 210,
+  "lines": 211,
   "last_rug": {
    "coin": "RDB",
    "pass": false
@@ -795,15 +795,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-26T23:07:05Z",
-   "time": "00:07:05",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.8 a minute · 3 watched · 36 rejected (serial launcher 26, mayhem mode 7, dump 2) · closest AFRICAN: too young: 27 s (min 45 s)",
-   "n": 11
-  },
   {
    "t": "2026-11-26T23:08:06Z",
    "time": "00:08:06",
@@ -2594,6 +2585,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 1 watched · 6 rejected (mayhem mode 3, dev bought 2, serial launcher 1) · closest LOOP: SOL in -0.4/2.5 · buys 4/6 · rise -3%/+12%",
    "n": 210
+  },
+  {
+   "t": "2026-11-27T01:45:32Z",
+   "time": "02:45:32",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (serial launcher 1, dev bought 1, dump 1)",
+   "n": 211
   }
  ],
  "nights": [
@@ -2652,7 +2652,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2660,15 +2660,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1847,
-    "last_event_age_s": 4.4,
+    "events": 1851,
+    "last_event_age_s": 2.5,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24022,
+    "events": 24042,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
@@ -2676,8 +2676,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1178,
-    "last_event_age_s": 4.2,
+    "events": 1180,
+    "last_event_age_s": 8.1,
     "errors": 47,
     "last_error": "d.uguu.se: too slow (over 2 s)"
    }
@@ -2690,9 +2690,9 @@
   "exit_ms": 109,
   "exit_last_ms": 109,
   "launch_to_entry_s": 47,
-  "creates_per_min": 2.2,
-  "watching": 0,
-  "followed": 3
+  "creates_per_min": 2.8,
+  "watching": 2,
+  "followed": 5
  },
  "learner": {
   "samples": 111,
@@ -2738,28 +2738,100 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14694,
+   "sent": 14723,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14694,
+   "sent": 14723,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GTP",
+   "name": "GIRL TRADERS PROJECT",
+   "mint": "9v6RcD2LXcBwYP4Hy45VMcGKFWggnSqhinw1fRjgpump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "NT",
+   "name": "New trying",
+   "mint": "9YDLFuMDeWXSKRauWFzYdptdpfERH428yXduaW3Xpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "PROC/SELF",
+   "name": "proc/self linux",
+   "mint": "5aaGHxxYaWFDnArLEFh2EmMsLMdmhEhxBKqcsq8zpump",
+   "age_s": 8,
+   "sol_in": 10.54,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": 79.9,
+   "mcap_sol": 53.2,
+   "dev_pct": 3.0,
+   "big_sell": 0.68,
+   "x": "https://x.com/procself/status/2126130209191543064",
+   "tg": false,
+   "web": "https://procself.lol",
+   "status": "watching",
+   "why": "too young: 7 s (min 45 s)"
+  },
+  {
+   "symbol": "Crysory99",
+   "name": "KITTY",
+   "mint": "H8aSdv7vN9H2H9U225ftdof9eZ2AvAqWPU5Ao39Zpump",
+   "age_s": 19,
+   "sol_in": 1.0,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 6.8,
+   "mcap_sol": 29.9,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://www.tiktok.com/@crysory99?is_from_webapp=1&sender_device=pc",
+   "status": "watching",
+   "why": "too young: 13 s (min 45 s)"
+  },
+  {
    "symbol": "PUMPERS",
    "name": "AGENTIC TRADERS",
    "mint": "AVWRBRdgDxaTDycBYdrAGwDBU28CdaX4K22GqwBopump",
-   "age_s": 4,
-   "sol_in": 0.27,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": 1.8,
-   "mcap_sol": 30.4,
+   "age_s": 31,
+   "sol_in": -0.14,
+   "buys": 3,
+   "sells": 6,
+   "rise_pct": -0.9,
+   "mcap_sol": 29.6,
    "dev_pct": 3.4,
    "big_sell": 7.46,
    "x": "https://x.com/pumpersfunsol",
@@ -2772,7 +2844,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4HZcQvsgMhyWy5u7FPXoRu2ivgfpfFt4eCbDaJhWYniy",
-   "age_s": 35,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2790,7 +2862,7 @@
    "symbol": "Disney",
    "name": "Disney",
    "mint": "31twuwsNeXcmdUrrEHXR97d8Qe7KA5g69psYd2QGpump",
-   "age_s": 97,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2808,7 +2880,7 @@
    "symbol": "TOE-G",
    "name": "TOE-G",
    "mint": "5E6DJ5i8MUwUK97Y1ci2QausKiqjGZQoRq8oyNgobHyc",
-   "age_s": 109,
+   "age_s": 136,
    "sol_in": -5.9,
    "buys": 4,
    "sells": 8,
@@ -2826,7 +2898,7 @@
    "symbol": "PROTON",
    "name": "Proton",
    "mint": "HMFZy2a9UciNedhwVtwpW96csKuhm8FsqSAe6Kxapump",
-   "age_s": 113,
+   "age_s": 140,
    "sol_in": 0.02,
    "buys": 11,
    "sells": 2,
