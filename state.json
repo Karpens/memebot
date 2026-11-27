@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T21:08:48Z",
-    "time": "22:08:48",
-    "agent": "SCANNER",
-    "coin": "BGREM",
-    "action": "odd",
-    "text": "odd curve reading: virtual SOL 2.227 is not 30 + real SOL 0.02368 (off -27.8 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 393 odd readings from 143 coins tonight",
-    "n": 6808
-   },
-   {
-    "t": "2026-11-27T21:09:09Z",
-    "time": "22:09:09",
-    "agent": "LEARNER",
-    "coin": "MoonBoys",
-    "action": "shadow",
-    "text": "SHADOW MoonBoys · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000059213 (curve maths, every cost) · same exits, outside the book",
-    "n": 6809
-   },
-   {
     "t": "2026-11-27T21:09:12Z",
     "time": "22:09:12",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW GROUPCHAT · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020564 (curve maths, every cost) · same exits, outside the book",
     "n": 7407
+   },
+   {
+    "t": "2026-11-27T22:16:23Z",
+    "time": "23:16:23",
+    "agent": "SCANNER",
+    "coin": "ROBOT",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 8.993e+04 is not 30 + real SOL 0 (off +8.99e+04 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 651 odd readings from 190 coins tonight",
+    "n": 7408
+   },
+   {
+    "t": "2026-11-27T22:16:38Z",
+    "time": "23:16:38",
+    "agent": "LEARNER",
+    "coin": "dsa",
+    "action": "shadow",
+    "text": "SHADOW dsa would have made -7.5% (5 min, only -3%) · learned x0.5 · np:social:none now avg -8.1% over 300",
+    "n": 7409
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7407,
+  "lines": 7409,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795817760.44343,
   "shadow": {
-   "n": 2123,
+   "n": 2124,
    "wins": 487,
-   "sum": -15613.9
+   "sum": -15621.4
   },
   "np_speed": {
    "first_in": [
@@ -23110,8 +23110,8 @@
    ]
   },
   "odd": {
-   "readings": 650,
-   "coins": 189,
+   "readings": 651,
+   "coins": 190,
    "followed": 0,
    "mints": [
     "ERGxdPAhVciioVVK2cfaozyse99vgxkP8TBwvzrJpump",
@@ -23302,7 +23302,8 @@
     "B8HPmW2q3zzXzNZWmTwSGetrNkw3b2pYmohA79S5pump",
     "cYZcdKEun81LXRXrUKg9FEGhUA7r5Ts2K3dFSACpump",
     "6Dxfgpfyp9DtGu7jnYmB7kVZummCh8HhNsoKCp3UekvK",
-    "CBS3r8c8x9SbFa2gDBhhu5UXcwRMDoHUaP1TCQdcSfAs"
+    "CBS3r8c8x9SbFa2gDBhhu5UXcwRMDoHUaP1TCQdcSfAs",
+    "GR1FTzfXfZNJaAeBGJvniudrxaJp2QoeAA1Csd5kpww5"
    ]
   },
   "shadow_said": {
@@ -31997,9 +31998,9 @@
   }
  },
  "shadow": {
-  "n": 2137,
+  "n": 2138,
   "wins": 489,
-  "sum": -15812.4,
+  "sum": -15819.9,
   "by": {
    "learner": {
     "n": 16,
@@ -32007,32 +32008,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2121,
+    "n": 2122,
     "wins": 486,
-    "sum": -15614.6
+    "sum": -15622.1
    }
   },
   "closed": [
-   {
-    "symbol": "ペンギン",
-    "mint": "5N87iQxctSx6RvWAzyYyVkK9SAaXTTTTRAiQx5NQpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T22:06:00Z",
-    "cost": 5.91,
-    "pnl_pct": -21.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.53,
-    "closed": "2026-11-27T22:06:01Z",
-    "exit": "dump: 2.7 SOL sold",
-    "pnl": -1.29,
-    "weight": 0.5
-   },
    {
     "symbol": "GEODROP",
     "mint": "2Y4tSST3aS5fj8jnygpZpgpjC4zVenNK9ZruR2J8pump",
@@ -32412,10 +32393,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "dsa",
+    "mint": "4wxdJqL8HzBM74rk3JKMBic3CT2obeieLzGuSs2Npump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:11:38Z",
+    "cost": 5.91,
+    "pnl_pct": -7.5,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T22:16:38Z",
+    "exit": "5 min, only -3%",
+    "pnl": -0.44,
+    "weight": 0.5
    }
   ],
   "open": [
-   "dsa",
    "ORANGE",
    "SpaceX",
    "BRG",
@@ -32464,10 +32464,10 @@
    {
     "label": "snipe · hour:23-01",
     "n": 22,
-    "avg": -10.8
+    "avg": -10.7
    }
   ],
-  "shadows": 2329,
+  "shadows": 2330,
   "memory": "snipe"
  }
 }
