@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T02:03:25Z",
+ "updated": "2026-11-27T02:03:56Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 51.26,
- "equity": 64.07,
+ "balance": 1467.73,
+ "equity": 1473.95,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 33,
-  "checked": 29,
+  "flagged": 34,
+  "checked": 30,
   "filtered": 3,
-  "lines": 422,
+  "lines": 430,
   "last_rug": {
-   "coin": "EVELYN",
+   "coin": "530A",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "KEE",
-   "why": "snipe",
-   "t": "2026-11-27T01:58:37Z"
-  },
   {
    "coin": "IMGTEST",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "EVELYN",
    "why": "snipe",
    "t": "2026-11-27T02:02:29Z"
+  },
+  {
+   "coin": "530A",
+   "why": "snipe",
+   "t": "2026-11-27T02:03:33Z"
   }
  ],
  "curve": [
@@ -804,54 +804,16 @@
   [
    1795744973,
    64.06
+  ],
+  [
+   1795745033,
+   1473.95
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
  "positions": [
-  {
-   "symbol": "test",
-   "mint": "8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
-   "cost": 6.97,
-   "value": 6.59,
-   "pnl_pct": -5.4,
-   "opened": "2026-11-27T01:59:56Z",
-   "url": "https://pump.fun/coin/8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
-   "reason": "snipe · first reading 0.5 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL · fill curve",
-   "size_pct": 10.0,
-   "entry_price": 2.09363e-06,
-   "price": 2.00087e-06,
-   "slip": 0.31,
-   "tp1_done": false,
-   "strategy": "new_pairs",
-   "plan": {
-    "tier": "scalp",
-    "score": 0,
-    "parts": [],
-    "ladder": [
-     [
-      10.0,
-      1.0
-     ]
-    ],
-    "step": 0,
-    "stop_pct": -10.0,
-    "trail_pct": 0.0
-   },
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "age_s": 0,
-   "mcap_sol": 28.6,
-   "dev_pct": 0.04,
-   "sol_in": 0.33,
-   "hist": [
-    2.09363e-06,
-    2.02004e-06,
-    1.99698e-06
-   ]
-  },
   {
    "symbol": "EVELYN",
    "mint": "4ovjADkkZDgoBPeq6hgg4khfptb1BRd6WAh7UZp2pump",
@@ -863,7 +825,7 @@
    "reason": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.05298e-06,
-   "price": 2.00087e-06,
+   "price": 2.00078e-06,
    "slip": 0.29,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -1887,81 +1849,95 @@
    "snipe": true,
    "entry_fill": "curve",
    "stop_pct": -10.0
+  },
+  {
+   "symbol": "test",
+   "mint": "8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
+   "opened": "2026-11-27T01:59:56Z",
+   "closed": "2026-11-27T02:03:29Z",
+   "cost": 6.97,
+   "proceeds": 6.35,
+   "pnl": -0.62,
+   "pnl_pct": -8.8,
+   "why": "curve quiet for 3 min (no trade)",
+   "url": "https://pump.fun/coin/8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
+   "reason": "snipe · first reading 0.5 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.093627221653175e-06,
+   "exit_price": 2.0008689984823994e-06,
+   "slip": 0.31,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 0,
+    "parts": [],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 0,
+   "mcap_sol": 28.6,
+   "dev_pct": 0.04,
+   "sol_in": 0.33,
+   "snipe": true,
+   "entry_fill": "curve",
+   "stop_pct": -10.0
+  },
+  {
+   "symbol": "530A",
+   "mint": "BdQZtWwKGGu4fegHsnvtaHK3pNpNbZY5ajFZRnm6pump",
+   "opened": "2026-11-27T02:03:33Z",
+   "closed": "2026-11-27T02:03:33Z",
+   "cost": 6.38,
+   "proceeds": 1416.5,
+   "pnl": 1410.12,
+   "pnl_pct": 22092.2,
+   "why": "stop -78%",
+   "url": "https://pump.fun/coin/BdQZtWwKGGu4fegHsnvtaHK3pNpNbZY5ajFZRnm6pump",
+   "reason": "snipe · first reading 0.3 s after the create · -0.6 SOL in · -100% since the create · mcap 0 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 7.898751970986586e-09,
+   "exit_price": 1.758423150915402e-09,
+   "slip": 77.23,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 0.5,
+    "parts": [
+     "X post"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 0,
+   "mcap_sol": 0.0,
+   "dev_pct": 2.25,
+   "sol_in": -0.64,
+   "snipe": true,
+   "entry_fill": "curve",
+   "stop_pct": -10.0
   }
  ],
  "log": [
-  {
-   "t": "2026-11-27T01:47:25Z",
-   "time": "02:47:25",
-   "agent": "NEWS",
-   "coin": "DOOM",
-   "action": "plan",
-   "text": "hold plan · 0/10 (no news) · scalp: +10",
-   "n": 223
-  },
-  {
-   "t": "2026-11-27T01:47:44Z",
-   "time": "02:47:44",
-   "agent": "SCANNER",
-   "coin": "KITTY",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 224
-  },
-  {
-   "t": "2026-11-27T01:47:44Z",
-   "time": "02:47:44",
-   "agent": "SIZER",
-   "coin": "KITTY",
-   "action": "size",
-   "text": "10% of $79.79 = $7.98",
-   "n": 225
-  },
-  {
-   "t": "2026-11-27T01:47:44Z",
-   "time": "02:47:44",
-   "agent": "EXECUTOR",
-   "coin": "KITTY",
-   "action": "enter",
-   "text": "ENTER KITTY at 0.0000020511 · slip 0.4% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 2 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-   "n": 226
-  },
-  {
-   "t": "2026-11-27T01:47:44Z",
-   "time": "02:47:44",
-   "agent": "NEWS",
-   "coin": "KITTY",
-   "action": "plan",
-   "text": "hold plan · 0/10 (no news) · scalp: +10",
-   "n": 227
-  },
-  {
-   "t": "2026-11-27T01:48:09Z",
-   "time": "02:48:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.0 a minute · 0 watched · 2 rejected (dump 1, mayhem mode 1)",
-   "n": 228
-  },
-  {
-   "t": "2026-11-27T01:48:31Z",
-   "time": "02:48:31",
-   "agent": "SCANNER",
-   "coin": "DRAGON",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 229
-  },
-  {
-   "t": "2026-11-27T01:48:31Z",
-   "time": "02:48:31",
-   "agent": "SIZER",
-   "coin": "DRAGON",
-   "action": "size",
-   "text": "10% of $80.01 = $8.00",
-   "n": 230
-  },
   {
    "t": "2026-11-27T01:48:31Z",
    "time": "02:48:31",
@@ -3689,6 +3665,78 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 0 watched · 3 rejected (mayhem mode 2, snipe not bought: night at open  1)",
    "n": 422
+  },
+  {
+   "t": "2026-11-27T02:03:29Z",
+   "time": "03:03:29",
+   "agent": "EXECUTOR",
+   "coin": "test",
+   "action": "exit",
+   "text": "EXIT test $-0.62 (-9%) · curve quiet for 3 min (no trade)",
+   "n": 423
+  },
+  {
+   "t": "2026-11-27T02:03:29Z",
+   "time": "03:03:29",
+   "agent": "LEARNER",
+   "coin": "test",
+   "action": "learn",
+   "text": "learned · np:social:none now avg -15.8% over 12.5",
+   "n": 424
+  },
+  {
+   "t": "2026-11-27T02:03:33Z",
+   "time": "03:03:33",
+   "agent": "SCANNER",
+   "coin": "530A",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · -0.6 SOL in · -100% since the create · mcap 0 SOL",
+   "n": 425
+  },
+  {
+   "t": "2026-11-27T02:03:33Z",
+   "time": "03:03:33",
+   "agent": "SIZER",
+   "coin": "530A",
+   "action": "size",
+   "text": "10% of $63.83 = $6.38",
+   "n": 426
+  },
+  {
+   "t": "2026-11-27T02:03:33Z",
+   "time": "03:03:33",
+   "agent": "EXECUTOR",
+   "coin": "530A",
+   "action": "enter",
+   "text": "ENTER 530A at 0.0000000079 · slip 77.2% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 427
+  },
+  {
+   "t": "2026-11-27T02:03:33Z",
+   "time": "03:03:33",
+   "agent": "NEWS",
+   "coin": "530A",
+   "action": "plan",
+   "text": "hold plan · 0.5/10 (X post) · scalp: +10",
+   "n": 428
+  },
+  {
+   "t": "2026-11-27T02:03:33Z",
+   "time": "03:03:33",
+   "agent": "EXECUTOR",
+   "coin": "530A",
+   "action": "exit",
+   "text": "EXIT 530A +$1.4k (+22092%) · stop -78%",
+   "n": 429
+  },
+  {
+   "t": "2026-11-27T02:03:33Z",
+   "time": "03:03:33",
+   "agent": "LEARNER",
+   "coin": "530A",
+   "action": "learn",
+   "text": "learned · tier:scalp now avg -6.6% over 31.5",
+   "n": 430
   }
  ],
  "nights": [
@@ -3747,7 +3795,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 27 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 26 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3755,24 +3803,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 109,
-    "last_event_age_s": 48.0,
+    "events": 111,
+    "last_event_age_s": 23.9,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1694,
-    "last_event_age_s": 0.6,
+    "events": 1761,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 87,
-    "last_event_age_s": 57.1,
+    "events": 88,
+    "last_event_age_s": 23.9,
     "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3780,52 +3828,52 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 1.0,
+  "first_in_ms": 1,
   "first_in_last_ms": 1,
   "exit_ms": 35,
   "exit_last_ms": 33,
-  "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "launch_to_entry_s": 0,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 3
+  "followed": 2
  },
  "learner": {
-  "samples": 21,
+  "samples": 23,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
   "best": [
+   {
+    "label": "snipe · np:dev:2-5",
+    "n": 8,
+    "avg": 10.6
+   },
    {
     "label": "snipe · np:social:web",
     "n": 9,
     "avg": 1.7
    },
    {
-    "label": "snipe · np:buys:90+",
-    "n": 16,
-    "avg": -3.8
-   },
-   {
     "label": "snipe · np:social:x",
-    "n": 20,
-    "avg": -3.8
+    "n": 21,
+    "avg": 1.1
    }
   ],
   "worst": [
    {
     "label": "snipe · np:social:none",
     "n": 12,
-    "avg": -16.4
+    "avg": -15.8
    },
    {
-    "label": "snipe · np:buys:<70",
-    "n": 16,
-    "avg": -12.9
+    "label": "snipe · np:dev:0-2",
+    "n": 19,
+    "avg": -10.2
    },
    {
     "label": "snipe · tier:scalp",
-    "n": 30,
-    "avg": -10.1
+    "n": 32,
+    "avg": -6.6
    }
   ],
   "shadows": 21,
@@ -3834,23 +3882,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1115,
+   "sent": 1151,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1115,
+   "sent": 1151,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "530A",
+   "name": "READ",
+   "mint": "BdQZtWwKGGu4fegHsnvtaHK3pNpNbZY5ajFZRnm6pump",
+   "age_s": 23,
+   "sol_in": -0.64,
+   "buys": 0,
+   "sells": 3,
+   "rise_pct": -99.9,
+   "mcap_sol": 0.0,
+   "dev_pct": 2.2,
+   "big_sell": 0.64,
+   "x": "https://x.com/jazzquant/status/2126134633171701787?a=WLRyswcNcs3tmWOA_9k&s=20",
+   "tg": false,
+   "web": false,
+   "status": "exited: stop -78%",
+   "why": "stop -78%"
+  },
+  {
+   "symbol": "NO SLEEP",
+   "name": "NO SLEEP",
+   "mint": "84cdzuYq63u2hJrMn8YjgkADXg7safQ4tgMxpyC1pump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "GrenCAT",
    "name": "green cat",
    "mint": "F9EJaJQyp6GX6FHHvy2TjxMD59UXs5HNd17jwEA1pump",
-   "age_s": 48,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3868,7 +3952,7 @@
    "symbol": "EVELYN",
    "name": "Evelyn",
    "mint": "4ovjADkkZDgoBPeq6hgg4khfptb1BRd6WAh7UZp2pump",
-   "age_s": 57,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3881,60 +3965,6 @@
    "web": "https://x.com/Lanceurpump",
    "status": "entered",
    "why": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL"
-  },
-  {
-   "symbol": "TOGI",
-   "name": "TOGI",
-   "mint": "C78sxJPYbPfwNbydrPjLUXg3CNgacjhLxiEzxSdBpump",
-   "age_s": 160,
-   "sol_in": 0.55,
-   "buys": 10,
-   "sells": 4,
-   "rise_pct": 3.7,
-   "mcap_sol": 29.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.9,
-   "x": "https://x.com/ShaneStoffer/status/2126133393746432260",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -25%: 4 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -25%: 4 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "GrenCAT",
-   "name": "green cat",
-   "mint": "8BjuKD48TprFquMUWTXbMqxr7b6zF7rLE3AtrsEZpump",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "test",
-   "name": "test",
-   "mint": "8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
-   "age_s": 209,
-   "sol_in": -0.01,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.19,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "entered",
-   "why": "snipe · first reading 0.5 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL"
   }
  ],
  "strategies": [
@@ -3949,7 +3979,7 @@
    "why": "night at -25%: 4 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T02:00:46Z",
    "cost": 6.28,
-   "pnl_pct": -1.8,
+   "pnl_pct": -5.2,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
