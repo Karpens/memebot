@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:10:45Z",
-    "time": "06:10:45",
-    "agent": "EXECUTOR",
-    "coin": "BLUNT",
-    "action": "enter",
-    "text": "ENTER BLUNT at 0.0000021181 · slip 0.9% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2199
-   },
-   {
-    "t": "2026-11-27T05:10:45Z",
-    "time": "06:10:45",
-    "agent": "NEWS",
-    "coin": "BLUNT",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 2200
-   },
-   {
     "t": "2026-11-27T05:10:55Z",
     "time": "06:10:55",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Sale would have made +18.3% (TP +10%) · learned x0.5 · np:social:web now avg -8.8% over 171",
     "n": 2798
+   },
+   {
+    "t": "2026-11-27T06:23:35Z",
+    "time": "07:23:35",
+    "agent": "LEARNER",
+    "coin": "TECH4ALL",
+    "action": "shadow",
+    "text": "SHADOW TECH4ALL would have made +8.2% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.7% over 181.5",
+    "n": 2799
+   },
+   {
+    "t": "2026-11-27T06:23:57Z",
+    "time": "07:23:57",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.6 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 6, mayhem mode 4, serial launcher 2)",
+    "n": 2800
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2798,
+  "lines": 2800,
   "flags": [
    {
     "coin": "Kibo",
@@ -21107,17 +21107,21 @@
    [
     1795760573,
     361.97
+   ],
+   [
+    1795760633,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795760576.780953,
+  "np_said": 1795760637.780896,
   "shadow": {
-   "n": 323,
-   "wins": 57,
-   "sum": -2729.9
+   "n": 324,
+   "wins": 58,
+   "sum": -2721.7
   },
   "np_speed": {
    "first_in": [
@@ -30700,9 +30704,9 @@
   }
  },
  "shadow": {
-  "n": 337,
-  "wins": 59,
-  "sum": -2928.4,
+  "n": 338,
+  "wins": 60,
+  "sum": -2920.2,
   "by": {
    "learner": {
     "n": 16,
@@ -30710,32 +30714,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 321,
-    "wins": 56,
-    "sum": -2730.6
+    "n": 322,
+    "wins": 57,
+    "sum": -2722.4
    }
   },
   "closed": [
-   {
-    "symbol": "DOOM",
-    "mint": "DJ3jYoWWSejGFSXnoBzVkxyvz4rEe3BZAxYvekhdpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:04:48Z",
-    "cost": 36.2,
-    "pnl_pct": -7.9,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:07:48Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.87,
-    "weight": 0.5
-   },
    {
     "symbol": "PILLOWLINE",
     "mint": "GkJmjPG7JwWanqeXG3Xfm3jTNxNq7xMhUXgmfqYXpump",
@@ -31115,12 +31099,31 @@
     "exit": "TP +10%",
     "pnl": 6.63,
     "weight": 0.5
+   },
+   {
+    "symbol": "TECH4ALL",
+    "mint": "ChnKMUFmgM7d9SuFfhzB7aPEwXErDVWDwUjpRxb7pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:21:55Z",
+    "cost": 36.2,
+    "pnl_pct": 8.2,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:23:35Z",
+    "exit": "TP +10%",
+    "pnl": 2.98,
+    "weight": 0.5
    }
   ],
   "open": [
    "USFF",
    "ORC",
-   "TECH4ALL",
    "GHOST"
   ]
  },
@@ -31132,8 +31135,8 @@
   "best": [
    {
     "label": "snipe · hour:day",
-    "n": 14,
-    "avg": -3.9
+    "n": 15,
+    "avg": -3.5
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -31163,7 +31166,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 321,
+  "shadows": 322,
   "memory": "snipe"
  }
 }
