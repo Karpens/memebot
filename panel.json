@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T20:52:26Z",
+ "updated": "2026-11-27T20:52:59Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6704,
+  "lines": 6705,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795776734,
-   59.14
-  ],
   [
    1795776794,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795812708,
    59.14
+  ],
+  [
+   1795812768,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,15 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T20:27:24Z",
-   "time": "21:27:24",
-   "agent": "LEARNER",
-   "coin": "DEGENMAS",
-   "action": "shadow",
-   "text": "SHADOW DEGENMAS · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000223769 (curve maths, every cost) · same exits, outside the book",
-   "n": 6505
-  },
-  {
    "t": "2026-11-27T20:27:25Z",
    "time": "21:27:25",
    "agent": "LEARNER",
@@ -6157,6 +6148,15 @@
    "action": "shadow",
    "text": "SHADOW pepe · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022135 (curve maths, every cost) · same exits, outside the book",
    "n": 6704
+  },
+  {
+   "t": "2026-11-27T20:52:34Z",
+   "time": "21:52:34",
+   "agent": "LEARNER",
+   "coin": "RUSTTAIL",
+   "action": "shadow",
+   "text": "SHADOW RUSTTAIL · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021377 (curve maths, every cost) · same exits, outside the book",
+   "n": 6705
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 370 (133 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 370 (133 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,24 +6221,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1697,
-    "last_event_age_s": 1.7,
+    "events": 1699,
+    "last_event_age_s": 9.5,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26707,
-    "last_event_age_s": 0.2,
+    "events": 26823,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1017,
-    "last_event_age_s": 1.1,
+    "events": 1018,
+    "last_event_age_s": 25.0,
     "errors": 57,
     "last_error": "example.com: HTTP 404"
    }
@@ -6251,9 +6251,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 9,
+  "followed": 8,
   "odd_readings": 370,
   "odd_coins": 133
  },
@@ -6302,30 +6302,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13962,
+   "sent": 13997,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13962,
+   "sent": 13997,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RUSTTAIL",
+   "name": "Rust Tail",
+   "mint": "H23Nsq3YtDAyRLeAk5aLdL22TVCrRR1hVchu6C9cpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.49,
+   "x": "https://x.com/dollardeployer",
+   "tg": false,
+   "web": "https://dollardeployer.netlify.app/coin/017/",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "pepe",
    "name": "MoonPepe",
    "mint": "AV9MZ1nwxAi4kcnFKEGBPq169J5xogm48bJZws2Wpump",
-   "age_s": 1,
-   "sol_in": 0.09,
+   "age_s": 34,
+   "sol_in": -0.9,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.6,
-   "mcap_sol": 30.0,
+   "sells": 1,
+   "rise_pct": -5.7,
+   "mcap_sol": 28.1,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.99,
    "x": "https://x.com/pepecoineth",
    "tg": false,
    "web": false,
@@ -6336,7 +6354,7 @@
    "symbol": "BPCATE",
    "name": "Looksmax CATE",
    "mint": "9AQusuzi3ubLwwDspLgfFhHuVcXdEvsH6NFSjAqfpump",
-   "age_s": 36,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6354,12 +6372,12 @@
    "symbol": "Lemon",
    "name": "Lemon Pig",
    "mint": "FHyXcQKYH49bjKaEBtZDGqiSraYKRhckkNP2p1Njpump",
-   "age_s": 70,
-   "sol_in": 31.46,
-   "buys": 24,
-   "sells": 22,
-   "rise_pct": 243.1,
-   "mcap_sol": 145.2,
+   "age_s": 103,
+   "sol_in": 29.2,
+   "buys": 33,
+   "sells": 38,
+   "rise_pct": 220.8,
+   "mcap_sol": 135.8,
    "dev_pct": 20.1,
    "big_sell": 9.49,
    "x": "https://x.com/humanevolvd/status/2126418544292495435?a=x1bzSb1lz_CisrnPjmI&s=46",
@@ -6372,12 +6390,12 @@
    "symbol": "Rockstar",
    "name": "Rockstar Games",
    "mint": "GzvEVUF9i9ub8x6FdA9DDUDY8F6skVYRKhYJ7Ducpump",
-   "age_s": 81,
-   "sol_in": 18.76,
-   "buys": 20,
-   "sells": 14,
-   "rise_pct": 143.6,
-   "mcap_sol": 84.7,
+   "age_s": 114,
+   "sol_in": 18.72,
+   "buys": 31,
+   "sells": 27,
+   "rise_pct": 143.3,
+   "mcap_sol": 84.6,
    "dev_pct": 11.1,
    "big_sell": 0.32,
    "x": "https://x.com/RockstarGames",
@@ -6390,11 +6408,11 @@
    "symbol": "MOONGIRL",
    "name": "MOONGIRL",
    "mint": "GYSq5S9GsHLL58KcszNKZkHdQg5tSnPhEoTGjJnDpump",
-   "age_s": 100,
-   "sol_in": 0.03,
-   "buys": 2,
+   "age_s": 133,
+   "sol_in": 0.05,
+   "buys": 3,
    "sells": 0,
-   "rise_pct": 0.2,
+   "rise_pct": 0.3,
    "mcap_sol": 28.3,
    "dev_pct": 0.5,
    "big_sell": 0.0,
@@ -6408,7 +6426,7 @@
    "symbol": "Cozy",
    "name": "Cozy Doge",
    "mint": "6RMzNeNcYXzrack7mnoJVKrF9A7xCoCpJpK4yPZXd5ck",
-   "age_s": 106,
+   "age_s": 139,
    "sol_in": 0.09,
    "buys": 1,
    "sells": 1,
@@ -6426,7 +6444,7 @@
    "symbol": "DOOYET",
    "name": "Doomed Yeti",
    "mint": "ys3NvgHbpAqTTucXAT6TzMvVTfx3NS27Jk3AjPipump",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6444,7 +6462,7 @@
    "symbol": "GURGLE",
    "name": "Gurgle",
    "mint": "8HjdknPvexohQJU9Jm7P4wxhnCSQysT3ovDcvzYUC5r3",
-   "age_s": 141,
+   "age_s": 174,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 1,
@@ -6462,7 +6480,7 @@
    "symbol": "Fullball",
    "name": "Fullball",
    "mint": "F7zwSEJVLCQMNxSinfnhb6KsyrtFwmiSRN29sQbArFqV",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": -2.73,
    "buys": 36,
    "sells": 3,
@@ -6475,66 +6493,28 @@
    "web": false,
    "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "USMS",
-   "name": "USMS",
-   "mint": "8Z5SXa5HZL96wN5GbdvfyxwD19kz525zoYd5JUxppump",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "LARD",
-   "name": "Lard",
-   "mint": "3DZsoyMgm2UxtPHjLwXZqKr16NkvDfu5r6xdjRmrPyJo",
-   "age_s": 154,
-   "sol_in": -0.99,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.99,
-   "x": "https://x.com/lil_zebbi",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "COIN",
-   "name": "coin",
-   "mint": "8odCLuFk95qmadzFooasSuAMsMpDB3dWw3otjhUe9yfn",
-   "age_s": 156,
-   "sol_in": 2.94,
-   "buys": 17,
-   "sells": 19,
-   "rise_pct": 18.6,
-   "mcap_sol": 40.0,
-   "dev_pct": 9.6,
-   "big_sell": 3.23,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "RUSTTAIL",
+   "mint": "H23Nsq3YtDAyRLeAk5aLdL22TVCrRR1hVchu6C9cpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T20:52:34Z",
+   "cost": 5.91,
+   "pnl_pct": -6.8,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.49
+  },
   {
    "symbol": "pepe",
    "mint": "AV9MZ1nwxAi4kcnFKEGBPq169J5xogm48bJZws2Wpump",
@@ -6543,7 +6523,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T20:52:25Z",
    "cost": 5.91,
-   "pnl_pct": -3.7,
+   "pnl_pct": -9.8,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6559,7 +6539,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T20:51:05Z",
    "cost": 5.91,
-   "pnl_pct": 0.0,
+   "pnl_pct": -0.1,
    "tier": "swing",
    "score": 4,
    "steps": 0,
@@ -6575,7 +6555,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T20:50:46Z",
    "cost": 5.91,
-   "pnl_pct": -3.5,
+   "pnl_pct": -3.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7005,7 +6985,7 @@
   "wins": 419,
   "win_rate": 22.4,
   "mean_pnl_pct": -7.39,
-  "open": 4,
+  "open": 5,
   "learner": {
    "n": 16,
    "wins": 3,
