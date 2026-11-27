@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:50:46Z",
-    "time": "08:50:46",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.4 a minute · 0 watched · 13 rejected (snipe not bought: trades tonight 6, mayhem mode 5, serial launcher 2)",
-    "n": 3262
-   },
-   {
-    "t": "2026-11-27T07:50:59Z",
-    "time": "08:50:59",
-    "agent": "LEARNER",
-    "coin": "BO6",
-    "action": "shadow",
-    "text": "SHADOW BO6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021263 (curve maths, every cost) · same exits, outside the book",
-    "n": 3263
-   },
-   {
     "t": "2026-11-27T07:51:10Z",
     "time": "08:51:10",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.0 a minute · 0 watched · 14 rejected (snipe not bought: trades tonight 8, mayhem mode 4, serial launcher 2)",
     "n": 3861
+   },
+   {
+    "t": "2026-11-27T09:40:13Z",
+    "time": "10:40:13",
+    "agent": "LEARNER",
+    "coin": "LINK",
+    "action": "shadow",
+    "text": "SHADOW LINK · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000044451 (curve maths, every cost) · same exits, outside the book",
+    "n": 3862
+   },
+   {
+    "t": "2026-11-27T09:40:15Z",
+    "time": "10:40:15",
+    "agent": "LEARNER",
+    "coin": "LINK",
+    "action": "shadow",
+    "text": "SHADOW LINK would have made +24.8% (TP +20%) · learned x0.5 · tier:swing now avg -11.2% over 55",
+    "n": 3863
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3861,
+  "lines": 3863,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795736340,
-    82.3
-   ],
    [
     1795736400,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795772354,
     361.97
+   ],
+   [
+    1795772414,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795772383.645297,
   "shadow": {
-   "n": 732,
-   "wins": 156,
-   "sum": -6130.4
+   "n": 733,
+   "wins": 157,
+   "sum": -6105.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 746,
-  "wins": 158,
-  "sum": -6328.9,
+  "n": 747,
+  "wins": 159,
+  "sum": -6304.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 730,
-    "wins": 155,
-    "sum": -6131.1
+    "n": 731,
+    "wins": 156,
+    "sum": -6106.3
    }
   },
   "closed": [
-   {
-    "symbol": "RINU",
-    "mint": "CBFvzMeUoDNwuY4fW3QLzGQLGHrq7GmZqWHM7utkp9F9",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:31:20Z",
-    "cost": 36.2,
-    "pnl_pct": -14.5,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.7,
-    "closed": "2026-11-27T09:31:40Z",
-    "exit": "stop -11%",
-    "pnl": -5.25,
-    "weight": 0.5
-   },
    {
     "symbol": "BUTKERA",
     "mint": "Dy7FrpqCeWjdK1eX3uxFYMSSA9jDbCg3fYEpdhkgpump",
@@ -31743,6 +31723,26 @@
     "exit": "TP +10%",
     "pnl": 3.51,
     "weight": 0.5
+   },
+   {
+    "symbol": "LINK",
+    "mint": "DyNKAzdz4br8UFKwqHEjCQLeydrPuC1itJyWfyUcpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:40:13Z",
+    "cost": 36.2,
+    "pnl_pct": 24.8,
+    "tier": "swing",
+    "score": 3,
+    "steps": 2,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 7.9,
+    "closed": "2026-11-27T09:40:15Z",
+    "exit": "TP +20%",
+    "pnl": 8.98,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31765,8 +31765,8 @@
    },
    {
     "label": "snipe · np:sol:6-12",
-    "n": 64,
-    "avg": -5.9
+    "n": 65,
+    "avg": -5.7
    },
    {
     "label": "snipe · hour:05-07",
@@ -31791,7 +31791,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 730,
+  "shadows": 731,
   "memory": "snipe"
  }
 }
