@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:37:54Z",
-    "time": "21:37:54",
-    "agent": "SCANNER",
-    "coin": "MCAP",
-    "action": "odd",
-    "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 363 odd readings from 128 coins tonight",
-    "n": 6585
-   },
-   {
-    "t": "2026-11-27T20:38:00Z",
-    "time": "21:38:00",
-    "agent": "LEARNER",
-    "coin": "Arise",
-    "action": "shadow",
-    "text": "SHADOW Arise would have made -13.9% (5 min, only -9%) · learned x0.5 · np:social:none now avg -8.5% over 300",
-    "n": 6586
-   },
-   {
     "t": "2026-11-27T20:38:02Z",
     "time": "21:38:02",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 1.322e+05 is not 30 + real SOL 0 (off +1.322e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 626 odd readings from 178 coins tonight",
     "n": 7184
+   },
+   {
+    "t": "2026-11-27T21:52:41Z",
+    "time": "22:52:41",
+    "agent": "LEARNER",
+    "coin": "ZERO",
+    "action": "shadow",
+    "text": "SHADOW ZERO would have made -11.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:web now avg -7.5% over 300",
+    "n": 7185
+   },
+   {
+    "t": "2026-11-27T21:52:46Z",
+    "time": "22:52:46",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.8 a minute · 0 watched · 14 rejected (snipe not bought: night at open  8, serial launcher 2, no bonding curve key 2)",
+    "n": 7186
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7184,
+  "lines": 7186,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795780347,
-    59.14
-   ],
    [
     1795780407,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795816308,
     59.14
+   ],
+   [
+    1795816368,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795816306.443361,
+  "np_said": 1795816366.44341,
   "shadow": {
-   "n": 2035,
+   "n": 2036,
    "wins": 465,
-   "sum": -14868.0
+   "sum": -14879.6
   },
   "np_speed": {
    "first_in": [
@@ -31982,9 +31982,9 @@
   }
  },
  "shadow": {
-  "n": 2049,
+  "n": 2050,
   "wins": 467,
-  "sum": -15066.5,
+  "sum": -15078.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31992,32 +31992,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2033,
+    "n": 2034,
     "wins": 464,
-    "sum": -14868.7
+    "sum": -14880.3
    }
   },
   "closed": [
-   {
-    "symbol": "EARTH",
-    "mint": "52BzS1JXvBiPfoSCxzhTBA9Lphk1iSW8aHjS6hBjpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:46:53Z",
-    "cost": 5.91,
-    "pnl_pct": -14.7,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.74,
-    "closed": "2026-11-27T21:46:55Z",
-    "exit": "stop -10%",
-    "pnl": -0.87,
-    "weight": 0.5
-   },
    {
     "symbol": "PMPXMAS",
     "mint": "DBJ2wrZxrCq3Kivpjo4dQQKRUXhrgPJHtqx3y8fLpump",
@@ -32397,10 +32377,29 @@
     "exit": "TP +10%",
     "pnl": 2.71,
     "weight": 0.5
+   },
+   {
+    "symbol": "ZERO",
+    "mint": "4Lg42gW6yedRJpm1agQjQSC6VaDaUxKrL8oKUjvZpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:48:01Z",
+    "cost": 5.91,
+    "pnl_pct": -11.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 1.57,
+    "closed": "2026-11-27T21:52:41Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.68,
+    "weight": 0.5
    }
   ],
   "open": [
-   "ZERO",
    "CHINAINU",
    "CMGC",
    "HUS",
@@ -32447,7 +32446,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 2241,
+  "shadows": 2242,
   "memory": "snipe"
  }
 }
