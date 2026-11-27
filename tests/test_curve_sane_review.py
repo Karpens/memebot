@@ -473,6 +473,29 @@ class Study(unittest.TestCase):
         self.assertEqual((san["odd_readings"], san["odd_coins"]), (2, 2))
         self.assertEqual(sorted(cv.mint for cv in views if cv.odd), sorted([m3, m4]))
 
+    def test_the_odd_breakdown_tells_a_foreign_curve_from_a_gate_too_tight(self):
+        TS, st = self.TS, self.st
+        tp = TS.Tape(cfg=dict(TS.CFG))
+        tp.coin(TS.mint(1), TS.START + 100, [0.8, 1.5])                           # sane all along
+        m2 = tp.coin(TS.mint(2), TS.START + 200, [])                              # every reading on a 4.29 SOL base
+        for j, rs in enumerate((0.1593, 0.8961, 0.7974)):
+            tp.add({"k": "c", "m": m2, "t": TS.START + 201.0 + j, "s": 50 + j, "vs": round((4.29 + rs) * 1e9),
+                    "vt": 1060000000000000, "rs": round(rs * 1e9)})
+        m3 = tp.coin(TS.mint(3), TS.START + 300, [0.8, 1.5])                      # sane, then one reserves product off
+        tp.add({"k": "c", "m": m3, "t": TS.START + 305.0, "s": 90, "vs": 32 * 10 ** 9, "vt": 900000000000000,
+                "rs": 2 * 10 ** 9})
+        views, _, _ = self.views(tp)
+        san = st.sanity(views)
+        self.assertEqual((san["odd_readings"], san["odd_coins"]), (4, 2))
+        self.assertEqual(san["odd_kinds"], {"vsol off 30 + real SOL": [3, 1], "reserves product": [1, 1]})
+        self.assertEqual((san["odd_all_coins"], san["odd_mixed_coins"], san["odd_first_coins"]), (1, 1, 1))
+        self.assertEqual(san["odd_mixed_kinds"], {"reserves product": 1})
+        self.assertEqual(san["odd_bases"], [[4.29, 3, 1]])
+        self.assertEqual(st.odd_kind("price 1e-08 SOL under the launch price 2.8e-08"), "under the launch price")
+        self.assertEqual(st.odd_kind("no reserves (a zeroed or not yet initialized account)"), "no reserves")
+        self.assertEqual(st.odd_kind("not a pump.fun bonding curve (its Anchor discriminator)"), "not a pump.fun account")
+        self.assertEqual(st.odd_kind(None), "other")
+
 
 if __name__ == "__main__":
     unittest.main()

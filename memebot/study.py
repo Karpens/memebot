@@ -600,7 +600,8 @@ class CoinView(object):
     __slots__ = ("idx", "mint", "sym", "t0", "hour", "creator", "dev_pct", "skip", "skip0", "cfg", "watch_s", "rsol0",
                  "price0", "ts", "vs", "vt", "rs", "px", "cx", "bu", "se", "smax", "d", "gb", "gs", "pk",
                  "iv", "follow_t", "gaps", "held", "near_t", "mom", "fires", "buys", "sells", "shadows", "metas",
-                 "rugs", "ends", "last_t", "decs", "part", "migrate_t", "snipe_fires", "odd")
+                 "rugs", "ends", "last_t", "decs", "part", "migrate_t", "snipe_fires", "odd",
+                 "sane", "odd_first", "odd_kinds", "odd_bases")
 
     def __init__(self):
         for k in self.__slots__:
@@ -842,7 +843,7 @@ def build_view(tp, mk, creators, variants, fire_check=True):
     mom = {}
     if fire_check and not snipe_run(mk, t0):            # the run's own trigger, as it ran (newpairs' defaults under it);
         pending.append(MomVariant("RUN", mk.start_cfg(t0) or cfg))  # a SNIPE run had none
-    cv.odd = 0
+    cv.odd, cv.sane, cv.odd_first, cv.odd_kinds, cv.odd_bases = 0, 0, None, collections.Counter(), collections.Counter()
     for r in tp["readings"]:
         t = r["t"]
         if t < coin.t0 - EPS:
@@ -852,6 +853,16 @@ def build_view(tp, mk, creators, variants, fire_check=True):
         if why is not None and not newpairs.complete_flag(rd, why):
             cv.odd += 1                                 # no standard pump.fun curve reads so (the Tape checks count it);
                                                         # a migrated curve's withdrawn reserves are its completion
+            kind = odd_kind(why)
+            cv.odd_kinds[kind] += 1
+            if kind == "vsol off 30 + real SOL" and r["vsol"] is not None and r["rsol"] is not None:
+                cv.odd_bases[round(r["vsol"] - r["rsol"], 2)] += 1     # the curve's own virtual base, in SOL
+            if cv.odd_first is None:
+                cv.odd_first = True
+        elif why is None:
+            cv.sane += 1
+            if cv.odd_first is None:
+                cv.odd_first = False
         rr = newpairs.read_curve({"vsol": r["vsol"], "vtok": r["vtok"], "rsol": r["rsol"], "complete": r["complete"],
                                   "slot": r["slot"]}) if r["vsol"] else None
         if rr is None:
@@ -2417,9 +2428,57 @@ def sanity(views):
         if cv.cx[-1]:
             done.append(cv.rs[-1])
     odd = [cv.odd or 0 for cv in views]
-    return {"readings": n, "vsol_not_30_plus_real": bad, "completed": len(done),
-            "complete_real_sol": [rnd(min(done), 1), rnd(median(done), 1), rnd(max(done), 1)] if done else None,
-            "odd_readings": sum(odd), "odd_coins": sum(1 for x in odd if x)}
+    out = {"readings": n, "vsol_not_30_plus_real": bad, "completed": len(done),
+           "complete_real_sol": [rnd(min(done), 1), rnd(median(done), 1), rnd(max(done), 1)] if done else None,
+           "odd_readings": sum(odd), "odd_coins": sum(1 for x in odd if x)}
+    out.update(odd_breakdown(views))
+    return out
+
+
+ODD_KINDS = (("virtual SOL", "vsol off 30 + real SOL"), ("reserves product", "reserves product"),
+             ("price", "under the launch price"), ("past the completion", "past the completion"),
+             ("supply", "supply"), ("not a pump.fun", "not a pump.fun account"), ("no reserves", "no reserves"),
+             ("no virtual", "no reserves"), ("negative", "no reserves"))
+
+
+def odd_kind(why):
+    """newpairs.curve_sane's reason (or a tape line's "o", the same words cut at 80 characters) -> its kind."""
+    w = str(why or "")
+    for head, kind in ODD_KINDS:
+        if w.startswith(head):
+            return kind
+    return "other"
+
+
+def odd_breakdown(views):
+    """What the odd readings are, to tell a curve no standard pump.fun curve is (every reading odd: another program's
+    or another quote's account; the live gate is right to reject it) from a gate that is too tight (a coin with sane
+    readings and now and then an odd one: the live bot rejects it for good on the first). odd_kinds {kind: [readings,
+    coins]}; odd_all_coins (no sane reading), odd_mixed_coins (sane and odd) and their kinds (odd_mixed_kinds, in
+    readings), odd_first_coins (the first reading after the create odd: never a SNIPE), and odd_bases: the commonest
+    virtual SOL less real SOL of the readings off the identity (a standard curve's is 30), [base, readings, coins]."""
+    kinds, kcoins, mixed, bases, bcoins = (collections.Counter() for _ in range(5))
+    n_all = n_mixed = n_first = 0
+    for cv in views:
+        if not getattr(cv, "odd", 0):
+            continue
+        ks = getattr(cv, "odd_kinds", None) or {}
+        kinds.update(ks)
+        kcoins.update(ks.keys())
+        if getattr(cv, "sane", 0):
+            n_mixed += 1
+            mixed.update(ks)
+        else:
+            n_all += 1
+        if getattr(cv, "odd_first", None):
+            n_first += 1
+        bs = getattr(cv, "odd_bases", None) or {}
+        bases.update(bs)
+        bcoins.update(bs.keys())
+    return {"odd_kinds": {k: [v, kcoins[k]] for k, v in kinds.most_common()},
+            "odd_all_coins": n_all, "odd_mixed_coins": n_mixed, "odd_mixed_kinds": dict(mixed.most_common()),
+            "odd_first_coins": n_first,
+            "odd_bases": [[b, v, bcoins[b]] for b, v in bases.most_common(6)]}
 
 
 def fire_check(views):
@@ -3055,6 +3114,17 @@ def markdown(rep):
                        cov.get("creates") or 0, cov.get("near") or 0, cov.get("followed") or 0,
                        cov.get("cap_ends") or 0, cov.get("cap_before_600s") or 0, cov.get("gap_coins") or 0,
                        cov.get("late_bloomers_unseen") or 0, cov.get("unknown_s") or 0))
+        out.append("")
+    if san.get("odd_coins"):
+        out.append("**Odd readings** (is the live gate too tight?): by kind %s (readings / coins) · %d coins with every "
+                   "reading odd, %d with sane readings too (their odd ones: %s; the live bot rejects such a coin for "
+                   "good on its first odd one), %d with an odd first reading · virtual SOL less real SOL off the "
+                   "identity (a standard curve's is 30): %s (base: readings / coins)" % (
+                       ", ".join("%s %d / %d" % (k, v[0], v[1]) for k, v in (san.get("odd_kinds") or {}).items()),
+                       san.get("odd_all_coins") or 0, san.get("odd_mixed_coins") or 0,
+                       ", ".join("%s %d" % kv for kv in (san.get("odd_mixed_kinds") or {}).items()) or "none",
+                       san.get("odd_first_coins") or 0,
+                       ", ".join("%g: %d / %d" % tuple(b) for b in (san.get("odd_bases") or [])) or "none"))
         out.append("")
     covd = rep.get("coverage") or {}
     bl, hb, ps = covd.get("blind") or {}, covd.get("holes_by_cause") or {}, covd.get("poller_stretches") or {}
