@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:00:41Z",
-    "time": "20:00:41",
-    "agent": "LEARNER",
-    "coin": "chud",
-    "action": "shadow",
-    "text": "SHADOW chud would have made +17.7% (TP +20%) · learned x0.5 · np:buys:90+ now avg -8.0% over 300",
-    "n": 5784
-   },
-   {
-    "t": "2026-11-27T19:00:45Z",
-    "time": "20:00:45",
-    "agent": "SCANNER",
-    "coin": "Dogball",
-    "action": "odd",
-    "text": "odd curve reading: virtual SOL 1.202e+05 is not 30 + real SOL 0 (off +1.202e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 256 odd readings from 96 coins tonight",
-    "n": 5785
-   },
-   {
     "t": "2026-11-27T19:00:45Z",
     "time": "20:00:45",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 6.4 a minute · 0 watched · 15 rejected (mayhem mode 6, snipe not bought: night at open  4, serial launcher 2)",
     "n": 6383
+   },
+   {
+    "t": "2026-11-27T20:13:54Z",
+    "time": "21:13:54",
+    "agent": "LEARNER",
+    "coin": "calloutball",
+    "action": "shadow",
+    "text": "SHADOW calloutball would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -7.9% over 300",
+    "n": 6384
+   },
+   {
+    "t": "2026-11-27T20:14:17Z",
+    "time": "21:14:17",
+    "agent": "LEARNER",
+    "coin": "MIND",
+    "action": "shadow",
+    "text": "SHADOW MIND · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021321 (curve maths, every cost) · same exits, outside the book",
+    "n": 6385
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6383,
+  "lines": 6385,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795810430.443391,
   "shadow": {
-   "n": 1728,
+   "n": 1729,
    "wins": 377,
-   "sum": -13289.8
+   "sum": -13297.0
   },
   "np_speed": {
    "first_in": [
@@ -31920,9 +31920,9 @@
   }
  },
  "shadow": {
-  "n": 1742,
+  "n": 1743,
   "wins": 379,
-  "sum": -13488.3,
+  "sum": -13495.5,
   "by": {
    "learner": {
     "n": 16,
@@ -31930,32 +31930,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1726,
+    "n": 1727,
     "wins": 376,
-    "sum": -13290.5
+    "sum": -13297.7
    }
   },
   "closed": [
-   {
-    "symbol": "Apple",
-    "mint": "2rYom2XjVa8tKn7U9GxgkWAydUh4dpHnyHWJ73ozpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:04:19Z",
-    "cost": 5.91,
-    "pnl_pct": -32.6,
-    "tier": "swing",
-    "score": 4,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 17.92,
-    "closed": "2026-11-27T20:06:06Z",
-    "exit": "dump: 24.5 SOL sold",
-    "pnl": -1.93,
-    "weight": 0.5
-   },
    {
     "symbol": "MILKERS",
     "mint": "DNPH8RoMFmSSwd5SD67arZadWZGRVa4T6j4JQ2VJsXj3",
@@ -32335,13 +32315,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "calloutball",
+    "mint": "RCpeX3X6T2YsG3wgwPBrbmMNxJyEkYnXBk74HxVpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:10:07Z",
+    "cost": 5.91,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T20:13:54Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.43,
+    "weight": 0.5
    }
   ],
   "open": [
-   "calloutball",
    "HADESCOIN",
    "⚔️",
-   "ORANGE"
+   "ORANGE",
+   "MIND"
   ]
  },
  "learner_summary": {
@@ -32383,7 +32383,7 @@
     "avg": -8.9
    }
   ],
-  "shadows": 1934,
+  "shadows": 1935,
   "memory": "snipe"
  }
 }
