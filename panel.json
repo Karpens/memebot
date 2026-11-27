@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T22:25:33Z",
+ "updated": "2026-11-27T22:26:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7499,
+  "lines": 7502,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795782327,
-   59.14
-  ],
   [
    1795782387,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795818288,
    59.14
+  ],
+  [
+   1795818348,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,33 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T22:01:50Z",
-   "time": "23:01:50",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 15.2 a minute · 0 watched · 47 rejected (snipe not bought: night at open  39, mayhem mode 5, no symbol or name 2)",
-   "n": 7300
-  },
-  {
-   "t": "2026-11-27T22:01:59Z",
-   "time": "23:01:59",
-   "agent": "LEARNER",
-   "coin": "Dabo",
-   "action": "shadow",
-   "text": "SHADOW Dabo would have made -21.0% (dump: 2.5 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.5% over 258.5",
-   "n": 7301
-  },
-  {
-   "t": "2026-11-27T22:01:59Z",
-   "time": "23:01:59",
-   "agent": "LEARNER",
-   "coin": "БОРИС",
-   "action": "shadow",
-   "text": "SHADOW БОРИС would have made -21.5% (dump: 2.5 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.5% over 259",
-   "n": 7302
-  },
-  {
    "t": "2026-11-27T22:02:06Z",
    "time": "23:02:06",
    "agent": "LEARNER",
@@ -6157,6 +6130,33 @@
    "action": "scan",
    "text": "new pairs · 7.6 a minute · 0 watched · 30 rejected (snipe not bought: night at open  14, odd curve reading: virtual SOL i 13, mayhem mode 2)",
    "n": 7499
+  },
+  {
+   "t": "2026-11-27T22:25:46Z",
+   "time": "23:25:46",
+   "agent": "RISK",
+   "coin": "ANTROPIES",
+   "action": "skip",
+   "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "n": 7500
+  },
+  {
+   "t": "2026-11-27T22:25:46Z",
+   "time": "23:25:46",
+   "agent": "LEARNER",
+   "coin": "ANTROPIES",
+   "action": "shadow",
+   "text": "SHADOW ANTROPIES · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021315 (curve maths, every cost) · same exits, outside the book",
+   "n": 7501
+  },
+  {
+   "t": "2026-11-27T22:26:04Z",
+   "time": "23:26:04",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 7.0 a minute · 0 watched · 25 rejected (odd curve reading: virtual SOL i 12, snipe not bought: night at open  11, mayhem mode 2)",
+   "n": 7502
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 778 (207 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 779 (207 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,24 +6221,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2423,
-    "last_event_age_s": 15.2,
+    "events": 2424,
+    "last_event_age_s": 21.3,
     "errors": 4,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 37786,
-    "last_event_age_s": 1.1,
+    "events": 37850,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1532,
-    "last_event_age_s": 42.9,
+    "events": 1533,
+    "last_event_age_s": 19.7,
     "errors": 98,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6251,10 +6251,10 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 7.2,
+  "creates_per_min": 7.0,
   "watching": 0,
   "followed": 23,
-  "odd_readings": 778,
+  "odd_readings": 779,
   "odd_coins": 207
  },
  "learner": {
@@ -6302,23 +6302,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19907,
+   "sent": 19943,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19907,
+   "sent": 19943,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ANTROPIES",
+   "name": "Antropies",
+   "mint": "6bj3Wz8vDX5r3eeWVsEbv118DHorMAvwUs8aXcmXpump",
+   "age_s": 21,
+   "sol_in": -0.01,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -0.1,
+   "mcap_sol": 29.0,
+   "dev_pct": 2.0,
+   "big_sell": 0.05,
+   "x": "https://x.com/IOHK_Charles/status/2126441375411696112",
+   "tg": false,
+   "web": "https://x.com/Lanceurpump",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "NPL",
    "name": "Node Pad Labs",
    "mint": "BKaCjyMLEHZoD5Qxi3dn5FfGrDdRfhm5KVvnxLzypump",
-   "age_s": 15,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6336,7 +6354,7 @@
    "symbol": "NAPHOUND",
    "name": "Sidewalk Dog",
    "mint": "HABfj583JhMTEvW7Cv3iqBJmNTFb93u2eGhLLdW9b14n",
-   "age_s": 43,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6354,7 +6372,7 @@
    "symbol": "RETIRE2",
    "name": "The Last Play",
    "mint": "JBVAKQrr1kdEUf9rLMyNmkfexntSkaDq3dUwpqn9pump",
-   "age_s": 48,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6372,11 +6390,11 @@
    "symbol": "DERIVR",
    "name": "derivR",
    "mint": "73VhF2PabE45j6LzhZiwMBRpSUeYjnWqBvoDtDTfpump",
-   "age_s": 49,
-   "sol_in": 2.02,
+   "age_s": 82,
+   "sol_in": 2.01,
    "buys": 19,
-   "sells": 14,
-   "rise_pct": 13.5,
+   "sells": 15,
+   "rise_pct": 13.4,
    "mcap_sol": 33.8,
    "dev_pct": 3.4,
    "big_sell": 43.56,
@@ -6390,7 +6408,7 @@
    "symbol": "NIGHTHALF",
    "name": "Night Half",
    "mint": "6oxdKCEv7WWR6UuESFCBS7R6Kp8JGLc7nXmJuNWvpump",
-   "age_s": 50,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6408,7 +6426,7 @@
    "symbol": "HALH",
    "name": "Haaland Hair",
    "mint": "CHghrvYLBxTcuiY7rexJFAVq8PEmuQBoErd6SJYpump",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6426,7 +6444,7 @@
    "symbol": "USDC",
    "name": "United States Dollar Coin",
    "mint": "Ami83n7JMHVc4Yi2yrfmfm3Sd55bdcxadJQ2wbi1pump",
-   "age_s": 68,
+   "age_s": 101,
    "sol_in": 0.16,
    "buys": 1,
    "sells": 1,
@@ -6444,7 +6462,7 @@
    "symbol": "pisscat",
    "name": "pisscat",
    "mint": "48P5nKWBYsgsqeo4zCvzyByhnngefPPb7ww9V9nFpump",
-   "age_s": 81,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6462,7 +6480,7 @@
    "symbol": "TUNMANAO",
    "name": "TunManao",
    "mint": "CKyB2Ap8iyVDF3dT3ntv4bpuF2YKZXGr8A5f9cThpump",
-   "age_s": 114,
+   "age_s": 147,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 1,
@@ -6480,7 +6498,7 @@
    "symbol": "TunManao",
    "name": "Tun-Manao",
    "mint": "9SqRimozfBx8TQhsgW9rLqGBLvrs6Ek5Pv6k2ZJipump",
-   "age_s": 114,
+   "age_s": 147,
    "sol_in": -0.66,
    "buys": 9,
    "sells": 11,
@@ -6498,7 +6516,7 @@
    "symbol": "USDC",
    "name": "USDC",
    "mint": "SRMP7naHnyJqMfMnAfJmEEiBkJWyVL3xrneyMEEpump",
-   "age_s": 116,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6516,12 +6534,12 @@
    "symbol": "DERIVR",
    "name": "derivR",
    "mint": "987NbmCWUk5pggQfQzMUDirCbJPfM3uaeZ5niTWpump",
-   "age_s": 122,
-   "sol_in": 7.7,
-   "buys": 23,
-   "sells": 34,
-   "rise_pct": 57.4,
-   "mcap_sol": 44.8,
+   "age_s": 155,
+   "sol_in": 8.28,
+   "buys": 27,
+   "sells": 35,
+   "rise_pct": 62.2,
+   "mcap_sol": 46.2,
    "dev_pct": 1.0,
    "big_sell": 6.16,
    "x": "https://x.com/derivrdotfun",
@@ -6534,7 +6552,7 @@
    "symbol": "HEART",
    "name": "Knave Heart",
    "mint": "EaAQxrFuurmzPjQ4ERtpcJWWqULg1c1s5u7nF8Ksw84X",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6552,7 +6570,7 @@
    "symbol": "BACK",
    "name": "Knave Back",
    "mint": "3Q3Vr1TN3LeRxHZRKXwpr7A2UPDKsZu6pv8jMrqzCgDq",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6570,7 +6588,7 @@
    "symbol": "STACK",
    "name": "Knave Stack",
    "mint": "5fgSoBr2dsroj2GW7RfGYkHuMzMNysLowqBkqXNUgktG",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6588,7 +6606,7 @@
    "symbol": "SPADE",
    "name": "Knave Spade",
    "mint": "7kTrGceipMGWdrmLcmvYLPArdNoUY7pPmGNMmGTx1eXp",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6606,7 +6624,7 @@
    "symbol": "LAMP",
    "name": "Knave Lamp",
    "mint": "328uBJCyFY4EW1ZrqRtk4LXbgDgd6GWdEg3bU3GjQQRi",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6624,7 +6642,7 @@
    "symbol": "FAN",
    "name": "Knave Fan",
    "mint": "37H7VaBhnwprtP4yvjHpEHnrLqivLrxMBKHgHZMmne5r",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6642,7 +6660,7 @@
    "symbol": "CAP",
    "name": "Knave Cap",
    "mint": "B11Jw8G65MzTmFvN6Qgfh3Xr3VTzguq9aEYG6J52zfTW",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6655,30 +6673,28 @@
    "web": "https://knave.lol",
    "status": "rejected: odd curve reading: virtual SOL 2.364e+05 is not 30 + real SOL 1.188e+04 (off +2.245e+05 SOL)",
    "why": "odd curve reading: virtual SOL 2.364e+05 is not 30 + real SOL 1.188e+04 (off +2.245e+05 SOL)"
-  },
-  {
-   "symbol": "DECK",
-   "name": "Knave Deck",
-   "mint": "C21wimRGNPykHrs9mMgyRN7m8BVEpocAVC84k2nYVHWA",
-   "age_s": 127,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/KnaveLol",
-   "tg": false,
-   "web": "https://knave.lol",
-   "status": "rejected: odd curve reading: virtual SOL 2.393e+05 is not 30 + real SOL 1.474e+04 (off +2.245e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.393e+05 is not 30 + real SOL 1.474e+04 (off +2.245e+05 SOL)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "ANTROPIES",
+   "mint": "6bj3Wz8vDX5r3eeWVsEbv118DHorMAvwUs8aXcmXpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T22:25:46Z",
+   "cost": 5.91,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.05
+  },
   {
    "symbol": "NAPHOUND",
    "mint": "HABfj583JhMTEvW7Cv3iqBJmNTFb93u2eGhLLdW9b14n",
@@ -7165,7 +7181,7 @@
   "wins": 498,
   "win_rate": 22.9,
   "mean_pnl_pct": -7.38,
-  "open": 5,
+  "open": 6,
   "learner": {
    "n": 16,
    "wins": 3,
