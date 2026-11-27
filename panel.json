@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:19:02Z",
+ "updated": "2026-11-27T09:19:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3751,
+  "lines": 3752,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795735080,
-   82.3
-  ],
   [
    1795735140,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795771094,
    361.97
+  ],
+  [
+   1795771154,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:41:18Z",
-   "time": "09:41:18",
-   "agent": "LEARNER",
-   "coin": "$CATNADO",
-   "action": "shadow",
-   "text": "SHADOW $CATNADO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000041496 (curve maths, every cost) · same exits, outside the book",
-   "n": 3552
-  },
-  {
    "t": "2026-11-27T08:41:20Z",
    "time": "09:41:20",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "shadow",
    "text": "SHADOW DRAW would have made +9.9% (TP +10%) · learned x0.5 · np:social:web now avg -8.3% over 265",
    "n": 3751
+  },
+  {
+   "t": "2026-11-27T09:19:08Z",
+   "time": "10:19:08",
+   "agent": "LEARNER",
+   "coin": "POKE",
+   "action": "shadow",
+   "text": "SHADOW POKE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022461 (curve maths, every cost) · same exits, outside the book",
+   "n": 3752
   }
  ],
  "nights": [
@@ -6592,7 +6592,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6600,15 +6600,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 575,
-    "last_event_age_s": 2.0,
+    "events": 578,
+    "last_event_age_s": 13.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14510,
+    "events": 14561,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -6616,8 +6616,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 326,
-    "last_event_age_s": 1.9,
+    "events": 327,
+    "last_event_age_s": 22.3,
     "errors": 18,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,9 +6630,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 7
+  "followed": 6
  },
  "learner": {
   "samples": 249,
@@ -6679,30 +6679,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7128,
+   "sent": 7158,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7139,
+   "sent": 7169,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Kai",
+   "name": "Kai Ken",
+   "mint": "8R4UQY4H9jwhEcYaskLbrEmLp2amunpUVC5uiymdpump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "POKE",
+   "name": "ALOHA POKE FAN TOKEN",
+   "mint": "GzGmseaqtvEWbzXebogqd8TQadLrxU697VjUX4Eopump",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.4,
+   "dev_pct": 2.6,
+   "big_sell": 0.01,
+   "x": "https://x.com/punchcard_club",
+   "tg": false,
+   "web": "https://punchcard.club/aloha-fish/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "nothing",
    "name": "nothing to lose",
    "mint": "3QMpPRY22woXeRJquXZ5RiCEeify8JPq2UZE7pb5f98J",
-   "age_s": 2,
-   "sol_in": 8.46,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 54.3,
-   "mcap_sol": 58.5,
+   "age_s": 30,
+   "sol_in": 1.86,
+   "buys": 10,
+   "sells": 16,
+   "rise_pct": 10.9,
+   "mcap_sol": 42.1,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 4.46,
    "x": "https://x.com/MarioPrezldente/status/2126244384568217646",
    "tg": false,
    "web": false,
@@ -6713,12 +6749,12 @@
    "symbol": "DRAW",
    "name": "drawler",
    "mint": "DrH8U6sCxKUwa5NjVFX7q131JeNteh7g1F9j87oapump",
-   "age_s": 49,
-   "sol_in": 3.97,
-   "buys": 5,
+   "age_s": 77,
+   "sol_in": 7.05,
+   "buys": 8,
    "sells": 1,
-   "rise_pct": 27.3,
-   "mcap_sol": 37.9,
+   "rise_pct": 50.7,
+   "mcap_sol": 44.9,
    "dev_pct": 3.3,
    "big_sell": 0.25,
    "x": "https://x.com/Drawlerbot",
@@ -6731,7 +6767,7 @@
    "symbol": "Kai",
    "name": "Kai Ken",
    "mint": "2UFG1CRTXizNAeskeP7Q9BLAWourhxwkcqxbUiiUpump",
-   "age_s": 66,
+   "age_s": 94,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6749,7 +6785,7 @@
    "symbol": "JFK INU",
    "name": "JFK INU",
    "mint": "932UC8xXjhJHmYpXhmoFuXEAfeZzWju3GZP5wJDspump",
-   "age_s": 89,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6767,7 +6803,7 @@
    "symbol": "Durag Dog",
    "name": "ChiHu",
    "mint": "3AYCZzj8sQhsKDf2dJQcYU1QYzQ5B2hd8nmnbhQUpump",
-   "age_s": 113,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6785,12 +6821,12 @@
    "symbol": "Gemma",
    "name": "ジェマ",
    "mint": "FHigR4sW5hzij8sX3qX4vjjS3ThNMcYSfWgPeopBpump",
-   "age_s": 119,
-   "sol_in": 13.42,
-   "buys": 33,
-   "sells": 37,
-   "rise_pct": 98.0,
-   "mcap_sol": 66.8,
+   "age_s": 147,
+   "sol_in": 16.67,
+   "buys": 41,
+   "sells": 45,
+   "rise_pct": 126.7,
+   "mcap_sol": 76.5,
    "dev_pct": 9.6,
    "big_sell": 3.9,
    "x": "https://x.com/ZzzzzSol/status/2126243891712033243",
@@ -6798,48 +6834,28 @@
    "web": "https://x.com/i/status/2126142529473298695",
    "status": "rejected: serial launcher: 3 more coins in 60 min",
    "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "baobabF",
-   "name": "Cat Fat",
-   "mint": "7W4SxgsQwJ9J7qWpKq9sizGM1WjEuwPAAwnWjrF2pump",
-   "age_s": 161,
-   "sol_in": -0.09,
-   "buys": 2,
-   "sells": 4,
-   "rise_pct": -0.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.3,
-   "big_sell": 0.1,
-   "x": "https://x.com/pip0pkajou/status/2122673788135542983",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "NotAlfa",
-   "name": "NotAlfa",
-   "mint": "BhjCvtiQJkHZoVKaAv6rQVcnJ9fKVCvBbZnBLSCkpump",
-   "age_s": 165,
-   "sol_in": 3.13,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 21.2,
-   "mcap_sol": 36.2,
-   "dev_pct": 3.4,
-   "big_sell": 0.23,
-   "x": "https://x.com/Alfa_or_Not",
-   "tg": false,
-   "web": "https://x.com/notab2d_",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "POKE",
+   "mint": "GzGmseaqtvEWbzXebogqd8TQadLrxU697VjUX4Eopump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:19:08Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.01
+  },
   {
    "symbol": "JFK INU",
    "mint": "932UC8xXjhJHmYpXhmoFuXEAfeZzWju3GZP5wJDspump",
@@ -6864,7 +6880,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:17:09Z",
    "cost": 36.2,
-   "pnl_pct": -3.8,
+   "pnl_pct": -3.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7294,7 +7310,7 @@
   "wins": 148,
   "win_rate": 21.0,
   "mean_pnl_pct": -8.49,
-  "open": 3,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
