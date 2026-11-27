@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T04:13:27Z",
+ "updated": "2026-11-27T04:13:59Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 261.72,
- "equity": 289.81,
+ "equity": 289.84,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 162,
   "checked": 158,
   "filtered": 5,
-  "lines": 1782,
+  "lines": 1784,
   "last_rug": {
    "coin": "QHMQLRV",
    "pass": true
@@ -1324,6 +1324,10 @@
   [
    1795752773,
    289.8
+  ],
+  [
+   1795752833,
+   289.84
   ]
  ],
  "position_pct": 10.0,
@@ -1334,14 +1338,14 @@
    "symbol": "QHMQLRV",
    "mint": "BY2DwkFgWUCAQENhpuyjtAqyXS6wb8A25jGwBCy1JgUx",
    "cost": 29.2,
-   "value": 28.1,
-   "pnl_pct": -3.8,
+   "value": 28.12,
+   "pnl_pct": -3.7,
    "opened": "2026-11-27T04:11:18Z",
    "url": "https://pump.fun/coin/BY2DwkFgWUCAQENhpuyjtAqyXS6wb8A25jGwBCy1JgUx",
    "reason": "snipe · first reading 0.4 s after the create · 0.2 SOL in · +1% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.12572e-06,
-   "price": 2.05026e-06,
+   "price": 2.05203e-06,
    "slip": 1.3,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -3622,24 +3626,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T03:46:25Z",
-   "time": "04:46:25",
-   "agent": "NEWS",
-   "coin": "SunCoin",
-   "action": "plan",
-   "text": "hold plan · 0.5/10 (X post) · scalp: +10",
-   "n": 1583
-  },
-  {
-   "t": "2026-11-27T03:46:33Z",
-   "time": "04:46:33",
-   "agent": "EXECUTOR",
-   "coin": "SOLSY",
-   "action": "exit",
-   "text": "EXIT SOLSY $-6.18 (-14%) · curve quiet for 3 min (no trade)",
-   "n": 1584
-  },
-  {
    "t": "2026-11-27T03:46:33Z",
    "time": "04:46:33",
    "agent": "LEARNER",
@@ -5420,6 +5406,24 @@
    "action": "shadow",
    "text": "SHADOW Christmas · not bought (pause after a losing streak) · followed as if bought: $28.98 at 0.0000062582 (curve maths, every cost) · same exits, outside the book",
    "n": 1782
+  },
+  {
+   "t": "2026-11-27T04:13:27Z",
+   "time": "05:13:27",
+   "agent": "LEARNER",
+   "coin": "Christmas",
+   "action": "shadow",
+   "text": "SHADOW Christmas would have made -13.4% (dump: 2.9 SOL sold) · learned x0.5 · np:sol:12+ now avg -17.3% over 14.5",
+   "n": 1783
+  },
+  {
+   "t": "2026-11-27T04:13:36Z",
+   "time": "05:13:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (serial launcher 3, no symbol or name 2, mayhem mode 2)",
+   "n": 1784
   }
  ],
  "nights": [
@@ -5480,7 +5484,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 18 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 17 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5488,15 +5492,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 796,
-    "last_event_age_s": 1.2,
+    "events": 797,
+    "last_event_age_s": 3.2,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19743,
+    "events": 19853,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -5505,7 +5509,7 @@
     "name": "metadata",
     "connected": true,
     "events": 545,
-    "last_event_age_s": 1.1,
+    "last_event_age_s": 33.1,
     "errors": 51,
     "last_error": "example.com: HTTP 404"
    }
@@ -5518,7 +5522,7 @@
   "exit_ms": 35,
   "exit_last_ms": 37,
   "launch_to_entry_s": 0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 2.6,
   "watching": 0,
   "followed": 5
  },
@@ -5558,22 +5562,22 @@
    {
     "label": "snipe · np:sol:12+",
     "n": 14,
-    "avg": -17.4
+    "avg": -17.3
    }
   ],
-  "shadows": 205,
+  "shadows": 206,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9762,
+   "sent": 9796,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9761,
+   "sent": 9795,
    "errors": 0,
    "last_error": null
   }
@@ -5583,14 +5587,14 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "AgBxPNBFmBks58rtVnp2ZW5WHtE2968qTPWgDEvbpump",
-   "age_s": 1,
-   "sol_in": 17.87,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 128.4,
-   "mcap_sol": 86.6,
+   "age_s": 33,
+   "sol_in": 18.45,
+   "buys": 27,
+   "sells": 26,
+   "rise_pct": 133.5,
+   "mcap_sol": 88.5,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 2.99,
    "x": "https://x.com/humanevolvd/status/2126167397958877607?a=Zd1DwaL0UeUtuOBeM2I&s=46",
    "tg": false,
    "web": false,
@@ -5601,7 +5605,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BYd8rB8Dyx3q13gpuqpRD9m5NFwdfSjrjJjarWBTpump",
-   "age_s": 44,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5619,12 +5623,12 @@
    "symbol": "QI",
    "name": "QuantumInu",
    "mint": "5qZLmDg2sC31tBRC4mU6xtsNaq7FkPhKf3AaG9yjWy4b",
-   "age_s": 63,
-   "sol_in": 5.42,
-   "buys": 39,
-   "sells": 31,
-   "rise_pct": 33.4,
-   "mcap_sol": 50.6,
+   "age_s": 95,
+   "sol_in": -2.08,
+   "buys": 52,
+   "sells": 47,
+   "rise_pct": -11.5,
+   "mcap_sol": 33.5,
    "dev_pct": 15.2,
    "big_sell": 5.22,
    "x": "https://x.com/MarioPrezldente/status/2126167225547755929",
@@ -5637,7 +5641,7 @@
    "symbol": "BBC",
    "name": "Beanie Babies Coin",
    "mint": "6fdLeCQutE2CKHWHBtr7uQ6NrZ85GL5rFRTWEPEGdLuh",
-   "age_s": 87,
+   "age_s": 119,
    "sol_in": -5.53,
    "buys": 11,
    "sells": 10,
@@ -5655,7 +5659,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "72qUy2rcEXL5vdHaEKbomuTqAvaByUPFoiTA1Wckpump",
-   "age_s": 89,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5673,7 +5677,7 @@
    "symbol": "Jason",
    "name": "Jason's First Home",
    "mint": "DAC4aLA9sQ95PWUxnMWP4Ezd7EiCKMqY429C5Dy5pump",
-   "age_s": 123,
+   "age_s": 155,
    "sol_in": -0.02,
    "buys": 0,
    "sells": 1,
@@ -5691,7 +5695,7 @@
    "symbol": "QHMQLRV",
    "name": "QHMQLRV",
    "mint": "BY2DwkFgWUCAQENhpuyjtAqyXS6wb8A25jGwBCy1JgUx",
-   "age_s": 129,
+   "age_s": 161,
    "sol_in": 0.17,
    "buys": 1,
    "sells": 0,
@@ -5709,7 +5713,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "6CHa3AnUHFfVTgqYgWeXCE9ZEkSvTnpLG1Za4EN1pump",
-   "age_s": 142,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5727,7 +5731,7 @@
    "symbol": "?",
    "name": "",
    "mint": "FRYR8bEiEULXLzcKowJJbqTQtn2VFAwv3vqyRUjXpump",
-   "age_s": 144,
+   "age_s": 176,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5749,18 +5753,22 @@
   {
    "symbol": "Christmas",
    "mint": "AgBxPNBFmBks58rtVnp2ZW5WHtE2968qTPWgDEvbpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
    "opened": "2026-11-27T04:13:26Z",
    "cost": 28.98,
-   "pnl_pct": 0.1,
+   "pnl_pct": -13.4,
    "tier": "scalp",
    "score": 2.5,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 16.98
+   "sol_in": 16.98,
+   "closed": "2026-11-27T04:13:27Z",
+   "exit": "dump: 2.9 SOL sold",
+   "pnl": -3.87,
+   "weight": 0.5
   },
   {
    "symbol": "NVIDIA",
@@ -6141,34 +6149,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -3.18,
    "weight": 0.5
-  },
-  {
-   "symbol": "$FROSTY",
-   "mint": "Df6v4ER8Wxb6rHVEw9pSVJE68s6MdCq6siJUHd4Spump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T03:49:19Z",
-   "cost": 39.73,
-   "pnl_pct": -8.2,
-   "tier": "scalp",
-   "score": 2,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.11,
-   "closed": "2026-11-27T03:54:19Z",
-   "exit": "5 min, only -4%",
-   "pnl": -3.26,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 221,
+  "n": 222,
   "wins": 39,
   "win_rate": 17.6,
-  "mean_pnl_pct": -9.35,
-  "open": 1,
+  "mean_pnl_pct": -9.36,
+  "open": 0,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6176,10 +6164,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 205,
+   "n": 206,
    "wins": 36,
-   "win_rate": 17.6,
-   "mean_pnl_pct": -9.11
+   "win_rate": 17.5,
+   "mean_pnl_pct": -9.13
   }
  }
 }
