@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:00:15Z",
-    "time": "20:00:15",
-    "agent": "LEARNER",
-    "coin": "BERNIE",
-    "action": "shadow",
-    "text": "SHADOW BERNIE would have made -16.7% (stop -12%) · learned x0.5 · np:dev:8+ now avg -8.8% over 196",
-    "n": 5779
-   },
-   {
-    "t": "2026-11-27T19:00:18Z",
-    "time": "20:00:18",
-    "agent": "LEARNER",
-    "coin": "VERI",
-    "action": "shadow",
-    "text": "SHADOW VERI · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022391 (curve maths, every cost) · same exits, outside the book",
-    "n": 5780
-   },
-   {
     "t": "2026-11-27T19:00:22Z",
     "time": "20:00:22",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW ORANGE · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020755 (curve maths, every cost) · same exits, outside the book",
     "n": 6378
+   },
+   {
+    "t": "2026-11-27T20:12:38Z",
+    "time": "21:12:38",
+    "agent": "LEARNER",
+    "coin": "$SPENCER8",
+    "action": "shadow",
+    "text": "SHADOW $SPENCER8 would have made -7.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.8% over 300",
+    "n": 6379
+   },
+   {
+    "t": "2026-11-27T20:12:40Z",
+    "time": "21:12:40",
+    "agent": "LEARNER",
+    "coin": "Apple",
+    "action": "shadow",
+    "text": "SHADOW Apple would have made -8.9% (dump: 2.9 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.9% over 224.5",
+    "n": 6380
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6378,
+  "lines": 6380,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795810308.443568,
   "shadow": {
-   "n": 1725,
+   "n": 1727,
    "wins": 377,
-   "sum": -13266.0
+   "sum": -13282.3
   },
   "np_speed": {
    "first_in": [
@@ -31920,9 +31920,9 @@
   }
  },
  "shadow": {
-  "n": 1739,
+  "n": 1741,
   "wins": 379,
-  "sum": -13464.5,
+  "sum": -13480.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31930,52 +31930,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1723,
+    "n": 1725,
     "wins": 376,
-    "sum": -13266.7
+    "sum": -13283.0
    }
   },
   "closed": [
-   {
-    "symbol": "Habanero",
-    "mint": "DJ5byUd9PV5X6nTCkNvFoKQ7W7Mnk1ZzDYyAgaKnpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:05:28Z",
-    "cost": 5.91,
-    "pnl_pct": 5.2,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 11.29,
-    "closed": "2026-11-27T20:05:31Z",
-    "exit": "TP +10%",
-    "pnl": 0.31,
-    "weight": 0.5
-   },
-   {
-    "symbol": "BANNER",
-    "mint": "AMHeQVxjXz4ARVGRT6cQqc8zt7yxShx5wqXHFhbhpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:05:43Z",
-    "cost": 5.91,
-    "pnl_pct": 14.3,
-    "tier": "swing",
-    "score": 3,
-    "steps": 2,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 7.16,
-    "closed": "2026-11-27T20:05:47Z",
-    "exit": "TP +20%",
-    "pnl": 0.85,
-    "weight": 0.5
-   },
    {
     "symbol": "LMTEST",
     "mint": "B6zGf9kSytu9tvQBVXT3eBuBzFDeqALXjT7Xam1kawZp",
@@ -32335,13 +32295,51 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "$SPENCER8",
+    "mint": "X5qTGfA2FM9BnworRQHv8HyaefXgsPuxYywG7mqpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:08:53Z",
+    "cost": 5.91,
+    "pnl_pct": -7.4,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T20:12:38Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.44,
+    "weight": 0.5
+   },
+   {
+    "symbol": "Apple",
+    "mint": "2ZERrs7azXticMMEfDceUPPGWdfAT8GznzChV8o4pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:10:33Z",
+    "cost": 5.91,
+    "pnl_pct": -8.9,
+    "tier": "swing",
+    "score": 4,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 17.93,
+    "closed": "2026-11-27T20:12:40Z",
+    "exit": "dump: 2.9 SOL sold",
+    "pnl": -0.53,
+    "weight": 0.5
    }
   ],
   "open": [
-   "$SPENCER8",
    "calloutball",
    "calloutball",
-   "Apple",
    "HADESCOIN",
    "⚔️",
    "ORANGE"
@@ -32356,7 +32354,7 @@
    {
     "label": "snipe · np:social:tg",
     "n": 14,
-    "avg": 0.7
+    "avg": 0.4
    },
    {
     "label": "snipe · hour:01-03",
@@ -32386,7 +32384,7 @@
     "avg": -8.9
    }
   ],
-  "shadows": 1931,
+  "shadows": 1933,
   "memory": "snipe"
  }
 }
