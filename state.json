@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:50:36Z",
-    "time": "09:50:36",
-    "agent": "LEARNER",
-    "coin": "Retail",
-    "action": "shadow",
-    "text": "SHADOW Retail would have made -13.7% (stop -10%) · learned x0.5 · np:age:<30s now avg -7.9% over 300",
-    "n": 3615
-   },
-   {
-    "t": "2026-11-27T08:51:01Z",
-    "time": "09:51:01",
-    "agent": "LEARNER",
-    "coin": "Hope",
-    "action": "shadow",
-    "text": "SHADOW Hope · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000038489 (curve maths, every cost) · same exits, outside the book",
-    "n": 3616
-   },
-   {
-    "t": "2026-11-27T08:51:02Z",
-    "time": "09:51:02",
-    "agent": "LEARNER",
-    "coin": "$TIGERLOAF",
-    "action": "shadow",
-    "text": "SHADOW $TIGERLOAF · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000037491 (curve maths, every cost) · same exits, outside the book",
-    "n": 3617
-   },
-   {
     "t": "2026-11-27T08:51:09Z",
     "time": "09:51:09",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW BARGNA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022917 (curve maths, every cost) · same exits, outside the book",
     "n": 4214
+   },
+   {
+    "t": "2026-11-27T10:46:18Z",
+    "time": "11:46:18",
+    "agent": "LEARNER",
+    "coin": "DEMOB",
+    "action": "shadow",
+    "text": "SHADOW DEMOB would have made -1.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.2% over 227.5",
+    "n": 4215
+   },
+   {
+    "t": "2026-11-27T10:46:21Z",
+    "time": "11:46:21",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.8 a minute · 0 watched · 19 rejected (snipe not bought: trades tonight 11, mayhem mode 6, serial launcher 1)",
+    "n": 4216
+   },
+   {
+    "t": "2026-11-27T10:46:24Z",
+    "time": "11:46:24",
+    "agent": "LEARNER",
+    "coin": "NVIDIA",
+    "action": "shadow",
+    "text": "SHADOW NVIDIA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000061307 (curve maths, every cost) · same exits, outside the book",
+    "n": 4217
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4214,
+  "lines": 4217,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795740300,
-    80.34
-   ],
    [
     1795740360,
     80.34
@@ -21735,17 +21731,21 @@
    [
     1795776314,
     361.97
+   ],
+   [
+    1795776374,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795776320.645415,
+  "np_said": 1795776381.645425,
   "shadow": {
-   "n": 865,
+   "n": 866,
    "wins": 195,
-   "sum": -6804.3
+   "sum": -6805.3
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 879,
+  "n": 880,
   "wins": 197,
-  "sum": -7002.8,
+  "sum": -7003.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 863,
+    "n": 864,
     "wins": 194,
-    "sum": -6805.0
+    "sum": -6806.0
    }
   },
   "closed": [
-   {
-    "symbol": "FLOPCAT",
-    "mint": "BCpTPtucgTykAWtr5fDu1sJ8qtXcbQNb2AZybbXfpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:33:27Z",
-    "cost": 36.2,
-    "pnl_pct": -13.9,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 9.83,
-    "closed": "2026-11-27T10:33:38Z",
-    "exit": "stop -11%",
-    "pnl": -5.05,
-    "weight": 0.5
-   },
    {
     "symbol": "TEST",
     "mint": "35DicX3daM5wqfuvJgkJZNCRYoGM65vAws8EMHJRB5HY",
@@ -31743,19 +31723,39 @@
     "exit": "5 min, only -6%",
     "pnl": -3.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "DEMOB",
+    "mint": "gaDovUmXXsx3EuDoWNYVMPWxrmnoHzyX3NRuMU1pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:42:43Z",
+    "cost": 36.2,
+    "pnl_pct": -1.0,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T10:46:18Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.35,
+    "weight": 0.5
    }
   ],
   "open": [
    "JASON",
    "Votelaunch",
-   "DEMOB",
    "OPEN",
    "TAIL",
    "ASHESA",
    "RobRun",
    "BOND",
    "BBFC",
-   "BARGNA"
+   "BARGNA",
+   "NVIDIA"
   ]
  },
  "learner_summary": {
@@ -31797,7 +31797,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 863,
+  "shadows": 864,
   "memory": "snipe"
  }
 }
