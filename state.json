@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:35:47Z",
-    "time": "06:35:47",
-    "agent": "EXECUTOR",
-    "coin": "Kibo",
-    "action": "enter",
-    "text": "ENTER Kibo at 0.00000214 · slip 1.8% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2506
-   },
-   {
-    "t": "2026-11-27T05:35:47Z",
-    "time": "06:35:47",
-    "agent": "NEWS",
-    "coin": "Kibo",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 2507
-   },
-   {
     "t": "2026-11-27T05:36:29Z",
     "time": "06:36:29",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW TEETH would have made -13.5% (5 min, only -10%) · learned x0.5 · np:buys:<70 now avg -9.7% over 195",
     "n": 3105
+   },
+   {
+    "t": "2026-11-27T07:19:00Z",
+    "time": "08:19:00",
+    "agent": "LEARNER",
+    "coin": "Stickman",
+    "action": "shadow",
+    "text": "SHADOW Stickman · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000053854 (curve maths, every cost) · same exits, outside the book",
+    "n": 3106
+   },
+   {
+    "t": "2026-11-27T07:19:03Z",
+    "time": "08:19:03",
+    "agent": "LEARNER",
+    "coin": "Stickman",
+    "action": "shadow",
+    "text": "SHADOW Stickman would have made +51.6% (TP +10%) · learned x0.5 · np:sol:12+ now avg -11.9% over 28",
+    "n": 3107
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3105,
+  "lines": 3107,
   "flags": [
    {
     "coin": "Kibo",
@@ -21327,6 +21327,10 @@
    [
     1795763873,
     361.97
+   ],
+   [
+    1795763933,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21335,9 +21339,9 @@
   },
   "np_said": 1795763910.780845,
   "shadow": {
-   "n": 443,
-   "wins": 84,
-   "sum": -3743.3
+   "n": 444,
+   "wins": 85,
+   "sum": -3691.7
   },
   "np_speed": {
    "first_in": [
@@ -30920,9 +30924,9 @@
   }
  },
  "shadow": {
-  "n": 457,
-  "wins": 86,
-  "sum": -3941.8,
+  "n": 458,
+  "wins": 87,
+  "sum": -3890.2,
   "by": {
    "learner": {
     "n": 16,
@@ -30930,32 +30934,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 441,
-    "wins": 83,
-    "sum": -3744.0
+    "n": 442,
+    "wins": 84,
+    "sum": -3692.4
    }
   },
   "closed": [
-   {
-    "symbol": "DOJO",
-    "mint": "24H8FVzPu19GT3pbN1ZDQmAXJRQxAnNB29pStnompump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:09:19Z",
-    "cost": 36.2,
-    "pnl_pct": 8.6,
-    "tier": "swing",
-    "score": 3,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 9.42,
-    "closed": "2026-11-27T07:09:22Z",
-    "exit": "trailing stop 6% off the top (peak +17%)",
-    "pnl": 3.12,
-    "weight": 0.5
-   },
    {
     "symbol": "Hierberos",
     "mint": "9ugok1EHECYkW1ZjrHzBWbiBr2P6mYpbuV5bTufepump",
@@ -31335,6 +31319,26 @@
     "exit": "5 min, only -10%",
     "pnl": -4.88,
     "weight": 0.5
+   },
+   {
+    "symbol": "Stickman",
+    "mint": "H8cim5HL7iSqTKhb47TLzwC54Ag7si1V3nob8rwWpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:19:00Z",
+    "cost": 36.2,
+    "pnl_pct": 51.6,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 16.49,
+    "closed": "2026-11-27T07:19:03Z",
+    "exit": "TP +10%",
+    "pnl": 18.68,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31359,17 +31363,12 @@
     "avg": -5.7
    },
    {
-    "label": "snipe · hour:05-07",
-    "n": 152,
-    "avg": -5.9
+    "label": "snipe · np:dev:5-8",
+    "n": 24,
+    "avg": -6.0
    }
   ],
   "worst": [
-   {
-    "label": "snipe · np:sol:12+",
-    "n": 28,
-    "avg": -13.0
-   },
    {
     "label": "snipe · tier:swing",
     "n": 35,
@@ -31379,9 +31378,14 @@
     "label": "snipe · news:3-4",
     "n": 35,
     "avg": -12.6
+   },
+   {
+    "label": "snipe · hour:03-05",
+    "n": 212,
+    "avg": -10.9
    }
   ],
-  "shadows": 441,
+  "shadows": 442,
   "memory": "snipe"
  }
 }
