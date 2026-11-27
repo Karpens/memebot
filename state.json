@@ -13,7 +13,7 @@
    "entry_price": 2.108930943353293e-06,
    "opened": "2026-11-27T04:08:51Z",
    "peak": 2.108930943353293e-06,
-   "last": 2.0323523745341018e-06,
+   "last": 2.0328787710945503e-06,
    "tp1_done": false,
    "sold_usd": 0.0,
    "reason": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
@@ -87,7 +87,7 @@
     "complete": false,
     "slot": 474410730,
     "readings": 1,
-    "last_t": 1795752620.303251,
+    "last_t": 1795752654.331092,
     "age_s": 0.2641770839691162,
     "buys": 0,
     "sells": 0,
@@ -172,24 +172,6 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
-   {
-    "t": "2026-11-27T03:11:13Z",
-    "time": "04:11:13",
-    "agent": "LEARNER",
-    "coin": "Liberal",
-    "action": "shadow",
-    "text": "SHADOW Liberal · not bought (pause after a losing streak) · followed as if bought: $57.31 at 0.0000022784 (curve maths, every cost) · same exits, outside the book",
-    "n": 1170
-   },
-   {
-    "t": "2026-11-27T03:11:38Z",
-    "time": "04:11:38",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "14 losses in a row · 2 min pause",
-    "n": 1171
-   },
    {
     "t": "2026-11-27T03:11:38Z",
     "time": "04:11:38",
@@ -5571,6 +5553,24 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 7 rejected (mayhem mode 6, serial launcher 1)",
     "n": 1769
+   },
+   {
+    "t": "2026-11-27T04:10:33Z",
+    "time": "05:10:33",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.6 a minute · 0 watched · 7 rejected (mayhem mode 4, serial launcher 2, no symbol or name 1)",
+    "n": 1770
+   },
+   {
+    "t": "2026-11-27T04:10:39Z",
+    "time": "05:10:39",
+    "agent": "LEARNER",
+    "coin": "NVIDIA",
+    "action": "shadow",
+    "text": "SHADOW NVIDIA would have made -5.6% (5 min, only -2%) · learned x0.5 · tier:swing now avg -18.9% over 17",
+    "n": 1771
    }
   ],
   "trades": [
@@ -13823,7 +13823,7 @@
   "flagged": 161,
   "checked": 157,
   "filtered": 5,
-  "lines": 1769,
+  "lines": 1771,
   "flags": [
    {
     "coin": "DOGE2",
@@ -15106,17 +15106,21 @@
    [
     1795752593,
     291.99
+   ],
+   [
+    1795752653,
+    291.99
    ]
   ],
   "last_rug": {
    "coin": "GreenPill",
    "pass": true
   },
-  "np_said": 1795752572.780837,
+  "np_said": 1795752633.780849,
   "shadow": {
-   "n": 206,
+   "n": 207,
    "wins": 37,
-   "sum": -1861.2
+   "sum": -1866.8
   },
   "np_speed": {
    "first_in": [
@@ -24348,9 +24352,9 @@
   }
  },
  "shadow": {
-  "n": 220,
+  "n": 221,
   "wins": 39,
-  "sum": -2059.7,
+  "sum": -2065.3,
   "by": {
    "learner": {
     "n": 16,
@@ -24358,32 +24362,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 204,
+    "n": 205,
     "wins": 36,
-    "sum": -1861.9
+    "sum": -1867.5
    }
   },
   "closed": [
-   {
-    "symbol": "bawnsai",
-    "mint": "7D4anezxqBv1XgbTrUKLjvKpc7pfHs7D3hWLhp8Vpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:51:05Z",
-    "cost": 39.55,
-    "pnl_pct": -11.0,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T03:54:16Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -4.34,
-    "weight": 0.5
-   },
    {
     "symbol": "$FROSTY",
     "mint": "Df6v4ER8Wxb6rHVEw9pSVJE68s6MdCq6siJUHd4Spump",
@@ -24763,11 +24747,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "NVIDIA",
+    "mint": "39aWM2Boxa6AdDbbNeQ28EcJ5k4kA9gZQCuzMdLBpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:05:34Z",
+    "cost": 30.41,
+    "pnl_pct": -5.6,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 17.59,
+    "closed": "2026-11-27T04:10:39Z",
+    "exit": "5 min, only -2%",
+    "pnl": -1.7,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "NVIDIA"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 148,
@@ -24794,21 +24796,21 @@
   "worst": [
    {
     "label": "snipe · tier:swing",
-    "n": 16,
-    "avg": -19.3
+    "n": 17,
+    "avg": -18.9
    },
    {
     "label": "snipe · news:3-4",
-    "n": 16,
-    "avg": -19.3
+    "n": 17,
+    "avg": -18.9
    },
    {
     "label": "snipe · np:sol:12+",
     "n": 14,
-    "avg": -17.9
+    "avg": -17.4
    }
   ],
-  "shadows": 204,
+  "shadows": 205,
   "memory": "snipe"
  }
 }
