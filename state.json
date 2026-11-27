@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:39:36Z",
-    "time": "09:39:36",
-    "agent": "LEARNER",
-    "coin": "GUBBY",
-    "action": "shadow",
-    "text": "SHADOW GUBBY · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028093 (curve maths, every cost) · same exits, outside the book",
-    "n": 3543
-   },
-   {
-    "t": "2026-11-27T08:39:37Z",
-    "time": "09:39:37",
-    "agent": "LEARNER",
-    "coin": "GUBBY",
-    "action": "shadow",
-    "text": "SHADOW GUBBY would have made +30.6% (TP +10%) · learned x0.5 · np:age:<30s now avg -7.9% over 300",
-    "n": 3544
-   },
-   {
-    "t": "2026-11-27T08:40:00Z",
-    "time": "09:40:00",
-    "agent": "LEARNER",
-    "coin": "SANT",
-    "action": "shadow",
-    "text": "SHADOW SANT would have made -8.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.7% over 182",
-    "n": 3545
-   },
-   {
     "t": "2026-11-27T08:40:08Z",
     "time": "09:40:08",
     "agent": "SCANNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW KOKA would have made -10.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.3% over 224",
     "n": 4142
+   },
+   {
+    "t": "2026-11-27T10:31:12Z",
+    "time": "11:31:12",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.8 a minute · 0 watched · 15 rejected (mayhem mode 8, snipe not bought: trades tonight 6, serial launcher 1)",
+    "n": 4143
+   },
+   {
+    "t": "2026-11-27T10:31:23Z",
+    "time": "11:31:23",
+    "agent": "LEARNER",
+    "coin": "PARDON",
+    "action": "shadow",
+    "text": "SHADOW PARDON would have made -9.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.2% over 292",
+    "n": 4144
+   },
+   {
+    "t": "2026-11-27T10:31:24Z",
+    "time": "11:31:24",
+    "agent": "LEARNER",
+    "coin": "BURN",
+    "action": "shadow",
+    "text": "SHADOW BURN · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022411 (curve maths, every cost) · same exits, outside the book",
+    "n": 4145
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4142,
+  "lines": 4145,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795739400,
-    82.3
-   ],
    [
     1795739460,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795775414,
     361.97
+   ],
+   [
+    1795775474,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795775412.645333,
+  "np_said": 1795775472.645376,
   "shadow": {
-   "n": 841,
+   "n": 842,
    "wins": 189,
-   "sum": -6612.4
+   "sum": -6621.4
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 855,
+  "n": 856,
   "wins": 191,
-  "sum": -6810.9,
+  "sum": -6819.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 839,
+    "n": 840,
     "wins": 188,
-    "sum": -6613.1
+    "sum": -6622.1
    }
   },
   "closed": [
-   {
-    "symbol": "USFF",
-    "mint": "HaToW5agjtTVTggBFtS6wGis2wwaftczRaSouFn3pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:21:07Z",
-    "cost": 36.2,
-    "pnl_pct": -21.4,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": -1.05,
-    "closed": "2026-11-27T10:21:07Z",
-    "exit": "stop -12%",
-    "pnl": -7.73,
-    "weight": 0.5
-   },
    {
     "symbol": "$KANA",
     "mint": "EyDDh7Jq5qTH5kE1hjdy1rpToezQHS4rwV3bXk8Gpump",
@@ -31743,13 +31723,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -3.94,
     "weight": 0.5
+   },
+   {
+    "symbol": "PARDON",
+    "mint": "BtC3WqzGivYFQokr9PWngLntfWyM7pFxnkLusCXtpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:27:17Z",
+    "cost": 36.2,
+    "pnl_pct": -9.0,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.32,
+    "closed": "2026-11-27T10:31:23Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.26,
+    "weight": 0.5
    }
   ],
   "open": [
-   "PARDON",
    "BrawlStars",
    "Hero",
-   "TEST"
+   "TEST",
+   "BURN"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31791,7 @@
     "avg": -10.7
    }
   ],
-  "shadows": 839,
+  "shadows": 840,
   "memory": "snipe"
  }
 }
