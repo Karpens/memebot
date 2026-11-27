@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:41:05Z",
-    "time": "07:41:05",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.2 a minute · 0 watched · 16 rejected (serial launcher 8, mayhem mode 5, snipe not bought: trades tonight 2)",
-    "n": 2895
-   },
-   {
     "t": "2026-11-27T06:41:49Z",
     "time": "07:41:49",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 4.6 a minute · 0 watched · 17 rejected (snipe not bought: trades tonight 11, mayhem mode 6)",
     "n": 3494
+   },
+   {
+    "t": "2026-11-27T08:31:06Z",
+    "time": "09:31:06",
+    "agent": "LEARNER",
+    "coin": "GTA 6",
+    "action": "shadow",
+    "text": "SHADOW GTA 6 would have made +5.6% (trailing stop 6% off the top (peak +15%)) · learned x0.5 · np:sol:12+ now avg -13.0% over 35",
+    "n": 3495
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3494,
+  "lines": 3495,
   "flags": [
    {
     "coin": "Kibo",
@@ -21615,6 +21615,10 @@
    [
     1795768214,
     361.97
+   ],
+   [
+    1795768274,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21623,9 +21627,9 @@
   },
   "np_said": 1795768264.645337,
   "shadow": {
-   "n": 590,
-   "wins": 125,
-   "sum": -4849.6
+   "n": 591,
+   "wins": 126,
+   "sum": -4844.0
   },
   "np_speed": {
    "first_in": [
@@ -31208,9 +31212,9 @@
   }
  },
  "shadow": {
-  "n": 604,
-  "wins": 127,
-  "sum": -5048.1,
+  "n": 605,
+  "wins": 128,
+  "sum": -5042.5,
   "by": {
    "learner": {
     "n": 16,
@@ -31218,32 +31222,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 588,
-    "wins": 124,
-    "sum": -4850.3
+    "n": 589,
+    "wins": 125,
+    "sum": -4844.7
    }
   },
   "closed": [
-   {
-    "symbol": "CUPHATMA",
-    "mint": "5BSxpLG8sGgsappRF7D2mx1sWnW4F7jzeLGN8n2qpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:20:39Z",
-    "cost": 36.2,
-    "pnl_pct": 10.4,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T08:21:28Z",
-    "exit": "TP +10%",
-    "pnl": 3.78,
-    "weight": 0.5
-   },
    {
     "symbol": "Ant",
     "mint": "7wLoGDqkM1Jq5d4w8R6pfCb2HYWWVD5yQ23feEdspump",
@@ -31623,11 +31607,30 @@
     "exit": "dump: 8.1 SOL sold",
     "pnl": -15.37,
     "weight": 0.5
+   },
+   {
+    "symbol": "GTA 6",
+    "mint": "Eyum22t6Mwj4MJh5yzmXvrTmrRojKkz4WUPvTrzFpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:26:53Z",
+    "cost": 36.2,
+    "pnl_pct": 5.6,
+    "tier": "swing",
+    "score": 4,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 17.6,
+    "closed": "2026-11-27T08:31:06Z",
+    "exit": "trailing stop 6% off the top (peak +15%)",
+    "pnl": 2.02,
+    "weight": 0.5
    }
   ],
   "open": [
    "ANSEM",
-   "GTA 6",
    "YUNG69",
    "WGS",
    "PONPCOIN",
@@ -31659,8 +31662,8 @@
   "worst": [
    {
     "label": "snipe · np:sol:12+",
-    "n": 34,
-    "avg": -13.2
+    "n": 35,
+    "avg": -13.0
    },
    {
     "label": "snipe · hour:03-05",
@@ -31668,12 +31671,12 @@
     "avg": -10.9
    },
    {
-    "label": "snipe · tier:swing",
-    "n": 46,
-    "avg": -11.6
+    "label": "snipe · np:sol:3-6",
+    "n": 57,
+    "avg": -11.3
    }
   ],
-  "shadows": 588,
+  "shadows": 589,
   "memory": "snipe"
  }
 }
