@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:16:53Z",
-    "time": "06:16:53",
-    "agent": "NEWS",
-    "coin": "Sol",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 2255
-   },
-   {
-    "t": "2026-11-27T05:16:55Z",
-    "time": "06:16:55",
-    "agent": "SCANNER",
-    "coin": "MINDEX",
-    "action": "flag",
-    "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
-    "n": 2256
-   },
-   {
-    "t": "2026-11-27T05:16:55Z",
-    "time": "06:16:55",
-    "agent": "SIZER",
-    "coin": "MINDEX",
-    "action": "size",
-    "text": "10% of $211.46 = $21.15",
-    "n": 2257
-   },
-   {
     "t": "2026-11-27T05:16:55Z",
     "time": "06:16:55",
     "agent": "EXECUTOR",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW Bitcoin · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000064923 (curve maths, every cost) · same exits, outside the book",
     "n": 2854
+   },
+   {
+    "t": "2026-11-27T06:32:37Z",
+    "time": "07:32:37",
+    "agent": "LEARNER",
+    "coin": "Bitcoin",
+    "action": "shadow",
+    "text": "SHADOW Bitcoin would have made -17.7% (dump: 2.5 SOL sold) · learned x0.5 · tier:swing now avg -16.8% over 25.5",
+    "n": 2855
+   },
+   {
+    "t": "2026-11-27T06:32:55Z",
+    "time": "07:32:55",
+    "agent": "LEARNER",
+    "coin": "MUSKY",
+    "action": "shadow",
+    "text": "SHADOW MUSKY would have made -8.5% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:swing now avg -16.6% over 26",
+    "n": 2856
+   },
+   {
+    "t": "2026-11-27T06:33:00Z",
+    "time": "07:33:00",
+    "agent": "LEARNER",
+    "coin": "CHUD",
+    "action": "shadow",
+    "text": "SHADOW CHUD would have made -10.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:sol:<3 now avg -8.2% over 300",
+    "n": 2857
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2854,
+  "lines": 2857,
   "flags": [
    {
     "coin": "Kibo",
@@ -21143,6 +21143,10 @@
    [
     1795761113,
     361.97
+   ],
+   [
+    1795761173,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21151,9 +21155,9 @@
   },
   "np_said": 1795761121.780926,
   "shadow": {
-   "n": 344,
+   "n": 347,
    "wins": 62,
-   "sum": -2913.1
+   "sum": -2950.0
   },
   "np_speed": {
    "first_in": [
@@ -30736,9 +30740,9 @@
   }
  },
  "shadow": {
-  "n": 358,
+  "n": 361,
   "wins": 64,
-  "sum": -3111.6,
+  "sum": -3148.5,
   "by": {
    "learner": {
     "n": 16,
@@ -30746,72 +30750,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 342,
+    "n": 345,
     "wins": 61,
-    "sum": -2913.8
+    "sum": -2950.7
    }
   },
   "closed": [
-   {
-    "symbol": "PSST",
-    "mint": "9DxhopyVhvGaJQ1SYCGHBfkXG4NSPSG736VVmLrQPSST",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:25:14Z",
-    "cost": 36.2,
-    "pnl_pct": -14.7,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 9.22,
-    "closed": "2026-11-27T06:25:17Z",
-    "exit": "stop -11%",
-    "pnl": -5.33,
-    "weight": 0.5
-   },
-   {
-    "symbol": "USFF",
-    "mint": "Bbnwp3LJCdsWrMqXSwJZSAuFxTL4QAE7wRAdepwRpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:20:42Z",
-    "cost": 36.2,
-    "pnl_pct": -10.9,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:25:36Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.96,
-    "weight": 0.5
-   },
-   {
-    "symbol": "PAYSLIP",
-    "mint": "22318LaWUt96VdzJZVfKcHjsqG22f5hEAYr6yBDMpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:25:39Z",
-    "cost": 36.2,
-    "pnl_pct": -13.6,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.32,
-    "closed": "2026-11-27T06:25:50Z",
-    "exit": "stop -10%",
-    "pnl": -4.91,
-    "weight": 0.5
-   },
    {
     "symbol": "GHOST",
     "mint": "GWxPi7UR7zGFZaNZZrqrjkN2a6joeriLN8pjokRipump",
@@ -31151,15 +31095,72 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": 1.11,
     "weight": 0.5
+   },
+   {
+    "symbol": "Bitcoin",
+    "mint": "6H7rdkUPTRFbS22qXmqMEWVpfp3F4JqXUJPvbFWLpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:32:32Z",
+    "cost": 36.2,
+    "pnl_pct": -17.7,
+    "tier": "swing",
+    "score": 3.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 15.78,
+    "closed": "2026-11-27T06:32:37Z",
+    "exit": "dump: 2.5 SOL sold",
+    "pnl": -6.41,
+    "weight": 0.5
+   },
+   {
+    "symbol": "MUSKY",
+    "mint": "CSZYH6j9oxmDSfwxTXvFv1AkSUo5qFW8Zh3Yra4vxw6j",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:29:50Z",
+    "cost": 36.2,
+    "pnl_pct": -8.5,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:32:55Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.08,
+    "weight": 0.5
+   },
+   {
+    "symbol": "CHUD",
+    "mint": "4apjpmtsdvCjFAFCKywdG5QfTJNp2dp9Z7QSUteMpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:29:08Z",
+    "cost": 36.2,
+    "pnl_pct": -10.7,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.89,
+    "closed": "2026-11-27T06:33:00Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.88,
+    "weight": 0.5
    }
   ],
   "open": [
-   "CHUD",
-   "MUSKY",
    "BIBLE",
    "NVIDIAAI",
-   "JAZZCAT",
-   "Bitcoin"
+   "JAZZCAT"
   ]
  },
  "learner_summary": {
@@ -31180,28 +31181,28 @@
    },
    {
     "label": "snipe · hour:day",
-    "n": 25,
-    "avg": -6.0
+    "n": 26,
+    "avg": -6.3
    }
   ],
   "worst": [
    {
     "label": "snipe · tier:swing",
-    "n": 25,
-    "avg": -16.7
+    "n": 26,
+    "avg": -16.6
    },
    {
     "label": "snipe · news:3-4",
-    "n": 25,
-    "avg": -16.7
+    "n": 26,
+    "avg": -16.6
    },
    {
     "label": "snipe · np:sol:12+",
     "n": 24,
-    "avg": -13.8
+    "avg": -13.9
    }
   ],
-  "shadows": 342,
+  "shadows": 345,
   "memory": "snipe"
  }
 }
