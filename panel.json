@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:25:48Z",
+ "updated": "2026-11-27T09:26:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3784,
+  "lines": 3785,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795735500,
-   82.3
-  ],
   [
    1795735560,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795771514,
    361.97
+  ],
+  [
+   1795771574,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:45:59Z",
-   "time": "09:45:59",
-   "agent": "LEARNER",
-   "coin": "Divvypad",
-   "action": "shadow",
-   "text": "SHADOW Divvypad would have made +31.2% (TP +10%) · learned x0.5 · np:social:web now avg -8.0% over 252",
-   "n": 3585
-  },
-  {
    "t": "2026-11-27T08:46:05Z",
    "time": "09:46:05",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "shadow",
    "text": "SHADOW GIFT would have made -9.7% (dump: 3.8 SOL sold) · learned x0.5 · np:sol:12+ now avg -12.7% over 41.5",
    "n": 3784
+  },
+  {
+   "t": "2026-11-27T09:26:15Z",
+   "time": "10:26:15",
+   "agent": "LEARNER",
+   "coin": "FRYERA",
+   "action": "shadow",
+   "text": "SHADOW FRYERA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022733 (curve maths, every cost) · same exits, outside the book",
+   "n": 3785
   }
  ],
  "nights": [
@@ -6592,7 +6592,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6600,15 +6600,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 594,
-    "last_event_age_s": 10.2,
+    "events": 596,
+    "last_event_age_s": 1.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15143,
+    "events": 15210,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6616,8 +6616,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 341,
-    "last_event_age_s": 10.1,
+    "events": 342,
+    "last_event_age_s": 0.3,
     "errors": 18,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,9 +6630,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 9
+  "followed": 8
  },
  "learner": {
   "samples": 249,
@@ -6679,28 +6679,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7560,
+   "sent": 7590,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7571,
+   "sent": 7601,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FRYERA",
+   "name": "Turkey Fryer Fire",
+   "mint": "HVMxQRi9XBjFv8eANBLqX9LSS4UhJeDoiz6gicH9pump",
+   "age_s": 1,
+   "sol_in": 0.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 29.7,
+   "dev_pct": 3.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://www.wral.com/news/local/zebulon-fire-person-hurt-thanksgiving-turkey-deep-fryer-november-2026/?mint=",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "100k",
+   "name": "100k mc",
+   "mint": "G3nNFmCJqNUaAqJbTRh1ii1qhYjvncrGbET1WGipump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "GIFT",
    "name": "Gift",
    "mint": "Hmje3XvJnptF8PSjRjrXcHLw8dv2Xambda8bRaDdpump",
-   "age_s": 10,
-   "sol_in": 26.62,
-   "buys": 3,
-   "sells": 7,
-   "rise_pct": 256.1,
-   "mcap_sol": 99.6,
+   "age_s": 38,
+   "sol_in": 24.86,
+   "buys": 11,
+   "sells": 22,
+   "rise_pct": 234.4,
+   "mcap_sol": 93.5,
    "dev_pct": 0.0,
    "big_sell": 3.8,
    "x": "https://x.com/giftsolfun",
@@ -6713,7 +6749,7 @@
    "symbol": "BLACK",
    "name": "BLACK FRIDAY",
    "mint": "2m3BDDmYNxB7crsEQrDHJ9roUHhot7zSc2LbNvJ3pump",
-   "age_s": 10,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6731,7 +6767,7 @@
    "symbol": "PISSBALL",
    "name": "PISS BALL",
    "mint": "DLRVaeuaKtc8LUJLNHYnF41UyhSkyUG37NjU2xd6WLpw",
-   "age_s": 43,
+   "age_s": 71,
    "sol_in": 0.2,
    "buys": 2,
    "sells": 0,
@@ -6749,12 +6785,12 @@
    "symbol": "AKARI",
    "name": "Akari",
    "mint": "Hppm8zqJqNjY3vM9umXMijjwtk3bxhWtMDD8FKc4pump",
-   "age_s": 44,
-   "sol_in": 11.27,
-   "buys": 18,
-   "sells": 11,
-   "rise_pct": 77.8,
-   "mcap_sol": 63.0,
+   "age_s": 72,
+   "sol_in": 14.72,
+   "buys": 30,
+   "sells": 16,
+   "rise_pct": 106.1,
+   "mcap_sol": 73.1,
    "dev_pct": 12.0,
    "big_sell": 1.94,
    "x": "https://x.com/akarifigure/status/2126245332983918997",
@@ -6767,7 +6803,7 @@
    "symbol": "Rockstar",
    "name": "Rockstar Games",
    "mint": "H1XssMLY7gGEqTfbNkEhGUMhefDLgwqnjeGA7sQ5pump",
-   "age_s": 51,
+   "age_s": 79,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 1,
@@ -6785,12 +6821,12 @@
    "symbol": "Christ",
    "name": "The Nietzschean Man",
    "mint": "DZuyygeKUBR2FhNh3YeDTmqbsAjZttRhGhcCGGmeKrHf",
-   "age_s": 68,
-   "sol_in": -4.62,
-   "buys": 2,
-   "sells": 8,
-   "rise_pct": -24.7,
-   "mcap_sol": 28.6,
+   "age_s": 96,
+   "sol_in": -1.53,
+   "buys": 3,
+   "sells": 9,
+   "rise_pct": -8.6,
+   "mcap_sol": 34.7,
    "dev_pct": 15.2,
    "big_sell": 3.21,
    "x": false,
@@ -6803,7 +6839,7 @@
    "symbol": "Pickle",
    "name": "Gambling Deer",
    "mint": "GKKH9EHquen47BcTKbDa7zixtu4p1KNLtSBBw57npump",
-   "age_s": 102,
+   "age_s": 130,
    "sol_in": -0.76,
    "buys": 10,
    "sells": 14,
@@ -6821,7 +6857,7 @@
    "symbol": "CHARLIE",
    "name": "Charlie Brown",
    "mint": "HfLVPMUkhfcgApBHDNfb5MbCZk2u3vqnAX9RBBf5ttM6",
-   "age_s": 114,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6834,48 +6870,28 @@
    "web": "https://usepaid.app/token/FdRQXLWM42dZAUjkKfxyeLYoKDEmZEJvZeHU2dm7FKRR",
    "status": "rejected: serial launcher: 6 more coins in 60 min",
    "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "AKARI",
-   "name": "Akari",
-   "mint": "6R4hg3PtKPeSCjHZQAnq45n3TjfYQLfbH3LRkeaLpump",
-   "age_s": 164,
-   "sol_in": -3.77,
-   "buys": 9,
-   "sells": 9,
-   "rise_pct": -21.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 12.0,
-   "big_sell": 2.72,
-   "x": "https://x.com/akarifigure/status/2126245332983918997",
-   "tg": false,
-   "web": "https://akarifigure.fun",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "dogscountZ",
-   "name": "this will bring retail b",
-   "mint": "1XBHZVkN2xR4aapPZ57d48ez3guehoNc2JMfNF7qgxo",
-   "age_s": 172,
-   "sol_in": -1.79,
-   "buys": 1,
-   "sells": 4,
-   "rise_pct": -10.9,
-   "mcap_sol": 28.0,
-   "dev_pct": 6.0,
-   "big_sell": 1.81,
-   "x": "https://x.com/Dak9n/status/2123305180028424231?a=WeDWwWGnwIQdkQ8ard8&s=20",
-   "tg": false,
-   "web": "https://founderfun.xyz/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "FRYERA",
+   "mint": "HVMxQRi9XBjFv8eANBLqX9LSS4UhJeDoiz6gicH9pump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:26:15Z",
+   "cost": 36.2,
+   "pnl_pct": -3.9,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.05
+  },
   {
    "symbol": "PISSBALL",
    "mint": "DLRVaeuaKtc8LUJLNHYnF41UyhSkyUG37NjU2xd6WLpw",
@@ -6884,7 +6900,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:25:05Z",
    "cost": 36.2,
-   "pnl_pct": -2.6,
+   "pnl_pct": -2.5,
    "tier": "scalp",
    "score": 1,
    "steps": 0,
@@ -6900,7 +6916,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:24:57Z",
    "cost": 36.2,
-   "pnl_pct": -5.1,
+   "pnl_pct": -5.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7314,7 +7330,7 @@
   "wins": 151,
   "win_rate": 21.0,
   "mean_pnl_pct": -8.49,
-  "open": 2,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
