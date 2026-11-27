@@ -49,15 +49,6 @@
    {
     "t": "2026-11-27T05:21:44Z",
     "time": "06:21:44",
-    "agent": "EXECUTOR",
-    "coin": "CAVEBABY",
-    "action": "exit",
-    "text": "EXIT CAVEBABY +$3.29 (+15%) · TP +10% · out · 0.0 s after the reading",
-    "n": 2327
-   },
-   {
-    "t": "2026-11-27T05:21:44Z",
-    "time": "06:21:44",
     "agent": "LEARNER",
     "coin": "CAVEBABY",
     "action": "learn",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW SHIP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002631 (curve maths, every cost) · same exits, outside the book",
     "n": 2926
+   },
+   {
+    "t": "2026-11-27T06:49:23Z",
+    "time": "07:49:23",
+    "agent": "LEARNER",
+    "coin": "shawty",
+    "action": "shadow",
+    "text": "SHADOW shawty would have made -7.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.7% over 187",
+    "n": 2927
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2926,
+  "lines": 2927,
   "flags": [
    {
     "coin": "Kibo",
@@ -21211,6 +21211,10 @@
    [
     1795762133,
     361.97
+   ],
+   [
+    1795762193,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21219,9 +21223,9 @@
   },
   "np_said": 1795762150.780891,
   "shadow": {
-   "n": 370,
+   "n": 371,
    "wins": 68,
-   "sum": -3206.4
+   "sum": -3214.0
   },
   "np_speed": {
    "first_in": [
@@ -30804,9 +30808,9 @@
   }
  },
  "shadow": {
-  "n": 384,
+  "n": 385,
   "wins": 70,
-  "sum": -3404.9,
+  "sum": -3412.5,
   "by": {
    "learner": {
     "n": 16,
@@ -30814,32 +30818,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 368,
+    "n": 369,
     "wins": 67,
-    "sum": -3207.1
+    "sum": -3214.7
    }
   },
   "closed": [
-   {
-    "symbol": "PEAK",
-    "mint": "2YdSZeaV3rkMzwPc7TewTfSLcyM6XUAqa6JDiTn8pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:34:43Z",
-    "cost": 36.2,
-    "pnl_pct": -22.5,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": -0.01,
-    "closed": "2026-11-27T06:34:43Z",
-    "exit": "stop -12%",
-    "pnl": -8.13,
-    "weight": 0.5
-   },
    {
     "symbol": "NVIDIAAI",
     "mint": "DYqSeuLfjnZnHuxnC7yivX51GU5u957CY14hQJtBpump",
@@ -31219,11 +31203,30 @@
     "exit": "TP +20%",
     "pnl": 5.75,
     "weight": 0.5
+   },
+   {
+    "symbol": "shawty",
+    "mint": "8YtqRu16QmuLyW1H2NAiknFpt8U3dNW6bLh2mK47rZPH",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:46:23Z",
+    "cost": 36.2,
+    "pnl_pct": -7.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:49:23Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.75,
+    "weight": 0.5
    }
   ],
   "open": [
    "AGC",
-   "shawty",
    "DI",
    "claws",
    "HELL",
@@ -31269,7 +31272,7 @@
     "avg": -13.5
    }
   ],
-  "shadows": 368,
+  "shadows": 369,
   "memory": "snipe"
  }
 }
