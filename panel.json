@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:43:59Z",
+ "updated": "2026-11-27T10:44:32Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4200,
+  "lines": 4203,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795740180,
-   80.34
-  ],
   [
    1795740240,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795776194,
    361.97
+  ],
+  [
+   1795776254,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,33 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:07:52Z",
-   "time": "11:07:52",
-   "agent": "LEARNER",
-   "coin": "slapcat",
-   "action": "shadow",
-   "text": "SHADOW slapcat would have made +16.6% (TP +10%) · learned x0.5 · np:sol:3-6 now avg -11.4% over 69",
-   "n": 4001
-  },
-  {
-   "t": "2026-11-27T10:08:01Z",
-   "time": "11:08:01",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.0 a minute · 0 watched · 22 rejected (serial launcher 14, snipe not bought: trades tonight 4, mayhem mode 3)",
-   "n": 4002
-  },
-  {
-   "t": "2026-11-27T10:08:04Z",
-   "time": "11:08:04",
-   "agent": "LEARNER",
-   "coin": "Patrick",
-   "action": "shadow",
-   "text": "SHADOW Patrick would have made -8.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 226",
-   "n": 4003
-  },
-  {
    "t": "2026-11-27T10:08:11Z",
    "time": "11:08:11",
    "agent": "LEARNER",
@@ -6538,6 +6511,33 @@
    "action": "shadow",
    "text": "SHADOW NİMİS1 would have made -17.2% (stop -14%) · learned x0.5 · np:age:<30s now avg -7.8% over 300",
    "n": 4200
+  },
+  {
+   "t": "2026-11-27T10:44:04Z",
+   "time": "11:44:04",
+   "agent": "LEARNER",
+   "coin": "TUBEA",
+   "action": "shadow",
+   "text": "SHADOW TUBEA would have made +10.3% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.2% over 239",
+   "n": 4201
+  },
+  {
+   "t": "2026-11-27T10:44:15Z",
+   "time": "11:44:15",
+   "agent": "LEARNER",
+   "coin": "TAIL",
+   "action": "shadow",
+   "text": "SHADOW TAIL · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002134 (curve maths, every cost) · same exits, outside the book",
+   "n": 4202
+  },
+  {
+   "t": "2026-11-27T10:44:20Z",
+   "time": "11:44:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.0 a minute · 0 watched · 17 rejected (snipe not bought: trades tonight 9, mayhem mode 5, no symbol or name 3)",
+   "n": 4203
   }
  ],
  "nights": [
@@ -6597,33 +6597,33 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 1,
+  "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1079,
-    "last_event_age_s": 3.8,
+    "events": 1082,
+    "last_event_age_s": 6.2,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22755,
-    "last_event_age_s": 0.9,
+    "events": 22771,
+    "last_event_age_s": 5.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 639,
-    "last_event_age_s": 3.8,
-    "errors": 28,
+    "connected": false,
+    "events": 641,
+    "last_event_age_s": 1.9,
+    "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "creates_per_min": 5.0,
   "watching": 0,
-  "followed": 8
+  "followed": 10
  },
  "learner": {
   "samples": 249,
@@ -6678,34 +6678,88 @@
     "avg": -11.1
    }
   ],
-  "shadows": 859,
+  "shadows": 860,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12553,
+   "sent": 12588,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12564,
+   "sent": 12599,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NiuHui",
+   "name": "牛回",
+   "mint": "23drrP7Hazy523twPNoB2npY7FdkKXeXdaMzTrkGDK9a",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": -99.9,
+   "mcap_sol": 0.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 8 more coins in 60 min",
+   "why": "serial launcher: 8 more coins in 60 min"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "3gmMV3T5qHLm5FTNnusKBTNoDZsiQdg5Su37vLW8pump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "TAIL",
+   "name": "CAT'S TAIL",
+   "mint": "6y6RGWHdDhNRxVT7zs7t8AkLLJZS8G7Gb9En66T3hFvi",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.02,
+   "x": "https://x.com/Wiwisolo/status/2119159708053344678",
+   "tg": false,
+   "web": "https://www.space.com/astronomy/hubble-space-telescope/hubble-telescope-sees-cosmic-cats-tail-that-could-wrap-around-the-sun-and-earth-500-times",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "NİMİS1",
    "name": "NİMİS",
    "mint": "DQtLq2hVMqhCcb7tka1xXGvg7T9zePoVQayGQvwMEudT",
-   "age_s": 3,
-   "sol_in": -1.48,
+   "age_s": 36,
+   "sol_in": -1.68,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": -9.1,
-   "mcap_sol": 28.3,
+   "sells": 4,
+   "rise_pct": -10.3,
+   "mcap_sol": 28.0,
    "dev_pct": 5.7,
    "big_sell": 1.7,
    "x": "https://x.com/etquantz/status/2126264419768258906",
@@ -6718,7 +6772,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "3v2osyYfFBikk88pEA4ChZs9pp5pASnbxNxhTkcdpump",
-   "age_s": 16,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6736,7 +6790,7 @@
    "symbol": "?",
    "name": "",
    "mint": "D6avzi3rL6Y7VGer6zjLPSyDA5u8hYh83hexMVyFFr8b",
-   "age_s": 17,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6754,14 +6808,14 @@
    "symbol": "TUBEA",
    "name": "Fake Four-Day Week",
    "mint": "BsuxVHHCbEqPPXu3QsbZyXB3yRWtjjaSTLjqk76hpump",
-   "age_s": 19,
-   "sol_in": 0.85,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 5.5,
-   "mcap_sol": 31.5,
+   "age_s": 52,
+   "sol_in": 2.95,
+   "buys": 5,
+   "sells": 1,
+   "rise_pct": 20.0,
+   "mcap_sol": 35.8,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": false,
    "tg": false,
    "web": "https://www.standard.co.uk/news/london/tube-strikes-latest-friday-live-updates-rmt-piccadilly-circle-lines-b1306404.html?mint=",
@@ -6772,7 +6826,7 @@
    "symbol": "JENSEN",
    "name": "Jensen Is Back",
    "mint": "ATMYnSF6af3dfEgyZXZHU7g2PjJunaeJhmQpoopHpump",
-   "age_s": 20,
+   "age_s": 53,
    "sol_in": -1.22,
    "buys": 2,
    "sells": 2,
@@ -6790,7 +6844,7 @@
    "symbol": "OPEN",
    "name": "Is The Stock Market Open Today",
    "mint": "6ma6PqMgnGax28mTBonvNA7DhJt7chpjSqoLnWYdL3ok",
-   "age_s": 48,
+   "age_s": 81,
    "sol_in": -0.05,
    "buys": 1,
    "sells": 7,
@@ -6808,7 +6862,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "CJHh1RmV3nToyrE6G98Lewi9ooYiVx51qfUVKoJKpump",
-   "age_s": 52,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6826,7 +6880,7 @@
    "symbol": "DogeCoge",
    "name": "DogeCoge",
    "mint": "3x7PuHmbEKMy9JCxnt6mhCgithsGh8uBxi7aBa9Epump",
-   "age_s": 67,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6844,7 +6898,7 @@
    "symbol": "Votelaunch",
    "name": "Votelaunch",
    "mint": "DaDrLbhiHWqxYTjhLaoXArLWw3f8N4u2EnLaouRNhNqm",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": -0.05,
    "buys": 3,
    "sells": 3,
@@ -6862,7 +6916,7 @@
    "symbol": "sale",
    "name": "super whale",
    "mint": "5o6CZFqBqhq34j8HpeD8Ne5cZqQCDB66fzqEBWdFpump",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": -1.73,
    "buys": 2,
    "sells": 6,
@@ -6880,7 +6934,7 @@
    "symbol": "DEMOB",
    "name": "Demolished Down Under",
    "mint": "gaDovUmXXsx3EuDoWNYVMPWxrmnoHzyX3NRuMU1pump",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": 1.11,
    "buys": 4,
    "sells": 4,
@@ -6898,7 +6952,7 @@
    "symbol": "?",
    "name": "",
    "mint": "EPGGQCmeVhYrDamp8GwiNbUhdiguC65Qk19qZCUTECFM",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6916,14 +6970,14 @@
    "symbol": "JASON",
    "name": "Jason's House",
    "mint": "CdpCgGuobSx2WEruCLn18oGGyPit1ZPUti5nwoi3pump",
-   "age_s": 101,
-   "sol_in": 0.33,
+   "age_s": 134,
+   "sol_in": -0.74,
    "buys": 5,
-   "sells": 2,
-   "rise_pct": 2.1,
-   "mcap_sol": 30.5,
+   "sells": 4,
+   "rise_pct": -4.7,
+   "mcap_sol": 28.4,
    "dev_pct": 3.4,
-   "big_sell": 0.05,
+   "big_sell": 1.06,
    "x": "https://twitter.com/PicturesFoIder/status/2126255869591789583",
    "tg": false,
    "web": "https://www.msn.com/en-in/news/other/gta-vi-jason-s-real-life-house-on-sale-for-rs-683-crore/ar-AA2iljAL",
@@ -6934,7 +6988,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "ADGuWCwrFaNujD4KjQao6UPjUFpE9uKx8mHnXYjRpump",
-   "age_s": 119,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6952,7 +7006,7 @@
    "symbol": "?",
    "name": "",
    "mint": "C9fXThh3REmkYcMAAC4Cq5ZTQXh9Ttc4DMafu4yRducS",
-   "age_s": 141,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6965,24 +7019,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "337skWxEXHiCyR96G1Qwc8XC1NZdVn3cFRDwmaSrpump",
-   "age_s": 166,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
@@ -6990,20 +7026,20 @@
  ],
  "shadows": [
   {
-   "symbol": "TUBEA",
-   "mint": "BsuxVHHCbEqPPXu3QsbZyXB3yRWtjjaSTLjqk76hpump",
+   "symbol": "TAIL",
+   "mint": "6y6RGWHdDhNRxVT7zs7t8AkLLJZS8G7Gb9En66T3hFvi",
    "status": "open",
    "kind": "risk",
    "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:43:41Z",
+   "opened": "2026-11-27T10:44:15Z",
    "cost": 36.2,
-   "pnl_pct": 1.4,
+   "pnl_pct": -4.1,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
-   "age_s": 1,
-   "sol_in": 0.0
+   "age_s": 0,
+   "sol_in": 0.02
   },
   {
    "symbol": "OPEN",
@@ -7061,7 +7097,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:42:18Z",
    "cost": 36.2,
-   "pnl_pct": -2.5,
+   "pnl_pct": -9.1,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -7084,6 +7120,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "TUBEA",
+   "mint": "BsuxVHHCbEqPPXu3QsbZyXB3yRWtjjaSTLjqk76hpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:43:41Z",
+   "cost": 36.2,
+   "pnl_pct": 10.3,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 1,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T10:44:04Z",
+   "exit": "TP +10%",
+   "pnl": 3.72,
+   "weight": 0.5
   },
   {
    "symbol": "NİMİS1",
@@ -7464,33 +7520,13 @@
    "exit": "dump: 21.2 SOL sold",
    "pnl": -24.6,
    "weight": 0.5
-  },
-  {
-   "symbol": "PARDON",
-   "mint": "BtC3WqzGivYFQokr9PWngLntfWyM7pFxnkLusCXtpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:27:17Z",
-   "cost": 36.2,
-   "pnl_pct": -9.0,
-   "tier": "scalp",
-   "score": 2,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 1.32,
-   "closed": "2026-11-27T10:31:23Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -3.26,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 875,
-  "wins": 194,
-  "win_rate": 22.2,
-  "mean_pnl_pct": -8.05,
+  "n": 876,
+  "wins": 195,
+  "win_rate": 22.3,
+  "mean_pnl_pct": -8.03,
   "open": 6,
   "learner": {
    "n": 16,
@@ -7499,10 +7535,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 859,
-   "wins": 191,
-   "win_rate": 22.2,
-   "mean_pnl_pct": -7.97
+   "n": 860,
+   "wins": 192,
+   "win_rate": 22.3,
+   "mean_pnl_pct": -7.95
   }
  }
 }
