@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T11:11:11Z",
-    "time": "12:11:11",
-    "agent": "RISK",
-    "coin": "TLAOS",
-    "action": "skip",
-    "text": "no entry: 250 trades tonight (max)",
-    "n": 4357
-   },
-   {
-    "t": "2026-11-27T11:11:11Z",
-    "time": "12:11:11",
-    "agent": "LEARNER",
-    "coin": "TLAOS",
-    "action": "shadow",
-    "text": "SHADOW TLAOS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021841 (curve maths, every cost) · same exits, outside the book",
-    "n": 4358
-   },
-   {
-    "t": "2026-11-27T11:11:12Z",
-    "time": "12:11:12",
-    "agent": "LEARNER",
-    "coin": "HAROLD",
-    "action": "shadow",
-    "text": "SHADOW HAROLD · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021494 (curve maths, every cost) · same exits, outside the book",
-    "n": 4359
-   },
-   {
     "t": "2026-11-27T11:11:16Z",
     "time": "12:11:16",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW AVATAR would have made +6.3% (TP +10%) · learned x0.5 · np:social:none now avg -8.4% over 248",
     "n": 4956
+   },
+   {
+    "t": "2026-11-27T17:27:18Z",
+    "time": "18:27:18",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 9.4 a minute · 0 watched · 26 rejected (snipe not bought: night at open  14, mayhem mode 8, no symbol or name 3)",
+    "n": 4957
+   },
+   {
+    "t": "2026-11-27T17:27:23Z",
+    "time": "18:27:23",
+    "agent": "LEARNER",
+    "coin": "JOEY",
+    "action": "shadow",
+    "text": "SHADOW JOEY · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000024912 (curve maths, every cost) · same exits, outside the book",
+    "n": 4958
+   },
+   {
+    "t": "2026-11-27T17:27:27Z",
+    "time": "18:27:27",
+    "agent": "LEARNER",
+    "coin": "JOEY",
+    "action": "shadow",
+    "text": "SHADOW JOEY would have made -16.3% (stop -12%) · learned x0.5 · np:sol:3-6 now avg -12.3% over 83.5",
+    "n": 4959
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4956,
+  "lines": 4959,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795800378.44343,
+  "np_said": 1795800438.443461,
   "shadow": {
-   "n": 1151,
+   "n": 1152,
    "wins": 257,
-   "sum": -8648.9
+   "sum": -8665.2
   },
   "np_speed": {
    "first_in": [
@@ -31843,9 +31843,9 @@
   }
  },
  "shadow": {
-  "n": 1165,
+  "n": 1166,
   "wins": 259,
-  "sum": -8847.4,
+  "sum": -8863.7,
   "by": {
    "learner": {
     "n": 16,
@@ -31853,32 +31853,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1149,
+    "n": 1150,
     "wins": 256,
-    "sum": -8649.6
+    "sum": -8665.9
    }
   },
   "closed": [
-   {
-    "symbol": "RUBBER",
-    "mint": "62hrCbdmq3LAWmvgjmWxq3JvDKFNKLHS9v6At24dpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:21:12Z",
-    "cost": 5.91,
-    "pnl_pct": -7.3,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T17:24:16Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.43,
-    "weight": 0.5
-   },
    {
     "symbol": "SN",
     "mint": "6tkMUk5kAkfZujDPxJhih7S6dXfRztHjsEojNrC4pump",
@@ -32258,6 +32238,26 @@
     "exit": "TP +10%",
     "pnl": 0.37,
     "weight": 0.5
+   },
+   {
+    "symbol": "JOEY",
+    "mint": "9QTzTFz6evVPLWwZhjt46oeA5pgVWDeeJHkj6GYRpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:27:23Z",
+    "cost": 5.91,
+    "pnl_pct": -16.3,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.02,
+    "closed": "2026-11-27T17:27:27Z",
+    "exit": "stop -12%",
+    "pnl": -0.96,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32296,7 +32296,7 @@
   "worst": [
    {
     "label": "snipe · np:sol:3-6",
-    "n": 83,
+    "n": 84,
     "avg": -12.3
    },
    {
@@ -32310,7 +32310,7 @@
     "avg": -8.4
    }
   ],
-  "shadows": 1357,
+  "shadows": 1358,
   "memory": "snipe"
  }
 }
