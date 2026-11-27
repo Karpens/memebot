@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T08:58:41Z",
+ "updated": "2026-11-27T08:59:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3651,
+  "lines": 3654,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -2464,6 +2464,10 @@
   [
    1795769894,
    361.97
+  ],
+  [
+   1795769954,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4732,33 +4736,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:25:02Z",
-   "time": "09:25:02",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 1 watched · 12 rejected (mayhem mode 7, snipe not bought: trades tonight 3, serial launcher 2) · closest PRIVATE: no curve reading yet",
-   "n": 3452
-  },
-  {
-   "t": "2026-11-27T08:25:03Z",
-   "time": "09:25:03",
-   "agent": "RISK",
-   "coin": "PRIVATE",
-   "action": "skip",
-   "text": "no entry: 250 trades tonight (max)",
-   "n": 3453
-  },
-  {
-   "t": "2026-11-27T08:25:03Z",
-   "time": "09:25:03",
-   "agent": "LEARNER",
-   "coin": "PRIVATE",
-   "action": "shadow",
-   "text": "SHADOW PRIVATE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021765 (curve maths, every cost) · same exits, outside the book",
-   "n": 3454
-  },
-  {
    "t": "2026-11-27T08:25:08Z",
    "time": "09:25:08",
    "agent": "LEARNER",
@@ -6530,6 +6507,33 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 11 rejected (snipe not bought: trades tonight 7, mayhem mode 3, serial launcher 1)",
    "n": 3651
+  },
+  {
+   "t": "2026-11-27T08:58:58Z",
+   "time": "09:58:58",
+   "agent": "RISK",
+   "coin": "HUSH",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 3652
+  },
+  {
+   "t": "2026-11-27T08:58:58Z",
+   "time": "09:58:58",
+   "agent": "LEARNER",
+   "coin": "HUSH",
+   "action": "shadow",
+   "text": "SHADOW HUSH · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000042575 (curve maths, every cost) · same exits, outside the book",
+   "n": 3653
+  },
+  {
+   "t": "2026-11-27T08:59:02Z",
+   "time": "09:59:02",
+   "agent": "LEARNER",
+   "coin": "HUSH",
+   "action": "shadow",
+   "text": "SHADOW HUSH would have made +15.8% (TP +20%) · learned x0.5 · tier:swing now avg -11.7% over 51",
+   "n": 3654
   }
  ],
  "nights": [
@@ -6584,7 +6588,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 1,
   "scans_per_min": 0,
@@ -6592,24 +6596,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 492,
-    "last_event_age_s": 7.2,
+    "events": 494,
+    "last_event_age_s": 2.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12238,
-    "last_event_age_s": 0.3,
+    "events": 12341,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 277,
-    "last_event_age_s": 46.1,
+    "events": 278,
+    "last_event_age_s": 17.1,
     "errors": 16,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6622,9 +6626,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7
+  "followed": 6
  },
  "learner": {
   "samples": 249,
@@ -6639,8 +6643,8 @@
    },
    {
     "label": "snipe · np:sol:6-12",
-    "n": 61,
-    "avg": -5.5
+    "n": 62,
+    "avg": -5.4
    },
    {
     "label": "snipe · np:dev:5-8",
@@ -6655,39 +6659,75 @@
     "avg": -12.8
    },
    {
-    "label": "snipe · tier:swing",
-    "n": 50,
-    "avg": -12.0
+    "label": "snipe · hour:03-05",
+    "n": 212,
+    "avg": -10.9
    },
    {
-    "label": "snipe · news:3-4",
-    "n": 50,
-    "avg": -12.0
+    "label": "snipe · tier:swing",
+    "n": 51,
+    "avg": -11.7
    }
   ],
-  "shadows": 651,
+  "shadows": 652,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5829,
+   "sent": 5864,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5840,
+   "sent": 5875,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TERKEY",
+   "name": "Pterodactyl Turkey",
+   "mint": "FFdC7MhKYGFa7xtQiSH5UTN4BD9npznqEQ6rbhAopump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.7,
+   "dev_pct": 3.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "HUSH",
+   "name": "Hush",
+   "mint": "HhVNCcJ1vVhe7jVw2HrqutmyHzDw9wwnztjQgcFmpump",
+   "age_s": 17,
+   "sol_in": 14.82,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": 103.0,
+   "mcap_sol": 76.7,
+   "dev_pct": 15.0,
+   "big_sell": 1.15,
+   "x": "https://x.com/hushpoolsol",
+   "tg": false,
+   "web": "https://hushmarkets.fun",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "LMAO",
    "name": "LMAO",
    "mint": "BCGEAeycPY75G9SGp5Di8LfDjTaoSVWbJNhHw5Hwpump",
-   "age_s": 7,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6705,12 +6745,12 @@
    "symbol": "SALECOIN",
    "name": "This Coin is on sale",
    "mint": "BzV2CoboSEPFbDQZieLX9YW2s81Dsub5ZVY1oe3Wpump",
-   "age_s": 46,
-   "sol_in": -8.33,
+   "age_s": 79,
+   "sol_in": -8.48,
    "buys": 5,
-   "sells": 9,
-   "rise_pct": -37.4,
-   "mcap_sol": 30.9,
+   "sells": 10,
+   "rise_pct": -38.0,
+   "mcap_sol": 30.6,
    "dev_pct": 26.6,
    "big_sell": 5.56,
    "x": "https://x.com/ShiIIcoin/status/2126238973081112893",
@@ -6723,7 +6763,7 @@
    "symbol": "LMAO",
    "name": "LMAO",
    "mint": "DPeYSRW7ssH7qCEuuxCENWkGLzmWiCQJgfVsRFiopump",
-   "age_s": 58,
+   "age_s": 91,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6741,12 +6781,12 @@
    "symbol": "HUSH",
    "name": "Hush",
    "mint": "A6uuj1GJtGXNw6sRXagsb2vZLcCcUXVPZhLeVuGxpump",
-   "age_s": 59,
-   "sol_in": -4.35,
+   "age_s": 92,
+   "sol_in": -4.87,
    "buys": 10,
-   "sells": 9,
-   "rise_pct": -23.4,
-   "mcap_sol": 29.0,
+   "sells": 11,
+   "rise_pct": -26.0,
+   "mcap_sol": 28.0,
    "dev_pct": 15.0,
    "big_sell": 17.6,
    "x": "https://x.com/hushpoolsol",
@@ -6759,7 +6799,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "CPsMmzNcHUwXnDFo4S1v2hNYY5ENXNCBg8SHXznUpump",
-   "age_s": 96,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6777,12 +6817,12 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "HdwFN2e3SB78qXULR1XpBTvb8KqVXvWUXinxY6XHpump",
-   "age_s": 106,
-   "sol_in": 19.57,
-   "buys": 33,
-   "sells": 24,
-   "rise_pct": 151.2,
-   "mcap_sol": 87.3,
+   "age_s": 139,
+   "sol_in": 19.63,
+   "buys": 44,
+   "sells": 36,
+   "rise_pct": 151.8,
+   "mcap_sol": 87.6,
    "dev_pct": 11.1,
    "big_sell": 0.33,
    "x": "https://x.com/gtasix_",
@@ -6795,7 +6835,7 @@
    "symbol": "BABYKIBO",
    "name": "Baby Kibo",
    "mint": "FiDQtuFKFkWf5bB7939fv22Xmw3FaMYKDJG3W19Gpump",
-   "age_s": 107,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6813,11 +6853,11 @@
    "symbol": "ANTS",
    "name": "Snowball Ants",
    "mint": "28ihAQUBGb3aztTFxqPA5vGhfDmfA6jUwj64zxL7PX33",
-   "age_s": 126,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 159,
+   "sol_in": 0.03,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.2,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -6831,7 +6871,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "BsgBEMwnajnsnB3Mgx536Mco7aCKbFSyMQpsKs8Epump",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6844,42 +6884,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "CINU",
-   "name": "Cate Inu Prime",
-   "mint": "kEshVt8TFrCFpmQ93QPYuNW1Aequp7VdBTUmAFxBdc8",
-   "age_s": 160,
-   "sol_in": 0.2,
-   "buys": 20,
-   "sells": 4,
-   "rise_pct": 1.4,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": "https://x.com/search?q=%24CINU&f=live",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "HUSH",
-   "name": "Hush",
-   "mint": "4GUGA3nyeeLuQcg8FYpygjb6NNXYJ6PBYLZttEVSpump",
-   "age_s": 164,
-   "sol_in": -4.88,
-   "buys": 9,
-   "sells": 15,
-   "rise_pct": -26.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.0,
-   "big_sell": 15.06,
-   "x": "https://x.com/hushpoolsol",
-   "tg": false,
-   "web": "https://hushmarkets.fun",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
@@ -6894,7 +6898,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T08:56:55Z",
    "cost": 36.2,
-   "pnl_pct": 2.6,
+   "pnl_pct": 2.8,
    "tier": "swing",
    "score": 4,
    "steps": 0,
@@ -6910,7 +6914,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T08:56:54Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -4.1,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6926,7 +6930,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T08:56:36Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -3.8,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -6942,7 +6946,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T08:56:02Z",
    "cost": 36.2,
-   "pnl_pct": -3.1,
+   "pnl_pct": -3.2,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6965,6 +6969,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.57
+  },
+  {
+   "symbol": "HUSH",
+   "mint": "HhVNCcJ1vVhe7jVw2HrqutmyHzDw9wwnztjQgcFmpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T08:58:58Z",
+   "cost": 36.2,
+   "pnl_pct": 15.8,
+   "tier": "swing",
+   "score": 3,
+   "steps": 2,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 7.65,
+   "closed": "2026-11-27T08:59:02Z",
+   "exit": "TP +20%",
+   "pnl": 5.71,
+   "weight": 0.5
   },
   {
    "symbol": "HUSH",
@@ -7345,33 +7369,13 @@
    "exit": "TP +10%",
    "pnl": 3.79,
    "weight": 0.5
-  },
-  {
-   "symbol": "nopipin",
-   "mint": "2zNcckmYeYJ3gUhK4ZciZ6dZrFLoXPB11bgHNPjqpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T08:43:00Z",
-   "cost": 36.2,
-   "pnl_pct": 24.1,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T08:48:07Z",
-   "exit": "TP +10%",
-   "pnl": 8.71,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 667,
-  "wins": 141,
-  "win_rate": 21.1,
-  "mean_pnl_pct": -8.44,
+  "n": 668,
+  "wins": 142,
+  "win_rate": 21.3,
+  "mean_pnl_pct": -8.4,
   "open": 5,
   "learner": {
    "n": 16,
@@ -7380,10 +7384,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 651,
-   "wins": 138,
-   "win_rate": 21.2,
-   "mean_pnl_pct": -8.34
+   "n": 652,
+   "wins": 139,
+   "win_rate": 21.3,
+   "mean_pnl_pct": -8.3
   }
  }
 }
