@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:02:06Z",
-    "time": "06:02:06",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.2 a minute · 0 watched · 3 rejected (serial launcher 2, mayhem mode 1)",
-    "n": 2152
-   },
-   {
-    "t": "2026-11-27T05:02:59Z",
-    "time": "06:02:59",
-    "agent": "LEARNER",
-    "coin": "$FROGZ",
-    "action": "shadow",
-    "text": "SHADOW $FROGZ · not bought (pause after a losing streak) · followed as if bought: $21.23 at 0.000002141 (curve maths, every cost) · same exits, outside the book",
-    "n": 2153
-   },
-   {
     "t": "2026-11-27T05:03:06Z",
     "time": "06:03:06",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 3.2 a minute · 1 watched · 8 rejected (mayhem mode 4, serial launcher 2, snipe not bought: trades tonight 2) · closest PAIDMO: no curve reading yet",
     "n": 2751
+   },
+   {
+    "t": "2026-11-27T06:10:02Z",
+    "time": "07:10:02",
+    "agent": "LEARNER",
+    "coin": "CHAPE",
+    "action": "shadow",
+    "text": "SHADOW CHAPE would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 178.5",
+    "n": 2752
+   },
+   {
+    "t": "2026-11-27T06:10:08Z",
+    "time": "07:10:08",
+    "agent": "LEARNER",
+    "coin": "TWIZZY",
+    "action": "shadow",
+    "text": "SHADOW TWIZZY would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 179",
+    "n": 2753
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2751,
+  "lines": 2753,
   "flags": [
    {
     "coin": "Kibo",
@@ -21063,9 +21063,9 @@
   },
   "np_said": 1795759789.78088,
   "shadow": {
-   "n": 308,
+   "n": 310,
    "wins": 52,
-   "sum": -2682.9
+   "sum": -2697.9
   },
   "np_speed": {
    "first_in": [
@@ -30648,9 +30648,9 @@
   }
  },
  "shadow": {
-  "n": 322,
+  "n": 324,
   "wins": 54,
-  "sum": -2881.4,
+  "sum": -2896.4,
   "by": {
    "learner": {
     "n": 16,
@@ -30658,52 +30658,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 306,
+    "n": 308,
     "wins": 51,
-    "sum": -2683.6
+    "sum": -2698.6
    }
   },
   "closed": [
-   {
-    "symbol": "ZANTA",
-    "mint": "5JDrabd4L4wGDmd9XWFS3ZYvY1G4rFSyigEvFcB8pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T05:58:38Z",
-    "cost": 36.2,
-    "pnl_pct": 31.6,
-    "tier": "swing",
-    "score": 3,
-    "steps": 2,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 8.53,
-    "closed": "2026-11-27T05:58:39Z",
-    "exit": "TP +20%",
-    "pnl": 11.42,
-    "weight": 0.5
-   },
-   {
-    "symbol": "spxc",
-    "mint": "FcmaJbapvWS9Vqc7mu7HSppRoFpLuPSaUSigKAKvpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T05:53:55Z",
-    "cost": 36.33,
-    "pnl_pct": -5.9,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.15,
-    "closed": "2026-11-27T05:58:55Z",
-    "exit": "5 min, only -2%",
-    "pnl": -2.13,
-    "weight": 0.5
-   },
    {
     "symbol": "BAHAT",
     "mint": "GJxqfKGhs6Pt4LVkjEYMEpEspoo2hV4KdsNbNRMaiqoF",
@@ -31063,11 +31023,49 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.69,
     "weight": 0.5
+   },
+   {
+    "symbol": "CHAPE",
+    "mint": "6E3FQBw9kp5osyH6Hx8BeQQVd84cpxgqNmw35qJNpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:06:25Z",
+    "cost": 36.2,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:10:02Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.61,
+    "weight": 0.5
+   },
+   {
+    "symbol": "TWIZZY",
+    "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:05:25Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:10:08Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.84,
+    "weight": 0.5
    }
   ],
   "open": [
-   "TWIZZY",
-   "CHAPE",
    "GM"
   ]
  },
@@ -31078,6 +31076,11 @@
   "min_samples": 8,
   "best": [
    {
+    "label": "snipe · hour:day",
+    "n": 8,
+    "avg": -5.2
+   },
+   {
     "label": "snipe · np:sol:6-12",
     "n": 36,
     "avg": -5.0
@@ -31086,11 +31089,6 @@
     "label": "snipe · hour:01-03",
     "n": 32,
     "avg": -5.7
-   },
-   {
-    "label": "snipe · hour:05-07",
-    "n": 152,
-    "avg": -5.9
    }
   ],
   "worst": [
@@ -31110,7 +31108,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 306,
+  "shadows": 308,
   "memory": "snipe"
  }
 }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:09:59Z",
+ "updated": "2026-11-27T06:10:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2751,
+  "lines": 2753,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4060,24 +4060,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T05:38:47Z",
-   "time": "06:38:47",
-   "agent": "EXECUTOR",
-   "coin": "Kibo",
-   "action": "exit",
-   "text": "EXIT Kibo $-3.37 (-8%) · curve quiet for 3 min (no trade)",
-   "n": 2552
-  },
-  {
-   "t": "2026-11-27T05:38:47Z",
-   "time": "06:38:47",
-   "agent": "LEARNER",
-   "coin": "Kibo",
-   "action": "learn",
-   "text": "learned · np:buys:<70 now avg -9.9% over 165",
-   "n": 2553
-  },
-  {
    "t": "2026-11-27T05:39:19Z",
    "time": "06:39:19",
    "agent": "SCANNER",
@@ -5858,6 +5840,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 1 watched · 8 rejected (mayhem mode 4, serial launcher 2, snipe not bought: trades tonight 2) · closest PAIDMO: no curve reading yet",
    "n": 2751
+  },
+  {
+   "t": "2026-11-27T06:10:02Z",
+   "time": "07:10:02",
+   "agent": "LEARNER",
+   "coin": "CHAPE",
+   "action": "shadow",
+   "text": "SHADOW CHAPE would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 178.5",
+   "n": 2752
+  },
+  {
+   "t": "2026-11-27T06:10:08Z",
+   "time": "07:10:08",
+   "agent": "LEARNER",
+   "coin": "TWIZZY",
+   "action": "shadow",
+   "text": "SHADOW TWIZZY would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 179",
+   "n": 2753
   }
  ],
  "nights": [
@@ -5918,7 +5918,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5927,14 +5927,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 1228,
-    "last_event_age_s": 5.5,
+    "last_event_age_s": 33.5,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 38072,
+    "events": 38114,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -5943,7 +5943,7 @@
     "name": "metadata",
     "connected": true,
     "events": 823,
-    "last_event_age_s": 5.3,
+    "last_event_age_s": 33.3,
     "errors": 81,
     "last_error": "ar-io.dev: too slow (over 2 s)"
    }
@@ -5956,9 +5956,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
-  "watching": 1,
-  "followed": 6
+  "creates_per_min": 3.2,
+  "watching": 0,
+  "followed": 4
  },
  "learner": {
   "samples": 249,
@@ -5966,6 +5966,11 @@
   "explored": 0,
   "min_samples": 8,
   "best": [
+   {
+    "label": "snipe · hour:day",
+    "n": 8,
+    "avg": -5.2
+   },
    {
     "label": "snipe · np:sol:6-12",
     "n": 36,
@@ -5975,11 +5980,6 @@
     "label": "snipe · hour:01-03",
     "n": 32,
     "avg": -5.7
-   },
-   {
-    "label": "snipe · hour:05-07",
-    "n": 152,
-    "avg": -5.9
    }
   ],
   "worst": [
@@ -5999,19 +5999,19 @@
     "avg": -14.4
    }
   ],
-  "shadows": 306,
+  "shadows": 308,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17466,
+   "sent": 17496,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17465,
+   "sent": 17495,
    "errors": 0,
    "last_error": null
   }
@@ -6021,7 +6021,7 @@
    "symbol": "BELOBUG",
    "name": "GTA VI PORTED",
    "mint": "EHDoFbvuxPjc3eEVFm5wKzXp4qLNCooNeojK4bXqpump",
-   "age_s": 5,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6039,7 +6039,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "RVcT3rTZd3uwsG4DTwRaVdj5xyshU35RB4B9uGopump",
-   "age_s": 15,
+   "age_s": 43,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6057,7 +6057,7 @@
    "symbol": "CRUMP",
    "name": "DONALD J CRUMP",
    "mint": "E9Bns4jWhQacRrY2sSSg95njXVebK3cySS5iWvU2pump",
-   "age_s": 59,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6075,7 +6075,7 @@
    "symbol": "DORAICE",
    "name": "DORAICE",
    "mint": "HjmXwuEnW222QKMuwqaatvJZMC6U6kcrrVTXhDBmpump",
-   "age_s": 94,
+   "age_s": 122,
    "sol_in": 1.69,
    "buys": 4,
    "sells": 5,
@@ -6093,12 +6093,12 @@
    "symbol": "Fuzzy",
    "name": "FuzzyCoin",
    "mint": "75HjWUUvVLT9oVCz6nYcTVgeC9Ng6i67Gs3XeSJTn27T",
-   "age_s": 101,
-   "sol_in": 7.29,
-   "buys": 48,
-   "sells": 49,
-   "rise_pct": 46.1,
-   "mcap_sol": 55.4,
+   "age_s": 129,
+   "sol_in": 5.3,
+   "buys": 61,
+   "sells": 58,
+   "rise_pct": 32.6,
+   "mcap_sol": 50.3,
    "dev_pct": 15.2,
    "big_sell": 3.07,
    "x": "https://x.com/MarioPrezldente/status/2126196392574296211",
@@ -6111,7 +6111,7 @@
    "symbol": "CRUMP",
    "name": "DONALD J CRUMP",
    "mint": "FY5chpLhGyhjV2Y7roLgeU1M89HFnrh1iF7XJQtrpump",
-   "age_s": 111,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6129,7 +6129,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "AMMP6hbNw4cjwW2G8f9TTEyN9YndkuqqP2wtGxEKpump",
-   "age_s": 114,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6147,7 +6147,7 @@
    "symbol": "GM",
    "name": "GMGM",
    "mint": "E7zKosyJKUE1fVuXQAFKBUBeF5zM4bv5wH9Nr22xAT6q",
-   "age_s": 148,
+   "age_s": 176,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6160,42 +6160,6 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "PAIDMO",
-   "name": "Paidmo",
-   "mint": "9Rqx77dM8D9QGDfzQLm8rVAHpg8TfDSmLhbFRhNvL1nT",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/9Rqx77dM8D9QGDfzQLm8rVAHpg8TfDSmLhbFRhNvL1nT",
-   "status": "watching",
-   "why": "no curve reading yet"
-  },
-  {
-   "symbol": "FLATT",
-   "name": "Gnome-Smashed",
-   "mint": "3CWcfQqGzfpnfoxKbFRscGo1cxbnNsPw95Nu8hrsSyth",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 7 more coins in 60 min",
-   "why": "serial launcher: 7 more coins in 60 min"
   }
  ],
  "strategies": [
@@ -6210,7 +6174,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:07:32Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -3.9,
    "tier": "scalp",
    "score": 1,
    "steps": 0,
@@ -6219,36 +6183,44 @@
    "sol_in": 0.0
   },
   {
-   "symbol": "CHAPE",
-   "mint": "6E3FQBw9kp5osyH6Hx8BeQQVd84cpxgqNmw35qJNpump",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T06:06:25Z",
-   "cost": 36.2,
-   "pnl_pct": -3.4,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 0.0
-  },
-  {
    "symbol": "TWIZZY",
    "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:05:25Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -7.8,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T06:10:08Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -2.84,
+   "weight": 0.5
+  },
+  {
+   "symbol": "CHAPE",
+   "mint": "6E3FQBw9kp5osyH6Hx8BeQQVd84cpxgqNmw35qJNpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:06:25Z",
+   "cost": 36.2,
+   "pnl_pct": -7.2,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T06:10:02Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -2.61,
+   "weight": 0.5
   },
   {
    "symbol": "optimizer",
@@ -6609,54 +6581,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -2.83,
    "weight": 0.5
-  },
-  {
-   "symbol": "spxc",
-   "mint": "FcmaJbapvWS9Vqc7mu7HSppRoFpLuPSaUSigKAKvpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T05:53:55Z",
-   "cost": 36.33,
-   "pnl_pct": -5.9,
-   "tier": "scalp",
-   "score": 2,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.15,
-   "closed": "2026-11-27T05:58:55Z",
-   "exit": "5 min, only -2%",
-   "pnl": -2.13,
-   "weight": 0.5
-  },
-  {
-   "symbol": "ZANTA",
-   "mint": "5JDrabd4L4wGDmd9XWFS3ZYvY1G4rFSyigEvFcB8pump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T05:58:38Z",
-   "cost": 36.2,
-   "pnl_pct": 31.6,
-   "tier": "swing",
-   "score": 3,
-   "steps": 2,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 8.53,
-   "closed": "2026-11-27T05:58:39Z",
-   "exit": "TP +20%",
-   "pnl": 11.42,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 322,
+  "n": 324,
   "wins": 54,
-  "win_rate": 16.8,
-  "mean_pnl_pct": -8.95,
-  "open": 3,
+  "win_rate": 16.7,
+  "mean_pnl_pct": -8.94,
+  "open": 1,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6664,10 +6596,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 306,
+   "n": 308,
    "wins": 51,
-   "win_rate": 16.7,
-   "mean_pnl_pct": -8.77
+   "win_rate": 16.6,
+   "mean_pnl_pct": -8.76
   }
  }
 }
