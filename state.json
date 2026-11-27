@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:23:01Z",
-    "time": "21:23:01",
-    "agent": "LEARNER",
-    "coin": "JASUCK",
-    "action": "shadow",
-    "text": "SHADOW JASUCK would have made -9.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:8+ now avg -8.8% over 227",
-    "n": 6456
-   },
-   {
-    "t": "2026-11-27T20:23:18Z",
-    "time": "21:23:18",
-    "agent": "LEARNER",
-    "coin": "TripleT",
-    "action": "shadow",
-    "text": "SHADOW TripleT · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000068076 (curve maths, every cost) · same exits, outside the book",
-    "n": 6457
-   },
-   {
     "t": "2026-11-27T20:23:22Z",
     "time": "21:23:22",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW YMOON would have made +8.2% (TP +10%) · learned x0.5 · np:buys:<70 now avg -7.7% over 300",
     "n": 7055
+   },
+   {
+    "t": "2026-11-27T21:37:21Z",
+    "time": "22:37:21",
+    "agent": "LEARNER",
+    "coin": "TCASH",
+    "action": "shadow",
+    "text": "SHADOW TCASH would have made -11.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:web now avg -7.3% over 300",
+    "n": 7056
+   },
+   {
+    "t": "2026-11-27T21:37:37Z",
+    "time": "22:37:37",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.6 a minute · 0 watched · 6 rejected (snipe not bought: night at open  2, mayhem mode 2, serial launcher 1)",
+    "n": 7057
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7055,
+  "lines": 7057,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795815397.443391,
+  "np_said": 1795815457.443393,
   "shadow": {
-   "n": 1987,
+   "n": 1988,
    "wins": 452,
-   "sum": -14521.7
+   "sum": -14533.1
   },
   "np_speed": {
    "first_in": [
@@ -31970,9 +31970,9 @@
   }
  },
  "shadow": {
-  "n": 2001,
+  "n": 2002,
   "wins": 454,
-  "sum": -14720.2,
+  "sum": -14731.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31980,32 +31980,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1985,
+    "n": 1986,
     "wins": 451,
-    "sum": -14522.4
+    "sum": -14533.8
    }
   },
   "closed": [
-   {
-    "symbol": "SCT",
-    "mint": "4mf3NvMB9kpDcNqoZgMByphcFTkyPYZKvz5WsG3VxcRF",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:32:01Z",
-    "cost": 5.91,
-    "pnl_pct": 7.3,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 18.14,
-    "closed": "2026-11-27T21:32:02Z",
-    "exit": "TP +10%",
-    "pnl": 0.43,
-    "weight": 0.5
-   },
    {
     "symbol": "MoonBoy",
     "mint": "6miwtBDphHgtJ7NymxTMr6AXXuCSr8Gip3cfwBzjpump",
@@ -32385,11 +32365,30 @@
     "exit": "TP +10%",
     "pnl": 0.49,
     "weight": 0.5
+   },
+   {
+    "symbol": "TCASH",
+    "mint": "EVpiZ73NgPMUS9uT4W6uLqcer4XDaoE3PduoXofSzjAh",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:33:47Z",
+    "cost": 5.91,
+    "pnl_pct": -11.4,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 3,
+    "sol_in": 0.05,
+    "closed": "2026-11-27T21:37:21Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.67,
+    "weight": 0.5
    }
   ],
   "open": [
    "MOONFUEL",
-   "TCASH",
    "RENT$"
   ]
  },
@@ -32432,7 +32431,7 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2193,
+  "shadows": 2194,
   "memory": "snipe"
  }
 }
