@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:22:48Z",
-    "time": "06:22:48",
-    "agent": "NEWS",
-    "coin": "2TYRED",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 2351
-   },
-   {
-    "t": "2026-11-27T05:22:52Z",
-    "time": "06:22:52",
-    "agent": "SCANNER",
-    "coin": "시묘일",
-    "action": "flag",
-    "text": "snipe · first reading 0.5 s after the create · 1.0 SOL in · +7% since the create · mcap 31 SOL",
-    "n": 2352
-   },
-   {
     "t": "2026-11-27T05:22:52Z",
     "time": "06:22:52",
     "agent": "SIZER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW CEDARCREEK would have made -23.7% (dump: 2.9 SOL sold) · learned x0.5 · np:dev:0-2 now avg -9.1% over 198",
     "n": 2950
+   },
+   {
+    "t": "2026-11-27T06:52:10Z",
+    "time": "07:52:10",
+    "agent": "LEARNER",
+    "coin": "TEETH",
+    "action": "shadow",
+    "text": "SHADOW TEETH would have made -14.0% (stop -10%) · learned x0.5 · np:social:web now avg -8.9% over 188",
+    "n": 2951
+   },
+   {
+    "t": "2026-11-27T06:52:12Z",
+    "time": "07:52:12",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.8 a minute · 0 watched · 23 rejected (snipe not bought: trades tonight 11, mayhem mode 8, serial launcher 3)",
+    "n": 2952
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2950,
+  "lines": 2952,
   "flags": [
    {
     "coin": "Kibo",
@@ -21229,11 +21229,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795762271.780901,
+  "np_said": 1795762332.780854,
   "shadow": {
-   "n": 381,
+   "n": 382,
    "wins": 70,
-   "sum": -3344.6
+   "sum": -3358.6
   },
   "np_speed": {
    "first_in": [
@@ -30816,9 +30816,9 @@
   }
  },
  "shadow": {
-  "n": 395,
+  "n": 396,
   "wins": 72,
-  "sum": -3543.1,
+  "sum": -3557.1,
   "by": {
    "learner": {
     "n": 16,
@@ -30826,32 +30826,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 379,
+    "n": 380,
     "wins": 69,
-    "sum": -3345.3
+    "sum": -3359.3
    }
   },
   "closed": [
-   {
-    "symbol": "Ninja",
-    "mint": "3BhoyfBBiuGnc72yJC1AZzJtHgi4VYeutgrPxVJepump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:38:44Z",
-    "cost": 36.2,
-    "pnl_pct": -7.4,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:41:49Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.69,
-    "weight": 0.5
-   },
    {
     "symbol": "SOLCAP",
     "mint": "EA49YNQwbnEYVW1EgAjHkdmm73coERnAMFXC8fdjpump",
@@ -31231,14 +31211,33 @@
     "exit": "dump: 2.9 SOL sold",
     "pnl": -8.59,
     "weight": 0.5
+   },
+   {
+    "symbol": "TEETH",
+    "mint": "BAhWVHg8XumqpMWXVTAvtK2UWSVbUTP3sSUtEyJcpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:51:49Z",
+    "cost": 36.2,
+    "pnl_pct": -14.0,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.89,
+    "closed": "2026-11-27T06:52:10Z",
+    "exit": "stop -10%",
+    "pnl": -5.08,
+    "weight": 0.5
    }
   ],
   "open": [
    "DI",
    "HELL",
    "SHIP",
-   "GYX",
-   "TEETH"
+   "GYX"
   ]
  },
  "learner_summary": {
@@ -31280,7 +31279,7 @@
     "avg": -13.5
    }
   ],
-  "shadows": 379,
+  "shadows": 380,
   "memory": "snipe"
  }
 }
