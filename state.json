@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:30:42Z",
-    "time": "06:30:42",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "6 losses in a row · 2 min pause",
-    "n": 2454
-   },
-   {
-    "t": "2026-11-27T05:30:42Z",
-    "time": "06:30:42",
-    "agent": "EXECUTOR",
-    "coin": "Ozzy",
-    "action": "exit",
-    "text": "EXIT Ozzy $-4.15 (-10%) · curve quiet for 3 min (no trade)",
-    "n": 2455
-   },
-   {
-    "t": "2026-11-27T05:30:42Z",
-    "time": "06:30:42",
-    "agent": "LEARNER",
-    "coin": "Ozzy",
-    "action": "learn",
-    "text": "learned · np:buys:<70 now avg -10.1% over 158",
-    "n": 2456
-   },
-   {
     "t": "2026-11-27T05:30:55Z",
     "time": "06:30:55",
     "agent": "RISK",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW Penguin would have made +11.1% (TP +10%) · learned x0.5 · np:social:web now avg -8.8% over 198.5",
     "n": 3053
+   },
+   {
+    "t": "2026-11-27T07:09:19Z",
+    "time": "08:09:19",
+    "agent": "LEARNER",
+    "coin": "DOJO",
+    "action": "shadow",
+    "text": "SHADOW DOJO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000043731 (curve maths, every cost) · same exits, outside the book",
+    "n": 3054
+   },
+   {
+    "t": "2026-11-27T07:09:22Z",
+    "time": "08:09:22",
+    "agent": "LEARNER",
+    "coin": "DOJO",
+    "action": "shadow",
+    "text": "SHADOW DOJO would have made +8.6% (trailing stop 6% off the top (peak +17%)) · learned x0.5 · tier:swing now avg -14.0% over 33",
+    "n": 3055
+   },
+   {
+    "t": "2026-11-27T07:09:24Z",
+    "time": "08:09:24",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.6 a minute · 0 watched · 22 rejected (snipe not bought: trades tonight 10, serial launcher 7, mayhem mode 5)",
+    "n": 3056
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3053,
+  "lines": 3056,
   "flags": [
    {
     "coin": "Kibo",
@@ -21297,11 +21297,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795763303.78092,
+  "np_said": 1795763364.780871,
   "shadow": {
-   "n": 423,
-   "wins": 78,
-   "sum": -3720.8
+   "n": 424,
+   "wins": 79,
+   "sum": -3712.2
   },
   "np_speed": {
    "first_in": [
@@ -30884,9 +30884,9 @@
   }
  },
  "shadow": {
-  "n": 437,
-  "wins": 80,
-  "sum": -3919.3,
+  "n": 438,
+  "wins": 81,
+  "sum": -3910.7,
   "by": {
    "learner": {
     "n": 16,
@@ -30894,32 +30894,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 421,
-    "wins": 77,
-    "sum": -3721.5
+    "n": 422,
+    "wins": 78,
+    "sum": -3712.9
    }
   },
   "closed": [
-   {
-    "symbol": "TESTMINE",
-    "mint": "4Rft7X6mWf4gX91sDcT6b4dzv8StsmQFqH2K8P2EvdUS",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:01:41Z",
-    "cost": 36.2,
-    "pnl_pct": -26.6,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 4.16,
-    "closed": "2026-11-27T07:01:43Z",
-    "exit": "dump: 3.8 SOL sold",
-    "pnl": -9.64,
-    "weight": 0.5
-   },
    {
     "symbol": "DOJO",
     "mint": "5Trv6g9X86WxcdoayciKV9aBP8c6rmq6weBdvauRpump",
@@ -31299,6 +31279,26 @@
     "exit": "TP +10%",
     "pnl": 4.02,
     "weight": 0.5
+   },
+   {
+    "symbol": "DOJO",
+    "mint": "24H8FVzPu19GT3pbN1ZDQmAXJRQxAnNB29pStnompump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:09:19Z",
+    "cost": 36.2,
+    "pnl_pct": 8.6,
+    "tier": "swing",
+    "score": 3,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 9.42,
+    "closed": "2026-11-27T07:09:22Z",
+    "exit": "trailing stop 6% off the top (peak +17%)",
+    "pnl": 3.12,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31315,7 +31315,7 @@
    {
     "label": "snipe · np:sol:6-12",
     "n": 44,
-    "avg": -4.5
+    "avg": -4.4
    },
    {
     "label": "snipe · hour:01-03",
@@ -31331,13 +31331,13 @@
   "worst": [
    {
     "label": "snipe · tier:swing",
-    "n": 32,
-    "avg": -14.4
+    "n": 33,
+    "avg": -14.0
    },
    {
     "label": "snipe · news:3-4",
-    "n": 32,
-    "avg": -14.4
+    "n": 33,
+    "avg": -14.0
    },
    {
     "label": "snipe · np:sol:12+",
@@ -31345,7 +31345,7 @@
     "avg": -13.6
    }
   ],
-  "shadows": 421,
+  "shadows": 422,
   "memory": "snipe"
  }
 }
