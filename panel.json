@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T04:47:03Z",
+ "updated": "2026-11-27T04:47:36Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 217.87,
- "equity": 241.14,
+ "equity": 241.16,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 183,
   "checked": 179,
   "filtered": 5,
-  "lines": 2041,
+  "lines": 2043,
   "last_rug": {
    "coin": "SUGZ",
    "pass": true
@@ -1470,14 +1470,14 @@
    "symbol": "SUGZ",
    "mint": "FYtRuhq8LJPHkkNnwX8TEmzWfCdssPYAoewUmkkYpump",
    "cost": 24.1,
-   "value": 23.27,
-   "pnl_pct": -3.5,
+   "value": 23.29,
+   "pnl_pct": -3.4,
    "opened": "2026-11-27T04:44:05Z",
    "url": "https://pump.fun/coin/FYtRuhq8LJPHkkNnwX8TEmzWfCdssPYAoewUmkkYpump",
    "reason": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.11778e-06,
-   "price": 2.05031e-06,
+   "price": 2.05218e-06,
    "slip": 1.07,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -1507,7 +1507,8 @@
    "sol_in": 0.0,
    "hist": [
     2.11778e-06,
-    2.05031e-06
+    2.05031e-06,
+    2.05218e-06
    ]
   }
  ],
@@ -3752,24 +3753,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T04:23:46Z",
-   "time": "05:23:46",
-   "agent": "NEWS",
-   "coin": "o1",
-   "action": "plan",
-   "text": "hold plan · 2/10 (X, web) · scalp: +10",
-   "n": 1842
-  },
-  {
-   "t": "2026-11-27T04:23:49Z",
-   "time": "05:23:49",
-   "agent": "EXECUTOR",
-   "coin": "o1",
-   "action": "exit",
-   "text": "EXIT o1 +$1.81 (+6%) · TP +10% · out · 0.0 s after the reading",
-   "n": 1843
-  },
-  {
    "t": "2026-11-27T04:23:49Z",
    "time": "05:23:49",
    "agent": "LEARNER",
@@ -5550,6 +5533,24 @@
    "action": "learn",
    "text": "learned · np:dev:0-2 now avg -11.1% over 140.5",
    "n": 2041
+  },
+  {
+   "t": "2026-11-27T04:47:15Z",
+   "time": "05:47:15",
+   "agent": "LEARNER",
+   "coin": "Hope",
+   "action": "shadow",
+   "text": "SHADOW Hope · not bought (pause after a losing streak) · followed as if bought: $24.12 at 0.0000036533 (curve maths, every cost) · same exits, outside the book",
+   "n": 2042
+  },
+  {
+   "t": "2026-11-27T04:47:20Z",
+   "time": "05:47:20",
+   "agent": "LEARNER",
+   "coin": "Hope",
+   "action": "shadow",
+   "text": "SHADOW Hope would have made -14.2% (stop -11%) · learned x0.5 · np:age:<30s now avg -10.3% over 293",
+   "n": 2043
   }
  ],
  "nights": [
@@ -5610,7 +5611,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 18 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5618,24 +5619,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 908,
-    "last_event_age_s": 32.3,
+    "events": 910,
+    "last_event_age_s": 20.9,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25100,
-    "last_event_age_s": 0.3,
+    "events": 25187,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 624,
-    "last_event_age_s": 32.1,
+    "events": 625,
+    "last_event_age_s": 22.0,
     "errors": 60,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5648,9 +5649,9 @@
   "exit_ms": 35.0,
   "exit_last_ms": 34,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 5
+  "followed": 6
  },
  "learner": {
   "samples": 170,
@@ -5666,11 +5667,11 @@
    {
     "label": "snipe · np:sol:6-12",
     "n": 22,
-    "avg": -6.1
+    "avg": -6.3
    },
    {
     "label": "snipe · np:dev:8+",
-    "n": 52,
+    "n": 53,
     "avg": -8.5
    }
   ],
@@ -5691,36 +5692,54 @@
     "avg": -17.2
    }
   ],
-  "shadows": 245,
+  "shadows": 246,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11958,
+   "sent": 11993,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11957,
+   "sent": 11992,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Hope",
+   "name": "The Blue Macaw",
+   "mint": "397p6qpKLX9EYiyjCy8r5FmTHidBumhgm5epJZaMpump",
+   "age_s": 22,
+   "sol_in": 12.46,
+   "buys": 19,
+   "sells": 14,
+   "rise_pct": 89.3,
+   "mcap_sol": 64.7,
+   "dev_pct": 10.2,
+   "big_sell": 3.98,
+   "x": "https://x.com/ZzzzzSol/status/2126175992456585564",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
    "symbol": "Gib",
    "name": "Gibmas",
    "mint": "5uixJKW4PsqiPDewvCDnUT2ezo9CFSBaht3UqY1cpump",
-   "age_s": 32,
-   "sol_in": -0.43,
-   "buys": 7,
-   "sells": 15,
-   "rise_pct": -2.4,
-   "mcap_sol": 38.1,
+   "age_s": 65,
+   "sol_in": -5.27,
+   "buys": 12,
+   "sells": 22,
+   "rise_pct": -27.5,
+   "mcap_sol": 28.3,
    "dev_pct": 16.5,
-   "big_sell": 2.63,
+   "big_sell": 4.84,
    "x": "https://x.com/kuhnthedev/status/2126175640684531898",
    "tg": false,
    "web": false,
@@ -5731,12 +5750,12 @@
    "symbol": "YOBA",
    "name": "Comfy Guy",
    "mint": "3q6e5SUBJfWxhny9uwELNT6NWaBJYAuew8cqYHqHpump",
-   "age_s": 35,
-   "sol_in": 14.92,
-   "buys": 27,
-   "sells": 25,
-   "rise_pct": 119.5,
-   "mcap_sol": 65.5,
+   "age_s": 68,
+   "sol_in": 17.08,
+   "buys": 49,
+   "sells": 38,
+   "rise_pct": 140.6,
+   "mcap_sol": 71.8,
    "dev_pct": 3.4,
    "big_sell": 3.79,
    "x": "https://x.com/Yobactocoin/status/2126175529296343217",
@@ -5749,7 +5768,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "DDXKzUjKwX7jki3s5gyRwjMbXASS5N1hAEKQLPpTpump",
-   "age_s": 43,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5767,7 +5786,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HQVBSoe1GqEstQDdypxcgTb7pDcvaMPT5qyTjgk9XBvA",
-   "age_s": 59,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5785,12 +5804,12 @@
    "symbol": "NWB",
    "name": "NiggaWeBack",
    "mint": "8mrnxnnxXStj183FfAmucNn8qDX3wNFFyVhhuisGpump",
-   "age_s": 82,
-   "sol_in": -0.9,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -5.7,
-   "mcap_sol": 28.1,
+   "age_s": 115,
+   "sol_in": -0.98,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": -6.2,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 0.99,
    "x": "https://x.com/NWB_Soon",
@@ -5803,7 +5822,7 @@
    "symbol": "wuf",
    "name": "wuf",
    "mint": "WUFc8kmkjJoNyk3mK1cxSdjiMA7Ta4qU6aeHApfAMvp",
-   "age_s": 85,
+   "age_s": 118,
    "sol_in": -0.39,
    "buys": 2,
    "sells": 6,
@@ -5821,7 +5840,7 @@
    "symbol": "DOWNP",
    "name": "Downpad",
    "mint": "5p8HUhjnTbsrCMnuqXYNUuE9KkMoVG81Y4M43jssdown",
-   "age_s": 138,
+   "age_s": 171,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5839,11 +5858,11 @@
    "symbol": "SUGZ",
    "name": "SUGZ",
    "mint": "FYtRuhq8LJPHkkNnwX8TEmzWfCdssPYAoewUmkkYpump",
-   "age_s": 178,
-   "sol_in": 0.01,
-   "buys": 1,
+   "age_s": 211,
+   "sol_in": 0.03,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.1,
+   "rise_pct": 0.2,
    "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.0,
@@ -5858,6 +5877,26 @@
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "Hope",
+   "mint": "397p6qpKLX9EYiyjCy8r5FmTHidBumhgm5epJZaMpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T04:47:15Z",
+   "cost": 24.12,
+   "pnl_pct": -14.2,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 6.42,
+   "closed": "2026-11-27T04:47:20Z",
+   "exit": "stop -11%",
+   "pnl": -3.42,
+   "weight": 0.5
+  },
   {
    "symbol": "YOBA",
    "mint": "3q6e5SUBJfWxhny9uwELNT6NWaBJYAuew8cqYHqHpump",
@@ -6237,33 +6276,13 @@
    "exit": "stop -15%",
    "pnl": -4.44,
    "weight": 0.5
-  },
-  {
-   "symbol": "QUACK3",
-   "mint": "3PVbkcK7HLfYJtcTQ1FH2c3TLQRJH1pVF3gSftZS6g9v",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T04:32:36Z",
-   "cost": 24.88,
-   "pnl_pct": -7.0,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T04:35:36Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -1.73,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 261,
+  "n": 262,
   "wins": 44,
-  "win_rate": 16.9,
-  "mean_pnl_pct": -9.34,
+  "win_rate": 16.8,
+  "mean_pnl_pct": -9.36,
   "open": 0,
   "learner": {
    "n": 16,
@@ -6272,10 +6291,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 245,
+   "n": 246,
    "wins": 41,
    "win_rate": 16.7,
-   "mean_pnl_pct": -9.15
+   "mean_pnl_pct": -9.17
   }
  }
 }
