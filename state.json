@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T11:22:12Z",
-    "time": "12:22:12",
-    "agent": "LEARNER",
-    "coin": "$HUG9",
-    "action": "shadow",
-    "text": "SHADOW $HUG9 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021557 (curve maths, every cost) · same exits, outside the book",
-    "n": 4441
-   },
-   {
     "t": "2026-11-27T11:22:20Z",
     "time": "12:22:20",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW Ibex · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021114 (curve maths, every cost) · same exits, outside the book",
     "n": 5040
+   },
+   {
+    "t": "2026-11-27T17:38:00Z",
+    "time": "18:38:00",
+    "agent": "LEARNER",
+    "coin": "INUCHI",
+    "action": "shadow",
+    "text": "SHADOW INUCHI would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.6% over 256",
+    "n": 5041
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5040,
+  "lines": 5041,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795765034,
-    59.14
-   ],
    [
     1795765094,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795801008,
     59.14
+   ],
+   [
+    1795801068,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795801045.443329,
   "shadow": {
-   "n": 1185,
+   "n": 1186,
    "wins": 262,
-   "sum": -8955.8
+   "sum": -8963.7
   },
   "np_speed": {
    "first_in": [
@@ -31846,9 +31846,9 @@
   }
  },
  "shadow": {
-  "n": 1199,
+  "n": 1200,
   "wins": 264,
-  "sum": -9154.3,
+  "sum": -9162.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31856,32 +31856,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1183,
+    "n": 1184,
     "wins": 261,
-    "sum": -8956.5
+    "sum": -8964.4
    }
   },
   "closed": [
-   {
-    "symbol": "$VORQS",
-    "mint": "9njaG4NYvD3rgBCMZXyucBsJnbKGj8v8UpKUczuzpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:31:21Z",
-    "cost": 5.91,
-    "pnl_pct": -14.9,
-    "tier": "swing",
-    "score": 3,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 4,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T17:32:08Z",
-    "exit": "stop -10%",
-    "pnl": -0.88,
-    "weight": 0.5
-   },
    {
     "symbol": "CDRMLN",
     "mint": "9DNA173vbJk5zNagfpzQTtxKc1cxNJtgGQRGtSHbSKLH",
@@ -32261,11 +32241,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.78,
     "weight": 0.5
+   },
+   {
+    "symbol": "INUCHI",
+    "mint": "AhvUXC3wsjuG9eicxzsfoZ5KSXHfUE2a66HQmWb6rqYk",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:33:36Z",
+    "cost": 5.91,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T17:38:00Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.47,
+    "weight": 0.5
    }
   ],
   "open": [
    "EXC",
-   "INUCHI",
    "EXC",
    "DOWUPA",
    "SpaceX",
@@ -32313,7 +32312,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 1391,
+  "shadows": 1392,
   "memory": "snipe"
  }
 }
