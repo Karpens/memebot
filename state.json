@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T11:33:01Z",
-    "time": "12:33:01",
-    "agent": "LOGGER",
-    "coin": null,
-    "action": "fix",
-    "text": "book fixed (memebot/fix_book.py): 5 trades voided (curve states no pump.fun curve can be in), 208 not taken by the corrected book · balance $361.97 -> $59.14",
-    "n": 4519
-   },
-   {
-    "t": "2026-11-27T11:33:27Z",
-    "time": "12:33:27",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "feed",
-    "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
-    "n": 4520
-   },
-   {
-    "t": "2026-11-27T11:33:27Z",
-    "time": "12:33:27",
-    "agent": "LOGGER",
-    "coin": null,
-    "action": "tape",
-    "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
-    "n": 4521
-   },
-   {
-    "t": "2026-11-27T11:33:33Z",
-    "time": "12:33:33",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest BBNB: no curve reading yet",
-    "n": 4522
-   },
-   {
     "t": "2026-11-27T11:33:33Z",
     "time": "12:33:33",
     "agent": "RISK",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW upstream would have made -12.1% (5 min, only -7%) · learned x0.5 · np:social:none now avg -8.5% over 262.5",
     "n": 5118
+   },
+   {
+    "t": "2026-11-27T17:47:35Z",
+    "time": "18:47:35",
+    "agent": "LEARNER",
+    "coin": "RHT",
+    "action": "shadow",
+    "text": "SHADOW RHT · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000031836 (curve maths, every cost) · same exits, outside the book",
+    "n": 5119
+   },
+   {
+    "t": "2026-11-27T17:47:38Z",
+    "time": "18:47:38",
+    "agent": "LEARNER",
+    "coin": "RHT",
+    "action": "shadow",
+    "text": "SHADOW RHT would have made +13.6% (TP +10%) · learned x0.5 · np:sol:3-6 now avg -12.0% over 85.5",
+    "n": 5120
+   },
+   {
+    "t": "2026-11-27T17:47:48Z",
+    "time": "18:47:48",
+    "agent": "SCANNER",
+    "coin": "XXX",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 9354 is not 30 + real SOL 1294 (off +8030 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 122 odd readings from 46 coins tonight",
+    "n": 5121
+   },
+   {
+    "t": "2026-11-27T17:47:51Z",
+    "time": "18:47:51",
+    "agent": "LEARNER",
+    "coin": "Chinese In",
+    "action": "shadow",
+    "text": "SHADOW Chinese In · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020505 (curve maths, every cost) · same exits, outside the book",
+    "n": 5122
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5118,
+  "lines": 5122,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795765634,
-    59.14
-   ],
    [
     1795765694,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795801608,
     59.14
+   ],
+   [
+    1795801668,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795801650.443339,
   "shadow": {
-   "n": 1216,
-   "wins": 270,
-   "sum": -9137.5
+   "n": 1217,
+   "wins": 271,
+   "sum": -9123.9
   },
   "np_speed": {
    "first_in": [
@@ -23110,8 +23110,8 @@
    ]
   },
   "odd": {
-   "readings": 121,
-   "coins": 45,
+   "readings": 131,
+   "coins": 46,
    "followed": 0,
    "mints": [
     "ERGxdPAhVciioVVK2cfaozyse99vgxkP8TBwvzrJpump",
@@ -23158,7 +23158,8 @@
     "8M6gL5jnCyJLe9ZW8Jknw2RL2YmdqbegkdTetkrtCDco",
     "ApXu9GQXRVM9Syw4kNDHP5KaJVDY1RRfZPwFiajTquD4",
     "Fk8KtPPEAJ3w75y6hJ66LgSdUsBoCMfgTQfZFavxBpwb",
-    "ADfS6HdHze4eZcsXvLcpyGRXgj8QbQKmRhhm5nhusgs6"
+    "ADfS6HdHze4eZcsXvLcpyGRXgj8QbQKmRhhm5nhusgs6",
+    "9MEaFL5sFTPas9MtpG9UdUgZxXuqy9xjgBoTysmTpump"
    ]
   }
  },
@@ -31849,9 +31850,9 @@
   }
  },
  "shadow": {
-  "n": 1230,
-  "wins": 272,
-  "sum": -9336.0,
+  "n": 1231,
+  "wins": 273,
+  "sum": -9322.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31859,32 +31860,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1214,
-    "wins": 269,
-    "sum": -9138.2
+    "n": 1215,
+    "wins": 270,
+    "sum": -9124.6
    }
   },
   "closed": [
-   {
-    "symbol": "FARMCOIN",
-    "mint": "Ai8KVFyrGQkFjXWDeipHE7cmY3eqYyGp5S3MZvSLpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:41:55Z",
-    "cost": 5.91,
-    "pnl_pct": -18.5,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 2.59,
-    "closed": "2026-11-27T17:41:57Z",
-    "exit": "dump: 2.4 SOL sold",
-    "pnl": -1.09,
-    "weight": 0.5
-   },
    {
     "symbol": "FARMCOIN",
     "mint": "3heJboDh4EEXef9NkSETvLJZS8FcR3nGze5iHSK3pump",
@@ -32264,6 +32245,26 @@
     "exit": "5 min, only -7%",
     "pnl": -0.71,
     "weight": 0.5
+   },
+   {
+    "symbol": "RHT",
+    "mint": "DmiGHbMYJzvwccw6ezKre7fEwsVBLHh8KqdZFkJqngDf",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:47:35Z",
+    "cost": 5.91,
+    "pnl_pct": 13.6,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 4.48,
+    "closed": "2026-11-27T17:47:38Z",
+    "exit": "TP +10%",
+    "pnl": 0.81,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32275,7 +32276,8 @@
    "PILLER",
    "Yuya",
    "igloo",
-   "igloo"
+   "igloo",
+   "Chinese In"
   ]
  },
  "learner_summary": {
@@ -32303,8 +32305,8 @@
   "worst": [
    {
     "label": "snipe · np:sol:3-6",
-    "n": 85,
-    "avg": -12.1
+    "n": 86,
+    "avg": -12.0
    },
    {
     "label": "snipe · hour:03-05",
@@ -32317,7 +32319,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1422,
+  "shadows": 1423,
   "memory": "snipe"
  }
 }
