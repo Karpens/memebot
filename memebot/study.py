@@ -17,16 +17,17 @@ create through newpairs.coin_from_create(), every curve reading through newpairs
 a sell reading and the biggest sell are counted exactly as live), and the live trigger itself is newpairs.trigger()
 with the config's own numbers. Nothing here writes anywhere but --out and --md.
 
-CAUSALITY. Every entry decision happens on a curve reading (or, for the base rows, at a clock time) and reads only
-lines with t at or before it: the readings so far, the create, the meta and RugCheck lines from their own t, the
-coin's "follow" / "end" / "gap" lines so far, the heartbeats so far. A coin is "polled" at t when its first reading
-came by t (the poller writes the first reading of every watch: before it the curve is unknown), no "end" line came
-for it by t, no "gap" line of it is still open (no reading since), its run is alive, and, past the bot's own watch
-window (np_watch_s + 5 s), its "follow" line came at or before t (or the live bot held it then): an entry after
-180 s can only be taken on a coin the recorder had chosen to follow by then. A window feature ("SOL in over the
-last 120 s") also needs the coin polled over the whole window, with every hole the heartbeats had shown by t. The
-rules never read a coin's future peak, its end, its completion or how long the tape followed it. The no-look-ahead
-test (tests/test_study.py) cuts the tape after a decision and checks that every decision before the cut is the same.
+CAUSALITY. Every entry decision happens on a curve reading (or, for the base rows, at a clock time; SNIPE create on
+the create line itself) and reads only lines with t at or before it: the readings so far, the create, the meta and
+RugCheck lines from their own t, the coin's "follow" / "end" / "gap" lines so far, the heartbeats so far. A coin is
+"polled" at t when its first reading came by t (the poller writes the first reading of every watch: before it the
+curve is unknown), no "end" line came for it by t, no "gap" line of it is still open (no reading since), its run is
+alive, and, past the bot's own watch window (np_watch_s + 5 s), its "follow" line came at or before t (or the live
+bot held it then): an entry after 180 s can only be taken on a coin the recorder had chosen to follow by then. A
+window feature ("SOL in over the last 120 s") also needs the coin polled over the whole window, with every hole the
+heartbeats had shown by t. The rules never read a coin's future peak, its end, its completion or how long the tape
+followed it. The no-look-ahead test (tests/test_study.py) cuts the tape after a decision and checks that every
+decision before the cut is the same.
 
 FILLS. An order decided at t is sent at t + L and fills against the curve as the next poll saw it: the first reading
 at or after t + L when one came within a poll (--poll-s, 1 s), else the last reading at or before t + L (readings
@@ -72,23 +73,50 @@ three designs, merged where two proposed the same thing (the report's "rules" li
          a scale-out ladder, a trailing stop, a time-only hold, the dump response, the stall exit; and the bot's own
          scalp exit (X1)
   Q1-Q5  quality overlays (socials, the dev's buy, RugCheck, holders per SOL, the snipers' overhang) on the two best
-         first-part rules (design 1 F6), counted like every other combination
-Base rows (never selectable): BASE-A every watched coin at 30 / 60 / 120 s, BASE-B every coin near a trigger at
-60-480 s, C0 a random time per near coin (one seeded uniform draw in [max(45 s, near), 600 s]; left out when not
-polled then), under fixed exits. Reference rows: the tape's
-own fire lines under the bot's scalp exit (the CURRENT rule, RugCheck and the LEARNER left out), the same under
-time-only holds, and the live and shadow trades as booked.
+         first-part rules of the older families (design 1 F6; never a SNIPE row: at a create line or a first reading
+         Q1, Q3, Q4 and Q5 are unknowable and Q2 repeats SNIPE's own dev filter), counted like every other combination
+  SNIPE  buy a new coin in its first second. SNIPE create: at its create line itself (t0, when the feed received it:
+         the first moment the bot can see the coin), on that line alone: every coin the bot's checks at the create
+         let through (mayhem mode, a symbol, a pump.fun curve; one it then skipped for a full watch list has no
+         reading to fill on). Its order, sent at t0 + L, fills on a reading only (the tape knows the curve from the
+         first reading on; the create's own state is PumpPortal's): the first reading at or after t0 + L when one
+         came within the next poll, else the last one before t0 + L; none when the first reading came later ("no
+         reading by the fill": the tape cannot price it) or the tape lost lines between the send and that reading.
+         The other four at its first curve reading, a poll after the create (the poller writes the first reading of
+         every watch; before it the curve is unknown), on a coin the live bot watched (not skipped at its create),
+         not complete, polled then, the tape's first reading being the bot's first sight (no "gap" line of the coin
+         by then, no tape hole over [create, it] the heartbeats had shown by then) and at most SNIPE_MAX_DELAY_S
+         (10 s) after the create (never a later reading instead: no snipe). They read the create line and that
+         reading only: any coin; the price at most R % over the create's own state (R 10, 30: early, not bought after
+         a bundle already pumped it); at most +10 % and the dev's initial buy at most 3 % of the supply. Their
+         orders fill like every other (sent at t + L: the first reading in the next poll, or, when the curve did not
+         change, the last state at or before t + L, which can be the deciding reading's own). Every SNIPE entry under
+         a hold of 5 / 10 / 30 s (X3), the bot's scalp out by 175 s of age (X1@175, as the BASE-A rows have it: a
+         coin the recorder did not follow leaves the tape at 181 s, and the plain X1 would hold it past that, blind)
+         and a sniper's exit S1 (+25 % take, -15 % stop, both on the bot's own gain on the cost basis like X1, out
+         30 s after the fill whatever): 5 x 5, few on purpose (each costs Bonferroni width), last in the grid (a
+         smaller --max-rules keeps every older row as it was), never the overlays' source and shown apart from the
+         older rows (they keep every slot they had). The trades before the first reading (the launch block's own
+         snipers, the wallets that make +90 % in 5 s) are invisible to the tape: these rules buy after them, at the
+         earliest the bot can. Fills in a coin's first seconds are the most contested of all (other snipers in the
+         same slots, which paper fills never meet): a pass here is the weakest hint of any.
+Base rows (never selectable): BASE-A every watched coin at 30 / 60 / 120 s and at its first reading (BASE-A first,
+what SNIPE is read against), BASE-B every coin near a trigger at 60-480 s, C0 a random time per near coin (one
+seeded uniform draw in [max(45 s, near), 600 s]; left out when not polled then), under fixed exits. Reference rows:
+the tape's own fire lines under the bot's scalp exit (the CURRENT rule, RugCheck and the LEARNER left out), the same
+under time-only holds, and the live and shadow trades as booked.
 
 STATISTICS. The coins are split by create time: the first --split (0.7) of the range ranks, the rest is held out
 (coins created in the last --embargo-s before the split are left out of both: a coin lives 900 s on the tape).
 Ranking: selectable combinations with at least --min-trades (15) first-part trades, by the lower one-sided 95 %
 bound of their mean (mean - 1.645 sd / sqrt(n)): a few lucky trades do not rank first. EVERY ranked combination is
 then judged once on the held-out coins at the same Bonferroni z (which already pays for all M: judging them all
-costs no error rate, and a family that ranked low on the first part is not left untested). The top --top (15) by
-first-part rank are shown, and every one that passes: n, win rate, mean, median, 5 % trimmed mean, mean without the
-top 3, the total in $ for the typical order, a bootstrap 95 % CI of the mean (trade-level percentile, fixed seed),
-the mean by UTC hour, the blind and completed shares, a stress table and two matched nulls (the same coin at a
-random time; another coin of the same hour at the same age).
+costs no error rate, and a family that ranked low on the first part is not left untested). The top --top (15) of the
+older families by first-part rank are shown, the best SNIPE_SHOWN (5) SNIPE rows apart (SNIPE takes no older row's
+slot), and every one that passes: n, win rate, mean, median, 5 % trimmed mean, mean without the top 3, the total in
+$ for the typical order, a bootstrap 95 % CI of the mean (trade-level percentile, fixed seed), the mean by UTC hour,
+the blind and completed shares, a stress table and two matched nulls (the same coin at a random time; another coin
+of the same hour at the same age).
 A rule PASSES only when, on the held-out part: n >= --min-trades; mean > 0; the Bonferroni lower bound > 0; its
 first-part mean > 0; at most 10 % blind trades; its mean is still >= 0 with 2 s more latency each way than the
 tape's own; and still >= 0 with every completion sold at x0.85 of the curve's last state.
@@ -98,10 +126,16 @@ SE = the larger of the trade-level and the hour-cluster bootstrap standard error
 resamples each, seed --seed); bound = mean - z * SE. The verdict names the rules that pass, or says "no rule beats
 costs on held-out data".
 
-OUTPUT: --out a JSON with everything (settings, tape, coverage, costs, calibration, every combination's first-part
-numbers, every ranked one's held-out numbers and gates, the shown ones in full, the base and reference rows, the
-verdict); --md a
-Markdown summary appended to the file ($GITHUB_STEP_SUMMARY); the same summary on stdout.
+OUTPUT: --out a JSON with everything (settings, tape, coverage, costs, calibration, the first readings, every
+combination's first-part numbers, every ranked one's held-out numbers and gates, the shown ones in full, the base and
+reference rows, the verdict); --md a
+Markdown summary appended to the file ($GITHUB_STEP_SUMMARY); the same summary on stdout. Its "First reading" line
+(first_reading(): the watched coins the first-reading SNIPE rules may decide on; the others counted by why not: no
+reading, complete at it, not on the tape, not polled then, later than 10 s): the delay from the create line to the
+first reading (median, p90; the share read within L + a poll, where a SNIPE create order is priced), the price's
+rise there over the create's state (median, p75, p90, the share at +50 % or more) and the real SOL in the curve then
+(median, p90; and how much of it came in since the create): how far the coins had already moved before the bot
+could see their curve.
 
 HONEST LIMITS: paper fills on the curve maths (no sandwich, no failed or late transaction, nobody reacting to our
 order); the universe is what the live bot watched (its cheap checks at the create already applied: mayhem mode,
@@ -150,6 +184,10 @@ NEAR_TOO_LATE = 180.0           # a coin is "near" only on a reading within np_m
 BLIND_MAX = 0.10                # a rule with more blind trades than this is flagged and never passes
 STRESS_LAT_S = 2.0              # the latency a passing rule must survive on top of the tape's own, each way
 OVERLAY_ROOM = 15               # combinations kept for the quality overlays (10 selectable, 5 on the reference)
+SNIPE_MAX_DELAY_S = 10.0        # a first curve reading later than this after the create is no snipe (the live bot's
+                                # first poll of a new coin comes within a second or two: one this late is a poller
+                                # that was behind, or a tape that lost the real first reading)
+SNIPE_SHOWN = 5                 # the best SNIPE rows shown in full apart from the --top of the older families
 DAYS_FOR_VERDICT = 3.0          # under this much tape the verdict is descriptive (said in the summary)
 CAL_WARN_PP = 1.0               # the cost model further than this off the bot's own trades: said with the verdict
 
@@ -557,8 +595,8 @@ class CoinView(object):
     complete, buy / sell reading counts so far, the biggest single sell so far, this reading's real SOL change, the
     gross SOL bought / sold so far, the highest price so far. And what the tape says about its coverage."""
 
-    __slots__ = ("idx", "mint", "sym", "t0", "hour", "creator", "dev_pct", "skip", "cfg", "watch_s", "rsol0", "price0",
-                 "ts", "vs", "vt", "rs", "px", "cx", "bu", "se", "smax", "d", "gb", "gs", "pk",
+    __slots__ = ("idx", "mint", "sym", "t0", "hour", "creator", "dev_pct", "skip", "skip0", "cfg", "watch_s", "rsol0",
+                 "price0", "ts", "vs", "vt", "rs", "px", "cx", "bu", "se", "smax", "d", "gb", "gs", "pk",
                  "iv", "follow_t", "gaps", "held", "near_t", "mom", "fires", "buys", "sells", "shadows", "metas",
                  "rugs", "ends", "last_t", "decs", "part", "migrate_t")
 
@@ -733,7 +771,7 @@ def build_view(tp, mk, creators, variants, fire_check=True):
         return None
     cv = CoinView()
     cv.mint, cv.sym, cv.t0, cv.hour = tp["mint"], coin.symbol or tp["mint"][:6], coin.t0, hour_of(coin.t0)
-    cv.creator, cv.dev_pct, cv.skip, cv.cfg = coin.creator, coin.dev_pct, why, cfg
+    cv.creator, cv.dev_pct, cv.skip, cv.skip0, cv.cfg = coin.creator, coin.dev_pct, why, why, cfg
     cv.watch_s = float(cfg.get("np_watch_s", 180) or 180)
     cv.rsol0, cv.price0 = coin.rsol0, coin.price0
     ev_lines = tp.get("events") or []
@@ -748,7 +786,8 @@ def build_view(tp, mk, creators, variants, fire_check=True):
     follows = sorted(float(x["t"]) for x in by["follow"])
     cv.follow_t = follows[0] if follows else None
     cv.last_t = max([t0] + [float(r["t"]) for r in tp["readings"][-1:]] + [float(x["t"]) for x in ev_lines[-1:]])
-    if cv.skip is None:                                 # skipped at its create for a reason only the bot knew (list full)
+    if cv.skip is None:                                 # skipped for a reason only the bot knew (list full): a "dec"
+                                                        # line after the create (skip0: the create's own checks only)
         cv.skip = next((x.get("why") or "skip" for x in by["dec"] if x.get("d") == "skip"), None)
     # the live bot's own holds: a real one (buy -> final sell) and a shadow (open -> final sell or drop)
     held, open_t = [], None
@@ -880,12 +919,13 @@ def build_view(tp, mk, creators, variants, fire_check=True):
 
 def fill_index(cv, t, poll_s, mode="next"):
     """The index of the curve state an order sent at t fills against: mode "next", the first reading at or after t
-    when it came within poll_s (the poll that answered next), else the last state at or before t (change-only: the
-    curve had not moved); mode "at", always the last state at or before t."""
+    when it came within poll_s (the poll that answered next; a reading, never index 0, the create's own state, even
+    for an order sent at the create itself), else the last state at or before t (change-only: the curve had not
+    moved); mode "at", always the last state at or before t."""
     ts = cv.ts
     if mode == "next":
-        i = bisect.bisect_left(ts, t - EPS)
-        if 1 <= i < len(ts) and ts[i] <= t + poll_s + EPS:
+        i = max(1, bisect.bisect_left(ts, t - EPS))
+        if i < len(ts) and ts[i] <= t + poll_s + EPS:
             return i
     return bisect.bisect_right(ts, t + EPS) - 1
 
@@ -1270,14 +1310,25 @@ Trade = collections.namedtuple("Trade", "cv t0 dec fill exit pnl gross blind com
 
 def simulate(cv, mk, dec_t, pol, sim):
     """One paper trade: decided at dec_t, filled at dec_t + L (fill_index), sold by the exit policy on the readings
-    and clock times after the fill, every sale at its own decision + L. -> (Trade, None) or (None, why not)."""
+    and clock times after the fill, every sale at its own decision + L. -> (Trade, None) or (None, why not).
+    A decision before the coin's first reading (SNIPE create, at the create line; every other rule decides on a
+    polled reading or clock time, never before the first reading) fills only on a reading: the tape knows the curve
+    from the first reading on (the create's own state is PumpPortal's, no reading), so the order sent at t + L is
+    priced when the first reading came by then or within the next poll (else "no reading by the fill") and nothing
+    was lost between the send and that reading (a gap line, a tape hole: the next poll may be missing)."""
     ts = cv.ts
     n = len(ts)
     t_send = dec_t + sim.l_in
-    unk, unk_why = cv.unknown_from(mk, dec_t)
+    early = n > 1 and dec_t < ts[1] - EPS
+    unk, unk_why = cv.unknown_from(mk, ts[1] if early else dec_t)
+    if early and ts[1] > t_send + EPS and (mk.hole_from(t_send) < ts[1] - EPS or any(
+            g < ts[1] - EPS for g, _ in cv.gaps)):
+        unk, unk_why = t_send, "lost before the first reading"
     fi = fill_index(cv, t_send, sim.poll_s, sim.mode)
     if fi < 0:
         return None, "no state"
+    if early and fi < 1:
+        return None, "no reading by the fill"
     t_fill = max(t_send, ts[fi])
     if unk <= t_fill + EPS:
         return None, "not polled at the fill"
@@ -1610,12 +1661,82 @@ def scan_mom(cv, mk, cfgs):
     return {key: cv.mom[p["v"]] for key, p in cfgs if p["v"] in cv.mom}
 
 
+FIRST_LEFT_OUT = ("no reading", "complete", "gap", "tape hole", "not polled", "late")
+
+
+def first_reading_why(cv, mk):
+    """(t, None): the time of the coin's first curve reading (index 1: the first state the engine took after the
+    create; the poller writes the first reading of every watch, before it the curve is unknown) when a rule may decide
+    on it, or (None, why not), why one of FIRST_LEFT_OUT ("skipped" for a coin not watched). A rule may decide there
+    on a coin the live bot watched (not skipped at its create), that reading not complete, and the tape's first
+    reading the bot's first sight: no "gap" line of the coin at or before it (the hour cap dropped the real first
+    reading) and no tape hole over [create, it] the heartbeats had shown by then (lost lines, a silent poller: the
+    real one may be missing); the coin polled then; and at most SNIPE_MAX_DELAY_S after the create (a later first
+    reading is no snipe). Never a later reading instead: that is no snipe either. Reads the lines at or before it."""
+    if cv.skip is not None:
+        return None, "skipped"
+    if len(cv.ts) < 2:
+        return None, "no reading"
+    if cv.cx[1]:
+        return None, "complete"
+    t = cv.ts[1]
+    if any(g <= t + EPS for g, _ in cv.gaps):
+        return None, "gap"
+    if mk.holes and mk.hole_known(cv.t0, t, t):
+        return None, "tape hole"
+    if not cv.polled(mk, t):
+        return None, "not polled"
+    if t - cv.t0 > SNIPE_MAX_DELAY_S + EPS:
+        return None, "late"
+    return t, None
+
+
+def first_reading_at(cv, mk):
+    """The time of the coin's first curve reading when a rule may decide on it (first_reading_why), else None."""
+    return first_reading_why(cv, mk)[0]
+
+
+def rise_at_first(cv):
+    """The price's rise at the first reading over the create's own state (index 0), % (newpairs' rise_pct then)."""
+    return (cv.px[1] / cv.px[0] - 1) * 100 if cv.px[0] > 0 else INF
+
+
+def scan_snipe(cv, mk, cfgs):
+    """SNIPE: buy a new coin in its first second. "at" "create": at the create line itself (t0, when the feed received
+    it: the first moment the bot can see the coin), on that line alone: a coin the bot's checks at the create let
+    through (mayhem mode, a symbol, a pump.fun curve; skip0: the full-list skip is a "dec" line after the create, and
+    such a coin has no reading to fill on); simulate() prices it on the first reading. Else at its first curve
+    reading (first_reading_at: one poll later), on the create line and that reading only: with R, the price there at
+    most R % over the create's own state (early, not after a bundle already pumped it); with D (either way), the
+    dev's initial buy (initialBuy) at most D % of the supply."""
+    out = {}
+    t = first_reading_at(cv, mk)
+    rise = rise_at_first(cv) if t is not None else None
+    for key, p in cfgs:
+        if p.get("D") is not None and cv.dev_pct > p["D"] + 1e-9:
+            continue
+        if p.get("at") == "create":
+            if cv.skip0 is None:
+                out[key] = cv.t0
+            continue
+        if t is None or (p.get("R") is not None and rise > p["R"] + 1e-9):
+            continue
+        out[key] = t
+    return out
+
+
 def scan_base_a(cv, mk, cfgs):
-    """BASE-A: every coin the live bot watched (not skipped at its create), at a fixed age, if still polled."""
+    """BASE-A: every coin the live bot watched (not skipped at its create), at a fixed age, if still polled; "first":
+    at its first curve reading (first_reading_at), what every SNIPE rule is read against."""
     out = {}
     if cv.skip is not None:
         return out
     for key, p in cfgs:
+        if p.get("first"):
+            t = first_reading_at(cv, mk)
+            if t is not None:
+                out[key] = t
+            continue
         t = cv.t0 + p["a"]
         if cv.polled(mk, t) and not cv.complete_by(t):
             out[key] = t
@@ -1726,9 +1847,12 @@ def exit_policies(cfg):
                "runner: -20% stop until +30%, then a 20% trail or +5% floor; out at 80 SOL real (cost basis)"),
         "E3": (Scalp(basis="bot", sl=-15.0, r_take=80.0), "graduation: out at 80 SOL real or -15% (cost basis)"),
     }
-    for h in (15, 45, 60, 180, 300, 480):
+    for h in (5, 10, 15, 30, 45, 60, 180, 300, 480):
         ex["X3_%d" % h] = (Hold(h), "hold %d s" % h)
+    for h in (15, 45, 60, 180, 300, 480):
         ex["H%d_TP30" % h] = (Hold(h, tp=30.0), "hold %d s, +30%% (curve) take" % h)
+    ex["S1"] = (Scalp(basis="bot", tp=25.0, sl=-15.0, t_max=30.0),
+                "sniper: +25% take, -15% stop (cost basis), out 30 s after the fill")
     for tp in (10, 20, 40):
         for sl in (-10, None):
             for tm in (60, 240):
@@ -1773,14 +1897,15 @@ def mom_variants(cfg):
 
 FAMILIES = {
     "SURV": scan_surv, "DIP": scan_dip, "ORG": scan_org, "GRAD": scan_grad, "BRK": scan_brk, "MOM": scan_mom,
-    "BASE-A": scan_base_a, "BASE-B": scan_base_b, "C0": scan_c0, "REF": scan_fire,
+    "BASE-A": scan_base_a, "BASE-B": scan_base_b, "C0": scan_c0, "REF": scan_fire, "SNIPE": scan_snipe,
 }
 
 
 def build_grid():
     """Every rule x parameter combination, in the order the cap keeps them: the reference and base rows first (they
     are what every rule is read against), then the families by prior plausibility (designer 1: GRAD > SURV > DIP > ORG
-    > BRK; the skeptic: the momentum steelman last), then design 2's exits on the live trigger.
+    > BRK; the skeptic: the momentum steelman last), then design 2's exits on the live trigger; SNIPE last (its base
+    row first), added after the others so a smaller --max-rules keeps every older row as it was.
     -> ([combo dict], {entry key: (family, params)})"""
     combos, entries = [], {}
 
@@ -1871,6 +1996,18 @@ def build_grid():
     for dsol in (1, 2, 3):
         for mode in ("now", "rebound"):
             add("rule", "MOM", base, "DR_%d_%s" % (dsol, mode), "momentum, dump response")
+    first = entry("BASE-A", "BASE-A first", first=True)
+    for xk in ("X3_5", "X3_30", "X1@175"):                # X1 out by 175 s: an unfollowed coin leaves the tape at 181 s
+        add("base", "BASE-A", first, xk, "every watched coin at its first reading")
+    snipe = [(entry("SNIPE", "SNIPE any"), "at its first reading: any watched coin")]
+    snipe += [(entry("SNIPE", "SNIPE r<=%d" % R, R=float(R)),
+               "at its first reading: the price at most +%d%% over the create's" % R) for R in (10, 30)]
+    snipe += [(entry("SNIPE", "SNIPE r<=10 d<=%d" % D, R=10.0, D=float(D)), "at its first reading: the price at "
+               "most +10%% over the create's, the dev's buy at most %d%% of the supply" % D) for D in (3,)]
+    snipe += [(entry("SNIPE", "SNIPE create", at="create"), "at its create line, filled on its first reading")]
+    for ek, what in snipe:
+        for xk in ("X3_5", "X3_10", "X3_30", "X1@175", "S1"):
+            add("rule", "SNIPE", ek, xk, what)
     return combos, entries
 
 
@@ -1886,8 +2023,8 @@ def _last_before(lines, t):
 
 
 def overlay(q, cv, t):
-    """True / False, or None (unknown: no metadata read, no RugCheck report, no reading in the first 5 s) for quality
-    filter q at decision time t, from lines at or before t only."""
+    """True / False, or None (unknown: no metadata read, no RugCheck report, no reading in the first 5 s or a decision
+    inside them) for quality filter q at decision time t, from lines at or before t only."""
     if q == "Q1":                                       # socials: an X link that is not a post, or a Telegram
         m = _last_before([x for x in cv.metas if x.get("ok")], t)
         if m is None:
@@ -1907,6 +2044,8 @@ def overlay(q, cv, t):
         sol_in = cv.rs[cv.at(t)] - cv.rsol0
         return sol_in <= 0.1 or holders / sol_in >= 3.0
     if q == "Q5":                                       # the snipers' SOL has probably come back out
+        if t < cv.t0 + 5.0 - EPS:                       # the first 5 s are not over yet: unknown (no look ahead)
+            return None
         k = cv.at(cv.t0 + 5.0)
         first_in = cv.rs[k] - cv.rsol0 if k >= 1 else None
         if first_in is None or first_in <= 0.05:
@@ -2272,6 +2411,66 @@ def fire_check(views):
                     "RugCheck prefetch FAIL, a holder wait): the study's triggers leave RugCheck out on purpose"}
 
 
+def pctl(xs, q):
+    """The q quantile of xs (linear between the closest ranks: q 0.5 is the median), or None."""
+    xs = sorted(xs)
+    if not xs:
+        return None
+    k = q * (len(xs) - 1)
+    i = int(math.floor(k))
+    if i + 1 >= len(xs):
+        return xs[-1]
+    return xs[i] + (xs[i + 1] - xs[i]) * (k - i)
+
+
+FIRST_NOTE = ("trades before the first reading (the launch block's snipers, the wallets that make +90 % in the first "
+              "seconds) are invisible to the tape: the SNIPE rules can only buy after them")
+
+
+def first_reading(views, mk, within=None):
+    """How far the coins had moved before the bot could see their curve, on the coins the first-reading SNIPE rules
+    may decide on (first_reading_why; the other watched coins, not skipped at their create, counted by why not in
+    left_out): the delay from the create line to the first reading (s), the price's rise there over the create's
+    own state (%), the real SOL in the curve then and how much of it came in since the create (SOL); with within
+    (L + a poll), the share read by then (a SNIPE create order is priced on that reading). Descriptive, every part
+    of the tape."""
+    watched = 0
+    left = collections.OrderedDict((k, 0) for k in FIRST_LEFT_OUT)
+    delay, rise, real, since = [], [], [], []
+    for cv in views:
+        if cv.skip is not None:
+            continue
+        watched += 1
+        t, why = first_reading_why(cv, mk)
+        if t is None:
+            left[why] += 1
+            continue
+        delay.append(t - cv.t0)
+        rise.append(rise_at_first(cv))
+        real.append(cv.rs[1])
+        since.append(cv.rs[1] - cv.rsol0)
+    n = len(delay)
+
+    def share(ok):
+        return rnd(sum(1 for x in rise if ok(x)) / n, 3) if n else None
+
+    def q(xs, p, nd=3):
+        v = rnd(pctl(xs, p), nd)
+        return None if v is None else v + 0.0          # never "-0.0" (a curve read at the create's own state)
+
+    return {"coins": n, "watched": watched, "left_out": dict(left), "max_delay_s": SNIPE_MAX_DELAY_S,
+            "delay_s": {"median": q(delay, 0.5), "p90": q(delay, 0.9)},
+            "create_fill": None if within is None else {
+                "within_s": rnd(within, 3),
+                "share": rnd(sum(1 for d in delay if d <= within + EPS) / n, 3) if n else None},
+            "rise_pct": {"median": q(rise, 0.5, 2), "p75": q(rise, 0.75, 2), "p90": q(rise, 0.9, 2),
+                         "share_50": share(lambda x: x >= 50.0 - 1e-9), "share_le_10": share(lambda x: x <= 10.0 + 1e-9),
+                         "share_le_30": share(lambda x: x <= 30.0 + 1e-9)},
+            "real_sol": {"median": q(real, 0.5), "p90": q(real, 0.9)},
+            "sol_in_since_create": {"median": q(since, 0.5), "p90": q(since, 0.9)},
+            "note": FIRST_NOTE}
+
+
 # ---------------------------------------------------------------- the study
 
 def load(data, since=None, until=None):
@@ -2345,6 +2544,7 @@ def study(data=None, since=None, until=None, split=0.7, cfg=None, max_rules=300,
     rep["coverage"] = coverage(views, mk)
     rep["sanity"] = sanity(views)
     rep["fire_check"] = fire_check(views)
+    rep["first_reading"] = first_reading(views, mk, l_in + poll_s)
     rep["calibration"] = calibrate(views, mk, costs, poll_s, l_in, l_out, cfg, exit_policies(cfg)["X1"][0])
     say("study · tape, costs and calibration done (%.1f s)" % (time.monotonic() - wall))
 
@@ -2389,9 +2589,11 @@ def study(data=None, since=None, until=None, split=0.7, cfg=None, max_rules=300,
         rows.append(dict(c, first=st))
     ranked = sorted([r for r in rows if r["selectable"] and r["first"]["n"] >= min_trades and r["first"].get("score")
                      is not None], key=lambda r: (-r["first"]["score"], -r["first"]["mean"], r["key"]))
-    # the quality overlays on the two best first-part rules, and on the reference
+    # the quality overlays on the two best first-part rules of the older families (never a SNIPE row: at a first
+    # reading or a create Q1, Q3, Q4 and Q5 are unknowable, no metadata or RugCheck line yet and the first 5 s not
+    # over, and Q2 repeats SNIPE's own dev filter), and on the reference
     over = []
-    base_two = ranked[:2]
+    base_two = [r for r in ranked if r["family"] != "SNIPE"][:2]
     ref_key = next((c["key"] for c in combos if c["kind"] == "ref"), None)
     for src, kind in [(r, "rule") for r in base_two] + ([({"key": ref_key}, "ref")] if ref_key else []):
         for q in sorted(OVERLAYS):
@@ -2429,10 +2631,13 @@ def study(data=None, since=None, until=None, split=0.7, cfg=None, max_rules=300,
     # no bootstrap and no re-run come first; the bootstrap, the stress table, the nulls and the marks to market only
     # for the top --top (shown) and for every one that passes those.
     finalists, judged = [], []
+    seen = collections.Counter()                        # the rank among the older families, and among SNIPE's rows
     for r in ranked:
         key = r["key"]
         held = part(key, "held")
-        shown = r["rank"] <= max(0, int(top))
+        snipe = r["family"] == "SNIPE"
+        seen[snipe] += 1
+        shown = seen[snipe] <= min(SNIPE_SHOWN if snipe else INF, max(0, int(top)))   # SNIPE pushes no older row out
         quick = stats(held, order_usd)
         cheap = gates(quick, r["first"], {}, min_trades)
         row = {"rank": r["rank"], "key": key, "family": r["family"], "n": quick["n"], "mean": rnd(quick.get("mean"), 3)}
@@ -2468,7 +2673,8 @@ def study(data=None, since=None, until=None, split=0.7, cfg=None, max_rules=300,
     rep["held_out"] = {"judged": len(judged), "shown": sum(1 for f in finalists if f["shown"]),
                        "passed": sum(1 for r in judged if r["passes"]), "families": dict(sorted(fams.items())),
                        "note": "every ranked combination is judged on the held-out part at the same Bonferroni z; "
-                               "the top --top by first-part rank are shown, and every one that passes",
+                               "the top --top of the older families by first-part rank are shown, the best %d SNIPE "
+                               "rows apart, and every one that passes" % SNIPE_SHOWN,
                        "rows": judged}
     rep["ranking"] = [{"rank": r["rank"], "key": r["key"], "family": r["family"], "first": small(
         {k: r["first"].get(k) for k in ("n", "mean", "median", "win", "score", "blind_share", "gross")})}
@@ -2633,16 +2839,24 @@ def nulls(r, held, views, mk, sim, exits, seed):
 
 def mtm(held, views, mk, sim):
     """Design 1's entry check: the net % if each held-out trade had been sold everything at +60 / +180 / +300 s
-    after its fill (the exit's own path left out), on the trades still polled then."""
+    after its fill (the exit's own path left out). Every trade counts: one the tape lost before its mark (an
+    unfollowed coin leaves it at 181 s) at its blind sale, the last state the tape knew, n_blind of them; the still
+    polled ones alone apart (mean_polled: only the coins the recorder followed, the ones that came near a trigger,
+    are left by +180 s, so alone they are survivors)."""
     out = {}
     for h in (60.0, 180.0, 300.0):
-        got = []
+        got, polled = [], []
         for t in held:
             cv = views[t.cv]
             tr, _ = simulate(cv, mk, t.dec, Hold(h), sim)
-            if tr is not None and not tr.blind:
-                got.append(tr.pnl)
-        out["+%ds" % h] = {"n": len(got), "mean": rnd(math.fsum(got) / len(got), 3) if got else None}
+            if tr is None:
+                continue
+            got.append(tr.pnl)
+            if not tr.blind:
+                polled.append(tr.pnl)
+        out["+%ds" % h] = {"n": len(got), "mean": rnd(math.fsum(got) / len(got), 3) if got else None,
+                           "n_blind": len(got) - len(polled),
+                           "mean_polled": rnd(math.fsum(polled) / len(polled), 3) if polled else None}
     return out
 
 
@@ -2692,9 +2906,18 @@ RULES_NOTE = {
                "+20..+30 %, a 20..25 % trail); X3(H) and design 2's time-only hold H are one rule. Dropped: the "
                "skeptic's 1 s resampled buy counts (design 2 needs the raw reading counts to reproduce the live fire "
                "lines; they differ only on coins polled at 0.5 s, rare before an entry).",
-        "Q1-Q5": "designer 1 F6 as proposed, each filter alone on the two best first-part rules (counted in M) and on "
-                 "the reference row; a coin with no metadata, no RugCheck report or no reading in its first 5 s is "
-                 "an \"unknown\" class, left out and counted.",
+        "Q1-Q5": "designer 1 F6 as proposed, each filter alone on the two best first-part rules of the older "
+                 "families (counted in M; never a SNIPE row, where all but Q2 are unknowable and Q2 repeats its dev "
+                 "filter) and on the reference row; a coin with no metadata, no RugCheck report or no reading in its "
+                 "first 5 s or a decision inside them is an \"unknown\" class, left out and counted.",
+        "SNIPE": "the ask (buy new coins in their first seconds, like the wallets that make +90 % in 5 s), "
+                 "measured before any live change: decided at the coin's create line (SNIPE create, the first moment "
+                 "the bot sees it; filled on the first reading when it came by t + L + a poll) or at its first curve "
+                 "reading (a poll later; only the bot's first sight, at most 10 s after the create), on the create "
+                 "and that reading only; any / the price at most +10 or +30 % over the create's / +10 % and the dev "
+                 "at most 3 %; under X3 5 / 10 / 30 s, X1@175 and S1 (+25 % / -15 % / 30 s). 5 x 5 on purpose: each "
+                 "combination costs Bonferroni width. BASE-A first is its base row. Never the overlays' source; its "
+                 "best 5 are shown apart from the older rows' --top.",
         "BASE / C0 / REF": "the skeptic's BASE-A and BASE-B (near by the run's own thresholds, design 1's form, not "
                            "the strictest across runs), one random-time control C0 for designers 1 C0, 2 E_RAND and "
                            "3 BASE-C (one seeded draw per coin instead of 20), the fire lines under X1 and the "
@@ -2707,7 +2930,7 @@ RULES_NOTE = {
         "days of tape the summary says the numbers are descriptive",
         "design 2's per-family finalist (one per family and entry set): every ranked combination is judged on the "
         "held-out part instead (the Bonferroni z already counts them all), the top 15 by the first-part lower bound "
-        "shown with every pass",
+        "(SNIPE's best 5 apart) shown with every pass",
         "the 1 s resampled buy counts (see MOM), the 20 random draws per coin (one), the per-rule \"lost to the cap\" "
         "counts (the coverage table counts the cap ends by hour for every coin)",
         "trimmed means, the mean without the top trades, the matched nulls and the rest of the stress table are "
@@ -2812,6 +3035,29 @@ def markdown(rep):
                        ", ".join("%s %d" % kv for kv in sorted(((rep.get("tried") or {}).get("not_traded") or {})
                                                                .items(), key=lambda kv: -kv[1])) or "none"))
         out.append("")
+    fr = rep.get("first_reading") or {}
+    if fr:
+        d, r, rl, si = (fr.get(k) or {} for k in ("delay_s", "rise_pct", "real_sol", "sol_in_since_create"))
+        share = lambda x: "-" if x is None else "%.0f %%" % (x * 100)
+        num_ = lambda x, nd=1: "-" if x is None else ("%." + str(nd) + "f") % x
+        lo, cf = fr.get("left_out") or {}, fr.get("create_fill") or {}
+        out.append("**First reading** (the earliest the bot sees a coin's curve, a poll after its create line: the "
+                   "first-reading SNIPE rules' decision; of %d watched coins %d with a first reading a rule may decide "
+                   "on, %d without one, %d complete at it, %d not on the tape (a gap line, lost lines or a known hole "
+                   "before it), %d not polled then, %d later than %g s): %s s after the create line (median; p90 %s "
+                   "s)%s; the price %s %% over the create's state (median; p75 %s %%, p90 %s %%; +50 %% or more on %s "
+                   "of them, at most +10 %% on %s, +30 %% on %s); real SOL in the curve %s (median; p90 %s), %s of it "
+                   "in since the create (p90 %s); %s" % (
+                       fr.get("watched") or 0, fr.get("coins") or 0, lo.get("no reading") or 0, lo.get("complete") or 0,
+                       (lo.get("gap") or 0) + (lo.get("tape hole") or 0), lo.get("not polled") or 0,
+                       lo.get("late") or 0, fr.get("max_delay_s") or SNIPE_MAX_DELAY_S, num_(d.get("median"), 2),
+                       num_(d.get("p90"), 2), "" if cf.get("within_s") is None else ", within %.1f s (L + a poll: a "
+                       "SNIPE create order is priced on it) on %s" % (cf["within_s"], share(cf.get("share"))),
+                       _pct(r.get("median"), 1), _pct(r.get("p75"), 1), _pct(r.get("p90"), 1), share(r.get("share_50")),
+                       share(r.get("share_le_10")), share(r.get("share_le_30")), num_(rl.get("median"), 2),
+                       num_(rl.get("p90"), 2), num_(si.get("median"), 2), num_(si.get("p90"), 2),
+                       fr.get("note") or FIRST_NOTE))
+        out.append("")
     tr = rep.get("tried") or {}
     if tr:
         out.append("**Rules**: %d combinations tried (%d selectable, %d left out by --max-rules %s), %d with %d+ first-part "
@@ -2824,11 +3070,13 @@ def markdown(rep):
     ho = rep.get("held_out") or {}
     if fins:
         extra = sum(1 for f in fins if not f.get("shown", True))
+        sn = sum(1 for f in fins if f.get("shown", True) and f.get("family") == "SNIPE")
         out.append("**The held-out part**: every one of the %d ranked combinations judged at the same Bonferroni z "
-                   "(families %s); shown: the top %d by first-part rank%s (net %% of a $%.2f order after every "
+                   "(families %s); shown: the top %d%s by first-part rank%s%s (net %% of a $%.2f order after every "
                    "cost):" % (ho.get("judged") or 0, " · ".join("%s %d" % kv for kv in (ho.get("families") or {}).items()),
-                               len(fins) - extra, " and %d more that pass" % extra if extra else "",
-                               st.get("order_usd") or 0))
+                               len(fins) - extra - sn, " of the older families" if sn else "",
+                               ", SNIPE's best %d apart," % sn if sn else "",
+                               " and %d more that pass" % extra if extra else "", st.get("order_usd") or 0))
         out.append("")
         out.append("| # | rule | first part n / mean % | held-out n | win | mean % | median % | 95 % CI | Bonferroni lower "
                    "| $ total | hours up | blind | completed (mean at x0.85) | +2 s lat. | pass |")
