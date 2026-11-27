@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T04:05:03Z",
+ "updated": "2026-11-27T04:05:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 304.09,
@@ -24,7 +24,7 @@
   "flagged": 159,
   "checked": 155,
   "filtered": 5,
-  "lines": 1745,
+  "lines": 1747,
   "last_rug": {
    "coin": "GTAIV",
    "pass": true
@@ -3554,24 +3554,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T03:44:48Z",
-   "time": "04:44:48",
-   "agent": "EXECUTOR",
-   "coin": "SEQUEL",
-   "action": "exit",
-   "text": "EXIT SEQUEL $-6.01 (-14%) · stop -10% · out · 0.0 s after the reading",
-   "n": 1546
-  },
-  {
-   "t": "2026-11-27T03:44:48Z",
-   "time": "04:44:48",
-   "agent": "LEARNER",
-   "coin": "SEQUEL",
-   "action": "learn",
-   "text": "learned · np:social:none now avg -12.3% over 80.5",
-   "n": 1547
-  },
-  {
    "t": "2026-11-27T03:44:50Z",
    "time": "04:44:50",
    "agent": "SCANNER",
@@ -5352,6 +5334,24 @@
    "action": "shadow",
    "text": "SHADOW LENTO · not bought (pause after a losing streak) · followed as if bought: $30.41 at 0.0000021158 (curve maths, every cost) · same exits, outside the book",
    "n": 1745
+  },
+  {
+   "t": "2026-11-27T04:05:30Z",
+   "time": "05:05:30",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (mayhem mode 5, snipe not bought: pause after a  3, serial launcher 3)",
+   "n": 1746
+  },
+  {
+   "t": "2026-11-27T04:05:34Z",
+   "time": "05:05:34",
+   "agent": "LEARNER",
+   "coin": "NVIDIA",
+   "action": "shadow",
+   "text": "SHADOW NVIDIA · not bought (pause after a losing streak) · followed as if bought: $30.41 at 0.0000060506 (curve maths, every cost) · same exits, outside the book",
+   "n": 1747
   }
  ],
  "nights": [
@@ -5412,7 +5412,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5420,15 +5420,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 764,
-    "last_event_age_s": 2.3,
+    "events": 767,
+    "last_event_age_s": 3.9,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18696,
+    "events": 18775,
     "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
@@ -5436,7 +5436,7 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 532,
+    "events": 533,
     "last_event_age_s": 3.9,
     "errors": 50,
     "last_error": "ipfs.io: HTTP 403"
@@ -5452,7 +5452,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 6
+  "followed": 7
  },
  "learner": {
   "samples": 147,
@@ -5499,23 +5499,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9218,
+   "sent": 9254,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9217,
+   "sent": 9253,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "39aWM2Boxa6AdDbbNeQ28EcJ5k4kA9gZQCuzMdLBpump",
+   "age_s": 3,
+   "sol_in": 17.71,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 133.9,
+   "mcap_sol": 81.3,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
+   "symbol": "GTAIV",
+   "name": "GTA4",
+   "mint": "2e73WAyPbywUqMh3BEQhBapgXamBY6mh3BEPEEi4pump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "DOGE",
    "name": "DOGE",
    "mint": "FXwYEc32Yu4HLVtEx7BRZj2kWRbGLPgeRMk3E41Zpump",
-   "age_s": 2,
+   "age_s": 36,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5533,7 +5569,7 @@
    "symbol": "LENTO",
    "name": "Key Lento",
    "mint": "FsX6nhgodETQL4oSN6gE4rZGrVaKQ3FJXBHHW1sQUPLC",
-   "age_s": 4,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5551,14 +5587,14 @@
    "symbol": "Tomato",
    "name": "Tomato",
    "mint": "GCRK36NqsymprUGEReoY8QtTctvXiNdqRsptCGoktTJp",
-   "age_s": 30,
-   "sol_in": 7.68,
-   "buys": 14,
-   "sells": 11,
-   "rise_pct": 48.8,
-   "mcap_sol": 56.4,
+   "age_s": 64,
+   "sol_in": -1.85,
+   "buys": 26,
+   "sells": 26,
+   "rise_pct": -10.3,
+   "mcap_sol": 34.0,
    "dev_pct": 15.2,
-   "big_sell": 2.07,
+   "big_sell": 4.76,
    "x": "https://x.com/MarioPrezldente/status/2126165250710151583",
    "tg": false,
    "web": false,
@@ -5569,7 +5605,7 @@
    "symbol": "SANTA",
    "name": "actually viral mfers",
    "mint": "FyQA56R2uUj9UKgqhx5oswmVWH9BN3mDNcVtP5ZQpump",
-   "age_s": 46,
+   "age_s": 80,
    "sol_in": -3.82,
    "buys": 3,
    "sells": 6,
@@ -5587,7 +5623,7 @@
    "symbol": "$LEGEND",
    "name": "LEGEND",
    "mint": "DnC83aqWLHt8r5o37AVAU2mYKtY52E4bBKHqD9dopump",
-   "age_s": 49,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5605,7 +5641,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "24PjZvY2iryi3kr6gUKKYZkMkA35UbCWkAd7b9sPpump",
-   "age_s": 51,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5623,7 +5659,7 @@
    "symbol": "GTAIV",
    "name": "GTA4",
    "mint": "EKVpMWC48pyFMgfmsqAicFtMtLiPvKTXxt1z3J7Fpump",
-   "age_s": 84,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5641,7 +5677,7 @@
    "symbol": "bb",
    "name": "bubyh",
    "mint": "Awfd71kwV1ZTSfq8Br2DR8vdnhVkgqS4ijdFmVaPpump",
-   "age_s": 87,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5659,7 +5695,7 @@
    "symbol": "REALPEPE",
    "name": "Real Pepe IRL",
    "mint": "3Z8WgFv12sT9Z7Q4rK5BmqzWcRF2CNErSQr9tDBCpump",
-   "age_s": 139,
+   "age_s": 173,
    "sol_in": 0.29,
    "buys": 4,
    "sells": 1,
@@ -5672,48 +5708,28 @@
    "web": "https://x.com/sinobututns/status/2124966802304245912",
    "status": "rejected: snipe not bought: pause after a losing streak",
    "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "AtyVhkeChMN4x1ZxvPwMgnmnXFM4LrDaxAeBmfokpump",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "GTAIV",
-   "name": "GTA4",
-   "mint": "6puraNZHnwDREZA73KoSxFXAjw87LmjpEV43A29rpump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "NVIDIA",
+   "mint": "39aWM2Boxa6AdDbbNeQ28EcJ5k4kA9gZQCuzMdLBpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T04:05:34Z",
+   "cost": 30.41,
+   "pnl_pct": -2.8,
+   "tier": "swing",
+   "score": 3,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 17.59
+  },
   {
    "symbol": "LENTO",
    "mint": "FsX6nhgodETQL4oSN6gE4rZGrVaKQ3FJXBHHW1sQUPLC",
@@ -6200,7 +6216,7 @@
   "wins": 39,
   "win_rate": 18.2,
   "mean_pnl_pct": -9.35,
-  "open": 5,
+  "open": 6,
   "learner": {
    "n": 16,
    "wins": 3,
