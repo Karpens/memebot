@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:13:26Z",
-    "time": "06:13:26",
-    "agent": "RISK",
-    "coin": "ANTHEMA",
-    "action": "skip",
-    "text": "no entry: pause after a losing streak",
-    "n": 2213
-   },
-   {
-    "t": "2026-11-27T05:13:26Z",
-    "time": "06:13:26",
-    "agent": "LEARNER",
-    "coin": "ANTHEMA",
-    "action": "shadow",
-    "text": "SHADOW ANTHEMA · not bought (pause after a losing streak) · followed as if bought: $20.53 at 0.0000023714 (curve maths, every cost) · same exits, outside the book",
-    "n": 2214
-   },
-   {
     "t": "2026-11-27T05:13:47Z",
     "time": "06:13:47",
     "agent": "RISK",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 4.8 a minute · 0 watched · 14 rejected (mayhem mode 7, snipe not bought: trades tonight 6, serial launcher 1)",
     "n": 2812
+   },
+   {
+    "t": "2026-11-27T06:26:19Z",
+    "time": "07:26:19",
+    "agent": "LEARNER",
+    "coin": "GHOST",
+    "action": "shadow",
+    "text": "SHADOW GHOST would have made -9.7% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:swing now avg -16.8% over 24.5",
+    "n": 2813
+   },
+   {
+    "t": "2026-11-27T06:26:26Z",
+    "time": "07:26:26",
+    "agent": "LEARNER",
+    "coin": "ORC",
+    "action": "shadow",
+    "text": "SHADOW ORC would have made -9.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.0% over 190.5",
+    "n": 2814
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2812,
+  "lines": 2814,
   "flags": [
    {
     "coin": "Kibo",
@@ -21127,9 +21127,9 @@
   },
   "np_said": 1795760758.780851,
   "shadow": {
-   "n": 327,
+   "n": 329,
    "wins": 58,
-   "sum": -2760.9
+   "sum": -2779.6
   },
   "np_speed": {
    "first_in": [
@@ -30712,9 +30712,9 @@
   }
  },
  "shadow": {
-  "n": 341,
+  "n": 343,
   "wins": 60,
-  "sum": -2959.4,
+  "sum": -2978.1,
   "by": {
    "learner": {
     "n": 16,
@@ -30722,52 +30722,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 325,
+    "n": 327,
     "wins": 57,
-    "sum": -2761.6
+    "sum": -2780.3
    }
   },
   "closed": [
-   {
-    "symbol": "optimizer",
-    "mint": "AsReuAgeFcXDHZEypDUHqg6Z35tzn9jq9yi4icu7pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:06:04Z",
-    "cost": 36.2,
-    "pnl_pct": -1.9,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:09:36Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.69,
-    "weight": 0.5
-   },
-   {
-    "symbol": "CHAPE",
-    "mint": "6E3FQBw9kp5osyH6Hx8BeQQVd84cpxgqNmw35qJNpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:06:25Z",
-    "cost": 36.2,
-    "pnl_pct": -7.2,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:10:02Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.61,
-    "weight": 0.5
-   },
    {
     "symbol": "TWIZZY",
     "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
@@ -31127,11 +31087,49 @@
     "exit": "stop -10%",
     "pnl": -4.91,
     "weight": 0.5
+   },
+   {
+    "symbol": "GHOST",
+    "mint": "GWxPi7UR7zGFZaNZZrqrjkN2a6joeriLN8pjokRipump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:22:47Z",
+    "cost": 36.2,
+    "pnl_pct": -9.7,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.3,
+    "closed": "2026-11-27T06:26:19Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.51,
+    "weight": 0.5
+   },
+   {
+    "symbol": "ORC",
+    "mint": "7tJfwB4GHuB64rN5f5K7iawsis41rbnEeDLepbDSpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:21:27Z",
+    "cost": 36.2,
+    "pnl_pct": -9.0,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 1.32,
+    "closed": "2026-11-27T06:26:26Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.25,
+    "weight": 0.5
    }
   ],
   "open": [
-   "ORC",
-   "GHOST",
    "MEK",
    "BIBLE",
    "CPM"
@@ -31145,8 +31143,8 @@
   "best": [
    {
     "label": "snipe · hour:day",
-    "n": 16,
-    "avg": -4.4
+    "n": 18,
+    "avg": -4.7
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -31163,12 +31161,12 @@
    {
     "label": "snipe · tier:swing",
     "n": 24,
-    "avg": -16.9
+    "avg": -16.8
    },
    {
     "label": "snipe · news:3-4",
     "n": 24,
-    "avg": -16.9
+    "avg": -16.8
    },
    {
     "label": "snipe · np:sol:12+",
@@ -31176,7 +31174,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 325,
+  "shadows": 327,
   "memory": "snipe"
  }
 }

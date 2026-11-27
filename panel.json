@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:26:15Z",
+ "updated": "2026-11-27T06:26:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2812,
+  "lines": 2814,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4124,24 +4124,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T05:46:44Z",
-   "time": "06:46:44",
-   "agent": "EXECUTOR",
-   "coin": "ひな",
-   "action": "exit",
-   "text": "EXIT ひな $-3.93 (-11%) · curve quiet for 3 min (no trade)",
-   "n": 2613
-  },
-  {
-   "t": "2026-11-27T05:46:44Z",
-   "time": "06:46:44",
-   "agent": "LEARNER",
-   "coin": "ひな",
-   "action": "learn",
-   "text": "learned · np:dev:0-2 now avg -9.4% over 173.5",
-   "n": 2614
-  },
-  {
    "t": "2026-11-27T05:46:51Z",
    "time": "06:46:51",
    "agent": "EXECUTOR",
@@ -5922,6 +5904,24 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 0 watched · 14 rejected (mayhem mode 7, snipe not bought: trades tonight 6, serial launcher 1)",
    "n": 2812
+  },
+  {
+   "t": "2026-11-27T06:26:19Z",
+   "time": "07:26:19",
+   "agent": "LEARNER",
+   "coin": "GHOST",
+   "action": "shadow",
+   "text": "SHADOW GHOST would have made -9.7% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:swing now avg -16.8% over 24.5",
+   "n": 2813
+  },
+  {
+   "t": "2026-11-27T06:26:26Z",
+   "time": "07:26:26",
+   "agent": "LEARNER",
+   "coin": "ORC",
+   "action": "shadow",
+   "text": "SHADOW ORC would have made -9.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.0% over 190.5",
+   "n": 2814
   }
  ],
  "nights": [
@@ -5982,7 +5982,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5990,16 +5990,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1291,
-    "last_event_age_s": 12.6,
+    "events": 1293,
+    "last_event_age_s": 11.1,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39309,
-    "last_event_age_s": 0.5,
+    "events": 39337,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
@@ -6007,7 +6007,7 @@
     "name": "metadata",
     "connected": true,
     "events": 860,
-    "last_event_age_s": 29.5,
+    "last_event_age_s": 58.5,
     "errors": 83,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -6020,7 +6020,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.0,
+  "creates_per_min": 4.8,
   "watching": 0,
   "followed": 6
  },
@@ -6032,8 +6032,8 @@
   "best": [
    {
     "label": "snipe · hour:day",
-    "n": 16,
-    "avg": -4.4
+    "n": 18,
+    "avg": -4.7
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -6050,12 +6050,12 @@
    {
     "label": "snipe · tier:swing",
     "n": 24,
-    "avg": -16.9
+    "avg": -16.8
    },
    {
     "label": "snipe · news:3-4",
     "n": 24,
-    "avg": -16.9
+    "avg": -16.8
    },
    {
     "label": "snipe · np:sol:12+",
@@ -6063,29 +6063,65 @@
     "avg": -14.4
    }
   ],
-  "shadows": 325,
+  "shadows": 327,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18505,
+   "sent": 18535,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18504,
+   "sent": 18534,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HYPE",
+   "name": "Hyperliquid",
+   "mint": "DVU6skdtH8ZDGwPAypYthS83vBqDRBpUuQ2Pckt7pump",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.8,
+   "dev_pct": 6.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "CRUMP",
+   "name": "DONALD J CRUMP",
+   "mint": "BaU3qY4LFNWo5XU8yqwSXJ6A3q82wyQxUtBj9Twqpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.3,
+   "dev_pct": 4.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "E97aLcH4fjcsrpew3hZPyEUx4MEBFFsvUomRBsg8pump",
-   "age_s": 12,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6103,7 +6139,7 @@
    "symbol": "OCB",
    "name": "OfficialChainBroker",
    "mint": "Hyr4EJitkcMy79rSoa84AHsWiVHbHnRDyv8pxKDRpump",
-   "age_s": 18,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6121,7 +6157,7 @@
    "symbol": "DogePFP",
    "name": "DogePFP",
    "mint": "H4bdCmvcY6xN1T8fb2mDnSafWWTB6SaACrzZBr9XXH2f",
-   "age_s": 29,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6139,7 +6175,7 @@
    "symbol": "PAYSLIP",
    "name": "Payslip",
    "mint": "22318LaWUt96VdzJZVfKcHjsqG22f5hEAYr6yBDMpump",
-   "age_s": 36,
+   "age_s": 65,
    "sol_in": 2.61,
    "buys": 5,
    "sells": 4,
@@ -6157,7 +6193,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "9HDzsLwxnfVe9wh8d2q4xz6oGFsGgMLLJfszF8N2pump",
-   "age_s": 50,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6175,12 +6211,12 @@
    "symbol": "PSST",
    "name": "Psst Scanner",
    "mint": "9DxhopyVhvGaJQ1SYCGHBfkXG4NSPSG736VVmLrQPSST",
-   "age_s": 62,
-   "sol_in": 0.32,
+   "age_s": 91,
+   "sol_in": -0.34,
    "buys": 12,
-   "sells": 21,
-   "rise_pct": 2.1,
-   "mcap_sol": 29.8,
+   "sells": 24,
+   "rise_pct": -2.2,
+   "mcap_sol": 28.5,
    "dev_pct": 2.2,
    "big_sell": 3.73,
    "x": "https://x.com/PsstScanner/status/2126200650925023589",
@@ -6193,7 +6229,7 @@
    "symbol": "CRUMP",
    "name": "DONALD J CRUMP",
    "mint": "EZxzwpy6Rq5wtsobM5ZEqjjBkSFqzVkJJhx1mBgupump",
-   "age_s": 62,
+   "age_s": 91,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6211,7 +6247,7 @@
    "symbol": "CPM",
    "name": "Crazy Pinata Man",
    "mint": "9fMibQBFrEnn4C2cCiTFFLCeBab97uoW5PzkMaaspump",
-   "age_s": 71,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6229,7 +6265,7 @@
    "symbol": "OCB",
    "name": "OfficialChainBroker",
    "mint": "2MKMQjN1M7KcbwgeGBo4zN13pDgzfG4vGnsLHFKzpump",
-   "age_s": 97,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6247,7 +6283,7 @@
    "symbol": "MEK",
    "name": "MEK",
    "mint": "Fr14uVvtcBJnC5zvdGqQtQhY3kpUcwdMf8Woo4e2pump",
-   "age_s": 103,
+   "age_s": 132,
    "sol_in": 0.2,
    "buys": 2,
    "sells": 0,
@@ -6265,7 +6301,7 @@
    "symbol": "BIBLE",
    "name": "Holy Bible Dog",
    "mint": "rhkcRi5pXftvVAqu7JHe3P3nQXdJpbbmsCoFWYppump",
-   "age_s": 104,
+   "age_s": 133,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 1,
@@ -6283,31 +6319,13 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "2t4d1sTPhpUQCMT7MkiGRzyPDbUFMjzxonxaPTcFpump",
-   "age_s": 124,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 31.8,
    "dev_pct": 6.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GIGACAT",
-   "name": "GIGACAT",
-   "mint": "AfMe3YN4SGosx5us12DVY36hyqycFcxaS5WLEFeBpump",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6369,36 +6387,44 @@
    "sol_in": 0.05
   },
   {
-   "symbol": "GHOST",
-   "mint": "GWxPi7UR7zGFZaNZZrqrjkN2a6joeriLN8pjokRipump",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T06:22:47Z",
-   "cost": 36.2,
-   "pnl_pct": -6.0,
-   "tier": "swing",
-   "score": 3,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.3
-  },
-  {
    "symbol": "ORC",
    "mint": "7tJfwB4GHuB64rN5f5K7iawsis41rbnEeDLepbDSpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:21:27Z",
    "cost": 36.2,
-   "pnl_pct": -5.3,
+   "pnl_pct": -9.0,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
    "fill": "curve",
    "age_s": 1,
-   "sol_in": 1.32
+   "sol_in": 1.32,
+   "closed": "2026-11-27T06:26:26Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -3.25,
+   "weight": 0.5
+  },
+  {
+   "symbol": "GHOST",
+   "mint": "GWxPi7UR7zGFZaNZZrqrjkN2a6joeriLN8pjokRipump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:22:47Z",
+   "cost": 36.2,
+   "pnl_pct": -9.7,
+   "tier": "swing",
+   "score": 3,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.3,
+   "closed": "2026-11-27T06:26:19Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -3.51,
+   "weight": 0.5
   },
   {
    "symbol": "PAYSLIP",
@@ -6759,54 +6785,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -2.84,
    "weight": 0.5
-  },
-  {
-   "symbol": "CHAPE",
-   "mint": "6E3FQBw9kp5osyH6Hx8BeQQVd84cpxgqNmw35qJNpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T06:06:25Z",
-   "cost": 36.2,
-   "pnl_pct": -7.2,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T06:10:02Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -2.61,
-   "weight": 0.5
-  },
-  {
-   "symbol": "optimizer",
-   "mint": "AsReuAgeFcXDHZEypDUHqg6Z35tzn9jq9yi4icu7pump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T06:06:04Z",
-   "cost": 36.2,
-   "pnl_pct": -1.9,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T06:09:36Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -0.69,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 341,
+  "n": 343,
   "wins": 60,
-  "win_rate": 17.6,
+  "win_rate": 17.5,
   "mean_pnl_pct": -8.68,
-  "open": 5,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6814,9 +6800,9 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 325,
+   "n": 327,
    "wins": 57,
-   "win_rate": 17.5,
+   "win_rate": 17.4,
    "mean_pnl_pct": -8.5
   }
  }
