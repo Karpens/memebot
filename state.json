@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:04:43Z",
-    "time": "09:04:43",
-    "agent": "LEARNER",
-    "coin": "IRON",
-    "action": "shadow",
-    "text": "SHADOW IRON · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021423 (curve maths, every cost) · same exits, outside the book",
-    "n": 3349
-   },
-   {
-    "t": "2026-11-27T08:04:52Z",
-    "time": "09:04:52",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.8 a minute · 0 watched · 17 rejected (snipe not bought: trades tonight 9, mayhem mode 6, serial launcher 2)",
-    "n": 3350
-   },
-   {
     "t": "2026-11-27T08:05:11Z",
     "time": "09:05:11",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW TODD would have made -13.7% (dump: 2.5 SOL sold) · learned x0.5 · np:social:web now avg -8.2% over 282.5",
     "n": 3948
+   },
+   {
+    "t": "2026-11-27T09:57:56Z",
+    "time": "10:57:56",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.6 a minute · 0 watched · 13 rejected (mayhem mode 5, snipe not bought: trades tonight 4, serial launcher 3)",
+    "n": 3949
+   },
+   {
+    "t": "2026-11-27T09:58:08Z",
+    "time": "10:58:08",
+    "agent": "LEARNER",
+    "coin": "TG",
+    "action": "shadow",
+    "text": "SHADOW TG would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 222.5",
+    "n": 3950
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3948,
+  "lines": 3950,
   "flags": [
    {
     "coin": "Kibo",
@@ -21741,11 +21741,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795773415.645336,
+  "np_said": 1795773476.645223,
   "shadow": {
-   "n": 765,
+   "n": 766,
    "wins": 167,
-   "sum": -6238.8
+   "sum": -6246.7
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 779,
+  "n": 780,
   "wins": 169,
-  "sum": -6437.3,
+  "sum": -6445.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 763,
+    "n": 764,
     "wins": 166,
-    "sum": -6239.5
+    "sum": -6247.4
    }
   },
   "closed": [
-   {
-    "symbol": "BAI",
-    "mint": "Fp38oChj4aKn8LyQ6HVvPnezgTiTiUxJMe68Y5BJpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:42:36Z",
-    "cost": 36.2,
-    "pnl_pct": -11.3,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.64,
-    "closed": "2026-11-27T09:47:36Z",
-    "exit": "5 min, only -7%",
-    "pnl": -4.07,
-    "weight": 0.5
-   },
    {
     "symbol": "NBA",
     "mint": "5var3KGB6XctWDUarM9zpZn4z7T1fjyMqr1HbfpUboRn",
@@ -31743,11 +31723,30 @@
     "exit": "dump: 2.5 SOL sold",
     "pnl": -4.95,
     "weight": 0.5
+   },
+   {
+    "symbol": "TG",
+    "mint": "HtGaVosxnoKDnf12g3Z4gE1AgjfroC3j2KaWuLGbpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:55:08Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:58:08Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.85,
+    "weight": 0.5
    }
   ],
   "open": [
    "baoCat",
-   "TG",
    "DVXEATA",
    "WUGO"
   ]
@@ -31791,7 +31790,7 @@
     "avg": -11.5
    }
   ],
-  "shadows": 763,
+  "shadows": 764,
   "memory": "snipe"
  }
 }
