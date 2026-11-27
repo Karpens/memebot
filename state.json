@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:55:26Z",
-    "time": "11:55:26",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.0 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 5, mayhem mode 2, serial launcher 1)",
-    "n": 4268
-   },
-   {
-    "t": "2026-11-27T10:55:48Z",
-    "time": "11:55:48",
-    "agent": "LEARNER",
-    "coin": "DROPPED",
-    "action": "shadow",
-    "text": "SHADOW DROPPED would have made -22.4% (stop -19%) · learned x0.5 · np:sol:3-6 now avg -11.0% over 76.5",
-    "n": 4269
-   },
-   {
-    "t": "2026-11-27T10:56:15Z",
-    "time": "11:56:15",
-    "agent": "LEARNER",
-    "coin": "NVIDIA",
-    "action": "shadow",
-    "text": "SHADOW NVIDIA would have made +6.5% (TP +10%) · learned x0.5 · np:social:none now avg -9.1% over 235",
-    "n": 4270
-   },
-   {
-    "t": "2026-11-27T10:56:27Z",
-    "time": "11:56:27",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.0 a minute · 0 watched · 5 rejected (serial launcher 2, snipe not bought: trades tonight 1, mayhem mode 1)",
-    "n": 4271
-   },
-   {
     "t": "2026-11-27T10:56:45Z",
     "time": "11:56:45",
     "agent": "LEARNER",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW KITT would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · tier:scalp now avg -7.7% over 254.5",
     "n": 4867
+   },
+   {
+    "t": "2026-11-27T17:18:51Z",
+    "time": "18:18:51",
+    "agent": "LEARNER",
+    "coin": "coin",
+    "action": "shadow",
+    "text": "SHADOW coin · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000024879 (curve maths, every cost) · same exits, outside the book",
+    "n": 4868
+   },
+   {
+    "t": "2026-11-27T17:18:53Z",
+    "time": "18:18:53",
+    "agent": "LEARNER",
+    "coin": "coin",
+    "action": "shadow",
+    "text": "SHADOW coin would have made -23.4% (dump: 3.0 SOL sold) · learned x0.5 · tier:scalp now avg -7.7% over 255",
+    "n": 4869
+   },
+   {
+    "t": "2026-11-27T17:19:12Z",
+    "time": "18:19:12",
+    "agent": "LEARNER",
+    "coin": "SM",
+    "action": "shadow",
+    "text": "SHADOW SM would have made -14.6% (stop -10%) · learned x0.5 · np:social:none now avg -8.4% over 240",
+    "n": 4870
+   },
+   {
+    "t": "2026-11-27T17:19:15Z",
+    "time": "18:19:15",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.4 a minute · 0 watched · 19 rejected (snipe not bought: night at open  12, mayhem mode 3, no bonding curve key 3)",
+    "n": 4871
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4867,
+  "lines": 4871,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795763873,
-    59.14
-   ],
    [
     1795763933,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795799868,
     59.14
+   ],
+   [
+    1795799928,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795799894.443412,
+  "np_said": 1795799955.443304,
   "shadow": {
-   "n": 1113,
+   "n": 1115,
    "wins": 253,
-   "sum": -8172.4
+   "sum": -8210.4
   },
   "np_speed": {
    "first_in": [
@@ -31842,9 +31842,9 @@
   }
  },
  "shadow": {
-  "n": 1127,
+  "n": 1129,
   "wins": 255,
-  "sum": -8370.9,
+  "sum": -8408.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31852,52 +31852,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1111,
+    "n": 1113,
     "wins": 252,
-    "sum": -8173.1
+    "sum": -8211.1
    }
   },
   "closed": [
-   {
-    "symbol": "ELEPHANT",
-    "mint": "DZz2TLEjg2x8HTZmye7A4ARGs8uXTkFMUCL4JgbFpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:04:33Z",
-    "cost": 5.91,
-    "pnl_pct": -10.4,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.96,
-    "closed": "2026-11-27T17:09:24Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.61,
-    "weight": 0.5
-   },
-   {
-    "symbol": "OrangeCorn",
-    "mint": "CmfyNNhkZ8V7hDwJwmhARnk7fbnHPYp3CgH2jpEmpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:05:18Z",
-    "cost": 5.91,
-    "pnl_pct": -6.7,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T17:09:40Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.4,
-    "weight": 0.5
-   },
    {
     "symbol": "zencoin",
     "mint": "9JQBMt5oNMBguH6gJM4dRTS23HPrhPZzyZrfF4Htpump",
@@ -32257,6 +32217,46 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.47,
     "weight": 0.5
+   },
+   {
+    "symbol": "coin",
+    "mint": "HMpxVB5oPRXKAdoMCpji7tkLP5zKxGDMaY79kaqmpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:18:51Z",
+    "cost": 5.91,
+    "pnl_pct": -23.4,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 5,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T17:18:53Z",
+    "exit": "dump: 3.0 SOL sold",
+    "pnl": -1.38,
+    "weight": 0.5
+   },
+   {
+    "symbol": "SM",
+    "mint": "CPEtWkdQY78DXM4vQL8TP728B8bFTH2nKhkjJzdJpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:18:41Z",
+    "cost": 5.91,
+    "pnl_pct": -14.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 2,
+    "sol_in": 1.21,
+    "closed": "2026-11-27T17:19:12Z",
+    "exit": "stop -10%",
+    "pnl": -0.87,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32264,8 +32264,7 @@
    "GOTGTA",
    "hyalis",
    "SPLITCOIN",
-   "SCHAN",
-   "SM"
+   "SCHAN"
   ]
  },
  "learner_summary": {
@@ -32307,7 +32306,7 @@
     "avg": -8.4
    }
   ],
-  "shadows": 1319,
+  "shadows": 1321,
   "memory": "snipe"
  }
 }
