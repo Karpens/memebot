@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:15:52Z",
-    "time": "07:15:52",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.6 a minute · 0 watched · 8 rejected (serial launcher 6, snipe not bought: trades tonight 1, mayhem mode 1)",
-    "n": 2765
-   },
-   {
-    "t": "2026-11-27T06:16:04Z",
-    "time": "07:16:04",
-    "agent": "LEARNER",
-    "coin": "LAB",
-    "action": "shadow",
-    "text": "SHADOW LAB would have made -16.2% (stop -13%) · learned x0.5 · np:social:web now avg -8.9% over 168.5",
-    "n": 2766
-   },
-   {
-    "t": "2026-11-27T06:16:52Z",
-    "time": "07:16:52",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.2 a minute · 0 watched · 6 rejected (serial launcher 3, mayhem mode 2, snipe not bought: trades tonight 1)",
-    "n": 2767
-   },
-   {
     "t": "2026-11-27T06:17:53Z",
     "time": "07:17:53",
     "agent": "SCANNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW JENSEN · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022276 (curve maths, every cost) · same exits, outside the book",
     "n": 3364
+   },
+   {
+    "t": "2026-11-27T08:07:44Z",
+    "time": "09:07:44",
+    "agent": "LEARNER",
+    "coin": "MSCLK",
+    "action": "shadow",
+    "text": "SHADOW MSCLK · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022586 (curve maths, every cost) · same exits, outside the book",
+    "n": 3365
+   },
+   {
+    "t": "2026-11-27T08:07:51Z",
+    "time": "09:07:51",
+    "agent": "LEARNER",
+    "coin": "MSCLK",
+    "action": "shadow",
+    "text": "SHADOW MSCLK would have made +65.1% (TP +20%) · learned x0.5 · tier:swing now avg -11.9% over 40",
+    "n": 3366
+   },
+   {
+    "t": "2026-11-27T08:07:54Z",
+    "time": "09:07:54",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.8 a minute · 0 watched · 19 rejected (mayhem mode 10, snipe not bought: trades tonight 8, serial launcher 1)",
+    "n": 3367
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3364,
+  "lines": 3367,
   "flags": [
    {
     "coin": "Kibo",
@@ -21529,11 +21529,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795766813.645368,
+  "np_said": 1795766874.645301,
   "shadow": {
-   "n": 540,
-   "wins": 107,
-   "sum": -4622.7
+   "n": 541,
+   "wins": 108,
+   "sum": -4557.6
   },
   "np_speed": {
    "first_in": [
@@ -31116,9 +31116,9 @@
   }
  },
  "shadow": {
-  "n": 554,
-  "wins": 109,
-  "sum": -4821.2,
+  "n": 555,
+  "wins": 110,
+  "sum": -4756.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31126,32 +31126,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 538,
-    "wins": 106,
-    "sum": -4623.4
+    "n": 539,
+    "wins": 107,
+    "sum": -4558.3
    }
   },
   "closed": [
-   {
-    "symbol": "mihao2cute",
-    "mint": "5ETzcdWGTopGebxNNYBWYXTdP2Q7eWSUNmTnv1NJpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:53:45Z",
-    "cost": 36.2,
-    "pnl_pct": -8.6,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.45,
-    "closed": "2026-11-27T07:57:46Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.12,
-    "weight": 0.5
-   },
    {
     "symbol": "TRUE",
     "mint": "D42XHGVJ9uATA64jGSixpBTvpZfSTkRa2B79jsStxiLb",
@@ -31531,6 +31511,26 @@
     "exit": "TP +10%",
     "pnl": 3.09,
     "weight": 0.5
+   },
+   {
+    "symbol": "MSCLK",
+    "mint": "8CgUrKLnCDtrjHkufhv7BrxKvuhj1zyZrkKcqCTupump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:07:44Z",
+    "cost": 36.2,
+    "pnl_pct": 65.1,
+    "tier": "swing",
+    "score": 3,
+    "steps": 2,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.71,
+    "closed": "2026-11-27T08:07:51Z",
+    "exit": "TP +20%",
+    "pnl": 23.57,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31566,22 +31566,22 @@
   ],
   "worst": [
    {
-    "label": "snipe · tier:swing",
-    "n": 40,
-    "avg": -12.9
-   },
-   {
-    "label": "snipe · news:3-4",
-    "n": 40,
-    "avg": -12.9
-   },
-   {
     "label": "snipe · np:sol:12+",
     "n": 32,
     "avg": -12.9
+   },
+   {
+    "label": "snipe · hour:03-05",
+    "n": 212,
+    "avg": -10.9
+   },
+   {
+    "label": "snipe · tier:swing",
+    "n": 40,
+    "avg": -11.9
    }
   ],
-  "shadows": 538,
+  "shadows": 539,
   "memory": "snipe"
  }
 }
