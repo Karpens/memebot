@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:48:11Z",
-    "time": "06:48:11",
-    "agent": "EXECUTOR",
-    "coin": "Kibo",
-    "action": "enter",
-    "text": "ENTER Kibo at 0.0000021652 · slip 3.6% · snipe · first in · 0.1 s after the first reading · 1 s after launch · fill quote · Jupiter 0.1 s · curve maths 0.0% off Jupiter · stop -10%",
-    "n": 2626
-   },
-   {
-    "t": "2026-11-27T05:48:11Z",
-    "time": "06:48:11",
-    "agent": "NEWS",
-    "coin": "Kibo",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 2627
-   },
-   {
     "t": "2026-11-27T05:48:14Z",
     "time": "06:48:14",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW GYM would have made -33.9% (dump: 5.8 SOL sold) · learned x0.5 · np:buys:<70 now avg -9.6% over 199",
     "n": 3225
+   },
+   {
+    "t": "2026-11-27T07:41:41Z",
+    "time": "08:41:41",
+    "agent": "LEARNER",
+    "coin": "milhoa",
+    "action": "shadow",
+    "text": "SHADOW milhoa would have made -6.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.6% over 199.5",
+    "n": 3226
+   },
+   {
+    "t": "2026-11-27T07:41:41Z",
+    "time": "08:41:41",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.8 a minute · 0 watched · 15 rejected (mayhem mode 6, snipe not bought: trades tonight 5, serial launcher 3)",
+    "n": 3227
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3225,
+  "lines": 3227,
   "flags": [
    {
     "coin": "Kibo",
@@ -21425,11 +21425,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795765240.645382,
+  "np_said": 1795765301.645343,
   "shadow": {
-   "n": 488,
+   "n": 489,
    "wins": 94,
-   "sum": -4053.9
+   "sum": -4060.5
   },
   "np_speed": {
    "first_in": [
@@ -31012,9 +31012,9 @@
   }
  },
  "shadow": {
-  "n": 502,
+  "n": 503,
   "wins": 96,
-  "sum": -4252.4,
+  "sum": -4259.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31022,32 +31022,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 486,
+    "n": 487,
     "wins": 93,
-    "sum": -4054.6
+    "sum": -4061.2
    }
   },
   "closed": [
-   {
-    "symbol": "Joey",
-    "mint": "9ATikWHimxZsPjUgrmotCUCotB9GgH3nG6pwedFYpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:34:54Z",
-    "cost": 36.2,
-    "pnl_pct": -15.7,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 7.55,
-    "closed": "2026-11-27T07:35:00Z",
-    "exit": "stop -12%",
-    "pnl": -5.68,
-    "weight": 0.5
-   },
    {
     "symbol": "SPRC",
     "mint": "35mdEuz2r8ZrZj5zaBkv2nKVU84JdYKWbBMpFBX9pump",
@@ -31427,11 +31407,30 @@
     "exit": "dump: 5.8 SOL sold",
     "pnl": -12.27,
     "weight": 0.5
+   },
+   {
+    "symbol": "milhoa",
+    "mint": "GWJ2RZQ74HYeSpNSWYMmqK4P8hdnXZmYphtwFvv3pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:38:40Z",
+    "cost": 36.2,
+    "pnl_pct": -6.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T07:41:41Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.39,
+    "weight": 0.5
    }
   ],
   "open": [
    "HABIBO",
-   "milhoa",
    "SWIPE"
   ]
  },
@@ -31474,7 +31473,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 486,
+  "shadows": 487,
   "memory": "snipe"
  }
 }
