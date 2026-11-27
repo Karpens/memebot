@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T11:29:52Z",
+ "updated": "2026-11-27T11:30:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4503,
+  "lines": 4504,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795742940,
-   80.34
-  ],
   [
    1795743000,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795778954,
    361.97
+  ],
+  [
+   1795779014,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T11:03:10Z",
-   "time": "12:03:10",
-   "agent": "LEARNER",
-   "coin": "TIMEOUT",
-   "action": "shadow",
-   "text": "SHADOW TIMEOUT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000030366 (curve maths, every cost) · same exits, outside the book",
-   "n": 4304
-  },
-  {
    "t": "2026-11-27T11:03:16Z",
    "time": "12:03:16",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 10 rejected (snipe not bought: trades tonight 6, serial launcher 2, mayhem mode 2)",
    "n": 4503
+  },
+  {
+   "t": "2026-11-27T11:30:19Z",
+   "time": "12:30:19",
+   "agent": "LEARNER",
+   "coin": "SWARM",
+   "action": "shadow",
+   "text": "SHADOW SWARM · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023888 (curve maths, every cost) · same exits, outside the book",
+   "n": 4504
   }
  ],
  "nights": [
@@ -6606,25 +6606,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1326,
-    "last_event_age_s": 30.9,
+    "events": 1328,
+    "last_event_age_s": 6.3,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 28279,
+    "events": 28354,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 812,
-    "last_event_age_s": 30.9,
-    "errors": 40,
+    "connected": false,
+    "events": 813,
+    "last_event_age_s": 4.2,
+    "errors": 41,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
   ],
@@ -6636,9 +6636,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 8
+  "followed": 7
  },
  "learner": {
   "samples": 249,
@@ -6685,28 +6685,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15482,
+   "sent": 15516,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15493,
+   "sent": 15527,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SWARM",
+   "name": "SWARM",
+   "mint": "HTCTeH2Np37eEuV69AVtZnF1Sff9hGWAdPXDd9LXQm5U",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.5,
+   "dev_pct": 6.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "毒ウサギ",
    "name": "Doku Usagi",
    "mint": "29cV6tNHU5shRNeHy4t351QeLE9uFEk6wghPQh6spump",
-   "age_s": 30,
-   "sol_in": 14.55,
-   "buys": 10,
-   "sells": 16,
-   "rise_pct": 107.7,
-   "mcap_sol": 70.2,
+   "age_s": 62,
+   "sol_in": 5.44,
+   "buys": 11,
+   "sells": 30,
+   "rise_pct": 35.7,
+   "mcap_sol": 45.9,
    "dev_pct": 9.8,
    "big_sell": 3.27,
    "x": "https://x.com/danielkuhn77568/status/2126276919763054616?a=ZvdlrBW7xUeWAQbjyOo&s=20",
@@ -6719,7 +6737,7 @@
    "symbol": "GRAD",
    "name": "Graduation Inu",
    "mint": "CbAwHAAMuCTPcigw8MyuqymhmudKBNc3gu8Q1Wk4pump",
-   "age_s": 39,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6737,7 +6755,7 @@
    "symbol": "GTABALL",
    "name": "GTA Ball",
    "mint": "HuzzqisKgysWteQnEtbf1AY6akk4KrRp2Cr5ccjRpump",
-   "age_s": 40,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6755,12 +6773,12 @@
    "symbol": "MICROWAVE",
    "name": "Dog On Sale",
    "mint": "AG3GUtp1bovwaWwY5Uf3fdD6GUzdjHEG899TUJvWpump",
-   "age_s": 58,
-   "sol_in": 15.73,
-   "buys": 20,
-   "sells": 17,
-   "rise_pct": 110.1,
-   "mcap_sol": 80.0,
+   "age_s": 90,
+   "sol_in": 18.51,
+   "buys": 34,
+   "sells": 26,
+   "rise_pct": 133.7,
+   "mcap_sol": 88.9,
    "dev_pct": 15.3,
    "big_sell": 3.26,
    "x": "https://x.com/devilsiopf/status/2126276906572017875",
@@ -6773,14 +6791,14 @@
    "symbol": "PWNSION",
    "name": "Department for Pwn and Pensions",
    "mint": "AAVWx5jeaonPuH671frTu7LZDGDDeUnwV5WFR5pDbKAt",
-   "age_s": 136,
-   "sol_in": 2.77,
+   "age_s": 168,
+   "sol_in": 2.18,
    "buys": 6,
-   "sells": 9,
-   "rise_pct": 19.1,
-   "mcap_sol": 33.9,
+   "sells": 10,
+   "rise_pct": 14.9,
+   "mcap_sol": 32.7,
    "dev_pct": 0.9,
-   "big_sell": 0.53,
+   "big_sell": 0.59,
    "x": "https://x.com/watchdoglive",
    "tg": false,
    "web": "https://watchdog.best",
@@ -6791,7 +6809,7 @@
    "symbol": "trumpe",
    "name": "trumpe",
    "mint": "EyPz8SRjUoJvJM2Ta9sxP6DUYXnR3taKLN4iyaj8pump",
-   "age_s": 141,
+   "age_s": 173,
    "sol_in": -5.39,
    "buys": 0,
    "sells": 1,
@@ -6809,7 +6827,7 @@
    "symbol": "GTABALL",
    "name": "GTA Ball",
    "mint": "99YRAfMyj518d3EcAFZRNo7yrUyaTRnMeZPggTACpump",
-   "age_s": 142,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6827,53 +6845,17 @@
    "symbol": "DIH",
    "name": "DIH",
    "mint": "3AYshf6BKsM9HVxbPk6vZ3QyWC5H4zTetAANynLrDmmZ",
-   "age_s": 143,
-   "sol_in": 43.82,
-   "buys": 53,
-   "sells": 47,
-   "rise_pct": 505.5,
-   "mcap_sol": 169.3,
+   "age_s": 175,
+   "sol_in": 45.46,
+   "buys": 59,
+   "sells": 53,
+   "rise_pct": 532.7,
+   "mcap_sol": 176.9,
    "dev_pct": 0.0,
    "big_sell": 2.74,
    "x": "https://x.com/holdthisdih/status/2126276613251772483?a=S5n_4yp94kzg9Vyy-D8&s=20",
    "tg": false,
    "web": "https://holdthisdih.xyz/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "CI",
-   "name": "Cloud Inu",
-   "mint": "FaB6r1WA4JSKsBV9UmjACEuZSH9uqtRYaAWQoWJupxYh",
-   "age_s": 155,
-   "sol_in": -4.94,
-   "buys": 6,
-   "sells": 13,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 4.72,
-   "x": "https://x.com/MarioPrezldente/status/2126276669053059121",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 13 more coins in 60 min",
-   "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "FLANTERN",
-   "name": "Frosty Lantern",
-   "mint": "7bN2nqaa9KFVduwqd665u1PbrSdkatRb5wb5MLJypump",
-   "age_s": 159,
-   "sol_in": -0.05,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.2,
-   "big_sell": 0.05,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   }
@@ -6883,6 +6865,22 @@
  ],
  "shadows": [
   {
+   "symbol": "SWARM",
+   "mint": "HTCTeH2Np37eEuV69AVtZnF1Sff9hGWAdPXDd9LXQm5U",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T11:30:19Z",
+   "cost": 36.2,
+   "pnl_pct": -3.9,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
+  {
    "symbol": "PWNSION",
    "mint": "AAVWx5jeaonPuH671frTu7LZDGDDeUnwV5WFR5pDbKAt",
    "status": "open",
@@ -6890,7 +6888,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T11:27:37Z",
    "cost": 36.2,
-   "pnl_pct": -6.6,
+   "pnl_pct": -9.9,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -6906,7 +6904,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T11:27:13Z",
    "cost": 36.2,
-   "pnl_pct": -4.3,
+   "pnl_pct": -4.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7320,7 +7318,7 @@
   "wins": 227,
   "win_rate": 22.7,
   "mean_pnl_pct": -7.42,
-  "open": 2,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
