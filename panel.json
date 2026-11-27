@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T05:07:02Z",
+ "updated": "2026-11-27T05:07:31Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 190.2,
- "equity": 209.47,
+ "equity": 209.48,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 196,
   "checked": 192,
   "filtered": 5,
-  "lines": 2174,
+  "lines": 2175,
   "last_rug": {
    "coin": "LILPUMP",
    "pass": true
@@ -1550,14 +1550,14 @@
    "symbol": "MOTE",
    "mint": "HxjQTjt8hNpqS5WCpsKJs6G3Tgkp4YFQrfCzfwpXpump",
    "cost": 21.23,
-   "value": 19.27,
+   "value": 19.28,
    "pnl_pct": -9.2,
    "opened": "2026-11-27T05:04:08Z",
    "url": "https://pump.fun/coin/HxjQTjt8hNpqS5WCpsKJs6G3Tgkp4YFQrfCzfwpXpump",
    "reason": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL · fill quote",
    "size_pct": 10.0,
    "entry_price": 2.24068e-06,
-   "price": 2.04056e-06,
+   "price": 2.04164e-06,
    "slip": 0.0,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -3841,15 +3841,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T04:38:37Z",
-   "time": "05:38:37",
-   "agent": "LEARNER",
-   "coin": "SANDFOX",
-   "action": "shadow",
-   "text": "SHADOW SANDFOX would have made -7.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:age:<30s now avg -10.4% over 281.5",
-   "n": 1975
-  },
-  {
    "t": "2026-11-27T04:38:51Z",
    "time": "05:38:51",
    "agent": "SCANNER",
@@ -5639,6 +5630,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 7 rejected (snipe not bought: pause after a  3, serial launcher 2, no bonding curve key 1)",
    "n": 2174
+  },
+  {
+   "t": "2026-11-27T05:07:08Z",
+   "time": "06:07:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 6 rejected (serial launcher 2, snipe not bought: pause after a  1, no bonding curve key 1)",
+   "n": 2175
   }
  ],
  "nights": [
@@ -5707,26 +5707,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 972,
-    "last_event_age_s": 27.1,
+    "events": 973,
+    "last_event_age_s": 10.7,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27789,
+    "events": 27839,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 665,
-    "last_event_age_s": 67.1,
-    "errors": 64,
-    "last_error": "gateway.irys.xyz: timeout after 2 s"
+    "connected": false,
+    "events": 666,
+    "last_event_age_s": 10.5,
+    "errors": 65,
+    "last_error": "gg.sc: HTTP 404"
    }
   ],
   "strategies": [
@@ -5737,9 +5737,9 @@
   "exit_ms": 35,
   "exit_last_ms": 34,
   "launch_to_entry_s": 0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 5
+  "followed": 4
  },
  "learner": {
   "samples": 183,
@@ -5786,23 +5786,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13264,
+   "sent": 13295,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13263,
+   "sent": 13294,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "do",
+   "name": "do",
+   "mint": "BRbdCvN7trVrczmwEygtwqjqVUjVAxWGhMrSLLkaBgvG",
+   "age_s": 10,
+   "sol_in": -3.06,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": -16.1,
+   "mcap_sol": 34.6,
+   "dev_pct": 18.9,
+   "big_sell": 1.92,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "ArL3K6bdhVNfciSunCg2WENQ9CrK2A3Y2wCyubicpump",
-   "age_s": 27,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5820,12 +5838,12 @@
    "symbol": "MSI100",
    "name": "Meme Stock Index",
    "mint": "G3wCD34kHdSWtjuhtLfcXRnvZgqpwGcvmqP7ATihpump",
-   "age_s": 67,
-   "sol_in": -0.24,
+   "age_s": 96,
+   "sol_in": -0.29,
    "buys": 9,
-   "sells": 5,
-   "rise_pct": -1.6,
-   "mcap_sol": 29.4,
+   "sells": 6,
+   "rise_pct": -1.8,
+   "mcap_sol": 29.3,
    "dev_pct": 3.4,
    "big_sell": 1.13,
    "x": "https://x.com/launchmemeindex",
@@ -5838,7 +5856,7 @@
    "symbol": "?",
    "name": "",
    "mint": "FkKS56VdrJNWmC6RYR9nwMraCSA5yf8mov1kh3ohpump",
-   "age_s": 103,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5856,7 +5874,7 @@
    "symbol": "ZLIME",
    "name": "Zero Lime",
    "mint": "8ANVCPTjSMNmBzSLEv7FetRYz2khcwFcjz8wqH3uzero",
-   "age_s": 124,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5874,7 +5892,7 @@
    "symbol": "xihao",
    "name": "xi hao dog",
    "mint": "9LuCHDuEWsFiFaoA4CAda6gpeAFB9FwYUk1cU5hApump",
-   "age_s": 142,
+   "age_s": 171,
    "sol_in": -0.02,
    "buys": 1,
    "sells": 2,
@@ -5889,46 +5907,10 @@
    "why": "serial launcher: 2 more coins in 60 min"
   },
   {
-   "symbol": "Scat",
-   "name": "Solana Cat",
-   "mint": "4k8etht15qX6AWzuU9bcCvY4ZnjsWsnb1xXtNLjzpPDH",
-   "age_s": 153,
-   "sol_in": -4.94,
-   "buys": 8,
-   "sells": 24,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 3.38,
-   "x": "https://x.com/MarioPrezldente/status/2126180334878576958",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "LILPUMP",
-   "name": "Lil Pump Coin",
-   "mint": "aysaqyv3vQdpURkT25ngj17oF5MUozoLj8Mvy3ipump",
-   "age_s": 156,
-   "sol_in": 0.08,
-   "buys": 7,
-   "sells": 10,
-   "rise_pct": 0.5,
-   "mcap_sol": 31.9,
-   "dev_pct": 6.6,
-   "big_sell": 1.38,
-   "x": "https://x.com/lilpump",
-   "tg": false,
-   "web": "https://www.instagram.com/lilpump/",
-   "status": "exited: stop -12%",
-   "why": "stop -12%"
-  },
-  {
    "symbol": "MOTE",
    "name": "MOTE",
    "mint": "HxjQTjt8hNpqS5WCpsKJs6G3Tgkp4YFQrfCzfwpXpump",
-   "age_s": 175,
+   "age_s": 204,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 1,
@@ -5955,7 +5937,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T05:05:55Z",
    "cost": 20.94,
-   "pnl_pct": -7.4,
+   "pnl_pct": -7.6,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -5971,7 +5953,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T05:03:12Z",
    "cost": 21.23,
-   "pnl_pct": -3.5,
+   "pnl_pct": -3.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
