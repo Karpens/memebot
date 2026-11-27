@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:38:44Z",
-    "time": "09:38:44",
-    "agent": "LEARNER",
-    "coin": "MITTS",
-    "action": "shadow",
-    "text": "SHADOW MITTS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000003181 (curve maths, every cost) · same exits, outside the book",
-    "n": 3541
-   },
-   {
-    "t": "2026-11-27T08:39:08Z",
-    "time": "09:39:08",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.6 a minute · 0 watched · 18 rejected (snipe not bought: trades tonight 13, mayhem mode 4, serial launcher 1)",
-    "n": 3542
-   },
-   {
     "t": "2026-11-27T08:39:36Z",
     "time": "09:39:36",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.0 a minute · 0 watched · 17 rejected (mayhem mode 8, snipe not bought: trades tonight 7, serial launcher 1)",
     "n": 4140
+   },
+   {
+    "t": "2026-11-27T10:30:45Z",
+    "time": "11:30:45",
+    "agent": "LEARNER",
+    "coin": "TEST",
+    "action": "shadow",
+    "text": "SHADOW TEST · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021378 (curve maths, every cost) · same exits, outside the book",
+    "n": 4141
+   },
+   {
+    "t": "2026-11-27T10:30:53Z",
+    "time": "11:30:53",
+    "agent": "LEARNER",
+    "coin": "KOKA",
+    "action": "shadow",
+    "text": "SHADOW KOKA would have made -10.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.3% over 224",
+    "n": 4142
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4140,
+  "lines": 4142,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795775412.645333,
   "shadow": {
-   "n": 840,
+   "n": 841,
    "wins": 189,
-   "sum": -6601.5
+   "sum": -6612.4
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 854,
+  "n": 855,
   "wins": 191,
-  "sum": -6800.0,
+  "sum": -6810.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 838,
+    "n": 839,
     "wins": 188,
-    "sum": -6602.2
+    "sum": -6613.1
    }
   },
   "closed": [
-   {
-    "symbol": "puter",
-    "mint": "7kGtByzM6Di2Z5Y3LQwHDK9FHhqt271pfA7pbPc4pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:19:13Z",
-    "cost": 36.2,
-    "pnl_pct": 10.6,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 4.83,
-    "closed": "2026-11-27T10:19:19Z",
-    "exit": "TP +10%",
-    "pnl": 3.84,
-    "weight": 0.5
-   },
    {
     "symbol": "USFF",
     "mint": "HaToW5agjtTVTggBFtS6wGis2wwaftczRaSouFn3pump",
@@ -31743,13 +31723,33 @@
     "exit": "stop -10%",
     "pnl": -5.03,
     "weight": 0.5
+   },
+   {
+    "symbol": "KOKA",
+    "mint": "FzTGtdub5y8dKdpH9GbYSdpEHZ3nzZndprX2itwhP9WY",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:25:55Z",
+    "cost": 36.2,
+    "pnl_pct": -10.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.77,
+    "closed": "2026-11-27T10:30:53Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.94,
+    "weight": 0.5
    }
   ],
   "open": [
-   "KOKA",
    "PARDON",
    "BrawlStars",
-   "Hero"
+   "Hero",
+   "TEST"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31791,7 @@
     "avg": -10.7
    }
   ],
-  "shadows": 838,
+  "shadows": 839,
   "memory": "snipe"
  }
 }
