@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T03:44:19Z",
-    "time": "04:44:19",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.8 a minute · 0 watched · 10 rejected (serial launcher 5, mayhem mode 5)",
-    "n": 1539
-   },
-   {
-    "t": "2026-11-27T03:44:26Z",
-    "time": "04:44:26",
-    "agent": "SCANNER",
-    "coin": "Solcoin",
-    "action": "flag",
-    "text": "snipe · first reading 0.5 s after the create · 10.8 SOL in · +82% since the create · mcap 54 SOL",
-    "n": 1540
-   },
-   {
-    "t": "2026-11-27T03:44:26Z",
-    "time": "04:44:26",
-    "agent": "SIZER",
-    "coin": "Solcoin",
-    "action": "size",
-    "text": "10% of $432.50 = $43.25",
-    "n": 1541
-   },
-   {
     "t": "2026-11-27T03:44:26Z",
     "time": "04:44:26",
     "agent": "EXECUTOR",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW QUIETREP would have made -6.9% (5 min, only -3%) · learned x0.5 · np:dev:0-2 now avg -10.9% over 147",
     "n": 2138
+   },
+   {
+    "t": "2026-11-27T04:59:42Z",
+    "time": "05:59:42",
+    "agent": "LEARNER",
+    "coin": "NBOT4000",
+    "action": "shadow",
+    "text": "SHADOW NBOT4000 would have made -12.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:age:<30s now avg -10.2% over 300",
+    "n": 2139
+   },
+   {
+    "t": "2026-11-27T05:00:00Z",
+    "time": "06:00:00",
+    "agent": "LOGGER",
+    "coin": null,
+    "action": "tape",
+    "text": "tape 2026-11-27T04 · 10860 lines (9234 curve readings) · 1.8 MB · 184 coins",
+    "n": 2140
+   },
+   {
+    "t": "2026-11-27T05:00:05Z",
+    "time": "06:00:05",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 2.6 a minute · 0 watched · 8 rejected (snipe not bought: pause after a  3, serial launcher 2, mayhem mode 2)",
+    "n": 2141
    }
   ],
   "trades": [
@@ -15517,7 +15517,7 @@
   "flagged": 193,
   "checked": 189,
   "filtered": 5,
-  "lines": 2138,
+  "lines": 2141,
   "flags": [
    {
     "coin": "Wojakmas",
@@ -16996,17 +16996,21 @@
    [
     1795755533,
     215.71
+   ],
+   [
+    1795755593,
+    215.71
    ]
   ],
   "last_rug": {
    "coin": "MUELLER",
    "pass": true
   },
-  "np_said": 1795755545.780564,
+  "np_said": 1795755605.780954,
   "shadow": {
-   "n": 252,
+   "n": 253,
    "wins": 44,
-   "sum": -2246.1
+   "sum": -2258.7
   },
   "np_speed": {
    "first_in": [
@@ -26345,9 +26349,9 @@
   }
  },
  "shadow": {
-  "n": 266,
+  "n": 267,
   "wins": 46,
-  "sum": -2444.6,
+  "sum": -2457.2,
   "by": {
    "learner": {
     "n": 16,
@@ -26355,32 +26359,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 250,
+    "n": 251,
     "wins": 43,
-    "sum": -2246.8
+    "sum": -2259.4
    }
   },
   "closed": [
-   {
-    "symbol": "RB",
-    "mint": "8UEEBcpgKpvQRWZHAKvpiXQt9FmTy9J5ZvMSVxTGpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T04:32:14Z",
-    "cost": 24.88,
-    "pnl_pct": -12.8,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T04:37:12Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.19,
-    "weight": 0.5
-   },
    {
     "symbol": "money",
     "mint": "FYFLFF5o5BjWRJFcbQ4YxHTqumbmzndPnz5MMB5Apump",
@@ -26760,10 +26744,29 @@
     "exit": "5 min, only -3%",
     "pnl": -1.52,
     "weight": 0.5
+   },
+   {
+    "symbol": "NBOT4000",
+    "mint": "91uSg6vYkyM68Y8XXAJkeS23UxxVTwT58bcuxpLBpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:55:20Z",
+    "cost": 21.72,
+    "pnl_pct": -12.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T04:59:42Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.75,
+    "weight": 0.5
    }
   ],
   "open": [
-   "NBOT4000",
    "Niggalo",
    "HONEST",
    "JAWCCC"
@@ -26808,7 +26811,7 @@
     "avg": -17.2
    }
   ],
-  "shadows": 250,
+  "shadows": 251,
   "memory": "snipe"
  }
 }
