@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T02:27:54Z",
-    "time": "03:27:54",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "14 losses in a row · 2 min pause",
-    "n": 698
-   },
-   {
-    "t": "2026-11-27T02:27:54Z",
-    "time": "03:27:54",
-    "agent": "EXECUTOR",
-    "coin": "FOXIE",
-    "action": "exit",
-    "text": "EXIT FOXIE $-12.25 (-12%) · curve quiet for 3 min (no trade)",
-    "n": 699
-   },
-   {
-    "t": "2026-11-27T02:27:54Z",
-    "time": "03:27:54",
-    "agent": "LEARNER",
-    "coin": "FOXIE",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -15.0% over 41.5",
-    "n": 700
-   },
-   {
     "t": "2026-11-27T02:28:01Z",
     "time": "03:28:01",
     "agent": "RISK",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 7.0 a minute · 0 watched · 24 rejected (serial launcher 12, snipe not bought: pause after a  11, mayhem mode 1)",
     "n": 1297
+   },
+   {
+    "t": "2026-11-27T03:25:14Z",
+    "time": "04:25:14",
+    "agent": "LEARNER",
+    "coin": "LUCEMA",
+    "action": "shadow",
+    "text": "SHADOW LUCEMA would have made -22.5% (dump: 2.3 SOL sold) · learned x0.5 · hour:03-05 now avg -11.9% over 142",
+    "n": 1298
+   },
+   {
+    "t": "2026-11-27T03:25:31Z",
+    "time": "04:25:31",
+    "agent": "LEARNER",
+    "coin": "LARP NGA",
+    "action": "shadow",
+    "text": "SHADOW LARP NGA would have made -9.0% (curve quiet for 3 min (no trade)) · learned x0.5 · hour:03-05 now avg -11.9% over 142.5",
+    "n": 1299
+   },
+   {
+    "t": "2026-11-27T03:25:39Z",
+    "time": "04:25:39",
+    "agent": "LEARNER",
+    "coin": "monky",
+    "action": "shadow",
+    "text": "SHADOW monky would have made -2.3% (5 min, only +1%) · learned x0.5 · np:social:none now avg -13.2% over 66.5",
+    "n": 1300
    }
   ],
   "trades": [
@@ -11151,7 +11151,7 @@
   "flagged": 114,
   "checked": 110,
   "filtered": 5,
-  "lines": 1297,
+  "lines": 1300,
   "flags": [
    {
     "coin": "FROYO",
@@ -12262,9 +12262,9 @@
   },
   "np_said": 1795749910.780865,
   "shadow": {
-   "n": 144,
+   "n": 147,
    "wins": 26,
-   "sum": -1445.0
+   "sum": -1478.8
   },
   "np_speed": {
    "first_in": [
@@ -21332,9 +21332,9 @@
   }
  },
  "shadow": {
-  "n": 158,
+  "n": 161,
   "wins": 28,
-  "sum": -1643.5,
+  "sum": -1677.3,
   "by": {
    "learner": {
     "n": 16,
@@ -21342,72 +21342,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 142,
+    "n": 145,
     "wins": 25,
-    "sum": -1445.7
+    "sum": -1479.5
    }
   },
   "closed": [
-   {
-    "symbol": "RSTAR",
-    "mint": "DX3gDSXRcwsBYqVGgVEZSHMus9vbDBWWe8hJPpLYpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:14:35Z",
-    "cost": 55.14,
-    "pnl_pct": -19.2,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T03:15:36Z",
-    "exit": "dump: 2.3 SOL sold",
-    "pnl": -10.58,
-    "weight": 0.5
-   },
-   {
-    "symbol": "PARTXI",
-    "mint": "3ZwdsSMSEydyEA9khXmRfAZ2hTEDX8k8r1j1qbZdpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:12:56Z",
-    "cost": 57.03,
-    "pnl_pct": -1.5,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T03:16:07Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.85,
-    "weight": 0.5
-   },
-   {
-    "symbol": "ANGERC",
-    "mint": "FXJq9XTPF7RpeGeZECiMJEQ4dkadvhPKxqsW9MyKpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:16:11Z",
-    "cost": 53.94,
-    "pnl_pct": -14.2,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.41,
-    "closed": "2026-11-27T03:16:12Z",
-    "exit": "stop -10%",
-    "pnl": -7.67,
-    "weight": 0.5
-   },
    {
     "symbol": "PUNTB",
     "mint": "7Aq5QkihUPoZWrBgLnxEu1H9F1PGGZNfXJ9i9rPXpump",
@@ -21747,17 +21687,74 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.41,
     "weight": 0.5
+   },
+   {
+    "symbol": "LUCEMA",
+    "mint": "BKGm4wZsiccGatq397yBXLuhRrLg2tuwfmhEDFkopump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T03:25:05Z",
+    "cost": 51.17,
+    "pnl_pct": -22.5,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.39,
+    "closed": "2026-11-27T03:25:14Z",
+    "exit": "dump: 2.3 SOL sold",
+    "pnl": -11.52,
+    "weight": 0.5
+   },
+   {
+    "symbol": "LARP NGA",
+    "mint": "CSWRwF7uaS4qUitH13SME1hJK52XijGYhT6TpsGwpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T03:22:30Z",
+    "cost": 51.74,
+    "pnl_pct": -9.0,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T03:25:31Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -4.66,
+    "weight": 0.5
+   },
+   {
+    "symbol": "monky",
+    "mint": "At5hmwDn4YgPDoic1UN7zMdTtCoiXJsMhnKaoazEpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T03:20:39Z",
+    "cost": 52.65,
+    "pnl_pct": -2.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T03:25:39Z",
+    "exit": "5 min, only +1%",
+    "pnl": -1.22,
+    "weight": 0.5
    }
   ],
   "open": [
-   "monky",
    "NVIDIA",
-   "LARP NGA",
    "BLKJ",
    "BUFKC",
    "Scat",
-   "GRCH",
-   "LUCEMA"
+   "GRCH"
   ]
  },
  "learner_summary": {
@@ -21779,14 +21776,14 @@
    {
     "label": "snipe · np:dev:8+",
     "n": 28,
-    "avg": -9.1
+    "avg": -9.0
    }
   ],
   "worst": [
    {
     "label": "snipe · np:social:none",
     "n": 66,
-    "avg": -13.3
+    "avg": -13.2
    },
    {
     "label": "snipe · tier:swing",
@@ -21799,7 +21796,7 @@
     "avg": -18.0
    }
   ],
-  "shadows": 142,
+  "shadows": 145,
   "memory": "snipe"
  }
 }
