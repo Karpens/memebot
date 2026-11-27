@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:37:54Z",
-    "time": "06:37:54",
-    "agent": "EXECUTOR",
-    "coin": "BFC",
-    "action": "exit",
-    "text": "EXIT BFC +$8.99 (+24%) · TP +20% · out · 0.0 s after the reading",
-    "n": 2541
-   },
-   {
-    "t": "2026-11-27T05:37:54Z",
-    "time": "06:37:54",
-    "agent": "LEARNER",
-    "coin": "BFC",
-    "action": "learn",
-    "text": "learned · tier:swing now avg -17.0% over 22.5",
-    "n": 2542
-   },
-   {
-    "t": "2026-11-27T05:38:06Z",
-    "time": "06:38:06",
-    "agent": "SCANNER",
-    "coin": "Fallout",
-    "action": "flag",
-    "text": "snipe · first reading 0.3 s after the create · 0.7 SOL in · +4% since the create · mcap 32 SOL",
-    "n": 2543
-   },
-   {
     "t": "2026-11-27T05:38:06Z",
     "time": "06:38:06",
     "agent": "SIZER",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 19 rejected (snipe not bought: trades tonight 9, mayhem mode 6, serial launcher 4)",
     "n": 3140
+   },
+   {
+    "t": "2026-11-27T07:29:44Z",
+    "time": "08:29:44",
+    "agent": "LEARNER",
+    "coin": "NOTHINGCAT",
+    "action": "shadow",
+    "text": "SHADOW NOTHINGCAT would have made +47.3% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.6% over 195.5",
+    "n": 3141
+   },
+   {
+    "t": "2026-11-27T07:30:02Z",
+    "time": "08:30:02",
+    "agent": "RISK",
+    "coin": "nutting",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 3142
+   },
+   {
+    "t": "2026-11-27T07:30:02Z",
+    "time": "08:30:02",
+    "agent": "LEARNER",
+    "coin": "nutting",
+    "action": "shadow",
+    "text": "SHADOW nutting · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028139 (curve maths, every cost) · same exits, outside the book",
+    "n": 3143
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3140,
+  "lines": 3143,
   "flags": [
    {
     "coin": "Kibo",
@@ -21379,9 +21379,9 @@
   },
   "np_said": 1795764576.645303,
   "shadow": {
-   "n": 451,
-   "wins": 86,
-   "sum": -3752.7
+   "n": 452,
+   "wins": 87,
+   "sum": -3705.4
   },
   "np_speed": {
    "first_in": [
@@ -22274,7 +22274,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795764272.638428
+   "at": 1795764602.722141
   }
  },
  "last_night": {
@@ -30964,9 +30964,9 @@
   }
  },
  "shadow": {
-  "n": 465,
-  "wins": 88,
-  "sum": -3951.2,
+  "n": 466,
+  "wins": 89,
+  "sum": -3903.9,
   "by": {
    "learner": {
     "n": 16,
@@ -30974,32 +30974,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 449,
-    "wins": 85,
-    "sum": -3753.4
+    "n": 450,
+    "wins": 86,
+    "sum": -3706.1
    }
   },
   "closed": [
-   {
-    "symbol": "Basance",
-    "mint": "4zE53WkXbpCjFjP1k1qxs2LNTi1wep11W2LLcRpMpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:09:50Z",
-    "cost": 36.2,
-    "pnl_pct": -7.8,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T07:12:53Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.82,
-    "weight": 0.5
-   },
    {
     "symbol": "TEXOL",
     "mint": "FxckgmdyBjNN7oprYKGL4mdchpVm4zjNJ8M6agAapump",
@@ -31379,6 +31359,26 @@
     "exit": "dump: 2.3 SOL sold",
     "pnl": -5.98,
     "weight": 0.5
+   },
+   {
+    "symbol": "NOTHINGCAT",
+    "mint": "4HTZQvRJUDd73z3c5VT123kvQ2cFtmaNVDBhPHBgK1wV",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:29:13Z",
+    "cost": 36.2,
+    "pnl_pct": 47.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T07:29:44Z",
+    "exit": "TP +10%",
+    "pnl": 17.14,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31387,8 +31387,8 @@
    "NP",
    "GRAND",
    "NOTHINGCAT",
-   "NOTHINGCAT",
-   "LEFTOVERS"
+   "LEFTOVERS",
+   "nutting"
   ]
  },
  "learner_summary": {
@@ -31430,7 +31430,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 449,
+  "shadows": 450,
   "memory": "snipe"
  }
 }
