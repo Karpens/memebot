@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:56:33Z",
-    "time": "05:56:33",
-    "agent": "LEARNER",
-    "coin": "MUELLER",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -10.9% over 146.5",
-    "n": 2126
-   },
-   {
     "t": "2026-11-27T04:56:44Z",
     "time": "05:56:44",
     "agent": "RISK",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW 0 would have made +27.9% (TP +10%) · learned x0.5 · np:sol:12+ now avg -14.4% over 22",
     "n": 2725
+   },
+   {
+    "t": "2026-11-27T06:04:26Z",
+    "time": "07:04:26",
+    "agent": "LEARNER",
+    "coin": "INUX",
+    "action": "shadow",
+    "text": "SHADOW INUX would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.2% over 180",
+    "n": 2726
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2725,
+  "lines": 2726,
   "flags": [
    {
     "coin": "Kibo",
@@ -21039,9 +21039,9 @@
   },
   "np_said": 1795759425.780847,
   "shadow": {
-   "n": 296,
+   "n": 297,
    "wins": 51,
-   "sum": -2603.4
+   "sum": -2611.4
   },
   "np_speed": {
    "first_in": [
@@ -30624,9 +30624,9 @@
   }
  },
  "shadow": {
-  "n": 310,
+  "n": 311,
   "wins": 53,
-  "sum": -2801.9,
+  "sum": -2809.9,
   "by": {
    "learner": {
     "n": 16,
@@ -30634,32 +30634,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 294,
+    "n": 295,
     "wins": 50,
-    "sum": -2604.1
+    "sum": -2612.1
    }
   },
   "closed": [
-   {
-    "symbol": "SANTA",
-    "mint": "2vQNHn27afQ5tXCri9LMHQup7L9fc4TCVc8gLnNmpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:40:30Z",
-    "cost": 36.61,
-    "pnl_pct": -29.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.5,
-    "closed": "2026-11-27T05:40:41Z",
-    "exit": "dump: 4.5 SOL sold",
-    "pnl": -10.66,
-    "weight": 0.5
-   },
    {
     "symbol": "SantaHat",
     "mint": "8CBFRocgDKEdEwmfzxThcWB2gHoo8BiUeq7b6RQfcpeF",
@@ -31039,11 +31019,30 @@
     "exit": "TP +10%",
     "pnl": 10.1,
     "weight": 0.5
+   },
+   {
+    "symbol": "INUX",
+    "mint": "EKF94BbUarB82sDBtiiKb77UkV5MrQzm9EL9BVHQM6Y",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:00:27Z",
+    "cost": 36.2,
+    "pnl_pct": -8.0,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.04,
+    "closed": "2026-11-27T06:04:26Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.89,
+    "weight": 0.5
    }
   ],
   "open": [
    "PEPSODENT",
-   "INUX",
    "BONCOIN",
    "Christmas",
    "PILLOWLINE",
@@ -31090,7 +31089,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 294,
+  "shadows": 295,
   "memory": "snipe"
  }
 }
