@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T22:52:37Z",
+ "updated": "2026-11-27T22:53:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7697,
+  "lines": 7700,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795783947,
-   59.14
-  ],
   [
    1795784007,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795819908,
    59.14
+  ],
+  [
+   1795819968,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,33 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T22:24:52Z",
-   "time": "23:24:52",
-   "agent": "LEARNER",
-   "coin": "DZN",
-   "action": "shadow",
-   "text": "SHADOW DZN would have made -6.2% (5 min, only -1%) · learned x0.5 · np:social:none now avg -8.1% over 300",
-   "n": 7498
-  },
-  {
-   "t": "2026-11-27T22:25:03Z",
-   "time": "23:25:03",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.6 a minute · 0 watched · 30 rejected (snipe not bought: night at open  14, odd curve reading: virtual SOL i 13, mayhem mode 2)",
-   "n": 7499
-  },
-  {
-   "t": "2026-11-27T22:25:46Z",
-   "time": "23:25:46",
-   "agent": "RISK",
-   "coin": "ANTROPIES",
-   "action": "skip",
-   "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "n": 7500
-  },
-  {
    "t": "2026-11-27T22:25:46Z",
    "time": "23:25:46",
    "agent": "LEARNER",
@@ -6157,6 +6130,33 @@
    "action": "skip",
    "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "n": 7697
+  },
+  {
+   "t": "2026-11-27T22:52:47Z",
+   "time": "23:52:47",
+   "agent": "SCANNER",
+   "coin": "BOUNCE",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 7698
+  },
+  {
+   "t": "2026-11-27T22:52:47Z",
+   "time": "23:52:47",
+   "agent": "SCANNER",
+   "coin": "NASDAQISTAN",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.07152 is not 30 + real SOL 0 (off -29.93 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 842 odd readings from 227 coins tonight",
+   "n": 7699
+  },
+  {
+   "t": "2026-11-27T22:52:48Z",
+   "time": "23:52:48",
+   "agent": "LEARNER",
+   "coin": "BEASTWN",
+   "action": "shadow",
+   "text": "SHADOW BEASTWN would have made -6.6% (the job ends · the next job takes over) · learned x0.5 · np:buys:<70 now avg -7.6% over 300",
+   "n": 7700
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 832 (226 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 860 (227 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,24 +6221,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2640,
-    "last_event_age_s": 4.3,
+    "events": 2646,
+    "last_event_age_s": 6.5,
     "errors": 4,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 42178,
-    "last_event_age_s": 0.7,
+    "events": 42298,
+    "last_event_age_s": 2.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1676,
-    "last_event_age_s": 3.7,
+    "events": 1681,
+    "last_event_age_s": 6.3,
     "errors": 103,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6251,11 +6251,11 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 10.4,
+  "creates_per_min": 9.2,
   "watching": 0,
-  "followed": 11,
-  "odd_readings": 832,
-  "odd_coins": 226
+  "followed": 12,
+  "odd_readings": 860,
+  "odd_coins": 227
  },
  "learner": {
   "samples": 36,
@@ -6296,36 +6296,126 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2439,
+  "shadows": 2440,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21636,
+   "sent": 21672,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21636,
+   "sent": 21672,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SPEC",
+   "name": "Spectre",
+   "mint": "6DmC5KR6DF62Gfz5oe8uVkNFrQb5N3kdXpKswA7pump",
+   "age_s": 6,
+   "sol_in": 14.83,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 116.5,
+   "mcap_sol": 66.6,
+   "dev_pct": 5.0,
+   "big_sell": 0.31,
+   "x": "https://x.com/gentexe/status/2126447882232590800?a=6tFY9hFRpZMvj-ABWXQ&s=46",
+   "tg": false,
+   "web": "https://spectretx.com/",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
+   "symbol": "Nala",
+   "name": "The CashCat",
+   "mint": "AXWAq2QPwgcNQk98EausMkRNXwk2S5EbRLKJCL9ypump",
+   "age_s": 17,
+   "sol_in": 1.69,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 11.6,
+   "mcap_sol": 31.2,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/gettindevvy/status/2126445571003097371",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
+   "symbol": "pissball",
+   "name": "pissball",
+   "mint": "E8g1mLHMjU7Q93WxNgi88keRcdsAXF85S1rDxKd7pump",
+   "age_s": 18,
+   "sol_in": -1.24,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -7.8,
+   "mcap_sol": 28.0,
+   "dev_pct": 4.3,
+   "big_sell": 1.24,
+   "x": "https://x.com/pissballfun",
+   "tg": false,
+   "web": "https://pissball.fun",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
+   "symbol": "NASDAQISTAN",
+   "name": "Nasdaqistan",
+   "mint": "7yHF6wTgykQ1KsXBBzMTuM9v3gaFLJKNUzYv6AYE2VAi",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/FrFrFrFrrFrFrF/status/2126449166356287750",
+   "tg": false,
+   "web": "https://www.reddit.com/r/wallstreetbets/comments/1y71f8e/me_and_the_boys_trying_to_survive_another_week_in/",
+   "status": "rejected: serial launcher: 14 more coins in 60 min",
+   "why": "serial launcher: 14 more coins in 60 min"
+  },
+  {
+   "symbol": "MOOLAYER",
+   "name": "MOOLAYER",
+   "mint": "KBsYjzNyHXB8UrHVZ1VsTV8bfzoBXCCZRDjxDyuNrEa",
+   "age_s": 33,
+   "sol_in": -0.59,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -3.8,
+   "mcap_sol": 28.0,
+   "dev_pct": 2.1,
+   "big_sell": 0.59,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "$TECC",
    "name": "TRUMPEXECUTIONCOIN",
    "mint": "HFEDeMEndY1jjzss18ipPx5pGoRVXYFg4iB4d1Lxpump",
-   "age_s": 4,
-   "sol_in": 0.41,
+   "age_s": 38,
+   "sol_in": -0.13,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 2.8,
-   "mcap_sol": 29.2,
+   "sells": 1,
+   "rise_pct": -0.9,
+   "mcap_sol": 28.2,
    "dev_pct": 0.9,
-   "big_sell": 0.0,
+   "big_sell": 0.55,
    "x": false,
    "tg": false,
    "web": false,
@@ -6336,14 +6426,14 @@
    "symbol": "Fenrir",
    "name": "Alfa Wolf",
    "mint": "4pywnjUKT9sLgTGFr42T6DVzcNUgs7U4HqxHH9Tspump",
-   "age_s": 10,
-   "sol_in": 7.19,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": 47.1,
-   "mcap_sol": 52.1,
+   "age_s": 44,
+   "sol_in": 5.76,
+   "buys": 12,
+   "sells": 17,
+   "rise_pct": 37.0,
+   "mcap_sol": 48.5,
    "dev_pct": 11.9,
-   "big_sell": 1.12,
+   "big_sell": 2.48,
    "x": "https://x.com/slndr3000/status/2126449074358362160?a=vcl7lRACMjqwxr8vewk&s=20",
    "tg": false,
    "web": "https://www.instagram.com/reel/DgPweL3FjwM/",
@@ -6354,7 +6444,7 @@
    "symbol": "BABYCATE",
    "name": "Baby Catecoin",
    "mint": "CLFWsFgDZ4DUcoD7JfkbQSJNaUTrZe5oUw4tTPERpump",
-   "age_s": 17,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6372,10 +6462,10 @@
    "symbol": "MOONGIRL",
    "name": "moongirl",
    "mint": "8i7Ux8UcWCTzx7w51q5eewGEdehNvyEDG3fTPCEQpump",
-   "age_s": 38,
-   "sol_in": 8.82,
+   "age_s": 72,
+   "sol_in": 8.81,
    "buys": 4,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": 65.7,
    "mcap_sol": 48.5,
    "dev_pct": 2.5,
@@ -6390,14 +6480,14 @@
    "symbol": "RLX",
    "name": "ROLANA",
    "mint": "HPcs3gpn7C3eY6VwSW9dwoWFjfY7itoT8K1iuywVpump",
-   "age_s": 64,
-   "sol_in": 0.17,
+   "age_s": 98,
+   "sol_in": -0.53,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 1.1,
-   "mcap_sol": 29.4,
+   "sells": 1,
+   "rise_pct": -3.4,
+   "mcap_sol": 28.1,
    "dev_pct": 2.1,
-   "big_sell": 0.0,
+   "big_sell": 0.69,
    "x": "https://x.com/bitecong",
    "tg": false,
    "web": "https://www.roblox.com/games/100672735240325/Rolana",
@@ -6405,28 +6495,10 @@
    "why": "serial launcher: 4 more coins in 60 min"
   },
   {
-   "symbol": "BOUNCE",
-   "name": "Dollar Bounce",
-   "mint": "GcrARgWYiJVyGtoYhSJbucqBbQVYUq66aQEJrxdpump",
-   "age_s": 66,
-   "sol_in": 62.24,
-   "buys": 31,
-   "sells": 28,
-   "rise_pct": 811.4,
-   "mcap_sol": 269.1,
-   "dev_pct": 2.9,
-   "big_sell": 3.89,
-   "x": "https://x.com/Reuters/status/2126448515731657163",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
    "symbol": "MOO",
    "name": "SOLANA BULL",
    "mint": "DG6vYC3fxGigZBRZxw19AvTCeKumNCnwaJPX7hf2pump",
-   "age_s": 82,
+   "age_s": 116,
    "sol_in": 0.98,
    "buys": 1,
    "sells": 2,
@@ -6444,7 +6516,7 @@
    "symbol": "TEST",
    "name": "TEST",
    "mint": "BG9vZsRc1ccjfHQRFYy6mHX5GMFFa1QoJFzySFmNHnUs",
-   "age_s": 84,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6462,7 +6534,7 @@
    "symbol": "JENSENDOGE",
    "name": "JENSEN DOGE",
    "mint": "8RTLVok5uZ2j1peEGJJr6HEuzcWXs3K8Rm2RLWxcpump",
-   "age_s": 87,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6480,7 +6552,7 @@
    "symbol": "Felix",
    "name": "Felix",
    "mint": "BDtDpwYaiwcpcfgsAcezM5q1njhXiQyiJTivfZELpump",
-   "age_s": 110,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6493,60 +6565,6 @@
    "web": false,
    "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "JENSENDOGE",
-   "name": "Jensen Doge",
-   "mint": "4xeSitMQdFCKX7RQ1gZ4bea9PxTrNNumA9jpj4Uxpump",
-   "age_s": 149,
-   "sol_in": -0.07,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.3,
-   "big_sell": 0.07,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "LCIA",
-   "name": "LUCIA",
-   "mint": "FtQJsqQi3iUegn6h4zUGJBCTFM7Xk3kRS5fLC9VZpump",
-   "age_s": 154,
-   "sol_in": 0.15,
-   "buys": 5,
-   "sells": 1,
-   "rise_pct": 1.0,
-   "mcap_sol": 29.0,
-   "dev_pct": 1.4,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "SOL",
-   "name": "Speed of light",
-   "mint": "raWva7rbvk4WAhdvjoKijfhuKtX4eagTzGqU9nFpump",
-   "age_s": 163,
-   "sol_in": -2.19,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": -13.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 7.3,
-   "big_sell": 3.49,
-   "x": "https://x.com/ellengu18/status/2126448435763253629?a=vjZsDieak5H3btIuoDo&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
@@ -6556,18 +6574,22 @@
   {
    "symbol": "BEASTWN",
    "mint": "A7UDEhZgk5PRXPJCLWy78P5fGFBXe4kJ9JG13qtfpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T22:48:37Z",
    "cost": 5.91,
-   "pnl_pct": -3.0,
+   "pnl_pct": -6.6,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
    "fill": "curve",
    "age_s": 1,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T22:52:48Z",
+   "exit": "the job ends · the next job takes over",
+   "pnl": -0.39,
+   "weight": 0.5
   },
   {
    "symbol": "STILLUP",
@@ -6948,34 +6970,14 @@
    "exit": "TP +10%",
    "pnl": 0.77,
    "weight": 0.5
-  },
-  {
-   "symbol": "TAMAONE",
-   "mint": "6tzXVBnqN9cgVx3Uzd9PyUNySqJAFsE78mztFpyNpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "opened": "2026-11-27T22:44:28Z",
-   "cost": 5.91,
-   "pnl_pct": -17.0,
-   "tier": "scalp",
-   "score": 2.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 22.76,
-   "closed": "2026-11-27T22:44:29Z",
-   "exit": "dump: 2.9 SOL sold",
-   "pnl": -1.0,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 2247,
+  "n": 2248,
   "wins": 517,
   "win_rate": 23.0,
   "mean_pnl_pct": -7.27,
-  "open": 1,
+  "open": 0,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6983,7 +6985,7 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 2231,
+   "n": 2232,
    "wins": 514,
    "win_rate": 23.0,
    "mean_pnl_pct": -7.23
