@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:56:03Z",
+ "updated": "2026-11-27T09:56:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3944,
+  "lines": 3946,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795737300,
-   82.3
-  ],
   [
    1795737360,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795773314,
    361.97
+  ],
+  [
+   1795773374,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:17:30Z",
-   "time": "10:17:30",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 4, serial launcher 3, mayhem mode 2)",
-   "n": 3745
-  },
-  {
-   "t": "2026-11-27T09:17:33Z",
-   "time": "10:17:33",
-   "agent": "LEARNER",
-   "coin": "JFK INU",
-   "action": "shadow",
-   "text": "SHADOW JFK INU · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021624 (curve maths, every cost) · same exits, outside the book",
-   "n": 3746
-  },
-  {
    "t": "2026-11-27T09:17:49Z",
    "time": "10:17:49",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW DVXEATA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.00000583 (curve maths, every cost) · same exits, outside the book",
    "n": 3944
+  },
+  {
+   "t": "2026-11-27T09:56:14Z",
+   "time": "10:56:14",
+   "agent": "LEARNER",
+   "coin": "SUGZ",
+   "action": "shadow",
+   "text": "SHADOW SUGZ would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.4% over 222",
+   "n": 3945
+  },
+  {
+   "t": "2026-11-27T09:56:18Z",
+   "time": "10:56:18",
+   "agent": "LEARNER",
+   "coin": "WUGO",
+   "action": "shadow",
+   "text": "SHADOW WUGO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021369 (curve maths, every cost) · same exits, outside the book",
+   "n": 3946
   }
  ],
  "nights": [
@@ -6580,7 +6580,8 @@
  ],
  "errors": [
   "https://api.rugcheck.xyz/v1/tokens/7kdnoaXtGwWbeiBBzBzgNjsAV75jHQ5Bt7xTb8zQuvP7/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/HtGaVosxnoKDnf12g3Z4gE1AgjfroC3j2KaWuLGbpump/report: HTTP 400"
+  "https://api.rugcheck.xyz/v1/tokens/HtGaVosxnoKDnf12g3Z4gE1AgjfroC3j2KaWuLGbpump/report: HTTP 400",
+  "https://api.rugcheck.xyz/v1/tokens/EbFvQKQuAZBeWPMqUwUNVio1V7kvcusPGsSJDEEDpump/report: HTTP 400"
  ],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
@@ -6595,7 +6596,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 45 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 1,
   "scans_per_min": 0,
@@ -6603,24 +6604,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 771,
-    "last_event_age_s": 6.8,
+    "events": 775,
+    "last_event_age_s": 9.5,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18145,
-    "last_event_age_s": 1.6,
+    "events": 18162,
+    "last_event_age_s": 5.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 457,
-    "last_event_age_s": 6.7,
+    "events": 458,
+    "last_event_age_s": 20.5,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6633,9 +6634,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 8.8,
-  "watching": 1,
-  "followed": 33
+  "creates_per_min": 9.0,
+  "watching": 0,
+  "followed": 31
  },
  "learner": {
   "samples": 249,
@@ -6676,36 +6677,90 @@
     "avg": -11.5
    }
   ],
-  "shadows": 761,
+  "shadows": 762,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9492,
+   "sent": 9528,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9503,
+   "sent": 9539,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "DVXEATA",
-   "name": "DecvBna,org",
-   "mint": "EbFvQKQuAZBeWPMqUwUNVio1V7kvcusPGsSJDEEDpump",
-   "age_s": 6,
+   "symbol": "$TRUMP",
+   "name": "TRUMP COIN",
+   "mint": "8egwZj9nC6KVT5JPwHPdyyvLYwy5bD9aJHkfUak7pump",
+   "age_s": 9,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "JACKET",
+   "name": "Jacket Inu",
+   "mint": "Gh6SXqSChiizaaxjgvS9ugGM1SrDJskUjaiTki4uTRiX",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 1089.0,
+   "dev_pct": 90.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "WUGO",
+   "name": "Wugo",
+   "mint": "AdiZJtSUvfLYd6NgYaZtfK8wFi5VbNkKN3A9ui7Ppump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/Wugothefrog",
+   "tg": "https://t.me/WUGOthefrog",
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "DVXEATA",
+   "name": "DecvBna,org",
+   "mint": "EbFvQKQuAZBeWPMqUwUNVio1V7kvcusPGsSJDEEDpump",
+   "age_s": 40,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
    "mcap_sol": 76.9,
    "dev_pct": 42.6,
-   "big_sell": 0.0,
+   "big_sell": 0.33,
    "x": false,
    "tg": false,
    "web": false,
@@ -6716,7 +6771,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "2Mc3EKJ6Q7xvQw1pMCuiU8hjRNimHyuDfxTV6Qcqpump",
-   "age_s": 20,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6734,7 +6789,7 @@
    "symbol": "baton",
    "name": "dogewifbaton",
    "mint": "7kdnoaXtGwWbeiBBzBzgNjsAV75jHQ5Bt7xTb8zQuvP7",
-   "age_s": 41,
+   "age_s": 75,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 0,
@@ -6752,7 +6807,7 @@
    "symbol": "Baton",
    "name": "BatonCoin",
    "mint": "4cYSZpoMbqx7CiFDpnFtdA1oRknKQp5KtAGuLfXdMUBT",
-   "age_s": 43,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6770,7 +6825,7 @@
    "symbol": "TG",
    "name": "TOMMY GUNZZ",
    "mint": "HtGaVosxnoKDnf12g3Z4gE1AgjfroC3j2KaWuLGbpump",
-   "age_s": 55,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6788,7 +6843,7 @@
    "symbol": "$TRUMP",
    "name": "TRUMP COIN",
    "mint": "Dt79z7GCTizhRxvS5xkHT7yGWjuWzJsin5GyEvNNpump",
-   "age_s": 62,
+   "age_s": 96,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6806,12 +6861,12 @@
    "symbol": "DOGEWIFBATON",
    "name": "dogewifbaton",
    "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-   "age_s": 63,
-   "sol_in": 64.9,
-   "buys": 3,
+   "age_s": 97,
+   "sol_in": 80.45,
+   "buys": 4,
    "sells": 7,
-   "rise_pct": 4471.3,
-   "mcap_sol": 1278.1,
+   "rise_pct": 4581.2,
+   "mcap_sol": 1308.8,
    "dev_pct": 0.0,
    "big_sell": 152.88,
    "x": false,
@@ -6824,7 +6879,7 @@
    "symbol": "CONGA31",
    "name": "Conga #31",
    "mint": "F8pWymMCJb2DWqk89Ym8FDvEHnajFdWJSojFTP5b4XTc",
-   "age_s": 64,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6842,7 +6897,7 @@
    "symbol": "CONGA30",
    "name": "Conga #30",
    "mint": "8veQmbFUhvAXPSeiKo4RtS2NQ2AFpyZUsSg1qH4uCz6Y",
-   "age_s": 69,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6860,11 +6915,11 @@
    "symbol": "baoCat",
    "name": "CAT FAT",
    "mint": "GjuStaG19dbuvmhsG7hVfoaGK4XtLCHiHfsGtKKwpump",
-   "age_s": 73,
-   "sol_in": 0.18,
-   "buys": 15,
-   "sells": 8,
-   "rise_pct": 1.2,
+   "age_s": 107,
+   "sol_in": 0.19,
+   "buys": 17,
+   "sells": 11,
+   "rise_pct": 1.3,
    "mcap_sol": 28.3,
    "dev_pct": 0.0,
    "big_sell": 0.01,
@@ -6878,7 +6933,7 @@
    "symbol": "CONGA29",
    "name": "Conga #29",
    "mint": "y1FvYSSABhbTWpr4Wi3RneEkVJfJzcoktv2oveLCADe",
-   "age_s": 74,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6896,7 +6951,7 @@
    "symbol": "CONGA28",
    "name": "Conga #28",
    "mint": "EbqwyUzcGfjAAto3vgzK7z1MDfAg37cTPakZXpj4Lesc",
-   "age_s": 78,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6914,7 +6969,7 @@
    "symbol": "CONGA27",
    "name": "Conga #27",
    "mint": "BqCBqFgBn4Xj14thVhkyCJJiUvuQYiwMkfFJvPrJPQ1h",
-   "age_s": 84,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6932,7 +6987,7 @@
    "symbol": "CONGA26",
    "name": "Conga #26",
    "mint": "1C15VD88hfzZK2KY7kk7uv5imbY9BcCw5oBEzkWbdxh",
-   "age_s": 89,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6950,7 +7005,7 @@
    "symbol": "CONGA25",
    "name": "Conga #25",
    "mint": "HyLdB2owQ9zCCPAtYDLGa8weEAaWJGd7DLPxeHCTgNAB",
-   "age_s": 94,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6968,7 +7023,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "45wbqZXaE1YBKYsdVWm8wtGM2RUeZAytptcoujn5pump",
-   "age_s": 95,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6986,7 +7041,7 @@
    "symbol": "CONGA24",
    "name": "Conga #24",
    "mint": "H1Eibe4LZJ8ihrgNhPtkrF4HyVyFQsXJLu2zMqkqHAzf",
-   "age_s": 96,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6999,66 +7054,28 @@
    "web": "https://conga.monster",
    "status": "rejected: serial launcher: 19 more coins in 60 min",
    "why": "serial launcher: 19 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA23",
-   "name": "Conga #23",
-   "mint": "8v1RDNst7eZarxR32vCpDUnci5kmVhS4pKcVdtCW7m7H",
-   "age_s": 99,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2126249976246218898",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 18 more coins in 60 min",
-   "why": "serial launcher: 18 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA22",
-   "name": "Conga #22",
-   "mint": "EvpPqmJeBfJDXiN3Nw2vCiR4MFuqDRntJWRnYpg82SfJ",
-   "age_s": 101,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2126249976246218898",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 17 more coins in 60 min",
-   "why": "serial launcher: 17 more coins in 60 min"
-  },
-  {
-   "symbol": "CONGA21",
-   "name": "Conga #21",
-   "mint": "66S1gPqdgSGMEoQy1LPANyfx1xiPv4hvmuNJDbQK7Hza",
-   "age_s": 105,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Nostalgicgareth/status/2126249976246218898",
-   "tg": false,
-   "web": "https://conga.monster",
-   "status": "rejected: serial launcher: 16 more coins in 60 min",
-   "why": "serial launcher: 16 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "WUGO",
+   "mint": "AdiZJtSUvfLYd6NgYaZtfK8wFi5VbNkKN3A9ui7Ppump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:56:18Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "DVXEATA",
    "mint": "EbFvQKQuAZBeWPMqUwUNVio1V7kvcusPGsSJDEEDpump",
@@ -7099,29 +7116,13 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:54:51Z",
    "cost": 36.2,
-   "pnl_pct": -3.0,
+   "pnl_pct": -2.9,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
    "fill": "curve",
    "age_s": 1,
    "sol_in": 0.02
-  },
-  {
-   "symbol": "SUGZ",
-   "mint": "6gAVqX3uaZh1RoKzRGPjuqQzRW6j3AAYuGhdBFsnpump",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:53:14Z",
-   "cost": 36.2,
-   "pnl_pct": -4.0,
-   "tier": "scalp",
-   "score": 2,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 1,
-   "sol_in": 0.0
   },
   {
    "symbol": "TODD",
@@ -7138,6 +7139,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.27
+  },
+  {
+   "symbol": "SUGZ",
+   "mint": "6gAVqX3uaZh1RoKzRGPjuqQzRW6j3AAYuGhdBFsnpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:53:14Z",
+   "cost": 36.2,
+   "pnl_pct": -7.8,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T09:56:14Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -2.84,
+   "weight": 0.5
   },
   {
    "symbol": "DOGEWIFBATON",
@@ -7518,32 +7539,12 @@
    "exit": "5 min, only -8%",
    "pnl": -4.42,
    "weight": 0.5
-  },
-  {
-   "symbol": "FISH",
-   "mint": "6ohbrdKFTk6ni9QRu9AHCc26BKTGvFLgBJTzkQmVwvhL",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:42:24Z",
-   "cost": 36.2,
-   "pnl_pct": -13.5,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.48,
-   "closed": "2026-11-27T09:46:43Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -4.87,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 777,
+  "n": 778,
   "wins": 169,
-  "win_rate": 21.8,
+  "win_rate": 21.7,
   "mean_pnl_pct": -8.26,
   "open": 5,
   "learner": {
@@ -7553,7 +7554,7 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 761,
+   "n": 762,
    "wins": 166,
    "win_rate": 21.8,
    "mean_pnl_pct": -8.17

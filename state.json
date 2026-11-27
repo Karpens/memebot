@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:04:08Z",
-    "time": "09:04:08",
-    "agent": "LEARNER",
-    "coin": "IRON",
-    "action": "shadow",
-    "text": "SHADOW IRON · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000034671 (curve maths, every cost) · same exits, outside the book",
-    "n": 3345
-   },
-   {
-    "t": "2026-11-27T08:04:12Z",
-    "time": "09:04:12",
-    "agent": "LEARNER",
-    "coin": "IRON",
-    "action": "shadow",
-    "text": "SHADOW IRON would have made -12.7% (dump: 2.4 SOL sold) · learned x0.5 · np:sol:3-6 now avg -11.1% over 54",
-    "n": 3346
-   },
-   {
     "t": "2026-11-27T08:04:12Z",
     "time": "09:04:12",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW DVXEATA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.00000583 (curve maths, every cost) · same exits, outside the book",
     "n": 3944
+   },
+   {
+    "t": "2026-11-27T09:56:14Z",
+    "time": "10:56:14",
+    "agent": "LEARNER",
+    "coin": "SUGZ",
+    "action": "shadow",
+    "text": "SHADOW SUGZ would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.4% over 222",
+    "n": 3945
+   },
+   {
+    "t": "2026-11-27T09:56:18Z",
+    "time": "10:56:18",
+    "agent": "LEARNER",
+    "coin": "WUGO",
+    "action": "shadow",
+    "text": "SHADOW WUGO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021369 (curve maths, every cost) · same exits, outside the book",
+    "n": 3946
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3944,
+  "lines": 3946,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795737300,
-    82.3
-   ],
    [
     1795737360,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795773314,
     361.97
+   ],
+   [
+    1795773374,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795773355.645251,
   "shadow": {
-   "n": 763,
+   "n": 764,
    "wins": 167,
-   "sum": -6217.3
+   "sum": -6225.1
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 777,
+  "n": 778,
   "wins": 169,
-  "sum": -6415.8,
+  "sum": -6423.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 761,
+    "n": 762,
     "wins": 166,
-    "sum": -6218.0
+    "sum": -6225.8
    }
   },
   "closed": [
-   {
-    "symbol": "FISH",
-    "mint": "6ohbrdKFTk6ni9QRu9AHCc26BKTGvFLgBJTzkQmVwvhL",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:42:24Z",
-    "cost": 36.2,
-    "pnl_pct": -13.5,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.48,
-    "closed": "2026-11-27T09:46:43Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -4.87,
-    "weight": 0.5
-   },
    {
     "symbol": "CMS",
     "mint": "Dx3Ehv13KiZSBqmU1nUGjXfPdnkUS8L8CbmfxQ2Fu71G",
@@ -31743,14 +31723,34 @@
     "exit": "dump: 152.9 SOL sold",
     "pnl": -5.52,
     "weight": 0.5
+   },
+   {
+    "symbol": "SUGZ",
+    "mint": "6gAVqX3uaZh1RoKzRGPjuqQzRW6j3AAYuGhdBFsnpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:53:14Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:56:14Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.84,
+    "weight": 0.5
    }
   ],
   "open": [
    "TODD",
-   "SUGZ",
    "baoCat",
    "TG",
-   "DVXEATA"
+   "DVXEATA",
+   "WUGO"
   ]
  },
  "learner_summary": {
@@ -31792,7 +31792,7 @@
     "avg": -11.5
    }
   ],
-  "shadows": 761,
+  "shadows": 762,
   "memory": "snipe"
  }
 }
