@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:03:46Z",
-    "time": "08:03:46",
-    "agent": "LEARNER",
-    "coin": "OBSCURED",
-    "action": "shadow",
-    "text": "SHADOW OBSCURED · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000030527 (curve maths, every cost) · same exits, outside the book",
-    "n": 3015
-   },
-   {
     "t": "2026-11-27T07:03:49Z",
     "time": "08:03:49",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW Retail · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027188 (curve maths, every cost) · same exits, outside the book",
     "n": 3614
+   },
+   {
+    "t": "2026-11-27T08:50:36Z",
+    "time": "09:50:36",
+    "agent": "LEARNER",
+    "coin": "Retail",
+    "action": "shadow",
+    "text": "SHADOW Retail would have made -13.7% (stop -10%) · learned x0.5 · np:age:<30s now avg -7.9% over 300",
+    "n": 3615
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3614,
+  "lines": 3615,
   "flags": [
    {
     "coin": "Kibo",
@@ -21703,9 +21703,9 @@
   },
   "np_said": 1795769414.64529,
   "shadow": {
-   "n": 639,
+   "n": 640,
    "wins": 137,
-   "sum": -5145.8
+   "sum": -5159.5
   },
   "np_speed": {
    "first_in": [
@@ -31288,9 +31288,9 @@
   }
  },
  "shadow": {
-  "n": 653,
+  "n": 654,
   "wins": 139,
-  "sum": -5344.3,
+  "sum": -5358.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31298,32 +31298,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 637,
+    "n": 638,
     "wins": 136,
-    "sum": -5146.5
+    "sum": -5160.2
    }
   },
   "closed": [
-   {
-    "symbol": "ROCKSTAR",
-    "mint": "7u1zQkhEfgXBXWi668HvGy1GNStg5gEHzt5XJSGy8tNj",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:41:42Z",
-    "cost": 36.2,
-    "pnl_pct": -14.0,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.05,
-    "closed": "2026-11-27T08:42:32Z",
-    "exit": "stop -10%",
-    "pnl": -5.07,
-    "weight": 0.5
-   },
    {
     "symbol": "BI",
     "mint": "7wKYLxsWVpHeN4asZNehxRgADqieorUtxB2jvQETpump",
@@ -31703,14 +31683,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.77,
     "weight": 0.5
+   },
+   {
+    "symbol": "Retail",
+    "mint": "5xrfZ1HUgNUhMLdYFqF6EA8zWFkaf3Dws3pXZtQzpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:50:16Z",
+    "cost": 36.2,
+    "pnl_pct": -13.7,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.98,
+    "closed": "2026-11-27T08:50:36Z",
+    "exit": "stop -10%",
+    "pnl": -4.95,
+    "weight": 0.5
    }
   ],
   "open": [
    "LIFTLY",
    "NRWGN",
    "GTA 6",
-   "CATETTE",
-   "Retail"
+   "CATETTE"
   ]
  },
  "learner_summary": {
@@ -31731,8 +31730,8 @@
    },
    {
     "label": "snipe · np:dev:5-8",
-    "n": 27,
-    "avg": -6.2
+    "n": 28,
+    "avg": -6.4
    }
   ],
   "worst": [
@@ -31752,7 +31751,7 @@
     "avg": -11.3
    }
   ],
-  "shadows": 637,
+  "shadows": 638,
   "memory": "snipe"
  }
 }
