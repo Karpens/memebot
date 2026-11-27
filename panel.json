@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T07:26:53Z",
+ "updated": "2026-11-27T07:27:31Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3124,
+  "lines": 3128,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -2095,6 +2095,10 @@
   ],
   [
    1795764353,
+   361.97
+  ],
+  [
+   1795764434,
    361.97
   ]
  ],
@@ -4364,42 +4368,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T06:49:10Z",
-   "time": "07:49:10",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.8 a minute · 0 watched · 22 rejected (mayhem mode 11, snipe not bought: trades tonight 8, serial launcher 3)",
-   "n": 2925
-  },
-  {
-   "t": "2026-11-27T06:49:19Z",
-   "time": "07:49:19",
-   "agent": "LEARNER",
-   "coin": "SHIP",
-   "action": "shadow",
-   "text": "SHADOW SHIP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002631 (curve maths, every cost) · same exits, outside the book",
-   "n": 2926
-  },
-  {
-   "t": "2026-11-27T06:49:23Z",
-   "time": "07:49:23",
-   "agent": "LEARNER",
-   "coin": "shawty",
-   "action": "shadow",
-   "text": "SHADOW shawty would have made -7.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.7% over 187",
-   "n": 2927
-  },
-  {
-   "t": "2026-11-27T06:50:06Z",
-   "time": "07:50:06",
-   "agent": "LEARNER",
-   "coin": "GTA6",
-   "action": "shadow",
-   "text": "SHADOW GTA6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026927 (curve maths, every cost) · same exits, outside the book",
-   "n": 2928
-  },
-  {
    "t": "2026-11-27T06:50:11Z",
    "time": "07:50:11",
    "agent": "LEARNER",
@@ -6162,6 +6130,42 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 0 watched · 11 rejected (mayhem mode 7, snipe not bought: trades tonight 2, serial launcher 2)",
    "n": 3124
+  },
+  {
+   "t": "2026-11-27T07:27:14Z",
+   "time": "08:27:14",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 3125
+  },
+  {
+   "t": "2026-11-27T07:27:14Z",
+   "time": "08:27:14",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+   "n": 3126
+  },
+  {
+   "t": "2026-11-27T07:27:20Z",
+   "time": "08:27:20",
+   "agent": "LEARNER",
+   "coin": "NOTHING",
+   "action": "shadow",
+   "text": "SHADOW NOTHING · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021465 (curve maths, every cost) · same exits, outside the book",
+   "n": 3127
+  },
+  {
+   "t": "2026-11-27T07:27:28Z",
+   "time": "08:27:28",
+   "agent": "LEARNER",
+   "coin": "NOTHING",
+   "action": "shadow",
+   "text": "SHADOW NOTHING · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021465 (curve maths, every cost) · same exits, outside the book",
+   "n": 3128
   }
  ],
  "nights": [
@@ -6202,13 +6206,7 @@
    "scans": 0
   }
  ],
- "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/8Agqz3heHbasBt4xQ3CSDv4EjRUm3g4jmc1STgkspump/report: HTTP 502",
-  "https://api.rugcheck.xyz/v1/tokens/HeHJvLfXQCfp9gihVsMck6EeDmFHT8sFt2Y8EZbJRcjb/report: HTTP 502",
-  "https://api.rugcheck.xyz/v1/tokens/9ugok1EHECYkW1ZjrHzBWbiBr2P6mYpbuV5bTufepump/report: HTTP 502",
-  "https://api.rugcheck.xyz/v1/tokens/DegrN1BKXmr72Syn9HrUe2quKKh8FPXr49cidagEpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/GkpXH1PbCwysQDQqn3owRCGQpEcgBfGUzfegEEFZpump/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -6222,34 +6220,34 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal down · curve poll failing · 16 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 2 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
-    "connected": false,
-    "events": 1665,
-    "last_event_age_s": 12.3,
-    "errors": 5,
-    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
+    "connected": true,
+    "events": 3,
+    "last_event_age_s": 3.3,
+    "errors": 0,
+    "last_error": null
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 47519,
-    "last_event_age_s": 2.2,
+    "connected": true,
+    "events": 5,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1049,
-    "last_event_age_s": 12.2,
-    "errors": 89,
-    "last_error": "linkpairs.fun: too slow (over 2 s)"
+    "events": 2,
+    "last_event_age_s": 3.3,
+    "errors": 0,
+    "last_error": null
    }
   ],
   "strategies": [
@@ -6260,9 +6258,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 0.6,
   "watching": 0,
-  "followed": 5
+  "followed": 2
  },
  "learner": {
   "samples": 249,
@@ -6309,13 +6307,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 22376,
-   "errors": 0,
-   "last_error": null
+   "sent": 8,
+   "errors": 1,
+   "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 22375,
+   "sent": 19,
    "errors": 0,
    "last_error": null
   }
@@ -6323,195 +6321,33 @@
  "watch": [
   {
    "symbol": "NOTHING",
-   "name": "NOTHING",
-   "mint": "82afWLHgiRCsFCUoPV9fPxP6ANwn6YGu4Ur1Z8qpump",
-   "age_s": 12,
-   "sol_in": -0.01,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "HA5nUgAmfDPihTQ1oV5XMUE1nUug6CCHnre33o5gpump",
-   "age_s": 18,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "1RING2RULE",
-   "name": "1RING58",
-   "mint": "E2anMEVyNJd384JoL9vgJqART5QApRgLiKaKMgUepump",
-   "age_s": 51,
-   "sol_in": 0.0,
+   "name": "Launch Nothing",
+   "mint": "DEHN1ssS1j4QZCzLTXpXD6hH1sXbksUG3VvsU5t8pump",
+   "age_s": 3,
+   "sol_in": -0.0,
    "buys": 1,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.01,
-   "x": "https://x.com/A1RING2RULE",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "HLOVE",
-   "name": "HARSH LOVE",
-   "mint": "AeEwz28v5sS5L5XS2W9Cy81xWz6ZAnqCXS4qnNZCpump",
-   "age_s": 61,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "6sSSC583F4pC8BLyVq3mvkoR69L3q5JmmLSmQfmLpump",
-   "age_s": 63,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "STICK",
-   "name": "STICKMAN",
-   "mint": "Did8BaA4h6jVcdKUVoSm6QBPTkCd241e6bgsF7Npump",
-   "age_s": 77,
-   "sol_in": -0.01,
-   "buys": 2,
-   "sells": 5,
-   "rise_pct": -0.1,
+   "rise_pct": -0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": "https://x.com/Go2685925273317/status/2126215848754827357",
+   "big_sell": 0.21,
+   "x": "https://x.com/Lnchnothingfun/status/2126215485155111037?a=zL7ZEG9iMixDuim96WQ&s=20",
    "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "kittylick",
-   "name": "Freaky ah",
-   "mint": "5DDncyCeS5RoJ8wM6LNttZcTCv3ArwXYpTTZkgCkpump",
-   "age_s": 85,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "NCSP",
-   "name": "National Cybersecurity P",
-   "mint": "34DJyxecJNRf7qpVAziMvnU2JAXJDQCantrrKGiipump",
-   "age_s": 87,
-   "sol_in": -0.86,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": -5.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.1,
-   "big_sell": 6.31,
-   "x": false,
-   "tg": false,
-   "web": "https://ncsp.io",
+   "web": "https://launchnothing.fun/",
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   },
   {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "8KbL4TBhyLMXtetJiYjg7Cj4fFDDHbLXUpSav3AEpump",
-   "age_s": 109,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "HLOVE",
-   "name": "HARSH LOVE",
-   "mint": "9PXrHtynWf5cGdKTLXr5TQBDb7ZDBcC6CvSAqZaapump",
-   "age_s": 114,
+   "symbol": "VC",
+   "name": "PUMPFUN VC",
+   "mint": "CaVsKD2xfrNbotnmrvyHa8KRyRjmXaWwEzqXfPYJpump",
+   "age_s": 7,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
    "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GAYCOIN",
-   "name": "GAYCOIN",
-   "mint": "3DxMFfbDiDxQnzDkvMYeuDvXmwzVM6NsXqWnEN36pump",
-   "age_s": 131,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6522,44 +6358,58 @@
   {
    "symbol": "NOTHING",
    "name": "Launch Nothing",
-   "mint": "9PBVXxx7Hn72EJttB8X2besqJtbUvE4iN3Cc3ubUpump",
-   "age_s": 142,
-   "sol_in": 18.55,
-   "buys": 58,
-   "sells": 69,
-   "rise_pct": 102.8,
-   "mcap_sol": 120.5,
-   "dev_pct": 33.7,
-   "big_sell": 3.45,
+   "mint": "7cdDYCGvWo3yjBDcW4NVwS8EWZeKjDJoZvriWTrwpump",
+   "age_s": 11,
+   "sol_in": -0.01,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.2,
    "x": "https://x.com/Lnchnothingfun/status/2126215485155111037?a=zL7ZEG9iMixDuim96WQ&s=20",
    "tg": false,
    "web": "https://launchnothing.fun/",
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "3BenBtefPERBiUJhx9VTQf6WjpPf3QpK6CUJGJGgpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "NOTHING",
+   "mint": "DEHN1ssS1j4QZCzLTXpXD6hH1sXbksUG3VvsU5t8pump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T07:27:28Z",
+   "cost": 36.2,
+   "pnl_pct": -5.3,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.21
+  },
+  {
+   "symbol": "NOTHING",
+   "mint": "7cdDYCGvWo3yjBDcW4NVwS8EWZeKjDJoZvriWTrwpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T07:27:20Z",
+   "cost": 36.2,
+   "pnl_pct": -5.4,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.21
+  },
   {
    "symbol": "TOGI",
    "mint": "5XnvbbWWPEsKvy8D6QE47uSbvMTRfbsUGARDXLEVpump",
@@ -6966,7 +6816,7 @@
   "wins": 88,
   "win_rate": 19.0,
   "mean_pnl_pct": -8.47,
-  "open": 0,
+  "open": 2,
   "learner": {
    "n": 16,
    "wins": 3,
