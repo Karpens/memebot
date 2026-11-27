@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:26:35Z",
-    "time": "08:26:35",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.6 a minute · 0 watched · 11 rejected (mayhem mode 7, snipe not bought: trades tonight 2, serial launcher 2)",
-    "n": 3124
-   },
-   {
-    "t": "2026-11-27T07:27:14Z",
-    "time": "08:27:14",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "feed",
-    "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
-    "n": 3125
-   },
-   {
-    "t": "2026-11-27T07:27:14Z",
-    "time": "08:27:14",
-    "agent": "LOGGER",
-    "coin": null,
-    "action": "tape",
-    "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
-    "n": 3126
-   },
-   {
-    "t": "2026-11-27T07:27:20Z",
-    "time": "08:27:20",
-    "agent": "LEARNER",
-    "coin": "NOTHING",
-    "action": "shadow",
-    "text": "SHADOW NOTHING · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021465 (curve maths, every cost) · same exits, outside the book",
-    "n": 3127
-   },
-   {
     "t": "2026-11-27T07:27:28Z",
     "time": "08:27:28",
     "agent": "LEARNER",
@@ -5445,6 +5409,42 @@
     "action": "scan",
     "text": "new pairs · 4.8 a minute · 0 watched · 15 rejected (snipe not bought: trades tonight 5, serial launcher 5, mayhem mode 5)",
     "n": 3723
+   },
+   {
+    "t": "2026-11-27T09:12:47Z",
+    "time": "10:12:47",
+    "agent": "LEARNER",
+    "coin": "Flyball",
+    "action": "shadow",
+    "text": "SHADOW Flyball · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024545 (curve maths, every cost) · same exits, outside the book",
+    "n": 3724
+   },
+   {
+    "t": "2026-11-27T09:12:49Z",
+    "time": "10:12:49",
+    "agent": "LEARNER",
+    "coin": "COUCHTANK",
+    "action": "shadow",
+    "text": "SHADOW COUCHTANK · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021424 (curve maths, every cost) · same exits, outside the book",
+    "n": 3725
+   },
+   {
+    "t": "2026-11-27T09:13:06Z",
+    "time": "10:13:06",
+    "agent": "LEARNER",
+    "coin": "Holesale",
+    "action": "shadow",
+    "text": "SHADOW Holesale · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000029557 (curve maths, every cost) · same exits, outside the book",
+    "n": 3726
+   },
+   {
+    "t": "2026-11-27T09:13:10Z",
+    "time": "10:13:10",
+    "agent": "LEARNER",
+    "coin": "Holesale",
+    "action": "shadow",
+    "text": "SHADOW Holesale would have made -14.9% (stop -11%) · learned x0.5 · np:sol:3-6 now avg -11.2% over 62.5",
+    "n": 3727
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3723,
+  "lines": 3727,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795734720,
-    82.3
-   ],
    [
     1795734780,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795770734,
     361.97
+   ],
+   [
+    1795770794,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795770747.645262,
   "shadow": {
-   "n": 680,
+   "n": 681,
    "wins": 144,
-   "sum": -5692.8
+   "sum": -5707.7
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 694,
+  "n": 695,
   "wins": 146,
-  "sum": -5891.3,
+  "sum": -5906.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 678,
+    "n": 679,
     "wins": 143,
-    "sum": -5693.5
+    "sum": -5708.4
    }
   },
   "closed": [
-   {
-    "symbol": "Jesus",
-    "mint": "5CwHTwLt251b38r7yevHkHKB88QNATjX1WbkRQHkpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:04:14Z",
-    "cost": 36.2,
-    "pnl_pct": -21.3,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 13.37,
-    "closed": "2026-11-27T09:04:17Z",
-    "exit": "dump: 4.9 SOL sold",
-    "pnl": -7.71,
-    "weight": 0.5
-   },
    {
     "symbol": "BOING",
     "mint": "HYwerfwWyHtE8KFzSgC66EZzDejpHQPUNG26GetEpump",
@@ -31743,13 +31723,35 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.76,
     "weight": 0.5
+   },
+   {
+    "symbol": "Holesale",
+    "mint": "2y3ThD8QxrvcKFZm7W7civdfzuWTDeq226S1gQtRpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:13:06Z",
+    "cost": 36.2,
+    "pnl_pct": -14.9,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 4.36,
+    "closed": "2026-11-27T09:13:10Z",
+    "exit": "stop -11%",
+    "pnl": -5.41,
+    "weight": 0.5
    }
   ],
   "open": [
    "CPAI",
    "BAH",
    "34",
-   "DRAW"
+   "DRAW",
+   "Flyball",
+   "COUCHTANK"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31793,7 @@
     "avg": -11.8
    }
   ],
-  "shadows": 678,
+  "shadows": 679,
   "memory": "snipe"
  }
 }
