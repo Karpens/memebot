@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:11:05Z",
-    "time": "09:11:05",
-    "agent": "LEARNER",
-    "coin": "WhiteOrca",
-    "action": "shadow",
-    "text": "SHADOW WhiteOrca would have made +36.4% (TP +10%) · learned x0.5 · np:dev:8+ now avg -9.1% over 102",
-    "n": 3388
-   },
-   {
-    "t": "2026-11-27T08:11:18Z",
-    "time": "09:11:18",
-    "agent": "LEARNER",
-    "coin": "PACS",
-    "action": "shadow",
-    "text": "SHADOW PACS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000034735 (curve maths, every cost) · same exits, outside the book",
-    "n": 3389
-   },
-   {
     "t": "2026-11-27T08:11:19Z",
     "time": "09:11:19",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW BEYOND would have made -11.2% (dump: 2.8 SOL sold) · learned x0.5 · np:social:none now avg -9.3% over 215",
     "n": 3987
+   },
+   {
+    "t": "2026-11-27T10:05:00Z",
+    "time": "11:05:00",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.2 a minute · 0 watched · 20 rejected (serial launcher 9, snipe not bought: trades tonight 7, mayhem mode 3)",
+    "n": 3988
+   },
+   {
+    "t": "2026-11-27T10:05:02Z",
+    "time": "11:05:02",
+    "agent": "LEARNER",
+    "coin": "baoCat",
+    "action": "shadow",
+    "text": "SHADOW baoCat would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.3% over 278.5",
+    "n": 3989
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3987,
+  "lines": 3989,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795737840,
-    82.3
-   ],
    [
     1795737900,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795773854,
     361.97
+   ],
+   [
+    1795773914,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795773839.645321,
+  "np_said": 1795773900.645268,
   "shadow": {
-   "n": 779,
+   "n": 780,
    "wins": 172,
-   "sum": -6285.0
+   "sum": -6292.9
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 793,
+  "n": 794,
   "wins": 174,
-  "sum": -6483.5,
+  "sum": -6491.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 777,
+    "n": 778,
     "wins": 171,
-    "sum": -6285.7
+    "sum": -6293.6
    }
   },
   "closed": [
-   {
-    "symbol": "FBEACON",
-    "mint": "9VqPPRiXuL8uXn7y1LyF5dGgDhRB8xkyQEdaqnQhpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:47:45Z",
-    "cost": 36.2,
-    "pnl_pct": -8.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T09:52:45Z",
-    "exit": "5 min, only -4%",
-    "pnl": -2.92,
-    "weight": 0.5
-   },
    {
     "symbol": "SANDWICH",
     "mint": "HetVfkpD2n8VjoreBeraMDNuK5ynDhsQPp3Zq4kEpump",
@@ -31743,10 +31723,29 @@
     "exit": "dump: 2.8 SOL sold",
     "pnl": -4.04,
     "weight": 0.5
+   },
+   {
+    "symbol": "baoCat",
+    "mint": "55faB8Usukia7aiwoFQ25DCzHqJ68GAt81UKbAU2pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:00:22Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T10:05:02Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.86,
+    "weight": 0.5
    }
   ],
   "open": [
-   "baoCat",
    "OCTOBER",
    "Bateleur",
    "SQUIRR",
@@ -31793,7 +31792,7 @@
     "avg": -11.0
    }
   ],
-  "shadows": 777,
+  "shadows": 778,
   "memory": "snipe"
  }
 }
