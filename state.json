@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:06:07Z",
-    "time": "21:06:07",
-    "agent": "LEARNER",
-    "coin": "MILKERS",
-    "action": "shadow",
-    "text": "SHADOW MILKERS would have made -13.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
-    "n": 6338
-   },
-   {
-    "t": "2026-11-27T20:06:17Z",
-    "time": "21:06:17",
-    "agent": "LEARNER",
-    "coin": "Computer",
-    "action": "shadow",
-    "text": "SHADOW Computer would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 300",
-    "n": 6339
-   },
-   {
     "t": "2026-11-27T20:06:34Z",
     "time": "21:06:34",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW חתול · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002064 (curve maths, every cost) · same exits, outside the book",
     "n": 6937
+   },
+   {
+    "t": "2026-11-27T21:22:14Z",
+    "time": "22:22:14",
+    "agent": "LEARNER",
+    "coin": "CAICEDO",
+    "action": "shadow",
+    "text": "SHADOW CAICEDO would have made -9.6% (5 min, only -5%) · learned x0.5 · np:social:none now avg -8.3% over 300",
+    "n": 6938
+   },
+   {
+    "t": "2026-11-27T21:22:28Z",
+    "time": "22:22:28",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.6 a minute · 0 watched · 18 rejected (snipe not bought: night at open  8, mayhem mode 5, serial launcher 4)",
+    "n": 6939
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6937,
+  "lines": 6939,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795814488.443387,
+  "np_said": 1795814548.443412,
   "shadow": {
-   "n": 1940,
+   "n": 1941,
    "wins": 438,
-   "sum": -14248.3
+   "sum": -14257.9
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 417,
+   "readings": 418,
    "coins": 154,
    "followed": 0,
    "mints": [
@@ -31958,9 +31958,9 @@
   }
  },
  "shadow": {
-  "n": 1954,
+  "n": 1955,
   "wins": 440,
-  "sum": -14446.8,
+  "sum": -14456.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31968,32 +31968,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1938,
+    "n": 1939,
     "wins": 437,
-    "sum": -14249.0
+    "sum": -14258.6
    }
   },
   "closed": [
-   {
-    "symbol": "UPGRD",
-    "mint": "DbCex4dGeN6yxofuAYs2u48xoZUFytBrE8GqxjRxpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:14:45Z",
-    "cost": 5.91,
-    "pnl_pct": -36.3,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 2,
-    "sol_in": 5.27,
-    "closed": "2026-11-27T21:16:25Z",
-    "exit": "dump: 6.8 SOL sold",
-    "pnl": -2.15,
-    "weight": 0.5
-   },
    {
     "symbol": "HARVEST",
     "mint": "4GyoxfUGguvQjtWeFCNPfyQepn3uKGZSGQBQhWftpump",
@@ -32373,11 +32353,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "CAICEDO",
+    "mint": "BhCqTKHytLjmc4n835krsyN7tpKAaQSDhTGtLB1sb7nm",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:17:14Z",
+    "cost": 5.91,
+    "pnl_pct": -9.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.3,
+    "closed": "2026-11-27T21:22:14Z",
+    "exit": "5 min, only -5%",
+    "pnl": -0.57,
+    "weight": 0.5
    }
   ],
   "open": [
    "BLKFRI",
-   "CAICEDO",
    "Meta",
    "ZERO",
    "DOOM",
@@ -32427,7 +32426,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 2146,
+  "shadows": 2147,
   "memory": "snipe"
  }
 }
