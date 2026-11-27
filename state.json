@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:44:31Z",
-    "time": "08:44:31",
-    "agent": "LEARNER",
-    "coin": "GUESTD",
-    "action": "shadow",
-    "text": "SHADOW GUESTD · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027149 (curve maths, every cost) · same exits, outside the book",
-    "n": 3235
-   },
-   {
-    "t": "2026-11-27T07:44:35Z",
-    "time": "08:44:35",
-    "agent": "LEARNER",
-    "coin": "GUESTD",
-    "action": "shadow",
-    "text": "SHADOW GUESTD would have made -14.0% (stop -10%) · learned x0.5 · np:sol:3-6 now avg -11.1% over 51.5",
-    "n": 3236
-   },
-   {
-    "t": "2026-11-27T07:44:42Z",
-    "time": "08:44:42",
-    "agent": "LEARNER",
-    "coin": "SWIPE",
-    "action": "shadow",
-    "text": "SHADOW SWIPE would have made -7.8% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.6% over 200.5",
-    "n": 3237
-   },
-   {
     "t": "2026-11-27T07:44:43Z",
     "time": "08:44:43",
     "agent": "SCANNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW RING · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023921 (curve maths, every cost) · same exits, outside the book",
     "n": 3834
+   },
+   {
+    "t": "2026-11-27T09:35:24Z",
+    "time": "10:35:24",
+    "agent": "LEARNER",
+    "coin": "3",
+    "action": "shadow",
+    "text": "SHADOW 3 would have made -13.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.5% over 216",
+    "n": 3835
+   },
+   {
+    "t": "2026-11-27T09:35:40Z",
+    "time": "10:35:40",
+    "agent": "LEARNER",
+    "coin": "EDEN",
+    "action": "shadow",
+    "text": "SHADOW EDEN · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000064407 (curve maths, every cost) · same exits, outside the book",
+    "n": 3836
+   },
+   {
+    "t": "2026-11-27T09:35:41Z",
+    "time": "10:35:41",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.0 a minute · 0 watched · 10 rejected (snipe not bought: trades tonight 6, mayhem mode 3, serial launcher 1)",
+    "n": 3837
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3834,
+  "lines": 3837,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795736040,
-    82.3
-   ],
    [
     1795736100,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795772054,
     361.97
+   ],
+   [
+    1795772114,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795772080.645262,
+  "np_said": 1795772141.645345,
   "shadow": {
-   "n": 721,
+   "n": 722,
    "wins": 153,
-   "sum": -6046.3
+   "sum": -6059.7
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 735,
+  "n": 736,
   "wins": 155,
-  "sum": -6244.8,
+  "sum": -6258.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 719,
+    "n": 720,
     "wins": 152,
-    "sum": -6047.0
+    "sum": -6060.4
    }
   },
   "closed": [
-   {
-    "symbol": "AKARI",
-    "mint": "Hppm8zqJqNjY3vM9umXMijjwtk3bxhWtMDD8FKc4pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:25:04Z",
-    "cost": 36.2,
-    "pnl_pct": 11.3,
-    "tier": "scalp",
-    "score": 2.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 7.44,
-    "closed": "2026-11-27T09:25:05Z",
-    "exit": "TP +10%",
-    "pnl": 4.08,
-    "weight": 0.5
-   },
    {
     "symbol": "Poenanie",
     "mint": "FjTExpyZCxr7Mwjn3kkvzJaFb7a3pn7SVA8rrABbpump",
@@ -31743,14 +31723,34 @@
     "exit": "dump: 2.7 SOL sold",
     "pnl": -4.78,
     "weight": 0.5
+   },
+   {
+    "symbol": "3",
+    "mint": "9i9FpPqGqYR5H5BLqD3bRHqvFfcbKuAdqHNagHVQpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:32:15Z",
+    "cost": 36.2,
+    "pnl_pct": -13.4,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:35:24Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -4.86,
+    "weight": 0.5
    }
   ],
   "open": [
    "XMASA",
-   "3",
    "GTA 6",
    "Supabase",
-   "RING"
+   "RING",
+   "EDEN"
   ]
  },
  "learner_summary": {
@@ -31792,7 +31792,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 719,
+  "shadows": 720,
   "memory": "snipe"
  }
 }
