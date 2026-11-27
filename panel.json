@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:41:43Z",
+ "updated": "2026-11-27T01:42:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -719,6 +719,10 @@
   ],
   [
    1795743660,
+   80.34
+  ],
+  [
+   1795743720,
    80.34
   ]
  ],
@@ -2636,7 +2640,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2644,26 +2648,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1835,
-    "last_event_age_s": 47.5,
+    "events": 1838,
+    "last_event_age_s": 0.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23843,
-    "last_event_age_s": 0.4,
+    "events": 23886,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1173,
-    "last_event_age_s": 47.3,
-    "errors": 46,
-    "last_error": "ipfs.io: HTTP 403"
+    "connected": false,
+    "events": 1175,
+    "last_event_age_s": 3.1,
+    "errors": 47,
+    "last_error": "d.uguu.se: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -2674,9 +2678,9 @@
   "exit_ms": 109,
   "exit_last_ms": 109,
   "launch_to_entry_s": 47,
-  "creates_per_min": 2.2,
-  "watching": 2,
-  "followed": 6
+  "creates_per_min": 2.6,
+  "watching": 3,
+  "followed": 8
  },
  "learner": {
   "samples": 111,
@@ -2722,23 +2726,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14456,
+   "sent": 14493,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14456,
+   "sent": 14493,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Disney",
+   "name": "Disney",
+   "mint": "CbgfLvXXiPdqXWh9ELwv6LSiSH5VVhrynrYZPfKpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "LOOP",
+   "name": "Infinite Loop",
+   "mint": "CqcLXMTZkodX9bNAwFCVp8S4vzHHf3KYMdKgFyGxtCWp",
+   "age_s": 5,
+   "sol_in": 0.07,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.5,
+   "mcap_sol": 29.0,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 3 s (min 45 s)"
+  },
+  {
+   "symbol": "Cate",
+   "name": "Catecoin",
+   "mint": "4BrzEXSicMXB8CZ9U9ZYGgAhAvDWnSvnwneQWFtWjm2d",
+   "age_s": 14,
+   "sol_in": 0.47,
+   "buys": 1,
+   "sells": 4,
+   "rise_pct": 2.6,
+   "mcap_sol": 43.4,
+   "dev_pct": 20.1,
+   "big_sell": 6.93,
+   "x": "https://x.com/83fs732ts8236/status/2126129391101002212",
+   "tg": false,
+   "web": "https://www.reddit.com/r/OneOrangeBraincell/comments/1y6fdq2/you_may_present_my_turkey_now/",
+   "status": "rejected: dev bought 20.1% (max 8%)",
+   "why": "dev bought 20.1% (max 8%)"
+  },
+  {
    "symbol": "PEPEMAS",
    "name": "PEPEMAS",
    "mint": "EqUf9QtDiemNbmpyNKZpUv1Vs34bDfvwr3yN5LJ5pump",
-   "age_s": 47,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2756,7 +2814,7 @@
    "symbol": "XMRPAD",
    "name": "XMRPAD",
    "mint": "5tjpu9tzbY6TCUKiAuPLonceDQtCNsoWo1YRaHS1pump",
-   "age_s": 54,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2774,7 +2832,7 @@
    "symbol": "urcoin",
    "name": "Not SPCX narr",
    "mint": "9sJCTrjcnfoLxwKXCwChZ3TiXDtw3mRDgQyab5FFpump",
-   "age_s": 84,
+   "age_s": 119,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 1,
@@ -2792,12 +2850,12 @@
    "symbol": "PumpChain",
    "name": "PumpChain",
    "mint": "E7J7E9mFY5LwLVdfDPwrvPYip8yizoCumgdZ89sBpump",
-   "age_s": 86,
-   "sol_in": 10.68,
-   "buys": 36,
-   "sells": 22,
-   "rise_pct": 70.5,
-   "mcap_sol": 64.6,
+   "age_s": 121,
+   "sol_in": 11.3,
+   "buys": 44,
+   "sells": 27,
+   "rise_pct": 75.2,
+   "mcap_sol": 66.4,
    "dev_pct": 15.2,
    "big_sell": 6.37,
    "x": "https://x.com/HushFunPrivacy/status/2126128857396748757?s=20",
@@ -2810,7 +2868,7 @@
    "symbol": "IMHUNGRY",
    "name": "Feed me so i get uber eats thank",
    "mint": "12aqrnZtQ4VeaZ7mQLN5gPj6ow2bY6bCP2xk7dRTpump",
-   "age_s": 123,
+   "age_s": 158,
    "sol_in": -1.73,
    "buys": 3,
    "sells": 9,
@@ -2828,7 +2886,7 @@
    "symbol": "urcoin",
    "name": "Not SPCX narr",
    "mint": "3e6YUX37DyEvVbPs76bL9gwf5Y9dYADAMoqhixz2pump",
-   "age_s": 124,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2846,7 +2904,7 @@
    "symbol": "FLOWB",
    "name": "Flow Base",
    "mint": "4sAQPo2wsEtsgKHUi5k15VHSM1vK4sqboEaff6RUiBJJ",
-   "age_s": 129,
+   "age_s": 164,
    "sol_in": 0.03,
    "buys": 2,
    "sells": 0,
@@ -2859,24 +2917,6 @@
    "web": false,
    "status": "watching",
    "why": "SOL in 0.0/2.5 · buys 2/6 · rise +0%/+12%"
-  },
-  {
-   "symbol": "Disney",
-   "name": "Disney",
-   "mint": "34FfRW4o5FyE1G52iVVcQbczJTSf5iKQU2354BpFpump",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
