@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:00:05Z",
-    "time": "21:00:05",
-    "agent": "LEARNER",
-    "coin": "FUNDID",
-    "action": "shadow",
-    "text": "SHADOW FUNDID · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000046573 (curve maths, every cost) · same exits, outside the book",
-    "n": 6298
-   },
-   {
-    "t": "2026-11-27T20:00:06Z",
-    "time": "21:00:06",
-    "agent": "LEARNER",
-    "coin": "FUNDID",
-    "action": "shadow",
-    "text": "SHADOW FUNDID would have made -23.2% (dump: 4.0 SOL sold) · learned x0.5 · np:dev:8+ now avg -9.0% over 221.5",
-    "n": 6299
-   },
-   {
     "t": "2026-11-27T20:00:13Z",
     "time": "21:00:13",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW MoonGay · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020763 (curve maths, every cost) · same exits, outside the book",
     "n": 6897
+   },
+   {
+    "t": "2026-11-27T21:17:25Z",
+    "time": "22:17:25",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 9.0 a minute · 0 watched · 28 rejected (snipe not bought: night at open  15, mayhem mode 6, serial launcher 5)",
+    "n": 6898
+   },
+   {
+    "t": "2026-11-27T21:17:50Z",
+    "time": "22:17:50",
+    "agent": "LEARNER",
+    "coin": "RAINBETCOM",
+    "action": "shadow",
+    "text": "SHADOW RAINBETCOM would have made -11.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:90+ now avg -7.4% over 300",
+    "n": 6899
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6897,
+  "lines": 6899,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795778234,
-    59.14
-   ],
    [
     1795778294,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795814208,
     59.14
+   ],
+   [
+    1795814268,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795814185.443416,
+  "np_said": 1795814245.443432,
   "shadow": {
-   "n": 1923,
+   "n": 1924,
    "wins": 434,
-   "sum": -14150.3
+   "sum": -14162.1
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 413,
+   "readings": 414,
    "coins": 152,
    "followed": 0,
    "mints": [
@@ -31956,9 +31956,9 @@
   }
  },
  "shadow": {
-  "n": 1937,
+  "n": 1938,
   "wins": 436,
-  "sum": -14348.8,
+  "sum": -14360.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31966,32 +31966,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1921,
+    "n": 1922,
     "wins": 433,
-    "sum": -14151.0
+    "sum": -14162.8
    }
   },
   "closed": [
-   {
-    "symbol": "SHAMEA",
-    "mint": "CfZ8oK1Zys4K9CcRGAXtLBHYM13C7o2e8QtAnWjVpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:12:47Z",
-    "cost": 5.91,
-    "pnl_pct": 5.8,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.27,
-    "closed": "2026-11-27T21:13:00Z",
-    "exit": "TP +10%",
-    "pnl": 0.34,
-    "weight": 0.5
-   },
    {
     "symbol": "KneeHao",
     "mint": "HZUUJNRCTBsi2NJEvP7pHPuMwMwheUaEEbg1VcnnZdSi",
@@ -32371,10 +32351,29 @@
     "exit": "stop -11%",
     "pnl": -0.92,
     "weight": 0.5
+   },
+   {
+    "symbol": "RAINBETCOM",
+    "mint": "9APguUUaJmCR6kHzcnzGwRcYmr9scMdpauXRExGYpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:10:15Z",
+    "cost": 5.91,
+    "pnl_pct": -11.8,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.94,
+    "closed": "2026-11-27T21:17:50Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.7,
+    "weight": 0.5
    }
   ],
   "open": [
-   "RAINBETCOM",
    "AWWIII",
    "חתול",
    "BOOSTER",
@@ -32397,7 +32396,7 @@
    {
     "label": "snipe · np:social:tg",
     "n": 14,
-    "avg": 0.4
+    "avg": -0.0
    },
    {
     "label": "snipe · hour:01-03",
@@ -32427,7 +32426,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 2129,
+  "shadows": 2130,
   "memory": "snipe"
  }
 }
