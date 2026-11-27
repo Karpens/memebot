@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:11:21Z",
-    "time": "08:11:21",
-    "agent": "LEARNER",
-    "coin": "vigil",
-    "action": "shadow",
-    "text": "SHADOW vigil would have made -12.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:web now avg -8.6% over 201",
-    "n": 3064
-   },
-   {
-    "t": "2026-11-27T07:11:26Z",
-    "time": "08:11:26",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.4 a minute · 0 watched · 15 rejected (snipe not bought: trades tonight 7, mayhem mode 7, serial launcher 1)",
-    "n": 3065
-   },
-   {
     "t": "2026-11-27T07:12:12Z",
     "time": "08:12:12",
     "agent": "RISK",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW CINU would have made -8.2% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.5% over 254",
     "n": 3663
+   },
+   {
+    "t": "2026-11-27T09:01:20Z",
+    "time": "10:01:20",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (mayhem mode 7, snipe not bought: trades tonight 2)",
+    "n": 3664
+   },
+   {
+    "t": "2026-11-27T09:01:36Z",
+    "time": "10:01:36",
+    "agent": "LEARNER",
+    "coin": "ANTS",
+    "action": "shadow",
+    "text": "SHADOW ANTS would have made -7.1% (5 min, only -3%) · learned x0.5 · np:buys:<70 now avg -9.6% over 210.5",
+    "n": 3665
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3663,
+  "lines": 3665,
   "flags": [
    {
     "coin": "Kibo",
@@ -21741,11 +21741,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795770019.645331,
+  "np_said": 1795770080.6453,
   "shadow": {
-   "n": 659,
+   "n": 660,
    "wins": 140,
-   "sum": -5481.8
+   "sum": -5488.9
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 673,
+  "n": 674,
   "wins": 142,
-  "sum": -5680.3,
+  "sum": -5687.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 657,
+    "n": 658,
     "wins": 139,
-    "sum": -5482.5
+    "sum": -5489.6
    }
   },
   "closed": [
-   {
-    "symbol": "Retail",
-    "mint": "5xrfZ1HUgNUhMLdYFqF6EA8zWFkaf3Dws3pXZtQzpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:50:16Z",
-    "cost": 36.2,
-    "pnl_pct": -13.7,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.98,
-    "closed": "2026-11-27T08:50:36Z",
-    "exit": "stop -10%",
-    "pnl": -4.95,
-    "weight": 0.5
-   },
    {
     "symbol": "Hope",
     "mint": "CsFZwAJKcYryu6hj8bTVCY2UkHVT4AJNhwizVPRXpump",
@@ -31743,11 +31723,29 @@
     "exit": "5 min, only -4%",
     "pnl": -2.98,
     "weight": 0.5
+   },
+   {
+    "symbol": "ANTS",
+    "mint": "28ihAQUBGb3aztTFxqPA5vGhfDmfA6jUwj64zxL7PX33",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:56:36Z",
+    "cost": 36.2,
+    "pnl_pct": -7.1,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:01:36Z",
+    "exit": "5 min, only -3%",
+    "pnl": -2.58,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "ANTS"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 249,
@@ -31788,7 +31786,7 @@
     "avg": -11.9
    }
   ],
-  "shadows": 657,
+  "shadows": 658,
   "memory": "snipe"
  }
 }
