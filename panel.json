@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T16:48:42Z",
+ "updated": "2026-11-27T16:49:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4613,
+  "lines": 4614,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4359,15 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T11:18:46Z",
-   "time": "12:18:46",
-   "agent": "LEARNER",
-   "coin": "GeoClip",
-   "action": "shadow",
-   "text": "SHADOW GeoClip · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023247 (curve maths, every cost) · same exits, outside the book",
-   "n": 4414
-  },
-  {
    "t": "2026-11-27T11:18:54Z",
    "time": "12:18:54",
    "agent": "LEARNER",
@@ -6157,6 +6148,15 @@
    "action": "feed",
    "text": "pumpportal live again · pumpportal live · curve poll 1 s · 0 watched · ws off",
    "n": 4613
+  },
+  {
+   "t": "2026-11-27T16:48:51Z",
+   "time": "17:48:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (no symbol or name 1)",
+   "n": 4614
   }
  ],
  "nights": [
@@ -6219,8 +6219,8 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 57,
-    "last_event_age_s": 3.0,
+    "events": 62,
+    "last_event_age_s": 10.7,
     "errors": 266,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
@@ -6228,7 +6228,7 @@
     "name": "curve-poll",
     "connected": true,
     "events": 1981,
-    "last_event_age_s": 17589.1,
+    "last_event_age_s": 17623.1,
     "errors": 0,
     "last_error": null
    },
@@ -6236,7 +6236,7 @@
     "name": "metadata",
     "connected": true,
     "events": 39,
-    "last_event_age_s": 18254.8,
+    "last_event_age_s": 18288.8,
     "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6249,7 +6249,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 0.0,
+  "creates_per_min": 0.6,
   "watching": 0,
   "followed": 0,
   "odd_readings": 52,
@@ -6300,18 +6300,73 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20130,
+   "sent": 20166,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20133,
+   "sent": 20169,
    "errors": 0,
    "last_error": null
   }
  },
- "watch": [],
+ "watch": [
+  {
+   "symbol": "MUSLONG",
+   "name": "Muslim Nailong",
+   "mint": "53G2ZC5jBgPcamwLSg85JXuWq9GrumFj5X8NFifapump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "INGOT",
+   "name": "Ingot",
+   "mint": "iNg3JUoxwvu2jsACHteNcZdVkGRnFDYgR41rSU6kWya",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "DTdgjUVJbcd4MMxZLadCqw3SP696tfiQ4SdL5jXRpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  }
+ ],
  "strategies": [
   "new_pairs"
  ],
