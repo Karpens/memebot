@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:45:59Z",
-    "time": "09:45:59",
-    "agent": "LEARNER",
-    "coin": "Divvypad",
-    "action": "shadow",
-    "text": "SHADOW Divvypad would have made +31.2% (TP +10%) · learned x0.5 · np:social:web now avg -8.0% over 252",
-    "n": 3585
-   },
-   {
-    "t": "2026-11-27T08:46:05Z",
-    "time": "09:46:05",
-    "agent": "LEARNER",
-    "coin": "Burn",
-    "action": "shadow",
-    "text": "SHADOW Burn · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027453 (curve maths, every cost) · same exits, outside the book",
-    "n": 3586
-   },
-   {
     "t": "2026-11-27T08:46:06Z",
     "time": "09:46:06",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 13 rejected (mayhem mode 8, snipe not bought: trades tonight 2, no symbol or name 2)",
     "n": 4184
+   },
+   {
+    "t": "2026-11-27T10:41:24Z",
+    "time": "11:41:24",
+    "agent": "LEARNER",
+    "coin": "BURN",
+    "action": "shadow",
+    "text": "SHADOW BURN would have made -4.6% (10 min, only -1%) · learned x0.5 · tier:swing now avg -10.4% over 59.5",
+    "n": 4185
+   },
+   {
+    "t": "2026-11-27T10:41:48Z",
+    "time": "11:41:48",
+    "agent": "LEARNER",
+    "coin": "rice",
+    "action": "shadow",
+    "text": "SHADOW rice would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 238.5",
+    "n": 4186
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4184,
+  "lines": 4186,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795776079.64532,
   "shadow": {
-   "n": 856,
+   "n": 858,
    "wins": 192,
-   "sum": -6767.1
+   "sum": -6779.5
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 870,
+  "n": 872,
   "wins": 194,
-  "sum": -6965.6,
+  "sum": -6978.0,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,52 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 854,
+    "n": 856,
     "wins": 191,
-    "sum": -6767.8
+    "sum": -6780.2
    }
   },
   "closed": [
-   {
-    "symbol": "NVIDIA",
-    "mint": "DiSmdapsPvAMbLEy3YissQAYLLWHGRGC5d1LSio9pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:26:48Z",
-    "cost": 36.2,
-    "pnl_pct": 7.0,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 17.59,
-    "closed": "2026-11-27T10:29:24Z",
-    "exit": "TP +10%",
-    "pnl": 2.54,
-    "weight": 0.5
-   },
-   {
-    "symbol": "strugglecat",
-    "mint": "6ATQ5RsntLeeaqwSdpvmRvbbeFAA51UPMhiJ4qZDpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:29:25Z",
-    "cost": 36.2,
-    "pnl_pct": -14.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 4.88,
-    "closed": "2026-11-27T10:29:28Z",
-    "exit": "stop -12%",
-    "pnl": -5.41,
-    "weight": 0.5
-   },
    {
     "symbol": "chan",
     "mint": "5Hhp3BwfaDJ2NLcsGomuFGAANCy1YRHSgiLzUaNjpump",
@@ -31743,11 +31703,49 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.8,
     "weight": 0.5
+   },
+   {
+    "symbol": "BURN",
+    "mint": "5wk1CTSJuLtQJ86mxXd6FLS73sKwEFGZbwHCEqoqpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:31:24Z",
+    "cost": 36.2,
+    "pnl_pct": -4.6,
+    "tier": "swing",
+    "score": 3,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.06,
+    "closed": "2026-11-27T10:41:24Z",
+    "exit": "10 min, only -1%",
+    "pnl": -1.68,
+    "weight": 0.5
+   },
+   {
+    "symbol": "rice",
+    "mint": "FnTsVNJRkNz2u1CwsabPoR74d4R7JuUxSgYFK2wAHMek",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:38:48Z",
+    "cost": 36.2,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": -0.0,
+    "closed": "2026-11-27T10:41:48Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.81,
+    "weight": 0.5
    }
   ],
   "open": [
-   "BURN",
-   "rice",
    "Slaxias"
   ]
  },
@@ -31790,7 +31788,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 854,
+  "shadows": 856,
   "memory": "snipe"
  }
 }
