@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T21:14:10Z",
-    "time": "22:14:10",
-    "agent": "LEARNER",
-    "coin": "CALLOUT",
-    "action": "shadow",
-    "text": "SHADOW CALLOUT would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.7% over 300",
-    "n": 6856
-   },
-   {
     "t": "2026-11-27T21:14:17Z",
     "time": "22:14:17",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW DUG would have made -17.8% (dump: 3.7 SOL sold) · learned x0.5 · np:social:none now avg -8.1% over 300",
     "n": 7455
+   },
+   {
+    "t": "2026-11-27T22:21:50Z",
+    "time": "23:21:50",
+    "agent": "LEARNER",
+    "coin": "DUCKIT",
+    "action": "shadow",
+    "text": "SHADOW DUCKIT would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · hour:23-01 now avg -10.2% over 33",
+    "n": 7456
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7455,
+  "lines": 7456,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795782087,
-    59.14
-   ],
    [
     1795782147,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795818048,
     59.14
+   ],
+   [
+    1795818108,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795818062.443397,
   "shadow": {
-   "n": 2145,
+   "n": 2146,
    "wins": 491,
-   "sum": -15811.7
+   "sum": -15818.9
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 718,
+   "readings": 727,
    "coins": 194,
    "followed": 0,
    "mints": [
@@ -32002,9 +32002,9 @@
   }
  },
  "shadow": {
-  "n": 2159,
+  "n": 2160,
   "wins": 493,
-  "sum": -16010.2,
+  "sum": -16017.4,
   "by": {
    "learner": {
     "n": 16,
@@ -32012,32 +32012,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2143,
+    "n": 2144,
     "wins": 490,
-    "sum": -15812.4
+    "sum": -15819.6
    }
   },
   "closed": [
-   {
-    "symbol": "DEGODS",
-    "mint": "GoDSb9pXkg7wRNEiXnxHwpbXPYXoRGtkwZaEWY2MaD8z",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T22:17:02Z",
-    "cost": 5.91,
-    "pnl_pct": 21.4,
-    "tier": "swing",
-    "score": 3,
-    "steps": 2,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 14.99,
-    "closed": "2026-11-27T22:17:03Z",
-    "exit": "TP +20%",
-    "pnl": 1.26,
-    "weight": 0.5
-   },
    {
     "symbol": "ORANGE",
     "mint": "EacpWQhwV6z8AS9m2vVrvJekpyZhks8C98Fxmeg8pump",
@@ -32417,10 +32397,29 @@
     "exit": "dump: 3.7 SOL sold",
     "pnl": -1.05,
     "weight": 0.5
+   },
+   {
+    "symbol": "DUCKIT",
+    "mint": "5ddrNLgSKzNWaeXR8yxdxSqMqonZerzQ8AabYtvspump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:17:11Z",
+    "cost": 5.91,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T22:21:50Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.42,
+    "weight": 0.5
    }
   ],
   "open": [
-   "DUCKIT",
    "PHENOMDAD",
    "GENNY",
    "DZN"
@@ -32461,11 +32460,11 @@
    },
    {
     "label": "snipe · hour:23-01",
-    "n": 32,
+    "n": 33,
     "avg": -10.2
    }
   ],
-  "shadows": 2351,
+  "shadows": 2352,
   "memory": "snipe"
  }
 }
