@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T05:19:03Z",
+ "updated": "2026-11-27T05:19:34Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 172.35,
- "equity": 211.91,
+ "balance": 151.16,
+ "equity": 211.19,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 207,
-  "checked": 203,
+  "flagged": 208,
+  "checked": 204,
   "filtered": 5,
-  "lines": 2275,
+  "lines": 2280,
   "last_rug": {
-   "coin": "CHAD",
+   "coin": "Simyo",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TESS",
-   "why": "snipe",
-   "t": "2026-11-27T05:13:17Z"
-  },
   {
    "coin": "100k",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "CHAD",
    "why": "snipe",
    "t": "2026-11-27T05:18:13Z"
+  },
+  {
+   "coin": "Simyo",
+   "why": "snipe",
+   "t": "2026-11-27T05:19:22Z"
   }
  ],
  "curve": [
@@ -1605,7 +1605,7 @@
    "reason": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.11165e-06,
-   "price": 2.04248e-06,
+   "price": 2.04225e-06,
    "slip": 0.94,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -1647,7 +1647,7 @@
    "reason": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.25203e-06,
-   "price": 2.04248e-06,
+   "price": 2.04225e-06,
    "slip": 0.91,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -1679,6 +1679,52 @@
     2.25203e-06,
     2.17836e-06,
     2.04183e-06
+   ]
+  },
+  {
+   "symbol": "Simyo",
+   "mint": "EGRqiGd9niaDY64h1S2e2vSsPgVmFwFBcHPkszBkpump",
+   "cost": 21.19,
+   "value": 20.47,
+   "pnl_pct": -3.4,
+   "opened": "2026-11-27T05:19:22Z",
+   "url": "https://pump.fun/coin/EGRqiGd9niaDY64h1S2e2vSsPgVmFwFBcHPkszBkpump",
+   "reason": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.16591e-06,
+   "price": 2.09977e-06,
+   "slip": 0.93,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 2,
+    "parts": [
+     "X",
+     "web"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.39,
+   "sol_in": 0.01,
+   "hist": [
+    2.16591e-06,
+    2.09911e-06,
+    2.09775e-06,
+    2.09977e-06
    ]
   }
  ],
@@ -3927,51 +3973,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T04:52:00Z",
-   "time": "05:52:00",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 6 rejected (mayhem mode 4, serial launcher 1, no symbol or name 1)",
-   "n": 2076
-  },
-  {
-   "t": "2026-11-27T04:52:05Z",
-   "time": "05:52:05",
-   "agent": "SCANNER",
-   "coin": "CARDIB",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 8.5 SOL in · +63% since the create · mcap 48 SOL",
-   "n": 2077
-  },
-  {
-   "t": "2026-11-27T04:52:05Z",
-   "time": "05:52:05",
-   "agent": "SIZER",
-   "coin": "CARDIB",
-   "action": "size",
-   "text": "10% of $229.11 = $22.91",
-   "n": 2078
-  },
-  {
-   "t": "2026-11-27T04:52:05Z",
-   "time": "05:52:05",
-   "agent": "EXECUTOR",
-   "coin": "CARDIB",
-   "action": "enter",
-   "text": "ENTER CARDIB at 0.0000036074 · slip 0.8% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 5 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-   "n": 2079
-  },
-  {
-   "t": "2026-11-27T04:52:05Z",
-   "time": "05:52:05",
-   "agent": "NEWS",
-   "coin": "CARDIB",
-   "action": "plan",
-   "text": "hold plan · 3/10 (X, web, inflow 8.5 SOL) · swing: +10 → +20",
-   "n": 2080
-  },
-  {
    "t": "2026-11-27T04:52:12Z",
    "time": "05:52:12",
    "agent": "EXECUTOR",
@@ -5725,6 +5726,51 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 0 watched · 5 rejected (mayhem mode 3, serial launcher 1, no symbol or name 1)",
    "n": 2275
+  },
+  {
+   "t": "2026-11-27T05:19:18Z",
+   "time": "06:19:18",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 3 rejected (mayhem mode 2, serial launcher 1)",
+   "n": 2276
+  },
+  {
+   "t": "2026-11-27T05:19:22Z",
+   "time": "06:19:22",
+   "agent": "SCANNER",
+   "coin": "Simyo",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2277
+  },
+  {
+   "t": "2026-11-27T05:19:22Z",
+   "time": "06:19:22",
+   "agent": "SIZER",
+   "coin": "Simyo",
+   "action": "size",
+   "text": "10% of $211.91 = $21.19",
+   "n": 2278
+  },
+  {
+   "t": "2026-11-27T05:19:22Z",
+   "time": "06:19:22",
+   "agent": "EXECUTOR",
+   "coin": "Simyo",
+   "action": "enter",
+   "text": "ENTER Simyo at 0.0000021659 · slip 0.9% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 2 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 2279
+  },
+  {
+   "t": "2026-11-27T05:19:22Z",
+   "time": "06:19:22",
+   "agent": "NEWS",
+   "coin": "Simyo",
+   "action": "plan",
+   "text": "hold plan · 2/10 (X, web) · scalp: +10",
+   "n": 2280
   }
  ],
  "nights": [
@@ -5785,7 +5831,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 26 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 24 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5793,15 +5839,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1024,
-    "last_event_age_s": 19.6,
+    "events": 1026,
+    "last_event_age_s": 1.2,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 30382,
+    "events": 30509,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -5809,8 +5855,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 694,
-    "last_event_age_s": 50.9,
+    "events": 695,
+    "last_event_age_s": 12.2,
     "errors": 67,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5818,14 +5864,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 1.0,
+  "first_in_ms": 1,
   "first_in_last_ms": 1,
   "exit_ms": 35,
   "exit_last_ms": 33,
-  "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "launch_to_entry_s": 0,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 8
+  "followed": 7
  },
  "learner": {
   "samples": 193,
@@ -5872,30 +5918,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14063,
+   "sent": 14097,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14062,
+   "sent": 14096,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PAPER",
+   "name": "Paper Hands Anonymous",
+   "mint": "8yYdyXjspuGhcdedgkzrCbqkNarv3DzD4pjBdwv6pump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Simyo",
+   "name": "Simyo (시묘일)",
+   "mint": "EGRqiGd9niaDY64h1S2e2vSsPgVmFwFBcHPkszBkpump",
+   "age_s": 12,
+   "sol_in": 0.02,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.4,
+   "big_sell": 0.01,
+   "x": "https://x.com/rainbow_hobak",
+   "tg": false,
+   "web": "https://payday.direct/l/nGovr8pJ",
+   "status": "entered",
+   "why": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL"
+  },
+  {
    "symbol": "CHAD",
    "name": "Yes Chad",
    "mint": "8sg89KirTdjRvpxwpiVB7gT4JsegbVSdsL33bwrVpump",
-   "age_s": 51,
-   "sol_in": 12.08,
-   "buys": 21,
-   "sells": 17,
-   "rise_pct": 81.1,
-   "mcap_sol": 68.7,
+   "age_s": 82,
+   "sol_in": -3.57,
+   "buys": 28,
+   "sells": 33,
+   "rise_pct": -19.4,
+   "mcap_sol": 30.6,
    "dev_pct": 15.2,
-   "big_sell": 2.28,
+   "big_sell": 9.18,
    "x": "https://x.com/WojTheDegen/status/2126183087214092778?a=D79R3c4BAq0A1l1bakw&s=20",
    "tg": false,
    "web": "https://x.com/i/communities/2023407389253435661",
@@ -5906,7 +5988,7 @@
    "symbol": "gif",
    "name": "gif",
    "mint": "EByj25fiTY69bYgu1e6r7Yjm8e8h76D55bkQRjAnpump",
-   "age_s": 56,
+   "age_s": 87,
    "sol_in": -0.61,
    "buys": 8,
    "sells": 12,
@@ -5924,7 +6006,7 @@
    "symbol": "GAYANALPOR",
    "name": "GAYANALPORN",
    "mint": "8a4n5xJt2oWSfLhzeCgxAwtvguypJBHLZhwFhDzMpump",
-   "age_s": 95,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5942,10 +6024,10 @@
    "symbol": "Simyo",
    "name": "시묘일",
    "mint": "FfUnGMWLyKLHYVJ6UmC7rCn4TiFysAhsWzdfnJ2ppump",
-   "age_s": 117,
+   "age_s": 148,
    "sol_in": -0.92,
-   "buys": 34,
-   "sells": 57,
+   "buys": 35,
+   "sells": 58,
    "rise_pct": -5.5,
    "mcap_sol": 32.3,
    "dev_pct": 10.2,
@@ -5960,7 +6042,7 @@
    "symbol": "SPIRIT",
    "name": "Spirit Liquidity Pool",
    "mint": "5AQihDjBng43nyfC3GspBmsRCa9xzokazKcFpSZnpump",
-   "age_s": 125,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5978,7 +6060,7 @@
    "symbol": "MINDEX",
    "name": "MinDex",
    "mint": "AXgFL7WbKWLutvjzWU2E6LmcNNXveCCpJq9rHbKRpump",
-   "age_s": 129,
+   "age_s": 160,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -5996,7 +6078,7 @@
    "symbol": "Sol",
    "name": "Cupsey ansem please send me some",
    "mint": "B8wBEV23gy6KPdCQhZfULnoXVxUf8WHFnjvGvAqNpump",
-   "age_s": 130,
+   "age_s": 161,
    "sol_in": -0.0,
    "buys": 1,
    "sells": 2,
@@ -6014,12 +6096,12 @@
    "symbol": "SI",
    "name": "Santa Inu",
    "mint": "5LmBkocE4RTFScuWw2UXrJDWvgAVVYpyryP5CZ8vpump",
-   "age_s": 135,
-   "sol_in": -9.78,
+   "age_s": 166,
+   "sol_in": -10.55,
    "buys": 43,
-   "sells": 86,
-   "rise_pct": -41.5,
-   "mcap_sol": 31.5,
+   "sells": 89,
+   "rise_pct": -44.3,
+   "mcap_sol": 30.0,
    "dev_pct": 30.0,
    "big_sell": 6.9,
    "x": "https://x.com/daddyriskbets/status/2126183360032891168",
@@ -6027,42 +6109,6 @@
    "web": false,
    "status": "exited: dump: 3.3 SOL sold",
    "why": "dump: 3.3 SOL sold"
-  },
-  {
-   "symbol": "Xmas",
-   "name": "Xmas Coin",
-   "mint": "5JpmEnxfGdcYDMReQRpHk517iyKkHTVzTFFyt3Jbpump",
-   "age_s": 162,
-   "sol_in": 9.62,
-   "buys": 51,
-   "sells": 50,
-   "rise_pct": 71.7,
-   "mcap_sol": 51.2,
-   "dev_pct": 3.4,
-   "big_sell": 4.15,
-   "x": "https://x.com/PumpFun711/status/2126183218122559891",
-   "tg": false,
-   "web": false,
-   "status": "exited: TP +10%",
-   "why": "TP +10%"
-  },
-  {
-   "symbol": "100k",
-   "name": "Live until 100k challenge",
-   "mint": "DLz7eAzbXUt6TAv1AYTPLnwiohzqs4dXwyUPrW5tpump",
-   "age_s": 163,
-   "sol_in": 6.39,
-   "buys": 16,
-   "sells": 4,
-   "rise_pct": 45.9,
-   "mcap_sol": 42.9,
-   "dev_pct": 2.6,
-   "big_sell": 0.99,
-   "x": "https://x.com/PUMPATHON247/status/2126182401059799135",
-   "tg": false,
-   "web": "https://x.com/PUMPATHON247/status/2126182401059799135",
-   "status": "exited: TP +10%",
-   "why": "TP +10%"
   }
  ],
  "strategies": [
