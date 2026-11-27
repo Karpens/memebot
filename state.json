@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:45:20Z",
-    "time": "11:45:20",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.6 a minute · 0 watched · 21 rejected (snipe not bought: trades tonight 12, mayhem mode 6, no symbol or name 2)",
-    "n": 4210
-   },
-   {
-    "t": "2026-11-27T10:45:21Z",
-    "time": "11:45:21",
-    "agent": "LEARNER",
-    "coin": "BOND",
-    "action": "shadow",
-    "text": "SHADOW BOND · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021448 (curve maths, every cost) · same exits, outside the book",
-    "n": 4211
-   },
-   {
     "t": "2026-11-27T10:45:51Z",
     "time": "11:45:51",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.4 a minute · 0 watched · 17 rejected (snipe not bought: night at open  8, serial launcher 4, mayhem mode 3)",
     "n": 4809
+   },
+   {
+    "t": "2026-11-27T17:11:17Z",
+    "time": "18:11:17",
+    "agent": "LEARNER",
+    "coin": "SNOW",
+    "action": "shadow",
+    "text": "SHADOW SNOW would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.4% over 238",
+    "n": 4810
+   },
+   {
+    "t": "2026-11-27T17:11:23Z",
+    "time": "18:11:23",
+    "agent": "LEARNER",
+    "coin": "CoomCatFat",
+    "action": "shadow",
+    "text": "SHADOW CoomCatFat would have made -7.4% (5 min, only -3%) · learned x0.5 · np:buys:<70 now avg -8.4% over 240.5",
+    "n": 4811
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4809,
+  "lines": 4811,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795763453,
-    59.14
-   ],
    [
     1795763513,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795799427,
     59.14
+   ],
+   [
+    1795799487,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795799465.028831,
   "shadow": {
-   "n": 1098,
+   "n": 1100,
    "wins": 249,
-   "sum": -8066.1
+   "sum": -8080.7
   },
   "np_speed": {
    "first_in": [
@@ -31827,9 +31827,9 @@
   }
  },
  "shadow": {
-  "n": 1112,
+  "n": 1114,
   "wins": 251,
-  "sum": -8264.6,
+  "sum": -8279.2,
   "by": {
    "learner": {
     "n": 16,
@@ -31837,52 +31837,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1096,
+    "n": 1098,
     "wins": 248,
-    "sum": -8066.8
+    "sum": -8081.4
    }
   },
   "closed": [
-   {
-    "symbol": "VETO",
-    "mint": "6b423s2Ww2gK6sGjGE8hE7s1WpGyGKdQou49BY9Cpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:03:53Z",
-    "cost": 5.91,
-    "pnl_pct": 7.4,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.69,
-    "closed": "2026-11-27T17:04:40Z",
-    "exit": "TP +10%",
-    "pnl": 0.44,
-    "weight": 0.5
-   },
-   {
-    "symbol": "Nami",
-    "mint": "H2b4XMRgD4iZNZ6r3enSy2xo56QCavCgbTv1TK8npump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:01:13Z",
-    "cost": 5.91,
-    "pnl_pct": -7.8,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T17:04:51Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.46,
-    "weight": 0.5
-   },
    {
     "symbol": "Sadge",
     "mint": "H6UTsFFZLjL619htqEGZjsN3jzRkm1gJV1etqXWvpump",
@@ -32242,11 +32202,49 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.8,
     "weight": 0.5
+   },
+   {
+    "symbol": "SNOW",
+    "mint": "EEr3chVFbjt24jehtEdnu7Jp5tBxTPMShEMMYq4vjeAv",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:06:29Z",
+    "cost": 5.91,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.4,
+    "closed": "2026-11-27T17:11:17Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.43,
+    "weight": 0.5
+   },
+   {
+    "symbol": "CoomCatFat",
+    "mint": "FXHGnAk698aRUSLgxwDn7WhJ1HBZ2JZ4ECN5asxxpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:06:23Z",
+    "cost": 5.91,
+    "pnl_pct": -7.4,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T17:11:23Z",
+    "exit": "5 min, only -3%",
+    "pnl": -0.44,
+    "weight": 0.5
    }
   ],
   "open": [
-   "CoomCatFat",
-   "SNOW",
    "DUG"
   ]
  },
@@ -32289,7 +32287,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1304,
+  "shadows": 1306,
   "memory": "snipe"
  }
 }
