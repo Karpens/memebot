@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T09:03:46Z",
-    "time": "10:03:46",
-    "agent": "LEARNER",
-    "coin": "BUNZ",
-    "action": "shadow",
-    "text": "SHADOW BUNZ · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021566 (curve maths, every cost) · same exits, outside the book",
-    "n": 3669
-   },
-   {
     "t": "2026-11-27T09:04:14Z",
     "time": "10:04:14",
     "agent": "RISK",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 4.0 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 5, mayhem mode 2, serial launcher 1)",
     "n": 4268
+   },
+   {
+    "t": "2026-11-27T10:55:48Z",
+    "time": "11:55:48",
+    "agent": "LEARNER",
+    "coin": "DROPPED",
+    "action": "shadow",
+    "text": "SHADOW DROPPED would have made -22.4% (stop -19%) · learned x0.5 · np:sol:3-6 now avg -11.0% over 76.5",
+    "n": 4269
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4268,
+  "lines": 4269,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795776926.645301,
   "shadow": {
-   "n": 889,
+   "n": 890,
    "wins": 199,
-   "sum": -6829.2
+   "sum": -6851.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 903,
+  "n": 904,
   "wins": 201,
-  "sum": -7027.7,
+  "sum": -7050.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 887,
+    "n": 888,
     "wins": 198,
-    "sum": -6829.9
+    "sum": -6852.3
    }
   },
   "closed": [
-   {
-    "symbol": "TAIL",
-    "mint": "6y6RGWHdDhNRxVT7zs7t8AkLLJZS8G7Gb9En66T3hFvi",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:44:15Z",
-    "cost": 36.2,
-    "pnl_pct": -7.9,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.02,
-    "closed": "2026-11-27T10:47:17Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.85,
-    "weight": 0.5
-   },
    {
     "symbol": "ASHESA",
     "mint": "FzRAf8RNe48unHZJm87rEVcRgEP8FaDNuxAgJ4AUpump",
@@ -31743,10 +31723,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.94,
     "weight": 0.5
+   },
+   {
+    "symbol": "DROPPED",
+    "mint": "C1nGvsGQ3yUxTRqaKinzqdrHw35bqDZDfQsbmA62pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:52:34Z",
+    "cost": 36.2,
+    "pnl_pct": -22.4,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 3.18,
+    "closed": "2026-11-27T10:55:48Z",
+    "exit": "stop -19%",
+    "pnl": -8.12,
+    "weight": 0.5
    }
   ],
   "open": [
-   "DROPPED",
    "公式",
    "NVIDIA",
    "GOONEY"
@@ -31783,7 +31782,7 @@
    {
     "label": "snipe · np:sol:3-6",
     "n": 76,
-    "avg": -10.9
+    "avg": -11.0
    },
    {
     "label": "snipe · np:buys:<70",
@@ -31791,7 +31790,7 @@
     "avg": -9.2
    }
   ],
-  "shadows": 887,
+  "shadows": 888,
   "memory": "snipe"
  }
 }
