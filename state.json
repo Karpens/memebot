@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:21:13Z",
-    "time": "20:21:13",
-    "agent": "LEARNER",
-    "coin": "HARVEST",
-    "action": "shadow",
-    "text": "SHADOW HARVEST would have made -14.6% (stop -10%) · learned x0.5 · tier:scalp now avg -8.4% over 300",
-    "n": 5970
-   },
-   {
-    "t": "2026-11-27T19:21:15Z",
-    "time": "20:21:15",
-    "agent": "LEARNER",
-    "coin": "Holly",
-    "action": "shadow",
-    "text": "SHADOW Holly · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000028278 (curve maths, every cost) · same exits, outside the book",
-    "n": 5971
-   },
-   {
     "t": "2026-11-27T19:21:16Z",
     "time": "20:21:16",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW nothing would have made +6.4% (TP +10%) · learned x0.5 · np:social:none now avg -8.5% over 300",
     "n": 6569
+   },
+   {
+    "t": "2026-11-27T20:36:36Z",
+    "time": "21:36:36",
+    "agent": "LEARNER",
+    "coin": "ALIEN",
+    "action": "shadow",
+    "text": "SHADOW ALIEN · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000057977 (curve maths, every cost) · same exits, outside the book",
+    "n": 6570
+   },
+   {
+    "t": "2026-11-27T20:36:39Z",
+    "time": "21:36:39",
+    "agent": "LEARNER",
+    "coin": "ALIEN",
+    "action": "shadow",
+    "text": "SHADOW ALIEN would have made +15.9% (TP +10%) · learned x0.5 · np:dev:2-5 now avg -7.5% over 300",
+    "n": 6571
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6569,
+  "lines": 6571,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795811761.44346,
   "shadow": {
-   "n": 1800,
-   "wins": 400,
-   "sum": -13405.2
+   "n": 1801,
+   "wins": 401,
+   "sum": -13389.3
   },
   "np_speed": {
    "first_in": [
@@ -31931,9 +31931,9 @@
   }
  },
  "shadow": {
-  "n": 1814,
-  "wins": 402,
-  "sum": -13603.7,
+  "n": 1815,
+  "wins": 403,
+  "sum": -13587.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31941,32 +31941,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1798,
-    "wins": 399,
-    "sum": -13405.9
+    "n": 1799,
+    "wins": 400,
+    "sum": -13390.0
    }
   },
   "closed": [
-   {
-    "symbol": "BUENO",
-    "mint": "73i1ohbE27emBRPAwDN3fjc6Zee1yBDQ5Viu4YLph6hX",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T20:29:16Z",
-    "cost": 5.91,
-    "pnl_pct": -18.3,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.51,
-    "closed": "2026-11-27T20:29:16Z",
-    "exit": "dump: 2.2 SOL sold",
-    "pnl": -1.08,
-    "weight": 0.5
-   },
    {
     "symbol": "PEBBLES",
     "mint": "C3n14BoVqgeV1SV5tbbKewYAeVERyYcjb9154c1Fpump",
@@ -32346,6 +32326,26 @@
     "exit": "TP +10%",
     "pnl": 0.38,
     "weight": 0.5
+   },
+   {
+    "symbol": "ALIEN",
+    "mint": "6LvbDuuqQkhHcrPAfgYKr2N4Bp89GBbtQnuZhcujpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T20:36:36Z",
+    "cost": 5.91,
+    "pnl_pct": 15.9,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 19.6,
+    "closed": "2026-11-27T20:36:39Z",
+    "exit": "TP +10%",
+    "pnl": 0.94,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32396,7 +32396,7 @@
     "avg": -8.9
    }
   ],
-  "shadows": 2006,
+  "shadows": 2007,
   "memory": "snipe"
  }
 }
