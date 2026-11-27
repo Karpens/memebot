@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:42:04Z",
-    "time": "21:42:04",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.4 a minute · 0 watched · 19 rejected (snipe not bought: night at open  10, serial launcher 3, no symbol or name 3)",
-    "n": 6616
-   },
-   {
-    "t": "2026-11-27T20:42:07Z",
-    "time": "21:42:07",
-    "agent": "LEARNER",
-    "coin": "SpaceX",
-    "action": "shadow",
-    "text": "SHADOW SpaceX · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000061091 (curve maths, every cost) · same exits, outside the book",
-    "n": 6617
-   },
-   {
     "t": "2026-11-27T20:42:21Z",
     "time": "21:42:21",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Voyager · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000098202 (curve maths, every cost) · same exits, outside the book",
     "n": 7215
+   },
+   {
+    "t": "2026-11-27T21:55:30Z",
+    "time": "22:55:30",
+    "agent": "LEARNER",
+    "coin": "Voyager",
+    "action": "shadow",
+    "text": "SHADOW Voyager would have made -13.1% (dump: 2.1 SOL sold) · learned x0.5 · np:dev:2-5 now avg -7.4% over 300",
+    "n": 7216
+   },
+   {
+    "t": "2026-11-27T21:55:48Z",
+    "time": "22:55:48",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.4 a minute · 0 watched · 17 rejected (snipe not bought: night at open  14, mayhem mode 2, serial launcher 1)",
+    "n": 7217
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7215,
+  "lines": 7217,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795780527,
-    59.14
-   ],
    [
     1795780587,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795816488,
     59.14
+   ],
+   [
+    1795816548,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795816488.44339,
+  "np_said": 1795816548.443399,
   "shadow": {
-   "n": 2048,
+   "n": 2049,
    "wins": 471,
-   "sum": -14879.3
+   "sum": -14892.4
   },
   "np_speed": {
    "first_in": [
@@ -31982,9 +31982,9 @@
   }
  },
  "shadow": {
-  "n": 2062,
+  "n": 2063,
   "wins": 473,
-  "sum": -15077.8,
+  "sum": -15090.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31992,32 +31992,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2046,
+    "n": 2047,
     "wins": 470,
-    "sum": -14880.0
+    "sum": -14893.1
    }
   },
   "closed": [
-   {
-    "symbol": "CRST",
-    "mint": "EvvuvMQPTJagiJswjnCZZJWCPu8937Yv8yEquAnBpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:46:56Z",
-    "cost": 5.91,
-    "pnl_pct": -5.0,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T21:51:29Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.3,
-    "weight": 0.5
-   },
    {
     "symbol": "PINATA",
     "mint": "3bBUT5fr4vfEJmbqLNci5PiENFMp8gKaKs65ErAXpump",
@@ -32397,6 +32377,26 @@
     "exit": "stop -12%",
     "pnl": -0.95,
     "weight": 0.5
+   },
+   {
+    "symbol": "Voyager",
+    "mint": "52tbRszrEmfKAXoYAFZ3vgkj8dyPijQ8mZKMpshbpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:55:26Z",
+    "cost": 5.91,
+    "pnl_pct": -13.1,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 9,
+    "sol_in": 34.6,
+    "closed": "2026-11-27T21:55:30Z",
+    "exit": "dump: 2.1 SOL sold",
+    "pnl": -0.78,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32405,8 +32405,7 @@
    "SpaceX",
    "Apple",
    "Orbitard",
-   "MoonBot",
-   "Voyager"
+   "MoonBot"
   ]
  },
  "learner_summary": {
@@ -32448,7 +32447,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 2254,
+  "shadows": 2255,
   "memory": "snipe"
  }
 }
