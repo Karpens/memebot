@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:56:44Z",
-    "time": "05:56:44",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "11 losses in a row · 2 min pause",
-    "n": 2127
-   },
-   {
-    "t": "2026-11-27T04:56:44Z",
-    "time": "05:56:44",
-    "agent": "EXECUTOR",
-    "coin": "NiggaCat",
-    "action": "exit",
-    "text": "EXIT NiggaCat $-2.90 (-13%) · curve quiet for 3 min (no trade)",
-    "n": 2128
-   },
-   {
-    "t": "2026-11-27T04:56:44Z",
-    "time": "05:56:44",
-    "agent": "LEARNER",
-    "coin": "NiggaCat",
-    "action": "learn",
-    "text": "learned · np:age:<30s now avg -10.2% over 300",
-    "n": 2129
-   },
-   {
     "t": "2026-11-27T04:57:04Z",
     "time": "05:57:04",
     "agent": "SCANNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW INUX would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.2% over 180",
     "n": 2726
+   },
+   {
+    "t": "2026-11-27T06:04:45Z",
+    "time": "07:04:45",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.0 a minute · 1 watched · 11 rejected (snipe not bought: trades tonight 6, mayhem mode 3, serial launcher 2) · closest THREE: no curve reading yet",
+    "n": 2727
+   },
+   {
+    "t": "2026-11-27T06:04:48Z",
+    "time": "07:04:48",
+    "agent": "LEARNER",
+    "coin": "DOOM",
+    "action": "shadow",
+    "text": "SHADOW DOOM · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021212 (curve maths, every cost) · same exits, outside the book",
+    "n": 2728
+   },
+   {
+    "t": "2026-11-27T06:05:00Z",
+    "time": "07:05:00",
+    "agent": "LEARNER",
+    "coin": "PEPSODENT",
+    "action": "shadow",
+    "text": "SHADOW PEPSODENT would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.8% over 176",
+    "n": 2729
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2726,
+  "lines": 2729,
   "flags": [
    {
     "coin": "Kibo",
@@ -21031,17 +21031,21 @@
    [
     1795759433,
     361.97
+   ],
+   [
+    1795759493,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795759425.780847,
+  "np_said": 1795759485.780873,
   "shadow": {
-   "n": 297,
+   "n": 298,
    "wins": 51,
-   "sum": -2611.4
+   "sum": -2619.3
   },
   "np_speed": {
    "first_in": [
@@ -30624,9 +30628,9 @@
   }
  },
  "shadow": {
-  "n": 311,
+  "n": 312,
   "wins": 53,
-  "sum": -2809.9,
+  "sum": -2817.8,
   "by": {
    "learner": {
     "n": 16,
@@ -30634,32 +30638,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 295,
+    "n": 296,
     "wins": 50,
-    "sum": -2612.1
+    "sum": -2620.0
    }
   },
   "closed": [
-   {
-    "symbol": "SantaHat",
-    "mint": "8CBFRocgDKEdEwmfzxThcWB2gHoo8BiUeq7b6RQfcpeF",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:40:48Z",
-    "cost": 36.45,
-    "pnl_pct": -14.2,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 6.52,
-    "closed": "2026-11-27T05:41:06Z",
-    "exit": "stop -11%",
-    "pnl": -5.19,
-    "weight": 0.5
-   },
    {
     "symbol": "SACK",
     "mint": "4MvHRvUv9obx4SmQU4uMKLyXbD3fSCxUpKNXrzkRpump",
@@ -31039,15 +31023,35 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.89,
     "weight": 0.5
+   },
+   {
+    "symbol": "PEPSODENT",
+    "mint": "7Z8jMpuB6ACpiVTcwETSyZqA8j7k3XuTyA7JXEYSpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:00:00Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:05:00Z",
+    "exit": "5 min, only -4%",
+    "pnl": -2.85,
+    "weight": 0.5
    }
   ],
   "open": [
-   "PEPSODENT",
    "BONCOIN",
    "Christmas",
    "PILLOWLINE",
    "PRS",
-   "DRUNK"
+   "DRUNK",
+   "DOOM"
   ]
  },
  "learner_summary": {
@@ -31089,7 +31093,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 295,
+  "shadows": 296,
   "memory": "snipe"
  }
 }

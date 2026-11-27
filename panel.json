@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:04:43Z",
+ "updated": "2026-11-27T06:05:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2726,
+  "lines": 2729,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -1767,6 +1767,10 @@
   ],
   [
    1795759433,
+   361.97
+  ],
+  [
+   1795759493,
    361.97
   ]
  ],
@@ -4036,33 +4040,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T05:37:24Z",
-   "time": "06:37:24",
-   "agent": "NEWS",
-   "coin": "STEEP",
-   "action": "plan",
-   "text": "hold plan · 2.5/10 (X post, web, inflow 7.1 SOL) · scalp: +10",
-   "n": 2527
-  },
-  {
-   "t": "2026-11-27T05:37:25Z",
-   "time": "06:37:25",
-   "agent": "EXECUTOR",
-   "coin": "STEEP",
-   "action": "exit",
-   "text": "EXIT STEEP $-7.44 (-19%) · dump: 2.3 SOL sold · out · 0.0 s after the reading",
-   "n": 2528
-  },
-  {
-   "t": "2026-11-27T05:37:25Z",
-   "time": "06:37:25",
-   "agent": "LEARNER",
-   "coin": "STEEP",
-   "action": "learn",
-   "text": "learned · np:social:web now avg -9.3% over 152.5",
-   "n": 2529
-  },
-  {
    "t": "2026-11-27T05:37:29Z",
    "time": "06:37:29",
    "agent": "SCANNER",
@@ -5834,6 +5811,33 @@
    "action": "shadow",
    "text": "SHADOW INUX would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -9.2% over 180",
    "n": 2726
+  },
+  {
+   "t": "2026-11-27T06:04:45Z",
+   "time": "07:04:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 1 watched · 11 rejected (snipe not bought: trades tonight 6, mayhem mode 3, serial launcher 2) · closest THREE: no curve reading yet",
+   "n": 2727
+  },
+  {
+   "t": "2026-11-27T06:04:48Z",
+   "time": "07:04:48",
+   "agent": "LEARNER",
+   "coin": "DOOM",
+   "action": "shadow",
+   "text": "SHADOW DOOM · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021212 (curve maths, every cost) · same exits, outside the book",
+   "n": 2728
+  },
+  {
+   "t": "2026-11-27T06:05:00Z",
+   "time": "07:05:00",
+   "agent": "LEARNER",
+   "coin": "PEPSODENT",
+   "action": "shadow",
+   "text": "SHADOW PEPSODENT would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.8% over 176",
+   "n": 2729
   }
  ],
  "nights": [
@@ -5894,7 +5898,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5902,15 +5906,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1209,
-    "last_event_age_s": 0.3,
+    "events": 1210,
+    "last_event_age_s": 29.0,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 37387,
+    "events": 37481,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -5918,8 +5922,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 809,
-    "last_event_age_s": 38.8,
+    "events": 811,
+    "last_event_age_s": 28.8,
     "errors": 80,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5975,29 +5979,47 @@
     "avg": -14.4
    }
   ],
-  "shadows": 295,
+  "shadows": 296,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17130,
+   "sent": 17165,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17129,
+   "sent": 17164,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DOOM",
+   "name": "DoomsDay",
+   "mint": "DJ3jYoWWSejGFSXnoBzVkxyvz4rEe3BZAxYvekhdpump",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/skllper",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "BANGKOK",
    "name": "BANGKOK",
    "mint": "2oZpYvgZLuTCtwroWuh78XP5ws8uZ5696NK23PXUpump",
-   "age_s": 0,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6005,7 +6027,7 @@
    "mcap_sol": 28.1,
    "dev_pct": 0.4,
    "big_sell": 0.0,
-   "x": false,
+   "x": "https://x.com/cz_binance/status/2126194774931857559",
    "tg": false,
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
@@ -6015,12 +6037,12 @@
    "symbol": "0",
    "name": "0",
    "mint": "3XZuRcgf8BuVLpJiPZAEVuV53n1991FK4KxATc4Dpump",
-   "age_s": 38,
-   "sol_in": 1214.32,
-   "buys": 10,
-   "sells": 14,
-   "rise_pct": 32231.3,
-   "mcap_sol": 9096.2,
+   "age_s": 71,
+   "sol_in": 600.47,
+   "buys": 12,
+   "sells": 17,
+   "rise_pct": 27646.5,
+   "mcap_sol": 7806.3,
    "dev_pct": 0.3,
    "big_sell": 840.04,
    "x": false,
@@ -6033,7 +6055,7 @@
    "symbol": "THREE",
    "name": "Three Step",
    "mint": "9q9GUT7joaPrVycsVJcithrK2hXr6ACLTbQvC1Tibmus",
-   "age_s": 40,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6051,12 +6073,12 @@
    "symbol": "DRUNK",
    "name": "DRUNK WIF GRANNY",
    "mint": "Ad6XvsQew4GvTw5t9E9b6fKdaSSJcAftpqyGoUcQpump",
-   "age_s": 60,
-   "sol_in": 0.27,
-   "buys": 1,
+   "age_s": 93,
+   "sol_in": 0.28,
+   "buys": 2,
    "sells": 1,
    "rise_pct": 1.8,
-   "mcap_sol": 30.1,
+   "mcap_sol": 30.2,
    "dev_pct": 3.1,
    "big_sell": 0.62,
    "x": "https://x.com/JotchuaMeme/status/2046286281890812298",
@@ -6069,12 +6091,12 @@
    "symbol": "JBL",
    "name": "Jacket Booted Lobster",
    "mint": "A5niPcd8joUAYWH1j4aJBZE7mjuU8KZNRLNP9Q3vpump",
-   "age_s": 92,
-   "sol_in": 9.99,
-   "buys": 43,
-   "sells": 33,
-   "rise_pct": 64.3,
-   "mcap_sol": 64.1,
+   "age_s": 125,
+   "sol_in": 20.77,
+   "buys": 58,
+   "sells": 40,
+   "rise_pct": 151.6,
+   "mcap_sol": 98.1,
    "dev_pct": 16.5,
    "big_sell": 2.77,
    "x": "https://x.com/twaniimals/status/2126194536464740577",
@@ -6087,7 +6109,7 @@
    "symbol": "PRS",
    "name": "Perspolis",
    "mint": "uxYzHXmNBmPeUAkKzvXJLWPbuvJ4ubUazaEtmdZpump",
-   "age_s": 96,
+   "age_s": 129,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -6105,7 +6127,7 @@
    "symbol": "BGO",
    "name": "BIG GUYS ONLY",
    "mint": "DqLYToubzud6He8dWMtqfG1rY8aWSTcL4iNsZ2UDpump",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6123,14 +6145,14 @@
    "symbol": "PILLOWLINE",
    "name": "Pillow Line",
    "mint": "GkJmjPG7JwWanqeXG3Xfm3jTNxNq7xMhUXgmfqYXpump",
-   "age_s": 110,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
+   "age_s": 143,
+   "sol_in": 0.01,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.1,
    "mcap_sol": 28.1,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/dollardeployer",
    "tg": false,
    "web": "https://dollardeployer.netlify.app/coin/007/",
@@ -6141,7 +6163,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "5UkdQwGdJtatPRG6KLgkdw2xSkp8FtjV9r9XNH4kpump",
-   "age_s": 111,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6159,7 +6181,7 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "FnpXQR1EgTjxYgR3rqibKGxWtgX69J8DaHuL2FCLpump",
-   "age_s": 129,
+   "age_s": 162,
    "sol_in": -0.1,
    "buys": 1,
    "sells": 1,
@@ -6177,7 +6199,7 @@
    "symbol": "BGO",
    "name": "BIG GUYS ONLY",
    "mint": "G6bk3Ary2sv5JFbEiYQauAs61RB9aFUpTpK76kyBpump",
-   "age_s": 135,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6190,30 +6212,28 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "cz",
-   "name": "cz",
-   "mint": "EWkZ6f8K7bVnFP5Wv2JfCocAvRkK6wdSSqkJpHFmQom1",
-   "age_s": 174,
-   "sol_in": -4.94,
-   "buys": 2,
-   "sells": 10,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 2.96,
-   "x": "https://x.com/MarioPrezldente/status/2126194763439411615",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 12 more coins in 60 min",
-   "why": "serial launcher: 12 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "DOOM",
+   "mint": "DJ3jYoWWSejGFSXnoBzVkxyvz4rEe3BZAxYvekhdpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:04:48Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "DRUNK",
    "mint": "Ad6XvsQew4GvTw5t9E9b6fKdaSSJcAftpqyGoUcQpump",
@@ -6222,7 +6242,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:03:43Z",
    "cost": 36.2,
-   "pnl_pct": -7.6,
+   "pnl_pct": -7.5,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6254,7 +6274,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:02:54Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -3.9,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -6297,18 +6317,22 @@
   {
    "symbol": "PEPSODENT",
    "mint": "7Z8jMpuB6ACpiVTcwETSyZqA8j7k3XuTyA7JXEYSpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:00:00Z",
    "cost": 36.2,
-   "pnl_pct": -4.1,
+   "pnl_pct": -7.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T06:05:00Z",
+   "exit": "5 min, only -4%",
+   "pnl": -2.85,
+   "weight": 0.5
   },
   {
    "symbol": "INUX",
@@ -6689,33 +6713,13 @@
    "exit": "dump: 2.6 SOL sold",
    "pnl": -6.27,
    "weight": 0.5
-  },
-  {
-   "symbol": "SantaHat",
-   "mint": "8CBFRocgDKEdEwmfzxThcWB2gHoo8BiUeq7b6RQfcpeF",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T05:40:48Z",
-   "cost": 36.45,
-   "pnl_pct": -14.2,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 6.52,
-   "closed": "2026-11-27T05:41:06Z",
-   "exit": "stop -11%",
-   "pnl": -5.19,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 311,
+  "n": 312,
   "wins": 53,
   "win_rate": 17.0,
-  "mean_pnl_pct": -9.04,
+  "mean_pnl_pct": -9.03,
   "open": 6,
   "learner": {
    "n": 16,
@@ -6724,7 +6728,7 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 295,
+   "n": 296,
    "wins": 50,
    "win_rate": 16.9,
    "mean_pnl_pct": -8.85
