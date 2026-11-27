@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:51:55Z",
-    "time": "06:51:55",
-    "agent": "EXECUTOR",
-    "coin": "KLAUSE",
-    "action": "exit",
-    "text": "EXIT KLAUSE +$5.69 (+16%) · TP +10% · out · 0.0 s after the reading",
-    "n": 2660
-   },
-   {
-    "t": "2026-11-27T05:51:55Z",
-    "time": "06:51:55",
-    "agent": "LEARNER",
-    "coin": "KLAUSE",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -9.5% over 176.5",
-    "n": 2661
-   },
-   {
-    "t": "2026-11-27T05:52:21Z",
-    "time": "06:52:21",
-    "agent": "SCANNER",
-    "coin": "DUNEUSSY",
-    "action": "flag",
-    "text": "snipe · first reading 0.6 s after the create · 3.8 SOL in · +24% since the create · mcap 42 SOL",
-    "n": 2662
-   },
-   {
     "t": "2026-11-27T05:52:21Z",
     "time": "06:52:21",
     "agent": "SIZER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW MITTS would have made -19.3% (dump: 2.9 SOL sold) · learned x0.5 · tier:swing now avg -12.7% over 36.5",
     "n": 3259
+   },
+   {
+    "t": "2026-11-27T07:50:30Z",
+    "time": "08:50:30",
+    "agent": "LEARNER",
+    "coin": "MISS",
+    "action": "shadow",
+    "text": "SHADOW MISS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021657 (curve maths, every cost) · same exits, outside the book",
+    "n": 3260
+   },
+   {
+    "t": "2026-11-27T07:50:30Z",
+    "time": "08:50:30",
+    "agent": "LEARNER",
+    "coin": "SWARM",
+    "action": "shadow",
+    "text": "SHADOW SWARM would have made -16.1% (stop -13%) · learned x0.5 · np:social:web now avg -8.4% over 221",
+    "n": 3261
+   },
+   {
+    "t": "2026-11-27T07:50:46Z",
+    "time": "08:50:46",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.4 a minute · 0 watched · 13 rejected (snipe not bought: trades tonight 6, mayhem mode 5, serial launcher 2)",
+    "n": 3262
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3259,
+  "lines": 3262,
   "flags": [
    {
     "coin": "Kibo",
@@ -21461,11 +21461,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795765786.645325,
+  "np_said": 1795765846.645357,
   "shadow": {
-   "n": 500,
+   "n": 501,
    "wins": 96,
-   "sum": -4135.0
+   "sum": -4151.1
   },
   "np_speed": {
    "first_in": [
@@ -31048,9 +31048,9 @@
   }
  },
  "shadow": {
-  "n": 514,
+  "n": 515,
   "wins": 98,
-  "sum": -4333.5,
+  "sum": -4349.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31058,32 +31058,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 498,
+    "n": 499,
     "wins": 95,
-    "sum": -4135.7
+    "sum": -4151.8
    }
   },
   "closed": [
-   {
-    "symbol": "ATX",
-    "mint": "86rba6Q3JJSHN7oNwYQgKXbdm8qSNeZVCes9sdXKpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:38:30Z",
-    "cost": 36.2,
-    "pnl_pct": -33.0,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 4.72,
-    "closed": "2026-11-27T07:39:01Z",
-    "exit": "dump: 5.9 SOL sold",
-    "pnl": -11.95,
-    "weight": 0.5
-   },
    {
     "symbol": "Claude AI",
     "mint": "9Cw7ZmTwiamj7wR64bpcAh3uYeUTx3TdBh8ByjjJpump",
@@ -31463,11 +31443,31 @@
     "exit": "dump: 2.9 SOL sold",
     "pnl": -6.99,
     "weight": 0.5
+   },
+   {
+    "symbol": "SWARM",
+    "mint": "EDLShxBCHXQ8fSqcW9qtafASEAbvX1mDyHXMQEkjpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:48:24Z",
+    "cost": 36.2,
+    "pnl_pct": -16.1,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.9,
+    "closed": "2026-11-27T07:50:30Z",
+    "exit": "stop -13%",
+    "pnl": -5.84,
+    "weight": 0.5
    }
   ],
   "open": [
-   "SWARM",
-   "GOATCHASE"
+   "GOATCHASE",
+   "MISS"
   ]
  },
  "learner_summary": {
@@ -31509,7 +31509,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 498,
+  "shadows": 499,
   "memory": "snipe"
  }
 }
