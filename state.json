@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:04:27Z",
-    "time": "09:04:27",
-    "agent": "LEARNER",
-    "coin": "21",
-    "action": "shadow",
-    "text": "SHADOW 21 would have made -10.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.9% over 173",
-    "n": 3348
-   },
-   {
     "t": "2026-11-27T08:04:43Z",
     "time": "09:04:43",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 9.0 a minute · 0 watched · 32 rejected (serial launcher 22, snipe not bought: trades tonight 5, mayhem mode 4)",
     "n": 3947
+   },
+   {
+    "t": "2026-11-27T09:57:29Z",
+    "time": "10:57:29",
+    "agent": "LEARNER",
+    "coin": "TODD",
+    "action": "shadow",
+    "text": "SHADOW TODD would have made -13.7% (dump: 2.5 SOL sold) · learned x0.5 · np:social:web now avg -8.2% over 282.5",
+    "n": 3948
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3947,
+  "lines": 3948,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795737360,
-    82.3
-   ],
    [
     1795737420,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795773374,
     361.97
+   ],
+   [
+    1795773434,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795773415.645336,
   "shadow": {
-   "n": 764,
+   "n": 765,
    "wins": 167,
-   "sum": -6225.1
+   "sum": -6238.8
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 778,
+  "n": 779,
   "wins": 169,
-  "sum": -6423.6,
+  "sum": -6437.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 762,
+    "n": 763,
     "wins": 166,
-    "sum": -6225.8
+    "sum": -6239.5
    }
   },
   "closed": [
-   {
-    "symbol": "CMS",
-    "mint": "Dx3Ehv13KiZSBqmU1nUGjXfPdnkUS8L8CbmfxQ2Fu71G",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:42:09Z",
-    "cost": 36.2,
-    "pnl_pct": -12.2,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.79,
-    "closed": "2026-11-27T09:47:09Z",
-    "exit": "5 min, only -8%",
-    "pnl": -4.42,
-    "weight": 0.5
-   },
    {
     "symbol": "BAI",
     "mint": "Fp38oChj4aKn8LyQ6HVvPnezgTiTiUxJMe68Y5BJpump",
@@ -31743,10 +31723,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.84,
     "weight": 0.5
+   },
+   {
+    "symbol": "TODD",
+    "mint": "5QghyQkmXjpBRKptsZQrwKLo3YfUNPvpY1NLQCxfpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:50:28Z",
+    "cost": 36.2,
+    "pnl_pct": -13.7,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.27,
+    "closed": "2026-11-27T09:57:29Z",
+    "exit": "dump: 2.5 SOL sold",
+    "pnl": -4.95,
+    "weight": 0.5
    }
   ],
   "open": [
-   "TODD",
    "baoCat",
    "TG",
    "DVXEATA",
@@ -31792,7 +31791,7 @@
     "avg": -11.5
    }
   ],
-  "shadows": 762,
+  "shadows": 763,
   "memory": "snipe"
  }
 }
