@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:58:36Z",
-    "time": "21:58:36",
-    "agent": "LEARNER",
-    "coin": "MOON",
-    "action": "shadow",
-    "text": "SHADOW MOON · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000036841 (curve maths, every cost) · same exits, outside the book",
-    "n": 6733
-   },
-   {
-    "t": "2026-11-27T20:58:39Z",
-    "time": "21:58:39",
-    "agent": "LEARNER",
-    "coin": "MOON",
-    "action": "shadow",
-    "text": "SHADOW MOON would have made -16.5% (dump: 2.0 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.7% over 242",
-    "n": 6734
-   },
-   {
     "t": "2026-11-27T20:58:40Z",
     "time": "21:58:40",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW BLR would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.2% over 300",
     "n": 7332
+   },
+   {
+    "t": "2026-11-27T22:05:30Z",
+    "time": "23:05:30",
+    "agent": "LEARNER",
+    "coin": "DQ3",
+    "action": "shadow",
+    "text": "SHADOW DQ3 would have made -6.7% (5 min, only -2%) · learned x0.5 · np:social:none now avg -8.2% over 300",
+    "n": 7333
+   },
+   {
+    "t": "2026-11-27T22:05:34Z",
+    "time": "23:05:34",
+    "agent": "LEARNER",
+    "coin": "Rockstar",
+    "action": "shadow",
+    "text": "SHADOW Rockstar · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000059412 (curve maths, every cost) · same exits, outside the book",
+    "n": 7334
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7332,
+  "lines": 7334,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795817093.443316,
   "shadow": {
-   "n": 2100,
+   "n": 2101,
    "wins": 481,
-   "sum": -15401.7
+   "sum": -15408.4
   },
   "np_speed": {
    "first_in": [
@@ -31989,9 +31989,9 @@
   }
  },
  "shadow": {
-  "n": 2114,
+  "n": 2115,
   "wins": 483,
-  "sum": -15600.2,
+  "sum": -15606.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31999,32 +31999,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2098,
+    "n": 2099,
     "wins": 480,
-    "sum": -15402.4
+    "sum": -15409.1
    }
   },
   "closed": [
-   {
-    "symbol": "kumiro",
-    "mint": "5ZjUvziVm4f7BNma6fZHk97efHKp9gLxRNodnKyxpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:58:24Z",
-    "cost": 5.91,
-    "pnl_pct": -5.7,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T22:02:06Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.34,
-    "weight": 0.5
-   },
    {
     "symbol": "THEIA",
     "mint": "5BPpyuTuqaHsXnS8qpJwywXJfHuAJE34NSFBzeXMpump",
@@ -32404,12 +32384,32 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.48,
     "weight": 0.5
+   },
+   {
+    "symbol": "DQ3",
+    "mint": "Fi6NUCsAfjcmajEpYu7FEmT2VzSZ8q77XD4oJEBJpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:00:30Z",
+    "cost": 5.91,
+    "pnl_pct": -6.7,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 4,
+    "sol_in": 0.25,
+    "closed": "2026-11-27T22:05:30Z",
+    "exit": "5 min, only -2%",
+    "pnl": -0.4,
+    "weight": 0.5
    }
   ],
   "open": [
-   "DQ3",
    "CRT$",
-   "CI"
+   "CI",
+   "Rockstar"
   ]
  },
  "learner_summary": {
@@ -32446,12 +32446,12 @@
     "avg": -10.2
    },
    {
-    "label": "snipe · hour:23-01",
-    "n": 10,
-    "avg": -12.6
+    "label": "snipe · np:dev:8+",
+    "n": 260,
+    "avg": -8.5
    }
   ],
-  "shadows": 2306,
+  "shadows": 2307,
   "memory": "snipe"
  }
 }
