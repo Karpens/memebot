@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:35:09Z",
+ "updated": "2026-11-27T10:35:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4159,
+  "lines": 4160,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795739640,
-   82.3
-  ],
   [
    1795739700,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795775654,
    361.97
+  ],
+  [
+   1795775714,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,15 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:00:03Z",
-   "time": "11:00:03",
-   "agent": "LEARNER",
-   "coin": "RICE",
-   "action": "shadow",
-   "text": "SHADOW RICE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000048923 (curve maths, every cost) · same exits, outside the book",
-   "n": 3960
-  },
-  {
    "t": "2026-11-27T10:00:05Z",
    "time": "11:00:05",
    "agent": "LEARNER",
@@ -6538,6 +6529,15 @@
    "action": "shadow",
    "text": "SHADOW Hero would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.3% over 236.5",
    "n": 4159
+  },
+  {
+   "t": "2026-11-27T10:35:15Z",
+   "time": "11:35:15",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 10 rejected (mayhem mode 6, snipe not bought: trades tonight 3, serial launcher 1)",
+   "n": 4160
   }
  ],
  "nights": [
@@ -6599,30 +6599,30 @@
   "gt_sec": 20,
   "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 0,
+  "watch_ms": 1,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1037,
-    "last_event_age_s": 1.7,
+    "events": 1040,
+    "last_event_age_s": 2.9,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22216,
-    "last_event_age_s": 0.1,
+    "events": 22270,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 620,
-    "last_event_age_s": 102.7,
+    "events": 621,
+    "last_event_age_s": 3.6,
     "errors": 27,
     "last_error": "195.26.231.33: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)"
    }
@@ -6635,7 +6635,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 4
  },
@@ -6684,23 +6684,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11989,
+   "sent": 12020,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12000,
+   "sent": 12031,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MACAW",
+   "name": "The Macaw",
+   "mint": "4p4rNDCHNH78ZjmqQaLeq31pxTRPvn67aqGEGT1QUaiS",
+   "age_s": 3,
+   "sol_in": 4.84,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 29.6,
+   "mcap_sol": 49.2,
+   "dev_pct": 15.2,
+   "big_sell": 0.01,
+   "x": "https://x.com/FolkPepe200/status/2126263565417853181",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "HstjSQzgbvQjxvUhhuc6Prgji16d1SaQzwSGysqXPPar",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 42.0,
+   "dev_pct": 19.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "DEUGzgkt3U68Z4j7M1h7bbsRGYTA7Mf1cxHxPsNEpump",
-   "age_s": 1,
+   "age_s": 30,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6718,7 +6754,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "FV3HRyDCfutssja7EXLny7WysMij1x1JSTBgmz4vpump",
-   "age_s": 48,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6736,7 +6772,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "6xoapgiaT6NbQ3gFLf3yT3pqsPAvFV546zymGQwnpump",
-   "age_s": 81,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6754,14 +6790,14 @@
    "symbol": "FLOPCAT",
    "name": "Flip-Flop CAT",
    "mint": "BCpTPtucgTykAWtr5fDu1sJ8qtXcbQNb2AZybbXfpump",
-   "age_s": 102,
-   "sol_in": 17.9,
-   "buys": 45,
-   "sells": 38,
-   "rise_pct": 138.0,
-   "mcap_sol": 80.4,
+   "age_s": 131,
+   "sol_in": 14.96,
+   "buys": 56,
+   "sells": 50,
+   "rise_pct": 111.3,
+   "mcap_sol": 71.4,
    "dev_pct": 9.7,
-   "big_sell": 2.13,
+   "big_sell": 2.87,
    "x": "https://x.com/Big_Kandle/status/2126262450672832959",
    "tg": false,
    "web": "https://x.com/JudithTheHR/status/2125994363826389125?s=20",
@@ -6772,7 +6808,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "oBBQioZJNVK6ULNwYSZ9p224fp27pSfHYBf2sSapump",
-   "age_s": 106,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6790,7 +6826,7 @@
    "symbol": "Struggle",
    "name": "Struggle Cat",
    "mint": "YMKGSmUHvXCSiN8MVhAFZ6hse9tx13i4mYvUUsXpump",
-   "age_s": 114,
+   "age_s": 143,
    "sol_in": -8.19,
    "buys": 7,
    "sells": 15,
@@ -6808,7 +6844,7 @@
    "symbol": "Catfat",
    "name": "Cat fat",
    "mint": "5vn8wBHsFiEJ8YhLmYk5tF3oVegF8PFSRhvmxhLFpump",
-   "age_s": 119,
+   "age_s": 148,
    "sol_in": -0.09,
    "buys": 0,
    "sells": 1,
@@ -6826,7 +6862,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "3hYbJA5rmyA8Shv48DPBx9DLB4VXh9AvMz8Z6MkCpump",
-   "age_s": 125,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6844,49 +6880,13 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "HK8WJTes7NwwYhqrGTSrynHDnNgN1EdJHRn1Mebcpump",
-   "age_s": 138,
+   "age_s": 167,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 29.8,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GOAT",
-   "name": "Greatest Of All Tokens",
-   "mint": "64r9NLRhCtBVAe8T3oE2KNEmf9xRajgoUEzwwpYipump",
-   "age_s": 155,
-   "sol_in": -0.2,
-   "buys": 11,
-   "sells": 13,
-   "rise_pct": -1.3,
-   "mcap_sol": 29.4,
-   "dev_pct": 3.4,
-   "big_sell": 6.23,
-   "x": "https://x.com/trackmeasJULY/status/2126262880672874928",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "CStwK3pwxJMBqKkJEMZtkP63v8CDomoudzEvidpepump",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6923,7 +6923,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:31:24Z",
    "cost": 36.2,
-   "pnl_pct": -1.2,
+   "pnl_pct": -1.1,
    "tier": "swing",
    "score": 3,
    "steps": 0,
