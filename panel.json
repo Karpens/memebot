@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:59:15Z",
+ "updated": "2026-11-27T06:59:48Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2986,
+  "lines": 2989,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4256,33 +4256,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T06:21:27Z",
-   "time": "07:21:27",
-   "agent": "LEARNER",
-   "coin": "ORC",
-   "action": "shadow",
-   "text": "SHADOW ORC · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023138 (curve maths, every cost) · same exits, outside the book",
-   "n": 2787
-  },
-  {
-   "t": "2026-11-27T06:21:43Z",
-   "time": "07:21:43",
-   "agent": "LEARNER",
-   "coin": "CRASH-OUT",
-   "action": "shadow",
-   "text": "SHADOW CRASH-OUT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024783 (curve maths, every cost) · same exits, outside the book",
-   "n": 2788
-  },
-  {
-   "t": "2026-11-27T06:21:45Z",
-   "time": "07:21:45",
-   "agent": "LEARNER",
-   "coin": "CRASH-OUT",
-   "action": "shadow",
-   "text": "SHADOW CRASH-OUT would have made -15.7% (stop -12%) · learned x0.5 · np:dev:0-2 now avg -9.0% over 188.5",
-   "n": 2789
-  },
-  {
    "t": "2026-11-27T06:21:55Z",
    "time": "07:21:55",
    "agent": "LEARNER",
@@ -6054,6 +6027,33 @@
    "action": "shadow",
    "text": "SHADOW FRQCY · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002128 (curve maths, every cost) · same exits, outside the book",
    "n": 2986
+  },
+  {
+   "t": "2026-11-27T06:59:16Z",
+   "time": "07:59:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 8 rejected (mayhem mode 4, snipe not bought: trades tonight 3, serial launcher 1)",
+   "n": 2987
+  },
+  {
+   "t": "2026-11-27T06:59:22Z",
+   "time": "07:59:22",
+   "agent": "LEARNER",
+   "coin": "D&D",
+   "action": "shadow",
+   "text": "SHADOW D&D would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.8% over 191.5",
+   "n": 2988
+  },
+  {
+   "t": "2026-11-27T06:59:27Z",
+   "time": "07:59:27",
+   "agent": "LEARNER",
+   "coin": "LEN",
+   "action": "shadow",
+   "text": "SHADOW LEN · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002261 (curve maths, every cost) · same exits, outside the book",
+   "n": 2989
   }
  ],
  "nights": [
@@ -6114,7 +6114,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6122,15 +6122,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1513,
-    "last_event_age_s": 11.2,
+    "events": 1515,
+    "last_event_age_s": 0.3,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 43687,
+    "events": 43736,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6138,8 +6138,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 971,
-    "last_event_age_s": 17.9,
+    "events": 973,
+    "last_event_age_s": 0.1,
     "errors": 86,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6152,9 +6152,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
-  "watching": 0,
-  "followed": 4
+  "creates_per_min": 3.0,
+  "watching": 1,
+  "followed": 5
  },
  "learner": {
   "samples": 249,
@@ -6195,29 +6195,65 @@
     "avg": -13.4
    }
   ],
-  "shadows": 393,
+  "shadows": 394,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20612,
+   "sent": 20647,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20611,
+   "sent": 20646,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "100x",
+   "name": "100x",
+   "mint": "4XnTZTQAnYvbhzjz1dLeSrftFtQYje4gS41x2WR6pump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 92.9,
+   "dev_pct": 48.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/hit100xx/status/2126209216759091232",
+   "tg": false,
+   "web": "https://hit100xx.fun/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "LEN",
+   "name": "LENNNIE",
+   "mint": "AjRqQrKkgupHD5NXgzyhkGRQRuWRsdDGzT6m5TMvpump",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://www.itslennnie.com/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "Gy3P9Yhvjip2c1rHmYVGWe7gcJWZevBCdecdXec4pump",
-   "age_s": 11,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6235,12 +6271,12 @@
    "symbol": "FRQCY",
    "name": "FREQUENCY",
    "mint": "5zKMBPETj7JPkqNkH5HxELkQC7oxigAKsABtBBsSpump",
-   "age_s": 18,
-   "sol_in": 0.08,
-   "buys": 2,
+   "age_s": 51,
+   "sol_in": 0.13,
+   "buys": 4,
    "sells": 0,
-   "rise_pct": 0.5,
-   "mcap_sol": 28.1,
+   "rise_pct": 0.8,
+   "mcap_sol": 28.2,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
@@ -6253,12 +6289,12 @@
    "symbol": "$404",
    "name": "404 Frog",
    "mint": "AeCMpJLZDMAZk8TvoULwJE1Vdv3V8wSGsYvKxAEjpump",
-   "age_s": 46,
-   "sol_in": 0.05,
-   "buys": 1,
+   "age_s": 79,
+   "sol_in": 0.13,
+   "buys": 4,
    "sells": 0,
-   "rise_pct": 0.3,
-   "mcap_sol": 28.4,
+   "rise_pct": 0.8,
+   "mcap_sol": 28.6,
    "dev_pct": 0.7,
    "big_sell": 0.0,
    "x": false,
@@ -6271,7 +6307,7 @@
    "symbol": "EAD",
    "name": "EMOTIONAL ABUSE DEFENCE PROJECT",
    "mint": "42knXCTgMUCuMgBeWkHdVcmmVV9aDemdgDHDGQiupump",
-   "age_s": 60,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6289,7 +6325,7 @@
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "6bd1MqXv5mj4weQ7qv7eNMvXYWtuwFZaZmJpARPFpump",
-   "age_s": 107,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6307,7 +6343,7 @@
    "symbol": "BTC",
    "name": "bitcoin",
    "mint": "3JQN4EJT5P6Q6vNizQUgGCwkmX9c7y25RL5U2bkNpump",
-   "age_s": 119,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6320,66 +6356,28 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "30X",
-   "name": "30XCOIN",
-   "mint": "6NfTybCMxqajz887eXu9HDBYeLd39NB3YyTQeTvupump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.1,
-   "dev_pct": 2.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SIRIUS",
-   "name": "Sirius",
-   "mint": "DM58i4naRZQdExbqjAST2pcm3wJcVqUCsbpV8oDHpump",
-   "age_s": 154,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.05,
-   "x": "https://x.com/ace67_x/status/2126204700555088163",
-   "tg": false,
-   "web": "https://x.com/Lanceurpump",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "GIGACAT",
-   "name": "GIGACAT",
-   "mint": "Fz5d57nUmXVsZdDKPfVUt4p1Cxuu52Xndky2mMcnpump",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "LEN",
+   "mint": "AjRqQrKkgupHD5NXgzyhkGRQRuWRsdDGzT6m5TMvpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:59:27Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0
+  },
   {
    "symbol": "FRQCY",
    "mint": "5zKMBPETj7JPkqNkH5HxELkQC7oxigAKsABtBBsSpump",
@@ -6388,7 +6386,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:58:58Z",
    "cost": 36.2,
-   "pnl_pct": -3.8,
+   "pnl_pct": -3.5,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6420,7 +6418,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:56:41Z",
    "cost": 36.2,
-   "pnl_pct": -4.3,
+   "pnl_pct": -4.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6431,18 +6429,22 @@
   {
    "symbol": "D&D",
    "mint": "J1SmNjVxZu89eUG4u6dxDB1A8shP2oCpdgHxwgnpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:54:22Z",
    "cost": 36.2,
-   "pnl_pct": -4.1,
+   "pnl_pct": -7.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T06:59:22Z",
+   "exit": "5 min, only -4%",
+   "pnl": -2.85,
+   "weight": 0.5
   },
   {
    "symbol": "$POSSUM",
@@ -6823,32 +6825,12 @@
    "exit": "5 min, only -9%",
    "pnl": -4.76,
    "weight": 0.5
-  },
-  {
-   "symbol": "safgc",
-   "mint": "HGxZc7psrtSePMeufERQNVxjResvMytJT1iDjNnzpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T06:50:57Z",
-   "cost": 36.2,
-   "pnl_pct": -39.1,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 8.0,
-   "closed": "2026-11-27T06:50:58Z",
-   "exit": "dump: 7.8 SOL sold",
-   "pnl": -14.17,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 409,
+  "n": 410,
   "wins": 74,
-  "win_rate": 18.1,
+  "win_rate": 18.0,
   "mean_pnl_pct": -8.99,
   "open": 4,
   "learner": {
@@ -6858,9 +6840,9 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 393,
+   "n": 394,
    "wins": 71,
-   "win_rate": 18.1,
+   "win_rate": 18.0,
    "mean_pnl_pct": -8.85
   }
  }
