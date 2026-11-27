@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:26:54Z",
-    "time": "06:26:54",
-    "agent": "EXECUTOR",
-    "coin": "Boobscan",
-    "action": "enter",
-    "text": "ENTER Boobscan at 0.0000029182 · slip 1.6% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 6 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2411
-   },
-   {
-    "t": "2026-11-27T05:26:54Z",
-    "time": "06:26:54",
-    "agent": "NEWS",
-    "coin": "Boobscan",
-    "action": "plan",
-    "text": "hold plan · 2/10 (X, web) · scalp: +10",
-    "n": 2412
-   },
-   {
-    "t": "2026-11-27T05:26:56Z",
-    "time": "06:26:56",
-    "agent": "EXECUTOR",
-    "coin": "ATTNX",
-    "action": "exit",
-    "text": "EXIT ATTNX $-8.45 (-19%) · stop -15% · out · 0.0 s after the reading",
-    "n": 2413
-   },
-   {
     "t": "2026-11-27T05:26:56Z",
     "time": "06:26:56",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW DOJO would have made +8.1% (dump: 2.8 SOL sold) · learned x0.5 · tier:swing now avg -15.0% over 32",
     "n": 3010
+   },
+   {
+    "t": "2026-11-27T07:02:38Z",
+    "time": "08:02:38",
+    "agent": "LEARNER",
+    "coin": "Halfcoin",
+    "action": "shadow",
+    "text": "SHADOW Halfcoin · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000039224 (curve maths, every cost) · same exits, outside the book",
+    "n": 3011
+   },
+   {
+    "t": "2026-11-27T07:02:42Z",
+    "time": "08:02:42",
+    "agent": "LEARNER",
+    "coin": "Halfcoin",
+    "action": "shadow",
+    "text": "SHADOW Halfcoin would have made -23.1% (dump: 3.3 SOL sold) · learned x0.5 · np:age:<30s now avg -8.5% over 300",
+    "n": 3012
+   },
+   {
+    "t": "2026-11-27T07:02:48Z",
+    "time": "08:02:48",
+    "agent": "LEARNER",
+    "coin": "Minions",
+    "action": "shadow",
+    "text": "SHADOW Minions · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000025255 (curve maths, every cost) · same exits, outside the book",
+    "n": 3013
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3010,
+  "lines": 3013,
   "flags": [
    {
     "coin": "Kibo",
@@ -21263,6 +21263,10 @@
    [
     1795762913,
     361.97
+   ],
+   [
+    1795762973,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21271,9 +21275,9 @@
   },
   "np_said": 1795762938.780946,
   "shadow": {
-   "n": 405,
+   "n": 406,
    "wins": 74,
-   "sum": -3604.1
+   "sum": -3627.2
   },
   "np_speed": {
    "first_in": [
@@ -30856,9 +30860,9 @@
   }
  },
  "shadow": {
-  "n": 419,
+  "n": 420,
   "wins": 76,
-  "sum": -3802.6,
+  "sum": -3825.7,
   "by": {
    "learner": {
     "n": 16,
@@ -30866,32 +30870,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 403,
+    "n": 404,
     "wins": 73,
-    "sum": -3604.8
+    "sum": -3627.9
    }
   },
   "closed": [
-   {
-    "symbol": "Atoll",
-    "mint": "atoLLZE4frr3bQGDuNvPRnqNLoyWm8HBjeDbXq9SSM5",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:53:15Z",
-    "cost": 36.2,
-    "pnl_pct": -14.6,
-    "tier": "swing",
-    "score": 4,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 15.61,
-    "closed": "2026-11-27T06:53:17Z",
-    "exit": "stop -11%",
-    "pnl": -5.27,
-    "weight": 0.5
-   },
    {
     "symbol": "HELL",
     "mint": "3KMxcj2JCkkXPnxUDu7AuEZHPLQ5fGhe7n6h5Hbgpump",
@@ -31271,11 +31255,32 @@
     "exit": "dump: 2.8 SOL sold",
     "pnl": 2.93,
     "weight": 0.5
+   },
+   {
+    "symbol": "Halfcoin",
+    "mint": "4XSBXBVRCg7PhSC98nPjmBKjRBC5A4so2nSH9RSapump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:02:38Z",
+    "cost": 36.2,
+    "pnl_pct": -23.1,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 6.96,
+    "closed": "2026-11-27T07:02:42Z",
+    "exit": "dump: 3.3 SOL sold",
+    "pnl": -8.36,
+    "weight": 0.5
    }
   ],
   "open": [
    "FRQCY",
-   "LEN"
+   "LEN",
+   "Minions"
   ]
  },
  "learner_summary": {
@@ -31286,8 +31291,8 @@
   "best": [
    {
     "label": "snipe · np:sol:6-12",
-    "n": 42,
-    "avg": -4.7
+    "n": 43,
+    "avg": -4.9
    },
    {
     "label": "snipe · hour:01-03",
@@ -31317,7 +31322,7 @@
     "avg": -13.6
    }
   ],
-  "shadows": 403,
+  "shadows": 404,
   "memory": "snipe"
  }
 }
