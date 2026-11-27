@@ -49,24 +49,6 @@
    {
     "t": "2026-11-27T05:39:19Z",
     "time": "06:39:19",
-    "agent": "SIZER",
-    "coin": "Gygax",
-    "action": "size",
-    "text": "10% of $385.03 = $38.50",
-    "n": 2555
-   },
-   {
-    "t": "2026-11-27T05:39:19Z",
-    "time": "06:39:19",
-    "agent": "EXECUTOR",
-    "coin": "Gygax",
-    "action": "enter",
-    "text": "ENTER Gygax at 0.000003 · slip 1.4% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 6 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2556
-   },
-   {
-    "t": "2026-11-27T05:39:19Z",
-    "time": "06:39:19",
     "agent": "NEWS",
     "coin": "Gygax",
     "action": "plan",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.8 a minute · 0 watched · 16 rejected (snipe not bought: trades tonight 8, mayhem mode 7, serial launcher 1)",
     "n": 3154
+   },
+   {
+    "t": "2026-11-27T07:31:59Z",
+    "time": "08:31:59",
+    "agent": "LEARNER",
+    "coin": "SPRC",
+    "action": "shadow",
+    "text": "SHADOW SPRC · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021399 (curve maths, every cost) · same exits, outside the book",
+    "n": 3155
+   },
+   {
+    "t": "2026-11-27T07:32:09Z",
+    "time": "08:32:09",
+    "agent": "LEARNER",
+    "coin": "NOTHINGCAT",
+    "action": "shadow",
+    "text": "SHADOW NOTHINGCAT would have made -4.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.5% over 196",
+    "n": 3156
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3154,
+  "lines": 3156,
   "flags": [
    {
     "coin": "Kibo",
@@ -21379,6 +21379,10 @@
    [
     1795764674,
     361.97
+   ],
+   [
+    1795764734,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21387,9 +21391,9 @@
   },
   "np_said": 1795764696.645369,
   "shadow": {
-   "n": 458,
+   "n": 459,
    "wins": 87,
-   "sum": -3768.0
+   "sum": -3772.8
   },
   "np_speed": {
    "first_in": [
@@ -30972,9 +30976,9 @@
   }
  },
  "shadow": {
-  "n": 472,
+  "n": 473,
   "wins": 89,
-  "sum": -3966.5,
+  "sum": -3971.3,
   "by": {
    "learner": {
     "n": 16,
@@ -30982,32 +30986,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 456,
+    "n": 457,
     "wins": 86,
-    "sum": -3768.7
+    "sum": -3773.5
    }
   },
   "closed": [
-   {
-    "symbol": "Gemma",
-    "mint": "7CHrtZEQUsXShzYzx1geNdktjCFBXgAizatFxeGpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:18:00Z",
-    "cost": 36.2,
-    "pnl_pct": -16.0,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.96,
-    "closed": "2026-11-27T07:18:03Z",
-    "exit": "stop -13%",
-    "pnl": -5.79,
-    "weight": 0.5
-   },
    {
     "symbol": "DARKF",
     "mint": "BEbJiN5tDqdj5sgssVxztQvz97dLdEy51tCBNhVaPyXh",
@@ -31387,13 +31371,33 @@
     "exit": "stop -10%",
     "pnl": -4.83,
     "weight": 0.5
+   },
+   {
+    "symbol": "NOTHINGCAT",
+    "mint": "9iLSsntqUZ4rUCos4pgRafevvV8kGwZy3RS1UM6uXTh5",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:29:08Z",
+    "cost": 36.2,
+    "pnl_pct": -4.8,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T07:32:09Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -1.73,
+    "weight": 0.5
    }
   ],
   "open": [
-   "NOTHINGCAT",
    "LEFTOVERS",
    "VETO",
-   "BF"
+   "BF",
+   "SPRC"
   ]
  },
  "learner_summary": {
@@ -31435,7 +31439,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 456,
+  "shadows": 457,
   "memory": "snipe"
  }
 }
