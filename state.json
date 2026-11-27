@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:41:39Z",
-    "time": "09:41:39",
-    "agent": "LEARNER",
-    "coin": "BCAT",
-    "action": "shadow",
-    "text": "SHADOW BCAT would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.6% over 249",
-    "n": 3556
-   },
-   {
-    "t": "2026-11-27T08:41:42Z",
-    "time": "09:41:42",
-    "agent": "LEARNER",
-    "coin": "ROCKSTAR",
-    "action": "shadow",
-    "text": "SHADOW ROCKSTAR · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027302 (curve maths, every cost) · same exits, outside the book",
-    "n": 3557
-   },
-   {
     "t": "2026-11-27T08:41:45Z",
     "time": "09:41:45",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW FLOPCAT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000043145 (curve maths, every cost) · same exits, outside the book",
     "n": 4155
+   },
+   {
+    "t": "2026-11-27T10:33:38Z",
+    "time": "11:33:38",
+    "agent": "LEARNER",
+    "coin": "FLOPCAT",
+    "action": "shadow",
+    "text": "SHADOW FLOPCAT would have made -13.9% (stop -11%) · learned x0.5 · np:social:web now avg -7.9% over 300",
+    "n": 4156
+   },
+   {
+    "t": "2026-11-27T10:33:45Z",
+    "time": "11:33:45",
+    "agent": "LEARNER",
+    "coin": "TEST",
+    "action": "shadow",
+    "text": "SHADOW TEST would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.3% over 224.5",
+    "n": 4157
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4155,
+  "lines": 4157,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795775594.645248,
   "shadow": {
-   "n": 845,
+   "n": 847,
    "wins": 190,
-   "sum": -6687.8
+   "sum": -6709.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 859,
+  "n": 861,
   "wins": 192,
-  "sum": -6886.3,
+  "sum": -6908.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,52 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 843,
+    "n": 845,
     "wins": 189,
-    "sum": -6688.5
+    "sum": -6710.3
    }
   },
   "closed": [
-   {
-    "symbol": "ResidentE",
-    "mint": "7VwCvtxzM9JdEiHJMMcn9QeT7Y11ZDb8SuExauPZpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:18:37Z",
-    "cost": 36.2,
-    "pnl_pct": -9.4,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.06,
-    "closed": "2026-11-27T10:21:53Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -3.41,
-    "weight": 0.5
-   },
-   {
-    "symbol": "SXSN",
-    "mint": "HKfr9ZaBxMvrze2aLV1xvAxuFf5DrPoVC9aCPuPchga",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:17:12Z",
-    "cost": 36.2,
-    "pnl_pct": -7.9,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T10:22:12Z",
-    "exit": "5 min, only -4%",
-    "pnl": -2.84,
-    "weight": 0.5
-   },
    {
     "symbol": "Slopmas",
     "mint": "qkqDTxTdyqvGmWGuNMKFnYCtJag3Q8bQCkhr365pump",
@@ -31743,14 +31703,52 @@
     "exit": "TP +10%",
     "pnl": 3.99,
     "weight": 0.5
+   },
+   {
+    "symbol": "FLOPCAT",
+    "mint": "BCpTPtucgTykAWtr5fDu1sJ8qtXcbQNb2AZybbXfpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:33:27Z",
+    "cost": 36.2,
+    "pnl_pct": -13.9,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 9.83,
+    "closed": "2026-11-27T10:33:38Z",
+    "exit": "stop -11%",
+    "pnl": -5.05,
+    "weight": 0.5
+   },
+   {
+    "symbol": "TEST",
+    "mint": "35DicX3daM5wqfuvJgkJZNCRYoGM65vAws8EMHJRB5HY",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:30:45Z",
+    "cost": 36.2,
+    "pnl_pct": -7.9,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.04,
+    "closed": "2026-11-27T10:33:45Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.88,
+    "weight": 0.5
    }
   ],
   "open": [
    "Hero",
-   "TEST",
    "BURN",
-   "Catfat",
-   "FLOPCAT"
+   "Catfat"
   ]
  },
  "learner_summary": {
@@ -31792,7 +31790,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 843,
+  "shadows": 845,
   "memory": "snipe"
  }
 }
