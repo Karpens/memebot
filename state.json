@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:44:55Z",
-    "time": "09:44:55",
-    "agent": "LEARNER",
-    "coin": "• JPUMP",
-    "action": "shadow",
-    "text": "SHADOW • JPUMP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022547 (curve maths, every cost) · same exits, outside the book",
-    "n": 3578
-   },
-   {
-    "t": "2026-11-27T08:45:12Z",
-    "time": "09:45:12",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.8 a minute · 0 watched · 20 rejected (snipe not bought: trades tonight 10, mayhem mode 7, serial launcher 3)",
-    "n": 3579
-   },
-   {
     "t": "2026-11-27T08:45:13Z",
     "time": "09:45:13",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW rice · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021363 (curve maths, every cost) · same exits, outside the book",
     "n": 4177
+   },
+   {
+    "t": "2026-11-27T10:38:53Z",
+    "time": "11:38:53",
+    "agent": "LEARNER",
+    "coin": "NVIDIA",
+    "action": "shadow",
+    "text": "SHADOW NVIDIA would have made +6.6% (TP +10%) · learned x0.5 · np:sol:12+ now avg -11.1% over 49",
+    "n": 4178
+   },
+   {
+    "t": "2026-11-27T10:39:18Z",
+    "time": "11:39:18",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.4 a minute · 0 watched · 11 rejected (snipe not bought: trades tonight 6, mayhem mode 4, no symbol or name 1)",
+    "n": 4179
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4177,
+  "lines": 4179,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795739880,
-    82.3
-   ],
    [
     1795739940,
     82.3
@@ -21735,17 +21731,21 @@
    [
     1795775894,
     361.97
+   ],
+   [
+    1795775954,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795775897.645367,
+  "np_said": 1795775958.645356,
   "shadow": {
-   "n": 853,
-   "wins": 191,
-   "sum": -6758.8
+   "n": 854,
+   "wins": 192,
+   "sum": -6752.2
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 867,
-  "wins": 193,
-  "sum": -6957.3,
+  "n": 868,
+  "wins": 194,
+  "sum": -6950.7,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 851,
-    "wins": 190,
-    "sum": -6759.5
+    "n": 852,
+    "wins": 191,
+    "sum": -6752.9
    }
   },
   "closed": [
-   {
-    "symbol": "Holdball",
-    "mint": "r6EknZBAjDEnQuo9P8BGftSCAL48LA3VU5iXdx3pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:27:31Z",
-    "cost": 36.2,
-    "pnl_pct": -14.4,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 4.59,
-    "closed": "2026-11-27T10:27:32Z",
-    "exit": "stop -11%",
-    "pnl": -5.2,
-    "weight": 0.5
-   },
    {
     "symbol": "Gudetama",
     "mint": "BJZvNJyyKjMgrptpobMYsLNHPSUv6jqiYyK5UetZpump",
@@ -31743,11 +31723,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -3.04,
     "weight": 0.5
+   },
+   {
+    "symbol": "NVIDIA",
+    "mint": "4Pq4AYk9uope9ifBzFvhrou1RXHUKadVPNjdafoUpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:36:07Z",
+    "cost": 36.2,
+    "pnl_pct": 6.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 17.59,
+    "closed": "2026-11-27T10:38:53Z",
+    "exit": "TP +10%",
+    "pnl": 2.39,
+    "weight": 0.5
    }
   ],
   "open": [
    "BURN",
-   "NVIDIA",
    "SOFLOW",
    "Wonald",
    "rice"
@@ -31783,8 +31782,8 @@
    },
    {
     "label": "snipe · np:sol:12+",
-    "n": 48,
-    "avg": -11.3
+    "n": 49,
+    "avg": -11.1
    },
    {
     "label": "snipe · np:sol:3-6",
@@ -31792,7 +31791,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 851,
+  "shadows": 852,
   "memory": "snipe"
  }
 }
