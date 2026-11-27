@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T03:57:10Z",
+ "updated": "2026-11-27T03:57:47Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 300.38,
- "equity": 379.18,
+ "balance": 262.44,
+ "equity": 377.88,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 155,
-  "checked": 151,
+  "flagged": 156,
+  "checked": 152,
   "filtered": 5,
-  "lines": 1683,
+  "lines": 1690,
   "last_rug": {
-   "coin": "PCAT",
+   "coin": "Scat",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TR",
-   "why": "snipe",
-   "t": "2026-11-27T03:44:51Z"
-  },
   {
    "coin": "SNOWCHILL",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "PCAT",
    "why": "snipe",
    "t": "2026-11-27T03:55:04Z"
+  },
+  {
+   "coin": "Scat",
+   "why": "snipe",
+   "t": "2026-11-27T03:57:32Z"
   }
  ],
  "curve": [
@@ -1270,36 +1270,41 @@
    "symbol": "Solanta",
    "mint": "6uA3oxZFPX73oAcdWb9cgn1FB64uPFXN66V891k4pump",
    "cost": 38.71,
-   "value": 41.36,
-   "pnl_pct": 6.8,
+   "value": 41.59,
+   "pnl_pct": 7.4,
    "opened": "2026-11-27T03:54:37Z",
    "url": "https://pump.fun/coin/6uA3oxZFPX73oAcdWb9cgn1FB64uPFXN66V891k4pump",
    "reason": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL · fill quote",
    "size_pct": 10.0,
    "entry_price": 2.21415e-06,
-   "price": 2.37014e-06,
+   "price": 2.38355e-06,
    "slip": 5.12,
    "tp1_done": false,
    "strategy": "new_pairs",
    "plan": {
-    "tier": "scalp",
-    "score": 2,
+    "tier": "swing",
+    "score": 3,
     "parts": [
      "X",
-     "web"
+     "web",
+     "buys 80%"
     ],
     "ladder": [
      [
       10.0,
+      0.5
+     ],
+     [
+      20.0,
       1.0
      ]
     ],
     "step": 0,
     "stop_pct": -10.0,
-    "trail_pct": 0.0
+    "trail_pct": 6.0
    },
-   "tier": "scalp",
-   "score": 2,
+   "tier": "swing",
+   "score": 3,
    "steps": 0,
    "age_s": 1,
    "mcap_sol": 29.3,
@@ -1310,21 +1315,22 @@
     2.12928e-06,
     2.12934e-06,
     2.12622e-06,
-    2.37051e-06
+    2.37051e-06,
+    2.38403e-06
    ]
   },
   {
    "symbol": "PCAT",
    "mint": "FQoxbsN1WRPpwAN7P5qqbNUzeRDj7QSSzgfQ4bQspump",
    "cost": 38.41,
-   "value": 37.45,
+   "value": 37.44,
    "pnl_pct": -2.5,
    "opened": "2026-11-27T03:55:04Z",
    "url": "https://pump.fun/coin/FQoxbsN1WRPpwAN7P5qqbNUzeRDj7QSSzgfQ4bQspump",
    "reason": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.12767e-06,
-   "price": 2.07826e-06,
+   "price": 2.07785e-06,
    "slip": 1.7,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -1353,6 +1359,49 @@
     2.12767e-06,
     2.0794e-06,
     2.0796e-06
+   ]
+  },
+  {
+   "symbol": "Scat",
+   "mint": "Fv8spTh1EpdzfEsGd5rb1gR1C8UszUKXY4nwzF2TFVvM",
+   "cost": 37.94,
+   "value": 36.41,
+   "pnl_pct": -4.0,
+   "opened": "2026-11-27T03:57:32Z",
+   "url": "https://pump.fun/coin/Fv8spTh1EpdzfEsGd5rb1gR1C8UszUKXY4nwzF2TFVvM",
+   "reason": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.2373e-06,
+   "price": 2.15134e-06,
+   "slip": 1.64,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 1.5,
+    "parts": [
+     "X post",
+     "web"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 29.7,
+   "dev_pct": 3.13,
+   "sol_in": 0.0,
+   "hist": [
+    2.2373e-06
    ]
   }
  ],
@@ -3599,69 +3648,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T03:41:13Z",
-   "time": "04:41:13",
-   "agent": "LEARNER",
-   "coin": "1SOL",
-   "action": "shadow",
-   "text": "SHADOW 1SOL · not bought (pause after a losing streak) · followed as if bought: $43.87 at 0.0000022093 (curve maths, every cost) · same exits, outside the book",
-   "n": 1484
-  },
-  {
-   "t": "2026-11-27T03:41:18Z",
-   "time": "04:41:18",
-   "agent": "LEARNER",
-   "coin": "GRCH",
-   "action": "shadow",
-   "text": "SHADOW GRCH · not bought (pause after a losing streak) · followed as if bought: $43.87 at 0.0000024761 (curve maths, every cost) · same exits, outside the book",
-   "n": 1485
-  },
-  {
-   "t": "2026-11-27T03:41:18Z",
-   "time": "04:41:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 0 watched · 18 rejected (snipe not bought: pause after a  12, serial launcher 3, mayhem mode 3)",
-   "n": 1486
-  },
-  {
-   "t": "2026-11-27T03:41:23Z",
-   "time": "04:41:23",
-   "agent": "LEARNER",
-   "coin": "SOLCAT",
-   "action": "shadow",
-   "text": "SHADOW SOLCAT would have made -8.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -11.8% over 105",
-   "n": 1487
-  },
-  {
-   "t": "2026-11-27T03:42:01Z",
-   "time": "04:42:01",
-   "agent": "SCANNER",
-   "coin": "SI",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 49 SOL",
-   "n": 1488
-  },
-  {
-   "t": "2026-11-27T03:42:01Z",
-   "time": "04:42:01",
-   "agent": "SIZER",
-   "coin": "SI",
-   "action": "size",
-   "text": "10% of $438.65 = $43.87",
-   "n": 1489
-  },
-  {
-   "t": "2026-11-27T03:42:01Z",
-   "time": "04:42:01",
-   "agent": "EXECUTOR",
-   "coin": "SI",
-   "action": "enter",
-   "text": "ENTER SI at 0.0000037363 · slip 26.8% · snipe · first in · 0.1 s after the first reading · 0 s after launch · fill quote · Jupiter 0.1 s · curve maths 0.0% off Jupiter · stop -10%",
-   "n": 1490
-  },
-  {
    "t": "2026-11-27T03:42:01Z",
    "time": "04:42:01",
    "agent": "NEWS",
@@ -5397,6 +5383,69 @@
    "action": "shadow",
    "text": "SHADOW life would have made -8.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -11.4% over 118.5",
    "n": 1683
+  },
+  {
+   "t": "2026-11-27T03:57:12Z",
+   "time": "04:57:12",
+   "agent": "LEARNER",
+   "coin": "HOODY",
+   "action": "shadow",
+   "text": "SHADOW HOODY would have made -8.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -11.8% over 88",
+   "n": 1684
+  },
+  {
+   "t": "2026-11-27T03:57:27Z",
+   "time": "04:57:27",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 8 rejected (serial launcher 7, no symbol or name 1)",
+   "n": 1685
+  },
+  {
+   "t": "2026-11-27T03:57:32Z",
+   "time": "04:57:32",
+   "agent": "SCANNER",
+   "coin": "Scat",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 1686
+  },
+  {
+   "t": "2026-11-27T03:57:32Z",
+   "time": "04:57:32",
+   "agent": "SIZER",
+   "coin": "Scat",
+   "action": "size",
+   "text": "10% of $379.41 = $37.94",
+   "n": 1687
+  },
+  {
+   "t": "2026-11-27T03:57:32Z",
+   "time": "04:57:32",
+   "agent": "EXECUTOR",
+   "coin": "Scat",
+   "action": "enter",
+   "text": "ENTER Scat at 0.0000022373 · slip 1.6% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 2 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 1688
+  },
+  {
+   "t": "2026-11-27T03:57:32Z",
+   "time": "04:57:32",
+   "agent": "NEWS",
+   "coin": "Scat",
+   "action": "plan",
+   "text": "hold plan · 1.5/10 (X post, web) · scalp: +10",
+   "n": 1689
+  },
+  {
+   "t": "2026-11-27T03:57:39Z",
+   "time": "04:57:39",
+   "agent": "NEWS",
+   "coin": "Solanta",
+   "action": "replan",
+   "text": "upgrade scalp → swing (buys 80%)",
+   "n": 1690
   }
  ],
  "nights": [
@@ -5457,7 +5506,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 42 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 39 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5465,15 +5514,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 731,
-    "last_event_age_s": 13.5,
+    "events": 734,
+    "last_event_age_s": 0.2,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17298,
+    "events": 17341,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -5481,8 +5530,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 510,
-    "last_event_age_s": 13.1,
+    "events": 513,
+    "last_event_age_s": 0.1,
     "errors": 49,
     "last_error": "gateway.irys.xyz: timeout after 2 s"
    }
@@ -5490,14 +5539,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 1.0,
+  "first_in_ms": 1,
   "first_in_last_ms": 1,
   "exit_ms": 35,
   "exit_last_ms": 33,
-  "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
-  "watching": 0,
-  "followed": 10
+  "launch_to_entry_s": 0,
+  "creates_per_min": 3.8,
+  "watching": 1,
+  "followed": 8
  },
  "learner": {
   "samples": 141,
@@ -5529,7 +5578,7 @@
    },
    {
     "label": "snipe · np:dev:0-2",
-    "n": 118,
+    "n": 119,
     "avg": -11.4
    },
    {
@@ -5538,29 +5587,83 @@
     "avg": -10.6
    }
   ],
-  "shadows": 192,
+  "shadows": 193,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8702,
+   "sent": 8742,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8701,
+   "sent": 8741,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Pumpers",
+   "name": "Pumpfun Cult",
+   "mint": "5zbabES1Wk6i9Y82JGrRhqFAwrtuQYWpj8CDTprGpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Pumpfun/status/1757788546407268517",
+   "tg": false,
+   "web": "https://www.reddit.com/r/pumpfun/search/?q=Pumpers&cId=1267abf5-3cb0-4a6e-b4ea-b97f4f461933&iId=c4716edd-63a2-4db6-86c2-cf9fc8f00197&kwfEligible=1",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Scat",
+   "name": "Solana Cat",
+   "mint": "Fv8spTh1EpdzfEsGd5rb1gR1C8UszUKXY4nwzF2TFVvM",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.7,
+   "dev_pct": 3.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/D1Ruru427/status/2126107230571577555?a=VgG-g7z2kyTORb-aC4Q&s=20",
+   "tg": false,
+   "web": true,
+   "status": "entered",
+   "why": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL"
+  },
+  {
+   "symbol": "mis",
+   "name": "miss",
+   "mint": "y5ETAV8LyfXsLfYzMtvsYdTyND1WASpoW9oFR2fpump",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/XHNews/status/2126161102824526157",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "CHEEMSTEST",
    "name": "Cheems",
    "mint": "DsuntEkJHcXY8Qie3CynWUf9knK8EwPgxUcT4571yeMC",
-   "age_s": 13,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5578,7 +5681,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Demm5y8a1GQNBk6GheCm4Eqi6go7RUKj15sKorMLpump",
-   "age_s": 29,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5596,7 +5699,7 @@
    "symbol": "HDT",
    "name": "Happy Thanksgiving",
    "mint": "9Hjvxc9tE9PHjXQCbq5ys5QfEaxEQixin7LGJXar8LUm",
-   "age_s": 114,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5614,7 +5717,7 @@
    "symbol": "PCAT",
    "name": "PCAT",
    "mint": "FQoxbsN1WRPpwAN7P5qqbNUzeRDj7QSSzgfQ4bQspump",
-   "age_s": 126,
+   "age_s": 163,
    "sol_in": 0.27,
    "buys": 2,
    "sells": 0,
@@ -5632,7 +5735,7 @@
    "symbol": "DOGE2",
    "name": "The New Doge",
    "mint": "2PGPoC8DRkSe8HnLyUTFQfaGB67gzLnShycx38CDpump",
-   "age_s": 130,
+   "age_s": 167,
    "sol_in": -3.47,
    "buys": 3,
    "sells": 3,
@@ -5647,33 +5750,15 @@
    "why": "dump: 3.9 SOL sold"
   },
   {
-   "symbol": "Energy",
-   "name": "Energy Coin",
-   "mint": "ACu3sW2o31KWTa2v8a4WFY2jCoyUm1sSxJgYagRppump",
-   "age_s": 143,
-   "sol_in": 5.7,
-   "buys": 96,
-   "sells": 77,
-   "rise_pct": 36.4,
-   "mcap_sol": 48.8,
-   "dev_pct": 12.5,
-   "big_sell": 8.94,
-   "x": "https://x.com/KankiAlpha/status/2126162767006822893",
-   "tg": false,
-   "web": "https://x.com/elonmusk/status/2002066048535904291",
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
    "symbol": "Solanta",
    "name": "Solanta",
    "mint": "6uA3oxZFPX73oAcdWb9cgn1FB64uPFXN66V891k4pump",
-   "age_s": 154,
-   "sol_in": 1.72,
-   "buys": 3,
+   "age_s": 191,
+   "sol_in": 1.82,
+   "buys": 4,
    "sells": 1,
-   "rise_pct": 11.5,
-   "mcap_sol": 32.7,
+   "rise_pct": 12.2,
+   "mcap_sol": 32.9,
    "dev_pct": 2.5,
    "big_sell": 0.01,
    "x": "https://x.com/i/communities/1974363031044808900",
@@ -5681,78 +5766,6 @@
    "web": "https://www.tiktok.com/@degenzane/live?enter_from_merge=share&enter_method=share_copy_link",
    "status": "entered",
    "why": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL"
-  },
-  {
-   "symbol": "hugo",
-   "name": "hugo",
-   "mint": "8frk2ZjSQMC9Bb2thCohrN35fSQzBkYSpHxNrTMrpump",
-   "age_s": 159,
-   "sol_in": 0.03,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/hugoautomation/status/2126159880394277262",
-   "tg": false,
-   "web": "https://hugo-agent.com/",
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "hugo",
-   "name": "hugo",
-   "mint": "BKaTNtjesXzADhWDc1Cv77BAoYNmppKXSudTk9ADpump",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/hugoautomation/status/2126159880394277262",
-   "tg": false,
-   "web": "https://hugo-agent.com/",
-   "status": "rejected: serial launcher: 10 more coins in 60 min",
-   "why": "serial launcher: 10 more coins in 60 min"
-  },
-  {
-   "symbol": "BAAAAA",
-   "name": "ABAAAA",
-   "mint": "GUGtXNH4zGoZoJ8J3J1Sw3ohCXpb9AwzPMM6oG8ERQMX",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/GUGtXNH4zGoZoJ8J3J1Sw3ohCXpb9AwzPMM6oG8ERQMX",
-   "status": "rejected: serial launcher: 12 more coins in 60 min",
-   "why": "serial launcher: 12 more coins in 60 min"
-  },
-  {
-   "symbol": "HOODY",
-   "name": "Hooded Dog",
-   "mint": "DZiYHwu5ZYZ37EDbW5ppPgxM3BGiPxWFq6gQYjcqqtzJ",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
   }
  ],
  "strategies": [
@@ -5762,18 +5775,22 @@
   {
    "symbol": "HOODY",
    "mint": "DZiYHwu5ZYZ37EDbW5ppPgxM3BGiPxWFq6gQYjcqqtzJ",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
    "opened": "2026-11-27T03:54:12Z",
    "cost": 38.71,
-   "pnl_pct": -4.3,
+   "pnl_pct": -8.2,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T03:57:12Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -3.16,
+   "weight": 0.5
   },
   {
    "symbol": "life",
@@ -6154,34 +6171,14 @@
    "exit": "dump: 3.0 SOL sold",
    "pnl": -9.53,
    "weight": 0.5
-  },
-  {
-   "symbol": "BI",
-   "mint": "4mSqPr4f3bELzhuYrz4uc3Ub7H6fPgmYZDCY5DaCpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T03:48:52Z",
-   "cost": 40.2,
-   "pnl_pct": -15.4,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 3.56,
-   "closed": "2026-11-27T03:48:53Z",
-   "exit": "stop -12%",
-   "pnl": -6.19,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 208,
+  "n": 209,
   "wins": 36,
-  "win_rate": 17.3,
-  "mean_pnl_pct": -9.75,
-  "open": 1,
+  "win_rate": 17.2,
+  "mean_pnl_pct": -9.74,
+  "open": 0,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6189,9 +6186,9 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 192,
+   "n": 193,
    "wins": 33,
-   "win_rate": 17.2,
+   "win_rate": 17.1,
    "mean_pnl_pct": -9.53
   }
  }
