@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:11:00Z",
-    "time": "07:11:00",
-    "agent": "RISK",
-    "coin": "trk",
-    "action": "skip",
-    "text": "no entry: 250 trades tonight (max)",
-    "n": 2756
-   },
-   {
-    "t": "2026-11-27T06:11:00Z",
-    "time": "07:11:00",
-    "agent": "LEARNER",
-    "coin": "trk",
-    "action": "shadow",
-    "text": "SHADOW trk · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021229 (curve maths, every cost) · same exits, outside the book",
-    "n": 2757
-   },
-   {
     "t": "2026-11-27T06:11:50Z",
     "time": "07:11:50",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW GTA 6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000062693 (curve maths, every cost) · same exits, outside the book",
     "n": 3355
+   },
+   {
+    "t": "2026-11-27T08:05:52Z",
+    "time": "09:05:52",
+    "agent": "LEARNER",
+    "coin": "GTA 6",
+    "action": "shadow",
+    "text": "SHADOW GTA 6 would have made -68.2% (dump: 21.7 SOL sold) · learned x0.5 · tier:swing now avg -12.9% over 39.5",
+    "n": 3356
+   },
+   {
+    "t": "2026-11-27T08:05:53Z",
+    "time": "09:05:53",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.4 a minute · 0 watched · 18 rejected (snipe not bought: trades tonight 10, mayhem mode 7, serial launcher 1)",
+    "n": 3357
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3355,
+  "lines": 3357,
   "flags": [
    {
     "coin": "Kibo",
@@ -21521,11 +21521,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795766692.64528,
+  "np_said": 1795766753.645334,
   "shadow": {
-   "n": 537,
+   "n": 538,
    "wins": 105,
-   "sum": -4571.6
+   "sum": -4639.8
   },
   "np_speed": {
    "first_in": [
@@ -31108,9 +31108,9 @@
   }
  },
  "shadow": {
-  "n": 551,
+  "n": 552,
   "wins": 107,
-  "sum": -4770.1,
+  "sum": -4838.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31118,32 +31118,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 535,
+    "n": 536,
     "wins": 104,
-    "sum": -4572.3
+    "sum": -4640.5
    }
   },
   "closed": [
-   {
-    "symbol": "HUSHED",
-    "mint": "DEmnq7HmzmWZcoADAGMSgaswVN2oxYzuWnsMbYfapump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:56:33Z",
-    "cost": 36.2,
-    "pnl_pct": 7.5,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 2.14,
-    "closed": "2026-11-27T07:57:01Z",
-    "exit": "TP +10%",
-    "pnl": 2.73,
-    "weight": 0.5
-   },
    {
     "symbol": "nothing",
     "mint": "8EVWVRUbk2VehffowVvh7f944vZYXLAd4WHyyjC9pump",
@@ -31523,14 +31503,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.76,
     "weight": 0.5
+   },
+   {
+    "symbol": "GTA 6",
+    "mint": "2B6XBVnN84FLLLPwavrqb6PzqjofDrDbv8kJiCuupump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:05:29Z",
+    "cost": 36.2,
+    "pnl_pct": -68.2,
+    "tier": "swing",
+    "score": 4,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 18.17,
+    "closed": "2026-11-27T08:05:52Z",
+    "exit": "dump: 21.7 SOL sold",
+    "pnl": -24.7,
+    "weight": 0.5
    }
   ],
   "open": [
    "$VICTIMS",
    "IRON",
    "GPP",
-   "NEXTHIUM",
-   "GTA 6"
+   "NEXTHIUM"
   ]
  },
  "learner_summary": {
@@ -31558,21 +31557,21 @@
   "worst": [
    {
     "label": "snipe · tier:swing",
-    "n": 39,
-    "avg": -12.2
+    "n": 40,
+    "avg": -12.9
    },
    {
     "label": "snipe · news:3-4",
-    "n": 39,
-    "avg": -12.2
+    "n": 40,
+    "avg": -12.9
    },
    {
-    "label": "snipe · hour:03-05",
-    "n": 212,
-    "avg": -10.9
+    "label": "snipe · np:sol:12+",
+    "n": 32,
+    "avg": -12.9
    }
   ],
-  "shadows": 535,
+  "shadows": 536,
   "memory": "snipe"
  }
 }
