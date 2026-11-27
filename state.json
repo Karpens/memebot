@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T11:44:38Z",
-    "time": "12:44:38",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.2 a minute · 0 watched · 9 rejected (snipe not bought: night at open  5, mayhem mode 2, odd curve reading: virtual SOL i 1)",
-    "n": 4599
-   },
-   {
-    "t": "2026-11-27T11:44:54Z",
-    "time": "12:44:54",
-    "agent": "LEARNER",
-    "coin": "LDGR",
-    "action": "shadow",
-    "text": "SHADOW LDGR would have made -9.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 221.5",
-    "n": 4600
-   },
-   {
     "t": "2026-11-27T11:45:25Z",
     "time": "12:45:25",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Slingoor would have made -7.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.4% over 267",
     "n": 5198
+   },
+   {
+    "t": "2026-11-27T17:55:56Z",
+    "time": "18:55:56",
+    "agent": "LEARNER",
+    "coin": "XSHARE",
+    "action": "shadow",
+    "text": "SHADOW XSHARE would have made -11.0% (5 min, only -6%) · learned x0.5 · np:dev:2-5 now avg -8.3% over 219.5",
+    "n": 5199
+   },
+   {
+    "t": "2026-11-27T17:56:03Z",
+    "time": "18:56:03",
+    "agent": "LEARNER",
+    "coin": "DЕWIЕ",
+    "action": "shadow",
+    "text": "SHADOW DЕWIЕ · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000024574 (curve maths, every cost) · same exits, outside the book",
+    "n": 5200
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5198,
+  "lines": 5200,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795802134.44339,
   "shadow": {
-   "n": 1244,
+   "n": 1245,
    "wins": 277,
-   "sum": -9254.6
+   "sum": -9265.6
   },
   "np_speed": {
    "first_in": [
@@ -31864,9 +31864,9 @@
   }
  },
  "shadow": {
-  "n": 1258,
+  "n": 1259,
   "wins": 279,
-  "sum": -9453.1,
+  "sum": -9464.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31874,32 +31874,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1242,
+    "n": 1243,
     "wins": 276,
-    "sum": -9255.3
+    "sum": -9266.3
    }
   },
   "closed": [
-   {
-    "symbol": "Rockstar",
-    "mint": "HXPSMkwyjqiyiWyQhq5j7eWTYdEBYDxUgf4e2GVupump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:50:11Z",
-    "cost": 5.91,
-    "pnl_pct": -69.3,
-    "tier": "swing",
-    "score": 4,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 18.27,
-    "closed": "2026-11-27T17:50:30Z",
-    "exit": "dump: 21.9 SOL sold",
-    "pnl": -4.1,
-    "weight": 0.5
-   },
    {
     "symbol": "boing",
     "mint": "EddUvaB3cBCqT8qLVbtbTRVTbbbYi1uuGaWD6ScNpump",
@@ -32279,10 +32259,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.43,
     "weight": 0.5
+   },
+   {
+    "symbol": "XSHARE",
+    "mint": "EzmEv8WLc87X1Fd4aoSaN2rZ9U8yaJV2RcNPQZppump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:50:56Z",
+    "cost": 5.91,
+    "pnl_pct": -11.0,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T17:55:56Z",
+    "exit": "5 min, only -6%",
+    "pnl": -0.65,
+    "weight": 0.5
    }
   ],
   "open": [
-   "XSHARE",
    "SEASNAKE",
    "SCAMSEM",
    "PAPER",
@@ -32290,7 +32289,8 @@
    "BFC",
    "NICK30",
    "SpaceX",
-   "Rockstar"
+   "Rockstar",
+   "DЕWIЕ"
   ]
  },
  "learner_summary": {
@@ -32332,7 +32332,7 @@
     "avg": -8.4
    }
   ],
-  "shadows": 1450,
+  "shadows": 1451,
   "memory": "snipe"
  }
 }
