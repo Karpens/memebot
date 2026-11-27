@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T07:17:42Z",
+ "updated": "2026-11-27T07:18:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3097,
+  "lines": 3100,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -2059,6 +2059,10 @@
   ],
   [
    1795763813,
+   361.97
+  ],
+  [
+   1795763873,
    361.97
   ]
  ],
@@ -4328,33 +4332,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T06:42:17Z",
-   "time": "07:42:17",
-   "agent": "LEARNER",
-   "coin": "SOLCAP",
-   "action": "shadow",
-   "text": "SHADOW SOLCAP would have made +8.7% (TP +10%) · learned x0.5 · np:dev:0-2 now avg -9.0% over 196",
-   "n": 2898
-  },
-  {
-   "t": "2026-11-27T06:43:06Z",
-   "time": "07:43:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 0 watched · 15 rejected (serial launcher 6, mayhem mode 5, no symbol or name 2)",
-   "n": 2899
-  },
-  {
-   "t": "2026-11-27T06:43:47Z",
-   "time": "07:43:47",
-   "agent": "LEARNER",
-   "coin": "Midoor",
-   "action": "shadow",
-   "text": "SHADOW Midoor · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024148 (curve maths, every cost) · same exits, outside the book",
-   "n": 2900
-  },
-  {
    "t": "2026-11-27T06:44:07Z",
    "time": "07:44:07",
    "agent": "SCANNER",
@@ -6126,6 +6103,33 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 7, serial launcher 3, mayhem mode 2)",
    "n": 3097
+  },
+  {
+   "t": "2026-11-27T07:18:00Z",
+   "time": "08:18:00",
+   "agent": "RISK",
+   "coin": "Gemma",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 3098
+  },
+  {
+   "t": "2026-11-27T07:18:00Z",
+   "time": "08:18:00",
+   "agent": "LEARNER",
+   "coin": "Gemma",
+   "action": "shadow",
+   "text": "SHADOW Gemma · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035549 (curve maths, every cost) · same exits, outside the book",
+   "n": 3099
+  },
+  {
+   "t": "2026-11-27T07:18:03Z",
+   "time": "08:18:03",
+   "agent": "LEARNER",
+   "coin": "Gemma",
+   "action": "shadow",
+   "text": "SHADOW Gemma would have made -16.0% (stop -13%) · learned x0.5 · np:sol:3-6 now avg -10.4% over 46.5",
+   "n": 3100
   }
  ],
  "nights": [
@@ -6186,7 +6190,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6194,15 +6198,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1627,
-    "last_event_age_s": 5.3,
+    "events": 1628,
+    "last_event_age_s": 11.8,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 46474,
+    "events": 46553,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -6210,8 +6214,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1035,
-    "last_event_age_s": 5.2,
+    "events": 1036,
+    "last_event_age_s": 11.6,
     "errors": 88,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6224,9 +6228,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 9
+  "followed": 8
  },
  "learner": {
   "samples": 249,
@@ -6267,34 +6271,52 @@
     "avg": -12.6
    }
   ],
-  "shadows": 436,
+  "shadows": 437,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21790,
+   "sent": 21821,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21789,
+   "sent": 21820,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Gemma",
+   "name": "ジェマ",
+   "mint": "7CHrtZEQUsXShzYzx1geNdktjCFBXgAizatFxeGpump",
+   "age_s": 11,
+   "sol_in": 5.9,
+   "buys": 6,
+   "sells": 5,
+   "rise_pct": 39.0,
+   "mcap_sol": 46.9,
+   "dev_pct": 9.6,
+   "big_sell": 1.33,
+   "x": "https://x.com/Zeeko__Dev/status/2126213913607864450",
+   "tg": false,
+   "web": "https://x.com/i/status/2126142529473298695",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "1RING2RULE",
    "name": "1RING57",
    "mint": "G1porkb6pQZm38TPuVADDPPnBaWPLWUGhQJFe7Wspump",
-   "age_s": 5,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 34,
+   "sol_in": 0.12,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "rise_pct": 0.8,
+   "mcap_sol": 28.2,
    "dev_pct": 0.1,
    "big_sell": 0.01,
    "x": "https://x.com/A1RING2RULE",
@@ -6307,14 +6329,14 @@
    "symbol": "nutting",
    "name": "nutting",
    "mint": "3g71uJF1DGS8NPwVSFtha5Z2qB8B7WtSsGGFKhnKpump",
-   "age_s": 36,
-   "sol_in": 13.08,
-   "buys": 13,
-   "sells": 11,
-   "rise_pct": 102.2,
-   "mcap_sol": 60.3,
+   "age_s": 65,
+   "sol_in": 2.09,
+   "buys": 19,
+   "sells": 26,
+   "rise_pct": 13.9,
+   "mcap_sol": 34.0,
    "dev_pct": 3.4,
-   "big_sell": 1.77,
+   "big_sell": 6.04,
    "x": "https://x.com/onchainmidas_/status/2126213707206111361",
    "tg": false,
    "web": false,
@@ -6325,7 +6347,7 @@
    "symbol": "tugi",
    "name": "tugi",
    "mint": "G7JqQDEXWuBnqyPoJjrQTzL6qta41szqCyfjPKWpZGZp",
-   "age_s": 37,
+   "age_s": 66,
    "sol_in": -6.63,
    "buys": 1,
    "sells": 6,
@@ -6343,7 +6365,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "By5gE5rWcaMNbBsjSQ1aLA6cXeQDBdbzECyRDpTDpump",
-   "age_s": 57,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6361,7 +6383,7 @@
    "symbol": "chartpaint",
    "name": "chartpainter",
    "mint": "DA8NBDVp3cLRVe6gef9j4QdJ6SU76hwctTRwa65Mpump",
-   "age_s": 78,
+   "age_s": 107,
    "sol_in": 0.27,
    "buys": 6,
    "sells": 2,
@@ -6379,7 +6401,7 @@
    "symbol": "INULANA",
    "name": "INULANA",
    "mint": "6Njr4id4zx3ZWN7W8f8vveTX6dNghvKAHXugrr83pump",
-   "age_s": 107,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 4,
@@ -6397,11 +6419,11 @@
    "symbol": "OBSCURED",
    "name": "Obscured",
    "mint": "GkpXH1PbCwysQDQqn3owRCGQpEcgBfGUzfegEEFZpump",
-   "age_s": 137,
-   "sol_in": -0.57,
+   "age_s": 166,
+   "sol_in": -0.59,
    "buys": 5,
-   "sells": 10,
-   "rise_pct": -3.7,
+   "sells": 11,
+   "rise_pct": -3.8,
    "mcap_sol": 28.0,
    "dev_pct": 2.1,
    "big_sell": 8.63,
@@ -6415,7 +6437,7 @@
    "symbol": "1RING2RULE",
    "name": "1RING56",
    "mint": "DegrN1BKXmr72Syn9HrUe2quKKh8FPXr49cidagEpump",
-   "age_s": 140,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6428,60 +6450,6 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "さと",
-   "name": "Macu",
-   "mint": "9tcssJv12rVVAh4rLpuzTUUDjvng1US5h2aNAra24JqU",
-   "age_s": 153,
-   "sol_in": -4.8,
-   "buys": 3,
-   "sells": 8,
-   "rise_pct": -25.6,
-   "mcap_sol": 28.2,
-   "dev_pct": 15.2,
-   "big_sell": 3.19,
-   "x": "https://x.com/neopark754/status/2126213025959211367",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 8 more coins in 60 min",
-   "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "DARKF",
-   "name": "Dark Fibre 465",
-   "mint": "BEbJiN5tDqdj5sgssVxztQvz97dLdEy51tCBNhVaPyXh",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "GIGACAT",
-   "name": "GIGACAT",
-   "mint": "BGnYqZFmjMdvtD3iFwijLzz8APFjyafDuwb318XDpump",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
@@ -6496,7 +6464,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T07:16:24Z",
    "cost": 36.2,
-   "pnl_pct": -2.2,
+   "pnl_pct": -2.3,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6583,6 +6551,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "Gemma",
+   "mint": "7CHrtZEQUsXShzYzx1geNdktjCFBXgAizatFxeGpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T07:18:00Z",
+   "cost": 36.2,
+   "pnl_pct": -16.0,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 5.96,
+   "closed": "2026-11-27T07:18:03Z",
+   "exit": "stop -13%",
+   "pnl": -5.79,
+   "weight": 0.5
   },
   {
    "symbol": "WALMART",
@@ -6963,33 +6951,13 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -3.31,
    "weight": 0.5
-  },
-  {
-   "symbol": "TOGI",
-   "mint": "5GGVMzdg5t7Q3qzjCwDgqdt9TM26fixAgwrjUjMpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T07:05:35Z",
-   "cost": 36.2,
-   "pnl_pct": -8.0,
-   "tier": "scalp",
-   "score": 0.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.01,
-   "closed": "2026-11-27T07:08:40Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -2.89,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 452,
+  "n": 453,
   "wins": 85,
   "win_rate": 18.8,
-  "mean_pnl_pct": -8.63,
+  "mean_pnl_pct": -8.65,
   "open": 6,
   "learner": {
    "n": 16,
@@ -6998,10 +6966,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 436,
+   "n": 437,
    "wins": 82,
    "win_rate": 18.8,
-   "mean_pnl_pct": -8.5
+   "mean_pnl_pct": -8.51
   }
  }
 }

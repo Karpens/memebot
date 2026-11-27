@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:34:54Z",
-    "time": "06:34:54",
-    "agent": "LEARNER",
-    "coin": "POLY",
-    "action": "learn",
-    "text": "learned · np:age:<30s now avg -8.7% over 300",
-    "n": 2498
-   },
-   {
-    "t": "2026-11-27T05:35:15Z",
-    "time": "06:35:15",
-    "agent": "SCANNER",
-    "coin": "KAREN",
-    "action": "flag",
-    "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-    "n": 2499
-   },
-   {
-    "t": "2026-11-27T05:35:15Z",
-    "time": "06:35:15",
-    "agent": "SIZER",
-    "coin": "KAREN",
-    "action": "size",
-    "text": "10% of $401.09 = $40.11",
-    "n": 2500
-   },
-   {
     "t": "2026-11-27T05:35:15Z",
     "time": "06:35:15",
     "agent": "EXECUTOR",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 4.0 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 7, serial launcher 3, mayhem mode 2)",
     "n": 3097
+   },
+   {
+    "t": "2026-11-27T07:18:00Z",
+    "time": "08:18:00",
+    "agent": "RISK",
+    "coin": "Gemma",
+    "action": "skip",
+    "text": "no entry: 250 trades tonight (max)",
+    "n": 3098
+   },
+   {
+    "t": "2026-11-27T07:18:00Z",
+    "time": "08:18:00",
+    "agent": "LEARNER",
+    "coin": "Gemma",
+    "action": "shadow",
+    "text": "SHADOW Gemma · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035549 (curve maths, every cost) · same exits, outside the book",
+    "n": 3099
+   },
+   {
+    "t": "2026-11-27T07:18:03Z",
+    "time": "08:18:03",
+    "agent": "LEARNER",
+    "coin": "Gemma",
+    "action": "shadow",
+    "text": "SHADOW Gemma would have made -16.0% (stop -13%) · learned x0.5 · np:sol:3-6 now avg -10.4% over 46.5",
+    "n": 3100
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3097,
+  "lines": 3100,
   "flags": [
    {
     "coin": "Kibo",
@@ -21323,6 +21323,10 @@
    [
     1795763813,
     361.97
+   ],
+   [
+    1795763873,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21331,9 +21335,9 @@
   },
   "np_said": 1795763850.780772,
   "shadow": {
-   "n": 438,
+   "n": 439,
    "wins": 83,
-   "sum": -3704.2
+   "sum": -3720.2
   },
   "np_speed": {
    "first_in": [
@@ -22226,7 +22230,7 @@
   },
   "risk_said": {
    "why": "250 trades tonight (max)",
-   "at": 1795763532.497968
+   "at": 1795763880.54731
   }
  },
  "last_night": {
@@ -30916,9 +30920,9 @@
   }
  },
  "shadow": {
-  "n": 452,
+  "n": 453,
   "wins": 85,
-  "sum": -3902.7,
+  "sum": -3918.7,
   "by": {
    "learner": {
     "n": 16,
@@ -30926,32 +30930,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 436,
+    "n": 437,
     "wins": 82,
-    "sum": -3704.9
+    "sum": -3720.9
    }
   },
   "closed": [
-   {
-    "symbol": "TOGI",
-    "mint": "5GGVMzdg5t7Q3qzjCwDgqdt9TM26fixAgwrjUjMpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:05:35Z",
-    "cost": 36.2,
-    "pnl_pct": -8.0,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T07:08:40Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.89,
-    "weight": 0.5
-   },
    {
     "symbol": "TOGI",
     "mint": "FP3xvBw543ic1tphkNWPi7dBnEajayAcio6oyg26pump",
@@ -31331,6 +31315,26 @@
     "exit": "5 min, only -2%",
     "pnl": -2.27,
     "weight": 0.5
+   },
+   {
+    "symbol": "Gemma",
+    "mint": "7CHrtZEQUsXShzYzx1geNdktjCFBXgAizatFxeGpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:18:00Z",
+    "cost": 36.2,
+    "pnl_pct": -16.0,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 5.96,
+    "closed": "2026-11-27T07:18:03Z",
+    "exit": "stop -13%",
+    "pnl": -5.79,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31381,7 +31385,7 @@
     "avg": -12.6
    }
   ],
-  "shadows": 436,
+  "shadows": 437,
   "memory": "snipe"
  }
 }
