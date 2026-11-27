@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T21:01:17Z",
-    "time": "22:01:17",
-    "agent": "LEARNER",
-    "coin": "Trailer",
-    "action": "shadow",
-    "text": "SHADOW Trailer would have made +21.7% (TP +20%) · learned x0.5 · np:dev:2-5 now avg -7.4% over 300",
-    "n": 6755
-   },
-   {
-    "t": "2026-11-27T21:01:30Z",
-    "time": "22:01:30",
-    "agent": "LEARNER",
-    "coin": "Apple",
-    "action": "shadow",
-    "text": "SHADOW Apple · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000060383 (curve maths, every cost) · same exits, outside the book",
-    "n": 6756
-   },
-   {
     "t": "2026-11-27T21:02:00Z",
     "time": "22:02:00",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 1258 is not 30 + real SOL 0 (off +1228 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 641 odd readings from 185 coins tonight",
     "n": 7354
+   },
+   {
+    "t": "2026-11-27T22:08:39Z",
+    "time": "23:08:39",
+    "agent": "LEARNER",
+    "coin": "TED",
+    "action": "shadow",
+    "text": "SHADOW TED · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000024049 (curve maths, every cost) · same exits, outside the book",
+    "n": 7355
+   },
+   {
+    "t": "2026-11-27T22:08:44Z",
+    "time": "23:08:44",
+    "agent": "LEARNER",
+    "coin": "CI",
+    "action": "shadow",
+    "text": "SHADOW CI would have made -5.8% (5 min, only -1%) · learned x0.5 · np:dev:8+ now avg -8.6% over 261",
+    "n": 7356
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7354,
+  "lines": 7356,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795781307,
-    59.14
-   ],
    [
     1795781367,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795817268,
     59.14
+   ],
+   [
+    1795817328,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795817274.44353,
   "shadow": {
-   "n": 2107,
+   "n": 2108,
    "wins": 484,
-   "sum": -15423.3
+   "sum": -15429.1
   },
   "np_speed": {
    "first_in": [
@@ -31993,9 +31993,9 @@
   }
  },
  "shadow": {
-  "n": 2121,
+  "n": 2122,
   "wins": 486,
-  "sum": -15621.8,
+  "sum": -15627.6,
   "by": {
    "learner": {
     "n": 16,
@@ -32003,32 +32003,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2105,
+    "n": 2106,
     "wins": 483,
-    "sum": -15424.0
+    "sum": -15429.8
    }
   },
   "closed": [
-   {
-    "symbol": "RLX",
-    "mint": "57bLDYSXDXu2auZJsUR5eZ1PnXbBCdrLKkd5VyqXpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:59:16Z",
-    "cost": 5.91,
-    "pnl_pct": -10.6,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T22:04:16Z",
-    "exit": "5 min, only -6%",
-    "pnl": -0.63,
-    "weight": 0.5
-   },
    {
     "symbol": "BLR",
     "mint": "2EBqRW7pn868vAh5xmQT8qy4mj952isFwNYLrQNiMYpU",
@@ -32408,13 +32388,33 @@
     "exit": "TP +10%",
     "pnl": 0.67,
     "weight": 0.5
+   },
+   {
+    "symbol": "CI",
+    "mint": "Bn5jGpvjvRKYQDA3v2qmwWB2uGYja7fLMuBh6tFWpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:03:44Z",
+    "cost": 5.91,
+    "pnl_pct": -5.8,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.33,
+    "closed": "2026-11-27T22:08:44Z",
+    "exit": "5 min, only -1%",
+    "pnl": -0.34,
+    "weight": 0.5
    }
   ],
   "open": [
-   "CI",
    "Rockstar",
    "fatcat",
-   "ZOO"
+   "ZOO",
+   "TED"
   ]
  },
  "learner_summary": {
@@ -32452,11 +32452,11 @@
    },
    {
     "label": "snipe · np:dev:8+",
-    "n": 260,
+    "n": 261,
     "avg": -8.6
    }
   ],
-  "shadows": 2313,
+  "shadows": 2314,
   "memory": "snipe"
  }
 }
