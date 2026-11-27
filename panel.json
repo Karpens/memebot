@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:40:57Z",
+ "updated": "2026-11-27T09:41:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3865,
+  "lines": 3867,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795736400,
-   82.3
-  ],
   [
    1795736460,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795772414,
    361.97
+  ],
+  [
+   1795772474,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:02:21Z",
-   "time": "10:02:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (mayhem mode 6, serial launcher 2, snipe not bought: trades tonight 1)",
-   "n": 3666
-  },
-  {
-   "t": "2026-11-27T09:03:21Z",
-   "time": "10:03:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (mayhem mode 5, serial launcher 2)",
-   "n": 3667
-  },
-  {
    "t": "2026-11-27T09:03:44Z",
    "time": "10:03:44",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "scan",
    "text": "new pairs · 4.6 a minute · 0 watched · 14 rejected (snipe not bought: trades tonight 8, mayhem mode 5, serial launcher 1)",
    "n": 3865
+  },
+  {
+   "t": "2026-11-27T09:40:57Z",
+   "time": "10:40:57",
+   "agent": "LEARNER",
+   "coin": "GTA7",
+   "action": "shadow",
+   "text": "SHADOW GTA7 would have made +16.1% (TP +10%) · learned x0.5 · np:social:none now avg -9.5% over 206.5",
+   "n": 3866
+  },
+  {
+   "t": "2026-11-27T09:41:25Z",
+   "time": "10:41:25",
+   "agent": "LEARNER",
+   "coin": "Suki",
+   "action": "shadow",
+   "text": "SHADOW Suki would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.5% over 217",
+   "n": 3867
   }
  ],
  "nights": [
@@ -6592,32 +6592,32 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 1,
+  "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 654,
-    "last_event_age_s": 12.1,
+    "events": 656,
+    "last_event_age_s": 16.2,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16781,
-    "last_event_age_s": 1.7,
+    "events": 16810,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 379,
-    "last_event_age_s": 14.1,
+    "events": 380,
+    "last_event_age_s": 15.8,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6632,7 +6632,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.6,
   "watching": 0,
-  "followed": 8
+  "followed": 5
  },
  "learner": {
   "samples": 249,
@@ -6673,29 +6673,65 @@
     "avg": -10.9
    }
   ],
-  "shadows": 731,
+  "shadows": 733,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8528,
+   "sent": 8563,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8539,
+   "sent": 8574,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "COIN",
+   "name": "coin",
+   "mint": "F28zBHzmxrHYoGaqJekEd2L4E4tStHA4xQb2Manpxgko",
+   "age_s": 16,
+   "sol_in": 6.99,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": 38.1,
+   "mcap_sol": 68.2,
+   "dev_pct": 26.6,
+   "big_sell": 1.68,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "8Gwif15jM3zGxQf2AzsmvfznYrjpiGVLFMhUkvrkpump",
+   "age_s": 23,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "8neLaEBuVXh77iZTQW29H5RqD2a1gBQGxDwin87Cpump",
-   "age_s": 12,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6713,7 +6749,7 @@
    "symbol": "table",
    "name": "table",
    "mint": "5phSFous8mThwibFomir1t16TivbsxGtPMzMyJ15pump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.05,
    "buys": 1,
    "sells": 0,
@@ -6731,7 +6767,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "CF2w9ZwA5xUtDorRzxacwtpahQcc3HJDo9zdYMfJpump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6749,12 +6785,12 @@
    "symbol": "LINK",
    "name": "LINK",
    "mint": "DyNKAzdz4br8UFKwqHEjCQLeydrPuC1itJyWfyUcpump",
-   "age_s": 43,
-   "sol_in": -0.56,
-   "buys": 8,
-   "sells": 16,
-   "rise_pct": -3.1,
-   "mcap_sol": 37.8,
+   "age_s": 76,
+   "sol_in": 3.32,
+   "buys": 17,
+   "sells": 18,
+   "rise_pct": 19.6,
+   "mcap_sol": 46.6,
    "dev_pct": 16.5,
    "big_sell": 4.52,
    "x": "https://x.com/LinkPairs",
@@ -6767,7 +6803,7 @@
    "symbol": "GAYCOIN",
    "name": "GAYCOIN",
    "mint": "9eDUyjwAtdGZBn9h4qBUq8cBZuWUpbBjTVW3a26zpump",
-   "age_s": 60,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6785,7 +6821,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "kQYqriE5GbAV56DtmfKnvEaUWF7ZGDsW545Rr1apump",
-   "age_s": 67,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6803,12 +6839,12 @@
    "symbol": "GTA7",
    "name": "GTA VII",
    "mint": "HrURiXYRBkK25NcPDeBFn88AUH2yPwtWyWCL5WXrdSGV",
-   "age_s": 117,
-   "sol_in": 1.02,
-   "buys": 5,
-   "sells": 1,
-   "rise_pct": 6.7,
-   "mcap_sol": 31.8,
+   "age_s": 150,
+   "sol_in": 4.81,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": 33.4,
+   "mcap_sol": 39.8,
    "dev_pct": 3.4,
    "big_sell": 1.02,
    "x": "https://x.com/RockstarGames",
@@ -6821,7 +6857,7 @@
    "symbol": "COIN",
    "name": "COIN",
    "mint": "CcGCimVr3aTTrimi3N4n2XBHRudcdZxjtLrdHKr5o4yU",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": -0.77,
    "buys": 2,
    "sells": 10,
@@ -6839,7 +6875,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "3Lc6d8ND8TBCZQte6kzbZACTgy96BEoYhk8dt6jnpump",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6852,78 +6888,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "Suki",
-   "name": "Sukicoin",
-   "mint": "4BD1BFiwLsesHMDgiR2kupJYBnVkHStzY4kmD6xMx3tG",
-   "age_s": 153,
-   "sol_in": -0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://clonepump.fun",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "RING",
-   "name": "privacyRing",
-   "mint": "7x5ATSnQwuAStkd4RZjNr3jvAbiNUnuA6vaf7XZXpump",
-   "age_s": 155,
-   "sol_in": -0.99,
-   "buys": 2,
-   "sells": 5,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.99,
-   "x": "https://x.com/tradeonring",
-   "tg": false,
-   "web": "https://ringprivacy.cc/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "RINGBALL",
-   "name": "Ringball",
-   "mint": "CcHp3tieeVtpEiCQztYHqFZ3aUpqZB8kLReJ1gjEpump",
-   "age_s": 161,
-   "sol_in": 0.93,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": 6.3,
-   "mcap_sol": 29.9,
-   "dev_pct": 0.3,
-   "big_sell": 2.09,
-   "x": "https://x.com/tryRingball",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "Capybara",
-   "name": "The Capybara",
-   "mint": "ATf1fQ4w936QTVWU6G3S56HqK2ZTQys1psWEEdUCpump",
-   "age_s": 169,
-   "sol_in": 0.19,
-   "buys": 7,
-   "sells": 14,
-   "rise_pct": 1.2,
-   "mcap_sol": 30.2,
-   "dev_pct": 3.4,
-   "big_sell": 2.68,
-   "x": "https://x.com/Milsaftermils/status/2126247477208641990",
-   "tg": false,
-   "web": "https://www.reddit.com/r/MemeEconomy/comments/5e9y1c/capybara_memes_a_good_investment_heading_onto/",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
@@ -6947,38 +6911,6 @@
    "sol_in": 0.05
   },
   {
-   "symbol": "GTA7",
-   "mint": "HrURiXYRBkK25NcPDeBFn88AUH2yPwtWyWCL5WXrdSGV",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:39:00Z",
-   "cost": 36.2,
-   "pnl_pct": 2.0,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.05
-  },
-  {
-   "symbol": "Suki",
-   "mint": "4BD1BFiwLsesHMDgiR2kupJYBnVkHStzY4kmD6xMx3tG",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:38:24Z",
-   "cost": 36.2,
-   "pnl_pct": -4.1,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": -0.0
-  },
-  {
    "symbol": "RING",
    "mint": "7x5ATSnQwuAStkd4RZjNr3jvAbiNUnuA6vaf7XZXpump",
    "status": "open",
@@ -6986,7 +6918,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:38:22Z",
    "cost": 36.2,
-   "pnl_pct": -10.0,
+   "pnl_pct": -10.1,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -7009,6 +6941,46 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.05
+  },
+  {
+   "symbol": "Suki",
+   "mint": "4BD1BFiwLsesHMDgiR2kupJYBnVkHStzY4kmD6xMx3tG",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:38:24Z",
+   "cost": 36.2,
+   "pnl_pct": -7.9,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": -0.0,
+   "closed": "2026-11-27T09:41:25Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -2.86,
+   "weight": 0.5
+  },
+  {
+   "symbol": "GTA7",
+   "mint": "HrURiXYRBkK25NcPDeBFn88AUH2yPwtWyWCL5WXrdSGV",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:39:00Z",
+   "cost": 36.2,
+   "pnl_pct": 16.1,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 1,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.05,
+   "closed": "2026-11-27T09:40:57Z",
+   "exit": "TP +10%",
+   "pnl": 5.84,
+   "weight": 0.5
   },
   {
    "symbol": "LINK",
@@ -7369,54 +7341,14 @@
    "exit": "dump: 6.4 SOL sold",
    "pnl": -13.35,
    "weight": 0.5
-  },
-  {
-   "symbol": "CHOSEN",
-   "mint": "Zd8Nv83aJJDxMLGeM55nNiziqvmfSQaGsj2RP9Apump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:32:03Z",
-   "cost": 36.2,
-   "pnl_pct": 12.0,
-   "tier": "swing",
-   "score": 4,
-   "steps": 2,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 15.46,
-   "closed": "2026-11-27T09:32:10Z",
-   "exit": "TP +20%",
-   "pnl": 4.34,
-   "weight": 0.5
-  },
-  {
-   "symbol": "BUTKERA",
-   "mint": "Dy7FrpqCeWjdK1eX3uxFYMSSA9jDbCg3fYEpdhkgpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:31:20Z",
-   "cost": 36.2,
-   "pnl_pct": 8.9,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.32,
-   "closed": "2026-11-27T09:31:48Z",
-   "exit": "TP +10%",
-   "pnl": 3.21,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 747,
-  "wins": 159,
-  "win_rate": 21.3,
-  "mean_pnl_pct": -8.44,
-  "open": 5,
+  "n": 749,
+  "wins": 160,
+  "win_rate": 21.4,
+  "mean_pnl_pct": -8.41,
+  "open": 3,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -7424,10 +7356,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 731,
-   "wins": 156,
-   "win_rate": 21.3,
-   "mean_pnl_pct": -8.35
+   "n": 733,
+   "wins": 157,
+   "win_rate": 21.4,
+   "mean_pnl_pct": -8.32
   }
  }
 }
