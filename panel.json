@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T02:06:00Z",
+ "updated": "2026-11-27T02:06:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 1126.81,
- "equity": 1395.52,
+ "equity": 1395.51,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 38,
   "checked": 34,
   "filtered": 3,
-  "lines": 455,
+  "lines": 456,
   "last_rug": {
    "coin": "MINT",
    "pass": true
@@ -826,14 +826,14 @@
    "symbol": "cat3d",
    "mint": "2Bs6WmotZiRtjmyntMLCRzSBR3e7GfUFcZPdDxQipump",
    "cost": 147.39,
-   "value": 134.81,
+   "value": 134.8,
    "pnl_pct": -8.5,
    "opened": "2026-11-27T02:04:22Z",
    "url": "https://pump.fun/coin/2Bs6WmotZiRtjmyntMLCRzSBR3e7GfUFcZPdDxQipump",
    "reason": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.18554e-06,
-   "price": 1.99984e-06,
+   "price": 1.9998e-06,
    "slip": 6.35,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -876,7 +876,7 @@
    "reason": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.18158e-06,
-   "price": 1.99984e-06,
+   "price": 1.9998e-06,
    "slip": 6.3,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -2125,15 +2125,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-27T01:50:05Z",
-   "time": "02:50:05",
-   "agent": "EXECUTOR",
-   "coin": "TJR",
-   "action": "enter",
-   "text": "ENTER TJR at 0.0000020507 · slip 0.4% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 6 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-   "n": 256
-  },
   {
    "t": "2026-11-27T01:50:05Z",
    "time": "02:50:05",
@@ -3924,6 +3915,15 @@
    "action": "shadow",
    "text": "SHADOW TOGI would have made -8.9% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -10.3% over 21.5",
    "n": 455
+  },
+  {
+   "t": "2026-11-27T02:06:19Z",
+   "time": "03:06:19",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 3 rejected (mayhem mode 3)",
+   "n": 456
   }
  ],
  "nights": [
@@ -3982,7 +3982,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 21 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3990,15 +3990,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 117,
-    "last_event_age_s": 37.3,
+    "events": 120,
+    "last_event_age_s": 1.6,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1967,
+    "events": 2020,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
@@ -4007,7 +4007,7 @@
     "name": "metadata",
     "connected": false,
     "events": 92,
-    "last_event_age_s": 33.6,
+    "last_event_age_s": 68.6,
     "errors": 5,
     "last_error": "h.uguu.se: too slow (over 2 s)"
    }
@@ -4020,9 +4020,9 @@
   "exit_ms": 35,
   "exit_last_ms": 33,
   "launch_to_entry_s": 0,
-  "creates_per_min": 1.8,
+  "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 5
+  "followed": 4
  },
  "learner": {
   "samples": 26,
@@ -4069,23 +4069,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1293,
+   "sent": 1331,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1293,
+   "sent": 1331,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "wind",
+   "name": "wind",
+   "mint": "CacB9D7iZ6bp2v4PnP41n1w1qjcLRCUpfaquM99mpump",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "MINT",
    "name": "Mint Intern",
    "mint": "8xkK8tLJJE4p82zm8VXmjDFn7S33yd7GELUzLZmZTSWg",
-   "age_s": 37,
+   "age_s": 72,
    "sol_in": -0.0,
    "buys": 1,
    "sells": 2,
@@ -4103,12 +4121,12 @@
    "symbol": "Toggle",
    "name": "Toggle",
    "mint": "4aw2BtjF4BxWn4RQPoUcrEWe61MexjASfmuyuSb7pump",
-   "age_s": 91,
-   "sol_in": 0.61,
+   "age_s": 126,
+   "sol_in": -0.1,
    "buys": 22,
-   "sells": 32,
-   "rise_pct": 4.1,
-   "mcap_sol": 30.2,
+   "sells": 35,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.8,
    "dev_pct": 2.0,
    "big_sell": 2.76,
    "x": "https://x.com/trytoggle",
@@ -4121,7 +4139,7 @@
    "symbol": "test",
    "name": "test",
    "mint": "kXpW1q2PY8RK4etnkSUhKtZNRh8wpW1v9ai8xDTtesT",
-   "age_s": 98,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4139,7 +4157,7 @@
    "symbol": "cat3d",
    "name": "cat3d",
    "mint": "2Bs6WmotZiRtjmyntMLCRzSBR3e7GfUFcZPdDxQipump",
-   "age_s": 98,
+   "age_s": 133,
    "sol_in": -0.02,
    "buys": 0,
    "sells": 1,
@@ -4157,49 +4175,13 @@
    "symbol": "wind",
    "name": "wind",
    "mint": "AZcaJn9Vb2sJqGFHPjR9mdaZW3jPynUNuv4JRWSqpump",
-   "age_s": 118,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "530A",
-   "name": "READ",
-   "mint": "BdQZtWwKGGu4fegHsnvtaHK3pNpNbZY5ajFZRnm6pump",
-   "age_s": 147,
-   "sol_in": -0.64,
-   "buys": 0,
-   "sells": 3,
-   "rise_pct": -99.9,
-   "mcap_sol": 0.0,
-   "dev_pct": 2.2,
-   "big_sell": 0.64,
-   "x": "https://x.com/jazzquant/status/2126134633171701787?a=WLRyswcNcs3tmWOA_9k&s=20",
-   "tg": false,
-   "web": false,
-   "status": "exited: stop -78%",
-   "why": "stop -78%"
-  },
-  {
-   "symbol": "NO SLEEP",
-   "name": "NO SLEEP",
-   "mint": "84cdzuYq63u2hJrMn8YjgkADXg7safQ4tgMxpyC1pump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
