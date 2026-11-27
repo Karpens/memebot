@@ -47,51 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T03:46:33Z",
-    "time": "04:46:33",
-    "agent": "EXECUTOR",
-    "coin": "SOLSY",
-    "action": "exit",
-    "text": "EXIT SOLSY $-6.18 (-14%) · curve quiet for 3 min (no trade)",
-    "n": 1584
-   },
-   {
-    "t": "2026-11-27T03:46:33Z",
-    "time": "04:46:33",
-    "agent": "LEARNER",
-    "coin": "SOLSY",
-    "action": "learn",
-    "text": "learned · hour:03-05 now avg -10.2% over 186",
-    "n": 1585
-   },
-   {
-    "t": "2026-11-27T03:46:50Z",
-    "time": "04:46:50",
-    "agent": "EXECUTOR",
-    "coin": "SNOWCHILL",
-    "action": "exit",
-    "text": "EXIT SNOWCHILL $-5.85 (-14%) · stop -10%",
-    "n": 1586
-   },
-   {
-    "t": "2026-11-27T03:46:50Z",
-    "time": "04:46:50",
-    "agent": "LEARNER",
-    "coin": "SNOWCHILL",
-    "action": "learn",
-    "text": "learned · hour:03-05 now avg -10.3% over 187",
-    "n": 1587
-   },
-   {
-    "t": "2026-11-27T03:46:52Z",
-    "time": "04:46:52",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "5 losses in a row · 2 min pause",
-    "n": 1588
-   },
-   {
     "t": "2026-11-27T03:46:52Z",
     "time": "04:46:52",
     "agent": "EXECUTOR",
@@ -5445,6 +5400,51 @@
     "action": "shadow",
     "text": "SHADOW CTRL would have made -6.9% (5 min, only -3%) · learned x0.5 · np:dev:0-2 now avg -10.8% over 149.5",
     "n": 2183
+   },
+   {
+    "t": "2026-11-27T05:08:48Z",
+    "time": "06:08:48",
+    "agent": "LEARNER",
+    "coin": "capmas",
+    "action": "shadow",
+    "text": "SHADOW capmas · not bought (pause after a losing streak) · followed as if bought: $20.88 at 0.0000038895 (curve maths, every cost) · same exits, outside the book",
+    "n": 2184
+   },
+   {
+    "t": "2026-11-27T05:08:49Z",
+    "time": "06:08:49",
+    "agent": "LEARNER",
+    "coin": "capmas",
+    "action": "shadow",
+    "text": "SHADOW capmas would have made +6.8% (TP +10%) · learned x0.5 · np:dev:0-2 now avg -10.7% over 150",
+    "n": 2185
+   },
+   {
+    "t": "2026-11-27T05:08:52Z",
+    "time": "06:08:52",
+    "agent": "LEARNER",
+    "coin": "WASB",
+    "action": "shadow",
+    "text": "SHADOW WASB · not bought (pause after a losing streak) · followed as if bought: $20.88 at 0.0000044395 (curve maths, every cost) · same exits, outside the book",
+    "n": 2186
+   },
+   {
+    "t": "2026-11-27T05:08:55Z",
+    "time": "06:08:55",
+    "agent": "LEARNER",
+    "coin": "WASB",
+    "action": "shadow",
+    "text": "SHADOW WASB would have made -15.6% (dump: 2.1 SOL sold) · learned x0.5 · np:sol:12+ now avg -17.1% over 17.5",
+    "n": 2187
+   },
+   {
+    "t": "2026-11-27T05:08:56Z",
+    "time": "06:08:56",
+    "agent": "LEARNER",
+    "coin": "NHC",
+    "action": "shadow",
+    "text": "SHADOW NHC · not bought (pause after a losing streak) · followed as if bought: $20.88 at 0.0000022199 (curve maths, every cost) · same exits, outside the book",
+    "n": 2188
    }
   ],
   "trades": [
@@ -15685,7 +15685,7 @@
   "flagged": 196,
   "checked": 192,
   "filtered": 5,
-  "lines": 2183,
+  "lines": 2188,
   "flags": [
    {
     "coin": "SANTABALL",
@@ -17200,6 +17200,10 @@
    [
     1795756073,
     208.8
+   ],
+   [
+    1795756133,
+    208.8
    ]
   ],
   "last_rug": {
@@ -17208,9 +17212,9 @@
   },
   "np_said": 1795756089.780882,
   "shadow": {
-   "n": 260,
-   "wins": 45,
-   "sum": -2300.9
+   "n": 262,
+   "wins": 46,
+   "sum": -2309.7
   },
   "np_speed": {
    "first_in": [
@@ -26560,9 +26564,9 @@
   }
  },
  "shadow": {
-  "n": 274,
-  "wins": 47,
-  "sum": -2499.4,
+  "n": 276,
+  "wins": 48,
+  "sum": -2508.2,
   "by": {
    "learner": {
     "n": 16,
@@ -26570,52 +26574,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 258,
-    "wins": 44,
-    "sum": -2301.6
+    "n": 260,
+    "wins": 45,
+    "sum": -2310.4
    }
   },
   "closed": [
-   {
-    "symbol": "mas",
-    "mint": "8WJrNBD4jpY5Pg66hCuK6YsZRefzP6Bkw4ayAi8Jpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T04:40:06Z",
-    "cost": 24.52,
-    "pnl_pct": -16.5,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.99,
-    "closed": "2026-11-27T04:41:04Z",
-    "exit": "stop -13%",
-    "pnl": -4.05,
-    "weight": 0.5
-   },
-   {
-    "symbol": "FLOP",
-    "mint": "3w6vE1be5QwB6FSFZ5EsaUhHidJXqdhsKf8Tu6Lhpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T04:38:17Z",
-    "cost": 24.6,
-    "pnl_pct": -6.8,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T04:43:17Z",
-    "exit": "5 min, only -3%",
-    "pnl": -1.68,
-    "weight": 0.5
-   },
    {
     "symbol": "Christmas",
     "mint": "B18stJiF3rSgezdAq9BezmF3Yxmtd3KJWWDEZKAHpump",
@@ -26975,10 +26939,51 @@
     "exit": "5 min, only -3%",
     "pnl": -1.46,
     "weight": 0.5
+   },
+   {
+    "symbol": "capmas",
+    "mint": "3VJJoqmqwmQEWEpxsnaH5geUJ3TuWu6ZEyupNJrBpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T05:08:48Z",
+    "cost": 20.88,
+    "pnl_pct": 6.8,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 10.54,
+    "closed": "2026-11-27T05:08:49Z",
+    "exit": "TP +10%",
+    "pnl": 1.43,
+    "weight": 0.5
+   },
+   {
+    "symbol": "WASB",
+    "mint": "Fvsu4PLWK4zyXuUkAMs7BhDe9teaFAGhbPuzhZVipump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T05:08:52Z",
+    "cost": 20.88,
+    "pnl_pct": -15.6,
+    "tier": "scalp",
+    "score": 2.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 12.63,
+    "closed": "2026-11-27T05:08:55Z",
+    "exit": "dump: 2.1 SOL sold",
+    "pnl": -3.26,
+    "weight": 0.5
    }
   ],
   "open": [
-   "MSI100"
+   "MSI100",
+   "NHC"
   ]
  },
  "learner_summary": {
@@ -26995,7 +27000,7 @@
    {
     "label": "snipe · np:sol:6-12",
     "n": 24,
-    "avg": -6.3
+    "avg": -6.0
    },
    {
     "label": "snipe · np:dev:5-8",
@@ -27016,11 +27021,11 @@
    },
    {
     "label": "snipe · np:sol:12+",
-    "n": 17,
-    "avg": -17.2
+    "n": 18,
+    "avg": -17.1
    }
   ],
-  "shadows": 258,
+  "shadows": 260,
   "memory": "snipe"
  }
 }
