@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:00:00Z",
-    "time": "09:00:00",
-    "agent": "LOGGER",
-    "coin": null,
-    "action": "tape",
-    "text": "tape 2026-11-27T07 · 4953 lines (3689 curve readings) · 0.8 MB · 175 coins",
-    "n": 3322
-   },
-   {
-    "t": "2026-11-27T08:00:51Z",
-    "time": "09:00:51",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.8 a minute · 0 watched · 10 rejected (serial launcher 4, snipe not bought: trades tonight 3, mayhem mode 3)",
-    "n": 3323
-   },
-   {
     "t": "2026-11-27T08:01:03Z",
     "time": "09:01:03",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 7.8 a minute · 12 watched · 17 rejected (snipe not bought: trades tonight 8, mayhem mode 7, serial launcher 2) · closest PAWN: no curve reading yet",
     "n": 3921
+   },
+   {
+    "t": "2026-11-27T09:51:03Z",
+    "time": "10:51:03",
+    "agent": "LEARNER",
+    "coin": "SANDWICH",
+    "action": "shadow",
+    "text": "SHADOW SANDWICH · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023755 (curve maths, every cost) · same exits, outside the book",
+    "n": 3922
+   },
+   {
+    "t": "2026-11-27T09:51:10Z",
+    "time": "10:51:10",
+    "agent": "LEARNER",
+    "coin": "PUMP",
+    "action": "shadow",
+    "text": "SHADOW PUMP would have made +16.1% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.4% over 220",
+    "n": 3923
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3921,
+  "lines": 3923,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795737000,
-    82.3
-   ],
    [
     1795737060,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795773014,
     361.97
+   ],
+   [
+    1795773074,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795773051.645354,
   "shadow": {
-   "n": 755,
-   "wins": 164,
-   "sum": -6190.7
+   "n": 756,
+   "wins": 165,
+   "sum": -6174.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 769,
-  "wins": 166,
-  "sum": -6389.2,
+  "n": 770,
+  "wins": 167,
+  "sum": -6373.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 753,
-    "wins": 163,
-    "sum": -6191.4
+    "n": 754,
+    "wins": 164,
+    "sum": -6175.3
    }
   },
   "closed": [
-   {
-    "symbol": "Conga",
-    "mint": "EuLCw9oRTyVsxWFc6C8gM48cG7cL4xSSqXvzPHmFpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:41:31Z",
-    "cost": 36.2,
-    "pnl_pct": -15.5,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.01,
-    "closed": "2026-11-27T09:41:35Z",
-    "exit": "stop -12%",
-    "pnl": -5.62,
-    "weight": 0.5
-   },
    {
     "symbol": "Pobby",
     "mint": "CBkQxn7beaPnR4UcL289WAH8yd4kmEJrHK9rLmr1pump",
@@ -31743,13 +31723,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.82,
     "weight": 0.5
+   },
+   {
+    "symbol": "PUMP",
+    "mint": "8LAyBfHE5GTmJ2W7pPQmgbE6qPemcZhmEmv6VLn7vSaq",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:49:29Z",
+    "cost": 36.2,
+    "pnl_pct": 16.1,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:51:10Z",
+    "exit": "TP +10%",
+    "pnl": 5.82,
+    "weight": 0.5
    }
   ],
   "open": [
    "FBEACON",
-   "PUMP",
    "Scxuball",
-   "TODD"
+   "TODD",
+   "SANDWICH"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31791,7 @@
     "avg": -11.5
    }
   ],
-  "shadows": 753,
+  "shadows": 754,
   "memory": "snipe"
  }
 }
