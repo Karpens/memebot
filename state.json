@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T03:09:48Z",
-    "time": "04:09:48",
-    "agent": "EXECUTOR",
-    "coin": "PLAYGROUND",
-    "action": "enter",
-    "text": "ENTER PLAYGROUND at 0.0000024265 · slip 2.4% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 2 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 1154
-   },
-   {
-    "t": "2026-11-27T03:09:48Z",
-    "time": "04:09:48",
-    "agent": "NEWS",
-    "coin": "PLAYGROUND",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 1155
-   },
-   {
     "t": "2026-11-27T03:10:02Z",
     "time": "04:10:02",
     "agent": "RISK",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW TAGDOUBT would have made -7.6% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -12.0% over 123.5",
     "n": 1753
+   },
+   {
+    "t": "2026-11-27T04:07:27Z",
+    "time": "05:07:27",
+    "agent": "LEARNER",
+    "coin": "$LEGEND",
+    "action": "shadow",
+    "text": "SHADOW $LEGEND would have made -10.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -12.0% over 124",
+    "n": 1754
+   },
+   {
+    "t": "2026-11-27T04:07:30Z",
+    "time": "05:07:30",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.2 a minute · 0 watched · 13 rejected (mayhem mode 7, serial launcher 3, snipe not bought: pause after a  3)",
+    "n": 1755
    }
   ],
   "trades": [
@@ -13644,7 +13644,7 @@
   "flagged": 159,
   "checked": 155,
   "filtered": 5,
-  "lines": 1753,
+  "lines": 1755,
   "flags": [
    {
     "coin": "ANGEL",
@@ -14921,11 +14921,11 @@
    "coin": "GTAIV",
    "pass": true
   },
-  "np_said": 1795752390.780927,
+  "np_said": 1795752450.780984,
   "shadow": {
-   "n": 204,
+   "n": 205,
    "wins": 37,
-   "sum": -1842.8
+   "sum": -1853.2
   },
   "np_speed": {
    "first_in": [
@@ -24151,9 +24151,9 @@
   }
  },
  "shadow": {
-  "n": 218,
+  "n": 219,
   "wins": 39,
-  "sum": -2041.3,
+  "sum": -2051.7,
   "by": {
    "learner": {
     "n": 16,
@@ -24161,32 +24161,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 202,
+    "n": 203,
     "wins": 36,
-    "sum": -1843.5
+    "sum": -1853.9
    }
   },
   "closed": [
-   {
-    "symbol": "CCAT",
-    "mint": "xNKt9xKsMwSrsXZ4YqXEn9UEKquS59WqZiPsKB6pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T03:52:58Z",
-    "cost": 38.71,
-    "pnl_pct": -19.5,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 11.77,
-    "closed": "2026-11-27T03:53:00Z",
-    "exit": "dump: 3.0 SOL sold",
-    "pnl": -7.53,
-    "weight": 0.5
-   },
    {
     "symbol": "JADE",
     "mint": "sbUD3iHfwyTffU52kgWxkFZzzWVgDc5z4ts5LfSpump",
@@ -24566,10 +24546,29 @@
     "exit": "5 min, only -4%",
     "pnl": -2.35,
     "weight": 0.5
+   },
+   {
+    "symbol": "$LEGEND",
+    "mint": "DnC83aqWLHt8r5o37AVAU2mYKtY52E4bBKHqD9dopump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:04:14Z",
+    "cost": 30.53,
+    "pnl_pct": -10.4,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.49,
+    "closed": "2026-11-27T04:07:27Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.17,
+    "weight": 0.5
    }
   ],
   "open": [
-   "$LEGEND",
    "LENTO",
    "NVIDIA"
   ]
@@ -24613,7 +24612,7 @@
     "avg": -17.9
    }
   ],
-  "shadows": 202,
+  "shadows": 203,
   "memory": "snipe"
  }
 }
