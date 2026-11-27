@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:07:52Z",
-    "time": "11:07:52",
-    "agent": "LEARNER",
-    "coin": "slapcat",
-    "action": "shadow",
-    "text": "SHADOW slapcat would have made +16.6% (TP +10%) · learned x0.5 · np:sol:3-6 now avg -11.4% over 69",
-    "n": 4001
-   },
-   {
-    "t": "2026-11-27T10:08:01Z",
-    "time": "11:08:01",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.0 a minute · 0 watched · 22 rejected (serial launcher 14, snipe not bought: trades tonight 4, mayhem mode 3)",
-    "n": 4002
-   },
-   {
     "t": "2026-11-27T10:08:04Z",
     "time": "11:08:04",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW LDGR would have made -9.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.5% over 221.5",
     "n": 4600
+   },
+   {
+    "t": "2026-11-27T11:45:25Z",
+    "time": "12:45:25",
+    "agent": "LEARNER",
+    "coin": "Inu black",
+    "action": "shadow",
+    "text": "SHADOW Inu black would have made -7.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -8.5% over 224",
+    "n": 4601
+   },
+   {
+    "t": "2026-11-27T11:45:39Z",
+    "time": "12:45:39",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.4 a minute · 0 watched · 7 rejected (snipe not bought: night at open  4, mayhem mode 2, odd curve reading: virtual SOL i 1)",
+    "n": 4602
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4600,
+  "lines": 4602,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795743840,
-    80.34
-   ],
    [
     1795743900,
     80.34
@@ -10161,17 +10157,21 @@
    [
     1795779867,
     59.14
+   ],
+   [
+    1795779927,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795779878.028933,
+  "np_said": 1795779939.028923,
   "shadow": {
-   "n": 1021,
+   "n": 1022,
    "wins": 232,
-   "sum": -7496.5
+   "sum": -7504.0
   },
   "np_speed": {
    "first_in": [
@@ -31809,9 +31809,9 @@
   }
  },
  "shadow": {
-  "n": 1035,
+  "n": 1036,
   "wins": 234,
-  "sum": -7695.0,
+  "sum": -7702.5,
   "by": {
    "learner": {
     "n": 16,
@@ -31819,32 +31819,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1019,
+    "n": 1020,
     "wins": 231,
-    "sum": -7497.2
+    "sum": -7504.7
    }
   },
   "closed": [
-   {
-    "symbol": "FUEL",
-    "mint": "EUwpMkzdzTdSmB7Cc5H9qMsxVaFZhktTtoUB37Azpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T11:37:47Z",
-    "cost": 5.91,
-    "pnl_pct": -8.7,
-    "tier": "swing",
-    "score": 4,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 22.86,
-    "closed": "2026-11-27T11:37:49Z",
-    "exit": "dump: 2.3 SOL sold",
-    "pnl": -0.51,
-    "weight": 0.5
-   },
    {
     "symbol": "BOWL",
     "mint": "9Arhw1DXjCP6d4asvhvKwjqkuQvUigdPtKW8jeXwpump",
@@ -32224,11 +32204,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.54,
     "weight": 0.5
+   },
+   {
+    "symbol": "Inu black",
+    "mint": "5Z2GnmZysiwLZtXkobeDFeTzfrUVHYHfSHCRFqWmpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T11:40:59Z",
+    "cost": 5.91,
+    "pnl_pct": -7.5,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T11:45:25Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.45,
+    "weight": 0.5
    }
   ],
   "open": [
    "PENGUIN",
-   "Inu black",
    "TEST",
    "Solanta"
   ]
@@ -32272,7 +32271,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1227,
+  "shadows": 1228,
   "memory": "snipe"
  }
 }
