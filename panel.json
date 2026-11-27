@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T11:39:57Z",
+ "updated": "2026-11-27T11:40:31Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4563,
+  "lines": 4565,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795743540,
-   80.34
-  ],
   [
    1795743600,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795779567,
    59.14
+  ],
+  [
+   1795779627,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,24 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T11:11:32Z",
-   "time": "12:11:32",
-   "agent": "LEARNER",
-   "coin": "HCA",
-   "action": "shadow",
-   "text": "SHADOW HCA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021452 (curve maths, every cost) · same exits, outside the book",
-   "n": 4364
-  },
-  {
-   "t": "2026-11-27T11:11:37Z",
-   "time": "12:11:37",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.2 a minute · 0 watched · 18 rejected (snipe not bought: trades tonight 9, serial launcher 4, mayhem mode 3)",
-   "n": 4365
-  },
-  {
    "t": "2026-11-27T11:11:50Z",
    "time": "12:11:50",
    "agent": "LEARNER",
@@ -6157,6 +6139,24 @@
    "action": "shadow",
    "text": "SHADOW Pupstarz would have made -13.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -8.5% over 220",
    "n": 4563
+  },
+  {
+   "t": "2026-11-27T11:40:21Z",
+   "time": "12:40:21",
+   "agent": "LEARNER",
+   "coin": "LCE",
+   "action": "shadow",
+   "text": "SHADOW LCE · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022527 (curve maths, every cost) · same exits, outside the book",
+   "n": 4564
+  },
+  {
+   "t": "2026-11-27T11:40:25Z",
+   "time": "12:40:25",
+   "agent": "LEARNER",
+   "coin": "LDGR",
+   "action": "shadow",
+   "text": "SHADOW LDGR · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021398 (curve maths, every cost) · same exits, outside the book",
+   "n": 4565
   }
  ],
  "nights": [
@@ -6211,7 +6211,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · odd curve readings 11 (2 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · odd curve readings 11 (2 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6219,15 +6219,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 32,
-    "last_event_age_s": 22.6,
+    "events": 34,
+    "last_event_age_s": 6.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 505,
+    "events": 561,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6235,8 +6235,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 22,
-    "last_event_age_s": 22.5,
+    "events": 24,
+    "last_event_age_s": 6.7,
     "errors": 0,
     "last_error": null
    }
@@ -6249,9 +6249,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 10,
+  "followed": 11,
   "odd_readings": 11,
   "odd_coins": 2
  },
@@ -6300,23 +6300,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 413,
+   "sent": 449,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 416,
+   "sent": 452,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LDGR",
+   "name": "Ledger",
+   "mint": "Y1hXedZ3SGg3VJ3nQqi9hZbMoJA1JxVn1t7QaeNpump",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
+   "symbol": "LCE",
+   "name": "lceVSgirl",
+   "mint": "8DGtcCvDczPBT3qfpxRi8ExCJ7SuvL2pc9TA3mPgpump",
+   "age_s": 10,
+   "sol_in": 1.09,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 7.4,
+   "mcap_sol": 30.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "USFF",
    "name": "USFF",
    "mint": "BRs1KHgWA5a8uh8TVCR36TdAY2VEGZBxAdfGWmcDpump",
-   "age_s": 22,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6334,7 +6370,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CXgku2h8MFyBcPTXnCNjVd9RWkY77BjAUUscsKWUqjmM",
-   "age_s": 24,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6352,7 +6388,7 @@
    "symbol": "SET",
    "name": "Stocks Set",
    "mint": "25DSjjikSyQYPBCwmxUMYsBYNz2XmME5qsqPGP83D8Cs",
-   "age_s": 46,
+   "age_s": 80,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6370,7 +6406,7 @@
    "symbol": "DIH",
    "name": "DIH",
    "mint": "EajScsbcfsMATRj1dpDVvyzexz4kQRVrDAUrQWS2exif",
-   "age_s": 48,
+   "age_s": 82,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6388,7 +6424,7 @@
    "symbol": "MINT",
    "name": "MintMyGame",
    "mint": "HgYxKNCCDX774go3GenPPeRvndMug7SrGxyr2St5pump",
-   "age_s": 50,
+   "age_s": 84,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 3,
@@ -6406,7 +6442,7 @@
    "symbol": "PENGUIN",
    "name": "Penguin",
    "mint": "2cQTvH6PLEgznjcTTWoXTouTu1vGp4YZCTt2aiW9pump",
-   "age_s": 58,
+   "age_s": 92,
    "sol_in": -0.11,
    "buys": 1,
    "sells": 1,
@@ -6424,12 +6460,12 @@
    "symbol": "PLAN",
    "name": "Trading Plan",
    "mint": "FGAaHQnQU5PiTkm2dLCnvd3TKDxYDbDkoUhGnCDrpump",
-   "age_s": 107,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 141,
+   "sol_in": 0.02,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "rise_pct": 0.1,
+   "mcap_sol": 29.9,
    "dev_pct": 3.4,
    "big_sell": 0.0,
    "x": "https://x.com/KongBTC/status/2126269809260458316",
@@ -6442,7 +6478,7 @@
    "symbol": "PEPECASH",
    "name": "PepeCash",
    "mint": "ERGxdPAhVciioVVK2cfaozyse99vgxkP8TBwvzrJpump",
-   "age_s": 110,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6460,7 +6496,7 @@
    "symbol": "Rockstar",
    "name": "Rockstar Games",
    "mint": "8qSdzyGM2AkpM3KjyXMCRizQb5Cq3B9uK1Gj3XzJLcuE",
-   "age_s": 115,
+   "age_s": 149,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6478,12 +6514,12 @@
    "symbol": "FUEL",
    "name": "Fuel",
    "mint": "EUwpMkzdzTdSmB7Cc5H9qMsxVaFZhktTtoUB37Azpump",
-   "age_s": 130,
-   "sol_in": 23.32,
-   "buys": 47,
-   "sells": 46,
-   "rise_pct": 215.8,
-   "mcap_sol": 88.3,
+   "age_s": 164,
+   "sol_in": 20.44,
+   "buys": 69,
+   "sells": 55,
+   "rise_pct": 182.7,
+   "mcap_sol": 79.0,
    "dev_pct": 0.0,
    "big_sell": 4.54,
    "x": "https://x.com/launchonfuel",
@@ -6491,30 +6527,44 @@
    "web": "https://www.launchonfuel.fun/",
    "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
-  },
-  {
-   "symbol": "FSBF",
-   "name": "Flying Sam Bankman-Fried",
-   "mint": "4WEm6gVodzngwc9XuGYkLckFk7tnr7RgNVHUL3v6nKxJ",
-   "age_s": 167,
-   "sol_in": -4.3,
-   "buys": 9,
-   "sells": 20,
-   "rise_pct": -23.1,
-   "mcap_sol": 29.2,
-   "dev_pct": 15.2,
-   "big_sell": 3.01,
-   "x": "https://x.com/cz_binance/status/2126278987706212451",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "LDGR",
+   "mint": "Y1hXedZ3SGg3VJ3nQqi9hZbMoJA1JxVn1t7QaeNpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T11:40:25Z",
+   "cost": 5.91,
+   "pnl_pct": -3.7,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0
+  },
+  {
+   "symbol": "LCE",
+   "mint": "8DGtcCvDczPBT3qfpxRi8ExCJ7SuvL2pc9TA3mPgpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T11:40:21Z",
+   "cost": 5.91,
+   "pnl_pct": -3.7,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 1.09
+  },
   {
    "symbol": "SET",
    "mint": "25DSjjikSyQYPBCwmxUMYsBYNz2XmME5qsqPGP83D8Cs",
@@ -7033,7 +7083,7 @@
   "wins": 231,
   "win_rate": 22.6,
   "mean_pnl_pct": -7.45,
-  "open": 7,
+  "open": 9,
   "learner": {
    "n": 16,
    "wins": 3,
