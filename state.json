@@ -49,24 +49,6 @@
    {
     "t": "2026-11-27T04:53:47Z",
     "time": "05:53:47",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "6 losses in a row · 2 min pause",
-    "n": 2105
-   },
-   {
-    "t": "2026-11-27T04:53:47Z",
-    "time": "05:53:47",
-    "agent": "EXECUTOR",
-    "coin": "RSA",
-    "action": "exit",
-    "text": "EXIT RSA $-1.65 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 2106
-   },
-   {
-    "t": "2026-11-27T04:53:47Z",
-    "time": "05:53:47",
     "agent": "LEARNER",
     "coin": "RSA",
     "action": "learn",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW PUMP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021774 (curve maths, every cost) · same exits, outside the book",
     "n": 2704
+   },
+   {
+    "t": "2026-11-27T05:59:31Z",
+    "time": "06:59:31",
+    "agent": "LEARNER",
+    "coin": "FLASHER",
+    "action": "shadow",
+    "text": "SHADOW FLASHER would have made -8.6% (5 min, only -5%) · learned x0.5 · np:buys:<70 now avg -9.9% over 175",
+    "n": 2705
+   },
+   {
+    "t": "2026-11-27T05:59:42Z",
+    "time": "06:59:42",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 4, mayhem mode 3, serial launcher 1)",
+    "n": 2706
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2704,
+  "lines": 2706,
   "flags": [
    {
     "coin": "Kibo",
@@ -21011,17 +21011,21 @@
    [
     1795759133,
     361.97
+   ],
+   [
+    1795759193,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795759122.780849,
+  "np_said": 1795759182.780902,
   "shadow": {
-   "n": 291,
+   "n": 292,
    "wins": 50,
-   "sum": -2593.1
+   "sum": -2601.7
   },
   "np_speed": {
    "first_in": [
@@ -30604,9 +30608,9 @@
   }
  },
  "shadow": {
-  "n": 305,
+  "n": 306,
   "wins": 52,
-  "sum": -2791.6,
+  "sum": -2800.2,
   "by": {
    "learner": {
     "n": 16,
@@ -30614,32 +30618,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 289,
+    "n": 290,
     "wins": 49,
-    "sum": -2593.8
+    "sum": -2602.4
    }
   },
   "closed": [
-   {
-    "symbol": "Kibo",
-    "mint": "EqGMVSpViUXzxwu3sNxZocJLhPYEGUu7kRLJEKiDpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:32:13Z",
-    "cost": 39.57,
-    "pnl_pct": -17.6,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 1.19,
-    "closed": "2026-11-27T05:32:15Z",
-    "exit": "stop -14%",
-    "pnl": -6.98,
-    "weight": 0.5
-   },
    {
     "symbol": "Libre",
     "mint": "HcRXRj3GwYmeYUVMaXWyevJyoCu9JbWzwFjd57VQpump",
@@ -31019,11 +31003,30 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.83,
     "weight": 0.5
+   },
+   {
+    "symbol": "FLASHER",
+    "mint": "ERF7fNdUeGgLSVxCremrhL6UaRVHdESo7MvXntGrpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:54:31Z",
+    "cost": 36.33,
+    "pnl_pct": -8.6,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T05:59:31Z",
+    "exit": "5 min, only -5%",
+    "pnl": -3.11,
+    "weight": 0.5
    }
   ],
   "open": [
    "RUNNER",
-   "FLASHER",
    "PUMP"
   ]
  },
@@ -31045,7 +31048,7 @@
    },
    {
     "label": "snipe · hour:05-07",
-    "n": 150,
+    "n": 151,
     "avg": -5.8
    }
   ],
@@ -31066,7 +31069,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 289,
+  "shadows": 290,
   "memory": "snipe"
  }
 }

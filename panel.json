@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T05:59:30Z",
+ "updated": "2026-11-27T05:59:58Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2704,
+  "lines": 2706,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -1747,6 +1747,10 @@
   ],
   [
    1795759133,
+   361.97
+  ],
+  [
+   1795759193,
    361.97
   ]
  ],
@@ -4018,24 +4022,6 @@
   {
    "t": "2026-11-27T05:35:47Z",
    "time": "06:35:47",
-   "agent": "SIZER",
-   "coin": "Kibo",
-   "action": "size",
-   "text": "10% of $399.46 = $39.95",
-   "n": 2505
-  },
-  {
-   "t": "2026-11-27T05:35:47Z",
-   "time": "06:35:47",
-   "agent": "EXECUTOR",
-   "coin": "Kibo",
-   "action": "enter",
-   "text": "ENTER Kibo at 0.00000214 · slip 1.8% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 1 coin held, its exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-   "n": 2506
-  },
-  {
-   "t": "2026-11-27T05:35:47Z",
-   "time": "06:35:47",
    "agent": "NEWS",
    "coin": "Kibo",
    "action": "plan",
@@ -5814,6 +5800,24 @@
    "action": "shadow",
    "text": "SHADOW PUMP · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021774 (curve maths, every cost) · same exits, outside the book",
    "n": 2704
+  },
+  {
+   "t": "2026-11-27T05:59:31Z",
+   "time": "06:59:31",
+   "agent": "LEARNER",
+   "coin": "FLASHER",
+   "action": "shadow",
+   "text": "SHADOW FLASHER would have made -8.6% (5 min, only -5%) · learned x0.5 · np:buys:<70 now avg -9.9% over 175",
+   "n": 2705
+  },
+  {
+   "t": "2026-11-27T05:59:42Z",
+   "time": "06:59:42",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 4, mayhem mode 3, serial launcher 1)",
+   "n": 2706
   }
  ],
  "nights": [
@@ -5882,26 +5886,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1191,
-    "last_event_age_s": 7.5,
+    "events": 1193,
+    "last_event_age_s": 21.1,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 36718,
-    "last_event_age_s": 0.7,
+    "events": 36764,
+    "last_event_age_s": 1.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 797,
-    "last_event_age_s": 6.9,
-    "errors": 78,
-    "last_error": "ar-io.dev: timeout after 2 s"
+    "connected": false,
+    "events": 798,
+    "last_event_age_s": 21.0,
+    "errors": 79,
+    "last_error": "ar-io.dev: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -5934,7 +5938,7 @@
    },
    {
     "label": "snipe · hour:05-07",
-    "n": 150,
+    "n": 151,
     "avg": -5.8
    }
   ],
@@ -5955,36 +5959,54 @@
     "avg": -15.4
    }
   ],
-  "shadows": 289,
+  "shadows": 290,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16797,
+   "sent": 16826,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16796,
+   "sent": 16825,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "KETTLE",
+   "name": "Boil Point",
+   "mint": "BayxcD98oQwCbnjutr8GLi1reRZVNTaCiy6fVtagxqLA",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
    "symbol": "PUMP",
    "name": "PUMP",
    "mint": "4gTHZhq4LtBWZ1wDCd2LUYHeANLC1GgAmFPJBC8mpump",
-   "age_s": 7,
-   "sol_in": 0.3,
+   "age_s": 35,
+   "sol_in": -0.09,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 2.0,
-   "mcap_sol": 28.7,
+   "sells": 1,
+   "rise_pct": -0.6,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.38,
    "x": false,
    "tg": false,
    "web": false,
@@ -5995,14 +6017,14 @@
    "symbol": "ZANTA",
    "name": "Zanta",
    "mint": "5JDrabd4L4wGDmd9XWFS3ZYvY1G4rFSyigEvFcB8pump",
-   "age_s": 53,
-   "sol_in": 23.85,
-   "buys": 25,
-   "sells": 25,
-   "rise_pct": 219.6,
-   "mcap_sol": 91.0,
+   "age_s": 81,
+   "sol_in": 33.47,
+   "buys": 38,
+   "sells": 35,
+   "rise_pct": 343.2,
+   "mcap_sol": 126.2,
    "dev_pct": 1.0,
-   "big_sell": 3.18,
+   "big_sell": 3.45,
    "x": "https://x.com/zantafun",
    "tg": false,
    "web": "https://zanta.fun/",
@@ -6013,7 +6035,7 @@
    "symbol": "DOGEMOON",
    "name": "DOGEMOONING",
    "mint": "D8RygtCUEWX5TSfDM4AzoRZ2KvkeZdUzw5MHUBoppump",
-   "age_s": 56,
+   "age_s": 84,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6031,7 +6053,7 @@
    "symbol": "BPCATE",
    "name": "Looksmax CATE",
    "mint": "Beknpu5M9efmwgjkfe6D3cTPWbDg7MbHZLkuW1tGpump",
-   "age_s": 73,
+   "age_s": 101,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6049,7 +6071,7 @@
    "symbol": "MOONDOGE",
    "name": "MOONDOGE",
    "mint": "sqakigzB2KcRZ29RZfkVjY7ZrH6mh2URJn2Ct8Ypump",
-   "age_s": 109,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6067,7 +6089,7 @@
    "symbol": "NWB",
    "name": "NiggaWeBack Token",
    "mint": "25M5RjH7fELxcGEY7uz4ECgApMdaXZ9DyGoFekebpump",
-   "age_s": 139,
+   "age_s": 167,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -6078,42 +6100,6 @@
    "x": "https://x.com/NWB_Soon",
    "tg": false,
    "web": "https://x.com/5f02281179/status/2124865523657925007",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "6GcsC7zcWvCoq2oZyNp8zZubTW61v8HiPYVppCLfpump",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "Kolmas",
-   "name": "Kolmas",
-   "mint": "2XypytV4XfFxM9cn7ScLE9qfrtZCbX8fYaSzo4nzpump",
-   "age_s": 165,
-   "sol_in": -0.76,
-   "buys": 25,
-   "sells": 27,
-   "rise_pct": -4.8,
-   "mcap_sol": 28.4,
-   "dev_pct": 3.4,
-   "big_sell": 4.05,
-   "x": "https://x.com/Milsaftermils/status/2126193483866144953",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   }
@@ -6130,29 +6116,13 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T05:59:24Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -6.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.3
-  },
-  {
-   "symbol": "FLASHER",
-   "mint": "ERF7fNdUeGgLSVxCremrhL6UaRVHdESo7MvXntGrpump",
-   "status": "open",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T05:54:31Z",
-   "cost": 36.33,
-   "pnl_pct": -4.8,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0
   },
   {
    "symbol": "RUNNER",
@@ -6169,6 +6139,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "FLASHER",
+   "mint": "ERF7fNdUeGgLSVxCremrhL6UaRVHdESo7MvXntGrpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T05:54:31Z",
+   "cost": 36.33,
+   "pnl_pct": -8.6,
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "closed": "2026-11-27T05:59:31Z",
+   "exit": "5 min, only -5%",
+   "pnl": -3.11,
+   "weight": 0.5
   },
   {
    "symbol": "BAHAT",
@@ -6549,34 +6539,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -3.21,
    "weight": 0.5
-  },
-  {
-   "symbol": "Kibo",
-   "mint": "EqGMVSpViUXzxwu3sNxZocJLhPYEGUu7kRLJEKiDpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T05:32:13Z",
-   "cost": 39.57,
-   "pnl_pct": -17.6,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 1.19,
-   "closed": "2026-11-27T05:32:15Z",
-   "exit": "stop -14%",
-   "pnl": -6.98,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 305,
+  "n": 306,
   "wins": 52,
   "win_rate": 17.0,
   "mean_pnl_pct": -9.15,
-  "open": 3,
+  "open": 2,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6584,10 +6554,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 289,
+   "n": 290,
    "wins": 49,
-   "win_rate": 17.0,
-   "mean_pnl_pct": -8.98
+   "win_rate": 16.9,
+   "mean_pnl_pct": -8.97
   }
  }
 }
