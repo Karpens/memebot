@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T22:55:56Z",
+ "updated": "2026-11-27T22:56:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7711,
+  "lines": 7714,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795784127,
-   59.14
-  ],
   [
    1795784187,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795820106,
    59.14
+  ],
+  [
+   1795820166,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,33 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T22:26:59Z",
-   "time": "23:26:59",
-   "agent": "LEARNER",
-   "coin": "SI",
-   "action": "shadow",
-   "text": "SHADOW SI · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000026673 (curve maths, every cost) · same exits, outside the book",
-   "n": 7512
-  },
-  {
-   "t": "2026-11-27T22:27:00Z",
-   "time": "23:27:00",
-   "agent": "LEARNER",
-   "coin": "SI",
-   "action": "shadow",
-   "text": "SHADOW SI would have made -21.6% (dump: 2.7 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.7% over 268.5",
-   "n": 7513
-  },
-  {
-   "t": "2026-11-27T22:27:04Z",
-   "time": "23:27:04",
-   "agent": "LEARNER",
-   "coin": "USDC",
-   "action": "shadow",
-   "text": "SHADOW USDC would have made +5.8% (TP +10%) · learned x0.5 · np:buys:<70 now avg -7.5% over 300",
-   "n": 7514
-  },
-  {
    "t": "2026-11-27T22:27:04Z",
    "time": "23:27:04",
    "agent": "SCANNER",
@@ -6157,6 +6130,33 @@
    "action": "shadow",
    "text": "SHADOW BABY · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002138 (curve maths, every cost) · same exits, outside the book",
    "n": 7711
+  },
+  {
+   "t": "2026-11-27T22:56:02Z",
+   "time": "23:56:02",
+   "agent": "LEARNER",
+   "coin": "Memorably",
+   "action": "shadow",
+   "text": "SHADOW Memorably · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020933 (curve maths, every cost) · same exits, outside the book",
+   "n": 7712
+  },
+  {
+   "t": "2026-11-27T22:56:25Z",
+   "time": "23:56:25",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.6 a minute · 0 watched · 8 rejected (snipe not bought: night at open  5, mayhem mode 3)",
+   "n": 7713
+  },
+  {
+   "t": "2026-11-27T22:56:28Z",
+   "time": "23:56:28",
+   "agent": "LEARNER",
+   "coin": "Snowball",
+   "action": "shadow",
+   "text": "SHADOW Snowball · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000040967 (curve maths, every cost) · same exits, outside the book",
+   "n": 7714
   }
  ],
  "nights": [
@@ -6211,7 +6211,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · odd curve readings 888 (228 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · odd curve readings 888 (228 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6219,24 +6219,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 7,
-    "last_event_age_s": 11.9,
+    "events": 10,
+    "last_event_age_s": 3.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 13,
-    "last_event_age_s": 8.4,
+    "events": 22,
+    "last_event_age_s": 1.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 11.7,
+    "events": 6,
+    "last_event_age_s": 3.6,
     "errors": 0,
     "last_error": null
    }
@@ -6249,9 +6249,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.2,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 6,
   "odd_readings": 888,
   "odd_coins": 228
  },
@@ -6300,30 +6300,84 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 118,
+   "sent": 153,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 118,
+   "sent": 153,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Snowball",
+   "name": "Snowball",
+   "mint": "3GN4ymrKQRQ7hCrKAZ9HCmhWLKPBJ7Y1kqgjFL9xpump",
+   "age_s": 3,
+   "sol_in": 12.3,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 98.3,
+   "mcap_sol": 56.0,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/hodlsnowball/status/2126449791404319169?a=4-yUZPoyOhLdv6HqReA&s=20",
+   "tg": false,
+   "web": "https://hodlsnowball.fun",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
+   "symbol": "capnigger",
+   "name": "capnigger",
+   "mint": "DAJJCx4KFdDQqX7pMhMLgT4VJqukuuMyE19XuNS5pump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Memorably",
+   "name": "Memorably",
+   "mint": "GL4u15w8cqRwLeGCqHUZeVmREhjmhjSdRJq2BabBpump",
+   "age_s": 30,
+   "sol_in": -0.57,
+   "buys": 1,
+   "sells": 5,
+   "rise_pct": -3.7,
+   "mcap_sol": 28.0,
+   "dev_pct": 2.0,
+   "big_sell": 0.49,
+   "x": "https://x.com/memorablesh",
+   "tg": false,
+   "web": "https://www.memorable.sh/",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "BABY",
    "name": "BABYCAT",
    "mint": "6RvJzhtCqZCvGvcxdcAffihuQdtnqCiuCXG69g5Qpump",
-   "age_s": 11,
-   "sol_in": 0.05,
+   "age_s": 44,
+   "sol_in": -0.59,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.3,
-   "mcap_sol": 29.2,
+   "sells": 2,
+   "rise_pct": -3.8,
+   "mcap_sol": 28.0,
    "dev_pct": 2.1,
-   "big_sell": 0.0,
+   "big_sell": 0.59,
    "x": "https://x.com/Bcrypto00/status/2126448966086623399",
    "tg": false,
    "web": false,
@@ -6334,7 +6388,7 @@
    "symbol": "capnigger",
    "name": "capnigger",
    "mint": "BcTpuG76TQJ5Mmu8ueRCcnrj3XJ4ZL7KEaY9RPVwpump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6352,7 +6406,7 @@
    "symbol": "test",
    "name": "test",
    "mint": "A4Y22RLynLqKjmTF98fT9FNVd1dwZauKkZK9ymcXpump",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.13,
    "buys": 2,
    "sells": 6,
@@ -6370,7 +6424,7 @@
    "symbol": "BABYCATE",
    "name": "Baby Cate",
    "mint": "8xYwXPFrQXrpN3C37HuDcobK96woCnkKxJZEjHdmpump",
-   "age_s": 84,
+   "age_s": 117,
    "sol_in": -0.08,
    "buys": 0,
    "sells": 1,
@@ -6388,7 +6442,7 @@
    "symbol": "BullB4lls",
    "name": "BallsOfABull",
    "mint": "HDdpuSugabN2QvU2bvVnJkHeK2u6LtwSaXxVvDzRpump",
-   "age_s": 88,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6406,7 +6460,7 @@
    "symbol": "BABYCOIN",
    "name": "BABYCATECOIN",
    "mint": "GNCvoCy9RdQ8HaA6bUBGKUWaSx4TU84EFHGzsyqRpump",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": -0.59,
    "buys": 0,
    "sells": 1,
@@ -6426,6 +6480,38 @@
  ],
  "shadows": [
   {
+   "symbol": "Snowball",
+   "mint": "3GN4ymrKQRQ7hCrKAZ9HCmhWLKPBJ7Y1kqgjFL9xpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T22:56:28Z",
+   "cost": 5.91,
+   "pnl_pct": -3.6,
+   "tier": "swing",
+   "score": 3.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 2,
+   "sol_in": 12.3
+  },
+  {
+   "symbol": "Memorably",
+   "mint": "GL4u15w8cqRwLeGCqHUZeVmREhjmhjSdRJq2BabBpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T22:56:02Z",
+   "cost": 5.91,
+   "pnl_pct": -5.7,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 3,
+   "sol_in": -0.25
+  },
+  {
    "symbol": "BABY",
    "mint": "6RvJzhtCqZCvGvcxdcAffihuQdtnqCiuCXG69g5Qpump",
    "status": "open",
@@ -6433,7 +6519,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T22:55:48Z",
    "cost": 5.91,
-   "pnl_pct": -3.7,
+   "pnl_pct": -7.7,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6879,7 +6965,7 @@
   "wins": 518,
   "win_rate": 23.0,
   "mean_pnl_pct": -7.25,
-  "open": 3,
+  "open": 5,
   "learner": {
    "n": 16,
    "wins": 3,
