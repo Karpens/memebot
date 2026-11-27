@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T03:19:15Z",
-    "time": "04:19:15",
-    "agent": "NEWS",
-    "coin": "Buttcheeks",
-    "action": "plan",
-    "text": "hold plan · 1/10 (web) · scalp: +10",
-    "n": 1234
-   },
-   {
-    "t": "2026-11-27T03:19:19Z",
-    "time": "04:19:19",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "17 losses in a row · 2 min pause",
-    "n": 1235
-   },
-   {
     "t": "2026-11-27T03:19:19Z",
     "time": "04:19:19",
     "agent": "EXECUTOR",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Quby would have made -13.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:age:<30s now avg -10.4% over 261",
     "n": 1833
+   },
+   {
+    "t": "2026-11-27T04:20:29Z",
+    "time": "05:20:29",
+    "agent": "LEARNER",
+    "coin": "TINTR",
+    "action": "shadow",
+    "text": "SHADOW TINTR would have made -22.3% (dump: 2.6 SOL sold) · learned x0.5 · np:age:<30s now avg -10.5% over 261.5",
+    "n": 1834
+   },
+   {
+    "t": "2026-11-27T04:20:40Z",
+    "time": "05:20:40",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.8 a minute · 0 watched · 10 rejected (snipe not bought: pause after a  8, serial launcher 2)",
+    "n": 1835
    }
   ],
   "trades": [
@@ -13913,7 +13913,7 @@
   "flagged": 164,
   "checked": 160,
   "filtered": 5,
-  "lines": 1833,
+  "lines": 1835,
   "flags": [
    {
     "coin": "Pumpers",
@@ -15242,11 +15242,11 @@
    "coin": "SILVER",
    "pass": true
   },
-  "np_said": 1795753180.780713,
+  "np_said": 1795753240.780829,
   "shadow": {
-   "n": 220,
+   "n": 221,
    "wins": 40,
-   "sum": -1973.8
+   "sum": -1996.1
   },
   "np_speed": {
    "first_in": [
@@ -24489,9 +24489,9 @@
   }
  },
  "shadow": {
-  "n": 234,
+  "n": 235,
   "wins": 42,
-  "sum": -2172.3,
+  "sum": -2194.6,
   "by": {
    "learner": {
     "n": 16,
@@ -24499,32 +24499,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 218,
+    "n": 219,
     "wins": 39,
-    "sum": -1974.5
+    "sum": -1996.8
    }
   },
   "closed": [
-   {
-    "symbol": "REALPEPE",
-    "mint": "3Z8WgFv12sT9Z7Q4rK5BmqzWcRF2CNErSQr9tDBCpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T04:02:45Z",
-    "cost": 30.53,
-    "pnl_pct": -8.3,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.44,
-    "closed": "2026-11-27T04:06:31Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.54,
-    "weight": 0.5
-   },
    {
     "symbol": "RBLX",
     "mint": "28N2aTGAMWCX5EmGx2qAaQUQ4eNV59MfvwDuBmPJpump",
@@ -24904,11 +24884,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -3.8,
     "weight": 0.5
+   },
+   {
+    "symbol": "TINTR",
+    "mint": "arHWyKjffDVvMZsdhz4FULThNSPpwz1VXezGj1Ypump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:18:21Z",
+    "cost": 28.04,
+    "pnl_pct": -22.3,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 2.44,
+    "closed": "2026-11-27T04:20:29Z",
+    "exit": "dump: 2.6 SOL sold",
+    "pnl": -6.25,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "TINTR"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 152,
@@ -24949,7 +24947,7 @@
     "avg": -17.3
    }
   ],
-  "shadows": 218,
+  "shadows": 219,
   "memory": "snipe"
  }
 }
