@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:25:02Z",
-    "time": "06:25:02",
-    "agent": "EXECUTOR",
-    "coin": "leftovers",
-    "action": "exit",
-    "text": "EXIT leftovers +$1.53 (+7%) · TP +10% · out · 0.0 s after the reading",
-    "n": 2365
-   },
-   {
-    "t": "2026-11-27T05:25:02Z",
-    "time": "06:25:02",
-    "agent": "LEARNER",
-    "coin": "leftovers",
-    "action": "learn",
-    "text": "learned · np:age:<30s now avg -9.1% over 300",
-    "n": 2366
-   },
-   {
-    "t": "2026-11-27T05:25:06Z",
-    "time": "06:25:06",
-    "agent": "EXECUTOR",
-    "coin": "BOOT",
-    "action": "exit",
-    "text": "EXIT BOOT $-1.59 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 2367
-   },
-   {
-    "t": "2026-11-27T05:25:06Z",
-    "time": "06:25:06",
-    "agent": "LEARNER",
-    "coin": "BOOT",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -10.2% over 157",
-    "n": 2368
-   },
-   {
     "t": "2026-11-27T05:25:22Z",
     "time": "06:25:22",
     "agent": "SCANNER",
@@ -5445,6 +5409,42 @@
     "action": "shadow",
     "text": "SHADOW 1RING2RULE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021224 (curve maths, every cost) · same exits, outside the book",
     "n": 2964
+   },
+   {
+    "t": "2026-11-27T06:54:05Z",
+    "time": "07:54:05",
+    "agent": "LEARNER",
+    "coin": "AI",
+    "action": "shadow",
+    "text": "SHADOW AI · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000030379 (curve maths, every cost) · same exits, outside the book",
+    "n": 2965
+   },
+   {
+    "t": "2026-11-27T06:54:12Z",
+    "time": "07:54:12",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.2 a minute · 0 watched · 26 rejected (mayhem mode 10, snipe not bought: trades tonight 9, serial launcher 5)",
+    "n": 2966
+   },
+   {
+    "t": "2026-11-27T06:54:22Z",
+    "time": "07:54:22",
+    "agent": "LEARNER",
+    "coin": "D&D",
+    "action": "shadow",
+    "text": "SHADOW D&D · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002122 (curve maths, every cost) · same exits, outside the book",
+    "n": 2967
+   },
+   {
+    "t": "2026-11-27T06:54:36Z",
+    "time": "07:54:36",
+    "agent": "LEARNER",
+    "coin": "AI",
+    "action": "shadow",
+    "text": "SHADOW AI would have made +12.3% (TP +10%) · learned x0.5 · np:social:web now avg -8.9% over 190.5",
+    "n": 2968
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2964,
+  "lines": 2968,
   "flags": [
    {
     "coin": "Kibo",
@@ -21237,11 +21237,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795762392.780947,
+  "np_said": 1795762452.780957,
   "shadow": {
-   "n": 387,
-   "wins": 70,
-   "sum": -3419.9
+   "n": 388,
+   "wins": 71,
+   "sum": -3407.6
   },
   "np_speed": {
    "first_in": [
@@ -30824,9 +30824,9 @@
   }
  },
  "shadow": {
-  "n": 401,
-  "wins": 72,
-  "sum": -3618.4,
+  "n": 402,
+  "wins": 73,
+  "sum": -3606.1,
   "by": {
    "learner": {
     "n": 16,
@@ -30834,32 +30834,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 385,
-    "wins": 69,
-    "sum": -3420.6
+    "n": 386,
+    "wins": 70,
+    "sum": -3408.3
    }
   },
   "closed": [
-   {
-    "symbol": "MOMENT",
-    "mint": "654tDGVyg8gQJXUSRePmzoq2jjmwYXrd13KdAq6Hpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:47:23Z",
-    "cost": 36.2,
-    "pnl_pct": -48.4,
-    "tier": "swing",
-    "score": 3,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 11.43,
-    "closed": "2026-11-27T06:47:25Z",
-    "exit": "dump: 12.9 SOL sold",
-    "pnl": -17.51,
-    "weight": 0.5
-   },
    {
     "symbol": "USFF",
     "mint": "3pvZiNU1hFf7fkhNcpKQWee34n3pCZ9rmQ56MXmppump",
@@ -31239,13 +31219,34 @@
     "exit": "5 min, only -5%",
     "pnl": -3.02,
     "weight": 0.5
+   },
+   {
+    "symbol": "AI",
+    "mint": "31nJYSbaEQXCyjGunMSYZUJyqEA7Hb7VUosMQMhmpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:54:05Z",
+    "cost": 36.2,
+    "pnl_pct": 12.3,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.05,
+    "closed": "2026-11-27T06:54:36Z",
+    "exit": "TP +10%",
+    "pnl": 4.44,
+    "weight": 0.5
    }
   ],
   "open": [
    "GYX",
    "VEC",
    "CRONG",
-   "1RING2RULE"
+   "1RING2RULE",
+   "D&D"
   ]
  },
  "learner_summary": {
@@ -31287,7 +31288,7 @@
     "avg": -13.4
    }
   ],
-  "shadows": 385,
+  "shadows": 386,
   "memory": "snipe"
  }
 }
