@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:09:38Z",
+ "updated": "2026-11-27T09:10:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3707,
+  "lines": 3711,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4740,42 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:34:06Z",
-   "time": "09:34:06",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 0 watched · 14 rejected (mayhem mode 8, snipe not bought: trades tonight 4, serial launcher 2)",
-   "n": 3508
-  },
-  {
-   "t": "2026-11-27T08:34:28Z",
-   "time": "09:34:28",
-   "agent": "LEARNER",
-   "coin": "Inu",
-   "action": "shadow",
-   "text": "SHADOW Inu · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000041478 (curve maths, every cost) · same exits, outside the book",
-   "n": 3509
-  },
-  {
-   "t": "2026-11-27T08:34:30Z",
-   "time": "09:34:30",
-   "agent": "LEARNER",
-   "coin": "Inu",
-   "action": "shadow",
-   "text": "SHADOW Inu would have made -14.2% (stop -11%) · learned x0.5 · np:dev:8+ now avg -8.7% over 109",
-   "n": 3510
-  },
-  {
-   "t": "2026-11-27T08:34:32Z",
-   "time": "09:34:32",
-   "agent": "LEARNER",
-   "coin": "PTERKEY",
-   "action": "shadow",
-   "text": "SHADOW PTERKEY would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:age:<30s now avg -8.1% over 300",
-   "n": 3511
-  },
-  {
    "t": "2026-11-27T08:34:48Z",
    "time": "09:34:48",
    "agent": "LEARNER",
@@ -6538,6 +6502,42 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 7, mayhem mode 5)",
    "n": 3707
+  },
+  {
+   "t": "2026-11-27T09:09:50Z",
+   "time": "10:09:50",
+   "agent": "SCANNER",
+   "coin": "COIN",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 3708
+  },
+  {
+   "t": "2026-11-27T09:09:57Z",
+   "time": "10:09:57",
+   "agent": "RISK",
+   "coin": "Flyball",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 3709
+  },
+  {
+   "t": "2026-11-27T09:09:57Z",
+   "time": "10:09:57",
+   "agent": "LEARNER",
+   "coin": "Flyball",
+   "action": "shadow",
+   "text": "SHADOW Flyball · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035122 (curve maths, every cost) · same exits, outside the book",
+   "n": 3710
+  },
+  {
+   "t": "2026-11-27T09:09:58Z",
+   "time": "10:09:58",
+   "agent": "LEARNER",
+   "coin": "Flyball",
+   "action": "shadow",
+   "text": "SHADOW Flyball would have made -19.6% (dump: 2.7 SOL sold) · learned x0.5 · tier:swing now avg -11.8% over 52.5",
+   "n": 3711
   }
  ],
  "nights": [
@@ -6592,32 +6592,32 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 1,
+  "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 535,
-    "last_event_age_s": 35.7,
+    "events": 540,
+    "last_event_age_s": 3.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 13519,
-    "last_event_age_s": 2.0,
+    "events": 13564,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 301,
-    "last_event_age_s": 38.8,
+    "events": 304,
+    "last_event_age_s": 3.6,
     "errors": 17,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,9 +6630,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.4,
+  "creates_per_min": 4.8,
   "watching": 0,
-  "followed": 6
+  "followed": 7
  },
  "learner": {
   "samples": 249,
@@ -6647,8 +6647,8 @@
    },
    {
     "label": "snipe · np:sol:6-12",
-    "n": 63,
-    "avg": -5.8
+    "n": 64,
+    "avg": -6.0
    },
    {
     "label": "snipe · hour:05-07",
@@ -6663,39 +6663,93 @@
     "avg": -12.9
    },
    {
-    "label": "snipe · hour:03-05",
-    "n": 212,
-    "avg": -10.9
-   },
-   {
     "label": "snipe · tier:swing",
     "n": 52,
-    "avg": -11.7
+    "avg": -11.8
+   },
+   {
+    "label": "snipe · news:3-4",
+    "n": 52,
+    "avg": -11.8
    }
   ],
-  "shadows": 672,
+  "shadows": 673,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6528,
+   "sent": 6563,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6539,
+   "sent": 6574,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MacCoin",
+   "name": "MacCoin",
+   "mint": "7aLiwPQRQ6DarTLNstFQbWRDE8sZTH7sgLEtH1cPpump",
+   "age_s": 3,
+   "sol_in": 6.76,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 45.2,
+   "mcap_sol": 49.0,
+   "dev_pct": 9.6,
+   "big_sell": 0.77,
+   "x": "https://x.com/ZzzzzSol/status/2126242151268757826",
+   "tg": false,
+   "web": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/maccoin.html",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "TERKEY",
+   "name": "Pterodactyl Turkey",
+   "mint": "8EXWx2dnHERfGLysQY4iz64zb9cfSccKtVKtLtqgpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.6,
+   "dev_pct": 1.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Flyball",
+   "name": "Flyball",
+   "mint": "oAG19CqntgMjvhDv8xhDNvfZZnT13VvddGfvtyxpump",
+   "age_s": 14,
+   "sol_in": 8.35,
+   "buys": 5,
+   "sells": 4,
+   "rise_pct": 61.2,
+   "mcap_sol": 48.1,
+   "dev_pct": 3.4,
+   "big_sell": 2.7,
+   "x": "https://x.com/tryflyball",
+   "tg": false,
+   "web": "https://www.flyballs.fun/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "TERKEY",
    "name": "Pterodactyl Turkey",
    "mint": "59SaJ1g4qXEVW7gXA7hRAekERpbyTMs2ca6cjyxLpump",
-   "age_s": 35,
+   "age_s": 68,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6713,12 +6767,12 @@
    "symbol": "COIN",
    "name": "coin",
    "mint": "5r46BtNjKhSGgFuqj6n9tcbFY2Uk7YX9bSjDz4ZQmwdS",
-   "age_s": 39,
-   "sol_in": 4.9,
-   "buys": 8,
-   "sells": 4,
-   "rise_pct": 31.9,
-   "mcap_sol": 44.5,
+   "age_s": 72,
+   "sol_in": 3.82,
+   "buys": 9,
+   "sells": 6,
+   "rise_pct": 24.5,
+   "mcap_sol": 42.0,
    "dev_pct": 9.6,
    "big_sell": 1.94,
    "x": false,
@@ -6731,7 +6785,7 @@
    "symbol": "NODUS",
    "name": "Nodus42",
    "mint": "EGppbHrrL9C5GwSiGCKt7L794HVnD4zcuiGnt2C6pump",
-   "age_s": 42,
+   "age_s": 75,
    "sol_in": -0.33,
    "buys": 1,
    "sells": 1,
@@ -6749,12 +6803,12 @@
    "symbol": "Haku",
    "name": "The Survivor Haku",
    "mint": "Hop4QjaAx5eavrfJqQbeygdbb6xTLB8FX1kHZUpVpump",
-   "age_s": 44,
-   "sol_in": 3.13,
-   "buys": 4,
-   "sells": 7,
-   "rise_pct": 21.2,
-   "mcap_sol": 36.2,
+   "age_s": 77,
+   "sol_in": 3.31,
+   "buys": 6,
+   "sells": 11,
+   "rise_pct": 22.5,
+   "mcap_sol": 36.5,
    "dev_pct": 3.4,
    "big_sell": 3.56,
    "x": "https://x.com/kungfuhavestyle/status/2126241777074278859?s=61&t=GwEVRQpYv-4DbkJqY5-ZyQ",
@@ -6767,7 +6821,7 @@
    "symbol": "CPAI",
    "name": "chartpilotai.xyz",
    "mint": "32vuFc6pYx9ypHK4Bz4G5Xpa8bea6xoaUyqJimrZpump",
-   "age_s": 45,
+   "age_s": 78,
    "sol_in": 1.09,
    "buys": 3,
    "sells": 1,
@@ -6785,7 +6839,7 @@
    "symbol": "dogscount",
    "name": "this will bring retail b",
    "mint": "BxHtuVnW5z5U7E7iH4hwDjjymTZM367UrRHeM7RaDQD9",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": -1.73,
    "buys": 1,
    "sells": 4,
@@ -6803,7 +6857,7 @@
    "symbol": "BLACK",
    "name": "BLACK FRIDAY",
    "mint": "CDJehDKw7Ty9yoFCk1bFTYWNxJHite1ZUYsgZnYFpump",
-   "age_s": 75,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6821,7 +6875,7 @@
    "symbol": "TERKEY",
    "name": "Pterodactyl Turkey",
    "mint": "7u2Qt4PoyMPhp3nR26uFoN1C7mExKYamz6x1M2nypump",
-   "age_s": 83,
+   "age_s": 116,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6834,42 +6888,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "TERKEY",
-   "name": "Pterodactyl Turkey",
-   "mint": "2NacXRogfy3yyFqWWX3vB5merNzifHkhrdwz9FAtpump",
-   "age_s": 147,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.5,
-   "dev_pct": 2.8,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "BLACK",
-   "name": "BLACK FRIDAY",
-   "mint": "7yC1fUgwKEUmEPT4VvDVTkQW3X1aZos9qiBbTccdpump",
-   "age_s": 179,
-   "sol_in": -0.06,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -0.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.2,
-   "big_sell": 0.09,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
@@ -6900,7 +6918,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:06:40Z",
    "cost": 36.2,
-   "pnl_pct": -4.5,
+   "pnl_pct": -4.6,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6948,13 +6966,33 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:05:49Z",
    "cost": 36.2,
-   "pnl_pct": -4.5,
+   "pnl_pct": -4.6,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.0
+  },
+  {
+   "symbol": "Flyball",
+   "mint": "oAG19CqntgMjvhDv8xhDNvfZZnT13VvddGfvtyxpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:09:57Z",
+   "cost": 36.2,
+   "pnl_pct": -19.6,
+   "tier": "swing",
+   "score": 3,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 7.58,
+   "closed": "2026-11-27T09:09:58Z",
+   "exit": "dump: 2.7 SOL sold",
+   "pnl": -7.11,
+   "weight": 0.5
   },
   {
    "symbol": "NODUS",
@@ -7335,33 +7373,13 @@
    "exit": "stop -13%",
    "pnl": -5.99,
    "weight": 0.5
-  },
-  {
-   "symbol": "Big Cuck",
-   "mint": "H6JbHGZ28c5ztwbJ88cSfEkee35y1GSK3wQBMRVhpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T08:55:40Z",
-   "cost": 36.2,
-   "pnl_pct": -7.6,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.57,
-   "closed": "2026-11-27T08:59:30Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -2.76,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 688,
+  "n": 689,
   "wins": 145,
-  "win_rate": 21.1,
-  "mean_pnl_pct": -8.51,
+  "win_rate": 21.0,
+  "mean_pnl_pct": -8.52,
   "open": 5,
   "learner": {
    "n": 16,
@@ -7370,10 +7388,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 672,
+   "n": 673,
    "wins": 142,
    "win_rate": 21.1,
-   "mean_pnl_pct": -8.42
+   "mean_pnl_pct": -8.43
   }
  }
 }
