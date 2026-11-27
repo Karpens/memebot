@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T20:42:56Z",
-    "time": "21:42:56",
-    "agent": "LEARNER",
-    "coin": "KIMCHI",
-    "action": "shadow",
-    "text": "SHADOW KIMCHI · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000037868 (curve maths, every cost) · same exits, outside the book",
-    "n": 6627
-   },
-   {
-    "t": "2026-11-27T20:42:56Z",
-    "time": "21:42:56",
-    "agent": "LEARNER",
-    "coin": "FoMo",
-    "action": "shadow",
-    "text": "SHADOW FoMo would have made +11.1% (TP +20%) · learned x0.5 · np:dev:2-5 now avg -7.3% over 300",
-    "n": 6628
-   },
-   {
     "t": "2026-11-27T20:42:58Z",
     "time": "21:42:58",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.2 a minute · 0 watched · 20 rejected (snipe not bought: night at open  14, serial launcher 3, mayhem mode 3)",
     "n": 7226
+   },
+   {
+    "t": "2026-11-27T21:57:11Z",
+    "time": "22:57:11",
+    "agent": "LEARNER",
+    "coin": "turtl",
+    "action": "shadow",
+    "text": "SHADOW turtl · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000069793 (curve maths, every cost) · same exits, outside the book",
+    "n": 7227
+   },
+   {
+    "t": "2026-11-27T21:57:26Z",
+    "time": "22:57:26",
+    "agent": "LEARNER",
+    "coin": "Orbitard",
+    "action": "shadow",
+    "text": "SHADOW Orbitard would have made -13.1% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.6% over 300",
+    "n": 7228
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7226,
+  "lines": 7228,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795816608.443885,
   "shadow": {
-   "n": 2053,
+   "n": 2054,
    "wins": 473,
-   "sum": -14916.8
+   "sum": -14929.9
   },
   "np_speed": {
    "first_in": [
@@ -31982,9 +31982,9 @@
   }
  },
  "shadow": {
-  "n": 2067,
+  "n": 2068,
   "wins": 475,
-  "sum": -15115.3,
+  "sum": -15128.4,
   "by": {
    "learner": {
     "n": 16,
@@ -31992,32 +31992,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2051,
+    "n": 2052,
     "wins": 472,
-    "sum": -14917.5
+    "sum": -14930.6
    }
   },
   "closed": [
-   {
-    "symbol": "PINATA",
-    "mint": "8j42VSQ1Y6jDPHK9rBW8Fgs5KNeFSKiooNrhXu46pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:51:09Z",
-    "cost": 5.91,
-    "pnl_pct": -21.0,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T21:51:59Z",
-    "exit": "dump: 2.5 SOL sold",
-    "pnl": -1.24,
-    "weight": 0.5
-   },
    {
     "symbol": "ZEROCOIN",
     "mint": "6o6v1o8mtnnKYBs3p4xZBZhLerqbuYoCdWbhc7kfpump",
@@ -32397,15 +32377,35 @@
     "exit": "TP +20%",
     "pnl": 0.59,
     "weight": 0.5
+   },
+   {
+    "symbol": "Orbitard",
+    "mint": "BsyBqzKWrjCfYTqNAR6sMyLoab9rsmop4hkLYqiVpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:54:24Z",
+    "cost": 5.91,
+    "pnl_pct": -13.1,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T21:57:26Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.77,
+    "weight": 0.5
    }
   ],
   "open": [
    "ROLN",
    "SpaceX",
    "Apple",
-   "Orbitard",
    "MoonBot",
-   "RLX"
+   "RLX",
+   "turtl"
   ]
  },
  "learner_summary": {
@@ -32447,7 +32447,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 2259,
+  "shadows": 2260,
   "memory": "snipe"
  }
 }
