@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:25:50Z",
-    "time": "06:25:50",
-    "agent": "SIZER",
-    "coin": "BANK",
-    "action": "size",
-    "text": "10% of $455.37 = $45.54",
-    "n": 2373
-   },
-   {
-    "t": "2026-11-27T05:25:50Z",
-    "time": "06:25:50",
-    "agent": "EXECUTOR",
-    "coin": "BANK",
-    "action": "enter",
-    "text": "ENTER BANK at 0.0000022075 · slip 2.0% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 3 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2374
-   },
-   {
-    "t": "2026-11-27T05:25:50Z",
-    "time": "06:25:50",
-    "agent": "NEWS",
-    "coin": "BANK",
-    "action": "plan",
-    "text": "hold plan · 2/10 (X, web) · scalp: +10",
-    "n": 2375
-   },
-   {
     "t": "2026-11-27T05:25:54Z",
     "time": "06:25:54",
     "agent": "SCANNER",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 8.0 a minute · 0 watched · 22 rejected (mayhem mode 11, snipe not bought: trades tonight 8, serial launcher 2)",
     "n": 2972
+   },
+   {
+    "t": "2026-11-27T06:55:47Z",
+    "time": "07:55:47",
+    "agent": "LEARNER",
+    "coin": "MOMENT",
+    "action": "shadow",
+    "text": "SHADOW MOMENT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000027898 (curve maths, every cost) · same exits, outside the book",
+    "n": 2973
+   },
+   {
+    "t": "2026-11-27T06:55:50Z",
+    "time": "07:55:50",
+    "agent": "LEARNER",
+    "coin": "MOMENT",
+    "action": "shadow",
+    "text": "SHADOW MOMENT would have made -23.9% (dump: 2.9 SOL sold) · learned x0.5 · np:social:web now avg -8.9% over 191.5",
+    "n": 2974
+   },
+   {
+    "t": "2026-11-27T06:56:00Z",
+    "time": "07:56:00",
+    "agent": "LEARNER",
+    "coin": "GYX",
+    "action": "shadow",
+    "text": "SHADOW GYX would have made -7.7% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.7% over 189",
+    "n": 2975
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2972,
+  "lines": 2975,
   "flags": [
    {
     "coin": "Kibo",
@@ -21235,6 +21235,10 @@
    [
     1795762493,
     361.97
+   ],
+   [
+    1795762553,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21243,9 +21247,9 @@
   },
   "np_said": 1795762513.780892,
   "shadow": {
-   "n": 389,
+   "n": 391,
    "wins": 72,
-   "sum": -3392.7
+   "sum": -3424.3
   },
   "np_speed": {
    "first_in": [
@@ -30828,9 +30832,9 @@
   }
  },
  "shadow": {
-  "n": 403,
+  "n": 405,
   "wins": 74,
-  "sum": -3591.2,
+  "sum": -3622.8,
   "by": {
    "learner": {
     "n": 16,
@@ -30838,52 +30842,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 387,
+    "n": 389,
     "wins": 71,
-    "sum": -3393.4
+    "sum": -3425.0
    }
   },
   "closed": [
-   {
-    "symbol": "MOMENT",
-    "mint": "9nYZ468RmSaGuUX7gcRZ9Se45P1qduGks74BVmb1pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:48:43Z",
-    "cost": 36.2,
-    "pnl_pct": 15.9,
-    "tier": "swing",
-    "score": 3,
-    "steps": 2,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 6.96,
-    "closed": "2026-11-27T06:48:46Z",
-    "exit": "TP +20%",
-    "pnl": 5.75,
-    "weight": 0.5
-   },
-   {
-    "symbol": "shawty",
-    "mint": "8YtqRu16QmuLyW1H2NAiknFpt8U3dNW6bLh2mK47rZPH",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:46:23Z",
-    "cost": 36.2,
-    "pnl_pct": -7.6,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:49:23Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.75,
-    "weight": 0.5
-   },
    {
     "symbol": "BENCH",
     "mint": "3ZrHrTBzfJBJRyNfwGAAkBNKpjirwgABukYMQVrMpump",
@@ -31243,10 +31207,49 @@
     "exit": "TP +20%",
     "pnl": 5.38,
     "weight": 0.5
+   },
+   {
+    "symbol": "MOMENT",
+    "mint": "MMNT5RGzcxHv12bjtusDh3M4TULmFQbeFF5Tn8wHEjX",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:55:47Z",
+    "cost": 36.2,
+    "pnl_pct": -23.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.66,
+    "closed": "2026-11-27T06:55:50Z",
+    "exit": "dump: 2.9 SOL sold",
+    "pnl": -8.65,
+    "weight": 0.5
+   },
+   {
+    "symbol": "GYX",
+    "mint": "4VCz1mPyFwYGBHnnC85oqRp1XHAp6hRTi9Zh6CsYpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:51:00Z",
+    "cost": 36.2,
+    "pnl_pct": -7.7,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T06:56:00Z",
+    "exit": "5 min, only -4%",
+    "pnl": -2.77,
+    "weight": 0.5
    }
   ],
   "open": [
-   "GYX",
    "VEC",
    "CRONG",
    "1RING2RULE",
@@ -31293,7 +31296,7 @@
     "avg": -13.4
    }
   ],
-  "shadows": 387,
+  "shadows": 389,
   "memory": "snipe"
  }
 }
