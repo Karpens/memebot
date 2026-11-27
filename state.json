@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:20:58Z",
-    "time": "06:20:58",
-    "agent": "LEARNER",
-    "coin": "SANTA",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -10.3% over 154",
-    "n": 2301
-   },
-   {
-    "t": "2026-11-27T05:20:59Z",
-    "time": "06:20:59",
-    "agent": "EXECUTOR",
-    "coin": "Sol",
-    "action": "exit",
-    "text": "EXIT Sol $-1.46 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 2302
-   },
-   {
     "t": "2026-11-27T05:20:59Z",
     "time": "06:20:59",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Midoor · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024148 (curve maths, every cost) · same exits, outside the book",
     "n": 2900
+   },
+   {
+    "t": "2026-11-27T06:44:07Z",
+    "time": "07:44:07",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.4 a minute · 0 watched · 14 rejected (mayhem mode 7, serial launcher 4, dump 1)",
+    "n": 2901
+   },
+   {
+    "t": "2026-11-27T06:44:08Z",
+    "time": "07:44:08",
+    "agent": "LEARNER",
+    "coin": "Midoor",
+    "action": "shadow",
+    "text": "SHADOW Midoor would have made -15.2% (stop -12%) · learned x0.5 · np:social:web now avg -8.9% over 181.5",
+    "n": 2902
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2900,
+  "lines": 2902,
   "flags": [
    {
     "coin": "Kibo",
@@ -21197,11 +21197,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795761786.780893,
+  "np_said": 1795761847.780816,
   "shadow": {
-   "n": 363,
+   "n": 364,
    "wins": 65,
-   "sum": -3115.1
+   "sum": -3130.3
   },
   "np_speed": {
    "first_in": [
@@ -30784,9 +30784,9 @@
   }
  },
  "shadow": {
-  "n": 377,
+  "n": 378,
   "wins": 67,
-  "sum": -3313.6,
+  "sum": -3328.8,
   "by": {
    "learner": {
     "n": 16,
@@ -30794,32 +30794,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 361,
+    "n": 362,
     "wins": 64,
-    "sum": -3115.8
+    "sum": -3131.0
    }
   },
   "closed": [
-   {
-    "symbol": "GAI",
-    "mint": "BGxbg1drfDNNJedpT1y6KGze5H9L8mRTYzHXk1qMpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:27:19Z",
-    "cost": 36.2,
-    "pnl_pct": 3.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.2,
-    "closed": "2026-11-27T06:32:11Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": 1.11,
-    "weight": 0.5
-   },
    {
     "symbol": "Bitcoin",
     "mint": "6H7rdkUPTRFbS22qXmqMEWVpfp3F4JqXUJPvbFWLpump",
@@ -31199,11 +31179,29 @@
     "exit": "TP +10%",
     "pnl": 3.14,
     "weight": 0.5
+   },
+   {
+    "symbol": "Midoor",
+    "mint": "EQfmS6dJVXXduHCwX8eebPUeNb88Aar9vMrTDE1Dpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:43:47Z",
+    "cost": 36.2,
+    "pnl_pct": -15.2,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 1.07,
+    "closed": "2026-11-27T06:44:08Z",
+    "exit": "stop -12%",
+    "pnl": -5.49,
+    "weight": 0.5
    }
   ],
-  "open": [
-   "Midoor"
-  ]
+  "open": []
  },
  "learner_summary": {
   "samples": 249,
@@ -31244,7 +31242,7 @@
     "avg": -13.9
    }
   ],
-  "shadows": 361,
+  "shadows": 362,
   "memory": "snipe"
  }
 }
