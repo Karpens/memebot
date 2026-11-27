@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:16:05Z",
-    "time": "11:16:05",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 8.2 a minute · 0 watched · 29 rejected (serial launcher 12, snipe not bought: trades tonight 10, mayhem mode 6)",
-    "n": 4053
-   },
-   {
-    "t": "2026-11-27T10:16:10Z",
-    "time": "11:16:10",
-    "agent": "LEARNER",
-    "coin": "Basket",
-    "action": "shadow",
-    "text": "SHADOW Basket · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000067317 (curve maths, every cost) · same exits, outside the book",
-    "n": 4054
-   },
-   {
-    "t": "2026-11-27T10:16:11Z",
-    "time": "11:16:11",
-    "agent": "LEARNER",
-    "coin": "REVOLUTION",
-    "action": "shadow",
-    "text": "SHADOW REVOLUTION would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.4% over 219",
-    "n": 4055
-   },
-   {
     "t": "2026-11-27T10:16:16Z",
     "time": "11:16:16",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW AGI · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020715 (curve maths, every cost) · same exits, outside the book",
     "n": 4652
+   },
+   {
+    "t": "2026-11-27T16:53:43Z",
+    "time": "17:53:43",
+    "agent": "LEARNER",
+    "coin": "ORDER",
+    "action": "shadow",
+    "text": "SHADOW ORDER would have made -15.9% (stop -11%) · learned x0.5 · np:dev:2-5 now avg -8.3% over 194.5",
+    "n": 4653
+   },
+   {
+    "t": "2026-11-27T16:53:46Z",
+    "time": "17:53:46",
+    "agent": "LEARNER",
+    "coin": "Sheeb",
+    "action": "shadow",
+    "text": "SHADOW Sheeb · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020784 (curve maths, every cost) · same exits, outside the book",
+    "n": 4654
+   },
+   {
+    "t": "2026-11-27T16:53:53Z",
+    "time": "17:53:53",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.6 a minute · 0 watched · 36 rejected (snipe not bought: night at open  15, odd curve reading: virtual SOL i 10, mayhem mode 10)",
+    "n": 4655
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4652,
+  "lines": 4655,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795798373.028911,
+  "np_said": 1795798433.028917,
   "shadow": {
-   "n": 1031,
+   "n": 1032,
    "wins": 236,
-   "sum": -7517.9
+   "sum": -7533.8
   },
   "np_speed": {
    "first_in": [
@@ -31819,9 +31819,9 @@
   }
  },
  "shadow": {
-  "n": 1045,
+  "n": 1046,
   "wins": 238,
-  "sum": -7716.4,
+  "sum": -7732.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31829,32 +31829,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1029,
+    "n": 1030,
     "wins": 235,
-    "sum": -7518.6
+    "sum": -7534.5
    }
   },
   "closed": [
-   {
-    "symbol": "DIH",
-    "mint": "EajScsbcfsMATRj1dpDVvyzexz4kQRVrDAUrQWS2exif",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T11:39:09Z",
-    "cost": 5.91,
-    "pnl_pct": -7.3,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": -0.0,
-    "closed": "2026-11-27T11:42:10Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.43,
-    "weight": 0.5
-   },
    {
     "symbol": "SET",
     "mint": "25DSjjikSyQYPBCwmxUMYsBYNz2XmME5qsqPGP83D8Cs",
@@ -32234,6 +32214,26 @@
     "exit": "stop -11%",
     "pnl": -0.91,
     "weight": 0.5
+   },
+   {
+    "symbol": "ORDER",
+    "mint": "FDQ78ZnrLK2jQgFo42vSMSinyvw2DgRfZ3eKweCdpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T16:52:17Z",
+    "cost": 5.91,
+    "pnl_pct": -15.9,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.28,
+    "closed": "2026-11-27T16:53:43Z",
+    "exit": "stop -11%",
+    "pnl": -0.94,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -32243,11 +32243,11 @@
    "SWIPEINU",
    "CART",
    "MWG",
-   "ORDER",
    "ALBI",
    "Inu",
    "ballwif",
-   "AGI"
+   "AGI",
+   "Sheeb"
   ]
  },
  "learner_summary": {
@@ -32289,7 +32289,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1237,
+  "shadows": 1238,
   "memory": "snipe"
  }
 }
