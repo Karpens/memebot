@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T02:23:51Z",
+ "updated": "2026-11-27T02:24:24Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 1027.53,
- "equity": 1027.53,
+ "balance": 924.78,
+ "equity": 1020.71,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -21,21 +21,16 @@
   "start_equity": 82.3,
   "started": "2026-11-26T23:00:00Z",
   "scans": 0,
-  "flagged": 58,
-  "checked": 54,
+  "flagged": 59,
+  "checked": 55,
   "filtered": 4,
-  "lines": 643,
+  "lines": 647,
   "last_rug": {
-   "coin": "SpaceXers",
+   "coin": "FOXIE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CORNSUGAR",
-   "why": "snipe",
-   "t": "2026-11-27T02:15:00Z"
-  },
   {
    "coin": "DRIVEBUFF",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SpaceXers",
    "why": "snipe",
    "t": "2026-11-27T02:22:06Z"
+  },
+  {
+   "coin": "FOXIE",
+   "why": "snipe",
+   "t": "2026-11-27T02:24:19Z"
   }
  ],
  "curve": [
@@ -884,12 +884,60 @@
   [
    1795746173,
    1027.53
+  ],
+  [
+   1795746233,
+   1027.53
   ]
  ],
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [],
+ "positions": [
+  {
+   "symbol": "FOXIE",
+   "mint": "DAeggnpXBD2yrson1LpoQtXq8vF9TfGvbu9sZVcxpump",
+   "cost": 102.75,
+   "value": 95.93,
+   "pnl_pct": -6.6,
+   "opened": "2026-11-27T02:24:19Z",
+   "url": "https://pump.fun/coin/DAeggnpXBD2yrson1LpoQtXq8vF9TfGvbu9sZVcxpump",
+   "reason": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.20247e-06,
+   "price": 2.05776e-06,
+   "slip": 4.43,
+   "tp1_done": false,
+   "strategy": "new_pairs",
+   "plan": {
+    "tier": "scalp",
+    "score": 2,
+    "parts": [
+     "X",
+     "web"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "age_s": 0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.05,
+   "sol_in": 0.0,
+   "hist": [
+    2.20247e-06
+   ]
+  }
+ ],
  "trades": [
   {
    "symbol": "BAOBAO",
@@ -3046,42 +3094,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T02:04:31Z",
-   "time": "03:04:31",
-   "agent": "EXECUTOR",
-   "coin": "Toggle",
-   "action": "exit",
-   "text": "EXIT Toggle $-28.72 (-20%) · stop -13% · out · 0.0 s after the reading",
-   "n": 444
-  },
-  {
-   "t": "2026-11-27T02:04:31Z",
-   "time": "03:04:31",
-   "agent": "LEARNER",
-   "coin": "Toggle",
-   "action": "learn",
-   "text": "learned · np:age:<30s now avg -5.6% over 34.5",
-   "n": 445
-  },
-  {
-   "t": "2026-11-27T02:05:18Z",
-   "time": "03:05:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.0 a minute · 0 watched · 3 rejected (mayhem mode 3)",
-   "n": 446
-  },
-  {
-   "t": "2026-11-27T02:05:24Z",
-   "time": "03:05:24",
-   "agent": "SCANNER",
-   "coin": "MINT",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.4 SOL in · +2% since the create · mcap 29 SOL",
-   "n": 447
-  },
-  {
    "t": "2026-11-27T02:05:24Z",
    "time": "03:05:24",
    "agent": "SIZER",
@@ -4844,6 +4856,42 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 0 watched · 12 rejected (snipe not bought: pause after a  6, serial launcher 3, mayhem mode 2)",
    "n": 643
+  },
+  {
+   "t": "2026-11-27T02:24:19Z",
+   "time": "03:24:19",
+   "agent": "SCANNER",
+   "coin": "FOXIE",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 644
+  },
+  {
+   "t": "2026-11-27T02:24:19Z",
+   "time": "03:24:19",
+   "agent": "SIZER",
+   "coin": "FOXIE",
+   "action": "size",
+   "text": "10% of $1.0k = $102.75",
+   "n": 645
+  },
+  {
+   "t": "2026-11-27T02:24:19Z",
+   "time": "03:24:19",
+   "agent": "EXECUTOR",
+   "coin": "FOXIE",
+   "action": "enter",
+   "text": "ENTER FOXIE at 0.0000022025 · slip 4.4% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter: no Jupiter route · 0.0 s) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
+   "n": 646
+  },
+  {
+   "t": "2026-11-27T02:24:19Z",
+   "time": "03:24:19",
+   "agent": "NEWS",
+   "coin": "FOXIE",
+   "action": "plan",
+   "text": "hold plan · 2/10 (X, web) · scalp: +10",
+   "n": 647
   }
  ],
  "nights": [
@@ -4885,9 +4933,9 @@
   }
  ],
  "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/4krfddJmkfNn36EzXKeBQptvdmVoEdqg8xv4Xm9rpump/report: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://api.rugcheck.xyz/v1/tokens/FYF7eURp7UUjVKcQMcQEmbKnHZgHdcbh4TCgNHi2WG9h/report: HTTP 400",
+  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400"
  ],
@@ -4904,7 +4952,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 31 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4912,24 +4960,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 202,
-    "last_event_age_s": 29.9,
+    "events": 205,
+    "last_event_age_s": 0.4,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3823,
-    "last_event_age_s": 0.7,
+    "events": 3859,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 145,
-    "last_event_age_s": 34.7,
+    "events": 146,
+    "last_event_age_s": 6.3,
     "errors": 12,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4937,14 +4985,14 @@
   "strategies": [
    "new_pairs"
   ],
-  "first_in_ms": 1.0,
-  "first_in_last_ms": 34,
+  "first_in_ms": 1,
+  "first_in_last_ms": 31,
   "exit_ms": 35,
   "exit_last_ms": 59,
-  "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "launch_to_entry_s": 0,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 11
+  "followed": 12
  },
  "learner": {
   "samples": 47,
@@ -4991,23 +5039,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2488,
+   "sent": 2525,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2488,
+   "sent": 2525,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FOXIE",
+   "name": "FoxzieCoin",
+   "mint": "DAeggnpXBD2yrson1LpoQtXq8vF9TfGvbu9sZVcxpump",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Foxzie_RBLX",
+   "tg": false,
+   "web": "https://www.roblox.com/games/1554960397/Car-Dealership-Tycoon",
+   "status": "entered",
+   "why": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL"
+  },
+  {
    "symbol": "HUSS",
    "name": "HUSS HUSS HUSS",
    "mint": "4oVX34iJxhci8qBStLZPU7FqKgJkVS3LRxqZQvDSpump",
-   "age_s": 34,
+   "age_s": 67,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 0,
@@ -5025,7 +5091,7 @@
    "symbol": "BCAT",
    "name": "Birthday Cat",
    "mint": "HSkKfpqN8EwQgPdesZiXCh1uHTEGmhEY65A5vcA6pump",
-   "age_s": 49,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5043,7 +5109,7 @@
    "symbol": "SPCXCOIN",
    "name": "SoaceXCoin",
    "mint": "AXEJAiDKwCRiqbRNMxY8VqfJrgkZFj3ZmzSfga1JZPQV",
-   "age_s": 68,
+   "age_s": 101,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5061,7 +5127,7 @@
    "symbol": "this is bette",
    "name": "jimmy rustles ran to 1m",
    "mint": "QaVoBxKjsmVEuwKzkXU8PhW49gsoSSqfDMN1zz6pump",
-   "age_s": 78,
+   "age_s": 111,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5079,7 +5145,7 @@
    "symbol": "this is bette",
    "name": "jimmy rustles ran to 1m",
    "mint": "EJr8s4JvEpDmpCeTvLf6BwqAigC5kB9YUhqH54CApump",
-   "age_s": 78,
+   "age_s": 111,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5097,7 +5163,7 @@
    "symbol": "this is bette",
    "name": "jimmy rustles ran to 1m",
    "mint": "H9aoCFGRpyspq2nPo6VEu4dQ4ua9TjWyqwdLXk2upump",
-   "age_s": 78,
+   "age_s": 111,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -5115,7 +5181,7 @@
    "symbol": "this is bette",
    "name": "jimmy rustles ran to 1m",
    "mint": "2MRpudxYbY2xcZFLA34DTppGbPdXVcF65QgJKj8Hpump",
-   "age_s": 79,
+   "age_s": 112,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5133,7 +5199,7 @@
    "symbol": "this is bette",
    "name": "jimmy rustles ran to 1m",
    "mint": "71HJjyu56ZUtegrYHZwq5qRiAZrtiL2yYXne2PCqpump",
-   "age_s": 80,
+   "age_s": 113,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5151,7 +5217,7 @@
    "symbol": "this is bette",
    "name": "jimmy rustles ran to 1m",
    "mint": "6oPTHPgxdcZz1VsS2BdYjTc1qD6uZHVk7pLeu5upump",
-   "age_s": 80,
+   "age_s": 113,
    "sol_in": -0.09,
    "buys": 1,
    "sells": 1,
@@ -5169,7 +5235,7 @@
    "symbol": "PLINE",
    "name": "POWERLINE",
    "mint": "CtKy25GdbJaTnx4bBdzo8uyzGnsfcCa2ofqJExnmpump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5187,10 +5253,10 @@
    "symbol": "SpaceXers",
    "name": "SpaceX Cult",
    "mint": "8sRaWUjCGHob4qmqwXwENgSTMAZ6rLr2oRbsFPyTpump",
-   "age_s": 106,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 5,
-   "sells": 1,
+   "sells": 3,
    "rise_pct": -99.9,
    "mcap_sol": 0.0,
    "dev_pct": 0.0,
@@ -5205,7 +5271,7 @@
    "symbol": "MDTA",
    "name": "Mamdani Torn Achilles",
    "mint": "EQefzsLvsVDpZwzPfZLvvYaPG5qpamyJGNAfsXfNpump",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -5223,7 +5289,7 @@
    "symbol": "TRUMPCOIN",
    "name": "TRUMPP",
    "mint": "6LoedJ5Nypakd5o5pC3YNR9RmeLndFWv2UzJhJ7gpump",
-   "age_s": 132,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5250,7 +5316,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T02:23:17Z",
    "cost": 102.75,
-   "pnl_pct": -5.1,
+   "pnl_pct": -4.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -5266,7 +5332,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T02:23:03Z",
    "cost": 102.75,
-   "pnl_pct": -6.7,
+   "pnl_pct": -6.5,
    "tier": "scalp",
    "score": 1,
    "steps": 0,
@@ -5282,7 +5348,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T02:22:34Z",
    "cost": 102.75,
-   "pnl_pct": -6.6,
+   "pnl_pct": -6.5,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -5298,7 +5364,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T02:22:32Z",
    "cost": 102.75,
-   "pnl_pct": -6.6,
+   "pnl_pct": -6.5,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -5314,7 +5380,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T02:22:32Z",
    "cost": 102.75,
-   "pnl_pct": -6.6,
+   "pnl_pct": -6.4,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -5330,7 +5396,7 @@
    "why": "pause after a losing streak",
    "opened": "2026-11-27T02:22:32Z",
    "cost": 102.75,
-   "pnl_pct": -6.6,
+   "pnl_pct": -6.5,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
