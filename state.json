@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T17:32:47Z",
-    "time": "18:32:47",
-    "agent": "LEARNER",
-    "coin": "USPLITBALL",
-    "action": "shadow",
-    "text": "SHADOW USPLITBALL would have made -13.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -8.6% over 252",
-    "n": 4997
-   },
-   {
-    "t": "2026-11-27T17:32:48Z",
-    "time": "18:32:48",
-    "agent": "LEARNER",
-    "coin": "SBULL",
-    "action": "shadow",
-    "text": "SHADOW SBULL would have made -23.5% (dump: 4.5 SOL sold) · learned x0.5 · tier:scalp now avg -8.3% over 280",
-    "n": 4998
-   },
-   {
     "t": "2026-11-27T17:32:51Z",
     "time": "18:32:51",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.2 a minute · 0 watched · 16 rejected (snipe not bought: night at open  7, no bonding curve key 3, mayhem mode 3)",
     "n": 5596
+   },
+   {
+    "t": "2026-11-27T18:39:17Z",
+    "time": "19:39:17",
+    "agent": "LEARNER",
+    "coin": "BORNTOGLOW",
+    "action": "shadow",
+    "text": "SHADOW BORNTOGLOW would have made -7.8% (5 min, only -3%) · learned x0.5 · np:dev:8+ now avg -8.6% over 186.5",
+    "n": 5597
+   },
+   {
+    "t": "2026-11-27T18:39:23Z",
+    "time": "19:39:23",
+    "agent": "LEARNER",
+    "coin": "PKKILN",
+    "action": "shadow",
+    "text": "SHADOW PKKILN · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020581 (curve maths, every cost) · same exits, outside the book",
+    "n": 5598
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5596,
+  "lines": 5598,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795804737.443477,
   "shadow": {
-   "n": 1407,
+   "n": 1408,
    "wins": 309,
-   "sum": -10825.0
+   "sum": -10832.8
   },
   "np_speed": {
    "first_in": [
@@ -31890,9 +31890,9 @@
   }
  },
  "shadow": {
-  "n": 1421,
+  "n": 1422,
   "wins": 311,
-  "sum": -11023.5,
+  "sum": -11031.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31900,32 +31900,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1405,
+    "n": 1406,
     "wins": 308,
-    "sum": -10825.7
+    "sum": -10833.5
    }
   },
   "closed": [
-   {
-    "symbol": "FLAMESA",
-    "mint": "2QFwZvsE6KN9whc4Jz9yCjNzkDzQJNh1PayGLf6vpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T18:27:57Z",
-    "cost": 5.91,
-    "pnl_pct": 0.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T18:33:17Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": 0.01,
-    "weight": 0.5
-   },
    {
     "symbol": "ECAT",
     "mint": "7cszN484EMRFg3bMmqfYeYCcRhBRS2iJzzTdV1tqpump",
@@ -32305,12 +32285,32 @@
     "exit": "TP +10%",
     "pnl": 0.79,
     "weight": 0.5
+   },
+   {
+    "symbol": "BORNTOGLOW",
+    "mint": "otVKseLNUKUuwAK7pY4SbLdj6TdyCk6pJSqHZs6pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T18:34:17Z",
+    "cost": 5.91,
+    "pnl_pct": -7.8,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.51,
+    "closed": "2026-11-27T18:39:17Z",
+    "exit": "5 min, only -3%",
+    "pnl": -0.46,
+    "weight": 0.5
    }
   ],
   "open": [
-   "BORNTOGLOW",
    "Winstoncin",
-   "SpaceX"
+   "SpaceX",
+   "PKKILN"
   ]
  },
  "learner_summary": {
@@ -32352,7 +32352,7 @@
     "avg": -8.6
    }
   ],
-  "shadows": 1613,
+  "shadows": 1614,
   "memory": "snipe"
  }
 }
