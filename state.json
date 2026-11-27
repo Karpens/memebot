@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:05:22Z",
-    "time": "09:05:22",
-    "agent": "LEARNER",
-    "coin": "NEXTHIUM",
-    "action": "shadow",
-    "text": "SHADOW NEXTHIUM · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022799 (curve maths, every cost) · same exits, outside the book",
-    "n": 3354
-   },
-   {
-    "t": "2026-11-27T08:05:29Z",
-    "time": "09:05:29",
-    "agent": "LEARNER",
-    "coin": "GTA 6",
-    "action": "shadow",
-    "text": "SHADOW GTA 6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000062693 (curve maths, every cost) · same exits, outside the book",
-    "n": 3355
-   },
-   {
     "t": "2026-11-27T08:05:52Z",
     "time": "09:05:52",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW RECUR · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028503 (curve maths, every cost) · same exits, outside the book",
     "n": 3953
+   },
+   {
+    "t": "2026-11-27T09:59:16Z",
+    "time": "10:59:16",
+    "agent": "LEARNER",
+    "coin": "RECUR",
+    "action": "shadow",
+    "text": "SHADOW RECUR would have made -13.9% (stop -10%) · learned x0.5 · np:sol:3-6 now avg -11.8% over 68",
+    "n": 3954
+   },
+   {
+    "t": "2026-11-27T09:59:34Z",
+    "time": "10:59:34",
+    "agent": "LEARNER",
+    "coin": "GTA 6",
+    "action": "shadow",
+    "text": "SHADOW GTA 6 · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000061453 (curve maths, every cost) · same exits, outside the book",
+    "n": 3955
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3953,
+  "lines": 3955,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795737480,
-    82.3
-   ],
    [
     1795737540,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795773494,
     361.97
+   ],
+   [
+    1795773554,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795773536.64526,
   "shadow": {
-   "n": 766,
+   "n": 767,
    "wins": 167,
-   "sum": -6246.7
+   "sum": -6260.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 780,
+  "n": 781,
   "wins": 169,
-  "sum": -6445.2,
+  "sum": -6459.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 764,
+    "n": 765,
     "wins": 166,
-    "sum": -6247.4
+    "sum": -6261.3
    }
   },
   "closed": [
-   {
-    "symbol": "NBA",
-    "mint": "5var3KGB6XctWDUarM9zpZn4z7T1fjyMqr1HbfpUboRn",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:47:28Z",
-    "cost": 36.2,
-    "pnl_pct": 26.2,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T09:47:46Z",
-    "exit": "TP +10%",
-    "pnl": 9.49,
-    "weight": 0.5
-   },
    {
     "symbol": "COAL",
     "mint": "AxKHMh8QdYMpYp1KXjmn8Dt9d2VYokUuQzas37CWpump",
@@ -31743,13 +31723,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.85,
     "weight": 0.5
+   },
+   {
+    "symbol": "RECUR",
+    "mint": "FNtdCUMeQojj9RKtiW12BnHeAKkJv8JQoVURCn7Gpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:59:05Z",
+    "cost": 36.2,
+    "pnl_pct": -13.9,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.71,
+    "closed": "2026-11-27T09:59:16Z",
+    "exit": "stop -10%",
+    "pnl": -5.01,
+    "weight": 0.5
    }
   ],
   "open": [
    "baoCat",
    "DVXEATA",
    "WUGO",
-   "RECUR"
+   "GTA 6"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31791,7 @@
     "avg": -11.5
    }
   ],
-  "shadows": 764,
+  "shadows": 765,
   "memory": "snipe"
  }
 }
