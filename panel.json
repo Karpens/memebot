@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T05:01:44Z",
+ "updated": "2026-11-27T05:02:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 212.31,
@@ -24,7 +24,7 @@
   "flagged": 194,
   "checked": 190,
   "filtered": 5,
-  "lines": 2150,
+  "lines": 2152,
   "last_rug": {
    "coin": "Simyo",
    "pass": true
@@ -1516,6 +1516,10 @@
   [
    1795755653,
    215.71
+  ],
+  [
+   1795755713,
+   212.31
   ]
  ],
  "position_pct": 10.0,
@@ -3771,24 +3775,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T04:34:10Z",
-   "time": "05:34:10",
-   "agent": "NEWS",
-   "coin": "DEALS",
-   "action": "plan",
-   "text": "hold plan · 0/10 (no news) · scalp: +10",
-   "n": 1951
-  },
-  {
-   "t": "2026-11-27T04:34:49Z",
-   "time": "05:34:49",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (snipe not bought: pause after a  7, mayhem mode 1)",
-   "n": 1952
-  },
-  {
    "t": "2026-11-27T04:34:55Z",
    "time": "05:34:55",
    "agent": "RISK",
@@ -5569,6 +5555,24 @@
    "action": "learn",
    "text": "learned · np:age:<30s now avg -10.2% over 300",
    "n": 2150
+  },
+  {
+   "t": "2026-11-27T05:01:54Z",
+   "time": "06:01:54",
+   "agent": "LEARNER",
+   "coin": "Niggalo",
+   "action": "shadow",
+   "text": "SHADOW Niggalo would have made -12.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:age:<30s now avg -10.2% over 300",
+   "n": 2151
+  },
+  {
+   "t": "2026-11-27T05:02:06Z",
+   "time": "06:02:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 3 rejected (serial launcher 2, mayhem mode 1)",
+   "n": 2152
   }
  ],
  "nights": [
@@ -5629,7 +5633,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5637,15 +5641,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 956,
-    "last_event_age_s": 1.3,
+    "events": 957,
+    "last_event_age_s": 11.9,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27040,
+    "events": 27120,
     "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
@@ -5653,8 +5657,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 655,
-    "last_event_age_s": 1.2,
+    "events": 656,
+    "last_event_age_s": 11.3,
     "errors": 64,
     "last_error": "gateway.irys.xyz: timeout after 2 s"
    }
@@ -5667,7 +5671,7 @@
   "exit_ms": 35.0,
   "exit_last_ms": 35,
   "launch_to_entry_s": 0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 2.2,
   "watching": 0,
   "followed": 3
  },
@@ -5710,36 +5714,54 @@
     "avg": -17.2
    }
   ],
-  "shadows": 252,
+  "shadows": 253,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12921,
+   "sent": 12955,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12920,
+   "sent": 12954,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BEAST",
+   "name": "MrBeast",
+   "mint": "826cmxVUpozqapDwxZpcuU9tSdP3NoZ1k3jPER1Dpump",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/MrBeast/status/1941802940768850033?s=20",
+   "tg": false,
+   "web": "https://mrbeast.store/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "DUNEUSSY",
    "name": "The Duneussy",
    "mint": "7ZpKyFjdLMU8rDe8AeCFQnVVkJhiNry6b7DeUcjvpump",
-   "age_s": 1,
-   "sol_in": 2.98,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 20.8,
-   "mcap_sol": 33.8,
+   "age_s": 33,
+   "sol_in": 7.95,
+   "buys": 10,
+   "sells": 9,
+   "rise_pct": 60.0,
+   "mcap_sol": 44.7,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 1.42,
    "x": "https://x.com/TrenchSage/status/2126179610563944858",
    "tg": false,
    "web": false,
@@ -5750,14 +5772,14 @@
    "symbol": "Simyo",
    "name": "시묘일",
    "mint": "E459NYfKofxS29RZFz7UqnGdYWKp28WWATAKR165pump",
-   "age_s": 8,
-   "sol_in": 3.09,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 20.2,
-   "mcap_sol": 38.2,
+   "age_s": 40,
+   "sol_in": 20.69,
+   "buys": 18,
+   "sells": 9,
+   "rise_pct": 171.3,
+   "mcap_sol": 86.2,
    "dev_pct": 6.6,
-   "big_sell": 1.72,
+   "big_sell": 1.77,
    "x": "https://x.com/johnporkagency/status/2126179543098519823",
    "tg": false,
    "web": false,
@@ -5768,7 +5790,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "5atQpfJ5152Mapp2XRptsjxcVDqLD8cvCMN1JZQpump",
-   "age_s": 123,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5781,24 +5803,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "João",
-   "name": "Caveman Baby",
-   "mint": "QXfXyZ4F1wKuz4WVTf9ebcGR8332oSHvu6Vn1wHpump",
-   "age_s": 174,
-   "sol_in": -0.0,
-   "buys": 3,
-   "sells": 6,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 2.47,
-   "x": "https://x.com/TrenchSage/status/2126178894177026496",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
@@ -5824,18 +5828,22 @@
   {
    "symbol": "Niggalo",
    "mint": "5n5RJaCkpokCfrqKigB4CZV1EzkLrS4GCBBGv6Mtpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
    "opened": "2026-11-27T04:58:00Z",
    "cost": 21.57,
-   "pnl_pct": -9.4,
+   "pnl_pct": -12.6,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
    "fill": "curve",
    "age_s": 1,
-   "sol_in": 0.01
+   "sol_in": 0.01,
+   "closed": "2026-11-27T05:01:54Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -2.71,
+   "weight": 0.5
   },
   {
    "symbol": "HONEST",
@@ -6216,34 +6224,14 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -1.69,
    "weight": 0.5
-  },
-  {
-   "symbol": "SANDFOX",
-   "mint": "HNNh3pjWsk7z8iQDywWsiZbN7JMX6M6G6Mda7spCpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T04:35:34Z",
-   "cost": 24.66,
-   "pnl_pct": -7.1,
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.01,
-   "closed": "2026-11-27T04:38:37Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -1.76,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 268,
+  "n": 269,
   "wins": 46,
-  "win_rate": 17.2,
-  "mean_pnl_pct": -9.19,
-  "open": 2,
+  "win_rate": 17.1,
+  "mean_pnl_pct": -9.21,
+  "open": 1,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6251,10 +6239,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 252,
+   "n": 253,
    "wins": 43,
-   "win_rate": 17.1,
-   "mean_pnl_pct": -8.99
+   "win_rate": 17.0,
+   "mean_pnl_pct": -9.01
   }
  }
 }

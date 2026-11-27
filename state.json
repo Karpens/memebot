@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T03:44:50Z",
-    "time": "04:44:50",
-    "agent": "NEWS",
-    "coin": "ADEN",
-    "action": "plan",
-    "text": "hold plan · 1/10 (inflow 6.2 SOL) · scalp: +10",
-    "n": 1551
-   },
-   {
-    "t": "2026-11-27T03:44:51Z",
-    "time": "04:44:51",
-    "agent": "EXECUTOR",
-    "coin": "ADEN",
-    "action": "exit",
-    "text": "EXIT ADEN +$4.35 (+10%) · TP +10% · by the curve maths (Jupiter: no Jupiter route; the entry was filled by it too) · out · 0.0 s after the reading",
-    "n": 1552
-   },
-   {
     "t": "2026-11-27T03:44:51Z",
     "time": "04:44:51",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "learn",
     "text": "learned · np:age:<30s now avg -10.2% over 300",
     "n": 2150
+   },
+   {
+    "t": "2026-11-27T05:01:54Z",
+    "time": "06:01:54",
+    "agent": "LEARNER",
+    "coin": "Niggalo",
+    "action": "shadow",
+    "text": "SHADOW Niggalo would have made -12.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:age:<30s now avg -10.2% over 300",
+    "n": 2151
+   },
+   {
+    "t": "2026-11-27T05:02:06Z",
+    "time": "06:02:06",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 2.2 a minute · 0 watched · 3 rejected (serial launcher 2, mayhem mode 1)",
+    "n": 2152
    }
   ],
   "trades": [
@@ -15572,7 +15572,7 @@
   "flagged": 194,
   "checked": 190,
   "filtered": 5,
-  "lines": 2150,
+  "lines": 2152,
   "flags": [
    {
     "coin": "RSA",
@@ -17059,17 +17059,21 @@
    [
     1795755653,
     215.71
+   ],
+   [
+    1795755713,
+    212.31
    ]
   ],
   "last_rug": {
    "coin": "Simyo",
    "pass": true
   },
-  "np_said": 1795755666.78084,
+  "np_said": 1795755726.78085,
   "shadow": {
-   "n": 254,
+   "n": 255,
    "wins": 44,
-   "sum": -2265.5
+   "sum": -2278.1
   },
   "np_speed": {
    "first_in": [
@@ -26412,9 +26416,9 @@
   }
  },
  "shadow": {
-  "n": 268,
+  "n": 269,
   "wins": 46,
-  "sum": -2464.0,
+  "sum": -2476.6,
   "by": {
    "learner": {
     "n": 16,
@@ -26422,32 +26426,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 252,
+    "n": 253,
     "wins": 43,
-    "sum": -2266.2
+    "sum": -2278.8
    }
   },
   "closed": [
-   {
-    "symbol": "SANDFOX",
-    "mint": "HNNh3pjWsk7z8iQDywWsiZbN7JMX6M6G6Mda7spCpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T04:35:34Z",
-    "cost": 24.66,
-    "pnl_pct": -7.1,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T04:38:37Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -1.76,
-    "weight": 0.5
-   },
    {
     "symbol": "RICE",
     "mint": "JB41hUHMuPcKCoC2xmSGKozCu4rukwk1z6R2Z9Dya25q",
@@ -26827,10 +26811,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -1.46,
     "weight": 0.5
+   },
+   {
+    "symbol": "Niggalo",
+    "mint": "5n5RJaCkpokCfrqKigB4CZV1EzkLrS4GCBBGv6Mtpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T04:58:00Z",
+    "cost": 21.57,
+    "pnl_pct": -12.6,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T05:01:54Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.71,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Niggalo",
    "JAWCCC"
   ]
  },
@@ -26873,7 +26876,7 @@
     "avg": -17.2
    }
   ],
-  "shadows": 252,
+  "shadows": 253,
   "memory": "snipe"
  }
 }
