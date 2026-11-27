@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:51:46Z",
+ "updated": "2026-11-27T10:52:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4247,
+  "lines": 4250,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795740660,
-   80.34
-  ],
   [
    1795740720,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795776674,
    361.97
+  ],
+  [
+   1795776734,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,33 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:15:12Z",
-   "time": "11:15:12",
-   "agent": "LEARNER",
-   "coin": "YO",
-   "action": "shadow",
-   "text": "SHADOW YO · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021314 (curve maths, every cost) · same exits, outside the book",
-   "n": 4048
-  },
-  {
-   "t": "2026-11-27T10:15:16Z",
-   "time": "11:15:16",
-   "agent": "LEARNER",
-   "coin": "LAPMOOSE",
-   "action": "shadow",
-   "text": "SHADOW LAPMOOSE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021453 (curve maths, every cost) · same exits, outside the book",
-   "n": 4049
-  },
-  {
-   "t": "2026-11-27T10:15:36Z",
-   "time": "11:15:36",
-   "agent": "LEARNER",
-   "coin": "SWEATER",
-   "action": "shadow",
-   "text": "SHADOW SWEATER · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021314 (curve maths, every cost) · same exits, outside the book",
-   "n": 4050
-  },
-  {
    "t": "2026-11-27T10:15:53Z",
    "time": "11:15:53",
    "agent": "LEARNER",
@@ -6538,6 +6511,33 @@
    "action": "scan",
    "text": "new pairs · 5.6 a minute · 0 watched · 17 rejected (snipe not bought: trades tonight 9, mayhem mode 5, serial launcher 2)",
    "n": 4247
+  },
+  {
+   "t": "2026-11-27T10:51:47Z",
+   "time": "11:51:47",
+   "agent": "LEARNER",
+   "coin": "DI",
+   "action": "shadow",
+   "text": "SHADOW DI · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000045376 (curve maths, every cost) · same exits, outside the book",
+   "n": 4248
+  },
+  {
+   "t": "2026-11-27T10:51:50Z",
+   "time": "11:51:50",
+   "agent": "LEARNER",
+   "coin": "DI",
+   "action": "shadow",
+   "text": "SHADOW DI would have made -38.4% (dump: 7.2 SOL sold) · learned x0.5 · np:sol:3-6 now avg -10.9% over 76",
+   "n": 4249
+  },
+  {
+   "t": "2026-11-27T10:51:57Z",
+   "time": "11:51:57",
+   "agent": "LEARNER",
+   "coin": "LEVYB",
+   "action": "shadow",
+   "text": "SHADOW LEVYB would have made -7.9% (5 min, only -4%) · learned x0.5 · np:social:none now avg -9.1% over 232.5",
+   "n": 4250
   }
  ],
  "nights": [
@@ -6597,7 +6597,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 1,
   "scans_per_min": 0,
@@ -6605,15 +6605,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1126,
-    "last_event_age_s": 4.6,
+    "events": 1129,
+    "last_event_age_s": 13.1,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23137,
+    "events": 23206,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6621,8 +6621,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 664,
-    "last_event_age_s": 4.6,
+    "events": 666,
+    "last_event_age_s": 12.5,
     "errors": 30,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6670,7 +6670,7 @@
    {
     "label": "snipe · np:sol:3-6",
     "n": 76,
-    "avg": -10.8
+    "avg": -10.9
    },
    {
     "label": "snipe · np:buys:<70",
@@ -6678,36 +6678,90 @@
     "avg": -9.2
    }
   ],
-  "shadows": 877,
+  "shadows": 879,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13050,
+   "sent": 13084,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13061,
+   "sent": 13095,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "USFF",
+   "name": "USFF",
+   "mint": "7kgaHGAMMxWWV4FbVX3zRiyfgB7KvvN3Xxq8qik3pump",
+   "age_s": 13,
+   "sol_in": -0.72,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": -84.6,
+   "mcap_sol": 4.6,
+   "dev_pct": 3.6,
+   "big_sell": 0.85,
+   "x": false,
+   "tg": false,
+   "web": "https://usff.info/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "DGGI",
+   "name": "DOGGIE",
+   "mint": "4Ve4kw3RkmLmuVVfxvYyjd44oxphs7x6hbjkKkrapump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "DI",
+   "name": "Discount INU",
+   "mint": "9FMDWWfZCz2QmipXDKjLV95bzQDpKpegt1JqwsXGpump",
+   "age_s": 31,
+   "sol_in": -0.45,
+   "buys": 12,
+   "sells": 13,
+   "rise_pct": -2.2,
+   "mcap_sol": 48.3,
+   "dev_pct": 26.6,
+   "big_sell": 7.18,
+   "x": "https://x.com/thealexmorgan15/status/2126266772311495045",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "ᶻ 𝗓 𐰁",
    "name": "ᶻ 𝗓 𐰁",
    "mint": "G4uPZaELEEYWTKrJXKj2tbUvwMyPat4yYU88Yjgnpump",
-   "age_s": 4,
-   "sol_in": -0.13,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -0.8,
-   "mcap_sol": 31.5,
+   "age_s": 36,
+   "sol_in": -1.3,
+   "buys": 4,
+   "sells": 5,
+   "rise_pct": -8.0,
+   "mcap_sol": 29.2,
    "dev_pct": 6.6,
-   "big_sell": 0.47,
+   "big_sell": 0.97,
    "x": "https://x.com/munnyonly/status/2126267680835641600",
    "tg": false,
    "web": false,
@@ -6718,7 +6772,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "J1wv4mQrb4VY1PRSrepyNYfHfXp5m8MzRuC3QuBLpump",
-   "age_s": 29,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6736,11 +6790,11 @@
    "symbol": "DOOMDAY",
    "name": "Avengers Doomsday",
    "mint": "686hKxke81Q1yn4TDTQj92kA7syD936zzM1AJb7Fpump",
-   "age_s": 40,
-   "sol_in": 0.07,
-   "buys": 2,
+   "age_s": 72,
+   "sol_in": 0.09,
+   "buys": 5,
    "sells": 1,
-   "rise_pct": 0.4,
+   "rise_pct": 0.6,
    "mcap_sol": 28.3,
    "dev_pct": 0.4,
    "big_sell": 0.02,
@@ -6754,7 +6808,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "BMQCCwCYJV5tYNM6a5qvrseCoXd541fYzs5tnrZGpump",
-   "age_s": 44,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6772,12 +6826,12 @@
    "symbol": "USFF",
    "name": "USFF",
    "mint": "4E42yq8MwYoH5x7uEjMEt8uBTii68vTxna7q6be4pump",
-   "age_s": 53,
-   "sol_in": -0.47,
+   "age_s": 85,
+   "sol_in": -0.54,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": -84.9,
-   "mcap_sol": 4.4,
+   "sells": 4,
+   "rise_pct": -85.3,
+   "mcap_sol": 4.3,
    "dev_pct": 2.4,
    "big_sell": 0.55,
    "x": false,
@@ -6790,7 +6844,7 @@
    "symbol": "$Kulkas",
    "name": "kulkal",
    "mint": "9EHdhw2oxQobTh8pesnU8RpkUvUAAzEFHvVr1E6hpump",
-   "age_s": 54,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6808,7 +6862,7 @@
    "symbol": "INUMAS",
    "name": "INUMAS",
    "mint": "z1PVouJvTbLyw1ZctN1MCNP3wdrvfAd7XDk6eu3pump",
-   "age_s": 72,
+   "age_s": 104,
    "sol_in": 0.04,
    "buys": 2,
    "sells": 3,
@@ -6826,7 +6880,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "3aJZMY5fCesetPNiJbXk9CUTGQJ4wNHfLmfViFPNpump",
-   "age_s": 79,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6844,7 +6898,7 @@
    "symbol": "FLOWERS",
    "name": "Buy Lucia Flowers",
    "mint": "J6b8hZ9QYRcZ3AhvsY8YjqkTB1rcrykHUrhe9ZjLpump",
-   "age_s": 87,
+   "age_s": 119,
    "sol_in": 0.06,
    "buys": 2,
    "sells": 3,
@@ -6862,7 +6916,7 @@
    "symbol": "BSC2",
    "name": "Binance Super CZ 2",
    "mint": "BFdDbTKsZsu1D4rWGnFCN7oK9EZjfdMqWfsJMxovMbud",
-   "age_s": 101,
+   "age_s": 133,
    "sol_in": -0.05,
    "buys": 2,
    "sells": 5,
@@ -6880,7 +6934,7 @@
    "symbol": "?",
    "name": "",
    "mint": "5Na8DYYJUMjsHzud1ditu84x3vjXfATARaS16opJLzoq",
-   "age_s": 123,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6898,7 +6952,7 @@
    "symbol": "One week",
    "name": "One week",
    "mint": "FbDMro5dQ1jpa2KhrcoyFGmEajwYUjsbueZXXWvqpump",
-   "age_s": 126,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6916,7 +6970,7 @@
    "symbol": "FOMOPUG",
    "name": "Fomo PUG",
    "mint": "F9nkrNAxo8PM3YEHgqUhXTqmM8mPvYWE1uYrZKtmpump",
-   "age_s": 132,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6934,7 +6988,7 @@
    "symbol": "pepuda",
    "name": "ratita",
    "mint": "2Adhfnwo2Dg4recR6NRvvNf6ybSqqHAmdX4Z8pFKpF1o",
-   "age_s": 144,
+   "age_s": 176,
    "sol_in": -0.66,
    "buys": 2,
    "sells": 5,
@@ -6945,42 +6999,6 @@
    "x": "https://x.com/morinotaggy/status/2126266646767509975",
    "tg": false,
    "web": "https://www.instagram.com/ratita.pepuda/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "PACKERS",
-   "name": "1-2-3 PACKERS!",
-   "mint": "3MufMXr4pRJbVV9Ws5tRgrPEXtqLYWc1qQzpxEegpump",
-   "age_s": 159,
-   "sol_in": 0.08,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.6,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "mihao",
-   "name": "ni hao cat",
-   "mint": "5vqsD4vuTYFLRTbP7xxNQWQUc2LQ5fPRFsaDeRREpump",
-   "age_s": 160,
-   "sol_in": 3.01,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 21.1,
-   "mcap_sol": 33.9,
-   "dev_pct": 0.0,
-   "big_sell": 0.15,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
   }
@@ -7045,7 +7063,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:50:05Z",
    "cost": 36.2,
-   "pnl_pct": -4.9,
+   "pnl_pct": -5.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -7104,18 +7122,42 @@
   {
    "symbol": "LEVYB",
    "mint": "CwLRCiKXVGnoZATGa5eE7Z1ipzymAn7ZK3Fkj4Hspump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:46:57Z",
    "cost": 36.2,
-   "pnl_pct": -4.2,
+   "pnl_pct": -7.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.33
+   "sol_in": 0.33,
+   "closed": "2026-11-27T10:51:57Z",
+   "exit": "5 min, only -4%",
+   "pnl": -2.88,
+   "weight": 0.5
+  },
+  {
+   "symbol": "DI",
+   "mint": "9FMDWWfZCz2QmipXDKjLV95bzQDpKpegt1JqwsXGpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:51:47Z",
+   "cost": 36.2,
+   "pnl_pct": -38.4,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 3.99,
+   "closed": "2026-11-27T10:51:50Z",
+   "exit": "dump: 7.2 SOL sold",
+   "pnl": -13.91,
+   "weight": 0.5
   },
   {
    "symbol": "mihao",
@@ -7476,54 +7518,14 @@
    "exit": "TP +10%",
    "pnl": 3.72,
    "weight": 0.5
-  },
-  {
-   "symbol": "NİMİS1",
-   "mint": "DQtLq2hVMqhCcb7tka1xXGvg7T9zePoVQayGQvwMEudT",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:43:56Z",
-   "cost": 36.2,
-   "pnl_pct": -17.2,
-   "tier": "scalp",
-   "score": 0.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.23,
-   "closed": "2026-11-27T10:43:58Z",
-   "exit": "stop -14%",
-   "pnl": -6.21,
-   "weight": 0.5
-  },
-  {
-   "symbol": "JENSEN",
-   "mint": "ATMYnSF6af3dfEgyZXZHU7g2PjJunaeJhmQpoopHpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:43:39Z",
-   "cost": 36.2,
-   "pnl_pct": -34.9,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 4.58,
-   "closed": "2026-11-27T10:43:50Z",
-   "exit": "dump: 5.8 SOL sold",
-   "pnl": -12.62,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 893,
+  "n": 895,
   "wins": 200,
-  "win_rate": 22.4,
-  "mean_pnl_pct": -7.75,
-  "open": 8,
+  "win_rate": 22.3,
+  "mean_pnl_pct": -7.78,
+  "open": 7,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -7531,10 +7533,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 877,
+   "n": 879,
    "wins": 197,
-   "win_rate": 22.5,
-   "mean_pnl_pct": -7.66
+   "win_rate": 22.4,
+   "mean_pnl_pct": -7.7
   }
  }
 }
