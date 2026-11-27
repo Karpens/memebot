@@ -67,6 +67,16 @@ waits longer than the live bot did, the tape has no fresher report, the coin goe
 follow-up (rec_follow_s, 15 minutes after launch) finds no readings (blind exits). Paper money, no guarantee: a
 replay that made money is a hint, not a promise.
 
+SNIPE mode (np_snipe on in the config, or on a run's own start line in a live check): the engine's own snipe
+(newpairs.snipe, Night.np_snipe_fire) buys each coin on its first reading on the tape, the first one the live poller
+wrote for its watch, as live; a run whose start line does not name np_snipe (from before it) is replayed with the
+momentum entry (LIVE_OFF). The replay's Jupiter always quotes by the curve maths, so a live "fill curve" (Jupiter had
+no route yet) replays as "fill quote" at the same price, on the same maths (while a coin is held both fill by the curve
+maths, with no quote). A snipe needs no RugCheck report: no "rug_missing" for it. The replay decides each reading at its
+own time, so a live snipe the loop decided too late (np_snipe_late: past np_snipe_max_age_s at the decision, a curve
+fill's reading older than np_snipe_fresh_s or a newer one already in: its "dec" line says why) is bought by the replay:
+the live check lists it under only_replay, a cost of the live loop's speed, not of the rules.
+
     python3 memebot/replay.py --data DIR [--since ISO] [--until ISO] [--config FILE] [--set key=json ...] [--out FILE]
                               [--live-check]
     python3 memebot/replay.py --synth DIR [--coins 100] [--seed 1]      # a made-up tape (tests and demos only)
@@ -1344,7 +1354,8 @@ def rug_waits(night, mint, rep):
 
 
 TRADE_KEYS = ("symbol", "mint", "opened", "closed", "cost", "proceeds", "pnl", "pnl_pct", "why", "tier", "score",
-              "steps", "age_s", "mcap_sol", "dev_pct", "sol_in", "fill", "size_pct", "exit_ms", "slip")
+              "steps", "age_s", "mcap_sol", "dev_pct", "sol_in", "fill", "size_pct", "exit_ms", "slip",
+              "snipe", "entry_fill", "stop_pct")             # (a SNIPE's trade only: the others have none of the three)
 
 
 def jobs_for(tape, since, until, job_min=340.0, job_gap_s=120.0, align="auto"):
@@ -1466,9 +1477,11 @@ def replay(tape, cfg, since=None, until=None, job_min=340.0, job_gap_s=120.0, ru
 
 LIVE_SKIP = ("rec_", "live_")           # recorded settings a live check does not take over
 # rules a run's start line does not name did not exist in the code that run traded with: a live check replays such a
-# run with them off (the SHADOW trades; the entry-quality rules of newpairs.py), so a tape recorded before them is
-# replayed as it was traded. bot.DEFAULTS names every one, so every start line since carries its value
-LIVE_OFF = {"shadow_on": False, "np_min_holders": 0, "np_max_sol_per_holder": 0.0, "np_max_buy_sol": 0.0}
+# run with them off (the SHADOW trades; the entry-quality rules of newpairs.py; SNIPE mode, np_snipe: a run from
+# before it traded the momentum entry), so a tape recorded before them is replayed as it was traded. bot.DEFAULTS
+# names every one, so every start line since carries its value
+LIVE_OFF = {"shadow_on": False, "np_min_holders": 0, "np_max_sol_per_holder": 0.0, "np_max_buy_sol": 0.0,
+            "np_snipe": False}
 
 
 def live_check(tape, cfg, since=None, until=None, **opts):

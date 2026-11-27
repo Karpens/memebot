@@ -63,18 +63,25 @@ on every coin line:
       graphInsidersDetected; score = score_normalised. ok means a report CAME, not that it passed; ok
       false: no report (only t, why, ms then). The verdict is not on this line: the bot's own (by the
       run's thresholds) shows as a "dec" or a "buy".
-  {"k":"fire","m","t","tt","why","sol_in","buys","sells","rise","mcap","age","price"}
+  {"k":"fire","m","t","tt","why","sol_in","buys","sells","rise","mcap","age","price"[,"entry"]}
       the momentum trigger fired (once per trigger): tt when its rules started to hold, why the
-      trigger's text, the coin's state then (SOL, %, SOL, s, SOL per token).
+      trigger's text, the coin's state then (SOL, %, SOL, s, SOL per token). "entry": "snipe" (SNIPE mode,
+      np_snipe): no momentum trigger, the coin's FIRST reading fired, tt that reading's time (a line without
+      "entry" is the momentum trigger's).
   {"k":"dec","m","t","d","why"}   a decision: d "skip" (not watched at its create: mayhem mode, no
       symbol, not a pump.fun curve, list full), "reject" (cheap check, RugCheck, sell simulation, ...),
       "learner" (the LEARNER's skip), "risk" (fired, RISK said no entry now; once per reason in a row).
       skip / reject / learner come from the coin's status, seen at the end of that loop turn (t).
   {"k":"buy","m","t","usd","raw","tok","px","px_sol","sol","impact","fee_sol","tier","score","size_pct",
-   "check","tt","why","learn"}   the paper entry: usd paid (fees in), raw / tok the tokens got (after the
-      latency haircut), px dollars per token, px_sol the curve's price at the fill, sol the SOL/USD used,
-      impact Jupiter's price impact %, fee_sol network + priority fee, tier / score the NEWS hold plan,
-      check the curve maths against the quotes ({"buy_pct","sell_pct"}), tt the trigger's time.
+   "check","tt","why","learn"[,"entry","fill"]}   the paper entry: usd paid (fees in), raw / tok the tokens got
+      (after the latency haircut), px dollars per token, px_sol the curve's price at the fill, sol the SOL/USD
+      used, impact Jupiter's price impact %, fee_sol network + priority fee, tier / score the NEWS hold plan,
+      check the curve maths against the quotes ({"buy_pct","sell_pct"}), tt the trigger's time. A SNIPE (np_snipe:
+      bought on the coin's first reading, its "fire" line that reading's) has "entry": "snipe" and "fill": "quote"
+      (a Jupiter quote) or "curve" (the curve maths filled it: something was held, or Jupiter had no route or
+      failed; check then null and impact the curve maths' own), why "snipe · ... · fill quote | curve", and its
+      RugCheck ask about 25 s after its launch, for the tape only, a "rug" line with why "snipe" (a sold one's
+      too). A line without "entry" is a momentum entry's.
   {"k":"sell","m","t","frac","raw","usd","px","px_sol","sol","why","fill","final","pnl","pnl_pct","lat_ms"}
       a paper sale: frac of what was left, usd it brought (fees out), px the price that decided it, fill
       "quote" (Jupiter) or "curve" (the curve maths fallback); final true on the last sale, with the
@@ -90,7 +97,8 @@ on every coin line:
   {"k":"gone","m","t"}  the curve account read as null 3 times;  {"k":"migrate","m","t","pool"}
   {"k":"shadow","m","t","act",...}   a SHADOW trade (bot.py: a coin that fired and passed RugCheck but was not bought,
       followed as if it had been, for the LEARNER; never in the book): act "open" (kind "learner" | "risk", why, usd,
-      raw, px, px_sol, sol, fill "quote" | "curve", tier, score, learn), "sell" (frac, raw, usd, why, fill, final, px;
+      raw, px, px_sol, sol, fill "quote" | "curve", tier, score, learn; a RISK-blocked SNIPE's also "entry": "snipe",
+      "snipe": true and its "stop_pct"), "sell" (frac, raw, usd, why, fill, final, px;
       pnl / pnl_pct on the final one) or "drop" (why: it was bought for real). Never a "buy" or "sell" line: those are
       the live trades a replay is checked against (replay.py keeps it with the live lines, never as a trade).
 Lines without "m": {"k":"start","t","v":2,"cfg":{...}[,"bal","held","mem"]} (a run started: the settings it traded
@@ -664,17 +672,19 @@ class Recorder(object):
         else:
             self._coin_line(r, "rug", now, ok=True, why=_s(why, 20), ms=ms, **doc)
 
-    def fire(self, coin):
-        """The momentum trigger fired (the bot calls it once per trigger)."""
+    def fire(self, coin, entry=None):
+        """The momentum trigger fired (the bot calls it once per trigger); entry "snipe": SNIPE mode's first reading
+        fired instead (no momentum trigger), and the line says so ("entry": "snipe"; a momentum line has no "entry")."""
         r = self._get(getattr(coin, "mint", None))
         if r is None:
             return
         r.coin = coin
         r.fired = True
         g = lambda k: getattr(coin, k, None)            # noqa: E731
+        kw = {"entry": _s(entry, 12)} if entry else {}
         self._coin_line(r, "fire", self._now(), tt=_r(g("trigger_t"), TD), why=_s(g("why"), 200), sol_in=_r(g("sol_in"), 4),
                         buys=_num(g("buys")), sells=_num(g("sells")), rise=_r(g("rise_pct"), 2),
-                        mcap=_r(g("mcap_sol"), 2), age=_r(g("age_s"), 2), price=_r(g("price"), 15))
+                        mcap=_r(g("mcap_sol"), 2), age=_r(g("age_s"), 2), price=_r(g("price"), 15), **kw)
 
     def decide(self, mint, d, why):
         """A decision about a coin ("skip", "reject", "learner", "risk"), once per (d, why) in a row."""
@@ -698,13 +708,14 @@ class Recorder(object):
             r.coin = coin
         plan = pos.get("plan") if isinstance(pos.get("plan"), dict) else {}
         raw = _num(pos.get("raw"))
+        kw = {"entry": "snipe", "fill": _s(pos.get("entry_fill"), 12)} if pos.get("snipe") else {}
         self._coin_line(r, "buy", self._now(), usd=_r(pos.get("cost"), 6), raw=raw, tok=_r(pos.get("tokens_ui"), 6),
                         px=_r(pos.get("entry_price"), 15), px_sol=_r(getattr(coin, "price", None), 15),
                         sol=_r(sol_usd, 4), impact=_r(pos.get("impact_pct"), 3), fee_sol=_r(pos.get("fee_sol"), 9),
                         tier=_s(plan.get("entry_tier") or plan.get("tier"), 20),
                         score=_num(plan.get("entry_score", plan.get("score"))), size_pct=_r(pos.get("size_pct"), 2),
                         check=_clean(pos.get("curve_check")), tt=_r(getattr(coin, "trigger_t", None), TD),
-                        why=_s(pos.get("reason"), 200), learn=_clean(pos.get("learn")))
+                        why=_s(pos.get("reason"), 200), learn=_clean(pos.get("learn")), **kw)
 
     def sell(self, mint, pos, frac, why, usd, raw=None, sol_usd=None, lat=None, note=""):
         """A paper sale that went through (pos: the position, its sold_usd already counting usd)."""

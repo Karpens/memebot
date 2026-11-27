@@ -38,6 +38,11 @@ np_max_buy_sol (concentration(); off by default). A coin that passed RugCheck an
 LEARNER said skip) is not offered again while the rules keep holding, so the learner is asked once per
 trigger, not once per reading (still: reject it).
 
+SNIPE mode (cfg "np_snipe"): judge() fires on the coin's FIRST curve reading instead (snipe()), when it came within
+np_snipe_max_age_s of the create and cheap_check passes: no momentum trigger, no minimum age, no RugCheck verdict
+(rug_check_np is not asked for the entry). Once: a later reading rejects the coin, and the bot buys it on the turn it
+fires or rejects it (a coin not bought on its first reading is never bought later).
+
 A reading is the decoded bonding-curve account (decode_curve() below, or the feed's own decode):
 {"vsol", "vtok", "rsol", "complete", "slot"} in lamports and raw token units, or in SOL and whole
 tokens ({"price_sol", "real_sol", "complete"} works too). Buys and sells are counted from the real
@@ -136,6 +141,13 @@ DEFAULTS = {
     "np_max_buy_sol": 0.0,
     # held coins
     "np_stale_s": 5.0,              # no fresh reading this long while holding: Jupiter price (caller)
+    # SNIPE mode (judge(): snipe() in place of the momentum trigger): a watched coin is bought on its FIRST curve
+    # reading, once, when the cheap checks pass (cheap_check: no waiting) and that reading came within
+    # np_snipe_max_age_s of its create; no momentum trigger, no minimum age, no RugCheck wait. Off by default: a
+    # config without the key trades the momentum rules as before. bot.py gives a sniped trade its own stop
+    # (np_snipe_stop_pct) and fills it by the curve maths when Jupiter has no route yet.
+    "np_snipe": False,
+    "np_snipe_max_age_s": 10.0,     # a first reading later than this after the create: not sniped (stale)
 }
 
 WATCHING, ENTERED = "watching", "entered"
@@ -691,13 +703,15 @@ class Watchlist(object):
     # the bot's decisions
     def judge(self, coin, now):
         """("reject" | "wait" | "fire", why) on a reading: cheap_check first (a failure rejects the
-        coin for good), then the momentum trigger."""
+        coin for good), then the momentum trigger (with np_snipe: snipe(), _judge_snipe)."""
         coin = self._coin(coin)
         if coin is None:
             return "wait", "not watched"
         now = self._clock(now)
         if coin.status != WATCHING:
             return "wait", coin.status
+        if _on(self.cfg, "np_snipe"):
+            return self._judge_snipe(coin, now)
         ok, bad = cheap_check(coin, self.cfg)
         rug = coin.rug if isinstance(coin.rug, dict) else {}
         if ok and rug.get("ok") is False:           # a RugCheck FAIL is final, whoever forgot to say so
@@ -720,6 +734,33 @@ class Watchlist(object):
         why = "fired, not bought"                   # it passed RugCheck and the bot said no
         coin.why = why
         return "wait", why
+
+    def _judge_snipe(self, coin, now):
+        """judge() in SNIPE mode: cheap_check (a failure rejects, as always), then snipe() on the coin's first reading:
+        "fire" on it (coin.trigger_t is that reading's time), "wait" before it, "reject" for good on any later one or
+        on a first reading too late or on a completed curve. A coin fires at most once: the bot buys it on that turn
+        or rejects it (Night.np_snipe_fire), so a coin it did not buy on its first reading is never bought later."""
+        ok, bad = cheap_check(coin, self.cfg)
+        rug = coin.rug if isinstance(coin.rug, dict) else {}
+        if ok and rug.get("ok") is False:           # a RugCheck FAIL is final here too (none is waited for)
+            ok, bad = False, (_reasons(rug.get("reasons")) or ["RugCheck: fail"])[:1]
+        if not ok:
+            self.reject(coin, bad[0])
+            return "reject", bad[0]
+        if coin.trigger_t is not None:              # it fired once and is still not bought (the bot's turn failed):
+            why = "snipe: fired once, not bought"   # a later look would fill an old reading at a later time
+            self.reject(coin, why)
+            return "reject", why
+        fire, why = snipe(coin, self.cfg)
+        if fire is None:
+            coin.why = why
+            return "wait", why
+        if not fire:
+            self.reject(coin, why)
+            return "reject", why
+        coin.why = why
+        coin.trigger_t = coin.last_t if coin.last_t else now        # the first reading's time ("after the reading")
+        return "fire", why
 
     def retry(self, coin):
         """No buy on this fire for a reason that may pass (the book is full, a pause): the next
@@ -1076,6 +1117,35 @@ def _momentum(coin, cfg, t):
         coin.sol_in, coin.buys, coin.buys + coin.sells, coin.buy_share * 100, coin.rise_pct, coin.mcap_sol, age)
 
 
+def snipe(coin, cfg=None):
+    """(fire, why): the SNIPE entry (np_snipe), in place of the momentum trigger. fire None: no curve reading yet
+    (wait for it). True on the coin's FIRST reading of the watch when that reading came within np_snipe_max_age_s of
+    the create (the reading's own age: Coin.age_s), the curve is not complete and cheap_check passes (mayhem mode, a
+    symbol and name, the creator's buy at most np_max_dev_pct, the serial-creator rule, a single sell under
+    np_dump_sol, np_need_social once the links are read: everything known without waiting; the bonding-curve account
+    and the pump.fun pool were checked at the create and on the reading). False for good on anything else: a later
+    reading (the snipe is the first one or none), a first reading too late (the snipe would be stale), a completed
+    curve. No momentum rule, no minimum age, no RugCheck: a coin a second old is not on RugCheck yet."""
+    if not isinstance(coin, Coin):
+        return False, "no coin"
+    if coin.status != WATCHING:
+        return False, coin.status
+    if coin.readings < 1:
+        return None, "no curve reading yet"
+    if coin.readings > 1:
+        return False, "snipe: past its first reading"
+    if coin.complete:
+        return False, "curve complete"
+    ok, bad = cheap_check(coin, cfg)
+    if not ok:
+        return False, bad[0]
+    age, cap = coin.age_s, _c(cfg, "np_snipe_max_age_s")
+    if age > cap + EPS:
+        return False, "snipe: first reading %.1f s after the create (max %s s)" % (age, _g(cap))
+    return True, "snipe · first reading %.1f s after the create · %.1f SOL in · %+.0f%% since the create · mcap %.0f SOL" % (
+        age, coin.sol_in, coin.rise_pct, coin.mcap_sol)
+
+
 def concentration(coin, cfg=None):
     """(ok, why): no single buy READING above np_max_buy_sol ("concentrated: one buy of 2.4 SOL (max 2)"; 0, the
     default: off). Judged when the trigger fires (Watchlist.judge rejects the coin for good on a False). The SOL
@@ -1219,15 +1289,16 @@ def watch_text(coin, now=None):
     return "new pair · %d s old · %.1f SOL in · dev %.1f%% · %s" % (age, coin.sol_in, coin.dev_pct, soc)
 
 
-def first_in_text(coin, now):
-    """EXECUTOR, at the paper fill: "first in · 1.2 s after the trigger · 38 s after launch"."""
+def first_in_text(coin, now, what="the trigger"):
+    """EXECUTOR, at the paper fill: "first in · 1.2 s after the trigger · 38 s after launch" (a snipe: what "the
+    first reading")."""
     if not isinstance(coin, Coin):
         return "first in"
     t = _t(now)
     t = coin.last_t if t is None else t
     bits = ["first in"]
     if coin.trigger_t is not None:
-        bits.append("%.1f s after the trigger" % max(0.0, t - coin.trigger_t))
+        bits.append("%.1f s after %s" % (max(0.0, t - coin.trigger_t), what))
     bits.append("%d s after launch" % max(0.0, t - coin.t0))
     return " · ".join(bits)
 

@@ -438,7 +438,9 @@ def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None, extr
             self.sol_pool = SimPool(feeds, rng)
 
     cfg = bot.load_config(bot.CONFIG)
-    cfg.update(live_enabled=False, rec_on=True)
+    # the momentum entry this stream was made for (np_snipe off; over={"np_snipe": True}: config.json's snipe mode,
+    # every coin bought on its first reading: tests/test_snipe.py)
+    cfg.update(live_enabled=False, rec_on=True, np_snipe=False)
     cfg.update(copy.deepcopy(over or {}))
     env = dict(os.environ)
     env.pop("MEMEBOT_REC", None)
@@ -604,7 +606,9 @@ class LiveAgainstReplay(unittest.TestCase):
         self.assertIn("hold_tiers", chk["settings_changed"])
         self.assertIn("the settings changed between runs", R.live_check_text(chk))
         self.assertTrue(any(t["why"] == "TP +7%" for t in tape.live_trades()))
-        rep = bt.backtest(d, grid={"combos": []}, cfg=bot.load_config(bot.CONFIG), jobs=1, min_trades=3)
+        # the base: config.json as both runs traded it (live_run: the momentum entry, np_snipe off)
+        rep = bt.backtest(d, grid={"combos": []}, cfg=dict(bot.load_config(bot.CONFIG), np_snipe=False), jobs=1,
+                          min_trades=3)
         self.assertEqual(sorted(rep["live"]["live_config_differs"]), ["hold_tiers", "tp1_pct"])     # the FIRST run's
         self.assertEqual([sorted(x["differs"]) for x in rep["live"]["settings_by_run"]], [["hold_tiers", "tp1_pct"], []])
 
@@ -699,15 +703,16 @@ class LiveAgainstReplay(unittest.TestCase):
         self.assertTrue(big[0]["why"].startswith("dump: "), big[0])
         self.assertLess(big[0]["pnl_pct"], -15)
         self.assertEqual(loose["stats"]["rug_missing"], res["stats"]["rug_missing"])     # it had its report
+        # the momentum entry these levers belong to (np_snipe off: a snipe never reads them)
         rep = bt.backtest(tape=tape, grid={"combos": [{"np_max_sol_per_holder": 0}, {"np_min_holders": 0}]},
-                          cfg=bot.load_config(bot.CONFIG), jobs=1, min_trades=3)
+                          cfg=dict(bot.load_config(bot.CONFIG), np_snipe=False), jobs=1, min_trades=3)
         self.assertEqual(rep["grid"]["configs"], 3)
         self.assertEqual((rep["live_check"]["same_entry"], rep["live_check"]["same_exit"]), (len(live), len(live)))
 
     def test_backtest_on_the_tapes_with_its_live_check(self):
         d, live, cfg = self.run_live(20, 11, "reading")
         rep = bt.backtest(d, grid={"combos": [{"np_min_age_s": 30}, {"scalp_tp": 15.0}, {"stop_pct": -10.0}]},
-                          cfg=bot.load_config(bot.CONFIG), jobs=1, min_trades=3)
+                          cfg=dict(bot.load_config(bot.CONFIG), np_snipe=False), jobs=1, min_trades=3)
         self.assertIn(rep["decision"]["action"], ("keep", "change"))
         self.assertEqual(rep["grid"]["configs"], 4)
         self.assertEqual(rep["base"]["error"], None)

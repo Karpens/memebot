@@ -107,6 +107,28 @@ DEFAULT_GRID = {
     "time_stop_x": [0.5, 2.0],
 }
 
+# SNIPE mode (np_snipe, bot.snipe_on): a snipe buys on the coin's first reading and never reads the momentum trigger's
+# levers, RugCheck's holder rules, the LEARNER's (a snipe is never skipped or resized) or stop_pct (its stop is
+# np_snipe_stop_pct). For a snipe base the default grid leaves
+# those out (they would replay the base again under another name) and tries the snipe's own two instead: its stop, and
+# how late a first reading may come (a coin first read 10-20 s after its create was watched and recorded all the same)
+SNIPE_IDLE = ("np_min_sol", "np_min_buys", "np_min_buy_share", "np_min_rise_pct", "np_max_age_s", "np_min_age_s",
+              "np_max_mcap_sol", "np_min_holders", "np_max_sol_per_holder", "np_max_buy_sol", "np_max_holder_pct",
+              "np_max_top10_pct", "stop_pct", "learn_skip_pct", "learn_mult_min", "learn_mult_max",
+              "learn_explore_every")
+# (an explicit grid's lever in SNIPE_IDLE on a snipe base is said in the report: settings "idle_levers" and its mode)
+SNIPE_GRID = {"np_snipe_stop_pct": [-7.0, -15.0], "np_snipe_max_age_s": [5, 20]}
+
+
+def default_grid(base_cfg=None):
+    """The default levers for this base config: DEFAULT_GRID, or for a SNIPE base (np_snipe) the levers a snipe reads."""
+    if isinstance(base_cfg, dict) and bot.snipe_on(base_cfg):
+        g = {k: copy.deepcopy(v) for k, v in DEFAULT_GRID.items() if k not in SNIPE_IDLE}
+        g.update(copy.deepcopy(SNIPE_GRID))
+        return g
+    return copy.deepcopy(DEFAULT_GRID)
+
+
 # the size of the book's bets, not its rules: the same trades in other dollars. Tried one at a time and reported
 # apart (risk choices: a bigger size makes every win and every loss bigger), never a recommendation.
 SIZE_LEVERS = ("position_pct", "max_open", "min_order_usd")
@@ -232,11 +254,12 @@ def lever_text(levers):
 
 # ---------------------------------------------------------------- the grid
 
-def load_grid(spec):
+def load_grid(spec, base_cfg=None):
     """"default" (None), a JSON file, or a dict -> {"levers": {key: [alternatives]}} or {"combos": [levers, ...]},
-    with optional "max_combos", "seed", "random" (false: one lever at a time only)."""
+    with optional "max_combos", "seed", "random" (false: one lever at a time only). The default is default_grid(base_cfg)
+    (a SNIPE base: the snipe's own levers)."""
     if spec in (None, "", "default"):
-        return {"levers": copy.deepcopy(DEFAULT_GRID)}
+        return {"levers": default_grid(base_cfg)}
     if isinstance(spec, dict):
         return copy.deepcopy(spec)
     with open(spec, encoding="utf-8") as fh:
@@ -258,7 +281,7 @@ def build_grid(grid, base_cfg, max_combos=200, seed=7):
     to 4 levers (seeded: the same grid every run; never a size lever, SIZE_LEVERS) until max_combos. A combo whose
     config is the base's again (config_diff empty: a pseudo-lever at the base's own value) or one already in the
     grid is left out: it would only be replayed twice."""
-    grid = load_grid(grid) if not isinstance(grid, dict) or not ("levers" in grid or "combos" in grid) else grid
+    grid = load_grid(grid, base_cfg) if not isinstance(grid, dict) or not ("levers" in grid or "combos" in grid) else grid
     cap = max(1, int(grid.get("max_combos") or max_combos))
     out, seen, diffs = [{}], {_key({})}, {_key({})}
 
@@ -467,6 +490,10 @@ def backtest(data=None, since=None, until=None, grid="default", split=0.7, cfg=N
               "settings": {"split": split, "min_trades": min_trades, "margin_pct": margin_pct, "margin_usd": margin_usd,
                            "top": top, "max_combos": max_combos, "budget_min": budget_min, "seed": seed,
                            "replay": opts}}
+    if bot.snipe_on(base_cfg):                          # said plainly: the base buys every coin on its first reading
+        report["settings"]["mode"] = ("snipe: the base config buys each coin on its first reading (np_snipe; replayed "
+                                      "by the engine's own snipe), so the momentum levers are left out of the default "
+                                      "grid and np_snipe_stop_pct / np_snipe_max_age_s are tried")
     if since is None or until is None or until - since < 60:
         report.update(decision={"action": "keep", "why": "no tape to replay (%s)" % (data or "no data")}, top=[],
                       ranking=[], base=None, lines=["keep: no tape to replay"])
@@ -475,6 +502,11 @@ def backtest(data=None, since=None, until=None, grid="default", split=0.7, cfg=N
     report["range"] = {"since": replay.iso(since), "until": replay.iso(until), "split_at": replay.iso(split_t),
                        "first_part_h": round((split_t - since) / 3600, 2), "held_out_h": round((until - split_t) / 3600, 2)}
     combos = build_grid(grid, base_cfg, max_combos, seed)
+    idle = sorted({k for lv in combos for k in lv if k in SNIPE_IDLE}) if bot.snipe_on(base_cfg) else []
+    if idle:                                            # an explicit grid's levers a snipe base never reads
+        report["settings"]["idle_levers"] = idle
+        report["settings"]["mode"] += (" · levers in this grid a snipe never reads (each one replays the base under "
+                                       "another name): %s" % ", ".join(idle))
     cfgs = [apply(base_cfg, lv) for lv in combos]
     say("backtest · %s → %s · split at %s · %d configs · %s processes" % (
         replay.iso(since), replay.iso(until), replay.iso(split_t), len(combos), jobs or os.cpu_count()))
@@ -648,6 +680,8 @@ def text_lines(r):
     rg = r.get("range") or {}
     out.append("tape %s → %s · %s coins · %s with RugCheck · split at %s" % (
         tp.get("from"), tp.get("to"), tp.get("coins"), tp.get("coins_with_rugcheck"), rg.get("split_at")))
+    if (r.get("settings") or {}).get("mode"):
+        out.append(r["settings"]["mode"])
     if tp.get("rug_lines_old"):
         out.append("%d RugCheck lines recorded before the tape counted the wallets holding a coin: their holder rules "
                    "are judged on the wallets their top lists (a lower bound)" % tp["rug_lines_old"])

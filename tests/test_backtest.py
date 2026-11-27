@@ -34,9 +34,10 @@ def base_cfg(**kw):
     """config.json's rules on the code's defaults, with a LEARNER that neither skips nor resizes (so a test sees
     the rule it is about), unless kw says otherwise. np_min_age_s 0: the synthetic coins here reach the trigger
     5 s after their launch (config.json waits 45 s; tests/test_newpairs.py tests that rule, and
-    tests/test_endtoend.py replays a realistic stream with config.json as it is)."""
+    tests/test_endtoend.py replays a realistic stream with config.json as it is). The momentum entry these tests are
+    about: np_snipe off (config.json snipes every coin on its first reading; tests/test_snipe.py replays that)."""
     c = bot.load_config(bot.CONFIG)
-    c.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0, np_min_age_s=0)
+    c.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0, np_min_age_s=0, np_snipe=False)
     c.update(kw)
     return c
 
@@ -95,7 +96,8 @@ class Tapes(unittest.TestCase):
         self.assertEqual(create["traderPublicKey"], "dev-" + mint(1))     # the serial-launcher check needs it
 
     def test_the_rugcheck_summary_is_judged_by_the_engines_own_rules(self):
-        cfg = bot.load_config(bot.CONFIG)
+        # the one-holder cap these cases were written for, 12 % (config.json's is 70 % now, the owner's: below)
+        cfg = dict(bot.load_config(bot.CONFIG), np_max_holder_pct=12.0)
         cases = [({"ok": True, "holders": 9, "top1": 15.0, "top10": 20.0, "top": [15.0, 5.0], "risks": [], "insiders": 0},
                   False, "a holder has 15.0%"),
                  ({"ok": True, "holders": 9, "top1": 3.0, "top10": 3.0, "top": [3.0],
@@ -120,6 +122,12 @@ class Tapes(unittest.TestCase):
             if why:
                 self.assertTrue(bad[0].startswith(why), bad)
         self.assertIsNone(R.rug_report_of({"ok": False, "why": "fire", "ms": 3000}, "mmm"))   # a failed ask: no report
+        # config.json's 70 %: a holder of 15 % is no FAIL; a report that sees 12 wallets passes
+        big = {"ok": True, "holders": 12, "top1": 15.0, "top10": 30.0, "top": [15.0, 5.0, 5.0, 5.0], "risks": [],
+               "insiders": 0, "held": 12, "empty": 0, "curve": 0}
+        ok, bad, _ = bot.newpairs.rug_check_np(R.rug_report_of(big, "mmm"), bot.newpairs.Coin(mint="mmm", curve="cv"),
+                                               bot.load_config(bot.CONFIG))
+        self.assertEqual((ok, bad), (True, []))
         rep = R.rug_report_of({"ok": False, "reasons": ["risk: Single holder ownership"], "top1_pct": 2.0}, "mmm")
         self.assertFalse(bot.newpairs.rug_check_np(rep, bot.newpairs.Coin(mint="mmm"), cfg)[0])
 
@@ -451,7 +459,7 @@ class Replays(unittest.TestCase):
 
 class Grid(unittest.TestCase):
     def test_the_default_grid(self):
-        base = bot.load_config(bot.CONFIG)
+        base = dict(bot.load_config(bot.CONFIG), np_snipe=False)    # the momentum grid (a snipe's: tests/test_snipe.py)
         g = bt.build_grid("default", base, 200, seed=7)
         self.assertEqual(g[0], {})
         self.assertLessEqual(len(g), 200)
@@ -469,7 +477,7 @@ class Grid(unittest.TestCase):
         self.assertEqual(len(bt.build_grid("default", base, 30)), 30)
 
     def test_the_grid_never_replays_the_base_again_and_tries_the_old_first_step(self):
-        base = bot.load_config(bot.CONFIG)
+        base = dict(bot.load_config(bot.CONFIG), np_snipe=False)    # the momentum grid (a snipe's: tests/test_snipe.py)
         g = bt.build_grid("default", base, 200, seed=7)
         diffs = [json.dumps(bt.config_diff(base, bt.apply(base, lv)), sort_keys=True) for lv in g]
         self.assertEqual(diffs[0], "{}")                                # the base, once
@@ -487,7 +495,7 @@ class Grid(unittest.TestCase):
                 self.assertFalse(bt.is_size(lv), lv)
 
     def test_the_pseudo_levers(self):
-        base = bot.load_config(bot.CONFIG)
+        base = dict(bot.load_config(bot.CONFIG), np_snipe=False)
         t = lambda c, name: next(x for x in bot.holdplan.tiers_from_cfg(c) if x["name"] == name)
         c = bt.apply(base, {"tp_x": 2.0, "trail_x": 1.5, "time_stop_x": 0.5})
         self.assertEqual(t(c, "runner")["ladder"], [[g * 2.0, f] for g, f in t(base, "runner")["ladder"]])
@@ -622,8 +630,8 @@ class KeepRule(unittest.TestCase):
                 out[key] = {"trades": tr, "metrics": R.metrics(tr, 100.0), "memory": None, "stats": kw.get("stats", {})}
             return out
         with unittest.mock.patch.object(bt, "run_many", fake):
-            return bt.backtest(cfg=bot.load_config(bot.CONFIG), tape=self.Tape(), grid={"combos": combos}, jobs=1,
-                               live_check=False)
+            return bt.backtest(cfg=dict(bot.load_config(bot.CONFIG), np_snipe=False), tape=self.Tape(),
+                               grid={"combos": combos}, jobs=1, live_check=False)
 
     def test_a_size_lever_is_a_risk_choice_never_a_change(self):
         rng = random.Random(3)
@@ -704,14 +712,14 @@ class KeepRule(unittest.TestCase):
         recs += [{"k": "hb", "t": START + 10 * i, "sol": 200.0} for i in range(1, 60)] + [{"k": "stop", "t": START + 600}]
         tape = R.tape_of(recs)
         self.assertEqual(tape.unpolled, {never})
-        res = R.replay(tape, base_cfg(), START, START + 600)
+        res = R.replay(tape, base_cfg(np_max_dev_pct=8.0), START, START + 600)      # the live bot's 8 % line then
         self.assertEqual((res["stats"]["unseen"], res["stats"]["rug_missing"], res["stats"]["unjudged"]), (0, 0, 0))
         self.assertEqual([t["mint"] for t in res["trades"]], [normal])
         res = R.replay(tape, base_cfg(np_max_dev_pct=12.0), START, START + 600)
         self.assertEqual([t["mint"] for t in res["trades"]], [normal])  # the same trades as the base ...
         self.assertEqual((res["stats"]["unseen"], res["stats"]["rug_missing"], res["stats"]["unjudged"]), (1, 1, 2))
         # ... and the default grid no longer has the looser line
-        self.assertFalse([lv for lv in bt.build_grid("default", bot.load_config(bot.CONFIG), 200)
+        self.assertFalse([lv for lv in bt.build_grid("default", dict(bot.load_config(bot.CONFIG), np_snipe=False), 200)
                           if lv.get("np_max_dev_pct", 0) > 8.0])
         self.assertEqual(res["unjudged_coins"], {"unseen": [never], "missing": [polled], "stale": []})
 
@@ -740,8 +748,8 @@ class KeepRule(unittest.TestCase):
                             "stats": {"unjudged": len(unj["stale"])}, "unjudged_coins": unj}
             return out
         with unittest.mock.patch.object(bt, "run_many", fake):
-            rep = bt.backtest(cfg=bot.load_config(bot.CONFIG), tape=self.Tape(), grid={"combos": [{"np_min_holders": 5}]},
-                              jobs=1, live_check=False)
+            rep = bt.backtest(cfg=dict(bot.load_config(bot.CONFIG), np_snipe=False), tape=self.Tape(),
+                              grid={"combos": [{"np_min_holders": 5}]}, jobs=1, live_check=False)
         c = rep["top"][0]
         self.assertEqual(rep["decision"]["action"], "keep", rep["decision"])
         self.assertEqual((c["vs_base"]["coins"], c["vs_base"]["mean"], c["vs_base"]["t"]), (40, 0.0, 0.0))

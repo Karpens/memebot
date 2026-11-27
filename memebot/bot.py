@@ -10,6 +10,15 @@ Two strategies (config.json "strategies"):
              same loop turn; a reading that completes a watched coin's momentum trigger is bought in
              the same loop turn (RugCheck, the LEARNER, RISK, the SIZER, a Jupiter quote and the
              honeypot sell simulation in between).
+             SNIPE mode (config.json np_snipe, the _snipe note; prompt_snipe.txt says it in words): the momentum
+             entry is off and each watched coin is bought on its FIRST curve reading, within np_snipe_max_age_s of
+             its create, once, when the cheap checks pass (mayhem mode, a symbol, a pump.fun curve, the serial
+             creator, the creator's buy at most np_max_dev_pct, the curve not complete) and the bot decides it
+             within np_snipe_max_age_s too: no minimum age, no RugCheck wait, no LEARNER skip (it learns, in a
+             memory of its own: memory_snipe.json). RISK and the SIZER as always; a Jupiter quote when nothing is
+             held and Jupiter has a route, else the curve maths on that reading with every cost ("fill curve"),
+             only on a reading at most np_snipe_fresh_s old with no newer one in; the stop is np_snipe_stop_pct
+             (-10 %) until the first step, the profit exits are the hold plan's, as for any New Pair.
   migrated   the older scanner (off by default): pairs a few minutes to hours old from GeckoTerminal
              and DexScreener, with its own rules below.
 
@@ -33,7 +42,9 @@ The agents, written as rules (the prompt in memebot/prompt.txt says the same in 
   6. RISK       how many positions and trades a night, a loss streak pause, a stop for the night.
   7. LEARNER    learns from the bot's own closed trades (memebot/learner.py, memory.json in the
                 data dir): a coin that looks like past losers is skipped, every 5th such skip is
-                bought at half size, and the size of any other buy follows the past results. A new pair
+                bought at half size, and the size of any other buy follows the past results (in SNIPE
+                mode it neither skips nor sizes: it only learns from each closed snipe, in memory_snipe.json,
+                which no momentum decision reads). A new pair
                 it skips (or RISK blocks) after a RugCheck PASS is followed as a SHADOW trade: the same
                 exits on the same readings, outside the book, learned at shadow_weight (np_shadow_*).
   8. LOGGER     every decision with its reason, and the morning report.
@@ -93,6 +104,7 @@ except ImportError:                     # pragma: no cover - Python 3.8
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONFIG = os.path.join(HERE, "config.json")
 PROMPT = os.path.join(HERE, "prompt.txt")
+PROMPT_SNIPE = os.path.join(HERE, "prompt_snipe.txt")  # the page's prompt in SNIPE mode (np_snipe: prompt_path)
 PAGE = os.path.join(HERE, "page.html")
 SOL = "So11111111111111111111111111111111111111112"
 UA = "Mozilla/5.0 (meme-bot paper trader)"
@@ -255,6 +267,14 @@ DEFAULTS = {
     "np_min_rise_pct": 15.0,            # the price above the launch price
     "np_max_mcap_sol": 70.0,            # well before the curve completes (about 400 SOL)
     "np_stale_s": 5.0,                  # no curve reading this long while holding: Jupiter's price instead
+    # SNIPE mode (newpairs.snipe, Night.np_snipe_fire): a watched coin bought on its FIRST curve reading, once, when
+    # the cheap checks pass (no momentum trigger, no minimum age, no RugCheck wait); the momentum entry is off then.
+    # Off when the key is missing: config.json turns it on
+    "np_snipe": False,
+    "np_snipe_max_age_s": 10,           # a first reading later than this after the create: not sniped (stale)
+    "np_snipe_stop_pct": -10.0,         # a sniped trade's stop until its first step (stop_pct stays the momentum's)
+    "np_snipe_fresh_s": 1.0,            # a fill by the curve maths only on a reading at most this old when the bot
+                                        # decides (a quote is Jupiter's price then); older: not bought (Night.np_snipe_late)
     "np_quiet_min": 3.0,                # a held coin's curve without a trade this long: dead, sold
     "time_stop_late_x": 2.0,            # after this many times its tier's time stop, a coin still short of its
                                         # first ladder step is sold (before it: only one under time_stop_below_pct)
@@ -291,6 +311,11 @@ DEFAULTS = {
 }
 
 AGENTS = ["SCANNER", "NEWS", "RUG CHECK", "SIZER", "EXECUTOR", "RISK", "LEARNER", "LOGGER"]
+SNIPE_RUG_S = 25.0                      # SNIPE mode: each snipe's (and snipe shadow's) RugCheck report is asked this long
+                                        # after its launch, for the tape only (Night.np_snipe_rug; real reports count
+                                        # holders from ~22 s)
+# why np_snipe_late refused a snipe (np_snipe_fire tells these from the fill's other answers)
+SNIPE_LATE = ("decided ", "a newer reading of it", "its reading is ")
 
 
 class MemeError(Exception):
@@ -380,6 +405,29 @@ def strategies(cfg):
 def np_on(cfg):
     """New Pairs trades when the config asks for it and its two modules loaded."""
     return "new_pairs" in strategies(cfg) and newpairs is not None and holdplan is not None
+
+
+def snipe_on(cfg):
+    """SNIPE mode: New Pairs trades and config.json's np_snipe is on (newpairs.py reads the same switch the same way:
+    the watch list fires on the first reading, Night.np_snipe_fire buys it)."""
+    try:
+        return np_on(cfg) and bool(newpairs._on(cfg, "np_snipe"))
+    except Exception:                                   # noqa: BLE001 - a broken switch is off: the momentum rules
+        return False
+
+
+def snipe_stop(cfg):
+    """A sniped trade's stop until its first step: np_snipe_stop_pct (-10 %), a % under 0 (else the default)."""
+    v = f(cfg.get("np_snipe_stop_pct") if not isinstance(cfg.get("np_snipe_stop_pct"), bool) else None,
+          DEFAULTS["np_snipe_stop_pct"])
+    return max(-99.0, v) if v < 0 else DEFAULTS["np_snipe_stop_pct"]
+
+
+def snipe_fresh(cfg):
+    """How old (s) a snipe's reading may be for a fill by the curve maths: np_snipe_fresh_s (1 s), at least 0."""
+    v = cfg.get("np_snipe_fresh_s")
+    v = f(v if not isinstance(v, bool) else None, DEFAULTS["np_snipe_fresh_s"])
+    return max(0.0, v)
 
 
 def np_off_why(cfg):
@@ -1063,6 +1111,10 @@ class Night(object):
         st.setdefault("rug_cache", {})
         self.mem_path = os.path.join(data_dir, "memory.json")
         self.mem, self.mem_off, self.mem_said = None, None, False    # mem_off: why the LEARNER is out
+        # SNIPE mode's own memory (learn_close, np_shadow_learn): what a coin bought on its first reading did never
+        # moves a momentum entry's LEARNER decision (memory.json), whichever mode a later run trades
+        self.mem_snipe_path = os.path.join(data_dir, "memory_snipe.json")
+        self.mem_snipe = None
         self.load_memory()
         # NEW PAIRS, all on this thread but RugCheck's calls (worker threads hand reports back)
         self.clock_fn = None                            # run()'s now_fn: the latencies read the clock after a fill
@@ -1078,6 +1130,10 @@ class Night(object):
         self.news_at = {}                               # mint -> the last NEWS refresh of a held coin
         self.np_said = {}                               # once-only lines: key -> when
         self.np_stats = {"creates": 0, "fired": 0}
+        self.np_batch_left = collections.Counter()     # mint -> its curve readings still to come in this batch
+        self.np_ending = False                          # np_exit is selling for the night's or a job's end
+        self.np_snipe_rugs = {}                         # mint -> its launch: a snipe (or its shadow) RugCheck is asked
+                                                        # about SNIPE_RUG_S after it, for the tape (np_snipe_rug)
         self.job_left = None                            # minutes left in this job when the next job takes the night over
         self.sol_px = None                              # (epoch, SOL in dollars)
         self.sol_pool = self.sol_job = None             # SOL's price, read again on a worker thread
@@ -1257,7 +1313,8 @@ class Night(object):
                 last = int(f(take.get("steps"), 1)) if isinstance(take, dict) and take.get("kind") == "take" else 0
                 trade.update(tier=plan.get("entry_tier") or plan.get("tier"), score=plan.get("entry_score"),
                              steps=int(f(plan.get("sold"))) + last, plan=holdplan.panel_plan(plan) if holdplan else None)
-            for k in ("age_s", "mcap_sol", "dev_pct", "sol_in", "fill"):
+            # a SNIPE's: snipe, entry_fill (quote | curve) and its own stop; "fill" only when a sale went by the curve maths
+            for k in ("age_s", "mcap_sol", "dev_pct", "sol_in", "fill", "snipe", "entry_fill", "stop_pct"):
                 if k in pos:
                     trade[k] = pos[k]
             if lat is not None:
@@ -1585,7 +1642,9 @@ class Night(object):
     # ---- the LEARNER (memebot/learner.py), on this thread only: no locks
     def load_memory(self):
         """memory.json, read when the Night is made: once a run. A new memory first learns the closed
-        trades state.json still has (only their hour, unless they carry their labels)."""
+        trades state.json still has (only their hour, unless they carry their labels). SNIPE mode's trades have
+        their own memory, memory_snipe.json (read in every mode, learned only by snipes): a new one learns the
+        closed snipes state.json has, and memory.json never learns one."""
         self.state.pop("learner_summary", None)         # one from before would say the LEARNER works
         if learner is None:
             return self.learner_off("learner.py did not load (%s)" % LEARNER_OFF)
@@ -1593,17 +1652,23 @@ class Night(object):
             new = not os.path.exists(self.mem_path)
             mem = learner.load(self.mem_path)
             old = [t for k in ("last_night", "night") for t in (self.state.get(k) or {}).get("trades") or []]
-            if new and learner.backfill(mem, old, self.cfg["timezone"]):
+            snipes = [t for t in old if isinstance(t, dict) and t.get("snipe")]
+            if new and learner.backfill(mem, [t for t in old if not (isinstance(t, dict) and t.get("snipe"))],
+                                        self.cfg["timezone"]):
                 learner.save(self.mem_path, mem)
+            new = not os.path.exists(self.mem_snipe_path)
+            smem = learner.load(self.mem_snipe_path)
+            if new and snipes and learner.backfill(smem, snipes, self.cfg["timezone"]):
+                learner.save(self.mem_snipe_path, smem)
         except Exception as e:                          # noqa: BLE001 - the night goes on without it
             return self.learner_off("memory.json: %s: %s" % (type(e).__name__, e))
-        self.mem = mem
+        self.mem, self.mem_snipe = mem, smem
         self.learn_summary()
 
     def learner_off(self, why):
         """The LEARNER is out for the rest of the run, said once in the log: the night trades on as it
         did before it learned (full size, no skips)."""
-        self.mem, self.mem_off = None, self.mem_off or why
+        self.mem, self.mem_snipe, self.mem_off = None, None, self.mem_off or why
         self.state.pop("learner_summary", None)
         if self.state.get("night") and not self.mem_said:
             self.mem_said = True
@@ -1621,14 +1686,25 @@ class Night(object):
             return None
 
     def learn_summary(self):
-        s = self.learn("summary", self.mem, self.cfg.get("learn_k"), self.cfg.get("learn_min_n"))
+        """The page's LEARNER block: memory.json's summary, or in SNIPE mode the snipes' own memory's (what the
+        LEARNER learns then), marked "memory": "snipe" and each label "snipe · ..." so the page says which it is."""
+        snipe = snipe_on(self.cfg)
+        mem = self.mem_snipe if snipe else self.mem
+        s = self.learn("summary", mem, self.cfg.get("learn_k"), self.cfg.get("learn_min_n")) if mem is not None else None
         if s is not None:
+            if snipe:
+                s = dict(s, memory="snipe")
+                for k in ("best", "worst"):
+                    s[k] = [dict(r, label="snipe · %s" % r.get("label")) if isinstance(r, dict) else r
+                            for r in s.get(k) or []]
             self.state["learner_summary"] = s           # panel()["learner"] and every tick
 
-    def learn_save(self):
-        """memory.json after each change (a closed trade, a skip, an explore) and the page's summary."""
-        if self.learn("save", self.mem_path, self.mem) is False:
-            self.m.errors.append("learner: memory.json not saved")
+    def learn_save(self, snipe=False):
+        """memory.json (snipe: memory_snipe.json) after each change (a closed trade, a skip, an explore) and the
+        page's summary."""
+        path, mem = (self.mem_snipe_path, self.mem_snipe) if snipe else (self.mem_path, self.mem)
+        if mem is not None and self.learn("save", path, mem) is False:
+            self.m.errors.append("learner: %s not saved" % os.path.basename(path))
         self.learn_summary()
 
     def learn_judge(self, fx, pos):
@@ -1671,11 +1747,13 @@ class Night(object):
     def learn_close(self, pos, trade):
         """LEARNER after a full exit: the trade's P&L % (fees included) goes into the buckets the coin
         had at its entry. A position bought before the LEARNER has none: nothing to learn."""
-        if self.mem is None or not pos.get("learn"):
+        snipe = bool(pos.get("snipe"))                  # a SNIPE's trade: its own memory (memory_snipe.json)
+        mem = self.mem_snipe if snipe else self.mem
+        if self.mem is None or mem is None or not pos.get("learn"):
             return
-        self.learn("update", self.mem, pos["learn"], trade["pnl_pct"])
-        self.learn_save()
-        said = self.learn("learned", self.mem, pos["learn"])
+        self.learn("update", mem, pos["learn"], trade["pnl_pct"])
+        self.learn_save(snipe)
+        said = self.learn("learned", mem, pos["learn"])
         if said:
             self.log("LEARNER", pos["symbol"], "learn", "learned · %s" % said)
 
@@ -1901,15 +1979,24 @@ class Night(object):
         evs = [] if ev is None else [ev] + list(self.feeds.drain(2000) or [])
         held = self.state["positions"]
         evs.sort(key=lambda e: 0 if isinstance(e, dict) and e.get("kind") == "curve" and e.get("mint") in held else 1)
-        for ev in evs:
-            if self.clock_fn is not None:
-                self.now = self.clock_fn()
-            try:
-                self.np_event(ev, minutes_left)
-            except Exception as e:                      # noqa: BLE001 - one odd event never stops the night
-                text = "error in a New Pairs event (%s: %s) · going on" % (type(e).__name__, e)
-                self.m.errors.append(text)
-                self.say_once("np_error_said", text, "LOGGER", None, "error", text, every=60)
+        # each coin's curve readings still to come in this batch: a snipe's fill by the curve maths prices the reading
+        # in hand only when no newer one of the coin is already here (np_snipe_late)
+        left = self.np_batch_left = collections.Counter(
+            e.get("mint") for e in evs if isinstance(e, dict) and e.get("kind") == "curve" and isinstance(e.get("mint"), str))
+        try:
+            for ev in evs:
+                if self.clock_fn is not None:
+                    self.now = self.clock_fn()
+                if isinstance(ev, dict) and ev.get("kind") == "curve" and isinstance(ev.get("mint"), str):
+                    left[ev["mint"]] -= 1
+                try:
+                    self.np_event(ev, minutes_left)
+                except Exception as e:                  # noqa: BLE001 - one odd event never stops the night
+                    text = "error in a New Pairs event (%s: %s) · going on" % (type(e).__name__, e)
+                    self.m.errors.append(text)
+                    self.say_once("np_error_said", text, "LOGGER", None, "error", text, every=60)
+        finally:
+            self.np_batch_left = collections.Counter()
         self.np_reports(minutes_left)
         self.np_touch()
         self.np_rec_tick()
@@ -1978,9 +2065,12 @@ class Night(object):
         """The 1 s step: the coins whose links RugCheck had not got yet are asked again when due; a coin
         too old to be bought, or no longer a candidate, is let go (its links stay unknown)."""
         now, top = self.epoch(), f(self.cfg.get("np_max_age_s"), 180)
+        # SNIPE mode buys a coin before its metadata is read: a held one keeps asking (np_reports gives it the links,
+        # NEWS reads them every 30 s), until np_max_age_s like a watched one
+        keep = ("watching", "entered") if snipe_on(self.cfg) else ("watching",)
         for mint in list(self.np_meta_rug):
             coin = self.wl.get(mint)
-            if coin is None or coin.meta is not None or coin.status != "watching" or now - coin.t0 > top:
+            if coin is None or coin.meta is not None or coin.status not in keep or now - coin.t0 > top:
                 del self.np_meta_rug[mint]
             else:
                 self.np_meta_ask(mint)
@@ -2062,10 +2152,12 @@ class Night(object):
                 self.wl.reject(coin, "held already (migrated)")
             return
         act, why = self.wl.judge(coin, t)
-        if act == "fire":
+        if act == "fire" and snipe_on(self.cfg):       # SNIPE: the coin's first reading (newpairs.snipe)
+            self.np_snipe_fire(coin, t, minutes_left)
+        elif act == "fire":
             self.np_fire(coin, t, minutes_left)
-        elif act == "wait" and coin.status == "watching":
-            self.np_prefetch(coin)
+        elif act == "wait" and coin.status == "watching" and not snipe_on(self.cfg):
+            self.np_prefetch(coin)                      # (a snipe waits for no RugCheck report)
         elif act == "reject" and str(why).startswith("concentrated"):
             # the trigger held, but one buy reading was bigger than np_max_buy_sol (newpairs.concentration): said
             # once (a reject is for good), never bought and never a SHADOW: the rule is about the coin
@@ -2304,10 +2396,210 @@ class Night(object):
         self.log("NEWS", coin.symbol, "plan", holdplan.plan_text(plan))
         self.rec_call("enter", mint, pos, coin, sol_usd)
 
-    def np_entry_plan(self, coin):
+    def np_snipe_fire(self, coin, t, minutes_left):
+        """SNIPE (np_snipe): the coin's FIRST curve reading, at t, passed the cheap checks (newpairs.snipe). It is bought
+        on this loop turn or never: every way out but the buy rejects the coin. First the snipe's age when the bot
+        decides (np_snipe_late: np_snipe_max_age_s from the create to now, a reading that waited in the queue is no
+        fresher). RISK as for any entry (why_no_entries: 8 open, 250 trades a night, the pause after a losing streak,
+        the night stop and its dump guard, the session's last minutes; np_job_why: a job's last minutes); no LEARNER
+        skip and no LEARNER size (the closed trade teaches the snipes' own memory: pos["learn"], learn_close); the
+        SIZER's position_pct of the equity, at least min_order_usd; no RugCheck wait (asked SNIPE_RUG_S after the launch,
+        for the tape: np_snipe_rug). The fill: np_snipe_buy (a Jupiter quote when nothing is held and Jupiter has a
+        route now, else the curve maths on this very reading with every cost, when it is fresh). The trade's stop is
+        np_snipe_stop_pct (pos["stop_pct"], np_pos_cfg) until its first step; its profit exits are the hold plan's, as
+        any New Pair's. A RISK block is a SHADOW with shadow_on_risk (np_shadow_snipe). RUG CHECK's counts on the page
+        ("checked", "filtered", the last verdict): a coin that reached the buy went through the snipe's checks (the
+        cheap ones, and the sell simulation on a quote)."""
+        cfg, n, mint = self.cfg, self.state["night"], coin.mint
+        now = self.epoch()
+        if mint in self.state["positions"]:             # held already (np_judge says so): never bought twice
+            self.wl.reject(coin, "held already")
+            return
+        late = self.np_snipe_late(coin, curve=False)
+        if late:                                        # the loop was behind: no snipe, and no shadow on that reading
+            return self.np_snipe_drop(coin, late)
+        why = self.why_no_entries(minutes_left, {}) or self.np_job_why()
+        if why:                                         # (before the flag, as np_fire: a full book flags nothing)
+            self.say_once("risk_said", why, "RISK", coin.symbol, "skip", "no entry: %s" % why)
+            self.rec_call("decide", mint, "risk", why)
+            self.wl.reject(coin, "snipe not bought: %s" % why)     # the first reading is gone: never later
+            self.np_shadow_safe("np_shadow_snipe", coin, why, minutes_left)
+            return
+        self.np_once("snipe mode", "LEARNER", None, "snipe",
+                     "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's "
+                     "size, none skipped or resized · it learns from each closed snipe in a memory of its own "
+                     "(memory_snipe.json: the momentum entry's memory.json never sees a snipe)")
+        self.np_stats["fired"] += 1
+        n["flagged"] = n.get("flagged", 0) + 1
+        n["flags"] = ([x for x in n.get("flags", []) if x.get("coin") != coin.symbol]
+                      + [{"coin": coin.symbol, "why": "snipe", "t": self.ts()}])[-8:]
+        self.log("SCANNER", coin.symbol, "flag", coin.why)
+        self.rec_call("fire", coin, "snipe")
+        sol_usd = self.sol_usd()
+        if not sol_usd:
+            self.wl.reject(coin, "snipe not bought: no SOL price")
+            return
+        cash = max(0.0, math.floor(self.state["balance"] * 1e4) / 1e4)
+        eq = self.equity({})
+        size = min(cash, eq * cfg["position_pct"] / 100.0)
+        if size < cfg["min_order_usd"]:
+            self.say_once("sizer_said", "cash", "SIZER", coin.symbol, "skip", "only %s left to size" % usd(size))
+            self.wl.reject(coin, "snipe not bought: only %s to size" % usd(size))
+            return
+        want = min(cash, max(cfg["min_order_usd"], size))
+        stop = snipe_stop(cfg)
+        plan, labels = self.np_entry_plan(coin, stop)  # NEWS: the hold plan, with the snipe's stop; the LEARNER's labels
+        fee_sol = f(cfg.get("network_fee_sol"), 0.0005) + f(cfg.get("priority_fee_sol"), 0.0)
+        fx = {"symbol": coin.symbol or "?", "name": coin.name, "url": "https://pump.fun/coin/%s" % mint}
+        pos, check, bad = self.np_snipe_buy(coin, fx, want - fee_sol * sol_usd, sol_usd, fee_sol)
+        if pos is None:
+            if str(bad).startswith(SNIPE_LATE):         # Jupiter's wait (or a newer reading) left the reading stale
+                return self.np_snipe_drop(coin, bad)
+            if str(bad).startswith("sell simulation"):
+                self.log("RUG CHECK", coin.symbol, "reject", bad)
+                n["checked"] = n.get("checked", 0) + 1
+                n["filtered"] = n.get("filtered", 0) + 1
+                n["last_rug"] = {"coin": coin.symbol, "pass": False}
+            else:
+                self.log("EXECUTOR", coin.symbol, "skip", "snipe not bought: %s" % bad)
+            self.wl.reject(coin, "snipe not bought: %s" % bad)
+            return
+        n["checked"] = n.get("checked", 0) + 1
+        n["last_rug"] = {"coin": coin.symbol, "pass": True}
+        fill = pos.get("entry_fill") or "quote"
+        pos["reason"] = "%s · fill %s" % (coin.why, fill)
+        if labels:
+            pos["learn"] = labels
+        pos.update({"strategy": "new_pairs", "plan": plan, "age_s": int(coin.age_s), "mcap_sol": round(coin.mcap_sol, 1),
+                    "dev_pct": round(coin.dev_pct, 2), "sol_in": round(coin.sol_in, 2), "curve_check": check,
+                    "size_pct": round(pos["cost"] / eq * 100, 1) if eq else None, "moved_t": now, "snipe": True,
+                    "stop_pct": stop})
+        self.state["balance"] = max(0.0, self.state["balance"] - pos["cost"])    # cost <= cash: only a float's last bit
+        self.state["positions"][mint] = pos
+        self.traded = True
+        self.wl.mark_entered(coin, now, coin.price)
+        pos["np"] = coin.to_dict()
+        self.np_win[mint] = [[coin.t0, 0, 0, coin.rsol0], [now, coin.buys, coin.sells, coin.rsol]]
+        self.news_at[mint] = now
+        self.np_snipe_rugs[mint] = coin.t0
+        self.np_holding()
+        wall = self.wall()
+        self.np_speed_add("first_in", (wall - (coin.trigger_t if coin.trigger_t is not None else t)) * 1000)
+        self.np_speed_add("launch", wall - coin.t0)
+        if fill == "curve":
+            how = "fill curve (%s) · pump.fun's fee, the curve's impact, the %g%% haircut and the fees" % (
+                pos.get("fill_why") or "Jupiter: no route", f(cfg.get("latency_slip_pct"), 1.0))
+        else:
+            worst = max([abs(v) for v in (check or {}).values() if v is not None] or [float("inf")])
+            how = "fill quote · %s · " % (pos.get("fill_why") or "Jupiter") + (
+                ("curve maths %.1f%% off Jupiter" % worst) if worst != float("inf") else "curve maths not checked")
+            if (check or {}).get("sell_pct") is None:
+                how += " · sell simulation: no answer from Jupiter now, the sale unchecked"
+        self.log("SIZER", coin.symbol, "size", self.size_text(eq, 1.0, size, want, pos["cost"]))
+        self.log("EXECUTOR", coin.symbol, "enter", "ENTER %s at %s · slip %.1f%% · snipe · %s · %s · stop %+g%%" % (
+            coin.symbol, ("%.10f" % pos["entry_price"]).rstrip("0"), pos["impact_pct"],
+            newpairs.first_in_text(coin, wall, "the first reading"), how, stop))
+        self.log("NEWS", coin.symbol, "plan", holdplan.plan_text(plan))
+        self.rec_call("enter", mint, pos, coin, sol_usd)
+
+    def np_snipe_late(self, coin, curve=True):
+        """None when coin's snipe may still be decided now, else why not (np_snipe_fire's guard, and np_snipe_buy's and
+        np_shadow_snipe's right before a fill by the curve maths). Its age when the bot decides: np_snipe_max_age_s from
+        the create to now (the wall clock: after any Jupiter wait), not only to the reading, since a reading that waited
+        in the queue is no fresher. curve: also what a fill by the curve maths needs, as it prices the reading in hand:
+        no newer reading of the coin already in this batch (np_events), and that reading at most np_snipe_fresh_s old
+        now. A Jupiter quote prices the chain at the decision, so a quote fill needs neither."""
+        now = self.wall()
+        cap = f(self.cfg.get("np_snipe_max_age_s"), DEFAULTS["np_snipe_max_age_s"])
+        age = now - f(coin.t0, now)
+        if age > cap + 1e-6:
+            return "decided %.1f s after the create (max %g s)" % (age, cap)
+        if not curve:
+            return None
+        if self.np_batch_left.get(coin.mint, 0) > 0:
+            return "a newer reading of it came in the same turn (the curve maths would fill an old price)"
+        late = now - f(coin.trigger_t if coin.trigger_t is not None else coin.last_t, now)
+        lim = snipe_fresh(self.cfg)
+        if late > lim + 1e-6:
+            return "its reading is %.1f s old (a curve fill takes one at most %g s old: np_snipe_fresh_s)" % (late, lim)
+        return None
+
+    def np_snipe_drop(self, coin, why):
+        """A snipe the loop decided too late (np_snipe_late): rejected for good (its first reading is gone), no shadow;
+        the log says it once a minute for each kind (a slow loop can drop several in a row)."""
+        self.wl.reject(coin, "snipe not bought: %s" % why)
+        self.say_once("snipe_late_said", str(why).split(" ")[0], "EXECUTOR", coin.symbol, "skip",
+                      "snipe %s not bought: %s · the loop was behind" % (coin.symbol, why), every=60)
+
+    def np_snipe_buy(self, coin, fx, usd_in, sol_usd, fee_sol):
+        """EXECUTOR for a SNIPE -> (the position, the curve maths against the quotes or None, None) or (None, None, why
+        not). With nothing held and room in Jupiter's minute: a Jupiter quote for the amount, with the honeypot sell
+        simulation as any entry (a sell-simulation failure rejects; no answer from Jupiter for it now is no verdict:
+        bought on the quote, the sale unchecked); pos["fill_why"] says how long Jupiter took. Otherwise the curve maths on
+        the reading that fired (np_shadow_curve_buy: pump.fun's fee, the curve's impact, the latency haircut, the
+        network and priority fees; the maths each live fill matched Jupiter by), with no Jupiter call: while a coin is
+        held its exits come first (two quotes on this thread would hold its stop up to 2 x quote_timeout_s), when
+        Jupiter's minute is full, and when Jupiter had no route (a coin a second or two old often has none yet) or failed.
+        A fill by the curve maths only on a fresh reading with no newer one already in (np_snipe_late), never on an
+        earlier one, never waited for: a snipe is this reading or nothing. pos["entry_fill"] says which ("quote" |
+        "curve"); a curve fill has no curve_check (nothing to check the maths against) and no pos["fill"], which is set
+        when a SALE goes by the curve maths (np_curve_sale), as for any position."""
+        if not usd_in > 0:
+            return None, None, "the order is under its own fee"
+        held = len(self.state["positions"])
+        if held:
+            jwhy = "Jupiter not asked: %d coin%s held, %s exits first" % (held, "" if held == 1 else "s",
+                                                                        "its" if held == 1 else "their")
+        elif not getattr(self.m, "can_quote", lambda k: True)(2):
+            jwhy = "Jupiter not asked: its minute is full"
+        else:
+            t0 = self.wall()
+            pos = self.buy(coin.mint, fx, usd_in, sol_usd, 6, coin.why, fee_sol=fee_sol)
+            if pos is not None:
+                check, bad = self.np_sell_sim(pos, coin, sol_usd)
+                if bad and bad != "jupiter":
+                    return None, None, "sell simulation: %s" % bad
+                pos["entry_fill"], pos["fill_why"] = "quote", "Jupiter %.1f s" % max(0.0, self.wall() - t0)
+                return pos, check, None
+            jwhy = "Jupiter: %s · %.1f s" % (getattr(self.m, "quote_why", None) or "no Jupiter route",
+                                             max(0.0, self.wall() - t0))
+        late = self.np_snipe_late(coin)
+        if late:
+            return None, None, late
+        pos = self.np_shadow_curve_buy(coin, fx, usd_in, sol_usd, fee_sol)
+        if pos is None:
+            return None, None, "the curve maths gave no tokens"
+        pos.pop("fill", None)                           # the entry's fill kind is entry_fill; "fill" is a sale's
+        pos["entry_fill"], pos["fill_why"] = "curve", str(jwhy)[:80]
+        return pos, None, None
+
+    def np_snipe_rug(self):
+        """RugCheck for the tape only (SNIPE mode): every snipe bought and every snipe SHADOW (np_snipe_rugs), held or
+        sold, asked once SNIPE_RUG_S after its launch (real reports count the holders from about 22 s; a coin a second
+        old has none) while the watch list or the shadows still have it; after a RugCheck call already on its way for
+        it (its links). Never waited on, never a reason to buy or sell: the report lands through np_reports() on the
+        tape ("rug" line, why "snipe"), the fast stop-outs' too."""
+        now, top = self.epoch(), f(self.cfg.get("np_watch_s"), 180)
+        for mint, t0 in list(self.np_snipe_rugs.items()):
+            if now - t0 < SNIPE_RUG_S or mint in self.np_jobs:
+                continue
+            del self.np_snipe_rugs[mint]
+            if now - t0 <= top and (self.wl.get(mint) is not None or mint in self.shadows):
+                self.np_rug_ask(mint, "snipe")
+
+    def np_pos_cfg(self, pos):
+        """The config a held New Pair's hold plan decides with: the config, or, for a position with its own stop (a
+        SNIPE's np_snipe_stop_pct, pos["stop_pct"]), the config with that stop in stop_pct's place. A momentum trade has
+        none: the config itself, its stop_pct (-7 %)."""
+        s = pos.get("stop_pct") if isinstance(pos, dict) else None
+        if isinstance(s, bool) or not isinstance(s, (int, float)) or not math.isfinite(s) or not -100.0 < s < 0.0:
+            return self.cfg
+        return dict(self.cfg, stop_pct=float(s))
+
+    def np_entry_plan(self, coin, stop=None):
         """NEWS at an entry (a real one or a SHADOW's): the coin's links and the curve's momentum -> (the hold plan,
-        the LEARNER's labels of the coin now)."""
-        cfg = self.cfg
+        the LEARNER's labels of the coin now). stop: the trade's own stop (a SNIPE's), else the config's stop_pct."""
+        cfg = self.cfg if stop is None else dict(self.cfg, stop_pct=stop)
         score, parts = holdplan.news_score(newpairs.news_info(coin), cfg)
         plan = holdplan.new_plan(score, parts, holdplan.tiers_from_cfg(cfg), cfg)
         return plan, newpairs.labels(coin, None, plan, local(self.now, cfg["timezone"]).hour)
@@ -2356,11 +2648,25 @@ class Night(object):
         chk = pos.get("curve_check") or {}
         diffs = [abs(f(v)) for v in chk.values() if v is not None]
         coin = self.wl.get(pos["mint"]) if self.wl is not None else None
-        if not diffs or max(diffs) > f(self.cfg.get("np_validate_pct"), 5.0) or coin is None:
+        # a SNIPE the curve maths filled (no Jupiter route at its first reading) is sold by the same maths when Jupiter
+        # fails: its entry is priced by it already, and it was the maths each live fill matched Jupiter by. Never on
+        # stale reserves (no curve reading for np_stale_s: the poller is dark, the coin may have gone anywhere) but at
+        # the night's or a job's end (np_ending), which sells it on the last ones and says so
+        by_curve = pos.get("entry_fill") == "curve" and not diffs
+        if (not by_curve and (not diffs or max(diffs) > f(self.cfg.get("np_validate_pct"), 5.0))) or coin is None:
             return None
+        stale = by_curve and newpairs.stale(coin, self.cfg, self.epoch())
+        if stale and not self.np_ending:
+            return None                                 # close_part: "can't sell ... · retrying" until a reading comes
         sol = curve_sell_sol(coin.vsol, coin.vtok, raw / 10.0 ** pos.get("decimals", 6), f(self.cfg.get("curve_fee_pct"), 1.25))
         if not sol > 0:
             return None
+        if by_curve:
+            self.fill_note = " · by the curve maths%s (Jupiter: %s; the entry was filled by it too)" % (
+                " on stale reserves (no curve reading for %.0f s)" % (self.epoch() - coin.last_t) if stale else "",
+                getattr(self.m, "quote_why", None) or "no quote")
+            pos["fill"] = "curve"
+            return self.sale_usd(sol, sol_usd, pos)
         self.fill_note = " · by the curve maths (Jupiter: %s; it was %.1f%% off a quote at the entry)" % (
             getattr(self.m, "quote_why", None) or "no quote", max(diffs))
         pos["fill"] = "curve"
@@ -2411,7 +2717,11 @@ class Night(object):
         else:
             why, timed = (newpairs.exit_signal(coin, cfg) if coin is not None else None), True
         if why:
-            sell(mint, 1.0, why, sol_usd, t_reading=t if timed else None)
+            self.np_ending = not timed                  # the night's or a job's end: np_curve_sale may take stale reserves
+            try:
+                sell(mint, 1.0, why, sol_usd, t_reading=t if timed else None)
+            finally:
+                self.np_ending = False
             return
         if coin is not None and self.epoch() - self.news_at.setdefault(mint, self.epoch()) >= \
                 f(cfg.get("news_refresh_sec"), 30):
@@ -2438,8 +2748,9 @@ class Night(object):
         selling the rest now leaves the whole trade at 0 after every cost (pump.fun's fee and the price
         impact by the curve maths, the latency haircut, the order's network and priority fees; the step
         already sold counted), at least breakeven_pct and at most the highest step sold. A stop at +1 % of
-        the price sells the rest under its costs: "a winner never turns into a loser" is counted in dollars."""
-        cfg = self.cfg
+        the price sells the rest under its costs: "a winner never turns into a loser" is counted in dollars.
+        A position with a stop of its own (a SNIPE's: np_pos_cfg) is decided with it in stop_pct's place."""
+        cfg = self.np_pos_cfg(pos)
         if not (f(plan.get("sold")) > 0 or f(plan.get("step")) > 0):
             return cfg
         level = self.np_even_gain(pos, coin, sol_usd)
@@ -2584,6 +2895,11 @@ class Night(object):
             else:
                 pos.pop("stale_said", None)
             self.np_exit(mint, coin, None, minutes_left, px_usd=px)    # no reading decided these: not timed
+        if snipe_on(cfg):
+            try:
+                self.np_snipe_rug()                     # RugCheck for the tape only: a held snipe, once
+            except Exception as e:                      # noqa: BLE001 - a record is never worth the exits' step
+                self.m.errors.append("snipe rugcheck: %s: %s" % (type(e).__name__, e))
         self.np_shadow_safe("np_shadow_second", minutes_left)
         self.np_summary(now)
         self.np_health(now)
@@ -2750,13 +3066,15 @@ class Night(object):
             return fixed
         return max(f(cfg.get("min_order_usd"), 5.0), self.equity({}) * f(cfg.get("position_pct"), 10.0) / 100.0)
 
-    def np_shadow_open(self, coin, plan, labels, kind, why):
+    def np_shadow_open(self, coin, plan, labels, kind, why, extra=None):
         """A SHADOW of a coin np_fire() did not buy after it passed RugCheck (kind "learner": the LEARNER skipped it;
         "risk": RISK said no entry, why). Priced as a real entry of np_shadow_usd() on the reading that fired, by the
         curve maths with every cost (np_shadow_curve_buy), never by Jupiter: a shadow's quote would share the real
         book's Jupiter (its free minute, and the rest after a failure: Market.quote_pause, 10-60 s with no quote at
         all, so the next REAL entry would wait) and its loop time. So it gets no honeypot sell simulation either.
-        plan and labels: the entry's (np_entry_plan). -> the shadow, or None."""
+        plan and labels: the entry's (np_entry_plan). extra: fields the shadow has from its open on, its log and tape
+        lines too (a SNIPE's: {"snipe": True, "stop_pct": its stop}; the tape's open line then says "entry": "snipe").
+        -> the shadow, or None."""
         mint, cfg = coin.mint, self.cfg
         no = self.np_shadow_why_not(mint)
         if no is not None:
@@ -2780,6 +3098,8 @@ class Night(object):
         pos.update({"strategy": "new_pairs", "plan": plan, "age_s": int(coin.age_s), "mcap_sol": round(coin.mcap_sol, 1),
                     "dev_pct": round(coin.dev_pct, 2), "sol_in": round(coin.sol_in, 2), "moved_t": now,
                     "shadow": kind, "shadow_why": str(why or kind)[:120]})
+        extra = dict(extra) if isinstance(extra, dict) else {}
+        pos.update(extra)
         if labels:
             pos["learn"] = labels
         self.shadows[mint] = pos
@@ -2792,7 +3112,8 @@ class Night(object):
         self.np_rec_shadow(mint, "open", {"kind": kind, "why": pos["shadow_why"], "usd": pos["cost"], "raw": pos["raw"],
                                           "px": pos["entry_price"], "px_sol": coin.price, "sol": sol_usd,
                                           "fill": pos.get("fill"), "tier": plan_doc.get("entry_tier") or plan_doc.get("tier"),
-                                          "score": plan_doc.get("entry_score"), "learn": labels})
+                                          "score": plan_doc.get("entry_score"), "learn": labels,
+                                          **(dict(extra, entry="snipe") if extra.get("snipe") else extra)})
         return pos
 
     def np_shadow_curve_buy(self, coin, fx, usd_in, sol_usd, fee_sol):
@@ -2834,6 +3155,24 @@ class Night(object):
         elif ok:
             plan, labels = self.np_entry_plan(coin)
             self.np_shadow_open(coin, plan, labels, "risk", why)
+
+    def np_shadow_snipe(self, coin, why, minutes_left):
+        """RISK said no entry to a SNIPE (np_snipe_fire, why): with shadow_on_risk, followed as a SHADOW ("risk") as the
+        snipe would have been: priced on its first reading by the curve maths with every cost (np_shadow_open), so only
+        on a reading a real curve fill could take (np_snipe_late: fresh, no newer one in), the snipe's stop
+        (np_snipe_stop_pct) and the same exits, marked "snipe" (its result teaches the snipes' memory); no RugCheck,
+        which a snipe waits for no more than its shadow (asked for the tape: np_snipe_rug). Never at the session's or a
+        job's end (nothing is bought there, RISK or not)."""
+        cfg = self.cfg
+        if not cfg.get("shadow_on_risk", True) or minutes_left <= cfg["no_entries_last_min"] \
+                or self.np_job_why() is not None or self.np_snipe_late(coin) is not None:
+            return None
+        stop = snipe_stop(cfg)
+        plan, labels = self.np_entry_plan(coin, stop)
+        pos = self.np_shadow_open(coin, plan, labels, "risk", why, {"snipe": True, "stop_pct": stop})
+        if pos is not None:
+            self.np_snipe_rugs[coin.mint] = coin.t0
+        return pos
 
     def np_shadow_curve(self, mint, ev, t, minutes_left):
         """A curve reading of a SHADOW's coin: into its own copy, then its exits (np_exit), as a held coin's."""
@@ -2949,7 +3288,9 @@ class Night(object):
         """The LEARNER learns a closed shadow: learner.update(labels, P&L %, weight=shadow_weight, shadow=True). -> (the
         log's words, the weight it learned with: 0 when it did not)."""
         w = min(1.0, max(0.0, f(self.cfg.get("shadow_weight"), 0.5)))
-        if self.mem is None:
+        snipe = bool(pos.get("snipe"))                  # a RISK-blocked SNIPE's shadow: the snipes' memory
+        mem = self.mem_snipe if snipe else self.mem
+        if self.mem is None or mem is None:
             return "not learned (LEARNER off)", 0.0
         if not pos.get("learn"):
             return "not learned (no labels)", 0.0
@@ -2957,11 +3298,11 @@ class Night(object):
             return "not learned (shadow_weight 0)", 0.0
         if not getattr(learner, "WEIGHTS", False):      # a learner.py without weights would count it as a whole trade
             return "not learned (learner.py takes no weights)", 0.0
-        self.learn("update", self.mem, pos["learn"], pnl_pct, w, True)
+        self.learn("update", mem, pos["learn"], pnl_pct, w, True)
         if self.mem is None:                            # update() failed: the LEARNER is out (its line says why)
             return "not learned (LEARNER off)", 0.0
-        self.learn_save()
-        said = self.learn("learned", self.mem, pos["learn"])
+        self.learn_save(snipe)
+        said = self.learn("learned", mem, pos["learn"])
         return "learned x%g%s" % (w, " · " + said if said else ""), w
 
     def np_shadow_drop(self, mint, why):
@@ -3237,6 +3578,12 @@ def stream_view(cfg, on=None):
             "ws": [b["ws"] for b in cfg.get("live_brokers") or [] if b.get("ws")]}
 
 
+def prompt_path(cfg):
+    """The strategy the page shows (panel "prompt"): prompt.txt (the momentum entry), or in SNIPE mode prompt_snipe.txt
+    (the first-reading buy, its stop and costs: the momentum words would not be true then)."""
+    return PROMPT_SNIPE if snipe_on(cfg) else PROMPT
+
+
 def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=None, shadows=None):
     """What the page shows: the prompt, the balance, the night's log, open positions, trades, and
     "watch": the New Pairs being watched now (newpairs.row(): symbol, name, mint, age_s, sol_in, buys,
@@ -3247,7 +3594,7 @@ def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=
     pos, eq = positions_view(state, prices)
     shadow_rows, shadow_stats = shadow_view(state.get("shadow"), shadows)
     try:
-        with open(PROMPT, encoding="utf-8") as fh:
+        with open(prompt_path(cfg), encoding="utf-8") as fh:
             prompt = fh.read()
     except OSError:
         prompt = ""

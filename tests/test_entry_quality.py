@@ -437,22 +437,23 @@ class Concentration(unittest.TestCase):
         fires at both rates, and the same RugCheck report gives the same verdict whatever the rate."""
         c_json = {k: v for k, v in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
                                                                "memebot", "config.json"))).items()
-                  if k.startswith("np_")}
+                  if k.startswith("np_") and not k.startswith("np_snipe")}   # the momentum trigger (no snipe)
         trades = [(38.1 + 0.2 * i, 0.15) for i in range(60)]
         verdicts = {}
         for step in (1.0, 0.5):
             wl = npm.Watchlist(dict(D, **c_json))
             c = wl.on_create(TN.create("crowdflow", "CROWD", "crowd coin", dev_sol=0.3), T0)
             wl.on_meta(c.mint, {"telegram": "https://t.me/x"})
-            got = None
+            got = fired = None
             for i, (t, sol) in enumerate(flow_readings(trades, step, 60)):
                 if wl.on_curve(c.mint, TN.reading(0.3 + sol, slot=1000 + i), T0 + t) is None:
                     continue
                 act, why = wl.judge(c, T0 + t)
                 if act in ("fire", "reject"):
-                    got = act
+                    got, fired = act, why
                     break
             self.assertEqual(got, "fire", step)
+            self.assertTrue(str(fired).startswith("momentum ·"), fired)      # the trigger, never a snipe
             verdicts[step] = [npm.rug_check_np(report(c.mint, c.curve, n), npm.Coin.from_dict(c.to_dict()), wl.cfg)[0]
                               for n in (8, 26)]
             self.assertEqual(verdicts[step], [None, True], step)             # 8 wallets wait, 26 pass
@@ -683,8 +684,8 @@ def tape_coin(mint, t0, path, holders=14, top=(3.0, 2.0, 1.5), rugs=None):
 
 
 def replay_cfg(**kw):
-    c = R.bot.load_config(R.bot.CONFIG)
-    c.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0, np_min_age_s=0,
+    c = R.bot.load_config(R.bot.CONFIG)       # the momentum entry (np_snipe off): its RugCheck rules are the subject
+    c.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0, np_min_age_s=0, np_snipe=False,
              np_max_sol_per_holder=D["np_max_sol_per_holder"], np_min_holders=D["np_min_holders"],
              np_max_buy_sol=D["np_max_buy_sol"], np_rug_recheck_s=4.0, np_rug_cache_s=4.0)
     c.update(kw)

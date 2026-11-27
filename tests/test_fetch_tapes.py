@@ -753,7 +753,7 @@ class EndToEnd(unittest.TestCase):
         # coins (a trigger 5 s after launch, no holders on their report) cannot pass, so that configs trade here
         cfg = bt.bot.load_config(bt.bot.CONFIG)
         cfg.update(learn_skip_pct=-1000.0, learn_mult_min=1.0, learn_mult_max=1.0, np_min_age_s=0, np_min_holders=0,
-                   np_max_sol_per_holder=0)
+                   np_max_sol_per_holder=0, np_snipe=False)         # the momentum entry: the grid's stop_pct is its
         cfg_path = os.path.join(d, "config.json")
         with open(cfg_path, "w") as fh:
             json.dump(cfg, fh)
