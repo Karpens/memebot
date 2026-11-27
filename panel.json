@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T16:49:44Z",
+ "updated": "2026-11-27T16:50:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4614,
+  "lines": 4618,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4359,42 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T11:18:54Z",
-   "time": "12:18:54",
-   "agent": "LEARNER",
-   "coin": "TST",
-   "action": "shadow",
-   "text": "SHADOW TST · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021271 (curve maths, every cost) · same exits, outside the book",
-   "n": 4415
-  },
-  {
-   "t": "2026-11-27T11:18:54Z",
-   "time": "12:18:54",
-   "agent": "LEARNER",
-   "coin": "HACKED",
-   "action": "shadow",
-   "text": "SHADOW HACKED · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021258 (curve maths, every cost) · same exits, outside the book",
-   "n": 4416
-  },
-  {
-   "t": "2026-11-27T11:18:56Z",
-   "time": "12:18:56",
-   "agent": "LEARNER",
-   "coin": "HACKED",
-   "action": "shadow",
-   "text": "SHADOW HACKED · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021258 (curve maths, every cost) · same exits, outside the book",
-   "n": 4417
-  },
-  {
-   "t": "2026-11-27T11:19:02Z",
-   "time": "12:19:02",
-   "agent": "LEARNER",
-   "coin": "TETOK",
-   "action": "shadow",
-   "text": "SHADOW TETOK would have made -7.7% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.2% over 300",
-   "n": 4418
-  },
-  {
    "t": "2026-11-27T11:19:10Z",
    "time": "12:19:10",
    "agent": "LEARNER",
@@ -6157,6 +6121,42 @@
    "action": "scan",
    "text": "new pairs · 0.2 a minute · 0 watched · 1 rejected (no symbol or name 1)",
    "n": 4614
+  },
+  {
+   "t": "2026-11-27T16:49:50Z",
+   "time": "17:49:50",
+   "agent": "RISK",
+   "coin": "GUARDIAN",
+   "action": "skip",
+   "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "n": 4615
+  },
+  {
+   "t": "2026-11-27T16:49:50Z",
+   "time": "17:49:50",
+   "agent": "LEARNER",
+   "coin": "GUARDIAN",
+   "action": "shadow",
+   "text": "SHADOW GUARDIAN · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000029948 (curve maths, every cost) · same exits, outside the book",
+   "n": 4616
+  },
+  {
+   "t": "2026-11-27T16:49:51Z",
+   "time": "17:49:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.0 a minute · 0 watched · 5 rejected (no symbol or name 2, snipe not bought: night at open  1, no bonding curve key 1)",
+   "n": 4617
+  },
+  {
+   "t": "2026-11-27T16:49:52Z",
+   "time": "17:49:52",
+   "agent": "LEARNER",
+   "coin": "GUARDIAN",
+   "action": "shadow",
+   "text": "SHADOW GUARDIAN would have made -16.0% (stop -12%) · learned x0.5 · np:sol:3-6 now avg -11.9% over 73.5",
+   "n": 4618
   }
  ],
  "nights": [
@@ -6211,7 +6211,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 0 watched · ws off · odd curve readings 52 (5 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 1 watched · ws off · odd curve readings 52 (5 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6219,24 +6219,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 63,
-    "last_event_age_s": 0.1,
+    "events": 64,
+    "last_event_age_s": 27.6,
     "errors": 266,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1981,
-    "last_event_age_s": 17651.1,
+    "events": 1989,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 39,
-    "last_event_age_s": 18316.8,
+    "events": 40,
+    "last_event_age_s": 27.4,
     "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6249,9 +6249,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 0.8,
+  "creates_per_min": 1.0,
   "watching": 0,
-  "followed": 0,
+  "followed": 1,
   "odd_readings": 52,
   "odd_coins": 5
  },
@@ -6280,8 +6280,8 @@
   "worst": [
    {
     "label": "snipe · np:sol:3-6",
-    "n": 73,
-    "avg": -11.8
+    "n": 74,
+    "avg": -11.9
    },
    {
     "label": "snipe · hour:03-05",
@@ -6294,29 +6294,47 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1231,
+  "shadows": 1232,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20196,
+   "sent": 20231,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20199,
+   "sent": 20234,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GUARDIAN",
+   "name": "Embodied Avatar",
+   "mint": "2TenoRc7cUqpyMCJpuqSHTR1TQHS1w41yD3sEkWipump",
+   "age_s": 27,
+   "sol_in": 2.06,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": 13.3,
+   "mcap_sol": 36.0,
+   "dev_pct": 6.6,
+   "big_sell": 0.95,
+   "x": "https://x.com/needs0lana/status/2126357837701931285",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
-   "age_s": 0,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6334,7 +6352,7 @@
    "symbol": "MUSLONG",
    "name": "Muslim Nailong",
    "mint": "53G2ZC5jBgPcamwLSg85JXuWq9GrumFj5X8NFifapump",
-   "age_s": 38,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6352,7 +6370,7 @@
    "symbol": "INGOT",
    "name": "Ingot",
    "mint": "iNg3JUoxwvu2jsACHteNcZdVkGRnFDYgR41rSU6kWya",
-   "age_s": 46,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6370,7 +6388,7 @@
    "symbol": "?",
    "name": "",
    "mint": "DTdgjUVJbcd4MMxZLadCqw3SP696tfiQ4SdL5jXRpump",
-   "age_s": 53,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6389,6 +6407,26 @@
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "GUARDIAN",
+   "mint": "2TenoRc7cUqpyMCJpuqSHTR1TQHS1w41yD3sEkWipump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T16:49:50Z",
+   "cost": 5.91,
+   "pnl_pct": -16.0,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 4.12,
+   "closed": "2026-11-27T16:49:52Z",
+   "exit": "stop -12%",
+   "pnl": -0.94,
+   "weight": 0.5
+  },
   {
    "symbol": "Solanta",
    "mint": "EeE5hzQ3C49DVC1LLhfNAUzyXiaDr6jRtCdii3chpump",
@@ -6768,33 +6806,13 @@
    "exit": "dump: 2.6 SOL sold",
    "pnl": -0.95,
    "weight": 0.5
-  },
-  {
-   "symbol": "Pupstarz",
-   "mint": "BZ99cZXuprqRdWb5PkmW4Kx6YHGMBZC6E9jV8bY3pump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "opened": "2026-11-27T11:35:56Z",
-   "cost": 5.91,
-   "pnl_pct": -13.3,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T11:39:44Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -0.79,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 1039,
+  "n": 1040,
   "wins": 235,
   "win_rate": 22.6,
-  "mean_pnl_pct": -7.43,
+  "mean_pnl_pct": -7.44,
   "open": 0,
   "learner": {
    "n": 16,
@@ -6803,10 +6821,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 1023,
+   "n": 1024,
    "wins": 232,
    "win_rate": 22.7,
-   "mean_pnl_pct": -7.35
+   "mean_pnl_pct": -7.36
   }
  }
 }
