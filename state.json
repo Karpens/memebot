@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:02:18Z",
-    "time": "08:02:18",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.6 a minute · 0 watched · 18 rejected (snipe not bought: trades tonight 8, mayhem mode 8, serial launcher 1)",
-    "n": 3009
-   },
-   {
-    "t": "2026-11-27T07:02:22Z",
-    "time": "08:02:22",
-    "agent": "LEARNER",
-    "coin": "DOJO",
-    "action": "shadow",
-    "text": "SHADOW DOJO would have made +8.1% (dump: 2.8 SOL sold) · learned x0.5 · tier:swing now avg -15.0% over 32",
-    "n": 3010
-   },
-   {
     "t": "2026-11-27T07:02:38Z",
     "time": "08:02:38",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.4 a minute · 0 watched · 15 rejected (snipe not bought: trades tonight 7, mayhem mode 6, serial launcher 2)",
     "n": 3608
+   },
+   {
+    "t": "2026-11-27T08:49:47Z",
+    "time": "09:49:47",
+    "agent": "SCANNER",
+    "coin": "Rockstar",
+    "action": "migrate",
+    "text": "migrated: the curve is complete (pump-amm)",
+    "n": 3609
+   },
+   {
+    "t": "2026-11-27T08:49:51Z",
+    "time": "09:49:51",
+    "agent": "LEARNER",
+    "coin": "• JPUMP",
+    "action": "shadow",
+    "text": "SHADOW • JPUMP would have made -7.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.6% over 188",
+    "n": 3610
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3608,
+  "lines": 3610,
   "flags": [
    {
     "coin": "Kibo",
@@ -21699,9 +21699,9 @@
   },
   "np_said": 1795769353.645326,
   "shadow": {
-   "n": 638,
+   "n": 639,
    "wins": 137,
-   "sum": -5138.1
+   "sum": -5145.8
   },
   "np_speed": {
    "first_in": [
@@ -31284,9 +31284,9 @@
   }
  },
  "shadow": {
-  "n": 652,
+  "n": 653,
   "wins": 139,
-  "sum": -5336.6,
+  "sum": -5344.3,
   "by": {
    "learner": {
     "n": 16,
@@ -31294,32 +31294,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 636,
+    "n": 637,
     "wins": 136,
-    "sum": -5138.8
+    "sum": -5146.5
    }
   },
   "closed": [
-   {
-    "symbol": "ANSEM",
-    "mint": "9dzcvPUAuRaGSHzFeyZpsoESGJZ1bykKWjoHUSL2ByvP",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:37:03Z",
-    "cost": 36.2,
-    "pnl_pct": -8.5,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.11,
-    "closed": "2026-11-27T08:42:03Z",
-    "exit": "5 min, only -4%",
-    "pnl": -3.06,
-    "weight": 0.5
-   },
    {
     "symbol": "ROCKSTAR",
     "mint": "7u1zQkhEfgXBXWi668HvGy1GNStg5gEHzt5XJSGy8tNj",
@@ -31699,10 +31679,29 @@
     "exit": "dump: 4.9 SOL sold",
     "pnl": -8.78,
     "weight": 0.5
+   },
+   {
+    "symbol": "• JPUMP",
+    "mint": "EYjrzjCE6w5Ak9ae2SN5Dm4SPdpAmeEZrmxfEpQmpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:44:55Z",
+    "cost": 36.2,
+    "pnl_pct": -7.7,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.02,
+    "closed": "2026-11-27T08:49:51Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.77,
+    "weight": 0.5
    }
   ],
   "open": [
-   "• JPUMP",
    "LIFTLY",
    "NRWGN"
   ]
@@ -31746,7 +31745,7 @@
     "avg": -11.3
    }
   ],
-  "shadows": 636,
+  "shadows": 637,
   "memory": "snipe"
  }
 }
