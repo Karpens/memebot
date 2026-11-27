@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:27:28Z",
-    "time": "08:27:28",
-    "agent": "LEARNER",
-    "coin": "NOTHING",
-    "action": "shadow",
-    "text": "SHADOW NOTHING · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021465 (curve maths, every cost) · same exits, outside the book",
-    "n": 3128
-   },
-   {
-    "t": "2026-11-27T07:27:36Z",
-    "time": "08:27:36",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 0.8 a minute · 0 watched · 4 rejected (snipe not bought: trades tonight 2, mayhem mode 2)",
-    "n": 3129
-   },
-   {
     "t": "2026-11-27T07:27:59Z",
     "time": "08:27:59",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Holesale would have made -14.9% (stop -11%) · learned x0.5 · np:sol:3-6 now avg -11.2% over 62.5",
     "n": 3727
+   },
+   {
+    "t": "2026-11-27T09:13:19Z",
+    "time": "10:13:19",
+    "agent": "LEARNER",
+    "coin": "CPAI",
+    "action": "shadow",
+    "text": "SHADOW CPAI would have made -9.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.6% over 213",
+    "n": 3728
+   },
+   {
+    "t": "2026-11-27T09:13:27Z",
+    "time": "10:13:27",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.2 a minute · 0 watched · 14 rejected (snipe not bought: trades tonight 7, mayhem mode 5, serial launcher 2)",
+    "n": 3729
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3727,
+  "lines": 3729,
   "flags": [
    {
     "coin": "Kibo",
@@ -21741,11 +21741,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795770747.645262,
+  "np_said": 1795770807.64533,
   "shadow": {
-   "n": 681,
+   "n": 682,
    "wins": 144,
-   "sum": -5707.7
+   "sum": -5717.2
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 695,
+  "n": 696,
   "wins": 146,
-  "sum": -5906.2,
+  "sum": -5915.7,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 679,
+    "n": 680,
     "wins": 143,
-    "sum": -5708.4
+    "sum": -5717.9
    }
   },
   "closed": [
-   {
-    "symbol": "BOING",
-    "mint": "HYwerfwWyHtE8KFzSgC66EZzDejpHQPUNG26GetEpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:04:16Z",
-    "cost": 36.2,
-    "pnl_pct": -17.8,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 3.07,
-    "closed": "2026-11-27T09:04:18Z",
-    "exit": "stop -15%",
-    "pnl": -6.45,
-    "weight": 0.5
-   },
    {
     "symbol": "RBCAT",
     "mint": "3nJ5hoRHTE3mkZZfv1f6bGPrFMkh3gcMBxw5oiPvRCLo",
@@ -31743,10 +31723,29 @@
     "exit": "stop -11%",
     "pnl": -5.41,
     "weight": 0.5
+   },
+   {
+    "symbol": "CPAI",
+    "mint": "32vuFc6pYx9ypHK4Bz4G5Xpa8bea6xoaUyqJimrZpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:08:53Z",
+    "cost": 36.2,
+    "pnl_pct": -9.5,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T09:13:19Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -3.43,
+    "weight": 0.5
    }
   ],
   "open": [
-   "CPAI",
    "BAH",
    "34",
    "DRAW",
@@ -31793,7 +31792,7 @@
     "avg": -11.8
    }
   ],
-  "shadows": 679,
+  "shadows": 680,
   "memory": "snipe"
  }
 }
