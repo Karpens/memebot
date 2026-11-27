@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T21:38:46Z",
+ "updated": "2026-11-27T21:39:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7065,
+  "lines": 7067,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795779507,
-   59.14
-  ],
   [
    1795779567,
    59.14
@@ -2472,6 +2468,10 @@
   [
    1795815468,
    59.14
+  ],
+  [
+   1795815528,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,24 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T21:14:46Z",
-   "time": "22:14:46",
-   "agent": "SCANNER",
-   "coin": "TSI",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.8237 is not 30 + real SOL 0 (off -29.18 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 401 odd readings from 149 coins tonight",
-   "n": 6866
-  },
-  {
-   "t": "2026-11-27T21:14:53Z",
-   "time": "22:14:53",
-   "agent": "LEARNER",
-   "coin": "ZERO",
-   "action": "shadow",
-   "text": "SHADOW ZERO would have made -10.9% (dump: 2.3 SOL sold) · learned x0.5 · np:dev:2-5 now avg -7.4% over 300",
-   "n": 6867
-  },
-  {
    "t": "2026-11-27T21:15:02Z",
    "time": "22:15:02",
    "agent": "LEARNER",
@@ -6157,6 +6139,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: night at open  3, odd curve reading: virtual SOL i 2, serial launcher 2)",
    "n": 7065
+  },
+  {
+   "t": "2026-11-27T21:38:48Z",
+   "time": "22:38:48",
+   "agent": "LEARNER",
+   "coin": "CMC",
+   "action": "shadow",
+   "text": "SHADOW CMC · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020643 (curve maths, every cost) · same exits, outside the book",
+   "n": 7066
+  },
+  {
+   "t": "2026-11-27T21:39:00Z",
+   "time": "22:39:00",
+   "agent": "LEARNER",
+   "coin": "SI01",
+   "action": "shadow",
+   "text": "SHADOW SI01 · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022851 (curve maths, every cost) · same exits, outside the book",
+   "n": 7067
   }
  ],
  "nights": [
@@ -6213,7 +6213,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 479 (168 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 497 (168 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6221,24 +6221,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2048,
-    "last_event_age_s": 6.8,
+    "events": 2051,
+    "last_event_age_s": 14.6,
     "errors": 4,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 32572,
-    "last_event_age_s": 1.1,
+    "events": 32631,
+    "last_event_age_s": 2.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1254,
-    "last_event_age_s": 17.0,
+    "events": 1256,
+    "last_event_age_s": 16.1,
     "errors": 62,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6251,10 +6251,10 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.2,
   "watching": 0,
   "followed": 7,
-  "odd_readings": 479,
+  "odd_readings": 497,
   "odd_coins": 168
  },
  "learner": {
@@ -6302,23 +6302,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16920,
+   "sent": 16950,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16920,
+   "sent": 16950,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SI01",
+   "name": "Sentinel One",
+   "mint": "E5jCdcz9DHcuopMDWiEGsAY4DmuFQT4RVyMATErkpump",
+   "age_s": 16,
+   "sol_in": 0.53,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 3.4,
+   "mcap_sol": 30.9,
+   "dev_pct": 3.5,
+   "big_sell": 0.05,
+   "x": "https://twitter.com/tetsuoai/status/2126430032986026488",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
+   "symbol": "CMC",
+   "name": "Christmas Miracle Coin",
+   "mint": "6PvFivqdUpVbP96pRbBtzWKLm3aCkbDgDn7Xbp8hpump",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/TicAssociation",
+   "tg": false,
+   "web": "https://ticassociation.com",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "HpGmomiLN6zjd7psiuyioqhTt7qv97Dwu1SM9Cazpump",
-   "age_s": 6,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6336,7 +6372,7 @@
    "symbol": "Sol",
    "name": "Solana",
    "mint": "E28HZKy7V9DobX4GVsiviNqsqbWyaSipnQE736FnMmrN",
-   "age_s": 17,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6354,7 +6390,7 @@
    "symbol": "Sol",
    "name": "Solana",
    "mint": "Xb6V46U9hHHxiJnoAFxiEqEh59owzdt1ZL9q5zpVSoL",
-   "age_s": 18,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6372,7 +6408,7 @@
    "symbol": "DCAT",
    "name": "Dollar Cat",
    "mint": "6KrBJXfW7b5c9TLdz9ybxBNVY1TLSKqbYioUVLAXpump",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": 0.27,
    "buys": 3,
    "sells": 3,
@@ -6390,14 +6426,14 @@
    "symbol": "Percy",
    "name": "Elon's Dog",
    "mint": "tLxQnbpSvn9qxy2muFdkgZxgX1YnSxZPPV2Jtirpump",
-   "age_s": 44,
-   "sol_in": 0.36,
+   "age_s": 72,
+   "sol_in": 0.2,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 1.8,
-   "mcap_sol": 47.9,
+   "sells": 1,
+   "rise_pct": 1.0,
+   "mcap_sol": 47.5,
    "dev_pct": 24.5,
-   "big_sell": 0.0,
+   "big_sell": 0.16,
    "x": "https://x.com/i/communities/1974556859043619230",
    "tg": false,
    "web": false,
@@ -6408,7 +6444,7 @@
    "symbol": "BID",
    "name": "BID",
    "mint": "3GogJuXBXRCcehHXf2bvDhdeZRzQu5pzEK4m5c7VyPxx",
-   "age_s": 54,
+   "age_s": 82,
    "sol_in": -0.23,
    "buys": 3,
    "sells": 3,
@@ -6426,7 +6462,7 @@
    "symbol": "Bull",
    "name": "Bearproof",
    "mint": "65f1EuLPBqAdVS78pbPBuzYEY4uTfHr1AnuETeRipump",
-   "age_s": 84,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6444,7 +6480,7 @@
    "symbol": "TOAD",
    "name": "The Toad Cat",
    "mint": "3KFVAPNvfbi9BbAhtC2MBjf6RUUJzauTNVSQkCKqpump",
-   "age_s": 141,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6457,48 +6493,44 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "testzec",
-   "name": "test",
-   "mint": "HZymkUHKpszdvoWc7nLzu3PL6oq97mUSvDTS1oJdNYJK",
-   "age_s": 164,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 0.447 is not 30 + real SOL 0 (off -29.55 SOL)",
-   "why": "odd curve reading: virtual SOL 0.447 is not 30 + real SOL 0 (off -29.55 SOL)"
-  },
-  {
-   "symbol": "RENT$",
-   "name": "RENT",
-   "mint": "AbUmQRuaQR7RmhmmUheLrZTPaQctvEFtKMuVh4ntpump",
-   "age_s": 172,
-   "sol_in": 2.23,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 15.2,
-   "mcap_sol": 33.1,
-   "dev_pct": 1.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "SI01",
+   "mint": "E5jCdcz9DHcuopMDWiEGsAY4DmuFQT4RVyMATErkpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T21:39:00Z",
+   "cost": 5.91,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 3,
+   "sol_in": 0.58
+  },
+  {
+   "symbol": "CMC",
+   "mint": "6PvFivqdUpVbP96pRbBtzWKLm3aCkbDgDn7Xbp8hpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T21:38:48Z",
+   "cost": 5.91,
+   "pnl_pct": -3.7,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "BID",
    "mint": "3GogJuXBXRCcehHXf2bvDhdeZRzQu5pzEK4m5c7VyPxx",
@@ -6523,7 +6555,7 @@
    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T21:35:53Z",
    "cost": 5.91,
-   "pnl_pct": -2.0,
+   "pnl_pct": -1.7,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6937,7 +6969,7 @@
   "wins": 454,
   "win_rate": 22.7,
   "mean_pnl_pct": -7.37,
-  "open": 2,
+  "open": 4,
   "learner": {
    "n": 16,
    "wins": 3,
