@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:14:40Z",
+ "updated": "2026-11-27T06:15:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2763,
+  "lines": 2764,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -1807,6 +1807,10 @@
   ],
   [
    1795760033,
+   361.97
+  ],
+  [
+   1795760093,
    361.97
   ]
  ],
@@ -4076,15 +4080,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T05:39:55Z",
-   "time": "06:39:55",
-   "agent": "LEARNER",
-   "coin": "SNOWBALLIN",
-   "action": "learn",
-   "text": "learned · np:buys:<70 now avg -9.9% over 166",
-   "n": 2564
-  },
-  {
    "t": "2026-11-27T05:40:15Z",
    "time": "06:40:15",
    "agent": "RISK",
@@ -5874,6 +5869,15 @@
    "action": "shadow",
    "text": "SHADOW LAB · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023446 (curve maths, every cost) · same exits, outside the book",
    "n": 2763
+  },
+  {
+   "t": "2026-11-27T06:14:51Z",
+   "time": "07:14:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 5 rejected (serial launcher 3, snipe not bought: trades tonight 1, mayhem mode 1)",
+   "n": 2764
   }
  ],
  "nights": [
@@ -5934,7 +5938,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5942,15 +5946,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1238,
-    "last_event_age_s": 26.4,
+    "events": 1239,
+    "last_event_age_s": 14.6,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 38365,
+    "events": 38401,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -5958,8 +5962,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 830,
-    "last_event_age_s": 26.3,
+    "events": 831,
+    "last_event_age_s": 14.6,
     "errors": 81,
     "last_error": "ar-io.dev: too slow (over 2 s)"
    }
@@ -5972,9 +5976,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 4
+  "followed": 5
  },
  "learner": {
   "samples": 249,
@@ -6021,27 +6025,45 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17765,
+   "sent": 17801,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17764,
+   "sent": 17800,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NİMİS",
+   "name": "NİMİS",
+   "mint": "3xUdsPtatFpaYr48cpAsJSRNAikRCLPAiURXXoWWrvw2",
+   "age_s": 14,
+   "sol_in": 14.34,
+   "buys": 7,
+   "sells": 6,
+   "rise_pct": 98.9,
+   "mcap_sol": 75.4,
+   "dev_pct": 15.2,
+   "big_sell": 3.43,
+   "x": "https://x.com/MarioPrezldente/status/2126198080227942514",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 12 more coins in 60 min",
+   "why": "serial launcher: 12 more coins in 60 min"
+  },
+  {
    "symbol": "LAB",
    "name": "LAB",
    "mint": "4NETVSHc1pJYpE3cgZ67xu81zPTmnLwWP2fqbY4Bpump",
-   "age_s": 26,
-   "sol_in": 0.36,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 2.3,
+   "age_s": 60,
+   "sol_in": 0.35,
+   "buys": 6,
+   "sells": 2,
+   "rise_pct": 2.2,
    "mcap_sol": 30.7,
    "dev_pct": 3.7,
    "big_sell": 0.17,
@@ -6055,12 +6077,12 @@
    "symbol": "SNOWMAS",
    "name": "Snowmas",
    "mint": "4XjkmpTfBrjzi33wYcZGfJgfD8aiLSu9ytKsGUYHpump",
-   "age_s": 55,
-   "sol_in": -5.87,
-   "buys": 20,
-   "sells": 25,
-   "rise_pct": -28.6,
-   "mcap_sol": 31.9,
+   "age_s": 89,
+   "sol_in": -6.5,
+   "buys": 22,
+   "sells": 29,
+   "rise_pct": -31.4,
+   "mcap_sol": 30.6,
    "dev_pct": 22.4,
    "big_sell": 4.75,
    "x": "https://x.com/early404/status/2126197764547653841",
@@ -6073,7 +6095,7 @@
    "symbol": "GIBBON",
    "name": "Gibbon",
    "mint": "Ef6hzAwoNLK7XiDbAEMjs6nPsuVhnHovk5g5NM9VsnmZ",
-   "age_s": 80,
+   "age_s": 114,
    "sol_in": -1.88,
    "buys": 9,
    "sells": 13,
@@ -6091,7 +6113,7 @@
    "symbol": "9figs",
    "name": "9 fig coin",
    "mint": "8zg15BYRfaEZa1pW8rheDeGW8uqnFhEhnmwieTVUk4Uc",
-   "age_s": 91,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6104,24 +6126,6 @@
    "web": false,
    "status": "rejected: serial launcher: 6 more coins in 60 min",
    "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "CRUMP",
-   "name": "DONALD J CRUMP",
-   "mint": "AopyX1oh5AmMwu2F7VLogbvZLXaYHEU23ScEShVFpump",
-   "age_s": 160,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.1,
-   "dev_pct": 5.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
@@ -6136,7 +6140,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:14:15Z",
    "cost": 36.2,
-   "pnl_pct": -4.4,
+   "pnl_pct": -4.5,
    "tier": "scalp",
    "score": 1,
    "steps": 0,
