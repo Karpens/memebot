@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T11:34:16Z",
+ "updated": "2026-11-27T11:34:49Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4530,
+  "lines": 4532,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795743180,
-   80.34
-  ],
   [
    1795743240,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795779207,
    59.14
+  ],
+  [
+   1795779267,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,24 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T11:07:22Z",
-   "time": "12:07:22",
-   "agent": "LEARNER",
-   "coin": "SANDYA",
-   "action": "shadow",
-   "text": "SHADOW SANDYA would have made -10.3% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.1% over 247.5",
-   "n": 4331
-  },
-  {
-   "t": "2026-11-27T11:07:27Z",
-   "time": "12:07:27",
-   "agent": "LEARNER",
-   "coin": "Bark",
-   "action": "shadow",
-   "text": "SHADOW Bark · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028386 (curve maths, every cost) · same exits, outside the book",
-   "n": 4332
-  },
-  {
    "t": "2026-11-27T11:07:32Z",
    "time": "12:07:32",
    "agent": "LEARNER",
@@ -6157,6 +6139,24 @@
    "action": "shadow",
    "text": "SHADOW HOPE would have made -15.8% (dump: 2.2 SOL sold) · learned x0.5 · np:dev:8+ now avg -7.2% over 139",
    "n": 4530
+  },
+  {
+   "t": "2026-11-27T11:34:20Z",
+   "time": "12:34:20",
+   "agent": "LEARNER",
+   "coin": "VAULT",
+   "action": "shadow",
+   "text": "SHADOW VAULT · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022261 (curve maths, every cost) · same exits, outside the book",
+   "n": 4531
+  },
+  {
+   "t": "2026-11-27T11:34:33Z",
+   "time": "12:34:33",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.0 a minute · 0 watched · 5 rejected (snipe not bought: night at open  5)",
+   "n": 4532
   }
  ],
  "nights": [
@@ -6211,7 +6211,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 4 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 5 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6219,24 +6219,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 5,
-    "last_event_age_s": 5.3,
+    "events": 9,
+    "last_event_age_s": 4.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 28,
-    "last_event_age_s": 0.9,
+    "events": 51,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 5.2,
+    "events": 5,
+    "last_event_age_s": 29.2,
     "errors": 0,
     "last_error": null
    }
@@ -6249,9 +6249,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 0.8,
+  "creates_per_min": 1.2,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 0,
   "odd_coins": 0
  },
@@ -6300,28 +6300,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 50,
+   "sent": 85,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 53,
+   "sent": 88,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GTARUG6",
+   "name": "GTA RUG 6",
+   "mint": "8kT1vL7bNWmWt3NbH7nKat45jRyuQp6vSDvuNzgspump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "VAULT",
+   "name": "Vault",
+   "mint": "9SfzY5bVkWxLvHMxpnAesnamGhD8sh4gx6QbDXAspump",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.6,
+   "dev_pct": 3.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/tryvaultclaims",
+   "tg": false,
+   "web": "https://vault.claims/",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
+  },
+  {
    "symbol": "HOPE",
    "name": "Last Blue Macaw",
    "mint": "HDkA2so9sY91RRjiEL8zvusg6fFaC3LYCoM67Np9pump",
-   "age_s": 5,
-   "sol_in": 9.45,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": 65.5,
-   "mcap_sol": 55.9,
+   "age_s": 38,
+   "sol_in": 9.84,
+   "buys": 10,
+   "sells": 14,
+   "rise_pct": 68.6,
+   "mcap_sol": 56.9,
    "dev_pct": 9.7,
    "big_sell": 2.19,
    "x": "https://x.com/SlawnStacy/status/2126277999830138902",
@@ -6334,12 +6370,12 @@
    "symbol": "RI",
    "name": "Russian Inu",
    "mint": "3EZr9vxkHDoGSto3Y2yheHTtZTJpf7bsj1DxRBRvptVX",
-   "age_s": 19,
-   "sol_in": -0.23,
+   "age_s": 52,
+   "sol_in": -1.44,
    "buys": 2,
-   "sells": 7,
-   "rise_pct": -1.3,
-   "mcap_sol": 37.4,
+   "sells": 8,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
    "dev_pct": 15.2,
    "big_sell": 2.35,
    "x": "https://x.com/MarioPrezldente/status/2126278342022402330",
@@ -6352,7 +6388,7 @@
    "symbol": "BOWL",
    "name": "Marie Antoinette's Bowl",
    "mint": "9Arhw1DXjCP6d4asvhvKwjqkuQvUigdPtKW8jeXwpump",
-   "age_s": 41,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6370,11 +6406,11 @@
    "symbol": "BBNB",
    "name": "Bruised But Never Broken",
    "mint": "BgsMnWC6bqok3yyrXU3Ts6fjFttPRp8yGyR5qSwrpump",
-   "age_s": 43,
-   "sol_in": -1.81,
+   "age_s": 76,
+   "sol_in": -1.83,
    "buys": 4,
-   "sells": 10,
-   "rise_pct": -10.7,
+   "sells": 11,
+   "rise_pct": -10.8,
    "mcap_sol": 30.1,
    "dev_pct": 9.6,
    "big_sell": 1.66,
@@ -6389,6 +6425,22 @@
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "VAULT",
+   "mint": "9SfzY5bVkWxLvHMxpnAesnamGhD8sh4gx6QbDXAspump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T11:34:20Z",
+   "cost": 5.91,
+   "pnl_pct": -3.7,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "BOWL",
    "mint": "9Arhw1DXjCP6d4asvhvKwjqkuQvUigdPtKW8jeXwpump",
@@ -6811,7 +6863,7 @@
   "wins": 229,
   "win_rate": 22.7,
   "mean_pnl_pct": -7.45,
-  "open": 1,
+  "open": 2,
   "learner": {
    "n": 16,
    "wins": 3,
