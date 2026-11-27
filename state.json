@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T21:33:09Z",
-    "time": "22:33:09",
-    "agent": "LEARNER",
-    "coin": "Solanta",
-    "action": "shadow",
-    "text": "SHADOW Solanta would have made +9.0% (TP +10%) · learned x0.5 · np:dev:8+ now avg -8.6% over 251.5",
-    "n": 7031
-   },
-   {
-    "t": "2026-11-27T21:33:23Z",
-    "time": "22:33:23",
-    "agent": "LEARNER",
-    "coin": "CODEMEN",
-    "action": "shadow",
-    "text": "SHADOW CODEMEN would have made +10.4% (TP +20%) · learned x0.5 · np:social:web now avg -7.2% over 300",
-    "n": 7032
-   },
-   {
-    "t": "2026-11-27T21:33:27Z",
-    "time": "22:33:27",
-    "agent": "LEARNER",
-    "coin": "MOONFUEL",
-    "action": "shadow",
-    "text": "SHADOW MOONFUEL · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000022075 (curve maths, every cost) · same exits, outside the book",
-    "n": 7033
-   },
-   {
     "t": "2026-11-27T21:33:34Z",
     "time": "22:33:34",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW PerpDB would have made -14.7% (stop -10%) · learned x0.5 · np:social:web now avg -7.9% over 300",
     "n": 7630
+   },
+   {
+    "t": "2026-11-27T22:42:51Z",
+    "time": "23:42:51",
+    "agent": "LEARNER",
+    "coin": "Nala",
+    "action": "shadow",
+    "text": "SHADOW Nala would have made -7.4% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:web now avg -7.9% over 300",
+    "n": 7631
+   },
+   {
+    "t": "2026-11-27T22:42:54Z",
+    "time": "23:42:54",
+    "agent": "LEARNER",
+    "coin": "CHASEHIM",
+    "action": "shadow",
+    "text": "SHADOW CHASEHIM · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020554 (curve maths, every cost) · same exits, outside the book",
+    "n": 7632
+   },
+   {
+    "t": "2026-11-27T22:43:14Z",
+    "time": "23:43:14",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.6 a minute · 0 watched · 23 rejected (snipe not bought: night at open  7, mayhem mode 6, no symbol or name 5)",
+    "n": 7633
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 7630,
+  "lines": 7633,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795783347,
-    59.14
-   ],
    [
     1795783407,
     59.14
@@ -10161,17 +10157,21 @@
    [
     1795819308,
     59.14
+   ],
+   [
+    1795819368,
+    59.14
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795819333.443402,
+  "np_said": 1795819394.443368,
   "shadow": {
-   "n": 2208,
+   "n": 2209,
    "wins": 511,
-   "sum": -16064.2
+   "sum": -16071.6
   },
   "np_speed": {
    "first_in": [
@@ -32023,9 +32023,9 @@
   }
  },
  "shadow": {
-  "n": 2222,
+  "n": 2223,
   "wins": 513,
-  "sum": -16262.7,
+  "sum": -16270.1,
   "by": {
    "learner": {
     "n": 16,
@@ -32033,32 +32033,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2206,
+    "n": 2207,
     "wins": 510,
-    "sum": -16064.9
+    "sum": -16072.3
    }
   },
   "closed": [
-   {
-    "symbol": "Staffed",
-    "mint": "FBowEcWui24CjuiYCDGjkj3kkb8GWLws5Pz44n97pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T22:30:41Z",
-    "cost": 5.91,
-    "pnl_pct": -12.4,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.89,
-    "closed": "2026-11-27T22:34:50Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.73,
-    "weight": 0.5
-   },
    {
     "symbol": "HYCB",
     "mint": "AxxThMTEreU37yUuzN78murxGR6HFUZPqXmi2Y7Cpump",
@@ -32438,16 +32418,36 @@
     "exit": "stop -10%",
     "pnl": -0.87,
     "weight": 0.5
+   },
+   {
+    "symbol": "Nala",
+    "mint": "DS6M923yq6HoURJhywmXs5Y4pbGx2RVmexfTxkoQpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T22:39:51Z",
+    "cost": 5.91,
+    "pnl_pct": -7.4,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T22:42:51Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.43,
+    "weight": 0.5
    }
   ],
   "open": [
    "HYPERTESTI",
    "PENISCOIN",
-   "Nala",
    "ANIME",
    "ELF",
    "Nala",
-   "SARU"
+   "SARU",
+   "CHASEHIM"
   ]
  },
  "learner_summary": {
@@ -32489,7 +32489,7 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2414,
+  "shadows": 2415,
   "memory": "snipe"
  }
 }
