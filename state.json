@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:28:56Z",
-    "time": "07:28:56",
-    "agent": "LEARNER",
-    "coin": "GAINS",
-    "action": "shadow",
-    "text": "SHADOW GAINS · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022857 (curve maths, every cost) · same exits, outside the book",
-    "n": 2826
-   },
-   {
-    "t": "2026-11-27T06:29:00Z",
-    "time": "07:29:00",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.2 a minute · 0 watched · 19 rejected (mayhem mode 10, snipe not bought: trades tonight 6, serial launcher 1)",
-    "n": 2827
-   },
-   {
     "t": "2026-11-27T06:29:02Z",
     "time": "07:29:02",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW 中国牛 would have made -8.3% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -8.6% over 238",
     "n": 3425
+   },
+   {
+    "t": "2026-11-27T08:18:54Z",
+    "time": "09:18:54",
+    "agent": "LEARNER",
+    "coin": "MOBL",
+    "action": "shadow",
+    "text": "SHADOW MOBL would have made -7.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.9% over 176",
+    "n": 3426
+   },
+   {
+    "t": "2026-11-27T08:19:00Z",
+    "time": "09:19:00",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (mayhem mode 9, snipe not bought: trades tonight 3)",
+    "n": 3427
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3425,
+  "lines": 3427,
   "flags": [
    {
     "coin": "Kibo",
@@ -21573,11 +21573,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795767479.645263,
+  "np_said": 1795767540.645278,
   "shadow": {
-   "n": 565,
+   "n": 566,
    "wins": 115,
-   "sum": -4679.7
+   "sum": -4687.3
   },
   "np_speed": {
    "first_in": [
@@ -31160,9 +31160,9 @@
   }
  },
  "shadow": {
-  "n": 579,
+  "n": 580,
   "wins": 117,
-  "sum": -4878.2,
+  "sum": -4885.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31170,32 +31170,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 563,
+    "n": 564,
     "wins": 114,
-    "sum": -4680.4
+    "sum": -4688.0
    }
   },
   "closed": [
-   {
-    "symbol": "NEXTHIUM",
-    "mint": "3VaxKGYbnSrNE9tyS4w14Ye6XkJrbT1UqDGH64zwpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:05:22Z",
-    "cost": 36.2,
-    "pnl_pct": -6.7,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.45,
-    "closed": "2026-11-27T08:10:18Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.42,
-    "weight": 0.5
-   },
    {
     "symbol": "JENSEN",
     "mint": "BoYZED7EbyE8jDrofPgCay9Wk64PNLsU4KjTQGG3pump",
@@ -31575,12 +31555,31 @@
     "exit": "5 min, only -4%",
     "pnl": -3.02,
     "weight": 0.5
+   },
+   {
+    "symbol": "MOBL",
+    "mint": "9wpH5u49Rw5qdV8vytm1WJv1ZkxsWaq4NnZoMwYapump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:15:48Z",
+    "cost": 36.2,
+    "pnl_pct": -7.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.01,
+    "closed": "2026-11-27T08:18:54Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.74,
+    "weight": 0.5
    }
   ],
   "open": [
    "Ant",
-   "哈基米",
-   "MOBL"
+   "哈基米"
   ]
  },
  "learner_summary": {
@@ -31622,7 +31621,7 @@
     "avg": -11.4
    }
   ],
-  "shadows": 563,
+  "shadows": 564,
   "memory": "snipe"
  }
 }
