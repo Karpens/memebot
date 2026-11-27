@@ -49,24 +49,6 @@
    {
     "t": "2026-11-27T05:34:49Z",
     "time": "06:34:49",
-    "agent": "SIZER",
-    "coin": "POLY",
-    "action": "size",
-    "text": "10% of $398.81 = $39.88",
-    "n": 2494
-   },
-   {
-    "t": "2026-11-27T05:34:49Z",
-    "time": "06:34:49",
-    "agent": "EXECUTOR",
-    "coin": "POLY",
-    "action": "enter",
-    "text": "ENTER POLY at 0.0000024591 · slip 5.2% · snipe · first in · 0.1 s after the first reading · 1 s after launch · fill quote · Jupiter 0.1 s · curve maths 0.0% off Jupiter · stop -10%",
-    "n": 2495
-   },
-   {
-    "t": "2026-11-27T05:34:49Z",
-    "time": "06:34:49",
     "agent": "NEWS",
     "coin": "POLY",
     "action": "plan",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 5.0 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 8, serial launcher 2, mayhem mode 2)",
     "n": 3093
+   },
+   {
+    "t": "2026-11-27T07:17:05Z",
+    "time": "08:17:05",
+    "agent": "LEARNER",
+    "coin": "tugi",
+    "action": "shadow",
+    "text": "SHADOW tugi · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000031996 (curve maths, every cost) · same exits, outside the book",
+    "n": 3094
+   },
+   {
+    "t": "2026-11-27T07:17:07Z",
+    "time": "08:17:07",
+    "agent": "LEARNER",
+    "coin": "tugi",
+    "action": "shadow",
+    "text": "SHADOW tugi would have made -16.3% (stop -13%) · learned x0.5 · np:social:none now avg -9.7% over 155.5",
+    "n": 3095
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3093,
+  "lines": 3095,
   "flags": [
    {
     "coin": "Kibo",
@@ -21319,6 +21319,10 @@
    [
     1795763753,
     361.97
+   ],
+   [
+    1795763813,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21327,9 +21331,9 @@
   },
   "np_said": 1795763789.780855,
   "shadow": {
-   "n": 436,
+   "n": 437,
    "wins": 83,
-   "sum": -3681.6
+   "sum": -3697.9
   },
   "np_speed": {
    "first_in": [
@@ -30912,9 +30916,9 @@
   }
  },
  "shadow": {
-  "n": 450,
+  "n": 451,
   "wins": 85,
-  "sum": -3880.1,
+  "sum": -3896.4,
   "by": {
    "learner": {
     "n": 16,
@@ -30922,32 +30926,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 434,
+    "n": 435,
     "wins": 82,
-    "sum": -3682.3
+    "sum": -3698.6
    }
   },
   "closed": [
-   {
-    "symbol": "TOGI",
-    "mint": "27uoW6yciP4uZfj8Xkv8A1fRdbnv9trRnJqLX38vpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:05:28Z",
-    "cost": 36.2,
-    "pnl_pct": -8.0,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T07:08:31Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.89,
-    "weight": 0.5
-   },
    {
     "symbol": "RAKEBACK",
     "mint": "qGjtJXGYVTkuNfC8Xv6ndLdwkUKWrb36H7Y57wApump",
@@ -31327,6 +31311,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.86,
     "weight": 0.5
+   },
+   {
+    "symbol": "tugi",
+    "mint": "G7JqQDEXWuBnqyPoJjrQTzL6qta41szqCyfjPKWpZGZp",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:17:05Z",
+    "cost": 36.2,
+    "pnl_pct": -16.3,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.02,
+    "closed": "2026-11-27T07:17:07Z",
+    "exit": "stop -13%",
+    "pnl": -5.9,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31378,7 +31382,7 @@
     "avg": -12.6
    }
   ],
-  "shadows": 434,
+  "shadows": 435,
   "memory": "snipe"
  }
 }
