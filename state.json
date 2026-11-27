@@ -49,15 +49,6 @@
    {
     "t": "2026-11-27T05:47:28Z",
     "time": "06:47:28",
-    "agent": "SIZER",
-    "coin": "gif",
-    "action": "size",
-    "text": "10% of $377.04 = $37.70",
-    "n": 2618
-   },
-   {
-    "t": "2026-11-27T05:47:28Z",
-    "time": "06:47:28",
     "agent": "EXECUTOR",
     "coin": "gif",
     "action": "enter",
@@ -5445,6 +5436,15 @@
     "action": "shadow",
     "text": "SHADOW SWIPE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021169 (curve maths, every cost) · same exits, outside the book",
     "n": 3217
+   },
+   {
+    "t": "2026-11-27T07:40:14Z",
+    "time": "08:40:14",
+    "agent": "LEARNER",
+    "coin": "$SNOW",
+    "action": "shadow",
+    "text": "SHADOW $SNOW would have made -7.0% (5 min, only -3%) · learned x0.5 · np:buys:<70 now avg -9.6% over 198",
+    "n": 3218
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3217,
+  "lines": 3218,
   "flags": [
    {
     "coin": "Kibo",
@@ -21411,6 +21411,10 @@
    [
     1795765154,
     361.97
+   ],
+   [
+    1795765214,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21419,9 +21423,9 @@
   },
   "np_said": 1795765180.645294,
   "shadow": {
-   "n": 484,
+   "n": 485,
    "wins": 94,
-   "sum": -3984.1
+   "sum": -3991.1
   },
   "np_speed": {
    "first_in": [
@@ -31004,9 +31008,9 @@
   }
  },
  "shadow": {
-  "n": 498,
+  "n": 499,
   "wins": 96,
-  "sum": -4182.6,
+  "sum": -4189.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31014,32 +31018,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 482,
+    "n": 483,
     "wins": 93,
-    "sum": -3984.8
+    "sum": -3991.8
    }
   },
   "closed": [
-   {
-    "symbol": "VETO",
-    "mint": "5rQ48L1doJBuFJHpz7ZQsEojEMwhfekhFoiehYLg4rU9",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:30:32Z",
-    "cost": 36.2,
-    "pnl_pct": -7.8,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T07:33:35Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.81,
-    "weight": 0.5
-   },
    {
     "symbol": "Keegan",
     "mint": "kNNYnodcF89bXjRaNaGQttaK5Fv2cHTpWDZgeHipump",
@@ -31419,10 +31403,29 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.96,
     "weight": 0.5
+   },
+   {
+    "symbol": "$SNOW",
+    "mint": "GnYBsfkazBD62knCfiwkLZpB4eELzLh4Jc9Gonv9pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:35:14Z",
+    "cost": 36.2,
+    "pnl_pct": -7.0,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T07:40:14Z",
+    "exit": "5 min, only -3%",
+    "pnl": -2.52,
+    "weight": 0.5
    }
   ],
   "open": [
-   "$SNOW",
    "HABIBO",
    "1RING2RULE",
    "milhoa",
@@ -31468,7 +31471,7 @@
     "avg": -10.9
    }
   ],
-  "shadows": 482,
+  "shadows": 483,
   "memory": "snipe"
  }
 }
