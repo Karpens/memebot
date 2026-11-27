@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T11:05:56Z",
+ "updated": "2026-11-27T11:06:25Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4319,
+  "lines": 4321,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795741500,
-   80.34
-  ],
   [
    1795741560,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795777514,
    361.97
+  ],
+  [
+   1795777574,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:26:48Z",
-   "time": "11:26:48",
-   "agent": "LEARNER",
-   "coin": "NVIDIA",
-   "action": "shadow",
-   "text": "SHADOW NVIDIA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000061249 (curve maths, every cost) · same exits, outside the book",
-   "n": 4120
-  },
-  {
-   "t": "2026-11-27T10:26:57Z",
-   "time": "11:26:57",
-   "agent": "LEARNER",
-   "coin": "$JELLY",
-   "action": "shadow",
-   "text": "SHADOW $JELLY would have made +15.9% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.3% over 235.5",
-   "n": 4121
-  },
-  {
    "t": "2026-11-27T10:27:11Z",
    "time": "11:27:11",
    "agent": "SCANNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW trump would have made -7.9% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.1% over 247",
    "n": 4319
+  },
+  {
+   "t": "2026-11-27T11:06:01Z",
+   "time": "12:06:01",
+   "agent": "RISK",
+   "coin": "SUNHAZE",
+   "action": "skip",
+   "text": "no entry: 250 trades tonight (max)",
+   "n": 4320
+  },
+  {
+   "t": "2026-11-27T11:06:01Z",
+   "time": "12:06:01",
+   "agent": "LEARNER",
+   "coin": "SUNHAZE",
+   "action": "shadow",
+   "text": "SHADOW SUNHAZE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002872 (curve maths, every cost) · same exits, outside the book",
+   "n": 4321
   }
  ],
  "nights": [
@@ -6597,7 +6597,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 1,
   "scans_per_min": 0,
@@ -6605,15 +6605,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1182,
-    "last_event_age_s": 31.4,
+    "events": 1185,
+    "last_event_age_s": 0.2,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25110,
+    "events": 25163,
     "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
@@ -6621,8 +6621,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 701,
-    "last_event_age_s": 40.9,
+    "events": 704,
+    "last_event_age_s": 0.2,
     "errors": 32,
     "last_error": "jwsexactpsnl3wjzevbyostexqzhw3pcch54rzxdwyolbaty4bvq.turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
-  "watching": 0,
-  "followed": 7
+  "creates_per_min": 3.8,
+  "watching": 1,
+  "followed": 8
  },
  "learner": {
   "samples": 249,
@@ -6684,23 +6684,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13954,
+   "sent": 13985,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13965,
+   "sent": 13996,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MINT",
+   "name": "MintMyGame",
+   "mint": "9LVvgbCLmijw8fWdEHaYBpFLNv9cdHdYREUgxBwcpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 33.8,
+   "dev_pct": 9.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/MintMyGame",
+   "tg": false,
+   "web": "https://mintmygame.com/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "SUNHAZE",
+   "name": "SUNHAZE",
+   "mint": "6G1cqhmeBqygJujajCp2K1yXpQFsjizN83XYYVtRpump",
+   "age_s": 23,
+   "sol_in": 0.8,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 4.6,
+   "mcap_sol": 39.7,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/SUNHAZESOL",
+   "tg": false,
+   "web": "https://sunhaze.club",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
+   "symbol": "HOKKAIDO",
+   "name": "Hokkaido Inu",
+   "mint": "5pgWbNCAYJ17YXwZVNJevrRJgHSoKZPmBoX6ucQYpump",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/search?q=%22hokkaido%20inu%22",
+   "tg": false,
+   "web": "https://en.wikipedia.org/wiki/Hokkaido_(dog_breed)",
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
    "symbol": "FAT TOKEN",
    "name": "CATfat",
    "mint": "HLY5wniCdTTKesmdN5byxnUYqA7Cjdq28czuK18Spump",
-   "age_s": 40,
+   "age_s": 69,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -6718,7 +6772,7 @@
    "symbol": "GPRP",
    "name": "Grandpa RugPull Club",
    "mint": "5WhcZPfQ3NKKwoLZ2EWTnfx1MyjmV545iTsu1S2ipump",
-   "age_s": 50,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6736,7 +6790,7 @@
    "symbol": "GLD",
    "name": "GOLD",
    "mint": "NSxVCChF9scgL8MUqeXMsLtxyuSbDRfcocHTefLpump",
-   "age_s": 56,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6754,7 +6808,7 @@
    "symbol": "HOSTSB",
    "name": "Hosts Bounce Back",
    "mint": "AhPWFctBWMXsdkHc3UNhGQfbEDmfCwacq4eaQk7Wpump",
-   "age_s": 72,
+   "age_s": 101,
    "sol_in": 1.05,
    "buys": 1,
    "sells": 0,
@@ -6772,7 +6826,7 @@
    "symbol": "SANDYA",
    "name": "Not Quite Hurricane Sandy",
    "mint": "9Fh4QHtVfF26fAmEQniUFdggsSvcSt5JKuwgRywppump",
-   "age_s": 98,
+   "age_s": 127,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 3,
@@ -6790,7 +6844,7 @@
    "symbol": "JOE",
    "name": "catwifhat",
    "mint": "Aw4EiNifrRsY5fGQ7V82v4rstu1UEFoDExW2kCqkULs8",
-   "age_s": 109,
+   "age_s": 138,
    "sol_in": -1.76,
    "buys": 8,
    "sells": 16,
@@ -6803,48 +6857,28 @@
    "web": false,
    "status": "rejected: serial launcher: 8 more coins in 60 min",
    "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "TIMEOUT",
-   "name": "Phantom Timeout",
-   "mint": "4iZ6saFrfZm5ke1vZWj7LAFUNgnWu6BwZ5UDirgTpump",
-   "age_s": 165,
-   "sol_in": -1.1,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": -7.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.8,
-   "big_sell": 5.93,
-   "x": "https://x.com/USATODAY/status/2126269949899411790",
-   "tg": false,
-   "web": "https://www.usatoday.com/story/sports/ncaab/acc/2026/11/27/louisville-st-johns-basketball-phantom-timeout-controversy-adrian-wooley-game-winner/92975996007/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "MINT",
-   "name": "MintMyGame",
-   "mint": "C31SafwVU9QLpAAj99Z38SWmzr1DXhzwPnuTdEmepump",
-   "age_s": 169,
-   "sol_in": -2.47,
-   "buys": 9,
-   "sells": 11,
-   "rise_pct": -14.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 8.2,
-   "big_sell": 2.58,
-   "x": "https://x.com/MintMyGame",
-   "tg": false,
-   "web": "https://mintmygame.com/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "SUNHAZE",
+   "mint": "6G1cqhmeBqygJujajCp2K1yXpQFsjizN83XYYVtRpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T11:06:01Z",
+   "cost": 36.2,
+   "pnl_pct": 0.6,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "FAT TOKEN",
    "mint": "HLY5wniCdTTKesmdN5byxnUYqA7Cjdq28czuK18Spump",
@@ -6853,7 +6887,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T11:05:16Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -4.1,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -6885,7 +6919,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T11:04:43Z",
    "cost": 36.2,
-   "pnl_pct": 2.7,
+   "pnl_pct": 2.6,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6901,7 +6935,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T11:04:18Z",
    "cost": 36.2,
-   "pnl_pct": -6.6,
+   "pnl_pct": -6.7,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6917,7 +6951,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T11:01:52Z",
    "cost": 36.2,
-   "pnl_pct": -1.0,
+   "pnl_pct": -5.5,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -7331,7 +7365,7 @@
   "wins": 206,
   "win_rate": 22.3,
   "mean_pnl_pct": -7.63,
-  "open": 5,
+  "open": 6,
   "learner": {
    "n": 16,
    "wins": 3,
