@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T01:49:33Z",
-    "time": "02:49:33",
-    "agent": "NEWS",
-    "coin": "BHSL",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 247
-   },
-   {
-    "t": "2026-11-27T01:49:48Z",
-    "time": "02:49:48",
-    "agent": "SCANNER",
-    "coin": "cap",
-    "action": "flag",
-    "text": "snipe · first reading 0.5 s after the create · 7.9 SOL in · +41% since the create · mcap 77 SOL",
-    "n": 248
-   },
-   {
-    "t": "2026-11-27T01:49:48Z",
-    "time": "02:49:48",
-    "agent": "SIZER",
-    "coin": "cap",
-    "action": "size",
-    "text": "10% of $80.91 = $8.09",
-    "n": 249
-   },
-   {
     "t": "2026-11-27T01:49:48Z",
     "time": "02:49:48",
     "agent": "EXECUTOR",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW Huss would have made +10.5% (TP +10%) · learned x0.5 · hour:03-05 now avg -13.1% over 67.5",
     "n": 846
+   },
+   {
+    "t": "2026-11-27T02:41:26Z",
+    "time": "03:41:26",
+    "agent": "LEARNER",
+    "coin": "QZRACE2",
+    "action": "shadow",
+    "text": "SHADOW QZRACE2 would have made -11.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -14.8% over 36.5",
+    "n": 847
+   },
+   {
+    "t": "2026-11-27T02:41:42Z",
+    "time": "03:41:42",
+    "agent": "LEARNER",
+    "coin": "Snowball",
+    "action": "shadow",
+    "text": "SHADOW Snowball · not bought (pause after a losing streak) · followed as if bought: $77.90 at 0.0000022911 (curve maths, every cost) · same exits, outside the book",
+    "n": 848
+   },
+   {
+    "t": "2026-11-27T02:41:43Z",
+    "time": "03:41:43",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: pause after a  6, mayhem mode 2, serial launcher 1)",
+    "n": 849
    }
   ],
   "trades": [
@@ -9167,7 +9167,7 @@
   "flagged": 77,
   "checked": 73,
   "filtered": 4,
-  "lines": 846,
+  "lines": 849,
   "flags": [
    {
     "coin": "Hina",
@@ -10100,11 +10100,11 @@
    "coin": "RAGEDEX",
    "pass": true
   },
-  "np_said": 1795747243.780848,
+  "np_said": 1795747303.780902,
   "shadow": {
-   "n": 68,
+   "n": 69,
    "wins": 15,
-   "sum": -667.9
+   "sum": -678.9
   },
   "np_speed": {
    "first_in": [
@@ -19042,9 +19042,9 @@
   }
  },
  "shadow": {
-  "n": 82,
+  "n": 83,
   "wins": 17,
-  "sum": -866.4,
+  "sum": -877.4,
   "by": {
    "learner": {
     "n": 16,
@@ -19052,32 +19052,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 66,
+    "n": 67,
     "wins": 14,
-    "sum": -668.6
+    "sum": -679.6
    }
   },
   "closed": [
-   {
-    "symbol": "WAHA",
-    "mint": "4sjnVbjTwzEYrBKzytYuUKxtKt48pXjz6ytuPA81pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T02:26:47Z",
-    "cost": 99.79,
-    "pnl_pct": 16.6,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T02:27:22Z",
-    "exit": "TP +10%",
-    "pnl": 16.57,
-    "weight": 0.5
-   },
    {
     "symbol": "ころすけ",
     "mint": "6oGB79AB71ZpWaSbfgxCMdocwbY2QZDVazk7ec2Rpump",
@@ -19457,13 +19437,33 @@
     "exit": "TP +10%",
     "pnl": 8.16,
     "weight": 0.5
+   },
+   {
+    "symbol": "QZRACE2",
+    "mint": "9QL5F5b1US7LpUaMF6x16GRqrEnZMZGVGcJFvuomYC86",
+    "status": "closed",
+    "kind": "risk",
+    "why": "pause after a losing streak",
+    "opened": "2026-11-27T02:38:25Z",
+    "cost": 79.63,
+    "pnl_pct": -11.0,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T02:41:26Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -8.75,
+    "weight": 0.5
    }
   ],
   "open": [
    "Smambell",
-   "QZRACE2",
    "AMERICA",
-   "CLAUDE"
+   "CLAUDE",
+   "Snowball"
   ]
  },
  "learner_summary": {
@@ -19505,7 +19505,7 @@
     "avg": -13.1
    }
   ],
-  "shadows": 66,
+  "shadows": 67,
   "memory": "snipe"
  }
 }

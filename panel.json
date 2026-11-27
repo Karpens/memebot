@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T02:41:10Z",
+ "updated": "2026-11-27T02:41:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 779.04,
@@ -24,7 +24,7 @@
   "flagged": 77,
   "checked": 73,
   "filtered": 4,
-  "lines": 846,
+  "lines": 849,
   "last_rug": {
    "coin": "RAGEDEX",
    "pass": true
@@ -3216,33 +3216,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T02:24:19Z",
-   "time": "03:24:19",
-   "agent": "NEWS",
-   "coin": "FOXIE",
-   "action": "plan",
-   "text": "hold plan · 2/10 (X, web) · scalp: +10",
-   "n": 647
-  },
-  {
-   "t": "2026-11-27T02:24:32Z",
-   "time": "03:24:32",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 12 rejected (snipe not bought: pause after a  6, serial launcher 3, mayhem mode 2)",
-   "n": 648
-  },
-  {
-   "t": "2026-11-27T02:25:05Z",
-   "time": "03:25:05",
-   "agent": "SCANNER",
-   "coin": "mas",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 1.3 SOL in · +8% since the create · mcap 33 SOL",
-   "n": 649
-  },
-  {
    "t": "2026-11-27T02:25:05Z",
    "time": "03:25:05",
    "agent": "SIZER",
@@ -5014,6 +4987,33 @@
    "action": "shadow",
    "text": "SHADOW Huss would have made +10.5% (TP +10%) · learned x0.5 · hour:03-05 now avg -13.1% over 67.5",
    "n": 846
+  },
+  {
+   "t": "2026-11-27T02:41:26Z",
+   "time": "03:41:26",
+   "agent": "LEARNER",
+   "coin": "QZRACE2",
+   "action": "shadow",
+   "text": "SHADOW QZRACE2 would have made -11.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -14.8% over 36.5",
+   "n": 847
+  },
+  {
+   "t": "2026-11-27T02:41:42Z",
+   "time": "03:41:42",
+   "agent": "LEARNER",
+   "coin": "Snowball",
+   "action": "shadow",
+   "text": "SHADOW Snowball · not bought (pause after a losing streak) · followed as if bought: $77.90 at 0.0000022911 (curve maths, every cost) · same exits, outside the book",
+   "n": 848
+  },
+  {
+   "t": "2026-11-27T02:41:43Z",
+   "time": "03:41:43",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: pause after a  6, mayhem mode 2, serial launcher 1)",
+   "n": 849
   }
  ],
  "nights": [
@@ -5074,7 +5074,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5082,15 +5082,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 279,
-    "last_event_age_s": 1.0,
+    "events": 280,
+    "last_event_age_s": 3.2,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5914,
+    "events": 5987,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -5098,8 +5098,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 197,
-    "last_event_age_s": 5.5,
+    "events": 198,
+    "last_event_age_s": 3.0,
     "errors": 25,
     "last_error": "helliot.fun: timeout after 2 s"
    }
@@ -5114,7 +5114,7 @@
   "launch_to_entry_s": 0,
   "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 10
+  "followed": 8
  },
  "learner": {
   "samples": 66,
@@ -5155,36 +5155,54 @@
     "avg": -13.1
    }
   ],
-  "shadows": 66,
+  "shadows": 67,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3646,
+   "sent": 3682,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3646,
+   "sent": 3682,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Snowball",
+   "name": "SnowballAgent",
+   "mint": "yb3aMc8BfJzTc5ZbaANchUpM9A5E61a97ypaVCmpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/SnowballAgent",
+   "tg": false,
+   "web": "https://www.snowballtools.xyz/",
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
    "symbol": "Huss",
    "name": "Huss Huss Huss",
    "mint": "6YwBdvJYpGmfufTBDGSBQkNAi6qHruKfAQfwb4JDpump",
-   "age_s": 6,
-   "sol_in": 18.23,
-   "buys": 5,
-   "sells": 1,
-   "rise_pct": 157.8,
-   "mcap_sol": 72.6,
+   "age_s": 40,
+   "sol_in": 17.88,
+   "buys": 13,
+   "sells": 11,
+   "rise_pct": 154.1,
+   "mcap_sol": 71.5,
    "dev_pct": 0.4,
-   "big_sell": 0.14,
+   "big_sell": 2.76,
    "x": "https://x.com/Husscoinfun/status/2126144111786832003",
    "tg": false,
    "web": "https://www.tiktok.com/@synelite1",
@@ -5195,7 +5213,7 @@
    "symbol": "CLAUDE",
    "name": "I asked Claude to populate",
    "mint": "BDn9B7WGNvKGLHT1tm8uSoBiird7qjPdvze7gEt1S6Rm",
-   "age_s": 7,
+   "age_s": 41,
    "sol_in": 0.16,
    "buys": 1,
    "sells": 0,
@@ -5213,7 +5231,7 @@
    "symbol": "AMERICA",
    "name": "Every child in America",
    "mint": "GQNyRe1Ek7ryyG9wfUSPJWLEc9CJz9f6G97fVj4rWbcv",
-   "age_s": 37,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5231,12 +5249,12 @@
    "symbol": "PILLHEADS",
    "name": "pillheads",
    "mint": "FYJtjVB7AeuptjHTsZatdPGdcVN9mQwyeef5o9Z6inzW",
-   "age_s": 46,
-   "sol_in": 4.85,
+   "age_s": 80,
+   "sol_in": 0.28,
    "buys": 4,
-   "sells": 12,
-   "rise_pct": 4051.3,
-   "mcap_sol": 1160.7,
+   "sells": 13,
+   "rise_pct": 4020.8,
+   "mcap_sol": 1152.1,
    "dev_pct": 0.0,
    "big_sell": 221.08,
    "x": false,
@@ -5249,7 +5267,7 @@
    "symbol": "kittylick",
    "name": "Freaky ah",
    "mint": "BrSyWBwkk2mtH6f5hsYde3iaEviM4b1xXGRSZ4DWpump",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5267,7 +5285,7 @@
    "symbol": "FOMO",
    "name": "FomoFamily | Offical Tddeam",
    "mint": "F36QZjp7NhR5BzHvPAWGNFqBQWoorPpgBGMuNBZRpump",
-   "age_s": 65,
+   "age_s": 99,
    "sol_in": -2.96,
    "buys": 1,
    "sells": 2,
@@ -5285,12 +5303,12 @@
    "symbol": "RAGEDEX",
    "name": "The Rage Dex",
    "mint": "3e4CJULo4uUyq5KDHxJUTQW9W3ksJrAtPGUr5jH5pump",
-   "age_s": 83,
-   "sol_in": 11.38,
-   "buys": 32,
-   "sells": 50,
-   "rise_pct": 87.4,
-   "mcap_sol": 55.4,
+   "age_s": 117,
+   "sol_in": 9.23,
+   "buys": 34,
+   "sells": 61,
+   "rise_pct": 68.7,
+   "mcap_sol": 49.9,
    "dev_pct": 3.0,
    "big_sell": 10.31,
    "x": "https://x.com/theragedex/status/2126143857314218340",
@@ -5303,7 +5321,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "HArAkMZnZkEXw28Pk56Eces7AzBdqkTKuvMghwrbpump",
-   "age_s": 107,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5321,89 +5339,17 @@
    "symbol": "UNCS",
    "name": "uncs",
    "mint": "GXSL65qMoAJMc52kpQymivs6LmQfCQZxVMNYZUgnL91v",
-   "age_s": 123,
-   "sol_in": -4.6,
+   "age_s": 157,
+   "sol_in": -4.66,
    "buys": 8,
-   "sells": 9,
-   "rise_pct": -23.4,
-   "mcap_sol": 32.4,
+   "sells": 10,
+   "rise_pct": -23.7,
+   "mcap_sol": 32.3,
    "dev_pct": 20.1,
    "big_sell": 6.32,
    "x": "https://x.com/toly/status/2126143715924435374",
    "tg": false,
    "web": "https://www.reddit.com/r/OneOrangeBraincell/comments/1y6fdq2/you_may_present_my_turkey_now/",
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "PAYMASK",
-   "name": "Paymask.wtf",
-   "mint": "FDg9CaVyU6djdUTg6YnEXL5Hv4XBy7JxWmkXUt91pump",
-   "age_s": 162,
-   "sol_in": -0.73,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -4.7,
-   "mcap_sol": 28.4,
-   "dev_pct": 3.4,
-   "big_sell": 1.0,
-   "x": "https://x.com/Paymaskwtf",
-   "tg": false,
-   "web": "https://paymask.wtf/",
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "QZRACE2",
-   "name": "CALL Race Two",
-   "mint": "9QL5F5b1US7LpUaMF6x16GRqrEnZMZGVGcJFvuomYC86",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: pause after a losing streak",
-   "why": "snipe not bought: pause after a losing streak"
-  },
-  {
-   "symbol": "Murphy",
-   "name": "Uncle Murphy",
-   "mint": "ChV7FB3AFbhX8HKufnkJCWasbJ1i3ZKRLmJETjatpump",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "REINVEST",
-   "name": "Reindeer In Vest",
-   "mint": "3Vdr5XUTnb7yZ5gu7CtyhuQRAan3G8Spvi7AMaLYpump",
-   "age_s": 175,
-   "sol_in": -0.99,
-   "buys": 2,
-   "sells": 6,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.99,
-   "x": "https://x.com/reindeernvest/status/2126143507828031987?a=w5hcsAN078ZJuSCeykc&s=20",
-   "tg": false,
-   "web": "https://reindeerinvest.lol/",
    "status": "rejected: snipe not bought: pause after a losing streak",
    "why": "snipe not bought: pause after a losing streak"
   }
@@ -5412,6 +5358,22 @@
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "Snowball",
+   "mint": "yb3aMc8BfJzTc5ZbaANchUpM9A5E61a97ypaVCmpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T02:41:42Z",
+   "cost": 77.9,
+   "pnl_pct": -5.6,
+   "tier": "scalp",
+   "score": 2,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "CLAUDE",
    "mint": "BDn9B7WGNvKGLHT1tm8uSoBiird7qjPdvze7gEt1S6Rm",
@@ -5445,14 +5407,14 @@
    "sol_in": 0.0
   },
   {
-   "symbol": "QZRACE2",
-   "mint": "9QL5F5b1US7LpUaMF6x16GRqrEnZMZGVGcJFvuomYC86",
+   "symbol": "Smambell",
+   "mint": "4hz9m91kXVMBF1164M2aew3ozpPVbDqPGNac6fEbpump",
    "status": "open",
    "kind": "risk",
    "why": "pause after a losing streak",
-   "opened": "2026-11-27T02:38:25Z",
-   "cost": 79.63,
-   "pnl_pct": -5.7,
+   "opened": "2026-11-27T02:37:05Z",
+   "cost": 80.71,
+   "pnl_pct": -4.3,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -5461,20 +5423,24 @@
    "sol_in": 0.0
   },
   {
-   "symbol": "Smambell",
-   "mint": "4hz9m91kXVMBF1164M2aew3ozpPVbDqPGNac6fEbpump",
-   "status": "open",
+   "symbol": "QZRACE2",
+   "mint": "9QL5F5b1US7LpUaMF6x16GRqrEnZMZGVGcJFvuomYC86",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
-   "opened": "2026-11-27T02:37:05Z",
-   "cost": 80.71,
-   "pnl_pct": -4.4,
+   "opened": "2026-11-27T02:38:25Z",
+   "cost": 79.63,
+   "pnl_pct": -11.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T02:41:26Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -8.75,
+   "weight": 0.5
   },
   {
    "symbol": "Huss",
@@ -5855,32 +5821,12 @@
    "exit": "TP +10%",
    "pnl": 10.86,
    "weight": 0.5
-  },
-  {
-   "symbol": "WAHA",
-   "mint": "4sjnVbjTwzEYrBKzytYuUKxtKt48pXjz6ytuPA81pump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T02:26:47Z",
-   "cost": 99.79,
-   "pnl_pct": 16.6,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T02:27:22Z",
-   "exit": "TP +10%",
-   "pnl": 16.57,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 82,
+  "n": 83,
   "wins": 17,
-  "win_rate": 20.7,
+  "win_rate": 20.5,
   "mean_pnl_pct": -10.57,
   "open": 4,
   "learner": {
@@ -5890,10 +5836,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 66,
+   "n": 67,
    "wins": 14,
-   "win_rate": 21.2,
-   "mean_pnl_pct": -10.13
+   "win_rate": 20.9,
+   "mean_pnl_pct": -10.14
   }
  }
 }
