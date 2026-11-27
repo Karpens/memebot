@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T07:22:25Z",
+ "updated": "2026-11-27T07:22:58Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3117,
+  "lines": 3118,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -2079,6 +2079,10 @@
   ],
   [
    1795764113,
+   361.97
+  ],
+  [
+   1795764173,
    361.97
   ]
  ],
@@ -4353,15 +4357,6 @@
    "agent": "LEARNER",
    "coin": "USFF",
    "action": "shadow",
-   "text": "SHADOW USFF · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000003465 (curve maths, every cost) · same exits, outside the book",
-   "n": 2918
-  },
-  {
-   "t": "2026-11-27T06:47:40Z",
-   "time": "07:47:40",
-   "agent": "LEARNER",
-   "coin": "USFF",
-   "action": "shadow",
    "text": "SHADOW USFF would have made -22.2% (stop -12%) · learned x0.5 · np:buys:<70 now avg -9.7% over 186.5",
    "n": 2919
   },
@@ -6146,6 +6141,15 @@
    "action": "shadow",
    "text": "SHADOW TCAT would have made +6.0% (TP +10%) · learned x0.5 · np:sol:12+ now avg -11.5% over 28.5",
    "n": 3117
+  },
+  {
+   "t": "2026-11-27T07:22:32Z",
+   "time": "08:22:32",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 9 rejected (snipe not bought: trades tonight 4, mayhem mode 4, serial launcher 1)",
+   "n": 3118
   }
  ],
  "nights": [
@@ -6214,26 +6218,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1645,
-    "last_event_age_s": 11.4,
+    "events": 1647,
+    "last_event_age_s": 7.7,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 47147,
-    "last_event_age_s": 0.2,
+    "events": 47218,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1043,
-    "last_event_age_s": 21.3,
-    "errors": 88,
-    "last_error": "ipfs.io: HTTP 403"
+    "connected": false,
+    "events": 1044,
+    "last_event_age_s": 5.6,
+    "errors": 89,
+    "last_error": "linkpairs.fun: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -6244,9 +6248,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 5
+  "followed": 6
  },
  "learner": {
   "samples": 249,
@@ -6293,23 +6297,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 22091,
+   "sent": 22126,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 22090,
+   "sent": 22125,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "keko",
+   "name": "keko",
+   "mint": "DT4Ro69YA3vg5e4kMg6oPhPXBEkiBjASk9WLTdadQ9QC",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.1,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "mmrich",
+   "name": "makemerich",
+   "mint": "N4BsevBS1dDbDyMF6wXWW4c99v3JfpA3xiNCwzspump",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "v9KnpVLN8WVBiVTwBpyo36QvbzE1ukGq25vNdCMpump",
-   "age_s": 11,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6327,12 +6367,12 @@
    "symbol": "LOS",
    "name": "League of Solana",
    "mint": "HX41A7Utuq1Wr2BB6Jmm6iH8XksvdRtfwtq18Ck1yQZD",
-   "age_s": 21,
-   "sol_in": 3.47,
-   "buys": 7,
-   "sells": 10,
-   "rise_pct": 24.5,
-   "mcap_sol": 34.8,
+   "age_s": 54,
+   "sol_in": 2.24,
+   "buys": 8,
+   "sells": 15,
+   "rise_pct": 15.5,
+   "mcap_sol": 32.3,
    "dev_pct": 0.0,
    "big_sell": 3.18,
    "x": "https://x.com/leagueofsolanaa",
@@ -6345,12 +6385,12 @@
    "symbol": "TCAT",
    "name": "Tap Cat",
    "mint": "8DoocwuKukTq9ZiioeSYEaUfRtYVthPTcAGF9cf6pump",
-   "age_s": 38,
-   "sol_in": 6.74,
-   "buys": 14,
-   "sells": 18,
-   "rise_pct": 48.3,
-   "mcap_sol": 44.2,
+   "age_s": 71,
+   "sol_in": 13.31,
+   "buys": 25,
+   "sells": 29,
+   "rise_pct": 104.4,
+   "mcap_sol": 61.0,
    "dev_pct": 3.4,
    "big_sell": 2.56,
    "x": "https://x.com/uncquant/status/2126214870605709776",
@@ -6363,7 +6403,7 @@
    "symbol": "TC",
    "name": "TURBO COIN",
    "mint": "burJPYvxRizqse8HSMbwkMecjBhKNabCNCTQ9yzpump",
-   "age_s": 59,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -6381,7 +6421,7 @@
    "symbol": "TOGI",
    "name": "TOGI",
    "mint": "5XnvbbWWPEsKvy8D6QE47uSbvMTRfbsUGARDXLEVpump",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 4,
@@ -6399,10 +6439,10 @@
    "symbol": "strugglecat",
    "name": "strugglecat",
    "mint": "EWgLCadXYu2627gYZtXwGZt9Zkk86jrUbzdVJeAzpump",
-   "age_s": 120,
-   "sol_in": -2.03,
+   "age_s": 153,
+   "sol_in": -2.04,
    "buys": 11,
-   "sells": 10,
+   "sells": 11,
    "rise_pct": -11.3,
    "mcap_sol": 33.6,
    "dev_pct": 15.2,
@@ -6417,7 +6457,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "DBzwFktoVjkx3bGkEan6z7jnEjAm7fpWBKdxXF1Npump",
-   "age_s": 133,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6435,31 +6475,13 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "41qJMVs6Vn9vLrAGWE2hrQKQypvEXpUZLbiV3hiDpump",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "6CqbvZBNNAnwwzGEvsRpchoHeieNFijZYCY5ZTvjpump",
-   "age_s": 177,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.5,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6480,7 +6502,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T07:21:22Z",
    "cost": 36.2,
-   "pnl_pct": -4.1,
+   "pnl_pct": -4.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
