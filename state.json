@@ -47,42 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T10:46:24Z",
-    "time": "11:46:24",
-    "agent": "LEARNER",
-    "coin": "NVIDIA",
-    "action": "shadow",
-    "text": "SHADOW NVIDIA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000061307 (curve maths, every cost) · same exits, outside the book",
-    "n": 4217
-   },
-   {
-    "t": "2026-11-27T10:46:54Z",
-    "time": "11:46:54",
-    "agent": "LEARNER",
-    "coin": "Votelaunch",
-    "action": "shadow",
-    "text": "SHADOW Votelaunch would have made -10.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.2% over 228",
-    "n": 4218
-   },
-   {
-    "t": "2026-11-27T10:46:56Z",
-    "time": "11:46:56",
-    "agent": "LEARNER",
-    "coin": "OPEN",
-    "action": "shadow",
-    "text": "SHADOW OPEN would have made -8.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:dev:0-2 now avg -8.2% over 295.5",
-    "n": 4219
-   },
-   {
-    "t": "2026-11-27T10:46:57Z",
-    "time": "11:46:57",
-    "agent": "LEARNER",
-    "coin": "LEVYB",
-    "action": "shadow",
-    "text": "SHADOW LEVYB · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023402 (curve maths, every cost) · same exits, outside the book",
-    "n": 4220
-   },
-   {
     "t": "2026-11-27T10:47:09Z",
     "time": "11:47:09",
     "agent": "LEARNER",
@@ -5445,6 +5409,42 @@
     "action": "tape",
     "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
     "n": 4816
+   },
+   {
+    "t": "2026-11-27T17:14:13Z",
+    "time": "18:14:13",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest KITT: no curve reading yet",
+    "n": 4817
+   },
+   {
+    "t": "2026-11-27T17:14:13Z",
+    "time": "18:14:13",
+    "agent": "LEARNER",
+    "coin": "KITT",
+    "action": "shadow",
+    "text": "SHADOW KITT · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000020764 (curve maths, every cost) · same exits, outside the book",
+    "n": 4818
+   },
+   {
+    "t": "2026-11-27T17:14:20Z",
+    "time": "18:14:20",
+    "agent": "LEARNER",
+    "coin": "TROOP",
+    "action": "shadow",
+    "text": "SHADOW TROOP · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000025946 (curve maths, every cost) · same exits, outside the book",
+    "n": 4819
+   },
+   {
+    "t": "2026-11-27T17:14:25Z",
+    "time": "18:14:25",
+    "agent": "LEARNER",
+    "coin": "TROOP",
+    "action": "shadow",
+    "text": "SHADOW TROOP would have made +22.4% (TP +10%) · learned x0.5 · np:sol:3-6 now avg -12.1% over 78.5",
+    "n": 4820
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4816,
+  "lines": 4820,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795799585.028904,
+  "np_said": 1795799653.44339,
   "shadow": {
-   "n": 1101,
-   "wins": 249,
-   "sum": -8092.4
+   "n": 1102,
+   "wins": 250,
+   "sum": -8070.0
   },
   "np_speed": {
    "first_in": [
@@ -31827,9 +31827,9 @@
   }
  },
  "shadow": {
-  "n": 1115,
-  "wins": 251,
-  "sum": -8290.9,
+  "n": 1116,
+  "wins": 252,
+  "sum": -8268.5,
   "by": {
    "learner": {
     "n": 16,
@@ -31837,32 +31837,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1099,
-    "wins": 248,
-    "sum": -8093.1
+    "n": 1100,
+    "wins": 249,
+    "sum": -8070.7
    }
   },
   "closed": [
-   {
-    "symbol": "FRACTALS",
-    "mint": "AmRK6MMZhurRPPnMPkSDDa6gM2FX8TF9BHQwsWt1pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:05:01Z",
-    "cost": 5.91,
-    "pnl_pct": -6.6,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 13.95,
-    "closed": "2026-11-27T17:05:09Z",
-    "exit": "dump: 2.1 SOL sold",
-    "pnl": -0.39,
-    "weight": 0.5
-   },
    {
     "symbol": "WRAPPED",
     "mint": "G98xTmMcn955ivs7S64dayNVMcrV7yJYqBHC9W7ypump",
@@ -32242,9 +32222,31 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.69,
     "weight": 0.5
+   },
+   {
+    "symbol": "TROOP",
+    "mint": "HmmgjJFP4CdqmTfRJmj26rKpfDabXj5ZSXHmHjwp2tRx",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:14:20Z",
+    "cost": 5.91,
+    "pnl_pct": 22.4,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 3.58,
+    "closed": "2026-11-27T17:14:25Z",
+    "exit": "TP +10%",
+    "pnl": 1.33,
+    "weight": 0.5
    }
   ],
-  "open": []
+  "open": [
+   "KITT"
+  ]
  },
  "learner_summary": {
   "samples": 36,
@@ -32272,7 +32274,7 @@
    {
     "label": "snipe · np:sol:3-6",
     "n": 78,
-    "avg": -12.3
+    "avg": -12.1
    },
    {
     "label": "snipe · hour:03-05",
@@ -32285,7 +32287,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1307,
+  "shadows": 1308,
   "memory": "snipe"
  }
 }
