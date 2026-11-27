@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T17:17:13Z",
-    "time": "18:17:13",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.4 a minute · 0 watched · 31 rejected (odd curve reading: virtual SOL i 15, snipe not bought: night at open  10, mayhem mode 3)",
-    "n": 4856
-   },
-   {
-    "t": "2026-11-27T17:17:17Z",
-    "time": "18:17:17",
-    "agent": "LEARNER",
-    "coin": "GOTGTA",
-    "action": "shadow",
-    "text": "SHADOW GOTGTA · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021901 (curve maths, every cost) · same exits, outside the book",
-    "n": 4857
-   },
-   {
     "t": "2026-11-27T17:17:18Z",
     "time": "18:17:18",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 9.8 a minute · 0 watched · 32 rejected (snipe not bought: night at open  12, serial launcher 10, no symbol or name 6)",
     "n": 5455
+   },
+   {
+    "t": "2026-11-27T18:23:05Z",
+    "time": "19:23:05",
+    "agent": "LEARNER",
+    "coin": "HACKED",
+    "action": "shadow",
+    "text": "SHADOW HACKED would have made -7.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.8% over 292",
+    "n": 5456
+   },
+   {
+    "t": "2026-11-27T18:23:07Z",
+    "time": "19:23:07",
+    "agent": "LEARNER",
+    "coin": "HACKED",
+    "action": "shadow",
+    "text": "SHADOW HACKED would have made -7.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -7.8% over 292.5",
+    "n": 5457
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5455,
+  "lines": 5457,
   "flags": [
    {
     "coin": "Kibo",
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795803769.443495,
   "shadow": {
-   "n": 1344,
+   "n": 1346,
    "wins": 296,
-   "sum": -10181.3
+   "sum": -10196.3
   },
   "np_speed": {
    "first_in": [
@@ -31888,9 +31888,9 @@
   }
  },
  "shadow": {
-  "n": 1358,
+  "n": 1360,
   "wins": 298,
-  "sum": -10379.8,
+  "sum": -10394.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31898,52 +31898,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1342,
+    "n": 1344,
     "wins": 295,
-    "sum": -10182.0
+    "sum": -10197.0
    }
   },
   "closed": [
-   {
-    "symbol": "dump",
-    "mint": "d1nKkvtLCrcG6ZHkwipAXnBDDLRfnoUrstRM7rxpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T18:16:57Z",
-    "cost": 5.91,
-    "pnl_pct": 6.8,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 11.61,
-    "closed": "2026-11-27T18:17:00Z",
-    "exit": "TP +10%",
-    "pnl": 0.4,
-    "weight": 0.5
-   },
-   {
-    "symbol": "BASICS",
-    "mint": "C8o93tJCJpUiqxm2XvNVwqa2ZmmNjp9BFPgZNFvgpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T18:17:08Z",
-    "cost": 5.91,
-    "pnl_pct": -19.9,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 3.01,
-    "closed": "2026-11-27T18:17:09Z",
-    "exit": "dump: 2.4 SOL sold",
-    "pnl": -1.18,
-    "weight": 0.5
-   },
    {
     "symbol": "Rockstar",
     "mint": "HUwwYDN4cN7rGGtaDymCc4mqMaCswLWrmgoWiFNapump",
@@ -32303,12 +32263,50 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -0.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "HACKED",
+    "mint": "Bws5Zjqr2V2m1wKGkNSz5regxtSpqjLKyP4b6rKPpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T18:20:04Z",
+    "cost": 5.91,
+    "pnl_pct": -7.5,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T18:23:05Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.44,
+    "weight": 0.5
+   },
+   {
+    "symbol": "HACKED",
+    "mint": "HCvd1qDj4CSEAq4b9ri5185q6XYJh7WX9bRGDC6spump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T18:20:07Z",
+    "cost": 5.91,
+    "pnl_pct": -7.5,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T18:23:07Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.44,
+    "weight": 0.5
    }
   ],
   "open": [
    "MUTUALA",
-   "HACKED",
-   "HACKED",
    "SWEENEYMAS",
    "RICE",
    "WOJAHA",
@@ -32356,7 +32354,7 @@
     "avg": -8.3
    }
   ],
-  "shadows": 1550,
+  "shadows": 1552,
   "memory": "snipe"
  }
 }
