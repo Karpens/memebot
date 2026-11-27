@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T00:07:28Z",
+ "updated": "2026-11-27T00:08:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 82.3,
@@ -24,7 +24,7 @@
   "flagged": 5,
   "checked": 2,
   "filtered": 1,
-  "lines": 88,
+  "lines": 89,
   "last_rug": {
    "coin": "INUHAO",
    "pass": false
@@ -328,6 +328,10 @@
   ],
   [
    1795738020,
+   82.3
+  ],
+  [
+   1795738080,
    82.3
   ]
  ],
@@ -1128,6 +1132,15 @@
    "action": "scan",
    "text": "new pairs · 4.2 a minute · 2 watched · 7 rejected (mayhem mode 3, no symbol or name 2, dump 1) · closest ty: too young: 15 s (min 45 s)",
    "n": 88
+  },
+  {
+   "t": "2026-11-27T00:07:38Z",
+   "time": "01:07:38",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 2 watched · 7 rejected (dump 3, no symbol or name 2, serial launcher 1) · closest PXHOLD: too young: 5 s (min 45 s)",
+   "n": 89
   }
  ],
  "nights": [
@@ -1185,7 +1198,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -1193,15 +1206,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1212,
-    "last_event_age_s": 3.4,
+    "events": 1217,
+    "last_event_age_s": 12.8,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15305,
+    "events": 15431,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -1209,8 +1222,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 864,
-    "last_event_age_s": 3.3,
+    "events": 865,
+    "last_event_age_s": 21.8,
     "errors": 24,
     "last_error": "liqfun.xyz: gaierror: [Errno -5] No address associated with hostname"
    }
@@ -1223,9 +1236,9 @@
   "exit_ms": null,
   "exit_last_ms": null,
   "launch_to_entry_s": null,
-  "creates_per_min": 3.4,
-  "watching": 3,
-  "followed": 6
+  "creates_per_min": 3.6,
+  "watching": 2,
+  "followed": 7
  },
  "learner": {
   "samples": 110,
@@ -1271,59 +1284,113 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8434,
+   "sent": 8470,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8434,
+   "sent": 8470,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "PXHOLD",
-   "name": "Pixelhold",
-   "mint": "6QdguxPccJEz79AUKRL8EezztNvH8JVUitWbHLk3pump",
-   "age_s": 3,
+   "symbol": "GROVEHOME",
+   "name": "Grove Street Home",
+   "mint": "8MWVxTZ5WhoYJzA4nBSEsFnXtbeQNoNtXQeZzthxpump",
+   "age_s": 12,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "AJ4eWzvKnfsvJDbaKDyFKZ8tBfoT2QqT78VrAo5W86kj",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 42.0,
+   "dev_pct": 19.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "Ghniy",
+   "name": "Justice For Ghniy",
+   "mint": "AH418zvM5djqj8PFwVTmSB1bbqQpsVyrvXcCTXyNpump",
+   "age_s": 21,
+   "sol_in": 2.29,
+   "buys": 10,
+   "sells": 9,
+   "rise_pct": 15.3,
+   "mcap_sol": 34.4,
+   "dev_pct": 3.4,
+   "big_sell": 4.57,
+   "x": "https://x.com/trackmeasJULY/status/2126105617760969072",
+   "tg": false,
+   "web": "https://x.com/ghniy_/status/2125800900220633581",
+   "status": "rejected: dump: 4.6 SOL sold",
+   "why": "dump: 4.6 SOL sold"
+  },
+  {
+   "symbol": "PXHOLD",
+   "name": "Pixelhold",
+   "mint": "6QdguxPccJEz79AUKRL8EezztNvH8JVUitWbHLk3pump",
+   "age_s": 36,
+   "sol_in": 0.02,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.7,
+   "big_sell": 0.99,
    "x": "https://x.com/Jo1355870399724",
    "tg": false,
    "web": "https://getpixelhold.com",
    "status": "watching",
-   "why": "too young: 1 s (min 45 s)"
+   "why": "too young: 23 s (min 45 s)"
   },
   {
    "symbol": "avina",
    "name": "privacy on avina",
    "mint": "K74xFQUyt1PMyP5BMnE2dbQwZyUAtENGnUKyLt9pump",
-   "age_s": 4,
-   "sol_in": 23.06,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 204.2,
-   "mcap_sol": 90.8,
+   "age_s": 37,
+   "sol_in": 1.79,
+   "buys": 8,
+   "sells": 3,
+   "rise_pct": 11.9,
+   "mcap_sol": 33.4,
    "dev_pct": 3.4,
-   "big_sell": 1.35,
+   "big_sell": 25.14,
    "x": "https://x.com/oceannsol/status/2126105391851348054?a=2l0p_tdCVeHzyrbEQeQ&s=46",
    "tg": false,
    "web": "https://avina.fun",
-   "status": "watching",
-   "why": "too young: 4 s (min 45 s)"
+   "status": "rejected: dump: 25.1 SOL sold",
+   "why": "dump: 25.1 SOL sold"
   },
   {
    "symbol": "FIREBALL",
    "name": "FIREBALL",
    "mint": "CN6hCsSzMc1WpU4Ux8reZcQoCfSAiwArK2pkeBEspump",
-   "age_s": 29,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1341,7 +1408,7 @@
    "symbol": "ty",
    "name": "ty",
    "mint": "CRF6c39YosJiL4Zp3MA1RBSJ1DJE8nZtwotz7yExpump",
-   "age_s": 65,
+   "age_s": 98,
    "sol_in": -0.99,
    "buys": 5,
    "sells": 5,
@@ -1359,7 +1426,7 @@
    "symbol": "?",
    "name": "",
    "mint": "2QMhAHSE8GaQxPAgSXqZgxWzGFvQnmaiksmVQbiUzidi",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1377,7 +1444,7 @@
    "symbol": "JD",
    "name": "Jadoo",
    "mint": "Dqj2TW4RineLDDaoPyDVm9qzMRg8bz1E6sjRGVtWpump",
-   "age_s": 92,
+   "age_s": 125,
    "sol_in": 0.03,
    "buys": 3,
    "sells": 1,
@@ -1395,7 +1462,7 @@
    "symbol": "Jupiter",
    "name": "Jupiter",
    "mint": "7wp75qE4WEtKrJFspUU74A7kkffT2D8MBwbpQoFBpump",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1413,7 +1480,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HczAxrFu8KypZv6mRTT1cVmC7C8XTXfepTbWp8wZPdgj",
-   "age_s": 104,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -1431,10 +1498,10 @@
    "symbol": "sms",
    "name": "sold my sol",
    "mint": "4S3hnMZawTZ4HFt8MtaghoAmZ2QXBT6ijugFsqRnpump",
-   "age_s": 112,
+   "age_s": 145,
    "sol_in": 2.5,
    "buys": 13,
-   "sells": 23,
+   "sells": 24,
    "rise_pct": 16.8,
    "mcap_sol": 34.8,
    "dev_pct": 3.4,
