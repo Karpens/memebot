@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T11:24:09Z",
-    "time": "12:24:09",
-    "agent": "LEARNER",
-    "coin": "$BFC",
-    "action": "shadow",
-    "text": "SHADOW $BFC · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000025396 (curve maths, every cost) · same exits, outside the book",
-    "n": 4460
-   },
-   {
-    "t": "2026-11-27T11:24:29Z",
-    "time": "12:24:29",
-    "agent": "LEARNER",
-    "coin": "REFUEL",
-    "action": "shadow",
-    "text": "SHADOW REFUEL · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000057088 (curve maths, every cost) · same exits, outside the book",
-    "n": 4461
-   },
-   {
     "t": "2026-11-27T11:24:31Z",
     "time": "12:24:31",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Rockstar · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000059832 (curve maths, every cost) · same exits, outside the book",
     "n": 5059
+   },
+   {
+    "t": "2026-11-27T17:40:57Z",
+    "time": "18:40:57",
+    "agent": "LEARNER",
+    "coin": "Fug",
+    "action": "shadow",
+    "text": "SHADOW Fug · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.000002053 (curve maths, every cost) · same exits, outside the book",
+    "n": 5060
+   },
+   {
+    "t": "2026-11-27T17:41:16Z",
+    "time": "18:41:16",
+    "agent": "LEARNER",
+    "coin": "DOUDOU",
+    "action": "shadow",
+    "text": "SHADOW DOUDOU would have made -10.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -8.2% over 260.5",
+    "n": 5061
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 5059,
+  "lines": 5061,
   "flags": [
    {
     "coin": "Kibo",
@@ -7762,10 +7762,6 @@
    }
   ],
   "curve": [
-   [
-    1795765214,
-    59.14
-   ],
    [
     1795765274,
     59.14
@@ -10161,6 +10157,10 @@
    [
     1795801188,
     59.14
+   ],
+   [
+    1795801248,
+    59.14
    ]
   ],
   "last_rug": {
@@ -10169,9 +10169,9 @@
   },
   "np_said": 1795801226.443394,
   "shadow": {
-   "n": 1193,
+   "n": 1194,
    "wins": 264,
-   "sum": -8987.6
+   "sum": -8998.4
   },
   "np_speed": {
    "first_in": [
@@ -31846,9 +31846,9 @@
   }
  },
  "shadow": {
-  "n": 1207,
+  "n": 1208,
   "wins": 266,
-  "sum": -9186.1,
+  "sum": -9196.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31856,32 +31856,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1191,
+    "n": 1192,
     "wins": 263,
-    "sum": -8988.3
+    "sum": -8999.1
    }
   },
   "closed": [
-   {
-    "symbol": "ELDOGGO",
-    "mint": "2h7E7N78Q8eQpUG6C4JRyyAKVo3Y8CdASrQEcdTRpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T17:31:37Z",
-    "cost": 5.91,
-    "pnl_pct": -7.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T17:34:39Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.42,
-    "weight": 0.5
-   },
    {
     "symbol": "BULLOUT",
     "mint": "CQ3HFNKNEMdGyTp9981b8iPGMD92o8ZjZFtoecg7pump",
@@ -32261,17 +32241,37 @@
     "exit": "stop -11%",
     "pnl": -0.92,
     "weight": 0.5
+   },
+   {
+    "symbol": "DOUDOU",
+    "mint": "31m3PFUqrf8W1kCF7J4EfNV7Evib6QeuEnwfAyRopump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T17:37:29Z",
+    "cost": 5.91,
+    "pnl_pct": -10.8,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T17:41:16Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.64,
+    "weight": 0.5
    }
   ],
   "open": [
    "BFF",
-   "DOUDOU",
    "Ibex",
    "Key",
    "AISLOP",
    "DROOL",
    "$VORQJ",
-   "Rockstar"
+   "Rockstar",
+   "Fug"
   ]
  },
  "learner_summary": {
@@ -32313,7 +32313,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1399,
+  "shadows": 1400,
   "memory": "snipe"
  }
 }
