@@ -47,15 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:35:26Z",
-    "time": "09:35:26",
-    "agent": "LEARNER",
-    "coin": "baomac",
-    "action": "shadow",
-    "text": "SHADOW baomac · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021554 (curve maths, every cost) · same exits, outside the book",
-    "n": 3516
-   },
-   {
     "t": "2026-11-27T08:35:35Z",
     "time": "09:35:35",
     "agent": "LEARNER",
@@ -5445,6 +5436,15 @@
     "action": "scan",
     "text": "new pairs · 5.0 a minute · 0 watched · 16 rejected (mayhem mode 6, snipe not bought: trades tonight 5, serial launcher 3)",
     "n": 4115
+   },
+   {
+    "t": "2026-11-27T10:25:31Z",
+    "time": "11:25:31",
+    "agent": "LEARNER",
+    "coin": "AICREEPS",
+    "action": "shadow",
+    "text": "SHADOW AICREEPS would have made -16.1% (stop -13%) · learned x0.5 · np:dev:0-2 now avg -8.3% over 289.5",
+    "n": 4116
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4115,
+  "lines": 4116,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795739040,
-    82.3
-   ],
    [
     1795739100,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795775054,
     361.97
+   ],
+   [
+    1795775114,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795775110.645325,
   "shadow": {
-   "n": 831,
+   "n": 832,
    "wins": 186,
-   "sum": -6548.5
+   "sum": -6564.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 845,
+  "n": 846,
   "wins": 188,
-  "sum": -6747.0,
+  "sum": -6763.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 829,
+    "n": 830,
     "wins": 185,
-    "sum": -6549.2
+    "sum": -6565.3
    }
   },
   "closed": [
-   {
-    "symbol": "YO",
-    "mint": "2RwZ8Kzqezhi42WwBtuZqLsNr8fikA6T8H88YmzWeUq9",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:15:12Z",
-    "cost": 36.2,
-    "pnl_pct": -7.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T10:18:12Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.86,
-    "weight": 0.5
-   },
    {
     "symbol": "SAPPED",
     "mint": "7WPnoM7n6UrqsXhzNf4ER4dBXgXJsabcyswbwa2E3Vm6",
@@ -31743,12 +31723,31 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -1.7,
     "weight": 0.5
+   },
+   {
+    "symbol": "AICREEPS",
+    "mint": "CRjuysoWU25LcC2Phum79SQpZPDYfhPbrhoyNQjVpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:24:01Z",
+    "cost": 36.2,
+    "pnl_pct": -16.1,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.99,
+    "closed": "2026-11-27T10:25:31Z",
+    "exit": "stop -13%",
+    "pnl": -5.82,
+    "weight": 0.5
    }
   ],
   "open": [
    "$JELLY",
-   "Gudetama",
-   "AICREEPS"
+   "Gudetama"
   ]
  },
  "learner_summary": {
@@ -31790,7 +31789,7 @@
     "avg": -10.5
    }
   ],
-  "shadows": 829,
+  "shadows": 830,
   "memory": "snipe"
  }
 }
