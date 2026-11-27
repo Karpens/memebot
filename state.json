@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:08:41Z",
-    "time": "08:08:41",
-    "agent": "LEARNER",
-    "coin": "strugglecat",
-    "action": "shadow",
-    "text": "SHADOW strugglecat · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000037793 (curve maths, every cost) · same exits, outside the book",
-    "n": 3049
-   },
-   {
-    "t": "2026-11-27T07:08:43Z",
-    "time": "08:08:43",
-    "agent": "LEARNER",
-    "coin": "strugglecat",
-    "action": "shadow",
-    "text": "SHADOW strugglecat would have made -14.4% (stop -11%) · learned x0.5 · np:sol:3-6 now avg -10.4% over 44.5",
-    "n": 3050
-   },
-   {
     "t": "2026-11-27T07:08:53Z",
     "time": "08:08:53",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 10 rejected (snipe not bought: trades tonight 6, mayhem mode 3, serial launcher 1)",
     "n": 3648
+   },
+   {
+    "t": "2026-11-27T08:57:42Z",
+    "time": "09:57:42",
+    "agent": "LEARNER",
+    "coin": "HUSH",
+    "action": "shadow",
+    "text": "SHADOW HUSH · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000004177 (curve maths, every cost) · same exits, outside the book",
+    "n": 3649
+   },
+   {
+    "t": "2026-11-27T08:57:45Z",
+    "time": "09:57:45",
+    "agent": "LEARNER",
+    "coin": "HUSH",
+    "action": "shadow",
+    "text": "SHADOW HUSH would have made +5.3% (trailing stop 6% off the top (peak +13%)) · learned x0.5 · tier:swing now avg -12.0% over 50.5",
+    "n": 3650
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3648,
+  "lines": 3650,
   "flags": [
    {
     "coin": "Kibo",
@@ -21731,9 +21731,9 @@
   },
   "np_said": 1795769837.64525,
   "shadow": {
-   "n": 652,
-   "wins": 138,
-   "sum": -5434.7
+   "n": 653,
+   "wins": 139,
+   "sum": -5429.4
   },
   "np_speed": {
    "first_in": [
@@ -31316,9 +31316,9 @@
   }
  },
  "shadow": {
-  "n": 666,
-  "wins": 140,
-  "sum": -5633.2,
+  "n": 667,
+  "wins": 141,
+  "sum": -5627.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31326,32 +31326,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 650,
-    "wins": 137,
-    "sum": -5435.4
+    "n": 651,
+    "wins": 138,
+    "sum": -5430.1
    }
   },
   "closed": [
-   {
-    "symbol": "NULLPTR",
-    "mint": "7zi3UdTsL5zFMMzGgVXygssWiDUqxE99aHBiAPTQm381",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:42:48Z",
-    "cost": 36.2,
-    "pnl_pct": -7.3,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T08:47:48Z",
-    "exit": "5 min, only -3%",
-    "pnl": -2.65,
-    "weight": 0.5
-   },
    {
     "symbol": "nopipin",
     "mint": "2zNcckmYeYJ3gUhK4ZciZ6dZrFLoXPB11bgHNPjqpump",
@@ -31731,6 +31711,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.76,
     "weight": 0.5
+   },
+   {
+    "symbol": "HUSH",
+    "mint": "A6uuj1GJtGXNw6sRXagsb2vZLcCcUXVPZhLeVuGxpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:57:42Z",
+    "cost": 36.2,
+    "pnl_pct": 5.3,
+    "tier": "swing",
+    "score": 3,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 7.23,
+    "closed": "2026-11-27T08:57:45Z",
+    "exit": "trailing stop 6% off the top (peak +13%)",
+    "pnl": 1.91,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31754,8 +31754,8 @@
    },
    {
     "label": "snipe · np:sol:6-12",
-    "n": 60,
-    "avg": -5.6
+    "n": 61,
+    "avg": -5.5
    },
    {
     "label": "snipe · np:dev:5-8",
@@ -31772,15 +31772,15 @@
    {
     "label": "snipe · tier:swing",
     "n": 50,
-    "avg": -12.2
+    "avg": -12.0
    },
    {
     "label": "snipe · news:3-4",
     "n": 50,
-    "avg": -12.2
+    "avg": -12.0
    }
   ],
-  "shadows": 650,
+  "shadows": 651,
   "memory": "snipe"
  }
 }
