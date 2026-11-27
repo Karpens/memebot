@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:37:13Z",
+ "updated": "2026-11-27T10:37:46Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4167,
+  "lines": 4170,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795739760,
-   82.3
-  ],
   [
    1795739820,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795775774,
    361.97
+  ],
+  [
+   1795775834,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,33 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:00:57Z",
-   "time": "11:00:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 0 watched · 13 rejected (snipe not bought: trades tonight 7, mayhem mode 3, serial launcher 1)",
-   "n": 3968
-  },
-  {
-   "t": "2026-11-27T10:01:03Z",
-   "time": "11:01:03",
-   "agent": "LEARNER",
-   "coin": "OCTOBER",
-   "action": "shadow",
-   "text": "SHADOW OCTOBER · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021503 (curve maths, every cost) · same exits, outside the book",
-   "n": 3969
-  },
-  {
-   "t": "2026-11-27T10:01:14Z",
-   "time": "11:01:14",
-   "agent": "LEARNER",
-   "coin": "Bateleur",
-   "action": "shadow",
-   "text": "SHADOW Bateleur · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021363 (curve maths, every cost) · same exits, outside the book",
-   "n": 3970
-  },
-  {
    "t": "2026-11-27T10:01:18Z",
    "time": "11:01:18",
    "agent": "LEARNER",
@@ -6538,6 +6511,33 @@
    "action": "shadow",
    "text": "SHADOW BLACK would have made +14.5% (TP +10%) · learned x0.5 · np:sol:<3 now avg -7.7% over 300",
    "n": 4167
+  },
+  {
+   "t": "2026-11-27T10:37:17Z",
+   "time": "11:37:17",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe not bought: trades tonight 4, mayhem mode 2, serial launcher 1)",
+   "n": 4168
+  },
+  {
+   "t": "2026-11-27T10:37:26Z",
+   "time": "11:37:26",
+   "agent": "LEARNER",
+   "coin": "Duneussy",
+   "action": "shadow",
+   "text": "SHADOW Duneussy · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028386 (curve maths, every cost) · same exits, outside the book",
+   "n": 4169
+  },
+  {
+   "t": "2026-11-27T10:37:38Z",
+   "time": "11:37:38",
+   "agent": "LEARNER",
+   "coin": "Duneussy",
+   "action": "shadow",
+   "text": "SHADOW Duneussy would have made -14.7% (dump: 2.7 SOL sold) · learned x0.5 · np:social:web now avg -7.9% over 300",
+   "n": 4170
   }
  ],
  "nights": [
@@ -6597,7 +6597,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 1,
   "scans_per_min": 0,
@@ -6605,24 +6605,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1044,
-    "last_event_age_s": 17.8,
+    "events": 1048,
+    "last_event_age_s": 1.6,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22431,
-    "last_event_age_s": 0.1,
+    "events": 22471,
+    "last_event_age_s": 4.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 625,
-    "last_event_age_s": 17.7,
+    "events": 628,
+    "last_event_age_s": 1.5,
     "errors": 27,
     "last_error": "195.26.231.33: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)"
    }
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
-  "watching": 0,
-  "followed": 5
+  "creates_per_min": 3.6,
+  "watching": 2,
+  "followed": 8
  },
  "learner": {
   "samples": 249,
@@ -6678,36 +6678,90 @@
     "avg": -10.6
    }
   ],
-  "shadows": 848,
+  "shadows": 849,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12121,
+   "sent": 12156,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12132,
+   "sent": 12167,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Fridaycoin",
+   "name": "Black Friday Coin",
+   "mint": "2yZXx6YzvVhUScKK1gHziiHqV6ESruGEQam9kQcLpump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 49.4,
+   "dev_pct": 26.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/munnyonly/status/2126263962119663764",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Wonald",
+   "name": "Wonald The Duck",
+   "mint": "6i9x2xYiJuzn1QG11aLTPY53insNTRcmjhqNBUYsA8oq",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Duneussy",
+   "name": "Dune Bucket Pussy",
+   "mint": "CAb2LFZmjFVrFoSqhmPTtcnysYfV9RUrWhg9QQhCpump",
+   "age_s": 21,
+   "sol_in": 1.85,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 11.9,
+   "mcap_sol": 35.5,
+   "dev_pct": 6.6,
+   "big_sell": 2.65,
+   "x": "https://x.com/ChadBoi67xd/status/2126263819886571537",
+   "tg": false,
+   "web": "https://x.com/search?q=Dune%27s%20POPCORN%20BUCKET%20&src=typed_query",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "BLACK",
    "name": "Black Friday Coin",
    "mint": "GsWxPW5MCjDjsRPR5TKDfBT8JvZB833o6xd8Xh5qpump",
-   "age_s": 17,
-   "sol_in": 8.22,
-   "buys": 5,
-   "sells": 8,
-   "rise_pct": 58.0,
-   "mcap_sol": 50.2,
+   "age_s": 50,
+   "sol_in": 1.2,
+   "buys": 8,
+   "sells": 16,
+   "rise_pct": 7.7,
+   "mcap_sol": 34.2,
    "dev_pct": 6.6,
-   "big_sell": 1.16,
+   "big_sell": 1.8,
    "x": "https://x.com/munnyonly/status/2126263962119663764",
    "tg": false,
    "web": false,
@@ -6718,7 +6772,7 @@
    "symbol": "SOFLOW",
    "name": "SEGFAULT Nº 002 StackOverflow",
    "mint": "HXKF438idKV3aeoXMdTx2BhSxjpC2gB2kf5uNbQQUz6Y",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.11,
    "buys": 4,
    "sells": 0,
@@ -6736,12 +6790,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "4Pq4AYk9uope9ifBzFvhrou1RXHUKadVPNjdafoUpump",
-   "age_s": 66,
-   "sol_in": 18.76,
-   "buys": 24,
-   "sells": 15,
-   "rise_pct": 143.6,
-   "mcap_sol": 84.7,
+   "age_s": 99,
+   "sol_in": 19.16,
+   "buys": 31,
+   "sells": 21,
+   "rise_pct": 147.4,
+   "mcap_sol": 86.0,
    "dev_pct": 11.1,
    "big_sell": 0.49,
    "x": false,
@@ -6754,7 +6808,7 @@
    "symbol": "420tekk2",
    "name": "420tekk!",
    "mint": "BuNJvQjje3AuMXPAJz9jNuvsL8mzMS9j9GUDEfDgATs5",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": -1.68,
    "buys": 1,
    "sells": 4,
@@ -6772,7 +6826,7 @@
    "symbol": "MACAW",
    "name": "The Macaw",
    "mint": "4p4rNDCHNH78ZjmqQaLeq31pxTRPvn67aqGEGT1QUaiS",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": -4.64,
    "buys": 1,
    "sells": 5,
@@ -6790,7 +6844,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HstjSQzgbvQjxvUhhuc6Prgji16d1SaQzwSGysqXPPar",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6808,31 +6862,13 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "DEUGzgkt3U68Z4j7M1h7bbsRGYTA7Mf1cxHxPsNEpump",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.5,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "FV3HRyDCfutssja7EXLny7WysMij1x1JSTBgmz4vpump",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6853,7 +6889,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:36:34Z",
    "cost": 36.2,
-   "pnl_pct": -3.3,
+   "pnl_pct": -3.4,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6869,7 +6905,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:36:07Z",
    "cost": 36.2,
-   "pnl_pct": 1.1,
+   "pnl_pct": 2.6,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -6901,13 +6937,33 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:31:24Z",
    "cost": 36.2,
-   "pnl_pct": 0.9,
+   "pnl_pct": 0.7,
    "tier": "swing",
    "score": 3,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.06
+  },
+  {
+   "symbol": "Duneussy",
+   "mint": "CAb2LFZmjFVrFoSqhmPTtcnysYfV9RUrWhg9QQhCpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:37:26Z",
+   "cost": 36.2,
+   "pnl_pct": -14.7,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 2.7,
+   "closed": "2026-11-27T10:37:38Z",
+   "exit": "dump: 2.7 SOL sold",
+   "pnl": -5.33,
+   "weight": 0.5
   },
   {
    "symbol": "BLACK",
@@ -7288,33 +7344,13 @@
    "exit": "stop -13%",
    "pnl": -5.82,
    "weight": 0.5
-  },
-  {
-   "symbol": "Love",
-   "mint": "AZkgchFQhvXwz2FpmpktsnHLbR6nfDiPwBMZYTgRpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:18:52Z",
-   "cost": 36.2,
-   "pnl_pct": -4.7,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T10:23:27Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -1.7,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 864,
+  "n": 865,
   "wins": 193,
   "win_rate": 22.3,
-  "mean_pnl_pct": -8.01,
+  "mean_pnl_pct": -8.02,
   "open": 4,
   "learner": {
    "n": 16,
@@ -7323,7 +7359,7 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 848,
+   "n": 849,
    "wins": 190,
    "win_rate": 22.4,
    "mean_pnl_pct": -7.93
