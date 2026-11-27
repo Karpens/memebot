@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:45:51Z",
-    "time": "07:45:51",
-    "agent": "LEARNER",
-    "coin": "BAZOOCAT",
-    "action": "shadow",
-    "text": "SHADOW BAZOOCAT would have made +8.4% (TP +10%) · learned x0.5 · np:sol:12+ now avg -13.5% over 24.5",
-    "n": 2906
-   },
-   {
-    "t": "2026-11-27T06:45:54Z",
-    "time": "07:45:54",
-    "agent": "LEARNER",
-    "coin": "MOMENT",
-    "action": "shadow",
-    "text": "SHADOW MOMENT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000041347 (curve maths, every cost) · same exits, outside the book",
-    "n": 2907
-   },
-   {
-    "t": "2026-11-27T06:45:56Z",
-    "time": "07:45:56",
-    "agent": "LEARNER",
-    "coin": "MOMENT",
-    "action": "shadow",
-    "text": "SHADOW MOMENT would have made +15.8% (TP +20%) · learned x0.5 · tier:swing now avg -16.0% over 26.5",
-    "n": 2908
-   },
-   {
     "t": "2026-11-27T06:46:02Z",
     "time": "07:46:02",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "scan",
     "text": "new pairs · 5.2 a minute · 0 watched · 14 rejected (mayhem mode 7, snipe not bought: trades tonight 6, serial launcher 1)",
     "n": 3505
+   },
+   {
+    "t": "2026-11-27T08:34:04Z",
+    "time": "09:34:04",
+    "agent": "LEARNER",
+    "coin": "Floki",
+    "action": "shadow",
+    "text": "SHADOW Floki · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000040882 (curve maths, every cost) · same exits, outside the book",
+    "n": 3506
+   },
+   {
+    "t": "2026-11-27T08:34:05Z",
+    "time": "09:34:05",
+    "agent": "LEARNER",
+    "coin": "Floki",
+    "action": "shadow",
+    "text": "SHADOW Floki would have made -30.1% (dump: 5.6 SOL sold) · learned x0.5 · np:dev:8+ now avg -8.7% over 108.5",
+    "n": 3507
+   },
+   {
+    "t": "2026-11-27T08:34:06Z",
+    "time": "09:34:06",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.4 a minute · 0 watched · 14 rejected (mayhem mode 8, snipe not bought: trades tonight 4, serial launcher 2)",
+    "n": 3508
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3505,
+  "lines": 3508,
   "flags": [
    {
     "coin": "Kibo",
@@ -21627,17 +21627,21 @@
    [
     1795768394,
     361.97
+   ],
+   [
+    1795768454,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795768386.645254,
+  "np_said": 1795768446.645258,
   "shadow": {
-   "n": 596,
+   "n": 597,
    "wins": 126,
-   "sum": -4889.2
+   "sum": -4919.3
   },
   "np_speed": {
    "first_in": [
@@ -31220,9 +31224,9 @@
   }
  },
  "shadow": {
-  "n": 610,
+  "n": 611,
   "wins": 128,
-  "sum": -5087.7,
+  "sum": -5117.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31230,32 +31234,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 594,
+    "n": 595,
     "wins": 125,
-    "sum": -4889.9
+    "sum": -4920.0
    }
   },
   "closed": [
-   {
-    "symbol": "ATX",
-    "mint": "9MUXa54ofwmdyQkd9Sz1qgT26MLFgypMcGC8P18apump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:25:59Z",
-    "cost": 36.2,
-    "pnl_pct": 11.1,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T08:26:01Z",
-    "exit": "TP +10%",
-    "pnl": 4.02,
-    "weight": 0.5
-   },
    {
     "symbol": "TIGERINU",
     "mint": "UQGj3H5zSdrvv1rCwbBhLgvUKStCxXPfDYdqVRnpump",
@@ -31635,6 +31619,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.48,
     "weight": 0.5
+   },
+   {
+    "symbol": "Floki",
+    "mint": "7ZX6HBF7Aj9heVZQ8dpLSTcpmT63NsXkoJc9Yuoapump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:34:04Z",
+    "cost": 36.2,
+    "pnl_pct": -30.1,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 1.83,
+    "closed": "2026-11-27T08:34:05Z",
+    "exit": "dump: 5.6 SOL sold",
+    "pnl": -10.88,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31682,7 +31686,7 @@
     "avg": -11.3
    }
   ],
-  "shadows": 594,
+  "shadows": 595,
   "memory": "snipe"
  }
 }
