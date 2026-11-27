@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T04:57:04Z",
-    "time": "05:57:04",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (snipe not bought: pause after a  3, mayhem mode 3, serial launcher 2)",
-    "n": 2130
-   },
-   {
-    "t": "2026-11-27T04:58:00Z",
-    "time": "05:58:00",
-    "agent": "LEARNER",
-    "coin": "Niggalo",
-    "action": "shadow",
-    "text": "SHADOW Niggalo · not bought (pause after a losing streak) · followed as if bought: $21.57 at 0.0000022383 (curve maths, every cost) · same exits, outside the book",
-    "n": 2131
-   },
-   {
     "t": "2026-11-27T04:58:04Z",
     "time": "05:58:04",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW PEPSODENT would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.8% over 176",
     "n": 2729
+   },
+   {
+    "t": "2026-11-27T06:05:25Z",
+    "time": "07:05:25",
+    "agent": "LEARNER",
+    "coin": "TWIZZY",
+    "action": "shadow",
+    "text": "SHADOW TWIZZY · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021279 (curve maths, every cost) · same exits, outside the book",
+    "n": 2730
+   },
+   {
+    "t": "2026-11-27T06:05:44Z",
+    "time": "07:05:44",
+    "agent": "LEARNER",
+    "coin": "BONCOIN",
+    "action": "shadow",
+    "text": "SHADOW BONCOIN would have made -7.7% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -9.2% over 181",
+    "n": 2731
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2729,
+  "lines": 2731,
   "flags": [
    {
     "coin": "Kibo",
@@ -21043,9 +21043,9 @@
   },
   "np_said": 1795759485.780873,
   "shadow": {
-   "n": 298,
+   "n": 299,
    "wins": 51,
-   "sum": -2619.3
+   "sum": -2627.0
   },
   "np_speed": {
    "first_in": [
@@ -30628,9 +30628,9 @@
   }
  },
  "shadow": {
-  "n": 312,
+  "n": 313,
   "wins": 53,
-  "sum": -2817.8,
+  "sum": -2825.5,
   "by": {
    "learner": {
     "n": 16,
@@ -30638,32 +30638,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 296,
+    "n": 297,
     "wins": 50,
-    "sum": -2620.0
+    "sum": -2627.7
    }
   },
   "closed": [
-   {
-    "symbol": "SACK",
-    "mint": "4MvHRvUv9obx4SmQU4uMKLyXbD3fSCxUpKNXrzkRpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:41:24Z",
-    "cost": 36.45,
-    "pnl_pct": -17.2,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 3.75,
-    "closed": "2026-11-27T05:41:31Z",
-    "exit": "dump: 2.6 SOL sold",
-    "pnl": -6.27,
-    "weight": 0.5
-   },
    {
     "symbol": "CaveBaby",
     "mint": "EJmHdDt3SUNcFC8yuWLL1hCk1TX8fFBg14tTBchTpump",
@@ -31043,15 +31023,35 @@
     "exit": "5 min, only -4%",
     "pnl": -2.85,
     "weight": 0.5
+   },
+   {
+    "symbol": "BONCOIN",
+    "mint": "DLMqsQSw6ESMMArJVsLtCM8mxwrtfFitaVVkLv1Kpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:00:44Z",
+    "cost": 36.2,
+    "pnl_pct": -7.7,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.16,
+    "closed": "2026-11-27T06:05:44Z",
+    "exit": "5 min, only -4%",
+    "pnl": -2.79,
+    "weight": 0.5
    }
   ],
   "open": [
-   "BONCOIN",
    "Christmas",
    "PILLOWLINE",
    "PRS",
    "DRUNK",
-   "DOOM"
+   "DOOM",
+   "TWIZZY"
   ]
  },
  "learner_summary": {
@@ -31093,7 +31093,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 296,
+  "shadows": 297,
   "memory": "snipe"
  }
 }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:05:16Z",
+ "updated": "2026-11-27T06:05:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2729,
+  "lines": 2731,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4040,24 +4040,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T05:37:29Z",
-   "time": "06:37:29",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 2 rejected (serial launcher 1, mayhem mode 1)",
-   "n": 2530
-  },
-  {
-   "t": "2026-11-27T05:37:41Z",
-   "time": "06:37:41",
-   "agent": "SCANNER",
-   "coin": "Kibo",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 1.2 SOL in · +7% since the create · mcap 36 SOL",
-   "n": 2531
-  },
-  {
    "t": "2026-11-27T05:37:41Z",
    "time": "06:37:41",
    "agent": "SIZER",
@@ -5838,6 +5820,24 @@
    "action": "shadow",
    "text": "SHADOW PEPSODENT would have made -7.9% (5 min, only -4%) · learned x0.5 · np:buys:<70 now avg -9.8% over 176",
    "n": 2729
+  },
+  {
+   "t": "2026-11-27T06:05:25Z",
+   "time": "07:05:25",
+   "agent": "LEARNER",
+   "coin": "TWIZZY",
+   "action": "shadow",
+   "text": "SHADOW TWIZZY · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021279 (curve maths, every cost) · same exits, outside the book",
+   "n": 2730
+  },
+  {
+   "t": "2026-11-27T06:05:44Z",
+   "time": "07:05:44",
+   "agent": "LEARNER",
+   "coin": "BONCOIN",
+   "action": "shadow",
+   "text": "SHADOW BONCOIN would have made -7.7% (5 min, only -4%) · learned x0.5 · np:dev:0-2 now avg -9.2% over 181",
+   "n": 2731
   }
  ],
  "nights": [
@@ -5900,21 +5900,21 @@
   "gt_sec": 20,
   "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 0,
+  "watch_ms": 1,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1210,
-    "last_event_age_s": 29.0,
+    "events": 1211,
+    "last_event_age_s": 19.9,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 37481,
+    "events": 37542,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -5922,8 +5922,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 811,
-    "last_event_age_s": 28.8,
+    "events": 812,
+    "last_event_age_s": 19.8,
     "errors": 80,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5936,7 +5936,7 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.8,
   "watching": 1,
   "followed": 9
  },
@@ -5979,29 +5979,47 @@
     "avg": -14.4
    }
   ],
-  "shadows": 296,
+  "shadows": 297,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17165,
+   "sent": 17195,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17164,
+   "sent": 17194,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TWIZZY",
+   "name": "TWIZZY",
+   "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "DOOM",
    "name": "DoomsDay",
    "mint": "DJ3jYoWWSejGFSXnoBzVkxyvz4rEe3BZAxYvekhdpump",
-   "age_s": 28,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6019,14 +6037,14 @@
    "symbol": "BANGKOK",
    "name": "BANGKOK",
    "mint": "2oZpYvgZLuTCtwroWuh78XP5ws8uZ5696NK23PXUpump",
-   "age_s": 33,
-   "sol_in": 0.0,
+   "age_s": 61,
+   "sol_in": -0.1,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": "https://x.com/cz_binance/status/2126194774931857559",
    "tg": false,
    "web": false,
@@ -6037,12 +6055,12 @@
    "symbol": "0",
    "name": "0",
    "mint": "3XZuRcgf8BuVLpJiPZAEVuV53n1991FK4KxATc4Dpump",
-   "age_s": 71,
-   "sol_in": 600.47,
-   "buys": 12,
-   "sells": 17,
-   "rise_pct": 27646.5,
-   "mcap_sol": 7806.3,
+   "age_s": 99,
+   "sol_in": 615.91,
+   "buys": 13,
+   "sells": 18,
+   "rise_pct": 27757.5,
+   "mcap_sol": 7837.6,
    "dev_pct": 0.3,
    "big_sell": 840.04,
    "x": false,
@@ -6055,7 +6073,7 @@
    "symbol": "THREE",
    "name": "Three Step",
    "mint": "9q9GUT7joaPrVycsVJcithrK2hXr6ACLTbQvC1Tibmus",
-   "age_s": 73,
+   "age_s": 101,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6073,12 +6091,12 @@
    "symbol": "DRUNK",
    "name": "DRUNK WIF GRANNY",
    "mint": "Ad6XvsQew4GvTw5t9E9b6fKdaSSJcAftpqyGoUcQpump",
-   "age_s": 93,
-   "sol_in": 0.28,
+   "age_s": 121,
+   "sol_in": 0.27,
    "buys": 2,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": 1.8,
-   "mcap_sol": 30.2,
+   "mcap_sol": 30.1,
    "dev_pct": 3.1,
    "big_sell": 0.62,
    "x": "https://x.com/JotchuaMeme/status/2046286281890812298",
@@ -6091,12 +6109,12 @@
    "symbol": "JBL",
    "name": "Jacket Booted Lobster",
    "mint": "A5niPcd8joUAYWH1j4aJBZE7mjuU8KZNRLNP9Q3vpump",
-   "age_s": 125,
-   "sol_in": 20.77,
-   "buys": 58,
-   "sells": 40,
-   "rise_pct": 151.6,
-   "mcap_sol": 98.1,
+   "age_s": 153,
+   "sol_in": 18.83,
+   "buys": 63,
+   "sells": 52,
+   "rise_pct": 134.5,
+   "mcap_sol": 91.5,
    "dev_pct": 16.5,
    "big_sell": 2.77,
    "x": "https://x.com/twaniimals/status/2126194536464740577",
@@ -6109,7 +6127,7 @@
    "symbol": "PRS",
    "name": "Perspolis",
    "mint": "uxYzHXmNBmPeUAkKzvXJLWPbuvJ4ubUazaEtmdZpump",
-   "age_s": 129,
+   "age_s": 157,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -6127,7 +6145,7 @@
    "symbol": "BGO",
    "name": "BIG GUYS ONLY",
    "mint": "DqLYToubzud6He8dWMtqfG1rY8aWSTcL4iNsZ2UDpump",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6145,7 +6163,7 @@
    "symbol": "PILLOWLINE",
    "name": "Pillow Line",
    "mint": "GkJmjPG7JwWanqeXG3Xfm3jTNxNq7xMhUXgmfqYXpump",
-   "age_s": 143,
+   "age_s": 171,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -6163,7 +6181,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "5UkdQwGdJtatPRG6KLgkdw2xSkp8FtjV9r9XNH4kpump",
-   "age_s": 144,
+   "age_s": 172,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6176,48 +6194,28 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "Christmas",
-   "name": "Christmas Coin",
-   "mint": "FnpXQR1EgTjxYgR3rqibKGxWtgX69J8DaHuL2FCLpump",
-   "age_s": 162,
-   "sol_in": -0.1,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.12,
-   "x": "https://x.com/Humanevolvd/status/2126168800261242945?s=46",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "BGO",
-   "name": "BIG GUYS ONLY",
-   "mint": "G6bk3Ary2sv5JFbEiYQauAs61RB9aFUpTpK76kyBpump",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 30.5,
-   "dev_pct": 4.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "TWIZZY",
+   "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:05:25Z",
+   "cost": 36.2,
+   "pnl_pct": -4.0,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
   {
    "symbol": "DOOM",
    "mint": "DJ3jYoWWSejGFSXnoBzVkxyvz4rEe3BZAxYvekhdpump",
@@ -6242,7 +6240,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:03:43Z",
    "cost": 36.2,
-   "pnl_pct": -7.5,
+   "pnl_pct": -7.6,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6290,7 +6288,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:02:35Z",
    "cost": 36.2,
-   "pnl_pct": -4.6,
+   "pnl_pct": -4.7,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6301,18 +6299,22 @@
   {
    "symbol": "BONCOIN",
    "mint": "DLMqsQSw6ESMMArJVsLtCM8mxwrtfFitaVVkLv1Kpump",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T06:00:44Z",
    "cost": 36.2,
-   "pnl_pct": -4.0,
+   "pnl_pct": -7.7,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.16
+   "sol_in": 0.16,
+   "closed": "2026-11-27T06:05:44Z",
+   "exit": "5 min, only -4%",
+   "pnl": -2.79,
+   "weight": 0.5
   },
   {
    "symbol": "PEPSODENT",
@@ -6693,32 +6695,12 @@
    "exit": "stop -14%",
    "pnl": -6.48,
    "weight": 0.5
-  },
-  {
-   "symbol": "SACK",
-   "mint": "4MvHRvUv9obx4SmQU4uMKLyXbD3fSCxUpKNXrzkRpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "pause after a losing streak",
-   "opened": "2026-11-27T05:41:24Z",
-   "cost": 36.45,
-   "pnl_pct": -17.2,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 3.75,
-   "closed": "2026-11-27T05:41:31Z",
-   "exit": "dump: 2.6 SOL sold",
-   "pnl": -6.27,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 312,
+  "n": 313,
   "wins": 53,
-  "win_rate": 17.0,
+  "win_rate": 16.9,
   "mean_pnl_pct": -9.03,
   "open": 6,
   "learner": {
@@ -6728,9 +6710,9 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 296,
+   "n": 297,
    "wins": 50,
-   "win_rate": 16.9,
+   "win_rate": 16.8,
    "mean_pnl_pct": -8.85
   }
  }
