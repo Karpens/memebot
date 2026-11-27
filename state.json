@@ -49,24 +49,6 @@
    {
     "t": "2026-11-27T04:53:08Z",
     "time": "05:53:08",
-    "agent": "SCANNER",
-    "coin": "MUELLER",
-    "action": "flag",
-    "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-    "n": 2094
-   },
-   {
-    "t": "2026-11-27T04:53:08Z",
-    "time": "05:53:08",
-    "agent": "SIZER",
-    "coin": "MUELLER",
-    "action": "size",
-    "text": "10% of $222.14 = $22.21",
-    "n": 2095
-   },
-   {
-    "t": "2026-11-27T04:53:08Z",
-    "time": "05:53:08",
     "agent": "EXECUTOR",
     "coin": "MUELLER",
     "action": "enter",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW Kolmas would have made +16.0% (TP +10%) · learned x0.5 · np:social:none now avg -9.9% over 139",
     "n": 2693
+   },
+   {
+    "t": "2026-11-27T05:56:51Z",
+    "time": "06:56:51",
+    "agent": "LEARNER",
+    "coin": "Tittymas",
+    "action": "shadow",
+    "text": "SHADOW Tittymas would have made -13.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.9% over 174",
+    "n": 2694
+   },
+   {
+    "t": "2026-11-27T05:57:12Z",
+    "time": "06:57:12",
+    "agent": "LEARNER",
+    "coin": "NWB",
+    "action": "shadow",
+    "text": "SHADOW NWB · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000023052 (curve maths, every cost) · same exits, outside the book",
+    "n": 2695
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2693,
+  "lines": 2695,
   "flags": [
    {
     "coin": "Kibo",
@@ -20999,6 +20999,10 @@
    [
     1795758953,
     361.97
+   ],
+   [
+    1795759013,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21007,9 +21011,9 @@
   },
   "np_said": 1795759002.780846,
   "shadow": {
-   "n": 286,
+   "n": 287,
    "wins": 49,
-   "sum": -2582.9
+   "sum": -2595.9
   },
   "np_speed": {
    "first_in": [
@@ -30592,9 +30596,9 @@
   }
  },
  "shadow": {
-  "n": 300,
+  "n": 301,
   "wins": 51,
-  "sum": -2781.4,
+  "sum": -2794.4,
   "by": {
    "learner": {
     "n": 16,
@@ -30602,32 +30606,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 284,
+    "n": 285,
     "wins": 48,
-    "sum": -2583.6
+    "sum": -2596.6
    }
   },
   "closed": [
-   {
-    "symbol": "ANTHEMA",
-    "mint": "AHGPmnzk8V4ikYsZjcWvugaoXffc13ErTEHwoA6pump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T05:13:26Z",
-    "cost": 20.53,
-    "pnl_pct": -15.3,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.9,
-    "closed": "2026-11-27T05:14:07Z",
-    "exit": "stop -12%",
-    "pnl": -3.15,
-    "weight": 0.5
-   },
    {
     "symbol": "CLOVER",
     "mint": "GRXCdL6XpBicCcYH7LxsnMY6Z3P9ygx4ZTWLNEjApump",
@@ -31007,14 +30991,34 @@
     "exit": "TP +10%",
     "pnl": 5.81,
     "weight": 0.5
+   },
+   {
+    "symbol": "Tittymas",
+    "mint": "9t1o2EzxCamzyAWJrB7E8avaUtFrq3YtHpTpWiJxpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T05:53:04Z",
+    "cost": 36.33,
+    "pnl_pct": -13.0,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T05:56:51Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -4.72,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Tittymas",
    "spxc",
    "RUNNER",
    "FLASHER",
-   "BAHAT"
+   "BAHAT",
+   "NWB"
   ]
  },
  "learner_summary": {
@@ -31056,7 +31060,7 @@
     "avg": -15.4
    }
   ],
-  "shadows": 284,
+  "shadows": 285,
   "memory": "snipe"
  }
 }
