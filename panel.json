@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T23:50:40Z",
+ "updated": "2026-11-27T23:51:12Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 117,
+  "flagged": 118,
   "checked": 49,
   "filtered": 1,
-  "lines": 647,
+  "lines": 649,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -69,7 +69,7 @@
   {
    "coin": "UPGRADE",
    "why": "snipe",
-   "t": "2026-11-27T23:50:27Z"
+   "t": "2026-11-27T23:50:54Z"
   }
  ],
  "curve": [
@@ -275,6 +275,10 @@
   ],
   [
    1795823400,
+   47.79
+  ],
+  [
+   1795823460,
    47.79
   ]
  ],
@@ -2429,24 +2433,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:30:15Z",
-   "time": "00:30:15",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 10.0 a minute · 0 watched · 17 rejected (mayhem mode 10, serial launcher 6, snipe not bought: pause after a  1)",
-   "n": 448
-  },
-  {
-   "t": "2026-11-27T23:30:19Z",
-   "time": "00:30:19",
-   "agent": "LEARNER",
-   "coin": "MoZe",
-   "action": "shadow",
-   "text": "SHADOW MoZe would have made -7.5% (5 min, only -2%) · learned x0.5 · np:social:none now avg -7.4% over 300",
-   "n": 449
-  },
-  {
    "t": "2026-11-27T23:30:21Z",
    "time": "00:30:21",
    "agent": "SCANNER",
@@ -4227,6 +4213,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 647
+  },
+  {
+   "t": "2026-11-27T23:50:54Z",
+   "time": "00:50:54",
+   "agent": "SCANNER",
+   "coin": "UPGRADE",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 19.8 SOL in · +169% since the create · mcap 80 SOL",
+   "n": 648
+  },
+  {
+   "t": "2026-11-27T23:51:04Z",
+   "time": "00:51:04",
+   "agent": "SCANNER",
+   "coin": "LOOPS",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.544e+05 is not 30 + real SOL 0 (off +1.543e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 65 odd readings from 44 coins tonight",
+   "n": 649
   }
  ],
  "nights": [
@@ -4299,7 +4303,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 52 watched · ws off · odd curve readings 62 (43 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 51 watched · ws off · odd curve readings 65 (44 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4307,15 +4311,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 550,
-    "last_event_age_s": 14.2,
+    "events": 553,
+    "last_event_age_s": 9.2,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 9374,
+    "events": 9486,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -4323,8 +4327,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 337,
-    "last_event_age_s": 13.5,
+    "events": 339,
+    "last_event_age_s": 9.0,
     "errors": 13,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -4337,11 +4341,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 4.6,
   "watching": 0,
-  "followed": 9,
-  "odd_readings": 62,
-  "odd_coins": 43
+  "followed": 10,
+  "odd_readings": 65,
+  "odd_coins": 44
  },
  "learner": {
   "samples": 84,
@@ -4388,23 +4392,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3736,
+   "sent": 3770,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3736,
+   "sent": 3770,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LOOPS",
+   "name": "Loop Strategy",
+   "mint": "EU1yzfyhj8fo18j5AkPTCsmHhwNyk2v161rPPeDa6HoN",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://derivr.fun",
+   "status": "rejected: odd curve reading: virtual SOL 1.544e+05 is not 30 + real SOL 0 (off +1.543e+05 SOL)",
+   "why": "odd curve reading: virtual SOL 1.544e+05 is not 30 + real SOL 0 (off +1.543e+05 SOL)"
+  },
+  {
+   "symbol": "UPGRADE",
+   "name": "Upgrade Now",
+   "mint": "8UgEde8ZZeHNiM28RzFJL8P9XNhQRjyYpThUrj1jpump",
+   "age_s": 18,
+   "sol_in": 36.2,
+   "buys": 14,
+   "sells": 5,
+   "rise_pct": 370.1,
+   "mcap_sol": 140.2,
+   "dev_pct": 3.4,
+   "big_sell": 2.65,
+   "x": "https://x.com/toly/status/2126463636046741900",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "GTAFORTNIT",
+   "name": "GTA VI VS FORTNITE",
+   "mint": "3CGhqWifUnorqeWaT3vug14W6iLMymFaF46EWpiwpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "UPGRADE",
    "name": "Upgrade Now",
    "mint": "6eCHRR43d6mnxAStcgr6P2ET8pLcYwstGeBJWw8zpump",
-   "age_s": 14,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4422,7 +4480,7 @@
    "symbol": "Rizzmas",
    "name": "RIZZMAS 3",
    "mint": "Eb8rH5Kqg8uua6ekQfvvprHTm1wLKdJvzy6T7SHFpump",
-   "age_s": 40,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -4440,7 +4498,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "B6San66b2qPkfyJiKJakTrWgor977hQjPxbKpvAX1krf",
-   "age_s": 43,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -4458,7 +4516,7 @@
    "symbol": "CAT",
    "name": "Christmas Cat",
    "mint": "FpvJQf63bu4pRMbQUFTZfh6q5t7bGZ7vodYUnERv5ACq",
-   "age_s": 46,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4476,7 +4534,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "9fNb18PAUn85pE7HcZnyZ5b9PQwFgJQFzRTBGR7tpump",
-   "age_s": 72,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4494,14 +4552,14 @@
    "symbol": "SOLUNA",
    "name": "Retarded Solana",
    "mint": "99JNP6eCj7U6oJK3VccrK7jQJFYtr1WeaWBUSkcUpump",
-   "age_s": 80,
-   "sol_in": 11.0,
-   "buys": 9,
-   "sells": 9,
-   "rise_pct": 86.7,
-   "mcap_sol": 52.3,
+   "age_s": 112,
+   "sol_in": 12.43,
+   "buys": 21,
+   "sells": 19,
+   "rise_pct": 99.9,
+   "mcap_sol": 56.0,
    "dev_pct": 0.1,
-   "big_sell": 1.02,
+   "big_sell": 1.16,
    "x": "https://x.com/ramentrade/status/2126463353652715614",
    "tg": false,
    "web": false,
@@ -4512,12 +4570,12 @@
    "symbol": "TEETH",
    "name": "STRAIGHT TEETH",
    "mint": "HsKYJQ4oRYMaqmr1drrPv97Hnmbp3uMJD1B5uEbHpump",
-   "age_s": 117,
-   "sol_in": -0.01,
+   "age_s": 149,
+   "sol_in": -0.05,
    "buys": 3,
-   "sells": 1,
-   "rise_pct": -0.1,
-   "mcap_sol": 28.9,
+   "sells": 2,
+   "rise_pct": -0.3,
+   "mcap_sol": 28.8,
    "dev_pct": 1.7,
    "big_sell": 0.05,
    "x": "https://x.com/Go2685925273317/status/2126463255094657475",
@@ -4530,7 +4588,7 @@
    "symbol": "BRUUUH",
    "name": "BRUUUH",
    "mint": "AQvXztEdbJE2KKu8vqTA7jJQ9C9ztWCyGEiHWMxEpump",
-   "age_s": 141,
+   "age_s": 173,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4548,7 +4606,7 @@
    "symbol": "LILNK",
    "name": "Lil Linkoop",
    "mint": "375DUSiCPfokgNsp6RgZUmPtxEUPAVodwzAG5CpexH6R",
-   "age_s": 142,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4561,42 +4619,6 @@
    "web": "https://derivr.fun",
    "status": "rejected: serial launcher: 13 more coins in 60 min",
    "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "Dutchman",
-   "name": "Flying Dutchman",
-   "mint": "GjsHrP6SBf2pN64QCJLP4Xb57Pcz7jz9nWZtgPjXpump",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 40.1,
-   "dev_pct": 17.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "CALL",
-   "name": "Call.fun",
-   "mint": "EZ6HtEpWVtQBn637THVZ7QKZABxm1KDQbRFnhectpump",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 1.18,
-   "x": "https://x.com/thesendorr/status/2126462835924635953",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
