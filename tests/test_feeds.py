@@ -535,9 +535,10 @@ class Poller(unittest.TestCase):
         self.assertEqual(len(set(self.rpc.calls[0]["keys"]) | set(self.rpc.calls[1]["keys"])), 150)
         evs = events(self.q)
         e = [x for x in evs if x["mint"] == "m007"][0]
-        self.assertEqual(sorted(e), ["complete", "disc_ok", "key", "kind", "mint", "price_sol", "rsol", "rtok", "slot",
-                                     "src", "t", "vsol", "vtok"])
+        self.assertEqual(sorted(e), ["complete", "disc_ok", "key", "kind", "mint", "owner_ok", "price_sol", "rsol", "rtok",
+                                     "slot", "src", "supply", "t", "vsol", "vtok"])
         self.assertIs(e["disc_ok"], True)                                           # a pump.fun BondingCurve account
+        self.assertIs(e["owner_ok"], True)                                          # owned by the pump.fun program
         self.assertEqual((e["kind"], e["key"], e["vsol"], e["vtok"], e["slot"], e["src"], e["complete"]),
                          ("curve", "km007", VSOL0 + 7, VTOK0, 100, "poll", False))
         self.assertAlmostEqual(e["price_sol"], 2.796e-08, delta=1e-11)
@@ -908,6 +909,7 @@ class PollerSilences(unittest.TestCase):
 class Socket(unittest.TestCase):
     def setUp(self):
         self.accounts = {}
+        self.owners = {}                # key -> the account's owner (the pump.fun program unless set)
         self.subs = []                  # (connection, key)
         self.unsubs = []
         self.sock = None
@@ -937,7 +939,8 @@ class Socket(unittest.TestCase):
                     self.slot += 1
                     ws.send(json.dumps({"jsonrpc": "2.0", "method": "accountNotification", "params": {
                         "result": {"context": {"slot": self.slot}, "value": {
-                            "data": [b64(self.accounts[key]), "base64"], "owner": "6EF8", "lamports": 1}},
+                            "data": [b64(self.accounts[key]), "base64"],
+                            "owner": self.owners.get(key, fd.PUMP_PROGRAM), "lamports": 1}},
                         "subscription": sid}}))
                 elif msg["method"] == "accountUnsubscribe":
                     self.unsubs.append((n, msg["params"][0]))
@@ -956,6 +959,7 @@ class Socket(unittest.TestCase):
     def test_pushes_a_drop_resubscribe_after_1_s_and_unsubscribe(self):
         for i in range(3):
             self.accounts["k%d" % i] = account(vsol=VSOL0 + i)
+        self.owners["k2"] = "ForkLaunchpad111111111111111111111111111111"     # another program's account
         self.srv = WSServer(self.rpc_handler(drop_first_after=0.6))
         q = queue.Queue()
         self.sock = fd.CurveSocket(q, url=self.srv.url, proxy=None, rand=lambda: 0.0)
@@ -966,6 +970,9 @@ class Socket(unittest.TestCase):
         evs = events(q)
         self.assertEqual(sorted((e["mint"], e["src"], e["vsol"]) for e in evs),
                          [("m%d" % i, "ws", VSOL0 + i) for i in range(3)])
+        # the socket's owner check, as the poller's: the pump.fun program's account, or not (newpairs.curve_sane: odd)
+        self.assertEqual(sorted((e["mint"], e["disc_ok"], e["owner_ok"]) for e in evs),
+                         [("m0", True, True), ("m1", True, True), ("m2", True, False)])
         self.accounts["k1"] = account(vsol=VSOL0 + 10 ** 9)                         # it moves while we are away
         self.assertTrue(wait_for(lambda: len(self.subs) == 6, 5))                   # all three again on connection 2
         self.assertEqual(sorted(k for n, k in self.subs if n == 2), ["k0", "k1", "k2"])

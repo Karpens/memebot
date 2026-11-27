@@ -91,6 +91,15 @@ class Base(unittest.TestCase):
         n.now = self.clock.now()
         n.watch(400)
 
+    def polled_tick(self, n, sec):
+        """tick(), with the curve poller answering a round first (nothing changed: the held and shadowed curves are
+        fresh, as feeds.py's good rounds keep a quiet curve)."""
+        self.clock.advance(sec)
+        n.now = self.clock.now()
+        self.feeds.poller.ok += 1
+        n.np_touch()
+        n.watch(400)
+
 
 class TheShadow(Base):
     def test_a_learner_skip_becomes_a_shadow_that_exits_by_the_plan_and_teaches_with_its_weight(self):
@@ -147,15 +156,15 @@ class TheShadow(Base):
                 self.turn(n, {"kind": "migrate", "txType": "migrate", "mint": mint, "pool": "pump-amm", "signature": "s"})
             elif kind == "time":
                 self.read(n, mint, self.rsol(pos, -2))
-                self.tick(n, 6)                                 # stale: a real coin's Jupiter price, a shadow's last one
-                self.tick(n, 300)                               # the scalp's 5 minutes, under +2 %
+                self.polled_tick(n, 6)                          # the poller answers: the unchanged curve stays fresh
+                self.polled_tick(n, 300)                        # the scalp's 5 minutes, under +2 %
             elif kind == "quiet":
                 self.read(n, mint, self.rsol(pos, 1))
                 for _ in range(4):
-                    self.tick(n, 50)                            # no reading for 3 minutes: dead, sold
+                    self.polled_tick(n, 50)                     # no trade on the curve for 3 minutes: dead, sold
 
         for kind, why in (("stop", "stop -9%"), ("tp", "TP +7%"), ("dump", "dump: 3.1 SOL sold"),
-                          ("migrate", "migrating: take it"), ("time", None), ("quiet", "no curve reading for 3 min")):
+                          ("migrate", "migrating: take it"), ("time", None), ("quiet", "curve quiet for 3 min (no trade)")):
             with self.subTest(kind=kind):
                 self.setUp()
                 real = self.night()

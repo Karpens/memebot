@@ -104,7 +104,9 @@ Base rows (never selectable): BASE-A every watched coin at 30 / 60 / 120 s and a
 what SNIPE is read against), BASE-B every coin near a trigger at 60-480 s, C0 a random time per near coin (one
 seeded uniform draw in [max(45 s, near), 600 s]; left out when not polled then), under fixed exits. Reference rows:
 the tape's own fire lines under the bot's scalp exit (the CURRENT rule, RugCheck and the LEARNER left out), the same
-under time-only holds, and the live and shadow trades as booked.
+under time-only holds, and the live and shadow trades as booked. A SNIPE run's fire lines (its start line has np_snipe,
+or the line says "entry": "snipe") are first readings bought, not momentum triggers: never a REF fire, never checked
+against the recomputed trigger (the Tape checks count them apart).
 
 STATISTICS. The coins are split by create time: the first --split (0.7) of the range ranks, the rest is held out
 (coins created in the last --embargo-s before the split are left out of both: a coin lives 900 s on the tape).
@@ -598,7 +600,7 @@ class CoinView(object):
     __slots__ = ("idx", "mint", "sym", "t0", "hour", "creator", "dev_pct", "skip", "skip0", "cfg", "watch_s", "rsol0",
                  "price0", "ts", "vs", "vt", "rs", "px", "cx", "bu", "se", "smax", "d", "gb", "gs", "pk",
                  "iv", "follow_t", "gaps", "held", "near_t", "mom", "fires", "buys", "sells", "shadows", "metas",
-                 "rugs", "ends", "last_t", "decs", "part", "migrate_t")
+                 "rugs", "ends", "last_t", "decs", "part", "migrate_t", "snipe_fires", "odd")
 
     def __init__(self):
         for k in self.__slots__:
@@ -713,6 +715,21 @@ def _line_t(x):
     return float(x["t"])
 
 
+def snipe_run(mk, t):
+    """The run t falls in (its start line's cfg, or the last one before t) traded SNIPE mode (np_snipe)."""
+    try:
+        c = mk.start_cfg(t)
+        return isinstance(c, dict) and bool(newpairs._on(c, "np_snipe"))
+    except Exception:                                   # noqa: BLE001 - an odd start line: a momentum run
+        return False
+
+
+def snipe_line(x, mk):
+    """A fire line that is a SNIPE's (the coin's first reading bought), not the momentum trigger's: it says "entry":
+    "snipe", or the run it is in started with np_snipe (an older SNIPE run's line may say neither)."""
+    return x.get("entry") == "snipe" or snipe_run(mk, _line_t(x))
+
+
 def creators_index(tapes):
     """creator -> sorted create times of every coin on the tape (the serial-launcher check: Watchlist._launch)."""
     out = collections.defaultdict(list)
@@ -778,7 +795,12 @@ def build_view(tp, mk, creators, variants, fire_check=True):
     by = collections.defaultdict(list)
     for x in ev_lines:
         by[x.get("k")].append(x)
-    cv.fires, cv.buys, cv.sells, cv.shadows = by["fire"], by["buy"], by["sell"], by["shadow"]
+    # a fire line of a SNIPE run (its start line's cfg has np_snipe, or the line says "entry": "snipe") is the coin's
+    # first reading bought, not a momentum trigger: kept apart (never a REF fire, never checked against the trigger)
+    cv.fires, cv.snipe_fires = [], []
+    for x in by["fire"]:
+        (cv.snipe_fires if snipe_line(x, mk) else cv.fires).append(x)
+    cv.buys, cv.sells, cv.shadows = by["buy"], by["sell"], by["shadow"]
     cv.metas, cv.rugs, cv.decs = by["meta"], by["rug"], by["dec"]
     cv.migrate_t = min(float(x["t"]) for x in by["migrate"]) if by["migrate"] else None
     cv.ends = [(float(x["t"]), str(x.get("why") or "")) for x in by["end"]]
@@ -818,12 +840,18 @@ def build_view(tp, mk, creators, variants, fire_check=True):
     times = creators.get(coin.creator) or []
     pending = [v for v in variants]
     mom = {}
-    if fire_check:                                      # the run's own trigger, as it ran (newpairs' defaults under it)
-        pending.append(MomVariant("RUN", mk.start_cfg(t0) or cfg))
+    if fire_check and not snipe_run(mk, t0):            # the run's own trigger, as it ran (newpairs' defaults under it);
+        pending.append(MomVariant("RUN", mk.start_cfg(t0) or cfg))  # a SNIPE run had none
+    cv.odd = 0
     for r in tp["readings"]:
         t = r["t"]
         if t < coin.t0 - EPS:
             continue
+        rd = {"vsol": r["vsol"], "vtok": r["vtok"], "rsol": r["rsol"], "complete": r["complete"], "odd": r.get("odd")}
+        why = newpairs.curve_sane(rd)                   # the live bot's own verdict when the line has one ("o")
+        if why is not None and not newpairs.complete_flag(rd, why):
+            cv.odd += 1                                 # no standard pump.fun curve reads so (the Tape checks count it);
+                                                        # a migrated curve's withdrawn reserves are its completion
         rr = newpairs.read_curve({"vsol": r["vsol"], "vtok": r["vtok"], "rsol": r["rsol"], "complete": r["complete"],
                                   "slot": r["slot"]}) if r["vsol"] else None
         if rr is None:
@@ -1776,7 +1804,8 @@ def scan_c0(cv, mk, cfgs, seed=7):
 
 def scan_fire(cv, mk, cfgs):
     """REF / FIRE: the tape's own first fire line at 45 s or older (the bot's current age floor), decided at the
-    line's time (the reading that fired, the same loop turn)."""
+    line's time (the reading that fired, the same loop turn). A momentum fire line only (cv.fires: a SNIPE run's are
+    cv.snipe_fires)."""
     out = {}
     for x in sorted(cv.fires, key=_line_t):
         t = float(x["t"])
@@ -2374,7 +2403,10 @@ def blind_causes(trades):
 
 
 def sanity(views):
-    """The curve identity vsol = 30 + real SOL on every reading, and the real SOL a curve completes at (about 85)."""
+    """The curve identity vsol = 30 + real SOL on every reading, and the real SOL a curve completes at (about 85);
+    and the readings no standard pump.fun curve can be in by newpairs.curve_sane (the live bot's gate: odd ones it
+    never prices, fills or exits on), counted on every reading of the tape (a completed curve's left out: its
+    migration withdraws the reserves), with the coins that had any."""
     bad = n = 0
     done = []
     for cv in views:
@@ -2384,14 +2416,19 @@ def sanity(views):
                 bad += 1
         if cv.cx[-1]:
             done.append(cv.rs[-1])
+    odd = [cv.odd or 0 for cv in views]
     return {"readings": n, "vsol_not_30_plus_real": bad, "completed": len(done),
-            "complete_real_sol": [rnd(min(done), 1), rnd(median(done), 1), rnd(max(done), 1)] if done else None}
+            "complete_real_sol": [rnd(min(done), 1), rnd(median(done), 1), rnd(max(done), 1)] if done else None,
+            "odd_readings": sum(odd), "odd_coins": sum(1 for x in odd if x)}
 
 
 def fire_check(views):
     """The live trigger recomputed with each run's own settings against the tape's first fire line per coin: the
-    share found within 2 s, and the fires the tape has that the recomputation does not (and the other way)."""
+    share found within 2 s, and the fires the tape has that the recomputation does not (and the other way). A SNIPE
+    run's fire lines are its first readings bought, not momentum triggers: counted apart (snipe_fire_lines), never
+    checked against the trigger (its runs recompute none)."""
     match = miss = extra = 0
+    snipes = sum(len(cv.snipe_fires or ()) for cv in views)
     for cv in views:
         fires = sorted(float(x.get("tt") or x["t"]) for x in cv.fires)
         mine = cv.mom.get("RUN")
@@ -2406,7 +2443,7 @@ def fire_check(views):
             extra += 1
     n = match + miss
     return {"fire_lines": n, "found_within_2s": match, "share": rnd(match / n, 3) if n else None,
-            "recomputed_without_a_line": extra,
+            "recomputed_without_a_line": extra, "snipe_fire_lines": snipes,
             "note": "a recomputed fire without a fire line is a coin the live bot had rejected before its trigger (a "
                     "RugCheck prefetch FAIL, a holder wait): the study's triggers leave RugCheck out on purpose"}
 
@@ -3005,14 +3042,16 @@ def markdown(rep):
     san, fc = rep.get("sanity") or {}, rep.get("fire_check") or {}
     cov = (rep.get("coverage") or {}).get("total") or {}
     if cov:
-        out.append("**Tape checks**: %d readings, %d off vsol = 30 + real SOL; %d completions at real SOL %s (min / "
-                   "median / max); fire lines found by the recomputed trigger within 2 s: %s of %d (%d more fires without "
-                   "RugCheck) · coverage: %d "
+        out.append("**Tape checks**: %d readings, %d off vsol = 30 + real SOL, %d odd by newpairs.curve_sane (%d coins: "
+                   "no standard pump.fun curve reads so; the live bot never prices them); %d completions at real SOL %s "
+                   "(min / median / max); fire lines found by the recomputed trigger within 2 s: %s of %d (%d more fires "
+                   "without RugCheck; %d SNIPE fire lines apart, never checked against it) · coverage: %d "
                    "creates, %d near, %d followed, %d ended by the cap (%d before 600 s), %d with a gap, %d late "
                    "bloomers the tape cannot see, %.0f s unknown for every coin" % (
-                       san.get("readings") or 0, san.get("vsol_not_30_plus_real") or 0, san.get("completed") or 0,
+                       san.get("readings") or 0, san.get("vsol_not_30_plus_real") or 0, san.get("odd_readings") or 0,
+                       san.get("odd_coins") or 0, san.get("completed") or 0,
                        san.get("complete_real_sol"), fc.get("found_within_2s") or 0, fc.get("fire_lines") or 0,
-                       fc.get("recomputed_without_a_line") or 0,
+                       fc.get("recomputed_without_a_line") or 0, fc.get("snipe_fire_lines") or 0,
                        cov.get("creates") or 0, cov.get("near") or 0, cov.get("followed") or 0,
                        cov.get("cap_ends") or 0, cov.get("cap_before_600s") or 0, cov.get("gap_coins") or 0,
                        cov.get("late_bloomers_unseen") or 0, cov.get("unknown_s") or 0))

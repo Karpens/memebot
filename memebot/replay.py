@@ -135,6 +135,7 @@ def _load(name, path):
 bot = _load("memebot_replay_bot", os.path.join(HERE, "bot.py"))
 SOL = bot.SOL
 read_curve = bot.newpairs.read_curve if bot.newpairs is not None else None
+curve_sane = getattr(bot.newpairs, "curve_sane", None) if bot.newpairs is not None else None
 
 LOOKBACK_S = 600.0                      # tape read this long before `since`: SOL's price and the market's last state
 DEFAULT_SOL_USD = 200.0                 # only when the tape has no "sol" line at all (said in the result)
@@ -206,7 +207,8 @@ KINDS = {"c": CURVE, "curve": CURVE, "create": CREATE, "migrate": MIGRATE, "gone
 SYSTEM = ("start", "hb", "stop")
 DROP = ("k", "kind", "t", "ts", "m", "mint")
 # per kind: the recorder's short field -> the feed event's field
-CURVE_FIELDS = {"s": "slot", "vs": "vsol", "vt": "vtok", "rs": "rsol", "x": "complete"}
+CURVE_FIELDS = {"s": "slot", "vs": "vsol", "vt": "vtok", "rs": "rsol", "x": "complete", "o": "odd"}   # "o": the live
+# bot's verdict that no standard curve reads so (newpairs.curve_sane returns it: one verdict, live and replayed)
 META_FIELDS = {"x": "twitter", "tg": "telegram", "web": "website", "xk": "x_kind", "src": "source"}
 HB_S = 10.0                             # the recorder's heartbeat (rec_hb_s): a run without "stop" ended about then
 SAME_ASK_S = 0.05                       # a replay's RugCheck ask this close to a recorded one is the same ask
@@ -335,6 +337,8 @@ class Tape(object):
 
     def _state(self, mint, t, fields):
         r = read_curve(fields) if read_curve is not None else None
+        if r is not None and curve_sane is not None and curve_sane(fields) is not None:
+            r = None                        # an odd reading (newpairs.curve_sane) prices no quote: the last sane state does
         if r is not None and r["vsol"] > 0 and r["vtok"] > 0:
             st = self.states.setdefault(mint, ([], []))
             st[0].append(t)

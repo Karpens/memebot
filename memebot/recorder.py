@@ -47,10 +47,13 @@ on every coin line:
   {"k":"create","m","t","symbol","name","creator","initialBuy","solAmount","bondingCurveKey",
    "vSolInBondingCurve","vTokensInBondingCurve","marketCapSol","is_mayhem_mode","pool","_rx"}
       PumpPortal's own fields (creator = traderPublicKey); t is "_rx", when the feed received it.
-  {"k":"c","m","t","s","vs","vt","rs"[,"x":1]}
+  {"k":"c","m","t","s","vs","vt","rs"[,"x":1][,"o":"why"]}
       a curve reading as feeds.py decoded it: s the slot, vs / rs the virtual / real SOL in LAMPORTS, vt
       the virtual tokens in BASE UNITS (1e6 per token), x 1 when the curve is complete (left out when
-      not). t is when the poll answered. Change-only (the first reading of a watch, then each change):
+      not), o when the bot found it ODD (newpairs.curve_sane: no standard pump.fun curve is in that state; the
+      reading is still here as it came, and the bot never priced, filled or exited on it; older tapes have no
+      "o": curve_sane on the line's own numbers says the same). t is when the poll answered. Change-only (the
+      first reading of a watch, then each change):
       between two readings the curve did not move, as long as the coin was watched (see "follow" and
       "end") and the poller was answering (see "hb").
   {"k":"meta","m","t","ok","x","tg","web","xk","src","ms"}   the coin's X / Telegram / website ("" when
@@ -619,6 +622,8 @@ class Recorder(object):
             if _yes(ev.get("complete")):
                 kw["x"] = 1
                 r.complete = True
+            if ev.get("odd"):                           # the bot's verdict (newpairs.curve_sane), the reading as it is
+                kw["o"] = _s(ev.get("odd"), 80)
             self._coin_line(r, "c", t, **kw)
         elif kind == "create":
             if mint in self.coins:                      # PumpPortal sends a create twice now and then
@@ -1114,8 +1119,9 @@ def _files(folder, since, until, tail_s):
 
 
 def reading(obj):
-    """A "c" line -> {"t", "slot", "vsol", "vtok", "rsol", "complete", "price"} in SOL and whole tokens (units
-    told apart by size like newpairs.read_curve: a curve has 30+ SOL virtual, 2.8e14+ token base units)."""
+    """A "c" line -> {"t", "slot", "vsol", "vtok", "rsol", "complete", "price"[, "odd"]} in SOL and whole tokens (units
+    told apart by size like newpairs.read_curve: a curve has 30+ SOL virtual, 2.8e14+ token base units); "odd" the
+    line's "o" when it has one."""
     vs, vt, rs = _num(obj.get("vs")), _num(obj.get("vt")), _num(obj.get("rs"))
     lamports = (vs is not None and vs > 1e4) or (vs is None and rs is not None and rs > 1e4)
     vsol = vs / 1e9 if vs is not None and lamports else vs
@@ -1123,9 +1129,12 @@ def reading(obj):
     vtok = vt / 1e6 if vt is not None and vt > 1e12 else vt
     price = vsol / vtok if vsol is not None and vtok and vsol > 0 and vtok > 0 else None
     slot = _num(obj.get("s"))
-    return {"t": float(obj["t"]), "slot": int(slot) if slot is not None else None,
-            "vsol": float(vsol) if vsol is not None else None, "vtok": float(vtok) if vtok is not None else None,
-            "rsol": float(rsol) if rsol is not None else None, "complete": bool(obj.get("x")), "price": price}
+    out = {"t": float(obj["t"]), "slot": int(slot) if slot is not None else None,
+           "vsol": float(vsol) if vsol is not None else None, "vtok": float(vtok) if vtok is not None else None,
+           "rsol": float(rsol) if rsol is not None else None, "complete": bool(obj.get("x")), "price": price}
+    if isinstance(obj.get("o"), str) and obj["o"]:
+        out["odd"] = obj["o"]                   # the live bot's verdict (newpairs.curve_sane): odd, as recorded
+    return out
 
 
 def load_tapes(folder, since=None, until=None, tail_s=7200):

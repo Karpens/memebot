@@ -39,6 +39,7 @@ SOL = bot.SOL
 K = 30.0 * 1.073e9
 EPOCH = datetime.datetime(1970, 1, 1)
 START = datetime.datetime(2026, 11, 26, 9, 0)
+END_RSOL = bot.newpairs.END_RSOL        # a standard curve completes at about 85 real SOL (its last tokens sold)
 
 
 class Clock(object):
@@ -73,14 +74,26 @@ class SimCoin(object):
         self._ts = self._cum = None
 
     def finish(self):
+        """The trades in time order and the real SOL after each. A curve completes when its real SOL reaches
+        END_RSOL (pump.fun sells its last tokens there): from then on it reads that state with complete set, and no
+        trade moves it again (the coin migrates). A standard curve never reads past it: the stream is sane, every
+        reading (newpairs.curve_sane)."""
         self.trades.sort()
         self._ts = [t for t, _ in self.trades]
         self._cum, s = [], 0.0
-        for _, x in self.trades:
+        self.t_done = None
+        for t, x in self.trades:
             s = max(0.0, s + x)
+            if self.t_done is None and self.dev_sol + s >= END_RSOL:
+                self.t_done = t
             self._cum.append(s)
 
+    def done_at(self, t):
+        return self.t_done is not None and t >= self.t_done
+
     def rsol_at(self, t):
+        if self.done_at(t):
+            return END_RSOL
         i = bisect.bisect_right(self._ts, t) - 1
         return self.dev_sol + (self._cum[i] if i >= 0 else 0.0)
 
@@ -387,7 +400,7 @@ class StreamFeeds(object):
                 p.fire()
             elif kind == "poll":
                 lat = self.rng.uniform(0.15, 0.45)
-                snap = {m: self.coins[m].rsol_at(t) for m in self.watching if m in self.coins}
+                snap = {m: (self.coins[m].rsol_at(t), self.coins[m].done_at(t)) for m in self.watching if m in self.coins}
                 self.slot += 2
                 self.at(t + lat, "answer", (snap, self.slot, int(lat * 1000), t))
                 self.at(t + (0.5 if self.holding else 1.0), "poll", None)
@@ -397,7 +410,7 @@ class StreamFeeds(object):
                 self.poller.calls += 1
                 self.poller.ok += 1
                 self.poller.last_ms = ms
-                for m, rsol in snap.items():
+                for m, (rsol, done) in snap.items():
                     if m in self.watching and (m in self.forget or abs(rsol - self.sent.get(m, -1.0)) > 1e-12):
                         self.forget.discard(m)
                         self.sent[m] = rsol
@@ -407,14 +420,17 @@ class StreamFeeds(object):
                                            "price_sol": (int(vsol * 1e9) / 1e9) / (int(vtok * 1e6) / 1e6),
                                            "vtok": int(vtok * 1e6), "vsol": int(vsol * 1e9),
                                            "rtok": int(max(0.0, vtok - 279.9e6) * 1e6), "rsol": int(rsol * 1e9),
-                                           "complete": False, "slot": slot, "src": "poll", "t": t})
+                                           "complete": done, "slot": slot, "src": "poll", "t": t})
 
 
-def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None, extra=None, memory=None):
+def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None, extra=None, memory=None, checked=True):
     """bot.run() on the stream with config.json (live channel off, the recorder on; over: settings changed for this
     run) -> the live run's trades (this run's day). clock: go on from another run's clock; tag: a letter for this
     stream's mints (two runs on one data dir need different coins); extra: more coins, extra(t_start) -> [SimCoin];
-    memory: the LEARNER's memory.json before the run (learner.py's dict)."""
+    memory: the LEARNER's memory.json before the run (learner.py's dict). checked: the stream is sane, so the run must
+    count no odd curve reading (newpairs.curve_sane's false positives on standard curves: none) and every trade it
+    booked must pass memebot/fix_book.py's void rules (its proceeds, exit price, mcap and "since the create" all from
+    one standard curve state); AssertionError otherwise."""
     clock = clock or Clock(START)
     coins = make_stream(seed, minutes, clock.epoch())
     if extra is not None:
@@ -448,7 +464,25 @@ def live_run(data_dir, minutes, seed, jup, over=None, clock=None, tag=None, extr
         bot.run(data_dir, cfg, minutes=minutes, anytime=False, market=market, now_fn=clock.now, sleep=clock.advance,
                 out=lambda *a: None, live=None, feeds=feeds)
     st = bot.read_json(os.path.join(data_dir, "state.json"), {})
-    return list((st.get("night") or {}).get("trades") or []), cfg
+    trades = list((st.get("night") or {}).get("trades") or [])
+    if checked:
+        odd = (st.get("night") or {}).get("odd")
+        if odd is not None:
+            raise AssertionError("odd curve readings on a sane stream: %s" % {k: odd.get(k) for k in odd if k != "mints"})
+        void = [(t.get("symbol"), w) for t in trades for w in fix_book().void_reasons(t)]
+        if void:
+            raise AssertionError("trades fix_book would void: %s" % void[:5])
+    return trades, cfg
+
+
+_FB = []
+
+
+def fix_book():
+    """memebot/fix_book.py, loaded once."""
+    if not _FB:
+        _FB.append(load("memebot", "fix_book"))
+    return _FB[0]
 
 
 def clean_report(mint, holders, top, empty=None):
@@ -556,6 +590,17 @@ class LiveAgainstReplay(unittest.TestCase):
         self.assertEqual((chk["live"], chk["replay"], chk["same_entry"]), (len(live), len(live), len(live)))
         self.assertGreaterEqual(chk["same_exit"], len(live) // 2)
         self.assertLess(abs(chk["pnl_pct_gap_mean"]), 2.0)
+
+    def test_jupiters_fills_of_the_true_market_are_booked_as_quoted(self):
+        # Jupiter quotes the chain at the quote's time, as live: a sale a moment after its reading fills above or under
+        # the reading's state, and is booked so (the sale cap, np_sale_cap, is only for curve-filled entries far beyond
+        # their state). The code before the odd-reading gate (bb498d0) booked these very 48 trades, $13.58, on this
+        # stream; the first version of the gate booked $11.60 (its cap turned two stops' fills down to the curve maths)
+        d, live, cfg = self.run_live(60, 13, "true")
+        self.assertEqual((len(live), round(sum(t["pnl"] for t in live), 2)), (48, 13.58))
+        self.assertFalse([t for t in live if t.get("fill") == "curve"])
+        st = bot.read_json(os.path.join(d, "state.json"), {})
+        self.assertFalse([r for r in st["night"]["decisions"] if "curve state that decided the sale" in r["text"]])
 
     def test_a_full_hours_tape_is_unknown_in_the_replay_never_a_flat_curve(self):
         # the review's case: at rec_max_mb_hour 1.5 the recorder left curve readings out and only a heartbeat counter

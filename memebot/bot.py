@@ -19,6 +19,15 @@ Two strategies (config.json "strategies"):
              held and Jupiter has a route, else the curve maths on that reading with every cost ("fill curve"),
              only on a reading at most np_snipe_fresh_s old with no newer one in; the stop is np_snipe_stop_pct
              (-10 %) until the first step, the profit exits are the hold plan's, as for any New Pair.
+             ODD READINGS (newpairs.curve_sane; the night of 2026-11-27 booked $82 -> $362 on five of them): a curve
+             reading no standard pump.fun curve can be in is never a price, a fill, an exit's reading or the
+             LEARNER's, in either mode (Night.np_curve, the watch lists' on_curve): counted (night["odd"], the page's
+             speed line) and said once a coin, kept on the tape as it is ("o"); a watched coin is rejected for good on
+             it, a held one keeps its last sane state, its time stops go on, and it sells by Jupiter, or by the curve
+             maths only on a sane, fresh reading (at the job's end on one at most np_end_state_s old, else it waits for
+             the next job), its trade's exit price that state's; a SHADOW the same (np_shadow_sale), dropped unlearned
+             when nothing prices it. A curve-filled entry's sale on a Jupiter quote over np_sale_cap_x (2x) what the
+             fresh, sane curve state that decided it gives is booked by the curve maths on that state (np_sale_cap).
   migrated   the older scanner (off by default): pairs a few minutes to hours old from GeckoTerminal
              and DexScreener, with its own rules below.
 
@@ -276,6 +285,10 @@ DEFAULTS = {
     "np_snipe_fresh_s": 1.0,            # a fill by the curve maths only on a reading at most this old when the bot
                                         # decides (a quote is Jupiter's price then); older: not bought (Night.np_snipe_late)
     "np_quiet_min": 3.0,                # a held coin's curve without a trade this long: dead, sold
+    "np_end_state_s": 60.0,             # at the job's or night's end the curve maths sells a coin with no fresh
+                                        # sane reading only on a last sane state at most this old (else it waits)
+    "np_sale_cap_x": 2.0,               # a curve-filled entry's Jupiter sale over this many times what the deciding
+                                        # curve state gives: booked by the curve maths on that state (np_sale_cap)
     "time_stop_late_x": 2.0,            # after this many times its tier's time stop, a coin still short of its
                                         # first ladder step is sold (before it: only one under time_stop_below_pct)
     "job_no_entries_min": 5,            # a job that ends before the night does (the next job takes over):
@@ -1149,12 +1162,20 @@ class Night(object):
         self.np_shadowed = {}                           # mint -> when it was shadowed: one shadow a coin a run
         st["shadow"] = shadow_book(st.get("shadow"))
         self.shadow_lost = st["shadow"].pop("open", [])   # open at the last save: dropped (said in begin())
+        self.restored_odd = []                          # held coins whose saved curve state is odd (said in begin())
         if self.wl is not None:
             for mint, pos in st["positions"].items():   # a restart keeps the book: held new pairs are watched again
                 if pos.get("strategy") == "new_pairs":
                     coin = newpairs.Coin.from_dict(pos.get("np"))
                     if coin is not None and coin.mint == mint:
                         coin.status = "entered"
+                        why = newpairs.curve_sane({"vsol": coin.vsol, "vtok": coin.vtok, "rsol": coin.rsol})
+                        if why is not None:
+                            # saved by an older bot (or edited): a state no standard curve is in never prices an exit
+                            # or a sale. Stale from the start (Jupiter's price v3 decides) and odd until a sane reading
+                            coin.odd, coin.odd_why, coin.odd_now = coin.odd + 1, why[:120], True
+                            coin.last_t = 0.0
+                            self.restored_odd.append("%s (%s)" % (pos.get("symbol") or mint[:6], why))
                         self.wl.adopt(coin)
                         win = np_win_load(pos.get("np_win"))
                         if win:                         # the NEWS window goes on where it was, not from the launch
@@ -1192,6 +1213,11 @@ class Night(object):
                 night_id, usd(st["balance"]), len(AGENTS), self.cfg["session_start"], self.cfg["session_end"]))
         if self.mem_off and not self.mem_said:          # said here: the night's log exists now
             self.learner_off(self.mem_off)
+        if self.restored_odd:                           # held coins restored with an odd curve state, said once
+            odd, self.restored_odd = self.restored_odd, []
+            self.log("EXECUTOR", None, "stale", "restored with a curve state no standard pump.fun curve is in: %s · "
+                     "priced by Jupiter until a sane curve reading comes, never sold by the curve maths on it" % (
+                         "; ".join(odd[:8]) + (" ..." if len(odd) > 8 else "")))
         if self.shadow_lost:                            # the shadows a restart dropped (memory only), said once
             lost, self.shadow_lost = self.shadow_lost, []
             self.log("LEARNER", None, "shadow", "SHADOW %d open shadow trade%s dropped by the restart, not learned: %s" % (
@@ -1265,7 +1291,38 @@ class Night(object):
             return self.np_curve_sale(pos, raw, sol_usd)
         sol = int(q["outAmount"]) / 1e9
         self.quote_out = int(q["outAmount"])
+        if not sim and pos.get("strategy") == "new_pairs":
+            sol = self.np_sale_cap(pos, raw, sol)
         return self.sale_usd(sol, sol_usd, pos)
+
+    def np_sale_cap(self, pos, raw, sol):
+        """A safety net for a New Pair whose ENTRY the curve maths filled (no Jupiter check of that curve for this
+        mint): a Jupiter quote of its sale more than np_sale_cap_x (2x) over what the curve state that decided the sale
+        gives for these tokens (its last sane reading, the newest and fresh, not complete) is booked by the curve maths
+        on that state. No market move of a moment explains 2x on a fresh state; a reading of another account or another
+        coin does (the night of 2026-11-27: Coke-Cola's sale 12x and 530A's about 1000x the state that decided them,
+        +$233 and +$1410 booked). Anything else stands as Jupiter quoted it, above or under the state: a quote-filled
+        entry (Jupiter checked the curve maths for this mint at the entry), a sale no fresh sane state decided
+        (stale, odd, complete: Jupiter's price did), and a move within 2x either way (the paper book and the LEARNER
+        are never biased by a cap on ordinary moves). -> the SOL to book."""
+        try:
+            if pos.get("entry_fill") != "curve":
+                return sol
+            coin = self.wl.get(pos["mint"]) if self.wl is not None else None
+            if coin is None or coin.complete or getattr(coin, "odd_now", False) or \
+                    newpairs.stale(coin, self.cfg, self.epoch()) or not (f(coin.vsol) > 0 and f(coin.vtok) > 0):
+                return sol                              # no fresh curve state decided it (Jupiter's price, a migration)
+            want = curve_sell_sol(coin.vsol, coin.vtok, raw / 10.0 ** pos.get("decimals", 6),
+                                  f(self.cfg.get("curve_fee_pct"), 1.25))
+            if not want > 0 or sol <= want * max(1.0, f(self.cfg.get("np_sale_cap_x"), 2.0)):
+                return sol
+            self.fill_note = (" · Jupiter's quote %.1fx what the curve state that decided the sale gives (the entry was "
+                              "filled by the curve maths): booked by the curve maths on that state" % (sol / want))
+            pos["fill"] = "curve"                       # the proceeds are the curve maths', not Jupiter's
+            return want
+        except Exception as e:                          # noqa: BLE001 - a check never stops a sale
+            self.m.errors.append("sale cap: %s: %s" % (type(e).__name__, e))
+            return sol
 
     def close_part(self, mint, frac, why, sol_usd, take=None, t_reading=None):
         """Sells frac of what is left of a position. take: plan.py's ladder decision (its log line);
@@ -2005,8 +2062,12 @@ class Night(object):
     def np_event(self, ev, minutes_left):
         if not isinstance(ev, dict):
             return
-        self.rec_call("event", ev)                      # on the tape as it came (create, curve, meta, ...)
         kind = ev.get("kind") or ev.get("txType")
+        if kind == "curve":                             # an odd reading goes on the tape as it is, marked with why
+            odd = newpairs.curve_sane(ev)
+            if odd is not None:
+                ev = dict(ev, odd=odd)
+        self.rec_call("event", ev)                      # on the tape as it came (create, curve, meta, ...)
         if kind == "curve":
             self.np_curve(ev, minutes_left)
         elif kind == "create":
@@ -2028,6 +2089,8 @@ class Night(object):
         coin = self.wl.on_create(ev, now)
         if coin is None:
             return None
+        if coin.odd:                                    # PumpPortal's reserves in the create: no standard launch state
+            self.np_odd(coin.mint, coin.odd_why, "its launch state is the creator's buy on a standard curve instead")
         for m in coin.evicted:
             self.np_unwatch(m)
         self.np_call("watch", coin.mint, coin.curve)
@@ -2093,9 +2156,23 @@ class Night(object):
 
     def np_curve(self, ev, minutes_left):
         """A curve reading: a held coin's exits at once (first out), else the watched coin's trigger
-        (first in). A price of 0.0 (a zeroed or broken curve) is never a price."""
+        (first in). An ODD reading (newpairs.curve_sane: a zeroed account, another program's layout, reserves no
+        standard pump.fun curve has; np_event marked it) is never a price: no snipe, no trigger, no fill, no exit, no
+        SHADOW step and nothing for the LEARNER on it. The watch lists' gate (on_curve) keeps it out of the coins (a
+        watched one is rejected for good; a held one keeps its last sane state, its time stops go on in np_second, it
+        goes stale like a coin with no reading and the curve maths sells nothing on it); np_odd counts it. An odd
+        reading's complete flag is taken only from a pump.fun curve whose reserves the migration withdrew
+        (newpairs.complete_flag); a foreign account's is odd like the rest."""
         mint = ev.get("mint")
         if not isinstance(mint, str):
+            return
+        odd = newpairs.curve_sane(ev)                   # np_event's verdict when it put one on (one verdict for all)
+        if odd is not None and not newpairs.complete_flag(ev, odd):
+            t = self.np_t(ev)
+            self.np_odd(mint, odd)
+            self.wl.on_curve(mint, ev, t)               # counted on the coin; a watched one is rejected there
+            if mint in self.shadows:                    # the shadow's own copy is marked the same way, no exit on it
+                self.np_shadow_safe("np_shadow_curve", mint, ev, t, minutes_left)
             return
         if "price_sol" in ev and not ev.get("complete") and not f(ev.get("price_sol")) > 0:
             return
@@ -2110,6 +2187,48 @@ class Night(object):
             self.np_judge(coin, t, minutes_left)
         if mint in self.shadows:                        # a SHADOW's exits on the same reading, after the book's
             self.np_shadow_safe("np_shadow_curve", mint, ev, t, minutes_left)
+
+    def np_odd(self, mint, why, what=None):
+        """An odd curve reading (np_curve; np_create for a create's own reserves) of a coin the bot watches, holds or
+        shadows: counted for the night (night["odd"]: readings, coins; the page's speed line and the panel's speed
+        "odd_readings" / "odd_coins") and said once a coin in the log, with what it means for the coin: a watched one is
+        rejected for good, a held one keeps its last sane price. A curve only the recorder still follows (after
+        np_watch_s) is counted apart ("followed"), never said and never in the page's figures. The coins counted are
+        kept in the night itself ("mints", the last ODD_MINTS), so a restart (the next job) never counts or says one
+        twice. what: the log's words for the coin instead of the ones above."""
+        n = self.state.get("night")
+        if not isinstance(n, dict):
+            return
+        old = n.get("odd") if isinstance(n.get("odd"), dict) else {}
+        mints = [m for m in (old.get("mints") or []) if isinstance(m, str)] if isinstance(old.get("mints"), list) else []
+        odd = n["odd"] = {"readings": int(f(old.get("readings"))), "coins": int(f(old.get("coins"))),
+                          "followed": int(f(old.get("followed"))), "mints": mints}
+        coin = self.wl.get(mint) if self.wl is not None else None
+        if coin is None and mint not in self.shadows and not self.np_held(mint):
+            odd["followed"] += 1                        # a curve nobody trades (the recorder's): apart, not said
+            return
+        odd["readings"] += 1
+        if mint in mints:
+            return
+        mints.append(mint)
+        del mints[:-ODD_MINTS]
+        odd["coins"] += 1
+        sym = getattr(coin, "symbol", None) or ((self.state["positions"].get(mint) or self.shadows.get(mint) or {})
+                                                .get("symbol")) or mint[:6]
+        if not what:
+            if self.np_held(mint):
+                what = "held: its exits decide on its last sane price, it is sold by Jupiter, or by the curve maths " \
+                       "only on a sane reading"
+            elif mint in self.shadows:
+                what = "a shadow: its exits decide on its last sane state"
+            elif coin is not None and coin.status == "watching":
+                what = "never bought: rejected for good"
+            else:
+                what = "not traded"
+        self.np_once(("odd", mint), "SCANNER", sym, "odd", "odd curve reading: %s · no standard pump.fun curve reads "
+                     "so: never a price, a fill or an exit's reading · %s · %d odd reading%s from %d coin%s tonight" % (
+                         why, what, odd["readings"], "" if odd["readings"] == 1 else "s", odd["coins"],
+                         "" if odd["coins"] == 1 else "s"))
 
     def np_held(self, mint):
         """A position New Pairs holds (the migrated strategy's coins have exits of their own)."""
@@ -2650,24 +2769,43 @@ class Night(object):
         coin = self.wl.get(pos["mint"]) if self.wl is not None else None
         # a SNIPE the curve maths filled (no Jupiter route at its first reading) is sold by the same maths when Jupiter
         # fails: its entry is priced by it already, and it was the maths each live fill matched Jupiter by. Never on
-        # stale reserves (no curve reading for np_stale_s: the poller is dark, the coin may have gone anywhere) but at
-        # the night's or a job's end (np_ending), which sells it on the last ones and says so
+        # stale reserves (no curve reading for np_stale_s: the poller is dark, the coin may have gone anywhere), nor
+        # when the coin's newest reading was ODD (newpairs.curve_sane: its last sane state is not the chain's now),
+        # whichever way its entry was filled, but at the night's or a job's end (np_ending), which sells it on the
+        # last sane ones and says so, and only when they are at most np_end_state_s old (older: held for the next job).
+        # The trade's exit price is then that state's price: a sale's proceeds and its exit price come from one state
         by_curve = pos.get("entry_fill") == "curve" and not diffs
         if (not by_curve and (not diffs or max(diffs) > f(self.cfg.get("np_validate_pct"), 5.0))) or coin is None:
             return None
-        stale = by_curve and newpairs.stale(coin, self.cfg, self.epoch())
+        stale = newpairs.stale(coin, self.cfg, self.epoch()) or bool(getattr(coin, "odd_now", False))
+        age = self.epoch() - f(coin.last_t)
         if stale and not self.np_ending:
             return None                                 # close_part: "can't sell ... · retrying" until a reading comes
+        if stale and age > f(self.cfg.get("np_end_state_s"), 60.0):
+            # the job's or night's end, and the last sane state is older than np_end_state_s: no fill on a state the
+            # coin may have left long ago. It stays held: the next job adopts it from state.json and watches its curve
+            # again (a sane reading, or Jupiter's route, sells it then)
+            if not pos.get("end_said"):
+                pos["end_said"] = True
+                self.log("EXECUTOR", pos["symbol"], "stuck", "not sold by the curve maths: its last sane curve reading "
+                         "is %.0f s old (at most %g s at the end) · held for the next job, which watches its curve "
+                         "again" % (age, f(self.cfg.get("np_end_state_s"), 60.0)))
+            return None
         sol = curve_sell_sol(coin.vsol, coin.vtok, raw / 10.0 ** pos.get("decimals", 6), f(self.cfg.get("curve_fee_pct"), 1.25))
         if not sol > 0:
             return None
+        if f(coin.price) > 0:                           # the exit price on the trade is the state's that priced the
+            pos["last"] = coin.price * sol_usd          # sale: proceeds and exit price from one state, never two
         if by_curve:
             self.fill_note = " · by the curve maths%s (Jupiter: %s; the entry was filled by it too)" % (
-                " on stale reserves (no curve reading for %.0f s)" % (self.epoch() - coin.last_t) if stale else "",
+                (" on stale reserves (no %scurve reading for %.0f s)" % (
+                    "sane " if getattr(coin, "odd_now", False) else "", self.epoch() - coin.last_t)) if stale else "",
                 getattr(self.m, "quote_why", None) or "no quote")
             pos["fill"] = "curve"
             return self.sale_usd(sol, sol_usd, pos)
-        self.fill_note = " · by the curve maths (Jupiter: %s; it was %.1f%% off a quote at the entry)" % (
+        self.fill_note = " · by the curve maths%s (Jupiter: %s; it was %.1f%% off a quote at the entry)" % (
+            " on stale reserves (no %scurve reading for %.0f s)" % (
+                "sane " if getattr(coin, "odd_now", False) else "", self.epoch() - coin.last_t) if stale else "",
             getattr(self.m, "quote_why", None) or "no quote", max(diffs))
         pos["fill"] = "curve"
         return self.sale_usd(sol, sol_usd, pos)
@@ -2964,7 +3102,8 @@ class Night(object):
         del lst[:-500]
 
     def np_speed_view(self, now):
-        sp = (self.state.get("night") or {}).get("np_speed") or {}
+        night = self.state.get("night") if isinstance(self.state.get("night"), dict) else {}
+        sp = night.get("np_speed") if isinstance(night.get("np_speed"), dict) else {}   # a broken state.json: none
 
         def last(k):
             return (sp.get(k) or [None])[-1]
@@ -2973,7 +3112,13 @@ class Night(object):
             status = [{"name": "pumpportal", "connected": False, "events": 0, "last_event_age_s": None, "errors": 0,
                        "last_error": self.feeds_off or "no feeds"}]
         text = self.np_call("text") if self.feeds is not None else "new pairs off: no feeds (%s)" % (self.feeds_off or "?")
+        odd = night.get("odd") if isinstance(night.get("odd"), dict) else {}
+        odd_n, odd_c = int(f(odd.get("readings"))), int(f(odd.get("coins")))
+        if odd_n:                                       # the page shows the feeds' text in its speed line
+            text = "%s · odd curve readings %d (%d coin%s, never a price)" % (text or "feeds", odd_n, odd_c,
+                                                                              "" if odd_c == 1 else "s")
         self.speed.update({
+            "odd_readings": odd_n, "odd_coins": odd_c,
             "first_in_ms": median(sp.get("first_in") or []), "first_in_last_ms": last("first_in"),
             "exit_ms": median(sp.get("exit") or []), "exit_last_ms": last("exit"),
             "launch_to_entry_s": median(sp.get("launch") or []),
@@ -3219,8 +3364,18 @@ class Night(object):
             return None, None
         if coin is None or not (f(coin.vsol) > 0 and f(coin.vtok) > 0):
             return None, None
+        # the real path's rule (np_curve_sale): never on a state the coin may have left, its newest reading odd or no
+        # sane reading for np_stale_s, but at the night's or a job's end on one at most np_end_state_s old; a shadow
+        # that cannot be priced so waits (np_shadow_sell), and is dropped unlearned when that lasts
+        if getattr(coin, "odd_now", False) or newpairs.stale(coin, self.cfg, self.epoch()):
+            if not self.np_ending or self.epoch() - f(coin.last_t) > f(self.cfg.get("np_end_state_s"), 60.0):
+                return None, None
         sol = curve_sell_sol(coin.vsol, coin.vtok, raw / 10.0 ** pos.get("decimals", 6), f(self.cfg.get("curve_fee_pct"), 1.25))
-        return (self.sale_usd(sol, sol_usd, pos), "curve") if sol > 0 else (None, None)
+        if not sol > 0:
+            return None, None
+        if f(coin.price) > 0:
+            pos["last"] = coin.price * sol_usd          # the sale's price is the state's that priced it
+        return self.sale_usd(sol, sol_usd, pos), "curve"
 
     def np_shadow_sell(self, mint, frac, why, sol_usd, take=None, t_reading=None):
         """close_part() for a SHADOW (np_exit's sale when shadow): frac of what is left, priced by np_shadow_sale(), the
@@ -3232,8 +3387,17 @@ class Night(object):
         raw = pos["raw"] if frac >= 0.999 else int(pos["raw"] * frac)
         got, fill = self.np_shadow_sale(pos, self.np_shadow_wl.get(mint), raw, sol_usd)
         if got is None:
-            pos["retry_at"] = self.epoch() + 5
+            now = self.epoch()
+            since = pos.setdefault("unpriced_at", now)
+            if self.np_ending or now - since >= f(self.cfg.get("np_quiet_min"), 3.0) * 60:
+                # no sane, fresh curve state to sell it on for np_quiet_min (or the end has come): its result would be a
+                # guess, and a guess never teaches the LEARNER
+                self.np_shadow_drop(mint, "not priced: odd or stale curve (no sane curve reading for %.0f s)" % (
+                    now - f(getattr(self.np_shadow_wl.get(mint), "last_t", now))))
+                return False
+            pos["retry_at"] = now + 5
             return False
+        pos.pop("unpriced_at", None)
         pos["sold_usd"] += got
         if pos.get("fill") != fill:
             pos["fill"] = "mixed"                       # Jupiter's quotes and the curve maths both priced it
@@ -3545,8 +3709,9 @@ def trades_view(trades):
     return [{k: v for k, v in t.items() if k != "learn"} for t in (trades or [])[-50:]]
 
 
+ODD_MINTS = 500                         # night["odd"]["mints"]: the coins counted tonight (np_odd), the last ones
 NP_SPEED = ("first_in_ms", "first_in_last_ms", "exit_ms", "exit_last_ms", "launch_to_entry_s", "creates_per_min",
-            "watching", "followed")
+            "watching", "followed", "odd_readings", "odd_coins")
 
 
 def speed_view(cfg, speed=None):
@@ -3554,7 +3719,9 @@ def speed_view(cfg, speed=None):
     last_event_age_s, errors, last_error}; one "pumpportal" entry saying why when there are no feeds),
     "feed" the feeds' short text, first_in_ms (trigger -> fill, the night's median) and
     first_in_last_ms, exit_ms (reading -> fill) and exit_last_ms, launch_to_entry_s, creates_per_min,
-    watching (candidates now) and followed (curves read). Without it, "feeds" names the REST sources."""
+    watching (candidates now) and followed (curves read), odd_readings / odd_coins (curve readings no standard
+    pump.fun curve can be in, tonight: never a price; "feed" says them too). Without it, "feeds" names the REST
+    sources."""
     s = speed or {}
     w = watch_sec(cfg)
     out = {"watch_sec": w, "tick_sec": w, "scan_sec": cfg["scan_every_sec"], "gt_sec": cfg.get("gt_every_sec"),
@@ -3611,7 +3778,8 @@ def panel(state, cfg, prices, at, errors=(), speed=None, live_stats=None, watch=
             "shadows": shadow_rows, "shadow_stats": shadow_stats}
 
 
-SPEED_COUNTERS = ("watch_ms", "last_scan_ms", "scans_per_min", "creates_per_min", "watching", "followed")
+SPEED_COUNTERS = ("watch_ms", "last_scan_ms", "scans_per_min", "creates_per_min", "watching", "followed",
+                  "odd_readings", "odd_coins")
 
 
 def steady_view(doc):
@@ -3621,7 +3789,8 @@ def steady_view(doc):
     each panel, every 15 s). A feed going down or up, and the latencies after a trade, still differ."""
     sp = {k: v for k, v in (doc.get("speed") or {}).items() if k not in SPEED_COUNTERS}
     if isinstance(sp.get("feed"), str):
-        sp["feed"] = re.sub(r"\d+ watched", "N watched", sp["feed"])
+        sp["feed"] = re.sub(r"odd curve readings \d+ \(\d+ coins?", "odd curve readings N (N coins",
+                            re.sub(r"\d+ watched", "N watched", sp["feed"]))
     if isinstance(sp.get("feeds"), list):
         sp["feeds"] = [{k: x.get(k) for k in ("name", "connected", "last_error")} if isinstance(x, dict) else x
                        for x in sp["feeds"]]

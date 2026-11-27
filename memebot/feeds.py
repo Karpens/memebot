@@ -18,10 +18,14 @@ the standard library.
 
 Events on the queue (dispatch on "kind"):
   {"kind": "create"|"migrate", "txType", ...PumpPortal's own fields..., "_rx": epoch seconds when it arrived}
-  {"kind": "curve", "mint", "key", "price_sol", "vtok", "vsol", "rtok", "rsol", "complete", "slot", "t", "src"}
+  {"kind": "curve", "mint", "key", "price_sol", "vtok", "vsol", "rtok", "rsol", "supply", "complete", "slot", "t",
+   "src", "disc_ok", "owner_ok"}
       The reserves are the raw on-chain integers: vsol and rsol in lamports (1e9 per SOL), vtok and rtok in token
       base units (1e6 per token). price_sol is SOL per whole token. src is "poll" or "ws". A curve event comes with
-      the first reading of a coin, and after that only when its reserves changed.
+      the first reading of a coin, and after that only when its reserves changed. disc_ok: the account's first 8
+      bytes are Anchor's BondingCurve discriminator; owner_ok: its owner is the pump.fun program (left out when the
+      answer has no owner). Nothing here judges the reserves: the event is the reading as it is (the tape keeps it),
+      and newpairs.curve_sane() says whether a standard curve can be in that state.
   {"kind": "curve_gone", "mint", "key", "t", "src"}   the account read as null 3 times in a row (closed, or not
       there yet). It comes once, and again only after the account has been seen in between.
   {"kind": "meta", "mint", "twitter", "telegram", "website", "description", "x_kind", "ok", "source", "ms",
@@ -73,7 +77,9 @@ UA = "Mozilla/5.0 (meme-bot paper trader)"
 BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
               "Chrome/131.0.0.0 Safari/537.36")
 NO_WS = "websockets not installed (pip install websockets==17.4)"
-CURVE_DISC = hashlib.sha256(b"account:BondingCurve").digest()[:8]     # Anchor's account discriminator
+CURVE_DISC = hashlib.sha256(b"account:BondingCurve").digest()[:8]     # Anchor's account discriminator: the same
+                                        # for ANY Anchor program with an account named BondingCurve (a fork's too)
+PUMP_PROGRAM = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"           # the owner of every pump.fun bonding curve
 GONE_AFTER = 3                          # nulls in a row before a curve counts as gone (RPC nodes lag a little)
 MAX_META = 512 * 1024                   # a metadata JSON is ~1 KB; never read a huge page into memory
 
@@ -119,7 +125,10 @@ def decode_curve(data):
     None when the bytes can't be one. Layout (the live probe matched the create event's price exactly): an 8-byte
     Anchor discriminator, then five little-endian u64 (virtual token reserves, virtual SOL reserves, real token
     reserves, real SOL reserves, token supply), then the complete flag at byte 48 (the curve is done and the coin
-    migrates). The account is 166 bytes; the rest is not needed. Accepts bytes or a base64 string."""
+    migrates). The account is 166 bytes; the rest is not needed. Accepts bytes or a base64 string. It reads ANY 49+
+    bytes as reserves: a zeroed account gives price 0, another program's account garbage. The callers mark the
+    discriminator (disc_ok) and the owner (owner_ok) on the event, and newpairs.curve_sane() judges the reserves (the
+    bot never prices an odd reading); the event carries the reading as it is, for the tape."""
     if isinstance(data, str):
         try:
             data = base64.b64decode(data, validate=True)
@@ -132,6 +141,13 @@ def decode_curve(data):
     price = (vsol / 1e9) / (vtok / 1e6) if vtok else 0.0        # SOL per whole token (the coin has 6 decimals)
     return {"vtok": vtok, "vsol": vsol, "rtok": rtok, "rsol": rsol, "supply": supply, "complete": raw[48] != 0,
             "price_sol": price}
+
+
+def _owner(d, value):
+    """d["owner_ok"]: the RPC account value's owner is the pump.fun program (left out when the answer has no owner)."""
+    owner = value.get("owner") if isinstance(value, dict) else None
+    if isinstance(owner, str):
+        d["owner_ok"] = owner == PUMP_PROGRAM
 
 
 def account_bytes(value):
@@ -625,8 +641,9 @@ class _Curves(Feed):
         ev = {"kind": "curve", "mint": mint, "key": key, "price_sol": d["price_sol"], "vtok": d["vtok"],
               "vsol": d["vsol"], "rtok": d["rtok"], "rsol": d["rsol"], "complete": d["complete"], "slot": slot,
               "t": t, "src": self.src}
-        if "disc_ok" in d:
-            ev["disc_ok"] = d["disc_ok"]
+        for k in ("supply", "disc_ok", "owner_ok"):     # what newpairs.curve_sane() also checks
+            if k in d:
+                ev[k] = d[k]
         return 1 if self._emit(ev) else 0
 
 
@@ -838,6 +855,7 @@ class CurvePoller(_Curves):
         d = decode_curve(raw)
         if d is not None:
             d["disc_ok"] = bytes(raw[:8]) == CURVE_DISC
+            _owner(d, value)
         if d is None:
             self._error("%s: not a curve account (%d bytes)" % (mint[:8], len(raw)))
             return 0
@@ -981,6 +999,7 @@ class CurveSocket(_Curves, _Reconnecting):
         d = decode_curve(raw)
         if d is not None:
             d["disc_ok"] = bytes(raw[:8]) == CURVE_DISC
+            _owner(d, res.get("value"))
         if d is None:
             self._error("%s: not a curve account" % tag[0][:8])
             return

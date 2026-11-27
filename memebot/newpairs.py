@@ -10,7 +10,10 @@ and asks it what to do. Garbage in (None, NaN, text, wrong types) never raises.
     coin = wl.on_create(event, now)          # None: skipped (mayhem mode, no symbol, ...) or a repeat
     for m in coin.evicted: unwatch(m)        # at most np_max_watch curves at once, oldest out first
     wl.on_meta(mint, metadata_json)          # once: the uri's JSON (None when every gateway failed)
-    coin = wl.on_curve(mint, reading, now)   # None: not watched, or nothing new in this reading
+    coin = wl.on_curve(mint, reading, now)   # None: not watched, or nothing new in this reading, or an ODD one:
+        # curve_sane(reading) says why no standard pump.fun curve is in that state (a zeroed account, another layout,
+        # reserves off vsol = 30 + real SOL ...); it never reaches the coin (a watched coin is rejected for good on
+        # it, a held one keeps its last sane state: coin.odd, odd_why, odd_now)
     wl.touch(now)                            # each good poll round: an unchanged curve is still fresh
     act, why = wl.judge(coin, now)           # "reject" | "wait" | "fire" (cheap_check, then trigger)
     ok, why, holders = rug_check_np(report, coin, cfg)    # on "fire" (report None when not in yet)
@@ -356,6 +359,142 @@ def read_curve(r):
             "slot": int(slot) if slot is not None and slot >= 0 else None}
 
 
+# ---------------------------------------------------------------- is it a standard pump.fun curve?
+#
+# The night of 2026-11-27 SNIPE mode filled 5 coins by the curve maths on accounts read as reserves that no standard
+# pump.fun curve has (vsol 0.015-0.026 SOL against 1.04-1.07 B tokens: "-100 % since the create", mcap 0; vsol ~3.5
+# SOL: "-88 %"; ~1290 SOL: "+4432 %", mcap 1267), and the paper book went from $82 to $362 on them. decode_curve()
+# reads ANY 49+ bytes as reserves, and the feeds checked neither the account's owner nor the reserves. What a standard
+# curve is, from pump.fun's program: it starts at 30 SOL virtual against 1,073,000,000 virtual tokens, 793,100,000 of
+# them real, supply 1,000,000,000 (6 decimals); every buy adds the same lamports to the virtual and the real SOL and
+# takes the same tokens from both token reserves, every sell the other way, and the fees are paid outside the
+# reserves. So, exactly: virtual SOL = 30 SOL + real SOL; virtual SOL x virtual tokens = 30 SOL x 1.073 B tokens (the
+# program's integer rounding only ever adds, about one part in 1e10 a trade); the price is never under the launch
+# price (no real SOL, all tokens); and the curve completes when the real tokens are gone (279.9 M virtual tokens left,
+# about 85 real SOL in, mcap about 411 SOL).
+STD_RTOK0 = 793.1e6                     # the real tokens a curve starts with (whole tokens)
+END_VTOK = START_VTOK - STD_RTOK0       # 279.9 M virtual tokens left when the curve completes
+END_RSOL = K / END_VTOK - START_VSOL    # ~85.005 real SOL in at completion
+LAUNCH_PRICE = START_VSOL / START_VTOK  # SOL per whole token at the launch (mcap 27.96 SOL)
+END_PRICE = K / END_VTOK ** 2           # ... at completion (mcap ~410.9 SOL)
+STD_SUPPLY = SUPPLY                     # whole tokens (1e15 base units)
+# The tolerances (curve_sane):
+#   SANE_VSOL_TOL  |virtual SOL - 30 - real SOL|, SOL. The identity is exact to the lamport on chain (both fields
+#                  move by the same integer); 0.001 SOL (1e6 lamports) only absorbs a reading given as SOL floats
+#                  (1e-14 of 115 SOL) and the tests' rounding (1 lamport), and is still four orders of magnitude
+#                  under the smallest odd offset seen (Coke-Cola: 26.5 SOL; the study's tape check counts 0.05 SOL).
+#   SANE_K_TOL     |vsol x vtok / (30 SOL x 1.073 B) - 1|. On chain it drifts up by about 1e-10 a trade (rounding);
+#                  1 % costs nothing (the odd readings were off 9x to 1200x) and lets a reading through only when its
+#                  price is within about 1 % of the standard curve's at the same real SOL.
+#   SANE_PRICE_TOL the price at least the launch price x (1 - 0.1 %): exact on chain, 0.1 % for floats.
+#   SANE_END_TOL   not past the completion state: real SOL at most END_RSOL x 1.01 and virtual tokens at least
+#                  END_VTOK x 0.999 (the same 1 % as k: a curve within it completes within 1 % of 85 SOL).
+SANE_VSOL_TOL = 1e-3
+SANE_K_TOL = 0.01
+SANE_PRICE_TOL = 1e-3
+SANE_END_TOL = 0.01
+
+
+def _sane_g(v):
+    """A reserve or price in a reason text: 0.0255, 30.64, 1.045e+09, 2.44e-11."""
+    return "%.4g" % v
+
+
+def curve_sane(r):
+    """None when a curve reading (feeds.py's event in raw lamports and token base units, or read_curve()'s forms in
+    SOL and whole tokens) is one a standard pump.fun bonding curve can be in, else the reason it is not ("odd"):
+    the account is not a pump.fun curve (disc_ok / owner_ok False: feeds.py's discriminator and owner checks), no
+    reserves (a zeroed or not yet initialized account), reserves that are not numbers, virtual SOL that is not 30 SOL
+    + real SOL (SANE_VSOL_TOL), a reserves product off the launch curve's (SANE_K_TOL), a price under the launch
+    price (SANE_PRICE_TOL), past the completion state (SANE_END_TOL), a supply other than 1 B tokens. An odd reading
+    is never a price, a fill, an exit's reading or the LEARNER's (Watchlist.on_curve keeps it out of the coin; the bot
+    counts it); a completed curve's reserves may read odd after its migration withdrew them (the caller takes such a
+    reading's complete flag only when complete_flag() believes it). A reading that carries its verdict already (r["odd"]:
+    a non-empty text, put on it by Night.np_event; a tape line's "o", mapped to "odd" by replay.py) is that verdict: the
+    bot's gate, the watch lists' and the replay's market share one, whatever produced the event. Never raises."""
+    if not isinstance(r, dict):
+        return "not a reading"
+    said = r.get("odd")
+    if isinstance(said, str) and said:
+        return said
+    if r.get("disc_ok") is False:
+        return "not a pump.fun bonding curve (its Anchor discriminator)"
+    if r.get("owner_ok") is False:
+        return "not a pump.fun bonding curve (the account's owner is not the pump.fun program)"
+    raw = {"vsol": _pick(r, "vsol", "virtual_sol_reserves", "vSolInBondingCurve", "v_sol"),
+           "vtok": _pick(r, "vtok", "virtual_token_reserves", "vTokensInBondingCurve", "v_tokens"),
+           "rsol": _pick(r, "rsol", "real_sol_reserves", "real_sol"),
+           "price": _pick(r, "price_sol", "price"), "supply": _pick(r, "supply", "token_total_supply")}
+    val = {}
+    for k, x in raw.items():
+        v = _num(x) if x is not None else None
+        if x is not None and v is None:
+            return "%s is not a number (%s)" % (k, _text(str(x), 24))
+        val[k] = v
+    vsol, vtok, rsol, price, supply = val["vsol"], val["vtok"], val["rsol"], val["price"], val["supply"]
+    if vsol is None and rsol is None:
+        return "no reserves in the reading"
+    if vsol is not None and vsol <= 0 and not (vtok or 0) > 0 and not (rsol or 0) > 0:
+        return "no reserves (a zeroed or not yet initialized account)"
+    if vsol is not None and vsol <= 0:
+        return "no virtual SOL"
+    if vtok is not None and vtok <= 0:
+        return "no virtual tokens"
+    if rsol is not None and rsol < 0:
+        return "negative real SOL"
+    lamports = vsol > 1e4 if vsol is not None else rsol > 1e4         # read_curve's units, told apart by size
+    if lamports:
+        vsol = vsol / LAMPORTS if vsol is not None else None
+        rsol = rsol / LAMPORTS if rsol is not None else None
+    if vtok is not None and vtok > 1e12:
+        vtok /= TOKEN_UNITS
+    if supply is not None and supply > 1e12:
+        supply /= TOKEN_UNITS
+    if rsol is None:
+        rsol = vsol - START_VSOL                    # a reading without the real SOL: the identity is all it has
+    if vsol is None:
+        vsol = START_VSOL + rsol
+    off = vsol - START_VSOL - rsol
+    if abs(off) > SANE_VSOL_TOL:
+        return "virtual SOL %s is not 30 + real SOL %s (off %+.4g SOL)" % (_sane_g(vsol), _sane_g(rsol), off)
+    if vtok is None:
+        vtok = vsol / price if price is not None and price > 0 else K / vsol
+    k = vsol * vtok / K
+    if abs(k - 1.0) > SANE_K_TOL:
+        return "reserves product %sx a standard curve's (%s SOL x %s tokens)" % (_sane_g(k), _sane_g(vsol), _sane_g(vtok))
+    px = vsol / vtok
+    if px < LAUNCH_PRICE * (1.0 - SANE_PRICE_TOL):
+        return "price %s SOL under the launch price %s" % (_sane_g(px), _sane_g(LAUNCH_PRICE))
+    if rsol > END_RSOL * (1.0 + SANE_END_TOL) or vtok < END_VTOK * (1.0 - SANE_END_TOL / 10.0):
+        return "past the completion state (%s real SOL, %s tokens left virtual)" % (_sane_g(rsol), _sane_g(vtok))
+    if supply is not None and abs(supply / STD_SUPPLY - 1.0) > 1e-9:
+        return "supply %s tokens (a pump.fun coin has 1 B)" % _sane_g(supply)
+    return None
+
+
+def complete_flag(r, odd=None):
+    """True when a curve reading says the curve is complete and that can be believed: a sane reading (odd None:
+    curve_sane(r)), or an odd one whose account is a pump.fun curve (disc_ok and owner_ok not False) with its reserves
+    withdrawn as pump.fun's migration leaves them (no real SOL, and the virtual tokens either gone or at the completion
+    value, END_VTOK within SANE_END_TOL). A foreign or garbage account's byte 48 is never a completion: its reading is
+    odd like any other (counted, no exit on it). Never raises."""
+    if not isinstance(r, dict) or not _yes(r.get("complete")):
+        return False
+    if odd is None:
+        return True
+    if r.get("disc_ok") is False or r.get("owner_ok") is False:
+        return False
+    rsol = _num(_pick(r, "rsol", "real_sol_reserves", "real_sol"))
+    vtok = _num(_pick(r, "vtok", "virtual_token_reserves", "vTokensInBondingCurve", "v_tokens"))
+    if rsol is not None and rsol != 0:
+        return False
+    if not vtok:
+        return True                                 # every reserve zeroed (or none in the reading)
+    if vtok > 1e12:
+        vtok /= TOKEN_UNITS
+    return abs(vtok / END_VTOK - 1.0) <= SANE_END_TOL
+
+
 # ---------------------------------------------------------------- a watched coin
 
 class Coin(object):
@@ -370,6 +509,9 @@ class Coin(object):
         "buys": 0, "sells": 0, "sell_max": 0.0, "last_sell": 0.0, "sell_max_held": 0.0, "buy_max": 0.0,
         "meta": None, "serial": 0, "status": WATCHING, "why": "", "trigger_t": None,
         "entry_t": None, "entry_price": None, "exit_t": None, "rug": None, "rearm": False,
+        # odd readings (curve_sane): how many, the last one's reason, and whether the newest reading was one (its
+        # state then is not the chain's: no touch keeps it fresh, the curve maths sells nothing on it)
+        "odd": 0, "odd_why": "", "odd_now": False,
     }
     # what from_dict accepts from a hand-edited or broken state.json: every derived number (rise %,
     # market cap, SOL in, ages) stays finite, so the panel's JSON never gets an Infinity
@@ -378,7 +520,7 @@ class Coin(object):
               "sell_max": (0.0, MAX_VSOL), "last_sell": (0.0, MAX_VSOL), "sell_max_held": (0.0, MAX_VSOL),
               "buy_max": (0.0, MAX_VSOL),
               "dev_tokens": (0.0, 1e12), "dev_pct": (0.0, 1e5), "age_s": (0.0, 2 * MAX_T),
-              "buys": (0, MAX_N), "sells": (0, MAX_N), "readings": (0, MAX_N), "serial": (0, MAX_N),
+              "buys": (0, MAX_N), "sells": (0, MAX_N), "readings": (0, MAX_N), "serial": (0, MAX_N), "odd": (0, MAX_N),
               "slot": (0, 2 ** 63)}
     TIMES = ("t0", "last_t", "trigger_t", "entry_t", "exit_t")
     PRICES = ("price0", "price", "entry_price")
@@ -495,11 +637,20 @@ def coin_from_create(ev, now, cfg=None):
     c.dev_sol = min(MAX_VSOL, max(0.0, f(ev.get("solAmount"))))
     c.dev_pct = c.dev_tokens / SUPPLY * 100
     r = read_curve(ev)                              # vSolInBondingCurve / vTokensInBondingCurve
+    odd = curve_sane(r) if r is not None else None
+    if odd is not None:
+        # PumpPortal's reserves in the create are no state a standard curve is in at its launch: never the coin's
+        # launch state (price0 and rsol0 decide "since the create" and the trigger's SOL in), the creator's own buy
+        # (solAmount) on a standard curve is; counted as an odd reading of the coin (Night.np_create says it)
+        c.odd, c.odd_why = 1, _text("the create's reserves: %s" % odd, 120)
+        r = None
     if r is None:
         mcap = _num(ev.get("marketCapSol"))
         vsol = START_VSOL + c.dev_sol
         r = {"vsol": vsol, "vtok": K / vsol, "rsol": c.dev_sol,
-             "price": mcap / SUPPLY if mcap is not None and 1.0 <= mcap <= 1e6 else vsol * vsol / K}
+             "price": mcap / SUPPLY if odd is None and mcap is not None and
+             LAUNCH_PRICE * SUPPLY * (1.0 - SANE_PRICE_TOL) <= mcap <= END_PRICE * SUPPLY * (1.0 + SANE_END_TOL)
+             else vsol * vsol / K}                  # a market cap no standard curve has is never the launch price
     c.vsol0, c.price0, c.rsol0 = r["vsol"], r["price"], r["rsol"]
     c.vsol, c.vtok, c.rsol, c.price = r["vsol"], r["vtok"], r["rsol"], r["price"]
     if c.mayhem and _on(cfg, "np_skip_mayhem"):
@@ -574,6 +725,7 @@ class Watchlist(object):
         self.seen = {}              # mint -> t of its create: PumpPortal may send a create twice
         self.create_times = []      # for creates per minute
         self.now = 0.0
+        self.odd = 0                # odd curve readings taken off the coins (curve_sane), completions aside
 
     def _clock(self, now):
         n = _t(now)
@@ -597,6 +749,7 @@ class Watchlist(object):
         if coin is None or coin.mint in self.seen:
             return None
         self.seen[coin.mint] = now
+        self.odd += coin.odd                        # the create's own reserves were odd (coin_from_create)
         self.create_times.append(now)
         self._launch(coin, now)
         if why is None:
@@ -647,24 +800,43 @@ class Watchlist(object):
     def on_curve(self, mint, reading, now):
         """A curve reading for a watched coin -> the Coin when it brought something new (a newer
         state, or a fresh copy of the same state), None otherwise. Readings after the curve
-        completed are left out."""
+        completed are left out. THE GATE for odd readings (curve_sane): one is never taken into the coin (its price,
+        reserves, buys and sells, its time: the coin keeps its last sane state, and goes stale like a coin with no
+        reading), counted (coin.odd, odd_why, odd_now; self.odd), and a watched coin is rejected for good on it
+        ("odd curve reading: ..."; a SNIPE whose first reading is odd is never bought). A held coin is not rejected:
+        its exits decide on its last sane state. A completed curve's reading is its complete flag only when its
+        reserves read odd as the migration leaves them (complete_flag: a pump.fun account, no real SOL left); any other
+        odd reading's complete flag is odd too (a foreign account's byte 48 is no migration)."""
         coin = self.get(mint)
         if coin is None:
             return None
         if isinstance(reading, dict) and reading.get("disc_ok") is False:
             # the account is not a pump.fun bonding curve (another launchpad, or a key we were sent wrong): its
             # bytes read as reserves are nonsense (a "+4050 %" coin in the dry run), so it is never traded
+            coin.odd, coin.odd_why, coin.odd_now = coin.odd + 1, "not a pump.fun bonding curve", True
+            self.odd += 1
             if coin.status == WATCHING:
                 self.reject(coin, "not a pump.fun bonding curve")
             return None
-        r = read_curve(reading)
+        odd = curve_sane(reading)
+        complete = complete_flag(reading, odd)      # an odd reading's complete flag only from a withdrawn pump.fun curve
+        if odd is not None and not complete:
+            coin.odd, coin.odd_why, coin.odd_now = min(MAX_N, coin.odd + 1), _text(odd, 120), True
+            self.odd += 1
+            if coin.status == WATCHING:
+                self.reject(coin, "odd curve reading: %s" % odd)
+            return None
+        r = read_curve(reading) if odd is None else None
         if r is None:
             # a migrated curve can read with its reserves zeroed (feeds.py still sends it): the
             # complete flag is the news, the last usable state stays the price
-            if isinstance(reading, dict) and _yes(reading.get("complete")) and not coin.complete:
+            if complete and not coin.complete:
                 return coin if _completed(coin, None, self._clock(now)) else None
             return None
-        return coin if apply_reading(coin, r, self._clock(now)) else None
+        if not apply_reading(coin, r, self._clock(now)):
+            return None
+        coin.odd_now = False                        # a sane state is the newest again
+        return coin
 
     def touch(self, now, mints=None):
         """A poll round read these curves (all watched ones when mints is None) and found them
@@ -679,8 +851,8 @@ class Watchlist(object):
             coins = []
         n = 0
         for c in coins:
-            if c is not None and not c.complete:
-                c.last_t = max(c.last_t, now)
+            if c is not None and not c.complete and not c.odd_now:     # an odd newest reading: its state is not the
+                c.last_t = max(c.last_t, now)                           # chain's, an unchanged poll keeps it no fresher
                 n += 1
         return n
 
