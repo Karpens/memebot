@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T01:33:57Z",
+ "updated": "2026-11-27T01:34:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 80.34,
@@ -24,7 +24,7 @@
   "flagged": 10,
   "checked": 6,
   "filtered": 3,
-  "lines": 199,
+  "lines": 200,
   "last_rug": {
    "coin": "RDB",
    "pass": false
@@ -687,6 +687,10 @@
   ],
   [
    1795743180,
+   80.34
+  ],
+  [
+   1795743240,
    80.34
   ]
  ],
@@ -2537,6 +2541,15 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 2 watched · 7 rejected (mayhem mode 3, dump 2, dev bought 1) · closest PROTON: SOL in 0.1/2.5 · buys 2/6 · buy share 40%/65% · rise +1%/+12%",
    "n": 199
+  },
+  {
+   "t": "2026-11-27T01:34:26Z",
+   "time": "02:34:26",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 2 watched · 6 rejected (dump 2, dev bought 2, mayhem mode 2) · closest RETIRE: too young: 1 s (min 45 s)",
+   "n": 200
   }
  ],
  "nights": [
@@ -2594,7 +2607,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 14 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -2602,24 +2615,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1802,
-    "last_event_age_s": 31.4,
+    "events": 1807,
+    "last_event_age_s": 3.8,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 23437,
-    "last_event_age_s": 6.5,
+    "events": 23451,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1149,
-    "last_event_age_s": 48.5,
+    "events": 1153,
+    "last_event_age_s": 5.4,
     "errors": 42,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -2633,8 +2646,8 @@
   "exit_last_ms": 109,
   "launch_to_entry_s": 47,
   "creates_per_min": 2.8,
-  "watching": 1,
-  "followed": 4
+  "watching": 2,
+  "followed": 5
  },
  "learner": {
   "samples": 111,
@@ -2680,23 +2693,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13960,
+   "sent": 13995,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13960,
+   "sent": 13995,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LPI",
+   "name": "Low Poly Inu",
+   "mint": "DRZgYv3QFhFWLjvHy3WfnzdqsbUqk1HfTixyvgo4pump",
+   "age_s": 5,
+   "sol_in": 9.68,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 66.3,
+   "mcap_sol": 57.8,
+   "dev_pct": 11.1,
+   "big_sell": 1.92,
+   "x": "https://x.com/slndr3000/status/2126127446885880105?a=6z8C9GD4J_o6esJQaz0&s=20",
+   "tg": false,
+   "web": "https://x.com/T0KK1_OuO/status/2125174737081073722/quotes",
+   "status": "rejected: dev bought 11.1% (max 8%)",
+   "why": "dev bought 11.1% (max 8%)"
+  },
+  {
+   "symbol": "RETIRE",
+   "name": "Retire",
+   "mint": "8UVtBnSm7sF8CDzKVfkjwdCDT1tT4Pp2ELxPaa6rmWzs",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/gregorydevory/status/2126124922582008033",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "urcoin",
+   "name": "ur coin",
+   "mint": "DokoWjAGbVSKGmEo1GbfMg6T9ca1mVpWjQK4L2gTMmCv",
+   "age_s": 26,
+   "sol_in": -0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "watching",
+   "why": "too young: 1 s (min 45 s)"
+  },
+  {
+   "symbol": "hairypair",
+   "name": "hairy pair",
+   "mint": "8HbvYZ5siBJCGVa7ibD5ioyuYHmo7RhVPyv1AuhUpump",
+   "age_s": 26,
+   "sol_in": -2.46,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -14.6,
+   "mcap_sol": 28.0,
+   "dev_pct": 8.2,
+   "big_sell": 5.71,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: dev bought 8.2% (max 8%)",
+   "why": "dev bought 8.2% (max 8%)"
+  },
+  {
    "symbol": "SJP",
    "name": "SJP",
    "mint": "F1giunmY6YdhLGZ859RAxuVqhAPSCGYK48KPeTgwpump",
-   "age_s": 31,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2714,7 +2799,7 @@
    "symbol": "HOPE",
    "name": "Hopecoin",
    "mint": "GjuRkHdkovRMKwJkvHe9LFTCXjWsbVAKU2B5ensmpump",
-   "age_s": 48,
+   "age_s": 81,
    "sol_in": -0.75,
    "buys": 5,
    "sells": 8,
@@ -2732,7 +2817,7 @@
    "symbol": "UPVOTES",
    "name": "Upvotes",
    "mint": "5zhCoxHNpthjqcqGqi2pUhGwFM8RxWR5wAZfrVCApump",
-   "age_s": 116,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -2745,78 +2830,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "PEAK",
-   "name": "ChainPeak",
-   "mint": "Hak6eauyk17jpBUofg3aQYHvQpQPX52VPvYwTyYGpump",
-   "age_s": 147,
-   "sol_in": -2.28,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -13.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 7.6,
-   "big_sell": 2.28,
-   "x": "https://x.com/chainpeak",
-   "tg": false,
-   "web": "https://linktr.ee/chainpeak",
-   "status": "rejected: dump: 2.3 SOL sold",
-   "why": "dump: 2.3 SOL sold"
-  },
-  {
-   "symbol": "PUMP",
-   "name": "PUMP",
-   "mint": "GCgamRHtfzLH9sLxm5LeXaKorsqRz9rty9GS7wnCpump",
-   "age_s": 161,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SNOWTRUCK",
-   "name": "Truck In Snow",
-   "mint": "AjErJsKfTzxW2ZLY3DaC1uackib8xrkB56XK1pGcpump",
-   "age_s": 170,
-   "sol_in": -69.04,
-   "buys": 8,
-   "sells": 3,
-   "rise_pct": -90.8,
-   "mcap_sol": 28.1,
-   "dev_pct": 74.8,
-   "big_sell": 74.79,
-   "x": "https://x.com/MarioNawfal/status/2126123130959884547",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 74.8% (max 8%)",
-   "why": "dev bought 74.8% (max 8%)"
-  },
-  {
-   "symbol": "PROTON",
-   "name": "Proton",
-   "mint": "PZXvizoaPTgXzcKLnzgqpSweW5ryXMhpdPmxMnBpump",
-   "age_s": 171,
-   "sol_in": 0.11,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": 0.8,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "SOL in 0.1/2.5 · buys 2/6 · buy share 40%/65% · rise +1%/+12%"
   }
  ],
  "strategies": [
