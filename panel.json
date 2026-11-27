@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:01:46Z",
+ "updated": "2026-11-27T10:02:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3972,
+  "lines": 3975,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795737660,
-   82.3
-  ],
   [
    1795737720,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795773674,
    361.97
+  ],
+  [
+   1795773734,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,33 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T09:23:33Z",
-   "time": "10:23:33",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 8 rejected (snipe not bought: trades tonight 6, serial launcher 1, mayhem mode 1)",
-   "n": 3773
-  },
-  {
-   "t": "2026-11-27T09:24:05Z",
-   "time": "10:24:05",
-   "agent": "LEARNER",
-   "coin": "Pickle",
-   "action": "shadow",
-   "text": "SHADOW Pickle · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000048889 (curve maths, every cost) · same exits, outside the book",
-   "n": 3774
-  },
-  {
-   "t": "2026-11-27T09:24:10Z",
-   "time": "10:24:10",
-   "agent": "LEARNER",
-   "coin": "Pickle",
-   "action": "shadow",
-   "text": "SHADOW Pickle would have made +14.6% (TP +10%) · learned x0.5 · np:sol:12+ now avg -12.8% over 41",
-   "n": 3775
-  },
-  {
    "t": "2026-11-27T09:24:34Z",
    "time": "10:24:34",
    "agent": "SCANNER",
@@ -6538,6 +6511,33 @@
    "action": "shadow",
    "text": "SHADOW Bateleur would have made +7.4% (TP +10%) · learned x0.5 · np:buys:<70 now avg -9.3% over 224",
    "n": 3972
+  },
+  {
+   "t": "2026-11-27T10:01:57Z",
+   "time": "11:01:57",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 17 rejected (snipe not bought: trades tonight 9, mayhem mode 5, dev bought 1)",
+   "n": 3973
+  },
+  {
+   "t": "2026-11-27T10:02:04Z",
+   "time": "11:02:04",
+   "agent": "LEARNER",
+   "coin": "Bateleur",
+   "action": "shadow",
+   "text": "SHADOW Bateleur · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000039686 (curve maths, every cost) · same exits, outside the book",
+   "n": 3974
+  },
+  {
+   "t": "2026-11-27T10:02:07Z",
+   "time": "11:02:07",
+   "agent": "LEARNER",
+   "coin": "Bateleur",
+   "action": "shadow",
+   "text": "SHADOW Bateleur would have made +11.6% (TP +10%) · learned x0.5 · np:dev:8+ now avg -8.8% over 129.5",
+   "n": 3975
   }
  ],
  "nights": [
@@ -6596,7 +6596,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6604,24 +6604,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 797,
-    "last_event_age_s": 3.5,
+    "events": 799,
+    "last_event_age_s": 4.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18536,
-    "last_event_age_s": 0.6,
+    "events": 18600,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 470,
-    "last_event_age_s": 33.4,
+    "events": 472,
+    "last_event_age_s": 4.6,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6636,7 +6636,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 11
+  "followed": 12
  },
  "learner": {
   "samples": 249,
@@ -6677,29 +6677,65 @@
     "avg": -11.2
    }
   ],
-  "shadows": 772,
+  "shadows": 773,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9857,
+   "sent": 9893,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9868,
+   "sent": 9904,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "USFF",
+   "name": "USFF",
+   "mint": "GNfGpQQcSxzTzQr2BEt7fgaHz9r5iJHqQx2g2FYHpump",
+   "age_s": 4,
+   "sol_in": -12.33,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -85.3,
+   "mcap_sol": 9.1,
+   "dev_pct": 35.0,
+   "big_sell": 12.21,
+   "x": false,
+   "tg": false,
+   "web": "https://usff.info/",
+   "status": "rejected: dump: 12.2 SOL sold",
+   "why": "dump: 12.2 SOL sold"
+  },
+  {
+   "symbol": "Bateleur",
+   "name": "Aura Farming Bird",
+   "mint": "74zKwxLUSNDCnP5uVbvH2xx4ogav2gGwBYuvj9Qppump",
+   "age_s": 16,
+   "sol_in": 6.74,
+   "buys": 8,
+   "sells": 8,
+   "rise_pct": 36.6,
+   "mcap_sol": 67.5,
+   "dev_pct": 26.6,
+   "big_sell": 7.09,
+   "x": "https://x.com/slndr3000/status/2126252788166295603?a=Owf6O4Z6EFLgxMb4kVI&s=20",
+   "tg": false,
+   "web": "https://www.instagram.com/reels/DgOfMHKSdDg/",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "HeMHznQmgiHrgY2QeFbVE1aZVvfYUP3xTAWeUPMDpump",
-   "age_s": 3,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6717,12 +6753,12 @@
    "symbol": "Bateleur",
    "name": "Aura Farming Bird",
    "mint": "7xVkn3U79eyVFGNsLNvnfKgGG6fTJ9Sj4awxEAoypump",
-   "age_s": 33,
-   "sol_in": 0.69,
-   "buys": 4,
-   "sells": 3,
-   "rise_pct": 4.6,
-   "mcap_sol": 29.3,
+   "age_s": 67,
+   "sol_in": 0.42,
+   "buys": 5,
+   "sells": 4,
+   "rise_pct": 2.8,
+   "mcap_sol": 28.7,
    "dev_pct": 0.0,
    "big_sell": 1.51,
    "x": "https://x.com/slndr3000/status/2126252788166295603?a=Owf6O4Z6EFLgxMb4kVI&s=20",
@@ -6735,7 +6771,7 @@
    "symbol": "Suki",
    "name": "Sukicoin",
    "mint": "9zqEToD2MktwwCdRPJVUwU3vkt5rL8rWmAB67LrMDDBj",
-   "age_s": 34,
+   "age_s": 68,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6753,7 +6789,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "5opNVYPzX3TXqrgEh2VxMbhFC2QodR2dH6pdcJ7jpump",
-   "age_s": 38,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6771,7 +6807,7 @@
    "symbol": "OCTOBER",
    "name": "October",
    "mint": "uErtXSG3iF1NqKD4L51buQuAkg88LckGqApmtgqZDyW",
-   "age_s": 44,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6789,7 +6825,7 @@
    "symbol": "alon",
    "name": "alon",
    "mint": "Ds9sp4tXfxpdPCf6cx6ydcwPtrQNMhau1r46wjzJpump",
-   "age_s": 68,
+   "age_s": 102,
    "sol_in": -1.96,
    "buys": 2,
    "sells": 3,
@@ -6807,7 +6843,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "FRbkqhpA3WVEbpQG5QjmqNLrftnHVS6ySvzTzohgpump",
-   "age_s": 72,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6825,11 +6861,11 @@
    "symbol": "baoCat",
    "name": "CAT FAT",
    "mint": "55faB8Usukia7aiwoFQ25DCzHqJ68GAt81UKbAU2pump",
-   "age_s": 84,
-   "sol_in": 0.01,
+   "age_s": 118,
+   "sol_in": -0.0,
    "buys": 9,
-   "sells": 6,
-   "rise_pct": 0.1,
+   "sells": 8,
+   "rise_pct": -0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.09,
@@ -6843,7 +6879,7 @@
    "symbol": "GremlinX",
    "name": "GremlinX",
    "mint": "DeCvXsP9Pi8nmLtr3mEZCnqb8kSNCD7QvgeuvhZpump",
-   "age_s": 89,
+   "age_s": 123,
    "sol_in": -0.67,
    "buys": 2,
    "sells": 3,
@@ -6861,12 +6897,12 @@
    "symbol": "Muffin",
    "name": "Muffin",
    "mint": "6L35MhaVGuCVY9eY8fLVyjX8aBX9QgdwwbEUvnQApump",
-   "age_s": 90,
-   "sol_in": 8.55,
-   "buys": 13,
-   "sells": 3,
-   "rise_pct": 18.4,
-   "mcap_sol": 347.2,
+   "age_s": 124,
+   "sol_in": 9.16,
+   "buys": 15,
+   "sells": 6,
+   "rise_pct": 19.8,
+   "mcap_sol": 351.2,
    "dev_pct": 74.2,
    "big_sell": 0.53,
    "x": "https://x.com/MuffinPurinX",
@@ -6879,12 +6915,12 @@
    "symbol": "RICE",
    "name": "Rice and Shine",
    "mint": "CD8mCjFtTmUse3m4cJQPE2XqoWHVusPPGuPYEQqVpump",
-   "age_s": 103,
-   "sol_in": -0.61,
-   "buys": 24,
+   "age_s": 137,
+   "sol_in": -0.53,
+   "buys": 25,
    "sells": 22,
-   "rise_pct": -3.9,
-   "mcap_sol": 28.3,
+   "rise_pct": -3.4,
+   "mcap_sol": 28.4,
    "dev_pct": 2.7,
    "big_sell": 31.49,
    "x": "https://x.com/0xBrangizz/status/2126254431926718551?a=SovHctcFH3qT3vRBWrU&s=20",
@@ -6897,7 +6933,7 @@
    "symbol": "TRASH",
    "name": "Mecha Trashcan",
    "mint": "H6aSwqwDAp1LLzH3CsbWTYnrhNZsuGzXKYcHeEspqnhQ",
-   "age_s": 109,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 4,
@@ -6915,7 +6951,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "AAdVk6J3d4EpX6u1EySdLw4sh7ZVSGTSJXTJ8Lc5pump",
-   "age_s": 125,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6933,12 +6969,12 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "5Cs9HwrxQU9Z3XzkSovmGQSM58d3hb95vxCSci5ipump",
-   "age_s": 132,
-   "sol_in": 19.33,
-   "buys": 46,
-   "sells": 35,
-   "rise_pct": 149.0,
-   "mcap_sol": 86.6,
+   "age_s": 166,
+   "sol_in": 19.71,
+   "buys": 57,
+   "sells": 46,
+   "rise_pct": 152.5,
+   "mcap_sol": 87.8,
    "dev_pct": 11.1,
    "big_sell": 0.33,
    "x": "https://x.com/gtasix_",
@@ -6951,7 +6987,7 @@
    "symbol": "MRABBIT",
    "name": "Mad Rabbit",
    "mint": "3PY4WeUSMD7hVsxC79zEt9FDz589mqHhCQrYwR9Kmint",
-   "age_s": 141,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6964,42 +7000,6 @@
    "web": false,
    "status": "rejected: no bonding curve key",
    "why": "no bonding curve key"
-  },
-  {
-   "symbol": "RECUR",
-   "name": "Recur",
-   "mint": "FNtdCUMeQojj9RKtiW12BnHeAKkJv8JQoVURCn7Gpump",
-   "age_s": 161,
-   "sol_in": -0.37,
-   "buys": 4,
-   "sells": 10,
-   "rise_pct": -2.4,
-   "mcap_sol": 29.1,
-   "dev_pct": 3.4,
-   "big_sell": 1.62,
-   "x": "https://x.com/RecurFun/status/2126254452667510800",
-   "tg": false,
-   "web": "https://userecur.fun/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "CXCDgJUoAhczMVfp4pMJNdtN7XdLkTzbbAEGhMwHpump",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
@@ -7030,7 +7030,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:00:22Z",
    "cost": 36.2,
-   "pnl_pct": -4.1,
+   "pnl_pct": -4.2,
    "tier": "scalp",
    "score": 1.5,
    "steps": 0,
@@ -7062,13 +7062,33 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:59:34Z",
    "cost": 36.2,
-   "pnl_pct": 3.1,
+   "pnl_pct": 4.6,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 17.59
+  },
+  {
+   "symbol": "Bateleur",
+   "mint": "74zKwxLUSNDCnP5uVbvH2xx4ogav2gGwBYuvj9Qppump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:02:04Z",
+   "cost": 36.2,
+   "pnl_pct": 11.6,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 1,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 1.14,
+   "closed": "2026-11-27T10:02:07Z",
+   "exit": "TP +10%",
+   "pnl": 4.2,
+   "weight": 0.5
   },
   {
    "symbol": "Bateleur",
@@ -7449,33 +7469,13 @@
    "exit": "TP +10%",
    "pnl": 5.82,
    "weight": 0.5
-  },
-  {
-   "symbol": "90%OFF",
-   "mint": "BBgDHUJ2WcZfuhhph3FZVbWHdpnrF3TJZXfrpcjypump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:45:10Z",
-   "cost": 36.2,
-   "pnl_pct": -7.8,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T09:50:06Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -2.82,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 788,
-  "wins": 171,
-  "win_rate": 21.7,
-  "mean_pnl_pct": -8.24,
+  "n": 789,
+  "wins": 172,
+  "win_rate": 21.8,
+  "mean_pnl_pct": -8.21,
   "open": 4,
   "learner": {
    "n": 16,
@@ -7484,10 +7484,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 772,
-   "wins": 168,
-   "win_rate": 21.8,
-   "mean_pnl_pct": -8.15
+   "n": 773,
+   "wins": 169,
+   "win_rate": 21.9,
+   "mean_pnl_pct": -8.12
   }
  }
 }
