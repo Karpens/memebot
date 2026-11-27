@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T06:31:01Z",
-    "time": "07:31:01",
-    "agent": "LEARNER",
-    "coin": "JAZZCAT",
-    "action": "shadow",
-    "text": "SHADOW JAZZCAT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021189 (curve maths, every cost) · same exits, outside the book",
-    "n": 2845
-   },
-   {
-    "t": "2026-11-27T06:31:01Z",
-    "time": "07:31:01",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 7.4 a minute · 1 watched · 26 rejected (snipe not bought: trades tonight 13, mayhem mode 7, serial launcher 4) · closest UPCAT: no curve reading yet",
-    "n": 2846
-   },
-   {
     "t": "2026-11-27T06:31:22Z",
     "time": "07:31:22",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (snipe not bought: trades tonight 6, mayhem mode 5, serial launcher 1)",
     "n": 3444
+   },
+   {
+    "t": "2026-11-27T08:22:21Z",
+    "time": "09:22:21",
+    "agent": "LEARNER",
+    "coin": "BUX",
+    "action": "shadow",
+    "text": "SHADOW BUX · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000072894 (curve maths, every cost) · same exits, outside the book",
+    "n": 3445
+   },
+   {
+    "t": "2026-11-27T08:22:27Z",
+    "time": "09:22:27",
+    "agent": "LEARNER",
+    "coin": "BUX",
+    "action": "shadow",
+    "text": "SHADOW BUX would have made -13.4% (stop -10%) · learned x0.5 · np:sol:12+ now avg -12.6% over 33.5",
+    "n": 3446
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3444,
+  "lines": 3446,
   "flags": [
    {
     "coin": "Kibo",
@@ -21579,6 +21579,10 @@
    [
     1795767674,
     361.97
+   ],
+   [
+    1795767734,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21587,9 +21591,9 @@
   },
   "np_said": 1795767721.645371,
   "shadow": {
-   "n": 573,
+   "n": 574,
    "wins": 119,
-   "sum": -4680.0
+   "sum": -4693.4
   },
   "np_speed": {
    "first_in": [
@@ -31172,9 +31176,9 @@
   }
  },
  "shadow": {
-  "n": 587,
+  "n": 588,
   "wins": 121,
-  "sum": -4878.5,
+  "sum": -4891.9,
   "by": {
    "learner": {
     "n": 16,
@@ -31182,32 +31186,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 571,
+    "n": 572,
     "wins": 118,
-    "sum": -4680.7
+    "sum": -4694.1
    }
   },
   "closed": [
-   {
-    "symbol": "$RUG",
-    "mint": "5PyR6aSeoET7qj34h1omRBRMxSehJCzZBShGu3fLpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T08:08:36Z",
-    "cost": 36.2,
-    "pnl_pct": -8.0,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T08:12:40Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.88,
-    "weight": 0.5
-   },
    {
     "symbol": "GTA 6",
     "mint": "F6NSbsMnZZSp2D7C582scTbWMn1up8jmVLvGct5opump",
@@ -31587,6 +31571,26 @@
     "exit": "stop -15%",
     "pnl": -6.81,
     "weight": 0.5
+   },
+   {
+    "symbol": "BUX",
+    "mint": "8XEsL9U7Mcxpeiw4LeF4P96d9Kzf7hf6v5eixuFQpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T08:22:21Z",
+    "cost": 36.2,
+    "pnl_pct": -13.4,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 25.54,
+    "closed": "2026-11-27T08:22:27Z",
+    "exit": "stop -10%",
+    "pnl": -4.84,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31618,7 +31622,7 @@
   "worst": [
    {
     "label": "snipe · np:sol:12+",
-    "n": 33,
+    "n": 34,
     "avg": -12.6
    },
    {
@@ -31632,7 +31636,7 @@
     "avg": -11.3
    }
   ],
-  "shadows": 571,
+  "shadows": 572,
   "memory": "snipe"
  }
 }
