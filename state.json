@@ -3720,6 +3720,33 @@
     "action": "shadow",
     "text": "SHADOW FB would have made +14.2% (TP +10%) · learned x0.5 · np:dev:8+ now avg -8.5% over 285",
     "n": 407
+   },
+   {
+    "t": "2026-11-27T23:28:00Z",
+    "time": "00:28:00",
+    "agent": "LEARNER",
+    "coin": "KORYFI",
+    "action": "shadow",
+    "text": "SHADOW KORYFI would have made -7.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:web now avg -7.9% over 300",
+    "n": 408
+   },
+   {
+    "t": "2026-11-27T23:28:05Z",
+    "time": "00:28:05",
+    "agent": "SCANNER",
+    "coin": "DERCLT",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1.521e+05 is not 30 + real SOL 0 (off +1.521e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 32 odd readings from 25 coins tonight",
+    "n": 409
+   },
+   {
+    "t": "2026-11-27T23:28:14Z",
+    "time": "00:28:14",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 11.2 a minute · 0 watched · 33 rejected (mayhem mode 14, serial launcher 6, snipe not bought: pause after a  6)",
+    "n": 410
    }
   ],
   "trades": [
@@ -5647,7 +5674,7 @@
   "flagged": 36,
   "checked": 36,
   "filtered": 1,
-  "lines": 407,
+  "lines": 410,
   "flags": [
    {
     "coin": "CDARS",
@@ -5802,17 +5829,21 @@
    [
     1795822020,
     50.71
+   ],
+   [
+    1795822080,
+    50.71
    ]
   ],
   "last_rug": {
    "coin": "Rizzman",
    "pass": true
   },
-  "np_said": 1795822033.960902,
+  "np_said": 1795822094.960677,
   "shadow": {
-   "n": 61,
+   "n": 62,
    "wins": 16,
-   "sum": -729.0
+   "sum": -736.5
   },
   "np_speed": {
    "first_in": [
@@ -5946,8 +5977,8 @@
    "3kfhsKiwyPrPfCh3LF2DQYhgR3F4L6w8WRcphDkot5YW": 1795822308.960779
   },
   "odd": {
-   "readings": 31,
-   "coins": 24,
+   "readings": 32,
+   "coins": 25,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -5973,7 +6004,8 @@
     "2t1N9USKYh1vFjB6aUUeMU1eohw5bBL9pBA5DmBYJNMX",
     "63eks2wT1Gs6y7SoRa5tVLUkFaubYbhXy1eYvRGZdPBE",
     "6nQ59tV5kWWAamVNwhAr6MvDJ4PbJhQ4MvExE6qKbd1z",
-    "7vr1x3sqHkYWyZGMLMxJi5kCAAfEDbhu7iwhktKX4yvT"
+    "7vr1x3sqHkYWyZGMLMxJi5kCAAfEDbhu7iwhktKX4yvT",
+    "G1xAuKwmut1vccNM8S5kx3dqdui671xzKSXVMYWpKJvJ"
    ]
   },
   "risk_said": {
@@ -29290,9 +29322,9 @@
   }
  },
  "shadow": {
-  "n": 2326,
+  "n": 2327,
   "wins": 542,
-  "sum": -17006.6,
+  "sum": -17014.1,
   "by": {
    "learner": {
     "n": 16,
@@ -29300,32 +29332,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 2310,
+    "n": 2311,
     "wins": 539,
-    "sum": -16808.8
+    "sum": -16816.3
    }
   },
   "closed": [
-   {
-    "symbol": "MECHAEXPR",
-    "mint": "AmkffUVXJQGmmbcLfACv1mi6TFS1ZJiaX5t47wZrthtK",
-    "status": "closed",
-    "kind": "risk",
-    "why": "pause after a losing streak",
-    "opened": "2026-11-27T23:15:05Z",
-    "cost": 5.47,
-    "pnl_pct": -7.5,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": -0.01,
-    "closed": "2026-11-27T23:18:05Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -0.41,
-    "weight": 0.5
-   },
    {
     "symbol": "MONKEY",
     "mint": "3iAA9T9ArN8XdgABJNQNhMJaEWVPSUMJjCchN7wKgoFQ",
@@ -29705,10 +29717,29 @@
     "exit": "TP +10%",
     "pnl": 0.72,
     "weight": 0.5
+   },
+   {
+    "symbol": "KORYFI",
+    "mint": "7vx8oJAJYFgFxT7zCATRoNRoV8tR6qomVgqPdzW4pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -16%: 5 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T23:25:00Z",
+    "cost": 5.07,
+    "pnl_pct": -7.5,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T23:28:00Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -0.38,
+    "weight": 0.5
    }
   ],
   "open": [
-   "KORYFI",
    "SQUAD",
    "MoZe",
    "MITTEN",
@@ -29754,7 +29785,7 @@
     "avg": -8.5
    }
   ],
-  "shadows": 2518,
+  "shadows": 2519,
   "memory": "snipe"
  }
 }
