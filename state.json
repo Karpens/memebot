@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T07:41:01Z",
-    "time": "08:41:01",
-    "agent": "LEARNER",
-    "coin": "GYM",
-    "action": "shadow",
-    "text": "SHADOW GYM would have made -33.9% (dump: 5.8 SOL sold) · learned x0.5 · np:buys:<70 now avg -9.6% over 199",
-    "n": 3225
-   },
-   {
-    "t": "2026-11-27T07:41:41Z",
-    "time": "08:41:41",
-    "agent": "LEARNER",
-    "coin": "milhoa",
-    "action": "shadow",
-    "text": "SHADOW milhoa would have made -6.6% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.6% over 199.5",
-    "n": 3226
-   },
-   {
     "t": "2026-11-27T07:41:41Z",
     "time": "08:41:41",
     "agent": "SCANNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW AFCPATH would have made -11.6% (dump: 2.6 SOL sold) · learned x0.5 · np:social:none now avg -9.5% over 204",
     "n": 3824
+   },
+   {
+    "t": "2026-11-27T09:33:18Z",
+    "time": "10:33:18",
+    "agent": "LEARNER",
+    "coin": "DWPA",
+    "action": "shadow",
+    "text": "SHADOW DWPA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024043 (curve maths, every cost) · same exits, outside the book",
+    "n": 3825
+   },
+   {
+    "t": "2026-11-27T09:33:19Z",
+    "time": "10:33:19",
+    "agent": "LEARNER",
+    "coin": "DWPA",
+    "action": "shadow",
+    "text": "SHADOW DWPA would have made -17.6% (stop -14%) · learned x0.5 · np:social:none now avg -9.5% over 204.5",
+    "n": 3826
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3824,
+  "lines": 3826,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795735920,
-    82.3
-   ],
    [
     1795735980,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795771934,
     361.97
+   ],
+   [
+    1795771994,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795771958.645308,
   "shadow": {
-   "n": 718,
+   "n": 719,
    "wins": 153,
-   "sum": -6003.0
+   "sum": -6020.6
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 732,
+  "n": 733,
   "wins": 155,
-  "sum": -6201.5,
+  "sum": -6219.1,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 716,
+    "n": 717,
     "wins": 152,
-    "sum": -6003.7
+    "sum": -6021.3
    }
   },
   "closed": [
-   {
-    "symbol": "AIJGS",
-    "mint": "BFPz525BLkpzBngjCS1n7GAzKvo4orwTrjniCQcTpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:21:26Z",
-    "cost": 36.2,
-    "pnl_pct": -16.2,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.01,
-    "closed": "2026-11-27T09:23:27Z",
-    "exit": "stop -13%",
-    "pnl": -5.85,
-    "weight": 0.5
-   },
    {
     "symbol": "GTA 6",
     "mint": "JCvtTY995JeQ4dBB5DdsM3zVm449qSVfYCYicYWmpump",
@@ -31743,6 +31723,26 @@
     "exit": "dump: 2.6 SOL sold",
     "pnl": -4.2,
     "weight": 0.5
+   },
+   {
+    "symbol": "DWPA",
+    "mint": "C4qnxZ5MYR2cgxkUQssJA6LvfZq1uPGkzZsoTZNRpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:33:18Z",
+    "cost": 36.2,
+    "pnl_pct": -17.6,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.89,
+    "closed": "2026-11-27T09:33:19Z",
+    "exit": "stop -14%",
+    "pnl": -6.39,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31790,7 +31790,7 @@
     "avg": -11.7
    }
   ],
-  "shadows": 716,
+  "shadows": 717,
   "memory": "snipe"
  }
 }

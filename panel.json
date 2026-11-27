@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T09:33:07Z",
+ "updated": "2026-11-27T09:33:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3824,
+  "lines": 3826,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795735920,
-   82.3
-  ],
   [
    1795735980,
    82.3
@@ -2472,6 +2468,10 @@
   [
    1795771934,
    361.97
+  ],
+  [
+   1795771994,
+   361.97
   ]
  ],
  "position_pct": 10.0,
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T08:52:21Z",
-   "time": "09:52:21",
-   "agent": "LEARNER",
-   "coin": "$TIGERLOAF",
-   "action": "shadow",
-   "text": "SHADOW $TIGERLOAF would have made -46.4% (dump: 9.6 SOL sold) · learned x0.5 · np:social:none now avg -9.7% over 189",
-   "n": 3625
-  },
-  {
-   "t": "2026-11-27T08:52:26Z",
-   "time": "09:52:26",
-   "agent": "LEARNER",
-   "coin": "pear",
-   "action": "shadow",
-   "text": "SHADOW pear · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000037743 (curve maths, every cost) · same exits, outside the book",
-   "n": 3626
-  },
-  {
    "t": "2026-11-27T08:52:27Z",
    "time": "09:52:27",
    "agent": "LEARNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW AFCPATH would have made -11.6% (dump: 2.6 SOL sold) · learned x0.5 · np:social:none now avg -9.5% over 204",
    "n": 3824
+  },
+  {
+   "t": "2026-11-27T09:33:18Z",
+   "time": "10:33:18",
+   "agent": "LEARNER",
+   "coin": "DWPA",
+   "action": "shadow",
+   "text": "SHADOW DWPA · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024043 (curve maths, every cost) · same exits, outside the book",
+   "n": 3825
+  },
+  {
+   "t": "2026-11-27T09:33:19Z",
+   "time": "10:33:19",
+   "agent": "LEARNER",
+   "coin": "DWPA",
+   "action": "shadow",
+   "text": "SHADOW DWPA would have made -17.6% (stop -14%) · learned x0.5 · np:social:none now avg -9.5% over 204.5",
+   "n": 3826
   }
  ],
  "nights": [
@@ -6600,24 +6600,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 620,
-    "last_event_age_s": 30.2,
+    "events": 621,
+    "last_event_age_s": 17.0,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15960,
-    "last_event_age_s": 3.8,
+    "events": 15992,
+    "last_event_age_s": 2.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 358,
-    "last_event_age_s": 28.7,
+    "events": 359,
+    "last_event_age_s": 15.4,
     "errors": 22,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6630,9 +6630,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 9
+  "followed": 10
  },
  "learner": {
   "samples": 249,
@@ -6673,29 +6673,47 @@
     "avg": -11.7
    }
   ],
-  "shadows": 716,
+  "shadows": 717,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8028,
+   "sent": 8058,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8039,
+   "sent": 8069,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DWPA",
+   "name": "DWP Offline",
+   "mint": "C4qnxZ5MYR2cgxkUQssJA6LvfZq1uPGkzZsoTZNRpump",
+   "age_s": 16,
+   "sol_in": -0.89,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -5.7,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.3,
+   "big_sell": 1.78,
+   "x": false,
+   "tg": false,
+   "web": "https://www.gov.uk/government/news/temporary-disruption-to-some-dwp-online-services?mint=",
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "AFCPATH",
    "name": "AFC No. 1 Chase",
    "mint": "GXmhq2vvv81a1yGSVL8F9sg9XwhXTYDqKrg156YMpump",
-   "age_s": 30,
+   "age_s": 58,
    "sol_in": -0.64,
    "buys": 4,
    "sells": 2,
@@ -6713,7 +6731,7 @@
    "symbol": "3",
    "name": "doji burned 70% xd",
    "mint": "9i9FpPqGqYR5H5BLqD3bRHqvFfcbKuAdqHNagHVQpump",
-   "age_s": 51,
+   "age_s": 79,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 1,
@@ -6731,12 +6749,12 @@
    "symbol": "XMASA",
    "name": "Buffalo on Christmas",
    "mint": "3qGAgiDLcXgbu7UstczxxEpPBjRRJ2NKex5LrNiHpump",
-   "age_s": 54,
-   "sol_in": 0.32,
-   "buys": 1,
+   "age_s": 82,
+   "sol_in": 0.33,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 2.1,
-   "mcap_sol": 30.3,
+   "rise_pct": 2.2,
+   "mcap_sol": 30.4,
    "dev_pct": 3.3,
    "big_sell": 0.17,
    "x": false,
@@ -6749,7 +6767,7 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "EHQKA2h7B7iyNbdDTuu71LKN28FnTH88wVAWubiVpump",
-   "age_s": 61,
+   "age_s": 89,
    "sol_in": -1.15,
    "buys": 1,
    "sells": 1,
@@ -6767,11 +6785,11 @@
    "symbol": "CHOSEN",
    "name": "The Chosen One",
    "mint": "Zd8Nv83aJJDxMLGeM55nNiziqvmfSQaGsj2RP9Apump",
-   "age_s": 64,
+   "age_s": 92,
    "sol_in": -0.41,
    "buys": 31,
-   "sells": 22,
-   "rise_pct": -2.6,
+   "sells": 23,
+   "rise_pct": -2.7,
    "mcap_sol": 28.6,
    "dev_pct": 2.7,
    "big_sell": 34.08,
@@ -6785,7 +6803,7 @@
    "symbol": "BUTKERA",
    "name": "Butker Boot",
    "mint": "Dy7FrpqCeWjdK1eX3uxFYMSSA9jDbCg3fYEpdhkgpump",
-   "age_s": 107,
+   "age_s": 135,
    "sol_in": -1.19,
    "buys": 6,
    "sells": 4,
@@ -6803,14 +6821,14 @@
    "symbol": "RINU",
    "name": "Ringball Inu",
    "mint": "CBFvzMeUoDNwuY4fW3QLzGQLGHrq7GmZqWHM7utkp9F9",
-   "age_s": 107,
-   "sol_in": 3.65,
+   "age_s": 135,
+   "sol_in": 2.54,
    "buys": 4,
-   "sells": 7,
-   "rise_pct": 25.8,
-   "mcap_sol": 35.2,
+   "sells": 10,
+   "rise_pct": 17.7,
+   "mcap_sol": 32.9,
    "dev_pct": 0.0,
-   "big_sell": 0.58,
+   "big_sell": 0.64,
    "x": false,
    "tg": false,
    "web": "https://ringball.fun/coin/CBFvzMeUoDNwuY4fW3QLzGQLGHrq7GmZqWHM7utkp9F9",
@@ -6821,7 +6839,7 @@
    "symbol": "Capy",
    "name": "Holy Shit Capybara",
    "mint": "ADWYBau9qnG7aEYejHV8QXFmmu26P6mnFPyJtAw2pump",
-   "age_s": 109,
+   "age_s": 137,
    "sol_in": -0.99,
    "buys": 2,
    "sells": 10,
@@ -6839,7 +6857,7 @@
    "symbol": "snowman",
    "name": "snowman",
    "mint": "8NXEuFX1ukeQpxUvVRiAAkt8G68a1Y2wwN71zJyUpump",
-   "age_s": 129,
+   "age_s": 157,
    "sol_in": 2.39,
    "buys": 6,
    "sells": 5,
@@ -6852,24 +6870,6 @@
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
    "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "100k",
-   "name": "100k mc",
-   "mint": "CHTKnFYxkMxgf5UNYYpYJ3NV6wBSuhcYRv2VGL4hpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
@@ -6884,7 +6884,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:32:15Z",
    "cost": 36.2,
-   "pnl_pct": -10.1,
+   "pnl_pct": -10.0,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
@@ -6900,7 +6900,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:32:13Z",
    "cost": 36.2,
-   "pnl_pct": -5.0,
+   "pnl_pct": -4.9,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
@@ -6916,13 +6916,33 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T09:28:43Z",
    "cost": 36.2,
-   "pnl_pct": -9.1,
+   "pnl_pct": -9.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
    "sol_in": 1.04
+  },
+  {
+   "symbol": "DWPA",
+   "mint": "C4qnxZ5MYR2cgxkUQssJA6LvfZq1uPGkzZsoTZNRpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T09:33:18Z",
+   "cost": 36.2,
+   "pnl_pct": -17.6,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.89,
+   "closed": "2026-11-27T09:33:19Z",
+   "exit": "stop -14%",
+   "pnl": -6.39,
+   "weight": 0.5
   },
   {
    "symbol": "AFCPATH",
@@ -7303,33 +7323,13 @@
    "exit": "dump: 24.1 SOL sold",
    "pnl": -10.93,
    "weight": 0.5
-  },
-  {
-   "symbol": "AIJGS",
-   "mint": "BFPz525BLkpzBngjCS1n7GAzKvo4orwTrjniCQcTpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T09:21:26Z",
-   "cost": 36.2,
-   "pnl_pct": -16.2,
-   "tier": "scalp",
-   "score": 1.5,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.01,
-   "closed": "2026-11-27T09:23:27Z",
-   "exit": "stop -13%",
-   "pnl": -5.85,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 732,
+  "n": 733,
   "wins": 155,
-  "win_rate": 21.2,
-  "mean_pnl_pct": -8.47,
+  "win_rate": 21.1,
+  "mean_pnl_pct": -8.48,
   "open": 3,
   "learner": {
    "n": 16,
@@ -7338,10 +7338,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 716,
+   "n": 717,
    "wins": 152,
    "win_rate": 21.2,
-   "mean_pnl_pct": -8.39
+   "mean_pnl_pct": -8.4
   }
  }
 }
