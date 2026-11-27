@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T01:56:03Z",
+ "updated": "2026-11-27T01:56:36Z",
  "mode": "paper",
  "start_balance": 100.0,
- "balance": 66.6,
- "equity": 74.98,
+ "balance": 74.69,
+ "equity": 74.69,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 22,
   "checked": 18,
   "filtered": 3,
-  "lines": 336,
+  "lines": 340,
   "last_rug": {
    "coin": "MSI100",
    "pass": true
@@ -781,56 +781,7 @@
  "position_pct": 10.0,
  "slip_cap": 10.0,
  "live": true,
- "positions": [
-  {
-   "symbol": "TJR",
-   "mint": "BWxrxxYv8cHYnBwgUEH7gHLncpapjHWZsf2t3xDrpump",
-   "cost": 7.97,
-   "value": 8.38,
-   "pnl_pct": 5.1,
-   "opened": "2026-11-27T01:50:05Z",
-   "url": "https://pump.fun/coin/BWxrxxYv8cHYnBwgUEH7gHLncpapjHWZsf2t3xDrpump",
-   "reason": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
-   "size_pct": 10.0,
-   "entry_price": 2.05067e-06,
-   "price": 2.17496e-06,
-   "slip": 0.36,
-   "tp1_done": false,
-   "strategy": "new_pairs",
-   "plan": {
-    "tier": "scalp",
-    "score": 1,
-    "parts": [
-     "X"
-    ],
-    "ladder": [
-     [
-      10.0,
-      1.0
-     ]
-    ],
-    "step": 0,
-    "stop_pct": -10.0,
-    "trail_pct": 0.0
-   },
-   "tier": "scalp",
-   "score": 1,
-   "steps": 0,
-   "age_s": 0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.07,
-   "sol_in": 0.0,
-   "hist": [
-    2.05067e-06,
-    2.00502e-06,
-    2.00797e-06,
-    2.18115e-06,
-    2.17069e-06,
-    2.16771e-06,
-    2.17631e-06
-   ]
-  }
- ],
+ "positions": [],
  "trades": [
   {
    "symbol": "BAOBAO",
@@ -1369,45 +1320,53 @@
    "snipe": true,
    "entry_fill": "curve",
    "stop_pct": -10.0
+  },
+  {
+   "symbol": "TJR",
+   "mint": "BWxrxxYv8cHYnBwgUEH7gHLncpapjHWZsf2t3xDrpump",
+   "opened": "2026-11-27T01:50:05Z",
+   "closed": "2026-11-27T01:56:24Z",
+   "cost": 7.97,
+   "proceeds": 8.09,
+   "pnl": 0.12,
+   "pnl_pct": 1.5,
+   "why": "curve quiet for 3 min (no trade)",
+   "url": "https://pump.fun/coin/BWxrxxYv8cHYnBwgUEH7gHLncpapjHWZsf2t3xDrpump",
+   "reason": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL · fill curve",
+   "size_pct": 10.0,
+   "entry_price": 2.050670518387723e-06,
+   "exit_price": 2.17474508254353e-06,
+   "slip": 0.36,
+   "strategy": "new_pairs",
+   "tier": "scalp",
+   "score": 1,
+   "steps": 0,
+   "plan": {
+    "tier": "scalp",
+    "score": 1,
+    "parts": [
+     "X"
+    ],
+    "ladder": [
+     [
+      10.0,
+      1.0
+     ]
+    ],
+    "step": 0,
+    "stop_pct": -10.0,
+    "trail_pct": 0.0
+   },
+   "age_s": 0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.07,
+   "sol_in": 0.0,
+   "snipe": true,
+   "entry_fill": "curve",
+   "stop_pct": -10.0
   }
  ],
  "log": [
-  {
-   "t": "2026-11-27T00:40:19Z",
-   "time": "01:40:19",
-   "agent": "NEWS",
-   "coin": "BAOBAO",
-   "action": "plan",
-   "text": "hold plan · 4.5/10 (X post, Telegram, web, inflow 6.7 SOL, buys 100%) · swing: +10 → +20",
-   "n": 137
-  },
-  {
-   "t": "2026-11-27T00:40:26Z",
-   "time": "01:40:26",
-   "agent": "EXECUTOR",
-   "coin": "BAOBAO",
-   "action": "exit",
-   "text": "EXIT BAOBAO $-1.95 (-39%) · dump: 7.4 SOL sold · out · 0.1 s after the reading",
-   "n": 138
-  },
-  {
-   "t": "2026-11-27T00:40:26Z",
-   "time": "01:40:26",
-   "agent": "LEARNER",
-   "coin": "BAOBAO",
-   "action": "learn",
-   "text": "learned · np:buys:90+ now avg -23.4% over 7.5",
-   "n": 139
-  },
-  {
-   "t": "2026-11-27T00:40:57Z",
-   "time": "01:40:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.6 a minute · 4 watched · 19 rejected (dump 10, mayhem mode 5, dev bought 3) · closest VAPE: too young: 0 s (min 45 s)",
-   "n": 140
-  },
   {
    "t": "2026-11-27T00:41:57Z",
    "time": "01:41:57",
@@ -3171,6 +3130,42 @@
    "action": "shadow",
    "text": "SHADOW hey nigger would have made -14.5% (stop -10%) · learned x0.5 · tier:scalp now avg -7.6% over 15.5",
    "n": 336
+  },
+  {
+   "t": "2026-11-27T01:56:12Z",
+   "time": "02:56:12",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 8.2 a minute · 0 watched · 33 rejected (snipe not bought: pause after a  16, serial launcher 16, mayhem mode 1)",
+   "n": 337
+  },
+  {
+   "t": "2026-11-27T01:56:24Z",
+   "time": "02:56:24",
+   "agent": "EXECUTOR",
+   "coin": "TJR",
+   "action": "exit",
+   "text": "EXIT TJR +$0.12 (+2%) · curve quiet for 3 min (no trade)",
+   "n": 338
+  },
+  {
+   "t": "2026-11-27T01:56:24Z",
+   "time": "02:56:24",
+   "agent": "LEARNER",
+   "coin": "TJR",
+   "action": "learn",
+   "text": "learned · tier:scalp now avg -7.0% over 16.5",
+   "n": 339
+  },
+  {
+   "t": "2026-11-27T01:56:33Z",
+   "time": "02:56:33",
+   "agent": "LEARNER",
+   "coin": "TOGI",
+   "action": "shadow",
+   "text": "SHADOW TOGI would have made -7.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.4% over 9",
+   "n": 340
   }
  ],
  "nights": [
@@ -3225,7 +3220,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 47 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 45 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3234,14 +3229,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 68,
-    "last_event_age_s": 15.6,
+    "last_event_age_s": 48.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 703,
+    "events": 777,
     "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
@@ -3250,7 +3245,7 @@
     "name": "metadata",
     "connected": true,
     "events": 53,
-    "last_event_age_s": 15.6,
+    "last_event_age_s": 48.6,
     "errors": 2,
     "last_error": "example.com: HTTP 404"
    }
@@ -3263,20 +3258,20 @@
   "exit_ms": 53.0,
   "exit_last_ms": 62,
   "launch_to_entry_s": 1,
-  "creates_per_min": 8.2,
+  "creates_per_min": 8.0,
   "watching": 0,
-  "followed": 33
+  "followed": 30
  },
  "learner": {
-  "samples": 11,
+  "samples": 12,
   "skipped": 0,
   "explored": 0,
   "min_samples": 8,
   "best": [
    {
     "label": "snipe · np:social:x",
-    "n": 8,
-    "avg": -2.0
+    "n": 9,
+    "avg": -1.6
    },
    {
     "label": "snipe · np:buys:90+",
@@ -3284,41 +3279,41 @@
     "avg": -4.1
    },
    {
-    "label": "snipe · hour:01-03",
-    "n": 16,
-    "avg": -5.9
+    "label": "snipe · np:dev:0-2",
+    "n": 9,
+    "avg": -6.6
    }
   ],
   "worst": [
    {
     "label": "snipe · np:social:none",
-    "n": 8,
-    "avg": -9.6
+    "n": 9,
+    "avg": -9.4
    },
    {
     "label": "snipe · tier:scalp",
-    "n": 16,
-    "avg": -7.6
+    "n": 17,
+    "avg": -7.0
    },
    {
     "label": "snipe · news:0-2",
-    "n": 16,
-    "avg": -7.6
+    "n": 17,
+    "avg": -7.0
    }
   ],
-  "shadows": 11,
+  "shadows": 12,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 614,
+   "sent": 650,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 614,
+   "sent": 650,
    "errors": 0,
    "last_error": null
   }
@@ -3328,7 +3323,7 @@
    "symbol": "TOGI",
    "name": "OG 6 MONTHS + FEES",
    "mint": "46PTp8x4c1F3iSx8NrxGv3vq6YLoZFSCZYMa5qEbYAzs",
-   "age_s": 15,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3346,14 +3341,14 @@
    "symbol": "Kuroshiro",
    "name": "Kuroshiro",
    "mint": "8JjhrukV5Q8TWMyY82YiKdSTavbLw1PA7xvXTPERpump",
-   "age_s": 24,
-   "sol_in": 9.95,
-   "buys": 11,
-   "sells": 6,
-   "rise_pct": 74.5,
-   "mcap_sol": 52.1,
+   "age_s": 57,
+   "sol_in": 7.54,
+   "buys": 17,
+   "sells": 19,
+   "rise_pct": 54.6,
+   "mcap_sol": 46.1,
    "dev_pct": 3.4,
-   "big_sell": 1.08,
+   "big_sell": 1.25,
    "x": "https://x.com/Kuroshironft",
    "tg": false,
    "web": "https://www.kuroshiro.xyz/",
@@ -3364,7 +3359,7 @@
    "symbol": "GrenCAT",
    "name": "green cat",
    "mint": "BWgZ7R1kWLFJniSmAvg5ew1g2qii33kmGoK2DfQhpump",
-   "age_s": 25,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3382,7 +3377,7 @@
    "symbol": "TOGI",
    "name": "OG 6 MONTHS + FEES",
    "mint": "4GLVu1Hfuvg26TvgD8KubUz8F3c16FBLz7pXgCoGk27u",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3400,7 +3395,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "8t8p1LXvHqhC2UYUW9coU2krcKzHuTtSAjqaiHjhenRz",
-   "age_s": 70,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3418,7 +3413,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "F6q8972TMVbv9Vchggo6TX4bEigBMiP5jM1nXHnLECZz",
-   "age_s": 74,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3436,7 +3431,7 @@
    "symbol": "hey nigger",
    "name": "niggler",
    "mint": "DnqX3kB9mM4tPbjG5s65sDbpfchiXHSxjt6uZzsxpump",
-   "age_s": 75,
+   "age_s": 108,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 4,
@@ -3454,7 +3449,7 @@
    "symbol": "BADSANTA",
    "name": "Bad Santa",
    "mint": "vgXxaJfnVRWGPWHkcvXVCSBX8CLeeWnZ1Dw78mfpump",
-   "age_s": 75,
+   "age_s": 108,
    "sol_in": -0.8,
    "buys": 1,
    "sells": 2,
@@ -3472,7 +3467,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "A54coa8XaQ4prJujnr6stosV7DZAESoZkDocYwmWPN6t",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3490,7 +3485,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "99VZj1e3gQJAKDDZDnoGCXumS2mM6YEBE9QhAoocDy6o",
-   "age_s": 80,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3508,7 +3503,7 @@
    "symbol": "TOGI",
    "name": "30k larp",
    "mint": "9zEWGsFDFF2CyKqfCyN8jzeyaBHA8KteGmombBcVpump",
-   "age_s": 95,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3526,12 +3521,12 @@
    "symbol": "fine",
    "name": "this is fine",
    "mint": "3r2gMhG2rSTbSUNGrVJxAeD545kKYR8oBzPGQsskpump",
-   "age_s": 96,
-   "sol_in": 15.02,
-   "buys": 40,
-   "sells": 44,
-   "rise_pct": 108.0,
-   "mcap_sol": 74.5,
+   "age_s": 129,
+   "sol_in": 15.77,
+   "buys": 54,
+   "sells": 51,
+   "rise_pct": 114.5,
+   "mcap_sol": 76.8,
    "dev_pct": 12.5,
    "big_sell": 2.7,
    "x": "https://x.com/Polymarket/status/2126130224748208266?a=Twy-d4srP9mDa9TS4OU&s=20",
@@ -3544,7 +3539,7 @@
    "symbol": "TOGI",
    "name": "30k larp",
    "mint": "6gGLhXBSRGoabeTCihF8wEjjh3pjemMh1p8Qgunwpump",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3562,7 +3557,7 @@
    "symbol": "TOGI",
    "name": "30k larp",
    "mint": "DPeXbpQEJhynynVCtyiVYTc7HXxqeeKRhdceMUgpump",
-   "age_s": 100,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3580,7 +3575,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "2rpcotAJKaEJw74ccG8cmQY655YfyZS8cRsgTuJgueJk",
-   "age_s": 104,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3598,7 +3593,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "Dxbi5WVrCJJVFsGccyZNyH4FKutHJ95znJvd19h83YPz",
-   "age_s": 104,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3616,7 +3611,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "ApwmoTbikB4m8BSQDZyBLupeSnZeuQ9XhAcexs1vGkgs",
-   "age_s": 105,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3634,7 +3629,7 @@
    "symbol": "YO",
    "name": "TOGI FUNDED THIS FIRST CHECK",
    "mint": "7fCKXLckqCytyXTntrwfWi4tVK53vhEXXMKtvHbaatuY",
-   "age_s": 105,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3652,7 +3647,7 @@
    "symbol": "TOGI",
    "name": "OG 6 MONTHS + FEES",
    "mint": "6hqAgAVmoFaSjqJ5H4HC1xtzPWBUdNRmPjua4pnY1PAg",
-   "age_s": 109,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3670,12 +3665,12 @@
    "symbol": "MOO",
    "name": "Moo",
    "mint": "9KPcYXz5JmZVpi97nBPmayPyQP2TNytJKcZeiUDP6Qqi",
-   "age_s": 109,
-   "sol_in": 21.52,
-   "buys": 78,
-   "sells": 55,
-   "rise_pct": 145.8,
-   "mcap_sol": 109.7,
+   "age_s": 142,
+   "sol_in": 16.7,
+   "buys": 96,
+   "sells": 71,
+   "rise_pct": 107.5,
+   "mcap_sol": 92.6,
    "dev_pct": 22.4,
    "big_sell": 5.38,
    "x": "https://x.com/and_khamoo/status/2126132427773161766",
@@ -3836,18 +3831,22 @@
   {
    "symbol": "TOGI",
    "mint": "ErWJ7Xduav63KkLMj7dEzmc1UuCisfRM9gU1HFzWauhp",
-   "status": "open",
+   "status": "closed",
    "kind": "risk",
    "why": "pause after a losing streak",
    "opened": "2026-11-27T01:53:33Z",
    "cost": 7.55,
-   "pnl_pct": -3.6,
+   "pnl_pct": -7.0,
    "tier": "scalp",
    "score": 0,
    "steps": 0,
    "fill": "curve",
    "age_s": 0,
-   "sol_in": 0.0
+   "sol_in": 0.0,
+   "closed": "2026-11-27T01:56:33Z",
+   "exit": "curve quiet for 3 min (no trade)",
+   "pnl": -0.53,
+   "weight": 0.5
   },
   {
    "symbol": "hey nigger",
@@ -4228,34 +4227,14 @@
    "exit": "dump: 5.7 SOL sold",
    "pnl": -2.84,
    "weight": 0.5
-  },
-  {
-   "symbol": "AT8",
-   "mint": "2EUHE1LM8sATDQgTD4cBybd3g54MEimNtTpYaHiGpump",
-   "status": "closed",
-   "kind": "learner",
-   "why": "learner skip",
-   "opened": "2026-11-26T20:09:12Z",
-   "cost": 8.35,
-   "pnl_pct": 16.7,
-   "tier": "swing",
-   "score": 3,
-   "steps": 2,
-   "fill": "curve",
-   "age_s": 45,
-   "sol_in": 7.37,
-   "closed": "2026-11-26T20:09:22Z",
-   "exit": "TP +20%",
-   "pnl": 1.39,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 27,
+  "n": 28,
   "wins": 7,
-  "win_rate": 25.9,
-  "mean_pnl_pct": -9.18,
-  "open": 10,
+  "win_rate": 25.0,
+  "mean_pnl_pct": -9.1,
+  "open": 9,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -4263,10 +4242,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 11,
+   "n": 12,
    "wins": 4,
-   "win_rate": 36.4,
-   "mean_pnl_pct": -4.55
+   "win_rate": 33.3,
+   "mean_pnl_pct": -4.76
   }
  }
 }
