@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:03:41Z",
-    "time": "09:03:41",
-    "agent": "LEARNER",
-    "coin": "HUSHED",
-    "action": "shadow",
-    "text": "SHADOW HUSHED would have made +19.9% (TP +10%) · learned x0.5 · np:age:<30s now avg -8.3% over 300",
-    "n": 3341
-   },
-   {
-    "t": "2026-11-27T08:03:44Z",
-    "time": "09:03:44",
-    "agent": "LEARNER",
-    "coin": "Midoor",
-    "action": "shadow",
-    "text": "SHADOW Midoor · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000028814 (curve maths, every cost) · same exits, outside the book",
-    "n": 3342
-   },
-   {
     "t": "2026-11-27T08:03:50Z",
     "time": "09:03:50",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW DOGEWIFBATON · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0001353325 (curve maths, every cost) · same exits, outside the book",
     "n": 3940
+   },
+   {
+    "t": "2026-11-27T09:55:03Z",
+    "time": "10:55:03",
+    "agent": "LEARNER",
+    "coin": "DOGEWIFBATON",
+    "action": "shadow",
+    "text": "SHADOW DOGEWIFBATON would have made -15.2% (dump: 152.9 SOL sold) · learned x0.5 · np:sol:12+ now avg -11.5% over 44.5",
+    "n": 3941
+   },
+   {
+    "t": "2026-11-27T09:55:08Z",
+    "time": "10:55:08",
+    "agent": "LEARNER",
+    "coin": "TG",
+    "action": "shadow",
+    "text": "SHADOW TG · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021412 (curve maths, every cost) · same exits, outside the book",
+    "n": 3942
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3940,
+  "lines": 3942,
   "flags": [
    {
     "coin": "Kibo",
@@ -19336,10 +19336,6 @@
    }
   ],
   "curve": [
-   [
-    1795737240,
-    82.3
-   ],
    [
     1795737300,
     82.3
@@ -21735,6 +21731,10 @@
    [
     1795773254,
     361.97
+   ],
+   [
+    1795773314,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795773294.645333,
   "shadow": {
-   "n": 762,
+   "n": 763,
    "wins": 167,
-   "sum": -6202.1
+   "sum": -6217.3
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 776,
+  "n": 777,
   "wins": 169,
-  "sum": -6400.6,
+  "sum": -6415.8,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 760,
+    "n": 761,
     "wins": 166,
-    "sum": -6202.8
+    "sum": -6218.0
    }
   },
   "closed": [
-   {
-    "symbol": "Insider",
-    "mint": "5VLv3f9WnCsViP7qrdouChrAEQvZ6RKNSaZPUvCPpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T09:46:09Z",
-    "cost": 36.2,
-    "pnl_pct": -16.9,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.82,
-    "closed": "2026-11-27T09:46:12Z",
-    "exit": "stop -14%",
-    "pnl": -6.11,
-    "weight": 0.5
-   },
    {
     "symbol": "FISH",
     "mint": "6ohbrdKFTk6ni9QRu9AHCc26BKTGvFLgBJTzkQmVwvhL",
@@ -31743,13 +31723,33 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.39,
     "weight": 0.5
+   },
+   {
+    "symbol": "DOGEWIFBATON",
+    "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T09:55:01Z",
+    "cost": 36.2,
+    "pnl_pct": -15.2,
+    "tier": "scalp",
+    "score": 2,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 308.73,
+    "closed": "2026-11-27T09:55:03Z",
+    "exit": "dump: 152.9 SOL sold",
+    "pnl": -5.52,
+    "weight": 0.5
    }
   ],
   "open": [
    "TODD",
    "SUGZ",
    "baoCat",
-   "DOGEWIFBATON"
+   "TG"
   ]
  },
  "learner_summary": {
@@ -31791,7 +31791,7 @@
     "avg": -11.5
    }
   ],
-  "shadows": 760,
+  "shadows": 761,
   "memory": "snipe"
  }
 }
