@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-27T02:01:52Z",
+ "updated": "2026-11-27T02:02:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 51.32,
- "equity": 64.57,
+ "equity": 64.55,
  "session": "24/7",
  "agents": [
   "SCANNER",
@@ -24,7 +24,7 @@
   "flagged": 32,
   "checked": 28,
   "filtered": 3,
-  "lines": 414,
+  "lines": 415,
   "last_rug": {
    "coin": "Evelyn",
    "pass": true
@@ -796,6 +796,10 @@
   [
    1795744853,
    62.75
+  ],
+  [
+   1795744913,
+   64.57
   ]
  ],
  "position_pct": 10.0,
@@ -806,14 +810,14 @@
    "symbol": "HPD",
    "mint": "E7EtgRs2opd5RQxQMKyKJV5WARUzLYTRDSV2pjjCpump",
    "cost": 7.21,
-   "value": 6.65,
-   "pnl_pct": -7.8,
+   "value": 6.64,
+   "pnl_pct": -7.9,
    "opened": "2026-11-27T01:57:50Z",
    "url": "https://pump.fun/coin/E7EtgRs2opd5RQxQMKyKJV5WARUzLYTRDSV2pjjCpump",
    "reason": "snipe · first reading 0.3 s after the create · 0.7 SOL in · +5% since the create · mcap 29 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.15199e-06,
-   "price": 2.00364e-06,
+   "price": 2.00117e-06,
    "slip": 0.32,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -852,14 +856,14 @@
    "symbol": "test",
    "mint": "8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
    "cost": 6.97,
-   "value": 6.6,
-   "pnl_pct": -5.3,
+   "value": 6.59,
+   "pnl_pct": -5.4,
    "opened": "2026-11-27T01:59:56Z",
    "url": "https://pump.fun/coin/8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
    "reason": "snipe · first reading 0.5 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL · fill curve",
    "size_pct": 10.0,
    "entry_price": 2.09363e-06,
-   "price": 2.00364e-06,
+   "price": 2.00117e-06,
    "slip": 0.31,
    "tp1_done": false,
    "strategy": "new_pairs",
@@ -1841,15 +1845,6 @@
   }
  ],
  "log": [
-  {
-   "t": "2026-11-27T01:47:09Z",
-   "time": "02:47:09",
-   "agent": "LEARNER",
-   "coin": null,
-   "action": "snipe",
-   "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
-   "n": 215
-  },
   {
    "t": "2026-11-27T01:47:09Z",
    "time": "02:47:09",
@@ -3640,6 +3635,15 @@
    "action": "learn",
    "text": "learned · np:social:none now avg -16.4% over 11.5",
    "n": 414
+  },
+  {
+   "t": "2026-11-27T02:02:17Z",
+   "time": "03:02:17",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 0 watched · 8 rejected (serial launcher 6, snipe not bought: night at open  1, mayhem mode 1)",
+   "n": 415
   }
  ],
  "nights": [
@@ -3698,7 +3702,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 0.5 s · 35 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 0.5 s · 34 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -3707,14 +3711,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 107,
-    "last_event_age_s": 67.1,
-    "errors": 0,
-    "last_error": null
+    "last_event_age_s": 95.1,
+    "errors": 1,
+    "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1523,
+    "events": 1572,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -3723,7 +3727,7 @@
     "name": "metadata",
     "connected": true,
     "events": 86,
-    "last_event_age_s": 67.0,
+    "last_event_age_s": 95.0,
     "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -3736,9 +3740,9 @@
   "exit_ms": 35,
   "exit_last_ms": 33,
   "launch_to_entry_s": 0,
-  "creates_per_min": 6.2,
+  "creates_per_min": 4.6,
   "watching": 0,
-  "followed": 12
+  "followed": 10
  },
  "learner": {
   "samples": 20,
@@ -3785,13 +3789,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1014,
+   "sent": 1044,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1014,
+   "sent": 1044,
    "errors": 0,
    "last_error": null
   }
@@ -3801,7 +3805,7 @@
    "symbol": "TOGI",
    "name": "TOGI",
    "mint": "C78sxJPYbPfwNbydrPjLUXg3CNgacjhLxiEzxSdBpump",
-   "age_s": 67,
+   "age_s": 95,
    "sol_in": 1.12,
    "buys": 6,
    "sells": 1,
@@ -3819,7 +3823,7 @@
    "symbol": "GrenCAT",
    "name": "green cat",
    "mint": "8BjuKD48TprFquMUWTXbMqxr7b6zF7rLE3AtrsEZpump",
-   "age_s": 69,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3837,7 +3841,7 @@
    "symbol": "Evelyn",
    "name": "Evelyn",
    "mint": "C7acs2tkBkieWvamiZgCGyFHUrz17qnWF7VbsT2w9LhF",
-   "age_s": 101,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3855,7 +3859,7 @@
    "symbol": "FIRST DEV",
    "name": "TOGI FUNDED THIS FIRST",
    "mint": "Bxy8m6FUCzeY5bQRSPzif4xFTRBRrDBDkw26mQtfyH95",
-   "age_s": 112,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3873,7 +3877,7 @@
    "symbol": "FIRST DEV",
    "name": "TOGI FUNDED THIS FIRST",
    "mint": "DikN4N3m62vCm8Ts2jSpuTdK273gcs4tnPgHSpYRT9WB",
-   "age_s": 112,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3891,7 +3895,7 @@
    "symbol": "FIRST DEV",
    "name": "TOGI FUNDED THIS FIRST",
    "mint": "GJyhNgm3aRz72UyaYa4SdDgFtX7bRsQTn7ewDKVJHKXB",
-   "age_s": 112,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3909,7 +3913,7 @@
    "symbol": "test",
    "name": "test",
    "mint": "8yJVr5PFseQpUEqpbDnohRmzeW5f6pn8k4PgMqmdpump",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 2,
@@ -3927,7 +3931,7 @@
    "symbol": "FIRST DEV",
    "name": "TOGI FUNDED THIS FIRST",
    "mint": "GCPUuYeBiyMT621VhkwdBsTb5SfT84gCgvsH1YUEtDEC",
-   "age_s": 135,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3945,7 +3949,7 @@
    "symbol": "FIRST DEV",
    "name": "TOGI FUNDED THIS FIRST",
    "mint": "28kT4Jgf4DHRydoubNa6aKK4pBYGzvYiuzjWCNhHAR8M",
-   "age_s": 138,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3963,7 +3967,7 @@
    "symbol": "FIRST DEV",
    "name": "TOGI FUNDED THIS FIRST",
    "mint": "AhMVU8aL7Hynhx2MAW86UyvgV58EEo7GPa5Bsgq5kt2u",
-   "age_s": 141,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -3978,46 +3982,10 @@
    "why": "serial launcher: 28 more coins in 60 min"
   },
   {
-   "symbol": "Toggle",
-   "name": "Toggle",
-   "mint": "EzZ86zi1xYUSkbfVRu8s3adTuVAAAvDjFnvYw1SXtogg",
-   "age_s": 154,
-   "sol_in": 29.22,
-   "buys": 111,
-   "sells": 81,
-   "rise_pct": 282.5,
-   "mcap_sol": 111.0,
-   "dev_pct": 2.0,
-   "big_sell": 4.54,
-   "x": "https://x.com/trytoggle",
-   "tg": false,
-   "web": "https://trytoggle.xyz/",
-   "status": "exited: TP +20%",
-   "why": "TP +20%"
-  },
-  {
-   "symbol": "shitcoin",
-   "name": "oh shit coin",
-   "mint": "FHgnCWcxo4JjXCYaL6GLsBZwNP6paSidivVFQnFpump",
-   "age_s": 159,
-   "sol_in": 5.87,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": 43.0,
-   "mcap_sol": 40.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.7,
-   "x": "https://x.com/search?q=from%3Atoly%20oh%20shit%20coin&src=typed_query&f=live",
-   "tg": false,
-   "web": "https://knowyourmeme.com/memes/shitcoin",
-   "status": "exited: TP +10%",
-   "why": "TP +10%"
-  },
-  {
    "symbol": "HPD",
    "name": "The Frontrun Bull",
    "mint": "E7EtgRs2opd5RQxQMKyKJV5WARUzLYTRDSV2pjjCpump",
-   "age_s": 242,
+   "age_s": 270,
    "sol_in": -0.01,
    "buys": 2,
    "sells": 3,
@@ -4044,7 +4012,7 @@
    "why": "night at -25%: 4 open and one more order could take it past -30% in one dump wave",
    "opened": "2026-11-27T02:00:46Z",
    "cost": 6.28,
-   "pnl_pct": 2.1,
+   "pnl_pct": 2.0,
    "tier": "scalp",
    "score": 0.5,
    "steps": 0,
