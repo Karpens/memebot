@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:13:47Z",
-    "time": "06:13:47",
-    "agent": "LEARNER",
-    "coin": "BLUNT",
-    "action": "learn",
-    "text": "learned · np:social:none now avg -10.9% over 114.5",
-    "n": 2217
-   },
-   {
-    "t": "2026-11-27T05:13:56Z",
-    "time": "06:13:56",
-    "agent": "LEARNER",
-    "coin": "debundle-0",
-    "action": "shadow",
-    "text": "SHADOW debundle-0 · not bought (pause after a losing streak) · followed as if bought: $20.45 at 0.0000039317 (curve maths, every cost) · same exits, outside the book",
-    "n": 2218
-   },
-   {
     "t": "2026-11-27T05:14:05Z",
     "time": "06:14:05",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW GAI · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022157 (curve maths, every cost) · same exits, outside the book",
     "n": 2816
+   },
+   {
+    "t": "2026-11-27T06:27:34Z",
+    "time": "07:27:34",
+    "agent": "LEARNER",
+    "coin": "cornado",
+    "action": "shadow",
+    "text": "SHADOW cornado · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000036189 (curve maths, every cost) · same exits, outside the book",
+    "n": 2817
+   },
+   {
+    "t": "2026-11-27T06:27:36Z",
+    "time": "07:27:36",
+    "agent": "LEARNER",
+    "coin": "cornado",
+    "action": "shadow",
+    "text": "SHADOW cornado would have made -18.2% (dump: 2.4 SOL sold) · learned x0.5 · np:age:<30s now avg -8.2% over 300",
+    "n": 2818
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2816,
+  "lines": 2818,
   "flags": [
    {
     "coin": "Kibo",
@@ -21131,9 +21131,9 @@
   },
   "np_said": 1795760819.780846,
   "shadow": {
-   "n": 329,
+   "n": 330,
    "wins": 58,
-   "sum": -2779.6
+   "sum": -2797.8
   },
   "np_speed": {
    "first_in": [
@@ -30716,9 +30716,9 @@
   }
  },
  "shadow": {
-  "n": 343,
+  "n": 344,
   "wins": 60,
-  "sum": -2978.1,
+  "sum": -2996.3,
   "by": {
    "learner": {
     "n": 16,
@@ -30726,32 +30726,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 327,
+    "n": 328,
     "wins": 57,
-    "sum": -2780.3
+    "sum": -2798.5
    }
   },
   "closed": [
-   {
-    "symbol": "TWIZZY",
-    "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:05:25Z",
-    "cost": 36.2,
-    "pnl_pct": -7.8,
-    "tier": "scalp",
-    "score": 0,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:10:08Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.84,
-    "weight": 0.5
-   },
    {
     "symbol": "GM",
     "mint": "E7zKosyJKUE1fVuXQAFKBUBeF5zM4bv5wH9Nr22xAT6q",
@@ -31131,6 +31111,26 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -3.25,
     "weight": 0.5
+   },
+   {
+    "symbol": "cornado",
+    "mint": "FvQf8hRGNeqhiNnRt2wfkKVHSYB3ixyH56cGRTuJpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:27:34Z",
+    "cost": 36.2,
+    "pnl_pct": -18.2,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 3.86,
+    "closed": "2026-11-27T06:27:36Z",
+    "exit": "dump: 2.4 SOL sold",
+    "pnl": -6.59,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31149,7 +31149,7 @@
    {
     "label": "snipe · hour:day",
     "n": 18,
-    "avg": -4.7
+    "avg": -5.1
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -31179,7 +31179,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 327,
+  "shadows": 328,
   "memory": "snipe"
  }
 }

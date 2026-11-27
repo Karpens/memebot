@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:27:19Z",
+ "updated": "2026-11-27T06:27:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2816,
+  "lines": 2818,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4130,24 +4130,6 @@
   {
    "t": "2026-11-27T05:47:28Z",
    "time": "06:47:28",
-   "agent": "SCANNER",
-   "coin": "gif",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 4.3 SOL in · +30% since the create · mcap 39 SOL",
-   "n": 2617
-  },
-  {
-   "t": "2026-11-27T05:47:28Z",
-   "time": "06:47:28",
-   "agent": "SIZER",
-   "coin": "gif",
-   "action": "size",
-   "text": "10% of $377.04 = $37.70",
-   "n": 2618
-  },
-  {
-   "t": "2026-11-27T05:47:28Z",
-   "time": "06:47:28",
    "agent": "EXECUTOR",
    "coin": "gif",
    "action": "enter",
@@ -5926,6 +5908,24 @@
    "action": "shadow",
    "text": "SHADOW GAI · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022157 (curve maths, every cost) · same exits, outside the book",
    "n": 2816
+  },
+  {
+   "t": "2026-11-27T06:27:34Z",
+   "time": "07:27:34",
+   "agent": "LEARNER",
+   "coin": "cornado",
+   "action": "shadow",
+   "text": "SHADOW cornado · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000036189 (curve maths, every cost) · same exits, outside the book",
+   "n": 2817
+  },
+  {
+   "t": "2026-11-27T06:27:36Z",
+   "time": "07:27:36",
+   "agent": "LEARNER",
+   "coin": "cornado",
+   "action": "shadow",
+   "text": "SHADOW cornado would have made -18.2% (dump: 2.4 SOL sold) · learned x0.5 · np:age:<30s now avg -8.2% over 300",
+   "n": 2818
   }
  ],
  "nights": [
@@ -5986,7 +5986,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5994,15 +5994,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1298,
-    "last_event_age_s": 1.4,
+    "events": 1299,
+    "last_event_age_s": 14.0,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39368,
+    "events": 39398,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6010,8 +6010,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 861,
-    "last_event_age_s": 1.3,
+    "events": 862,
+    "last_event_age_s": 13.9,
     "errors": 83,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -6024,9 +6024,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 7
+  "followed": 6
  },
  "learner": {
   "samples": 249,
@@ -6037,7 +6037,7 @@
    {
     "label": "snipe · hour:day",
     "n": 18,
-    "avg": -4.7
+    "avg": -5.1
    },
    {
     "label": "snipe · np:sol:6-12",
@@ -6067,29 +6067,47 @@
     "avg": -14.4
    }
   ],
-  "shadows": 327,
+  "shadows": 328,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18573,
+   "sent": 18602,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18572,
+   "sent": 18601,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "cornado",
+   "name": "Spinning Tornado Cat",
+   "mint": "FvQf8hRGNeqhiNnRt2wfkKVHSYB3ixyH56cGRTuJpump",
+   "age_s": 14,
+   "sol_in": -2.08,
+   "buys": 4,
+   "sells": 6,
+   "rise_pct": -11.4,
+   "mcap_sol": 34.6,
+   "dev_pct": 16.5,
+   "big_sell": 2.43,
+   "x": "https://x.com/BigManJimmi/status/2126197732541071852",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "GAI",
    "name": "GAIA",
    "mint": "BGxbg1drfDNNJedpT1y6KGze5H9L8mRTYzHXk1qMpump",
-   "age_s": 1,
+   "age_s": 29,
    "sol_in": 0.2,
    "buys": 1,
    "sells": 0,
@@ -6107,7 +6125,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "FxjhSH5uWa4V7ydoC7Cy2YatBMGXDGZDdJNy4vzypump",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6125,7 +6143,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "6Diwje7SXukzxWh7DgYsaqeYpAwKxhnoLLRcLcLqpump",
-   "age_s": 24,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6143,7 +6161,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "DVU6skdtH8ZDGwPAypYthS83vBqDRBpUuQ2Pckt7pump",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6161,7 +6179,7 @@
    "symbol": "CRUMP",
    "name": "DONALD J CRUMP",
    "mint": "BaU3qY4LFNWo5XU8yqwSXJ6A3q82wyQxUtBj9Twqpump",
-   "age_s": 54,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6179,7 +6197,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "E97aLcH4fjcsrpew3hZPyEUx4MEBFFsvUomRBsg8pump",
-   "age_s": 76,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6197,7 +6215,7 @@
    "symbol": "OCB",
    "name": "OfficialChainBroker",
    "mint": "Hyr4EJitkcMy79rSoa84AHsWiVHbHnRDyv8pxKDRpump",
-   "age_s": 82,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6215,7 +6233,7 @@
    "symbol": "DogePFP",
    "name": "DogePFP",
    "mint": "H4bdCmvcY6xN1T8fb2mDnSafWWTB6SaACrzZBr9XXH2f",
-   "age_s": 93,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6233,12 +6251,12 @@
    "symbol": "PAYSLIP",
    "name": "Payslip",
    "mint": "22318LaWUt96VdzJZVfKcHjsqG22f5hEAYr6yBDMpump",
-   "age_s": 100,
-   "sol_in": 0.0,
-   "buys": 5,
-   "sells": 8,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.1,
+   "age_s": 128,
+   "sol_in": -0.4,
+   "buys": 7,
+   "sells": 9,
+   "rise_pct": -2.6,
+   "mcap_sol": 28.3,
    "dev_pct": 2.1,
    "big_sell": 1.44,
    "x": "https://x.com/PayslipFun/status/2126200494200889353?a=OmGsBYy-_9Q0oPaT0tE&s=20",
@@ -6251,7 +6269,7 @@
    "symbol": "HYPE",
    "name": "Hyperliquid",
    "mint": "9HDzsLwxnfVe9wh8d2q4xz6oGFsGgMLLJfszF8N2pump",
-   "age_s": 114,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6269,7 +6287,7 @@
    "symbol": "PSST",
    "name": "Psst Scanner",
    "mint": "9DxhopyVhvGaJQ1SYCGHBfkXG4NSPSG736VVmLrQPSST",
-   "age_s": 126,
+   "age_s": 154,
    "sol_in": 0.3,
    "buys": 13,
    "sells": 24,
@@ -6287,7 +6305,7 @@
    "symbol": "CRUMP",
    "name": "DONALD J CRUMP",
    "mint": "EZxzwpy6Rq5wtsobM5ZEqjjBkSFqzVkJJhx1mBgupump",
-   "age_s": 126,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6305,7 +6323,7 @@
    "symbol": "CPM",
    "name": "Crazy Pinata Man",
    "mint": "9fMibQBFrEnn4C2cCiTFFLCeBab97uoW5PzkMaaspump",
-   "age_s": 135,
+   "age_s": 163,
    "sol_in": -0.05,
    "buys": 0,
    "sells": 1,
@@ -6314,60 +6332,6 @@
    "dev_pct": 0.2,
    "big_sell": 0.05,
    "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "OCB",
-   "name": "OfficialChainBroker",
-   "mint": "2MKMQjN1M7KcbwgeGBo4zN13pDgzfG4vGnsLHFKzpump",
-   "age_s": 161,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 1.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "MEK",
-   "name": "MEK",
-   "mint": "Fr14uVvtcBJnC5zvdGqQtQhY3kpUcwdMf8Woo4e2pump",
-   "age_s": 167,
-   "sol_in": 0.18,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 1.2,
-   "mcap_sol": 30.2,
-   "dev_pct": 3.4,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": "https://mektxt.com/about",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "BIBLE",
-   "name": "Holy Bible Dog",
-   "mint": "rhkcRi5pXftvVAqu7JHe3P3nQXdJpbbmsCoFWYppump",
-   "age_s": 168,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 29.6,
-   "dev_pct": 2.9,
-   "big_sell": 0.05,
-   "x": "https://x.com/Holybibledog/status/2126200183809810698",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: 250 trades tonight (max)",
@@ -6441,6 +6405,26 @@
    "fill": "curve",
    "age_s": 1,
    "sol_in": 0.05
+  },
+  {
+   "symbol": "cornado",
+   "mint": "FvQf8hRGNeqhiNnRt2wfkKVHSYB3ixyH56cGRTuJpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T06:27:34Z",
+   "cost": 36.2,
+   "pnl_pct": -18.2,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 3.86,
+   "closed": "2026-11-27T06:27:36Z",
+   "exit": "dump: 2.4 SOL sold",
+   "pnl": -6.59,
+   "weight": 0.5
   },
   {
    "symbol": "ORC",
@@ -6821,33 +6805,13 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -2.8,
    "weight": 0.5
-  },
-  {
-   "symbol": "TWIZZY",
-   "mint": "HCzJj9o9UCQf2Cy5FxEkPfrsA7gjtYR551twP7fqpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T06:05:25Z",
-   "cost": 36.2,
-   "pnl_pct": -7.8,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 0,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "closed": "2026-11-27T06:10:08Z",
-   "exit": "curve quiet for 3 min (no trade)",
-   "pnl": -2.84,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 343,
+  "n": 344,
   "wins": 60,
-  "win_rate": 17.5,
-  "mean_pnl_pct": -8.68,
+  "win_rate": 17.4,
+  "mean_pnl_pct": -8.71,
   "open": 4,
   "learner": {
    "n": 16,
@@ -6856,10 +6820,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 327,
+   "n": 328,
    "wins": 57,
    "win_rate": 17.4,
-   "mean_pnl_pct": -8.5
+   "mean_pnl_pct": -8.53
   }
  }
 }
