@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T04:14:30Z",
+ "updated": "2026-11-27T04:15:03Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 288.78,
@@ -24,7 +24,7 @@
   "flagged": 162,
   "checked": 158,
   "filtered": 5,
-  "lines": 1787,
+  "lines": 1789,
   "last_rug": {
    "coin": "QHMQLRV",
    "pass": true
@@ -1328,6 +1328,10 @@
   [
    1795752833,
    289.84
+  ],
+  [
+   1795752893,
+   288.78
   ]
  ],
  "position_pct": 10.0,
@@ -3585,24 +3589,6 @@
   {
    "t": "2026-11-27T03:46:52Z",
    "time": "04:46:52",
-   "agent": "RISK",
-   "coin": null,
-   "action": "pause",
-   "text": "5 losses in a row · 2 min pause",
-   "n": 1588
-  },
-  {
-   "t": "2026-11-27T03:46:52Z",
-   "time": "04:46:52",
-   "agent": "EXECUTOR",
-   "coin": "SunCoin",
-   "action": "exit",
-   "text": "EXIT SunCoin $-7.17 (-17%) · stop -14% · out · 0.0 s after the reading",
-   "n": 1589
-  },
-  {
-   "t": "2026-11-27T03:46:52Z",
-   "time": "04:46:52",
    "agent": "LEARNER",
    "coin": "SunCoin",
    "action": "learn",
@@ -5381,6 +5367,24 @@
    "action": "learn",
    "text": "learned · np:dev:0-2 now avg -11.9% over 126.5",
    "n": 1787
+  },
+  {
+   "t": "2026-11-27T04:14:36Z",
+   "time": "05:14:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 7 rejected (serial launcher 4, snipe not bought: pause after a  1, mayhem mode 1)",
+   "n": 1788
+  },
+  {
+   "t": "2026-11-27T04:15:02Z",
+   "time": "05:15:02",
+   "agent": "LEARNER",
+   "coin": "test",
+   "action": "shadow",
+   "text": "SHADOW test · not bought (pause after a losing streak) · followed as if bought: $28.88 at 0.0000028468 (curve maths, every cost) · same exits, outside the book",
+   "n": 1789
   }
  ],
  "nights": [
@@ -5426,7 +5430,7 @@
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
   "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
-  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400"
+  "https://api.rugcheck.xyz/v1/tokens/6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC/report: HTTP 502"
  ],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
@@ -5449,26 +5453,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 799,
-    "last_event_age_s": 8.2,
+    "events": 800,
+    "last_event_age_s": 1.9,
     "errors": 2,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19935,
+    "events": 19991,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 547,
-    "last_event_age_s": 8.1,
-    "errors": 51,
-    "last_error": "example.com: HTTP 404"
+    "connected": false,
+    "events": 548,
+    "last_event_age_s": 1.0,
+    "errors": 52,
+    "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
@@ -5479,7 +5483,7 @@
   "exit_ms": 35,
   "exit_last_ms": 37,
   "launch_to_entry_s": 0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.4,
   "watching": 0,
   "followed": 5
  },
@@ -5528,23 +5532,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9829,
+   "sent": 9864,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9828,
+   "sent": 9863,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "test",
+   "name": "test",
+   "mint": "6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: pause after a losing streak",
+   "why": "snipe not bought: pause after a losing streak"
+  },
+  {
    "symbol": "ROLN",
    "name": "Rolana",
    "mint": "9r5Pspu8rNG8kkNhmDiyQWyssxCPJwAuxd2mXWwopump",
-   "age_s": 8,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5562,12 +5584,12 @@
    "symbol": "BBC",
    "name": "Beanie Babies Coin",
    "mint": "6qvY2pTt9z1R9ksYpMtVJwuQTHZp5Nef1wLydwsAaYTb",
-   "age_s": 30,
-   "sol_in": -5.62,
+   "age_s": 63,
+   "sol_in": -6.13,
    "buys": 2,
-   "sells": 4,
-   "rise_pct": -28.5,
-   "mcap_sol": 29.5,
+   "sells": 6,
+   "rise_pct": -30.8,
+   "mcap_sol": 28.5,
    "dev_pct": 18.9,
    "big_sell": 3.24,
    "x": "https://x.com/83fs732ts8236/status/2126167629136044508",
@@ -5580,12 +5602,12 @@
    "symbol": "Christmas",
    "name": "Christmas Coin",
    "mint": "AgBxPNBFmBks58rtVnp2ZW5WHtE2968qTPWgDEvbpump",
-   "age_s": 64,
-   "sol_in": 19.73,
-   "buys": 43,
-   "sells": 39,
-   "rise_pct": 144.8,
-   "mcap_sol": 92.8,
+   "age_s": 97,
+   "sol_in": 26.9,
+   "buys": 56,
+   "sells": 47,
+   "rise_pct": 213.2,
+   "mcap_sol": 118.8,
    "dev_pct": 15.2,
    "big_sell": 2.99,
    "x": "https://x.com/humanevolvd/status/2126167397958877607?a=Zd1DwaL0UeUtuOBeM2I&s=46",
@@ -5598,7 +5620,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BYd8rB8Dyx3q13gpuqpRD9m5NFwdfSjrjJjarWBTpump",
-   "age_s": 107,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5616,12 +5638,12 @@
    "symbol": "QI",
    "name": "QuantumInu",
    "mint": "5qZLmDg2sC31tBRC4mU6xtsNaq7FkPhKf3AaG9yjWy4b",
-   "age_s": 126,
-   "sol_in": -3.33,
-   "buys": 52,
-   "sells": 53,
-   "rise_pct": -18.2,
-   "mcap_sol": 31.0,
+   "age_s": 159,
+   "sol_in": -3.2,
+   "buys": 53,
+   "sells": 55,
+   "rise_pct": -17.5,
+   "mcap_sol": 31.3,
    "dev_pct": 15.2,
    "big_sell": 5.22,
    "x": "https://x.com/MarioPrezldente/status/2126167225547755929",
@@ -5629,48 +5651,28 @@
    "web": false,
    "status": "rejected: serial launcher: 11 more coins in 60 min",
    "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "BBC",
-   "name": "Beanie Babies Coin",
-   "mint": "6fdLeCQutE2CKHWHBtr7uQ6NrZ85GL5rFRTWEPEGdLuh",
-   "age_s": 150,
-   "sol_in": -5.68,
-   "buys": 11,
-   "sells": 11,
-   "rise_pct": -28.8,
-   "mcap_sol": 29.4,
-   "dev_pct": 18.9,
-   "big_sell": 4.62,
-   "x": "https://x.com/83fs732ts8236/status/2126167126595539309",
-   "tg": false,
-   "web": "https://www.citizen.org/wp-content/uploads/Trump-meme-coin-foreign-gala.pdf#page=8",
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "FOMOPUG",
-   "name": "Fomo PUG",
-   "mint": "72qUy2rcEXL5vdHaEKbomuTqAvaByUPFoiTA1Wckpump",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "test",
+   "mint": "6YegqbQKSWRHVCKapLE3Y215JenpSHtQeLiQkfFkQ7UC",
+   "status": "open",
+   "kind": "risk",
+   "why": "pause after a losing streak",
+   "opened": "2026-11-27T04:15:02Z",
+   "cost": 28.88,
+   "pnl_pct": -3.6,
+   "tier": "scalp",
+   "score": 0,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.0
+  },
   {
    "symbol": "Christmas",
    "mint": "AgBxPNBFmBks58rtVnp2ZW5WHtE2968qTPWgDEvbpump",
@@ -6077,7 +6079,7 @@
   "wins": 39,
   "win_rate": 17.6,
   "mean_pnl_pct": -9.36,
-  "open": 0,
+  "open": 1,
   "learner": {
    "n": 16,
    "wins": 3,
