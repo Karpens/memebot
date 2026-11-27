@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T11:32:28Z",
+ "updated": "2026-11-27T11:33:43Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 59.14,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4519,
+  "lines": 4526,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795743120,
-   80.34
-  ],
   [
    1795743180,
    80.34
@@ -2472,6 +2468,10 @@
   [
    1795779134,
    59.14
+  ],
+  [
+   1795779207,
+   59.14
   ]
  ],
  "position_pct": 10.0,
@@ -4359,69 +4359,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T11:06:01Z",
-   "time": "12:06:01",
-   "agent": "RISK",
-   "coin": "SUNHAZE",
-   "action": "skip",
-   "text": "no entry: 250 trades tonight (max)",
-   "n": 4320
-  },
-  {
-   "t": "2026-11-27T11:06:01Z",
-   "time": "12:06:01",
-   "agent": "LEARNER",
-   "coin": "SUNHAZE",
-   "action": "shadow",
-   "text": "SHADOW SUNHAZE · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000002872 (curve maths, every cost) · same exits, outside the book",
-   "n": 4321
-  },
-  {
-   "t": "2026-11-27T11:06:25Z",
-   "time": "12:06:25",
-   "agent": "LEARNER",
-   "coin": "MINT",
-   "action": "shadow",
-   "text": "SHADOW MINT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035725 (curve maths, every cost) · same exits, outside the book",
-   "n": 4322
-  },
-  {
-   "t": "2026-11-27T11:06:27Z",
-   "time": "12:06:27",
-   "agent": "LEARNER",
-   "coin": "MINT",
-   "action": "shadow",
-   "text": "SHADOW MINT would have made -16.6% (stop -13%) · learned x0.5 · np:social:web now avg -7.7% over 300",
-   "n": 4323
-  },
-  {
-   "t": "2026-11-27T11:06:32Z",
-   "time": "12:06:32",
-   "agent": "LEARNER",
-   "coin": "GTAV",
-   "action": "shadow",
-   "text": "SHADOW GTAV · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021224 (curve maths, every cost) · same exits, outside the book",
-   "n": 4324
-  },
-  {
-   "t": "2026-11-27T11:06:34Z",
-   "time": "12:06:34",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 0 watched · 11 rejected (snipe not bought: trades tonight 7, serial launcher 2, mayhem mode 2)",
-   "n": 4325
-  },
-  {
-   "t": "2026-11-27T11:06:46Z",
-   "time": "12:06:46",
-   "agent": "LEARNER",
-   "coin": "STOCKD",
-   "action": "shadow",
-   "text": "SHADOW STOCKD · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026347 (curve maths, every cost) · same exits, outside the book",
-   "n": 4326
-  },
-  {
    "t": "2026-11-27T11:06:50Z",
    "time": "12:06:50",
    "agent": "LEARNER",
@@ -6157,6 +6094,69 @@
    "action": "fix",
    "text": "book fixed (memebot/fix_book.py): 5 trades voided (curve states no pump.fun curve can be in), 208 not taken by the corrected book · balance $361.97 -> $59.14",
    "n": 4519
+  },
+  {
+   "t": "2026-11-27T11:33:27Z",
+   "time": "12:33:27",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 4520
+  },
+  {
+   "t": "2026-11-27T11:33:27Z",
+   "time": "12:33:27",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+   "n": 4521
+  },
+  {
+   "t": "2026-11-27T11:33:33Z",
+   "time": "12:33:33",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 0.2 a minute · 1 watched · 0 rejected · closest BBNB: no curve reading yet",
+   "n": 4522
+  },
+  {
+   "t": "2026-11-27T11:33:33Z",
+   "time": "12:33:33",
+   "agent": "RISK",
+   "coin": "BBNB",
+   "action": "skip",
+   "text": "no entry: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "n": 4523
+  },
+  {
+   "t": "2026-11-27T11:33:33Z",
+   "time": "12:33:33",
+   "agent": "LEARNER",
+   "coin": "BBNB",
+   "action": "shadow",
+   "text": "SHADOW BBNB · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000033877 (curve maths, every cost) · same exits, outside the book",
+   "n": 4524
+  },
+  {
+   "t": "2026-11-27T11:33:35Z",
+   "time": "12:33:35",
+   "agent": "LEARNER",
+   "coin": "BOWL",
+   "action": "shadow",
+   "text": "SHADOW BOWL · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000021703 (curve maths, every cost) · same exits, outside the book",
+   "n": 4525
+  },
+  {
+   "t": "2026-11-27T11:33:40Z",
+   "time": "12:33:40",
+   "agent": "LEARNER",
+   "coin": "BBNB",
+   "action": "shadow",
+   "text": "SHADOW BBNB would have made -15.2% (stop -11%) · learned x0.5 · np:sol:3-6 now avg -11.8% over 71",
+   "n": 4526
   }
  ],
  "nights": [
@@ -6197,13 +6197,7 @@
    "scans": 0
   }
  ],
- "errors": [
-  "https://api.rugcheck.xyz/v1/tokens/2azFGWCyUenq4JCBjyVq4yKtHpvtvHzf12rukVPhpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/7zJFTswQp9v1WeLUNAUmBAeUQKWezp133E7igG8Rpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/Dzr6YNmfTrSWqSx8LtAoDLGyZsdSUUZUBCQMNfw1pump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/GxYsMfZWV1gAWoFC1uPJkSbSwihUKTwVH69BXWyNpump/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/5coqRNfFy7MHQB4jvgZWecgu9X5xAo34ir9D6kGZpump/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -6217,7 +6211,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 2 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6225,26 +6219,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1339,
-    "last_event_age_s": 0.4,
-    "errors": 2,
-    "last_error": "silent for 90 s · reconnecting"
+    "events": 2,
+    "last_event_age_s": 8.6,
+    "errors": 0,
+    "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 28726,
-    "last_event_age_s": 0.5,
+    "events": 8,
+    "last_event_age_s": 1.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 821,
-    "last_event_age_s": 0.4,
-    "errors": 41,
-    "last_error": "turbo-gateway.com: too slow (over 2 s)"
+    "events": 2,
+    "last_event_age_s": 8.5,
+    "errors": 0,
+    "last_error": null
    }
   ],
   "strategies": [
@@ -6255,9 +6249,11 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
-  "watching": 1,
-  "followed": 9
+  "creates_per_min": 0.4,
+  "watching": 0,
+  "followed": 2,
+  "odd_readings": 0,
+  "odd_coins": 0
  },
  "learner": {
   "samples": 36,
@@ -6284,7 +6280,7 @@
   "worst": [
    {
     "label": "snipe · np:sol:3-6",
-    "n": 70,
+    "n": 71,
     "avg": -11.8
    },
    {
@@ -6298,227 +6294,101 @@
     "avg": -8.5
    }
   ],
-  "shadows": 1200,
+  "shadows": 1201,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15648,
-   "errors": 1,
-   "last_error": "TimeoutError: The read operation timed out"
+   "sent": 15,
+   "errors": 0,
+   "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15659,
+   "sent": 18,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "$SANTA",
-   "name": "Santa",
-   "mint": "HULTWFkYi8PmJEBEHW86vtU8Q3UpF46Fo7YZgHpkpump",
-   "age_s": 0,
+   "symbol": "BOWL",
+   "name": "Marie Antoinette's Bowl",
+   "mint": "9Arhw1DXjCP6d4asvhvKwjqkuQvUigdPtKW8jeXwpump",
+   "age_s": 8,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 1.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/Hoehoehoe155",
-   "tg": false,
-   "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
-  },
-  {
-   "symbol": "Spread",
-   "name": "Spread",
-   "mint": "HQYLt1Ne2xQdknmZjbnTffSKFYX2ZHCkBG3WBJQYpump",
-   "age_s": 19,
-   "sol_in": 9.95,
-   "buys": 4,
-   "sells": 11,
-   "rise_pct": 75.9,
-   "mcap_sol": 50.8,
+   "mcap_sol": 28.9,
    "dev_pct": 1.7,
-   "big_sell": 4.26,
-   "x": "https://x.com/spreadholders/status/2126277789330378843",
-   "tg": false,
-   "web": "https://usespreadholders.fun/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "FRIDAY",
-   "name": "FRIDAY",
-   "mint": "Eu7BdKwNH8nzKR8cviNYfyrD1fBT7hXu7yChFKmCpump",
-   "age_s": 32,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.6,
-   "dev_pct": 1.2,
    "big_sell": 0.0,
-   "x": false,
+   "x": "https://twitter.com/CTVNews/status/2126277446399844465",
    "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
+   "web": "https://www.ctvnews.ca/lifestyle/article/marie-antoinettes-nipple-bowl-auctioned-for-record-us31-million/",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
   },
   {
-   "symbol": "TEST",
-   "name": "test",
-   "mint": "2vWYMSJG3W8gsqcobJu1QCujbZ8GAama5sT293eTFRES",
-   "age_s": 42,
-   "sol_in": 0.84,
-   "buys": 1,
-   "sells": 8,
-   "rise_pct": 5.7,
-   "mcap_sol": 29.6,
-   "dev_pct": 0.2,
-   "big_sell": 0.55,
-   "x": false,
+   "symbol": "BBNB",
+   "name": "Bruised But Never Broken",
+   "mint": "BgsMnWC6bqok3yyrXU3Ts6fjFttPRp8yGyR5qSwrpump",
+   "age_s": 10,
+   "sol_in": 3.0,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 19.0,
+   "mcap_sol": 40.2,
+   "dev_pct": 9.6,
+   "big_sell": 1.55,
+   "x": "https://x.com/Zeeko__Dev/status/2126278221339464115",
    "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "FRIDAYCJ",
-   "name": "Black Friday CJ",
-   "mint": "2DXHQSgP9ta331Ndu9KWiBQZD3UWKnRcHDSrmmr9pump",
-   "age_s": 55,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 0.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Mаcaw",
-   "name": "Nietzschean Mаcaw",
-   "mint": "DKZN7puQnwQccCKYQe2hHGKN5P6xKrS5XuMzz6yCpump",
-   "age_s": 61,
-   "sol_in": 4.75,
-   "buys": 16,
-   "sells": 19,
-   "rise_pct": 29.9,
-   "mcap_sol": 46.5,
-   "dev_pct": 12.5,
-   "big_sell": 2.87,
-   "x": "https://x.com/slndr3000/status/2126277687316488691?a=zOtWPq3Fa74lCrupTq4&s=20",
-   "tg": false,
-   "web": "https://x.com/AMAZlNGNATURE/status/2126262758224396501?a=oFRnBWq8FllyLm2m_mM&s=20",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "FCP",
-   "name": "Flying Cocaine Penguin",
-   "mint": "8DT1GhTDtznA7YKoJx4HJeadEY33PnzyNqEwqBbNnv39",
-   "age_s": 69,
-   "sol_in": -4.94,
-   "buys": 4,
-   "sells": 12,
-   "rise_pct": -26.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.2,
-   "big_sell": 3.5,
-   "x": "https://x.com/MarioPrezldente/status/2126277681063006638",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 13 more coins in 60 min",
-   "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "YieldField",
-   "name": "星露谷物语",
-   "mint": "2bY6oD3LrVzti38JfhnLLwbbsThaRGHCo1xQPos9pump",
-   "age_s": 105,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "USFF",
-   "name": "USFF",
-   "mint": "3S1wEpZ3YEVjiDdJjqwspL47LmCsiNChM7TdyhUWpump",
-   "age_s": 107,
-   "sol_in": -0.55,
-   "buys": 5,
-   "sells": 9,
-   "rise_pct": -85.4,
-   "mcap_sol": 4.3,
-   "dev_pct": 2.4,
-   "big_sell": 0.28,
-   "x": false,
-   "tg": false,
-   "web": "https://usff.info/",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "FCAT",
-   "name": "FuelCat",
-   "mint": "4Ji2vou3LjWzppvjCRLYMFg9wZJJaz4Mup5vi6okm3y9",
-   "age_s": 119,
-   "sol_in": 2.13,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 14.7,
-   "mcap_sol": 32.1,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "SWARM",
-   "name": "SWARM",
-   "mint": "HTCTeH2Np37eEuV69AVtZnF1Sff9hGWAdPXDd9LXQm5U",
-   "age_s": 130,
-   "sol_in": -1.72,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": -10.5,
-   "mcap_sol": 28.1,
-   "dev_pct": 6.1,
-   "big_sell": 1.83,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
+   "web": "https://x.com/i/trending/2126269767665496180",
+   "status": "rejected: snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "why": "snipe not bought: night at -28%: 0 open and one more order could take it past -30% in one dump wave"
   }
  ],
  "strategies": [
   "new_pairs"
  ],
  "shadows": [
+  {
+   "symbol": "BOWL",
+   "mint": "9Arhw1DXjCP6d4asvhvKwjqkuQvUigdPtKW8jeXwpump",
+   "status": "open",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T11:33:35Z",
+   "cost": 5.91,
+   "pnl_pct": -3.7,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 0,
+   "sol_in": 0.0
+  },
+  {
+   "symbol": "BBNB",
+   "mint": "BgsMnWC6bqok3yyrXU3Ts6fjFttPRp8yGyR5qSwrpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+   "opened": "2026-11-27T11:33:33Z",
+   "cost": 5.91,
+   "pnl_pct": -15.2,
+   "tier": "scalp",
+   "score": 1.5,
+   "steps": 0,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 5.15,
+   "closed": "2026-11-27T11:33:40Z",
+   "exit": "stop -11%",
+   "pnl": -0.9,
+   "weight": 0.5
+  },
   {
    "symbol": "Spread",
    "mint": "HQYLt1Ne2xQdknmZjbnTffSKFYX2ZHCkBG3WBJQYpump",
@@ -6898,34 +6768,14 @@
    "exit": "TP +10%",
    "pnl": 2.52,
    "weight": 0.5
-  },
-  {
-   "symbol": "ANT",
-   "mint": "GEh1wedTVoKT5SUc6owjoDpLWwryczv1V8akXfM3pump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T11:26:40Z",
-   "cost": 36.2,
-   "pnl_pct": 10.4,
-   "tier": "scalp",
-   "score": 0,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 1.3,
-   "closed": "2026-11-27T11:26:41Z",
-   "exit": "TP +10%",
-   "pnl": 3.78,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 1008,
+  "n": 1009,
   "wins": 229,
   "win_rate": 22.7,
-  "mean_pnl_pct": -7.42,
-  "open": 0,
+  "mean_pnl_pct": -7.43,
+  "open": 1,
   "learner": {
    "n": 16,
    "wins": 3,
@@ -6933,10 +6783,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 992,
+   "n": 993,
    "wins": 226,
    "win_rate": 22.8,
-   "mean_pnl_pct": -7.34
+   "mean_pnl_pct": -7.35
   }
  }
 }
