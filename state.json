@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:30:27Z",
-    "time": "06:30:27",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "5 losses in a row · 2 min pause",
-    "n": 2451
-   },
-   {
-    "t": "2026-11-27T05:30:27Z",
-    "time": "06:30:27",
-    "agent": "EXECUTOR",
-    "coin": "Process",
-    "action": "exit",
-    "text": "EXIT Process $-6.41 (-15%) · stop -11% · out · 0.0 s after the reading",
-    "n": 2452
-   },
-   {
-    "t": "2026-11-27T05:30:27Z",
-    "time": "06:30:27",
-    "agent": "LEARNER",
-    "coin": "Process",
-    "action": "learn",
-    "text": "learned · np:social:web now avg -9.2% over 149",
-    "n": 2453
-   },
-   {
     "t": "2026-11-27T05:30:42Z",
     "time": "06:30:42",
     "agent": "RISK",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW strugglecat would have made -14.4% (stop -11%) · learned x0.5 · np:sol:3-6 now avg -10.4% over 44.5",
     "n": 3050
+   },
+   {
+    "t": "2026-11-27T07:08:53Z",
+    "time": "08:08:53",
+    "agent": "LEARNER",
+    "coin": "TOGI",
+    "action": "shadow",
+    "text": "SHADOW TOGI would have made -11.7% (dump: 2.4 SOL sold) · learned x0.5 · np:buys:<70 now avg -9.7% over 194",
+    "n": 3051
+   },
+   {
+    "t": "2026-11-27T07:09:04Z",
+    "time": "08:09:04",
+    "agent": "LEARNER",
+    "coin": "Penguin",
+    "action": "shadow",
+    "text": "SHADOW Penguin · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000035045 (curve maths, every cost) · same exits, outside the book",
+    "n": 3052
+   },
+   {
+    "t": "2026-11-27T07:09:05Z",
+    "time": "08:09:05",
+    "agent": "LEARNER",
+    "coin": "Penguin",
+    "action": "shadow",
+    "text": "SHADOW Penguin would have made +11.1% (TP +10%) · learned x0.5 · np:social:web now avg -8.8% over 198.5",
+    "n": 3053
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 3050,
+  "lines": 3053,
   "flags": [
    {
     "coin": "Kibo",
@@ -21287,6 +21287,10 @@
    [
     1795763273,
     361.97
+   ],
+   [
+    1795763333,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21295,9 +21299,9 @@
   },
   "np_said": 1795763303.78092,
   "shadow": {
-   "n": 421,
-   "wins": 77,
-   "sum": -3720.2
+   "n": 423,
+   "wins": 78,
+   "sum": -3720.8
   },
   "np_speed": {
    "first_in": [
@@ -30880,9 +30884,9 @@
   }
  },
  "shadow": {
-  "n": 435,
-  "wins": 79,
-  "sum": -3918.7,
+  "n": 437,
+  "wins": 80,
+  "sum": -3919.3,
   "by": {
    "learner": {
     "n": 16,
@@ -30890,52 +30894,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 419,
-    "wins": 76,
-    "sum": -3720.9
+    "n": 421,
+    "wins": 77,
+    "sum": -3721.5
    }
   },
   "closed": [
-   {
-    "symbol": "FOUNDER",
-    "mint": "B9GYwJHcZZM8H4pr5GkBgpop7gqHujHEVC2Ln75hENLZ",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:00:35Z",
-    "cost": 36.2,
-    "pnl_pct": -37.5,
-    "tier": "scalp",
-    "score": 0.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 1.98,
-    "closed": "2026-11-27T07:00:46Z",
-    "exit": "dump: 6.1 SOL sold",
-    "pnl": -13.57,
-    "weight": 0.5
-   },
-   {
-    "symbol": "TOGI",
-    "mint": "7hKPz9GWxuePn4cE8fT5iSmwBAwaijEsRGytFMYoGzZR",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T07:00:48Z",
-    "cost": 36.2,
-    "pnl_pct": -16.8,
-    "tier": "scalp",
-    "score": 1.5,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.02,
-    "closed": "2026-11-27T07:00:52Z",
-    "exit": "stop -13%",
-    "pnl": -6.08,
-    "weight": 0.5
-   },
    {
     "symbol": "TESTMINE",
     "mint": "4Rft7X6mWf4gX91sDcT6b4dzv8StsmQFqH2K8P2EvdUS",
@@ -31295,10 +31259,49 @@
     "exit": "stop -11%",
     "pnl": -5.2,
     "weight": 0.5
+   },
+   {
+    "symbol": "TOGI",
+    "mint": "2M8GkiuCKdqTgZAzPLWzNU5LRi9KiLYo4b6eAVTBpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:06:26Z",
+    "cost": 36.2,
+    "pnl_pct": -11.7,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T07:08:53Z",
+    "exit": "dump: 2.4 SOL sold",
+    "pnl": -4.25,
+    "weight": 0.5
+   },
+   {
+    "symbol": "Penguin",
+    "mint": "6hvBkaBrCVyPjN3pj5Zy5hMcCW51S5462WwXYkDZpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T07:09:04Z",
+    "cost": 36.2,
+    "pnl_pct": 11.1,
+    "tier": "scalp",
+    "score": 1.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 5.68,
+    "closed": "2026-11-27T07:09:05Z",
+    "exit": "TP +10%",
+    "pnl": 4.02,
+    "weight": 0.5
    }
   ],
   "open": [
-   "TOGI",
    "vigil",
    "Hierberos"
   ]
@@ -31342,7 +31345,7 @@
     "avg": -13.6
    }
   ],
-  "shadows": 419,
+  "shadows": 421,
   "memory": "snipe"
  }
 }
