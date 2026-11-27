@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T06:58:13Z",
+ "updated": "2026-11-27T06:58:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2984,
+  "lines": 2985,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4252,15 +4252,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T06:20:51Z",
-   "time": "07:20:51",
-   "agent": "LEARNER",
-   "coin": "Simyo",
-   "action": "shadow",
-   "text": "SHADOW Simyo would have made +12.7% (TP +10%) · learned x0.5 · np:dev:0-2 now avg -9.0% over 188",
-   "n": 2785
-  },
-  {
    "t": "2026-11-27T06:20:55Z",
    "time": "07:20:55",
    "agent": "SCANNER",
@@ -6050,6 +6041,15 @@
    "action": "shadow",
    "text": "SHADOW $POSSUM would have made -7.8% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.8% over 191",
    "n": 2984
+  },
+  {
+   "t": "2026-11-27T06:58:16Z",
+   "time": "07:58:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.4 a minute · 0 watched · 10 rejected (mayhem mode 6, snipe not bought: trades tonight 3, serial launcher 1)",
+   "n": 2985
   }
  ],
  "nights": [
@@ -6110,7 +6110,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6118,15 +6118,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1509,
-    "last_event_age_s": 45.6,
+    "events": 1511,
+    "last_event_age_s": 18.3,
     "errors": 5,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 43598,
+    "events": 43651,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6134,8 +6134,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 969,
-    "last_event_age_s": 57.4,
+    "events": 970,
+    "last_event_age_s": 18.1,
     "errors": 86,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6148,9 +6148,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.4,
+  "creates_per_min": 4.6,
   "watching": 0,
-  "followed": 4
+  "followed": 3
  },
  "learner": {
   "samples": 249,
@@ -6197,23 +6197,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20546,
+   "sent": 20582,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20545,
+   "sent": 20581,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$404",
+   "name": "404 Frog",
+   "mint": "AeCMpJLZDMAZk8TvoULwJE1Vdv3V8wSGsYvKxAEjpump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "EAD",
+   "name": "EMOTIONAL ABUSE DEFENCE PROJECT",
+   "mint": "42knXCTgMUCuMgBeWkHdVcmmVV9aDemdgDHDGQiupump",
+   "age_s": 32,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "6bd1MqXv5mj4weQ7qv7eNMvXYWtuwFZaZmJpARPFpump",
-   "age_s": 45,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6231,7 +6267,7 @@
    "symbol": "BTC",
    "name": "bitcoin",
    "mint": "3JQN4EJT5P6Q6vNizQUgGCwkmX9c7y25RL5U2bkNpump",
-   "age_s": 57,
+   "age_s": 91,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6249,7 +6285,7 @@
    "symbol": "30X",
    "name": "30XCOIN",
    "mint": "6NfTybCMxqajz887eXu9HDBYeLd39NB3YyTQeTvupump",
-   "age_s": 89,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6267,7 +6303,7 @@
    "symbol": "SIRIUS",
    "name": "Sirius",
    "mint": "DM58i4naRZQdExbqjAST2pcm3wJcVqUCsbpV8oDHpump",
-   "age_s": 92,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6285,79 +6321,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "Fz5d57nUmXVsZdDKPfVUt4p1Cxuu52Xndky2mMcnpump",
-   "age_s": 117,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "MOMENT",
-   "name": "Moment",
-   "mint": "MMNT5RGzcxHv12bjtusDh3M4TULmFQbeFF5Tn8wHEjX",
-   "age_s": 146,
-   "sol_in": -0.79,
-   "buys": 2,
-   "sells": 11,
-   "rise_pct": -5.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.8,
-   "big_sell": 2.89,
-   "x": "https://x.com/momentlivefun",
-   "tg": false,
-   "web": "https://momentlive.fun/",
-   "status": "rejected: snipe not bought: 250 trades tonight (max)",
-   "why": "snipe not bought: 250 trades tonight (max)"
-  },
-  {
-   "symbol": "HongFeng",
-   "name": "紅楓",
-   "mint": "7VagCxwfDnwFVMSJwibAsUrvdbiC5sEmeNTu26Akpump",
-   "age_s": 169,
-   "sol_in": 20.31,
-   "buys": 87,
-   "sells": 54,
-   "rise_pct": 161.2,
-   "mcap_sol": 88.2,
-   "dev_pct": 9.6,
-   "big_sell": 4.92,
-   "x": "https://x.com/ZzzzzSol/status/2126208243630313968",
-   "tg": false,
-   "web": "https://www.bilibili.com/en/video/BV1DWyhzAE3Q/?spm_id_from=333.1387.homepage.video_card.click",
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "30X",
-   "name": "30XCOIN",
-   "mint": "7yKX9nuA1aX1ertkHQCiC5fTrn91SkRLFxZBeNcspump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "sky",
-   "name": "moon",
-   "mint": "7cLL1SPCo5VCJuGHUphJzFvqYHxbum5TGZvAgxfTpump",
-   "age_s": 175,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
