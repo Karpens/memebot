@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:45:32Z",
-    "time": "09:45:32",
-    "agent": "LEARNER",
-    "coin": "DISCOUNT",
-    "action": "shadow",
-    "text": "SHADOW DISCOUNT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000029448 (curve maths, every cost) · same exits, outside the book",
-    "n": 3582
-   },
-   {
-    "t": "2026-11-27T08:45:33Z",
-    "time": "09:45:33",
-    "agent": "LEARNER",
-    "coin": "DISCOUNT",
-    "action": "shadow",
-    "text": "SHADOW DISCOUNT would have made +11.7% (TP +10%) · learned x0.5 · np:sol:3-6 now avg -11.1% over 58.5",
-    "n": 3583
-   },
-   {
     "t": "2026-11-27T08:45:43Z",
     "time": "09:45:43",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 3.6 a minute · 0 watched · 13 rejected (mayhem mode 7, snipe not bought: trades tonight 4, serial launcher 1)",
     "n": 4181
+   },
+   {
+    "t": "2026-11-27T10:40:50Z",
+    "time": "11:40:50",
+    "agent": "LEARNER",
+    "coin": "Wonald",
+    "action": "shadow",
+    "text": "SHADOW Wonald would have made -7.7% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 238",
+    "n": 4182
+   },
+   {
+    "t": "2026-11-27T10:40:51Z",
+    "time": "11:40:51",
+    "agent": "LEARNER",
+    "coin": "Slaxias",
+    "action": "shadow",
+    "text": "SHADOW Slaxias · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000022714 (curve maths, every cost) · same exits, outside the book",
+    "n": 4183
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4181,
+  "lines": 4183,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795776019.645306,
   "shadow": {
-   "n": 855,
+   "n": 856,
    "wins": 192,
-   "sum": -6759.4
+   "sum": -6767.1
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 869,
+  "n": 870,
   "wins": 194,
-  "sum": -6957.9,
+  "sum": -6965.6,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 853,
+    "n": 854,
     "wins": 191,
-    "sum": -6760.1
+    "sum": -6767.8
    }
   },
   "closed": [
-   {
-    "symbol": "Holdball",
-    "mint": "BaGzZcAj4UM6Mx8kELhtMdyt2VQztvwGckQv6zNepump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:28:24Z",
-    "cost": 36.2,
-    "pnl_pct": 5.0,
-    "tier": "swing",
-    "score": 3,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 9.2,
-    "closed": "2026-11-27T10:28:29Z",
-    "exit": "trailing stop 6% off the top (peak +14%)",
-    "pnl": 1.8,
-    "weight": 0.5
-   },
    {
     "symbol": "NVIDIA",
     "mint": "DiSmdapsPvAMbLEy3YissQAYLLWHGRGC5d1LSio9pump",
@@ -31743,12 +31723,32 @@
     "exit": "curve quiet for 3 min (no trade)",
     "pnl": -2.59,
     "weight": 0.5
+   },
+   {
+    "symbol": "Wonald",
+    "mint": "6i9x2xYiJuzn1QG11aLTPY53insNTRcmjhqNBUYsA8oq",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:37:50Z",
+    "cost": 36.2,
+    "pnl_pct": -7.7,
+    "tier": "scalp",
+    "score": 1,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 5,
+    "sol_in": -0.0,
+    "closed": "2026-11-27T10:40:50Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.8,
+    "weight": 0.5
    }
   ],
   "open": [
    "BURN",
-   "Wonald",
-   "rice"
+   "rice",
+   "Slaxias"
   ]
  },
  "learner_summary": {
@@ -31790,7 +31790,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 853,
+  "shadows": 854,
   "memory": "snipe"
  }
 }
