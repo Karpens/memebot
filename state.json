@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:20:10Z",
-    "time": "06:20:10",
-    "agent": "EXECUTOR",
-    "coin": "Friday",
-    "action": "enter",
-    "text": "ENTER Friday at 0.0000068761 · slip 0.5% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 4 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 2287
-   },
-   {
-    "t": "2026-11-27T05:20:10Z",
-    "time": "06:20:10",
-    "agent": "NEWS",
-    "coin": "Friday",
-    "action": "plan",
-    "text": "hold plan · 2/10 (inflow 19.3 SOL) · scalp: +10",
-    "n": 2288
-   },
-   {
     "t": "2026-11-27T05:20:14Z",
     "time": "06:20:14",
     "agent": "EXECUTOR",
@@ -5445,6 +5427,24 @@
     "action": "scan",
     "text": "new pairs · 6.2 a minute · 0 watched · 14 rejected (snipe not bought: trades tonight 6, mayhem mode 5, serial launcher 3)",
     "n": 2886
+   },
+   {
+    "t": "2026-11-27T06:38:19Z",
+    "time": "07:38:19",
+    "agent": "LEARNER",
+    "coin": "TOMLINA",
+    "action": "shadow",
+    "text": "SHADOW TOMLINA would have made -7.2% (curve quiet for 3 min (no trade)) · learned x0.5 · np:social:none now avg -9.5% over 147.5",
+    "n": 2887
+   },
+   {
+    "t": "2026-11-27T06:38:44Z",
+    "time": "07:38:44",
+    "agent": "LEARNER",
+    "coin": "Ninja",
+    "action": "shadow",
+    "text": "SHADOW Ninja · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024167 (curve maths, every cost) · same exits, outside the book",
+    "n": 2888
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2886,
+  "lines": 2888,
   "flags": [
    {
     "coin": "Kibo",
@@ -21175,9 +21175,9 @@
   },
   "np_said": 1795761484.780842,
   "shadow": {
-   "n": 358,
+   "n": 359,
    "wins": 64,
-   "sum": -3093.3
+   "sum": -3100.5
   },
   "np_speed": {
    "first_in": [
@@ -30760,9 +30760,9 @@
   }
  },
  "shadow": {
-  "n": 372,
+  "n": 373,
   "wins": 66,
-  "sum": -3291.8,
+  "sum": -3299.0,
   "by": {
    "learner": {
     "n": 16,
@@ -30770,32 +30770,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 356,
+    "n": 357,
     "wins": 63,
-    "sum": -3094.0
+    "sum": -3101.2
    }
   },
   "closed": [
-   {
-    "symbol": "cucu",
-    "mint": "FvKr7jbyugs9suWvb88bBWPez88ntnSD891wVJerByAb",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:30:23Z",
-    "cost": 36.2,
-    "pnl_pct": -17.9,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": 3.95,
-    "closed": "2026-11-27T06:30:27Z",
-    "exit": "stop -15%",
-    "pnl": -6.48,
-    "weight": 0.5
-   },
    {
     "symbol": "CEDARCREEK",
     "mint": "Ds1aANqw4FiEJ8o3VyYsfqvtyyQCZM7S3UEFxybmpump",
@@ -31175,12 +31155,32 @@
     "exit": "dump: 2.0 SOL sold",
     "pnl": -3.93,
     "weight": 0.5
+   },
+   {
+    "symbol": "TOMLINA",
+    "mint": "EnrCuCHtn88SbyHgZgHb7edgdsHuiyyAe5zYre8ipump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:34:56Z",
+    "cost": 36.2,
+    "pnl_pct": -7.2,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.27,
+    "closed": "2026-11-27T06:38:19Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.61,
+    "weight": 0.5
    }
   ],
   "open": [
-   "TOMLINA",
    "哈基米",
-   "UBR"
+   "UBR",
+   "Ninja"
   ]
  },
  "learner_summary": {
@@ -31222,7 +31222,7 @@
     "avg": -13.9
    }
   ],
-  "shadows": 356,
+  "shadows": 357,
   "memory": "snipe"
  }
 }
