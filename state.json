@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T08:43:00Z",
-    "time": "09:43:00",
-    "agent": "LEARNER",
-    "coin": "nopipin",
-    "action": "shadow",
-    "text": "SHADOW nopipin · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021555 (curve maths, every cost) · same exits, outside the book",
-    "n": 3566
-   },
-   {
-    "t": "2026-11-27T08:43:11Z",
-    "time": "09:43:11",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 5.8 a minute · 0 watched · 14 rejected (mayhem mode 7, snipe not bought: trades tonight 6, serial launcher 1)",
-    "n": 3567
-   },
-   {
     "t": "2026-11-27T08:43:18Z",
     "time": "09:43:18",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "shadow",
     "text": "SHADOW SOFLOW · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.00000213 (curve maths, every cost) · same exits, outside the book",
     "n": 4165
+   },
+   {
+    "t": "2026-11-27T10:36:57Z",
+    "time": "11:36:57",
+    "agent": "LEARNER",
+    "coin": "BLACK",
+    "action": "shadow",
+    "text": "SHADOW BLACK · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024691 (curve maths, every cost) · same exits, outside the book",
+    "n": 4166
+   },
+   {
+    "t": "2026-11-27T10:36:58Z",
+    "time": "11:36:58",
+    "agent": "LEARNER",
+    "coin": "BLACK",
+    "action": "shadow",
+    "text": "SHADOW BLACK would have made +14.5% (TP +10%) · learned x0.5 · np:sol:<3 now avg -7.7% over 300",
+    "n": 4167
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4165,
+  "lines": 4167,
   "flags": [
    {
     "coin": "Kibo",
@@ -21743,9 +21743,9 @@
   },
   "np_said": 1795775776.645314,
   "shadow": {
-   "n": 849,
-   "wins": 190,
-   "sum": -6734.7
+   "n": 850,
+   "wins": 191,
+   "sum": -6720.2
   },
   "np_speed": {
    "first_in": [
@@ -31328,9 +31328,9 @@
   }
  },
  "shadow": {
-  "n": 863,
-  "wins": 192,
-  "sum": -6933.2,
+  "n": 864,
+  "wins": 193,
+  "sum": -6918.7,
   "by": {
    "learner": {
     "n": 16,
@@ -31338,32 +31338,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 847,
-    "wins": 189,
-    "sum": -6735.4
+    "n": 848,
+    "wins": 190,
+    "sum": -6720.9
    }
   },
   "closed": [
-   {
-    "symbol": "VAULT",
-    "mint": "4tqzkSWA9tiWYhzYpSt81We3cVNkrEbkD1tzjFDZpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T10:22:18Z",
-    "cost": 36.2,
-    "pnl_pct": 24.7,
-    "tier": "scalp",
-    "score": 2,
-    "steps": 1,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 5.62,
-    "closed": "2026-11-27T10:23:00Z",
-    "exit": "TP +10%",
-    "pnl": 8.92,
-    "weight": 0.5
-   },
    {
     "symbol": "Love",
     "mint": "AZkgchFQhvXwz2FpmpktsnHLbR6nfDiPwBMZYTgRpump",
@@ -31743,6 +31723,26 @@
     "exit": "stop -14%",
     "pnl": -6.22,
     "weight": 0.5
+   },
+   {
+    "symbol": "BLACK",
+    "mint": "GsWxPW5MCjDjsRPR5TKDfBT8JvZB833o6xd8Xh5qpump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T10:36:57Z",
+    "cost": 36.2,
+    "pnl_pct": 14.5,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 1,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.35,
+    "closed": "2026-11-27T10:36:58Z",
+    "exit": "TP +10%",
+    "pnl": 5.26,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31791,7 +31791,7 @@
     "avg": -10.6
    }
   ],
-  "shadows": 847,
+  "shadows": 848,
   "memory": "snipe"
  }
 }

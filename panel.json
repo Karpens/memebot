@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T10:36:45Z",
+ "updated": "2026-11-27T10:37:13Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 361.97,
@@ -24,7 +24,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 4165,
+  "lines": 4167,
   "last_rug": {
    "coin": "memecoin",
    "pass": true
@@ -4740,24 +4740,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T10:00:38Z",
-   "time": "11:00:38",
-   "agent": "LEARNER",
-   "coin": "DVXEATA",
-   "action": "shadow",
-   "text": "SHADOW DVXEATA would have made -6.5% (curve quiet for 3 min (no trade)) · learned x0.5 · np:buys:<70 now avg -9.3% over 223",
-   "n": 3966
-  },
-  {
-   "t": "2026-11-27T10:00:50Z",
-   "time": "11:00:50",
-   "agent": "LEARNER",
-   "coin": "alon",
-   "action": "shadow",
-   "text": "SHADOW alon would have made -18.6% (stop -15%) · learned x0.5 · np:social:none now avg -9.3% over 213.5",
-   "n": 3967
-  },
-  {
    "t": "2026-11-27T10:00:57Z",
    "time": "11:00:57",
    "agent": "SCANNER",
@@ -6538,6 +6520,24 @@
    "action": "shadow",
    "text": "SHADOW SOFLOW · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.00000213 (curve maths, every cost) · same exits, outside the book",
    "n": 4165
+  },
+  {
+   "t": "2026-11-27T10:36:57Z",
+   "time": "11:36:57",
+   "agent": "LEARNER",
+   "coin": "BLACK",
+   "action": "shadow",
+   "text": "SHADOW BLACK · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000024691 (curve maths, every cost) · same exits, outside the book",
+   "n": 4166
+  },
+  {
+   "t": "2026-11-27T10:36:58Z",
+   "time": "11:36:58",
+   "agent": "LEARNER",
+   "coin": "BLACK",
+   "action": "shadow",
+   "text": "SHADOW BLACK would have made +14.5% (TP +10%) · learned x0.5 · np:sol:<3 now avg -7.7% over 300",
+   "n": 4167
   }
  ],
  "nights": [
@@ -6605,24 +6605,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1043,
-    "last_event_age_s": 11.2,
+    "events": 1044,
+    "last_event_age_s": 17.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22381,
-    "last_event_age_s": 0.9,
+    "events": 22431,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 624,
-    "last_event_age_s": 10.6,
+    "events": 625,
+    "last_event_age_s": 17.7,
     "errors": 27,
     "last_error": "195.26.231.33: SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)"
    }
@@ -6635,9 +6635,9 @@
   "exit_ms": 35,
   "exit_last_ms": 59,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 4
+  "followed": 5
  },
  "learner": {
   "samples": 249,
@@ -6678,29 +6678,47 @@
     "avg": -10.6
    }
   ],
-  "shadows": 847,
+  "shadows": 848,
   "memory": "snipe"
  },
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12091,
+   "sent": 12121,
    "errors": 1,
    "last_error": "TimeoutError: The read operation timed out"
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12102,
+   "sent": 12132,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BLACK",
+   "name": "Black Friday Coin",
+   "mint": "GsWxPW5MCjDjsRPR5TKDfBT8JvZB833o6xd8Xh5qpump",
+   "age_s": 17,
+   "sol_in": 8.22,
+   "buys": 5,
+   "sells": 8,
+   "rise_pct": 58.0,
+   "mcap_sol": 50.2,
+   "dev_pct": 6.6,
+   "big_sell": 1.16,
+   "x": "https://x.com/munnyonly/status/2126263962119663764",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: 250 trades tonight (max)",
+   "why": "snipe not bought: 250 trades tonight (max)"
+  },
+  {
    "symbol": "SOFLOW",
    "name": "SEGFAULT Nº 002 StackOverflow",
    "mint": "HXKF438idKV3aeoXMdTx2BhSxjpC2gB2kf5uNbQQUz6Y",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.11,
    "buys": 4,
    "sells": 0,
@@ -6718,12 +6736,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "4Pq4AYk9uope9ifBzFvhrou1RXHUKadVPNjdafoUpump",
-   "age_s": 38,
-   "sol_in": 18.58,
-   "buys": 12,
-   "sells": 5,
-   "rise_pct": 141.9,
-   "mcap_sol": 84.1,
+   "age_s": 66,
+   "sol_in": 18.76,
+   "buys": 24,
+   "sells": 15,
+   "rise_pct": 143.6,
+   "mcap_sol": 84.7,
    "dev_pct": 11.1,
    "big_sell": 0.49,
    "x": false,
@@ -6736,7 +6754,7 @@
    "symbol": "420tekk2",
    "name": "420tekk!",
    "mint": "BuNJvQjje3AuMXPAJz9jNuvsL8mzMS9j9GUDEfDgATs5",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": -1.68,
    "buys": 1,
    "sells": 4,
@@ -6754,14 +6772,14 @@
    "symbol": "MACAW",
    "name": "The Macaw",
    "mint": "4p4rNDCHNH78ZjmqQaLeq31pxTRPvn67aqGEGT1QUaiS",
-   "age_s": 70,
-   "sol_in": -1.44,
+   "age_s": 98,
+   "sol_in": -4.64,
    "buys": 1,
-   "sells": 4,
-   "rise_pct": -8.1,
-   "mcap_sol": 34.9,
+   "sells": 5,
+   "rise_pct": -24.8,
+   "mcap_sol": 28.5,
    "dev_pct": 15.2,
-   "big_sell": 3.01,
+   "big_sell": 3.2,
    "x": "https://x.com/FolkPepe200/status/2126263565417853181",
    "tg": false,
    "web": false,
@@ -6772,7 +6790,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HstjSQzgbvQjxvUhhuc6Prgji16d1SaQzwSGysqXPPar",
-   "age_s": 89,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6790,7 +6808,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "DEUGzgkt3U68Z4j7M1h7bbsRGYTA7Mf1cxHxPsNEpump",
-   "age_s": 97,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6808,31 +6826,13 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "FV3HRyDCfutssja7EXLny7WysMij1x1JSTBgmz4vpump",
-   "age_s": 144,
+   "age_s": 172,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.3,
    "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "6xoapgiaT6NbQ3gFLf3yT3pqsPAvFV546zymGQwnpump",
-   "age_s": 177,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
@@ -6869,7 +6869,7 @@
    "why": "250 trades tonight (max)",
    "opened": "2026-11-27T10:36:07Z",
    "cost": 36.2,
-   "pnl_pct": 0.4,
+   "pnl_pct": 1.1,
    "tier": "scalp",
    "score": 2,
    "steps": 0,
@@ -6908,6 +6908,26 @@
    "fill": "curve",
    "age_s": 0,
    "sol_in": 0.06
+  },
+  {
+   "symbol": "BLACK",
+   "mint": "GsWxPW5MCjDjsRPR5TKDfBT8JvZB833o6xd8Xh5qpump",
+   "status": "closed",
+   "kind": "risk",
+   "why": "250 trades tonight (max)",
+   "opened": "2026-11-27T10:36:57Z",
+   "cost": 36.2,
+   "pnl_pct": 14.5,
+   "tier": "scalp",
+   "score": 0.5,
+   "steps": 1,
+   "fill": "curve",
+   "age_s": 1,
+   "sol_in": 0.35,
+   "closed": "2026-11-27T10:36:58Z",
+   "exit": "TP +10%",
+   "pnl": 5.26,
+   "weight": 0.5
   },
   {
    "symbol": "420tekk2",
@@ -7288,33 +7308,13 @@
    "exit": "curve quiet for 3 min (no trade)",
    "pnl": -1.7,
    "weight": 0.5
-  },
-  {
-   "symbol": "VAULT",
-   "mint": "4tqzkSWA9tiWYhzYpSt81We3cVNkrEbkD1tzjFDZpump",
-   "status": "closed",
-   "kind": "risk",
-   "why": "250 trades tonight (max)",
-   "opened": "2026-11-27T10:22:18Z",
-   "cost": 36.2,
-   "pnl_pct": 24.7,
-   "tier": "scalp",
-   "score": 2,
-   "steps": 1,
-   "fill": "curve",
-   "age_s": 0,
-   "sol_in": 5.62,
-   "closed": "2026-11-27T10:23:00Z",
-   "exit": "TP +10%",
-   "pnl": 8.92,
-   "weight": 0.5
   }
  ],
  "shadow_stats": {
-  "n": 863,
-  "wins": 192,
-  "win_rate": 22.2,
-  "mean_pnl_pct": -8.03,
+  "n": 864,
+  "wins": 193,
+  "win_rate": 22.3,
+  "mean_pnl_pct": -8.01,
   "open": 4,
   "learner": {
    "n": 16,
@@ -7323,10 +7323,10 @@
    "mean_pnl_pct": -12.36
   },
   "risk": {
-   "n": 847,
-   "wins": 189,
-   "win_rate": 22.3,
-   "mean_pnl_pct": -7.95
+   "n": 848,
+   "wins": 190,
+   "win_rate": 22.4,
+   "mean_pnl_pct": -7.93
   }
  }
 }
