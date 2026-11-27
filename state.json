@@ -47,24 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T19:49:03Z",
-    "time": "20:49:03",
-    "agent": "LEARNER",
-    "coin": "HIJAK",
-    "action": "shadow",
-    "text": "SHADOW HIJAK · not bought (night at -28%: 0 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.91 at 0.0000046489 (curve maths, every cost) · same exits, outside the book",
-    "n": 6205
-   },
-   {
-    "t": "2026-11-27T19:49:06Z",
-    "time": "20:49:06",
-    "agent": "LEARNER",
-    "coin": "HIJAK",
-    "action": "shadow",
-    "text": "SHADOW HIJAK would have made +5.7% (TP +10%) · learned x0.5 · np:dev:8+ now avg -8.8% over 216.5",
-    "n": 6206
-   },
-   {
     "t": "2026-11-27T19:49:11Z",
     "time": "20:49:11",
     "agent": "LEARNER",
@@ -5445,6 +5427,24 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 391 odd readings from 142 coins tonight",
     "n": 6804
+   },
+   {
+    "t": "2026-11-27T21:08:07Z",
+    "time": "22:08:07",
+    "agent": "LEARNER",
+    "coin": "Broke",
+    "action": "shadow",
+    "text": "SHADOW Broke would have made -4.4% (5 min, only +0%) · learned x0.5 · np:social:none now avg -8.3% over 300",
+    "n": 6805
+   },
+   {
+    "t": "2026-11-27T21:08:20Z",
+    "time": "22:08:20",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.0 a minute · 0 watched · 13 rejected (mayhem mode 6, snipe not bought: night at open  5, serial launcher 2)",
+    "n": 6806
    }
   ],
   "trades": [
@@ -7718,7 +7718,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 6804,
+  "lines": 6806,
   "flags": [
    {
     "coin": "Kibo",
@@ -10167,11 +10167,11 @@
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795813639.443466,
+  "np_said": 1795813700.443409,
   "shadow": {
-   "n": 1892,
+   "n": 1893,
    "wins": 427,
-   "sum": -13884.8
+   "sum": -13889.2
   },
   "np_speed": {
    "first_in": [
@@ -23110,7 +23110,7 @@
    ]
   },
   "odd": {
-   "readings": 391,
+   "readings": 392,
    "coins": 142,
    "followed": 0,
    "mints": [
@@ -31946,9 +31946,9 @@
   }
  },
  "shadow": {
-  "n": 1906,
+  "n": 1907,
   "wins": 429,
-  "sum": -14083.3,
+  "sum": -14087.7,
   "by": {
    "learner": {
     "n": 16,
@@ -31956,32 +31956,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 1890,
+    "n": 1891,
     "wins": 426,
-    "sum": -13885.5
+    "sum": -13889.9
    }
   },
   "closed": [
-   {
-    "symbol": "Trailer",
-    "mint": "GiPvWYjbNefC1BERkkt4Ehf36VzUorh8XURkmNwmpump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
-    "opened": "2026-11-27T21:00:41Z",
-    "cost": 5.91,
-    "pnl_pct": -15.0,
-    "tier": "swing",
-    "score": 3,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 19.85,
-    "closed": "2026-11-27T21:00:46Z",
-    "exit": "stop -11%",
-    "pnl": -0.89,
-    "weight": 0.5
-   },
    {
     "symbol": "Step",
     "mint": "8zttDVyNEU86NpHkUCw7Fhqu7BYLT4yEDCZZmZ2gpump",
@@ -32361,10 +32341,29 @@
     "exit": "stop -13%",
     "pnl": -1.03,
     "weight": 0.5
+   },
+   {
+    "symbol": "Broke",
+    "mint": "ABB1fw1nS8vJcHhjQc9W6xHRcRzAHekpxiRa2VVppump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "night at -28%: 0 open and one more order could take it past -30% in one dump wave",
+    "opened": "2026-11-27T21:03:07Z",
+    "cost": 5.91,
+    "pnl_pct": -4.4,
+    "tier": "scalp",
+    "score": 0,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 0.0,
+    "closed": "2026-11-27T21:08:07Z",
+    "exit": "5 min, only +0%",
+    "pnl": -0.26,
+    "weight": 0.5
    }
   ],
   "open": [
-   "Broke",
    "HUS",
    "SpaceX"
   ]
@@ -32408,7 +32407,7 @@
     "avg": -8.7
    }
   ],
-  "shadows": 2098,
+  "shadows": 2099,
   "memory": "snipe"
  }
 }
