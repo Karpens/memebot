@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:25:22Z",
-    "time": "06:25:22",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 3.8 a minute · 0 watched · 3 rejected (serial launcher 2, mayhem mode 1)",
-    "n": 2369
-   },
-   {
-    "t": "2026-11-27T05:25:44Z",
-    "time": "06:25:44",
-    "agent": "EXECUTOR",
-    "coin": "Coke-Cola",
-    "action": "exit",
-    "text": "EXIT Coke-Cola +$233.13 (+1131%) · 5 min, only +0%",
-    "n": 2370
-   },
-   {
-    "t": "2026-11-27T05:25:44Z",
-    "time": "06:25:44",
-    "agent": "LEARNER",
-    "coin": "Coke-Cola",
-    "action": "learn",
-    "text": "learned · np:dev:0-2 now avg -9.5% over 158",
-    "n": 2371
-   },
-   {
     "t": "2026-11-27T05:25:50Z",
     "time": "06:25:50",
     "agent": "SCANNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW AI would have made +12.3% (TP +10%) · learned x0.5 · np:social:web now avg -8.9% over 190.5",
     "n": 2968
+   },
+   {
+    "t": "2026-11-27T06:54:39Z",
+    "time": "07:54:39",
+    "agent": "LEARNER",
+    "coin": "MOMENT",
+    "action": "shadow",
+    "text": "SHADOW MOMENT · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.000004096 (curve maths, every cost) · same exits, outside the book",
+    "n": 2969
+   },
+   {
+    "t": "2026-11-27T06:54:42Z",
+    "time": "07:54:42",
+    "agent": "LEARNER",
+    "coin": "$POSSUM",
+    "action": "shadow",
+    "text": "SHADOW $POSSUM · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000021192 (curve maths, every cost) · same exits, outside the book",
+    "n": 2970
+   },
+   {
+    "t": "2026-11-27T06:54:42Z",
+    "time": "07:54:42",
+    "agent": "LEARNER",
+    "coin": "MOMENT",
+    "action": "shadow",
+    "text": "SHADOW MOMENT would have made +14.9% (TP +20%) · learned x0.5 · tier:swing now avg -15.3% over 30.5",
+    "n": 2971
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2968,
+  "lines": 2971,
   "flags": [
    {
     "coin": "Kibo",
@@ -21231,6 +21231,10 @@
    [
     1795762433,
     361.97
+   ],
+   [
+    1795762493,
+    361.97
    ]
   ],
   "last_rug": {
@@ -21239,9 +21243,9 @@
   },
   "np_said": 1795762452.780957,
   "shadow": {
-   "n": 388,
-   "wins": 71,
-   "sum": -3407.6
+   "n": 389,
+   "wins": 72,
+   "sum": -3392.7
   },
   "np_speed": {
    "first_in": [
@@ -30824,9 +30828,9 @@
   }
  },
  "shadow": {
-  "n": 402,
-  "wins": 73,
-  "sum": -3606.1,
+  "n": 403,
+  "wins": 74,
+  "sum": -3591.2,
   "by": {
    "learner": {
     "n": 16,
@@ -30834,32 +30838,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 386,
-    "wins": 70,
-    "sum": -3408.3
+    "n": 387,
+    "wins": 71,
+    "sum": -3393.4
    }
   },
   "closed": [
-   {
-    "symbol": "USFF",
-    "mint": "3pvZiNU1hFf7fkhNcpKQWee34n3pCZ9rmQ56MXmppump",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:47:40Z",
-    "cost": 36.2,
-    "pnl_pct": -22.2,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 1,
-    "sol_in": -0.59,
-    "closed": "2026-11-27T06:47:40Z",
-    "exit": "stop -12%",
-    "pnl": -8.02,
-    "weight": 0.5
-   },
    {
     "symbol": "MOMENT",
     "mint": "9nYZ468RmSaGuUX7gcRZ9Se45P1qduGks74BVmb1pump",
@@ -31239,6 +31223,26 @@
     "exit": "TP +10%",
     "pnl": 4.44,
     "weight": 0.5
+   },
+   {
+    "symbol": "MOMENT",
+    "mint": "F6dLSwuHRaLUAjPTtRS1ReLVZw6X7wXJmkRKxnc2pump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:54:39Z",
+    "cost": 36.2,
+    "pnl_pct": 14.9,
+    "tier": "swing",
+    "score": 3,
+    "steps": 2,
+    "fill": "curve",
+    "age_s": 0,
+    "sol_in": 6.93,
+    "closed": "2026-11-27T06:54:42Z",
+    "exit": "TP +20%",
+    "pnl": 5.38,
+    "weight": 0.5
    }
   ],
   "open": [
@@ -31246,7 +31250,8 @@
    "VEC",
    "CRONG",
    "1RING2RULE",
-   "D&D"
+   "D&D",
+   "$POSSUM"
   ]
  },
  "learner_summary": {
@@ -31258,7 +31263,7 @@
    {
     "label": "snipe · np:sol:6-12",
     "n": 42,
-    "avg": -5.1
+    "avg": -4.8
    },
    {
     "label": "snipe · hour:01-03",
@@ -31275,12 +31280,12 @@
    {
     "label": "snipe · tier:swing",
     "n": 30,
-    "avg": -15.8
+    "avg": -15.3
    },
    {
     "label": "snipe · news:3-4",
     "n": 30,
-    "avg": -15.8
+    "avg": -15.3
    },
    {
     "label": "snipe · np:sol:12+",
@@ -31288,7 +31293,7 @@
     "avg": -13.4
    }
   ],
-  "shadows": 386,
+  "shadows": 387,
   "memory": "snipe"
  }
 }
