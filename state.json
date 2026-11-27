@@ -47,33 +47,6 @@
   "started": "2026-11-26T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T05:14:05Z",
-    "time": "06:14:05",
-    "agent": "LEARNER",
-    "coin": "debundle-0",
-    "action": "shadow",
-    "text": "SHADOW debundle-0 would have made -13.9% (stop -11%) · learned x0.5 · np:age:<30s now avg -10.1% over 300",
-    "n": 2219
-   },
-   {
-    "t": "2026-11-27T05:14:07Z",
-    "time": "06:14:07",
-    "agent": "LEARNER",
-    "coin": "ANTHEMA",
-    "action": "shadow",
-    "text": "SHADOW ANTHEMA would have made -15.3% (stop -12%) · learned x0.5 · np:social:none now avg -11.0% over 115",
-    "n": 2220
-   },
-   {
-    "t": "2026-11-27T05:14:15Z",
-    "time": "06:14:15",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 2.8 a minute · 0 watched · 8 rejected (serial launcher 4, snipe not bought: pause after a  2, mayhem mode 2)",
-    "n": 2221
-   },
-   {
     "t": "2026-11-27T05:14:44Z",
     "time": "06:14:44",
     "agent": "LEARNER",
@@ -5445,6 +5418,33 @@
     "action": "shadow",
     "text": "SHADOW cornado would have made -18.2% (dump: 2.4 SOL sold) · learned x0.5 · np:age:<30s now avg -8.2% over 300",
     "n": 2818
+   },
+   {
+    "t": "2026-11-27T06:28:00Z",
+    "time": "07:28:00",
+    "agent": "LEARNER",
+    "coin": "BIBLE",
+    "action": "shadow",
+    "text": "SHADOW BIBLE would have made -8.0% (curve quiet for 3 min (no trade)) · learned x0.5 · np:sol:<3 now avg -8.3% over 300",
+    "n": 2819
+   },
+   {
+    "t": "2026-11-27T06:28:00Z",
+    "time": "07:28:00",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.8 a minute · 0 watched · 16 rejected (mayhem mode 9, snipe not bought: trades tonight 5, serial launcher 2)",
+    "n": 2820
+   },
+   {
+    "t": "2026-11-27T06:28:14Z",
+    "time": "07:28:14",
+    "agent": "LEARNER",
+    "coin": "TEXOL",
+    "action": "shadow",
+    "text": "SHADOW TEXOL · not bought (250 trades tonight (max)) · followed as if bought: $36.20 at 0.0000026297 (curve maths, every cost) · same exits, outside the book",
+    "n": 2821
    }
   ],
   "trades": [
@@ -19292,7 +19292,7 @@
   "flagged": 261,
   "checked": 257,
   "filtered": 5,
-  "lines": 2818,
+  "lines": 2821,
   "flags": [
    {
     "coin": "Kibo",
@@ -21123,17 +21123,21 @@
    [
     1795760813,
     361.97
+   ],
+   [
+    1795760873,
+    361.97
    ]
   ],
   "last_rug": {
    "coin": "memecoin",
    "pass": true
   },
-  "np_said": 1795760819.780846,
+  "np_said": 1795760880.780823,
   "shadow": {
-   "n": 330,
+   "n": 331,
    "wins": 58,
-   "sum": -2797.8
+   "sum": -2805.8
   },
   "np_speed": {
    "first_in": [
@@ -30716,9 +30720,9 @@
   }
  },
  "shadow": {
-  "n": 344,
+  "n": 345,
   "wins": 60,
-  "sum": -2996.3,
+  "sum": -3004.3,
   "by": {
    "learner": {
     "n": 16,
@@ -30726,32 +30730,12 @@
     "sum": -197.8
    },
    "risk": {
-    "n": 328,
+    "n": 329,
     "wins": 57,
-    "sum": -2798.5
+    "sum": -2806.5
    }
   },
   "closed": [
-   {
-    "symbol": "GM",
-    "mint": "E7zKosyJKUE1fVuXQAFKBUBeF5zM4bv5wH9Nr22xAT6q",
-    "status": "closed",
-    "kind": "risk",
-    "why": "250 trades tonight (max)",
-    "opened": "2026-11-27T06:07:32Z",
-    "cost": 36.2,
-    "pnl_pct": -7.7,
-    "tier": "scalp",
-    "score": 1,
-    "steps": 0,
-    "fill": "curve",
-    "age_s": 0,
-    "sol_in": 0.0,
-    "closed": "2026-11-27T06:10:32Z",
-    "exit": "curve quiet for 3 min (no trade)",
-    "pnl": -2.8,
-    "weight": 0.5
-   },
    {
     "symbol": "trk",
     "mint": "DKF5LWkA85VyeJnPhYn1Cm1m3ZycFbGA5yrkHBcVpump",
@@ -31131,13 +31115,33 @@
     "exit": "dump: 2.4 SOL sold",
     "pnl": -6.59,
     "weight": 0.5
+   },
+   {
+    "symbol": "BIBLE",
+    "mint": "rhkcRi5pXftvVAqu7JHe3P3nQXdJpbbmsCoFWYppump",
+    "status": "closed",
+    "kind": "risk",
+    "why": "250 trades tonight (max)",
+    "opened": "2026-11-27T06:24:32Z",
+    "cost": 36.2,
+    "pnl_pct": -8.0,
+    "tier": "scalp",
+    "score": 0.5,
+    "steps": 0,
+    "fill": "curve",
+    "age_s": 1,
+    "sol_in": 0.05,
+    "closed": "2026-11-27T06:28:00Z",
+    "exit": "curve quiet for 3 min (no trade)",
+    "pnl": -2.89,
+    "weight": 0.5
    }
   ],
   "open": [
    "MEK",
-   "BIBLE",
    "CPM",
-   "GAI"
+   "GAI",
+   "TEXOL"
   ]
  },
  "learner_summary": {
@@ -31179,7 +31183,7 @@
     "avg": -14.4
    }
   ],
-  "shadows": 328,
+  "shadows": 329,
   "memory": "snipe"
  }
 }
