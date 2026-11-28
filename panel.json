@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:57:50Z",
+ "updated": "2026-11-28T09:58:23Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1125,
   "checked": 49,
   "filtered": 1,
-  "lines": 2607,
+  "lines": 2608,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795823880,
-   47.79
-  ],
   [
    1795823940,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795859820,
    47.79
+  ],
+  [
+   1795859880,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:59:09Z",
-   "time": "09:59:09",
-   "agent": "SCANNER",
-   "coin": "Huss Huss",
-   "action": "flag",
-   "text": "snipe · first reading 2.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2408
-  },
-  {
    "t": "2026-11-28T08:59:12Z",
    "time": "09:59:12",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2607
+  },
+  {
+   "t": "2026-11-28T09:57:59Z",
+   "time": "10:57:59",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 7, serial launcher 2, mayhem mode 2)",
+   "n": 2608
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 709 (264 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 736 (264 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1234,
-    "last_event_age_s": 13.6,
+    "events": 1235,
+    "last_event_age_s": 4.8,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25212,
+    "events": 25319,
     "last_event_age_s": 0.2,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 884,
-    "last_event_age_s": 13.1,
+    "events": 885,
+    "last_event_age_s": 4.7,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,10 +6533,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 9,
-  "odd_readings": 709,
+  "followed": 10,
+  "odd_readings": 736,
   "odd_coins": 264
  },
  "learner": {
@@ -6584,30 +6584,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20647,
+   "sent": 20682,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20647,
+   "sent": 20682,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CI",
+   "name": "Cybergeddon inu",
+   "mint": "6KxdT7gzqne6EckmzFVTJ6yxreaN56G9YKFeGGfoHkdM",
+   "age_s": 4,
+   "sol_in": 6.52,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": 40.8,
+   "mcap_sol": 53.4,
+   "dev_pct": 15.2,
+   "big_sell": 2.45,
+   "x": "https://x.com/MarioPrezldente/status/2126616662946595021",
+   "tg": false,
+   "web": "https://en.wikipedia.org/wiki/Cybergeddon",
+   "status": "rejected: serial launcher: 8 more coins in 60 min",
+   "why": "serial launcher: 8 more coins in 60 min"
+  },
+  {
    "symbol": "SMOTHIE",
    "name": "Smoothie Moon Rocket Coin",
    "mint": "2vPwvhuY8uCTJr36NoT2BeKfdG5kKMKUqm9f4G6kpump",
-   "age_s": 13,
-   "sol_in": 0.2,
+   "age_s": 46,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 1.4,
-   "mcap_sol": 28.6,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.2,
    "x": "https://x.com/Lanceurpump",
    "tg": false,
    "web": false,
@@ -6618,7 +6636,7 @@
    "symbol": "MATH",
    "name": "MATH IS MONEY",
    "mint": "GjaNj46GhsVYSTE9zmo6VrMNCNo2PZign2AGtTaKpump",
-   "age_s": 24,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,7 +6654,7 @@
    "symbol": "IT",
    "name": "Send It",
    "mint": "FNrKaSeEemFveuEKsVWj2d1dbvs9X5bdEgtsqv7dAY9J",
-   "age_s": 37,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,12 +6672,12 @@
    "symbol": "ASAMI",
    "name": "Asami SpaceXSI Companion",
    "mint": "DPjnSsEapdzTv32bKUGMRAe2WZenAJScvpbbmAK9pump",
-   "age_s": 68,
-   "sol_in": 0.02,
-   "buys": 3,
+   "age_s": 101,
+   "sol_in": 0.04,
+   "buys": 4,
    "sells": 1,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.9,
+   "rise_pct": 0.3,
+   "mcap_sol": 29.0,
    "dev_pct": 1.7,
    "big_sell": 0.89,
    "x": "https://x.com/AsamiAnimates",
@@ -6672,7 +6690,7 @@
    "symbol": "BEARZILLA",
    "name": "BearZilla",
    "mint": "5t1KNEv78pMkMeQUAVTPzefebUUigW1TpYKzbFGgpump",
-   "age_s": 89,
+   "age_s": 122,
    "sol_in": -0.73,
    "buys": 2,
    "sells": 3,
@@ -6690,7 +6708,7 @@
    "symbol": "SENDIT",
    "name": "Send It",
    "mint": "9tTgiEGTYRsZcnjGgmKZM43LjARcXdZCKvAPDTv3rxZZ",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,7 +6726,7 @@
    "symbol": "ANYALPHA",
    "name": "AnyAlpha",
    "mint": "341oBRsqfBN4zm1hyJiN9GzrX2qoEba97g6dbydcpump",
-   "age_s": 133,
+   "age_s": 166,
    "sol_in": 0.52,
    "buys": 2,
    "sells": 11,
@@ -6726,7 +6744,7 @@
    "symbol": "NNNOVER",
    "name": "NoNutNovember Over",
    "mint": "Dd2k7otDGXF4D8xyVktuoKA7HDBMeZQG8PnL274Ppump",
-   "age_s": 134,
+   "age_s": 167,
    "sol_in": -0.1,
    "buys": 6,
    "sells": 2,
@@ -6744,7 +6762,7 @@
    "symbol": "MATH",
    "name": "MATH IS MONEY",
    "mint": "49uc99ir7mcVhh9s9HpBMre5DDrGnjHF3s69WL8Zpump",
-   "age_s": 135,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6762,14 +6780,14 @@
    "symbol": "SASSY",
    "name": "SASSY",
    "mint": "GN8jY4hjb5mXVfvtfaXytyEp2VR292sf5rXVXDHspump",
-   "age_s": 139,
-   "sol_in": 0.1,
+   "age_s": 172,
+   "sol_in": 0.09,
    "buys": 3,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 0.6,
    "mcap_sol": 28.5,
    "dev_pct": 0.7,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -6780,7 +6798,7 @@
    "symbol": "666",
    "name": "666",
    "mint": "FeHTKFZePzA4DpWPotYxEDfVaWQi1x5BpaV8Nk2fpump",
-   "age_s": 144,
+   "age_s": 177,
    "sol_in": 0.23,
    "buys": 5,
    "sells": 3,
