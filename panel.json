@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:26:31Z",
+ "updated": "2026-11-28T10:27:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1180,
+  "flagged": 1181,
   "checked": 49,
   "filtered": 1,
-  "lines": 2708,
+  "lines": 2709,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BACKUPA",
-   "why": "snipe",
-   "t": "2026-11-28T10:22:12Z"
-  },
   {
    "coin": "YPD",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "GTA",
    "why": "snipe",
    "t": "2026-11-28T10:26:19Z"
+  },
+  {
+   "coin": "Lone",
+   "why": "snipe",
+   "t": "2026-11-28T10:26:59Z"
   }
  ],
  "curve": [
-  [
-   1795825620,
-   47.79
-  ],
   [
    1795825680,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795861560,
    47.79
+  ],
+  [
+   1795861620,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:29:45Z",
-   "time": "10:29:45",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.6 a minute · 0 watched · 4 rejected (serial launcher 2, snipe not bought: only to size 1, no bonding curve key 1)",
-   "n": 2509
-  },
-  {
    "t": "2026-11-28T09:29:46Z",
    "time": "10:29:46",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 0.7 SOL in · +4% since the create · mcap 31 SOL",
    "n": 2708
+  },
+  {
+   "t": "2026-11-28T10:26:59Z",
+   "time": "11:26:59",
+   "agent": "SCANNER",
+   "coin": "Lone",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.6 SOL in · +4% since the create · mcap 31 SOL",
+   "n": 2709
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 914 (271 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 914 (271 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 47,
-    "last_event_age_s": 13.8,
+    "events": 50,
+    "last_event_age_s": 6.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1077,
+    "events": 1135,
     "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 37,
-    "last_event_age_s": 10.0,
+    "events": 39,
+    "last_event_age_s": 3.3,
     "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 9,
+  "followed": 8,
   "odd_readings": 914,
   "odd_coins": 271
  },
@@ -6578,23 +6578,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 752,
+   "sent": 787,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 752,
+   "sent": 787,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Fenrir",
+   "name": "The Alpha Wolf",
+   "mint": "49siA5iapLkAQrMJDyMH1SPMLEtwq2btCd2c4V6owVJJ",
+   "age_s": 6,
+   "sol_in": -0.28,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -1.6,
+   "mcap_sol": 37.3,
+   "dev_pct": 15.2,
+   "big_sell": 3.03,
+   "x": "https://x.com/Makayla_stylezz/status/2126623807272022315",
+   "tg": false,
+   "web": "https://www.instagram.com/reel/DgPweL3FjwM/",
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "Lone",
+   "name": "Loneliness",
+   "mint": "FzYcEXdsuwD9dnQ55Hhy7W8TPgJVP7LpCAQf4nBHqoS5",
+   "age_s": 6,
+   "sol_in": 0.63,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 4.1,
+   "mcap_sol": 31.1,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://en.wikipedia.org/wiki/Loneliness",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "000",
+   "name": "000",
+   "mint": "GjhrYzYMEvLXxEhsJJN2bD9W9gTap79X7rFempW7pump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "GTA",
    "name": "GTA6",
    "mint": "Bf4WxpD3i7TF9CgAbsJRcYDLC7XVU4MUgVqDxhyFpUBo",
-   "age_s": 13,
+   "age_s": 46,
    "sol_in": -0.7,
    "buys": 1,
    "sells": 2,
@@ -6612,7 +6666,7 @@
    "symbol": "jnn",
    "name": "jensen hung",
    "mint": "FTfiUua9tEz78h5kYxLq7RwyLRXoDSjACck9Ju1ypump",
-   "age_s": 21,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,12 +6684,12 @@
    "symbol": "Percolator",
    "name": "Percolator",
    "mint": "9wjqVYdWp2mc15qhzDFY9EAXgmZY8B2xEYRCvYtwpump",
-   "age_s": 47,
-   "sol_in": 4.88,
-   "buys": 17,
-   "sells": 10,
-   "rise_pct": 29.9,
-   "mcap_sol": 49.3,
+   "age_s": 80,
+   "sol_in": 6.24,
+   "buys": 21,
+   "sells": 17,
+   "rise_pct": 38.9,
+   "mcap_sol": 52.7,
    "dev_pct": 15.2,
    "big_sell": 1.45,
    "x": "https://x.com/Nostalgicgareth/status/2126623487573778577",
@@ -6648,7 +6702,7 @@
    "symbol": "OILRAT",
    "name": "Oil Rat",
    "mint": "xb7hi6sJSg843zeR8tg288t1iYoNSYNCzdNUAVDgMJW",
-   "age_s": 94,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6720,7 @@
    "symbol": "Reg",
    "name": "Little Reg",
    "mint": "BL9nKSYownG6WsWNbWAkrQiePm9ki2eXJqbNdtxkpump",
-   "age_s": 111,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 6,
    "sells": 8,
@@ -6684,7 +6738,7 @@
    "symbol": "yippee",
    "name": "yippee",
    "mint": "Dg5dPXQtkd639YPZ4jkz25Z87BV3XwLmTu9obzz4pump",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": -0.69,
    "buys": 6,
    "sells": 18,
@@ -6702,7 +6756,7 @@
    "symbol": "egt",
    "name": "EL GATITO",
    "mint": "AqAJrBRtoy86WqopwgSDeCgKYYPotngq4bbPArJapump",
-   "age_s": 131,
+   "age_s": 164,
    "sol_in": -0.06,
    "buys": 0,
    "sells": 1,
@@ -6715,60 +6769,6 @@
    "web": false,
    "status": "rejected: serial launcher: 3 more coins in 60 min",
    "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "Reg",
-   "name": "Little Reg",
-   "mint": "5P4YC1b92figibaw5n85CKP3cRXn3zNkuKJuruY2pump",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 4,
-   "sells": 10,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 5.15,
-   "x": true,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CHITRA",
-   "name": "Chitra indica",
-   "mint": "4XVYQZbLLb8Cx2bVDGrePQW7rJ4V23Rwuqq8ecYvpump",
-   "age_s": 174,
-   "sol_in": 38.55,
-   "buys": 101,
-   "sells": 68,
-   "rise_pct": 291.2,
-   "mcap_sol": 188.9,
-   "dev_pct": 25.7,
-   "big_sell": 10.17,
-   "x": "https://x.com/Sizebids/status/2126622777553641641",
-   "tg": false,
-   "web": "https://www.awazthevoice.in/lifestyle-news/nests-of-rare-turtle-species-discovered-along-yamuna-nmcg-71590.html",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CENTICOIN",
-   "name": "CENTICOIN",
-   "mint": "HjzZKRCE8EQz1Sjhfn8sPytWn7NH9FDhYNK6aSQ4CZeM",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 2.323e+05 is not 30 + real SOL 0 (off +2.322e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.323e+05 is not 30 + real SOL 0 (off +2.322e+05 SOL)"
   }
  ],
  "strategies": [
