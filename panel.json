@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:17:29Z",
+ "updated": "2026-11-28T03:18:03Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 537,
+  "flagged": 538,
   "checked": 49,
   "filtered": 1,
-  "lines": 1429,
+  "lines": 1431,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Jew.fun",
-   "why": "snipe",
-   "t": "2026-11-28T03:13:26Z"
-  },
   {
    "coin": "JESS",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MISANTHROPIC",
    "why": "snipe",
    "t": "2026-11-28T03:16:34Z"
+  },
+  {
+   "coin": "TRING",
+   "why": "snipe",
+   "t": "2026-11-28T03:17:55Z"
   }
  ],
  "curve": [
@@ -1103,6 +1103,10 @@
   ],
   [
    1795835820,
+   47.79
+  ],
+  [
+   1795835880,
    47.79
   ]
  ],
@@ -3257,24 +3261,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:17:47Z",
-   "time": "03:17:47",
-   "agent": "SCANNER",
-   "coin": "FIONA",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 26.2 SOL in · +242% since the create · mcap 101 SOL",
-   "n": 1230
-  },
-  {
-   "t": "2026-11-28T02:17:48Z",
-   "time": "03:17:48",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 8 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 2, serial launcher 2)",
-   "n": 1231
-  },
-  {
    "t": "2026-11-28T02:18:49Z",
    "time": "03:18:49",
    "agent": "SCANNER",
@@ -5055,6 +5041,24 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 4, serial launcher 2, mayhem mode 2)",
    "n": 1429
+  },
+  {
+   "t": "2026-11-28T03:17:55Z",
+   "time": "04:17:55",
+   "agent": "SCANNER",
+   "coin": "TRING",
+   "action": "flag",
+   "text": "snipe · first reading 1.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1430
+  },
+  {
+   "t": "2026-11-28T03:17:55Z",
+   "time": "04:17:55",
+   "agent": "SIZER",
+   "coin": "TRING",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1431
   }
  ],
  "nights": [
@@ -5127,7 +5131,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 336 (153 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 336 (153 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5135,24 +5139,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1662,
-    "last_event_age_s": 12.0,
+    "events": 1664,
+    "last_event_age_s": 10.8,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35253,
-    "last_event_age_s": 1.8,
+    "events": 35323,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 968,
-    "last_event_age_s": 24.9,
+    "events": 969,
+    "last_event_age_s": 10.0,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5165,7 +5169,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 6,
   "odd_readings": 336,
@@ -5216,30 +5220,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16943,
+   "sent": 16979,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16943,
+   "sent": 16979,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TRING",
+   "name": "TRYING",
+   "mint": "CEwctEP4qXZQHNK7uHcvWaFvZTSZfzJ1JjKnyk5epump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.05,
+   "x": "https://x.com/KRUDKAI/status/2126515112420966413",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "B5ng1tBheQqwM775CqWW2KfBJJgSmppFimc1yZGQpump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "HOOKKE",
    "name": "HookKey",
    "mint": "3UucYwfFjAbkprEbKBGKhM32EcvSuGcqgaV2PTojZNZp",
-   "age_s": 25,
-   "sol_in": 0.14,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 0.9,
-   "mcap_sol": 28.6,
+   "age_s": 59,
+   "sol_in": 2.4,
+   "buys": 4,
+   "sells": 3,
+   "rise_pct": 16.5,
+   "mcap_sol": 33.0,
    "dev_pct": 0.7,
-   "big_sell": 0.0,
+   "big_sell": 0.2,
    "x": "https://x.com/jasperbrookkin",
    "tg": "https://t.me/hookkey_portal",
    "web": "https://hookkey.fun",
@@ -5250,7 +5290,7 @@
    "symbol": "BLOB",
    "name": "blob",
    "mint": "4jEmx1d29HuDfe6t3zoiVyAov9NNwT1Qgy7T7tdPU4uj",
-   "age_s": 54,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5268,7 +5308,7 @@
    "symbol": "MISANTHROPIC",
    "name": "The MisAnthropic Statement",
    "mint": "BBEodVsXcxQEjTrVivJejS6DpDdUsHawpQiqozGmn6vJ",
-   "age_s": 55,
+   "age_s": 89,
    "sol_in": -5.93,
    "buys": 0,
    "sells": 4,
@@ -5286,12 +5326,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "6BdptLc6kfXsPXhnLwhhr6wqLxc2WYN3DuMQkWrdpump",
-   "age_s": 64,
-   "sol_in": 18.29,
-   "buys": 12,
-   "sells": 8,
-   "rise_pct": 139.2,
-   "mcap_sol": 83.2,
+   "age_s": 98,
+   "sol_in": 18.72,
+   "buys": 21,
+   "sells": 19,
+   "rise_pct": 143.2,
+   "mcap_sol": 84.6,
    "dev_pct": 11.1,
    "big_sell": 0.32,
    "x": "https://x.com/nvidianewsroom",
@@ -5304,7 +5344,7 @@
    "symbol": "?",
    "name": "",
    "mint": "ENDJHwoG22fbAx8L2cBUopKHFac1evFzZpQreahWpump",
-   "age_s": 77,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5322,7 +5362,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "E8hVMKfMhcxYVmYwTAYSaSt2b7mmesFVAdiHRBRRpump",
-   "age_s": 91,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5340,7 +5380,7 @@
    "symbol": "?",
    "name": "",
    "mint": "EhgEYPEGrrZB9eiV4jjVxD1TZXBufbUCZSotsXvDpump",
-   "age_s": 121,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5358,7 +5398,7 @@
    "symbol": "TES",
    "name": "Tes",
    "mint": "DSzpuvqmtdxd91Q8P3EbwKRr9y81a9DM3jTBR6v893wi",
-   "age_s": 135,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -5371,42 +5411,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CRY3",
-   "name": "Three-Eyed Crybaby",
-   "mint": "HwvtCpUfcvpXqCpgPowW85k13s4GuvxaqReGoai7pump",
-   "age_s": 161,
-   "sol_in": -2.75,
-   "buys": 6,
-   "sells": 5,
-   "rise_pct": -16.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 9.6,
-   "big_sell": 7.76,
-   "x": "https://x.com/ThreeEyedCrybab",
-   "tg": false,
-   "web": "https://crybaby.pro/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "WINTERARC",
-   "name": "Capo Winter Arc",
-   "mint": "3cAyvFEc3u14ivQVA9fuNFaETKR5AzWGJe8kwr2rPtZT",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
