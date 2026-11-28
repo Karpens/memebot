@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:41:16Z",
+ "updated": "2026-11-28T09:41:49Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1092,
+  "flagged": 1094,
   "checked": 49,
   "filtered": 1,
-  "lines": 2542,
+  "lines": 2544,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MUGL",
-   "why": "snipe",
-   "t": "2026-11-28T09:34:49Z"
-  },
-  {
-   "coin": "PlainSight",
-   "why": "snipe",
-   "t": "2026-11-28T09:35:07Z"
-  },
   {
    "coin": "SNOWMEI",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "PWTEST",
    "why": "snipe",
    "t": "2026-11-28T09:40:12Z"
+  },
+  {
+   "coin": "BEANOS",
+   "why": "snipe",
+   "t": "2026-11-28T09:41:31Z"
+  },
+  {
+   "coin": "RalphCoin",
+   "why": "snipe",
+   "t": "2026-11-28T09:41:44Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:39:13Z",
-   "time": "09:39:13",
-   "agent": "SCANNER",
-   "coin": "Zhaki",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2343
-  },
-  {
-   "t": "2026-11-28T08:39:18Z",
-   "time": "09:39:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, serial launcher 1, mayhem mode 1)",
-   "n": 2344
-  },
-  {
    "t": "2026-11-28T08:39:21Z",
    "time": "09:39:21",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 1.4 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, mayhem mode 1)",
    "n": 2542
+  },
+  {
+   "t": "2026-11-28T09:41:31Z",
+   "time": "10:41:31",
+   "agent": "SCANNER",
+   "coin": "BEANOS",
+   "action": "flag",
+   "text": "snipe · first reading 1.4 s after the create · 10.4 SOL in · +79% since the create · mcap 53 SOL",
+   "n": 2543
+  },
+  {
+   "t": "2026-11-28T09:41:44Z",
+   "time": "10:41:44",
+   "agent": "SCANNER",
+   "coin": "RalphCoin",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 3.5 SOL in · +22% since the create · mcap 42 SOL",
+   "n": 2544
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1158,
-    "last_event_age_s": 16.2,
-    "errors": 16,
-    "last_error": "silent for 90 s · reconnecting"
+    "events": 1160,
+    "last_event_age_s": 5.9,
+    "errors": 18,
+    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22481,
-    "last_event_age_s": 0.9,
+    "events": 22545,
+    "last_event_age_s": 0.3,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 827,
-    "last_event_age_s": 64.2,
+    "events": 829,
+    "last_event_age_s": 5.9,
     "errors": 32,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6535,7 +6535,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.6,
   "watching": 0,
-  "followed": 3,
+  "followed": 5,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,23 +6584,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19590,
+   "sent": 19625,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19590,
+   "sent": 19625,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RalphCoin",
+   "name": "RalphCoin",
+   "mint": "FTqZyadGqF8K74Lbfgjj3GVQTjrUwLCDkh52f1q3pump",
+   "age_s": 5,
+   "sol_in": 17.1,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 128.8,
+   "mcap_sol": 79.1,
+   "dev_pct": 10.8,
+   "big_sell": 1.77,
+   "x": "https://x.com/RalphCoinOnSol/status/2126612395128656106?a=PYiUCKL9n2dYJ729nno&s=20",
+   "tg": false,
+   "web": "https://www.tiktok.com/@ralphthegentleman_/video/7711146374472961293",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "BEANOS",
+   "name": "Beanos",
+   "mint": "85qY5aXoWTQHAEjv2JPjeTJNzfAjVsdUAoS4TEGrpump",
+   "age_s": 18,
+   "sol_in": 3.88,
+   "buys": 3,
+   "sells": 10,
+   "rise_pct": 26.6,
+   "mcap_sol": 37.8,
+   "dev_pct": 3.4,
+   "big_sell": 1.89,
+   "x": "https://x.com/BeanosOnPF_/status/2126612387101049317",
+   "tg": false,
+   "web": "https://x.com/BeanosOnPF_",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "ilm",
    "name": "illuminati",
    "mint": "DtrqkzPHD9bJLPGA5qY71GsikdB9uNzD4TJwL6aKpump",
-   "age_s": 16,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,7 +6654,7 @@
    "symbol": "PWTEST",
    "name": "PWTEST",
    "mint": "B93tzzVHmJbU5vTtCRee1fKoCmsfbxT8vmVjivQrpump",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6636,7 +6672,7 @@
    "symbol": "JADE",
    "name": "JADE CHAMBER",
    "mint": "Gwap1aFr4rwvxqNJhj9EdfJww8aKX7WAUxf1c8i4RkiE",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": -1.19,
    "buys": 2,
    "sells": 4,
@@ -6654,7 +6690,7 @@
    "symbol": "NOTICED",
    "name": "Senpai Noticed Me",
    "mint": "3iRtx4D1bcQRAUq7PJsannJpBbu4eNf43SxeiLfopump",
-   "age_s": 107,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 3,
    "sells": 5,
@@ -6667,24 +6703,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MAGPIE",
-   "name": "HELLO MR MAGPIE",
-   "mint": "8jirhm6NGje5Jco8zeMLHsaZSfx85teJWgHfFSNnpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
