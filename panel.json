@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:41:34Z",
+ "updated": "2026-11-28T02:42:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 450,
+  "flagged": 451,
   "checked": 49,
   "filtered": 1,
-  "lines": 1295,
+  "lines": 1297,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Pump.fun",
-   "why": "snipe",
-   "t": "2026-11-28T02:36:04Z"
-  },
   {
    "coin": "MANDY",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "reply",
    "why": "snipe",
    "t": "2026-11-28T02:40:04Z"
+  },
+  {
+   "coin": "W1zard",
+   "why": "snipe",
+   "t": "2026-11-28T02:41:55Z"
   }
  ],
  "curve": [
@@ -959,6 +959,10 @@
   ],
   [
    1795833660,
+   47.79
+  ],
+  [
+   1795833720,
    47.79
   ]
  ],
@@ -3113,24 +3117,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:38:28Z",
-   "time": "02:38:28",
-   "agent": "SCANNER",
-   "coin": "SI",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 258 odd readings from 122 coins tonight",
-   "n": 1096
-  },
-  {
-   "t": "2026-11-28T01:39:00Z",
-   "time": "02:39:00",
-   "agent": "SCANNER",
-   "coin": "GIGAD",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.351e+05 is not 30 + real SOL 20.99 (off +1.351e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 260 odd readings from 123 coins tonight",
-   "n": 1097
-  },
-  {
    "t": "2026-11-28T01:39:16Z",
    "time": "02:39:16",
    "agent": "SCANNER",
@@ -4911,6 +4897,24 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, mayhem mode 1)",
    "n": 1295
+  },
+  {
+   "t": "2026-11-28T02:41:55Z",
+   "time": "03:41:55",
+   "agent": "SCANNER",
+   "coin": "W1zard",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 19.5 SOL in · +148% since the create · mcap 89 SOL",
+   "n": 1296
+  },
+  {
+   "t": "2026-11-28T02:42:02Z",
+   "time": "03:42:02",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 0 watched · 4 rejected (snipe not bought: only to size 2, mayhem mode 1, no bonding curve key 1)",
+   "n": 1297
   }
  ],
  "nights": [
@@ -4983,7 +4987,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4991,24 +4995,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1507,
-    "last_event_age_s": 27.9,
+    "events": 1509,
+    "last_event_age_s": 8.8,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 31813,
-    "last_event_age_s": 1.0,
+    "events": 31856,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 861,
-    "last_event_age_s": 90.8,
+    "events": 862,
+    "last_event_age_s": 8.6,
     "errors": 43,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -5023,7 +5027,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 1,
+  "followed": 2,
   "odd_readings": 332,
   "odd_coins": 149
  },
@@ -5072,23 +5076,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14650,
+   "sent": 14679,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14650,
+   "sent": 14679,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "W1zard",
+   "name": "W1zard",
+   "mint": "9SUopktMjC5i7FXDs98JxTtpiNdhDJrftweTLF13SqQQ",
+   "age_s": 8,
+   "sol_in": 1.26,
+   "buys": 2,
+   "sells": 6,
+   "rise_pct": 7.5,
+   "mcap_sol": 38.5,
+   "dev_pct": 12.5,
+   "big_sell": 9.9,
+   "x": "https://x.com/OpticallyB",
+   "tg": false,
+   "web": "https://opticaltech.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FLIP",
    "name": "Flipside Markets",
    "mint": "GLbVuxYR9qBF2Sj3SND6x1nFaB6AMDKzPxv6gjZsHray",
-   "age_s": 27,
+   "age_s": 55,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5106,7 +5128,7 @@
    "symbol": "TRUNK",
    "name": "Trunk Test",
    "mint": "5ixW1TYmEEa2Hm3Cogk9gcLwE6qQDYeQZPpxYxKxpump",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5124,7 +5146,7 @@
    "symbol": "reply",
    "name": "reply guy",
    "mint": "3myzZsLUSaxNLRtN9QJfxKEtCpVVkUnU6ChkaYgYpump",
-   "age_s": 91,
+   "age_s": 119,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 4,
