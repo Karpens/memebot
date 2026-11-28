@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:08:47Z",
+ "updated": "2026-11-28T11:09:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1248,
+  "flagged": 1249,
   "checked": 49,
   "filtered": 1,
-  "lines": 2855,
+  "lines": 2856,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Ship",
-   "why": "snipe",
-   "t": "2026-11-28T11:00:23Z"
-  },
   {
    "coin": "SOTA",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "SIGMA",
    "why": "snipe",
    "t": "2026-11-28T11:08:05Z"
+  },
+  {
+   "coin": "SLOWCLAPCA",
+   "why": "snipe",
+   "t": "2026-11-28T11:09:19Z"
   }
  ],
  "curve": [
-  [
-   1795828140,
-   47.79
-  ],
   [
    1795828200,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864080,
    47.79
+  ],
+  [
+   1795864140,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:13:08Z",
-   "time": "11:13:08",
-   "agent": "SCANNER",
-   "coin": "PEBBLES",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 4.309 is not 30 + real SOL 0.01731 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 887 odd readings from 267 coins tonight",
-   "n": 2656
-  },
-  {
    "t": "2026-11-28T10:14:09Z",
    "time": "11:14:09",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, serial launcher 3, no symbol or name 2)",
    "n": 2855
+  },
+  {
+   "t": "2026-11-28T11:09:19Z",
+   "time": "12:09:19",
+   "agent": "SCANNER",
+   "coin": "SLOWCLAPCA",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2856
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 979 (299 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 979 (299 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 238,
-    "last_event_age_s": 29.6,
+    "events": 241,
+    "last_event_age_s": 2.4,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6281,
+    "events": 6334,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 170,
-    "last_event_age_s": 29.4,
+    "events": 172,
+    "last_event_age_s": 2.1,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 7,
+  "followed": 6,
   "odd_readings": 979,
   "odd_coins": 299
  },
@@ -6578,28 +6578,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3451,
+   "sent": 3487,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3451,
+   "sent": 3487,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SLOWCLAPCA",
+   "name": "BRAVO",
+   "mint": "C7AYsX92DKqpcgsWNU98CY6eS9gbQk1Tni5faAwepump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "fuck",
+   "name": "fish+duck",
+   "mint": "J6NpbkvkeUwqXRFEuRt8K3ijNRGkzWKMfuzVjJmMzUE3",
+   "age_s": 16,
+   "sol_in": 0.75,
+   "buys": 4,
+   "sells": 4,
+   "rise_pct": 4.3,
+   "mcap_sol": 39.6,
+   "dev_pct": 15.2,
+   "big_sell": 2.94,
+   "x": "https://x.com/HonestChadpf/status/2126634328683598161",
+   "tg": false,
+   "web": "https://x.com/beeldcoin/status/1938457344733810806",
+   "status": "rejected: serial launcher: 17 more coins in 60 min",
+   "why": "serial launcher: 17 more coins in 60 min"
+  },
+  {
+   "symbol": "Huss",
+   "name": "Huss huss",
+   "mint": "99cea1vp5GeRK77X5zJhvJEbwApCVjpbLTfG4wCfpump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "CatWifSki",
    "name": "Cat Wif Ski",
    "mint": "Ag3t45fYn88taEJweBVi1PRxCWo56ezALKSLEH4Ppump",
-   "age_s": 29,
-   "sol_in": 3.11,
+   "age_s": 62,
+   "sol_in": 2.78,
    "buys": 2,
-   "sells": 7,
-   "rise_pct": 21.3,
-   "mcap_sol": 35.6,
+   "sells": 11,
+   "rise_pct": 18.9,
+   "mcap_sol": 34.9,
    "dev_pct": 2.5,
    "big_sell": 1.07,
    "x": false,
@@ -6612,12 +6666,12 @@
    "symbol": "SIGMA",
    "name": "SIGMA",
    "mint": "79h1xP8nDHNuZrYE4EKi6sDqBs3qTwxpv65TmDiBpump",
-   "age_s": 43,
-   "sol_in": 0.51,
+   "age_s": 76,
+   "sol_in": -0.15,
    "buys": 4,
-   "sells": 3,
-   "rise_pct": 3.4,
-   "mcap_sol": 29.9,
+   "sells": 4,
+   "rise_pct": -1.0,
+   "mcap_sol": 28.6,
    "dev_pct": 1.7,
    "big_sell": 0.72,
    "x": "https://x.com/LaunchOnSigma",
@@ -6630,7 +6684,7 @@
    "symbol": "DUSTY",
    "name": "Dusty Ridge",
    "mint": "Fnss6ZgVjADd4b3pyXNhipCEs6p5X5Q1uXEBvHWj8Gcw",
-   "age_s": 54,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -6648,7 +6702,7 @@
    "symbol": "BurgerKing",
    "name": "Ryan Anthony Brewer",
    "mint": "Dms68CCgcyoahcxrAGjvCKP1UdEzzQwM1Pe29vmzfEya",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": -4.94,
    "buys": 1,
    "sells": 5,
@@ -6666,7 +6720,7 @@
    "symbol": "?",
    "name": "",
    "mint": "DVJhYaHPbJ831RTmPQAy24FQ75GdL5j29qbjSSpMQvQ9",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6679,78 +6733,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "4FuHAy7zmKpaeRs2zgrq2hPQZoGQNeUWXJDDbZuqwNwv",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 38.2,
-   "dev_pct": 15.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "GPU",
-   "name": "Graphic Process Unit",
-   "mint": "EvxrvnrmvQQajNQTFVaHQUNiXXNcaBZfAjda9Cjapump",
-   "age_s": 159,
-   "sol_in": 0.92,
-   "buys": 41,
-   "sells": 28,
-   "rise_pct": 6.2,
-   "mcap_sol": 30.3,
-   "dev_pct": 1.0,
-   "big_sell": 0.21,
-   "x": "https://x.com/GPUdotcommunity",
-   "tg": false,
-   "web": "https://GPU.community",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Earth Ball",
-   "name": "Ball",
-   "mint": "DyqXroEBpBRkKyE4xeD2gXZWkwrCywVmfdBjGccKpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Huss",
-   "name": "Huss huss",
-   "mint": "7XKpcQdCzozRSufb3rrWAJ4gGKgc4qDaxm59UYGZpump",
-   "age_s": 172,
-   "sol_in": -0.1,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.11,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
   }
  ],
  "strategies": [
