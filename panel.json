@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:13:48Z",
+ "updated": "2026-11-28T07:14:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 836,
+  "flagged": 837,
   "checked": 49,
   "filtered": 1,
-  "lines": 2079,
+  "lines": 2081,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PLEAB",
-   "why": "snipe",
-   "t": "2026-11-28T07:06:34Z"
-  },
   {
    "coin": "HYPOSCALER",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "DIGLETT",
    "why": "snipe",
    "t": "2026-11-28T07:10:02Z"
+  },
+  {
+   "coin": "MARSCOIN",
+   "why": "snipe",
+   "t": "2026-11-28T07:14:12Z"
   }
  ],
  "curve": [
@@ -2047,6 +2047,10 @@
   ],
   [
    1795849980,
+   47.79
+  ],
+  [
+   1795850040,
    47.79
   ]
  ],
@@ -4201,24 +4205,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:50:43Z",
-   "time": "06:50:43",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (snipe: first reading s after the 6, serial launcher 1)",
-   "n": 1880
-  },
-  {
-   "t": "2026-11-28T05:51:44Z",
-   "time": "06:51:44",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.0 a minute · 0 watched · 5 rejected (snipe: first reading s after the 4, serial launcher 1)",
-   "n": 1881
-  },
-  {
    "t": "2026-11-28T05:52:45Z",
    "time": "06:52:45",
    "agent": "SCANNER",
@@ -5999,6 +5985,24 @@
    "action": "scan",
    "text": "new pairs · 1.4 a minute · 0 watched · 3 rejected (serial launcher 3)",
    "n": 2079
+  },
+  {
+   "t": "2026-11-28T07:14:12Z",
+   "time": "08:14:12",
+   "agent": "SCANNER",
+   "coin": "MARSCOIN",
+   "action": "flag",
+   "text": "snipe · first reading 4.5 s after the create · 1.7 SOL in · +11% since the create · mcap 33 SOL",
+   "n": 2080
+  },
+  {
+   "t": "2026-11-28T07:14:12Z",
+   "time": "08:14:12",
+   "agent": "SIZER",
+   "coin": "MARSCOIN",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2081
   }
  ],
  "nights": [
@@ -6071,7 +6075,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · odd curve readings 549 (221 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · odd curve readings 550 (221 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6079,24 +6083,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 570,
-    "last_event_age_s": 88.9,
-    "errors": 10,
-    "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
+    "events": 572,
+    "last_event_age_s": 1.6,
+    "errors": 11,
+    "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5739,
-    "last_event_age_s": 1.5,
+    "events": 5766,
+    "last_event_age_s": 2.1,
     "errors": 419,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 414,
-    "last_event_age_s": 103.1,
+    "events": 416,
+    "last_event_age_s": 1.6,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6109,10 +6113,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.4,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 3,
-  "odd_readings": 549,
+  "followed": 4,
+  "odd_readings": 550,
   "odd_coins": 221
  },
  "learner": {
@@ -6160,23 +6164,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10174,
+   "sent": 10202,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10174,
+   "sent": 10202,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MIMI",
+   "name": "MIMICoin",
+   "mint": "6SUjPj4dxvVaP432ySMmXJkbdGQx1oXQ75aw54wApump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "MARSCOIN",
+   "name": "MarsCoin",
+   "mint": "FZ4Cs8gSkPyu3cHwBZ41xSMzsn9d3HketFfWgYAEpump",
+   "age_s": 6,
+   "sol_in": 1.68,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 11.1,
+   "mcap_sol": 33.2,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/TrenchbullDevs/status/2126575284111704112?a=gdxKSf5rHQtDg14tICo&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GENERATED",
    "name": "AI-generated",
    "mint": "Zgkoa4yDwEoo9VzCie8PSkdbL3zsWAfhTjkkPLMewrQ",
-   "age_s": 106,
+   "age_s": 133,
    "sol_in": -2.96,
    "buys": 0,
    "sells": 2,
@@ -6194,12 +6234,12 @@
    "symbol": "crime",
    "name": "crime",
    "mint": "FHDxLMJgUL2WwPJtR6dnkc3zHchht99zP8h1D6REMq1n",
-   "age_s": 128,
-   "sol_in": 23.33,
-   "buys": 17,
-   "sells": 18,
-   "rise_pct": 190.9,
-   "mcap_sol": 98.8,
+   "age_s": 155,
+   "sol_in": 20.84,
+   "buys": 21,
+   "sells": 22,
+   "rise_pct": 165.8,
+   "mcap_sol": 90.3,
    "dev_pct": 9.9,
    "big_sell": 2.8,
    "x": "https://x.com/nonanon124/status/2126574702210760947",
@@ -6207,24 +6247,6 @@
    "web": false,
    "status": "rejected: serial launcher: 11 more coins in 60 min",
    "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "Peg",
-   "name": "Peg",
-   "mint": "4CZZgR92mE6JD5y2W3MeP1XRpJJ6eJX3ncLyjgJ4VGK9",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 30.9,
-   "dev_pct": 5.2,
-   "big_sell": 0.0,
-   "x": "https://x.com/StepCoinsol8/status/2126574491044041200",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 10 more coins in 60 min",
-   "why": "serial launcher: 10 more coins in 60 min"
   }
  ],
  "strategies": [
