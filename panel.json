@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:17:09Z",
+ "updated": "2026-11-28T06:17:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 780,
+  "flagged": 781,
   "checked": 49,
   "filtered": 1,
-  "lines": 1925,
+  "lines": 1926,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SPEED",
-   "why": "snipe",
-   "t": "2026-11-28T05:55:21Z"
-  },
   {
    "coin": "Groo",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "PILL",
    "why": "snipe",
    "t": "2026-11-28T06:16:21Z"
+  },
+  {
+   "coin": "aura",
+   "why": "snipe",
+   "t": "2026-11-28T06:17:30Z"
   }
  ],
  "curve": [
@@ -3979,15 +3979,6 @@
   {
    "t": "2026-11-28T04:47:34Z",
    "time": "05:47:34",
-   "agent": "SCANNER",
-   "coin": "REATEST",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.5 SOL in · +4% since the create · mcap 29 SOL",
-   "n": 1726
-  },
-  {
-   "t": "2026-11-28T04:47:34Z",
-   "time": "05:47:34",
    "agent": "SIZER",
    "coin": "REATEST",
    "action": "skip",
@@ -5775,6 +5766,15 @@
    "action": "scan",
    "text": "new pairs · 1.8 a minute · 0 watched · 4 rejected (snipe not bought: only to size 2, serial launcher 1, mayhem mode 1)",
    "n": 1925
+  },
+  {
+   "t": "2026-11-28T06:17:30Z",
+   "time": "07:17:30",
+   "agent": "SCANNER",
+   "coin": "aura",
+   "action": "flag",
+   "text": "snipe · first reading 8.7 s after the create · 30.5 SOL in · +303% since the create · mcap 115 SOL",
+   "n": 1926
   }
  ],
  "nights": [
@@ -5845,7 +5845,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · odd curve readings 417 (191 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 7 watched · ws off · odd curve readings 417 (191 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5853,24 +5853,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 339,
-    "last_event_age_s": 50.6,
+    "events": 341,
+    "last_event_age_s": 15.0,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 2444,
-    "last_event_age_s": 2.0,
-    "errors": 281,
+    "connected": false,
+    "events": 2458,
+    "last_event_age_s": 6.3,
+    "errors": 282,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 251,
-    "last_event_age_s": 50.3,
+    "events": 252,
+    "last_event_age_s": 15.0,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5885,7 +5885,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 2,
+  "followed": 3,
   "odd_readings": 417,
   "odd_coins": 191
  },
@@ -5934,59 +5934,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6556,
+   "sent": 6585,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6556,
+   "sent": 6585,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "PILL",
-   "name": "SPLIT PILL",
-   "mint": "BME4v9UGwAUEgzxcQQvJkzT3yNKkpDyu7457xCH6wDtx",
-   "age_s": 50,
-   "sol_in": 0.35,
+   "symbol": "aura",
+   "name": "aura",
+   "mint": "BHygafZK9kvhZQng2pSWdQKHoE28KGmh58mF7Leapump",
+   "age_s": 15,
+   "sol_in": 30.47,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": 2.4,
-   "mcap_sol": 28.6,
-   "dev_pct": 0.0,
-   "big_sell": 1.05,
-   "x": false,
+   "sells": 0,
+   "rise_pct": 302.5,
+   "mcap_sol": 114.7,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/auracoinpf/status/2126560936777437447",
    "tg": false,
-   "web": "https://splitball.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CarPad",
-   "name": "CarPad",
-   "mint": "4MZWwDoktbWt8RHx9hJNznCsoYyvbi79Ftc9sySYpump",
-   "age_s": 82,
-   "sol_in": 8.07,
-   "buys": 13,
-   "sells": 8,
-   "rise_pct": 57.8,
-   "mcap_sol": 48.6,
-   "dev_pct": 5.0,
-   "big_sell": 2.4,
-   "x": "https://x.com/CarPaddotfun/status/2126560576293781795?a=HDX1NNoCU1NgyMleLgg&s=20",
-   "tg": false,
-   "web": "https://carpad.fun/",
+   "web": "https://nationaldaycalendar.com/celebrations/international-aura-awareness-day-fourth-saturday-in-november",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "FLUX",
    "name": "FLUX",
-   "mint": "9kFRyobb6a2PVXHXgm1stvTHt52LYdbCLLYTM41Apump",
-   "age_s": 175,
+   "mint": "3CTqaVpTBSdoQZcgf7Cf6A2qJ1UjzGdamubDmmLfpump",
+   "age_s": 22,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5999,6 +5981,42 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
+  },
+  {
+   "symbol": "PILL",
+   "name": "SPLIT PILL",
+   "mint": "BME4v9UGwAUEgzxcQQvJkzT3yNKkpDyu7457xCH6wDtx",
+   "age_s": 78,
+   "sol_in": 0.25,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.0,
+   "big_sell": 1.05,
+   "x": false,
+   "tg": false,
+   "web": "https://splitball.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CarPad",
+   "name": "CarPad",
+   "mint": "4MZWwDoktbWt8RHx9hJNznCsoYyvbi79Ftc9sySYpump",
+   "age_s": 110,
+   "sol_in": 18.79,
+   "buys": 16,
+   "sells": 9,
+   "rise_pct": 155.0,
+   "mcap_sol": 78.5,
+   "dev_pct": 5.0,
+   "big_sell": 2.79,
+   "x": "https://x.com/CarPaddotfun/status/2126560576293781795?a=HDX1NNoCU1NgyMleLgg&s=20",
+   "tg": false,
+   "web": "https://carpad.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
