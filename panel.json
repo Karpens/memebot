@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:34:48Z",
+ "updated": "2026-11-28T12:35:23Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1415,
+  "flagged": 1416,
   "checked": 49,
   "filtered": 1,
-  "lines": 3135,
+  "lines": 3137,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SAYLOR",
-   "why": "snipe",
-   "t": "2026-11-28T12:29:05Z"
-  },
   {
    "coin": "DDDd",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "FlipFlop",
    "why": "snipe",
    "t": "2026-11-28T12:34:31Z"
+  },
+  {
+   "coin": "MRMEOW",
+   "why": "snipe",
+   "t": "2026-11-28T12:35:19Z"
   }
  ],
  "curve": [
-  [
-   1795833300,
-   47.79
-  ],
   [
    1795833360,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795869240,
    47.79
+  ],
+  [
+   1795869300,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:32:52Z",
-   "time": "12:32:52",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, mayhem mode 2, no symbol or name 1)",
-   "n": 2936
-  },
-  {
-   "t": "2026-11-28T11:33:53Z",
-   "time": "12:33:53",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 5 rejected (snipe not bought: only to size 4, mayhem mode 1)",
-   "n": 2937
-  },
-  {
    "t": "2026-11-28T11:34:01Z",
    "time": "12:34:01",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 0.5 SOL in · +4% since the create · mcap 29 SOL",
    "n": 3135
+  },
+  {
+   "t": "2026-11-28T12:35:19Z",
+   "time": "13:35:19",
+   "agent": "SCANNER",
+   "coin": "MRMEOW",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3136
+  },
+  {
+   "t": "2026-11-28T12:35:19Z",
+   "time": "13:35:19",
+   "agent": "SIZER",
+   "coin": "MRMEOW",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 3137
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 625,
-    "last_event_age_s": 6.8,
+    "events": 628,
+    "last_event_age_s": 5.3,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16161,
+    "events": 16290,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 406,
-    "last_event_age_s": 6.6,
+    "events": 407,
+    "last_event_age_s": 5.2,
     "errors": 15,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6580,28 +6580,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8943,
+   "sent": 8981,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8943,
+   "sent": 8981,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "EUGENE",
-   "name": "Eugene Lazowski and Stanislaw Ma",
-   "mint": "J1PesTnoP87gUhM71cTTtMu8gpBxQhQfHA3Wg8papump",
-   "age_s": 6,
+   "symbol": "MRMEOW",
+   "name": "Margin Meow",
+   "mint": "G12M1V31uxBzbiwHVknjyK1b4bjTVRjfbtsbrUfdpump",
+   "age_s": 5,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "EUGENE",
+   "name": "Eugene Lazowski and Stanislaw Ma",
+   "mint": "J1PesTnoP87gUhM71cTTtMu8gpBxQhQfHA3Wg8papump",
+   "age_s": 41,
+   "sol_in": 0.03,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": "https://x.com/Rainmaker1973/status/2126655948139753795",
@@ -6614,7 +6632,7 @@
    "symbol": "FlipFlop",
    "name": "Flip Flop Cat",
    "mint": "7TmMF1xmEtwKGCmKRxTvU9udpabkrhtzPRbP1aW7pump",
-   "age_s": 18,
+   "age_s": 53,
    "sol_in": 0.54,
    "buys": 1,
    "sells": 0,
@@ -6632,14 +6650,14 @@
    "symbol": "guy",
    "name": "just a guy",
    "mint": "Aoxbdo4iCqNWAwCMLsYFwctxEbwYf668Wn34wzgDpump",
-   "age_s": 47,
-   "sol_in": 10.88,
-   "buys": 20,
-   "sells": 17,
-   "rise_pct": 71.8,
-   "mcap_sol": 65.4,
+   "age_s": 82,
+   "sol_in": 26.01,
+   "buys": 31,
+   "sells": 39,
+   "rise_pct": 203.8,
+   "mcap_sol": 115.6,
    "dev_pct": 15.3,
-   "big_sell": 2.24,
+   "big_sell": 2.83,
    "x": "https://x.com/justaguysol0/status/2126655804690300930",
    "tg": false,
    "web": "https://thenormie.org/",
@@ -6650,7 +6668,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CmEFCgYTgjAcLQpStWGx7387G1W5ZraKqfoaxiKWtKW9",
-   "age_s": 75,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6686,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "J2G6RS6ZW8uPxKxeZnvFNQMKVJRwCxP8PtpXhhJHpump",
-   "age_s": 90,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,12 +6704,12 @@
    "symbol": "Stefan",
    "name": "Holland Hitler",
    "mint": "DUQ3WYfYvQfnapthJvZS3Xy2sdu86GRJRc2ozWdXrqAP",
-   "age_s": 120,
-   "sol_in": 7.33,
-   "buys": 21,
-   "sells": 39,
-   "rise_pct": 47.9,
-   "mcap_sol": 52.9,
+   "age_s": 155,
+   "sol_in": 14.23,
+   "buys": 24,
+   "sells": 48,
+   "rise_pct": 101.4,
+   "mcap_sol": 72.1,
    "dev_pct": 12.5,
    "big_sell": 5.21,
    "x": false,
@@ -6704,7 +6722,7 @@
    "symbol": "NANCY",
    "name": "Nancy the Bedlington Terrier",
    "mint": "8m2sBgcpY4DwFm2gSjBNmmD4NebKGWqYPYQ7CTNJpump",
-   "age_s": 144,
+   "age_s": 179,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -6717,24 +6735,6 @@
    "web": "https://www.behance.net/gallery/68060071/The-Dog-Show-Season-2/modules/397872947",
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "SLOPPY",
-   "name": "Justice For Sloppy",
-   "mint": "Ctr5GicNUXiHSRz1yrrni88Bvxbs3MK2ZaKsmwDApump",
-   "age_s": 166,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/ancelpe/status/2126640898352066575",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
