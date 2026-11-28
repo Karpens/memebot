@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:25:54Z",
+ "updated": "2026-11-28T02:26:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 427,
+  "flagged": 428,
   "checked": 49,
   "filtered": 1,
-  "lines": 1251,
+  "lines": 1252,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -40,11 +40,6 @@
    "coin": "ハクくん",
    "why": "snipe",
    "t": "2026-11-28T02:22:39Z"
-  },
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T02:23:19Z"
   },
   {
    "coin": "Hypeball",
@@ -70,6 +65,11 @@
    "coin": "HDD",
    "why": "snipe",
    "t": "2026-11-28T02:25:29Z"
+  },
+  {
+   "coin": "NVIDIA",
+   "why": "snipe",
+   "t": "2026-11-28T02:26:25Z"
   }
  ],
  "curve": [
@@ -895,6 +895,10 @@
   ],
   [
    1795832700,
+   47.79
+  ],
+  [
+   1795832760,
    47.79
   ]
  ],
@@ -3049,15 +3053,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:27:16Z",
-   "time": "02:27:16",
-   "agent": "SCANNER",
-   "coin": "SOUL",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 5.0 SOL in · +36% since the create · mcap 38 SOL",
-   "n": 1052
-  },
-  {
    "t": "2026-11-28T01:27:21Z",
    "time": "02:27:21",
    "agent": "SCANNER",
@@ -4847,6 +4842,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 4, mayhem mode 1)",
    "n": 1251
+  },
+  {
+   "t": "2026-11-28T02:26:25Z",
+   "time": "03:26:25",
+   "agent": "SCANNER",
+   "coin": "NVIDIA",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 17.6 SOL in · +133% since the create · mcap 81 SOL",
+   "n": 1252
   }
  ],
  "nights": [
@@ -4919,7 +4923,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 330 (147 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 330 (147 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4927,24 +4931,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1462,
-    "last_event_age_s": 25.7,
+    "events": 1463,
+    "last_event_age_s": 2.6,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 29876,
-    "last_event_age_s": 1.0,
+    "events": 29991,
+    "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 831,
-    "last_event_age_s": 25.5,
+    "events": 832,
+    "last_event_age_s": 2.4,
     "errors": 40,
     "last_error": "no uri"
    }
@@ -4957,9 +4961,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 10,
+  "followed": 9,
   "odd_readings": 330,
   "odd_coins": 147
  },
@@ -5008,28 +5012,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13649,
+   "sent": 13684,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13649,
+   "sent": 13684,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "5cGCMpcwyUBx3iA4wZTdBBFDji6fruTN8ae62hsdpump",
+   "age_s": 2,
+   "sol_in": 17.83,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 135.0,
+   "mcap_sol": 81.7,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": "https://t.co/5UY6GdgPL1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "HDD",
    "name": "LOST BTC",
    "mint": "BT7BjgTNcGCEN8Um2EP7snkrzy7kePC3DWp5agi8sefF",
-   "age_s": 25,
-   "sol_in": 1.4,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": 9.3,
-   "mcap_sol": 32.4,
+   "age_s": 58,
+   "sol_in": 2.18,
+   "buys": 4,
+   "sells": 3,
+   "rise_pct": 14.6,
+   "mcap_sol": 34.0,
    "dev_pct": 3.1,
    "big_sell": 0.14,
    "x": "https://x.com/Nedeflexa/status/2126500788897808616?a=jr_sxjqT5N6nHbrZjso&s=20",
@@ -5042,12 +5064,12 @@
    "symbol": "Hypeball",
    "name": "Hypeball",
    "mint": "797pRn1pg5EgxrU3qBw91NxA38uKuRLscLZNwwjAqEjd",
-   "age_s": 35,
-   "sol_in": 0.05,
-   "buys": 2,
+   "age_s": 68,
+   "sol_in": 0.2,
+   "buys": 4,
    "sells": 2,
-   "rise_pct": 0.3,
-   "mcap_sol": 28.1,
+   "rise_pct": 1.3,
+   "mcap_sol": 28.4,
    "dev_pct": 0.2,
    "big_sell": 0.05,
    "x": false,
@@ -5060,12 +5082,12 @@
    "symbol": "pildo",
    "name": "pildo",
    "mint": "e9exmz6rLsxFRMi3gdY7ac7SDujhWDUgJyDeAQjpump",
-   "age_s": 62,
-   "sol_in": 30.6,
-   "buys": 34,
-   "sells": 26,
-   "rise_pct": 270.5,
-   "mcap_sol": 126.0,
+   "age_s": 95,
+   "sol_in": 33.64,
+   "buys": 54,
+   "sells": 37,
+   "rise_pct": 306.8,
+   "mcap_sol": 138.3,
    "dev_pct": 10.0,
    "big_sell": 4.67,
    "x": "https://x.com/wholetpildout/status/2126502456422969387",
@@ -5078,7 +5100,7 @@
    "symbol": "ORO",
    "name": "Tesoro",
    "mint": "3N92Tp4BsZkxJVuDx66P3JbQUrWBFTr1QLAQQb9ipump",
-   "age_s": 82,
+   "age_s": 115,
    "sol_in": 0.11,
    "buys": 4,
    "sells": 5,
@@ -5096,7 +5118,7 @@
    "symbol": "GTAcoin",
    "name": "GTA VII",
    "mint": "Mx7Jf3az8He1BaJEyxScSsa4LXdfBoFAfRQcybgpump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5114,12 +5136,12 @@
    "symbol": "Hypeball",
    "name": "Hypeball",
    "mint": "GABaBRfTncvPFi91MyB6737pHqrDTS1GrXpTTptmpump",
-   "age_s": 127,
-   "sol_in": 57.39,
-   "buys": 56,
-   "sells": 52,
-   "rise_pct": 743.4,
-   "mcap_sol": 238.0,
+   "age_s": 160,
+   "sol_in": 68.44,
+   "buys": 72,
+   "sells": 67,
+   "rise_pct": 969.7,
+   "mcap_sol": 301.9,
    "dev_pct": 0.5,
    "big_sell": 9.64,
    "x": "https://x.com/tryhypeball",
@@ -5132,7 +5154,7 @@
    "symbol": "$KCARTEL",
    "name": "Kitty Cartel",
    "mint": "Fn5hGoAKBppBsW569NMkNSRuK3tmXZWaNeRoXg2Tpump",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5150,14 +5172,14 @@
    "symbol": "AXOS",
    "name": "Axos",
    "mint": "GTcR9mQRD7WEYgXyGgP83iETUTzJfx2dMCCWE983oiec",
-   "age_s": 133,
-   "sol_in": 0.0,
+   "age_s": 166,
+   "sol_in": -0.2,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
+   "sells": 1,
+   "rise_pct": -1.3,
+   "mcap_sol": 28.0,
    "dev_pct": 0.7,
-   "big_sell": 0.0,
+   "big_sell": 0.2,
    "x": "https://x.com/jasperbrookkin",
    "tg": "https://t.me/axos_portal",
    "web": "https://axos.fun",
@@ -5168,7 +5190,7 @@
    "symbol": "Wigger",
    "name": "HADWIGGER",
    "mint": "C8NqsCB4eSm8uCvcBJWN5VToFncxGipR1cN8YbiGNPAr",
-   "age_s": 146,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5181,42 +5203,6 @@
    "web": "https://en.wikipedia.org/wiki/Wigger",
    "status": "rejected: serial launcher: 9 more coins in 60 min",
    "why": "serial launcher: 9 more coins in 60 min"
-  },
-  {
-   "symbol": "NVIDIA",
-   "name": "NVIDIA Newsroom",
-   "mint": "CphBC9BLTE1GA7eYZBxakMH3v4aoFY5phvdxmD1Npump",
-   "age_s": 156,
-   "sol_in": -3.4,
-   "buys": 18,
-   "sells": 13,
-   "rise_pct": -19.3,
-   "mcap_sol": 28.1,
-   "dev_pct": 11.1,
-   "big_sell": 23.31,
-   "x": "https://x.com/nvidianewsroom",
-   "tg": false,
-   "web": "https://t.co/5UY6GdgPL1",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "STEADY",
-   "name": "Steady",
-   "mint": "DXFZH1unVqKvGGQ84u91UABFYx6o7hvxwpkiouNKY7Sr",
-   "age_s": 157,
-   "sol_in": -0.05,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -0.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.2,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
   }
  ],
  "strategies": [
