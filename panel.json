@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:42:40Z",
+ "updated": "2026-11-28T13:43:08Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1555,
+  "flagged": 1557,
   "checked": 49,
   "filtered": 1,
-  "lines": 3378,
+  "lines": 3382,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "LTBX",
-   "why": "snipe",
-   "t": "2026-11-28T13:38:40Z"
-  },
-  {
-   "coin": "$PIZZA",
-   "why": "snipe",
-   "t": "2026-11-28T13:38:41Z"
-  },
   {
    "coin": "BUY",
    "why": "snipe",
@@ -70,13 +60,19 @@
    "coin": "Challenge",
    "why": "snipe",
    "t": "2026-11-28T13:41:15Z"
+  },
+  {
+   "coin": "WIPER",
+   "why": "snipe",
+   "t": "2026-11-28T13:42:50Z"
+  },
+  {
+   "coin": "GROKSIE",
+   "why": "snipe",
+   "t": "2026-11-28T13:42:58Z"
   }
  ],
  "curve": [
-  [
-   1795837380,
-   47.79
-  ],
   [
    1795837440,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795873320,
    47.79
+  ],
+  [
+   1795873380,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,42 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:48:47Z",
-   "time": "13:48:47",
-   "agent": "SCANNER",
-   "coin": "AC1",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3179
-  },
-  {
-   "t": "2026-11-28T12:49:14Z",
-   "time": "13:49:14",
-   "agent": "SCANNER",
-   "coin": "ORBITBUDDY",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3180
-  },
-  {
-   "t": "2026-11-28T12:49:21Z",
-   "time": "13:49:21",
-   "agent": "SCANNER",
-   "coin": "SALLY",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 2.0 SOL in · +13% since the create · mcap 32 SOL",
-   "n": 3181
-  },
-  {
-   "t": "2026-11-28T12:49:39Z",
-   "time": "13:49:39",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 17.6 a minute · 0 watched · 29 rejected (mayhem mode 20, snipe not bought: only to size 8, serial launcher 1)",
-   "n": 3182
-  },
-  {
    "t": "2026-11-28T12:50:16Z",
    "time": "13:50:16",
    "agent": "SCANNER",
@@ -6423,6 +6387,42 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 10 rejected (serial launcher 5, snipe not bought: only to size 4, mayhem mode 1)",
    "n": 3378
+  },
+  {
+   "t": "2026-11-28T13:42:50Z",
+   "time": "14:42:50",
+   "agent": "SCANNER",
+   "coin": "WIPER",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3379
+  },
+  {
+   "t": "2026-11-28T13:42:50Z",
+   "time": "14:42:50",
+   "agent": "SIZER",
+   "coin": "WIPER",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 3380
+  },
+  {
+   "t": "2026-11-28T13:42:58Z",
+   "time": "14:42:58",
+   "agent": "SCANNER",
+   "coin": "GROKSIE",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 7.1 SOL in · +51% since the create · mcap 45 SOL",
+   "n": 3381
+  },
+  {
+   "t": "2026-11-28T13:43:06Z",
+   "time": "14:43:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.4 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, serial launcher 3, mayhem mode 2)",
+   "n": 3382
   }
  ],
  "nights": [
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1109,
-    "last_event_age_s": 32.8,
+    "events": 1111,
+    "last_event_age_s": 11.2,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24263,
+    "events": 24332,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 608,
-    "last_event_age_s": 49.5,
+    "events": 610,
+    "last_event_age_s": 11.0,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,7 +6529,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.4,
   "watching": 0,
   "followed": 7,
   "odd_readings": 1050,
@@ -6580,23 +6580,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13277,
+   "sent": 13307,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13277,
+   "sent": 13307,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GROKSIE",
+   "name": "Groksie",
+   "mint": "5jjJWZfTTaZtG74zSpiEZbMBHNM2jieHEXM2UZvapump",
+   "age_s": 11,
+   "sol_in": 10.5,
+   "buys": 5,
+   "sells": 4,
+   "rise_pct": 79.6,
+   "mcap_sol": 53.2,
+   "dev_pct": 3.1,
+   "big_sell": 1.69,
+   "x": "https://x.com/groksiemars/status/2126672978683314443",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "WIPER",
+   "name": "Bald Wiper",
+   "mint": "64TPKiyz8gwNDxsxHq9mrJwaZdwPCMwyYYpDgU55pump",
+   "age_s": 19,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/wngkn194344/status/2126459049269211479",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "CcCHDsGR2RjnUaA72DJnT1AM3uyVvjpCuV5XtdHWpump",
-   "age_s": 32,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6650,7 @@
    "symbol": "TAGPAD",
    "name": "TagsPad",
    "mint": "4PvxoYDXHbqD39YLqncppb3DEhpnjS9myPWsbKYGSpm4",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "Challenge",
    "name": "Challenge Coin",
    "mint": "BsKv6uHcygHbNZ9YyxYtCaANMNg2XcnYS7vJigb4pump",
-   "age_s": 86,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6650,7 +6686,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "GtkmxoCMjRHiPsfmGZTUsRB7YMF8CGHNzHznuBMWpump",
-   "age_s": 86,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,12 +6704,12 @@
    "symbol": "bul",
    "name": "bul",
    "mint": "APirmMF4TQBPQxe94kjD4uQRiKmtbstT1LjKQNNbpump",
-   "age_s": 89,
-   "sol_in": -3.43,
-   "buys": 6,
-   "sells": 22,
-   "rise_pct": -18.6,
-   "mcap_sol": 31.0,
+   "age_s": 117,
+   "sol_in": -3.59,
+   "buys": 7,
+   "sells": 23,
+   "rise_pct": -19.5,
+   "mcap_sol": 30.6,
    "dev_pct": 15.3,
    "big_sell": 3.11,
    "x": "https://x.com/thejordanaura/status/2126672698080195043",
@@ -6686,7 +6722,7 @@
    "symbol": "DOG",
    "name": "DOg",
    "mint": "HwfMJYskW3h6cREWFVUcm9XyxgB8apJzkeJ2MtnLQUQc",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": -0.59,
    "buys": 2,
    "sells": 4,
@@ -6704,7 +6740,7 @@
    "symbol": "Stable",
    "name": "StableCoin",
    "mint": "GjJ1DPYoravgX57ybg6XmgPVyEw5RfwR6AxjferDphTM",
-   "age_s": 120,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6717,42 +6753,6 @@
    "web": false,
    "status": "rejected: serial launcher: 11 more coins in 60 min",
    "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "TRUMP2",
-   "name": "OFFICIAL TRUMPCOIN 2",
-   "mint": "GfhiDmPbKZ4LwKJtquij61AP71sqJESssuvzXikapump",
-   "age_s": 164,
-   "sol_in": 21.87,
-   "buys": 49,
-   "sells": 52,
-   "rise_pct": 139.7,
-   "mcap_sol": 118.4,
-   "dev_pct": 26.6,
-   "big_sell": 8.55,
-   "x": "https://x.com/ERXUI0m/status/2126672309150748867",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "HOLDR",
-   "name": "HOLDR",
-   "mint": "FSTFfQuY3F2GYtTQb4rP3sMXSQGrARX4vsR3B9X9pump",
-   "age_s": 173,
-   "sol_in": 1.05,
-   "buys": 4,
-   "sells": 4,
-   "rise_pct": 7.0,
-   "mcap_sol": 31.1,
-   "dev_pct": 2.1,
-   "big_sell": 3.87,
-   "x": "https://x.com/Holdrsol/status/2126672185159037094?a=TpvbMD9psUwsaB98hTM&s=20",
-   "tg": false,
-   "web": "https://holdr.wtf",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
