@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:16:31Z",
+ "updated": "2026-11-28T12:17:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1378,
+  "flagged": 1379,
   "checked": 49,
   "filtered": 1,
-  "lines": 3076,
+  "lines": 3077,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GPU",
-   "why": "snipe",
-   "t": "2026-11-28T12:12:48Z"
-  },
   {
    "coin": "OHUM",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "SI",
    "why": "snipe",
    "t": "2026-11-28T12:16:10Z"
+  },
+  {
+   "coin": "ASD",
+   "why": "snipe",
+   "t": "2026-11-28T12:16:42Z"
   }
  ],
  "curve": [
-  [
-   1795832220,
-   47.79
-  ],
   [
    1795832280,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795868160,
    47.79
+  ],
+  [
+   1795868220,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:15:38Z",
-   "time": "12:15:38",
-   "agent": "SCANNER",
-   "coin": "TripleH",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.383 is not 30 + real SOL 0.1884 (off -28.81 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 982 odd readings from 302 coins tonight",
-   "n": 2877
-  },
-  {
    "t": "2026-11-28T11:15:40Z",
    "time": "12:15:40",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, no symbol or name 1, mayhem mode 1)",
    "n": 3076
+  },
+  {
+   "t": "2026-11-28T12:16:42Z",
+   "time": "13:16:42",
+   "agent": "SCANNER",
+   "coin": "ASD",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3077
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,26 +6499,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 527,
-    "last_event_age_s": 1.5,
+    "events": 528,
+    "last_event_age_s": 22.5,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 13720,
+    "events": 13784,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 358,
-    "last_event_age_s": 21.7,
-    "errors": 8,
-    "last_error": "turbo-gateway.com: too slow (over 2 s)"
+    "connected": false,
+    "events": 359,
+    "last_event_age_s": 19.3,
+    "errors": 9,
+    "last_error": "kolbet.lol: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -6531,7 +6531,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 1009,
   "odd_coins": 308
  },
@@ -6580,23 +6580,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7776,
+   "sent": 7811,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7776,
+   "sent": 7811,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ASD",
+   "name": "ads",
+   "mint": "5JGiXreVVCYCc2YVL52KSiyTQGqbt17dmzgUJVCiboYi",
+   "age_s": 22,
+   "sol_in": 0.01,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "WLFI",
    "name": "We Literally Fuck Investors",
    "mint": "5VnH7jAa27sCdNixi3ewfvUEQ8qs4KQzQjV8PET2pump",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6632,7 @@
    "symbol": "SI",
    "name": "Super Inu",
    "mint": "62jLfzUDvK6UEF1DJ8NLvGLrQRGtJhqAbGNsv5bSpump",
-   "age_s": 21,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6632,7 +6650,7 @@
    "symbol": "Devil May Cry",
    "name": "even a devil may cry",
    "mint": "CdCv4vQpqZtiEKsqUSrjXkq8mGg4BKiWHAmgq8Supump",
-   "age_s": 46,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6668,7 @@
    "symbol": "?",
    "name": "",
    "mint": "GcPwmPpsdAvCkCDfs619Qhm3LEPLQ6mKazKa218gSWwG",
-   "age_s": 47,
+   "age_s": 80,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,11 +6686,11 @@
    "symbol": "BOTCREW",
    "name": "Bot Crew",
    "mint": "9HzeeyTqotoKMAKUvz4c4ZrppGHFmSGxYbb2t5aSpump",
-   "age_s": 99,
-   "sol_in": 2.74,
-   "buys": 3,
+   "age_s": 132,
+   "sol_in": 2.76,
+   "buys": 4,
    "sells": 11,
-   "rise_pct": 18.7,
+   "rise_pct": 18.8,
    "mcap_sol": 34.5,
    "dev_pct": 2.1,
    "big_sell": 1.3,
@@ -6686,7 +6704,7 @@
    "symbol": "Popuil",
    "name": "Popuil Cruelty Cam",
    "mint": "H2ELSXcx39obDhALQsQPUW89nNsNswj6EenUwZn1pump",
-   "age_s": 100,
+   "age_s": 133,
    "sol_in": 0.24,
    "buys": 2,
    "sells": 1,
@@ -6704,14 +6722,14 @@
    "symbol": "FlipFlop",
    "name": "Flip Flop Cat",
    "mint": "8yUDvFWAHXBXSdgcRJZ7cWtFb1DZ1dwaQeYhb7kEpump",
-   "age_s": 101,
-   "sol_in": 61.55,
-   "buys": 59,
-   "sells": 42,
-   "rise_pct": 531.4,
-   "mcap_sol": 324.8,
+   "age_s": 134,
+   "sol_in": 71.68,
+   "buys": 79,
+   "sells": 55,
+   "rise_pct": 662.7,
+   "mcap_sol": 392.3,
    "dev_pct": 28.2,
-   "big_sell": 6.89,
+   "big_sell": 9.65,
    "x": "https://x.com/BobOngTrader/status/2126649186498335226",
    "tg": false,
    "web": false,
@@ -6722,7 +6740,7 @@
    "symbol": "TDUMP",
    "name": "TRUMP DUMP",
    "mint": "BZzP5vtHFo5oDoatJ23ZVsNv1t5P4G1BF3zt4XzMpump",
-   "age_s": 116,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6740,7 +6758,7 @@
    "symbol": "ZHAKI",
    "name": "Baboon Smirk",
    "mint": "6MmDN7qzB3oV2v1915H4KPiUSZUXivsQJmdepZzVTGw9",
-   "age_s": 133,
+   "age_s": 166,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,
