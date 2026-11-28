@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:50:05Z",
+ "updated": "2026-11-28T00:50:33Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 255,
+  "flagged": 256,
   "checked": 49,
   "filtered": 1,
-  "lines": 894,
+  "lines": 895,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SIGMA",
-   "why": "snipe",
-   "t": "2026-11-28T00:45:29Z"
-  },
   {
    "coin": "Memeball",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Delta",
    "why": "snipe",
    "t": "2026-11-28T00:50:04Z"
+  },
+  {
+   "coin": "CarSeat",
+   "why": "snipe",
+   "t": "2026-11-28T00:50:16Z"
   }
  ],
  "curve": [
@@ -2669,15 +2669,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:59:58Z",
-   "time": "00:59:58",
-   "agent": "SCANNER",
-   "coin": "OFFICE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.526e+05 is not 30 + real SOL 0 (off +1.526e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 76 odd readings from 51 coins tonight",
-   "n": 695
-  },
-  {
    "t": "2026-11-28T00:00:00Z",
    "time": "01:00:00",
    "agent": "LOGGER",
@@ -4467,6 +4458,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
    "n": 894
+  },
+  {
+   "t": "2026-11-28T00:50:16Z",
+   "time": "01:50:16",
+   "agent": "SCANNER",
+   "coin": "CarSeat",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 895
   }
  ],
  "nights": [
@@ -4539,7 +4539,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 159 (78 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 159 (78 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4547,24 +4547,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 970,
-    "last_event_age_s": 1.9,
+    "events": 972,
+    "last_event_age_s": 1.3,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18638,
-    "last_event_age_s": 1.0,
+    "events": 18696,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 546,
-    "last_event_age_s": 1.6,
+    "events": 548,
+    "last_event_age_s": 0.7,
     "errors": 26,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4577,9 +4577,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.4,
+  "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 8,
+  "followed": 9,
   "odd_readings": 159,
   "odd_coins": 78
  },
@@ -4628,30 +4628,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7531,
+   "sent": 7560,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7531,
+   "sent": 7560,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "Delta",
-   "name": "Delta",
-   "mint": "GrRAVauh4P8gaoQYmoGN5uUqfDXn6c15SsVq3VDpump",
+   "symbol": "ELONBALL",
+   "name": "ELONBALL",
+   "mint": "GdFFHnrcFKP7WhEaPYNLk3j7vTv7AjnddJXEvi5upump",
    "age_s": 1,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "CarSeat",
+   "name": "Stephen Millers Wife",
+   "mint": "6WvuDwHckBxKFZEo4EHPFFRgDpKCNcZ8YtMN2adJpump",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Delta",
+   "name": "Delta",
+   "mint": "GrRAVauh4P8gaoQYmoGN5uUqfDXn6c15SsVq3VDpump",
+   "age_s": 29,
+   "sol_in": 18.88,
+   "buys": 12,
+   "sells": 13,
+   "rise_pct": 159.0,
+   "mcap_sol": 77.3,
+   "dev_pct": 3.4,
+   "big_sell": 3.32,
    "x": "https://x.com/degenaxel/status/2126478631665057810?a=Aj0vw0KTMRY7bVvhboU&s=20",
    "tg": false,
    "web": "https://www.instagram.com/p/DUYUXuUFRUt/",
@@ -4662,7 +4698,7 @@
    "symbol": "DVOOR",
    "name": "Derivoor",
    "mint": "ESCR667qcCdS1DGzM6yRSWBbULwigQsfnNsAb4QsGUBr",
-   "age_s": 26,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4680,12 +4716,12 @@
    "symbol": "67CAT",
    "name": "67 CAT",
    "mint": "rnE9FYpfd5WYcSpm8zBpZGjdk5imZ79f26VHZdbpump",
-   "age_s": 30,
-   "sol_in": -2.74,
+   "age_s": 58,
+   "sol_in": -3.12,
    "buys": 4,
-   "sells": 5,
-   "rise_pct": -15.6,
-   "mcap_sol": 29.9,
+   "sells": 8,
+   "rise_pct": -17.6,
+   "mcap_sol": 29.2,
    "dev_pct": 11.9,
    "big_sell": 10.17,
    "x": "https://x.com/slndr3000/status/2126478545119559998?a=Ri2SUHUaEWS4VR-KEuU&s=20",
@@ -4698,7 +4734,7 @@
    "symbol": "NBA",
    "name": "Never Broke Again",
    "mint": "2C7km8D3TBV6481mrJiQWnnBmnTLUpsQsWd21LFnpump",
-   "age_s": 57,
+   "age_s": 85,
    "sol_in": -0.01,
    "buys": 0,
    "sells": 1,
@@ -4716,7 +4752,7 @@
    "symbol": "NBA",
    "name": "NIGGGAS BALLS ASS",
    "mint": "J4LYN5mjvYuLQb2KufJL9xNxMKWxfZfEj5TusBWnpump",
-   "age_s": 67,
+   "age_s": 95,
    "sol_in": -0.73,
    "buys": 2,
    "sells": 6,
@@ -4734,7 +4770,7 @@
    "symbol": "NBA",
    "name": "Never Broke Again",
    "mint": "aR3ByoAhPinq7W19dsmWRHzTcRF7ZxdAcxcfpEKpump",
-   "age_s": 74,
+   "age_s": 102,
    "sol_in": -0.01,
    "buys": 2,
    "sells": 4,
@@ -4752,7 +4788,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "AWp9TjSnrXbbFxDiGAQZ6tKzdQjbDpkbgqw1L2cfpump",
-   "age_s": 81,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4770,7 +4806,7 @@
    "symbol": "?",
    "name": "",
    "mint": "GD5kuKVDcrkYwiptpDNFboRHBhfSEneQJvp9VuwpS3yd",
-   "age_s": 84,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4788,7 +4824,7 @@
    "symbol": "DLINK",
    "name": "Dark Link",
    "mint": "DvMYFDxrg6QToXbUiubFoiiWy55rGTqFWPccYtxBXMr3",
-   "age_s": 129,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4806,7 +4842,7 @@
    "symbol": "$GREMLIN",
    "name": "Galaxy Gremlin",
    "mint": "AFGgDFLwx8j5Y6fD2WULWZWvD6H5S1uJGGsmcnTtpump",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4824,7 +4860,7 @@
    "symbol": "?",
    "name": "",
    "mint": "8JhFwoz33AYMehUmo7cPpRT36e7hXHXxWqLoCrkE2HdX",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4837,24 +4873,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "$VOID",
-   "name": "The Void Awakening",
-   "mint": "62tzs93QZyCEXFpXDaNaAgaB8NZvUHQYcmRig6dwpump",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
