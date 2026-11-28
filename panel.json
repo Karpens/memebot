@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:55:43Z",
+ "updated": "2026-11-28T01:56:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 380,
+  "flagged": 382,
   "checked": 49,
   "filtered": 1,
-  "lines": 1158,
+  "lines": 1160,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Apocrycoin",
-   "why": "snipe",
-   "t": "2026-11-28T01:49:23Z"
-  },
-  {
-   "coin": "MARS",
-   "why": "snipe",
-   "t": "2026-11-28T01:50:32Z"
-  },
   {
    "coin": "SOL",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "GUAP",
    "why": "snipe",
    "t": "2026-11-28T01:54:44Z"
+  },
+  {
+   "coin": "BLIND",
+   "why": "snipe",
+   "t": "2026-11-28T01:56:03Z"
+  },
+  {
+   "coin": "DUCKY",
+   "why": "snipe",
+   "t": "2026-11-28T01:56:03Z"
   }
  ],
  "curve": [
@@ -775,6 +775,10 @@
   ],
   [
    1795830900,
+   47.79
+  ],
+  [
+   1795830960,
    47.79
   ]
  ],
@@ -2929,24 +2933,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:05:09Z",
-   "time": "02:05:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 0 watched · 15 rejected (snipe not bought: only to size 6, no symbol or name 4, odd curve reading: virtual SOL i 3)",
-   "n": 959
-  },
-  {
-   "t": "2026-11-28T01:06:07Z",
-   "time": "02:06:07",
-   "agent": "SCANNER",
-   "coin": "JLINK",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.181e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 183 odd readings from 94 coins tonight",
-   "n": 960
-  },
-  {
    "t": "2026-11-28T01:06:10Z",
    "time": "02:06:10",
    "agent": "SCANNER",
@@ -4727,6 +4713,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 13 rejected (snipe not bought: only to size 4, mayhem mode 4, serial launcher 2)",
    "n": 1158
+  },
+  {
+   "t": "2026-11-28T01:56:03Z",
+   "time": "02:56:03",
+   "agent": "SCANNER",
+   "coin": "BLIND",
+   "action": "flag",
+   "text": "snipe · first reading 4.0 s after the create · 0.1 SOL in · +1% since the create · mcap 29 SOL",
+   "n": 1159
+  },
+  {
+   "t": "2026-11-28T01:56:03Z",
+   "time": "02:56:03",
+   "agent": "SCANNER",
+   "coin": "DUCKY",
+   "action": "flag",
+   "text": "snipe · first reading 5.6 s after the create · 3.7 SOL in · +24% since the create · mcap 39 SOL",
+   "n": 1160
   }
  ],
  "nights": [
@@ -4799,7 +4803,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 286 (137 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 286 (137 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4807,24 +4811,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1365,
-    "last_event_age_s": 3.6,
+    "events": 1367,
+    "last_event_age_s": 12.3,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25891,
-    "last_event_age_s": 0.1,
+    "events": 25926,
+    "last_event_age_s": 1.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 765,
-    "last_event_age_s": 3.5,
+    "connected": true,
+    "events": 767,
+    "last_event_age_s": 11.2,
     "errors": 36,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4837,9 +4841,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 286,
   "odd_coins": 137
  },
@@ -4888,30 +4892,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11722,
+   "sent": 11752,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11722,
+   "sent": 11752,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BLIND",
+   "name": "Kevin The Blind Producer",
+   "mint": "2yFotiRADB3TzAPj49XWsJVsiMiiLvMokKTMUVV9pump",
+   "age_s": 12,
+   "sol_in": 0.08,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.5,
+   "mcap_sol": 29.4,
+   "dev_pct": 2.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/i/communities/2038294000050876770",
+   "tg": false,
+   "web": "https://kevin-the-blind-musician.lovable.app/#",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DUCKY",
+   "name": "Save Ducky",
+   "mint": "9ZxASWMMQuaRRp6xutZva9eJ31FNTgAY5psk882Zpump",
+   "age_s": 13,
+   "sol_in": 4.63,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 31.1,
+   "mcap_sol": 41.6,
+   "dev_pct": 6.6,
+   "big_sell": 1.44,
+   "x": "https://x.com/Jay_S0L/status/2126495216752341327",
+   "tg": false,
+   "web": "https://twitter.com/VoiceRescue/status/2126493265876664514",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FI6900",
    "name": "Fertility and Income Index 6900",
    "mint": "2Ve7g1EvR3cDzsARNnF92M8NiAcyoY6sEUf7DcPeUaJo",
-   "age_s": 3,
-   "sol_in": 0.0,
+   "age_s": 31,
+   "sol_in": -6.12,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 41.2,
+   "sells": 3,
+   "rise_pct": -30.8,
+   "mcap_sol": 28.5,
    "dev_pct": 18.9,
-   "big_sell": 0.0,
+   "big_sell": 3.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -4922,7 +4962,7 @@
    "symbol": "sexcoin",
    "name": "sexcoin",
    "mint": "J8bSoGp4hkuyBCSChCp7dbSJmFMTxByVvRTCLGYSDY13",
-   "age_s": 12,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4940,7 +4980,7 @@
    "symbol": "SRG",
    "name": "SHRIGGA",
    "mint": "5W8KGsoLrmFY1m4KGKFL8RrMGnr5yCSc32zqhBHepump",
-   "age_s": 21,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4958,7 +4998,7 @@
    "symbol": "CMDTYCHAN",
    "name": "CMDTY CHAN",
    "mint": "CKhbsG9LvNdyfw2JaTdAdt3NURRF8PS6jz5t1XdbfqHR",
-   "age_s": 43,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4976,7 +5016,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Bv861xkna1uVKCzN9JHyH2p2szr4npuqNqTAvyanP9V6",
-   "age_s": 44,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4994,7 +5034,7 @@
    "symbol": "SRG",
    "name": "SHRIGGA",
    "mint": "H7r9CQdEzXVEEqE9AGX4Jwi5X8XivpEAtAztH9k3pump",
-   "age_s": 45,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5012,14 +5052,14 @@
    "symbol": "GUAP",
    "name": "MOONLAND",
    "mint": "F4v5td2Z4WhX4hsNtw28UtcaPPpZEmctDTFahKH2pump",
-   "age_s": 59,
-   "sol_in": 0.28,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 1.9,
-   "mcap_sol": 28.8,
+   "age_s": 87,
+   "sol_in": 0.27,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 1.8,
+   "mcap_sol": 28.7,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": false,
    "tg": false,
    "web": false,
@@ -5030,7 +5070,7 @@
    "symbol": "SRG",
    "name": "SHRIGGA",
    "mint": "DM7FmApWKyNvL9zPb6chFDrZHBsmE6Vu2CPQnVhypump",
-   "age_s": 80,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5048,7 +5088,7 @@
    "symbol": "SING",
    "name": "Singularity",
    "mint": "DDn4nbkkfLtgW5DqR43sNVzPkAtsJrVdrR88q4W8pump",
-   "age_s": 111,
+   "age_s": 139,
    "sol_in": 0.33,
    "buys": 5,
    "sells": 1,
@@ -5066,7 +5106,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "6bpE8hbWXKxfVduWTZ1dgggCV7qLRsTxtTUnkmvMuXVh",
-   "age_s": 127,
+   "age_s": 155,
    "sol_in": 0.12,
    "buys": 2,
    "sells": 0,
@@ -5084,71 +5124,17 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "2fFEeiY9w6e5XQCxXbgXep3rgbeHTwaeZjXQdu8rpump",
-   "age_s": 146,
-   "sol_in": 19.56,
-   "buys": 42,
-   "sells": 37,
-   "rise_pct": 151.1,
-   "mcap_sol": 87.3,
+   "age_s": 174,
+   "sol_in": -3.44,
+   "buys": 45,
+   "sells": 41,
+   "rise_pct": -19.5,
+   "mcap_sol": 28.0,
    "dev_pct": 11.1,
-   "big_sell": 0.37,
+   "big_sell": 22.04,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "$TRASH",
-   "name": "Degen Raccoon",
-   "mint": "DyaGAHpRWb13wtU9PpwT5FLHSmeFibG4yYh2Cgcapump",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "CMDTYCAT",
-   "name": "CMTDY CAT",
-   "mint": "5g8WabPJa4eVh6x3JdL7DZsWcf4NABRF4CsdVP2RPdyB",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "SHHH",
-   "name": "shhhhh",
-   "mint": "DbzoMFkCti39BJZv78sDSYe736Su9eFD7kuKAp1mpump",
-   "age_s": 174,
-   "sol_in": 10.06,
-   "buys": 8,
-   "sells": 3,
-   "rise_pct": 77.7,
-   "mcap_sol": 50.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.03,
-   "x": "https://x.com/shhhhhsol",
-   "tg": "https://t.me/shhhhhsolana",
-   "web": "https://shhhhh.pro/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
