@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:03:21Z",
+ "updated": "2026-11-28T09:03:55Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1024,
+  "flagged": 1025,
   "checked": 49,
   "filtered": 1,
-  "lines": 2425,
+  "lines": 2427,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SPAWN",
-   "why": "snipe",
-   "t": "2026-11-28T08:59:50Z"
-  },
   {
    "coin": "JB",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "CI",
    "why": "snipe",
    "t": "2026-11-28T09:02:16Z"
+  },
+  {
+   "coin": "dug",
+   "why": "snipe",
+   "t": "2026-11-28T09:03:47Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:05:34Z",
-   "time": "09:05:34",
-   "agent": "SCANNER",
-   "coin": "BTCAGENDA",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.4 SOL in · +2% since the create · mcap 51 SOL",
-   "n": 2226
-  },
-  {
-   "t": "2026-11-28T08:05:40Z",
-   "time": "09:05:40",
-   "agent": "SCANNER",
-   "coin": "TONYVI",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 12.4 SOL in · +99% since the create · mcap 57 SOL",
-   "n": 2227
-  },
-  {
    "t": "2026-11-28T08:05:45Z",
    "time": "09:05:45",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 2.649e+05 is not 30 + real SOL 0 (off +2.649e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 649 odd readings from 247 coins tonight",
    "n": 2425
+  },
+  {
+   "t": "2026-11-28T09:03:30Z",
+   "time": "10:03:30",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 1, odd curve reading: virtual SOL i 1)",
+   "n": 2426
+  },
+  {
+   "t": "2026-11-28T09:03:47Z",
+   "time": "10:03:47",
+   "agent": "SCANNER",
+   "coin": "dug",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 5.7 SOL in · +36% since the create · mcap 50 SOL",
+   "n": 2427
   }
  ],
  "nights": [
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1014,
-    "last_event_age_s": 51.6,
+    "events": 1016,
+    "last_event_age_s": 8.2,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18271,
-    "last_event_age_s": 0.6,
+    "events": 18369,
+    "last_event_age_s": 0.1,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 733,
-    "last_event_age_s": 51.3,
+    "events": 734,
+    "last_event_age_s": 8.1,
     "errors": 28,
     "last_error": "usepaidball.fun: too slow (over 2 s)"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 649,
   "odd_coins": 247
  },
@@ -6584,23 +6584,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17169,
+   "sent": 17205,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17169,
+   "sent": 17205,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "dug",
+   "name": "dug",
+   "mint": "HNpcWSkYcpzT7MsQigiqbjEdEJFqZzQXXBfenK3jpump",
+   "age_s": 8,
+   "sol_in": 7.16,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": 45.9,
+   "mcap_sol": 53.8,
+   "dev_pct": 13.8,
+   "big_sell": 0.6,
+   "x": "https://x.com/dugpf/status/2126602914768757196",
+   "tg": false,
+   "web": "https://x.com/damicelled/status/2126290276268249115",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Rash",
+   "name": "Crushmika",
+   "mint": "BMkTH3WJv5f1YghEs1v9NupRQKDH5UNcBQP3ce3Bpump",
+   "age_s": 33,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "MMTV",
    "name": "Meme TV",
    "mint": "G5wWP8x6GcgWJz2mPjg14qrJchNe8Kp5ny9hSDoKRu1f",
-   "age_s": 51,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,12 +6654,12 @@
    "symbol": "CI",
    "name": "Chinese Inu",
    "mint": "BfiEPVpyHqqoNbpxE8Tp5ph4EHsDuEKkfsxAiFdpump",
-   "age_s": 65,
-   "sol_in": 2.3,
-   "buys": 13,
-   "sells": 18,
-   "rise_pct": 15.4,
-   "mcap_sol": 34.4,
+   "age_s": 99,
+   "sol_in": 0.96,
+   "buys": 15,
+   "sells": 23,
+   "rise_pct": 6.3,
+   "mcap_sol": 31.7,
    "dev_pct": 3.4,
    "big_sell": 4.33,
    "x": "https://x.com/uncquant/status/2126602529676902645",
@@ -6636,7 +6672,7 @@
    "symbol": "XMAS",
    "name": "$SENDMAS",
    "mint": "GjcUPyMVuKCEtqLPoMmHBDryeWNg5fVu3kykVJLoHQbN",
-   "age_s": 94,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,7 +6690,7 @@
    "symbol": "Småkage",
    "name": "Småkage",
    "mint": "86QNkdzqR78u4Ktf8Zs1WpXimWMuQJ1UEWAJMQgWpump",
-   "age_s": 97,
+   "age_s": 131,
    "sol_in": -0.7,
    "buys": 6,
    "sells": 9,
@@ -6672,11 +6708,11 @@
    "symbol": "COMM",
    "name": "Commodities",
    "mint": "DYydBsywc6YYkfBEy4rQRobDUrjEaaTqGHAPg8XGpump",
-   "age_s": 109,
-   "sol_in": 0.29,
-   "buys": 24,
-   "sells": 16,
-   "rise_pct": 1.9,
+   "age_s": 143,
+   "sol_in": 0.3,
+   "buys": 37,
+   "sells": 22,
+   "rise_pct": 2.0,
    "mcap_sol": 28.6,
    "dev_pct": 0.1,
    "big_sell": 1.45,
@@ -6690,7 +6726,7 @@
    "symbol": "Huss Huss",
    "name": "Huss Huss",
    "mint": "ChYK1mQN7JWrXSXe2mRJ9GT5pSjnHF3dAafVZxE2pump",
-   "age_s": 121,
+   "age_s": 155,
    "sol_in": -0.05,
    "buys": 1,
    "sells": 1,
@@ -6708,7 +6744,7 @@
    "symbol": "SD",
    "name": "Somali doctor",
    "mint": "2p6NnLsR49JSa9Dbyk6fqgayW9TnjgdvRMAAS4DztAN3",
-   "age_s": 140,
+   "age_s": 174,
    "sol_in": -0.3,
    "buys": 2,
    "sells": 4,
