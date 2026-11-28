@@ -59,42 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:25:23Z",
-    "time": "00:25:23",
-    "agent": "LEARNER",
-    "coin": "MITTEN",
-    "action": "shadow",
-    "text": "SHADOW MITTEN · not bought (night at -16%: 5 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.07 at 0.0000020657 (curve maths, every cost) · same exits, outside the book",
-    "n": 369
-   },
-   {
-    "t": "2026-11-27T23:25:24Z",
-    "time": "00:25:24",
-    "agent": "LEARNER",
-    "coin": "Joe",
-    "action": "shadow",
-    "text": "SHADOW Joe · not bought (night at -16%: 5 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.07 at 0.0000057568 (curve maths, every cost) · same exits, outside the book",
-    "n": 370
-   },
-   {
-    "t": "2026-11-27T23:25:24Z",
-    "time": "00:25:24",
-    "agent": "EXECUTOR",
-    "coin": "read",
-    "action": "exit",
-    "text": "EXIT read $-0.43 (-8%) · curve quiet for 3 min (no trade)",
-    "n": 371
-   },
-   {
-    "t": "2026-11-27T23:25:24Z",
-    "time": "00:25:24",
-    "agent": "LEARNER",
-    "coin": "read",
-    "action": "learn",
-    "text": "learned · np:buys:90+ now avg -7.2% over 300",
-    "n": 372
-   },
-   {
     "t": "2026-11-27T23:25:33Z",
     "time": "00:25:33",
     "agent": "LEARNER",
@@ -5457,6 +5421,42 @@
     "action": "scan",
     "text": "new pairs · 6.4 a minute · 0 watched · 19 rejected (serial launcher 6, snipe not bought: only to size 5, odd curve reading: virtual SOL i 3)",
     "n": 968
+   },
+   {
+    "t": "2026-11-28T01:08:09Z",
+    "time": "02:08:09",
+    "agent": "SCANNER",
+    "coin": "SESAME",
+    "action": "flag",
+    "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+    "n": 969
+   },
+   {
+    "t": "2026-11-28T01:08:09Z",
+    "time": "02:08:09",
+    "agent": "SIZER",
+    "coin": "SESAME",
+    "action": "skip",
+    "text": "only $4.78 left to size",
+    "n": 970
+   },
+   {
+    "t": "2026-11-28T01:08:11Z",
+    "time": "02:08:11",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 6.4 a minute · 0 watched · 22 rejected (serial launcher 9, snipe not bought: only to size 6, odd curve reading: virtual SOL i 2)",
+    "n": 971
+   },
+   {
+    "t": "2026-11-28T01:08:17Z",
+    "time": "02:08:17",
+    "agent": "SCANNER",
+    "coin": "H6900",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1.186e+05 is not 30 + real SOL 0 (off +1.186e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 186 odd readings from 96 coins tonight",
+    "n": 972
    }
   ],
   "trades": [
@@ -8102,16 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 291,
+  "flagged": 292,
   "checked": 49,
   "filtered": 1,
-  "lines": 968,
+  "lines": 972,
   "flags": [
-   {
-    "coin": "WOW",
-    "why": "snipe",
-    "t": "2026-11-28T01:03:57Z"
-   },
    {
     "coin": "$BDOG",
     "why": "snipe",
@@ -8146,6 +8141,11 @@
     "coin": "OOPS",
     "why": "snipe",
     "t": "2026-11-28T01:07:02Z"
+   },
+   {
+    "coin": "SESAME",
+    "why": "snipe",
+    "t": "2026-11-28T01:08:09Z"
    }
   ],
   "curve": [
@@ -8660,13 +8660,17 @@
    [
     1795828020,
     47.79
+   ],
+   [
+    1795828080,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795828030.96068,
+  "np_said": 1795828091.960631,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8851,8 +8855,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 185,
-   "coins": 95,
+   "readings": 187,
+   "coins": 96,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -8949,7 +8953,8 @@
     "4C12ZeM9fJHiVnF5DKHF9iTFq6KdkyqKrskiaL89VKty",
     "86WwUaR4pRzxbFrit91aCEGKMquqqrSTN3CyCwbBntVT",
     "Ge4fLBDFv2wTyYsNAWebJmRWNELh9MFxoLoYm6DRJRtu",
-    "DFUpEDgCgajFaSCFrnLWckmj4dTcbcf94NFtV2hUL438"
+    "DFUpEDgCgajFaSCFrnLWckmj4dTcbcf94NFtV2hUL438",
+    "BxR4qoiM19Myjgcd456R1aquhhpp8zD2ZTo2wuLhSZtz"
    ]
   },
   "risk_said": {
@@ -8958,7 +8963,7 @@
   },
   "sizer_said": {
    "why": "cash",
-   "at": 1795827759.074232
+   "at": 1795828089.163339
   }
  },
  "last_night": {
