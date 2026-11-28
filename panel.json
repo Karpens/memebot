@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:17:38Z",
+ "updated": "2026-11-28T11:18:10Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1267,
+  "flagged": 1268,
   "checked": 49,
   "filtered": 1,
-  "lines": 2886,
+  "lines": 2888,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "FILLINA",
-   "why": "snipe",
-   "t": "2026-11-28T11:14:50Z"
-  },
   {
    "coin": "J7TEST",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "GTA 6",
    "why": "snipe",
    "t": "2026-11-28T11:17:28Z"
+  },
+  {
+   "coin": "STAR",
+   "why": "snipe",
+   "t": "2026-11-28T11:18:02Z"
   }
  ],
  "curve": [
-  [
-   1795828680,
-   47.79
-  ],
   [
    1795828740,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864620,
    47.79
+  ],
+  [
+   1795864680,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:20:51Z",
-   "time": "11:20:51",
-   "agent": "SCANNER",
-   "coin": "SOLAMI",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 6.35e+04 is not 30 + real SOL 0 (off +6.347e+04 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 912 odd readings from 270 coins tonight",
-   "n": 2687
-  },
-  {
-   "t": "2026-11-28T10:21:12Z",
-   "time": "11:21:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 8, mayhem mode 2, odd curve reading: virtual SOL i 1)",
-   "n": 2688
-  },
-  {
    "t": "2026-11-28T10:21:28Z",
    "time": "11:21:28",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 17.7 SOL in · +134% since the create · mcap 81 SOL",
    "n": 2886
+  },
+  {
+   "t": "2026-11-28T11:17:44Z",
+   "time": "12:17:44",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 0 watched · 14 rejected (snipe not bought: only to size 9, serial launcher 2, mayhem mode 2)",
+   "n": 2887
+  },
+  {
+   "t": "2026-11-28T11:18:02Z",
+   "time": "12:18:02",
+   "agent": "SCANNER",
+   "coin": "STAR",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2888
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 275,
-    "last_event_age_s": 11.3,
+    "events": 277,
+    "last_event_age_s": 8.9,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7357,
+    "events": 7388,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 197,
-    "last_event_age_s": 11.0,
+    "events": 198,
+    "last_event_age_s": 8.8,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 12,
+  "followed": 10,
   "odd_readings": 987,
   "odd_coins": 302
  },
@@ -6578,28 +6578,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4016,
+   "sent": 4050,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4016,
+   "sent": 4050,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "STAR",
+   "name": "GMMTVStarlympics",
+   "mint": "EEPvmrMDWyKajFF96MtZgfLG9eK9DoARMoHxtxBLpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.8,
+   "big_sell": 0.0,
+   "x": "https://x.com/tohuppw/status/2126631916241928460?a=1dgilZFyz2sTbgI6Jps&s=19",
+   "tg": "https://t.me/geminifourthsupportsg",
+   "web": "https://www.gmm-tv.com/coverpage/?time=1795864176",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "6RF2G15ZLAdMsZRwhrf6jAcubrRkusooHrxxEwSJpump",
-   "age_s": 11,
-   "sol_in": 17.83,
-   "buys": 5,
-   "sells": 0,
-   "rise_pct": 135.0,
-   "mcap_sol": 81.7,
+   "age_s": 43,
+   "sol_in": 52.84,
+   "buys": 9,
+   "sells": 2,
+   "rise_pct": 565.3,
+   "mcap_sol": 231.4,
    "dev_pct": 11.1,
    "big_sell": 0.0,
    "x": "https://x.com/gtasix_",
@@ -6612,11 +6630,11 @@
    "symbol": "ONEDAY",
    "name": "One Day",
    "mint": "4gRmopnbQc36Uad3Hp5mebZD5ZL5BgRwWLTmoBuFpump",
-   "age_s": 21,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 53,
+   "sol_in": 0.01,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
    "big_sell": 0.0,
@@ -6630,7 +6648,7 @@
    "symbol": "CRNG",
    "name": "Crown Corgi",
    "mint": "BahF8cSpQvsQW49NUsM6E7Xd2wzDvwr8TveWqRy5pump",
-   "age_s": 54,
+   "age_s": 86,
    "sol_in": 0.13,
    "buys": 1,
    "sells": 0,
@@ -6648,12 +6666,12 @@
    "symbol": "Hilbert",
    "name": "Hilbert-Sahur conjecture",
    "mint": "att5V6szMm4DuD9YP9zVmRmkH2zyXe5rjbdDbouGkbd",
-   "age_s": 61,
-   "sol_in": 5.34,
-   "buys": 11,
-   "sells": 13,
-   "rise_pct": 32.9,
-   "mcap_sol": 50.4,
+   "age_s": 93,
+   "sol_in": 11.0,
+   "buys": 16,
+   "sells": 16,
+   "rise_pct": 72.9,
+   "mcap_sol": 65.6,
    "dev_pct": 15.2,
    "big_sell": 3.21,
    "x": "https://x.com/lilbruhfish/status/2126636245225013737",
@@ -6666,7 +6684,7 @@
    "symbol": "SHADOW",
    "name": "SHADOW TERMINAL",
    "mint": "BAvyGhV4nMTPYiS9R2aHW9nMKLsW7Yz9tuzTeF1vpump",
-   "age_s": 76,
+   "age_s": 108,
    "sol_in": -0.15,
    "buys": 1,
    "sells": 2,
@@ -6684,7 +6702,7 @@
    "symbol": "smol",
    "name": "smol cat",
    "mint": "Crx6zQNJhkN4wJpUsUTnTKyYXEP5ChcSeoULzfQiMz3q",
-   "age_s": 100,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6720,7 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "5g68fn25n7icq8VNUpej9heonwuZ8HLEgcsR2dChkpMw",
-   "age_s": 111,
+   "age_s": 143,
    "sol_in": -3.46,
    "buys": 7,
    "sells": 8,
@@ -6720,7 +6738,7 @@
    "symbol": "BRIGADEB",
    "name": "Green Brigade Cleared",
    "mint": "3nYMhnRCoCjA4moFpoKiZdGWgK84MZoCpw6EugEVpump",
-   "age_s": 117,
+   "age_s": 149,
    "sol_in": 2.86,
    "buys": 3,
    "sells": 0,
@@ -6738,7 +6756,7 @@
    "symbol": "WINSTON",
    "name": "Winston",
    "mint": "DPaik9gP6ATZGGACgDK8NCRbK8wPPZbUSGDxHCkBpump",
-   "age_s": 119,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6756,7 +6774,7 @@
    "symbol": "TripleH",
    "name": "Hilbert-Sahur conjecture",
    "mint": "C7AFmWZTcPq35snmZhedVD7pb44maiKDQTk7Uj63YFZP",
-   "age_s": 121,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6774,7 +6792,7 @@
    "symbol": "gAIpepe",
    "name": "gAIpepe",
    "mint": "3ibvKsMFCvwA8327489j4fcBmhYYH9FfuFdxgxVxpump",
-   "age_s": 137,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6792,7 +6810,7 @@
    "symbol": "Huss",
    "name": "Huss Huss",
    "mint": "BWAFrj3KsvZTn89KvdvyszK1ANkSkCUHn2KT9KHRpump",
-   "age_s": 138,
+   "age_s": 170,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6805,60 +6823,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "J7TEST",
-   "name": "J7 Control TEST",
-   "mint": "AU7EYvuHoSDYwALCwUpsEzkuiMk3Gi1U9jYiAmbSvVYW",
-   "age_s": 151,
-   "sol_in": -0.0,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FILLINA",
-   "name": "Filling In",
-   "mint": "2TDkypMDV6xSBcRV8MY5edMgrPRnEtbrAyc8QwKXpump",
-   "age_s": 169,
-   "sol_in": -0.79,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -5.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.8,
-   "big_sell": 0.79,
-   "x": false,
-   "tg": false,
-   "web": "https://www.nfl.com/news/brock-purdy-ankle-out-49ers-seahawks-mac-jones-start?mint=",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Sahur",
-   "name": "Hilbert-Sahur conjecture",
-   "mint": "9kY36tqn1o4ra2AC1stATC7LWWvoAY9yvsqaEW19ZgEu",
-   "age_s": 174,
-   "sol_in": -1.44,
-   "buys": 2,
-   "sells": 6,
-   "rise_pct": -8.1,
-   "mcap_sol": 34.9,
-   "dev_pct": 15.2,
-   "big_sell": 3.02,
-   "x": "https://x.com/MarioPrezldente/status/2126635762179522750",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 19 more coins in 60 min",
-   "why": "serial launcher: 19 more coins in 60 min"
   }
  ],
  "strategies": [
