@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:18:41Z",
+ "updated": "2026-11-28T06:19:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 781,
+  "flagged": 782,
   "checked": 49,
   "filtered": 1,
-  "lines": 1927,
+  "lines": 1929,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Groo",
-   "why": "snipe",
-   "t": "2026-11-28T05:55:58Z"
-  },
   {
    "coin": "ALEAST",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "aura",
    "why": "snipe",
    "t": "2026-11-28T06:17:30Z"
+  },
+  {
+   "coin": "Captain X",
+   "why": "snipe",
+   "t": "2026-11-28T06:19:05Z"
   }
  ],
  "curve": [
@@ -1827,6 +1827,10 @@
   ],
   [
    1795846680,
+   47.79
+  ],
+  [
+   1795846740,
    47.79
   ]
  ],
@@ -3981,24 +3985,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:47:46Z",
-   "time": "05:47:46",
-   "agent": "SCANNER",
-   "coin": "REDEX",
-   "action": "flag",
-   "text": "snipe · first reading 4.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1728
-  },
-  {
-   "t": "2026-11-28T04:47:46Z",
-   "time": "05:47:46",
-   "agent": "SCANNER",
-   "coin": "CrimeCat",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 0.7 SOL in · +5% since the create · mcap 31 SOL",
-   "n": 1729
-  },
-  {
    "t": "2026-11-28T04:47:52Z",
    "time": "05:47:52",
    "agent": "SCANNER",
@@ -5779,6 +5765,24 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 1 watched · 5 rejected (snipe not bought: only to size 3, serial launcher 1, mayhem mode 1) · closest GROO: no curve reading yet",
    "n": 1927
+  },
+  {
+   "t": "2026-11-28T06:18:57Z",
+   "time": "07:18:57",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 1 watched · 6 rejected (snipe not bought: only to size 2, snipe: first reading s after the 2, serial launcher 1) · closest Captain X: no curve reading yet",
+   "n": 1928
+  },
+  {
+   "t": "2026-11-28T06:19:05Z",
+   "time": "07:19:05",
+   "agent": "SCANNER",
+   "coin": "Captain X",
+   "action": "flag",
+   "text": "snipe · first reading 9.6 s after the create · 16.0 SOL in · +130% since the create · mcap 68 SOL",
+   "n": 1929
   }
  ],
  "nights": [
@@ -5849,7 +5853,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 9 watched · ws off · odd curve readings 417 (191 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · odd curve readings 417 (191 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5857,24 +5861,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 346,
-    "last_event_age_s": 22.1,
+    "events": 347,
+    "last_event_age_s": 18.3,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 2458,
-    "last_event_age_s": 70.3,
+    "connected": true,
+    "events": 2479,
+    "last_event_age_s": 1.0,
     "errors": 289,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 255,
-    "last_event_age_s": 36.8,
+    "events": 256,
+    "last_event_age_s": 18.3,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5887,8 +5891,8 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.8,
-  "watching": 2,
+  "creates_per_min": 1.6,
+  "watching": 0,
   "followed": 6,
   "odd_readings": 417,
   "odd_coins": 191
@@ -5938,48 +5942,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6653,
+   "sent": 6689,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6653,
+   "sent": 6689,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Captain X",
+   "name": "The Weeknd",
+   "mint": "CBvkDwF2skrJVGRA4E4o2qtsz2Q79xwYYiNqKyyJpump",
+   "age_s": 18,
+   "sol_in": 15.92,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 129.2,
+   "mcap_sol": 68.4,
+   "dev_pct": 3.4,
+   "big_sell": 0.04,
+   "x": "https://x.com/iclimbcharts/status/2125297984917131540?a=qTWwli_LMn-A3Hn_si4&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "HEARTTHROB",
    "name": "Roblox Heartthrob",
    "mint": "JDRvp3CAAu7TpvXnDUnCTyiZr9envFVTfh6sMbpzpump",
-   "age_s": 36,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 69,
+   "sol_in": 0.46,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
+   "rise_pct": 3.1,
+   "mcap_sol": 29.8,
    "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": "https://x.com/mohabessxbt/status/2126560919820067053?a=6mCRIbyx2TDxtKqW4iU&s=20",
    "tg": false,
    "web": "https://www.tiktok.com/search?q=roblox%20heartthrob",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 40.2 s after the create (max 10 s)",
+   "why": "snipe: first reading 40.2 s after the create (max 10 s)"
   },
   {
    "symbol": "OFM",
    "name": "Online Funny Money",
    "mint": "CVumibe6p6oVTemP4eyhc4EJci42wRn5UVWV5kfBpump",
-   "age_s": 48,
-   "sol_in": 0.0,
+   "age_s": 81,
+   "sol_in": -2.36,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.9,
+   "sells": 4,
+   "rise_pct": -13.1,
+   "mcap_sol": 33.0,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 0.84,
    "x": "https://x.com/CoachPatNFT/status/2126561186372010023",
    "tg": false,
    "web": "https://www.banking.senate.gov/newsroom/majority/brown-cryptocurrencies-put-americans-hard-earned-money-at-risk?utm_source=chatgpt.com",
@@ -5990,10 +6012,10 @@
    "symbol": "GROO",
    "name": "Galactic Rocket Obsessed Owls",
    "mint": "DiEoEsKPmH7bqxjoSDnbFcVx4ERr1ygpEuWZ5Ujepump",
-   "age_s": 58,
+   "age_s": 91,
    "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
+   "buys": 1,
+   "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 28.2,
    "dev_pct": 0.5,
@@ -6001,21 +6023,21 @@
    "x": "https://x.com/WojTheDegen/status/2126555520290959666",
    "tg": false,
    "web": "https://x.com/Lanceurpump",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 61.6 s after the create (max 10 s)",
+   "why": "snipe: first reading 61.6 s after the create (max 10 s)"
   },
   {
    "symbol": "aura",
    "name": "aura",
    "mint": "BHygafZK9kvhZQng2pSWdQKHoE28KGmh58mF7Leapump",
-   "age_s": 79,
-   "sol_in": 30.47,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 302.5,
-   "mcap_sol": 114.7,
+   "age_s": 112,
+   "sol_in": 30.38,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 301.3,
+   "mcap_sol": 114.3,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 7.43,
    "x": "https://x.com/auracoinpf/status/2126560936777437447",
    "tg": false,
    "web": "https://nationaldaycalendar.com/celebrations/international-aura-awareness-day-fourth-saturday-in-november",
@@ -6026,7 +6048,7 @@
    "symbol": "FLUX",
    "name": "FLUX",
    "mint": "3CTqaVpTBSdoQZcgf7Cf6A2qJ1UjzGdamubDmmLfpump",
-   "age_s": 86,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6044,7 +6066,7 @@
    "symbol": "PILL",
    "name": "SPLIT PILL",
    "mint": "BME4v9UGwAUEgzxcQQvJkzT3yNKkpDyu7457xCH6wDtx",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 2,
@@ -6055,24 +6077,6 @@
    "x": false,
    "tg": false,
    "web": "https://splitball.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CarPad",
-   "name": "CarPad",
-   "mint": "4MZWwDoktbWt8RHx9hJNznCsoYyvbi79Ftc9sySYpump",
-   "age_s": 174,
-   "sol_in": 18.79,
-   "buys": 16,
-   "sells": 9,
-   "rise_pct": 155.0,
-   "mcap_sol": 78.5,
-   "dev_pct": 5.0,
-   "big_sell": 2.79,
-   "x": "https://x.com/CarPaddotfun/status/2126560576293781795?a=HDX1NNoCU1NgyMleLgg&s=20",
-   "tg": false,
-   "web": "https://carpad.fun/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
