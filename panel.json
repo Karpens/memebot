@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:11:24Z",
+ "updated": "2026-11-28T01:11:56Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 297,
+  "flagged": 298,
   "checked": 49,
   "filtered": 1,
-  "lines": 983,
+  "lines": 985,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TEST8",
-   "why": "snipe",
-   "t": "2026-11-28T01:06:46Z"
-  },
   {
    "coin": "OOPS",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "simulcrum",
    "why": "snipe",
    "t": "2026-11-28T01:11:17Z"
+  },
+  {
+   "coin": "Elon Freak",
+   "why": "snipe",
+   "t": "2026-11-28T01:11:41Z"
   }
  ],
  "curve": [
@@ -2753,24 +2753,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:21:04Z",
-   "time": "01:21:04",
-   "agent": "SIZER",
-   "coin": "Joe",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 784
-  },
-  {
-   "t": "2026-11-28T00:21:27Z",
-   "time": "01:21:27",
-   "agent": "SCANNER",
-   "coin": "Midcurve",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 4.7 SOL in · +30% since the create · mcap 45 SOL",
-   "n": 785
-  },
-  {
    "t": "2026-11-28T00:21:38Z",
    "time": "01:21:38",
    "agent": "SCANNER",
@@ -4551,6 +4533,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 0.8 SOL in · +5% since the create · mcap 35 SOL",
    "n": 983
+  },
+  {
+   "t": "2026-11-28T01:11:41Z",
+   "time": "02:11:41",
+   "agent": "SCANNER",
+   "coin": "Elon Freak",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 984
+  },
+  {
+   "t": "2026-11-28T01:11:53Z",
+   "time": "02:11:53",
+   "agent": "SCANNER",
+   "coin": "TEST",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 2.754e+05 is not 30 + real SOL 0 (off +2.754e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 194 odd readings from 100 coins tonight",
+   "n": 985
   }
  ],
  "nights": [
@@ -4623,7 +4623,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 193 (99 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 194 (100 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4631,15 +4631,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1091,
-    "last_event_age_s": 8.9,
+    "events": 1093,
+    "last_event_age_s": 4.5,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21220,
+    "events": 21314,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -4647,8 +4647,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 630,
-    "last_event_age_s": 8.7,
+    "events": 632,
+    "last_event_age_s": 4.3,
     "errors": 30,
     "last_error": "d.uguu.se: timeout after 2 s"
    }
@@ -4661,11 +4661,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.0,
+  "creates_per_min": 5.2,
   "watching": 0,
-  "followed": 8,
-  "odd_readings": 193,
-  "odd_coins": 99
+  "followed": 10,
+  "odd_readings": 194,
+  "odd_coins": 100
  },
  "learner": {
   "samples": 84,
@@ -4712,23 +4712,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8892,
+   "sent": 8926,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8892,
+   "sent": 8926,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TEST",
+   "name": "test",
+   "mint": "HhEiPE946hLsWHRTkRknbaZjy1UZuvL2YT8sVWV7qVc8",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://steadypad.fun/burns",
+   "tg": false,
+   "web": "https://steadypad.fun/burns",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Elon Freak",
+   "name": "Elon Freak",
+   "mint": "7LrbrPkdHcregSki3c7X7fJZqR3EJyFN7aSrFUipump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/elonmusk/status/1662654838398697472/photo/1",
+   "tg": false,
+   "web": "https://x.com/elonmusk/status/1662654838398697472/photo/1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "simulcrum",
    "name": "simulcrum",
    "mint": "D8DSJ1BLi6By6y3f5idFDVhzissDQzUQktmB7m3Qpump",
-   "age_s": 8,
+   "age_s": 40,
    "sol_in": 0.28,
    "buys": 1,
    "sells": 1,
@@ -4746,12 +4782,12 @@
    "symbol": "SCARLET",
    "name": "Scarlet",
    "mint": "9723cSH2TXgqf54HLArBW9Y2Upop1JHjnW9yEGTrpump",
-   "age_s": 12,
-   "sol_in": 1.1,
+   "age_s": 44,
+   "sol_in": 0.87,
    "buys": 3,
-   "sells": 4,
-   "rise_pct": 7.4,
-   "mcap_sol": 30.0,
+   "sells": 5,
+   "rise_pct": 5.9,
+   "mcap_sol": 29.6,
    "dev_pct": 0.0,
    "big_sell": 5.82,
    "x": "https://x.com/scarletdevsol",
@@ -4764,7 +4800,7 @@
    "symbol": "WANNARACE",
    "name": "Wanna Race",
    "mint": "8mtedykWgrY69S3PpE7jMao41SDjAueMu96zMGqopump",
-   "age_s": 19,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4782,7 +4818,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "7ENEgrtsKxEWo3mDQ2gfjZyNZpMBLyqZvCpaHyrP3iwH",
-   "age_s": 34,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4800,7 +4836,7 @@
    "symbol": "ASF",
    "name": "Asf",
    "mint": "F9LgBYi8VjF31hkicehTPDMkvj3WzX94zvVWLfXupump",
-   "age_s": 65,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4818,12 +4854,12 @@
    "symbol": "PILLXBT",
    "name": "pillXBT",
    "mint": "Wd6LY8NNANR1tPUhKKaNhDw8otNgfmnRyM9nhzxMppp",
-   "age_s": 71,
-   "sol_in": 23.15,
-   "buys": 23,
-   "sells": 38,
-   "rise_pct": 199.2,
-   "mcap_sol": 93.5,
+   "age_s": 103,
+   "sol_in": 19.16,
+   "buys": 32,
+   "sells": 49,
+   "rise_pct": 157.3,
+   "mcap_sol": 80.4,
    "dev_pct": 5.8,
    "big_sell": 2.95,
    "x": false,
@@ -4836,7 +4872,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "DtcCnseMTEpEqqC1BoSfaXk9CCR86mAoefYy88EXdCer",
-   "age_s": 85,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4854,7 +4890,7 @@
    "symbol": "SEMIR",
    "name": "SemiDeriv",
    "mint": "CgMtv4NDJczfUJbuCoy8Np2vxpuKMSFZNTdyEujLcmZa",
-   "age_s": 117,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4872,14 +4908,14 @@
    "symbol": "bizcat",
    "name": "bizcat",
    "mint": "3eFzFy3YMHh67prR7BC3q9MZvDFRLZNRnvsjFApcpump",
-   "age_s": 127,
-   "sol_in": 23.69,
-   "buys": 23,
-   "sells": 32,
-   "rise_pct": 212.5,
-   "mcap_sol": 92.5,
+   "age_s": 159,
+   "sol_in": 24.95,
+   "buys": 39,
+   "sells": 43,
+   "rise_pct": 227.1,
+   "mcap_sol": 96.8,
    "dev_pct": 3.0,
-   "big_sell": 3.6,
+   "big_sell": 7.17,
    "x": "https://x.com/bizcatPF/status/2126483327314010221?a=MMgRc4g5J8ZSzL6kLHs&s=20",
    "tg": false,
    "web": "https://bizcatpf.fun/",
@@ -4890,12 +4926,12 @@
    "symbol": "GPU",
    "name": "Giga Purr Unit",
    "mint": "7YNL7N2JNcFcoamDdXUPWy6GBLEkzYZn3vhWzSxpump",
-   "age_s": 142,
-   "sol_in": 1.96,
+   "age_s": 174,
+   "sol_in": 1.87,
    "buys": 35,
-   "sells": 22,
-   "rise_pct": 13.0,
-   "mcap_sol": 33.7,
+   "sells": 23,
+   "rise_pct": 12.4,
+   "mcap_sol": 33.5,
    "dev_pct": 3.4,
    "big_sell": 21.1,
    "x": "https://x.com/GigaPurrUnit/status/2126483261975142682?a=xs6BAHMvhtTnN70-XEc&s=20",
