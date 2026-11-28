@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:42:06Z",
+ "updated": "2026-11-28T06:42:34Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 804,
+  "flagged": 806,
   "checked": 49,
   "filtered": 1,
-  "lines": 1991,
+  "lines": 1995,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "tremps",
-   "why": "snipe",
-   "t": "2026-11-28T06:30:35Z"
-  },
-  {
-   "coin": "AIR",
-   "why": "snipe",
-   "t": "2026-11-28T06:31:52Z"
-  },
   {
    "coin": "XDOGE",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "HOSTKEY",
    "why": "snipe",
    "t": "2026-11-28T06:37:03Z"
+  },
+  {
+   "coin": "Haven",
+   "why": "snipe",
+   "t": "2026-11-28T06:42:12Z"
+  },
+  {
+   "coin": "SLOP",
+   "why": "snipe",
+   "t": "2026-11-28T06:42:19Z"
   }
  ],
  "curve": [
@@ -4077,42 +4077,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:08:39Z",
-   "time": "06:08:39",
-   "agent": "SCANNER",
-   "coin": "USEFUL",
-   "action": "flag",
-   "text": "snipe · first reading 6.0 s after the create · 0.8 SOL in · +4% since the create · mcap 46 SOL",
-   "n": 1792
-  },
-  {
-   "t": "2026-11-28T05:09:18Z",
-   "time": "06:09:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 14 rejected (snipe: first reading s after the 6, serial launcher 6, snipe not bought: only to size 2)",
-   "n": 1793
-  },
-  {
-   "t": "2026-11-28T05:10:05Z",
-   "time": "06:10:05",
-   "agent": "SCANNER",
-   "coin": "CHURLIE",
-   "action": "flag",
-   "text": "snipe · first reading 3.6 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 1794
-  },
-  {
-   "t": "2026-11-28T05:10:05Z",
-   "time": "06:10:05",
-   "agent": "SIZER",
-   "coin": "CHURLIE",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1795
-  },
-  {
    "t": "2026-11-28T05:10:18Z",
    "time": "06:10:18",
    "agent": "SCANNER",
@@ -5875,6 +5839,42 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 437 odd readings from 203 coins tonight",
    "n": 1991
+  },
+  {
+   "t": "2026-11-28T06:42:11Z",
+   "time": "07:42:11",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 1 watched · 5 rejected (serial launcher 4, no symbol or name 1) · closest Haven: no curve reading yet",
+   "n": 1992
+  },
+  {
+   "t": "2026-11-28T06:42:12Z",
+   "time": "07:42:12",
+   "agent": "SCANNER",
+   "coin": "Haven",
+   "action": "flag",
+   "text": "snipe · first reading 3.5 s after the create · 0.0 SOL in · +0% since the create · mcap 31 SOL",
+   "n": 1993
+  },
+  {
+   "t": "2026-11-28T06:42:12Z",
+   "time": "07:42:12",
+   "agent": "SIZER",
+   "coin": "Haven",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1994
+  },
+  {
+   "t": "2026-11-28T06:42:19Z",
+   "time": "07:42:19",
+   "agent": "SCANNER",
+   "coin": "SLOP",
+   "action": "flag",
+   "text": "snipe · first reading 3.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1995
   }
  ],
  "nights": [
@@ -5947,7 +5947,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · odd curve readings 443 (203 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · odd curve readings 444 (203 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5955,24 +5955,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 437,
-    "last_event_age_s": 41.2,
+    "events": 440,
+    "last_event_age_s": 18.2,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3535,
-    "last_event_age_s": 0.9,
+    "events": 3552,
+    "last_event_age_s": 6.9,
     "errors": 358,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 315,
-    "last_event_age_s": 36.8,
+    "connected": true,
+    "events": 318,
+    "last_event_age_s": 18.2,
     "errors": 20,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5985,10 +5985,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 5,
-  "odd_readings": 443,
+  "followed": 7,
+  "odd_readings": 444,
   "odd_coins": 203
  },
  "learner": {
@@ -6036,23 +6036,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8149,
+   "sent": 8179,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8149,
+   "sent": 8179,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SLOP",
+   "name": "slop",
+   "mint": "E89P7JVL2VnArCzjXvs76SEh9jub3EDeUp95vykw5F9a",
+   "age_s": 18,
+   "sol_in": 0.11,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/noobiieez/status/2126567068455850279",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "fuck",
+   "name": "fish + duck",
+   "mint": "5Aq4uhH15yJBGPdFszfugT7ujZSpAuVCZK5BiSDpump",
+   "age_s": 18,
+   "sol_in": -2.19,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -12.2,
+   "mcap_sol": 33.3,
+   "dev_pct": 15.2,
+   "big_sell": 1.98,
+   "x": "https://x.com/CoachPatNFT/status/2126567324928921951",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "Haven",
+   "name": "Haven",
+   "mint": "GL9fqipBWJX8NDBXLZR6uRho733C38CSurKU7EWxpump",
+   "age_s": 25,
+   "sol_in": 0.04,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.3,
+   "mcap_sol": 30.9,
+   "dev_pct": 5.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/HavenLaunchapp",
+   "tg": false,
+   "web": "https://launchlocally.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "NEON",
    "name": "Neonjak",
    "mint": "9kLUUJNWtwtPZAUAvEKfup4vQDEiZiNh8ay3uCfa1n9i",
-   "age_s": 41,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6070,7 +6124,7 @@
    "symbol": "GEMINICHADS",
    "name": "Gemini Chads",
    "mint": "3Tkg3dEMxJiYfWdwR1zwo2PXuopAeNCM9UVREzDQsuXm",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6088,7 +6142,7 @@
    "symbol": "GEMINICHADS",
    "name": "Gemini Chads",
    "mint": "DwPyBxSyzWAniuafNihbhdRoacfkjFsJijdf9KpHQzMF",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6106,7 +6160,7 @@
    "symbol": "NI",
    "name": "Neon Inu",
    "mint": "3ELNidZstJpE4j3k6deoJom7QiALkCZqHYpF64oA5uTj",
-   "age_s": 53,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6124,7 +6178,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AeWu4GnmDqUZ8AKWvYYtegnxXRwJ9YuvZ5nKpPPbpump",
-   "age_s": 70,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6137,24 +6191,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "NVIDIA",
-   "name": "NVIDIA Newsroom",
-   "mint": "BjRfB4ysUgkdVD4RcsTSb1FTXRK2YJQyXbKT6wp7pump",
-   "age_s": 179,
-   "sol_in": 20.88,
-   "buys": 22,
-   "sells": 25,
-   "rise_pct": 163.7,
-   "mcap_sol": 91.7,
-   "dev_pct": 11.1,
-   "big_sell": 0.34,
-   "x": "https://x.com/nvidianewsroom",
-   "tg": false,
-   "web": "https://t.co/5UY6GdgPL1",
-   "status": "rejected: snipe: first reading 10.8 s after the create (max 10 s)",
-   "why": "snipe: first reading 10.8 s after the create (max 10 s)"
   }
  ],
  "strategies": [
