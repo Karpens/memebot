@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:11:11Z",
+ "updated": "2026-11-28T07:11:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 836,
   "checked": 49,
   "filtered": 1,
-  "lines": 2076,
+  "lines": 2077,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -4193,15 +4193,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:47:42Z",
-   "time": "06:47:42",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 1 watched · 7 rejected (snipe not bought: only to size 4, snipe: first reading s after the 1, serial launcher 1) · closest MWG: no curve reading yet",
-   "n": 1877
-  },
-  {
    "t": "2026-11-28T05:48:42Z",
    "time": "06:48:42",
    "agent": "SCANNER",
@@ -5991,6 +5982,15 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 4.837 is not 30 + real SOL 0.5446 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 511 odd readings from 221 coins tonight",
    "n": 2076
+  },
+  {
+   "t": "2026-11-28T07:11:31Z",
+   "time": "08:11:31",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 6 rejected (snipe not bought: only to size 2, serial launcher 2, no symbol or name 1)",
+   "n": 2077
   }
  ],
  "nights": [
@@ -6063,7 +6063,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 523 (221 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 531 (221 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6071,24 +6071,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 565,
-    "last_event_age_s": 21.4,
+    "events": 566,
+    "last_event_age_s": 4.9,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5539,
-    "last_event_age_s": 0.2,
+    "events": 5601,
+    "last_event_age_s": 1.0,
     "errors": 419,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 412,
-    "last_event_age_s": 21.3,
+    "events": 413,
+    "last_event_age_s": 4.4,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6101,10 +6101,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 7,
-  "odd_readings": 523,
+  "followed": 5,
+  "odd_readings": 531,
   "odd_coins": 221
  },
  "learner": {
@@ -6152,23 +6152,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10006,
+   "sent": 10042,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10006,
+   "sent": 10042,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "crime",
+   "name": "crime",
+   "mint": "FHDxLMJgUL2WwPJtR6dnkc3zHchht99zP8h1D6REMq1n",
+   "age_s": 4,
+   "sol_in": 3.97,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 25.5,
+   "mcap_sol": 42.6,
+   "dev_pct": 9.9,
+   "big_sell": 2.8,
+   "x": "https://x.com/nonanon124/status/2126574702210760947",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  },
+  {
    "symbol": "Peg",
    "name": "Peg",
    "mint": "4CZZgR92mE6JD5y2W3MeP1XRpJJ6eJX3ncLyjgJ4VGK9",
-   "age_s": 21,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6186,7 +6204,7 @@
    "symbol": "KURO",
    "name": "KuroCoin",
    "mint": "ceiLi1iL5sb6DVcAhNHKquLLD54uK6ujAVqqU54pump",
-   "age_s": 44,
+   "age_s": 77,
    "sol_in": 0.39,
    "buys": 3,
    "sells": 1,
@@ -6204,7 +6222,7 @@
    "symbol": "LYIN",
    "name": "The Lyin King",
    "mint": "56NyGuXBY2tgLHe6bqVTfMY3aYcxMN8TiEKYx3bapump",
-   "age_s": 54,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6222,12 +6240,12 @@
    "symbol": "DIGLETT",
    "name": "Depressed Diglett ディグダ",
    "mint": "FGavYVdehr7tUtZdGK6zrwPy7oV42z4h2mqcesxipump",
-   "age_s": 69,
-   "sol_in": -2.96,
-   "buys": 1,
+   "age_s": 102,
+   "sol_in": -1.32,
+   "buys": 2,
    "sells": 4,
-   "rise_pct": -17.2,
-   "mcap_sol": 28.0,
+   "rise_pct": -7.8,
+   "mcap_sol": 31.1,
    "dev_pct": 9.6,
    "big_sell": 2.67,
    "x": "https://x.com/takusanneyoo/status/2126167546269507646",
@@ -6240,7 +6258,7 @@
    "symbol": "AIR",
    "name": "Thin Air",
    "mint": "Svg4mMdcs5uJNYanP75NKbfxtz8MfV89hAhyfDcJH2E",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": -0.99,
    "buys": 3,
    "sells": 10,
@@ -6251,78 +6269,6 @@
    "x": "https://x.com/realDonaldTrump/status/1149472282584072192",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.3,
-   "dev_pct": 2.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "STABLE",
-   "name": "Stable Coin",
-   "mint": "9mRgxpGbRBE298PVnbxvuMVPKtz6cPR8vyie8h4apump",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/nonanon124/status/2126573855200145691",
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 4.362 is not 30 + real SOL 0.06969 (off -25.71 SOL)",
-   "why": "odd curve reading: virtual SOL 4.362 is not 30 + real SOL 0.06969 (off -25.71 SOL)"
-  },
-  {
-   "symbol": "fiat",
-   "name": "fiat",
-   "mint": "4e6i28w5ohPDsoFq6YfZyBuQczvaznkSc5jtqKGYdi91",
-   "age_s": 174,
-   "sol_in": -2.49,
-   "buys": 17,
-   "sells": 19,
-   "rise_pct": -14.5,
-   "mcap_sol": 29.0,
-   "dev_pct": 9.9,
-   "big_sell": 2.48,
-   "x": "https://x.com/nonanon124/status/2126573855200145691",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 9 more coins in 60 min",
-   "why": "serial launcher: 9 more coins in 60 min"
-  },
-  {
-   "symbol": "NVIDIA",
-   "name": "NVIDIA Newsroom",
-   "mint": "CAVP6wDEERV2x3T3JDvkkLTybrHqmZXcLhp9fDFzpump",
-   "age_s": 177,
-   "sol_in": 19.58,
-   "buys": 54,
-   "sells": 48,
-   "rise_pct": 151.3,
-   "mcap_sol": 87.4,
-   "dev_pct": 11.1,
-   "big_sell": 0.66,
-   "x": "https://x.com/nvidianewsroom",
-   "tg": false,
-   "web": "https://t.co/5UY6GdgPL1",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
