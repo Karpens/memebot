@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:34:57Z",
+ "updated": "2026-11-28T00:35:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 223,
+  "flagged": 224,
   "checked": 49,
   "filtered": 1,
-  "lines": 830,
+  "lines": 831,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Memeball",
-   "why": "snipe",
-   "t": "2026-11-28T00:31:02Z"
-  },
   {
    "coin": "Bambi",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GASCOON",
    "why": "snipe",
    "t": "2026-11-28T00:34:09Z"
+  },
+  {
+   "coin": "Steady",
+   "why": "snipe",
+   "t": "2026-11-28T00:35:21Z"
   }
  ],
  "curve": [
@@ -451,6 +451,10 @@
   ],
   [
    1795826040,
+   47.79
+  ],
+  [
+   1795826100,
    47.79
   ]
  ],
@@ -2605,15 +2609,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:46:45Z",
-   "time": "00:46:45",
-   "agent": "SCANNER",
-   "coin": "Copper",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 5.1 SOL in · +34% since the create · mcap 44 SOL",
-   "n": 631
-  },
-  {
    "t": "2026-11-27T23:47:18Z",
    "time": "00:47:18",
    "agent": "SCANNER",
@@ -4403,6 +4398,15 @@
    "action": "scan",
    "text": "new pairs · 5.4 a minute · 0 watched · 14 rejected (snipe not bought: only to size 6, mayhem mode 3, no symbol or name 2)",
    "n": 830
+  },
+  {
+   "t": "2026-11-28T00:35:21Z",
+   "time": "01:35:21",
+   "agent": "SCANNER",
+   "coin": "Steady",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 77 SOL",
+   "n": 831
   }
  ],
  "nights": [
@@ -4475,7 +4479,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 126 (65 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 126 (65 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4483,24 +4487,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 904,
-    "last_event_age_s": 29.4,
+    "events": 905,
+    "last_event_age_s": 11.0,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16828,
-    "last_event_age_s": 0.9,
+    "events": 16890,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 495,
-    "last_event_age_s": 49.4,
+    "events": 496,
+    "last_event_age_s": 10.8,
     "errors": 25,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4513,9 +4517,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.2,
+  "creates_per_min": 4.8,
   "watching": 0,
-  "followed": 8,
+  "followed": 9,
   "odd_readings": 126,
   "odd_coins": 65
  },
@@ -4564,23 +4568,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6564,
+   "sent": 6599,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6564,
+   "sent": 6599,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Steady",
+   "name": "STEADY",
+   "mint": "Afs95ePeJMkE4kMTsSTxr23JnMCLfDuActTxuWYBpump",
+   "age_s": 10,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 76.9,
+   "dev_pct": 42.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "BBGR9rNvurSvRakMe2PMkdzu7vnAeuM89GstwmgwPc8q",
-   "age_s": 29,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4598,11 +4620,11 @@
    "symbol": "GASCOON",
    "name": "GASCOON",
    "mint": "2PzFCizzGkWuaz3jhpqxLPPTNJjoemFyf4JWY7p2pump",
-   "age_s": 49,
-   "sol_in": -3.92,
+   "age_s": 82,
+   "sol_in": -3.95,
    "buys": 2,
-   "sells": 3,
-   "rise_pct": -21.8,
+   "sells": 4,
+   "rise_pct": -21.9,
    "mcap_sol": 28.0,
    "dev_pct": 12.5,
    "big_sell": 4.84,
@@ -4616,7 +4638,7 @@
    "symbol": "QG",
    "name": "Quantum Gravity",
    "mint": "2TS8t9AMGTrbTit6u1X5ih5WW8cki1kU7iYXxvnWpump",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -4634,7 +4656,7 @@
    "symbol": "BitchCoin",
    "name": "BTC",
    "mint": "DNgnU8bLSqQNci3qLzPcFn58SLZUcVFsrJdUMdYZpump",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4652,14 +4674,14 @@
    "symbol": "BISOU",
    "name": "BISOU",
    "mint": "CesNnJvWbBNZ5xxauYcbKZw9vduz6ZQxoGUPn8Mzpump",
-   "age_s": 59,
-   "sol_in": 0.04,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 0.3,
+   "age_s": 92,
+   "sol_in": 0.03,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 0.2,
    "mcap_sol": 28.1,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": false,
    "tg": false,
    "web": "https://www.tiktok.com/@1bisouuuh",
@@ -4670,7 +4692,7 @@
    "symbol": "batmen",
    "name": "Batmen",
    "mint": "EhGsPr2RbboxJvRaLX5Wj3LfzMXCefHdBxnfULGwpump",
-   "age_s": 77,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4688,14 +4710,14 @@
    "symbol": "JEFFLE",
    "name": "Jeffle",
    "mint": "BRRktKPa8m4dMrQ1fT6fLJABQjYUqLaEhPuMHxUvpump",
-   "age_s": 88,
-   "sol_in": 16.93,
-   "buys": 41,
-   "sells": 42,
-   "rise_pct": 109.3,
-   "mcap_sol": 93.4,
+   "age_s": 121,
+   "sol_in": 18.61,
+   "buys": 55,
+   "sells": 57,
+   "rise_pct": 122.3,
+   "mcap_sol": 99.2,
    "dev_pct": 22.4,
-   "big_sell": 2.86,
+   "big_sell": 3.09,
    "x": "https://x.com/early404/status/2126474522584899906",
    "tg": false,
    "web": false,
@@ -4706,7 +4728,7 @@
    "symbol": "UNTHINKABLE",
    "name": "The unthinkable",
    "mint": "Cimw575jAkuEL3exYJFSTHp86QqSe1DLtJuZSjRtgBqg",
-   "age_s": 90,
+   "age_s": 123,
    "sol_in": -3.6,
    "buys": 12,
    "sells": 18,
@@ -4724,7 +4746,7 @@
    "symbol": "OK",
    "name": "Okay Bears",
    "mint": "9Lztimtt1gqaX6L8aUKdEvtuFF8mNDueQPy9k6fWpump",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": 0.12,
    "buys": 1,
    "sells": 5,
@@ -4742,7 +4764,7 @@
    "symbol": "😌",
    "name": "😌",
    "mint": "CoQUbomw9rwR15NMR1wQDjc9WRPGZ88RByznhmGS2eqR",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4760,7 +4782,7 @@
    "symbol": "HANGLOON",
    "name": "Hangarloon",
    "mint": "BeQ6RSGQgqspqCt4L9Q1Es7BE8NR84HeQuhJUNTd8FPk",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -4778,7 +4800,7 @@
    "symbol": "CAT",
    "name": "CAT",
    "mint": "856eo2Q9FRC5Wb9GxAFpUR4SdaHiod3bP6Z6bGbopump",
-   "age_s": 135,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4796,7 +4818,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "HMNjycc5D21w1Yq4Tcx3HDLAqHaxcw6YKceTKL6Wpump",
-   "age_s": 136,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4809,24 +4831,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "CASU5zrvnk3vZgs1z7QLzEJtKWPpQLnJrXZxegyERfie",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 39.5,
-   "dev_pct": 17.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
