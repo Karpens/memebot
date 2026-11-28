@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:29:39Z",
+ "updated": "2026-11-28T13:30:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1527,
+  "flagged": 1528,
   "checked": 49,
   "filtered": 1,
-  "lines": 3324,
+  "lines": 3326,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MoneyMaxx",
-   "why": "snipe",
-   "t": "2026-11-28T13:24:29Z"
-  },
   {
    "coin": "VOYNICH",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "COCKINVEST",
    "why": "snipe",
    "t": "2026-11-28T13:29:30Z"
+  },
+  {
+   "coin": "Capychill",
+   "why": "snipe",
+   "t": "2026-11-28T13:30:02Z"
   }
  ],
  "curve": [
-  [
-   1795836600,
-   47.79
-  ],
   [
    1795836660,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795872540,
    47.79
+  ],
+  [
+   1795872600,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:30:27Z",
-   "time": "13:30:27",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.8 a minute · 0 watched · 30 rejected (mayhem mode 20, snipe not bought: only to size 7, serial launcher 3)",
-   "n": 3125
-  },
-  {
-   "t": "2026-11-28T12:30:59Z",
-   "time": "13:30:59",
-   "agent": "SCANNER",
-   "coin": "Stefan",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 4.9 SOL in · +32% since the create · mcap 44 SOL",
-   "n": 3126
-  },
-  {
    "t": "2026-11-28T12:31:08Z",
    "time": "13:31:08",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 3324
+  },
+  {
+   "t": "2026-11-28T13:30:01Z",
+   "time": "14:30:01",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.8 a minute · 1 watched · 7 rejected (serial launcher 4, snipe not bought: only to size 3) · closest Capychill: no curve reading yet",
+   "n": 3325
+  },
+  {
+   "t": "2026-11-28T13:30:02Z",
+   "time": "14:30:02",
+   "agent": "SCANNER",
+   "coin": "Capychill",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3326
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · odd curve readings 1035 (321 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 1035 (321 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1055,
-    "last_event_age_s": 7.8,
+    "events": 1056,
+    "last_event_age_s": 5.3,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22558,
-    "last_event_age_s": 0.4,
+    "events": 22609,
+    "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 564,
-    "last_event_age_s": 7.7,
+    "events": 565,
+    "last_event_age_s": 4.6,
     "errors": 25,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,7 +6529,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.0,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 8,
   "odd_readings": 1035,
@@ -6580,28 +6580,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12445,
+   "sent": 12474,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12445,
+   "sent": 12474,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Capychill",
+   "name": "Capychill",
+   "mint": "AuwLLZZqSekhQRq3kkr225dRdUCrTEsQQcMXcSCBpump",
+   "age_s": 5,
+   "sol_in": 0.02,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "RIO",
    "name": "Riocoin",
    "mint": "A2hSrTBVcXsv8wWznGH4UzhNgDQFNn6WgadTSY24am8b",
-   "age_s": 7,
-   "sol_in": 0.16,
+   "age_s": 34,
+   "sol_in": -1.44,
    "buys": 2,
-   "sells": 3,
-   "rise_pct": 0.9,
-   "mcap_sol": 38.3,
+   "sells": 6,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
    "dev_pct": 15.2,
    "big_sell": 2.95,
    "x": "https://twitter.com/XHNews/status/2126669697865417146",
@@ -6614,14 +6632,14 @@
    "symbol": "COCKINVEST",
    "name": "Cockinvest",
    "mint": "8qWMdRMPUBFVgCUemkisr6gGk1xJEWAGPnqm4ZSypump",
-   "age_s": 9,
-   "sol_in": 0.02,
+   "age_s": 36,
+   "sol_in": -0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.3,
+   "sells": 2,
+   "rise_pct": -0.0,
+   "mcap_sol": 28.2,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": "https://x.com/FolkPepe200/status/2126668410184470584",
    "tg": false,
    "web": "https://x.com/Lanceurpump",
@@ -6632,7 +6650,7 @@
    "symbol": "RINU",
    "name": "Red nose Inu",
    "mint": "55ugyAJ1tnYPYTtaZB35mnot74dx7cTP7kQcqEYhpump",
-   "age_s": 35,
+   "age_s": 62,
    "sol_in": 4.44,
    "buys": 2,
    "sells": 14,
@@ -6650,12 +6668,12 @@
    "symbol": "FUNDID",
    "name": "fundid",
    "mint": "KQpa5xcjCAU5ZbzjvqvY5NYBZYNBQGXk3y333eckfun",
-   "age_s": 89,
-   "sol_in": 20.09,
-   "buys": 34,
-   "sells": 16,
-   "rise_pct": 174.6,
-   "mcap_sol": 79.7,
+   "age_s": 116,
+   "sol_in": 24.32,
+   "buys": 46,
+   "sells": 21,
+   "rise_pct": 222.4,
+   "mcap_sol": 93.6,
    "dev_pct": 2.0,
    "big_sell": 3.2,
    "x": "https://x.com/fundidx/status/2126668931389952302",
@@ -6668,12 +6686,12 @@
    "symbol": "business",
    "name": "smol business",
    "mint": "GMsTRmrECmv2TFsR5g2eqSqJfW8roq3xiDdFoNLmpump",
-   "age_s": 92,
-   "sol_in": 5.54,
-   "buys": 40,
-   "sells": 39,
-   "rise_pct": 36.4,
-   "mcap_sol": 46.1,
+   "age_s": 119,
+   "sol_in": -0.68,
+   "buys": 43,
+   "sells": 55,
+   "rise_pct": -4.1,
+   "mcap_sol": 32.4,
    "dev_pct": 9.6,
    "big_sell": 7.94,
    "x": "https://x.com/Zeeko__Dev/status/2126669448970998237",
@@ -6686,7 +6704,7 @@
    "symbol": "DAW",
    "name": "Dawkoins",
    "mint": "9bLQGpKEP3hhzRZgFEZaJTMDVvrYvoz6t2G9shHMYPdP",
-   "age_s": 97,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6704,7 +6722,7 @@
    "symbol": "Dragonfly",
    "name": "NASA Dragonfly",
    "mint": "7VVwM84nvYiGjQUhcbavMZwTYUSxL9MM7qRJJJ24mFD3",
-   "age_s": 125,
+   "age_s": 152,
    "sol_in": -4.84,
    "buys": 7,
    "sells": 9,
@@ -6717,42 +6735,6 @@
    "web": "https://my.nasa.gov/specialevents/s/send-your-name-with-dragonfly",
    "status": "rejected: serial launcher: 17 more coins in 60 min",
    "why": "serial launcher: 17 more coins in 60 min"
-  },
-  {
-   "symbol": "DINU",
-   "name": "DOCINU",
-   "mint": "HUzbkyVbEQG4FLHHWbvpGahJKCrqrEP3A6nYtuUJmNqV",
-   "age_s": 171,
-   "sol_in": -0.59,
-   "buys": 6,
-   "sells": 5,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 0.64,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "stest",
-   "name": "stest",
-   "mint": "3y1K1kKv2eyL1iUDnzANr8CGpGYGBoERvcta4srpsray",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
