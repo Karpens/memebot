@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:14:48Z",
+ "updated": "2026-11-28T09:15:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1054,
+  "flagged": 1055,
   "checked": 49,
   "filtered": 1,
-  "lines": 2470,
+  "lines": 2471,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SMILE",
-   "why": "snipe",
-   "t": "2026-11-28T09:11:54Z"
-  },
   {
    "coin": "GPU",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "MOONBOY",
    "why": "snipe",
    "t": "2026-11-28T09:14:25Z"
+  },
+  {
+   "coin": "Småkager",
+   "why": "snipe",
+   "t": "2026-11-28T09:14:53Z"
   }
  ],
  "curve": [
-  [
-   1795821300,
-   54.71
-  ],
   [
    1795821360,
    54.7
@@ -2472,6 +2468,10 @@
   [
    1795857240,
    47.79
+  ],
+  [
+   1795857300,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:17:47Z",
-   "time": "09:17:47",
-   "agent": "SCANNER",
-   "coin": "CAT",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2271
-  },
-  {
    "t": "2026-11-28T08:18:07Z",
    "time": "09:18:07",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 8, mayhem mode 3)",
    "n": 2470
+  },
+  {
+   "t": "2026-11-28T09:14:53Z",
+   "time": "10:14:53",
+   "agent": "SCANNER",
+   "coin": "Småkager",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 2.0 SOL in · +13% since the create · mcap 36 SOL",
+   "n": 2471
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 652 (248 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 652 (248 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1068,
-    "last_event_age_s": 23.3,
+    "events": 1072,
+    "last_event_age_s": 3.6,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19531,
+    "events": 19597,
     "last_event_age_s": 0.6,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 766,
-    "last_event_age_s": 23.1,
+    "events": 767,
+    "last_event_age_s": 22.6,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 5.0,
   "watching": 0,
-  "followed": 8,
+  "followed": 7,
   "odd_readings": 652,
   "odd_coins": 248
  },
@@ -6584,27 +6584,81 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17900,
+   "sent": 17929,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17900,
+   "sent": 17929,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GBG",
+   "name": "GUNNA BEE GOOD",
+   "mint": "GXeWXQ8vDyj33X1EQZgG3Cc5Wyd6c6eEqNWU6xn3pump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "GOLDCAT",
+   "name": "Gold Cat",
+   "mint": "h9WdTFLmzji8JffCJ8pMvcm382GTeviqMH1tfHpMhsv",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "Småkager",
+   "name": "Småkager",
+   "mint": "AHg1s4Xs1fwpwomPNSWJ1452sUpNFT5MN34cBzp6pump",
+   "age_s": 23,
+   "sol_in": -1.95,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -11.8,
+   "mcap_sol": 28.0,
+   "dev_pct": 6.5,
+   "big_sell": 1.98,
+   "x": "https://x.com/snowstorm_eth/status/2126602147089309884",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MOONBOY",
    "name": "MoonBoy Verse",
    "mint": "Et1R9YTkm4cxiBqJo8ZXmmBceM77UKBhNcCkbjM5BVRJ",
-   "age_s": 23,
-   "sol_in": 0.14,
-   "buys": 6,
+   "age_s": 51,
+   "sol_in": 0.15,
+   "buys": 10,
    "sells": 1,
-   "rise_pct": 0.9,
+   "rise_pct": 1.0,
    "mcap_sol": 28.2,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -6618,7 +6672,7 @@
    "symbol": "Lucia",
    "name": "Thick lucia",
    "mint": "HWcvrAYtn5Ct2D2b4ee6KdH2DQyx8vejuAJsKJuUpump",
-   "age_s": 35,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,12 +6690,12 @@
    "symbol": "Pamuk",
    "name": "Pamuk the Apprentice",
    "mint": "FXcoDXcnNPuuGL4vpjUxupqX6XTj9SQjbo3rpbRGpump",
-   "age_s": 37,
-   "sol_in": 7.97,
-   "buys": 11,
-   "sells": 17,
-   "rise_pct": 48.0,
-   "mcap_sol": 62.3,
+   "age_s": 65,
+   "sol_in": 14.42,
+   "buys": 25,
+   "sells": 24,
+   "rise_pct": 93.7,
+   "mcap_sol": 81.5,
    "dev_pct": 19.8,
    "big_sell": 2.15,
    "x": "https://x.com/willie_castillo/status/2126605062231482731?",
@@ -6654,7 +6708,7 @@
    "symbol": "WLFI",
    "name": "We Literally Fuck Investors",
    "mint": "398jMTYTt36e8YpfUvHChdgbvcdv4qso287CE5Kkp7oQ",
-   "age_s": 47,
+   "age_s": 75,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 0,
@@ -6672,14 +6726,14 @@
    "symbol": "SAVELEGS",
    "name": "Legs Surgery Support",
    "mint": "4oqKbQW2NNP75D6w3mn2ZJEAJ4FjwKeCDAxKivRJpump",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": 0.0,
-   "buys": 3,
-   "sells": 1,
+   "buys": 6,
+   "sells": 2,
    "rise_pct": 0.0,
    "mcap_sol": 29.2,
    "dev_pct": 2.3,
-   "big_sell": 0.12,
+   "big_sell": 0.13,
    "x": false,
    "tg": false,
    "web": false,
@@ -6690,7 +6744,7 @@
    "symbol": "CRIMEAN",
    "name": "Crimean Bridge",
    "mint": "ADfrdZeyQqeVVA2MHdpijHKpNDiLSfM5dTUGLgSepump",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -6708,7 +6762,7 @@
    "symbol": "FIH",
    "name": "Fihh",
    "mint": "6prnhxChsqLnWcpKxhd7WtoL2tMNtqtoyrryNm4Zpump",
-   "age_s": 97,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6726,7 +6780,7 @@
    "symbol": "Huss Huss",
    "name": "Huss Huss Huss",
    "mint": "D8p8Xf58izFqvrNYNF5eUiEKBipQQiYs7QQRnGXkpump",
-   "age_s": 145,
+   "age_s": 173,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6744,53 +6798,17 @@
    "symbol": "うさぎ",
    "name": "Suica Rabbit",
    "mint": "4eXa5HXH9QxsVFCk8s2M4Xa6w8xjcLwdYLz8azpKpump",
-   "age_s": 148,
-   "sol_in": -0.04,
-   "buys": 28,
+   "age_s": 176,
+   "sol_in": 0.04,
+   "buys": 29,
    "sells": 30,
-   "rise_pct": -0.2,
-   "mcap_sol": 34.1,
+   "rise_pct": 0.2,
+   "mcap_sol": 34.2,
    "dev_pct": 10.2,
    "big_sell": 5.98,
    "x": "https://x.com/ZzzzzSol/status/2126605089376772289",
    "tg": false,
    "web": "https://x.com/i/trending/2126273138858324341",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "GPU",
-   "name": "Graphics Processing Unit",
-   "mint": "DB5wBxg11SQezwhupaJw8Fi8ALD69Zmbt85zZVRfpump",
-   "age_s": 158,
-   "sol_in": 0.54,
-   "buys": 9,
-   "sells": 12,
-   "rise_pct": 3.6,
-   "mcap_sol": 29.3,
-   "dev_pct": 0.5,
-   "big_sell": 3.2,
-   "x": "https://x.com/GPUhardware",
-   "tg": false,
-   "web": "https://gpu.community/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SMILE",
-   "name": "SMILE",
-   "mint": "HkijyJcfzDrCEnHkhHSp7ChVmpwSRWhCu6GRLfifpump",
-   "age_s": 173,
-   "sol_in": -3.82,
-   "buys": 9,
-   "sells": 11,
-   "rise_pct": -21.2,
-   "mcap_sol": 28.2,
-   "dev_pct": 12.5,
-   "big_sell": 6.96,
-   "x": "https://x.com/_SMILESOL",
-   "tg": "https://t.me/SM1LESOL",
-   "web": "https://smilesol.fun/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
