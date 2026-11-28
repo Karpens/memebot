@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:12:45Z",
+ "updated": "2026-11-28T04:13:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 655,
+  "flagged": 657,
   "checked": 49,
   "filtered": 1,
-  "lines": 1622,
+  "lines": 1625,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ELF",
-   "why": "snipe",
-   "t": "2026-11-28T04:10:19Z"
-  },
-  {
-   "coin": "CS",
-   "why": "snipe",
-   "t": "2026-11-28T04:10:39Z"
-  },
   {
    "coin": "Snowball",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "AC1",
    "why": "snipe",
    "t": "2026-11-28T04:12:45Z"
+  },
+  {
+   "coin": "PATCHWORK",
+   "why": "snipe",
+   "t": "2026-11-28T04:12:59Z"
+  },
+  {
+   "coin": "小猫仙人",
+   "why": "snipe",
+   "t": "2026-11-28T04:13:05Z"
   }
  ],
  "curve": [
@@ -1323,6 +1323,10 @@
   ],
   [
    1795839120,
+   47.79
+  ],
+  [
+   1795839180,
    47.79
   ]
  ],
@@ -3477,33 +3481,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:15:15Z",
-   "time": "04:15:15",
-   "agent": "SCANNER",
-   "coin": "TES",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 1.2 SOL in · +8% since the create · mcap 30 SOL",
-   "n": 1423
-  },
-  {
-   "t": "2026-11-28T03:15:21Z",
-   "time": "04:15:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: only to size 13, mayhem mode 2)",
-   "n": 1424
-  },
-  {
-   "t": "2026-11-28T03:16:21Z",
-   "time": "04:16:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, mayhem mode 3, no symbol or name 2)",
-   "n": 1425
-  },
-  {
    "t": "2026-11-28T03:16:26Z",
    "time": "04:16:26",
    "agent": "SCANNER",
@@ -5275,6 +5252,33 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1622
+  },
+  {
+   "t": "2026-11-28T04:12:59Z",
+   "time": "05:12:59",
+   "agent": "SCANNER",
+   "coin": "PATCHWORK",
+   "action": "flag",
+   "text": "snipe · first reading 1.5 s after the create · 21.6 SOL in · +193% since the create · mcap 84 SOL",
+   "n": 1623
+  },
+  {
+   "t": "2026-11-28T04:12:59Z",
+   "time": "05:12:59",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 9, odd curve reading: virtual SOL i 1, serial launcher 1)",
+   "n": 1624
+  },
+  {
+   "t": "2026-11-28T04:13:05Z",
+   "time": "05:13:05",
+   "agent": "SCANNER",
+   "coin": "小猫仙人",
+   "action": "flag",
+   "text": "snipe · first reading 1.5 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 1625
   }
  ],
  "nights": [
@@ -5355,24 +5359,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1929,
-    "last_event_age_s": 2.0,
+    "events": 1933,
+    "last_event_age_s": 11.2,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 40902,
-    "last_event_age_s": 0.7,
+    "events": 40939,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1180,
-    "last_event_age_s": 1.7,
+    "events": 1182,
+    "last_event_age_s": 8.8,
     "errors": 54,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5385,9 +5389,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 10,
+  "followed": 12,
   "odd_readings": 357,
   "odd_coins": 161
  },
@@ -5436,27 +5440,81 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20472,
+   "sent": 20503,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20472,
+   "sent": 20503,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "AC1",
-   "name": "Amethyst Cat",
-   "mint": "4QdRCN1ApVo4EoJ81cwV7RabdGpQgUQcJhsnSPCQfVtc",
-   "age_s": 1,
+   "symbol": "小猫仙人",
+   "name": "小猫仙人",
+   "mint": "DxSFZmPe9CNu9jkd6ZHkTtp97m4xS6S5SNqaPkvLpump",
+   "age_s": 11,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
+   "mcap_sol": 30.2,
+   "dev_pct": 4.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/Handlenie/status/2126506588475449464",
+   "tg": false,
+   "web": "https://www.xiaohongshu.com/search_result/?keyword=%E5%B0%8F%E7%8C%AB%E4%BB%99%E4%BA%BA%E6%B8%B2%E6%9F%93%E5%A4%A7%E8%B5%9B&type=58&source=note_related_search",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "PATCHWORK",
+   "name": "Patchwork",
+   "mint": "GdWkLrC7dz5UmWeegjBM8nFAMdMVoxmMQgUoBtW9pump",
+   "age_s": 17,
+   "sol_in": 0.59,
+   "buys": 3,
+   "sells": 7,
+   "rise_pct": 3.9,
+   "mcap_sol": 29.9,
+   "dev_pct": 1.5,
+   "big_sell": 14.11,
+   "x": "https://x.com/Patchworksol",
+   "tg": false,
+   "web": "https://patchworksol.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "$SPACEB",
+   "name": "🚀 SPACE BILLIONAIRE",
+   "mint": "FBZrFKmdH2ANQFhbcPy35WdnsQ2RoHU1RptMQqDYpump",
+   "age_s": 23,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "AC1",
+   "name": "Amethyst Cat",
+   "mint": "4QdRCN1ApVo4EoJ81cwV7RabdGpQgUQcJhsnSPCQfVtc",
+   "age_s": 30,
+   "sol_in": -0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -5470,7 +5528,7 @@
    "symbol": "BEARCAT",
    "name": "Bear Paw Cat",
    "mint": "UTF5bFuV1vog8x3ZdH84WDeanZwsbUrAjp8a22apump",
-   "age_s": 43,
+   "age_s": 72,
    "sol_in": -0.97,
    "buys": 1,
    "sells": 2,
@@ -5488,12 +5546,12 @@
    "symbol": "buub",
    "name": "buub",
    "mint": "4YmiNCxcdrpL8x6pPzpyXH9ePMmGgABwB7ZcdBJepump",
-   "age_s": 51,
-   "sol_in": 0.64,
-   "buys": 6,
-   "sells": 13,
-   "rise_pct": 4.2,
-   "mcap_sol": 30.8,
+   "age_s": 80,
+   "sol_in": 0.25,
+   "buys": 7,
+   "sells": 16,
+   "rise_pct": 1.7,
+   "mcap_sol": 30.1,
    "dev_pct": 3.0,
    "big_sell": 2.61,
    "x": "https://x.com/buubgum/status/2126529403471421477?a=NudsH7dc5DJRXLaB784&s=20",
@@ -5506,14 +5564,14 @@
    "symbol": "BEEF",
    "name": "Beefcoin",
    "mint": "CBrsrQtbvRuLhD3PeddStBeLTxHsMD9coX5BAjPdpump",
-   "age_s": 65,
-   "sol_in": 12.71,
-   "buys": 26,
-   "sells": 30,
-   "rise_pct": 88.9,
-   "mcap_sol": 67.6,
+   "age_s": 94,
+   "sol_in": 7.45,
+   "buys": 30,
+   "sells": 40,
+   "rise_pct": 48.7,
+   "mcap_sol": 53.3,
    "dev_pct": 12.5,
-   "big_sell": 1.59,
+   "big_sell": 1.75,
    "x": "https://x.com/KankiAlpha/status/2126529413466710185",
    "tg": false,
    "web": "https://www.cbc.ca/news/canada/calgary/sidhu-beef-prices-finally-stabilizing-9.7409526",
@@ -5524,12 +5582,12 @@
    "symbol": "Huss",
    "name": "Huss Huss Huss",
    "mint": "GuDsZKuCDf5FyoLrzyi5kRQwjZxiYtTSpR6U25Rrpump",
-   "age_s": 90,
-   "sol_in": 0.09,
-   "buys": 16,
-   "sells": 31,
-   "rise_pct": 0.6,
-   "mcap_sol": 30.0,
+   "age_s": 119,
+   "sol_in": -0.67,
+   "buys": 17,
+   "sells": 32,
+   "rise_pct": -4.3,
+   "mcap_sol": 28.6,
    "dev_pct": 3.4,
    "big_sell": 9.01,
    "x": "https://x.com/Husscoinfun",
@@ -5542,7 +5600,7 @@
    "symbol": "FIX6900",
    "name": "FANTASY INDEX 6900",
    "mint": "9YmYV4fA1j4yuaSxa6RkaAr2QTRMjq8vzjnTfonBpump",
-   "age_s": 96,
+   "age_s": 125,
    "sol_in": -0.28,
    "buys": 0,
    "sells": 1,
@@ -5560,7 +5618,7 @@
    "symbol": "Snowball",
    "name": "Snowball",
    "mint": "3GF66wcnkZqu7MUUGhjcJPUccffL5HPkDAeNwA93pump",
-   "age_s": 101,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 4,
    "sells": 4,
@@ -5578,7 +5636,7 @@
    "symbol": "CS",
    "name": "CS2",
    "mint": "5UMBjXJ9xEDHajri4YJbFbN6tyehMDrrFq2653Eopump",
-   "age_s": 126,
+   "age_s": 155,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5596,7 +5654,7 @@
    "symbol": "ELF",
    "name": "ELF",
    "mint": "9cScEW2edYXU4HpZmShVfJdfotpJdpaL1ygo2jWwtato",
-   "age_s": 146,
+   "age_s": 175,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5614,7 +5672,7 @@
    "symbol": "is it over?",
    "name": "is it over?",
    "mint": "2xp6R2Ggnt5bYtzoU9fJJQ4AGK3hsncsXcUTgENFpump",
-   "age_s": 149,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
