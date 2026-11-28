@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:47:42Z",
+ "updated": "2026-11-28T03:48:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 599,
+  "flagged": 600,
   "checked": 49,
   "filtered": 1,
-  "lines": 1532,
+  "lines": 1533,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HOOT",
-   "why": "snipe",
-   "t": "2026-11-28T03:44:20Z"
-  },
   {
    "coin": "WWW",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "FLIP",
    "why": "snipe",
    "t": "2026-11-28T03:46:47Z"
+  },
+  {
+   "coin": "SNOWMEI",
+   "why": "snipe",
+   "t": "2026-11-28T03:48:14Z"
   }
  ],
  "curve": [
@@ -1223,6 +1223,10 @@
   ],
   [
    1795837620,
+   47.79
+  ],
+  [
+   1795837680,
    47.79
   ]
  ],
@@ -3377,15 +3381,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:51:51Z",
-   "time": "03:51:51",
-   "agent": "SCANNER",
-   "coin": "MoonBoy",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 1.8 SOL in · +12% since the create · mcap 31 SOL",
-   "n": 1333
-  },
-  {
    "t": "2026-11-28T02:52:03Z",
    "time": "03:52:03",
    "agent": "SCANNER",
@@ -5175,6 +5170,15 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 3, odd curve reading: virtual SOL i 1)",
    "n": 1532
+  },
+  {
+   "t": "2026-11-28T03:48:14Z",
+   "time": "04:48:14",
+   "agent": "SCANNER",
+   "coin": "SNOWMEI",
+   "action": "flag",
+   "text": "snipe · first reading 1.4 s after the create · 0.5 SOL in · +3% since the create · mcap 29 SOL",
+   "n": 1533
   }
  ],
  "nights": [
@@ -5247,7 +5251,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 349 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 349 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5255,24 +5259,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1805,
-    "last_event_age_s": 32.6,
+    "events": 1806,
+    "last_event_age_s": 4.3,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 38643,
-    "last_event_age_s": 2.0,
+    "events": 38689,
+    "last_event_age_s": 2.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1080,
-    "last_event_age_s": 56.4,
+    "events": 1081,
+    "last_event_age_s": 4.1,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5285,9 +5289,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 10,
+  "followed": 9,
   "odd_readings": 349,
   "odd_coins": 157
  },
@@ -5336,23 +5340,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18872,
+   "sent": 18908,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18872,
+   "sent": 18908,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SNOWMEI",
+   "name": "Snowmei",
+   "mint": "B6sr1rivHa94qhw3qMTGshNBzFanse4KGYbkXyTmpump",
+   "age_s": 4,
+   "sol_in": 0.51,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 3.4,
+   "mcap_sol": 28.9,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/snowmei_sol",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "mElons",
    "name": "Elon Melon",
    "mint": "6g2YCJQzF3gqPkPA2bAGDNtAAShbRdXHP56VsCsFpump",
-   "age_s": 32,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5370,7 +5392,7 @@
    "symbol": "FLIP",
    "name": "Flip",
    "mint": "FsSdJbgLZpNmrvxrtyZo3J3BuRVgPDpMcgQJi78p5r2U",
-   "age_s": 57,
+   "age_s": 91,
    "sol_in": 0.02,
    "buys": 1,
    "sells": 0,
@@ -5388,7 +5410,7 @@
    "symbol": "SIGMOID",
    "name": "Sigmoid Conjecture",
    "mint": "HpXgrsQDdkjVgzLeSiFba4Hog7rRExWUHkRzgiwUjgrH",
-   "age_s": 88,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5406,7 +5428,7 @@
    "symbol": "SIGMOID",
    "name": "Sigmoid Conjecture",
    "mint": "HwLf1YBqGtYc7HEowezCmZCzN3FFLxMBEHnECkGhpump",
-   "age_s": 93,
+   "age_s": 127,
    "sol_in": -1.35,
    "buys": 5,
    "sells": 5,
@@ -5424,7 +5446,7 @@
    "symbol": "SIGMOID",
    "name": "Sigmoid Conjecture",
    "mint": "61PwjtR7hM9qczWuhG1t42f9HZ5MSkMm5GY8vMvyhMgP",
-   "age_s": 97,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5442,7 +5464,7 @@
    "symbol": "PRISMEICE",
    "name": "PRISMEICE",
    "mint": "C1yhgvDUCwAw7n5WHXudFavfDi4zDLf7XqwtrXGCLWcT",
-   "age_s": 119,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5460,14 +5482,14 @@
    "symbol": "CMDT",
    "name": "Commodities",
    "mint": "8GfCb7HMaYKo7gmRi3JCCcL1iENKCodK4JYhEKu3pump",
-   "age_s": 127,
-   "sol_in": 24.02,
-   "buys": 24,
-   "sells": 17,
-   "rise_pct": 222.9,
-   "mcap_sol": 91.1,
+   "age_s": 161,
+   "sol_in": 23.81,
+   "buys": 29,
+   "sells": 19,
+   "rise_pct": 220.4,
+   "mcap_sol": 90.4,
    "dev_pct": 0.5,
-   "big_sell": 1.14,
+   "big_sell": 1.55,
    "x": "https://x.com/usecommodities/status/2126512182670077975?a=-RTgj-JvYdsa0dN-rhU&s=20",
    "tg": false,
    "web": "https://usecommodities.xyz/",
@@ -5478,7 +5500,7 @@
    "symbol": "PTTSBRGH",
    "name": "Pittsburgh Steelers",
    "mint": "8frjQMzJ5GervH6Dq7neSAjiVpLb7Y69RWvA8kNUKUzc",
-   "age_s": 138,
+   "age_s": 172,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5496,7 +5518,7 @@
    "symbol": "DOZE",
    "name": "Lampshade Larry",
    "mint": "KwRSxgq79h6bE1icEwwics4iesLMPPfFkTDvQvJuSwF",
-   "age_s": 141,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5509,42 +5531,6 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "LOCKPA",
-   "name": "LockPay",
-   "mint": "D1PjphdWmV8YeBH4Z3SJVfXLAAk46tKTFjJz5mmF1mQS",
-   "age_s": 155,
-   "sol_in": -0.2,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -1.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.7,
-   "big_sell": 0.2,
-   "x": "https://x.com/jasperbrookkin",
-   "tg": "https://t.me/lockpay_portal",
-   "web": "https://lockpay.fun",
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "Anthropic",
-   "name": "Anthropic official",
-   "mint": "FG94kQBstod29j4D7BLy3mPgcyoVVHop8iCmyri8pump",
-   "age_s": 161,
-   "sol_in": 14.52,
-   "buys": 15,
-   "sells": 14,
-   "rise_pct": 104.6,
-   "mcap_sol": 72.4,
-   "dev_pct": 11.9,
-   "big_sell": 0.79,
-   "x": "https://x.com/AnthropicAI",
-   "tg": false,
-   "web": "https://www.anthropic.com/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
