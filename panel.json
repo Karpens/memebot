@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:48:35Z",
+ "updated": "2026-11-28T07:49:03Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 887,
+  "flagged": 889,
   "checked": 49,
   "filtered": 1,
-  "lines": 2181,
+  "lines": 2184,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Fraud",
-   "why": "snipe",
-   "t": "2026-11-28T07:44:14Z"
-  },
-  {
-   "coin": "X",
-   "why": "snipe",
-   "t": "2026-11-28T07:44:29Z"
-  },
   {
    "coin": "Artisan",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "MCAT",
    "why": "snipe",
    "t": "2026-11-28T07:48:31Z"
+  },
+  {
+   "coin": "crime",
+   "why": "snipe",
+   "t": "2026-11-28T07:48:40Z"
+  },
+  {
+   "coin": "NVIDIA",
+   "why": "snipe",
+   "t": "2026-11-28T07:48:56Z"
   }
  ],
  "curve": [
@@ -2187,6 +2187,10 @@
   ],
   [
    1795852080,
+   47.79
+  ],
+  [
+   1795852140,
    47.79
   ]
  ],
@@ -4341,33 +4345,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:38:08Z",
-   "time": "07:38:08",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 1 watched · 10 rejected (snipe not bought: only to size 5, serial launcher 4, snipe: first reading s after the 1) · closest AP: no curve reading yet",
-   "n": 1982
-  },
-  {
-   "t": "2026-11-28T06:38:45Z",
-   "time": "07:38:45",
-   "agent": "SCANNER",
-   "coin": "TIT",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.8297 is not 30 + real SOL 0 (off -29.17 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 428 odd readings from 198 coins tonight",
-   "n": 1983
-  },
-  {
-   "t": "2026-11-28T06:38:45Z",
-   "time": "07:38:45",
-   "agent": "SCANNER",
-   "coin": "CWAUDE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.03608 is not 30 + real SOL 2e-09 (off -29.96 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 429 odd readings from 199 coins tonight",
-   "n": 1984
-  },
-  {
    "t": "2026-11-28T06:39:08Z",
    "time": "07:39:08",
    "agent": "SCANNER",
@@ -6139,6 +6116,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
    "n": 2181
+  },
+  {
+   "t": "2026-11-28T07:48:40Z",
+   "time": "08:48:40",
+   "agent": "SCANNER",
+   "coin": "crime",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2182
+  },
+  {
+   "t": "2026-11-28T07:48:52Z",
+   "time": "08:48:52",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 6.6 a minute · 0 watched · 16 rejected (snipe not bought: only to size 7, snipe: first reading s after the 3, mayhem mode 3)",
+   "n": 2183
+  },
+  {
+   "t": "2026-11-28T07:48:56Z",
+   "time": "08:48:56",
+   "agent": "SCANNER",
+   "coin": "NVIDIA",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 17.8 SOL in · +134% since the create · mcap 82 SOL",
+   "n": 2184
   }
  ],
  "nights": [
@@ -6211,7 +6215,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6219,24 +6223,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 739,
-    "last_event_age_s": 4.2,
+    "events": 741,
+    "last_event_age_s": 7.3,
     "errors": 12,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 8644,
-    "last_event_age_s": 0.7,
+    "events": 8679,
+    "last_event_age_s": 0.4,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 527,
-    "last_event_age_s": 4.2,
+    "events": 529,
+    "last_event_age_s": 7.2,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6249,9 +6253,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.6,
+  "creates_per_min": 6.8,
   "watching": 0,
-  "followed": 11,
+  "followed": 13,
   "odd_readings": 561,
   "odd_coins": 230
  },
@@ -6300,23 +6304,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12395,
+   "sent": 12425,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12395,
+   "sent": 12425,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "6tjAkH9EjJUXj82RgTdT2YGY9gZ1WkE28BzFn8ropump",
+   "age_s": 7,
+   "sol_in": 17.92,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 135.8,
+   "mcap_sol": 82.0,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": "https://t.co/5UY6GdgPL1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "crime",
+   "name": "xD",
+   "mint": "DzYt1Mx2UeSkHLaGGc6CEqucJJRJe2si28tRSnpmMHbb",
+   "age_s": 23,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/StepCoinsol8/status/2126583629191245879",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MCAT",
    "name": "Moon Cat",
    "mint": "8z8GspP77xM3zH4B5ZZPFztE4d2YQZbWpu5ZFqWHZ1Rx",
-   "age_s": 4,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6334,7 +6374,7 @@
    "symbol": "Zhaki",
    "name": "Baboon Smirk",
    "mint": "GcWhPB2mdaL1m7KjrwMGj8gXy1vk9Rehc1mJaTH26Fd8",
-   "age_s": 7,
+   "age_s": 35,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6352,7 +6392,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "8uhvPMApB1RKk8pg9zPeCmiBuTD1g9xhXMpG3amWpump",
-   "age_s": 26,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6370,7 +6410,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "BGqTRpwNa8q3eEJodxPRVDBXYnXKgVhRwzNko8nypump",
-   "age_s": 54,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6388,7 +6428,7 @@
    "symbol": "crime",
    "name": "bro cented",
    "mint": "A3TZUViLvNzdaqPiV2KQYWijmUUueWPqeB5XyFuqCvMn",
-   "age_s": 58,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6406,7 +6446,7 @@
    "symbol": "crime",
    "name": "bro cented",
    "mint": "4ohRqWSSopzo2eQRNxNFxRYXkM5pQGcZNB1zMk8vNv5d",
-   "age_s": 58,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6424,7 +6464,7 @@
    "symbol": "crime",
    "name": "bro cented",
    "mint": "CTzQFkoTX9MG95DDrYTDcu5mwTfZuASZzfyy3g9fyKzU",
-   "age_s": 58,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6442,7 +6482,7 @@
    "symbol": "MOGCOIN",
    "name": "MOGCOIN",
    "mint": "F5oHgcgDprGcFGPWetsjYqXgmK8fvz9FFmg9Bv9Apump",
-   "age_s": 59,
+   "age_s": 87,
    "sol_in": 0.69,
    "buys": 1,
    "sells": 0,
@@ -6460,14 +6500,14 @@
    "symbol": "PairBall",
    "name": "PairBall",
    "mint": "BgCK3sazrPpR9QZyLKtisdyNtagrRjCEj3cd1F3bpump",
-   "age_s": 68,
-   "sol_in": 14.94,
-   "buys": 7,
-   "sells": 10,
-   "rise_pct": 120.3,
-   "mcap_sol": 65.2,
+   "age_s": 96,
+   "sol_in": 18.39,
+   "buys": 12,
+   "sells": 17,
+   "rise_pct": 154.6,
+   "mcap_sol": 75.3,
    "dev_pct": 3.0,
-   "big_sell": 1.34,
+   "big_sell": 2.59,
    "x": "https://x.com/PairballSOL",
    "tg": false,
    "web": "https://pairball.live/",
@@ -6478,11 +6518,11 @@
    "symbol": "clash Coin",
    "name": "Clah of Clans",
    "mint": "4diDSP5D42CMRnaXK8Q87PJWop1Ke23dupigpZPtpump",
-   "age_s": 68,
-   "sol_in": -0.0,
-   "buys": 4,
+   "age_s": 96,
+   "sol_in": 0.03,
+   "buys": 5,
    "sells": 1,
-   "rise_pct": -0.0,
+   "rise_pct": 0.2,
    "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.03,
@@ -6496,7 +6536,7 @@
    "symbol": "USD1",
    "name": "Useless Shitty Dollar 1",
    "mint": "EesRV9iQcKAd1DuUMWa9zL1cgpsg3oHmAVyRqT6pZFHk",
-   "age_s": 69,
+   "age_s": 97,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6514,7 +6554,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HsRKL5xZkyEgq2Y9E2nyDL7HGVsPuLjDBfyxTUAapump",
-   "age_s": 74,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6532,12 +6572,12 @@
    "symbol": "crime",
    "name": "crime",
    "mint": "2TC8HrGFD2mAWZUUhbg2TRyS7DGQ4GqdhSG6p4BFGvuL",
-   "age_s": 86,
-   "sol_in": 0.56,
+   "age_s": 114,
+   "sol_in": -2.45,
    "buys": 5,
-   "sells": 7,
-   "rise_pct": 3.4,
-   "mcap_sol": 35.1,
+   "sells": 9,
+   "rise_pct": -14.3,
+   "mcap_sol": 29.1,
    "dev_pct": 9.9,
    "big_sell": 3.48,
    "x": "https://x.com/StepCoinsol8/status/2126583629191245879",
@@ -6550,7 +6590,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "EgDgXmDS6f2oBVpprNQ651C8eNEhoFQoyDeTcL3Gpump",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6568,12 +6608,12 @@
    "symbol": "Artisan",
    "name": "artisan cash",
    "mint": "BXH3poWUV5frLeh9P1r3rzF7w8c8uLDtC4zvcZjipump",
-   "age_s": 132,
-   "sol_in": 20.93,
-   "buys": 28,
-   "sells": 32,
-   "rise_pct": 177.2,
-   "mcap_sol": 85.3,
+   "age_s": 160,
+   "sol_in": 20.25,
+   "buys": 33,
+   "sells": 38,
+   "rise_pct": 170.1,
+   "mcap_sol": 83.1,
    "dev_pct": 5.0,
    "big_sell": 3.16,
    "x": "https://x.com/IdMintThat",
