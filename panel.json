@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:00:01Z",
+ "updated": "2026-11-28T08:00:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 900,
+  "flagged": 901,
   "checked": 49,
   "filtered": 1,
-  "lines": 2209,
+  "lines": 2210,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SB",
-   "why": "snipe",
-   "t": "2026-11-28T07:56:09Z"
-  },
   {
    "coin": "Fumo",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Kibo",
    "why": "snipe",
    "t": "2026-11-28T07:59:20Z"
+  },
+  {
+   "coin": "MWJ",
+   "why": "snipe",
+   "t": "2026-11-28T08:00:27Z"
   }
  ],
  "curve": [
@@ -4389,15 +4389,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:48:30Z",
-   "time": "07:48:30",
-   "agent": "SCANNER",
-   "coin": "cashdog",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 4.748 is not 30 + real SOL 0.4559 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 449 odd readings from 207 coins tonight",
-   "n": 2010
-  },
-  {
    "t": "2026-11-28T06:49:00Z",
    "time": "07:49:00",
    "agent": "SCANNER",
@@ -6187,6 +6178,15 @@
    "action": "tape",
    "text": "tape 2026-11-28T07 · 7046 lines (5526 curve readings) · 1.2 MB · 230 coins",
    "n": 2209
+  },
+  {
+   "t": "2026-11-28T08:00:27Z",
+   "time": "09:00:27",
+   "agent": "SCANNER",
+   "coin": "MWJ",
+   "action": "flag",
+   "text": "snipe · first reading 1.2 s after the create · 2.2 SOL in · +15% since the create · mcap 32 SOL",
+   "n": 2210
   }
  ],
  "nights": [
@@ -6267,24 +6267,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 770,
-    "last_event_age_s": 22.1,
+    "events": 771,
+    "last_event_age_s": 2.8,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10082,
-    "last_event_age_s": 0.3,
+    "events": 10144,
+    "last_event_age_s": 0.1,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 550,
-    "last_event_age_s": 42.1,
+    "events": 551,
+    "last_event_age_s": 2.8,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6299,7 +6299,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 7,
+  "followed": 4,
   "odd_readings": 562,
   "odd_coins": 231
  },
@@ -6348,23 +6348,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13125,
+   "sent": 13154,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13125,
+   "sent": 13154,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MWJ",
+   "name": "Mem Wurz Jeneral",
+   "mint": "E57SqYo3B67yKhHpLxn4pS3U6Qk6a1sE15hCrC5Jpump",
+   "age_s": 2,
+   "sol_in": 2.17,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 15.0,
+   "mcap_sol": 32.2,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/thesendorr/status/2126586221879267361",
+   "tg": false,
+   "web": "https://www.instagram.com/donaldjtrumpjr/?hl=en",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "g3BxhqjVCYTh5WF595Gq2fM5Bd7JUVcthe9sTW3pump",
-   "age_s": 22,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6382,7 +6400,7 @@
    "symbol": "Kibo",
    "name": "キボウ",
    "mint": "CLyjZgtZ4gHXpN4MQtoBmZd7SWMGPuwWooW4pnfrZGJE",
-   "age_s": 42,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6400,7 +6418,7 @@
    "symbol": "USDIH1",
    "name": "USDIH1",
    "mint": "3p7Xecc3AimM6bcg6adi5A8o3iiXkzqyAUfb966hpump",
-   "age_s": 76,
+   "age_s": 104,
    "sol_in": -2.57,
    "buys": 2,
    "sells": 5,
@@ -6418,91 +6436,19 @@
    "symbol": "Scam",
    "name": "Scamcoin",
    "mint": "4MLHVrEjFhziK9j9FDmybVgJk41ATcmNaJW1dLnMhAw6",
-   "age_s": 80,
-   "sol_in": 50.26,
-   "buys": 24,
-   "sells": 35,
-   "rise_pct": 535.2,
-   "mcap_sol": 215.7,
+   "age_s": 108,
+   "sol_in": 32.09,
+   "buys": 32,
+   "sells": 53,
+   "rise_pct": 288.4,
+   "mcap_sol": 131.9,
    "dev_pct": 9.9,
-   "big_sell": 3.05,
+   "big_sell": 4.94,
    "x": "https://x.com/StepCoinsol8/status/2126586536355405878",
    "tg": false,
    "web": false,
    "status": "rejected: serial launcher: 11 more coins in 60 min",
    "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "will",
-   "name": "will save trenches",
-   "mint": "Dqv6XqPVVF1Ca8rSDxoU4vZZvEk511Tp1tsD75dUpump",
-   "age_s": 162,
-   "sol_in": 3.62,
-   "buys": 40,
-   "sells": 67,
-   "rise_pct": 24.7,
-   "mcap_sol": 37.2,
-   "dev_pct": 3.4,
-   "big_sell": 4.73,
-   "x": "https://x.com/uncquant/status/2126586195291561986",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "clashCoin",
-   "name": "CLASH OF CLANS",
-   "mint": "JEJ9xMfAk27wcZ6FBS7YurztRNmTVZod1AtRqYTnpump",
-   "age_s": 165,
-   "sol_in": -0.02,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": -0.1,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.03,
-   "x": "https://x.com/ClashofClans",
-   "tg": false,
-   "web": "https://supercell.com/en/games/clashofclans/",
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "SPEED",
-   "name": "Speed Test",
-   "mint": "GVHYZ2mJR1r5EhbGrjj7LL5UfyxA673ZhT84LNwDpump",
-   "age_s": 166,
-   "sol_in": -0.05,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.2,
-   "big_sell": 0.05,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FI",
-   "name": "Frozen Inu",
-   "mint": "5HkLs7ZV65adNRQiGde6kK9M5kccW8HZ3SAFCUW9pump",
-   "age_s": 176,
-   "sol_in": -2.31,
-   "buys": 3,
-   "sells": 13,
-   "rise_pct": -13.5,
-   "mcap_sol": 29.2,
-   "dev_pct": 9.6,
-   "big_sell": 3.35,
-   "x": "https://x.com/bbaoo777/status/2126586151901253673",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
