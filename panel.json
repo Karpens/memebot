@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:49:50Z",
+ "updated": "2026-11-28T06:50:23Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 812,
   "checked": 49,
   "filtered": 1,
-  "lines": 2013,
+  "lines": 2014,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -1951,6 +1951,10 @@
   ],
   [
    1795848540,
+   47.79
+  ],
+  [
+   1795848600,
    47.79
   ]
  ],
@@ -4105,15 +4109,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:18:28Z",
-   "time": "06:18:28",
-   "agent": "SCANNER",
-   "coin": "TIRED",
-   "action": "flag",
-   "text": "snipe · first reading 4.3 s after the create · 11.6 SOL in · +89% since the create · mcap 56 SOL",
-   "n": 1814
-  },
-  {
    "t": "2026-11-28T05:18:34Z",
    "time": "06:18:34",
    "agent": "SCANNER",
@@ -5903,6 +5898,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: only to size 5, serial launcher 4, snipe: first reading s after the 3)",
    "n": 2013
+  },
+  {
+   "t": "2026-11-28T06:50:19Z",
+   "time": "07:50:19",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 11 rejected (serial launcher 5, snipe: first reading s after the 3, odd curve reading: virtual SOL i 1)",
+   "n": 2014
   }
  ],
  "nights": [
@@ -5975,7 +5979,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 25 watched · ws off · odd curve readings 455 (207 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 26 watched · ws off · odd curve readings 455 (207 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5983,8 +5987,8 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 469,
-    "last_event_age_s": 54.0,
+    "events": 470,
+    "last_event_age_s": 31.6,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
@@ -5992,15 +5996,15 @@
     "name": "curve-poll",
     "connected": false,
     "events": 3738,
-    "last_event_age_s": 19.9,
-    "errors": 383,
+    "last_event_age_s": 52.9,
+    "errors": 388,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 341,
-    "last_event_age_s": 54.0,
+    "events": 342,
+    "last_event_age_s": 29.2,
     "errors": 20,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6013,9 +6017,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 11,
+  "followed": 10,
   "odd_readings": 455,
   "odd_coins": 207
  },
@@ -6064,23 +6068,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8643,
+   "sent": 8678,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8643,
+   "sent": 8678,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BANK",
+   "name": "Bankcoin",
+   "mint": "HcCmL1jAie9Jtc9PJXD8F62tmVCSkD5VSqbii2EdTzaz",
+   "age_s": 31,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/lebombjam/status/2126569189557072113",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 13 more coins in 60 min",
+   "why": "serial launcher: 13 more coins in 60 min"
+  },
+  {
    "symbol": "DCAT",
    "name": "Dollar Cat",
    "mint": "B527oymPA9N8i1axG3QvpXB1PQWrjRjw2d9h5fWjpump",
-   "age_s": 54,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -6098,7 +6120,7 @@
    "symbol": "NET",
    "name": "Net Effect",
    "mint": "7Y12jku5L3NEVVswnfozYysT1NswCcxemTMn3zeFx4Ec",
-   "age_s": 87,
+   "age_s": 120,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -6116,7 +6138,7 @@
    "symbol": "3BOT",
    "name": "3BOT",
    "mint": "ChCL2JA1P5ovSjCHAgFmA5DWtsCL3g129sc8broYpump",
-   "age_s": 103,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6134,7 +6156,7 @@
    "symbol": "DCAT",
    "name": "Dollar Cat",
    "mint": "4HhMBaCstgsMCsTRcCgt22j8uVRfNochDs6tAjV1pump",
-   "age_s": 107,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6152,7 +6174,7 @@
    "symbol": "Dog Think",
    "name": "Dog Think",
    "mint": "C4cucgdQxvCXgdmSfhk4QD3bt3b1i29oLqBFwijvpump",
-   "age_s": 108,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6170,7 +6192,7 @@
    "symbol": "cashdog",
    "name": "cashdog",
    "mint": "4hYfjKWu9t7zyguWH5eArpLporNtpJRdTPYMXm4aXgpc",
-   "age_s": 108,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6188,7 +6210,7 @@
    "symbol": "WLFI",
    "name": "We Literally Fuck Investors",
    "mint": "9NBoKZD7AyHZWn24mCFdfYWsdTTGkUCibrbLCjVWszEU",
-   "age_s": 108,
+   "age_s": 141,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6206,7 +6228,7 @@
    "symbol": "cashdog",
    "name": "cashdog",
    "mint": "AE4Fby5BKGzSTHq6My9WCPPVBjsHzWujuuFEgpxzpump",
-   "age_s": 110,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6224,7 +6246,7 @@
    "symbol": "RICE",
    "name": "Still Have Rice",
    "mint": "FZPCbLdrdJVqDFrLSygtbLP12de2jRbZp3uG3joZpump",
-   "age_s": 111,
+   "age_s": 144,
    "sol_in": -0.08,
    "buys": 1,
    "sells": 2,
@@ -6242,7 +6264,7 @@
    "symbol": "NANCY",
    "name": "Nancy the Bedlington Terrier",
    "mint": "2KDLwoTQDJ2UpRomzw7iKJnjDfPbeXGgxBUmrKVJogdR",
-   "age_s": 112,
+   "age_s": 145,
    "sol_in": -0.11,
    "buys": 2,
    "sells": 1,
@@ -6255,42 +6277,6 @@
    "web": "https://www.behance.net/gallery/68060071/The-Dog-Show-Season-2/modules/397872947",
    "status": "rejected: serial launcher: 3 more coins in 60 min",
    "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "USD1",
-   "name": "Useless Shitty Dollar 1",
-   "mint": "8MAk1Md3ssM23kSHN8oKNuEGQXNyXQGbuGGTncw8Gfro",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://clonepump.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "ELYW",
-   "name": "ELYSIUM WORLD",
-   "mint": "GHFPG32V3W4bxiPw196RXe9Xa1y96xSD8zEdBXz1pump",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": "https://x.com/Crypto_Alch/status/2125975264324936071?a=9QQ58xs14eQ9cXRXn_s&s=19",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
