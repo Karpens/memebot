@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:16:45Z",
+ "updated": "2026-11-28T00:17:12Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 190,
+  "flagged": 192,
   "checked": 49,
   "filtered": 1,
-  "lines": 770,
+  "lines": 772,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "baby",
-   "why": "snipe",
-   "t": "2026-11-28T00:11:17Z"
-  },
-  {
-   "coin": "Fenrir",
-   "why": "snipe",
-   "t": "2026-11-28T00:12:59Z"
-  },
   {
    "coin": "CHRISTIANA",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "NuanceAI",
    "why": "snipe",
    "t": "2026-11-28T00:15:52Z"
+  },
+  {
+   "coin": "FSTORM",
+   "why": "snipe",
+   "t": "2026-11-28T00:16:51Z"
+  },
+  {
+   "coin": "FARTBALL",
+   "why": "snipe",
+   "t": "2026-11-28T00:16:54Z"
   }
  ],
  "curve": [
@@ -379,6 +379,10 @@
   ],
   [
    1795824960,
+   47.79
+  ],
+  [
+   1795825020,
    47.79
   ]
  ],
@@ -2533,24 +2537,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:37:19Z",
-   "time": "00:37:19",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 18.0 a minute · 0 watched · 34 rejected (serial launcher 12, snipe not bought: only to size 11, mayhem mode 9)",
-   "n": 571
-  },
-  {
-   "t": "2026-11-27T23:37:42Z",
-   "time": "00:37:42",
-   "agent": "SCANNER",
-   "coin": "DCAT",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.375e+05 is not 30 + real SOL 0 (off +1.375e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 42 odd readings from 31 coins tonight",
-   "n": 572
-  },
-  {
    "t": "2026-11-27T23:37:56Z",
    "time": "00:37:56",
    "agent": "SCANNER",
@@ -4331,6 +4317,24 @@
    "action": "scan",
    "text": "new pairs · 6.6 a minute · 0 watched · 19 rejected (mayhem mode 8, snipe not bought: only to size 6, serial launcher 2)",
    "n": 770
+  },
+  {
+   "t": "2026-11-28T00:16:51Z",
+   "time": "01:16:51",
+   "agent": "SCANNER",
+   "coin": "FSTORM",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 771
+  },
+  {
+   "t": "2026-11-28T00:16:54Z",
+   "time": "01:16:54",
+   "agent": "SCANNER",
+   "coin": "FARTBALL",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 7.6 SOL in · +54% since the create · mcap 48 SOL",
+   "n": 772
   }
  ],
  "nights": [
@@ -4403,7 +4407,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · odd curve readings 93 (60 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · odd curve readings 93 (60 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4411,26 +4415,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 812,
-    "last_event_age_s": 23.7,
+    "events": 816,
+    "last_event_age_s": 5.1,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 13903,
-    "last_event_age_s": 0.6,
+    "events": 13963,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 452,
-    "last_event_age_s": 53.5,
-    "errors": 20,
-    "last_error": "n.uguu.se: timeout after 2 s"
+    "connected": false,
+    "events": 456,
+    "last_event_age_s": 1.7,
+    "errors": 21,
+    "last_error": "ar-io.dev: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -4441,9 +4445,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.6,
+  "creates_per_min": 6.2,
   "watching": 0,
-  "followed": 9,
+  "followed": 10,
   "odd_readings": 93,
   "odd_coins": 60
  },
@@ -4492,23 +4496,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5402,
+   "sent": 5431,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5402,
+   "sent": 5431,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BRUNCH",
+   "name": "Arthur's Brunch",
+   "mint": "De7UaemSvg99Voer6TbfiM6wQAJVwiZU3LUfvF37v9uy",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
+   "symbol": "SANTA",
+   "name": "SANTA CLAUS",
+   "mint": "FjA7RcSZpon3Y8KJDfGmj9ysG4BZERAmC2ThQT6Kpump",
+   "age_s": 11,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
+   "symbol": "FARTBALL",
+   "name": "Fartball",
+   "mint": "G8hr7J1udJWnzZzw2v7okSY4fzECMKtm4Vh4Mydmpump",
+   "age_s": 19,
+   "sol_in": 16.47,
+   "buys": 8,
+   "sells": 10,
+   "rise_pct": 132.0,
+   "mcap_sol": 71.4,
+   "dev_pct": 5.0,
+   "big_sell": 2.89,
+   "x": "https://x.com/fartball_xyz/status/2126470169618989173?a=eb4evVOEpxwqkOmk3Hw&s=20",
+   "tg": false,
+   "web": "https://www.fartball.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "FSTORM",
+   "name": "FIELDSTORM",
+   "mint": "F7K7QD3RXULQwyxaaeSgUMcKAf1aSFtA3rgB11xgNS6t",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.1,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/elitetakes_/status/2126468874400944602",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "FWaEaLCXVAVmoT3fTGhbtiVu7XQcGNRtdYRHmC8mpump",
-   "age_s": 40,
+   "age_s": 67,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4526,7 +4602,7 @@
    "symbol": "NuanceAI",
    "name": "Sentient AI Creators",
    "mint": "BQkfhTXewokqtWgVrTM6HXDXWRuAcPquqpfzhFFPpump",
-   "age_s": 54,
+   "age_s": 81,
    "sol_in": 0.05,
    "buys": 1,
    "sells": 0,
@@ -4544,7 +4620,7 @@
    "symbol": "PEMR",
    "name": "Isket Pemro",
    "mint": "7zwtXfPA7ZZaz1k3MAXwp73ehEmbpxj1jB8zyeShajAa",
-   "age_s": 60,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4562,12 +4638,12 @@
    "symbol": "RIDE",
    "name": "Pump My Ride",
    "mint": "EGdDWKpf5b11oQq22yXDZBHaPekBxbRzR9xNLsPpump",
-   "age_s": 71,
-   "sol_in": 14.56,
-   "buys": 20,
-   "sells": 20,
-   "rise_pct": 119.2,
-   "mcap_sol": 62.5,
+   "age_s": 98,
+   "sol_in": 17.96,
+   "buys": 28,
+   "sells": 26,
+   "rise_pct": 153.7,
+   "mcap_sol": 72.3,
    "dev_pct": 1.0,
    "big_sell": 2.64,
    "x": "https://x.com/Pumpmyridesol/status/2126469717682708497",
@@ -4580,7 +4656,7 @@
    "symbol": "Flying Dut",
    "name": "Flying Dutchman",
    "mint": "yruFJeiTGPE7ttVYHdnVBjKhmkSDfRpTDSMyRwLpump",
-   "age_s": 72,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4598,7 +4674,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HqyCpCZtaaWEHQreBprRv8quXrhPaWiA4bcMEwhQ5yb3",
-   "age_s": 73,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4616,7 +4692,7 @@
    "symbol": "SENTAI",
    "name": "Sent AI Labs",
    "mint": "8tHAp6NKmTJBucZgwabDC5P4C3eaFHqadKMGWoU2pump",
-   "age_s": 81,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4634,7 +4710,7 @@
    "symbol": "NELV",
    "name": "Ravet Nelva",
    "mint": "5NgUsKiDDRv3ewzpDN8fN3vmetEHmjvhw2rQdi1CJQZf",
-   "age_s": 92,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4652,7 +4728,7 @@
    "symbol": "hack",
    "name": "HACHIKO",
    "mint": "D6PfxCNasvxbQHABAcXbsa29M9aip4N4kpG2Dj7qpump",
-   "age_s": 97,
+   "age_s": 124,
    "sol_in": -0.21,
    "buys": 2,
    "sells": 5,
@@ -4670,7 +4746,7 @@
    "symbol": "APCoin",
    "name": "Alpaca",
    "mint": "VCuwnzP7YUxwxDY2gBuZ7qDzDMj4GWd8nDEndzppump",
-   "age_s": 97,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4688,7 +4764,7 @@
    "symbol": "SWS",
    "name": "Solana Web Standart",
    "mint": "EfdeUQFewgR5eJxo6rzchC4nkmfEmEpTMfNsuyVcHysB",
-   "age_s": 101,
+   "age_s": 128,
    "sol_in": -0.77,
    "buys": 0,
    "sells": 1,
@@ -4706,7 +4782,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4gKAxsD4XWJb7KHoTuazptDxMeaKCjrGDRS57KHatWtM",
-   "age_s": 127,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4724,7 +4800,7 @@
    "symbol": "TULM",
    "name": "Mavri Tulma",
    "mint": "GPVej7vZ51snAHU73hQnzNManQgw4RmXWAXviC56ARVD",
-   "age_s": 131,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4742,7 +4818,7 @@
    "symbol": "VPC",
    "name": "VICE POWER COUPLE",
    "mint": "4tQCAjnszWsqqQSwExSv1JtPHUEJhrFpZscXSDBHpump",
-   "age_s": 145,
+   "age_s": 172,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4755,96 +4831,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FUEL",
-   "name": "Fuel",
-   "mint": "CTemKNDkJJ8Pw6hq9ZUfMSNHUoxtZRbA9WdhazCvpump",
-   "age_s": 155,
-   "sol_in": 0.68,
-   "buys": 12,
-   "sells": 30,
-   "rise_pct": 4.6,
-   "mcap_sol": 29.2,
-   "dev_pct": 0.0,
-   "big_sell": 21.55,
-   "x": "https://x.com/launchonfuel",
-   "tg": false,
-   "web": "https://www.launchonfuel.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "JORV",
-   "name": "Vasko Jorvo",
-   "mint": "3zMheKZVgFdo3dF8mQsYagUYWQ2bYUgqVf5ZnNP6Ybik",
-   "age_s": 161,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SENTAI",
-   "name": "Sent AI Labs",
-   "mint": "8B4s5AMLwVKs1SSR18nuc1LyE8eMw4KrzTtSKaUPpump",
-   "age_s": 164,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "CHRISTIANA",
-   "name": "Christian AI Maxi",
-   "mint": "FXMcmrQb6recLZq6GhdWZTwZD7Z9L76eYPMgATXxrpsr",
-   "age_s": 170,
-   "sol_in": 0.05,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.3,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.0,
-   "big_sell": 0.41,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "LOOPOS",
-   "name": "LoopOS",
-   "mint": "FQH7xBKhDYQcrR5gGfYUdJSgMkCcTH22hhwuYGsTKf4k",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://derivr.fun",
-   "status": "rejected: odd curve reading: virtual SOL 1.416e+05 is not 30 + real SOL 0 (off +1.416e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 1.416e+05 is not 30 + real SOL 0 (off +1.416e+05 SOL)"
   }
  ],
  "strategies": [
