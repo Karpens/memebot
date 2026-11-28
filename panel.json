@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:19:46Z",
+ "updated": "2026-11-28T08:20:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 938,
+  "flagged": 939,
   "checked": 49,
   "filtered": 1,
-  "lines": 2276,
+  "lines": 2278,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "STAIRCASE",
-   "why": "snipe",
-   "t": "2026-11-28T08:16:41Z"
-  },
   {
    "coin": "NVIDIA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Kibo",
    "why": "snipe",
    "t": "2026-11-28T08:18:55Z"
+  },
+  {
+   "coin": "WLFI",
+   "why": "snipe",
+   "t": "2026-11-28T08:20:10Z"
   }
  ],
  "curve": [
@@ -2312,6 +2312,10 @@
   [
    1795853940,
    47.79
+  ],
+  [
+   1795854000,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4465,24 +4469,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:11:31Z",
-   "time": "08:11:31",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 6 rejected (snipe not bought: only to size 2, serial launcher 2, no symbol or name 1)",
-   "n": 2077
-  },
-  {
-   "t": "2026-11-28T07:12:32Z",
-   "time": "08:12:32",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 7 rejected (serial launcher 4, snipe not bought: only to size 2, mayhem mode 1)",
-   "n": 2078
-  },
-  {
    "t": "2026-11-28T07:13:32Z",
    "time": "08:13:32",
    "agent": "SCANNER",
@@ -6263,6 +6249,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1215 is not 30 + real SOL 0 (off +1185 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 605 odd readings from 237 coins tonight",
    "n": 2276
+  },
+  {
+   "t": "2026-11-28T08:20:07Z",
+   "time": "09:20:07",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 6, serial launcher 4)",
+   "n": 2277
+  },
+  {
+   "t": "2026-11-28T08:20:10Z",
+   "time": "09:20:10",
+   "agent": "SCANNER",
+   "coin": "WLFI",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.2 SOL in · +2% since the create · mcap 29 SOL",
+   "n": 2278
   }
  ],
  "nights": [
@@ -6335,7 +6339,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 605 (237 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · odd curve readings 612 (237 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6343,24 +6347,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 840,
-    "last_event_age_s": 11.9,
+    "events": 841,
+    "last_event_age_s": 4.0,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12382,
-    "last_event_age_s": 0.4,
+    "events": 12455,
+    "last_event_age_s": 0.5,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 603,
-    "last_event_age_s": 11.9,
+    "events": 604,
+    "last_event_age_s": 4.0,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6373,10 +6377,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.4,
   "watching": 0,
   "followed": 11,
-  "odd_readings": 605,
+  "odd_readings": 612,
   "odd_coins": 237
  },
  "learner": {
@@ -6424,23 +6428,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14386,
+   "sent": 14416,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14386,
+   "sent": 14416,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WLFI",
+   "name": "We Litarally Fuck Investors",
+   "mint": "8XGP3BNGawo2uPv9hYan9VFWskUridm7AJ1o5rEnR1x",
+   "age_s": 4,
+   "sol_in": 0.41,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 2.8,
+   "mcap_sol": 28.9,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/LuckiWeb3/status/2126536570404475079?a=XJhKwHwnLU68e1EMNl0&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "BUY",
    "name": "Buy and wait",
    "mint": "3s7AabwQiAcCskKyvjJvmZsTYRvVu3rM6ezMtCB2jWyp",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6458,7 +6480,7 @@
    "symbol": "Kibo",
    "name": "UPDATE LIFE ON YOUTUBE",
    "mint": "GRM7mqWRJKRsNdsEUTvugBVMiiHc4MZAqzzhqygTpump",
-   "age_s": 50,
+   "age_s": 78,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -6476,7 +6498,7 @@
    "symbol": "TREMP",
    "name": "Tremp Family",
    "mint": "AcPxCjQkFPjLQRTMP7d7BmegHoYn57rwsN9CuoKCpump",
-   "age_s": 71,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6494,7 +6516,7 @@
    "symbol": "Aura",
    "name": "Aura",
    "mint": "7CJHpMqd86uahDn7nyAKfq7pvykLP4ASNV7pKuH2pump",
-   "age_s": 91,
+   "age_s": 119,
    "sol_in": -0.9,
    "buys": 17,
    "sells": 14,
@@ -6512,7 +6534,7 @@
    "symbol": "黑鬼",
    "name": "黑鬼",
    "mint": "BvAD1VZQ4Lrqxn1WtBmzNaLWMeqU3k12782iYFKw2ocT",
-   "age_s": 109,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -6530,7 +6552,7 @@
    "symbol": "CAT",
    "name": "Mike",
    "mint": "81XhqBsqVcAoCFsGYswtukXwGJ15Xeitne7QHJcnYT7s",
-   "age_s": 119,
+   "age_s": 147,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6548,7 +6570,7 @@
    "symbol": "Fireball",
    "name": "Fireball",
    "mint": "8xhsTotZHFJs7Epe9mAWucJj6kmiUtYnVUpPmbQ1z9dD",
-   "age_s": 122,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6566,7 +6588,7 @@
    "symbol": "Twin",
    "name": "We ate off that twin",
    "mint": "CtW1dtmUy5pkHoAbRKkqsbgy7aB47Joxv19LkuHuM6Be",
-   "age_s": 134,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6584,7 +6606,7 @@
    "symbol": "CRYPTOGAL",
    "name": "Crypto Girl",
    "mint": "3a3PCWLK4HJ3vWEDe8YLyQJ7xinbADVtAQbJQNbwpump",
-   "age_s": 137,
+   "age_s": 165,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -6602,35 +6624,17 @@
    "symbol": "inuvestor",
    "name": "inu in vest",
    "mint": "A1EUSPbF7Y8mU1vQV56CZTTk7cNWAbttXP16i8rhpump",
-   "age_s": 148,
-   "sol_in": -3.12,
+   "age_s": 176,
+   "sol_in": -3.45,
    "buys": 39,
-   "sells": 54,
-   "rise_pct": -17.5,
-   "mcap_sol": 29.5,
+   "sells": 58,
+   "rise_pct": -19.3,
+   "mcap_sol": 28.9,
    "dev_pct": 12.5,
    "big_sell": 5.0,
    "x": "https://x.com/herrdevs/status/2126591216951136561?a=wlTHJoQ2WRaUSYptEm0&s=20",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "NVIDIA",
-   "name": "NVIDIA Newsroom",
-   "mint": "7s1nNEFZ9njDzj5EEiP4ddunMD7baCnZ3yXwxDUipump",
-   "age_s": 174,
-   "sol_in": 20.22,
-   "buys": 53,
-   "sells": 49,
-   "rise_pct": 157.4,
-   "mcap_sol": 89.5,
-   "dev_pct": 11.1,
-   "big_sell": 0.34,
-   "x": "https://x.com/nvidianewsroom",
-   "tg": false,
-   "web": "https://t.co/5UY6GdgPL1",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
