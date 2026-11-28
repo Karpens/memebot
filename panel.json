@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:33:52Z",
+ "updated": "2026-11-28T11:34:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1297,
   "checked": 49,
   "filtered": 1,
-  "lines": 2936,
+  "lines": 2938,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795829640,
-   47.79
-  ],
   [
    1795829700,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795865580,
    47.79
+  ],
+  [
+   1795865640,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:36:10Z",
-   "time": "11:36:10",
-   "agent": "SIZER",
-   "coin": "MAYCHAN",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2737
-  },
-  {
-   "t": "2026-11-28T10:36:18Z",
-   "time": "11:36:18",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (snipe not bought: only to size 4, mayhem mode 3, serial launcher 1)",
-   "n": 2738
-  },
-  {
    "t": "2026-11-28T10:37:19Z",
    "time": "11:37:19",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, mayhem mode 2, no symbol or name 1)",
    "n": 2936
+  },
+  {
+   "t": "2026-11-28T11:33:53Z",
+   "time": "12:33:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 5 rejected (snipe not bought: only to size 4, mayhem mode 1)",
+   "n": 2937
+  },
+  {
+   "t": "2026-11-28T11:34:01Z",
+   "time": "12:34:01",
+   "agent": "SCANNER",
+   "coin": "DCTYC",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1000 odd readings from 304 coins tonight",
+   "n": 2938
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 999 (303 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 1000 (304 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 337,
-    "last_event_age_s": 32.8,
+    "events": 338,
+    "last_event_age_s": 18.9,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 9038,
+    "events": 9079,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 240,
-    "last_event_age_s": 75.4,
+    "events": 241,
+    "last_event_age_s": 18.5,
     "errors": 3,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6527,11 +6527,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.6,
   "watching": 0,
   "followed": 4,
-  "odd_readings": 999,
-  "odd_coins": 303
+  "odd_readings": 1000,
+  "odd_coins": 304
  },
  "learner": {
   "samples": 84,
@@ -6578,23 +6578,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5053,
+   "sent": 5082,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5053,
+   "sent": 5082,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DCTYC",
+   "name": "DacityCoin",
+   "mint": "7qmZd9a8rxjXzAwTqStMpG3sjYGjo6WRnPPQdwFMVihe",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://useanonpad.fun/coin/7qmZd9a8rxjXzAwTqStMpG3sjYGjo6WRnPPQdwFMVihe",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "WWW",
    "name": "World Wide Web",
    "mint": "AxpZih3DByhsntVpTTofZAZckXkK1ZCf6YpQtFzBpump",
-   "age_s": 75,
+   "age_s": 102,
    "sol_in": -0.99,
    "buys": 2,
    "sells": 2,
@@ -6612,7 +6630,7 @@
    "symbol": "Moon",
    "name": "MoonBoy",
    "mint": "4wxZEqURm1QRoX2EirDdgCyYinVbXUT3YxB3wR5jpump",
-   "age_s": 103,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6648,7 @@
    "symbol": "DODO",
    "name": "Dodo la grenouille",
    "mint": "ANuJ5J9yPU5MHBEnx8xe5gZW6FKc1GUV1AR6JMqVpump",
-   "age_s": 106,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6666,7 @@
    "symbol": "Zhaki",
    "name": "Baboon Smirk",
    "mint": "G1JBi3xKrbopknGFsSzBCoJRh7M1mFUj1NBFW4MCpump",
-   "age_s": 141,
+   "age_s": 168,
    "sol_in": 10.0,
    "buys": 6,
    "sells": 2,
@@ -6657,24 +6675,6 @@
    "dev_pct": 0.0,
    "big_sell": 0.32,
    "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "R.I.P",
-   "name": "Bronson Reed",
-   "mint": "Ac53y87b4NczDsaRy7aJejJ9zY1B5CXdDqNxjfqpump",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/babyfarkimgur/status/2126511103827923448?a=mfPx9_Agj5L7Y3oTq4E&s=46",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
