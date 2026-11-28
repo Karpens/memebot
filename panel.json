@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:22:51Z",
+ "updated": "2026-11-28T11:23:25Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1276,
+  "flagged": 1278,
   "checked": 49,
   "filtered": 1,
-  "lines": 2902,
+  "lines": 2904,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HARD",
-   "why": "snipe",
-   "t": "2026-11-28T11:18:11Z"
-  },
-  {
-   "coin": "Aslan",
-   "why": "snipe",
-   "t": "2026-11-28T11:18:29Z"
-  },
   {
    "coin": "YCAT",
    "why": "snipe",
@@ -70,13 +60,19 @@
    "coin": "MOOND",
    "why": "snipe",
    "t": "2026-11-28T11:22:19Z"
+  },
+  {
+   "coin": "STC",
+   "why": "snipe",
+   "t": "2026-11-28T11:22:58Z"
+  },
+  {
+   "coin": "JUP2011",
+   "why": "snipe",
+   "t": "2026-11-28T11:23:06Z"
   }
  ],
  "curve": [
-  [
-   1795828980,
-   47.79
-  ],
   [
    1795829040,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864920,
    47.79
+  ],
+  [
+   1795864980,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:24:58Z",
-   "time": "11:24:58",
-   "agent": "SCANNER",
-   "coin": "OILRAT",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2703
-  },
-  {
-   "t": "2026-11-28T10:25:14Z",
-   "time": "11:25:14",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 7, serial launcher 3, odd curve reading: virtual SOL i 1)",
-   "n": 2704
-  },
-  {
    "t": "2026-11-28T10:25:44Z",
    "time": "11:25:44",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 6 rejected (snipe not bought: only to size 3, serial launcher 2, mayhem mode 1)",
    "n": 2902
+  },
+  {
+   "t": "2026-11-28T11:22:58Z",
+   "time": "12:22:58",
+   "agent": "SCANNER",
+   "coin": "STC",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2903
+  },
+  {
+   "t": "2026-11-28T11:23:06Z",
+   "time": "12:23:06",
+   "agent": "SCANNER",
+   "coin": "JUP2011",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2904
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 292,
-    "last_event_age_s": 33.1,
+    "events": 296,
+    "last_event_age_s": 3.0,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7913,
-    "last_event_age_s": 5.3,
+    "events": 7951,
+    "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 210,
-    "last_event_age_s": 32.9,
+    "events": 214,
+    "last_event_age_s": 2.8,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 5,
+  "followed": 8,
   "odd_readings": 987,
   "odd_coins": 302
  },
@@ -6578,28 +6578,100 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4349,
+   "sent": 4386,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4349,
+   "sent": 4386,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SEYONG",
+   "name": "The Gay Bull",
+   "mint": "G3EGm5oEFfnM9DsJKhAw71CNuyGoDoN1cNw36rdYpump",
+   "age_s": 2,
+   "sol_in": 3.6,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 23.8,
+   "mcap_sol": 39.3,
+   "dev_pct": 6.6,
+   "big_sell": 1.14,
+   "x": "https://x.com/humanevolvd/status/2126636924022493647?a=raTOiwfVZzKp1XAPwVo&s=46",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "JUP2011",
+   "name": "2011 Jupiter Incident",
+   "mint": "9H7dUCZybt3c9ybMEx1fneVxxLDe1wDua1vAXC4Qpump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/jupiteronpf/status/2124922427625107713?a=WzYh-7kx1md7-0JLGeY&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "SeaZ",
+   "name": "SeaZ",
+   "mint": "BTifkZneChgqvtgtZLhMv5UTtDaecZXtfLS2NBa6atHE",
+   "age_s": 21,
+   "sol_in": -1.34,
+   "buys": 2,
+   "sells": 6,
+   "rise_pct": -7.5,
+   "mcap_sol": 35.1,
+   "dev_pct": 15.2,
+   "big_sell": 3.01,
+   "x": "https://x.com/MarioPrezldente/status/2126637993897402710",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 20 more coins in 60 min",
+   "why": "serial launcher: 20 more coins in 60 min"
+  },
+  {
+   "symbol": "STC",
+   "name": "STC",
+   "mint": "BdgyFsrToG3SzKhFPHjdWa6KKrcvB6bDEDwSKtcLpump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.1,
+   "x": "https://x.com/LuckiWeb3/status/2126575079?s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MOOND",
    "name": "MOOND",
    "mint": "GRsQ9fefbafFZa7m73wN7xKq8xYGzj1Ez4CudokLpump",
-   "age_s": 33,
-   "sol_in": 2.69,
-   "buys": 6,
-   "sells": 1,
-   "rise_pct": 18.3,
-   "mcap_sol": 34.4,
+   "age_s": 67,
+   "sol_in": 7.76,
+   "buys": 10,
+   "sells": 4,
+   "rise_pct": 57.1,
+   "mcap_sol": 45.7,
    "dev_pct": 2.1,
    "big_sell": 0.42,
    "x": "https://x.com/Moondsol/status/2126637726158192840?a=rZ3_87TXiSX64glt9tg&s=20",
@@ -6612,7 +6684,7 @@
    "symbol": "CLEMENTINE",
    "name": "Clementine",
    "mint": "4Bqw893BxCZfg9jRfjxV8TVSCmEWyXoPaZW8mY5spump",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 2,
@@ -6630,12 +6702,12 @@
    "symbol": "RM",
    "name": "Red Morning",
    "mint": "2nmP7JnvYMUg29vebvebrkYrtSgR98Cf4pY37mwZThr4",
-   "age_s": 56,
-   "sol_in": -3.14,
+   "age_s": 90,
+   "sol_in": -3.26,
    "buys": 10,
-   "sells": 21,
-   "rise_pct": -17.2,
-   "mcap_sol": 31.4,
+   "sells": 23,
+   "rise_pct": -17.8,
+   "mcap_sol": 31.2,
    "dev_pct": 15.2,
    "big_sell": 3.33,
    "x": "https://x.com/thealexmorgan15/status/2126637460595572743",
@@ -6648,7 +6720,7 @@
    "symbol": "Mylastmeme",
    "name": "My last meme",
    "mint": "GgztLZp8Gmf3pPsnHfaFynyiUbewKK5nZMzmDqWqpump",
-   "age_s": 60,
+   "age_s": 94,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6738,7 @@
    "symbol": "Hilbert",
    "name": "Hilbert-Sahur conjecture",
    "mint": "2mPvWCQEYUpBqFDnrQpWgxr7tqApFenZY2KADXfy373T",
-   "age_s": 110,
+   "age_s": 144,
    "sol_in": -1.44,
    "buys": 2,
    "sells": 8,
@@ -6679,24 +6751,6 @@
    "web": "https://x.com/qflen00/status/2126362614683087062",
    "status": "rejected: serial launcher: 20 more coins in 60 min",
    "why": "serial launcher: 20 more coins in 60 min"
-  },
-  {
-   "symbol": "TIMOTHY",
-   "name": "Timothy the Hippo",
-   "mint": "5bkmhCpFyS6j8gCoa6ug33RGWePankbcxPZtqVfApump",
-   "age_s": 163,
-   "sol_in": 0.58,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 3.9,
-   "mcap_sol": 29.1,
-   "dev_pct": 0.0,
-   "big_sell": 1.25,
-   "x": "https://www.kens5.com/article/news/local/one-last-love-letter-san-antonio-zoo-mourns-fiona-timothy-hippo-longtime-sweetheart-cincinnati-remembrance-hippos-birthday-mariachi-conservation/273-fe8f5028-b",
-   "tg": false,
-   "web": "https://www.kens5.com/article/news/local/one-last-love-letter-san-antonio-zoo-mourns-fiona-timothy-hippo-longtime-sweetheart-cincinnati-remembrance-hippos-birthday-mariachi-conservation/273-fe8f5028-b",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
