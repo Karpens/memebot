@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:56:35Z",
+ "updated": "2026-11-28T03:57:09Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 610,
+  "flagged": 612,
   "checked": 49,
   "filtered": 1,
-  "lines": 1553,
+  "lines": 1556,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "EGG",
-   "why": "snipe",
-   "t": "2026-11-28T03:48:50Z"
-  },
-  {
-   "coin": "HOS",
-   "why": "snipe",
-   "t": "2026-11-28T03:50:10Z"
-  },
   {
    "coin": "FREEVPS",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "FUTURESHAW",
    "why": "snipe",
    "t": "2026-11-28T03:56:04Z"
+  },
+  {
+   "coin": "MBS",
+   "why": "snipe",
+   "t": "2026-11-28T03:56:39Z"
+  },
+  {
+   "coin": "MCAT",
+   "why": "snipe",
+   "t": "2026-11-28T03:57:03Z"
   }
  ],
  "curve": [
@@ -1259,6 +1259,10 @@
   ],
   [
    1795838160,
+   47.79
+  ],
+  [
+   1795838220,
    47.79
   ]
  ],
@@ -3413,33 +3417,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:57:28Z",
-   "time": "03:57:28",
-   "agent": "SCANNER",
-   "coin": "MARS",
-   "action": "flag",
-   "text": "snipe · first reading 1.5 s after the create · 5.4 SOL in · +34% since the create · mcap 48 SOL",
-   "n": 1354
-  },
-  {
-   "t": "2026-11-28T02:57:34Z",
-   "time": "03:57:34",
-   "agent": "SCANNER",
-   "coin": "DISABLE",
-   "action": "flag",
-   "text": "snipe · first reading 5.0 s after the create · 4.2 SOL in · +29% since the create · mcap 37 SOL",
-   "n": 1355
-  },
-  {
-   "t": "2026-11-28T02:57:55Z",
-   "time": "03:57:55",
-   "agent": "SCANNER",
-   "coin": "LANTPIP",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.9 SOL in · +6% since the create · mcap 32 SOL",
-   "n": 1356
-  },
-  {
    "t": "2026-11-28T02:58:10Z",
    "time": "03:58:10",
    "agent": "SCANNER",
@@ -5211,6 +5188,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1553
+  },
+  {
+   "t": "2026-11-28T03:56:39Z",
+   "time": "04:56:39",
+   "agent": "SCANNER",
+   "coin": "MBS",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 2.9 SOL in · +20% since the create · mcap 36 SOL",
+   "n": 1554
+  },
+  {
+   "t": "2026-11-28T03:56:46Z",
+   "time": "04:56:46",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 0 watched · 6 rejected (snipe not bought: only to size 3, serial launcher 1, mayhem mode 1)",
+   "n": 1555
+  },
+  {
+   "t": "2026-11-28T03:57:03Z",
+   "time": "04:57:03",
+   "agent": "SCANNER",
+   "coin": "MCAT",
+   "action": "flag",
+   "text": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1556
   }
  ],
  "nights": [
@@ -5291,24 +5295,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1830,
-    "last_event_age_s": 32.6,
+    "events": 1833,
+    "last_event_age_s": 0.0,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39556,
-    "last_event_age_s": 5.2,
+    "events": 39569,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1094,
-    "last_event_age_s": 31.9,
+    "events": 1096,
+    "last_event_age_s": 7.1,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5321,9 +5325,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 3,
+  "followed": 5,
   "odd_readings": 350,
   "odd_coins": 157
  },
@@ -5372,23 +5376,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19440,
+   "sent": 19476,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19440,
+   "sent": 19476,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GOAT",
+   "name": "GoatCoin",
+   "mint": "D4WQzALH6B7b3ciCKYn73EP4NBRopLbkKhhPUA9vpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "MCAT",
+   "name": "Moon Cat",
+   "mint": "g5Ssc8nqtDLySmWnBv7kFgRqRaYW9mFEqLKm4PznhN2",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "MBS",
+   "name": "Massive Boobs Shark",
+   "mint": "F1UA1ye7R5RNn78t1rvXas8e7SAFWqM7dqR6VKsJpump",
+   "age_s": 30,
+   "sol_in": 0.87,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 5.7,
+   "mcap_sol": 31.5,
+   "dev_pct": 3.4,
+   "big_sell": 1.12,
+   "x": "https://x.com/Milsaftermils/status/2126523901463142464",
+   "tg": false,
+   "web": "https://x.com/migihida44/status/2126211897121013829",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FUTURESHAW",
    "name": "futureshawarma",
    "mint": "AhV6FfahoaLwYzqUhjDsLvcEdCL7eWNMEqAyb5ei1sPZ",
-   "age_s": 32,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5406,7 +5464,7 @@
    "symbol": "CA",
    "name": "Contract Address",
    "mint": "7VdaemZLkSadR8DVCcMm4R4j3kt9DkqXmAo6DB7gwTCA",
-   "age_s": 44,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5424,7 +5482,7 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CpDJgKa6t7tK9bJeh9aenH49hyrM6wutobHg3QrVpump",
-   "age_s": 73,
+   "age_s": 107,
    "sol_in": -3.14,
    "buys": 8,
    "sells": 5,
@@ -5437,60 +5495,6 @@
    "web": "https://t.co/5UY6GdgPL1",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "TREVOR",
-   "name": "Trevor",
-   "mint": "FGsEsLXs3HNWuLXnjKmpgVLAA6645aqjuXMUHoiPpump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "AURUMGAMMA",
-   "name": "AurumGamma",
-   "mint": "CDy1RbHP3G5xcKq5p575YhkPihH7bDPkjnrQus4Bpump",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "躺赢",
-   "name": "躺赢 💎🔥🤑",
-   "mint": "5RC14U8LrHvghrbRAsxToVaynFaAHfz6tZiYFTrhpump",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
