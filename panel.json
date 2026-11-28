@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:01:04Z",
+ "updated": "2026-11-28T06:01:32Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 776,
+  "flagged": 777,
   "checked": 49,
   "filtered": 1,
-  "lines": 1899,
+  "lines": 1900,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "IRONIC",
-   "why": "snipe",
-   "t": "2026-11-28T05:45:35Z"
-  },
   {
    "coin": "pih",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GUALA",
    "why": "snipe",
    "t": "2026-11-28T06:01:00Z"
+  },
+  {
+   "coin": "flint",
+   "why": "snipe",
+   "t": "2026-11-28T06:01:08Z"
   }
  ],
  "curve": [
@@ -3913,15 +3913,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:36:53Z",
-   "time": "05:36:53",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.2 a minute · 0 watched · 6 rejected (snipe: first reading s after the 5, snipe not bought: only to size 1)",
-   "n": 1700
-  },
-  {
    "t": "2026-11-28T04:37:54Z",
    "time": "05:37:54",
    "agent": "SCANNER",
@@ -5711,6 +5702,15 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1899
+  },
+  {
+   "t": "2026-11-28T06:01:08Z",
+   "time": "07:01:08",
+   "agent": "SCANNER",
+   "coin": "flint",
+   "action": "flag",
+   "text": "snipe · first reading 4.5 s after the create · 2.2 SOL in · +15% since the create · mcap 34 SOL",
+   "n": 1900
   }
  ],
  "nights": [
@@ -5777,7 +5777,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · odd curve readings 408 (187 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 14 watched · ws off · odd curve readings 408 (187 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5785,24 +5785,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 296,
-    "last_event_age_s": 4.2,
+    "events": 297,
+    "last_event_age_s": 27.8,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2218,
-    "last_event_age_s": 3.2,
+    "events": 2240,
+    "last_event_age_s": 3.6,
     "errors": 229,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 226,
-    "last_event_age_s": 10.7,
+    "events": 227,
+    "last_event_age_s": 27.8,
     "errors": 13,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5815,9 +5815,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 7,
+  "followed": 6,
   "odd_readings": 408,
   "odd_coins": 187
  },
@@ -5866,28 +5866,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5528,
+   "sent": 5558,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5528,
+   "sent": 5558,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "flint",
+   "name": "flint",
+   "mint": "tjwv1t9WNxdzjq5uvJpUrS7YxF6nYSUFzNkPD78pump",
+   "age_s": 27,
+   "sol_in": 1.25,
+   "buys": 5,
+   "sells": 2,
+   "rise_pct": 8.2,
+   "mcap_sol": 32.1,
+   "dev_pct": 3.2,
+   "big_sell": 1.37,
+   "x": "https://x.com/withflintx/status/2126556696143343988",
+   "tg": false,
+   "web": "https://withflintpay.com/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GUALA",
    "name": "GUALA",
    "mint": "2qEYKirCSkFT8CooSLr9TzSWmLT5NkanRz1iWj5Ppump",
-   "age_s": 11,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "age_s": 39,
+   "sol_in": 0.04,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
@@ -5900,7 +5918,7 @@
    "symbol": "trader",
    "name": "a trader in a world of insiders",
    "mint": "Y5bnNjUv5y5U7SRcmrp5EfmVXoqsgUMVyoArAdXpump",
-   "age_s": 44,
+   "age_s": 72,
    "sol_in": -1.48,
    "buys": 1,
    "sells": 3,
@@ -5918,7 +5936,7 @@
    "symbol": "FRG",
    "name": "SOLAFROG",
    "mint": "GEFqDs5GSDMSGDic5okjgYSPpoks6mHDPvSuCarLxnsT",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5936,7 +5954,7 @@
    "symbol": "Groo",
    "name": "Groo",
    "mint": "HXSSwocWBLaRox7pSYVpgp7V7KsLY1FaNTTTgHtvpump",
-   "age_s": 93,
+   "age_s": 121,
    "sol_in": -4.07,
    "buys": 1,
    "sells": 3,
@@ -5954,7 +5972,7 @@
    "symbol": "BAEKGU",
    "name": "BaekguCoin",
    "mint": "5mwEGcdm3oyV548vDuZtadjb4KH8ho1S8hf23KZ4pump",
-   "age_s": 119,
+   "age_s": 147,
    "sol_in": -0.88,
    "buys": 2,
    "sells": 5,
@@ -5967,60 +5985,6 @@
    "web": "https://x.com/iamkimgosu/status/2125038959252361634?s=46",
    "status": "rejected: snipe: first reading 11.1 s after the create (max 10 s)",
    "why": "snipe: first reading 11.1 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "8tLXNgawkoBzpcBbEK6hKWVJBD5e8uByBPQzQEsoqDCk",
-   "age_s": 163,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "TESS",
-   "name": "Test",
-   "mint": "jDbuYK6w2EwcPXG1D9QqPCfkiaAU6j8fdQq6R8G3Afe",
-   "age_s": 164,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.44,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 22.2 s after the create (max 10 s)",
-   "why": "snipe: first reading 22.2 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "WLFI",
-   "name": "We Literally Fuck Investors",
-   "mint": "DEJn63wtMk9pZ1pKwcwN8pPuTNykDAceE6sDgHDDpump",
-   "age_s": 164,
-   "sol_in": -0.1,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.6,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/WhaleInsider/status/2126556185843347530",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
