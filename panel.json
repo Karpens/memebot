@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:05:27Z",
+ "updated": "2026-11-28T05:06:00Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -1535,6 +1535,10 @@
   ],
   [
    1795842300,
+   47.79
+  ],
+  [
+   1795842360,
    47.79
   ]
  ],
@@ -5553,7 +5557,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 26 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5561,26 +5565,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 130,
-    "last_event_age_s": 5.8,
+    "events": 131,
+    "last_event_age_s": 12.4,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
+    "connected": false,
     "events": 713,
-    "last_event_age_s": 4.1,
-    "errors": 51,
+    "last_event_age_s": 37.1,
+    "errors": 57,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 101,
-    "last_event_age_s": 15.0,
-    "errors": 5,
-    "last_error": "ipfs.io: HTTP 403"
+    "connected": false,
+    "events": 102,
+    "last_event_age_s": 9.3,
+    "errors": 6,
+    "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -5591,8 +5595,8 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.4,
-  "watching": 0,
+  "creates_per_min": 3.8,
+  "watching": 1,
   "followed": 12,
   "odd_readings": 372,
   "odd_coins": 175
@@ -5642,23 +5646,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1976,
+   "sent": 2011,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1976,
+   "sent": 2011,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MAKERS",
+   "name": "Let The Makers Make",
+   "mint": "3jjPP6ZHFZyY8zxGhs9Q7NykXzGthKhf2bFr6R2Hpump",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "$ptoken",
    "name": "PIRATE TOKEN",
    "mint": "5dYyJTjfGNHBaFjcWoLPEDbQVTAGeBUF9dPBdbuxpump",
-   "age_s": 5,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5676,7 +5698,7 @@
    "symbol": "Anthropic",
    "name": "Anthropic official",
    "mint": "5Uv8vjM4bumgVPbqZBLecTNSfag5hLMCWXhEC8SFpump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 17.92,
    "buys": 2,
    "sells": 0,
@@ -5694,7 +5716,7 @@
    "symbol": "MOONDOGE",
    "name": "Moondoge",
    "mint": "BjFnJJL7PGLRYh6nxjmTWRBtSnr65G2qj8kpzgX2hWhP",
-   "age_s": 26,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5712,7 +5734,7 @@
    "symbol": "Nancy",
    "name": "The Insider",
    "mint": "5drrJbCdzWeYf3sU9wnc3EDqfg78b3yBx8PJ12dDpump",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": 2.16,
    "buys": 6,
    "sells": 17,
@@ -5730,7 +5752,7 @@
    "symbol": "Billy Bux",
    "name": "Billy Bux",
    "mint": "6bEAt1X73ZCDpXFRfFauCaefdxunwwzX73of5cKKpump",
-   "age_s": 74,
+   "age_s": 107,
    "sol_in": 2.76,
    "buys": 10,
    "sells": 17,
@@ -5748,7 +5770,7 @@
    "symbol": "1",
    "name": "1 coin can change ruin life",
    "mint": "hX4TVKofjiD7GS8q9mnhj9okTajoLnUd1tCK6Hcpump",
-   "age_s": 88,
+   "age_s": 121,
    "sol_in": -0.89,
    "buys": 2,
    "sells": 3,
@@ -5766,7 +5788,7 @@
    "symbol": "RUBBER",
    "name": "Rubber",
    "mint": "7eXHKpA4D6bn1hiD8fwneiCRaA6qdssM6A6RyrJ9PuQF",
-   "age_s": 110,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5784,7 +5806,7 @@
    "symbol": "WOOL",
    "name": "Wool",
    "mint": "9k3WUv63zNmE6Zqwr8JChn4hE3hhkioeGckXudsPtvHL",
-   "age_s": 112,
+   "age_s": 145,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5802,7 +5824,7 @@
    "symbol": "COTTON",
    "name": "Cotton",
    "mint": "FRjze8ztVPrVC7TF99u9kW1MD18Bd2Ry6f3ot195gBox",
-   "age_s": 115,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5820,7 +5842,7 @@
    "symbol": "RICE",
    "name": "Rice",
    "mint": "634LMwLqMFM751qbyqdrwAL2oKvXJ28u59HcR9N6kooS",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5838,7 +5860,7 @@
    "symbol": "DONEALD",
    "name": "Doneald Tremp",
    "mint": "5CzowP3WwMngj7xDMNeHYJajP2S1UYWtgUjG5ELMpump",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": 0.79,
    "buys": 7,
    "sells": 15,
@@ -5856,7 +5878,7 @@
    "symbol": "Criminu",
    "name": "Criminu",
    "mint": "AmZg81zK6z2TCN8i2x3bokeweMr7dqYWPgwAAXuspump",
-   "age_s": 145,
+   "age_s": 178,
    "sol_in": -4.23,
    "buys": 1,
    "sells": 3,
@@ -5869,24 +5891,6 @@
    "web": "https://coinmarketcap.com/currencies/world-liberty-financial-wlfi/",
    "status": "rejected: dump: 3.9 SOL sold",
    "why": "dump: 3.9 SOL sold"
-  },
-  {
-   "symbol": "NVIDIA",
-   "name": "NVIDIA Newsroom",
-   "mint": "56ZD4LTsbzDzW9qA2dKStPDew2gQMTstFvHJtxgdpump",
-   "age_s": 165,
-   "sol_in": 19.71,
-   "buys": 21,
-   "sells": 21,
-   "rise_pct": 152.5,
-   "mcap_sol": 87.8,
-   "dev_pct": 11.1,
-   "big_sell": 0.85,
-   "x": "https://x.com/nvidianewsroom",
-   "tg": false,
-   "web": "https://t.co/5UY6GdgPL1",
-   "status": "rejected: snipe: first reading 51.9 s after the create (max 10 s)",
-   "why": "snipe: first reading 51.9 s after the create (max 10 s)"
   }
  ],
  "strategies": [
