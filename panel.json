@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:20:44Z",
+ "updated": "2026-11-28T11:21:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1274,
   "checked": 49,
   "filtered": 1,
-  "lines": 2897,
+  "lines": 2898,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795828860,
-   47.79
-  ],
   [
    1795828920,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864800,
    47.79
+  ],
+  [
+   1795864860,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:23:38Z",
-   "time": "11:23:38",
-   "agent": "SCANNER",
-   "coin": "CHITRA",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 1.2 SOL in · +6% since the create · mcap 51 SOL",
-   "n": 2698
-  },
-  {
    "t": "2026-11-28T10:23:59Z",
    "time": "11:23:59",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.4 s after the create · 1.8 SOL in · +13% since the create · mcap 31 SOL",
    "n": 2897
+  },
+  {
+   "t": "2026-11-28T11:20:46Z",
+   "time": "12:20:46",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, serial launcher 2, no symbol or name 1)",
+   "n": 2898
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 287,
-    "last_event_age_s": 36.7,
+    "events": 288,
+    "last_event_age_s": 16.4,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7757,
+    "events": 7809,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 206,
-    "last_event_age_s": 36.5,
+    "events": 207,
+    "last_event_age_s": 16.2,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 9,
+  "followed": 8,
   "odd_readings": 987,
   "odd_coins": 302
  },
@@ -6578,23 +6578,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4214,
+   "sent": 4249,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4214,
+   "sent": 4249,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Hilbert",
+   "name": "Hilbert-Sahur conjecture",
+   "mint": "2mPvWCQEYUpBqFDnrQpWgxr7tqApFenZY2KADXfy373T",
+   "age_s": 16,
+   "sol_in": -1.15,
+   "buys": 2,
+   "sells": 6,
+   "rise_pct": -6.5,
+   "mcap_sol": 35.5,
+   "dev_pct": 15.2,
+   "big_sell": 3.05,
+   "x": "https://x.com/MarioPrezldente/status/2126637480535617888",
+   "tg": false,
+   "web": "https://x.com/qflen00/status/2126362614683087062",
+   "status": "rejected: serial launcher: 20 more coins in 60 min",
+   "why": "serial launcher: 20 more coins in 60 min"
+  },
+  {
    "symbol": "TIMOTHY",
    "name": "Timothy the Hippo",
    "mint": "5bkmhCpFyS6j8gCoa6ug33RGWePankbcxPZtqVfApump",
-   "age_s": 36,
+   "age_s": 69,
    "sol_in": 0.58,
    "buys": 1,
    "sells": 1,
@@ -6612,12 +6630,12 @@
    "symbol": "bunance",
    "name": "bunance",
    "mint": "Hz3tZPubrn6wESmmxor1w2QgfR4opTmdXUGXBoe3xETQ",
-   "age_s": 62,
-   "sol_in": -1.41,
-   "buys": 7,
-   "sells": 6,
-   "rise_pct": -8.4,
-   "mcap_sol": 30.9,
+   "age_s": 95,
+   "sol_in": -1.72,
+   "buys": 8,
+   "sells": 7,
+   "rise_pct": -10.2,
+   "mcap_sol": 30.3,
    "dev_pct": 9.6,
    "big_sell": 3.65,
    "x": "https://x.com/kalshi/status/2126637054574604347",
@@ -6630,7 +6648,7 @@
    "symbol": "BABBYGONZ",
    "name": "BabbyGonz",
    "mint": "6rm7gyq6cUhazct9p8co3xDVVFUPhdjNWjixSMYUh7xd",
-   "age_s": 63,
+   "age_s": 96,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6666,7 @@
    "symbol": "CATZILLA",
    "name": "Catzilla",
    "mint": "AE4fVj2RAca4XDUkMg4QXpdGFVL7gBLXacXeaX8PHdr3",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": -4.52,
    "buys": 3,
    "sells": 8,
@@ -6666,14 +6684,14 @@
    "symbol": "RICE",
    "name": "Rice coin",
    "mint": "B1B731Hinborfk4hNN8PthakSY26T4rwBR84QG445Ecq",
-   "age_s": 101,
-   "sol_in": 0.1,
+   "age_s": 134,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.7,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": false,
    "tg": false,
    "web": "https://useyoyo.vercel.app/c/B1B731Hinborfk4hNN8PthakSY26T4rwBR84QG445Ecq",
@@ -6684,7 +6702,7 @@
    "symbol": "YCAT",
    "name": "yoyo cat",
    "mint": "8yrJXYFzRSiaM66Kv5AgKnE3Zprj9TuFpEAcik4PJ8NF",
-   "age_s": 131,
+   "age_s": 164,
    "sol_in": 0.39,
    "buys": 3,
    "sells": 9,
@@ -6702,71 +6720,17 @@
    "symbol": "Aslan",
    "name": "America's Number One POM",
    "mint": "DTKnJ57BVrJ8dP5qf4sMsJxnCj29KHjKi4cnwiV8pump",
-   "age_s": 136,
-   "sol_in": -1.34,
-   "buys": 32,
+   "age_s": 169,
+   "sol_in": -0.3,
+   "buys": 34,
    "sells": 52,
-   "rise_pct": -7.7,
-   "mcap_sol": 33.0,
+   "rise_pct": -1.8,
+   "mcap_sol": 35.2,
    "dev_pct": 12.5,
    "big_sell": 5.17,
    "x": "https://x.com/slndr3000/status/2126636797165760788?a=ccJy_HpP4E01zWVq6cM&s=20",
    "tg": false,
    "web": "https://www.instagram.com/reel/DgP4w1eiUEA/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "Brtu5cixjJNF5CJGE6LpgM4SnL2AzduAq5xZR6YzRPnt",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 38.2,
-   "dev_pct": 15.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "HARD",
-   "name": "A Hard Day's Bread",
-   "mint": "9BwGF9oaQaBNiHmZcqUjxpnsvi1y1oEfNR3VqKgdpump",
-   "age_s": 153,
-   "sol_in": 0.03,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.6,
-   "big_sell": 0.1,
-   "x": "https://x.com/SpicExplorX",
-   "tg": false,
-   "web": "https://www.instagram.com/reel/DgByPM_qYeL/?lqvp=MWMxOWE2MWU0ajMydA==",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "STAR",
-   "name": "GMMTVStarlympics",
-   "mint": "EEPvmrMDWyKajFF96MtZgfLG9eK9DoARMoHxtxBLpump",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.8,
-   "big_sell": 0.0,
-   "x": "https://x.com/tohuppw/status/2126631916241928460?a=1dgilZFyz2sTbgI6Jps&s=19",
-   "tg": "https://t.me/geminifourthsupportsg",
-   "web": "https://www.gmm-tv.com/coverpage/?time=1795864176",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
