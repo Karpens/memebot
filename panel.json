@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:57:36Z",
+ "updated": "2026-11-28T03:58:10Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 615,
+  "flagged": 617,
   "checked": 49,
   "filtered": 1,
-  "lines": 1559,
+  "lines": 1562,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "$RUNOVER",
-   "why": "snipe",
-   "t": "2026-11-28T03:52:21Z"
-  },
   {
    "coin": "$EDGE",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SMOOSH",
    "why": "snipe",
    "t": "2026-11-28T03:57:35Z"
+  },
+  {
+   "coin": "DrillCat",
+   "why": "snipe",
+   "t": "2026-11-28T03:58:09Z"
   }
  ],
  "curve": [
@@ -1263,6 +1263,10 @@
   ],
   [
    1795838220,
+   47.79
+  ],
+  [
+   1795838280,
    47.79
   ]
  ],
@@ -3417,33 +3421,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:58:27Z",
-   "time": "03:58:27",
-   "agent": "SCANNER",
-   "coin": "walter",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 1.6 SOL in · +11% since the create · mcap 31 SOL",
-   "n": 1360
-  },
-  {
-   "t": "2026-11-28T02:59:02Z",
-   "time": "03:59:02",
-   "agent": "SCANNER",
-   "coin": "CLVDRM",
-   "action": "flag",
-   "text": "snipe · first reading 2.5 s after the create · 1.0 SOL in · +6% since the create · mcap 32 SOL",
-   "n": 1361
-  },
-  {
-   "t": "2026-11-28T02:59:12Z",
-   "time": "03:59:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 10, serial launcher 1, no symbol or name 1)",
-   "n": 1362
-  },
-  {
    "t": "2026-11-28T02:59:26Z",
    "time": "03:59:26",
    "agent": "SCANNER",
@@ -5215,6 +5192,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.7 s after the create · 0.4 SOL in · +3% since the create · mcap 36 SOL",
    "n": 1559
+  },
+  {
+   "t": "2026-11-28T03:57:47Z",
+   "time": "04:57:47",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, serial launcher 1, no bonding curve key 1)",
+   "n": 1560
+  },
+  {
+   "t": "2026-11-28T03:57:59Z",
+   "time": "04:57:59",
+   "agent": "SCANNER",
+   "coin": "DrillCat",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1561
+  },
+  {
+   "t": "2026-11-28T03:58:09Z",
+   "time": "04:58:09",
+   "agent": "SCANNER",
+   "coin": "DrillCat",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 1562
   }
  ],
  "nights": [
@@ -5287,7 +5291,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5295,15 +5299,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1837,
-    "last_event_age_s": 2.0,
+    "events": 1839,
+    "last_event_age_s": 2.2,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39584,
+    "events": 39610,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -5311,8 +5315,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1100,
-    "last_event_age_s": 1.4,
+    "events": 1102,
+    "last_event_age_s": 2.0,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5325,9 +5329,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 8,
+  "followed": 10,
   "odd_readings": 350,
   "odd_coins": 157
  },
@@ -5376,28 +5380,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19504,
+   "sent": 19541,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19504,
+   "sent": 19541,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DrillCat",
+   "name": "DrillCat",
+   "mint": "BXJD7abxZCt9Vh2prKqMhA1m1jCyo2WwY4S4UgcQpump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DrillCat",
+   "name": "Drill Cat",
+   "mint": "GL1o7uG8wcLj8BMTxJYyqvfShz4dc7sgmBqmYs6Ppump",
+   "age_s": 11,
+   "sol_in": 0.52,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 3.5,
+   "mcap_sol": 28.9,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/VelvetG46721/status/2126525844164325632",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SMOOSH",
    "name": "Smoosh Pup",
    "mint": "432Hh2V4wMhJWm4G4tHF6H32XsqTEnJAjUL2Wan9pump",
-   "age_s": 2,
-   "sol_in": 0.3,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 1.8,
-   "mcap_sol": 36.0,
+   "age_s": 36,
+   "sol_in": 0.52,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 3.1,
+   "mcap_sol": 36.5,
    "dev_pct": 11.9,
    "big_sell": 0.14,
    "x": "https://x.com/SmooshPupSol",
@@ -5410,14 +5450,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "GvjHuVypGvTS2kJ7JTJbngPb8VTzwCCX5sj2FEaApump",
-   "age_s": 16,
-   "sol_in": 17.89,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 135.5,
-   "mcap_sol": 81.9,
+   "age_s": 50,
+   "sol_in": 18.33,
+   "buys": 12,
+   "sells": 6,
+   "rise_pct": 139.6,
+   "mcap_sol": 83.3,
    "dev_pct": 11.1,
-   "big_sell": 0.0,
+   "big_sell": 0.37,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -5428,7 +5468,7 @@
    "symbol": "DANI",
    "name": "Dani Day",
    "mint": "EqBMGkzaMxUrDccVvgnUYiE3amDWSnTNAgXmmXXrpump",
-   "age_s": 19,
+   "age_s": 53,
    "sol_in": 0.32,
    "buys": 2,
    "sells": 0,
@@ -5446,7 +5486,7 @@
    "symbol": "PAWPOOL",
    "name": "Critter Carpool",
    "mint": "8F5Yrve6qYnPvb6TJz9zeTZNEbgQCCxS1bv1g5fZpump",
-   "age_s": 25,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5464,7 +5504,7 @@
    "symbol": "GOAT",
    "name": "GoatCoin",
    "mint": "D4WQzALH6B7b3ciCKYn73EP4NBRopLbkKhhPUA9vpump",
-   "age_s": 27,
+   "age_s": 61,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 4,
@@ -5482,12 +5522,12 @@
    "symbol": "MCAT",
    "name": "Moon Cat",
    "mint": "g5Ssc8nqtDLySmWnBv7kFgRqRaYW9mFEqLKm4PznhN2",
-   "age_s": 34,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 68,
+   "sol_in": 0.49,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "rise_pct": 3.3,
+   "mcap_sol": 28.9,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": "https://x.com/",
@@ -5500,12 +5540,12 @@
    "symbol": "MBS",
    "name": "Massive Boobs Shark",
    "mint": "F1UA1ye7R5RNn78t1rvXas8e7SAFWqM7dqR6VKsJpump",
-   "age_s": 57,
-   "sol_in": 2.83,
-   "buys": 4,
+   "age_s": 91,
+   "sol_in": 4.31,
+   "buys": 5,
    "sells": 6,
-   "rise_pct": 19.1,
-   "mcap_sol": 35.5,
+   "rise_pct": 29.8,
+   "mcap_sol": 38.7,
    "dev_pct": 3.4,
    "big_sell": 2.38,
    "x": "https://x.com/Milsaftermils/status/2126523901463142464",
@@ -5518,7 +5558,7 @@
    "symbol": "FUTURESHAW",
    "name": "futureshawarma",
    "mint": "AhV6FfahoaLwYzqUhjDsLvcEdCL7eWNMEqAyb5ei1sPZ",
-   "age_s": 93,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5536,7 +5576,7 @@
    "symbol": "CA",
    "name": "Contract Address",
    "mint": "7VdaemZLkSadR8DVCcMm4R4j3kt9DkqXmAo6DB7gwTCA",
-   "age_s": 105,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5554,12 +5594,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CpDJgKa6t7tK9bJeh9aenH49hyrM6wutobHg3QrVpump",
-   "age_s": 134,
-   "sol_in": -3.14,
+   "age_s": 168,
+   "sol_in": -3.46,
    "buys": 8,
-   "sells": 5,
-   "rise_pct": -17.9,
-   "mcap_sol": 28.5,
+   "sells": 6,
+   "rise_pct": -19.6,
+   "mcap_sol": 28.0,
    "dev_pct": 11.1,
    "big_sell": 21.65,
    "x": "https://x.com/nvidianewsroom",
