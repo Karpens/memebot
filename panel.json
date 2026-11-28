@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:07:33Z",
+ "updated": "2026-11-28T04:08:00Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 640,
+  "flagged": 642,
   "checked": 49,
   "filtered": 1,
-  "lines": 1599,
+  "lines": 1602,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Alpha",
-   "why": "snipe",
-   "t": "2026-11-28T04:03:02Z"
-  },
-  {
-   "coin": "SEE",
-   "why": "snipe",
-   "t": "2026-11-28T04:03:31Z"
-  },
   {
    "coin": "CI",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "Whallet",
    "why": "snipe",
    "t": "2026-11-28T04:07:16Z"
+  },
+  {
+   "coin": "STRAY",
+   "why": "snipe",
+   "t": "2026-11-28T04:07:42Z"
+  },
+  {
+   "coin": "JEW",
+   "why": "snipe",
+   "t": "2026-11-28T04:07:55Z"
   }
  ],
  "curve": [
@@ -1303,6 +1303,10 @@
   ],
   [
    1795838820,
+   47.79
+  ],
+  [
+   1795838880,
    47.79
   ]
  ],
@@ -3457,33 +3461,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:09:16Z",
-   "time": "04:09:16",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 1 watched · 12 rejected (snipe not bought: only to size 6, mayhem mode 4, serial launcher 1) · closest apu: no curve reading yet",
-   "n": 1400
-  },
-  {
-   "t": "2026-11-28T03:09:17Z",
-   "time": "04:09:17",
-   "agent": "SCANNER",
-   "coin": "apu",
-   "action": "flag",
-   "text": "snipe · first reading 2.8 s after the create · 0.6 SOL in · +4% since the create · mcap 31 SOL",
-   "n": 1401
-  },
-  {
-   "t": "2026-11-28T03:09:27Z",
-   "time": "04:09:27",
-   "agent": "SCANNER",
-   "coin": "GOBLIN",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1402
-  },
-  {
    "t": "2026-11-28T03:10:17Z",
    "time": "04:10:17",
    "agent": "SCANNER",
@@ -5255,6 +5232,33 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1599
+  },
+  {
+   "t": "2026-11-28T04:07:42Z",
+   "time": "05:07:42",
+   "agent": "SCANNER",
+   "coin": "STRAY",
+   "action": "flag",
+   "text": "snipe · first reading 1.6 s after the create · -0.8 SOL in · -5% since the create · mcap 28 SOL",
+   "n": 1600
+  },
+  {
+   "t": "2026-11-28T04:07:54Z",
+   "time": "05:07:54",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 1 watched · 3 rejected (snipe not bought: only to size 3) · closest JEW: no curve reading yet",
+   "n": 1601
+  },
+  {
+   "t": "2026-11-28T04:07:55Z",
+   "time": "05:07:55",
+   "agent": "SCANNER",
+   "coin": "JEW",
+   "action": "flag",
+   "text": "snipe · first reading 1.3 s after the create · 10.1 SOL in · +70% since the create · mcap 58 SOL",
+   "n": 1602
   }
  ],
  "nights": [
@@ -5327,7 +5331,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 352 (159 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 352 (159 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5335,24 +5339,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1906,
-    "last_event_age_s": 18.7,
+    "events": 1909,
+    "last_event_age_s": 6.3,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 40495,
-    "last_event_age_s": 0.5,
+    "events": 40535,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1162,
-    "last_event_age_s": 18.6,
+    "events": 1164,
+    "last_event_age_s": 6.9,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5365,9 +5369,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
+  "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 3,
+  "followed": 4,
   "odd_readings": 352,
   "odd_coins": 159
  },
@@ -5416,30 +5420,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20140,
+   "sent": 20169,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20140,
+   "sent": 20169,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JEW",
+   "name": "Jewcoin",
+   "mint": "22pa41mM9uHnciAKVdu2pRyCqQvbtorLxp6rTEDapump",
+   "age_s": 7,
+   "sol_in": 7.28,
+   "buys": 1,
+   "sells": 5,
+   "rise_pct": 48.9,
+   "mcap_sol": 50.6,
+   "dev_pct": 10.0,
+   "big_sell": 1.83,
+   "x": "https://x.com/thejewfun",
+   "tg": false,
+   "web": "https://jew.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "STRAY",
+   "name": "Stray Cat",
+   "mint": "2VXRtAyoCgB4HxcDUZRkDDjxbWSUGTAQr1RtwRvdpump",
+   "age_s": 19,
+   "sol_in": -0.8,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -5.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 2.8,
+   "big_sell": 0.8,
+   "x": "https://x.com/fondnessweb3/status/2126517945794724330?a=nerPFOxlas5ALfnK8ko&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Whallet",
    "name": "Whallet",
    "mint": "GebL6MbQ2ebFToqyrfk7yB1NJhSSsJuZ87fko5E2pump",
-   "age_s": 18,
-   "sol_in": 14.7,
-   "buys": 9,
-   "sells": 7,
-   "rise_pct": 117.4,
-   "mcap_sol": 64.8,
+   "age_s": 45,
+   "sol_in": 1.01,
+   "buys": 15,
+   "sells": 23,
+   "rise_pct": 6.6,
+   "mcap_sol": 31.8,
    "dev_pct": 3.4,
-   "big_sell": 1.67,
+   "big_sell": 6.17,
    "x": "https://x.com/OnchainWhallet",
    "tg": false,
    "web": false,
@@ -5450,7 +5490,7 @@
    "symbol": "mogging",
    "name": "mogging",
    "mint": "Ey9iFxCWxrhHucKZJnk561XZUbJdXPp313PLXWDXpump",
-   "age_s": 145,
+   "age_s": 172,
    "sol_in": 0.32,
    "buys": 5,
    "sells": 12,
@@ -5461,24 +5501,6 @@
    "x": "https://x.com/moggingonchain",
    "tg": false,
    "web": true,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Bwubby",
-   "name": "Bwubby",
-   "mint": "WC8e7oPsL1EEuLeteKbFj66cpX9JAMmFecu8b7Qpump",
-   "age_s": 175,
-   "sol_in": -8.54,
-   "buys": 6,
-   "sells": 19,
-   "rise_pct": -39.1,
-   "mcap_sol": 28.6,
-   "dev_pct": 24.5,
-   "big_sell": 3.55,
-   "x": "https://x.com/PunkAnimates",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
