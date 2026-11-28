@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:24:22Z",
+ "updated": "2026-11-28T12:24:54Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1395,
+  "flagged": 1396,
   "checked": 49,
   "filtered": 1,
-  "lines": 3102,
+  "lines": 3105,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "heh",
-   "why": "snipe",
-   "t": "2026-11-28T12:21:05Z"
-  },
   {
    "coin": "HEH",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SYCKA",
    "why": "snipe",
    "t": "2026-11-28T12:23:36Z"
+  },
+  {
+   "coin": "WRP",
+   "why": "snipe",
+   "t": "2026-11-28T12:24:39Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:22:58Z",
-   "time": "12:22:58",
-   "agent": "SCANNER",
-   "coin": "STC",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2903
-  },
-  {
-   "t": "2026-11-28T11:23:06Z",
-   "time": "12:23:06",
-   "agent": "SCANNER",
-   "coin": "JUP2011",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2904
-  },
-  {
-   "t": "2026-11-28T11:23:27Z",
-   "time": "12:23:27",
-   "agent": "SCANNER",
-   "coin": "flint",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 1.0 SOL in · +6% since the create · mcap 32 SOL",
-   "n": 2905
-  },
-  {
    "t": "2026-11-28T11:23:30Z",
    "time": "12:23:30",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.3 s after the create · 0.2 SOL in · +1% since the create · mcap 28 SOL",
    "n": 3102
+  },
+  {
+   "t": "2026-11-28T12:24:24Z",
+   "time": "13:24:24",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, serial launcher 1, no symbol or name 1)",
+   "n": 3103
+  },
+  {
+   "t": "2026-11-28T12:24:39Z",
+   "time": "13:24:39",
+   "agent": "SCANNER",
+   "coin": "WRP",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3104
+  },
+  {
+   "t": "2026-11-28T12:24:39Z",
+   "time": "13:24:39",
+   "agent": "SIZER",
+   "coin": "WRP",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 3105
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 558,
-    "last_event_age_s": 8.8,
+    "events": 561,
+    "last_event_age_s": 14.4,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14567,
+    "events": 14627,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 378,
-    "last_event_age_s": 45.1,
+    "connected": true,
+    "events": 379,
+    "last_event_age_s": 16.1,
     "errors": 13,
     "last_error": "snowgent.fun: timeout after 2 s"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 8,
+  "followed": 7,
   "odd_readings": 1010,
   "odd_coins": 309
  },
@@ -6580,23 +6580,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8277,
+   "sent": 8311,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8277,
+   "sent": 8311,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ELVI",
+   "name": "Calvo Elvit",
+   "mint": "2kYdMSzK8UVM7eyhQhXwi1VHSXpSVfd8saLZF6dXcJ9e",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "WRP",
+   "name": "WRP",
+   "mint": "DPDzzczqpk4ZtMNdgaq56HzbN7Go1tKgp53BTcLwpump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DRAG",
+   "name": "dragon",
+   "mint": "DragARcVqgjmEhv38TJgxnQ3wg5bWHQACDJq1VB5wf86",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.7,
+   "dev_pct": 8.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "8RTUgQn4uG9sYtpna3dZsa9JzZtQ9joSc2YDy7YK4hVq",
-   "age_s": 33,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6668,7 @@
    "symbol": "SYCKA",
    "name": "snowvycka",
    "mint": "wKKJMrPW4wY4AUsapmVGfyLj6dzkjGZGwpxP8tuyGDb",
-   "age_s": 47,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6632,7 +6686,7 @@
    "symbol": "WINDOWS",
    "name": "Windows",
    "mint": "FmR6vFjcretg1soD8bt6JFb8CS68ZHRkRXs8LeE7cwYo",
-   "age_s": 60,
+   "age_s": 92,
    "sol_in": -0.74,
    "buys": 0,
    "sells": 1,
@@ -6650,14 +6704,14 @@
    "symbol": "BB",
    "name": "Blue Balls",
    "mint": "CkYq7WUZwAvvUy2q4PYj7WK7hrxWugdt3GjER3zKNibj",
-   "age_s": 63,
-   "sol_in": 6.22,
-   "buys": 16,
-   "sells": 16,
-   "rise_pct": 38.8,
-   "mcap_sol": 52.6,
+   "age_s": 95,
+   "sol_in": -0.77,
+   "buys": 24,
+   "sells": 20,
+   "rise_pct": -4.4,
+   "mcap_sol": 36.3,
    "dev_pct": 15.2,
-   "big_sell": 3.95,
+   "big_sell": 4.97,
    "x": "https://x.com/MarioPrezldente/status/2126653157212319896",
    "tg": false,
    "web": false,
@@ -6668,7 +6722,7 @@
    "symbol": "PEPEHOOD",
    "name": "PEPEHOOD",
    "mint": "6R3TVbLWUBB9NojK133eX6yeroZdLH9vTpS3QQYxpump",
-   "age_s": 67,
+   "age_s": 99,
    "sol_in": 0.06,
    "buys": 2,
    "sells": 0,
@@ -6686,7 +6740,7 @@
    "symbol": "Buck",
    "name": "BuckPad",
    "mint": "4BPSbY54QbQuSts2LyY3zfD8QXc5qZPvPTjsv1hhpump",
-   "age_s": 95,
+   "age_s": 127,
    "sol_in": -0.28,
    "buys": 1,
    "sells": 2,
@@ -6704,7 +6758,7 @@
    "symbol": "SCAT",
    "name": "SNOWCAT",
    "mint": "9Z2vhrzzx4z5gmYLCnX1RzcJeh6g3jCwbSZvntoGz6zD",
-   "age_s": 135,
+   "age_s": 167,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 3,
@@ -6715,42 +6769,6 @@
    "x": false,
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "TOLETOLE",
-   "name": "POOR TOLETOLE",
-   "mint": "A8Jbe5bzNBGE6ESPj8ogHUjktM3eZevhCuzDL9nJpump",
-   "age_s": 158,
-   "sol_in": -2.46,
-   "buys": 52,
-   "sells": 20,
-   "rise_pct": -14.4,
-   "mcap_sol": 28.8,
-   "dev_pct": 9.5,
-   "big_sell": 13.11,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "HEH",
-   "name": "heh",
-   "mint": "6ZEhZkjLTLmqcyymfkrkM8nrxKz3pmRD7j4waMqrnAcL",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/i/status/2126652141771059366",
-   "tg": false,
-   "web": "https://x.com/postalbraind/status/2125945319955321327",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
