@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:05:11Z",
+ "updated": "2026-11-28T08:05:39Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 908,
+  "flagged": 910,
   "checked": 49,
   "filtered": 1,
-  "lines": 2224,
+  "lines": 2226,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MWJ",
-   "why": "snipe",
-   "t": "2026-11-28T08:00:27Z"
-  },
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T08:01:23Z"
-  },
   {
    "coin": "FMC",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "TARD",
    "why": "snipe",
    "t": "2026-11-28T08:04:56Z"
+  },
+  {
+   "coin": "Keyora",
+   "why": "snipe",
+   "t": "2026-11-28T08:05:26Z"
+  },
+  {
+   "coin": "BTCAGENDA",
+   "why": "snipe",
+   "t": "2026-11-28T08:05:34Z"
   }
  ],
  "curve": [
@@ -4409,24 +4409,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:54:21Z",
-   "time": "07:54:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 0 watched · 13 rejected (serial launcher 4, snipe not bought: only to size 4, mayhem mode 3)",
-   "n": 2025
-  },
-  {
-   "t": "2026-11-28T06:55:07Z",
-   "time": "07:55:07",
-   "agent": "SCANNER",
-   "coin": "AnonPaid",
-   "action": "flag",
-   "text": "snipe · first reading 9.3 s after the create · 0.8 SOL in · +5% since the create · mcap 32 SOL",
-   "n": 2026
-  },
-  {
    "t": "2026-11-28T06:55:21Z",
    "time": "07:55:21",
    "agent": "SCANNER",
@@ -6207,6 +6189,24 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 6, serial launcher 3)",
    "n": 2224
+  },
+  {
+   "t": "2026-11-28T08:05:26Z",
+   "time": "09:05:26",
+   "agent": "SCANNER",
+   "coin": "Keyora",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 2.1 SOL in · +14% since the create · mcap 34 SOL",
+   "n": 2225
+  },
+  {
+   "t": "2026-11-28T08:05:34Z",
+   "time": "09:05:34",
+   "agent": "SCANNER",
+   "coin": "BTCAGENDA",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.4 SOL in · +2% since the create · mcap 51 SOL",
+   "n": 2226
   }
  ],
  "nights": [
@@ -6279,7 +6279,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 563 (232 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 563 (232 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6287,15 +6287,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 783,
-    "last_event_age_s": 15.7,
+    "events": 785,
+    "last_event_age_s": 5.7,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10626,
+    "events": 10685,
     "last_event_age_s": 0.7,
     "errors": 432,
     "last_error": "timeout after 5 s"
@@ -6303,8 +6303,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 561,
-    "last_event_age_s": 15.7,
+    "events": 563,
+    "last_event_age_s": 5.7,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6317,9 +6317,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 9,
+  "followed": 8,
   "odd_readings": 563,
   "odd_coins": 232
  },
@@ -6368,23 +6368,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13455,
+   "sent": 13484,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13455,
+   "sent": 13484,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BTCAGENDA",
+   "name": "Bitcoin Agenda",
+   "mint": "2qDbHHewRBFVDP3ebwP4LgC27hPgGyKMtxzs1De8pump",
+   "age_s": 5,
+   "sol_in": 0.44,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 2.2,
+   "mcap_sol": 51.1,
+   "dev_pct": 27.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/bitcoinlfgo/status/2126399928155205969?a=KNXW38r9L1nmQyyjZUA&s=20",
+   "tg": false,
+   "web": "https://pump.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Keyora",
+   "name": "Keyora",
+   "mint": "CtGxn6w5AhwuA7nT4MyF5J3cmj7kBBJszif3V2qNpump",
+   "age_s": 13,
+   "sol_in": 10.46,
+   "buys": 5,
+   "sells": 3,
+   "rise_pct": 78.9,
+   "mcap_sol": 53.4,
+   "dev_pct": 3.4,
+   "big_sell": 0.41,
+   "x": "https://x.com/keyora_wallet",
+   "tg": false,
+   "web": "https://keyora.lat",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "TARD",
    "name": "Ahimsan The Retard",
    "mint": "DqoLF8zNXQhYShca2qV27Ez3paMLwFZYLnH9Y7Nrpump",
-   "age_s": 15,
+   "age_s": 43,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6402,12 +6438,12 @@
    "symbol": "WLFI",
    "name": "We Literally Fucking Idiots",
    "mint": "EGxSL8gfdUhBda6WX33MqUE5LwPWmSLPFqqpGGxopump",
-   "age_s": 15,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 43,
+   "sol_in": 0.03,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.1,
    "dev_pct": 0.1,
    "big_sell": 0.0,
    "x": "https://x.com/Jeremybtc",
@@ -6420,7 +6456,7 @@
    "symbol": "ELON",
    "name": "Elon's law",
    "mint": "DoCNsra2nc9raogk3Zi9X5ZzjrfuEwnAERzDWnrBbxon",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6438,11 +6474,11 @@
    "symbol": "NPCS",
    "name": "NPCsignals",
    "mint": "5VVyqKKLTxwQ4bf5BMJy46KcYj2UfT5E8ZfvgcnVpump",
-   "age_s": 49,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 77,
+   "sol_in": 0.01,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.9,
    "dev_pct": 1.7,
    "big_sell": 0.49,
@@ -6456,12 +6492,12 @@
    "symbol": "INUSIDERS",
    "name": "Inusiders",
    "mint": "7xqNtCkG4Czy3SCrG5LVNEjpZ1EqWHFXKkftpZSrpump",
-   "age_s": 50,
-   "sol_in": 7.75,
-   "buys": 27,
-   "sells": 18,
-   "rise_pct": 41.2,
-   "mcap_sol": 74.3,
+   "age_s": 78,
+   "sol_in": 21.07,
+   "buys": 43,
+   "sells": 28,
+   "rise_pct": 128.7,
+   "mcap_sol": 120.3,
    "dev_pct": 29.1,
    "big_sell": 7.23,
    "x": "https://x.com/scottmelker/status/2126584679923102202",
@@ -6474,7 +6510,7 @@
    "symbol": "STEADY",
    "name": "Steady",
    "mint": "4NsvkAdREs7Q27ZuhU4gtLVHvdmuWBkC1U83GNRwgh75",
-   "age_s": 121,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6485,60 +6521,6 @@
    "x": "https://x.com/Steadypad_fun",
    "tg": false,
    "web": "https://steadypad.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "GitHub",
-   "name": "GitHub",
-   "mint": "12RhvGrEZhqiBwvLpwf62F61G1hTioziNMMcMVZSpump",
-   "age_s": 154,
-   "sol_in": 45.3,
-   "buys": 10,
-   "sells": 12,
-   "rise_pct": 454.1,
-   "mcap_sol": 192.7,
-   "dev_pct": 11.1,
-   "big_sell": 0.77,
-   "x": "https://x.com/github",
-   "tg": false,
-   "web": "https://github.com/",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "Hope",
-   "name": "Hope",
-   "mint": "BoYJkmCGW4iaMBPi9Rws7zg3jCpr7dSwRYuG14B88Vii",
-   "age_s": 157,
-   "sol_in": -1.46,
-   "buys": 19,
-   "sells": 18,
-   "rise_pct": -8.7,
-   "mcap_sol": 31.0,
-   "dev_pct": 9.9,
-   "big_sell": 2.62,
-   "x": "https://x.com/nonanon124/status/2126587516933324911",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "FMC",
-   "name": "fuck memecoins",
-   "mint": "DRp2U4MEMoHjWYSaxrSkvtfA9E2L3DqcMvHYHxhipump",
-   "age_s": 167,
-   "sol_in": 0.02,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
