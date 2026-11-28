@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:36:55Z",
+ "updated": "2026-11-28T06:37:26Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 803,
+  "flagged": 804,
   "checked": 49,
   "filtered": 1,
-  "lines": 1978,
+  "lines": 1981,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "kek14",
-   "why": "snipe",
-   "t": "2026-11-28T06:28:58Z"
-  },
   {
    "coin": "tremps",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SPSC",
    "why": "snipe",
    "t": "2026-11-28T06:36:25Z"
+  },
+  {
+   "coin": "HOSTKEY",
+   "why": "snipe",
+   "t": "2026-11-28T06:37:03Z"
   }
  ],
  "curve": [
@@ -1899,6 +1899,10 @@
   ],
   [
    1795847760,
+   47.79
+  ],
+  [
+   1795847820,
    47.79
   ]
  ],
@@ -4053,33 +4057,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:03:40Z",
-   "time": "06:03:40",
-   "agent": "SCANNER",
-   "coin": "WOOL",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.679e+05 is not 30 + real SOL 0 (off +1.679e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 371 odd readings from 174 coins tonight",
-   "n": 1779
-  },
-  {
-   "t": "2026-11-28T05:04:01Z",
-   "time": "06:04:01",
-   "agent": "SCANNER",
-   "coin": "1",
-   "action": "flag",
-   "text": "snipe · first reading 3.1 s after the create · 2.4 SOL in · +16% since the create · mcap 35 SOL",
-   "n": 1780
-  },
-  {
-   "t": "2026-11-28T05:04:01Z",
-   "time": "06:04:01",
-   "agent": "SIZER",
-   "coin": "1",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1781
-  },
-  {
    "t": "2026-11-28T05:04:14Z",
    "time": "06:04:14",
    "agent": "SCANNER",
@@ -5851,6 +5828,33 @@
    "action": "flag",
    "text": "snipe · first reading 5.2 s after the create · 0.8 SOL in · +5% since the create · mcap 30 SOL",
    "n": 1978
+  },
+  {
+   "t": "2026-11-28T06:37:03Z",
+   "time": "07:37:03",
+   "agent": "SCANNER",
+   "coin": "HOSTKEY",
+   "action": "flag",
+   "text": "snipe · first reading 2.3 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 1979
+  },
+  {
+   "t": "2026-11-28T06:37:03Z",
+   "time": "07:37:03",
+   "agent": "SIZER",
+   "coin": "HOSTKEY",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1980
+  },
+  {
+   "t": "2026-11-28T06:37:08Z",
+   "time": "07:37:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 0 watched · 10 rejected (snipe not bought: only to size 5, serial launcher 3, odd curve reading: virtual SOL i 1)",
+   "n": 1981
   }
  ],
  "nights": [
@@ -5922,7 +5926,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 427 (197 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 427 (197 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5930,24 +5934,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 421,
-    "last_event_age_s": 15.4,
+    "events": 422,
+    "last_event_age_s": 24.6,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3403,
-    "last_event_age_s": 0.1,
+    "events": 3438,
+    "last_event_age_s": 2.6,
     "errors": 343,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 303,
-    "last_event_age_s": 14.1,
+    "events": 304,
+    "last_event_age_s": 24.3,
     "errors": 18,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -5960,9 +5964,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 10,
+  "followed": 9,
   "odd_readings": 427,
   "odd_coins": 197
  },
@@ -6011,30 +6015,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7818,
+   "sent": 7851,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7818,
+   "sent": 7851,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HOSTKEY",
+   "name": "HOSTKEY",
+   "mint": "FNMekS7TSoZ3QATJCx6mLMdDT3b9s4X11hJo3V3zpump",
+   "age_s": 24,
+   "sol_in": 1.3,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 8.5,
+   "mcap_sol": 32.6,
+   "dev_pct": 3.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/Hostkey/status/2126260096476856754?a=lWJKAN6cU0ozYEi9YU0&s=20",
+   "tg": false,
+   "web": "https://www.hostkey.com/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "CUSTOMER",
    "name": "Customer Lost",
    "mint": "9XPvE4U9Kc6kqPWff6s7FLb6gG34g35BVwnYfaPZnRTQ",
-   "age_s": 15,
-   "sol_in": 0.01,
+   "age_s": 46,
+   "sol_in": -0.1,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
+   "sells": 1,
+   "rise_pct": -0.6,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": "https://x.com/elonmusk/status/2126565603016425859",
    "tg": false,
    "web": "https://x.com/elonmusk/status/2126565603016425859",
@@ -6045,14 +6067,14 @@
    "symbol": "SPSC",
    "name": "Shit Piss Skin Can",
    "mint": "FTN3CUJU5gLs3sxyQKUJ2FGtDfvBrvjFPe1kfHvYpump",
-   "age_s": 35,
-   "sol_in": 0.29,
-   "buys": 3,
-   "sells": 6,
-   "rise_pct": 1.9,
-   "mcap_sol": 29.0,
+   "age_s": 66,
+   "sol_in": 0.08,
+   "buys": 6,
+   "sells": 9,
+   "rise_pct": 0.5,
+   "mcap_sol": 28.6,
    "dev_pct": 1.0,
-   "big_sell": 0.19,
+   "big_sell": 0.2,
    "x": "https://x.com/HimothyyDeploys/status/2126538005888299516",
    "tg": false,
    "web": false,
@@ -6063,7 +6085,7 @@
    "symbol": "Artcoin",
    "name": "Artcoin",
    "mint": "ByYKUFG8eBDUZxSKfsxSJ5r1Hpv3zYXSDACfK8s8pump",
-   "age_s": 36,
+   "age_s": 67,
    "sol_in": -1.97,
    "buys": 0,
    "sells": 2,
@@ -6081,7 +6103,7 @@
    "symbol": "THERAPIST",
    "name": "The Rapist",
    "mint": "89oVMeB35GLdYb7frmFYkQ4MHUKmr5FRRrRkMzYxk9SZ",
-   "age_s": 41,
+   "age_s": 72,
    "sol_in": -5.86,
    "buys": 1,
    "sells": 5,
@@ -6099,7 +6121,7 @@
    "symbol": "THERAPIST",
    "name": "The THERAPIST",
    "mint": "9rm3bvEmn1g3yQ4sA8SxeULhNrCcfTMDkWwzWfBmvwGQ",
-   "age_s": 72,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6117,7 +6139,7 @@
    "symbol": "THERAPIST",
    "name": "The Rapist",
    "mint": "Bp2eW3Nc7W2JZ6smwUR4dFY2P5gz1EVQ1g71DhPk1htQ",
-   "age_s": 79,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6135,11 +6157,11 @@
    "symbol": "QUANTNALD",
    "name": "Quant Donald Trump",
    "mint": "6EaBCmCfnhYe9haxtgE4rksLSk8UawNH3CXeYSgapump",
-   "age_s": 82,
-   "sol_in": -0.01,
-   "buys": 1,
+   "age_s": 113,
+   "sol_in": 0.01,
+   "buys": 2,
    "sells": 2,
-   "rise_pct": -0.1,
+   "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
    "big_sell": 0.01,
@@ -6153,10 +6175,10 @@
    "symbol": "PLZB",
    "name": "BUY ME",
    "mint": "BiPKCFKDEVmmDq6ngu7e51tcaxYGRJopnnxmPEUKpump",
-   "age_s": 88,
-   "sol_in": 0.42,
-   "buys": 4,
-   "sells": 2,
+   "age_s": 119,
+   "sol_in": 0.41,
+   "buys": 5,
+   "sells": 3,
    "rise_pct": 2.8,
    "mcap_sol": 28.9,
    "dev_pct": 0.4,
@@ -6166,42 +6188,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PEPEMON",
-   "name": "Pepemon",
-   "mint": "Ew72n6PHgeomeX3rJ5CG96gbGWwzmJk3vdKDM5myGYDA",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/Ew72n6PHgeomeX3rJ5CG96gbGWwzmJk3vdKDM5myGYDA",
-   "status": "rejected: odd curve reading: virtual SOL 2.649e+05 is not 30 + real SOL 0 (off +2.649e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.649e+05 is not 30 + real SOL 0 (off +2.649e+05 SOL)"
-  },
-  {
-   "symbol": "USEFUL",
-   "name": "Very Useful",
-   "mint": "3ZBtCZyWyd1zQpSx4XjtKoccabVP6fjZafRVCFkRpump",
-   "age_s": 173,
-   "sol_in": -0.39,
-   "buys": 3,
-   "sells": 5,
-   "rise_pct": -2.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.4,
-   "big_sell": 1.6,
-   "x": "https://x.com/elonmusk/status/2126563155157344530?a=ndlA-71m-rxMyw1hRDk&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 13.5 s after the create (max 10 s)",
-   "why": "snipe: first reading 13.5 s after the create (max 10 s)"
   }
  ],
  "strategies": [
