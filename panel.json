@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:17:24Z",
+ "updated": "2026-11-28T05:17:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 750,
+  "flagged": 751,
   "checked": 49,
   "filtered": 1,
-  "lines": 1811,
+  "lines": 1812,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CHURLIE",
-   "why": "snipe",
-   "t": "2026-11-28T05:10:05Z"
-  },
   {
    "coin": "Fumb",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "DON",
    "why": "snipe",
    "t": "2026-11-28T05:17:18Z"
+  },
+  {
+   "coin": "wayback",
+   "why": "snipe",
+   "t": "2026-11-28T05:17:25Z"
   }
  ],
  "curve": [
@@ -3737,15 +3737,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:10:19Z",
-   "time": "05:10:19",
-   "agent": "SCANNER",
-   "coin": "ELF",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1612
-  },
-  {
    "t": "2026-11-28T04:10:39Z",
    "time": "05:10:39",
    "agent": "SCANNER",
@@ -5535,6 +5526,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 1 watched · 5 rejected (snipe not bought: only to size 3, snipe: first reading s after the 2) · closest wayback: no curve reading yet",
    "n": 1811
+  },
+  {
+   "t": "2026-11-28T05:17:25Z",
+   "time": "06:17:25",
+   "agent": "SCANNER",
+   "coin": "wayback",
+   "action": "flag",
+   "text": "snipe · first reading 9.0 s after the create · 24.4 SOL in · +223% since the create · mcap 94 SOL",
+   "n": 1812
   }
  ],
  "nights": [
@@ -5601,7 +5601,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 21 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5609,24 +5609,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 175,
-    "last_event_age_s": 7.4,
+    "events": 176,
+    "last_event_age_s": 5.3,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 1065,
-    "last_event_age_s": 5.4,
-    "errors": 89,
+    "connected": false,
+    "events": 1070,
+    "last_event_age_s": 23.7,
+    "errors": 93,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 139,
-    "last_event_age_s": 7.0,
+    "events": 140,
+    "last_event_age_s": 4.9,
     "errors": 6,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5639,9 +5639,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
-  "watching": 1,
-  "followed": 6,
+  "creates_per_min": 2.4,
+  "watching": 0,
+  "followed": 7,
   "odd_readings": 372,
   "odd_coins": 175
  },
@@ -5690,48 +5690,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2739,
+   "sent": 2774,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2739,
+   "sent": 2774,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "wayback",
-   "name": "wayback",
-   "mint": "HtFN4PMF7eP1x5wrfhZaqb79m4JjmhHQXWHBA2esR3ko",
-   "age_s": 7,
+   "symbol": "BAILOUT",
+   "name": "United Fidelity BAILOUT",
+   "mint": "EADP99XFP2kUMXJr8TmBuphF73LD7WKkvRLn8Xco58yc",
+   "age_s": 5,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 29.0,
-   "dev_pct": 2.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
+   "symbol": "wayback",
+   "name": "wayback",
+   "mint": "HtFN4PMF7eP1x5wrfhZaqb79m4JjmhHQXWHBA2esR3ko",
+   "age_s": 40,
+   "sol_in": 6.56,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 47.5,
+   "mcap_sol": 42.8,
+   "dev_pct": 2.0,
+   "big_sell": 17.84,
    "x": "https://x.com/usewayback",
    "tg": false,
    "web": "https://usewayback.fun",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "DON",
    "name": "Donald Pump",
    "mint": "4rq2oJXoyQZKgeiZaDhvQUBan1hQHWricEZS3ntQpump",
-   "age_s": 14,
-   "sol_in": 11.8,
+   "age_s": 47,
+   "sol_in": 4.76,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 93.2,
-   "mcap_sol": 55.0,
+   "sells": 2,
+   "rise_pct": 33.9,
+   "mcap_sol": 38.1,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 3.64,
    "x": "https://x.com/DonaldPumpOnPF/status/2126545813933339014",
    "tg": false,
    "web": "https://www.thedonaldgrump.fun/",
@@ -5742,7 +5760,7 @@
    "symbol": "YUTA",
    "name": "Yuta",
    "mint": "46dtYbdhGL69WW6cvn922R1xzX4SW5gEdVpHVcpUpump",
-   "age_s": 76,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5760,7 +5778,7 @@
    "symbol": "MYNAME",
    "name": "mynameistrump",
    "mint": "5FJA2p2j55b8DExmGARH2bQ8dCgfYt5Nybfgznirpump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5778,7 +5796,7 @@
    "symbol": "BATM",
    "name": "Batmancer",
    "mint": "DCHGXzmbuhdcZ7qEfc2SPDGWKyCEKE6TYCzYzuz7pump",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": -3.94,
    "buys": 3,
    "sells": 1,
@@ -5796,7 +5814,7 @@
    "symbol": "FISTRAT",
    "name": "Fistfight Rat",
    "mint": "6Um3cTnPQC8a1TKTipnVBdUqCpebsrx4EpdxWpCppump",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
