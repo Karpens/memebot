@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:52:28Z",
+ "updated": "2026-11-28T04:53:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 727,
+  "flagged": 728,
   "checked": 49,
   "filtered": 1,
-  "lines": 1747,
+  "lines": 1749,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "KACAURUS",
-   "why": "snipe",
-   "t": "2026-11-28T04:48:26Z"
-  },
   {
    "coin": "GUS",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SDOG",
    "why": "snipe",
    "t": "2026-11-28T04:51:13Z"
+  },
+  {
+   "coin": "RUBBER",
+   "why": "snipe",
+   "t": "2026-11-28T04:52:42Z"
   }
  ],
  "curve": [
@@ -1483,6 +1483,10 @@
   ],
   [
    1795841520,
+   47.79
+  ],
+  [
+   1795841580,
    47.79
   ]
  ],
@@ -3637,24 +3641,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:53:44Z",
-   "time": "04:53:44",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 8 rejected (snipe not bought: only to size 4, no symbol or name 2, mayhem mode 2)",
-   "n": 1548
-  },
-  {
-   "t": "2026-11-28T03:54:44Z",
-   "time": "04:54:44",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 8 rejected (snipe not bought: only to size 3, mayhem mode 3, serial launcher 1)",
-   "n": 1549
-  },
-  {
    "t": "2026-11-28T03:55:22Z",
    "time": "04:55:22",
    "agent": "SCANNER",
@@ -5435,6 +5421,24 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 0 watched · 11 rejected (snipe not bought: only to size 7, serial launcher 4)",
    "n": 1747
+  },
+  {
+   "t": "2026-11-28T04:52:42Z",
+   "time": "05:52:42",
+   "agent": "SCANNER",
+   "coin": "RUBBER",
+   "action": "flag",
+   "text": "snipe · first reading 9.1 s after the create · 3.0 SOL in · +21% since the create · mcap 35 SOL",
+   "n": 1748
+  },
+  {
+   "t": "2026-11-28T04:52:42Z",
+   "time": "05:52:42",
+   "agent": "SIZER",
+   "coin": "RUBBER",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1749
   }
  ],
  "nights": [
@@ -5509,24 +5513,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 75,
-    "last_event_age_s": 80.9,
+    "events": 77,
+    "last_event_age_s": 8.8,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 367,
-    "last_event_age_s": 4.5,
+    "events": 377,
+    "last_event_age_s": 2.0,
     "errors": 37,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 58,
-    "last_event_age_s": 80.4,
+    "events": 60,
+    "last_event_age_s": 8.8,
     "errors": 3,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5539,9 +5543,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 10,
+  "followed": 7,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5590,23 +5594,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1147,
+   "sent": 1182,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1147,
+   "sent": 1182,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RICH",
+   "name": "Make me rich Make no mistakes",
+   "mint": "75FSLixwi6oi8kbjF2iVwavsG2Lk6vvbBaXJwxHGsaWg",
+   "age_s": 8,
+   "sol_in": -7.11,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -34.4,
+   "mcap_sol": 28.5,
+   "dev_pct": 21.2,
+   "big_sell": 7.11,
+   "x": "https://x.com/toly/status/2126539780565651607",
+   "tg": false,
+   "web": false,
+   "status": "rejected: dump: 7.1 SOL sold",
+   "why": "dump: 7.1 SOL sold"
+  },
+  {
+   "symbol": "RUBBER",
+   "name": "Rubbercoin",
+   "mint": "8mw9pvsKFwV6r9yWTpcNQc72udBn7Lz9SpJTe6qJbrcP",
+   "age_s": 28,
+   "sol_in": 2.37,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 16.1,
+   "mcap_sol": 33.6,
+   "dev_pct": 1.7,
+   "big_sell": 0.59,
+   "x": "https://x.com/wallstreetbets/status/2126526500484653443/photo/4",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SDOG",
    "name": "SOLADOGE",
    "mint": "HeX4TP89E3a43A15XWe4uEt1cZENxSevWmmtwD82G2K8",
-   "age_s": 80,
+   "age_s": 113,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5624,7 +5664,7 @@
    "symbol": "STOMACH",
    "name": "Diamond Stomach",
    "mint": "FBggvw14BRafv1mPEvgxpVbjmyT4WJHJgDx8PQjLpump",
-   "age_s": 96,
+   "age_s": 129,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 2,
@@ -5642,7 +5682,7 @@
    "symbol": "DUEL",
    "name": "Duelfund",
    "mint": "2zfbwbUBtrWHRgKzhwuwaPUvR89H7Mk4KqN32H1opump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.04,
    "buys": 2,
    "sells": 1,
@@ -5660,7 +5700,7 @@
    "symbol": "WLFI",
    "name": "OG 1YR OLDEST ON PF",
    "mint": "HJJoE9YhdM5QidY7o3xeVTiYNPrJrYh8wJKTyKrCTRTp",
-   "age_s": 105,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5678,7 +5718,7 @@
    "symbol": "WLFI",
    "name": "OG 1YR OLDEST ON PF",
    "mint": "BnynphksQDsWCNgrAHenJ4hJikhNnT1NjctHRLmXmkg7",
-   "age_s": 138,
+   "age_s": 171,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5691,96 +5731,6 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "CYBRCB",
-   "name": "Cybercab & Chill",
-   "mint": "3UtTVCag3oiNfEUpVNaPNmcNSuatVz2WgcAXyBHGpump",
-   "age_s": 148,
-   "sol_in": 0.54,
-   "buys": 20,
-   "sells": 1,
-   "rise_pct": 3.6,
-   "mcap_sol": 29.3,
-   "dev_pct": 0.6,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "WLFI",
-   "name": "OG 1YR OLDEST ON PF",
-   "mint": "5VMD41H4AdRjFeyZPiHnYAL8c8xm9zyPq4THUrffR24P",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/maxkeiser/status/1991597355217400258",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "WLFI",
-   "name": "OG 1YR OLDEST ON PF",
-   "mint": "FCqzb6v7WXo2mc87PkfWkC9PmhXKFBKh5gyr1V5wUvAp",
-   "age_s": 154,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/maxkeiser/status/1991597355217400258",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "WLFI",
-   "name": "OG 1YR OLDEST ON PF",
-   "mint": "5YL91zu6o7LGByTNTnHLbzzY62GG7pnZKaTdxFUTDT2Z",
-   "age_s": 156,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/maxkeiser/status/1991597355217400258",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "WLFI",
-   "name": "OG 1YR OLDEST ON PF",
-   "mint": "FCf98PBkqjY3kDzQx2ZubCd9v81nRMByrMTDpaD6d3Aj",
-   "age_s": 163,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/maxkeiser/status/1991597355217400258",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
