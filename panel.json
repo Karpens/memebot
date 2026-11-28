@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:59:45Z",
+ "updated": "2026-11-28T09:00:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1016,
+  "flagged": 1018,
   "checked": 49,
   "filtered": 1,
-  "lines": 2411,
+  "lines": 2414,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "RALLY",
-   "why": "snipe",
-   "t": "2026-11-28T08:57:10Z"
-  },
   {
    "coin": "MOCHIYETI",
    "why": "snipe",
@@ -62,21 +57,22 @@
    "t": "2026-11-28T08:59:09Z"
   },
   {
-   "coin": "SPAWN",
-   "why": "snipe",
-   "t": "2026-11-28T08:59:12Z"
-  },
-  {
    "coin": "Neema",
    "why": "snipe",
    "t": "2026-11-28T08:59:44Z"
+  },
+  {
+   "coin": "SPAWN",
+   "why": "snipe",
+   "t": "2026-11-28T08:59:50Z"
+  },
+  {
+   "coin": "JB",
+   "why": "snipe",
+   "t": "2026-11-28T09:00:07Z"
   }
  ],
  "curve": [
-  [
-   1795820400,
-   59.14
-  ],
   [
    1795820460,
    59.52
@@ -2472,6 +2468,10 @@
   [
    1795856340,
    47.79
+  ],
+  [
+   1795856400,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:01:23Z",
-   "time": "09:01:23",
-   "agent": "SCANNER",
-   "coin": "NVIDIA",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 17.6 SOL in · +133% since the create · mcap 81 SOL",
-   "n": 2212
-  },
-  {
-   "t": "2026-11-28T08:01:23Z",
-   "time": "09:01:23",
-   "agent": "SIZER",
-   "coin": "NVIDIA",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2213
-  },
-  {
-   "t": "2026-11-28T08:01:59Z",
-   "time": "09:01:59",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, no symbol or name 1)",
-   "n": 2214
-  },
-  {
    "t": "2026-11-28T08:02:23Z",
    "time": "09:02:23",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 1.2 SOL in · +7% since the create · mcap 37 SOL",
    "n": 2411
+  },
+  {
+   "t": "2026-11-28T08:59:50Z",
+   "time": "09:59:50",
+   "agent": "SCANNER",
+   "coin": "SPAWN",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 5.4 SOL in · +34% since the create · mcap 49 SOL",
+   "n": 2412
+  },
+  {
+   "t": "2026-11-28T09:00:00Z",
+   "time": "10:00:00",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape 2026-11-28T08 · 9223 lines (7715 curve readings) · 1.5 MB · 202 coins",
+   "n": 2413
+  },
+  {
+   "t": "2026-11-28T09:00:07Z",
+   "time": "10:00:07",
+   "agent": "SCANNER",
+   "coin": "JB",
+   "action": "flag",
+   "text": "snipe · first reading 1.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2414
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 648 (246 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 648 (246 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1003,
-    "last_event_age_s": 1.0,
+    "events": 1005,
+    "last_event_age_s": 8.0,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17742,
-    "last_event_age_s": 0.2,
+    "events": 17840,
+    "last_event_age_s": 0.6,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 723,
-    "last_event_age_s": 0.6,
+    "events": 725,
+    "last_event_age_s": 7.5,
     "errors": 28,
     "last_error": "usepaidball.fun: too slow (over 2 s)"
    }
@@ -6533,7 +6533,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 10,
   "odd_readings": 648,
@@ -6584,30 +6584,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16939,
+   "sent": 16970,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16939,
+   "sent": 16970,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JB",
+   "name": "Just Believe",
+   "mint": "qjLZRyBcg53y84DfmFyj9LUFnaVS93FBePqC4Y3iAxu",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/elonmusk/status/2126539857581511160",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "SPAWN",
+   "name": "Spawn",
+   "mint": "4xNhA4W7FeMffSbLn3X8r6gYayVKZaZdGETc36cJpump",
+   "age_s": 23,
+   "sol_in": 13.08,
+   "buys": 9,
+   "sells": 8,
+   "rise_pct": 90.2,
+   "mcap_sol": 70.3,
+   "dev_pct": 14.0,
+   "big_sell": 2.65,
+   "x": "https://x.com/spawnlaunch",
+   "tg": false,
+   "web": "https://spawnlaunch.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Neema",
    "name": "The Giraffe Calf",
    "mint": "VxJJBDYbsXspYEcWi4fkVB1J6bDiMGMXSPbZ2Zzpump",
-   "age_s": 1,
-   "sol_in": 1.19,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 7.2,
-   "mcap_sol": 37.1,
+   "age_s": 30,
+   "sol_in": 4.57,
+   "buys": 9,
+   "sells": 8,
+   "rise_pct": 29.3,
+   "mcap_sol": 44.7,
    "dev_pct": 10.8,
-   "big_sell": 0.0,
+   "big_sell": 1.77,
    "x": "https://x.com/devvie258560/status/2126601882122531246",
    "tg": false,
    "web": "https://fox23.com/news/local/oklahoma-city-zoo-announces-birth-of-giraffe-calf-11-28-2026",
@@ -6618,10 +6654,10 @@
    "symbol": "SPAWN",
    "name": "Spawn",
    "mint": "CGZkdqmtZFY4ez1AWWPL8hBSsKGZwDBwuzZcahgApump",
-   "age_s": 32,
+   "age_s": 61,
    "sol_in": -4.5,
-   "buys": 3,
-   "sells": 4,
+   "buys": 4,
+   "sells": 9,
    "rise_pct": -24.4,
    "mcap_sol": 28.0,
    "dev_pct": 14.0,
@@ -6636,14 +6672,14 @@
    "symbol": "Huss Huss",
    "name": "Huss Huss",
    "mint": "H8ESoHSDSsJZvXe1FH4SYnnQRE1dnXR6xVMQoW8mpump",
-   "age_s": 37,
-   "sol_in": 0.0,
+   "age_s": 66,
+   "sol_in": -0.06,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": -0.4,
+   "mcap_sol": 28.0,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.06,
    "x": false,
    "tg": false,
    "web": false,
@@ -6654,12 +6690,12 @@
    "symbol": "TUGI",
    "name": "The Gambling Retard",
    "mint": "LbiLSbC6iLMmgt2g24W8oBeZt8DYandr8NsiPSApump",
-   "age_s": 61,
-   "sol_in": 15.15,
-   "buys": 28,
-   "sells": 17,
-   "rise_pct": 90.4,
-   "mcap_sol": 94.1,
+   "age_s": 90,
+   "sol_in": 26.88,
+   "buys": 44,
+   "sells": 25,
+   "rise_pct": 180.2,
+   "mcap_sol": 138.4,
    "dev_pct": 26.6,
    "big_sell": 4.66,
    "x": "https://twitter.com/ShaneStoffer/status/2126601328566972461",
@@ -6672,7 +6708,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "9z7VvEip3Hjwkjaa9PDzdKnaVsirZqGqmiUiwbQhiJn2",
-   "age_s": 84,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6726,7 @@
    "symbol": "TEST",
    "name": "Test Coin",
    "mint": "44PfhWWA4dfNiMd7DtfnjCrVxevHTgXhYFtp6FS5Hska",
-   "age_s": 102,
+   "age_s": 131,
    "sol_in": 0.08,
    "buys": 2,
    "sells": 6,
@@ -6708,7 +6744,7 @@
    "symbol": "VK86",
    "name": "virat kohli 86th TON",
    "mint": "6j378iT3QnaNpYbgBfWSPWH6sNMpUdTQeAKw929Vpump",
-   "age_s": 110,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6726,7 +6762,7 @@
    "symbol": "MOCHIYETI",
    "name": "Snowy Mochi Yeti",
    "mint": "CJihgUX7y4iTwQNsB2JAfqDMwycrcj1bnXzoiVhTAAoP",
-   "age_s": 114,
+   "age_s": 143,
    "sol_in": 0.25,
    "buys": 3,
    "sells": 2,
@@ -6744,7 +6780,7 @@
    "symbol": "tugi",
    "name": "tugi",
    "mint": "CJF4SZEKqUhevKY3DHFRoWXijoczma3zWHikuEQ1f7cA",
-   "age_s": 121,
+   "age_s": 150,
    "sol_in": -0.67,
    "buys": 14,
    "sells": 34,
@@ -6762,67 +6798,13 @@
    "symbol": "OUTSIDER",
    "name": "Outsider",
    "mint": "3PXfazk92Da11ux3nZLb4UxCrnu8dX3VJzRn1DRrpump",
-   "age_s": 125,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "RALLY",
-   "name": "Rally",
-   "mint": "CgFd8qqLXgN92GgPnCeTRofMZnd6cm6A8Uzo3gVRERLY",
    "age_s": 154,
-   "sol_in": 35.55,
-   "buys": 56,
-   "sells": 48,
-   "rise_pct": 360.8,
-   "mcap_sol": 137.6,
-   "dev_pct": 3.5,
-   "big_sell": 3.23,
-   "x": "https://x.com/try_rally",
-   "tg": false,
-   "web": "https://tryrally.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SCHARO",
-   "name": "scharo in u",
-   "mint": "GQNYX95KBHNcohGqK1gaKjutRBwTNCgWAqjc2qshpump",
-   "age_s": 167,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "100X",
-   "name": "LETS GO",
-   "mint": "Gpo2XWmBnpDgKGLitXG1M3yw2c2tDgEd8ZmcNo1hpump",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
