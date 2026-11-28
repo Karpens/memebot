@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:48:15Z",
+ "updated": "2026-11-28T08:48:50Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 996,
+  "flagged": 997,
   "checked": 49,
   "filtered": 1,
-  "lines": 2376,
+  "lines": 2379,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "WLFI",
-   "why": "snipe",
-   "t": "2026-11-28T08:44:27Z"
-  },
   {
    "coin": "Bonded",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Amanda",
    "why": "snipe",
    "t": "2026-11-28T08:48:14Z"
+  },
+  {
+   "coin": "Robinhood",
+   "why": "snipe",
+   "t": "2026-11-28T08:48:48Z"
   }
  ],
  "curve": [
@@ -4581,33 +4581,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:47:41Z",
-   "time": "08:47:41",
-   "agent": "SCANNER",
-   "coin": "MOGCOIN",
-   "action": "flag",
-   "text": "snipe · first reading 5.6 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 2177
-  },
-  {
-   "t": "2026-11-28T07:47:51Z",
-   "time": "08:47:51",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 0 watched · 27 rejected (serial launcher 17, snipe not bought: only to size 4, snipe: first reading s after the 3)",
-   "n": 2178
-  },
-  {
-   "t": "2026-11-28T07:48:28Z",
-   "time": "08:48:28",
-   "agent": "SCANNER",
-   "coin": "Zhaki",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2179
-  },
-  {
    "t": "2026-11-28T07:48:28Z",
    "time": "08:48:28",
    "agent": "SIZER",
@@ -6379,6 +6352,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.7 s after the create · 2.0 SOL in · +14% since the create · mcap 32 SOL",
    "n": 2376
+  },
+  {
+   "t": "2026-11-28T08:48:22Z",
+   "time": "09:48:22",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, serial launcher 2)",
+   "n": 2377
+  },
+  {
+   "t": "2026-11-28T08:48:41Z",
+   "time": "09:48:41",
+   "agent": "SCANNER",
+   "coin": "FlapCat",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1273 is not 30 + real SOL 0 (off +1243 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 648 odd readings from 246 coins tonight",
+   "n": 2378
+  },
+  {
+   "t": "2026-11-28T08:48:48Z",
+   "time": "09:48:48",
+   "agent": "SCANNER",
+   "coin": "Robinhood",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2379
   }
  ],
  "nights": [
@@ -6451,7 +6451,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 647 (245 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 648 (246 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6459,15 +6459,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 961,
-    "last_event_age_s": 0.7,
+    "events": 963,
+    "last_event_age_s": 1.2,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16429,
+    "events": 16478,
     "last_event_age_s": 0.1,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6475,8 +6475,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 698,
-    "last_event_age_s": 0.2,
+    "events": 700,
+    "last_event_age_s": 0.9,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6489,11 +6489,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.0,
   "watching": 0,
   "followed": 11,
-  "odd_readings": 647,
-  "odd_coins": 245
+  "odd_readings": 648,
+  "odd_coins": 246
  },
  "learner": {
   "samples": 84,
@@ -6540,30 +6540,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16205,
+   "sent": 16242,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16205,
+   "sent": 16242,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Robinhood",
+   "name": "Robinhood",
+   "mint": "2WxTpAjdKGTwiwe1sLGyGVLYwFzcjskhRw7N3qSsPgAF",
+   "age_s": 1,
+   "sol_in": -0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "FlapCat",
+   "name": "FlapCat",
+   "mint": "3mWWMaE1w3srLPQu1p6UtXwMdM1RTJRZvrPRVoerPL44",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/cryptoceejay2/status/2126598999704482005?a=hx2r7gmgMbjqu0NHPWs&s=46",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
    "symbol": "Amanda",
    "name": "Low Budget Vagina Amanda",
    "mint": "Htd6YJMBaZ5V8ae1zx4m5M1v1ZGZNshTXXveK2ARpump",
-   "age_s": 0,
-   "sol_in": 1.98,
+   "age_s": 35,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 13.6,
-   "mcap_sol": 31.9,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 1.98,
    "x": "https://x.com/oyindapenaddict/status/2124112999317475736",
    "tg": false,
    "web": "https://www.instagram.com/in.progress.jess/reel/Df9m-m6h6-1/",
@@ -6574,7 +6610,7 @@
    "symbol": "Fava",
    "name": "Fava",
    "mint": "BYbM3giGkaC9nzLNemEZVp415zQzeEvL7J9vfCLDpump",
-   "age_s": 10,
+   "age_s": 45,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6592,7 +6628,7 @@
    "symbol": "CATRAVE",
    "name": "CAT RAVE",
    "mint": "6VGN4jEGEVpyTBmdufH5d12PXtn42LhjpkGURZ8Bpump",
-   "age_s": 18,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6610,14 +6646,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CtvgHuV7MhwypXUg1BfsqSHxvQ7rZdDyS1SiMuempump",
-   "age_s": 27,
-   "sol_in": 17.34,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": 130.5,
-   "mcap_sol": 80.2,
+   "age_s": 62,
+   "sol_in": 18.89,
+   "buys": 18,
+   "sells": 12,
+   "rise_pct": 144.8,
+   "mcap_sol": 85.1,
    "dev_pct": 11.1,
-   "big_sell": 0.31,
+   "big_sell": 0.32,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -6628,7 +6664,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "5vk5Nmxzse99LSNJSppjVVuQM94YDceZMBq9GRuujAis",
-   "age_s": 33,
+   "age_s": 68,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6646,7 +6682,7 @@
    "symbol": "ATX",
    "name": "ATX",
    "mint": "BAqjdZzAay7AnRgbUeVbupDTv4mipGKezo78mCVKnDv6",
-   "age_s": 54,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6664,7 +6700,7 @@
    "symbol": "baguette",
    "name": "france is dead, send this",
    "mint": "5sFcHVtjskPRFcrgF5W3nWJKgXXENbChzExSJ7Lv8er3",
-   "age_s": 57,
+   "age_s": 92,
    "sol_in": -2.27,
    "buys": 2,
    "sells": 5,
@@ -6682,14 +6718,14 @@
    "symbol": "Bonded",
    "name": "Bonded",
    "mint": "5LLxrpPgvrPttBnAgMGiLREtReAZjfsdzbW4DMupump",
-   "age_s": 87,
-   "sol_in": 23.56,
-   "buys": 27,
-   "sells": 21,
-   "rise_pct": 213.8,
-   "mcap_sol": 90.9,
+   "age_s": 122,
+   "sol_in": 21.48,
+   "buys": 36,
+   "sells": 29,
+   "rise_pct": 190.1,
+   "mcap_sol": 84.1,
    "dev_pct": 1.9,
-   "big_sell": 3.23,
+   "big_sell": 4.77,
    "x": "https://x.com/UseBonded",
    "tg": false,
    "web": "https://getbonded.fun",
@@ -6700,7 +6736,7 @@
    "symbol": "DELIM",
    "name": "Tharoor Delimitation",
    "mint": "DFu4gLgAVtzpWNWe1nGuE62z3JYDZAXQR5D9NUYxUoY2",
-   "age_s": 87,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6713,42 +6749,6 @@
    "web": "https://grokfamily.fun/",
    "status": "rejected: serial launcher: 5 more coins in 60 min",
    "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "SAUDICUT",
-   "name": "Saudi Oil Cut",
-   "mint": "4QkoR4RjCuSYxKAHXpcimSbYnxM6r42gCp6eB9HhNuuu",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://twitter.com/CryptoSlate/status/2126598218851172833",
-   "tg": false,
-   "web": "https://grokfamily.fun/",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "Joe",
-   "name": "catwifhat",
-   "mint": "F6Bbaa6c88aFytV1ndZpi3X5fvVTH1KMXaUtdn84PX4j",
-   "age_s": 176,
-   "sol_in": -0.16,
-   "buys": 9,
-   "sells": 7,
-   "rise_pct": -1.0,
-   "mcap_sol": 33.6,
-   "dev_pct": 9.9,
-   "big_sell": 6.08,
-   "x": "https://x.com/nonanon124/status/2126597986977272295",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
