@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:07:38Z",
+ "updated": "2026-11-28T03:08:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 516,
+  "flagged": 517,
   "checked": 49,
   "filtered": 1,
-  "lines": 1396,
+  "lines": 1397,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T03:03:50Z"
-  },
   {
    "coin": "LETSSEE",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "CHARLIE",
    "why": "snipe",
    "t": "2026-11-28T03:07:35Z"
+  },
+  {
+   "coin": "test",
+   "why": "snipe",
+   "t": "2026-11-28T03:08:04Z"
   }
  ],
  "curve": [
@@ -1063,6 +1063,10 @@
   ],
   [
    1795835220,
+   47.79
+  ],
+  [
+   1795835280,
    47.79
   ]
  ],
@@ -3217,15 +3221,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:07:40Z",
-   "time": "03:07:40",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.8 a minute · 0 watched · 8 rejected (snipe not bought: only to size 6, serial launcher 1, mayhem mode 1)",
-   "n": 1197
-  },
-  {
    "t": "2026-11-28T02:07:48Z",
    "time": "03:07:48",
    "agent": "SCANNER",
@@ -5015,6 +5010,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
    "n": 1396
+  },
+  {
+   "t": "2026-11-28T03:08:04Z",
+   "time": "04:08:04",
+   "agent": "SCANNER",
+   "coin": "test",
+   "action": "flag",
+   "text": "snipe · first reading 2.6 s after the create · 0.5 SOL in · +3% since the create · mcap 29 SOL",
+   "n": 1397
   }
  ],
  "nights": [
@@ -5087,7 +5091,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5095,24 +5099,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1621,
-    "last_event_age_s": 4.7,
+    "events": 1622,
+    "last_event_age_s": 5.4,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 34568,
-    "last_event_age_s": 2.9,
+    "events": 34592,
+    "last_event_age_s": 2.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 943,
-    "last_event_age_s": 4.5,
+    "events": 944,
+    "last_event_age_s": 5.3,
     "errors": 45,
     "last_error": "turbo-gateway.com: timeout after 2 s"
    }
@@ -5127,7 +5131,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 335,
   "odd_coins": 152
  },
@@ -5176,23 +5180,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16314,
+   "sent": 16344,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16314,
+   "sent": 16344,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "test",
+   "name": "test",
+   "mint": "A7voVWoyrpRL8rasZaHjdCE8uqSPDvZ7ejxiCQkDpump",
+   "age_s": 5,
+   "sol_in": 0.48,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 3.2,
+   "mcap_sol": 28.9,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "CHARLIE",
    "name": "Charlie Coin",
    "mint": "J4fcq8nSs3p1C2C9Xh1ekYhdJ51HkwjmH2DdzyXQpump",
-   "age_s": 4,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5210,14 +5232,14 @@
    "symbol": "bob",
    "name": "bob",
    "mint": "BdYsf2oCXmVGX3E8uTVpZNiAQvUWDveyBBH7fr2Dpump",
-   "age_s": 9,
-   "sol_in": 11.42,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 87.3,
-   "mcap_sol": 55.9,
+   "age_s": 37,
+   "sol_in": -0.64,
+   "buys": 4,
+   "sells": 8,
+   "rise_pct": -4.1,
+   "mcap_sol": 28.6,
    "dev_pct": 3.4,
-   "big_sell": 2.48,
+   "big_sell": 7.73,
    "x": "https://x.com/bobunstnk",
    "tg": false,
    "web": "https://www.tiktok.com/tag/bob",
@@ -5228,7 +5250,7 @@
    "symbol": "thebigrat",
    "name": "TheBigRat",
    "mint": "5VHGv6Ak3vvxstcz9KNTz2VNfvfoVfytd5vqF2RNpump",
-   "age_s": 30,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5246,7 +5268,7 @@
    "symbol": "PUMPMAS",
    "name": "MERRY PUMPMAS",
    "mint": "2o4bxxLZ7ivoiEEpiRWpeQommdLmMJQq2F5P3Hjmpump",
-   "age_s": 38,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5264,12 +5286,12 @@
    "symbol": "Nighao",
    "name": "Nig Hao Cat",
    "mint": "EEZLxPMmDj1SArR93cuD1rNDwAi4K1V3TrNQPcJppump",
-   "age_s": 50,
-   "sol_in": 0.96,
-   "buys": 2,
+   "age_s": 78,
+   "sol_in": 1.03,
+   "buys": 4,
    "sells": 0,
-   "rise_pct": 6.5,
-   "mcap_sol": 29.8,
+   "rise_pct": 7.0,
+   "mcap_sol": 29.9,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
@@ -5282,7 +5304,7 @@
    "symbol": "CRJ",
    "name": "Carly Rae Jepsen",
    "mint": "B82mXPqJUVWcdRcN55Lcn3urVxCwyFRUHAtwJvKabNoa",
-   "age_s": 51,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5300,7 +5322,7 @@
    "symbol": "SLEEVE",
    "name": "sleeve",
    "mint": "AXKvru7cEQjpCnT2dvLdzj6h6QetYpkhUguJpsk9pump",
-   "age_s": 100,
+   "age_s": 128,
    "sol_in": 1.23,
    "buys": 1,
    "sells": 0,
@@ -5318,7 +5340,7 @@
    "symbol": "LOOB",
    "name": "Loob",
    "mint": "AzhCCpXsxphJ7ReURdWE4e4xFcec3Ao1qHeN2wJmpump",
-   "age_s": 101,
+   "age_s": 129,
    "sol_in": -0.34,
    "buys": 9,
    "sells": 14,
@@ -5336,7 +5358,7 @@
    "symbol": "RIZZMAS",
    "name": "Capo Rizzmas",
    "mint": "G8KTibtaX5UFfwHH5rKueynYuF3fhDW8H96s3CNXYVY7",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
