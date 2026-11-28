@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:40:38Z",
+ "updated": "2026-11-28T01:41:07Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 354,
+  "flagged": 356,
   "checked": 49,
   "filtered": 1,
-  "lines": 1101,
+  "lines": 1103,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CCM",
-   "why": "snipe",
-   "t": "2026-11-28T01:34:56Z"
-  },
-  {
-   "coin": "Pete",
-   "why": "snipe",
-   "t": "2026-11-28T01:35:25Z"
-  },
   {
    "coin": "STA",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "JERKPE",
    "why": "snipe",
    "t": "2026-11-28T01:38:06Z"
+  },
+  {
+   "coin": "BLACKJESUS",
+   "why": "snipe",
+   "t": "2026-11-28T01:40:54Z"
+  },
+  {
+   "coin": "AISI",
+   "why": "snipe",
+   "t": "2026-11-28T01:40:58Z"
   }
  ],
  "curve": [
@@ -715,6 +715,10 @@
   ],
   [
    1795830000,
+   47.79
+  ],
+  [
+   1795830060,
    47.79
   ]
  ],
@@ -2869,24 +2873,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:51:53Z",
-   "time": "01:51:53",
-   "agent": "SCANNER",
-   "coin": "hotdog",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.002935 is not 30 + real SOL 0 (off -30 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 164 odd readings from 82 coins tonight",
-   "n": 902
-  },
-  {
-   "t": "2026-11-28T00:51:57Z",
-   "time": "01:51:57",
-   "agent": "SCANNER",
-   "coin": "TAMASHA",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.5 SOL in · +3% since the create · mcap 39 SOL",
-   "n": 903
-  },
-  {
    "t": "2026-11-28T00:52:00Z",
    "time": "01:52:00",
    "agent": "SCANNER",
@@ -4667,6 +4653,24 @@
    "action": "scan",
    "text": "new pairs · 6.4 a minute · 0 watched · 18 rejected (mayhem mode 6, serial launcher 4, no symbol or name 4)",
    "n": 1101
+  },
+  {
+   "t": "2026-11-28T01:40:54Z",
+   "time": "02:40:54",
+   "agent": "SCANNER",
+   "coin": "BLACKJESUS",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1102
+  },
+  {
+   "t": "2026-11-28T01:40:58Z",
+   "time": "02:40:58",
+   "agent": "SCANNER",
+   "coin": "AISI",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 38 SOL",
+   "n": 1103
   }
  ],
  "nights": [
@@ -4739,7 +4743,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 264 (125 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 264 (125 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4747,24 +4751,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1291,
-    "last_event_age_s": 14.7,
+    "events": 1296,
+    "last_event_age_s": 8.9,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24819,
-    "last_event_age_s": 1.4,
+    "events": 24842,
+    "last_event_age_s": 1.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 724,
-    "last_event_age_s": 24.9,
+    "events": 726,
+    "last_event_age_s": 10.6,
     "errors": 31,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4777,7 +4781,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.0,
+  "creates_per_min": 6.4,
   "watching": 0,
   "followed": 8,
   "odd_readings": 264,
@@ -4828,23 +4832,113 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10758,
+   "sent": 10789,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10758,
+   "sent": 10789,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GTAFORTNIT",
+   "name": "GTA VI VS FORTNITE",
+   "mint": "6uZ1xSPQHqgxFMCdSyfdNtqKCznJV6cBMa3HJhqkpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "AISI",
+   "name": "Artificial Intelligent Super Inu",
+   "mint": "5695a38nKCBWC7S6q7vyNFRXFT4jWwjWifPLJDQdkoni",
+   "age_s": 10,
+   "sol_in": -4.95,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -26.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 15.2,
+   "big_sell": 4.39,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "BLACKJESUS",
+   "name": "Black Jesus Coin",
+   "mint": "3Ao2LqECnQp2wiLZ3qJcdxH7FwpAa248j5ersjfLpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DOOB",
+   "name": "DOOBIE",
+   "mint": "45om4dm1hqSG5EnydHZEMNXWTfzeEP6Ceh7kV8yopump",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "HvYUnoyB1VWVGzWDVT78zR1g9BuuTK2c1isfRt8spNMG",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 39.5,
+   "dev_pct": 17.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "BFFtNANG5nDADvJsYMKDRjNNHPr6z62ZyiApLJfsWBKe",
-   "age_s": 14,
+   "age_s": 43,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4862,7 +4956,7 @@
    "symbol": "FDSFDSF",
    "name": "dfsd",
    "mint": "CVMCqs7bh4NQhGxtCgRY8ncbhCRhezzXvuchrsJzpump",
-   "age_s": 23,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4880,7 +4974,7 @@
    "symbol": "DCEO",
    "name": "Deriv Strategy",
    "mint": "J6q4ZsX12htNdS72ytKfBgchjzsp6d2NbrmfK93N54cg",
-   "age_s": 25,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4898,7 +4992,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "GjBzgJLvEBW8yRdUnwiDgc7CjK7DBsTWxe2Q662Tpump",
-   "age_s": 30,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4916,12 +5010,12 @@
    "symbol": "MARS",
    "name": "Mars The Hippo",
    "mint": "Ch6sfAhJPAFvqBYGzJErLM8hQEPTteUj3NHpr74gpump",
-   "age_s": 41,
-   "sol_in": 2.83,
-   "buys": 10,
-   "sells": 18,
-   "rise_pct": 17.4,
-   "mcap_sol": 42.0,
+   "age_s": 70,
+   "sol_in": 2.33,
+   "buys": 11,
+   "sells": 24,
+   "rise_pct": 14.2,
+   "mcap_sol": 40.9,
    "dev_pct": 12.5,
    "big_sell": 2.73,
    "x": "https://x.com/tothemoon421742/status/2126491165298151724",
@@ -4934,7 +5028,7 @@
    "symbol": "eˣ",
    "name": "exponential coin",
    "mint": "DqdNJC9QrJ4dWbcyi2beW8ix28hxbGkDTeuQY2kALZBY",
-   "age_s": 83,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4952,7 +5046,7 @@
    "symbol": "GIGAD",
    "name": "Giga Deriv",
    "mint": "G7ELurkAXDMa69HFcY5UjymcBSqpDsmbQHdwuZS96p4j",
-   "age_s": 99,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4970,7 +5064,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "BabM4KeDwqkTcaq5KHyru5sHzUn7Roge6TVEjfU3pump",
-   "age_s": 110,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4988,7 +5082,7 @@
    "symbol": "FDSFDSF",
    "name": "dfsd",
    "mint": "A5GmLMYbDykbVi1wGdYwtKBdAHwZkfHu71XZr6GQpump",
-   "age_s": 122,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5006,7 +5100,7 @@
    "symbol": "SI",
    "name": "Singularity inu",
    "mint": "7j6xpkd8ngqtUucknPRyNXZyh5fBfRYDLpsC5rC1Qxdf",
-   "age_s": 131,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5024,7 +5118,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "8faKLnF1x8U7S8aQ2Py2AdrXrvTzb11tymsqT672pump",
-   "age_s": 131,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5042,7 +5136,7 @@
    "symbol": "Bnote",
    "name": "Botan",
    "mint": "5R2m9eTaCXuxzr8STSX8edZhPXubmLt6fkJBbpVYpump",
-   "age_s": 133,
+   "age_s": 162,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5060,7 +5154,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HmV5Nme96xV94E1oHiuhSARP2qkmpRQTHEfmBY7bpump",
-   "age_s": 148,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5073,60 +5167,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "JERKPE",
-   "name": "Jerk Pepe",
-   "mint": "5d7B1Ek7U4BQu3iheFnH7LuzRYgpx5FEx4GmiAHdpump",
-   "age_s": 153,
-   "sol_in": 6.5,
-   "buys": 16,
-   "sells": 8,
-   "rise_pct": 48.0,
-   "mcap_sol": 41.4,
-   "dev_pct": 0.0,
-   "big_sell": 0.66,
-   "x": "https://x.com/jerkpepeonsol",
-   "tg": false,
-   "web": "https://jerkpepe.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "DOOB",
-   "name": "DOOBIE",
-   "mint": "7dqzCNrEg6c7VGs1RBWi6andTg48d1V6gB38sUyfpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 30.8,
-   "dev_pct": 5.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "D6900",
-   "name": "Hexflip 6900",
-   "mint": "FYyULPwB4qocuaWE76MgPqweUjeFn3nmD8N6Xn2z5V2n",
-   "age_s": 164,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://derivr.fun",
-   "status": "rejected: odd curve reading: virtual SOL 1.351e+05 is not 30 + real SOL 0 (off +1.351e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 1.351e+05 is not 30 + real SOL 0 (off +1.351e+05 SOL)"
   }
  ],
  "strategies": [
