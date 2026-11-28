@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:30:29Z",
+ "updated": "2026-11-28T03:31:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 565,
+  "flagged": 566,
   "checked": 49,
   "filtered": 1,
-  "lines": 1475,
+  "lines": 1476,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SNIP",
-   "why": "snipe",
-   "t": "2026-11-28T03:27:09Z"
-  },
   {
    "coin": "Raisin",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SPEW",
    "why": "snipe",
    "t": "2026-11-28T03:30:20Z"
+  },
+  {
+   "coin": "PMIX",
+   "why": "snipe",
+   "t": "2026-11-28T03:30:56Z"
   }
  ],
  "curve": [
@@ -1155,6 +1155,10 @@
   ],
   [
    1795836600,
+   47.79
+  ],
+  [
+   1795836660,
    47.79
   ]
  ],
@@ -3309,15 +3313,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:34:16Z",
-   "time": "03:34:16",
-   "agent": "SCANNER",
-   "coin": "PINEWALK",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1276
-  },
-  {
    "t": "2026-11-28T02:34:53Z",
    "time": "03:34:53",
    "agent": "SCANNER",
@@ -5107,6 +5102,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, serial launcher 2)",
    "n": 1475
+  },
+  {
+   "t": "2026-11-28T03:30:56Z",
+   "time": "04:30:56",
+   "agent": "SCANNER",
+   "coin": "PMIX",
+   "action": "flag",
+   "text": "snipe · first reading 3.9 s after the create · -1.0 SOL in · -6% since the create · mcap 28 SOL",
+   "n": 1476
   }
  ],
  "nights": [
@@ -5179,7 +5183,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5187,15 +5191,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1710,
-    "last_event_age_s": 13.6,
+    "events": 1711,
+    "last_event_age_s": 10.3,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 36646,
+    "events": 36708,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -5203,8 +5207,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1006,
-    "last_event_age_s": 13.0,
+    "events": 1007,
+    "last_event_age_s": 10.0,
     "errors": 48,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5217,7 +5221,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.8,
   "watching": 0,
   "followed": 9,
   "odd_readings": 337,
@@ -5268,23 +5272,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17773,
+   "sent": 17808,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17773,
+   "sent": 17808,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PMIX",
+   "name": "pixmixes",
+   "mint": "8MFwfvYpfV73L6vTDxGLzFzkzkC3jMXEMzS5QgiMpump",
+   "age_s": 10,
+   "sol_in": -0.98,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 0.98,
+   "x": "https://x.com/fangtast/status/2126502926156005857",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SPEW",
    "name": "CrocoSpew",
    "mint": "54zrqGExWi3ui8TQK8pJV3uCNSBLifResFxnV54qpump",
-   "age_s": 13,
+   "age_s": 46,
    "sol_in": -4.05,
    "buys": 1,
    "sells": 1,
@@ -5302,12 +5324,12 @@
    "symbol": "SIMUS",
    "name": "Simus",
    "mint": "4Yoj6G3TD9PPumJsyBDbpQKFUvwmn4SJrsycmywai81s",
-   "age_s": 40,
-   "sol_in": -2.67,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -15.5,
-   "mcap_sol": 28.5,
+   "age_s": 73,
+   "sol_in": -2.96,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -17.2,
+   "mcap_sol": 28.0,
    "dev_pct": 9.6,
    "big_sell": 2.67,
    "x": false,
@@ -5320,14 +5342,14 @@
    "symbol": "DOTPAID",
    "name": "DOTPAID",
    "mint": "9FxzV2S13Cf1Nq2w3n1imMNg4suHCJCsHs4H7Zempump",
-   "age_s": 67,
-   "sol_in": 28.53,
-   "buys": 24,
-   "sells": 12,
-   "rise_pct": 275.5,
-   "mcap_sol": 108.0,
+   "age_s": 100,
+   "sol_in": 23.5,
+   "buys": 34,
+   "sells": 23,
+   "rise_pct": 214.1,
+   "mcap_sol": 90.3,
    "dev_pct": 1.5,
-   "big_sell": 2.5,
+   "big_sell": 2.59,
    "x": "https://x.com/dotpaidxyz",
    "tg": false,
    "web": "https://dotpaid.xyz/",
@@ -5338,12 +5360,12 @@
    "symbol": "Energy",
    "name": "Energy Coin",
    "mint": "9suCQCoN7RhvrZvpfNtFVpvAkaB3vN81xM6Ud2dWpump",
-   "age_s": 69,
-   "sol_in": -3.83,
+   "age_s": 102,
+   "sol_in": -3.91,
    "buys": 8,
-   "sells": 10,
-   "rise_pct": -21.3,
-   "mcap_sol": 28.2,
+   "sells": 11,
+   "rise_pct": -21.7,
+   "mcap_sol": 28.0,
    "dev_pct": 12.5,
    "big_sell": 5.27,
    "x": "https://x.com/KankiAlpha/status/2126518759108272554",
@@ -5356,7 +5378,7 @@
    "symbol": "HOPE",
    "name": "HOPE",
    "mint": "Fb54uXmjWz9pnLkxrDdgWyNZz3Gv7KTLEFiLvFJkpump",
-   "age_s": 85,
+   "age_s": 118,
    "sol_in": -4.74,
    "buys": 5,
    "sells": 3,
@@ -5374,7 +5396,7 @@
    "symbol": "GOOSE",
    "name": "Silly Goose",
    "mint": "GB4SPLqUbbQYdguGjNBew6KrNmXYMrrspg9kE5ripump",
-   "age_s": 106,
+   "age_s": 139,
    "sol_in": 1.9,
    "buys": 4,
    "sells": 2,
@@ -5392,7 +5414,7 @@
    "symbol": "MIYO",
    "name": "MIYO",
    "mint": "3ABs4qL4sKN4LhfqBEVr52otVuRwdL1iJGZgMeRgpump",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": -0.07,
    "buys": 0,
    "sells": 1,
@@ -5410,7 +5432,7 @@
    "symbol": "Chokecat",
    "name": "Choking cat",
    "mint": "CSidfa3Mw1c5ghTxE6PGpfvtfuL4UPdgCd8MXhRxpump",
-   "age_s": 136,
+   "age_s": 169,
    "sol_in": -0.42,
    "buys": 5,
    "sells": 8,
@@ -5421,24 +5443,6 @@
    "x": "https://x.com/CapriSunMonkey_/status/2126518183477588241",
    "tg": false,
    "web": "https://x.com/search?q=2126211922987282481&src=typed_query",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Raisin",
-   "name": "Raisin",
-   "mint": "HpUPEu6bbx16ivhAzfMwc47zcy8kmE2pGBKziGacpump",
-   "age_s": 169,
-   "sol_in": 12.72,
-   "buys": 39,
-   "sells": 43,
-   "rise_pct": 93.7,
-   "mcap_sol": 63.4,
-   "dev_pct": 8.2,
-   "big_sell": 6.17,
-   "x": "https://x.com/Polinkaii/status/2126518342454255826",
-   "tg": false,
-   "web": "https://reddit.com/r/moodeng/comments/1y74swu/new_pyppo_born_in_denmark/?utm_source=chatgpt.com",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
