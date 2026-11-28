@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:35:47Z",
+ "updated": "2026-11-28T06:36:21Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 800,
+  "flagged": 801,
   "checked": 49,
   "filtered": 1,
-  "lines": 1972,
+  "lines": 1976,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GROKBOT",
-   "why": "snipe",
-   "t": "2026-11-28T06:26:39Z"
-  },
   {
    "coin": "ELYW",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "PLZB",
    "why": "snipe",
    "t": "2026-11-28T06:35:33Z"
+  },
+  {
+   "coin": "THERAPIST",
+   "why": "snipe",
+   "t": "2026-11-28T06:36:15Z"
   }
  ],
  "curve": [
@@ -1895,6 +1895,10 @@
   ],
   [
    1795847700,
+   47.79
+  ],
+  [
+   1795847760,
    47.79
   ]
  ],
@@ -4049,42 +4053,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:01:11Z",
-   "time": "06:01:11",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 1 watched · 8 rejected (snipe: first reading s after the 3, snipe not bought: only to size 2, serial launcher 2) · closest MIHAO404: no curve reading yet",
-   "n": 1773
-  },
-  {
-   "t": "2026-11-28T05:02:12Z",
-   "time": "06:02:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 1 watched · 11 rejected (snipe: first reading s after the 4, serial launcher 4, snipe not bought: only to size 1) · closest BURRON: no curve reading yet",
-   "n": 1774
-  },
-  {
-   "t": "2026-11-28T05:03:13Z",
-   "time": "06:03:13",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 4 watched · 9 rejected (serial launcher 4, snipe: first reading s after the 3, odd curve reading: virtual SOL i 1) · closest BURRON: no curve reading yet",
-   "n": 1775
-  },
-  {
-   "t": "2026-11-28T05:03:37Z",
-   "time": "06:03:37",
-   "agent": "SCANNER",
-   "coin": "RICE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.776e+05 is not 30 + real SOL 2e-09 (off +1.775e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 368 odd readings from 171 coins tonight",
-   "n": 1776
-  },
-  {
    "t": "2026-11-28T05:03:37Z",
    "time": "06:03:37",
    "agent": "SCANNER",
@@ -5847,6 +5815,42 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 426 odd readings from 196 coins tonight",
    "n": 1972
+  },
+  {
+   "t": "2026-11-28T06:35:48Z",
+   "time": "07:35:48",
+   "agent": "SCANNER",
+   "coin": "THERAPIST",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 427 odd readings from 197 coins tonight",
+   "n": 1973
+  },
+  {
+   "t": "2026-11-28T06:36:07Z",
+   "time": "07:36:07",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 13 rejected (snipe: first reading s after the 5, serial launcher 5, odd curve reading: virtual SOL i 1)",
+   "n": 1974
+  },
+  {
+   "t": "2026-11-28T06:36:12Z",
+   "time": "07:36:12",
+   "agent": "SCANNER",
+   "coin": "DCTY",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 1975
+  },
+  {
+   "t": "2026-11-28T06:36:15Z",
+   "time": "07:36:15",
+   "agent": "SCANNER",
+   "coin": "THERAPIST",
+   "action": "flag",
+   "text": "snipe · first reading 2.1 s after the create · 1.0 SOL in · +5% since the create · mcap 43 SOL",
+   "n": 1976
   }
  ],
  "nights": [
@@ -5918,7 +5922,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 426 (196 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 427 (197 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5926,26 +5930,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 415,
-    "last_event_age_s": 4.2,
+    "events": 420,
+    "last_event_age_s": 1.1,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3326,
-    "last_event_age_s": 1.1,
+    "events": 3368,
+    "last_event_age_s": 0.4,
     "errors": 342,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 298,
-    "last_event_age_s": 1.0,
-    "errors": 17,
-    "last_error": "h.uguu.se: timeout after 2 s"
+    "events": 301,
+    "last_event_age_s": 2.2,
+    "errors": 18,
+    "last_error": "gg.sc: HTTP 404"
    }
   ],
   "strategies": [
@@ -5956,11 +5960,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
-  "watching": 0,
-  "followed": 12,
-  "odd_readings": 426,
-  "odd_coins": 196
+  "creates_per_min": 4.4,
+  "watching": 2,
+  "followed": 11,
+  "odd_readings": 427,
+  "odd_coins": 197
  },
  "learner": {
   "samples": 84,
@@ -6007,23 +6011,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7746,
+   "sent": 7782,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7746,
+   "sent": 7782,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SPSC",
+   "name": "Shit Piss Skin Can",
+   "mint": "FTN3CUJU5gLs3sxyQKUJ2FGtDfvBrvjFPe1kfHvYpump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Artcoin",
+   "name": "Artcoin",
+   "mint": "ByYKUFG8eBDUZxSKfsxSJ5r1Hpv3zYXSDACfK8s8pump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.8,
+   "dev_pct": 6.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/Nino_67x/status/2126565595344957441",
+   "tg": false,
+   "web": "https://www.youtube.com/watch?v=tUD96tMy-5k&t=1450sS",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "THERAPIST",
+   "name": "The Rapist",
+   "mint": "89oVMeB35GLdYb7frmFYkQ4MHUKmr5FRRrRkMzYxk9SZ",
+   "age_s": 7,
+   "sol_in": -1.67,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -8.9,
+   "mcap_sol": 37.5,
+   "dev_pct": 18.9,
+   "big_sell": 1.33,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "THERAPIST",
    "name": "The THERAPIST",
    "mint": "9rm3bvEmn1g3yQ4sA8SxeULhNrCcfTMDkWwzWfBmvwGQ",
-   "age_s": 4,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6041,7 +6099,7 @@
    "symbol": "THERAPIST",
    "name": "The Rapist",
    "mint": "Bp2eW3Nc7W2JZ6smwUR4dFY2P5gz1EVQ1g71DhPk1htQ",
-   "age_s": 11,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6059,7 +6117,7 @@
    "symbol": "QUANTNALD",
    "name": "Quant Donald Trump",
    "mint": "6EaBCmCfnhYe9haxtgE4rksLSk8UawNH3CXeYSgapump",
-   "age_s": 14,
+   "age_s": 48,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6077,12 +6135,12 @@
    "symbol": "PLZB",
    "name": "BUY ME",
    "mint": "BiPKCFKDEVmmDq6ngu7e51tcaxYGRJopnnxmPEUKpump",
-   "age_s": 20,
-   "sol_in": 0.27,
-   "buys": 2,
+   "age_s": 54,
+   "sol_in": 0.43,
+   "buys": 3,
    "sells": 0,
-   "rise_pct": 1.8,
-   "mcap_sol": 28.6,
+   "rise_pct": 2.9,
+   "mcap_sol": 28.9,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": false,
@@ -6095,7 +6153,7 @@
    "symbol": "PEPEMON",
    "name": "Pepemon",
    "mint": "Ew72n6PHgeomeX3rJ5CG96gbGWwzmJk3vdKDM5myGYDA",
-   "age_s": 90,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6113,10 +6171,10 @@
    "symbol": "USEFUL",
    "name": "Very Useful",
    "mint": "3ZBtCZyWyd1zQpSx4XjtKoccabVP6fjZafRVCFkRpump",
-   "age_s": 105,
+   "age_s": 139,
    "sol_in": -0.39,
-   "buys": 2,
-   "sells": 2,
+   "buys": 3,
+   "sells": 5,
    "rise_pct": -2.5,
    "mcap_sol": 28.0,
    "dev_pct": 1.4,
@@ -6131,7 +6189,7 @@
    "symbol": "TREMPS",
    "name": "the tremps family",
    "mint": "BLbhVZq137W38Dwmeagfd9hNiJUBYeXX2t4XY6G3yQSF",
-   "age_s": 116,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6149,7 +6207,7 @@
    "symbol": "FERSPE",
    "name": "Feral Specter",
    "mint": "59fvqA4tiqE46FzyJuXMogVCEqvhMBSc8cPoLjESpump",
-   "age_s": 134,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6167,7 +6225,7 @@
    "symbol": "BULLSHIT",
    "name": "The coin is bull shit",
    "mint": "87QkoNk8dmEM2QQcEWDJpnxXDSjnzrJDd2RzcQtkpku",
-   "age_s": 144,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6180,78 +6238,6 @@
    "web": false,
    "status": "rejected: serial launcher: 9 more coins in 60 min",
    "why": "serial launcher: 9 more coins in 60 min"
-  },
-  {
-   "symbol": "bottom",
-   "name": "bottom",
-   "mint": "DST6qK2dpvwU8s4Ax8gK7QwnusRENmQdXNwhCCNppump",
-   "age_s": 146,
-   "sol_in": -2.6,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": -15.2,
-   "mcap_sol": 28.6,
-   "dev_pct": 9.6,
-   "big_sell": 1.98,
-   "x": "https://x.com/bbaoo777/status/2126565078866477199",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "apefold",
-   "name": "apefold",
-   "mint": "8xaQYN3FN7aSEMz9RbVprAvpTMTPbY5dFvuKgxpXpump",
-   "age_s": 147,
-   "sol_in": -1.27,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -7.9,
-   "mcap_sol": 28.4,
-   "dev_pct": 5.2,
-   "big_sell": 1.56,
-   "x": "https://x.com/apefoldfun",
-   "tg": false,
-   "web": "https://apefold.fun/",
-   "status": "rejected: snipe: first reading 21.3 s after the create (max 10 s)",
-   "why": "snipe: first reading 21.3 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "$SPAGO",
-   "name": "SPAGHETTI INU",
-   "mint": "jq4cYBAYSazzao1sikh1d4VXE2HbFed4MmaniQkpump",
-   "age_s": 150,
-   "sol_in": 0.01,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 23.5 s after the create (max 10 s)",
-   "why": "snipe: first reading 23.5 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "BELIEF",
-   "name": "Beliefcoin",
-   "mint": "6mKxbqg4YkDPmZyYf7cRmdWEjQbjJLeJUqJMh3dipump",
-   "age_s": 150,
-   "sol_in": -1.98,
-   "buys": 0,
-   "sells": 2,
-   "rise_pct": -12.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 6.6,
-   "big_sell": 1.97,
-   "x": "https://x.com/munnyonly/status/2126565028761641420",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 24.1 s after the create (max 10 s)",
-   "why": "snipe: first reading 24.1 s after the create (max 10 s)"
   }
  ],
  "strategies": [
