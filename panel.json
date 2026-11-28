@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:57:41Z",
+ "updated": "2026-11-28T04:58:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 732,
+  "flagged": 733,
   "checked": 49,
   "filtered": 1,
-  "lines": 1761,
+  "lines": 1764,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "DUEL",
-   "why": "snipe",
-   "t": "2026-11-28T04:50:56Z"
-  },
   {
    "coin": "STOMACH",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "QRUMP",
    "why": "snipe",
    "t": "2026-11-28T04:57:38Z"
+  },
+  {
+   "coin": "TREMPS",
+   "why": "snipe",
+   "t": "2026-11-28T04:58:04Z"
   }
  ],
  "curve": [
@@ -1503,6 +1503,10 @@
   ],
   [
    1795841820,
+   47.79
+  ],
+  [
+   1795841880,
    47.79
   ]
  ],
@@ -3657,33 +3661,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:58:09Z",
-   "time": "04:58:09",
-   "agent": "SCANNER",
-   "coin": "DrillCat",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
-   "n": 1562
-  },
-  {
-   "t": "2026-11-28T03:58:20Z",
-   "time": "04:58:20",
-   "agent": "SCANNER",
-   "coin": "EVRY",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 1563
-  },
-  {
-   "t": "2026-11-28T03:58:48Z",
-   "time": "04:58:48",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 9, serial launcher 1, no bonding curve key 1)",
-   "n": 1564
-  },
-  {
    "t": "2026-11-28T03:58:50Z",
    "time": "04:58:50",
    "agent": "SCANNER",
@@ -5455,6 +5432,33 @@
    "action": "flag",
    "text": "snipe · first reading 9.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1761
+  },
+  {
+   "t": "2026-11-28T04:58:04Z",
+   "time": "05:58:04",
+   "agent": "SCANNER",
+   "coin": "TREMPS",
+   "action": "flag",
+   "text": "snipe · first reading 8.6 s after the create · 4.1 SOL in · +24% since the create · mcap 50 SOL",
+   "n": 1762
+  },
+  {
+   "t": "2026-11-28T04:58:04Z",
+   "time": "05:58:04",
+   "agent": "SIZER",
+   "coin": "TREMPS",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1763
+  },
+  {
+   "t": "2026-11-28T04:58:08Z",
+   "time": "05:58:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.6 a minute · 0 watched · 8 rejected (snipe: first reading s after the 4, snipe not bought: only to size 3, serial launcher 1)",
+   "n": 1764
   }
  ],
  "nights": [
@@ -5521,7 +5525,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 364 (168 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · odd curve readings 364 (168 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5529,26 +5533,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 96,
-    "last_event_age_s": 10.1,
+    "events": 99,
+    "last_event_age_s": 4.8,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 455,
-    "last_event_age_s": 2.5,
+    "events": 461,
+    "last_event_age_s": 2.9,
     "errors": 37,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 74,
-    "last_event_age_s": 10.0,
-    "errors": 3,
-    "last_error": "ipfs.io: HTTP 403"
+    "events": 77,
+    "last_event_age_s": 4.3,
+    "errors": 4,
+    "last_error": "gg.sc: HTTP 404"
    }
   ],
   "strategies": [
@@ -5559,9 +5563,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
-  "watching": 0,
-  "followed": 6,
+  "creates_per_min": 3.2,
+  "watching": 1,
+  "followed": 8,
   "odd_readings": 364,
   "odd_coins": 168
  },
@@ -5610,23 +5614,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1480,
+   "sent": 1515,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1480,
+   "sent": 1515,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SWEETIE",
+   "name": "SandySoSweetie",
+   "mint": "DykHTTYkoFWGJeF3UmdyXbJEZAfq2FQNzPjM42gapump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/sandysosweetiee",
+   "tg": false,
+   "web": "https://www.instagram.com/sandysosweetie",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "TREMPS",
+   "name": "The Tremps",
+   "mint": "EWNbb8hSKRB9ox6EcjnxuYfDvwoApJc6JwdF7UpBUGM2",
+   "age_s": 18,
+   "sol_in": 0.87,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 4.9,
+   "mcap_sol": 42.1,
+   "dev_pct": 17.7,
+   "big_sell": 3.23,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "TCC",
+   "name": "Trump Corruption Coin",
+   "mint": "7PajAk9eFsZDSZivAT3HuH5qPvRxukJzYdndE4a3xxbe",
+   "age_s": 20,
+   "sol_in": -1.08,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -6.1,
+   "mcap_sol": 35.6,
+   "dev_pct": 15.2,
+   "big_sell": 0.76,
+   "x": "https://x.com/MarioPrezldente/status/2126541064207307261",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe: first reading 10.4 s after the create (max 10 s)",
+   "why": "snipe: first reading 10.4 s after the create (max 10 s)"
+  },
+  {
    "symbol": "SUPERMASSIVE",
    "name": "SUPERMASSIVE",
    "mint": "31boSHx85jy8xGh5vjkRgEzeSUr2bCfjzSrovMAp752R",
-   "age_s": 10,
+   "age_s": 43,
    "sol_in": -7.11,
    "buys": 0,
    "sells": 1,
@@ -5644,7 +5702,7 @@
    "symbol": "QRUMP",
    "name": "Quant Trump",
    "mint": "79g2uRTf2AdCS81RqHs634PV34BziwbgYD5QpRpqpump",
-   "age_s": 11,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5662,12 +5720,12 @@
    "symbol": "ORCHARD",
    "name": "Orchard",
    "mint": "oRCHLgYiic9NbGBRA2C5A8aNb8Ap86ZLWmHjjSGkJVx",
-   "age_s": 65,
-   "sol_in": 1.09,
+   "age_s": 98,
+   "sol_in": 0.33,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 7.1,
-   "mcap_sol": 32.0,
+   "sells": 3,
+   "rise_pct": 2.2,
+   "mcap_sol": 30.5,
    "dev_pct": 3.4,
    "big_sell": 5.5,
    "x": "https://x.com/UseOrchardPad/status/2126540718470787116?a=0Rs-1vLlqkw0OJGXCs4&s=20",
@@ -5680,11 +5738,11 @@
    "symbol": "Singularity",
    "name": "Singularity",
    "mint": "HSxxE647rvpSNxfUf8q4kA71qmmN5KGVgd4zJVJnpump",
-   "age_s": 83,
-   "sol_in": -0.25,
+   "age_s": 116,
+   "sol_in": -0.28,
    "buys": 1,
-   "sells": 4,
-   "rise_pct": -1.6,
+   "sells": 5,
+   "rise_pct": -1.9,
    "mcap_sol": 28.0,
    "dev_pct": 1.0,
    "big_sell": 9.55,
@@ -5698,7 +5756,7 @@
    "symbol": "QuantTrump",
    "name": "Quant Trump",
    "mint": "BM6gvMJXjDxiNL8wV4iYvu4FaPsMUH4ETFzUGBiSpump",
-   "age_s": 122,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5711,42 +5769,6 @@
    "web": false,
    "status": "rejected: snipe: first reading 14.5 s after the create (max 10 s)",
    "why": "snipe: first reading 14.5 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "AI",
-   "name": "Attacked Inu",
-   "mint": "DdLDfJ7nF3YFCpXCbUNdFarS7bAxbHhKaKbsKy4xpump",
-   "age_s": 150,
-   "sol_in": -2.37,
-   "buys": 4,
-   "sells": 9,
-   "rise_pct": -13.8,
-   "mcap_sol": 29.1,
-   "dev_pct": 9.6,
-   "big_sell": 3.35,
-   "x": "https://x.com/Boatyy_/status/2126540320553017830?a=jJWvZGXdQYva4UkEKT4&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 11.2 s after the create (max 10 s)",
-   "why": "snipe: first reading 11.2 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "WENDG",
-   "name": "WENDGOLSY",
-   "mint": "EvBdXaqg2oQM9CmNs6aC2sADa87ajYgDgdYQgq3hxZiv",
-   "age_s": 174,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.5,
-   "dev_pct": 2.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
