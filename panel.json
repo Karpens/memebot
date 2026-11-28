@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:19:19Z",
+ "updated": "2026-11-28T00:19:51Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 194,
+  "flagged": 196,
   "checked": 49,
   "filtered": 1,
-  "lines": 776,
+  "lines": 779,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "VPC",
-   "why": "snipe",
-   "t": "2026-11-28T00:14:21Z"
-  },
-  {
-   "coin": "SWS",
-   "why": "snipe",
-   "t": "2026-11-28T00:15:05Z"
-  },
   {
    "coin": "RIDE",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "pumptape",
    "why": "snipe",
    "t": "2026-11-28T00:19:14Z"
+  },
+  {
+   "coin": "Joe",
+   "why": "snipe",
+   "t": "2026-11-28T00:19:23Z"
+  },
+  {
+   "coin": "BORIS",
+   "why": "snipe",
+   "t": "2026-11-28T00:19:41Z"
   }
  ],
  "curve": [
@@ -2545,33 +2545,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:38:39Z",
-   "time": "00:38:39",
-   "agent": "SCANNER",
-   "coin": "BLAKFRIDAY",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 577
-  },
-  {
-   "t": "2026-11-27T23:38:39Z",
-   "time": "00:38:39",
-   "agent": "SIZER",
-   "coin": "BLAKFRIDAY",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 578
-  },
-  {
-   "t": "2026-11-27T23:38:40Z",
-   "time": "00:38:40",
-   "agent": "SCANNER",
-   "coin": "LOOPZ",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.375e+05 is not 30 + real SOL 0 (off +1.375e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 43 odd readings from 32 coins tonight",
-   "n": 579
-  },
-  {
    "t": "2026-11-27T23:38:46Z",
    "time": "00:38:46",
    "agent": "SCANNER",
@@ -4343,6 +4316,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
    "n": 776
+  },
+  {
+   "t": "2026-11-28T00:19:23Z",
+   "time": "01:19:23",
+   "agent": "SCANNER",
+   "coin": "Joe",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 20.0 SOL in · +172% since the create · mcap 80 SOL",
+   "n": 777
+  },
+  {
+   "t": "2026-11-28T00:19:41Z",
+   "time": "01:19:41",
+   "agent": "SCANNER",
+   "coin": "BORIS",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 6.9 SOL in · +46% since the create · mcap 49 SOL",
+   "n": 778
+  },
+  {
+   "t": "2026-11-28T00:19:43Z",
+   "time": "01:19:43",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.0 a minute · 0 watched · 14 rejected (snipe not bought: only to size 6, no symbol or name 5, serial launcher 2)",
+   "n": 779
   }
  ],
  "nights": [
@@ -4415,7 +4415,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 93 (60 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 93 (60 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4423,26 +4423,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 823,
-    "last_event_age_s": 6.5,
+    "events": 828,
+    "last_event_age_s": 10.1,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14288,
+    "events": 14369,
     "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 458,
-    "last_event_age_s": 5.8,
-    "errors": 21,
-    "last_error": "ar-io.dev: timeout after 2 s"
+    "connected": false,
+    "events": 460,
+    "last_event_age_s": 11.1,
+    "errors": 22,
+    "last_error": "meta.uxento.io: HTTP 404"
    }
   ],
   "strategies": [
@@ -4453,9 +4453,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "creates_per_min": 5.0,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 93,
   "odd_coins": 60
  },
@@ -4504,23 +4504,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5566,
+   "sent": 5600,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5566,
+   "sent": 5600,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "?",
+   "name": "",
+   "mint": "3jpwnAvMAyr3i2JfkndzdvDQ5eteRPzfYRRyjzc84tJd",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 39.5,
+   "dev_pct": 17.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "BORIS",
+   "name": "The Chud Cat",
+   "mint": "HBdQWsHorLyk9MEWhztBVwNxR1fM1u6iK8oupS3ipump",
+   "age_s": 11,
+   "sol_in": 4.58,
+   "buys": 5,
+   "sells": 5,
+   "rise_pct": 29.7,
+   "mcap_sol": 43.8,
+   "dev_pct": 9.6,
+   "big_sell": 2.47,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "DvfQL5KJMhum2LNk6MqQcBVa1JcNQfeqVBqF9r4Cnova",
+   "age_s": 23,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.1,
+   "dev_pct": 3.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "Joe",
+   "name": "Sloppy Joe",
+   "mint": "AC5RNw6StJL8vhcZM2reCMXPoLL4vfXtPxeKA6pUpump",
+   "age_s": 29,
+   "sol_in": 27.85,
+   "buys": 16,
+   "sells": 13,
+   "rise_pct": 262.8,
+   "mcap_sol": 106.8,
+   "dev_pct": 2.7,
+   "big_sell": 3.17,
+   "x": "https://x.com/blutogreg/status/2126470946332811522",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "pumptape",
    "name": "pumptape",
    "mint": "Djvmw9KbQqmUQyuGsSw38CeoMYSVHEDZDp9eL67Bpump",
-   "age_s": 6,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4538,7 +4610,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "CGmAqkbwtWPnn6aW3gkRZjE5V7G7QA9XomaVYpPzpump",
-   "age_s": 58,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4556,7 +4628,7 @@
    "symbol": "?",
    "name": "",
    "mint": "72eD9uUA2dZsbwTfcunvc9g89Vc6tBEVSrh878c87gWu",
-   "age_s": 60,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4574,11 +4646,11 @@
    "symbol": "PEMP",
    "name": "Retarded Pump",
    "mint": "7AyJ1jsVMn4LN3ziqXyozu7ngHc1iAp83AaVdWoipump",
-   "age_s": 79,
-   "sol_in": 0.39,
+   "age_s": 111,
+   "sol_in": 0.37,
    "buys": 4,
-   "sells": 3,
-   "rise_pct": 2.6,
+   "sells": 4,
+   "rise_pct": 2.4,
    "mcap_sol": 30.2,
    "dev_pct": 2.8,
    "big_sell": 0.79,
@@ -4592,7 +4664,7 @@
    "symbol": "?",
    "name": "",
    "mint": "6k5nkv1znLb7nvNe5GinJtHMEoVM51zoxzfUQTTGxjaq",
-   "age_s": 92,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4610,7 +4682,7 @@
    "symbol": "?",
    "name": "",
    "mint": "2R6YavBx42m5WqZbHMJsuEfTrtDqvfRpyzqrMKXdFb13",
-   "age_s": 116,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4628,7 +4700,7 @@
    "symbol": "BRUNCH",
    "name": "Arthur's Brunch",
    "mint": "De7UaemSvg99Voer6TbfiM6wQAJVwiZU3LUfvF37v9uy",
-   "age_s": 132,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4646,11 +4718,11 @@
    "symbol": "SANTA",
    "name": "SANTA CLAUS",
    "mint": "FjA7RcSZpon3Y8KJDfGmj9ysG4BZERAmC2ThQT6Kpump",
-   "age_s": 138,
-   "sol_in": 0.08,
-   "buys": 7,
+   "age_s": 170,
+   "sol_in": 0.1,
+   "buys": 8,
    "sells": 1,
-   "rise_pct": 0.6,
+   "rise_pct": 0.7,
    "mcap_sol": 28.2,
    "dev_pct": 0.1,
    "big_sell": 0.01,
@@ -4664,35 +4736,17 @@
    "symbol": "FARTBALL",
    "name": "Fartball",
    "mint": "G8hr7J1udJWnzZzw2v7okSY4fzECMKtm4Vh4Mydmpump",
-   "age_s": 146,
-   "sol_in": 21.69,
-   "buys": 68,
-   "sells": 63,
-   "rise_pct": 185.2,
-   "mcap_sol": 87.8,
+   "age_s": 178,
+   "sol_in": 26.97,
+   "buys": 82,
+   "sells": 76,
+   "rise_pct": 244.7,
+   "mcap_sol": 106.1,
    "dev_pct": 5.0,
-   "big_sell": 3.04,
+   "big_sell": 4.44,
    "x": "https://x.com/fartball_xyz/status/2126470169618989173?a=eb4evVOEpxwqkOmk3Hw&s=20",
    "tg": false,
    "web": "https://www.fartball.xyz/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FSTORM",
-   "name": "FIELDSTORM",
-   "mint": "F7K7QD3RXULQwyxaaeSgUMcKAf1aSFtA3rgB11xgNS6t",
-   "age_s": 149,
-   "sol_in": -0.59,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 0.59,
-   "x": "https://x.com/elitetakes_/status/2126468874400944602",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
