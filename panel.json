@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:09:49Z",
+ "updated": "2026-11-28T10:10:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1151,
   "checked": 49,
   "filtered": 1,
-  "lines": 2650,
+  "lines": 2651,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795824600,
-   47.79
-  ],
   [
    1795824660,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795860540,
    47.79
+  ],
+  [
+   1795860600,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:10:25Z",
-   "time": "10:10:25",
-   "agent": "SCANNER",
-   "coin": "SEND",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.5 SOL in · +3% since the create · mcap 31 SOL",
-   "n": 2451
-  },
-  {
    "t": "2026-11-28T09:10:35Z",
    "time": "10:10:35",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "skip",
    "text": "no entry: last 5 min of this job: no new entries (the next job takes over)",
    "n": 2650
+  },
+  {
+   "t": "2026-11-28T10:10:05Z",
+   "time": "11:10:05",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, mayhem mode 3, snipe not bought: last min of th 2)",
+   "n": 2651
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 880 (265 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 880 (265 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1283,
-    "last_event_age_s": 12.3,
+    "events": 1285,
+    "last_event_age_s": 12.7,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26659,
-    "last_event_age_s": 1.6,
+    "events": 26701,
+    "last_event_age_s": 0.1,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 921,
-    "last_event_age_s": 12.2,
+    "events": 922,
+    "last_event_age_s": 20.1,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 880,
   "odd_coins": 265
  },
@@ -6584,30 +6584,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21413,
+   "sent": 21441,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21413,
+   "sent": 21441,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FCOURT",
+   "name": "Family Court Gaurdian",
+   "mint": "FgPv6SkREp9TdqeCciFAkRg7n8sevMa2FMq2ZMptpump",
+   "age_s": 12,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "BUSYNADS",
+   "name": "BusyNads",
+   "mint": "8C5ecYfdbvLbNLDLHbZZS3VZ97mT8paw7X7HBsJfJvKW",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.4,
+   "dev_pct": 4.4,
+   "big_sell": 0.29,
+   "x": "https://x.com/BusyNads",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
+   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
+  },
+  {
    "symbol": "TEREZA",
    "name": "The Hero Puppy",
    "mint": "EsdzP2BwW4Hr5TvMceWyRC47V1SRPE7ZAg6vXos6pump",
-   "age_s": 12,
-   "sol_in": 0.89,
-   "buys": 6,
-   "sells": 4,
-   "rise_pct": 4.5,
-   "mcap_sol": 51.6,
+   "age_s": 39,
+   "sol_in": -7.4,
+   "buys": 7,
+   "sells": 12,
+   "rise_pct": -33.7,
+   "mcap_sol": 32.8,
    "dev_pct": 26.6,
-   "big_sell": 1.94,
+   "big_sell": 6.0,
    "x": "https://x.com/guhhhonchain/status/2126619064403443964",
    "tg": false,
    "web": "https://www.instagram.com/reel/Df--hWUycLW/",
@@ -6618,7 +6654,7 @@
    "symbol": "000",
    "name": "000",
    "mint": "9UqRxRpppwJ24QqYb9jKgXrRGAxofMGfzkLYzSSKpump",
-   "age_s": 33,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,14 +6672,14 @@
    "symbol": "yippee",
    "name": "yippee",
    "mint": "8Hpiy7QgtjQZFZrHpkq7MKE6zdv4NmxpcR7Vec54pump",
-   "age_s": 61,
-   "sol_in": 6.39,
-   "buys": 11,
-   "sells": 11,
-   "rise_pct": 45.5,
-   "mcap_sol": 43.4,
+   "age_s": 88,
+   "sol_in": 0.11,
+   "buys": 16,
+   "sells": 28,
+   "rise_pct": 0.7,
+   "mcap_sol": 30.0,
    "dev_pct": 3.4,
-   "big_sell": 2.82,
+   "big_sell": 5.5,
    "x": "https://x.com/yippeepf_/status/2126619265805750294",
    "tg": false,
    "web": "https://x.com/yippeepf_",
@@ -6654,12 +6690,12 @@
    "symbol": "TRUMP2.0",
    "name": "OFFICIAL TRUMP 2.0",
    "mint": "EARxywsyBhzhgLgJ21iaE1JLSP9mfgJMYWrKWSM9pump",
-   "age_s": 67,
-   "sol_in": 0.63,
-   "buys": 8,
+   "age_s": 94,
+   "sol_in": 3.53,
+   "buys": 10,
    "sells": 5,
-   "rise_pct": 2.8,
-   "mcap_sol": 64.2,
+   "rise_pct": 16.4,
+   "mcap_sol": 72.6,
    "dev_pct": 35.5,
    "big_sell": 0.5,
    "x": "https://x.com/realDonaldTrump",
@@ -6672,7 +6708,7 @@
    "symbol": "N1N",
    "name": "Cube",
    "mint": "CtX8qpFoSDDkUPL1Bw29iNmsix9Cio7LSrUjdNAzpump",
-   "age_s": 68,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6726,7 @@
    "symbol": "AFOX",
    "name": "ALPHA FOx",
    "mint": "BByYBwhMwapjJukA5vmrPcSawMjtZ6YJeBQoo9gQpump",
-   "age_s": 85,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,7 +6744,7 @@
    "symbol": "GERMANY",
    "name": "Germany",
    "mint": "62ZbQZE38btaQbweLHsUFQ4jLNkxvEkziprmmnPvv4YS",
-   "age_s": 106,
+   "age_s": 133,
    "sol_in": -2.88,
    "buys": 1,
    "sells": 1,
@@ -6721,24 +6757,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FCOURT",
-   "name": "Family Court Gaurdian",
-   "mint": "GiBqQj4BxsTGFkkxg9p7YxFA5kWWqJnDxpL7M5mMpump",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
