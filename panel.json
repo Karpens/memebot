@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:30:56Z",
+ "updated": "2026-11-28T04:31:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 696,
   "checked": 49,
   "filtered": 1,
-  "lines": 1687,
+  "lines": 1688,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -1395,6 +1395,10 @@
   ],
   [
    1795840200,
+   47.79
+  ],
+  [
+   1795840260,
    47.79
   ]
  ],
@@ -3549,15 +3553,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:35:06Z",
-   "time": "04:35:06",
-   "agent": "SCANNER",
-   "coin": "Hawking",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 3.0 SOL in · +20% since the create · mcap 36 SOL",
-   "n": 1488
-  },
-  {
    "t": "2026-11-28T03:35:33Z",
    "time": "04:35:33",
    "agent": "SCANNER",
@@ -5347,6 +5342,15 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 0 watched · 11 rejected (snipe not bought: last min of th 4, snipe not bought: only to size 3, serial launcher 2)",
    "n": 1687
+  },
+  {
+   "t": "2026-11-28T04:31:10Z",
+   "time": "05:31:10",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 1 watched · 8 rejected (snipe not bought: last min of th 4, snipe not bought: only to size 2, serial launcher 2) · closest PETA: no curve reading yet",
+   "n": 1688
   }
  ],
  "nights": [
@@ -5427,15 +5431,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2008,
-    "last_event_age_s": 13.3,
+    "events": 2010,
+    "last_event_age_s": 17.4,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 42433,
+    "events": 42514,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -5443,8 +5447,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1235,
-    "last_event_age_s": 59.5,
+    "events": 1236,
+    "last_event_age_s": 20.1,
     "errors": 57,
     "last_error": "n.uguu.se: timeout after 2 s"
    }
@@ -5459,7 +5463,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 8,
+  "followed": 9,
   "odd_readings": 359,
   "odd_coins": 163
  },
@@ -5508,28 +5512,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21633,
+   "sent": 21669,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21633,
+   "sent": 21669,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "?",
+   "name": "",
+   "mint": "2vGMcUF9Wf6tDVvweeGMLgUuV62Tq9D8ULwtTbn5pump",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "PETA",
+   "name": "PETA",
+   "mint": "7cj2ZD61JHYvJ3Jmtkmo2iJrGLwzuSsZTUjEFKLkpump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/MarioNawfal/status/2126534299973198287",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
+   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
+  },
+  {
    "symbol": "CET",
    "name": "CET",
    "mint": "CMzrKj2yRRPWWgnjhELminfFkKeDMegmynBuRPc7pump",
-   "age_s": 60,
-   "sol_in": 0.87,
+   "age_s": 94,
+   "sol_in": -0.21,
    "buys": 1,
-   "sells": 5,
-   "rise_pct": 5.9,
-   "mcap_sol": 30.0,
+   "sells": 6,
+   "rise_pct": -1.4,
+   "mcap_sol": 28.0,
    "dev_pct": 0.8,
    "big_sell": 1.37,
    "x": "https://x.com/onrecoverymode/status/2126533939670196323",
@@ -5542,12 +5582,12 @@
    "symbol": "early",
    "name": "getinearly.fun",
    "mint": "GkhCkyzfVGfTQwAfMNAPffyc71kTj4TnpHtPVUYearLy",
-   "age_s": 62,
-   "sol_in": 23.24,
-   "buys": 21,
-   "sells": 21,
-   "rise_pct": 209.8,
-   "mcap_sol": 89.9,
+   "age_s": 96,
+   "sol_in": 27.93,
+   "buys": 30,
+   "sells": 32,
+   "rise_pct": 266.2,
+   "mcap_sol": 106.3,
    "dev_pct": 2.0,
    "big_sell": 5.69,
    "x": "https://x.com/getinearlyfun",
@@ -5560,7 +5600,7 @@
    "symbol": "EVIE",
    "name": "Evie the Lion",
    "mint": "4f2PNkLkZ1cSw7vvztuCt7KjApKYrxVv8LdmSLXtcLjH",
-   "age_s": 74,
+   "age_s": 108,
    "sol_in": -0.49,
    "buys": 3,
    "sells": 7,
@@ -5578,14 +5618,14 @@
    "symbol": "DIRTY2RICH",
    "name": "Dirty2Rich",
    "mint": "BwuGEjgK1a9vkimxrJzj7LT1yzHtrepTC9s82nRQpump",
-   "age_s": 88,
-   "sol_in": 2.8,
-   "buys": 34,
-   "sells": 1,
-   "rise_pct": 17.7,
-   "mcap_sol": 39.7,
+   "age_s": 122,
+   "sol_in": 3.81,
+   "buys": 51,
+   "sells": 2,
+   "rise_pct": 24.5,
+   "mcap_sol": 42.0,
    "dev_pct": 9.6,
-   "big_sell": 0.03,
+   "big_sell": 0.29,
    "x": "https://x.com/DirtyToRich",
    "tg": false,
    "web": "https://dirty2rich.online/",
@@ -5596,7 +5636,7 @@
    "symbol": "aura",
    "name": "aura cat",
    "mint": "63YrWauUTMjHnuXUZm2jYxTmtkKB95EwUL7bp8eapump",
-   "age_s": 103,
+   "age_s": 137,
    "sol_in": -2.74,
    "buys": 3,
    "sells": 12,
@@ -5614,7 +5654,7 @@
    "symbol": "FAT",
    "name": "Fat Coin",
    "mint": "4z3ztrvEtfy6rWuguSR5dMvT84NrkyRpZkGXvd4ipump",
-   "age_s": 104,
+   "age_s": 138,
    "sol_in": -3.95,
    "buys": 2,
    "sells": 11,
@@ -5632,7 +5672,7 @@
    "symbol": "PTSD",
    "name": "PTSD",
    "mint": "69Q4NhXy25Dh4zBPzcgEY7WWbxJw8K24WDL9Ks3kpump",
-   "age_s": 115,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5650,12 +5690,12 @@
    "symbol": "MERYLL",
    "name": "Meryll",
    "mint": "D8ZDb8z2CTaqdSMwy7Uf97bxP3tQWrbrmVYwqPoPpump",
-   "age_s": 119,
-   "sol_in": 19.38,
-   "buys": 52,
-   "sells": 61,
-   "rise_pct": 128.4,
-   "mcap_sol": 101.9,
+   "age_s": 153,
+   "sol_in": 14.76,
+   "buys": 69,
+   "sells": 78,
+   "rise_pct": 93.1,
+   "mcap_sol": 86.2,
    "dev_pct": 22.4,
    "big_sell": 4.05,
    "x": "https://x.com/early404/status/2126533777484615691",
