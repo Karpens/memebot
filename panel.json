@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:08:45Z",
+ "updated": "2026-11-28T12:09:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1364,
+  "flagged": 1365,
   "checked": 49,
   "filtered": 1,
-  "lines": 3052,
+  "lines": 3054,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MoonBoy",
-   "why": "snipe",
-   "t": "2026-11-28T12:04:39Z"
-  },
   {
    "coin": "Wow",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "rice",
    "why": "snipe",
    "t": "2026-11-28T12:08:42Z"
+  },
+  {
+   "coin": "Nala",
+   "why": "snipe",
+   "t": "2026-11-28T12:09:10Z"
   }
  ],
  "curve": [
-  [
-   1795831740,
-   47.79
-  ],
   [
    1795831800,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795867680,
    47.79
+  ],
+  [
+   1795867740,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:08:05Z",
-   "time": "12:08:05",
-   "agent": "SCANNER",
-   "coin": "SIGMA",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 2853
-  },
-  {
-   "t": "2026-11-28T11:08:05Z",
-   "time": "12:08:05",
-   "agent": "SIZER",
-   "coin": "SIGMA",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2854
-  },
-  {
    "t": "2026-11-28T11:08:39Z",
    "time": "12:08:39",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 3052
+  },
+  {
+   "t": "2026-11-28T12:09:10Z",
+   "time": "13:09:10",
+   "agent": "SCANNER",
+   "coin": "Nala",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 20.4 SOL in · +176% since the create · mcap 82 SOL",
+   "n": 3053
+  },
+  {
+   "t": "2026-11-28T12:09:16Z",
+   "time": "13:09:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.4 a minute · 0 watched · 12 rejected (snipe not bought: only to size 6, mayhem mode 2, no bonding curve key 2)",
+   "n": 3054
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 500,
-    "last_event_age_s": 3.2,
+    "events": 501,
+    "last_event_age_s": 8.2,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12853,
-    "last_event_age_s": 0.0,
+    "events": 12912,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 342,
-    "last_event_age_s": 3.0,
+    "events": 343,
+    "last_event_age_s": 8.0,
     "errors": 7,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,7 +6529,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.4,
   "watching": 0,
   "followed": 7,
   "odd_readings": 1009,
@@ -6580,28 +6580,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7280,
+   "sent": 7315,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7280,
+   "sent": 7315,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Nala",
+   "name": "Nala",
+   "mint": "Gr3NvCQQZd5mRQoXp8g1jAM6XJC6qcBKUk4oaaabpump",
+   "age_s": 8,
+   "sol_in": 19.82,
+   "buys": 5,
+   "sells": 3,
+   "rise_pct": 169.7,
+   "mcap_sol": 79.8,
+   "dev_pct": 3.0,
+   "big_sell": 5.58,
+   "x": "https://x.com/swaynfa/status/2126649041064984822",
+   "tg": false,
+   "web": "https://www.tiktok.com/@nalasicat",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "rice",
    "name": "1 grain of rice",
    "mint": "7AUTKB4RLaV93mqimKJ4UmFe5f23a9E2rcPUpMeLpump",
-   "age_s": 3,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 36,
+   "sol_in": 0.01,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": "https://x.com/Raydium/status/2126355690046554457",
@@ -6614,7 +6632,7 @@
    "symbol": "FLASK",
    "name": "Flask",
    "mint": "FLasjA4Adw8Zpso7TpBqd5A6JLutCybdQHm3eReyPQMo",
-   "age_s": 7,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6650,7 @@
    "symbol": "LEAN",
    "name": "Lean Client",
    "mint": "2NHKCKmY4kszKBnwutpFzDzZtLo5pubhyEj6qbJAvW8W",
-   "age_s": 30,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6650,7 +6668,7 @@
    "symbol": "?",
    "name": "",
    "mint": "qwEmrtR4CJrxDBSy56hSxv1sDovdaHHuTiQ9mBQJW9q",
-   "age_s": 33,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6686,7 @@
    "symbol": "ENC",
    "name": "Enclip",
    "mint": "6i1jzXoXeSQHwe63PtYcDsG4vjqiBz3vQsufeNpk6enc",
-   "age_s": 37,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6704,7 @@
    "symbol": "MATH",
    "name": "MATH IS MONEY",
    "mint": "EmPFfmy8rTZrFudwxM9fBCdCaYhMm8kLyGNDAdxApump",
-   "age_s": 59,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6722,7 @@
    "symbol": "Gemini",
    "name": "Google Gemini",
    "mint": "JDBCtGVRkRCkU1DEhhR45ZXwk3YCfZTxc93BRa2Fa3WH",
-   "age_s": 65,
+   "age_s": 98,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 1,
@@ -6722,12 +6740,12 @@
    "symbol": "SLPRNT",
    "name": "Slotprint",
    "mint": "9ZEFrwQjJpWmU1D1xnDcfkghtWPbSQEJQ1ui9cqMe4sR",
-   "age_s": 69,
-   "sol_in": 1.48,
+   "age_s": 102,
+   "sol_in": 1.41,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 10.0,
-   "mcap_sol": 31.3,
+   "sells": 3,
+   "rise_pct": 9.5,
+   "mcap_sol": 31.2,
    "dev_pct": 1.0,
    "big_sell": 0.44,
    "x": false,
@@ -6740,7 +6758,7 @@
    "symbol": "NALA",
    "name": "Nala",
    "mint": "4CAiukFjEhGrTysfEPUrh5Hsre5Sd36YodiMwkhMpump",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 3,
@@ -6758,9 +6776,9 @@
    "symbol": "CHRISTMAS",
    "name": "CHRISTMAS",
    "mint": "BnirfL7mNqDj9uWpcNQMZDB7SzB4eeRgiEGwX5Nmpump",
-   "age_s": 92,
+   "age_s": 125,
    "sol_in": 0.12,
-   "buys": 5,
+   "buys": 7,
    "sells": 1,
    "rise_pct": 0.8,
    "mcap_sol": 28.2,
@@ -6776,7 +6794,7 @@
    "symbol": "REA",
    "name": "REA PRINCESS OF THE SEA",
    "mint": "9c9TFmqJh7emmx4RuSoBMmc1UpuzXqqzMGAq4X8Cpump",
-   "age_s": 123,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6789,42 +6807,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "J1MoNzqxyfmaNTd4uKk38BhA9HCc1qmsZzbepaeUKXgb",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "CZ",
-   "name": "The Nietzschean Cz",
-   "mint": "5nvnWRCEX5ApuwiKG8Tnwo4NqiS1bariU9SpVYBEHRAT",
-   "age_s": 160,
-   "sol_in": -2.87,
-   "buys": 3,
-   "sells": 7,
-   "rise_pct": -15.7,
-   "mcap_sol": 32.0,
-   "dev_pct": 15.2,
-   "big_sell": 3.92,
-   "x": "https://x.com/TCryptochicks/status/2126648696175493333",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 14 more coins in 60 min",
-   "why": "serial launcher: 14 more coins in 60 min"
   }
  ],
  "strategies": [
