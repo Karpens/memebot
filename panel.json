@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:10:37Z",
+ "updated": "2026-11-28T04:11:10Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 648,
+  "flagged": 650,
   "checked": 49,
   "filtered": 1,
-  "lines": 1612,
+  "lines": 1615,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "STRAY",
-   "why": "snipe",
-   "t": "2026-11-28T04:07:42Z"
-  },
-  {
-   "coin": "JEW",
-   "why": "snipe",
-   "t": "2026-11-28T04:07:55Z"
-  },
   {
    "coin": "AC1",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "ELF",
    "why": "snipe",
    "t": "2026-11-28T04:10:19Z"
+  },
+  {
+   "coin": "CS",
+   "why": "snipe",
+   "t": "2026-11-28T04:10:39Z"
+  },
+  {
+   "coin": "Snowball",
+   "why": "snipe",
+   "t": "2026-11-28T04:11:06Z"
   }
  ],
  "curve": [
@@ -1315,6 +1315,10 @@
   ],
   [
    1795839000,
+   47.79
+  ],
+  [
+   1795839060,
    47.79
   ]
  ],
@@ -3469,33 +3473,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:13:10Z",
-   "time": "04:13:10",
-   "agent": "SCANNER",
-   "coin": "NEONPA",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1413
-  },
-  {
-   "t": "2026-11-28T03:13:16Z",
-   "time": "04:13:16",
-   "agent": "SCANNER",
-   "coin": "PILL",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 7.8 SOL in · +57% since the create · mcap 47 SOL",
-   "n": 1414
-  },
-  {
-   "t": "2026-11-28T03:13:19Z",
-   "time": "04:13:19",
-   "agent": "SCANNER",
-   "coin": "Sniffer",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 2.0 SOL in · +13% since the create · mcap 34 SOL",
-   "n": 1415
-  },
-  {
    "t": "2026-11-28T03:13:19Z",
    "time": "04:13:19",
    "agent": "SCANNER",
@@ -5267,6 +5244,33 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1612
+  },
+  {
+   "t": "2026-11-28T04:10:39Z",
+   "time": "05:10:39",
+   "agent": "SCANNER",
+   "coin": "CS",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1613
+  },
+  {
+   "t": "2026-11-28T04:10:57Z",
+   "time": "05:10:57",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 7, serial launcher 1, odd curve reading: virtual SOL i 1)",
+   "n": 1614
+  },
+  {
+   "t": "2026-11-28T04:11:06Z",
+   "time": "05:11:06",
+   "agent": "SCANNER",
+   "coin": "Snowball",
+   "action": "flag",
+   "text": "snipe · first reading 2.1 s after the create · 5.5 SOL in · +40% since the create · mcap 39 SOL",
+   "n": 1615
   }
  ],
  "nights": [
@@ -5339,7 +5343,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · odd curve readings 355 (161 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 43 watched · ws off · odd curve readings 356 (161 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5347,26 +5351,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1919,
-    "last_event_age_s": 19.0,
+    "events": 1923,
+    "last_event_age_s": 1.1,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 40678,
-    "last_event_age_s": 2.0,
+    "events": 40710,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1172,
-    "last_event_age_s": 18.8,
-    "errors": 53,
-    "last_error": "ar-io.dev: timeout after 2 s"
+    "events": 1175,
+    "last_event_age_s": 0.9,
+    "errors": 54,
+    "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -5377,10 +5381,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
-  "watching": 0,
-  "followed": 10,
-  "odd_readings": 355,
+  "creates_per_min": 3.2,
+  "watching": 1,
+  "followed": 9,
+  "odd_readings": 356,
   "odd_coins": 161
  },
  "learner": {
@@ -5428,23 +5432,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20336,
+   "sent": 20371,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20336,
+   "sent": 20371,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FIX6900",
+   "name": "FANTASY INDEX 6900",
+   "mint": "9YmYV4fA1j4yuaSxa6RkaAr2QTRMjq8vzjnTfonBpump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": true,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Snowball",
+   "name": "Snowball",
+   "mint": "3GF66wcnkZqu7MUUGhjcJPUccffL5HPkDAeNwA93pump",
+   "age_s": 6,
+   "sol_in": 4.88,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 35.2,
+   "mcap_sol": 37.8,
+   "dev_pct": 0.0,
+   "big_sell": 1.07,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CS",
+   "name": "CS2",
+   "mint": "5UMBjXJ9xEDHajri4YJbFbN6tyehMDrrFq2653Eopump",
+   "age_s": 31,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "ELF",
    "name": "ELF",
    "mint": "9cScEW2edYXU4HpZmShVfJdfotpJdpaL1ygo2jWwtato",
-   "age_s": 18,
+   "age_s": 51,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5462,7 +5520,7 @@
    "symbol": "is it over?",
    "name": "is it over?",
    "mint": "2xp6R2Ggnt5bYtzoU9fJJQ4AGK3hsncsXcUTgENFpump",
-   "age_s": 21,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5480,7 +5538,7 @@
    "symbol": "HAPPY",
    "name": "HAPPYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
    "mint": "GWG5p77b4JCVTEBRwMXF6Dcs7ezy68HoajyfDqfTpump",
-   "age_s": 53,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5498,7 +5556,7 @@
    "symbol": "ALPHALIGHT",
    "name": "alpha light",
    "mint": "5HM5fn5ztN5S1Bhq9U4f6UjDPqPgoR8pVhhdSEwmLjST",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": 0.27,
    "buys": 1,
    "sells": 2,
@@ -5516,14 +5574,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "7JonQSY1Ga2JLyAMZ8gUAVHxbsBFEYAPw8bH7Ydxpump",
-   "age_s": 91,
-   "sol_in": 19.15,
-   "buys": 27,
-   "sells": 22,
-   "rise_pct": 147.2,
-   "mcap_sol": 86.0,
+   "age_s": 124,
+   "sol_in": 20.58,
+   "buys": 40,
+   "sells": 32,
+   "rise_pct": 160.9,
+   "mcap_sol": 90.7,
    "dev_pct": 11.1,
-   "big_sell": 0.32,
+   "big_sell": 0.34,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -5534,7 +5592,7 @@
    "symbol": "NEEMA",
    "name": "Neema the Giraffe",
    "mint": "82apJNUDBxGuuHaBnMa9siHPC2t8rkcBSUhcSVxLpump",
-   "age_s": 123,
+   "age_s": 156,
    "sol_in": 1.47,
    "buys": 1,
    "sells": 0,
@@ -5552,7 +5610,7 @@
    "symbol": "PADS",
    "name": "Pad Wars",
    "mint": "96H8zNwCGVQqZzaEJ3piXESeLBNvEkfypHwffc2tr5ca",
-   "age_s": 129,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5570,7 +5628,7 @@
    "symbol": "Frogger",
    "name": "Frogger",
    "mint": "f3xh4ueWaBymDAMKNgyfzSDkddpt6P8tCwqgd9RXS1r",
-   "age_s": 146,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5583,78 +5641,6 @@
    "web": "https://www.youtube.com/watch?v=m1D18t6yoAI",
    "status": "rejected: serial launcher: 3 more coins in 60 min",
    "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "Trump",
-   "name": "Shalom Trump",
-   "mint": "FebDVDLZjnHS8nAcMmpfqRbtehszMt1S8yyq5znapump",
-   "age_s": 152,
-   "sol_in": 0.01,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://www.instagram.com/reel/DeRBXTHg9j2",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "AC1",
-   "name": "Amethyst Cat",
-   "mint": "649guBgRqUrbxYu29XTBWZxq25j8SLFpuqChyWd2idzj",
-   "age_s": 154,
-   "sol_in": 0.01,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "JEW",
-   "name": "Jewcoin",
-   "mint": "22pa41mM9uHnciAKVdu2pRyCqQvbtorLxp6rTEDapump",
-   "age_s": 164,
-   "sol_in": -3.04,
-   "buys": 12,
-   "sells": 29,
-   "rise_pct": -17.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 10.0,
-   "big_sell": 5.85,
-   "x": "https://x.com/thejewfun",
-   "tg": false,
-   "web": "https://jew.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "STRAY",
-   "name": "Stray Cat",
-   "mint": "2VXRtAyoCgB4HxcDUZRkDDjxbWSUGTAQr1RtwRvdpump",
-   "age_s": 176,
-   "sol_in": -0.8,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -5.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.8,
-   "big_sell": 0.8,
-   "x": "https://x.com/fondnessweb3/status/2126517945794724330?a=nerPFOxlas5ALfnK8ko&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
