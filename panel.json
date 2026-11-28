@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:35:08Z",
+ "updated": "2026-11-28T05:35:37Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 766,
   "checked": 49,
   "filtered": 1,
-  "lines": 1851,
+  "lines": 1853,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3809,24 +3809,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:20:36Z",
-   "time": "05:20:36",
-   "agent": "SCANNER",
-   "coin": "STOCKR",
-   "action": "flag",
-   "text": "snipe · first reading 4.8 s after the create · 2.4 SOL in · +17% since the create · mcap 34 SOL",
-   "n": 1652
-  },
-  {
-   "t": "2026-11-28T04:20:48Z",
-   "time": "05:20:48",
-   "agent": "SCANNER",
-   "coin": "SLOP",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 8.8 SOL in · +65% since the create · mcap 49 SOL",
-   "n": 1653
-  },
-  {
    "t": "2026-11-28T04:21:03Z",
    "time": "05:21:03",
    "agent": "SCANNER",
@@ -5607,6 +5589,24 @@
    "action": "scan",
    "text": "new pairs · 1.8 a minute · 0 watched · 5 rejected (snipe not bought: only to size 2, serial launcher 1, snipe: first reading s after the 1)",
    "n": 1851
+  },
+  {
+   "t": "2026-11-28T05:35:32Z",
+   "time": "06:35:32",
+   "agent": "SCANNER",
+   "coin": "NAZILON",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 386 odd readings from 181 coins tonight",
+   "n": 1852
+  },
+  {
+   "t": "2026-11-28T05:35:34Z",
+   "time": "06:35:34",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 0 watched · 6 rejected (snipe: first reading s after the 3, serial launcher 2, odd curve reading: virtual SOL i 1)",
+   "n": 1853
   }
  ],
  "nights": [
@@ -5673,7 +5673,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 17 watched · ws off · odd curve readings 384 (180 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · odd curve readings 387 (181 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5682,23 +5682,23 @@
     "name": "pumpportal",
     "connected": true,
     "events": 223,
-    "last_event_age_s": 10.9,
+    "last_event_age_s": 39.9,
     "errors": 3,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 1531,
-    "last_event_age_s": 48.5,
-    "errors": 151,
+    "connected": true,
+    "events": 1543,
+    "last_event_age_s": 1.4,
+    "errors": 152,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
     "events": 179,
-    "last_event_age_s": 10.8,
+    "last_event_age_s": 39.8,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5712,10 +5712,10 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.4,
-  "watching": 2,
-  "followed": 8,
-  "odd_readings": 384,
-  "odd_coins": 180
+  "watching": 0,
+  "followed": 6,
+  "odd_readings": 387,
+  "odd_coins": 181
  },
  "learner": {
   "samples": 84,
@@ -5762,13 +5762,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3872,
+   "sent": 3903,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3872,
+   "sent": 3903,
    "errors": 0,
    "last_error": null
   }
@@ -5778,7 +5778,7 @@
    "symbol": "NAZILON",
    "name": "nazilon",
    "mint": "9ExR2nShMy3NpPuhaAGS5p5bXFpEVq6FuR7LPikuNsZU",
-   "age_s": 10,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5796,25 +5796,25 @@
    "symbol": "Cannonball",
    "name": "Canonball",
    "mint": "AK2THGj6hJ9w1Coe9HNah9WGTY5Ruy2swGmPfyfapump",
-   "age_s": 15,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 44,
+   "sol_in": 0.03,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.2,
    "mcap_sol": 28.9,
    "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 40.5 s after the create (max 10 s)",
+   "why": "snipe: first reading 40.5 s after the create (max 10 s)"
   },
   {
    "symbol": "BLACKNAZIS",
    "name": "Black Nazis",
    "mint": "EWWa196T3J3zy4Jr2W4xo4qWrYN4BDbbGwkNAKCmpump",
-   "age_s": 16,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5832,25 +5832,25 @@
    "symbol": "DEMP",
    "name": "Doneld Demp",
    "mint": "BSk9gu8gH7Lg9DNZg8jor1waZKrnURWwfwXKCC83caKc",
-   "age_s": 26,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 55,
+   "sol_in": 2.97,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
+   "rise_pct": 20.4,
+   "mcap_sol": 34.8,
    "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": "https://x.com/News_crypto/status/2126548793713643761",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 50.6 s after the create (max 10 s)",
+   "why": "snipe: first reading 50.6 s after the create (max 10 s)"
   },
   {
    "symbol": "USD1",
    "name": "United States Dog Shit 1",
    "mint": "594FtC4kUEH4cFpJwHQgURtin9xLhuPMeTLJo3cZpump",
-   "age_s": 59,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5868,55 +5868,19 @@
    "symbol": "PBJT",
    "name": "Peanut Butter Jelly Time",
    "mint": "3PFn4oFnnKQJpijbbTCL7NLkhtEMHbyzMji883zGpump",
-   "age_s": 72,
-   "sol_in": 17.2,
+   "age_s": 101,
+   "sol_in": -0.28,
    "buys": 1,
-   "sells": 2,
-   "rise_pct": 145.9,
-   "mcap_sol": 70.0,
+   "sells": 3,
+   "rise_pct": -1.9,
+   "mcap_sol": 28.0,
    "dev_pct": 1.0,
-   "big_sell": 0.59,
+   "big_sell": 17.48,
    "x": false,
    "tg": false,
    "web": false,
    "status": "rejected: snipe: first reading 10.4 s after the create (max 10 s)",
    "why": "snipe: first reading 10.4 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "chairman",
-   "name": "chairman",
-   "mint": "9YDxMeoyZiXxEhF3PnjPXh6juifDGRVZYY98v8wUpump",
-   "age_s": 168,
-   "sol_in": -2.74,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -15.1,
-   "mcap_sol": 32.2,
-   "dev_pct": 15.2,
-   "big_sell": 3.87,
-   "x": "https://x.com/CoachPatNFT/status/2126549723825795472",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "packball",
-   "name": "packball",
-   "mint": "7UjWzLjQyGySc79qHTSn9C68rUcsfEwLbhqqnFiapump",
-   "age_s": 176,
-   "sol_in": -0.69,
-   "buys": 1,
-   "sells": 7,
-   "rise_pct": -4.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.4,
-   "big_sell": 7.0,
-   "x": "https://x.com/usepackball/status/2126549614350270666",
-   "tg": false,
-   "web": "https://packball.lol",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
