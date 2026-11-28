@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:19:58Z",
+ "updated": "2026-11-28T07:20:31Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 845,
+  "flagged": 846,
   "checked": 49,
   "filtered": 1,
-  "lines": 2095,
+  "lines": 2097,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "FIRSTBLOCK",
-   "why": "snipe",
-   "t": "2026-11-28T07:14:43Z"
-  },
   {
    "coin": "pptsk",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MIM",
    "why": "snipe",
    "t": "2026-11-28T07:18:41Z"
+  },
+  {
+   "coin": "WWW",
+   "why": "snipe",
+   "t": "2026-11-28T07:20:30Z"
   }
  ],
  "curve": [
@@ -2071,6 +2071,10 @@
   ],
   [
    1795850340,
+   47.79
+  ],
+  [
+   1795850400,
    47.79
   ]
  ],
@@ -4225,24 +4229,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:00:00Z",
-   "time": "07:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-28T05 · 2914 lines (1698 curve readings) · 0.5 MB · 158 coins",
-   "n": 1896
-  },
-  {
-   "t": "2026-11-28T06:00:48Z",
-   "time": "07:00:48",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe: first reading s after the 5, serial launcher 2, dump 1)",
-   "n": 1897
-  },
-  {
    "t": "2026-11-28T06:01:00Z",
    "time": "07:01:00",
    "agent": "SCANNER",
@@ -6023,6 +6009,24 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, serial launcher 1, dev bought 1)",
    "n": 2095
+  },
+  {
+   "t": "2026-11-28T07:20:30Z",
+   "time": "08:20:30",
+   "agent": "SCANNER",
+   "coin": "WWW",
+   "action": "flag",
+   "text": "snipe · first reading 1.6 s after the create · 14.6 SOL in · +116% since the create · mcap 65 SOL",
+   "n": 2096
+  },
+  {
+   "t": "2026-11-28T07:20:30Z",
+   "time": "08:20:30",
+   "agent": "SIZER",
+   "coin": "WWW",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2097
   }
  ],
  "nights": [
@@ -6095,7 +6099,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 22 watched · ws off · odd curve readings 550 (221 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 550 (221 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6103,24 +6107,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 583,
-    "last_event_age_s": 6.1,
+    "events": 585,
+    "last_event_age_s": 1.9,
     "errors": 11,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6029,
-    "last_event_age_s": 1.6,
+    "events": 6052,
+    "last_event_age_s": 0.4,
     "errors": 419,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 426,
-    "last_event_age_s": 59.9,
+    "events": 428,
+    "last_event_age_s": 1.9,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6133,9 +6137,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 5,
+  "followed": 7,
   "odd_readings": 550,
   "odd_coins": 221
  },
@@ -6184,23 +6188,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10567,
+   "sent": 10603,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10567,
+   "sent": 10603,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WWW",
+   "name": "We Will Win",
+   "mint": "Fhjtuv2yxgcC7Cru3KiXGqvfQgTtNQFpRbXQw6yrpump",
+   "age_s": 1,
+   "sol_in": 14.58,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 116.3,
+   "mcap_sol": 64.5,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/uncquant/status/2126576928429637910",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "USD0",
+   "name": "USD0",
+   "mint": "8MuiWoCQUmU6a2pH9V3gq5QsJvxsXv3bJT8TPxLDpump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/WhiteWhaleLabs/status/2007318289392062946",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "5mwGiQz6yaXGdLmQzsTiZWrwwc6rb4pLLydkKGoK2xbs",
-   "age_s": 6,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6218,14 +6258,14 @@
    "symbol": "USD1",
    "name": "Useless Shitty Dollar 1",
    "mint": "A1JKzYNzKPU41wUzZbSKiWtroxxBiLMfRKMqQKd1pump",
-   "age_s": 59,
-   "sol_in": 1.33,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": 2.8,
-   "mcap_sol": 301.3,
+   "age_s": 92,
+   "sol_in": 3.47,
+   "buys": 5,
+   "sells": 3,
+   "rise_pct": 7.3,
+   "mcap_sol": 314.6,
    "dev_pct": 74.2,
-   "big_sell": 0.01,
+   "big_sell": 0.03,
    "x": "https://x.com/AaronFlynnX/status/2126575945075343412",
    "tg": false,
    "web": false,
@@ -6236,12 +6276,12 @@
    "symbol": "MIM",
    "name": "Magic Internet Money",
    "mint": "C3zgsgzZ47TZujUv3d9nNWRCkwTH1Uou5LG3seAmpump",
-   "age_s": 79,
-   "sol_in": 1.81,
+   "age_s": 112,
+   "sol_in": -0.44,
    "buys": 11,
-   "sells": 24,
-   "rise_pct": 12.0,
-   "mcap_sol": 33.4,
+   "sells": 36,
+   "rise_pct": -2.8,
+   "mcap_sol": 29.0,
    "dev_pct": 3.4,
    "big_sell": 4.57,
    "x": "https://x.com/mimonpf/status/2126576221656080814",
@@ -6254,7 +6294,7 @@
    "symbol": "LARP",
    "name": "larp",
    "mint": "6ZcV9cbYQstXSvmhi1DiHVBG8sCFDzV5KkzZBduAiq9p",
-   "age_s": 90,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6272,12 +6312,12 @@
    "symbol": "ISLAND",
    "name": "Island Girls",
    "mint": "HwbvGn48vxJzYecV3cQ1hh4qkyWy7rqzMBJZPgNHpump",
-   "age_s": 111,
-   "sol_in": 0.06,
+   "age_s": 144,
+   "sol_in": -0.03,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 0.4,
-   "mcap_sol": 28.6,
+   "sells": 3,
+   "rise_pct": -0.2,
+   "mcap_sol": 28.5,
    "dev_pct": 1.0,
    "big_sell": 0.3,
    "x": "https://x.com/islandgirlsxyz",
@@ -6290,12 +6330,12 @@
    "symbol": "RECRUIT",
    "name": "RECRUIT",
    "mint": "GhgALX7p6wNbxBsyrWiyN4UEw4mddux85fSzLdpJpump",
-   "age_s": 129,
-   "sol_in": 6.08,
-   "buys": 11,
+   "age_s": 162,
+   "sol_in": 6.09,
+   "buys": 12,
    "sells": 11,
-   "rise_pct": 40.6,
-   "mcap_sol": 46.7,
+   "rise_pct": 40.7,
+   "mcap_sol": 46.8,
    "dev_pct": 8.9,
    "big_sell": 4.9,
    "x": "https://x.com/recruitonpumpf?s=11",
