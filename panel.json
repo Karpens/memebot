@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:59:15Z",
+ "updated": "2026-11-28T06:59:42Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 824,
+  "flagged": 825,
   "checked": 49,
   "filtered": 1,
-  "lines": 2039,
+  "lines": 2042,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "AnonPaid",
-   "why": "snipe",
-   "t": "2026-11-28T06:55:07Z"
-  },
   {
    "coin": "Anthropic",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SEND",
    "why": "snipe",
    "t": "2026-11-28T06:59:08Z"
+  },
+  {
+   "coin": "memewitz",
+   "why": "snipe",
+   "t": "2026-11-28T06:59:16Z"
   }
  ],
  "curve": [
@@ -4145,33 +4145,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:30:34Z",
-   "time": "06:30:34",
-   "agent": "SCANNER",
-   "coin": "Hosky",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 22.36 is not 30 + real SOL 0.03978 (off -7.677 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 382 odd readings from 179 coins tonight",
-   "n": 1840
-  },
-  {
-   "t": "2026-11-28T05:30:57Z",
-   "time": "06:30:57",
-   "agent": "SCANNER",
-   "coin": "NOOB",
-   "action": "flag",
-   "text": "snipe · first reading 5.7 s after the create · 11.8 SOL in · +87% since the create · mcap 60 SOL",
-   "n": 1841
-  },
-  {
-   "t": "2026-11-28T05:30:57Z",
-   "time": "06:30:57",
-   "agent": "SIZER",
-   "coin": "NOOB",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1842
-  },
-  {
    "t": "2026-11-28T05:31:13Z",
    "time": "06:31:13",
    "agent": "SCANNER",
@@ -5943,6 +5916,33 @@
    "action": "flag",
    "text": "snipe · first reading 6.6 s after the create · 16.6 SOL in · +138% since the create · mcap 69 SOL",
    "n": 2039
+  },
+  {
+   "t": "2026-11-28T06:59:16Z",
+   "time": "07:59:16",
+   "agent": "SCANNER",
+   "coin": "memewitz",
+   "action": "flag",
+   "text": "snipe · first reading 3.9 s after the create · 0.6 SOL in · +4% since the create · mcap 32 SOL",
+   "n": 2040
+  },
+  {
+   "t": "2026-11-28T06:59:16Z",
+   "time": "07:59:16",
+   "agent": "SIZER",
+   "coin": "memewitz",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2041
+  },
+  {
+   "t": "2026-11-28T06:59:23Z",
+   "time": "07:59:23",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 14 rejected (serial launcher 6, snipe not bought: only to size 6, mayhem mode 2)",
+   "n": 2042
   }
  ],
  "nights": [
@@ -6015,7 +6015,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 470 (211 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 470 (211 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6024,15 +6024,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 515,
-    "last_event_age_s": 2.7,
+    "last_event_age_s": 29.7,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4503,
-    "last_event_age_s": 2.2,
+    "events": 4536,
+    "last_event_age_s": 2.3,
     "errors": 400,
     "last_error": "timeout after 5 s"
    },
@@ -6040,7 +6040,7 @@
     "name": "metadata",
     "connected": true,
     "events": 373,
-    "last_event_age_s": 2.5,
+    "last_event_age_s": 29.5,
     "errors": 21,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6054,8 +6054,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.0,
-  "watching": 1,
-  "followed": 12,
+  "watching": 0,
+  "followed": 11,
   "odd_readings": 470,
   "odd_coins": 211
  },
@@ -6104,13 +6104,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9244,
+   "sent": 9273,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9244,
+   "sent": 9273,
    "errors": 0,
    "last_error": null
   }
@@ -6120,25 +6120,25 @@
    "symbol": "memewitz",
    "name": "memewitz",
    "mint": "3TBo9JsviNAVsfUGZDTSAZuknxjRvW5xv3Nyb6dfpump",
-   "age_s": 2,
+   "age_s": 29,
    "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
+   "buys": 1,
+   "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 30.8,
    "dev_pct": 5.0,
-   "big_sell": 0.0,
+   "big_sell": 0.59,
    "x": "https://x.com/itzmemewitz",
    "tg": false,
    "web": "https://memewitz.fun/",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "Mooncoin",
    "name": "Penus Boner",
    "mint": "HorPKvQYQ9eFRGH5ts6NWQ7SmGvxbZarZSrmrKcApump",
-   "age_s": 11,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6156,14 +6156,14 @@
    "symbol": "SEND",
    "name": "Send",
    "mint": "AghoyrhKiifSwbUrPsDiys7J13ixXhcQgADubmZvpump",
-   "age_s": 12,
-   "sol_in": 17.94,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 151.8,
-   "mcap_sol": 73.1,
+   "age_s": 39,
+   "sol_in": 27.15,
+   "buys": 7,
+   "sells": 1,
+   "rise_pct": 256.5,
+   "mcap_sol": 103.5,
    "dev_pct": 2.0,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": "https://x.com/UseSend_",
    "tg": false,
    "web": "https://sendpays.fun",
@@ -6174,14 +6174,14 @@
    "symbol": "PIGGYBANK",
    "name": "Piggy Bank",
    "mint": "G5WCjSfqVHp93tuGrt71rBsTRsag1cgepKWGRTF8pump",
-   "age_s": 16,
-   "sol_in": 0.0,
+   "age_s": 43,
+   "sol_in": -0.03,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "sells": 2,
+   "rise_pct": -0.2,
+   "mcap_sol": 28.0,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.03,
    "x": "https://x.com/ramentrade/status/2126571471556251856",
    "tg": false,
    "web": false,
@@ -6192,7 +6192,7 @@
    "symbol": "AP",
    "name": "Artificial Penguin",
    "mint": "FR1sUHkBq8z54NhMFdmN7QYJCQsQDAgZFeCqQ1PV99kQ",
-   "age_s": 59,
+   "age_s": 86,
    "sol_in": -3.06,
    "buys": 1,
    "sells": 5,
@@ -6210,7 +6210,7 @@
    "symbol": "USELESS",
    "name": "Useless Coin",
    "mint": "5YoKPerzzjehET84ywsHdUGghWMiePiBQk8LY4Sgpump",
-   "age_s": 60,
+   "age_s": 87,
    "sol_in": -1.48,
    "buys": 0,
    "sells": 1,
@@ -6228,7 +6228,7 @@
    "symbol": "DOWNALD",
    "name": "Downald Twump",
    "mint": "G6iQuRackX8hGScYmj56dUNyhjX7QsmHF5Fzb3QkHYZQ",
-   "age_s": 73,
+   "age_s": 100,
    "sol_in": -0.05,
    "buys": 2,
    "sells": 7,
@@ -6246,12 +6246,12 @@
    "symbol": "GIRL",
    "name": "Girl Coin",
    "mint": "5igrQREosvf9U4rF7RHULeCtTPyKRDJpFZK4abhfpump",
-   "age_s": 91,
-   "sol_in": 9.65,
-   "buys": 14,
-   "sells": 13,
-   "rise_pct": 73.9,
-   "mcap_sol": 49.6,
+   "age_s": 118,
+   "sol_in": 11.4,
+   "buys": 17,
+   "sells": 15,
+   "rise_pct": 89.4,
+   "mcap_sol": 54.0,
    "dev_pct": 1.0,
    "big_sell": 3.1,
    "x": "https://x.com/officialgrlcoin",
@@ -6264,7 +6264,7 @@
    "symbol": "Ralphie",
    "name": "McInu",
    "mint": "6t5Kz1AmWBL3zGwBX9pVa4SGEG5nxXRmQxCZnfDEcW8A",
-   "age_s": 102,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6282,7 +6282,7 @@
    "symbol": "RAPIST",
    "name": "Rapist",
    "mint": "6i3NqyJxZz9ovd46tXrh268pLbEpDrhsPRxhC7u8pump",
-   "age_s": 104,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6300,7 +6300,7 @@
    "symbol": "Wifi",
    "name": "Wifi",
    "mint": "GiCxxc2pyJ6pi7YJTULRNNj1U7QjSxhDk6wcaEPsbicz",
-   "age_s": 110,
+   "age_s": 137,
    "sol_in": -2.28,
    "buys": 3,
    "sells": 9,
@@ -6318,7 +6318,7 @@
    "symbol": "fuck owl",
    "name": "flames on sol",
    "mint": "9MBttcXFDn6jmAUSwBh2uU6t464L7XuFCcftXDxRpump",
-   "age_s": 122,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6336,7 +6336,7 @@
    "symbol": "IM",
    "name": "Internet Money",
    "mint": "4rXMdi5oYVUhoJ1zUs6abaSFAkEg7svuMtq4kK1qpump",
-   "age_s": 141,
+   "age_s": 168,
    "sol_in": -2.83,
    "buys": 5,
    "sells": 9,
@@ -6349,24 +6349,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "USELESS",
-   "name": "Useless Coin",
-   "mint": "GmkqUy4jw1pTorxAt7VH1JQJxniNoozLA8YoFv3dpump",
-   "age_s": 156,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/munnyonly/status/2126570922220130535",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
   }
  ],
  "strategies": [
