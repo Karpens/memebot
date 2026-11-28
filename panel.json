@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:46:40Z",
+ "updated": "2026-11-28T03:47:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 598,
+  "flagged": 599,
   "checked": 49,
   "filtered": 1,
-  "lines": 1530,
+  "lines": 1531,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "centa",
-   "why": "snipe",
-   "t": "2026-11-28T03:43:27Z"
-  },
   {
    "coin": "HOOT",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SIGMOID",
    "why": "snipe",
    "t": "2026-11-28T03:46:10Z"
+  },
+  {
+   "coin": "FLIP",
+   "why": "snipe",
+   "t": "2026-11-28T03:46:47Z"
   }
  ],
  "curve": [
@@ -1219,6 +1219,10 @@
   ],
   [
    1795837560,
+   47.79
+  ],
+  [
+   1795837620,
    47.79
   ]
  ],
@@ -3373,15 +3377,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:51:20Z",
-   "time": "03:51:20",
-   "agent": "SIZER",
-   "coin": "senta",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1331
-  },
-  {
    "t": "2026-11-28T02:51:34Z",
    "time": "03:51:34",
    "agent": "SCANNER",
@@ -5171,6 +5166,15 @@
    "action": "scan",
    "text": "new pairs · 7.6 a minute · 0 watched · 12 rejected (snipe not bought: only to size 7, serial launcher 4, odd curve reading: virtual SOL i 1)",
    "n": 1530
+  },
+  {
+   "t": "2026-11-28T03:46:47Z",
+   "time": "04:46:47",
+   "agent": "SCANNER",
+   "coin": "FLIP",
+   "action": "flag",
+   "text": "snipe · first reading 1.2 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1531
   }
  ],
  "nights": [
@@ -5251,24 +5255,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1803,
-    "last_event_age_s": 0.6,
+    "events": 1805,
+    "last_event_age_s": 4.6,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 38519,
-    "last_event_age_s": 0.5,
+    "events": 38596,
+    "last_event_age_s": 1.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1079,
-    "last_event_age_s": 26.6,
+    "events": 1080,
+    "last_event_age_s": 28.4,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5281,9 +5285,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 7.6,
+  "creates_per_min": 6.2,
   "watching": 0,
-  "followed": 12,
+  "followed": 13,
   "odd_readings": 349,
   "odd_coins": 157
  },
@@ -5332,23 +5336,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18806,
+   "sent": 18842,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18806,
+   "sent": 18842,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "mElons",
+   "name": "Elon Melon",
+   "mint": "6g2YCJQzF3gqPkPA2bAGDNtAAShbRdXHP56VsCsFpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "FLIP",
+   "name": "Flip",
+   "mint": "FsSdJbgLZpNmrvxrtyZo3J3BuRVgPDpMcgQJi78p5r2U",
+   "age_s": 29,
+   "sol_in": 0.02,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.2,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SIGMOID",
    "name": "Sigmoid Conjecture",
    "mint": "HpXgrsQDdkjVgzLeSiFba4Hog7rRExWUHkRzgiwUjgrH",
-   "age_s": 26,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5366,7 +5406,7 @@
    "symbol": "SIGMOID",
    "name": "Sigmoid Conjecture",
    "mint": "HwLf1YBqGtYc7HEowezCmZCzN3FFLxMBEHnECkGhpump",
-   "age_s": 31,
+   "age_s": 65,
    "sol_in": -1.35,
    "buys": 5,
    "sells": 5,
@@ -5384,7 +5424,7 @@
    "symbol": "SIGMOID",
    "name": "Sigmoid Conjecture",
    "mint": "61PwjtR7hM9qczWuhG1t42f9HZ5MSkMm5GY8vMvyhMgP",
-   "age_s": 35,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5402,7 +5442,7 @@
    "symbol": "PRISMEICE",
    "name": "PRISMEICE",
    "mint": "C1yhgvDUCwAw7n5WHXudFavfDi4zDLf7XqwtrXGCLWcT",
-   "age_s": 57,
+   "age_s": 91,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5420,14 +5460,14 @@
    "symbol": "CMDT",
    "name": "Commodities",
    "mint": "8GfCb7HMaYKo7gmRi3JCCcL1iENKCodK4JYhEKu3pump",
-   "age_s": 65,
-   "sol_in": 19.03,
-   "buys": 12,
-   "sells": 10,
-   "rise_pct": 166.2,
-   "mcap_sol": 75.1,
+   "age_s": 99,
+   "sol_in": 19.76,
+   "buys": 19,
+   "sells": 15,
+   "rise_pct": 174.1,
+   "mcap_sol": 77.4,
    "dev_pct": 0.5,
-   "big_sell": 1.06,
+   "big_sell": 1.14,
    "x": "https://x.com/usecommodities/status/2126512182670077975?a=-RTgj-JvYdsa0dN-rhU&s=20",
    "tg": false,
    "web": "https://usecommodities.xyz/",
@@ -5438,7 +5478,7 @@
    "symbol": "PTTSBRGH",
    "name": "Pittsburgh Steelers",
    "mint": "8frjQMzJ5GervH6Dq7neSAjiVpLb7Y69RWvA8kNUKUzc",
-   "age_s": 76,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5456,7 +5496,7 @@
    "symbol": "DOZE",
    "name": "Lampshade Larry",
    "mint": "KwRSxgq79h6bE1icEwwics4iesLMPPfFkTDvQvJuSwF",
-   "age_s": 79,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5474,14 +5514,14 @@
    "symbol": "LOCKPA",
    "name": "LockPay",
    "mint": "D1PjphdWmV8YeBH4Z3SJVfXLAAk46tKTFjJz5mmF1mQS",
-   "age_s": 93,
-   "sol_in": 0.0,
+   "age_s": 127,
+   "sol_in": -0.2,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
+   "sells": 2,
+   "rise_pct": -1.3,
+   "mcap_sol": 28.0,
    "dev_pct": 0.7,
-   "big_sell": 0.0,
+   "big_sell": 0.2,
    "x": "https://x.com/jasperbrookkin",
    "tg": "https://t.me/lockpay_portal",
    "web": "https://lockpay.fun",
@@ -5492,12 +5532,12 @@
    "symbol": "Anthropic",
    "name": "Anthropic official",
    "mint": "FG94kQBstod29j4D7BLy3mPgcyoVVHop8iCmyri8pump",
-   "age_s": 99,
-   "sol_in": 15.77,
-   "buys": 13,
-   "sells": 7,
-   "rise_pct": 115.3,
-   "mcap_sol": 76.2,
+   "age_s": 133,
+   "sol_in": 15.54,
+   "buys": 14,
+   "sells": 12,
+   "rise_pct": 113.3,
+   "mcap_sol": 75.5,
    "dev_pct": 11.9,
    "big_sell": 0.79,
    "x": "https://x.com/AnthropicAI",
@@ -5510,12 +5550,12 @@
    "symbol": "Fuck",
    "name": "fish + duck =",
    "mint": "AHSkScMBDXtoNCZ5NTbQp4NnRpQ9eiwxx1aiXmQjpump",
-   "age_s": 119,
-   "sol_in": 5.79,
-   "buys": 34,
-   "sells": 32,
-   "rise_pct": 35.9,
-   "mcap_sol": 51.5,
+   "age_s": 153,
+   "sol_in": 2.16,
+   "buys": 36,
+   "sells": 43,
+   "rise_pct": 12.7,
+   "mcap_sol": 42.8,
    "dev_pct": 15.2,
    "big_sell": 3.17,
    "x": "https://x.com/CoachPatNFT/status/2126522638654738727",
@@ -5528,7 +5568,7 @@
    "symbol": "WWW",
    "name": "Wonderful World Wide Web",
    "mint": "5xnzH6FDjKGBGQrEv9Ux36o2kUhrSmHZzjNcVw8Ppump",
-   "age_s": 133,
+   "age_s": 167,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5546,7 +5586,7 @@
    "symbol": "HOOT",
    "name": "Hootastrophe",
    "mint": "DczaepVjHT8AtMkkWLn3XPd66kMTKk5xtvKToUMmpump",
-   "age_s": 144,
+   "age_s": 178,
    "sol_in": -3.8,
    "buys": 4,
    "sells": 6,
