@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:36:22Z",
+ "updated": "2026-11-28T04:36:51Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 696,
+  "flagged": 697,
   "checked": 49,
   "filtered": 1,
-  "lines": 1696,
+  "lines": 1699,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -35,11 +35,6 @@
    "coin": "RAMEN",
    "why": "snipe",
    "t": "2026-11-28T04:25:17Z"
-  },
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T04:25:27Z"
   },
   {
    "coin": "guy",
@@ -70,6 +65,11 @@
    "coin": "PTSD",
    "why": "snipe",
    "t": "2026-11-28T04:29:03Z"
+  },
+  {
+   "coin": "NVIDIA",
+   "why": "snipe",
+   "t": "2026-11-28T04:36:44Z"
   }
  ],
  "curve": [
@@ -3573,33 +3573,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:38:22Z",
-   "time": "04:38:22",
-   "agent": "SCANNER",
-   "coin": "USFF",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 1497
-  },
-  {
-   "t": "2026-11-28T03:38:35Z",
-   "time": "04:38:35",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 2, mayhem mode 2)",
-   "n": 1498
-  },
-  {
-   "t": "2026-11-28T03:39:07Z",
-   "time": "04:39:07",
-   "agent": "SCANNER",
-   "coin": "FCAT",
-   "action": "flag",
-   "text": "snipe · first reading 1.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1499
-  },
-  {
    "t": "2026-11-28T03:39:07Z",
    "time": "04:39:07",
    "agent": "SIZER",
@@ -5371,6 +5344,33 @@
    "action": "scan",
    "text": "new pairs · 0.8 a minute · 4 watched · 0 rejected · closest RICEPEPE: no curve reading yet",
    "n": 1696
+  },
+  {
+   "t": "2026-11-28T04:36:44Z",
+   "time": "05:36:44",
+   "agent": "LEARNER",
+   "coin": null,
+   "action": "snipe",
+   "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
+   "n": 1697
+  },
+  {
+   "t": "2026-11-28T04:36:44Z",
+   "time": "05:36:44",
+   "agent": "SCANNER",
+   "coin": "NVIDIA",
+   "action": "flag",
+   "text": "snipe · first reading 2.5 s after the create · 17.8 SOL in · +135% since the create · mcap 82 SOL",
+   "n": 1698
+  },
+  {
+   "t": "2026-11-28T04:36:44Z",
+   "time": "05:36:44",
+   "agent": "SIZER",
+   "coin": "NVIDIA",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1699
   }
  ],
  "nights": [
@@ -5437,7 +5437,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 4 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 6 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5445,24 +5445,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 5,
-    "last_event_age_s": 30.2,
+    "events": 8,
+    "last_event_age_s": 8.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 0,
-    "last_event_age_s": null,
-    "errors": 9,
+    "connected": true,
+    "events": 12,
+    "last_event_age_s": 1.6,
+    "errors": 11,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 4,
-    "last_event_age_s": 30.1,
+    "events": 6,
+    "last_event_age_s": 8.9,
     "errors": 0,
     "last_error": null
    }
@@ -5475,9 +5475,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 0.8,
-  "watching": 4,
-  "followed": 4,
+  "creates_per_min": 1.2,
+  "watching": 0,
+  "followed": 6,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5526,89 +5526,125 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 119,
+   "sent": 150,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 119,
+   "sent": 150,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "A9Yy4efzHA5PQh94tvjkUC9TsoFqRHJ2fXMXYsXbpump",
+   "age_s": 8,
+   "sol_in": 18.03,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 136.8,
+   "mcap_sol": 82.3,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": "https://t.co/5UY6GdgPL1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "COTTON",
+   "name": "Cottoncoin",
+   "mint": "9m7u9dX395fhcWZnJnhGvLgbBhvsgLrB25CEcABSVd5P",
+   "age_s": 25,
+   "sol_in": 5.04,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 35.8,
+   "mcap_sol": 39.2,
+   "dev_pct": 1.7,
+   "big_sell": 0.06,
+   "x": "https://x.com/wallstreetbets/status/2126526500484653443",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe: first reading 19.4 s after the create (max 10 s)",
+   "why": "snipe: first reading 19.4 s after the create (max 10 s)"
+  },
+  {
    "symbol": "aura",
    "name": "aura cat",
    "mint": "4xEjyaqJmeL5RRJhA6Xo8Z4QTCUTJH59ko17ysXKpump",
-   "age_s": 30,
-   "sol_in": 0.0,
+   "age_s": 59,
+   "sol_in": -0.76,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.9,
+   "sells": 1,
+   "rise_pct": -4.3,
+   "mcap_sol": 36.3,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 0.76,
    "x": "https://x.com/CoachPatNFT/status/2126535516266832132",
    "tg": false,
    "web": "https://www.instagram.com/reel/DgMEThDsS2z/?evlk=MWltbWF6YWxhMHM3Ng%3D%3D",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 52.8 s after the create (max 10 s)",
+   "why": "snipe: first reading 52.8 s after the create (max 10 s)"
   },
   {
    "symbol": "PROOF",
    "name": "Proof Not Peek",
    "mint": "3SCeSQfSbksb74iHbN9rLkbH1ihwsHyXt9Q1gYX9pump",
-   "age_s": 50,
-   "sol_in": 0.0,
+   "age_s": 79,
+   "sol_in": -0.57,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.0,
+   "sells": 1,
+   "rise_pct": -3.7,
+   "mcap_sol": 28.0,
    "dev_pct": 2.0,
-   "big_sell": 0.0,
+   "big_sell": 0.57,
    "x": "https://x.com/xhakill_/status/2126528714485960718?a=0Kl_nPz7Jw1eqw389rg&s=20",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 73.4 s after the create (max 10 s)",
+   "why": "snipe: first reading 73.4 s after the create (max 10 s)"
   },
   {
    "symbol": "Saitama",
    "name": "埼玉コイン",
    "mint": "2eGYH9b5Kcj1LuyPir99SLLWYVF7tWJq5WxXPMetpump",
-   "age_s": 67,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 96,
+   "sol_in": 0.1,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 32.8,
+   "rise_pct": 0.6,
+   "mcap_sol": 32.9,
    "dev_pct": 8.2,
    "big_sell": 0.0,
    "x": "https://x.com/comethankme12/status/2126535174540361765",
    "tg": false,
    "web": "https://www.ownerpet.net/up/u2/read.php?p=1&q=125&s=4",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 90.2 s after the create (max 10 s)",
+   "why": "snipe: first reading 90.2 s after the create (max 10 s)"
   },
   {
    "symbol": "RICEPEPE",
    "name": "RICE PEPE",
    "mint": "5kFXvU3mUpDoBKVdHVfThdxYKUZHRTcbkwc1RPcNpump",
-   "age_s": 89,
-   "sol_in": 0.0,
+   "age_s": 118,
+   "sol_in": -0.22,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.4,
+   "sells": 1,
+   "rise_pct": -1.4,
+   "mcap_sol": 28.0,
    "dev_pct": 0.8,
-   "big_sell": 0.0,
+   "big_sell": 0.22,
    "x": "https://x.com/Fisherman0x/status/2126534960601592182",
    "tg": false,
    "web": "https://x.com/Fisherman0x/status/2126534960601592182",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 112.5 s after the create (max 10 s)",
+   "why": "snipe: first reading 112.5 s after the create (max 10 s)"
   }
  ],
  "strategies": [

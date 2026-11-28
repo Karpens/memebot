@@ -59,33 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-28T01:39:00Z",
-    "time": "02:39:00",
-    "agent": "SCANNER",
-    "coin": "GIGAD",
-    "action": "odd",
-    "text": "odd curve reading: virtual SOL 1.351e+05 is not 30 + real SOL 20.99 (off +1.351e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 260 odd readings from 123 coins tonight",
-    "n": 1097
-   },
-   {
-    "t": "2026-11-28T01:39:16Z",
-    "time": "02:39:16",
-    "agent": "SCANNER",
-    "coin": "eˣ",
-    "action": "odd",
-    "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 261 odd readings from 124 coins tonight",
-    "n": 1098
-   },
-   {
-    "t": "2026-11-28T01:39:26Z",
-    "time": "02:39:26",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 6.6 a minute · 0 watched · 20 rejected (mayhem mode 7, snipe not bought: only to size 4, odd curve reading: virtual SOL i 3)",
-    "n": 1099
-   },
-   {
     "t": "2026-11-28T01:40:14Z",
     "time": "02:40:14",
     "agent": "SCANNER",
@@ -5457,6 +5430,33 @@
     "action": "scan",
     "text": "new pairs · 0.8 a minute · 4 watched · 0 rejected · closest RICEPEPE: no curve reading yet",
     "n": 1696
+   },
+   {
+    "t": "2026-11-28T04:36:44Z",
+    "time": "05:36:44",
+    "agent": "LEARNER",
+    "coin": null,
+    "action": "snipe",
+    "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
+    "n": 1697
+   },
+   {
+    "t": "2026-11-28T04:36:44Z",
+    "time": "05:36:44",
+    "agent": "SCANNER",
+    "coin": "NVIDIA",
+    "action": "flag",
+    "text": "snipe · first reading 2.5 s after the create · 17.8 SOL in · +135% since the create · mcap 82 SOL",
+    "n": 1698
+   },
+   {
+    "t": "2026-11-28T04:36:44Z",
+    "time": "05:36:44",
+    "agent": "SIZER",
+    "coin": "NVIDIA",
+    "action": "skip",
+    "text": "only $4.78 left to size",
+    "n": 1699
    }
   ],
   "trades": [
@@ -8102,20 +8102,15 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 696,
+  "flagged": 697,
   "checked": 49,
   "filtered": 1,
-  "lines": 1696,
+  "lines": 1699,
   "flags": [
    {
     "coin": "RAMEN",
     "why": "snipe",
     "t": "2026-11-28T04:25:17Z"
-   },
-   {
-    "coin": "NVIDIA",
-    "why": "snipe",
-    "t": "2026-11-28T04:25:27Z"
    },
    {
     "coin": "guy",
@@ -8146,6 +8141,11 @@
     "coin": "PTSD",
     "why": "snipe",
     "t": "2026-11-28T04:29:03Z"
+   },
+   {
+    "coin": "NVIDIA",
+    "why": "snipe",
+    "t": "2026-11-28T04:36:44Z"
    }
   ],
   "curve": [
@@ -9864,7 +9864,7 @@
   },
   "sizer_said": {
    "why": "cash",
-   "at": 1795840137.68149
+   "at": 1795840604.643083
   }
  },
  "last_night": {
