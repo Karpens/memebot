@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:35:37Z",
+ "updated": "2026-11-28T05:36:05Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 766,
+  "flagged": 767,
   "checked": 49,
   "filtered": 1,
-  "lines": 1853,
+  "lines": 1854,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SPIKE",
-   "why": "snipe",
-   "t": "2026-11-28T05:25:47Z"
-  },
   {
    "coin": "GTAcoin",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "packball",
    "why": "snipe",
    "t": "2026-11-28T05:32:14Z"
+  },
+  {
+   "coin": "GTAVI",
+   "why": "snipe",
+   "t": "2026-11-28T05:35:54Z"
   }
  ],
  "curve": [
@@ -1655,6 +1655,10 @@
   ],
   [
    1795844100,
+   47.79
+  ],
+  [
+   1795844160,
    47.79
   ]
  ],
@@ -3812,15 +3816,6 @@
    "t": "2026-11-28T04:21:03Z",
    "time": "05:21:03",
    "agent": "SCANNER",
-   "coin": "Midcurve",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1654
-  },
-  {
-   "t": "2026-11-28T04:21:03Z",
-   "time": "05:21:03",
-   "agent": "SCANNER",
    "coin": null,
    "action": "scan",
    "text": "new pairs · 4.6 a minute · 0 watched · 14 rejected (snipe not bought: only to size 11, mayhem mode 3)",
@@ -5607,6 +5602,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 6 rejected (snipe: first reading s after the 3, serial launcher 2, odd curve reading: virtual SOL i 1)",
    "n": 1853
+  },
+  {
+   "t": "2026-11-28T05:35:54Z",
+   "time": "06:35:54",
+   "agent": "SCANNER",
+   "coin": "GTAVI",
+   "action": "flag",
+   "text": "snipe · first reading 3.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1854
   }
  ],
  "nights": [
@@ -5673,7 +5677,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · odd curve readings 387 (181 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · odd curve readings 391 (181 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5681,15 +5685,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 223,
-    "last_event_age_s": 39.9,
+    "events": 224,
+    "last_event_age_s": 13.4,
     "errors": 3,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1543,
+    "events": 1564,
     "last_event_age_s": 1.4,
     "errors": 152,
     "last_error": "timeout after 5 s"
@@ -5697,8 +5701,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 179,
-    "last_event_age_s": 39.8,
+    "events": 180,
+    "last_event_age_s": 12.8,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5713,8 +5717,8 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 6,
-  "odd_readings": 387,
+  "followed": 7,
+  "odd_readings": 391,
   "odd_coins": 181
  },
  "learner": {
@@ -5762,23 +5766,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3903,
+   "sent": 3933,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3903,
+   "sent": 3933,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GTAVI",
+   "name": "GTA Grand Theft Peru",
+   "mint": "9WD1rPdN2jZsUpJx7Mem2Nv1N6hsh7C3y4PeTrDDy9JQ",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/MarioNawfal/status/2126550589589033375",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "NAZILON",
    "name": "nazilon",
    "mint": "9ExR2nShMy3NpPuhaAGS5p5bXFpEVq6FuR7LPikuNsZU",
-   "age_s": 39,
+   "age_s": 67,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5796,7 +5818,7 @@
    "symbol": "Cannonball",
    "name": "Canonball",
    "mint": "AK2THGj6hJ9w1Coe9HNah9WGTY5Ruy2swGmPfyfapump",
-   "age_s": 44,
+   "age_s": 72,
    "sol_in": 0.03,
    "buys": 1,
    "sells": 0,
@@ -5814,7 +5836,7 @@
    "symbol": "BLACKNAZIS",
    "name": "Black Nazis",
    "mint": "EWWa196T3J3zy4Jr2W4xo4qWrYN4BDbbGwkNAKCmpump",
-   "age_s": 45,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5832,14 +5854,14 @@
    "symbol": "DEMP",
    "name": "Doneld Demp",
    "mint": "BSk9gu8gH7Lg9DNZg8jor1waZKrnURWwfwXKCC83caKc",
-   "age_s": 55,
-   "sol_in": 2.97,
+   "age_s": 83,
+   "sol_in": 2.9,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 20.4,
-   "mcap_sol": 34.8,
+   "sells": 2,
+   "rise_pct": 19.9,
+   "mcap_sol": 34.6,
    "dev_pct": 1.7,
-   "big_sell": 0.0,
+   "big_sell": 0.06,
    "x": "https://x.com/News_crypto/status/2126548793713643761",
    "tg": false,
    "web": false,
@@ -5850,7 +5872,7 @@
    "symbol": "USD1",
    "name": "United States Dog Shit 1",
    "mint": "594FtC4kUEH4cFpJwHQgURtin9xLhuPMeTLJo3cZpump",
-   "age_s": 88,
+   "age_s": 116,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5868,7 +5890,7 @@
    "symbol": "PBJT",
    "name": "Peanut Butter Jelly Time",
    "mint": "3PFn4oFnnKQJpijbbTCL7NLkhtEMHbyzMji883zGpump",
-   "age_s": 101,
+   "age_s": 129,
    "sol_in": -0.28,
    "buys": 1,
    "sells": 3,
