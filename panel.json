@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:14:34Z",
+ "updated": "2026-11-28T11:15:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1258,
+  "flagged": 1259,
   "checked": 49,
   "filtered": 1,
-  "lines": 2873,
+  "lines": 2875,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "QED",
-   "why": "snipe",
-   "t": "2026-11-28T11:09:30Z"
-  },
   {
    "coin": "KNOT",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "George",
    "why": "snipe",
    "t": "2026-11-28T11:14:27Z"
+  },
+  {
+   "coin": "FILLINA",
+   "why": "snipe",
+   "t": "2026-11-28T11:14:50Z"
   }
  ],
  "curve": [
-  [
-   1795828500,
-   47.79
-  ],
   [
    1795828560,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864440,
    47.79
+  ],
+  [
+   1795864500,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:17:56Z",
-   "time": "11:17:56",
-   "agent": "SCANNER",
-   "coin": "POTEMER",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 1.2 SOL in · +8% since the create · mcap 31 SOL",
-   "n": 2674
-  },
-  {
-   "t": "2026-11-28T10:18:09Z",
-   "time": "11:18:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 12 rejected (snipe not bought: only to size 7, odd curve reading: virtual SOL i 2, mayhem mode 2)",
-   "n": 2675
-  },
-  {
    "t": "2026-11-28T10:18:42Z",
    "time": "11:18:42",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 6.1 SOL in · +40% since the create · mcap 47 SOL",
    "n": 2873
+  },
+  {
+   "t": "2026-11-28T11:14:43Z",
+   "time": "12:14:43",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, mayhem mode 3, odd curve reading: virtual SOL i 2)",
+   "n": 2874
+  },
+  {
+   "t": "2026-11-28T11:14:50Z",
+   "time": "12:14:50",
+   "agent": "SCANNER",
+   "coin": "FILLINA",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · -0.8 SOL in · -5% since the create · mcap 28 SOL",
+   "n": 2875
   }
  ],
  "nights": [
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 260,
-    "last_event_age_s": 8.5,
+    "events": 262,
+    "last_event_age_s": 13.4,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7061,
+    "events": 7130,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 185,
-    "last_event_age_s": 8.4,
+    "events": 187,
+    "last_event_age_s": 11.6,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,7 +6527,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 9,
   "odd_readings": 981,
@@ -6578,28 +6578,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3821,
+   "sent": 3850,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3821,
+   "sent": 3850,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FILLINA",
+   "name": "Filling In",
+   "mint": "2TDkypMDV6xSBcRV8MY5edMgrPRnEtbrAyc8QwKXpump",
+   "age_s": 13,
+   "sol_in": -0.79,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -5.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 2.8,
+   "big_sell": 0.79,
+   "x": false,
+   "tg": false,
+   "web": "https://www.nfl.com/news/brock-purdy-ankle-out-49ers-seahawks-mac-jones-start?mint=",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Sahur",
+   "name": "Hilbert-Sahur conjecture",
+   "mint": "9kY36tqn1o4ra2AC1stATC7LWWvoAY9yvsqaEW19ZgEu",
+   "age_s": 18,
+   "sol_in": -1.44,
+   "buys": 2,
+   "sells": 6,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.02,
+   "x": "https://x.com/MarioPrezldente/status/2126635762179522750",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 19 more coins in 60 min",
+   "why": "serial launcher: 19 more coins in 60 min"
+  },
+  {
    "symbol": "George",
    "name": "Justice For George",
    "mint": "8nuzE4y7ELLUxyuKqUwRqf45DS2921X34vHqFMSpump",
-   "age_s": 8,
-   "sol_in": 6.07,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 40.3,
-   "mcap_sol": 47.3,
+   "age_s": 36,
+   "sol_in": 6.71,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 44.9,
+   "mcap_sol": 48.9,
    "dev_pct": 9.6,
    "big_sell": 0.05,
    "x": "https://x.com/AnteAnteDev/status/2126634605776081352",
@@ -6612,7 +6648,7 @@
    "symbol": "Sahur",
    "name": "Hilbert-Sahur conjecture",
    "mint": "5mBcmCdwdCcSLHDzMyZ94LBzngWHffBvEQsqYMwinvKH",
-   "age_s": 16,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6666,7 @@
    "symbol": "REA",
    "name": "REA PRINCESS OF THE SEA",
    "mint": "7kf4YFH1woVhqoidgUXnzGihjkUJdp7zkFr453Yzpump",
-   "age_s": 19,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6684,7 @@
    "symbol": "AIWRLD",
    "name": "ai world",
    "mint": "HyAKHpJT22sHEsh44VL58gamSuYwxfhnhqeiiwwE2G9V",
-   "age_s": 29,
+   "age_s": 57,
    "sol_in": 0.13,
    "buys": 1,
    "sells": 0,
@@ -6666,7 +6702,7 @@
    "symbol": "MAGPIE",
    "name": "HELLO MR MAGPIE",
    "mint": "H1JeP1ZxJFZ4x2kBHEY89FtHPijEz6QRWW7bDmXRpump",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,12 +6720,12 @@
    "symbol": "concat",
    "name": "crime it",
    "mint": "FypSHhWu4AALWJDumrrBrhpgExkoEJ1hY3rApV6P6hRB",
-   "age_s": 47,
-   "sol_in": -1.59,
-   "buys": 7,
+   "age_s": 75,
+   "sol_in": -0.49,
+   "buys": 8,
    "sells": 15,
-   "rise_pct": -9.4,
-   "mcap_sol": 30.6,
+   "rise_pct": -3.0,
+   "mcap_sol": 32.8,
    "dev_pct": 9.6,
    "big_sell": 2.93,
    "x": "https://x.com/deving4R/status/2126635622777622535?a=rTAgsxGn-Z5v998lEuo&s=20",
@@ -6702,14 +6738,14 @@
    "symbol": "BFRI",
    "name": "Black Friday",
    "mint": "CK2gH1AjrWJpQFXVKDTC54KjY5x6DnPywvnVFi5Upump",
-   "age_s": 119,
-   "sol_in": 0.34,
+   "age_s": 147,
+   "sol_in": 0.04,
    "buys": 5,
-   "sells": 0,
-   "rise_pct": 2.3,
-   "mcap_sol": 28.6,
+   "sells": 1,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.3,
    "x": false,
    "tg": false,
    "web": "https://en.wikipedia.org/wiki/Black_Friday_(shopping)",
@@ -6720,7 +6756,7 @@
    "symbol": "TRADER",
    "name": "in a world full of kols",
    "mint": "4zkxPT2ZHMguNnqwe6m5bgTBn2oPXvBPeKK8hWSupump",
-   "age_s": 120,
+   "age_s": 148,
    "sol_in": -8.22,
    "buys": 9,
    "sells": 17,
@@ -6738,12 +6774,12 @@
    "symbol": "WLSI",
    "name": "World Liberty Short Investment",
    "mint": "EeuHBhYmFKGTXtJWe4BKd8VEBB7zP1XV6Pb7a3nXpump",
-   "age_s": 123,
-   "sol_in": 4.9,
-   "buys": 53,
-   "sells": 48,
-   "rise_pct": 23.0,
-   "mcap_sol": 76.8,
+   "age_s": 151,
+   "sol_in": 6.21,
+   "buys": 63,
+   "sells": 58,
+   "rise_pct": 29.6,
+   "mcap_sol": 80.9,
    "dev_pct": 35.5,
    "big_sell": 4.25,
    "x": "https://x.com/WLSISOL/status/2126635086040674744",
@@ -6756,7 +6792,7 @@
    "symbol": "REA",
    "name": "REA PRINCESS OF THE SEA",
    "mint": "DhD1cKyWzeAC6TpmWd1MXNnJt4mCqcTxxUWiQFCQpump",
-   "age_s": 134,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6769,42 +6805,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "DIFFERENT",
-   "name": "Why Different",
-   "mint": "5r1k1HKkg1hba8jUpYvK1Sk9RjT8C2v2Q9FoJpjU8GDD",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/5r1k1HKkg1hba8jUpYvK1Sk9RjT8C2v2Q9FoJpjU8GDD",
-   "status": "rejected: odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL)"
-  },
-  {
-   "symbol": "TRADER",
-   "name": "in a world full of kols",
-   "mint": "FHLwXcLCte9dEShoQeoTt1WRPSgwGkUndjC8RGuWpump",
-   "age_s": 176,
-   "sol_in": -7.0,
-   "buys": 11,
-   "sells": 12,
-   "rise_pct": -32.0,
-   "mcap_sol": 33.6,
-   "dev_pct": 26.6,
-   "big_sell": 13.94,
-   "x": "https://x.com/solocoinPF/status/2126634477304590470?a=bQ1RhpM-1qtxdUcZf5M&s=20",
-   "tg": false,
-   "web": "https://www.solodog.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
