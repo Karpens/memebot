@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:10:51Z",
+ "updated": "2026-11-28T13:11:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1488,
+  "flagged": 1490,
   "checked": 49,
   "filtered": 1,
-  "lines": 3258,
+  "lines": 3261,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GOTO",
-   "why": "snipe",
-   "t": "2026-11-28T13:07:10Z"
-  },
-  {
-   "coin": "CRABS",
-   "why": "snipe",
-   "t": "2026-11-28T13:07:26Z"
-  },
   {
    "coin": "KIDSFUND",
    "why": "snipe",
@@ -70,13 +60,19 @@
    "coin": "BZD",
    "why": "snipe",
    "t": "2026-11-28T13:10:47Z"
+  },
+  {
+   "coin": "Kyun",
+   "why": "snipe",
+   "t": "2026-11-28T13:11:03Z"
+  },
+  {
+   "coin": "Wibbit",
+   "why": "snipe",
+   "t": "2026-11-28T13:11:23Z"
   }
  ],
  "curve": [
-  [
-   1795835460,
-   47.79
-  ],
   [
    1795835520,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795871400,
    47.79
+  ],
+  [
+   1795871460,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:12:07Z",
-   "time": "13:12:07",
-   "agent": "SCANNER",
-   "coin": "HYL",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3059
-  },
-  {
-   "t": "2026-11-28T12:12:11Z",
-   "time": "13:12:11",
-   "agent": "SCANNER",
-   "coin": "FlopCat",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3060
-  },
-  {
-   "t": "2026-11-28T12:12:14Z",
-   "time": "13:12:14",
-   "agent": "SCANNER",
-   "coin": "$LOOKSMAXX",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3061
-  },
-  {
    "t": "2026-11-28T12:12:17Z",
    "time": "13:12:17",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 6, no symbol or name 1, mayhem mode 1)",
    "n": 3258
+  },
+  {
+   "t": "2026-11-28T13:11:03Z",
+   "time": "14:11:03",
+   "agent": "SCANNER",
+   "coin": "Kyun",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 5.3 SOL in · +38% since the create · mcap 40 SOL",
+   "n": 3259
+  },
+  {
+   "t": "2026-11-28T13:11:19Z",
+   "time": "14:11:19",
+   "agent": "SCANNER",
+   "coin": "CASHTAG",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1024 odd readings from 316 coins tonight",
+   "n": 3260
+  },
+  {
+   "t": "2026-11-28T13:11:23Z",
+   "time": "14:11:23",
+   "agent": "SCANNER",
+   "coin": "Wibbit",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3261
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 1023 (315 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 1024 (316 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 942,
-    "last_event_age_s": 4.9,
+    "events": 945,
+    "last_event_age_s": 2.2,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 20348,
+    "events": 20418,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 506,
-    "last_event_age_s": 2.4,
+    "connected": true,
+    "events": 509,
+    "last_event_age_s": 2.0,
     "errors": 23,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,11 +6529,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 6,
-  "odd_readings": 1023,
-  "odd_coins": 315
+  "followed": 9,
+  "odd_readings": 1024,
+  "odd_coins": 316
  },
  "learner": {
   "samples": 84,
@@ -6580,28 +6580,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11245,
+   "sent": 11280,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11245,
+   "sent": 11280,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Wibbit",
+   "name": "Wibbit",
+   "mint": "DjWfpsWkefLx6P3BUFFzH1tVSDqPrrAhQkUUGiWApump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/WojTheDegen/status/2126401978984997328",
+   "tg": false,
+   "web": "https://x.com/i/communities/2023407389253435661",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CASHTAG",
+   "name": "CashTags",
+   "mint": "B8KaAs2TsnpohqgzPWp1VG9HgPvXeCB1NU9tKTa15NH5",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://useanonpad.fun/coin/B8KaAs2TsnpohqgzPWp1VG9HgPvXeCB1NU9tKTa15NH5",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Kyun",
+   "name": "KyunCoin",
+   "mint": "9P8zcTirHBVpm1bvy3yx5V2HahE7hvBRNyNHB4u2pump",
+   "age_s": 21,
+   "sol_in": 4.64,
+   "buys": 4,
+   "sells": 12,
+   "rise_pct": 32.8,
+   "mcap_sol": 38.2,
+   "dev_pct": 1.5,
+   "big_sell": 0.27,
+   "x": false,
+   "tg": false,
+   "web": "https://www.instagram.com/p/DgSU2bYiYZS/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "BZD",
    "name": "Big Blood ZOOd",
    "mint": "Hi6xF1Ysgx2WZ6F37EPZQ71J2UfmsUMwVX2vA24o8v5K",
-   "age_s": 4,
-   "sol_in": 0.02,
-   "buys": 1,
+   "age_s": 37,
+   "sol_in": 0.07,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.9,
+   "rise_pct": 0.5,
+   "mcap_sol": 29.0,
    "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": false,
@@ -6614,7 +6668,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "592w8MgZLeSidoV6mvU5or9LqQKjxAcDJGwJvhJ6pump",
-   "age_s": 32,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,10 +6686,10 @@
    "symbol": "PSMK",
    "name": "Pilot Smoke Test",
    "mint": "FJmdiXJCt4sQtcqp23r9fw5qbk8wxGgzG6nJH3hxiduQ",
-   "age_s": 40,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 2,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
@@ -6650,12 +6704,12 @@
    "symbol": "SHIBAKAMI",
    "name": "Shiba no Kami",
    "mint": "ALR4zJiNN7bxqV7hyoPQPpfGmuSfkK1zcf9Tw34rpump",
-   "age_s": 60,
-   "sol_in": 0.14,
+   "age_s": 93,
+   "sol_in": 0.03,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.8,
-   "mcap_sol": 35.9,
+   "sells": 3,
+   "rise_pct": 0.2,
+   "mcap_sol": 35.7,
    "dev_pct": 12.2,
    "big_sell": 0.2,
    "x": "https://x.com/SHIBAKAMIMEME",
@@ -6668,7 +6722,7 @@
    "symbol": "?",
    "name": "",
    "mint": "5xeMi3EmKCasNEqJacdqBfuqTC1VTnCjCCAeZowQj9MK",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6740,7 @@
    "symbol": "duk",
    "name": "duk",
    "mint": "6DbMj8TroTwe3wBN8F13WtnxEXpZqr3628w5T2xJi1wo",
-   "age_s": 74,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,12 +6758,12 @@
    "symbol": "OFFDOG",
    "name": "Offshift Dog",
    "mint": "9rQq61m3jye2vRTmF8sNDWQfHUgq6Edb3sKeezzSpump",
-   "age_s": 85,
-   "sol_in": 0.41,
-   "buys": 6,
+   "age_s": 118,
+   "sol_in": 0.48,
+   "buys": 7,
    "sells": 3,
-   "rise_pct": 2.8,
-   "mcap_sol": 28.8,
+   "rise_pct": 3.2,
+   "mcap_sol": 28.9,
    "dev_pct": 0.1,
    "big_sell": 0.93,
    "x": "https://x.com/OffshiftDog",
@@ -6722,7 +6776,7 @@
    "symbol": "KIDSFUND",
    "name": "Elon Kids Fund",
    "mint": "6nnNrYQgAuxQ15sqhFYygVVRSgndT9kD4R6vNnTnbFhZ",
-   "age_s": 133,
+   "age_s": 166,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,

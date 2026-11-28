@@ -59,33 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-28T10:14:45Z",
-    "time": "11:14:45",
-    "agent": "LOGGER",
-    "coin": null,
-    "action": "tape",
-    "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
-    "n": 2659
-   },
-   {
-    "t": "2026-11-28T10:14:53Z",
-    "time": "11:14:53",
-    "agent": "LEARNER",
-    "coin": null,
-    "action": "snipe",
-    "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
-    "n": 2660
-   },
-   {
-    "t": "2026-11-28T10:14:53Z",
-    "time": "11:14:53",
-    "agent": "SCANNER",
-    "coin": "Liberty",
-    "action": "flag",
-    "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-    "n": 2661
-   },
-   {
     "t": "2026-11-28T10:14:53Z",
     "time": "11:14:53",
     "agent": "SIZER",
@@ -5457,6 +5430,33 @@
     "action": "scan",
     "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 6, no symbol or name 1, mayhem mode 1)",
     "n": 3258
+   },
+   {
+    "t": "2026-11-28T13:11:03Z",
+    "time": "14:11:03",
+    "agent": "SCANNER",
+    "coin": "Kyun",
+    "action": "flag",
+    "text": "snipe · first reading 0.5 s after the create · 5.3 SOL in · +38% since the create · mcap 40 SOL",
+    "n": 3259
+   },
+   {
+    "t": "2026-11-28T13:11:19Z",
+    "time": "14:11:19",
+    "agent": "SCANNER",
+    "coin": "CASHTAG",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1024 odd readings from 316 coins tonight",
+    "n": 3260
+   },
+   {
+    "t": "2026-11-28T13:11:23Z",
+    "time": "14:11:23",
+    "agent": "SCANNER",
+    "coin": "Wibbit",
+    "action": "flag",
+    "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+    "n": 3261
    }
   ],
   "trades": [
@@ -8102,21 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 1488,
+  "flagged": 1490,
   "checked": 49,
   "filtered": 1,
-  "lines": 3258,
+  "lines": 3261,
   "flags": [
-   {
-    "coin": "GOTO",
-    "why": "snipe",
-    "t": "2026-11-28T13:07:10Z"
-   },
-   {
-    "coin": "CRABS",
-    "why": "snipe",
-    "t": "2026-11-28T13:07:26Z"
-   },
    {
     "coin": "KIDSFUND",
     "why": "snipe",
@@ -8146,13 +8136,19 @@
     "coin": "BZD",
     "why": "snipe",
     "t": "2026-11-28T13:10:47Z"
+   },
+   {
+    "coin": "Kyun",
+    "why": "snipe",
+    "t": "2026-11-28T13:11:03Z"
+   },
+   {
+    "coin": "Wibbit",
+    "why": "snipe",
+    "t": "2026-11-28T13:11:23Z"
    }
   ],
   "curve": [
-   [
-    1795835460,
-    47.79
-   ],
    [
     1795835520,
     47.79
@@ -10548,6 +10544,10 @@
    [
     1795871400,
     47.79
+   ],
+   [
+    1795871460,
+    47.79
    ]
   ],
   "last_rug": {
@@ -10739,8 +10739,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 1023,
-   "coins": 315,
+   "readings": 1024,
+   "coins": 316,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -11057,7 +11057,8 @@
     "E7eHkBHgj2xhaugnNWHTGcBr4NWc22Mf523tDec4FBrY",
     "9fXWFq56JhiZw4ogPtXPTDdJuSvUM9cCLYBGuHH9PAMq",
     "8VxrRve9M2CUQhpUkoHE4VK9S9oDiBGPx3hgcHCw8c6x",
-    "CwPDpmKixbZBpfdPWi1UjnLJCguxPSy1BDJoUUhqz55u"
+    "CwPDpmKixbZBpfdPWi1UjnLJCguxPSy1BDJoUUhqz55u",
+    "B8KaAs2TsnpohqgzPWp1VG9HgPvXeCB1NU9tKTa15NH5"
    ]
   },
   "risk_said": {
