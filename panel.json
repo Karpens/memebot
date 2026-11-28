@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:48:44Z",
+ "updated": "2026-11-28T03:49:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 602,
+  "flagged": 603,
   "checked": 49,
   "filtered": 1,
-  "lines": 1536,
+  "lines": 1537,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PTTSBRGH",
-   "why": "snipe",
-   "t": "2026-11-28T03:45:26Z"
-  },
   {
    "coin": "CMDT",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "JENN",
    "why": "snipe",
    "t": "2026-11-28T03:48:40Z"
+  },
+  {
+   "coin": "EGG",
+   "why": "snipe",
+   "t": "2026-11-28T03:48:50Z"
   }
  ],
  "curve": [
@@ -1227,6 +1227,10 @@
   ],
   [
    1795837680,
+   47.79
+  ],
+  [
+   1795837740,
    47.79
   ]
  ],
@@ -3381,15 +3385,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:53:10Z",
-   "time": "03:53:10",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 9 rejected (snipe not bought: only to size 5, mayhem mode 2, serial launcher 1)",
-   "n": 1337
-  },
-  {
    "t": "2026-11-28T02:53:22Z",
    "time": "03:53:22",
    "agent": "SCANNER",
@@ -5179,6 +5174,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 0 watched · 10 rejected (snipe not bought: only to size 6, serial launcher 2, odd curve reading: virtual SOL i 1)",
    "n": 1536
+  },
+  {
+   "t": "2026-11-28T03:48:50Z",
+   "time": "04:48:50",
+   "agent": "SCANNER",
+   "coin": "EGG",
+   "action": "flag",
+   "text": "snipe · first reading 2.8 s after the create · 3.1 SOL in · +21% since the create · mcap 36 SOL",
+   "n": 1537
   }
  ],
  "nights": [
@@ -5251,7 +5255,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 349 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5259,15 +5263,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1809,
-    "last_event_age_s": 7.2,
+    "events": 1810,
+    "last_event_age_s": 32.4,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 38745,
+    "events": 38834,
     "last_event_age_s": 1.5,
     "errors": 0,
     "last_error": null
@@ -5275,8 +5279,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 1084,
-    "last_event_age_s": 7.1,
+    "events": 1085,
+    "last_event_age_s": 31.8,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5291,8 +5295,8 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 8,
-  "odd_readings": 349,
+  "followed": 6,
+  "odd_readings": 350,
   "odd_coins": 157
  },
  "learner": {
@@ -5340,30 +5344,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18938,
+   "sent": 18975,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18938,
+   "sent": 18975,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "EGG",
+   "name": "Egg On Face",
+   "mint": "GJg8dnKe95xCWqGDzDWdX8gsin7GuN3SR9M6oCe1pump",
+   "age_s": 32,
+   "sol_in": -0.51,
+   "buys": 1,
+   "sells": 3,
+   "rise_pct": -3.3,
+   "mcap_sol": 28.5,
+   "dev_pct": 2.8,
+   "big_sell": 1.85,
+   "x": "https://x.com/amitisinvesting/status/2126510260840001878?a=zh9Aca9jenJXoEa3HJQ&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "JENN",
    "name": "Jenna Zimmerman",
    "mint": "BpMTggLP1wwe3ifNLYbax3SheSN9wSysSqtMKxFdpump",
-   "age_s": 7,
-   "sol_in": 5.3,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": 38.1,
-   "mcap_sol": 39.4,
+   "age_s": 42,
+   "sol_in": 2.11,
+   "buys": 7,
+   "sells": 7,
+   "rise_pct": 14.4,
+   "mcap_sol": 32.6,
    "dev_pct": 1.0,
-   "big_sell": 0.73,
+   "big_sell": 3.71,
    "x": "https://twitter.com/jennamzimmerman",
    "tg": false,
    "web": "https://www.tiktok.com/@jenna_zimmerman",
@@ -5374,12 +5396,12 @@
    "symbol": "DoubleK",
    "name": "Karkerkar Kurkur",
    "mint": "F1qcCJqs6GGaSNoSCVLHwEvKMBcrxgTzszuSVosDpump",
-   "age_s": 12,
-   "sol_in": 1.7,
-   "buys": 1,
-   "sells": 5,
-   "rise_pct": 10.9,
-   "mcap_sol": 35.2,
+   "age_s": 47,
+   "sol_in": -0.59,
+   "buys": 2,
+   "sells": 7,
+   "rise_pct": -3.6,
+   "mcap_sol": 30.6,
    "dev_pct": 6.6,
    "big_sell": 2.2,
    "x": "https://x.com/CapriSunMonkey_/status/2126523403515396250",
@@ -5392,12 +5414,12 @@
    "symbol": "HOPE",
    "name": "HOPE",
    "mint": "GxH3JWdZZA7XoeR6oga8iPohmDQACwLLV6nbcWinpump",
-   "age_s": 24,
-   "sol_in": 0.1,
-   "buys": 1,
+   "age_s": 59,
+   "sol_in": 8.18,
+   "buys": 8,
    "sells": 0,
-   "rise_pct": 0.6,
-   "mcap_sol": 30.2,
+   "rise_pct": 59.5,
+   "mcap_sol": 47.9,
    "dev_pct": 3.7,
    "big_sell": 0.0,
    "x": false,
@@ -5410,14 +5432,14 @@
    "symbol": "SNOWMEI",
    "name": "Snowmei",
    "mint": "B6sr1rivHa94qhw3qMTGshNBzFanse4KGYbkXyTmpump",
-   "age_s": 32,
-   "sol_in": 0.51,
+   "age_s": 67,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 3.4,
-   "mcap_sol": 28.9,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.51,
    "x": "https://x.com/snowmei_sol",
    "tg": false,
    "web": false,
@@ -5428,7 +5450,7 @@
    "symbol": "mElons",
    "name": "Elon Melon",
    "mint": "6g2YCJQzF3gqPkPA2bAGDNtAAShbRdXHP56VsCsFpump",
-   "age_s": 94,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5446,7 +5468,7 @@
    "symbol": "FLIP",
    "name": "Flip",
    "mint": "FsSdJbgLZpNmrvxrtyZo3J3BuRVgPDpMcgQJi78p5r2U",
-   "age_s": 119,
+   "age_s": 154,
    "sol_in": 0.02,
    "buys": 1,
    "sells": 0,
@@ -5459,60 +5481,6 @@
    "web": "https://clonepump.fun",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SIGMOID",
-   "name": "Sigmoid Conjecture",
-   "mint": "HpXgrsQDdkjVgzLeSiFba4Hog7rRExWUHkRzgiwUjgrH",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/toly/status/2126522971116417031",
-   "tg": false,
-   "web": "https://www.instagram.com/stories/binance/4040089692633551161/",
-   "status": "rejected: odd curve reading: virtual SOL 2.203 is not 30 + real SOL 0 (off -27.8 SOL)",
-   "why": "odd curve reading: virtual SOL 2.203 is not 30 + real SOL 0 (off -27.8 SOL)"
-  },
-  {
-   "symbol": "SIGMOID",
-   "name": "Sigmoid Conjecture",
-   "mint": "HwLf1YBqGtYc7HEowezCmZCzN3FFLxMBEHnECkGhpump",
-   "age_s": 155,
-   "sol_in": -1.35,
-   "buys": 5,
-   "sells": 5,
-   "rise_pct": -8.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 4.6,
-   "big_sell": 5.02,
-   "x": "https://x.com/toly/status/2126522971116417031",
-   "tg": false,
-   "web": "https://www.instagram.com/stories/binance/4040089692633551161/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SIGMOID",
-   "name": "Sigmoid Conjecture",
-   "mint": "61PwjtR7hM9qczWuhG1t42f9HZ5MSkMm5GY8vMvyhMgP",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/toly/status/2126522971116417031",
-   "tg": false,
-   "web": "https://www.instagram.com/stories/binance/4040089692633551161/",
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
