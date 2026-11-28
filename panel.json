@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:57:51Z",
+ "updated": "2026-11-28T00:58:25Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 270,
+  "flagged": 271,
   "checked": 49,
   "filtered": 1,
-  "lines": 926,
+  "lines": 930,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GOAT",
-   "why": "snipe",
-   "t": "2026-11-28T00:53:10Z"
-  },
   {
    "coin": "DOLANA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Nancy",
    "why": "snipe",
    "t": "2026-11-28T00:57:33Z"
+  },
+  {
+   "coin": "ASTROPEPE",
+   "why": "snipe",
+   "t": "2026-11-28T00:58:01Z"
   }
  ],
  "curve": [
@@ -543,6 +543,10 @@
   ],
   [
    1795827420,
+   47.79
+  ],
+  [
+   1795827480,
    47.79
   ]
  ],
@@ -2697,42 +2701,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:08:06Z",
-   "time": "01:08:06",
-   "agent": "SCANNER",
-   "coin": "SUL",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 31 SOL",
-   "n": 727
-  },
-  {
-   "t": "2026-11-28T00:08:07Z",
-   "time": "01:08:07",
-   "agent": "SCANNER",
-   "coin": "Bambi",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 14.1 SOL in · +106% since the create · mcap 67 SOL",
-   "n": 728
-  },
-  {
-   "t": "2026-11-28T00:08:14Z",
-   "time": "01:08:14",
-   "agent": "SCANNER",
-   "coin": "MUNIES",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 33 SOL",
-   "n": 729
-  },
-  {
-   "t": "2026-11-28T00:08:26Z",
-   "time": "01:08:26",
-   "agent": "SCANNER",
-   "coin": "birds",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 730
-  },
-  {
    "t": "2026-11-28T00:08:30Z",
    "time": "01:08:30",
    "agent": "SCANNER",
@@ -4495,6 +4463,42 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 926
+  },
+  {
+   "t": "2026-11-28T00:58:01Z",
+   "time": "01:58:01",
+   "agent": "SCANNER",
+   "coin": "ASTROPEPE",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 5.0 SOL in · +36% since the create · mcap 38 SOL",
+   "n": 927
+  },
+  {
+   "t": "2026-11-28T00:58:03Z",
+   "time": "01:58:03",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 0 watched · 10 rejected (snipe not bought: only to size 6, odd curve reading: virtual SOL i 2, serial launcher 1)",
+   "n": 928
+  },
+  {
+   "t": "2026-11-28T00:58:16Z",
+   "time": "01:58:16",
+   "agent": "SCANNER",
+   "coin": "WANTED",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1277 is not 30 + real SOL 0 (off +1247 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 175 odd readings from 87 coins tonight",
+   "n": 929
+  },
+  {
+   "t": "2026-11-28T00:58:23Z",
+   "time": "01:58:23",
+   "agent": "SCANNER",
+   "coin": "HINU",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.182e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 176 odd readings from 88 coins tonight",
+   "n": 930
   }
  ],
  "nights": [
@@ -4567,7 +4571,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 174 (86 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 176 (88 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4575,26 +4579,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1016,
-    "last_event_age_s": 19.4,
+    "events": 1019,
+    "last_event_age_s": 3.8,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19563,
-    "last_event_age_s": 1.9,
+    "events": 19605,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 577,
-    "last_event_age_s": 19.3,
-    "errors": 28,
-    "last_error": "my.agnt.social: HTTP 502"
+    "events": 580,
+    "last_event_age_s": 3.6,
+    "errors": 29,
+    "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
@@ -4605,11 +4609,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 9,
-  "odd_readings": 174,
-  "odd_coins": 86
+  "followed": 10,
+  "odd_readings": 176,
+  "odd_coins": 88
  },
  "learner": {
   "samples": 84,
@@ -4656,28 +4660,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8026,
+   "sent": 8063,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8026,
+   "sent": 8063,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HINU",
+   "name": "Hex Inu",
+   "mint": "GG461mnkxFksFaapsYdKELnjo3SGB4TCLYU4RfXpDhyi",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://derivr.fun",
+   "status": "rejected: odd curve reading: virtual SOL 1.182e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL)",
+   "why": "odd curve reading: virtual SOL 1.182e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL)"
+  },
+  {
+   "symbol": "WANTED",
+   "name": "Wantedcoin",
+   "mint": "3y6Mv1YbGHDxZKV6sWajAeMfe7BEcG2YSRLxEFHp2cDa",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
+   "symbol": "ASTROPEPE",
+   "name": "AstroPepe",
+   "mint": "Hqn9uCsHhNDP7RtAr35iVVDkUQz6Sw1HYuYUWc7Apump",
+   "age_s": 25,
+   "sol_in": 1.94,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": 13.3,
+   "mcap_sol": 31.7,
+   "dev_pct": 0.0,
+   "big_sell": 5.74,
+   "x": "https://x.com/AstroPepeDev",
+   "tg": false,
+   "web": "https://astropepedevv.shop/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Nancy",
    "name": "Nancy",
    "mint": "Fq5r8MRFsgsyMpaVqypZvXUUACG29pVLPCqC2USLpump",
-   "age_s": 19,
-   "sol_in": 1.33,
-   "buys": 2,
-   "sells": 10,
-   "rise_pct": 8.5,
-   "mcap_sol": 34.5,
+   "age_s": 53,
+   "sol_in": -0.53,
+   "buys": 4,
+   "sells": 15,
+   "rise_pct": -3.3,
+   "mcap_sol": 30.7,
    "dev_pct": 6.6,
    "big_sell": 2.96,
    "x": "https://x.com/degenspodey/status/2126480552203362557",
@@ -4690,7 +4748,7 @@
    "symbol": "DMAS",
    "name": "Derivmas",
    "mint": "CEg2NrkC1pb3G6D3E6gy1fot8oM9RJDKM24WYe73dddq",
-   "age_s": 40,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4708,12 +4766,12 @@
    "symbol": "culercucks",
    "name": "culercucks",
    "mint": "BKJcgW6ax1aDAS2Jg7LTvnuhLwrC2x4BnYxe11Ebpump",
-   "age_s": 46,
-   "sol_in": 15.04,
-   "buys": 3,
+   "age_s": 80,
+   "sol_in": 17.98,
+   "buys": 6,
    "sells": 2,
-   "rise_pct": 120.3,
-   "mcap_sol": 66.0,
+   "rise_pct": 149.4,
+   "mcap_sol": 74.7,
    "dev_pct": 3.6,
    "big_sell": 8.59,
    "x": "https://x.com/i/status/2126480216981946709",
@@ -4726,7 +4784,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "FDeCjWV6sdbP3Ddz5ds3dGSWSjm9Y9TQsBC3F2aopump",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4744,7 +4802,7 @@
    "symbol": "OG",
    "name": "Original Goyim",
    "mint": "DjUuF7XDpddhTYavFniEWtVB3UsVQCQFQYpHWkDvpump",
-   "age_s": 100,
+   "age_s": 134,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4762,7 +4820,7 @@
    "symbol": "DROOT",
    "name": "Root Loop",
    "mint": "EzQ42XKoWTPsWMs14TYPznfaNY1z9TtCgY62USBBzbUQ",
-   "age_s": 112,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4780,12 +4838,12 @@
    "symbol": "TOGI",
    "name": "Factually I Could",
    "mint": "hFksMKYWcRydVWzyFbwws7UT8KKzxFQzPnTGihhpump",
-   "age_s": 119,
-   "sol_in": -2.09,
+   "age_s": 153,
+   "sol_in": -2.15,
    "buys": 36,
-   "sells": 41,
-   "rise_pct": -12.3,
-   "mcap_sol": 29.6,
+   "sells": 43,
+   "rise_pct": -12.6,
+   "mcap_sol": 29.5,
    "dev_pct": 9.6,
    "big_sell": 5.14,
    "x": "https://x.com/ZzzzzSol/status/2126480137105322492?a=PGSYF8qkbvUjknQgVWI&s=20",
@@ -4798,7 +4856,7 @@
    "symbol": "VICEMAP",
    "name": "vicemap",
    "mint": "Dbx7EAykoLamDjCVQH9JM6k3PcUiYrMH9CGjDrKdpump",
-   "age_s": 126,
+   "age_s": 160,
    "sol_in": -0.51,
    "buys": 5,
    "sells": 11,
@@ -4809,42 +4867,6 @@
    "x": false,
    "tg": false,
    "web": "https://vicemap.xyz",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "DEAD",
-   "name": "Deadcoin",
-   "mint": "AzdmJmwhPaZZP7wtZC8ZukKaGJ6UTgccqBtK4A765tnW",
-   "age_s": 166,
-   "sol_in": -2.96,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -17.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.6,
-   "big_sell": 2.96,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "TACHAL",
-   "name": "Tachal",
-   "mint": "41YXSXJS276GJjpcunMajsSkVMKWANDBJkXN9jW3tUEt",
-   "age_s": 178,
-   "sol_in": -0.01,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": "https://x.com/jasperbrookkin/status/2126479840723300767",
-   "tg": "https://t.me/tachal_portal",
-   "web": "https://tachal.fun",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
