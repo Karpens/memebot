@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:24:38Z",
+ "updated": "2026-11-28T07:25:10Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 851,
+  "flagged": 852,
   "checked": 49,
   "filtered": 1,
-  "lines": 2108,
+  "lines": 2109,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ISLAND",
-   "why": "snipe",
-   "t": "2026-11-28T07:18:10Z"
-  },
   {
    "coin": "LARP",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "CAT FAT",
    "why": "snipe",
    "t": "2026-11-28T07:23:32Z"
+  },
+  {
+   "coin": "crime",
+   "why": "snipe",
+   "t": "2026-11-28T07:24:47Z"
   }
  ],
  "curve": [
@@ -2091,6 +2091,10 @@
   ],
   [
    1795850640,
+   47.79
+  ],
+  [
+   1795850700,
    47.79
   ]
  ],
@@ -4247,15 +4251,6 @@
   {
    "t": "2026-11-28T06:07:16Z",
    "time": "07:07:16",
-   "agent": "SCANNER",
-   "coin": "SCAT",
-   "action": "flag",
-   "text": "snipe · first reading 3.0 s after the create · 0.8 SOL in · +5% since the create · mcap 29 SOL",
-   "n": 1909
-  },
-  {
-   "t": "2026-11-28T06:07:16Z",
-   "time": "07:07:16",
    "agent": "SIZER",
    "coin": "SCAT",
    "action": "skip",
@@ -6043,6 +6038,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 6 rejected (serial launcher 3, snipe not bought: only to size 2, no symbol or name 1)",
    "n": 2108
+  },
+  {
+   "t": "2026-11-28T07:24:47Z",
+   "time": "08:24:47",
+   "agent": "SCANNER",
+   "coin": "crime",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 3.8 SOL in · +26% since the create · mcap 38 SOL",
+   "n": 2109
   }
  ],
  "nights": [
@@ -6123,24 +6127,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 598,
-    "last_event_age_s": 65.6,
+    "events": 602,
+    "last_event_age_s": 4.0,
     "errors": 11,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6615,
-    "last_event_age_s": 0.1,
+    "events": 6681,
+    "last_event_age_s": 2.5,
     "errors": 419,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 438,
-    "last_event_age_s": 65.6,
+    "events": 440,
+    "last_event_age_s": 4.0,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6153,9 +6157,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
-  "watching": 0,
-  "followed": 5,
+  "creates_per_min": 3.6,
+  "watching": 1,
+  "followed": 7,
   "odd_readings": 550,
   "odd_coins": 221
  },
@@ -6204,27 +6208,99 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10865,
+   "sent": 10899,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10865,
+   "sent": 10899,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GitHub",
+   "name": "GitHub",
+   "mint": "B6sffKcAH4hnwQzUY6eBn4fAtjSVAdRZiEjP7Vyopump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.8,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/github",
+   "tg": false,
+   "web": "https://github.com/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "chmo",
+   "name": "chonya",
+   "mint": "A99tVQeJh5sgMnP4UFLLNe6pAmV31cHLip6rGSXCpump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 31.8,
+   "dev_pct": 6.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "8ayCySKtj26YBQChxA3Bi56zpfKuDSLigih9vEsTpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "crime",
+   "name": "Crime Coin",
+   "mint": "5crK4KWRkp65vdTVnECxn2g5LXBGpsqz7PX41U19pump",
+   "age_s": 23,
+   "sol_in": -1.36,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": -8.5,
+   "mcap_sol": 28.0,
+   "dev_pct": 4.6,
+   "big_sell": 5.19,
+   "x": "https://x.com/justinsuntron/status/2126577829307654434",
+   "tg": false,
+   "web": "https://x.com/justinsuntron/status/2126577829307654434",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "CAT FAT",
    "name": "Cat Fat Coin",
    "mint": "5pvdwHme9ncjSFRcQUCatQffTmr87pJ7gA6HjM2ypump",
-   "age_s": 65,
-   "sol_in": 0.07,
-   "buys": 9,
-   "sells": 8,
-   "rise_pct": 0.5,
+   "age_s": 97,
+   "sol_in": 0.06,
+   "buys": 11,
+   "sells": 10,
+   "rise_pct": 0.4,
    "mcap_sol": 28.1,
    "dev_pct": 0.0,
    "big_sell": 0.02,
@@ -6238,7 +6314,7 @@
    "symbol": "DTSK",
    "name": "DOGETUSK",
    "mint": "4wQuFgnLHhvtwZZA88QZb88a6KkoAsSQhcfJQ9xbpump",
-   "age_s": 88,
+   "age_s": 120,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -6256,7 +6332,7 @@
    "symbol": "$MEOW",
    "name": "MeowCoin",
    "mint": "9sCP2RHsHn6cHB47B4qy1tx9k8fpqp2ArDMo7xAypump",
-   "age_s": 98,
+   "age_s": 130,
    "sol_in": -0.1,
    "buys": 3,
    "sells": 3,
@@ -6274,14 +6350,14 @@
    "symbol": "can",
    "name": "this can run",
    "mint": "J49Db68XHruthumVtEtT3fdqSPvnbVuWp81ToT7npump",
-   "age_s": 127,
-   "sol_in": 5.54,
-   "buys": 13,
-   "sells": 5,
-   "rise_pct": 38.3,
-   "mcap_sol": 42.6,
+   "age_s": 159,
+   "sol_in": -0.26,
+   "buys": 14,
+   "sells": 9,
+   "rise_pct": -1.7,
+   "mcap_sol": 30.3,
    "dev_pct": 5.0,
-   "big_sell": 1.36,
+   "big_sell": 5.23,
    "x": "https://x.com/munnyonly/status/2126577408388329611",
    "tg": false,
    "web": false,
@@ -6292,12 +6368,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "49Fo94NwLREbeXYhM4JQt5gu6fgrMDWSBcbRUULTpump",
-   "age_s": 136,
-   "sol_in": 22.01,
-   "buys": 42,
-   "sells": 24,
-   "rise_pct": 174.9,
-   "mcap_sol": 95.6,
+   "age_s": 168,
+   "sol_in": 21.46,
+   "buys": 51,
+   "sells": 34,
+   "rise_pct": 169.4,
+   "mcap_sol": 93.7,
    "dev_pct": 11.1,
    "big_sell": 0.95,
    "x": "https://x.com/nvidianewsroom",
@@ -6310,7 +6386,7 @@
    "symbol": "?",
    "name": "",
    "mint": "7Qz6DeCqqqGB4sNdZp81RGs89nrZi9CBPaSAgoUELXro",
-   "age_s": 147,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
