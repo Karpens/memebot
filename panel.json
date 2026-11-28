@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:58:51Z",
+ "updated": "2026-11-28T09:59:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1126,
   "checked": 49,
   "filtered": 1,
-  "lines": 2609,
+  "lines": 2610,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795823940,
-   47.79
-  ],
   [
    1795824000,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795859880,
    47.79
+  ],
+  [
+   1795859940,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:59:27Z",
-   "time": "09:59:27",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (snipe not bought: only to size 8, mayhem mode 3, serial launcher 1)",
-   "n": 2410
-  },
-  {
    "t": "2026-11-28T08:59:44Z",
    "time": "09:59:44",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2609
+  },
+  {
+   "t": "2026-11-28T09:59:00Z",
+   "time": "10:59:00",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, serial launcher 3, odd curve reading: virtual SOL i 1)",
+   "n": 2610
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 763 (264 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 805 (264 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6504,14 +6504,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 1237,
-    "last_event_age_s": 9.2,
+    "last_event_age_s": 42.2,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25432,
+    "events": 25571,
     "last_event_age_s": 0.2,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6520,7 +6520,7 @@
     "name": "metadata",
     "connected": true,
     "events": 886,
-    "last_event_age_s": 9.1,
+    "last_event_age_s": 42.1,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,10 +6533,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 8,
-  "odd_readings": 763,
+  "followed": 6,
+  "odd_readings": 805,
   "odd_coins": 264
  },
  "learner": {
@@ -6584,13 +6584,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20712,
+   "sent": 20747,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20712,
+   "sent": 20747,
    "errors": 0,
    "last_error": null
   }
@@ -6600,9 +6600,9 @@
    "symbol": "LUCIA",
    "name": "$LUCIA6",
    "mint": "5q5XXU121w11FdcvUy2z7tz5816WThhusic8ERCSpump",
-   "age_s": 9,
+   "age_s": 42,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
@@ -6618,7 +6618,7 @@
    "symbol": "ASTEROID",
    "name": "ASTEROID",
    "mint": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
-   "age_s": 13,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,14 +6636,14 @@
    "symbol": "CI",
    "name": "Cybergeddon inu",
    "mint": "6KxdT7gzqne6EckmzFVTJ6yxreaN56G9YKFeGGfoHkdM",
-   "age_s": 32,
-   "sol_in": 10.81,
-   "buys": 15,
-   "sells": 12,
-   "rise_pct": 71.5,
-   "mcap_sol": 65.0,
+   "age_s": 65,
+   "sol_in": -1.24,
+   "buys": 18,
+   "sells": 33,
+   "rise_pct": -7.0,
+   "mcap_sol": 35.3,
    "dev_pct": 15.2,
-   "big_sell": 2.45,
+   "big_sell": 2.7,
    "x": "https://x.com/MarioPrezldente/status/2126616662946595021",
    "tg": false,
    "web": "https://en.wikipedia.org/wiki/Cybergeddon",
@@ -6654,7 +6654,7 @@
    "symbol": "SMOTHIE",
    "name": "Smoothie Moon Rocket Coin",
    "mint": "2vPwvhuY8uCTJr36NoT2BeKfdG5kKMKUqm9f4G6kpump",
-   "age_s": 74,
+   "age_s": 107,
    "sol_in": -0.04,
    "buys": 1,
    "sells": 2,
@@ -6672,7 +6672,7 @@
    "symbol": "MATH",
    "name": "MATH IS MONEY",
    "mint": "GjaNj46GhsVYSTE9zmo6VrMNCNo2PZign2AGtTaKpump",
-   "age_s": 85,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6690,7 @@
    "symbol": "IT",
    "name": "Send It",
    "mint": "FNrKaSeEemFveuEKsVWj2d1dbvs9X5bdEgtsqv7dAY9J",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,11 +6708,11 @@
    "symbol": "ASAMI",
    "name": "Asami SpaceXSI Companion",
    "mint": "DPjnSsEapdzTv32bKUGMRAe2WZenAJScvpbbmAK9pump",
-   "age_s": 129,
-   "sol_in": 0.2,
-   "buys": 5,
+   "age_s": 162,
+   "sol_in": 0.22,
+   "buys": 6,
    "sells": 1,
-   "rise_pct": 1.3,
+   "rise_pct": 1.4,
    "mcap_sol": 29.3,
    "dev_pct": 1.7,
    "big_sell": 0.89,
@@ -6721,42 +6721,6 @@
    "web": "https://x.com/spacexsi",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "BEARZILLA",
-   "name": "BearZilla",
-   "mint": "5t1KNEv78pMkMeQUAVTPzefebUUigW1TpYKzbFGgpump",
-   "age_s": 150,
-   "sol_in": -0.73,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -4.7,
-   "mcap_sol": 28.4,
-   "dev_pct": 3.4,
-   "big_sell": 1.0,
-   "x": "https://x.com/bearzillasol",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SENDIT",
-   "name": "Send It",
-   "mint": "9tTgiEGTYRsZcnjGgmKZM43LjARcXdZCKvAPDTv3rxZZ",
-   "age_s": 160,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/SERKOpfs/status/2126615996475851111",
-   "tg": false,
-   "web": "https://www.senditexperiment.fun/",
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
   }
  ],
  "strategies": [
