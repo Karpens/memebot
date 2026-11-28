@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:11:42Z",
+ "updated": "2026-11-28T09:12:09Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1046,
+  "flagged": 1047,
   "checked": 49,
   "filtered": 1,
-  "lines": 2458,
+  "lines": 2459,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PENJAMIN",
-   "why": "snipe",
-   "t": "2026-11-28T09:09:42Z"
-  },
   {
    "coin": "SCAT",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "Owed",
    "why": "snipe",
    "t": "2026-11-28T09:11:34Z"
+  },
+  {
+   "coin": "SMILE",
+   "why": "snipe",
+   "t": "2026-11-28T09:11:54Z"
   }
  ],
  "curve": [
-  [
-   1795821120,
-   56.29
-  ],
   [
    1795821180,
    56.29
@@ -2472,6 +2468,10 @@
   [
    1795857060,
    47.79
+  ],
+  [
+   1795857120,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:15:29Z",
-   "time": "09:15:29",
-   "agent": "SCANNER",
-   "coin": "Kibo",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 2.0 SOL in · +14% since the create · mcap 32 SOL",
-   "n": 2259
-  },
-  {
    "t": "2026-11-28T08:16:06Z",
    "time": "09:16:06",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 0 watched · 20 rejected (snipe not bought: only to size 13, mayhem mode 5, serial launcher 2)",
    "n": 2458
+  },
+  {
+   "t": "2026-11-28T09:11:54Z",
+   "time": "10:11:54",
+   "agent": "SCANNER",
+   "coin": "SMILE",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 2.0 SOL in · +12% since the create · mcap 40 SOL",
+   "n": 2459
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · odd curve readings 652 (248 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 652 (248 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1055,
-    "last_event_age_s": 8.0,
+    "events": 1056,
+    "last_event_age_s": 14.8,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19179,
+    "events": 19226,
     "last_event_age_s": 0.5,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 758,
-    "last_event_age_s": 8.0,
+    "events": 759,
+    "last_event_age_s": 14.3,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6535,7 +6535,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.8,
   "watching": 0,
-  "followed": 14,
+  "followed": 12,
   "odd_readings": 652,
   "odd_coins": 248
  },
@@ -6584,30 +6584,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17702,
+   "sent": 17730,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17702,
+   "sent": 17730,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SMILE",
+   "name": "SMILE",
+   "mint": "HkijyJcfzDrCEnHkhHSp7ChVmpwSRWhCu6GRLfifpump",
+   "age_s": 14,
+   "sol_in": 3.39,
+   "buys": 6,
+   "sells": 4,
+   "rise_pct": 21.0,
+   "mcap_sol": 43.3,
+   "dev_pct": 12.5,
+   "big_sell": 0.75,
+   "x": "https://x.com/_SMILESOL",
+   "tg": "https://t.me/SM1LESOL",
+   "web": "https://smilesol.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Owed",
    "name": "Owed",
    "mint": "GLA6YYUQbShfNiBCLCsfrS9LHY4pC77UUBAmfQiupump",
-   "age_s": 7,
-   "sol_in": 13.52,
-   "buys": 2,
-   "sells": 4,
-   "rise_pct": 108.0,
-   "mcap_sol": 60.4,
+   "age_s": 34,
+   "sol_in": 17.84,
+   "buys": 9,
+   "sells": 11,
+   "rise_pct": 150.7,
+   "mcap_sol": 72.8,
    "dev_pct": 2.0,
-   "big_sell": 1.53,
+   "big_sell": 1.73,
    "x": "https://x.com/tryOwed",
    "tg": false,
    "web": "https://useowed.fun/",
@@ -6618,7 +6636,7 @@
    "symbol": "FCOURT",
    "name": "Family Court Gaurdian",
    "mint": "A8pQbQ2tJrADh7MBDiY2MrkfZfVpZdZ51cqe14CYpump",
-   "age_s": 24,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,7 +6654,7 @@
    "symbol": "AASF",
    "name": "AASF",
    "mint": "FjGH3jyfPq9Ps7AVUHrFBFUGsCmubCKnnfvhsZCvpump",
-   "age_s": 26,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,7 +6672,7 @@
    "symbol": "FIH",
    "name": "Fihh",
    "mint": "4C2H27EpVX6nHfo6gLrbEYhkCs8H3HR2KKNASjQepump",
-   "age_s": 32,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6672,7 +6690,7 @@
    "symbol": "Inu",
    "name": "Christmas inu",
    "mint": "HW529Sje9fFvggGAHZbzzJ1ULK8MxsgsK8LMg2nUpump",
-   "age_s": 44,
+   "age_s": 71,
    "sol_in": -9.88,
    "buys": 1,
    "sells": 5,
@@ -6690,7 +6708,7 @@
    "symbol": "LAUNDRY",
    "name": "Laundry",
    "mint": "Ai5y959mkPr1qtqa9gmobTpcBPCR3bqYFMy4Fq5tHP5X",
-   "age_s": 52,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6708,7 +6726,7 @@
    "symbol": "RHOD",
    "name": "Rhodope",
    "mint": "7n85GzdpYbTxXroiU2iBeWbZ6Qxt6cntLwcTUVNQpump",
-   "age_s": 61,
+   "age_s": 88,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,
@@ -6726,7 +6744,7 @@
    "symbol": "GTA6",
    "name": "GTA6",
    "mint": "4oZHkKJgRg6cFGgfZ2zYddG2gAg5xB27S6B8XGsbWcXL",
-   "age_s": 67,
+   "age_s": 94,
    "sol_in": 13.95,
    "buys": 3,
    "sells": 1,
@@ -6744,7 +6762,7 @@
    "symbol": "MANDY",
    "name": "PROJECT MANDY",
    "mint": "FjGAcVWoY4f64kMJyEPzsLyKjbWmKqTAyrW9ipu3pump",
-   "age_s": 76,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6762,7 +6780,7 @@
    "symbol": "SEND",
    "name": "Send",
    "mint": "HiTnKppeZcxwnSV9gjJE48urLjPqFCL5cPWyUeaypump",
-   "age_s": 77,
+   "age_s": 104,
    "sol_in": -0.94,
    "buys": 2,
    "sells": 2,
@@ -6780,7 +6798,7 @@
    "symbol": "BFO",
    "name": "BLACK FRIDAY OVER",
    "mint": "8t5zYCWZhFroLpDTZaj1GAKMdjSQ7cQAxeU736mcpump",
-   "age_s": 84,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6798,7 +6816,7 @@
    "symbol": "SCAT",
    "name": "Split Cat",
    "mint": "FqZsxKk8fLRuEqGw7ZdAqrriBBxRCrqfazi77iHuZ1XR",
-   "age_s": 88,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6816,7 +6834,7 @@
    "symbol": "PENJAMIN",
    "name": "Blinker Checkpoint",
    "mint": "GFySUCdrr1U4S5k2MXxMV6f3fkiAmzLWmojeirvzpump",
-   "age_s": 120,
+   "age_s": 147,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6834,7 +6852,7 @@
    "symbol": "PLINE",
    "name": "POWERLINE",
    "mint": "AnDQQU69a1jwsj1K9KSXx7sRnwky87t5M5i81oz1pump",
-   "age_s": 125,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6852,7 +6870,7 @@
    "symbol": "$BKT",
    "name": "BasKeT",
    "mint": "FfJnyjVjbvL1cF4SigJFKGPbatU7iVisg7mSoafTpump",
-   "age_s": 130,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6870,71 +6888,17 @@
    "symbol": "GitHub",
    "name": "GitHub",
    "mint": "3HobGGg1PGCrvYm6UtjfLAhapeMrfD8EVH3Ev5ok9SoN",
-   "age_s": 132,
-   "sol_in": 15.98,
+   "age_s": 159,
+   "sol_in": -3.09,
    "buys": 10,
-   "sells": 14,
-   "rise_pct": 118.4,
-   "mcap_sol": 75.9,
+   "sells": 16,
+   "rise_pct": -17.6,
+   "mcap_sol": 28.6,
    "dev_pct": 11.1,
-   "big_sell": 0.71,
+   "big_sell": 19.07,
    "x": "https://x.com/github",
    "tg": false,
    "web": "https://github.com/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PlainSight",
-   "name": "PlainSight",
-   "mint": "4nLrjtC1Z5uus6r3HqzDCCFNzeYxdpwueSy8Bnatpump",
-   "age_s": 158,
-   "sol_in": 0.05,
-   "buys": 14,
-   "sells": 30,
-   "rise_pct": 0.3,
-   "mcap_sol": 29.1,
-   "dev_pct": 2.0,
-   "big_sell": 10.81,
-   "x": "https://x.com/PlainsightPad",
-   "tg": false,
-   "web": "https://plainsightpad.site/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SAMURAI",
-   "name": "samurai",
-   "mint": "AGLNmZpnGgSYTKk6U8RkDjMo4MAzGGeGW8dRiyEet8sj",
-   "age_s": 172,
-   "sol_in": -0.3,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -1.9,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.0,
-   "big_sell": 0.3,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "WHITEOUT",
-   "name": "whiteout",
-   "mint": "4o3e2kDQDp4tygf3JCsCM3rJ422o4yFn95wTcD1DiRa5",
-   "age_s": 174,
-   "sol_in": -0.89,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -5.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.1,
-   "big_sell": 0.89,
-   "x": "https://x.com/whiteoutpad",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
