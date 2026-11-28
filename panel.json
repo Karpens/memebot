@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:02:31Z",
+ "updated": "2026-11-28T02:02:59Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 393,
+  "flagged": 394,
   "checked": 49,
   "filtered": 1,
-  "lines": 1182,
+  "lines": 1184,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "V1",
-   "why": "snipe",
-   "t": "2026-11-28T01:57:37Z"
-  },
   {
    "coin": "ristar",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MALIN",
    "why": "snipe",
    "t": "2026-11-28T02:02:11Z"
+  },
+  {
+   "coin": "Marscoin",
+   "why": "snipe",
+   "t": "2026-11-28T02:02:35Z"
   }
  ],
  "curve": [
@@ -2957,24 +2957,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:11:17Z",
-   "time": "02:11:17",
-   "agent": "SCANNER",
-   "coin": "simulcrum",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.8 SOL in · +5% since the create · mcap 35 SOL",
-   "n": 983
-  },
-  {
-   "t": "2026-11-28T01:11:41Z",
-   "time": "02:11:41",
-   "agent": "SCANNER",
-   "coin": "Elon Freak",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 984
-  },
-  {
    "t": "2026-11-28T01:11:53Z",
    "time": "02:11:53",
    "agent": "SCANNER",
@@ -4755,6 +4737,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 2.604e+05 is not 30 + real SOL 0 (off +2.604e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 292 odd readings from 140 coins tonight",
    "n": 1182
+  },
+  {
+   "t": "2026-11-28T02:02:35Z",
+   "time": "03:02:35",
+   "agent": "SCANNER",
+   "coin": "Marscoin",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 1183
+  },
+  {
+   "t": "2026-11-28T02:02:37Z",
+   "time": "03:02:37",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 1, odd curve reading: virtual SOL i 1)",
+   "n": 1184
   }
  ],
  "nights": [
@@ -4827,7 +4827,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 292 (140 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 292 (140 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4835,24 +4835,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1392,
-    "last_event_age_s": 11.2,
+    "events": 1393,
+    "last_event_age_s": 25.7,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26502,
-    "last_event_age_s": 0.2,
+    "events": 26544,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 784,
-    "last_event_age_s": 11.0,
+    "events": 785,
+    "last_event_age_s": 25.0,
     "errors": 36,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4865,9 +4865,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 7,
+  "followed": 5,
   "odd_readings": 292,
   "odd_coins": 140
  },
@@ -4916,23 +4916,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12156,
+   "sent": 12186,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12156,
+   "sent": 12186,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Marscoin",
+   "name": "Marscoin",
+   "mint": "2gjJ2t4rRFHZ2oUpQQmeKyfxCy5zuDaShMFuLA9Qpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.2,
+   "dev_pct": 2.2,
+   "big_sell": 0.03,
+   "x": "https://x.com/AxTrades32/status/2126493876126880061",
+   "tg": false,
+   "web": "https://twpark.com/mars-mission-control/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "BRASSGL",
    "name": "Brass Gull Gale",
    "mint": "G1UqCSRpF9LNxMBxgir5uimEbrFU3WmDFsDWx8LWpump",
-   "age_s": 11,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4950,7 +4968,7 @@
    "symbol": "MALIN",
    "name": "Malin",
    "mint": "EeZsdv4XmWTvwuuZm8xU6zYWGXkzvhkxeK7AvjZ37NiK",
-   "age_s": 21,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4968,14 +4986,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "8khbvzfBoZoJMEiscML9HiEFym6bMFP3Vz4epR86pump",
-   "age_s": 99,
-   "sol_in": 18.53,
-   "buys": 27,
-   "sells": 25,
-   "rise_pct": 141.4,
-   "mcap_sol": 83.9,
+   "age_s": 127,
+   "sol_in": 18.98,
+   "buys": 37,
+   "sells": 34,
+   "rise_pct": 145.7,
+   "mcap_sol": 85.4,
    "dev_pct": 11.1,
-   "big_sell": 0.32,
+   "big_sell": 0.33,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -4986,14 +5004,14 @@
    "symbol": "SHIP",
    "name": "Ship",
    "mint": "SHiPgdzD9pLirrDNuxkb3mA6AcXXqbbmH9Z3tYKvK1B",
-   "age_s": 124,
-   "sol_in": 1.94,
+   "age_s": 152,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": 12.9,
-   "mcap_sol": 33.7,
+   "sells": 2,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
    "dev_pct": 3.4,
-   "big_sell": 0.32,
+   "big_sell": 1.94,
    "x": "https://x.com/ShipdotFun_",
    "tg": false,
    "web": "https://www.ship.fun/",
@@ -5004,7 +5022,7 @@
    "symbol": "RICH",
    "name": "Capo Money",
    "mint": "FEPvybu3FD5H3Uk2gePzP91ALtP7JDtu6PkwLsnuB6UM",
-   "age_s": 148,
+   "age_s": 176,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5017,60 +5035,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "PICKLEPAL",
-   "name": "Pickle Pal",
-   "mint": "HbZEA7uqR77ZmZnWrkCwMh1NBPaUSqvNAjXAEoRuhwTG",
-   "age_s": 162,
-   "sol_in": 1.73,
-   "buys": 25,
-   "sells": 34,
-   "rise_pct": 11.8,
-   "mcap_sol": 31.7,
-   "dev_pct": 0.7,
-   "big_sell": 3.45,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "dogthru",
-   "name": "da dog thru",
-   "mint": "2hJASy4jEbp3jTaQqWXGuwJqY79VFDYzQ5F64Aeypump",
-   "age_s": 166,
-   "sol_in": 0.08,
-   "buys": 2,
-   "sells": 4,
-   "rise_pct": 0.5,
-   "mcap_sol": 29.9,
-   "dev_pct": 3.4,
-   "big_sell": 0.33,
-   "x": true,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "ASD2",
-   "name": "asd2",
-   "mint": "4tM3yRjj4VUHRkMmfpTRSMzrCCAW15kPER5WpaHkrxdf",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/fork",
-   "tg": false,
-   "web": "https://pump.fun/coin/GxptXv9endfndi9JDTqmiBpnECy4mm1fJx6U23q8pump",
-   "status": "rejected: serial launcher: 7 more coins in 60 min",
-   "why": "serial launcher: 7 more coins in 60 min"
   }
  ],
  "strategies": [
