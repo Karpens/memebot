@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:45:13Z",
+ "updated": "2026-11-28T13:45:46Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1561,
+  "flagged": 1563,
   "checked": 49,
   "filtered": 1,
-  "lines": 3390,
+  "lines": 3392,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "bul",
-   "why": "snipe",
-   "t": "2026-11-28T13:41:12Z"
-  },
-  {
-   "coin": "Challenge",
-   "why": "snipe",
-   "t": "2026-11-28T13:41:15Z"
-  },
   {
    "coin": "WIPER",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "DZ",
    "why": "snipe",
    "t": "2026-11-28T13:45:03Z"
+  },
+  {
+   "coin": "OOPS",
+   "why": "snipe",
+   "t": "2026-11-28T13:45:19Z"
+  },
+  {
+   "coin": "PONZI",
+   "why": "snipe",
+   "t": "2026-11-28T13:45:20Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:52:12Z",
-   "time": "13:52:12",
-   "agent": "SCANNER",
-   "coin": "KNOT",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.1 SOL in · +1% since the create · mcap 30 SOL",
-   "n": 3191
-  },
-  {
-   "t": "2026-11-28T12:52:41Z",
-   "time": "13:52:41",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 15.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 5, serial launcher 4, mayhem mode 3)",
-   "n": 3192
-  },
-  {
    "t": "2026-11-28T12:53:20Z",
    "time": "13:53:20",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (snipe not bought: only to size 6, serial launcher 3, mayhem mode 3)",
    "n": 3390
+  },
+  {
+   "t": "2026-11-28T13:45:19Z",
+   "time": "14:45:19",
+   "agent": "SCANNER",
+   "coin": "OOPS",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3391
+  },
+  {
+   "t": "2026-11-28T13:45:20Z",
+   "time": "14:45:20",
+   "agent": "SCANNER",
+   "coin": "PONZI",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 2.6 SOL in · +18% since the create · mcap 34 SOL",
+   "n": 3392
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 1052 (333 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 1052 (333 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1122,
-    "last_event_age_s": 10.7,
+    "events": 1124,
+    "last_event_age_s": 26.7,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24700,
-    "last_event_age_s": 0.3,
+    "events": 24778,
+    "last_event_age_s": 1.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 617,
-    "last_event_age_s": 10.4,
+    "events": 619,
+    "last_event_age_s": 26.5,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6531,7 +6531,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 9,
+  "followed": 11,
   "odd_readings": 1052,
   "odd_coins": 333
  },
@@ -6580,30 +6580,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13440,
+   "sent": 13475,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13440,
+   "sent": 13475,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PONZI",
+   "name": "PonziPump",
+   "mint": "qSsXP7i93ZFZZMuCqDW4ucjnJxrAUcZAmKx6yLJpump",
+   "age_s": 26,
+   "sol_in": 5.48,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 39.0,
+   "mcap_sol": 40.4,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/Ponzipumpsol/status/2126673742969680070?a=rzgaWp_cuNdZ6cDWsnA&s=20",
+   "tg": false,
+   "web": "https://ponzipump.lol",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "OOPS",
+   "name": "Financial Mistake",
+   "mint": "9YAbxfCkT7GTLi1xGYogneuaJ2tWZMqwDoisYML9pump",
+   "age_s": 27,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "DZ",
    "name": "Dead Zone",
    "mint": "9JqVPi35heAvbwwcEMHa5NWwqnAugiMVxr97wwLjpump",
-   "age_s": 10,
-   "sol_in": 1.13,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 5.5,
-   "mcap_sol": 56.9,
+   "age_s": 43,
+   "sol_in": 0.92,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": 4.5,
+   "mcap_sol": 56.3,
    "dev_pct": 30.0,
-   "big_sell": 0.0,
+   "big_sell": 0.25,
    "x": "https://x.com/DeadZonecrypto",
    "tg": false,
    "web": "https://deadzoneplay.com",
@@ -6614,7 +6650,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "6kSiLLrAp6qDRRq92VgEmw6FxUEpfHbF9EHkFCxVpump",
-   "age_s": 23,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "McRib",
    "name": "McRib",
    "mint": "39YcwzXxcCNGw3nstHXrGbWprBjSjEypyPGrES4azat5",
-   "age_s": 32,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6686,7 @@
    "symbol": "11",
    "name": "11",
    "mint": "8ev2kmd6irs7DiJyActh5x9w8fNLwQCZiAFXCyEXUZF4",
-   "age_s": 40,
+   "age_s": 73,
    "sol_in": -0.1,
    "buys": 1,
    "sells": 2,
@@ -6668,7 +6704,7 @@
    "symbol": "GAIN",
    "name": "Gain",
    "mint": "CFbmVmcqZM88drkmzSpnY28zZjwi6uDBDXWa29J1JiBQ",
-   "age_s": 50,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6722,7 @@
    "symbol": "GigaChat",
    "name": "GigaChat 4",
    "mint": "H874T1xrbrP7UzXniw7E83xtfBSZYgFPY74n45xPPjrU",
-   "age_s": 52,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6740,7 @@
    "symbol": "coin",
    "name": "coin",
    "mint": "APKAaisBMBzwazPPCSXkv5cGBb5nv3fNbBikgkdKpump",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": -1.32,
    "buys": 4,
    "sells": 7,
@@ -6722,12 +6758,12 @@
    "symbol": "MEIMEI",
    "name": "POOR MEI MEI",
    "mint": "FsG2TLYQyPFcS2EHUQgevEBMjYxGFWXwY9hL4K4Npump",
-   "age_s": 80,
-   "sol_in": 9.1,
-   "buys": 41,
-   "sells": 18,
-   "rise_pct": 65.1,
-   "mcap_sol": 52.4,
+   "age_s": 113,
+   "sol_in": 10.18,
+   "buys": 60,
+   "sells": 28,
+   "rise_pct": 73.9,
+   "mcap_sol": 55.1,
    "dev_pct": 6.6,
    "big_sell": 1.51,
    "x": false,
@@ -6740,7 +6776,7 @@
    "symbol": "SENDMINT",
    "name": "Sendmint",
    "mint": "GAtpLZKFuDyWztWxTCrKRaWgHxRZxzGoHZJKQjTvpump",
-   "age_s": 89,
+   "age_s": 122,
    "sol_in": -0.51,
    "buys": 2,
    "sells": 4,
@@ -6758,7 +6794,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "7gkxH3EEaCLWt5Ere38Vg4tGSMnLnRMAE1wd4hS3pump",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6776,12 +6812,12 @@
    "symbol": "GROKSIE",
    "name": "Groksie",
    "mint": "5jjJWZfTTaZtG74zSpiEZbMBHNM2jieHEXM2UZvapump",
-   "age_s": 136,
-   "sol_in": 30.68,
-   "buys": 58,
-   "sells": 50,
-   "rise_pct": 297.3,
-   "mcap_sol": 117.8,
+   "age_s": 169,
+   "sol_in": 27.13,
+   "buys": 67,
+   "sells": 66,
+   "rise_pct": 252.8,
+   "mcap_sol": 104.6,
    "dev_pct": 3.1,
    "big_sell": 6.54,
    "x": "https://x.com/groksiemars/status/2126672978683314443",
@@ -6794,7 +6830,7 @@
    "symbol": "WIPER",
    "name": "Bald Wiper",
    "mint": "64TPKiyz8gwNDxsxHq9mrJwaZdwPCMwyYYpDgU55pump",
-   "age_s": 144,
+   "age_s": 177,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
