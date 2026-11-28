@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:51:27Z",
+ "updated": "2026-11-28T02:52:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 472,
+  "flagged": 474,
   "checked": 49,
   "filtered": 1,
-  "lines": 1331,
+  "lines": 1333,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "paired",
-   "why": "snipe",
-   "t": "2026-11-28T02:46:26Z"
-  },
-  {
-   "coin": "OBSESSION",
-   "why": "snipe",
-   "t": "2026-11-28T02:47:28Z"
-  },
   {
    "coin": "FLIP",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "senta",
    "why": "snipe",
    "t": "2026-11-28T02:51:20Z"
+  },
+  {
+   "coin": "TRENCH98",
+   "why": "snipe",
+   "t": "2026-11-28T02:51:34Z"
+  },
+  {
+   "coin": "MoonBoy",
+   "why": "snipe",
+   "t": "2026-11-28T02:51:51Z"
   }
  ],
  "curve": [
@@ -999,6 +999,10 @@
   ],
   [
    1795834260,
+   47.79
+  ],
+  [
+   1795834320,
    47.79
   ]
  ],
@@ -3153,24 +3157,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:47:30Z",
-   "time": "02:47:30",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.4 a minute · 0 watched · 14 rejected (snipe not bought: only to size 5, mayhem mode 3, odd curve reading: virtual SOL i 2)",
-   "n": 1132
-  },
-  {
-   "t": "2026-11-28T01:47:34Z",
-   "time": "02:47:34",
-   "agent": "SCANNER",
-   "coin": "MoonBoy",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.2 SOL in · +1% since the create · mcap 28 SOL",
-   "n": 1133
-  },
-  {
    "t": "2026-11-28T01:47:49Z",
    "time": "02:47:49",
    "agent": "SCANNER",
@@ -4951,6 +4937,24 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1331
+  },
+  {
+   "t": "2026-11-28T02:51:34Z",
+   "time": "03:51:34",
+   "agent": "SCANNER",
+   "coin": "TRENCH98",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 3.6 SOL in · +24% since the create · mcap 38 SOL",
+   "n": 1332
+  },
+  {
+   "t": "2026-11-28T02:51:51Z",
+   "time": "03:51:51",
+   "agent": "SCANNER",
+   "coin": "MoonBoy",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 1.8 SOL in · +12% since the create · mcap 31 SOL",
+   "n": 1333
   }
  ],
  "nights": [
@@ -5031,26 +5035,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1544,
-    "last_event_age_s": 1.4,
+    "events": 1546,
+    "last_event_age_s": 11.5,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 32784,
-    "last_event_age_s": 0.7,
+    "events": 32845,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 890,
-    "last_event_age_s": 8.7,
-    "errors": 44,
-    "last_error": "gg.sc: HTTP 404"
+    "connected": false,
+    "events": 892,
+    "last_event_age_s": 7.7,
+    "errors": 45,
+    "last_error": "turbo-gateway.com: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -5063,7 +5067,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 4,
+  "followed": 6,
   "odd_readings": 334,
   "odd_coins": 151
  },
@@ -5112,28 +5116,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15281,
+   "sent": 15317,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15281,
+   "sent": 15317,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MoonBoy",
+   "name": "MoonBoy",
+   "mint": "DLkcFBKADjeDaEfpmV5o1VPjGHtLXcBB1veoB12Tpump",
+   "age_s": 11,
+   "sol_in": 1.81,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 12.4,
+   "mcap_sol": 31.4,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "TRENCH98",
+   "name": "Trench 98",
+   "mint": "6JWpAvoexHohqkBw5oSL1yom8SYwgcrwuyfpoHG3pump",
+   "age_s": 28,
+   "sol_in": -1.48,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -9.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 5.0,
+   "big_sell": 5.04,
+   "x": "https://x.com/trench98app",
+   "tg": false,
+   "web": "https://trench98.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "senta",
    "name": "senta",
    "mint": "3rsYAMhqx6vnU11SHbyui26qdbTKWVFke8fYsJiJpump",
-   "age_s": 8,
-   "sol_in": 3.69,
-   "buys": 4,
-   "sells": 4,
-   "rise_pct": 22.3,
-   "mcap_sol": 46.4,
+   "age_s": 42,
+   "sol_in": -3.06,
+   "buys": 15,
+   "sells": 22,
+   "rise_pct": -16.8,
+   "mcap_sol": 31.6,
    "dev_pct": 15.2,
    "big_sell": 2.33,
    "x": "https://x.com/KankiAlpha/status/2126509183701061960",
@@ -5146,14 +5186,14 @@
    "symbol": "pillclicker",
    "name": "Pill Clicker",
    "mint": "GZ6GH72JaZaALYnNfFU64EZu4cqngsdX9KaTGHsjpump",
-   "age_s": 88,
-   "sol_in": 4.44,
+   "age_s": 122,
+   "sol_in": -1.32,
    "buys": 9,
-   "sells": 6,
-   "rise_pct": 30.2,
-   "mcap_sol": 40.1,
+   "sells": 11,
+   "rise_pct": -8.2,
+   "mcap_sol": 28.2,
    "dev_pct": 5.0,
-   "big_sell": 1.06,
+   "big_sell": 3.47,
    "x": "https://x.com/pillclickerfun/status/2112700610722267207?s=20",
    "tg": false,
    "web": false,
@@ -5164,7 +5204,7 @@
    "symbol": "Elon67 Test",
    "name": "Elon 67 Inu (Test dont buy)",
    "mint": "5k2Hpm7FvKkJyjgnr8EmfyB4begzeCztXrxgkiL8pump",
-   "age_s": 123,
+   "age_s": 157,
    "sol_in": -2.46,
    "buys": 6,
    "sells": 10,
@@ -5182,7 +5222,7 @@
    "symbol": "EPSTEIN",
    "name": "Drawnstein",
    "mint": "2uU1mngLxE9XQY7enHeufnzZrTpabxGH4PdyVJZvpump",
-   "age_s": 144,
+   "age_s": 178,
    "sol_in": -0.18,
    "buys": 1,
    "sells": 1,
