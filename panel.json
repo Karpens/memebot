@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:25:41Z",
+ "updated": "2026-11-28T09:26:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1069,
+  "flagged": 1070,
   "checked": 49,
   "filtered": 1,
-  "lines": 2499,
+  "lines": 2501,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Dabou",
-   "why": "snipe",
-   "t": "2026-11-28T09:22:00Z"
-  },
   {
    "coin": "ALONE",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "$CANDLE",
    "why": "snipe",
    "t": "2026-11-28T09:24:35Z"
+  },
+  {
+   "coin": "ROCKSTAR",
+   "why": "snipe",
+   "t": "2026-11-28T09:26:12Z"
   }
  ],
  "curve": [
-  [
-   1795821960,
-   51.1
-  ],
   [
    1795822020,
    50.71
@@ -2472,6 +2468,10 @@
   [
    1795857900,
    47.79
+  ],
+  [
+   1795857960,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:27:46Z",
-   "time": "09:27:46",
-   "agent": "SIZER",
-   "coin": "CLAP",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2300
-  },
-  {
-   "t": "2026-11-28T08:28:12Z",
-   "time": "09:28:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 14 rejected (snipe not bought: only to size 7, serial launcher 7)",
-   "n": 2301
-  },
-  {
    "t": "2026-11-28T08:28:44Z",
    "time": "09:28:44",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 4.6 a minute · 0 watched · 15 rejected (snipe not bought: only to size 8, serial launcher 4, mayhem mode 3)",
    "n": 2499
+  },
+  {
+   "t": "2026-11-28T09:25:44Z",
+   "time": "10:25:44",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 0 watched · 12 rejected (snipe not bought: only to size 6, serial launcher 3, mayhem mode 3)",
+   "n": 2500
+  },
+  {
+   "t": "2026-11-28T09:26:12Z",
+   "time": "10:26:12",
+   "agent": "SCANNER",
+   "coin": "ROCKSTAR",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.5 SOL in · +4% since the create · mcap 29 SOL",
+   "n": 2501
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 654 (250 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 654 (250 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1115,
-    "last_event_age_s": 14.0,
+    "events": 1116,
+    "last_event_age_s": 2.1,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 20866,
+    "events": 20953,
     "last_event_age_s": 0.8,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 792,
-    "last_event_age_s": 65.6,
+    "events": 793,
+    "last_event_age_s": 1.6,
     "errors": 30,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6535,7 +6535,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 9,
+  "followed": 5,
   "odd_readings": 654,
   "odd_coins": 250
  },
@@ -6584,23 +6584,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18594,
+   "sent": 18630,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18594,
+   "sent": 18630,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ROCKSTAR",
+   "name": "rockstar",
+   "mint": "CeKnD2jhd6Y7RrJ6pARaG7qkMjhjmRu1TNZcQ6xtpump",
+   "age_s": 2,
+   "sol_in": 0.54,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 3.6,
+   "mcap_sol": 29.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GTP",
    "name": "GIRL TRADERS PROJECT",
    "mint": "7HD7gqK1y2Zqqy4niHHtqcAHL4gLMRiY24fCGXWbpump",
-   "age_s": 36,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,7 +6636,7 @@
    "symbol": "$CANDLE",
    "name": "GREEN CANDLE",
    "mint": "CmSt4oUwVnT7Raan7Cff2YiDcWtvA8abJxUWEcYmpump",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": 0.04,
    "buys": 1,
    "sells": 0,
@@ -6636,14 +6654,14 @@
    "symbol": "TIM",
    "name": "Tim Berners-Lee Coin",
    "mint": "9XDiMfiuX5FqeyY9iFzaebP8fH1UPaQXQiK77hp8pump",
-   "age_s": 66,
-   "sol_in": 15.6,
-   "buys": 11,
-   "sells": 8,
-   "rise_pct": 124.6,
-   "mcap_sol": 68.3,
+   "age_s": 99,
+   "sol_in": 22.16,
+   "buys": 32,
+   "sells": 14,
+   "rise_pct": 191.8,
+   "mcap_sol": 88.7,
    "dev_pct": 4.4,
-   "big_sell": 1.63,
+   "big_sell": 1.71,
    "x": "https://x.com/TrenchbullDevs/status/2126608118641741889?a=rC-wgCuKvfFH0Qli1Uw&s=20",
    "tg": false,
    "web": false,
@@ -6654,12 +6672,12 @@
    "symbol": "Boss",
    "name": "Boss Cat",
    "mint": "BqUaAHddr9Dn6iXDkPVykAmJqdpjkXNWw3rCFhXbpump",
-   "age_s": 74,
-   "sol_in": 5.41,
+   "age_s": 107,
+   "sol_in": -0.2,
    "buys": 16,
-   "sells": 21,
-   "rise_pct": 39.0,
-   "mcap_sol": 39.6,
+   "sells": 30,
+   "rise_pct": -1.3,
+   "mcap_sol": 28.1,
    "dev_pct": 1.0,
    "big_sell": 2.65,
    "x": "https://x.com/bosscatpf/status/2126608015453561167",
@@ -6672,7 +6690,7 @@
    "symbol": "toPePa",
    "name": "toilet paper",
    "mint": "7vwGKsvy3ZsoWuAVGuPyKqW94tkXtzWWWR157tctpump",
-   "age_s": 103,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6708,7 @@
    "symbol": "PadWars",
    "name": "PadWars",
    "mint": "CohQDrT7ppU9ke6FcLG7WpFdQ2351QupFgqaHV3Dpump",
-   "age_s": 110,
+   "age_s": 143,
    "sol_in": -0.15,
    "buys": 2,
    "sells": 4,
@@ -6708,7 +6726,7 @@
    "symbol": "Huss Huss",
    "name": "Huss Huss Huss",
    "mint": "ASBr6B1jpe3pUeANTgmfcjp5oVMQfd5DM41Cgk4Dpump",
-   "age_s": 136,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6721,96 +6739,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "FABIO",
-   "name": "Fabio",
-   "mint": "3iwM8VXqDfBSiyzU15nsmfUDfWYGvTFeVVzvjZawkWoM",
-   "age_s": 152,
-   "sol_in": -4.12,
-   "buys": 7,
-   "sells": 9,
-   "rise_pct": -22.2,
-   "mcap_sol": 29.5,
-   "dev_pct": 15.2,
-   "big_sell": 5.24,
-   "x": "https://x.com/kanazawakitecho/status/2126607592759915002",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "DCTY",
-   "name": "DCTY LAUNCHED IN GTA",
-   "mint": "B6mFWSaTynqBLiW5ZUCLagD1UwUPpSFptu4tuyGKpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.02,
-   "x": "https://x.com/Trencherbill77/status/2126520574369202355",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 9 more coins in 60 min",
-   "why": "serial launcher: 9 more coins in 60 min"
-  },
-  {
-   "symbol": "DCTY",
-   "name": "DCTY LAUNCHED IN GTA",
-   "mint": "2C6b8GwEb2sGiNk1BZkyPV1y54pWd2u3vaUiyTjZpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.02,
-   "x": "https://x.com/Trencherbill77/status/2126520574369202355",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 8 more coins in 60 min",
-   "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "Bon-chan",
-   "name": "ボン",
-   "mint": "ANocXaRzeMp4hq4XNpVbAWCNaGBnMSYFBdVmwcyupump",
-   "age_s": 160,
-   "sol_in": -2.57,
-   "buys": 15,
-   "sells": 23,
-   "rise_pct": -14.5,
-   "mcap_sol": 30.7,
-   "dev_pct": 12.6,
-   "big_sell": 2.13,
-   "x": "https://x.com/devilsiopf/status/2126607700804939884",
-   "tg": false,
-   "web": "https://x.com/RT_com/status/2126281532008763448",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "RALLY",
-   "name": "Rally",
-   "mint": "5gMpjacyh5EyKASpBvc4ec1PTMUf3dtX8pnddMtJpump",
-   "age_s": 175,
-   "sol_in": -0.96,
-   "buys": 0,
-   "sells": 3,
-   "rise_pct": -6.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.3,
-   "big_sell": 0.81,
-   "x": "https://x.com/try_rally",
-   "tg": false,
-   "web": "https://tryrally.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
