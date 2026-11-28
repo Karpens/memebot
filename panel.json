@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:45:41Z",
+ "updated": "2026-11-28T02:46:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 462,
+  "flagged": 464,
   "checked": 49,
   "filtered": 1,
-  "lines": 1312,
+  "lines": 1315,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "DEADON",
-   "why": "snipe",
-   "t": "2026-11-28T02:42:29Z"
-  },
   {
    "coin": "小猫仙",
    "why": "snipe",
@@ -67,9 +62,14 @@
    "t": "2026-11-28T02:45:26Z"
   },
   {
+   "coin": "RIO",
+   "why": "snipe",
+   "t": "2026-11-28T02:45:52Z"
+  },
+  {
    "coin": "Lenny",
    "why": "snipe",
-   "t": "2026-11-28T02:45:38Z"
+   "t": "2026-11-28T02:46:15Z"
   }
  ],
  "curve": [
@@ -975,6 +975,10 @@
   ],
   [
    1795833900,
+   47.79
+  ],
+  [
+   1795833960,
    47.79
   ]
  ],
@@ -3129,33 +3133,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:42:49Z",
-   "time": "02:42:49",
-   "agent": "SCANNER",
-   "coin": "HEXUS",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.357e+05 is not 30 + real SOL 0 (off +1.356e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 267 odd readings from 127 coins tonight",
-   "n": 1113
-  },
-  {
-   "t": "2026-11-28T01:43:01Z",
-   "time": "02:43:01",
-   "agent": "SCANNER",
-   "coin": "Test",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1114
-  },
-  {
-   "t": "2026-11-28T01:43:29Z",
-   "time": "02:43:29",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 0 watched · 19 rejected (mayhem mode 7, snipe not bought: only to size 6, no symbol or name 3)",
-   "n": 1115
-  },
-  {
    "t": "2026-11-28T01:43:46Z",
    "time": "02:43:46",
    "agent": "SCANNER",
@@ -4927,6 +4904,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.6 s after the create · 6.9 SOL in · +49% since the create · mcap 45 SOL",
    "n": 1312
+  },
+  {
+   "t": "2026-11-28T02:45:52Z",
+   "time": "03:45:52",
+   "agent": "SCANNER",
+   "coin": "RIO",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1313
+  },
+  {
+   "t": "2026-11-28T02:46:05Z",
+   "time": "03:46:05",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe not bought: only to size 7, serial launcher 1)",
+   "n": 1314
+  },
+  {
+   "t": "2026-11-28T02:46:15Z",
+   "time": "03:46:15",
+   "agent": "SCANNER",
+   "coin": "Lenny",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · -0.5 SOL in · -3% since the create · mcap 29 SOL",
+   "n": 1315
   }
  ],
  "nights": [
@@ -4999,7 +5003,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5007,24 +5011,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1523,
-    "last_event_age_s": 4.3,
+    "events": 1527,
+    "last_event_age_s": 1.4,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 32292,
-    "last_event_age_s": 0.6,
+    "events": 32381,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 874,
-    "last_event_age_s": 4.1,
+    "events": 877,
+    "last_event_age_s": 1.3,
     "errors": 43,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -5037,9 +5041,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 8,
+  "followed": 10,
   "odd_readings": 332,
   "odd_coins": 149
  },
@@ -5088,13 +5092,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14913,
+   "sent": 14949,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14913,
+   "sent": 14949,
    "errors": 0,
    "last_error": null
   }
@@ -5103,15 +5107,69 @@
   {
    "symbol": "Lenny",
    "name": "( ͡° ͜ʖ ͡°)",
-   "mint": "5T49gg8rgMtodtPLLhgf8od2gkkdnTmMxd4qYyNppump",
+   "mint": "9vAhyU96SuU1BXM6ekR2chCoSVm37q6H3ZwW9EM7pump",
+   "age_s": 1,
+   "sol_in": -0.54,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -3.4,
+   "mcap_sol": 28.6,
+   "dev_pct": 3.0,
+   "big_sell": 0.54,
+   "x": "https://x.com/lennyfacepf",
+   "tg": false,
+   "web": "https://knowyourmeme.com/memes/%CD%A1-%CD%9C%CA%96-%CD%A1-lenny-face",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "JDP",
+   "name": "jaime del pizzo",
+   "mint": "E7FbSmbwHXb3oi1SJorR5vyb8MTxrwTD1viqvbhVpump",
    "age_s": 4,
-   "sol_in": 18.0,
-   "buys": 4,
+   "sol_in": 0.0,
+   "buys": 0,
    "sells": 0,
-   "rise_pct": 149.9,
-   "mcap_sol": 74.5,
-   "dev_pct": 3.4,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
    "big_sell": 0.0,
+   "x": "https://x.com/jaimedelpizz0",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "RIO",
+   "name": "Rio the Panda",
+   "mint": "3mS5Vviba3WpZ9Q4dTveS55hSsoh5b8jhoMQBBttpump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Lenny",
+   "name": "( ͡° ͜ʖ ͡°)",
+   "mint": "5T49gg8rgMtodtPLLhgf8od2gkkdnTmMxd4qYyNppump",
+   "age_s": 38,
+   "sol_in": 9.62,
+   "buys": 18,
+   "sells": 17,
+   "rise_pct": 71.7,
+   "mcap_sol": 51.2,
+   "dev_pct": 3.4,
+   "big_sell": 5.15,
    "x": "https://x.com/lennyfacepf",
    "tg": false,
    "web": "https://knowyourmeme.com/memes/%CD%A1-%CD%9C%CA%96-%CD%A1-lenny-face",
@@ -5122,7 +5180,7 @@
    "symbol": "FLIPBA",
    "name": "FLIPBA",
    "mint": "3mbT3DifAvkiXZfjjvMyMEuiHgmYnip55BsbghZXcFLP",
-   "age_s": 16,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5140,7 +5198,7 @@
    "symbol": "FOMO",
    "name": "FomoFamily | Offical Team",
    "mint": "2zjAQkdcRGehNhXdziAMM3tdwBXtSN4zezBkPG7epvyy",
-   "age_s": 18,
+   "age_s": 52,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -5158,12 +5216,12 @@
    "symbol": "Captain X",
    "name": "The Weeknd",
    "mint": "9ao3pGrepXvfpeLfg4hUbPyLzEMonDpJqSTJAX4pump",
-   "age_s": 23,
-   "sol_in": 16.19,
-   "buys": 11,
-   "sells": 7,
-   "rise_pct": 131.8,
-   "mcap_sol": 69.1,
+   "age_s": 57,
+   "sol_in": 16.34,
+   "buys": 25,
+   "sells": 20,
+   "rise_pct": 133.2,
+   "mcap_sol": 69.6,
    "dev_pct": 3.4,
    "big_sell": 3.98,
    "x": "https://x.com/iclimbcharts/status/2125297984917131540?a=qTWwli_LMn-A3Hn_si4&s=20",
@@ -5176,7 +5234,7 @@
    "symbol": "JWOWW",
    "name": "JWoww",
    "mint": "67qbsh8gBwxYNcavAReke3utHdkjUJZRL1svKb99pump",
-   "age_s": 75,
+   "age_s": 109,
    "sol_in": -0.0,
    "buys": 1,
    "sells": 1,
@@ -5194,7 +5252,7 @@
    "symbol": "IBM",
    "name": "INTERNET BROKE MONEY",
    "mint": "9uqRWJRNhdTk8ztAM1YwZwxCannzdZLJSBqhiwTQpump",
-   "age_s": 85,
+   "age_s": 119,
    "sol_in": 2.86,
    "buys": 6,
    "sells": 12,
@@ -5212,35 +5270,17 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "D7e33BLae74ZWwZaL9GQHsmHar9oEFEKFesnJESzCrg8",
-   "age_s": 137,
-   "sol_in": 4.74,
+   "age_s": 171,
+   "sol_in": 3.65,
    "buys": 15,
-   "sells": 11,
-   "rise_pct": 34.1,
-   "mcap_sol": 37.5,
+   "sells": 13,
+   "rise_pct": 25.8,
+   "mcap_sol": 35.2,
    "dev_pct": 0.0,
    "big_sell": 1.21,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "小猫仙",
-   "name": "小猫仙人",
-   "mint": "9AsZz1KSCMZVs4CxQ4Ltbiu25jfo1LNoU1cjNLgpump",
-   "age_s": 170,
-   "sol_in": 2.79,
-   "buys": 21,
-   "sells": 24,
-   "rise_pct": 18.8,
-   "mcap_sol": 35.4,
-   "dev_pct": 3.4,
-   "big_sell": 13.68,
-   "x": "https://x.com/Handlenie/status/2126506588475449464",
-   "tg": false,
-   "web": "https://www.xiaohongshu.com/search_result/?keyword=%E5%B0%8F%E7%8C%AB%E4%BB%99%E4%BA%BA%E6%B8%B2%E6%9F%93%E5%A4%A7%E8%B5%9B&type=58&source=note_related_search",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
