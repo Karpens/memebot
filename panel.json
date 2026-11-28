@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:41:49Z",
+ "updated": "2026-11-28T09:42:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1094,
   "checked": 49,
   "filtered": 1,
-  "lines": 2544,
+  "lines": 2545,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795822920,
-   47.79
-  ],
   [
    1795822980,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795858860,
    47.79
+  ],
+  [
+   1795858920,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:39:21Z",
-   "time": "09:39:21",
-   "agent": "SCANNER",
-   "coin": "RANDOM",
-   "action": "flag",
-   "text": "snipe · first reading 1.4 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2345
-  },
-  {
    "t": "2026-11-28T08:39:47Z",
    "time": "09:39:47",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 3.5 SOL in · +22% since the create · mcap 42 SOL",
    "n": 2544
+  },
+  {
+   "t": "2026-11-28T09:41:51Z",
+   "time": "10:41:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.6 a minute · 0 watched · 6 rejected (snipe not bought: only to size 5, mayhem mode 1)",
+   "n": 2545
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1160,
-    "last_event_age_s": 5.9,
+    "events": 1161,
+    "last_event_age_s": 22.2,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22545,
-    "last_event_age_s": 0.3,
+    "events": 22628,
+    "last_event_age_s": 0.6,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 829,
-    "last_event_age_s": 5.9,
+    "events": 830,
+    "last_event_age_s": 22.1,
     "errors": 32,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6535,7 +6535,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.6,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,30 +6584,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19625,
+   "sent": 19654,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19625,
+   "sent": 19654,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Ralph",
+   "name": "RalphCoin",
+   "mint": "AJR36iNQqzzYtWGJZfEBCc4AFnFjDcSvWhq1QxPQTEfu",
+   "age_s": 22,
+   "sol_in": 0.65,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": 4.0,
+   "mcap_sol": 35.1,
+   "dev_pct": 9.6,
+   "big_sell": 3.85,
+   "x": "https://x.com/RalphCoinOnSol/status/2126612395128656106?a=PYiUCKL9n2dYJ729nno&s=20",
+   "tg": false,
+   "web": "https://www.tiktok.com/@ralphthegentleman_/video/7711146374472961293",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "RalphCoin",
    "name": "RalphCoin",
    "mint": "FTqZyadGqF8K74Lbfgjj3GVQTjrUwLCDkh52f1q3pump",
-   "age_s": 5,
-   "sol_in": 17.1,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 128.8,
-   "mcap_sol": 79.1,
+   "age_s": 33,
+   "sol_in": 24.58,
+   "buys": 16,
+   "sells": 16,
+   "rise_pct": 201.6,
+   "mcap_sol": 104.3,
    "dev_pct": 10.8,
-   "big_sell": 1.77,
+   "big_sell": 2.33,
    "x": "https://x.com/RalphCoinOnSol/status/2126612395128656106?a=PYiUCKL9n2dYJ729nno&s=20",
    "tg": false,
    "web": "https://www.tiktok.com/@ralphthegentleman_/video/7711146374472961293",
@@ -6618,14 +6636,14 @@
    "symbol": "BEANOS",
    "name": "Beanos",
    "mint": "85qY5aXoWTQHAEjv2JPjeTJNzfAjVsdUAoS4TEGrpump",
-   "age_s": 18,
-   "sol_in": 3.88,
-   "buys": 3,
-   "sells": 10,
-   "rise_pct": 26.6,
-   "mcap_sol": 37.8,
+   "age_s": 46,
+   "sol_in": 2.08,
+   "buys": 6,
+   "sells": 19,
+   "rise_pct": 13.9,
+   "mcap_sol": 34.0,
    "dev_pct": 3.4,
-   "big_sell": 1.89,
+   "big_sell": 2.62,
    "x": "https://x.com/BeanosOnPF_/status/2126612387101049317",
    "tg": false,
    "web": "https://x.com/BeanosOnPF_",
@@ -6636,7 +6654,7 @@
    "symbol": "ilm",
    "name": "illuminati",
    "mint": "DtrqkzPHD9bJLPGA5qY71GsikdB9uNzD4TJwL6aKpump",
-   "age_s": 49,
+   "age_s": 77,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,7 +6672,7 @@
    "symbol": "PWTEST",
    "name": "PWTEST",
    "mint": "B93tzzVHmJbU5vTtCRee1fKoCmsfbxT8vmVjivQrpump",
-   "age_s": 97,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6672,7 +6690,7 @@
    "symbol": "JADE",
    "name": "JADE CHAMBER",
    "mint": "Gwap1aFr4rwvxqNJhj9EdfJww8aKX7WAUxf1c8i4RkiE",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": -1.19,
    "buys": 2,
    "sells": 4,
@@ -6690,7 +6708,7 @@
    "symbol": "NOTICED",
    "name": "Senpai Noticed Me",
    "mint": "3iRtx4D1bcQRAUq7PJsannJpBbu4eNf43SxeiLfopump",
-   "age_s": 140,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 3,
    "sells": 5,
