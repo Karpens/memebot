@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:19:44Z",
+ "updated": "2026-11-28T11:20:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1273,
+  "flagged": 1274,
   "checked": 49,
   "filtered": 1,
-  "lines": 2895,
+  "lines": 2897,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ONEDAY",
-   "why": "snipe",
-   "t": "2026-11-28T11:17:18Z"
-  },
   {
    "coin": "GTA 6",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "BABBYGONZ",
    "why": "snipe",
    "t": "2026-11-28T11:19:42Z"
+  },
+  {
+   "coin": "TIMOTHY",
+   "why": "snipe",
+   "t": "2026-11-28T11:20:08Z"
   }
  ],
  "curve": [
-  [
-   1795828800,
-   47.79
-  ],
   [
    1795828860,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864740,
    47.79
+  ],
+  [
+   1795864800,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:23:32Z",
-   "time": "11:23:32",
-   "agent": "SCANNER",
-   "coin": "CHITRA",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 2.9 SOL in · +15% since the create · mcap 60 SOL",
-   "n": 2696
-  },
-  {
-   "t": "2026-11-28T10:23:36Z",
-   "time": "11:23:36",
-   "agent": "SCANNER",
-   "coin": "CENTICOIN",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.323e+05 is not 30 + real SOL 0 (off +2.322e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 914 odd readings from 271 coins tonight",
-   "n": 2697
-  },
-  {
    "t": "2026-11-28T10:23:38Z",
    "time": "11:23:38",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2895
+  },
+  {
+   "t": "2026-11-28T11:19:45Z",
+   "time": "12:19:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 8, serial launcher 2, no symbol or name 1)",
+   "n": 2896
+  },
+  {
+   "t": "2026-11-28T11:20:08Z",
+   "time": "12:20:08",
+   "agent": "SCANNER",
+   "coin": "TIMOTHY",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 1.8 SOL in · +13% since the create · mcap 31 SOL",
+   "n": 2897
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 286,
-    "last_event_age_s": 2.2,
+    "events": 287,
+    "last_event_age_s": 8.7,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7641,
+    "events": 7720,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 205,
-    "last_event_age_s": 1.6,
+    "events": 206,
+    "last_event_age_s": 8.5,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 10,
+  "followed": 11,
   "odd_readings": 987,
   "odd_coins": 302
  },
@@ -6578,30 +6578,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4150,
+   "sent": 4184,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4150,
+   "sent": 4184,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TIMOTHY",
+   "name": "Timothy the Hippo",
+   "mint": "5bkmhCpFyS6j8gCoa6ug33RGWePankbcxPZtqVfApump",
+   "age_s": 8,
+   "sol_in": 0.58,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 3.9,
+   "mcap_sol": 29.1,
+   "dev_pct": 0.0,
+   "big_sell": 1.25,
+   "x": "https://www.kens5.com/article/news/local/one-last-love-letter-san-antonio-zoo-mourns-fiona-timothy-hippo-longtime-sweetheart-cincinnati-remembrance-hippos-birthday-mariachi-conservation/273-fe8f5028-b",
+   "tg": false,
+   "web": "https://www.kens5.com/article/news/local/one-last-love-letter-san-antonio-zoo-mourns-fiona-timothy-hippo-longtime-sweetheart-cincinnati-remembrance-hippos-birthday-mariachi-conservation/273-fe8f5028-b",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "bunance",
    "name": "bunance",
    "mint": "Hz3tZPubrn6wESmmxor1w2QgfR4opTmdXUGXBoe3xETQ",
-   "age_s": 2,
-   "sol_in": 4.84,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 31.5,
-   "mcap_sol": 44.4,
+   "age_s": 34,
+   "sol_in": -1.72,
+   "buys": 5,
+   "sells": 5,
+   "rise_pct": -10.1,
+   "mcap_sol": 30.3,
    "dev_pct": 9.6,
-   "big_sell": 0.0,
+   "big_sell": 3.65,
    "x": "https://x.com/kalshi/status/2126637054574604347",
    "tg": false,
    "web": false,
@@ -6612,7 +6630,7 @@
    "symbol": "BABBYGONZ",
    "name": "BabbyGonz",
    "mint": "6rm7gyq6cUhazct9p8co3xDVVFUPhdjNWjixSMYUh7xd",
-   "age_s": 3,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,12 +6648,12 @@
    "symbol": "CATZILLA",
    "name": "Catzilla",
    "mint": "AE4fVj2RAca4XDUkMg4QXpdGFVL7gBLXacXeaX8PHdr3",
-   "age_s": 37,
-   "sol_in": -4.06,
+   "age_s": 69,
+   "sol_in": -4.52,
    "buys": 3,
-   "sells": 6,
-   "rise_pct": -21.9,
-   "mcap_sol": 29.6,
+   "sells": 8,
+   "rise_pct": -24.2,
+   "mcap_sol": 28.7,
    "dev_pct": 15.2,
    "big_sell": 6.97,
    "x": "https://x.com/numanuk/status/2126636982818549869",
@@ -6648,7 +6666,7 @@
    "symbol": "RICE",
    "name": "Rice coin",
    "mint": "B1B731Hinborfk4hNN8PthakSY26T4rwBR84QG445Ecq",
-   "age_s": 41,
+   "age_s": 73,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 0,
@@ -6666,7 +6684,7 @@
    "symbol": "YCAT",
    "name": "yoyo cat",
    "mint": "8yrJXYFzRSiaM66Kv5AgKnE3Zprj9TuFpEAcik4PJ8NF",
-   "age_s": 71,
+   "age_s": 103,
    "sol_in": 0.39,
    "buys": 3,
    "sells": 9,
@@ -6684,14 +6702,14 @@
    "symbol": "Aslan",
    "name": "America's Number One POM",
    "mint": "DTKnJ57BVrJ8dP5qf4sMsJxnCj29KHjKi4cnwiV8pump",
-   "age_s": 76,
-   "sol_in": 8.49,
-   "buys": 29,
-   "sells": 34,
-   "rise_pct": 56.3,
-   "mcap_sol": 56.0,
+   "age_s": 108,
+   "sol_in": -1.21,
+   "buys": 32,
+   "sells": 49,
+   "rise_pct": -7.0,
+   "mcap_sol": 33.3,
    "dev_pct": 12.5,
-   "big_sell": 2.22,
+   "big_sell": 5.17,
    "x": "https://x.com/slndr3000/status/2126636797165760788?a=ccJy_HpP4E01zWVq6cM&s=20",
    "tg": false,
    "web": "https://www.instagram.com/reel/DgP4w1eiUEA/",
@@ -6702,7 +6720,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Brtu5cixjJNF5CJGE6LpgM4SnL2AzduAq5xZR6YzRPnt",
-   "age_s": 88,
+   "age_s": 120,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6720,7 +6738,7 @@
    "symbol": "HARD",
    "name": "A Hard Day's Bread",
    "mint": "9BwGF9oaQaBNiHmZcqUjxpnsvi1y1oEfNR3VqKgdpump",
-   "age_s": 93,
+   "age_s": 125,
    "sol_in": 0.01,
    "buys": 3,
    "sells": 2,
@@ -6738,7 +6756,7 @@
    "symbol": "STAR",
    "name": "GMMTVStarlympics",
    "mint": "EEPvmrMDWyKajFF96MtZgfLG9eK9DoARMoHxtxBLpump",
-   "age_s": 102,
+   "age_s": 134,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6756,12 +6774,12 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "6RF2G15ZLAdMsZRwhrf6jAcubrRkusooHrxxEwSJpump",
-   "age_s": 137,
-   "sol_in": 49.41,
-   "buys": 62,
-   "sells": 29,
-   "rise_pct": 513.5,
-   "mcap_sol": 213.3,
+   "age_s": 169,
+   "sol_in": 49.6,
+   "buys": 84,
+   "sells": 38,
+   "rise_pct": 516.3,
+   "mcap_sol": 214.3,
    "dev_pct": 11.1,
    "big_sell": 0.87,
    "x": "https://x.com/gtasix_",
@@ -6774,7 +6792,7 @@
    "symbol": "ONEDAY",
    "name": "One Day",
    "mint": "4gRmopnbQc36Uad3Hp5mebZD5ZL5BgRwWLTmoBuFpump",
-   "age_s": 147,
+   "age_s": 179,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
