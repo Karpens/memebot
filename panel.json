@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:32:12Z",
+ "updated": "2026-11-28T02:32:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 434,
+  "flagged": 435,
   "checked": 49,
   "filtered": 1,
-  "lines": 1267,
+  "lines": 1268,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HDD",
-   "why": "snipe",
-   "t": "2026-11-28T02:25:29Z"
-  },
   {
    "coin": "NVIDIA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Joseon",
    "why": "snipe",
    "t": "2026-11-28T02:31:09Z"
+  },
+  {
+   "coin": "LEFTOVER",
+   "why": "snipe",
+   "t": "2026-11-28T02:32:21Z"
   }
  ],
  "curve": [
@@ -3077,15 +3077,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:30:23Z",
-   "time": "02:30:23",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 8.8 a minute · 0 watched · 25 rejected (mayhem mode 10, snipe not bought: only to size 6, no symbol or name 3)",
-   "n": 1068
-  },
-  {
    "t": "2026-11-28T01:30:46Z",
    "time": "02:30:46",
    "agent": "SCANNER",
@@ -4875,6 +4866,15 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1.388e+05 is not 30 + real SOL 0 (off +1.388e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 332 odd readings from 149 coins tonight",
    "n": 1267
+  },
+  {
+   "t": "2026-11-28T02:32:21Z",
+   "time": "03:32:21",
+   "agent": "SCANNER",
+   "coin": "LEFTOVER",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1268
   }
  ],
  "nights": [
@@ -4947,7 +4947,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4955,24 +4955,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1479,
-    "last_event_age_s": 5.8,
+    "events": 1480,
+    "last_event_age_s": 20.9,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 30678,
-    "last_event_age_s": 0.2,
+    "events": 30709,
+    "last_event_age_s": 1.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 842,
-    "last_event_age_s": 5.5,
+    "events": 843,
+    "last_event_age_s": 20.6,
     "errors": 42,
     "last_error": "no uri"
    }
@@ -4985,9 +4985,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 332,
   "odd_coins": 149
  },
@@ -5036,23 +5036,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14052,
+   "sent": 14081,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14052,
+   "sent": 14081,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LEFTOVER",
+   "name": "Leftovers",
+   "mint": "D5MrbKg8Sk9UEaJCC19PuU61mLzW57qasG26umC4pump",
+   "age_s": 20,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "coin",
    "name": "coin",
    "mint": "DLexyAKiEP8HkhKWfJj17eLbJ1dZ8X2ttzFJ65nC3Djn",
-   "age_s": 5,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5070,14 +5088,14 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "4tyswDqvReNAestBK63CWY3WbZyvxWENXDsrZJqxaQn9",
-   "age_s": 37,
-   "sol_in": 0.1,
+   "age_s": 65,
+   "sol_in": -0.1,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.7,
-   "mcap_sol": 28.3,
+   "sells": 3,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": false,
    "tg": false,
    "web": false,
@@ -5088,7 +5106,7 @@
    "symbol": "Joseon",
    "name": "JoseonFun",
    "mint": "9UKvk91YiSQ6KHZ6YgKEYn62r6XgXekbvquhDwmbpump",
-   "age_s": 64,
+   "age_s": 92,
    "sol_in": -1.78,
    "buys": 1,
    "sells": 6,
@@ -5106,7 +5124,7 @@
    "symbol": "VIZARDO",
    "name": "VIZARDO",
    "mint": "B7gF8wVUrsfdPCKjFAwyjsouD132E2UU1fxuNSPppump",
-   "age_s": 86,
+   "age_s": 114,
    "sol_in": 0.45,
    "buys": 5,
    "sells": 1,
