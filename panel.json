@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:11:52Z",
+ "updated": "2026-11-28T10:12:25Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1151,
   "checked": 49,
   "filtered": 1,
-  "lines": 2653,
+  "lines": 2654,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795824720,
-   47.79
-  ],
   [
    1795824780,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795860660,
    47.79
+  ],
+  [
+   1795860720,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:10:41Z",
-   "time": "10:10:41",
-   "agent": "SCANNER",
-   "coin": "RHOD",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL",
-   "n": 2454
-  },
-  {
    "t": "2026-11-28T09:10:58Z",
    "time": "10:10:58",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 0 watched · 9 rejected (snipe not bought: only to size 3, mayhem mode 3, snipe not bought: last min of th 2)",
    "n": 2653
+  },
+  {
+   "t": "2026-11-28T10:12:07Z",
+   "time": "11:12:07",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 10 rejected (snipe not bought: last min of th 4, mayhem mode 3, serial launcher 2)",
+   "n": 2654
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 886 (266 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 886 (266 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1291,
-    "last_event_age_s": 12.9,
+    "events": 1294,
+    "last_event_age_s": 13.4,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26813,
-    "last_event_age_s": 0.9,
+    "events": 26893,
+    "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 926,
-    "last_event_age_s": 10.9,
+    "events": 928,
+    "last_event_age_s": 14.8,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 6,
+  "followed": 8,
   "odd_readings": 886,
   "odd_coins": 266
  },
@@ -6584,28 +6584,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21544,
+   "sent": 21579,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21544,
+   "sent": 21579,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Verdict",
+   "name": "Verdict",
+   "mint": "6zLzZLeknx3dnr8VgQuV9fr4L3sHUho2efuL9xMepump",
+   "age_s": 15,
+   "sol_in": 11.83,
+   "buys": 8,
+   "sells": 5,
+   "rise_pct": 93.9,
+   "mcap_sol": 54.7,
+   "dev_pct": 0.5,
+   "big_sell": 0.52,
+   "x": "https://x.com/verdictbackup",
+   "tg": false,
+   "web": "https://www.verdictmarkets.xyz/",
+   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
+   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
+  },
+  {
+   "symbol": "Hope",
+   "name": "Hope",
+   "mint": "HnhchaK89jJ8nJN5ZV1L5i9dGQTvo8DmYcUh2QED2xX2",
+   "age_s": 28,
+   "sol_in": -0.94,
+   "buys": 5,
+   "sells": 8,
+   "rise_pct": -5.3,
+   "mcap_sol": 35.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.03,
+   "x": "https://x.com/MarioPrezldente/status/2126620094633754956",
+   "tg": false,
+   "web": "https://www.reuters.com/business/environment/brazil-zoo-hails-birth-spixs-macaw-chick-boost-species-recovery-2026-11-24",
+   "status": "rejected: serial launcher: 10 more coins in 60 min",
+   "why": "serial launcher: 10 more coins in 60 min"
+  },
+  {
    "symbol": "RELAY",
    "name": "Relay",
    "mint": "vXgDBtXoSJM2ZzvA1oLYQ45X3v1VuDX86z8C2xwRdPS",
-   "age_s": 12,
-   "sol_in": 0.32,
+   "age_s": 45,
+   "sol_in": 0.13,
    "buys": 3,
-   "sells": 5,
-   "rise_pct": 2.1,
-   "mcap_sol": 28.7,
+   "sells": 8,
+   "rise_pct": 0.8,
+   "mcap_sol": 28.3,
    "dev_pct": 0.2,
    "big_sell": 7.2,
    "x": "https://x.com/Relay_Key",
@@ -6618,7 +6654,7 @@
    "symbol": "000",
    "name": "000",
    "mint": "6Pw6Vh5kn7ZaM7DTJA2mdTLwfc7UoQ8Wy8SKr6Sgpump",
-   "age_s": 18,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,14 +6672,14 @@
    "symbol": "Hope",
    "name": "Hope",
    "mint": "8ow3gH6mfoeyWMLdHM1GMygEKNpJFra3YRUrDt47pump",
-   "age_s": 18,
-   "sol_in": 3.6,
+   "age_s": 51,
+   "sol_in": -1.21,
    "buys": 4,
-   "sells": 13,
-   "rise_pct": 22.9,
-   "mcap_sol": 42.0,
+   "sells": 19,
+   "rise_pct": -7.1,
+   "mcap_sol": 31.7,
    "dev_pct": 10.2,
-   "big_sell": 1.42,
+   "big_sell": 3.05,
    "x": "https://x.com/ZzzzzSol/status/2126619995895373886",
    "tg": false,
    "web": "https://www.reuters.com/business/environment/brazil-zoo-hails-birth-spixs-macaw-chick-boost-species-recovery-2026-11-24",
@@ -6654,14 +6690,14 @@
    "symbol": "SATNA",
    "name": "Satna Klause",
    "mint": "3UWF2btPVVSF8zbnkkfprdngLqCJwRitPXdaGL6Rpump",
-   "age_s": 20,
-   "sol_in": 1.09,
-   "buys": 5,
-   "sells": 2,
-   "rise_pct": 6.7,
-   "mcap_sol": 36.0,
+   "age_s": 53,
+   "sol_in": -1.42,
+   "buys": 7,
+   "sells": 8,
+   "rise_pct": -8.4,
+   "mcap_sol": 30.9,
    "dev_pct": 9.6,
-   "big_sell": 0.35,
+   "big_sell": 2.09,
    "x": "https://x.com/satnaklause_sol/status/2126619894955245861",
    "tg": false,
    "web": false,
@@ -6672,7 +6708,7 @@
    "symbol": "MONEYGRAM",
    "name": "MoneyGram",
    "mint": "GNY4n7otdW3x54xYEpGgmV21a2pkSRWPx6tYy5oVDCHN",
-   "age_s": 70,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6726,7 @@
    "symbol": "FCOURT",
    "name": "Family Court Gaurdian",
    "mint": "FgPv6SkREp9TdqeCciFAkRg7n8sevMa2FMq2ZMptpump",
-   "age_s": 108,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,7 +6744,7 @@
    "symbol": "BUSYNADS",
    "name": "BusyNads",
    "mint": "8C5ecYfdbvLbNLDLHbZZS3VZ97mT8paw7X7HBsJfJvKW",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": -1.29,
    "buys": 1,
    "sells": 2,
@@ -6726,12 +6762,12 @@
    "symbol": "TEREZA",
    "name": "The Hero Puppy",
    "mint": "EsdzP2BwW4Hr5TvMceWyRC47V1SRPE7ZAg6vXos6pump",
-   "age_s": 135,
-   "sol_in": -7.73,
+   "age_s": 168,
+   "sol_in": -8.03,
    "buys": 8,
-   "sells": 15,
-   "rise_pct": -35.0,
-   "mcap_sol": 32.1,
+   "sells": 16,
+   "rise_pct": -36.2,
+   "mcap_sol": 31.5,
    "dev_pct": 26.6,
    "big_sell": 6.0,
    "x": "https://x.com/guhhhonchain/status/2126619064403443964",
@@ -6739,24 +6775,6 @@
    "web": "https://www.instagram.com/reel/Df--hWUycLW/",
    "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
    "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
-  },
-  {
-   "symbol": "000",
-   "name": "000",
-   "mint": "9UqRxRpppwJ24QqYb9jKgXrRGAxofMGfzkLYzSSKpump",
-   "age_s": 156,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
