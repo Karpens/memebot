@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:24:13Z",
+ "updated": "2026-11-28T05:24:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 758,
   "checked": 49,
   "filtered": 1,
-  "lines": 1828,
+  "lines": 1829,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3765,15 +3765,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:14:54Z",
-   "time": "05:14:54",
-   "agent": "SCANNER",
-   "coin": "ELF",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1629
-  },
-  {
    "t": "2026-11-28T04:15:00Z",
    "time": "05:15:00",
    "agent": "SCANNER",
@@ -5563,6 +5554,15 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1828
+  },
+  {
+   "t": "2026-11-28T05:24:28Z",
+   "time": "06:24:28",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 1 watched · 7 rejected (serial launcher 2, snipe: first reading s after the 2, odd curve reading: virtual SOL i 1) · closest SUCCESS: no curve reading yet",
+   "n": 1829
   }
  ],
  "nights": [
@@ -5629,7 +5629,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 379 (177 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 25 watched · ws off · odd curve readings 379 (177 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5637,24 +5637,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 194,
-    "last_event_age_s": 23.3,
+    "events": 196,
+    "last_event_age_s": 5.7,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
+    "connected": false,
     "events": 1297,
-    "last_event_age_s": 3.1,
-    "errors": 112,
+    "last_event_age_s": 30.1,
+    "errors": 117,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 155,
-    "last_event_age_s": 21.6,
+    "events": 157,
+    "last_event_age_s": 3.9,
     "errors": 7,
     "last_error": "mptj-lubuntu.tail66749c.ts.net: too slow (over 2 s)"
    }
@@ -5668,7 +5668,7 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.8,
-  "watching": 0,
+  "watching": 2,
   "followed": 7,
   "odd_readings": 379,
   "odd_coins": 177
@@ -5718,23 +5718,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3175,
+   "sent": 3203,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3175,
+   "sent": 3203,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "santa6",
+   "name": "santa6",
+   "mint": "CvrGVhzvzixMGp5JFpaDLy4QZpZKks83dosx9w1ppump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/santasix6lol?s=11",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "SUCCESS",
+   "name": "Successful Asian",
+   "mint": "Ei7mcP6CrX4H4TwSjrvHKiyYkS98iPx5bFhAkcFtpump",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "Blossom",
    "name": "Blossom",
    "mint": "267ywwCVEXQLdaZ2dLBBEHAJCXYs5BtP3TRCkZNapump",
-   "age_s": 23,
+   "age_s": 50,
    "sol_in": 9.04,
    "buys": 2,
    "sells": 0,
@@ -5752,7 +5788,7 @@
    "symbol": "BOOGIE",
    "name": "unly nigga",
    "mint": "3odeVCKzSBPDwHdBKxjgEtAjSsoSAj2nuLRjC4Zbpump",
-   "age_s": 55,
+   "age_s": 82,
    "sol_in": -1.71,
    "buys": 0,
    "sells": 1,
@@ -5770,7 +5806,7 @@
    "symbol": "DON",
    "name": "Donald Pump",
    "mint": "qyg2iHXWReJGCgEVkzG6VcCXuauXeNFoXrcm3r4pump",
-   "age_s": 56,
+   "age_s": 83,
    "sol_in": 0.43,
    "buys": 2,
    "sells": 1,
@@ -5788,7 +5824,7 @@
    "symbol": "WLFI",
    "name": "We Lack Funds Inu",
    "mint": "8gd5c8BKbEWBSNMuyDRnwn4rZstUVE5CgEgrWJ48pump",
-   "age_s": 75,
+   "age_s": 102,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 1,
@@ -5806,7 +5842,7 @@
    "symbol": "WLFI",
    "name": "We Lack Funds Inu",
    "mint": "3h2iuajzoDma9BUgHQSbgtx1EnfhUo9bAvFQ7y1epump",
-   "age_s": 139,
+   "age_s": 166,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -5819,60 +5855,6 @@
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "X_X_X",
-   "name": "X_X_X",
-   "mint": "FsAG36AiLJXPAsqi2eX6mU5pouNefErZxo85pJGUpump",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 8814 is not 30 + real SOL 950.9 (off +7833 SOL)",
-   "why": "odd curve reading: virtual SOL 8814 is not 30 + real SOL 950.9 (off +7833 SOL)"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "9WfXmUnScSvwkMb8f3qGCz7U8KkxKPGH5o6Wsp3ipump",
-   "age_s": 160,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "Downald",
-   "name": "Downald Twump",
-   "mint": "GSwV5fT2W8FKp5GnmubNLFYwZWpzNtwAJq3MaSQepump",
-   "age_s": 168,
-   "sol_in": -0.83,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -5.2,
-   "mcap_sol": 28.9,
-   "dev_pct": 4.6,
-   "big_sell": 3.03,
-   "x": "https://x.com/Frankdegake/status/2126546788345852309",
-   "tg": false,
-   "web": "https://x.com/search?q=wlfi&src=typed_query",
-   "status": "rejected: snipe: first reading 14.2 s after the create (max 10 s)",
-   "why": "snipe: first reading 14.2 s after the create (max 10 s)"
   }
  ],
  "strategies": [
