@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:13:55Z",
+ "updated": "2026-11-28T13:14:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1495,
+  "flagged": 1496,
   "checked": 49,
   "filtered": 1,
-  "lines": 3269,
+  "lines": 3271,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BZD",
-   "why": "snipe",
-   "t": "2026-11-28T13:10:47Z"
-  },
   {
    "coin": "Kyun",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "Lemon",
    "why": "snipe",
    "t": "2026-11-28T13:13:24Z"
+  },
+  {
+   "coin": "Graftsol",
+   "why": "snipe",
+   "t": "2026-11-28T13:14:27Z"
   }
  ],
  "curve": [
-  [
-   1795835640,
-   47.79
-  ],
   [
    1795835700,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795871580,
    47.79
+  ],
+  [
+   1795871640,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:14:35Z",
-   "time": "13:14:35",
-   "agent": "SCANNER",
-   "coin": "TDUMP",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
-   "n": 3070
-  },
-  {
-   "t": "2026-11-28T12:14:50Z",
-   "time": "13:14:50",
-   "agent": "SCANNER",
-   "coin": "FlipFlop",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 3.6 SOL in · +18% since the create · mcap 61 SOL",
-   "n": 3071
-  },
-  {
    "t": "2026-11-28T12:14:51Z",
    "time": "13:14:51",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 0 watched · 15 rejected (snipe not bought: only to size 7, mayhem mode 7, serial launcher 1)",
    "n": 3269
+  },
+  {
+   "t": "2026-11-28T13:14:27Z",
+   "time": "14:14:27",
+   "agent": "SCANNER",
+   "coin": "Graftsol",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.6 SOL in · +4% since the create · mcap 36 SOL",
+   "n": 3270
+  },
+  {
+   "t": "2026-11-28T13:14:27Z",
+   "time": "14:14:27",
+   "agent": "SIZER",
+   "coin": "Graftsol",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 3271
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 1026 (316 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 1026 (316 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 960,
-    "last_event_age_s": 27.0,
+    "events": 962,
+    "last_event_age_s": 2.9,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 20670,
+    "events": 20717,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 514,
-    "last_event_age_s": 31.5,
+    "events": 515,
+    "last_event_age_s": 2.7,
     "errors": 23,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6531,7 +6531,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 8,
+  "followed": 6,
   "odd_readings": 1026,
   "odd_coins": 316
  },
@@ -6580,23 +6580,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11441,
+   "sent": 11477,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11441,
+   "sent": 11477,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Graftsol",
+   "name": "Graft",
+   "mint": "GXSJjLPBc4oChRA7kVcBswpLVcmjd8kLdBEikf6Vpump",
+   "age_s": 2,
+   "sol_in": -3.0,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -17.2,
+   "mcap_sol": 28.7,
+   "dev_pct": 10.9,
+   "big_sell": 3.4,
+   "x": "https://x.com/Graft_finance",
+   "tg": false,
+   "web": "https://Graft.finance",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Lemon",
    "name": "Lemon Pig",
    "mint": "DkDGqrWQwHDDKAGSx1qU3d2GPNZhnGVXyPxG9D64eC3B",
-   "age_s": 31,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6632,7 @@
    "symbol": "TULM",
    "name": "Welmo Tulma",
    "mint": "AXtVS25YSYUciCgHb1czZRTHNc2cM9dncY9i2xzUPhYu",
-   "age_s": 52,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,12 +6650,12 @@
    "symbol": "FIX6900",
    "name": "Fantasy Index 6900",
    "mint": "GDUL9Nor761zu3m6azcUiaLruwReAYG7jTppgGiWpump",
-   "age_s": 54,
-   "sol_in": 24.64,
-   "buys": 20,
-   "sells": 19,
-   "rise_pct": 226.2,
-   "mcap_sol": 94.7,
+   "age_s": 88,
+   "sol_in": 25.24,
+   "buys": 32,
+   "sells": 29,
+   "rise_pct": 233.3,
+   "mcap_sol": 96.8,
    "dev_pct": 2.0,
    "big_sell": 2.32,
    "x": "https://x.com/scufffd/status/2126665617478750573",
@@ -6650,7 +6668,7 @@
    "symbol": "GNB",
    "name": "GainBro",
    "mint": "CZVfWZHY7kxpJGp3FWkjNQ1Fnt8H3NAVnAMS4pFTpump",
-   "age_s": 58,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6686,7 @@
    "symbol": "NOBR",
    "name": "Sorbi Nobru",
    "mint": "F7cfmHypvd79VkufKVZpAjVx4jSSmepAKggoj8UdvtnF",
-   "age_s": 63,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6704,7 @@
    "symbol": "FOLM",
    "name": "Sorbi Folmi",
    "mint": "5PBY7H6TLnCsaQ6jXvuXkg5yQPWrSQ3AB88TivnbzGzh",
-   "age_s": 73,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6722,7 @@
    "symbol": "P/CITY",
    "name": "Pump City",
    "mint": "HrgGyAH5YeJZHwpwk39Kd4RuKSAxaQk6Qpb1qvTLpump",
-   "age_s": 73,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6722,7 +6740,7 @@
    "symbol": "HODL",
    "name": "HODL",
    "mint": "FcHqh61fBS7yLg4LTzce1oFgVPH6TnGm5hUvtM1Dpump",
-   "age_s": 80,
+   "age_s": 114,
    "sol_in": -3.95,
    "buys": 0,
    "sells": 1,
@@ -6740,7 +6758,7 @@
    "symbol": "KYUN",
    "name": "KyunCoin",
    "mint": "J1Zy2ezqXSZVUfUEm2jnuBR9pSjEuJyryTfv6gzcfAVF",
-   "age_s": 82,
+   "age_s": 116,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6758,7 +6776,7 @@
    "symbol": "$LCRYPTAN",
    "name": "LuckyCryptan",
    "mint": "7nFeoJSEnmiQu4jmd7krMJEfBKyMhPJxugV4kqc9pump",
-   "age_s": 91,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6776,7 +6794,7 @@
    "symbol": "$CIND",
    "name": "Crypto Is Not Dead",
    "mint": "7eGJyJKiCC4QSHDZ6zshv5GS97eXWjFEa3diwo97pump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -6794,7 +6812,7 @@
    "symbol": "WLFI",
    "name": "We Literally Fuck Investors",
    "mint": "HDxXrK91TJ2mVhMoai5rfbzhwcLq9yNQCngrsi4Gpump",
-   "age_s": 121,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6807,60 +6825,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "Wibbit",
-   "name": "Wibbit",
-   "mint": "DjWfpsWkefLx6P3BUFFzH1tVSDqPrrAhQkUUGiWApump",
-   "age_s": 153,
-   "sol_in": -0.0,
-   "buys": 19,
-   "sells": 3,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/WojTheDegen/status/2126401978984997328",
-   "tg": false,
-   "web": "https://x.com/i/communities/2023407389253435661",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CASHTAG",
-   "name": "CashTags",
-   "mint": "B8KaAs2TsnpohqgzPWp1VG9HgPvXeCB1NU9tKTa15NH5",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/B8KaAs2TsnpohqgzPWp1VG9HgPvXeCB1NU9tKTa15NH5",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "Kyun",
-   "name": "KyunCoin",
-   "mint": "9P8zcTirHBVpm1bvy3yx5V2HahE7hvBRNyNHB4u2pump",
-   "age_s": 172,
-   "sol_in": -0.43,
-   "buys": 4,
-   "sells": 14,
-   "rise_pct": -2.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.5,
-   "big_sell": 4.64,
-   "x": false,
-   "tg": false,
-   "web": "https://www.instagram.com/p/DgSU2bYiYZS/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
