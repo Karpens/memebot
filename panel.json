@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:37:24Z",
+ "updated": "2026-11-28T08:37:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 975,
+  "flagged": 976,
   "checked": 49,
   "filtered": 1,
-  "lines": 2337,
+  "lines": 2338,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BFC",
-   "why": "snipe",
-   "t": "2026-11-28T08:32:45Z"
-  },
   {
    "coin": "TEST",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "攀豹豹",
    "why": "snipe",
    "t": "2026-11-28T08:35:39Z"
+  },
+  {
+   "coin": "FLOKI",
+   "why": "snipe",
+   "t": "2026-11-28T08:37:39Z"
   }
  ],
  "curve": [
@@ -4537,15 +4537,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:32:43Z",
-   "time": "08:32:43",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 2 watched · 18 rejected (mayhem mode 5, snipe not bought: only to size 4, snipe: first reading s after the 3) · closest MUTED: no curve reading yet",
-   "n": 2138
-  },
-  {
    "t": "2026-11-28T07:33:44Z",
    "time": "08:33:44",
    "agent": "SCANNER",
@@ -6335,6 +6326,15 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 5, mayhem mode 3, serial launcher 2)",
    "n": 2337
+  },
+  {
+   "t": "2026-11-28T08:37:39Z",
+   "time": "09:37:39",
+   "agent": "SCANNER",
+   "coin": "FLOKI",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 1.2 SOL in · +8% since the create · mcap 30 SOL",
+   "n": 2338
   }
  ],
  "nights": [
@@ -6415,15 +6415,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 925,
-    "last_event_age_s": 14.1,
+    "events": 926,
+    "last_event_age_s": 13.4,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15209,
+    "events": 15293,
     "last_event_age_s": 0.8,
     "errors": 432,
     "last_error": "timeout after 5 s"
@@ -6431,8 +6431,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 664,
-    "last_event_age_s": 13.5,
+    "events": 665,
+    "last_event_age_s": 13.3,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6447,7 +6447,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 6,
   "odd_readings": 630,
   "odd_coins": 239
  },
@@ -6496,28 +6496,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15512,
+   "sent": 15541,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15512,
+   "sent": 15541,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FLOKI",
+   "name": "FLOKI",
+   "mint": "9YCAzPMn9cpwYFCvV4DSg8v1bhU8KGxgFi3f4ggApump",
+   "age_s": 13,
+   "sol_in": 0.71,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 4.8,
+   "mcap_sol": 29.3,
+   "dev_pct": 0.0,
+   "big_sell": 0.78,
+   "x": "https://x.com/elonmusk/status/1474860884359094275",
+   "tg": false,
+   "web": "https://launchpad.analosstonk.xyz/a/Floki_santa",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Yuki",
    "name": "RIP Yuki",
    "mint": "2ecwTxBFoWcZq24bgirxng8GpZozM53NgbzHf63Vua6F",
-   "age_s": 14,
-   "sol_in": 1.66,
-   "buys": 5,
-   "sells": 6,
-   "rise_pct": 10.3,
-   "mcap_sol": 37.5,
+   "age_s": 42,
+   "sol_in": 9.39,
+   "buys": 17,
+   "sells": 16,
+   "rise_pct": 64.9,
+   "mcap_sol": 56.0,
    "dev_pct": 9.9,
    "big_sell": 2.01,
    "x": "https://x.com/StepCoinsol8/status/2126595900097093946",
@@ -6530,7 +6548,7 @@
    "symbol": "rezigger",
    "name": "project 100k",
    "mint": "CcBKFj6s1MCpGKhDhcsgeYnuRgjWp5ZHWiDS98vxpump",
-   "age_s": 17,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6548,7 +6566,7 @@
    "symbol": "Deg",
    "name": "Deg",
    "mint": "B7vu2oCXsTVwoemHhfjfQpvTCEcmjseGec4m7FGEpump",
-   "age_s": 92,
+   "age_s": 120,
    "sol_in": -0.72,
    "buys": 19,
    "sells": 28,
@@ -6566,7 +6584,7 @@
    "symbol": "攀豹豹",
    "name": "Pan Bao Bao",
    "mint": "5ZcKR1V1FoUQsqTvEo7A7oJqnSySskrQirXC1CGapET2",
-   "age_s": 104,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6584,14 +6602,14 @@
    "symbol": "DBT",
    "name": "DON'T BUY THIS",
    "mint": "GCQi25Tzryv3oLGwYijeHCXV4H8u5NoFTv2DDGVvpump",
-   "age_s": 117,
-   "sol_in": 0.01,
+   "age_s": 145,
+   "sol_in": -0.05,
    "buys": 3,
-   "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.1,
+   "sells": 2,
+   "rise_pct": -0.3,
+   "mcap_sol": 28.0,
    "dev_pct": 0.2,
-   "big_sell": 0.01,
+   "big_sell": 0.06,
    "x": false,
    "tg": false,
    "web": false,
@@ -6602,7 +6620,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "4AszW7HAk2yDsuT45wnmFaHxw8dViZiHow14xFk5pump",
-   "age_s": 134,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6620,7 +6638,7 @@
    "symbol": "MUNICH",
    "name": "Munich Air Disaster",
    "mint": "aiCMQtmXs44FYXCKiyf3D772C4H9b51cqUifUZZotve",
-   "age_s": 137,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6633,60 +6651,6 @@
    "web": "https://grokfamily.fun/",
    "status": "rejected: odd curve reading: virtual SOL 2.462e+05 is not 30 + real SOL 0 (off +2.462e+05 SOL)",
    "why": "odd curve reading: virtual SOL 2.462e+05 is not 30 + real SOL 0 (off +2.462e+05 SOL)"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "zrJbHVYey5JwbC388tA4Y8ax35kwg4Bhre3avwQpump",
-   "age_s": 163,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 0.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "TIM",
-   "name": "Tim Berners-Lee Coin",
-   "mint": "HK3Y4dBphVDSbK5mzjytE5nEkU9jearHYmBgnuFbpump",
-   "age_s": 166,
-   "sol_in": -1.28,
-   "buys": 4,
-   "sells": 5,
-   "rise_pct": -8.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 4.4,
-   "big_sell": 1.81,
-   "x": "https://x.com/TrenchbullDevs/status/2126595302446801378?a=LpwyA0kKsHykwkFNZis&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "meme",
-   "name": "meme=meme",
-   "mint": "284E4oWmqdh7XC7JQ4aRACAry7tn8R3Phi2ouF6Cpump",
-   "age_s": 179,
-   "sol_in": -0.2,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -1.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.7,
-   "big_sell": 0.2,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
