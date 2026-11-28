@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:04:55Z",
+ "updated": "2026-11-28T04:05:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 638,
+  "flagged": 639,
   "checked": 49,
   "filtered": 1,
-  "lines": 1594,
+  "lines": 1595,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Anthropic",
-   "why": "snipe",
-   "t": "2026-11-28T04:02:29Z"
-  },
   {
    "coin": "FCAT",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Bwubby",
    "why": "snipe",
    "t": "2026-11-28T04:04:39Z"
+  },
+  {
+   "coin": "mogging",
+   "why": "snipe",
+   "t": "2026-11-28T04:05:09Z"
   }
  ],
  "curve": [
@@ -1291,6 +1291,10 @@
   ],
   [
    1795838640,
+   47.79
+  ],
+  [
+   1795838700,
    47.79
   ]
  ],
@@ -3445,15 +3449,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:07:30Z",
-   "time": "04:07:30",
-   "agent": "SCANNER",
-   "coin": "bob",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 8.3 SOL in · +61% since the create · mcap 48 SOL",
-   "n": 1395
-  },
-  {
    "t": "2026-11-28T03:07:35Z",
    "time": "04:07:35",
    "agent": "SCANNER",
@@ -5243,6 +5238,15 @@
    "action": "scan",
    "text": "new pairs · 6.8 a minute · 0 watched · 10 rejected (snipe not bought: only to size 10)",
    "n": 1594
+  },
+  {
+   "t": "2026-11-28T04:05:09Z",
+   "time": "05:05:09",
+   "agent": "SCANNER",
+   "coin": "mogging",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 13.2 SOL in · +106% since the create · mcap 59 SOL",
+   "n": 1595
   }
  ],
  "nights": [
@@ -5323,24 +5327,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1901,
-    "last_event_age_s": 17.2,
+    "events": 1902,
+    "last_event_age_s": 21.7,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 40297,
-    "last_event_age_s": 0.2,
+    "events": 40356,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1160,
-    "last_event_age_s": 16.6,
+    "events": 1161,
+    "last_event_age_s": 21.6,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5353,9 +5357,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.8,
+  "creates_per_min": 5.6,
   "watching": 0,
-  "followed": 10,
+  "followed": 8,
   "odd_readings": 352,
   "odd_coins": 159
  },
@@ -5404,28 +5408,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19972,
+   "sent": 20008,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19972,
+   "sent": 20008,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "mogging",
+   "name": "mogging",
+   "mint": "Ey9iFxCWxrhHucKZJnk561XZUbJdXPp313PLXWDXpump",
+   "age_s": 21,
+   "sol_in": 1.4,
+   "buys": 4,
+   "sells": 6,
+   "rise_pct": 9.5,
+   "mcap_sol": 31.2,
+   "dev_pct": 1.0,
+   "big_sell": 8.5,
+   "x": "https://x.com/moggingonchain",
+   "tg": false,
+   "web": true,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Bwubby",
    "name": "Bwubby",
    "mint": "WC8e7oPsL1EEuLeteKbFj66cpX9JAMmFecu8b7Qpump",
-   "age_s": 17,
-   "sol_in": -6.17,
+   "age_s": 51,
+   "sol_in": -8.04,
    "buys": 6,
-   "sells": 9,
-   "rise_pct": -29.2,
-   "mcap_sol": 33.2,
+   "sells": 15,
+   "rise_pct": -37.1,
+   "mcap_sol": 29.6,
    "dev_pct": 24.5,
    "big_sell": 3.55,
    "x": "https://x.com/PunkAnimates",
@@ -5438,7 +5460,7 @@
    "symbol": "ELF",
    "name": "ELF",
    "mint": "CQwVtRQuDhBzxnBKsKSgV3Y8LJKCCBpXstpEZssDuKYk",
-   "age_s": 23,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5456,7 +5478,7 @@
    "symbol": "CDoom",
    "name": "Circle Doom",
    "mint": "4YbaevW8tFTFK2xhMN2pYt7EuGTj4AfwMd7Q3p28pump",
-   "age_s": 41,
+   "age_s": 75,
    "sol_in": 0.37,
    "buys": 4,
    "sells": 1,
@@ -5474,14 +5496,14 @@
    "symbol": "CI",
    "name": "Commodity Inu",
    "mint": "A9JgrY2etzs6z2SRoPzyBToGw75woHVnj6KYj9GCpump",
-   "age_s": 77,
-   "sol_in": 19.01,
-   "buys": 34,
-   "sells": 33,
-   "rise_pct": 148.6,
-   "mcap_sol": 83.9,
+   "age_s": 111,
+   "sol_in": 18.58,
+   "buys": 49,
+   "sells": 45,
+   "rise_pct": 144.5,
+   "mcap_sol": 82.5,
    "dev_pct": 9.6,
-   "big_sell": 2.07,
+   "big_sell": 2.48,
    "x": "https://x.com/ZzzzzSol/status/2126527406517137435",
    "tg": false,
    "web": "https://x.com/wallstreetbets/status/2126526500484653443",
@@ -5492,7 +5514,7 @@
    "symbol": "SEE",
    "name": "What Did He See",
    "mint": "8ArnYdZwYUFLaEQLW2WAWR6ukRnWdv5pQomiCmH2pump",
-   "age_s": 85,
+   "age_s": 119,
    "sol_in": -0.8,
    "buys": 0,
    "sells": 1,
@@ -5510,12 +5532,12 @@
    "symbol": "Alpha",
    "name": "Alpha",
    "mint": "4bpzuMjAHZXaSPKe6fyPewZmdWXjomTiQUba5KE5pump",
-   "age_s": 114,
-   "sol_in": 6.6,
+   "age_s": 148,
+   "sol_in": 6.1,
    "buys": 4,
-   "sells": 9,
-   "rise_pct": 48.8,
-   "mcap_sol": 41.6,
+   "sells": 10,
+   "rise_pct": 44.8,
+   "mcap_sol": 40.5,
    "dev_pct": 0.0,
    "big_sell": 4.05,
    "x": false,
@@ -5528,7 +5550,7 @@
    "symbol": "FCAT",
    "name": "Flip Cat",
    "mint": "BZP9rGEHR842mbuKo3CiH2pqwRhG4jT8c3cdwPnk1FLP",
-   "age_s": 143,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5536,60 +5558,6 @@
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Anthropic",
-   "name": "Anthropic official",
-   "mint": "6v4Ep2JAEKiCAZ9BfHkX8XfxYHQ1U1KmHSvwqk4spump",
-   "age_s": 147,
-   "sol_in": 13.69,
-   "buys": 7,
-   "sells": 8,
-   "rise_pct": 97.6,
-   "mcap_sol": 69.9,
-   "dev_pct": 11.9,
-   "big_sell": 0.75,
-   "x": "https://x.com/AnthropicAI",
-   "tg": false,
-   "web": "https://www.anthropic.com/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Wildfire",
-   "name": "Wildfire",
-   "mint": "7natfGMq8dQXCWkYgo1nHdH9QXFnbS1RjdzALwKHpump",
-   "age_s": 163,
-   "sol_in": -0.84,
-   "buys": 4,
-   "sells": 4,
-   "rise_pct": -5.3,
-   "mcap_sol": 28.4,
-   "dev_pct": 3.8,
-   "big_sell": 0.85,
-   "x": "https://x.com/WildfireSolana",
-   "tg": false,
-   "web": "https://thewildfire.xyz/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "AC1",
-   "name": "Amethyst Cat",
-   "mint": "nF1yySepSzAoa4SGTBrKk1zEaSNRwLdy8EfpQtjkxQn",
-   "age_s": 176,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.42,
    "x": false,
    "tg": false,
    "web": false,
