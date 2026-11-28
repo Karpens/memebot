@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:54:06Z",
+ "updated": "2026-11-28T12:54:39Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1448,
+  "flagged": 1449,
   "checked": 49,
   "filtered": 1,
-  "lines": 3195,
+  "lines": 3196,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SALLY",
-   "why": "snipe",
-   "t": "2026-11-28T12:49:21Z"
-  },
   {
    "coin": "Zhaki",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "RINU",
    "why": "snipe",
    "t": "2026-11-28T12:53:46Z"
+  },
+  {
+   "coin": "GBADGE",
+   "why": "snipe",
+   "t": "2026-11-28T12:54:38Z"
   }
  ],
  "curve": [
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:50:29Z",
-   "time": "12:50:29",
-   "agent": "SIZER",
-   "coin": "rice",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2996
-  },
-  {
    "t": "2026-11-28T11:51:06Z",
    "time": "12:51:06",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 8.3 SOL in · +62% since the create · mcap 47 SOL",
    "n": 3195
+  },
+  {
+   "t": "2026-11-28T12:54:38Z",
+   "time": "13:54:38",
+   "agent": "SCANNER",
+   "coin": "GBADGE",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 3196
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 1015 (313 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 1015 (313 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 825,
-    "last_event_age_s": 8.6,
+    "events": 828,
+    "last_event_age_s": 2.0,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18864,
+    "events": 18900,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 455,
-    "last_event_age_s": 12.4,
+    "events": 457,
+    "last_event_age_s": 1.8,
     "errors": 19,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 7.0,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 5,
+  "followed": 7,
   "odd_readings": 1015,
   "odd_coins": 313
  },
@@ -6580,28 +6580,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10176,
+   "sent": 10211,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10176,
+   "sent": 10211,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GBADGE",
+   "name": "GYM BADGE",
+   "mint": "4QLrfAMCQRtadxk3Jg1pbvVT3FGcSKiNx6tnxyuSpump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/dbongino/status/2126648963491348708",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "PANBAOBAO",
+   "name": "Pan Baobao",
+   "mint": "82ABjBEyenUqdrAZmJhsf5wdtbH7rTXQLVYoGcK6pump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/Rainmaker1973/status/2126660881425793373",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
+   "symbol": "Huss Huss",
+   "name": "Huss Huss",
+   "mint": "2CiT4e7REi8AsK5qhbmq6yufbpHxLPF4WoagZcytpump",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "BNB",
    "name": "Bankrupting New Buyers",
    "mint": "BU435xCWa5nKmi1w8dJs736maQZTvhq7VrUCh7Xuc64P",
-   "age_s": 12,
-   "sol_in": -2.09,
-   "buys": 4,
-   "sells": 6,
-   "rise_pct": -11.6,
-   "mcap_sol": 33.5,
+   "age_s": 45,
+   "sol_in": -1.05,
+   "buys": 12,
+   "sells": 16,
+   "rise_pct": -5.9,
+   "mcap_sol": 35.7,
    "dev_pct": 15.2,
    "big_sell": 3.03,
    "x": "https://x.com/MarioPrezldente/status/2126660854842265899",
@@ -6614,7 +6668,7 @@
    "symbol": "PAILEY",
    "name": "PEBBLE",
    "mint": "D8hc8uaAWYCRmiwWngbfHbtReaMgFNBFNHxyQAWVpump",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,12 +6686,12 @@
    "symbol": "RINU",
    "name": "Red nose Inu",
    "mint": "DmtZTrxqgc7eQqrRUAT1AKWHUaZZqdgj4P1Thij4pump",
-   "age_s": 21,
-   "sol_in": 7.61,
-   "buys": 6,
-   "sells": 13,
-   "rise_pct": 56.3,
-   "mcap_sol": 44.9,
+   "age_s": 54,
+   "sol_in": 8.76,
+   "buys": 9,
+   "sells": 16,
+   "rise_pct": 65.9,
+   "mcap_sol": 47.7,
    "dev_pct": 1.5,
    "big_sell": 0.99,
    "x": "https://x.com/RINUsol",
@@ -6650,7 +6704,7 @@
    "symbol": "JOBLESS",
    "name": "Proudly Jobless",
    "mint": "XMNiWCKoKsLVjmHgUZJdcmZAxuz1JsEmtB1Ju2Kpump",
-   "age_s": 47,
+   "age_s": 80,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6722,7 @@
    "symbol": "PAILEY",
    "name": "PEBBLE",
    "mint": "8Wpki9EKxxesscwNQNMBnJSLz68mXbzDTTuAe4fJpump",
-   "age_s": 72,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6740,7 @@
    "symbol": "Huss Huss",
    "name": "Huss Huss",
    "mint": "J2tkhiif4mVjfDQRGf1ZdLZWPUoHJMgHeHvaf8fypump",
-   "age_s": 98,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6758,7 @@
    "symbol": "KNOT",
    "name": "KNOT A RUG",
    "mint": "A4Bcf21cmxRYem3d6btsvnF6un2HEu8Kvv23gmEspump",
-   "age_s": 115,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6722,7 +6776,7 @@
    "symbol": "BNB",
    "name": "Bankrupting New Buyers",
    "mint": "35fFGFnzckKey51TK1A3i84B2yWMyaYJ2cehCwYt5Qyi",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": -4.94,
    "buys": 1,
    "sells": 5,
@@ -6740,7 +6794,7 @@
    "symbol": "PAILEY",
    "name": "PEBBLE",
    "mint": "66USKgE9sWaKxipyQG2snGRi2k23LA7VkdgekJRSpump",
-   "age_s": 145,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
