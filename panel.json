@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:42:09Z",
+ "updated": "2026-11-28T11:42:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1315,
+  "flagged": 1316,
   "checked": 49,
   "filtered": 1,
-  "lines": 2967,
+  "lines": 2968,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Mojave",
-   "why": "snipe",
-   "t": "2026-11-28T11:39:59Z"
-  },
   {
    "coin": "PODL",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GIGACHAT",
    "why": "snipe",
    "t": "2026-11-28T11:42:02Z"
+  },
+  {
+   "coin": "GUAP",
+   "why": "snipe",
+   "t": "2026-11-28T11:42:23Z"
   }
  ],
  "curve": [
@@ -4627,15 +4627,6 @@
   {
    "t": "2026-11-28T10:46:42Z",
    "time": "11:46:42",
-   "agent": "SCANNER",
-   "coin": "Bоbby",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 1.9 SOL in · +12% since the create · mcap 35 SOL",
-   "n": 2768
-  },
-  {
-   "t": "2026-11-28T10:46:42Z",
-   "time": "11:46:42",
    "agent": "SIZER",
    "coin": "Bоbby",
    "action": "skip",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2967
+  },
+  {
+   "t": "2026-11-28T11:42:23Z",
+   "time": "12:42:23",
+   "agent": "SCANNER",
+   "coin": "GUAP",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2968
   }
  ],
  "nights": [
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 383,
-    "last_event_age_s": 7.7,
+    "events": 384,
+    "last_event_age_s": 15.7,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10024,
+    "events": 10073,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 273,
-    "last_event_age_s": 7.4,
+    "events": 274,
+    "last_event_age_s": 15.0,
     "errors": 3,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.6,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 10,
+  "followed": 11,
   "odd_readings": 1006,
   "odd_coins": 305
  },
@@ -6578,30 +6578,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5582,
+   "sent": 5612,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5582,
+   "sent": 5612,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "GIGACHAT",
-   "name": "GIGACHAT",
-   "mint": "Edr7LWHpBasKiRFLUE3zY4Gw1LYrVSiGMk3oBSYhpump",
-   "age_s": 7,
+   "symbol": "GUAP",
+   "name": "MOONLAND",
+   "mint": "6hRoqNzbuqpZU5BTetKKLqXHSK6fcMESXfNjpQWCpump",
+   "age_s": 15,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "GIGACHAT",
+   "name": "GIGACHAT",
+   "mint": "Edr7LWHpBasKiRFLUE3zY4Gw1LYrVSiGMk3oBSYhpump",
+   "age_s": 36,
+   "sol_in": -0.03,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -0.2,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.03,
    "x": "https://x.com/joinquant/status/2126642599662424260?a=Kuj-l2MrqUOzOGym-ak&s=20",
    "tg": false,
    "web": false,
@@ -6612,12 +6630,12 @@
    "symbol": "POSSUM",
    "name": "Possum In A Peanut",
    "mint": "2kdcNwp26CT3ACeaAdBuqdWfaoTsToQgsj1SUTkSunjh",
-   "age_s": 62,
-   "sol_in": -1.39,
+   "age_s": 91,
+   "sol_in": -1.44,
    "buys": 3,
-   "sells": 8,
-   "rise_pct": -7.8,
-   "mcap_sol": 35.0,
+   "sells": 9,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
    "dev_pct": 15.2,
    "big_sell": 1.78,
    "x": "https://x.com/HuffPost/status/2126642477595500566",
@@ -6630,7 +6648,7 @@
    "symbol": "FUKMOONBOY",
    "name": "GoonBoy",
    "mint": "FbFLaxZuff2QX7ENhS2gEbUKRxXYWM61GJVepjNnpump",
-   "age_s": 77,
+   "age_s": 106,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 0,
@@ -6648,12 +6666,12 @@
    "symbol": "OBOL",
    "name": "OBOL",
    "mint": "HgLNN1izsfTKWoRgyCiP6DZwDzW4RmqR2KsSuUdZpump",
-   "age_s": 83,
-   "sol_in": 18.58,
-   "buys": 40,
-   "sells": 22,
-   "rise_pct": 159.9,
-   "mcap_sol": 74.4,
+   "age_s": 112,
+   "sol_in": 17.16,
+   "buys": 47,
+   "sells": 29,
+   "rise_pct": 144.9,
+   "mcap_sol": 70.2,
    "dev_pct": 1.3,
    "big_sell": 8.11,
    "x": "https://x.com/ObolMarkets/status/2126642167221199252",
@@ -6666,7 +6684,7 @@
    "symbol": "APPLE",
    "name": "Apple",
    "mint": "BsnxFFarWWUpxzWTrhtGq8MeKuiNgRwU5LJ96qLsJX8X",
-   "age_s": 95,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6702,7 @@
    "symbol": "BAPHOMET",
    "name": "Baphomet",
    "mint": "D5Le1pGW1zixpdnm9Py3Xcc6F4aaTMDgpVei728Rpump",
-   "age_s": 113,
+   "age_s": 142,
    "sol_in": 3.57,
    "buys": 2,
    "sells": 2,
@@ -6702,7 +6720,7 @@
    "symbol": "GAYAURA",
    "name": "Binance Gay Aura",
    "mint": "HgLZGhJz4uS4qBygvfDaDfwFAA4vjdvfCL4x4Vrjpump",
-   "age_s": 126,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6720,7 +6738,7 @@
    "symbol": "PODL",
    "name": "PODL",
    "mint": "71WqjkU4ZeovtdeUb7EFSuQkeJYUdPvSVV3RDTrapump",
-   "age_s": 128,
+   "age_s": 157,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -6738,7 +6756,7 @@
    "symbol": "Mojave",
    "name": "Mojave The Tortoise",
    "mint": "HNshDwjuYDRfy1wLnxwaYL1ogKs5XS6xd9tC4bWVj6tt",
-   "age_s": 130,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6756,10 +6774,10 @@
    "symbol": "Mas",
    "name": "Mas",
    "mint": "AFJEQDKtAdBuT9xrxkj23QKAy8YtMEXhCRGpay4qSNU9",
-   "age_s": 150,
-   "sol_in": -4.9,
+   "age_s": 179,
+   "sol_in": -4.91,
    "buys": 21,
-   "sells": 35,
+   "sells": 36,
    "rise_pct": -26.1,
    "mcap_sol": 28.0,
    "dev_pct": 15.2,
