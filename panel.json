@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:44:42Z",
+ "updated": "2026-11-28T04:45:10Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 704,
+  "flagged": 705,
   "checked": 49,
   "filtered": 1,
-  "lines": 1715,
+  "lines": 1717,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PTSD",
-   "why": "snipe",
-   "t": "2026-11-28T04:29:03Z"
-  },
   {
    "coin": "NVIDIA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Plainsight",
    "why": "snipe",
    "t": "2026-11-28T04:44:28Z"
+  },
+  {
+   "coin": "legal",
+   "why": "snipe",
+   "t": "2026-11-28T04:44:47Z"
   }
  ],
  "curve": [
@@ -1451,6 +1451,10 @@
   ],
   [
    1795841040,
+   47.79
+  ],
+  [
+   1795841100,
    47.79
   ]
  ],
@@ -3605,24 +3609,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:43:27Z",
-   "time": "04:43:27",
-   "agent": "SCANNER",
-   "coin": "centa",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 31 SOL",
-   "n": 1516
-  },
-  {
-   "t": "2026-11-28T03:43:39Z",
-   "time": "04:43:39",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 9.2 a minute · 0 watched · 39 rejected (serial launcher 29, snipe not bought: only to size 8, mayhem mode 2)",
-   "n": 1517
-  },
-  {
    "t": "2026-11-28T03:44:20Z",
    "time": "04:44:20",
    "agent": "SCANNER",
@@ -5403,6 +5389,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.1 s after the create · 9.5 SOL in · +72% since the create · mcap 50 SOL",
    "n": 1715
+  },
+  {
+   "t": "2026-11-28T04:44:47Z",
+   "time": "05:44:47",
+   "agent": "SCANNER",
+   "coin": "legal",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 42 SOL",
+   "n": 1716
+  },
+  {
+   "t": "2026-11-28T04:44:58Z",
+   "time": "05:44:58",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 16 rejected (serial launcher 9, snipe not bought: only to size 7)",
+   "n": 1717
   }
  ],
  "nights": [
@@ -5469,7 +5473,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5477,24 +5481,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 43,
-    "last_event_age_s": 14.1,
+    "events": 44,
+    "last_event_age_s": 23.5,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 187,
-    "last_event_age_s": 0.9,
+    "events": 205,
+    "last_event_age_s": 1.9,
     "errors": 37,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 31,
-    "last_event_age_s": 14.0,
+    "events": 32,
+    "last_event_age_s": 23.4,
     "errors": 0,
     "last_error": null
    }
@@ -5507,9 +5511,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 15,
+  "followed": 16,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5558,28 +5562,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 651,
+   "sent": 681,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 651,
+   "sent": 681,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "legal",
+   "name": "crime is legal",
+   "mint": "DBp8FrDBawLcxY8VCuiRpSn5vxY2CGaXWB5N8GhZXAFA",
+   "age_s": 23,
+   "sol_in": -6.32,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -31.5,
+   "mcap_sol": 28.5,
+   "dev_pct": 19.4,
+   "big_sell": 6.32,
+   "x": "https://x.com/legitnarratives/status/2126537639633265088",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Plainsight",
    "name": "Plainsight Pad",
    "mint": "BzUkJDZf6Jddv9cwoNoE4RgoqrgLWtLpLeYeWXJCpump",
-   "age_s": 14,
-   "sol_in": 13.6,
-   "buys": 6,
-   "sells": 8,
-   "rise_pct": 108.8,
-   "mcap_sol": 60.6,
+   "age_s": 42,
+   "sol_in": 14.3,
+   "buys": 13,
+   "sells": 13,
+   "rise_pct": 115.4,
+   "mcap_sol": 62.5,
    "dev_pct": 2.0,
    "big_sell": 3.95,
    "x": "https://x.com/PlainsightPad",
@@ -5592,14 +5614,14 @@
    "symbol": "BOOS",
    "name": "BOOBCOIN",
    "mint": "Am2cUBiigm14D68jHK95AKZQAfuvHYTStncEwim3pump",
-   "age_s": 20,
+   "age_s": 48,
    "sol_in": 0.8,
-   "buys": 2,
-   "sells": 0,
+   "buys": 3,
+   "sells": 1,
    "rise_pct": 5.3,
    "mcap_sol": 30.0,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/jaadealexandra",
    "tg": false,
    "web": "https://www.instagram.com/jaadealexandra/",
@@ -5610,7 +5632,7 @@
    "symbol": "Saitama",
    "name": "stop spamming my tweet retard",
    "mint": "8LoUkZYC5AQkXEqqjn7yfLpgKwnRJULWCbZRL9uBpump",
-   "age_s": 25,
+   "age_s": 53,
    "sol_in": -1.84,
    "buys": 1,
    "sells": 2,
@@ -5628,7 +5650,7 @@
    "symbol": "SAITAMA",
    "name": "dogecoin not dogetoken",
    "mint": "BDBxJujzDzc9iHEQHQRJDmtiF4rMpB4mUv3JoAyGpump",
-   "age_s": 40,
+   "age_s": 68,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5646,7 +5668,7 @@
    "symbol": "SAITAMA",
    "name": "dogecoin not dogetoken",
    "mint": "39fWKLKsgqfEvCjzyTctsczyuDKur3A3SLj8b54Epump",
-   "age_s": 40,
+   "age_s": 68,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5664,7 +5686,7 @@
    "symbol": "SAITAMA",
    "name": "dogecoin not dogetoken",
    "mint": "CfVEPki1CbxFMsEmFcd1gjevnsscPaKz5Y7zm3qSpump",
-   "age_s": 40,
+   "age_s": 68,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5682,7 +5704,7 @@
    "symbol": "SAITAMA",
    "name": "dogecoin not doge token",
    "mint": "3KL5JdwegrjRkaUZJC6ad6pZeoZEHKJy4j47Vko1pump",
-   "age_s": 45,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5700,7 +5722,7 @@
    "symbol": "SAITAMA",
    "name": "dogecoin not doge token",
    "mint": "5XoVeRuMXvQGfwiP2WWAV8GYmyifpWpdvNzgodVXpump",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5718,7 +5740,7 @@
    "symbol": "SAITAMA",
    "name": "dogecoin not doge token",
    "mint": "8VJK4LoZeS58ocy8W4WNtwqU1qmCx5cVRXSdBkXmpump",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5736,7 +5758,7 @@
    "symbol": "SAUN",
    "name": "Saun the Trump",
    "mint": "BKu9uWpWgCj3TWL1uRQdFycQKN4BrkNrhe3jQ9ggevZ1",
-   "age_s": 51,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5754,7 +5776,7 @@
    "symbol": "SAITAMA",
    "name": "さいたまコイン",
    "mint": "9xBgUgNSAgiU1U3G3eudErodrBfHbZTYcDXQ3rDjpump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5772,7 +5794,7 @@
    "symbol": "SAITAMA",
    "name": "さいたまコイン",
    "mint": "GQcU3zqCbLnVS1eSsYnUyxiDUTEbDRa4cNCTbhq1pump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5790,7 +5812,7 @@
    "symbol": "SAITAMA",
    "name": "さいたまコイン",
    "mint": "ARwjQKhns6hGYCfGE7kpCYEBJ8J7sttpXoTW7v4fpump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5808,7 +5830,7 @@
    "symbol": "SAITAMA",
    "name": "さいたまコイン",
    "mint": "pZA9gYxTaoxmycGV82mKgiDcFciFsSZEfKRTP3Rpump",
-   "age_s": 104,
+   "age_s": 132,
    "sol_in": -0.74,
    "buys": 3,
    "sells": 7,
@@ -5826,7 +5848,7 @@
    "symbol": "SAITAMA",
    "name": "さいたまコイン",
    "mint": "DpjUnPsVXsyVzrwr5jHoJoKtwNaHYFqMRiqZrSXUpump",
-   "age_s": 139,
+   "age_s": 167,
    "sol_in": -2.96,
    "buys": 2,
    "sells": 3,
