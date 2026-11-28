@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:12:23Z",
+ "updated": "2026-11-28T12:12:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1370,
+  "flagged": 1371,
   "checked": 49,
   "filtered": 1,
-  "lines": 3062,
+  "lines": 3064,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "LEAN",
-   "why": "snipe",
-   "t": "2026-11-28T12:08:15Z"
-  },
   {
    "coin": "rice",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "$LOOKSMAXX",
    "why": "snipe",
    "t": "2026-11-28T12:12:14Z"
+  },
+  {
+   "coin": "GPU",
+   "why": "snipe",
+   "t": "2026-11-28T12:12:48Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:12:02Z",
-   "time": "12:12:02",
-   "agent": "SCANNER",
-   "coin": "DIFFERENT",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 980 odd readings from 300 coins tonight",
-   "n": 2863
-  },
-  {
-   "t": "2026-11-28T11:12:31Z",
-   "time": "12:12:31",
-   "agent": "SCANNER",
-   "coin": "WLSI",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 10.7 SOL in · +54% since the create · mcap 96 SOL",
-   "n": 2864
-  },
-  {
    "t": "2026-11-28T11:12:35Z",
    "time": "12:12:35",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, serial launcher 1, mayhem mode 1)",
    "n": 3062
+  },
+  {
+   "t": "2026-11-28T12:12:48Z",
+   "time": "13:12:48",
+   "agent": "SCANNER",
+   "coin": "GPU",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 2.8 SOL in · +19% since the create · mcap 35 SOL",
+   "n": 3063
+  },
+  {
+   "t": "2026-11-28T12:12:50Z",
+   "time": "13:12:50",
+   "agent": "SCANNER",
+   "coin": "CS",
+   "action": "migrate",
+   "text": "migrated: the curve is complete (pump-amm)",
+   "n": 3064
   }
  ],
  "nights": [
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 511,
-    "last_event_age_s": 10.0,
+    "events": 516,
+    "last_event_age_s": 2.5,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 13293,
+    "events": 13368,
     "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 349,
-    "last_event_age_s": 9.9,
+    "events": 351,
+    "last_event_age_s": 8.1,
     "errors": 8,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 1009,
   "odd_coins": 308
  },
@@ -6580,23 +6580,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7512,
+   "sent": 7548,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7512,
+   "sent": 7548,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "OKOWARE",
+   "name": "怒ワレ",
+   "mint": "4XWFSWucMGs5SNy3G5RUs1y7m6qUhFZS3hRAXYaopump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.5,
+   "dev_pct": 2.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "GPU",
+   "name": "Graphics Processing Unit",
+   "mint": "2nrLZK1SHqCyYZPq3qHrCfYEpTRhVdf6eLfe1n1gpump",
+   "age_s": 9,
+   "sol_in": 1.2,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 8.0,
+   "mcap_sol": 31.8,
+   "dev_pct": 2.8,
+   "big_sell": 1.99,
+   "x": "https://x.com/GPUhardware",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "7eKt9Cby7y3tTEpq3kKCQQa4WnSfvcmUfKCUTUE4pump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "$LOOKSMAXX",
    "name": "LOOKSMAXX",
    "mint": "3TCxAntqARDe6PZ3ySfs8HSqX3GqEqjer1twananpump",
-   "age_s": 10,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6668,7 @@
    "symbol": "FlopCat",
    "name": "Flip Flop Cat",
    "mint": "DixFbzB9HBqGmfZhKsxx3bZztoZp6mU3NHrAgKSQ1MxZ",
-   "age_s": 12,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6686,7 @@
    "symbol": "HYL",
    "name": "Hylsia",
    "mint": "5Pa6MS9G1cFGxWvuvVjeXaAZGNfzUM5vjsw94eee5Hbk",
-   "age_s": 16,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6704,7 @@
    "symbol": "LYRA",
    "name": "LYRA the Prism Queen",
    "mint": "D6FWsiAXsbzaFjZjc3EHdM7KMFcBTstnSodzZRDLpump",
-   "age_s": 22,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,12 +6722,12 @@
    "symbol": "NIKOS",
    "name": "The Alpha Wolf",
    "mint": "BRk64v4brKPR8EoBSUb7T7h6mgRUSoB6xeVQEcntpump",
-   "age_s": 55,
-   "sol_in": -4.32,
+   "age_s": 89,
+   "sol_in": -4.8,
    "buys": 11,
-   "sells": 21,
-   "rise_pct": -20.5,
-   "mcap_sol": 39.3,
+   "sells": 24,
+   "rise_pct": -22.6,
+   "mcap_sol": 38.2,
    "dev_pct": 26.6,
    "big_sell": 4.85,
    "x": "https://x.com/ERXUI0m/status/2126650082799866213",
@@ -6686,14 +6740,14 @@
    "symbol": "LUCIEN",
    "name": "Lucien",
    "mint": "Cw4zqH2RKro3bg4VFcFt5iMHb8aaVBnkR9E3kGaGpump",
-   "age_s": 58,
-   "sol_in": 2.43,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": 16.4,
-   "mcap_sol": 34.3,
+   "age_s": 92,
+   "sol_in": 3.81,
+   "buys": 4,
+   "sells": 3,
+   "rise_pct": 26.3,
+   "mcap_sol": 37.2,
    "dev_pct": 2.8,
-   "big_sell": 0.49,
+   "big_sell": 0.94,
    "x": "https://x.com/lucien_chat",
    "tg": false,
    "web": "https://lucien.chat/",
@@ -6704,7 +6758,7 @@
    "symbol": "J7TEST",
    "name": "J7 Control TEST",
    "mint": "3DR558RvqcgPH122vYfgVN3SfL9fVnYCMij6eJ9YJuBW",
-   "age_s": 107,
+   "age_s": 141,
    "sol_in": -0.0,
    "buys": 2,
    "sells": 3,
