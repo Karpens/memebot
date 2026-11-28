@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:05:08Z",
+ "updated": "2026-11-28T11:05:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1244,
   "checked": 49,
   "filtered": 1,
-  "lines": 2846,
+  "lines": 2847,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:08:41Z",
-   "time": "11:08:41",
-   "agent": "SCANNER",
-   "coin": "TRUMP2.0",
-   "action": "flag",
-   "text": "snipe · first reading 0.1 s after the create · 0.0 SOL in · +0% since the create · mcap 62 SOL",
-   "n": 2647
-  },
-  {
    "t": "2026-11-28T10:08:48Z",
    "time": "11:08:48",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 0 watched · 9 rejected (snipe not bought: only to size 3, serial launcher 2, mayhem mode 2)",
    "n": 2846
+  },
+  {
+   "t": "2026-11-28T11:05:37Z",
+   "time": "12:05:37",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 10 rejected (serial launcher 4, snipe not bought: only to size 2, mayhem mode 2)",
+   "n": 2847
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 979 (299 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 979 (299 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 226,
-    "last_event_age_s": 23.0,
+    "events": 228,
+    "last_event_age_s": 12.9,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5987,
-    "last_event_age_s": 0.4,
+    "events": 6023,
+    "last_event_age_s": 1.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 162,
-    "last_event_age_s": 22.8,
+    "events": 163,
+    "last_event_age_s": 12.7,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 979,
   "odd_coins": 299
  },
@@ -6578,23 +6578,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3218,
+   "sent": 3252,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3218,
+   "sent": 3252,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RAN",
+   "name": "Ran",
+   "mint": "6sfQe8LmZY182JFxf7VknATGUYHQPp7Zhq92DrDBV7Bo",
+   "age_s": 12,
+   "sol_in": -3.61,
+   "buys": 3,
+   "sells": 7,
+   "rise_pct": -19.6,
+   "mcap_sol": 30.5,
+   "dev_pct": 15.2,
+   "big_sell": 3.43,
+   "x": "https://x.com/kanazawakitecho/status/2126633502099849432",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 15 more coins in 60 min",
+   "why": "serial launcher: 15 more coins in 60 min"
+  },
+  {
+   "symbol": "TDEV",
+   "name": "Debt Intern",
+   "mint": "FhFBDZdmAv8kW2FbM3684iqg8SkRQH81jZMLvMGrpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "HIGHCAP",
    "name": "highcap",
    "mint": "CY27NYoeUTXqJXgM7H6b5qR58uHNGVH9rzubGapMpump",
-   "age_s": 22,
+   "age_s": 54,
    "sol_in": -1.98,
    "buys": 2,
    "sells": 2,
@@ -6612,7 +6648,7 @@
    "symbol": "GENNY READ",
    "name": "BLACKOUT SAVIOR DEV CLAIMED",
    "mint": "3eHPfNBdDXgaV5RupU4ccLQPKxYLmrfafhyy1nEFpump",
-   "age_s": 47,
+   "age_s": 79,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 1,
@@ -6630,7 +6666,7 @@
    "symbol": "?",
    "name": "",
    "mint": "9o91dawUyZEbbNK2HYN1BZ7TaNjwuMmaTVZJd96iADEx",
-   "age_s": 54,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6684,7 @@
    "symbol": "HighCap",
    "name": "HighCap",
    "mint": "GbprCRaYFzxE7MUJqGa8WZeHEJ4QNApCWwHJrHStW87w",
-   "age_s": 55,
+   "age_s": 87,
    "sol_in": -1.85,
    "buys": 5,
    "sells": 13,
@@ -6666,7 +6702,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Ca41FkfZc5YzmrZkd3Y1uXNkLHWFp6VbEb2YN3e9hyBz",
-   "age_s": 104,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6720,7 @@
    "symbol": "FISHY",
    "name": "Fishy",
    "mint": "8a4bHX1v17yShVxLWsoesBZgEGzVTGrs1LjGAoYspump",
-   "age_s": 115,
+   "age_s": 147,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6738,7 @@
    "symbol": "WLFI",
    "name": "We Literally Fuck Investors",
    "mint": "9Q6RuuWJqmcnQ2RJxuozjfEbeaKKQDvP9gwUQf6wpump",
-   "age_s": 127,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6720,7 +6756,7 @@
    "symbol": "snowball",
    "name": "snowsnow",
    "mint": "AG3vsX6Zx49d4rKKYfstqgNPWzG5QBeT6Pqkcojupump",
-   "age_s": 131,
+   "age_s": 163,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6733,24 +6769,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "$PENNY",
-   "name": "The Last Penny",
-   "mint": "977Bfs7mrjn9LEJZ3CwNs6cx33e5dbHBzN8vwErLpump",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
