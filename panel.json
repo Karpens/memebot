@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:59:24Z",
+ "updated": "2026-11-28T09:59:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1126,
+  "flagged": 1128,
   "checked": 49,
   "filtered": 1,
-  "lines": 2610,
+  "lines": 2612,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "666",
-   "why": "snipe",
-   "t": "2026-11-28T09:55:25Z"
-  },
-  {
-   "coin": "SASSY",
-   "why": "snipe",
-   "t": "2026-11-28T09:55:31Z"
-  },
   {
    "coin": "NNNOVER",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "LUCIA",
    "why": "snipe",
    "t": "2026-11-28T09:58:42Z"
+  },
+  {
+   "coin": "CI",
+   "why": "snipe",
+   "t": "2026-11-28T09:59:31Z"
+  },
+  {
+   "coin": "LEAKIZEN",
+   "why": "snipe",
+   "t": "2026-11-28T09:59:49Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:59:44Z",
-   "time": "09:59:44",
-   "agent": "SCANNER",
-   "coin": "Neema",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 1.2 SOL in · +7% since the create · mcap 37 SOL",
-   "n": 2411
-  },
-  {
-   "t": "2026-11-28T08:59:50Z",
-   "time": "09:59:50",
-   "agent": "SCANNER",
-   "coin": "SPAWN",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 5.4 SOL in · +34% since the create · mcap 49 SOL",
-   "n": 2412
-  },
-  {
    "t": "2026-11-28T09:00:00Z",
    "time": "10:00:00",
    "agent": "LOGGER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, serial launcher 3, odd curve reading: virtual SOL i 1)",
    "n": 2610
+  },
+  {
+   "t": "2026-11-28T09:59:31Z",
+   "time": "10:59:31",
+   "agent": "SCANNER",
+   "coin": "CI",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 11.8 SOL in · +92% since the create · mcap 56 SOL",
+   "n": 2611
+  },
+  {
+   "t": "2026-11-28T09:59:49Z",
+   "time": "10:59:49",
+   "agent": "SCANNER",
+   "coin": "LEAKIZEN",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.2 SOL in · +2% since the create · mcap 29 SOL",
+   "n": 2612
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 805 (264 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 841 (264 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1237,
-    "last_event_age_s": 42.2,
+    "events": 1240,
+    "last_event_age_s": 8.2,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25571,
-    "last_event_age_s": 0.2,
+    "events": 25669,
+    "last_event_age_s": 0.9,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 886,
-    "last_event_age_s": 42.1,
+    "events": 888,
+    "last_event_age_s": 7.7,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,10 +6533,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 6,
-  "odd_readings": 805,
+  "followed": 7,
+  "odd_readings": 841,
   "odd_coins": 264
  },
  "learner": {
@@ -6584,23 +6584,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20747,
+   "sent": 20782,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20747,
+   "sent": 20782,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LEAKIZEN",
+   "name": "eCitizen Leakizen",
+   "mint": "DkSitPMFeCT3F4N6TjqssCW9Wi1Y2JWh9FeETcbge9p7",
+   "age_s": 8,
+   "sol_in": 0.75,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 5.0,
+   "mcap_sol": 29.9,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/watchdoglive/status/2126617026957307976",
+   "tg": false,
+   "web": "https://watchdog.best",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CI",
+   "name": "Cybergeddon inu",
+   "mint": "2y2MAhZQ63TooAzJ1ioebEwQkgaLvHfBkeer6VK2pump",
+   "age_s": 26,
+   "sol_in": 11.63,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 90.4,
+   "mcap_sol": 55.4,
+   "dev_pct": 2.1,
+   "big_sell": 0.15,
+   "x": "https://x.com/MarioPrezldente/status/2126616662946595021",
+   "tg": false,
+   "web": "https://en.wikipedia.org/wiki/Cybergeddon",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "LUCIA",
    "name": "$LUCIA6",
    "mint": "5q5XXU121w11FdcvUy2z7tz5816WThhusic8ERCSpump",
-   "age_s": 42,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -6618,7 +6654,7 @@
    "symbol": "ASTEROID",
    "name": "ASTEROID",
    "mint": "SPCXxcqXj6e5dJDVNovHN8744zkbhM2bYudU45BimGb",
-   "age_s": 46,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,12 +6672,12 @@
    "symbol": "CI",
    "name": "Cybergeddon inu",
    "mint": "6KxdT7gzqne6EckmzFVTJ6yxreaN56G9YKFeGGfoHkdM",
-   "age_s": 65,
-   "sol_in": -1.24,
-   "buys": 18,
-   "sells": 33,
-   "rise_pct": -7.0,
-   "mcap_sol": 35.3,
+   "age_s": 98,
+   "sol_in": -1.37,
+   "buys": 19,
+   "sells": 36,
+   "rise_pct": -7.7,
+   "mcap_sol": 35.0,
    "dev_pct": 15.2,
    "big_sell": 2.7,
    "x": "https://x.com/MarioPrezldente/status/2126616662946595021",
@@ -6654,7 +6690,7 @@
    "symbol": "SMOTHIE",
    "name": "Smoothie Moon Rocket Coin",
    "mint": "2vPwvhuY8uCTJr36NoT2BeKfdG5kKMKUqm9f4G6kpump",
-   "age_s": 107,
+   "age_s": 140,
    "sol_in": -0.04,
    "buys": 1,
    "sells": 2,
@@ -6672,7 +6708,7 @@
    "symbol": "MATH",
    "name": "MATH IS MONEY",
    "mint": "GjaNj46GhsVYSTE9zmo6VrMNCNo2PZign2AGtTaKpump",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6726,7 @@
    "symbol": "IT",
    "name": "Send It",
    "mint": "FNrKaSeEemFveuEKsVWj2d1dbvs9X5bdEgtsqv7dAY9J",
-   "age_s": 131,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6703,24 +6739,6 @@
    "web": "https://www.senditexperiment.fun/",
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "ASAMI",
-   "name": "Asami SpaceXSI Companion",
-   "mint": "DPjnSsEapdzTv32bKUGMRAe2WZenAJScvpbbmAK9pump",
-   "age_s": 162,
-   "sol_in": 0.22,
-   "buys": 6,
-   "sells": 1,
-   "rise_pct": 1.4,
-   "mcap_sol": 29.3,
-   "dev_pct": 1.7,
-   "big_sell": 0.89,
-   "x": "https://x.com/AsamiAnimates",
-   "tg": false,
-   "web": "https://x.com/spacexsi",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
