@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:39:29Z",
+ "updated": "2026-11-28T04:39:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 697,
   "checked": 49,
   "filtered": 1,
-  "lines": 1702,
+  "lines": 1703,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3585,15 +3585,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:39:36Z",
-   "time": "04:39:36",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 2, mayhem mode 2)",
-   "n": 1503
-  },
-  {
    "t": "2026-11-28T03:40:20Z",
    "time": "04:40:20",
    "agent": "SCANNER",
@@ -5383,6 +5374,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 5 watched · 3 rejected (snipe: first reading s after the 1, snipe not bought: only to size 1, mayhem mode 1) · closest PIPUNYA: no curve reading yet",
    "n": 1702
+  },
+  {
+   "t": "2026-11-28T04:39:55Z",
+   "time": "05:39:55",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 9 watched · 1 rejected (mayhem mode 1) · closest PIPUNYA: no curve reading yet",
+   "n": 1703
   }
  ],
  "nights": [
@@ -5449,7 +5449,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 9 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 11 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5457,8 +5457,8 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 18,
-    "last_event_age_s": 12.6,
+    "events": 20,
+    "last_event_age_s": 7.7,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
@@ -5466,15 +5466,15 @@
     "name": "curve-poll",
     "connected": false,
     "events": 23,
-    "last_event_age_s": 138.5,
-    "errors": 26,
+    "last_event_age_s": 166.5,
+    "errors": 29,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 13,
-    "last_event_age_s": 12.6,
+    "events": 15,
+    "last_event_age_s": 7.7,
     "errors": 0,
     "last_error": null
    }
@@ -5487,9 +5487,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
-  "watching": 7,
-  "followed": 8,
+  "creates_per_min": 3.0,
+  "watching": 9,
+  "followed": 9,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5538,23 +5538,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 318,
+   "sent": 347,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 318,
+   "sent": 347,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CATS",
+   "name": "Nova",
+   "mint": "GFv26PmYGDvP7QMTuTkjDB2VJs7XWGCByCCZTq2WfD4S",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Pleb",
+   "name": "Plebeian",
+   "mint": "BwQhaWtC4UpocurWrzvzsaaQenZwjZL6KzHmWguhpump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/CoachPatNFT/status/2126536502733664430",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "MEMES",
    "name": "Memes Corporation",
    "mint": "HpN63T13XBcp2xmM6yRkGPB5HMwxtXTghCQjooS8pump",
-   "age_s": 12,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5572,7 +5608,7 @@
    "symbol": "DEERANGED",
    "name": "Deeranged Human",
    "mint": "5jF6Npou8QYXmQCGWfwtraswuZCuEYGk9gcRA5Bppump",
-   "age_s": 19,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5590,7 +5626,7 @@
    "symbol": "Saitama",
    "name": "埼玉コイン",
    "mint": "GVRtdwPsRPrx3sj2LvxKgZTesj8jSmXPHPqQ7stbpump",
-   "age_s": 66,
+   "age_s": 94,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5608,7 +5644,7 @@
    "symbol": "BILLY",
    "name": "Billy Bux",
    "mint": "GLoTBpwD31VSA8YtCczQZM2vgSPqM2jpoQnk5jGBpump",
-   "age_s": 77,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5626,7 +5662,7 @@
    "symbol": "GAYAURA",
    "name": "Binance Gay Aura",
    "mint": "BHgUtT7pb2Sdf6LsDixPD8u5jbMJSay69dr2zxD3pump",
-   "age_s": 95,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5644,7 +5680,7 @@
    "symbol": "Crapto",
    "name": "Craptocurrency",
    "mint": "9tiaJwr4W4aBgKtWYkXgbxsXaG4TN3VXeu3MNhA5pump",
-   "age_s": 118,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5662,7 +5698,7 @@
    "symbol": "PIPUNYA",
    "name": "PIPUNYA",
    "mint": "7rS4UARjFFpPjRA2cKevHBw6tfA6asyBoww5Z94dpump",
-   "age_s": 126,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5680,7 +5716,7 @@
    "symbol": "$CYBER",
    "name": "CYBER MONDAY ⚡💻",
    "mint": "ZZCMYt6hxbnQbcu8KBpGjjqoiVetSKvqgJYev8Npump",
-   "age_s": 138,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5693,24 +5729,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "NVIDIA",
-   "name": "NVIDIA Newsroom",
-   "mint": "A9Yy4efzHA5PQh94tvjkUC9TsoFqRHJ2fXMXYsXbpump",
-   "age_s": 166,
-   "sol_in": 18.06,
-   "buys": 5,
-   "sells": 1,
-   "rise_pct": 137.1,
-   "mcap_sol": 82.4,
-   "dev_pct": 11.1,
-   "big_sell": 0.31,
-   "x": "https://x.com/nvidianewsroom",
-   "tg": false,
-   "web": "https://t.co/5UY6GdgPL1",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
