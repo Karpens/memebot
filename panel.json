@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:35:56Z",
+ "updated": "2026-11-28T01:36:23Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 348,
+  "flagged": 350,
   "checked": 49,
   "filtered": 1,
-  "lines": 1083,
+  "lines": 1086,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MANDY",
-   "why": "snipe",
-   "t": "2026-11-28T01:29:44Z"
-  },
-  {
-   "coin": "crema",
-   "why": "snipe",
-   "t": "2026-11-28T01:30:07Z"
-  },
   {
    "coin": "SKORS",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "Pete",
    "why": "snipe",
    "t": "2026-11-28T01:35:25Z"
+  },
+  {
+   "coin": "STA",
+   "why": "snipe",
+   "t": "2026-11-28T01:35:58Z"
+  },
+  {
+   "coin": "YUP",
+   "why": "snipe",
+   "t": "2026-11-28T01:36:19Z"
   }
  ],
  "curve": [
@@ -695,6 +695,10 @@
   ],
   [
    1795829700,
+   47.79
+  ],
+  [
+   1795829760,
    47.79
   ]
  ],
@@ -2849,33 +2853,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:47:20Z",
-   "time": "01:47:20",
-   "agent": "SCANNER",
-   "coin": "$VOID",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 884
-  },
-  {
-   "t": "2026-11-28T00:47:57Z",
-   "time": "01:47:57",
-   "agent": "SCANNER",
-   "coin": "DLINK",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.191e+05 is not 30 + real SOL 0 (off +1.191e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 156 odd readings from 77 coins tonight",
-   "n": 885
-  },
-  {
-   "t": "2026-11-28T00:47:58Z",
-   "time": "01:47:58",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 0 watched · 14 rejected (snipe not bought: only to size 6, serial launcher 3, odd curve reading: virtual SOL i 3)",
-   "n": 886
-  },
-  {
    "t": "2026-11-28T00:48:51Z",
    "time": "01:48:51",
    "agent": "SCANNER",
@@ -4647,6 +4624,33 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1.441e+05 is not 30 + real SOL 0 (off +1.441e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 249 odd readings from 119 coins tonight",
    "n": 1083
+  },
+  {
+   "t": "2026-11-28T01:35:58Z",
+   "time": "02:35:58",
+   "agent": "SCANNER",
+   "coin": "STA",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1084
+  },
+  {
+   "t": "2026-11-28T01:36:19Z",
+   "time": "02:36:19",
+   "agent": "SCANNER",
+   "coin": "YUP",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 1085
+  },
+  {
+   "t": "2026-11-28T01:36:19Z",
+   "time": "02:36:19",
+   "agent": "SIZER",
+   "coin": "YUP",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1086
   }
  ],
  "nights": [
@@ -4719,7 +4723,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 252 (119 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 252 (119 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4727,24 +4731,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1259,
-    "last_event_age_s": 23.0,
+    "events": 1263,
+    "last_event_age_s": 4.8,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24479,
-    "last_event_age_s": 0.4,
+    "events": 24500,
+    "last_event_age_s": 1.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 710,
-    "last_event_age_s": 30.8,
+    "events": 712,
+    "last_event_age_s": 4.4,
     "errors": 31,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4759,7 +4763,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 5.2,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 252,
   "odd_coins": 119
  },
@@ -4808,23 +4812,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10458,
+   "sent": 10487,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10458,
+   "sent": 10487,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "YUP",
+   "name": "Yup",
+   "mint": "Ckcu8Wk7opXSRKZAK5Yo6aeqV42Xn6HuToNAHfMMpump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/elonmusk/status/2126489832977473981",
+   "tg": false,
+   "web": "https://x.com/elonmusk/status/2126489832977473981",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DSFDSF",
+   "name": "dsfddsf",
+   "mint": "Buw2TZBKPEU9GnUXikyw81RvN7u5RiC6d222Pjqvpump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "DOOB",
+   "name": "DOOBIE",
+   "mint": "84XMPorDFtLF5Sfjt39xPdRkDAHRp42eBmsHLKt9pump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "STA",
+   "name": "Santas Crack",
+   "mint": "H9e5gg23dcrbmnZJKmYZi3XB6E8gN8RyC3wqgtm7pump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/Santatrollmeme",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "DSFDSF",
    "name": "dsfddsf",
    "mint": "DNi1FVCuYXEh4EWzXyuEo7rzazxGksdExAPEX5xJpump",
-   "age_s": 23,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4842,7 +4918,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "4RD2dt3VqVKor2oNu3ZjofVLxVBztzxHZhzNM16zpump",
-   "age_s": 28,
+   "age_s": 55,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4860,7 +4936,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BeqPiDCTsviRePuSjfvpFJSmD28VdwARqPc3o1Q8DPdZ",
-   "age_s": 30,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4878,7 +4954,7 @@
    "symbol": "PLOOP",
    "name": "PeteLoop",
    "mint": "4qpN88bfTurmkwLCCDL7LxfsJA4FHDbcWuKxf89UbAHd",
-   "age_s": 30,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4896,7 +4972,7 @@
    "symbol": "Pete",
    "name": "Ultimate Hard Man",
    "mint": "2mLw6WstLBwyp2Zbt98YhX5UDnsemRM4AYaknrHEpump",
-   "age_s": 31,
+   "age_s": 58,
    "sol_in": 0.02,
    "buys": 1,
    "sells": 0,
@@ -4914,10 +4990,10 @@
    "symbol": "CCM",
    "name": "Central Commodity Markets",
    "mint": "G4hBAYM6LWfG8vXboonjsEhKMu9eLEJvTSkLVEiZpump",
-   "age_s": 61,
+   "age_s": 88,
    "sol_in": -0.62,
-   "buys": 13,
-   "sells": 23,
+   "buys": 14,
+   "sells": 24,
    "rise_pct": -4.0,
    "mcap_sol": 28.0,
    "dev_pct": 2.2,
@@ -4932,7 +5008,7 @@
    "symbol": "CIHAO",
    "name": "cihao",
    "mint": "Bk3NT3pHg6UahrLAQsNYyqApmzrii4ekiXgCR3zV5YRq",
-   "age_s": 65,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4950,7 +5026,7 @@
    "symbol": "DSFDSF",
    "name": "dsfddsf",
    "mint": "AuomAdNG6aqSZaBfaAVMQ89HrQomJwqHQdgvxcmbpump",
-   "age_s": 83,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4968,7 +5044,7 @@
    "symbol": "ZCESH",
    "name": "ZCESH",
    "mint": "bnaawEPSB7cbQDZxmynafJwokvhxHgvkZ1EGEZyyriD",
-   "age_s": 117,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4986,7 +5062,7 @@
    "symbol": "DSFDSF",
    "name": "dsfddsf",
    "mint": "8prcexmNQh8cBTnpPq9wNjbb8BBKHk8KRfKZAStWpump",
-   "age_s": 120,
+   "age_s": 147,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5004,7 +5080,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "BgxHzmgAAeSsrDz4fHnPbEctFrfytrEnsHrULTcwpump",
-   "age_s": 151,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5017,42 +5093,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "DSFDSF",
-   "name": "dsfddsf",
-   "mint": "ctu1WeUVJMtEZ8UNYwpEd2Z8LbG48RarUiUd6WRpump",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 0.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "FROG",
-   "name": "Frogcoin",
-   "mint": "F8vKkKvZkwkU7TrxQPNpTrGKTD2BL8BofuzgaPQYpump",
-   "age_s": 168,
-   "sol_in": 11.1,
-   "buys": 31,
-   "sells": 43,
-   "rise_pct": 78.7,
-   "mcap_sol": 60.3,
-   "dev_pct": 9.6,
-   "big_sell": 3.84,
-   "x": "https://x.com/AxTrades32/status/2126489483868582358?a=VAaUD2Aq2dzlkSvATHg&s=20",
-   "tg": false,
-   "web": "https://www.cnn.com/science/tiny-frogs-ghana-conservation-afia-birago-spc",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
