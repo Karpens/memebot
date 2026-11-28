@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:13:28Z",
+ "updated": "2026-11-28T11:14:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1255,
+  "flagged": 1256,
   "checked": 49,
   "filtered": 1,
-  "lines": 2867,
+  "lines": 2870,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "DUSTY",
-   "why": "snipe",
-   "t": "2026-11-28T11:07:53Z"
-  },
   {
    "coin": "SIGMA",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "BFRI",
    "why": "snipe",
    "t": "2026-11-28T11:12:36Z"
+  },
+  {
+   "coin": "concat",
+   "why": "snipe",
+   "t": "2026-11-28T11:13:48Z"
   }
  ],
  "curve": [
-  [
-   1795828440,
-   47.79
-  ],
   [
    1795828500,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864380,
    47.79
+  ],
+  [
+   1795864440,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:16:07Z",
-   "time": "11:16:07",
-   "agent": "SCANNER",
-   "coin": "KFC",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 8.2 SOL in · +53% since the create · mcap 58 SOL",
-   "n": 2668
-  },
-  {
-   "t": "2026-11-28T10:16:09Z",
-   "time": "11:16:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.8 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 2, mayhem mode 2)",
-   "n": 2669
-  },
-  {
-   "t": "2026-11-28T10:16:43Z",
-   "time": "11:16:43",
-   "agent": "SCANNER",
-   "coin": "WINSTON",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2670
-  },
-  {
    "t": "2026-11-28T10:17:09Z",
    "time": "11:17:09",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "scan",
    "text": "new pairs · 3.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 4, mayhem mode 3, serial launcher 2)",
    "n": 2867
+  },
+  {
+   "t": "2026-11-28T11:13:43Z",
+   "time": "12:13:43",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 7 rejected (snipe not bought: only to size 4, serial launcher 1, odd curve reading: virtual SOL i 1)",
+   "n": 2868
+  },
+  {
+   "t": "2026-11-28T11:13:48Z",
+   "time": "12:13:48",
+   "agent": "SCANNER",
+   "coin": "concat",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 4.8 SOL in · +31% since the create · mcap 44 SOL",
+   "n": 2869
+  },
+  {
+   "t": "2026-11-28T11:13:48Z",
+   "time": "12:13:48",
+   "agent": "SIZER",
+   "coin": "concat",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2870
   }
  ],
  "nights": [
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 254,
-    "last_event_age_s": 53.1,
-    "errors": 1,
-    "last_error": "silent for 90 s · reconnecting"
+    "events": 256,
+    "last_event_age_s": 14.8,
+    "errors": 3,
+    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 6915,
+    "events": 6992,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 181,
-    "last_event_age_s": 52.9,
+    "events": 182,
+    "last_event_age_s": 14.7,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,7 +6527,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 7,
   "odd_readings": 980,
@@ -6578,23 +6578,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3750,
+   "sent": 3786,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3750,
+   "sent": 3786,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MAGPIE",
+   "name": "HELLO MR MAGPIE",
+   "mint": "H1JeP1ZxJFZ4x2kBHEY89FtHPijEz6QRWW7bDmXRpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "concat",
+   "name": "crime it",
+   "mint": "FypSHhWu4AALWJDumrrBrhpgExkoEJ1hY3rApV6P6hRB",
+   "age_s": 15,
+   "sol_in": 8.41,
+   "buys": 5,
+   "sells": 5,
+   "rise_pct": 57.5,
+   "mcap_sol": 53.2,
+   "dev_pct": 9.6,
+   "big_sell": 1.38,
+   "x": "https://x.com/deving4R/status/2126635622777622535?a=rTAgsxGn-Z5v998lEuo&s=20",
+   "tg": false,
+   "web": "https://github.com/aeyakovenko/rbm/blob/master/Data/ImageUtils.hs#L57",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "BFRI",
    "name": "Black Friday",
    "mint": "CK2gH1AjrWJpQFXVKDTC54KjY5x6DnPywvnVFi5Upump",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": 0.3,
    "buys": 2,
    "sells": 0,
@@ -6612,12 +6648,12 @@
    "symbol": "TRADER",
    "name": "in a world full of kols",
    "mint": "4zkxPT2ZHMguNnqwe6m5bgTBn2oPXvBPeKK8hWSupump",
-   "age_s": 54,
-   "sol_in": -7.82,
-   "buys": 8,
-   "sells": 13,
-   "rise_pct": -35.4,
-   "mcap_sol": 31.9,
+   "age_s": 88,
+   "sol_in": -8.2,
+   "buys": 9,
+   "sells": 16,
+   "rise_pct": -36.9,
+   "mcap_sol": 31.2,
    "dev_pct": 26.6,
    "big_sell": 4.31,
    "x": "https://x.com/solocoinPF/status/2126634477304590470?a=bQ1RhpM-1qtxdUcZf5M&s=20",
@@ -6630,12 +6666,12 @@
    "symbol": "WLSI",
    "name": "World Liberty Short Investment",
    "mint": "EeuHBhYmFKGTXtJWe4BKd8VEBB7zP1XV6Pb7a3nXpump",
-   "age_s": 57,
-   "sol_in": 9.99,
-   "buys": 29,
-   "sells": 25,
-   "rise_pct": 49.5,
-   "mcap_sol": 93.3,
+   "age_s": 91,
+   "sol_in": 10.11,
+   "buys": 45,
+   "sells": 35,
+   "rise_pct": 50.2,
+   "mcap_sol": 93.7,
    "dev_pct": 35.5,
    "big_sell": 4.25,
    "x": "https://x.com/WLSISOL/status/2126635086040674744",
@@ -6648,7 +6684,7 @@
    "symbol": "REA",
    "name": "REA PRINCESS OF THE SEA",
    "mint": "DhD1cKyWzeAC6TpmWd1MXNnJt4mCqcTxxUWiQFCQpump",
-   "age_s": 68,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6702,7 @@
    "symbol": "DIFFERENT",
    "name": "Why Different",
    "mint": "5r1k1HKkg1hba8jUpYvK1Sk9RjT8C2v2Q9FoJpjU8GDD",
-   "age_s": 86,
+   "age_s": 120,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6720,7 @@
    "symbol": "TRADER",
    "name": "in a world full of kols",
    "mint": "FHLwXcLCte9dEShoQeoTt1WRPSgwGkUndjC8RGuWpump",
-   "age_s": 110,
+   "age_s": 144,
    "sol_in": -7.0,
    "buys": 11,
    "sells": 12,
@@ -6702,7 +6738,7 @@
    "symbol": "GitHub",
    "name": "GitHub",
    "mint": "DGLquKQumbsQyW4VZRuGG1LaG129a18Aiffzm6Popump",
-   "age_s": 118,
+   "age_s": 152,
    "sol_in": -3.27,
    "buys": 3,
    "sells": 7,
@@ -6715,42 +6751,6 @@
    "web": "https://github.com/",
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "WMONEY",
-   "name": "WORTH YOUR MONEY",
-   "mint": "GnUNghkVrPRd9mvy2zLDiFeEdNZFNSVFVM1KWPkJpump",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Concat",
-   "name": "Concat",
-   "mint": "GLWJ6Z3NFLSxA8Gh1eq8kjeddQqear8q2jiPu2oiijSu",
-   "age_s": 172,
-   "sol_in": -4.78,
-   "buys": 18,
-   "sells": 43,
-   "rise_pct": -25.5,
-   "mcap_sol": 28.2,
-   "dev_pct": 15.2,
-   "big_sell": 3.03,
-   "x": "https://x.com/GithubProjects/status/2126634715889434892",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 18 more coins in 60 min",
-   "why": "serial launcher: 18 more coins in 60 min"
   }
  ],
  "strategies": [
