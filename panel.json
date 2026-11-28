@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:41:37Z",
+ "updated": "2026-11-28T11:42:09Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1314,
+  "flagged": 1315,
   "checked": 49,
   "filtered": 1,
-  "lines": 2965,
+  "lines": 2967,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Anthropic",
-   "why": "snipe",
-   "t": "2026-11-28T11:38:30Z"
-  },
   {
    "coin": "Mojave",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "FUKMOONBOY",
    "why": "snipe",
    "t": "2026-11-28T11:40:53Z"
+  },
+  {
+   "coin": "GIGACHAT",
+   "why": "snipe",
+   "t": "2026-11-28T11:42:02Z"
   }
  ],
  "curve": [
-  [
-   1795830120,
-   47.79
-  ],
   [
    1795830180,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795866060,
    47.79
+  ],
+  [
+   1795866120,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:45:48Z",
-   "time": "11:45:48",
-   "agent": "SCANNER",
-   "coin": "SNOWCAT",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2766
-  },
-  {
-   "t": "2026-11-28T10:46:26Z",
-   "time": "11:46:26",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 8, mayhem mode 2, serial launcher 1)",
-   "n": 2767
-  },
-  {
    "t": "2026-11-28T10:46:42Z",
    "time": "11:46:42",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 5.6 a minute · 0 watched · 13 rejected (snipe not bought: only to size 10, serial launcher 2, no symbol or name 1)",
    "n": 2965
+  },
+  {
+   "t": "2026-11-28T11:42:00Z",
+   "time": "12:42:00",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.4 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, serial launcher 2)",
+   "n": 2966
+  },
+  {
+   "t": "2026-11-28T11:42:02Z",
+   "time": "12:42:02",
+   "agent": "SCANNER",
+   "coin": "GIGACHAT",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2967
   }
  ],
  "nights": [
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 382,
-    "last_event_age_s": 30.0,
+    "events": 383,
+    "last_event_age_s": 7.7,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 9966,
+    "events": 10024,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 272,
-    "last_event_age_s": 29.9,
+    "events": 273,
+    "last_event_age_s": 7.4,
     "errors": 3,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6527,7 +6527,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.4,
+  "creates_per_min": 5.6,
   "watching": 0,
   "followed": 10,
   "odd_readings": 1006,
@@ -6578,23 +6578,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5548,
+   "sent": 5582,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5548,
+   "sent": 5582,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GIGACHAT",
+   "name": "GIGACHAT",
+   "mint": "Edr7LWHpBasKiRFLUE3zY4Gw1LYrVSiGMk3oBSYhpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/joinquant/status/2126642599662424260?a=Kuj-l2MrqUOzOGym-ak&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "POSSUM",
    "name": "Possum In A Peanut",
    "mint": "2kdcNwp26CT3ACeaAdBuqdWfaoTsToQgsj1SUTkSunjh",
-   "age_s": 30,
+   "age_s": 62,
    "sol_in": -1.39,
    "buys": 3,
    "sells": 8,
@@ -6612,11 +6630,11 @@
    "symbol": "FUKMOONBOY",
    "name": "GoonBoy",
    "mint": "FbFLaxZuff2QX7ENhS2gEbUKRxXYWM61GJVepjNnpump",
-   "age_s": 45,
-   "sol_in": 0.01,
-   "buys": 1,
+   "age_s": 77,
+   "sol_in": 0.02,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.1,
+   "rise_pct": 0.2,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -6630,12 +6648,12 @@
    "symbol": "OBOL",
    "name": "OBOL",
    "mint": "HgLNN1izsfTKWoRgyCiP6DZwDzW4RmqR2KsSuUdZpump",
-   "age_s": 51,
-   "sol_in": 19.69,
-   "buys": 25,
-   "sells": 13,
-   "rise_pct": 171.7,
-   "mcap_sol": 77.9,
+   "age_s": 83,
+   "sol_in": 18.58,
+   "buys": 40,
+   "sells": 22,
+   "rise_pct": 159.9,
+   "mcap_sol": 74.4,
    "dev_pct": 1.3,
    "big_sell": 8.11,
    "x": "https://x.com/ObolMarkets/status/2126642167221199252",
@@ -6648,7 +6666,7 @@
    "symbol": "APPLE",
    "name": "Apple",
    "mint": "BsnxFFarWWUpxzWTrhtGq8MeKuiNgRwU5LJ96qLsJX8X",
-   "age_s": 63,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6684,7 @@
    "symbol": "BAPHOMET",
    "name": "Baphomet",
    "mint": "D5Le1pGW1zixpdnm9Py3Xcc6F4aaTMDgpVei728Rpump",
-   "age_s": 81,
+   "age_s": 113,
    "sol_in": 3.57,
    "buys": 2,
    "sells": 2,
@@ -6684,7 +6702,7 @@
    "symbol": "GAYAURA",
    "name": "Binance Gay Aura",
    "mint": "HgLZGhJz4uS4qBygvfDaDfwFAA4vjdvfCL4x4Vrjpump",
-   "age_s": 94,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6720,7 @@
    "symbol": "PODL",
    "name": "PODL",
    "mint": "71WqjkU4ZeovtdeUb7EFSuQkeJYUdPvSVV3RDTrapump",
-   "age_s": 96,
+   "age_s": 128,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -6720,7 +6738,7 @@
    "symbol": "Mojave",
    "name": "Mojave The Tortoise",
    "mint": "HNshDwjuYDRfy1wLnxwaYL1ogKs5XS6xd9tC4bWVj6tt",
-   "age_s": 98,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6738,7 +6756,7 @@
    "symbol": "Mas",
    "name": "Mas",
    "mint": "AFJEQDKtAdBuT9xrxkj23QKAy8YtMEXhCRGpay4qSNU9",
-   "age_s": 118,
+   "age_s": 150,
    "sol_in": -4.9,
    "buys": 21,
    "sells": 35,
@@ -6751,24 +6769,6 @@
    "web": false,
    "status": "rejected: serial launcher: 20 more coins in 60 min",
    "why": "serial launcher: 20 more coins in 60 min"
-  },
-  {
-   "symbol": "J7TEST",
-   "name": "J7 Control TEST",
-   "mint": "8stEScMvb1j1GAy1Ht7eLewK8kbcX5fVzuUGosZY7Lg9",
-   "age_s": 167,
-   "sol_in": -0.0,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
