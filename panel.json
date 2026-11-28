@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:46:53Z",
+ "updated": "2026-11-28T11:47:22Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1325,
+  "flagged": 1326,
   "checked": 49,
   "filtered": 1,
-  "lines": 2982,
+  "lines": 2984,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CLOVR",
-   "why": "snipe",
-   "t": "2026-11-28T11:43:07Z"
-  },
   {
    "coin": "COMM",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "STATS",
    "why": "snipe",
    "t": "2026-11-28T11:46:52Z"
+  },
+  {
+   "coin": "USD1",
+   "why": "snipe",
+   "t": "2026-11-28T11:47:19Z"
   }
  ],
  "curve": [
-  [
-   1795830420,
-   47.79
-  ],
   [
    1795830480,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795866360,
    47.79
+  ],
+  [
+   1795866420,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4628,24 +4628,6 @@
    "t": "2026-11-28T10:48:59Z",
    "time": "11:48:59",
    "agent": "SCANNER",
-   "coin": "PLUG",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.287e+05 is not 30 + real SOL 1.096e+04 (off +2.177e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 930 odd readings from 284 coins tonight",
-   "n": 2783
-  },
-  {
-   "t": "2026-11-28T10:48:59Z",
-   "time": "11:48:59",
-   "agent": "SCANNER",
-   "coin": "CANS",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.267e+05 is not 30 + real SOL 9572 (off +2.171e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 931 odd readings from 285 coins tonight",
-   "n": 2784
-  },
-  {
-   "t": "2026-11-28T10:48:59Z",
-   "time": "11:48:59",
-   "agent": "SCANNER",
    "coin": "POLE",
    "action": "odd",
    "text": "odd curve reading: virtual SOL 2.226e+05 is not 30 + real SOL 4886 (off +2.177e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 932 odd readings from 286 coins tonight",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2982
+  },
+  {
+   "t": "2026-11-28T11:47:03Z",
+   "time": "12:47:03",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 0 watched · 8 rejected (snipe not bought: only to size 6, mayhem mode 2)",
+   "n": 2983
+  },
+  {
+   "t": "2026-11-28T11:47:19Z",
+   "time": "12:47:19",
+   "agent": "SCANNER",
+   "coin": "USD1",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.9 SOL in · +6% since the create · mcap 33 SOL",
+   "n": 2984
   }
  ],
  "nights": [
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 398,
-    "last_event_age_s": 1.8,
+    "events": 399,
+    "last_event_age_s": 3.7,
     "errors": 5,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10378,
+    "events": 10420,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 283,
-    "last_event_age_s": 1.2,
+    "events": 284,
+    "last_event_age_s": 3.5,
     "errors": 3,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6529,7 +6529,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 1006,
   "odd_coins": 305
  },
@@ -6578,23 +6578,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5884,
+   "sent": 5915,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5884,
+   "sent": 5915,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "USD1",
+   "name": "UltimateSuperDick1",
+   "mint": "A8AKYPdwEUZaq1SicFA6NRLP9jhdfncGyQbBxs9Xpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.8,
+   "dev_pct": 5.0,
+   "big_sell": 0.89,
+   "x": "https://x.com/ThePhantom1206/status/2126643545209516525?a=cNB7dmVK4srHkke58Wk&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "STATS",
    "name": "Satstats",
    "mint": "evaJX1FJzm8bG9u8abhxZaihV67KscPZ2m1c4SEipBb",
-   "age_s": 1,
+   "age_s": 30,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6612,7 +6630,7 @@
    "symbol": "BIRTH",
    "name": "BIRTH RATE",
    "mint": "7UJCKUeb5YDDbvQTBBAzqDHhnXQEGwAicTjaUPEGpump",
-   "age_s": 3,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6648,7 @@
    "symbol": "OKOWARE",
    "name": "怒ワレ",
    "mint": "BXxr61Gxejzh7eGgZMfwf5DUaneXcnkPSPY5ybXupump",
-   "age_s": 3,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,12 +6666,12 @@
    "symbol": "TST",
    "name": "Tester",
    "mint": "CjW1tHLVj7KFGn5CRUXmLQierFzDTMkFWyvyqB3rpump",
-   "age_s": 8,
-   "sol_in": 3.56,
+   "age_s": 37,
+   "sol_in": 3.4,
    "buys": 4,
-   "sells": 3,
-   "rise_pct": 24.4,
-   "mcap_sol": 36.8,
+   "sells": 5,
+   "rise_pct": 23.3,
+   "mcap_sol": 36.5,
    "dev_pct": 3.0,
    "big_sell": 2.25,
    "x": false,
@@ -6666,14 +6684,14 @@
    "symbol": "Gimbal",
    "name": "Gimbal Trade",
    "mint": "4izzfWCCiGwkfih9AxxaJfzqMxkVpqwjP9kpvguQpump",
-   "age_s": 38,
-   "sol_in": 0.0,
+   "age_s": 67,
+   "sol_in": -0.15,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
+   "sells": 1,
+   "rise_pct": -1.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.15,
    "x": "https://x.com/gimbaltrade",
    "tg": false,
    "web": "https://tradegimbal.xyz/",
@@ -6684,7 +6702,7 @@
    "symbol": "GTA 7",
    "name": "GTA 7",
    "mint": "H1sC3wa9qgoMUu5DYQpcK1ZHvpjaK3rts1RJtedtpump",
-   "age_s": 67,
+   "age_s": 96,
    "sol_in": 0.14,
    "buys": 7,
    "sells": 0,
@@ -6702,7 +6720,7 @@
    "symbol": "OKOWARE",
    "name": "怒ワレ",
    "mint": "FJASs7k4fQjZYHM158R9c7YkQHV2wkpoPxSqQEr7pump",
-   "age_s": 83,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6720,7 +6738,7 @@
    "symbol": "MCA",
    "name": "THE MEME COIN ALLIANCE",
    "mint": "CEDeLWicqDe2NGdBKNC9SgnNTZs6YsTjbKnQayFrpump",
-   "age_s": 100,
+   "age_s": 129,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
