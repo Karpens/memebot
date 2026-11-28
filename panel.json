@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:49:26Z",
+ "updated": "2026-11-28T13:49:58Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1565,
+  "flagged": 1566,
   "checked": 49,
   "filtered": 1,
-  "lines": 3400,
+  "lines": 3402,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SENDMINT",
-   "why": "snipe",
-   "t": "2026-11-28T13:43:44Z"
-  },
   {
    "coin": "MEIMEI",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GrandmaV2",
    "why": "snipe",
    "t": "2026-11-28T13:46:28Z"
+  },
+  {
+   "coin": "believe",
+   "why": "snipe",
+   "t": "2026-11-28T13:49:37Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:55:26Z",
-   "time": "13:55:26",
-   "agent": "SCANNER",
-   "coin": "NEP",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3201
-  },
-  {
-   "t": "2026-11-28T12:55:35Z",
-   "time": "13:55:35",
-   "agent": "SCANNER",
-   "coin": "Zero",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3202
-  },
-  {
    "t": "2026-11-28T12:55:44Z",
    "time": "13:55:44",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 2 rejected (snipe not bought: only to size 1, no symbol or name 1)",
    "n": 3400
+  },
+  {
+   "t": "2026-11-28T13:49:37Z",
+   "time": "14:49:37",
+   "agent": "SCANNER",
+   "coin": "believe",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3401
+  },
+  {
+   "t": "2026-11-28T13:49:37Z",
+   "time": "14:49:37",
+   "agent": "SIZER",
+   "coin": "believe",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 3402
   }
  ],
  "nights": [
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1129,
-    "last_event_age_s": 179.4,
+    "events": 1132,
+    "last_event_age_s": 2.1,
     "errors": 11,
     "last_error": "TimeoutError: timed out while waiting for handshake response"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25164,
-    "last_event_age_s": 0.2,
+    "events": 25210,
+    "last_event_age_s": 1.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 622,
-    "last_event_age_s": 179.3,
+    "events": 624,
+    "last_event_age_s": 1.7,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6531,7 +6531,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 1,
+  "followed": 2,
   "odd_readings": 1052,
   "odd_coins": 333
  },
@@ -6580,33 +6580,69 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13709,
+   "sent": 13743,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13709,
+   "sent": 13743,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "GrandmaV2",
-   "name": "Minecraft Grandma Fund V2",
-   "mint": "2a6XZNBDdnpBBfEfGEA5P2Qa3iLv4hMsBFaNGbRopump",
-   "age_s": 179,
+   "symbol": "MYSTERY",
+   "name": "Mystery Post",
+   "mint": "7qsRxszduLDMmaYYVUVZ4Wciwdv3WPbndbBiFEiocNUR",
+   "age_s": 2,
    "sol_in": 0.0,
-   "buys": 1,
-   "sells": 2,
+   "buys": 0,
+   "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 29.1,
-   "dev_pct": 2.1,
-   "big_sell": 0.36,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://bsky.app/profile/in-otter-news.bsky.social/post/3n3e4xu6g6424",
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "GBLIN",
+   "name": "GOBLIN",
+   "mint": "GyR91RSULkLpdUp4AY8QohfwFbmrprg3MEtwDnHbpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "believe",
+   "name": "believe",
+   "mint": "4v73REhbt4y868E1jkjnE1qnWg3kTUuBrXVvca3Fh5Vg",
+   "age_s": 21,
+   "sol_in": -0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
