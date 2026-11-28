@@ -59,42 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:15:45Z",
-    "time": "00:15:45",
-    "agent": "LEARNER",
-    "coin": "SNP500",
-    "action": "shadow",
-    "text": "SHADOW SNP500 would have made -67.2% (dump: 21.3 SOL sold) · learned x0.5 · np:dev:2-5 now avg -7.3% over 300",
-    "n": 233
-   },
-   {
-    "t": "2026-11-27T23:15:52Z",
-    "time": "00:15:52",
-    "agent": "LEARNER",
-    "coin": "SNP500",
-    "action": "shadow",
-    "text": "SHADOW SNP500 · not bought (pause after a losing streak) · followed as if bought: $5.47 at 0.0000058344 (curve maths, every cost) · same exits, outside the book",
-    "n": 234
-   },
-   {
-    "t": "2026-11-27T23:15:55Z",
-    "time": "00:15:55",
-    "agent": "LEARNER",
-    "coin": "SNP500",
-    "action": "shadow",
-    "text": "SHADOW SNP500 would have made +7.2% (TP +10%) · learned x0.5 · np:dev:2-5 now avg -7.3% over 300",
-    "n": 235
-   },
-   {
-    "t": "2026-11-27T23:15:56Z",
-    "time": "00:15:56",
-    "agent": "LEARNER",
-    "coin": "PALMRAT",
-    "action": "shadow",
-    "text": "SHADOW PALMRAT would have made -7.5% (5 min, only -3%) · learned x0.5 · np:buys:<70 now avg -7.5% over 300",
-    "n": 236
-   },
-   {
     "t": "2026-11-27T23:16:05Z",
     "time": "00:16:05",
     "agent": "LEARNER",
@@ -5457,6 +5421,42 @@
     "action": "scan",
     "text": "new pairs · 4.8 a minute · 0 watched · 12 rejected (snipe not bought: only to size 7, mayhem mode 2, serial launcher 1)",
     "n": 832
+   },
+   {
+    "t": "2026-11-28T00:36:46Z",
+    "time": "01:36:46",
+    "agent": "SCANNER",
+    "coin": "DEFLOAT",
+    "action": "flag",
+    "text": "snipe · first reading 0.9 s after the create · 8.6 SOL in · +63% since the create · mcap 49 SOL",
+    "n": 833
+   },
+   {
+    "t": "2026-11-28T00:36:46Z",
+    "time": "01:36:46",
+    "agent": "SIZER",
+    "coin": "DEFLOAT",
+    "action": "skip",
+    "text": "only $4.78 left to size",
+    "n": 834
+   },
+   {
+    "t": "2026-11-28T00:36:51Z",
+    "time": "01:36:51",
+    "agent": "SCANNER",
+    "coin": "SILT",
+    "action": "flag",
+    "text": "snipe · first reading 0.6 s after the create · 5.0 SOL in · +36% since the create · mcap 39 SOL",
+    "n": 835
+   },
+   {
+    "t": "2026-11-28T00:36:51Z",
+    "time": "01:36:51",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 1, mayhem mode 1)",
+    "n": 836
    }
   ],
   "trades": [
@@ -8102,21 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 224,
+  "flagged": 226,
   "checked": 49,
   "filtered": 1,
-  "lines": 832,
+  "lines": 836,
   "flags": [
-   {
-    "coin": "Bambi",
-    "why": "snipe",
-    "t": "2026-11-28T00:31:18Z"
-   },
-   {
-    "coin": "HANGLOON",
-    "why": "snipe",
-    "t": "2026-11-28T00:32:53Z"
-   },
    {
     "coin": "OK",
     "why": "snipe",
@@ -8146,6 +8136,16 @@
     "coin": "Steady",
     "why": "snipe",
     "t": "2026-11-28T00:35:21Z"
+   },
+   {
+    "coin": "DEFLOAT",
+    "why": "snipe",
+    "t": "2026-11-28T00:36:46Z"
+   },
+   {
+    "coin": "SILT",
+    "why": "snipe",
+    "t": "2026-11-28T00:36:51Z"
    }
   ],
   "curve": [
@@ -8536,13 +8536,17 @@
    [
     1795826160,
     47.79
+   ],
+   [
+    1795826220,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795826150.960791,
+  "np_said": 1795826211.96064,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8804,7 +8808,7 @@
   },
   "sizer_said": {
    "why": "cash",
-   "at": 1795825878.542123
+   "at": 1795826206.150618
   }
  },
  "last_night": {

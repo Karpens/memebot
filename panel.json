@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:36:32Z",
+ "updated": "2026-11-28T00:37:00Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 224,
+  "flagged": 226,
   "checked": 49,
   "filtered": 1,
-  "lines": 832,
+  "lines": 836,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Bambi",
-   "why": "snipe",
-   "t": "2026-11-28T00:31:18Z"
-  },
-  {
-   "coin": "HANGLOON",
-   "why": "snipe",
-   "t": "2026-11-28T00:32:53Z"
-  },
   {
    "coin": "OK",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "Steady",
    "why": "snipe",
    "t": "2026-11-28T00:35:21Z"
+  },
+  {
+   "coin": "DEFLOAT",
+   "why": "snipe",
+   "t": "2026-11-28T00:36:46Z"
+  },
+  {
+   "coin": "SILT",
+   "why": "snipe",
+   "t": "2026-11-28T00:36:51Z"
   }
  ],
  "curve": [
@@ -459,6 +459,10 @@
   ],
   [
    1795826160,
+   47.79
+  ],
+  [
+   1795826220,
    47.79
   ]
  ],
@@ -2613,42 +2617,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:47:22Z",
-   "time": "00:47:22",
-   "agent": "SCANNER",
-   "coin": "RBULL",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 2.3 SOL in · +16% since the create · mcap 33 SOL",
-   "n": 633
-  },
-  {
-   "t": "2026-11-27T23:47:24Z",
-   "time": "00:47:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.8 a minute · 0 watched · 16 rejected (snipe not bought: only to size 11, serial launcher 3, mayhem mode 2)",
-   "n": 634
-  },
-  {
-   "t": "2026-11-27T23:47:37Z",
-   "time": "00:47:37",
-   "agent": "SCANNER",
-   "coin": "testzec",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 635
-  },
-  {
-   "t": "2026-11-27T23:47:46Z",
-   "time": "00:47:46",
-   "agent": "SCANNER",
-   "coin": "CALL",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 2.2 SOL in · +15% since the create · mcap 32 SOL",
-   "n": 636
-  },
-  {
    "t": "2026-11-27T23:48:18Z",
    "time": "00:48:18",
    "agent": "SCANNER",
@@ -4411,6 +4379,42 @@
    "action": "scan",
    "text": "new pairs · 4.8 a minute · 0 watched · 12 rejected (snipe not bought: only to size 7, mayhem mode 2, serial launcher 1)",
    "n": 832
+  },
+  {
+   "t": "2026-11-28T00:36:46Z",
+   "time": "01:36:46",
+   "agent": "SCANNER",
+   "coin": "DEFLOAT",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 8.6 SOL in · +63% since the create · mcap 49 SOL",
+   "n": 833
+  },
+  {
+   "t": "2026-11-28T00:36:46Z",
+   "time": "01:36:46",
+   "agent": "SIZER",
+   "coin": "DEFLOAT",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 834
+  },
+  {
+   "t": "2026-11-28T00:36:51Z",
+   "time": "01:36:51",
+   "agent": "SCANNER",
+   "coin": "SILT",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 5.0 SOL in · +36% since the create · mcap 39 SOL",
+   "n": 835
+  },
+  {
+   "t": "2026-11-28T00:36:51Z",
+   "time": "01:36:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 1, mayhem mode 1)",
+   "n": 836
   }
  ],
  "nights": [
@@ -4483,7 +4487,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 126 (65 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 126 (65 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4491,15 +4495,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 905,
-    "last_event_age_s": 73.0,
+    "events": 907,
+    "last_event_age_s": 10.5,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17030,
+    "events": 17095,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -4507,8 +4511,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 496,
-    "last_event_age_s": 72.8,
+    "events": 498,
+    "last_event_age_s": 10.4,
     "errors": 25,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4521,9 +4525,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 126,
   "odd_coins": 65
  },
@@ -4572,28 +4576,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6665,
+   "sent": 6695,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6665,
+   "sent": 6695,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SILT",
+   "name": "Silt",
+   "mint": "1yNtw9iLMGPVSqpzbDU2CgAvrvuZzdUHQYRCp78pump",
+   "age_s": 10,
+   "sol_in": 6.63,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 48.4,
+   "mcap_sol": 42.6,
+   "dev_pct": 1.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/siltagents/status/2126474032060956850?a=DI3qoHBJ4ww3GK3ZZHY&s=20",
+   "tg": false,
+   "web": "https://siltagents.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DEFLOAT",
+   "name": "DefloatPad",
+   "mint": "5tiJ9v8crZ1b1TftuyT3twzYNAFXV7jqFjWkqeM5bEaK",
+   "age_s": 15,
+   "sol_in": 2.41,
+   "buys": 4,
+   "sells": 8,
+   "rise_pct": 16.1,
+   "mcap_sol": 34.9,
+   "dev_pct": 3.7,
+   "big_sell": 7.36,
+   "x": false,
+   "tg": false,
+   "web": "https://defloatpad.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Steady",
    "name": "STEADY",
    "mint": "Afs95ePeJMkE4kMTsSTxr23JnMCLfDuActTxuWYBpump",
-   "age_s": 72,
-   "sol_in": 0.01,
-   "buys": 3,
+   "age_s": 100,
+   "sol_in": 0.02,
+   "buys": 4,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 76.9,
+   "rise_pct": 0.1,
+   "mcap_sol": 77.0,
    "dev_pct": 42.6,
    "big_sell": 0.0,
    "x": false,
@@ -4606,7 +4646,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BBGR9rNvurSvRakMe2PMkdzu7vnAeuM89GstwmgwPc8q",
-   "age_s": 124,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4624,7 +4664,7 @@
    "symbol": "GASCOON",
    "name": "GASCOON",
    "mint": "2PzFCizzGkWuaz3jhpqxLPPTNJjoemFyf4JWY7p2pump",
-   "age_s": 144,
+   "age_s": 172,
    "sol_in": -3.95,
    "buys": 2,
    "sells": 4,
@@ -4642,7 +4682,7 @@
    "symbol": "QG",
    "name": "Quantum Gravity",
    "mint": "2TS8t9AMGTrbTit6u1X5ih5WW8cki1kU7iYXxvnWpump",
-   "age_s": 150,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -4660,49 +4700,13 @@
    "symbol": "BitchCoin",
    "name": "BTC",
    "mint": "DNgnU8bLSqQNci3qLzPcFn58SLZUcVFsrJdUMdYZpump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "BISOU",
-   "name": "BISOU",
-   "mint": "CesNnJvWbBNZ5xxauYcbKZw9vduz6ZQxoGUPn8Mzpump",
-   "age_s": 154,
-   "sol_in": 0.03,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.1,
-   "big_sell": 0.02,
-   "x": false,
-   "tg": false,
-   "web": "https://www.tiktok.com/@1bisouuuh",
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "batmen",
-   "name": "Batmen",
-   "mint": "EhGsPr2RbboxJvRaLX5Wj3LfzMXCefHdBxnfULGwpump",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
