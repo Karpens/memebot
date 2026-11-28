@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:08:17Z",
+ "updated": "2026-11-28T12:08:45Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1363,
+  "flagged": 1364,
   "checked": 49,
   "filtered": 1,
-  "lines": 3051,
+  "lines": 3052,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "STACKR",
-   "why": "snipe",
-   "t": "2026-11-28T12:02:48Z"
-  },
   {
    "coin": "MoonBoy",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "LEAN",
    "why": "snipe",
    "t": "2026-11-28T12:08:15Z"
+  },
+  {
+   "coin": "rice",
+   "why": "snipe",
+   "t": "2026-11-28T12:08:42Z"
   }
  ],
  "curve": [
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:07:53Z",
-   "time": "12:07:53",
-   "agent": "SCANNER",
-   "coin": "DUSTY",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2852
-  },
-  {
    "t": "2026-11-28T11:08:05Z",
    "time": "12:08:05",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 3051
+  },
+  {
+   "t": "2026-11-28T12:08:42Z",
+   "time": "13:08:42",
+   "agent": "SCANNER",
+   "coin": "rice",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3052
   }
  ],
  "nights": [
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 498,
-    "last_event_age_s": 2.2,
+    "events": 500,
+    "last_event_age_s": 3.2,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12794,
-    "last_event_age_s": 1.0,
+    "events": 12853,
+    "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 341,
-    "last_event_age_s": 2.0,
+    "events": 342,
+    "last_event_age_s": 3.0,
     "errors": 7,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,7 +6529,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.2,
   "watching": 0,
   "followed": 7,
   "odd_readings": 1009,
@@ -6580,26 +6580,62 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7250,
+   "sent": 7280,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7250,
+   "sent": 7280,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "LEAN",
-   "name": "Lean Client",
-   "mint": "2NHKCKmY4kszKBnwutpFzDzZtLo5pubhyEj6qbJAvW8W",
-   "age_s": 2,
+   "symbol": "rice",
+   "name": "1 grain of rice",
+   "mint": "7AUTKB4RLaV93mqimKJ4UmFe5f23a9E2rcPUpMeLpump",
+   "age_s": 3,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/Raydium/status/2126355690046554457",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "FLASK",
+   "name": "Flask",
+   "mint": "FLasjA4Adw8Zpso7TpBqd5A6JLutCybdQHm3eReyPQMo",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "LEAN",
+   "name": "Lean Client",
+   "mint": "2NHKCKmY4kszKBnwutpFzDzZtLo5pubhyEj6qbJAvW8W",
+   "age_s": 30,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
@@ -6614,7 +6650,7 @@
    "symbol": "?",
    "name": "",
    "mint": "qwEmrtR4CJrxDBSy56hSxv1sDovdaHHuTiQ9mBQJW9q",
-   "age_s": 5,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "ENC",
    "name": "Enclip",
    "mint": "6i1jzXoXeSQHwe63PtYcDsG4vjqiBz3vQsufeNpk6enc",
-   "age_s": 9,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6686,7 @@
    "symbol": "MATH",
    "name": "MATH IS MONEY",
    "mint": "EmPFfmy8rTZrFudwxM9fBCdCaYhMm8kLyGNDAdxApump",
-   "age_s": 31,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6704,7 @@
    "symbol": "Gemini",
    "name": "Google Gemini",
    "mint": "JDBCtGVRkRCkU1DEhhR45ZXwk3YCfZTxc93BRa2Fa3WH",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": 0.02,
    "buys": 2,
    "sells": 1,
@@ -6686,12 +6722,12 @@
    "symbol": "SLPRNT",
    "name": "Slotprint",
    "mint": "9ZEFrwQjJpWmU1D1xnDcfkghtWPbSQEJQ1ui9cqMe4sR",
-   "age_s": 41,
-   "sol_in": 1.53,
+   "age_s": 69,
+   "sol_in": 1.48,
    "buys": 3,
-   "sells": 1,
-   "rise_pct": 10.4,
-   "mcap_sol": 31.4,
+   "sells": 2,
+   "rise_pct": 10.0,
+   "mcap_sol": 31.3,
    "dev_pct": 1.0,
    "big_sell": 0.44,
    "x": false,
@@ -6704,7 +6740,7 @@
    "symbol": "NALA",
    "name": "Nala",
    "mint": "4CAiukFjEhGrTysfEPUrh5Hsre5Sd36YodiMwkhMpump",
-   "age_s": 63,
+   "age_s": 91,
    "sol_in": -2.47,
    "buys": 1,
    "sells": 3,
@@ -6722,11 +6758,11 @@
    "symbol": "CHRISTMAS",
    "name": "CHRISTMAS",
    "mint": "BnirfL7mNqDj9uWpcNQMZDB7SzB4eeRgiEGwX5Nmpump",
-   "age_s": 64,
-   "sol_in": 0.09,
-   "buys": 4,
+   "age_s": 92,
+   "sol_in": 0.12,
+   "buys": 5,
    "sells": 1,
-   "rise_pct": 0.6,
+   "rise_pct": 0.8,
    "mcap_sol": 28.2,
    "dev_pct": 0.1,
    "big_sell": 0.0,
@@ -6740,7 +6776,7 @@
    "symbol": "REA",
    "name": "REA PRINCESS OF THE SEA",
    "mint": "9c9TFmqJh7emmx4RuSoBMmc1UpuzXqqzMGAq4X8Cpump",
-   "age_s": 95,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6758,7 +6794,7 @@
    "symbol": "?",
    "name": "",
    "mint": "J1MoNzqxyfmaNTd4uKk38BhA9HCc1qmsZzbepaeUKXgb",
-   "age_s": 122,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6776,12 +6812,12 @@
    "symbol": "CZ",
    "name": "The Nietzschean Cz",
    "mint": "5nvnWRCEX5ApuwiKG8Tnwo4NqiS1bariU9SpVYBEHRAT",
-   "age_s": 132,
-   "sol_in": -2.77,
+   "age_s": 160,
+   "sol_in": -2.87,
    "buys": 3,
-   "sells": 6,
-   "rise_pct": -15.2,
-   "mcap_sol": 32.2,
+   "sells": 7,
+   "rise_pct": -15.7,
+   "mcap_sol": 32.0,
    "dev_pct": 15.2,
    "big_sell": 3.92,
    "x": "https://x.com/TCryptochicks/status/2126648696175493333",
@@ -6789,24 +6825,6 @@
    "web": false,
    "status": "rejected: serial launcher: 14 more coins in 60 min",
    "why": "serial launcher: 14 more coins in 60 min"
-  },
-  {
-   "symbol": "YSH",
-   "name": "Yoshka",
-   "mint": "CyLd5ADbNDa1w3pZR36T9LcgMc1UhBdi2KQMHDXopump",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/Kiddoffsteell/status/2126648555955798292",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
