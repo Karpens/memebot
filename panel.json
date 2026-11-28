@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:51:56Z",
+ "updated": "2026-11-28T03:52:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 605,
+  "flagged": 607,
   "checked": 49,
   "filtered": 1,
-  "lines": 1543,
+  "lines": 1545,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SIGMOID",
-   "why": "snipe",
-   "t": "2026-11-28T03:46:10Z"
-  },
-  {
-   "coin": "FLIP",
-   "why": "snipe",
-   "t": "2026-11-28T03:46:47Z"
-  },
   {
    "coin": "SNOWMEI",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "FREEVPS",
    "why": "snipe",
    "t": "2026-11-28T03:51:31Z"
+  },
+  {
+   "coin": "TIM",
+   "why": "snipe",
+   "t": "2026-11-28T03:51:57Z"
+  },
+  {
+   "coin": "$RUNOVER",
+   "why": "snipe",
+   "t": "2026-11-28T03:52:21Z"
   }
  ],
  "curve": [
@@ -1239,6 +1239,10 @@
   ],
   [
    1795837860,
+   47.79
+  ],
+  [
+   1795837920,
    47.79
   ]
  ],
@@ -3393,24 +3397,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:54:46Z",
-   "time": "03:54:46",
-   "agent": "SCANNER",
-   "coin": "NVIDIA",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 17.8 SOL in · +135% since the create · mcap 82 SOL",
-   "n": 1344
-  },
-  {
-   "t": "2026-11-28T02:55:11Z",
-   "time": "03:55:11",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 0 watched · 17 rejected (snipe not bought: only to size 7, serial launcher 5, mayhem mode 4)",
-   "n": 1345
-  },
-  {
    "t": "2026-11-28T02:55:36Z",
    "time": "03:55:36",
    "agent": "SCANNER",
@@ -5191,6 +5177,24 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (snipe not bought: only to size 3, serial launcher 1, no symbol or name 1)",
    "n": 1543
+  },
+  {
+   "t": "2026-11-28T03:51:57Z",
+   "time": "04:51:57",
+   "agent": "SCANNER",
+   "coin": "TIM",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 10.8 SOL in · +78% since the create · mcap 58 SOL",
+   "n": 1544
+  },
+  {
+   "t": "2026-11-28T03:52:21Z",
+   "time": "04:52:21",
+   "agent": "SCANNER",
+   "coin": "$RUNOVER",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1545
   }
  ],
  "nights": [
@@ -5263,7 +5267,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5271,24 +5275,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1816,
-    "last_event_age_s": 0.1,
+    "events": 1818,
+    "last_event_age_s": 3.5,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39155,
-    "last_event_age_s": 1.2,
+    "events": 39220,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1088,
-    "last_event_age_s": 26.0,
+    "events": 1090,
+    "last_event_age_s": 2.8,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5302,8 +5306,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.2,
-  "watching": 1,
-  "followed": 4,
+  "watching": 0,
+  "followed": 5,
   "odd_readings": 350,
   "odd_coins": 157
  },
@@ -5352,41 +5356,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19142,
+   "sent": 19172,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19142,
+   "sent": 19172,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "TIM",
-   "name": "Tim Berners-Lee Coin",
-   "mint": "CrJvFqQdsYJjhz3A6vgWrVNRcykXjY4mf2xAAvwapump",
-   "age_s": 0,
+   "symbol": "$RUNOVER",
+   "name": "$NANA",
+   "mint": "GQ3EL2kfgPSx9dARWEc4CzFTRSTfxbQzM3AUeGngpump",
+   "age_s": 3,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 32.8,
-   "dev_pct": 8.2,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
    "big_sell": 0.0,
-   "x": false,
+   "x": "https://x.com/NANAXCOIN",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "TIM",
+   "name": "Tim Berners-Lee Coin",
+   "mint": "CrJvFqQdsYJjhz3A6vgWrVNRcykXjY4mf2xAAvwapump",
+   "age_s": 28,
+   "sol_in": 12.88,
+   "buys": 13,
+   "sells": 14,
+   "rise_pct": 95.0,
+   "mcap_sol": 63.9,
+   "dev_pct": 8.2,
+   "big_sell": 2.33,
+   "x": "https://x.com/AxTrades32/status/2126524431627395205?a=A-KKMON2wBz8tAcRYVM&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "FREEVPS",
    "name": "Freevps",
    "mint": "AJnVSE5Xj2yb5SgkXw1j8s4Sxfy9uVV6th3MCDqtPqac",
-   "age_s": 26,
+   "age_s": 54,
    "sol_in": -4.44,
    "buys": 0,
    "sells": 1,
@@ -5404,7 +5426,7 @@
    "symbol": "?",
    "name": "",
    "mint": "56N4srZWzZ5ZXnfp2kiydTKuxBruhhh5qq9RtL3Wpump",
-   "age_s": 67,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5422,10 +5444,10 @@
    "symbol": "HOS",
    "name": "Hit or Stay?",
    "mint": "De4g6QYTo23F1QZATRai54P2SbH6fLrJGByF1wCspump",
-   "age_s": 107,
+   "age_s": 135,
    "sol_in": 0.45,
-   "buys": 11,
-   "sells": 12,
+   "buys": 12,
+   "sells": 13,
    "rise_pct": 3.0,
    "mcap_sol": 29.0,
    "dev_pct": 0.3,
@@ -5440,14 +5462,14 @@
    "symbol": "MBS",
    "name": "Massive Boobs Shark",
    "mint": "36DFTERdwQ86QPnVAtNxgSVyvhcbcsBWJpK9eJYppump",
-   "age_s": 134,
-   "sol_in": 11.73,
-   "buys": 20,
-   "sells": 27,
-   "rise_pct": 90.0,
-   "mcap_sol": 56.7,
+   "age_s": 162,
+   "sol_in": 10.06,
+   "buys": 25,
+   "sells": 35,
+   "rise_pct": 75.5,
+   "mcap_sol": 52.3,
    "dev_pct": 3.4,
-   "big_sell": 1.85,
+   "big_sell": 5.23,
    "x": "https://x.com/Milsaftermils/status/2126523901463142464",
    "tg": false,
    "web": "https://x.com/migihida44/status/2126211897121013829",
