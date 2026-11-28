@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:44:07Z",
+ "updated": "2026-11-28T08:44:41Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 988,
+  "flagged": 989,
   "checked": 49,
   "filtered": 1,
-  "lines": 2361,
+  "lines": 2364,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "mogmas",
-   "why": "snipe",
-   "t": "2026-11-28T08:40:40Z"
-  },
   {
    "coin": "DAISY",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "JENSEN",
    "why": "snipe",
    "t": "2026-11-28T08:43:49Z"
+  },
+  {
+   "coin": "WLFI",
+   "why": "snipe",
+   "t": "2026-11-28T08:44:27Z"
   }
  ],
  "curve": [
@@ -4565,33 +4565,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:42:12Z",
-   "time": "08:42:12",
-   "agent": "SCANNER",
-   "coin": "bilybobjoe",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2162
-  },
-  {
-   "t": "2026-11-28T07:42:31Z",
-   "time": "08:42:31",
-   "agent": "SCANNER",
-   "coin": "Jinhao",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.4 SOL in · +2% since the create · mcap 67 SOL",
-   "n": 2163
-  },
-  {
-   "t": "2026-11-28T07:42:48Z",
-   "time": "08:42:48",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 0 watched · 10 rejected (serial launcher 4, snipe not bought: only to size 4, mayhem mode 2)",
-   "n": 2164
-  },
-  {
    "t": "2026-11-28T07:42:59Z",
    "time": "08:42:59",
    "agent": "SCANNER",
@@ -6363,6 +6336,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2361
+  },
+  {
+   "t": "2026-11-28T08:44:21Z",
+   "time": "09:44:21",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 12 rejected (snipe not bought: only to size 6, serial launcher 6)",
+   "n": 2362
+  },
+  {
+   "t": "2026-11-28T08:44:27Z",
+   "time": "09:44:27",
+   "agent": "SCANNER",
+   "coin": "WLFI",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 2363
+  },
+  {
+   "t": "2026-11-28T08:44:27Z",
+   "time": "09:44:27",
+   "agent": "SIZER",
+   "coin": "WLFI",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2364
   }
  ],
  "nights": [
@@ -6443,15 +6443,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 948,
-    "last_event_age_s": 18.2,
+    "events": 950,
+    "last_event_age_s": 14.4,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16163,
+    "events": 16230,
     "last_event_age_s": 0.8,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6459,8 +6459,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 685,
-    "last_event_age_s": 16.1,
+    "events": 687,
+    "last_event_age_s": 13.9,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6473,7 +6473,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 11,
   "odd_readings": 641,
@@ -6524,23 +6524,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15941,
+   "sent": 15977,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15941,
+   "sent": 15977,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WLFI",
+   "name": "We Literally Fuck Investors",
+   "mint": "Gf1xttwzoyMmWmFbi3poaqSU5U6JmccF9CHJnJj8pump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/LuckiWeb3/status/2126536570404475079?a=XJhKwHwnLU68e1EMNl0&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Joe",
+   "name": "catwifhat",
+   "mint": "9AuLDLJHkfK8UoDUWt5ByTD4T5e6oNjXoJu1ogP1cpPD",
+   "age_s": 31,
+   "sol_in": 6.15,
+   "buys": 6,
+   "sells": 7,
+   "rise_pct": 40.7,
+   "mcap_sol": 47.8,
+   "dev_pct": 9.9,
+   "big_sell": 1.55,
+   "x": "https://x.com/nonanon124/status/2126597986977272295",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 13 more coins in 60 min",
+   "why": "serial launcher: 13 more coins in 60 min"
+  },
+  {
    "symbol": "JENSEN",
    "name": "Jensen the White",
    "mint": "2Pi2APCLveXKcojF8yg3pk6oWsLJsg4aXNv3eLg5Fziu",
-   "age_s": 18,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6558,7 +6594,7 @@
    "symbol": "PAIN",
    "name": "Hayes Pain Threshold",
    "mint": "7qus4orQotjHM7CYc81dgAvfYbT4JccbaB67ByHoUr6T",
-   "age_s": 19,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6576,7 +6612,7 @@
    "symbol": "GOODE",
    "name": "100% Goode",
    "mint": "kYaUnpjmSQsZyeimyFwF3wqevjTE6PXgNEMG8eSNKtV",
-   "age_s": 25,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6594,7 +6630,7 @@
    "symbol": "Prince",
    "name": "dogwifhair",
    "mint": "CZuwmBoa7CitY9Ks58hLcz2Tig7oELjGNVdqezwePLg",
-   "age_s": 47,
+   "age_s": 81,
    "sol_in": -1.93,
    "buys": 1,
    "sells": 2,
@@ -6612,7 +6648,7 @@
    "symbol": "PHILOA",
    "name": "Philo Down Again",
    "mint": "Apsh2XBCQrX6WAKYVaT4XnGfuF2YL2nxjNHBFbt9pump",
-   "age_s": 59,
+   "age_s": 93,
    "sol_in": -0.99,
    "buys": 4,
    "sells": 3,
@@ -6630,12 +6666,12 @@
    "symbol": "hair",
    "name": "dogwifhair",
    "mint": "2hTV3nbPEpSABkVsivoFEU82RH26twxevg4bPdN8pump",
-   "age_s": 77,
-   "sol_in": -0.88,
-   "buys": 14,
+   "age_s": 111,
+   "sol_in": 0.54,
+   "buys": 15,
    "sells": 19,
-   "rise_pct": -5.4,
-   "mcap_sol": 30.0,
+   "rise_pct": 3.4,
+   "mcap_sol": 32.8,
    "dev_pct": 6.6,
    "big_sell": 2.82,
    "x": "https://x.com/gigadiggadev/status/2126597652531835284",
@@ -6648,7 +6684,7 @@
    "symbol": "NAKEDCAMA",
    "name": "Naked Camera",
    "mint": "C7nZqtbqsVM8XcqGLiFrL1i1bQ8Cmcon4JjWhyhfpump",
-   "age_s": 89,
+   "age_s": 123,
    "sol_in": -1.23,
    "buys": 3,
    "sells": 3,
@@ -6666,12 +6702,12 @@
    "symbol": "GitHub",
    "name": "GitHub",
    "mint": "A5GsopvvCBdowgX97ytvqSrFiEZav1zQTXmLT9Nvpump",
-   "age_s": 132,
-   "sol_in": 18.75,
-   "buys": 32,
-   "sells": 29,
-   "rise_pct": 143.5,
-   "mcap_sol": 84.7,
+   "age_s": 166,
+   "sol_in": 19.06,
+   "buys": 43,
+   "sells": 38,
+   "rise_pct": 146.4,
+   "mcap_sol": 85.7,
    "dev_pct": 11.1,
    "big_sell": 0.33,
    "x": "https://x.com/github",
@@ -6684,7 +6720,7 @@
    "symbol": "USD1",
    "name": "Useless Shitty Dollar 1",
    "mint": "7u78X6EjkeSZHioZpNkoYaZATA9BvMC4YyTapqnzpump",
-   "age_s": 138,
+   "age_s": 172,
    "sol_in": 0.42,
    "buys": 2,
    "sells": 1,
@@ -6695,42 +6731,6 @@
    "x": "https://x.com/AaronFlynnX/status/2126575945075343412",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "AFFORDHOU",
-   "name": "Affordable Redevelopment",
-   "mint": "3cNrzYMoNesQsakC1TFdHaoa3Sdz9keppGSWNAbuaPUN",
-   "age_s": 146,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://twitter.com/staronline/status/2126597304392069550",
-   "tg": false,
-   "web": "https://grokfamily.fun/",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "CATRAVE",
-   "name": "CAT RAVE",
-   "mint": "HSJVLYBEirsmjLeotqRyJz6z48ZLTiQtYyNavqPVpump",
-   "age_s": 161,
-   "sol_in": -0.46,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -3.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 3.4,
-   "big_sell": 1.02,
-   "x": false,
-   "tg": false,
-   "web": "https://www.youtube.com/watch?v=IxX_QHay02M",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
