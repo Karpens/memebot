@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:13:29Z",
+ "updated": "2026-11-28T02:13:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 411,
+  "flagged": 412,
   "checked": 49,
   "filtered": 1,
-  "lines": 1214,
+  "lines": 1216,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "EC",
-   "why": "snipe",
-   "t": "2026-11-28T02:08:24Z"
-  },
   {
    "coin": "STABLE",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MOD",
    "why": "snipe",
    "t": "2026-11-28T02:11:41Z"
+  },
+  {
+   "coin": "DAWK",
+   "why": "snipe",
+   "t": "2026-11-28T02:13:48Z"
   }
  ],
  "curve": [
@@ -3003,24 +3003,6 @@
   {
    "t": "2026-11-28T01:20:19Z",
    "time": "02:20:19",
-   "agent": "SCANNER",
-   "coin": "DINU",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.04e+05 is not 30 + real SOL 14.63 (off +1.04e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 208 odd readings from 107 coins tonight",
-   "n": 1015
-  },
-  {
-   "t": "2026-11-28T01:20:19Z",
-   "time": "02:20:19",
-   "agent": "SCANNER",
-   "coin": "ISF",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 5.2 SOL in · +36% since the create · mcap 41 SOL",
-   "n": 1016
-  },
-  {
-   "t": "2026-11-28T01:20:19Z",
-   "time": "02:20:19",
    "agent": "SIZER",
    "coin": "ISF",
    "action": "skip",
@@ -4799,6 +4781,24 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, serial launcher 1, mayhem mode 1)",
    "n": 1214
+  },
+  {
+   "t": "2026-11-28T02:13:46Z",
+   "time": "03:13:46",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 0 watched · 5 rejected (snipe not bought: only to size 4, serial launcher 1)",
+   "n": 1215
+  },
+  {
+   "t": "2026-11-28T02:13:48Z",
+   "time": "03:13:48",
+   "agent": "SCANNER",
+   "coin": "DAWK",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1216
   }
  ],
  "nights": [
@@ -4871,7 +4871,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 304 (141 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 305 (141 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4879,24 +4879,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1427,
-    "last_event_age_s": 25.0,
+    "events": 1430,
+    "last_event_age_s": 3.0,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27734,
-    "last_event_age_s": 1.0,
+    "events": 27807,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 804,
-    "last_event_age_s": 107.2,
+    "events": 805,
+    "last_event_age_s": 8.7,
     "errors": 36,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4909,10 +4909,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.8,
+  "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 5,
-  "odd_readings": 304,
+  "followed": 6,
+  "odd_readings": 305,
   "odd_coins": 141
  },
  "learner": {
@@ -4960,23 +4960,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12857,
+   "sent": 12886,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12857,
+   "sent": 12886,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DAWK",
+   "name": "Dawk Coin",
+   "mint": "Hfkw9rHfkdxMaAXUhsmbGoAmiks6AveUkAbNaosspump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MOD",
    "name": "Mod",
    "mint": "D9yizv6y9sodsArr11sYeREZ638FHJLPY8ygTwdKpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4994,7 +5012,7 @@
    "symbol": "DIP",
    "name": "Diglett in Pain",
    "mint": "8PAj9UUuZdZjGSTkj6FXand5CK3WY7BYqfRUHWdpump",
-   "age_s": 110,
+   "age_s": 138,
    "sol_in": 1.66,
    "buys": 27,
    "sells": 28,
@@ -5012,7 +5030,7 @@
    "symbol": "ZYRK",
    "name": "ZYRK",
    "mint": "E6xqxg68LSjQLm9wFxyoipeJ71bU8ZzP9RhkrXHFpump",
-   "age_s": 121,
+   "age_s": 149,
    "sol_in": 1.78,
    "buys": 4,
    "sells": 2,
@@ -5030,7 +5048,7 @@
    "symbol": "paired",
    "name": "paired",
    "mint": "GU8ewXxEnLcYrkMBguoG49o6wBHCoX981cdkvR3ZhBx",
-   "age_s": 125,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5048,12 +5066,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "6B8kzQUAfBkCHGcxX8MxWGf2QWeFPfP9ornsFA82pump",
-   "age_s": 127,
-   "sol_in": 19.03,
-   "buys": 37,
-   "sells": 38,
-   "rise_pct": 146.2,
-   "mcap_sol": 85.6,
+   "age_s": 155,
+   "sol_in": 19.77,
+   "buys": 49,
+   "sells": 46,
+   "rise_pct": 153.1,
+   "mcap_sol": 88.0,
    "dev_pct": 11.1,
    "big_sell": 0.32,
    "x": "https://x.com/nvidianewsroom",
