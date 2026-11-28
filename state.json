@@ -59,51 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:30:51Z",
-    "time": "00:30:51",
-    "agent": "SCANNER",
-    "coin": "PVE",
-    "action": "flag",
-    "text": "snipe · first reading 0.6 s after the create · 19.4 SOL in · +164% since the create · mcap 79 SOL",
-    "n": 460
-   },
-   {
-    "t": "2026-11-27T23:30:51Z",
-    "time": "00:30:51",
-    "agent": "SIZER",
-    "coin": "PVE",
-    "action": "size",
-    "text": "10% of $51.43 = $5.14",
-    "n": 461
-   },
-   {
-    "t": "2026-11-27T23:30:51Z",
-    "time": "00:30:51",
-    "agent": "EXECUTOR",
-    "coin": "PVE",
-    "action": "enter",
-    "text": "ENTER PVE at 0.0000057547 · slip 0.1% · snipe · first in · 0.0 s after the first reading · 0 s after launch · fill curve (Jupiter not asked: 5 coins held, their exits first) · pump.fun's fee, the curve's impact, the 1% haircut and the fees · stop -10%",
-    "n": 462
-   },
-   {
-    "t": "2026-11-27T23:30:51Z",
-    "time": "00:30:51",
-    "agent": "NEWS",
-    "coin": "PVE",
-    "action": "plan",
-    "text": "hold plan · 3.5/10 (X post, web, inflow 19.4 SOL) · swing: +10 → +20",
-    "n": 463
-   },
-   {
-    "t": "2026-11-27T23:30:54Z",
-    "time": "00:30:54",
-    "agent": "EXECUTOR",
-    "coin": "PVE",
-    "action": "take",
-    "text": "TP +10% · sold 50% for $2.71 · stop to break-even · out · 0.1 s after the reading",
-    "n": 464
-   },
-   {
     "t": "2026-11-27T23:30:56Z",
     "time": "00:30:56",
     "agent": "EXECUTOR",
@@ -5457,6 +5412,51 @@
     "action": "scan",
     "text": "new pairs · 7.8 a minute · 0 watched · 25 rejected (snipe not bought: only to size 11, mayhem mode 8, odd curve reading: virtual SOL i 3)",
     "n": 1059
+   },
+   {
+    "t": "2026-11-28T01:28:43Z",
+    "time": "02:28:43",
+    "agent": "SCANNER",
+    "coin": "TEST2",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 2.774e+05 is not 30 + real SOL 0 (off +2.774e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 222 odd readings from 114 coins tonight",
+    "n": 1060
+   },
+   {
+    "t": "2026-11-28T01:28:53Z",
+    "time": "02:28:53",
+    "agent": "SCANNER",
+    "coin": "SpaceXCoin",
+    "action": "flag",
+    "text": "snipe · first reading 0.2 s after the create · 17.6 SOL in · +131% since the create · mcap 82 SOL",
+    "n": 1061
+   },
+   {
+    "t": "2026-11-28T01:29:04Z",
+    "time": "02:29:04",
+    "agent": "SCANNER",
+    "coin": "TEST2",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 2.776e+05 is not 30 + real SOL 0 (off +2.775e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 224 odd readings from 115 coins tonight",
+    "n": 1062
+   },
+   {
+    "t": "2026-11-28T01:29:04Z",
+    "time": "02:29:04",
+    "agent": "SCANNER",
+    "coin": "CHILL",
+    "action": "flag",
+    "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 33 SOL",
+    "n": 1063
+   },
+   {
+    "t": "2026-11-28T01:29:23Z",
+    "time": "02:29:23",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 8.2 a minute · 0 watched · 26 rejected (snipe not bought: only to size 9, mayhem mode 8, no symbol or name 4)",
+    "n": 1064
    }
   ],
   "trades": [
@@ -8102,21 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 338,
+  "flagged": 340,
   "checked": 49,
   "filtered": 1,
-  "lines": 1059,
+  "lines": 1064,
   "flags": [
-   {
-    "coin": "Mas",
-    "why": "snipe",
-    "t": "2026-11-28T01:26:13Z"
-   },
-   {
-    "coin": "MIPSA",
-    "why": "snipe",
-    "t": "2026-11-28T01:26:31Z"
-   },
    {
     "coin": "YAMIONI",
     "why": "snipe",
@@ -8146,6 +8136,16 @@
     "coin": "OSOWKA",
     "why": "snipe",
     "t": "2026-11-28T01:28:17Z"
+   },
+   {
+    "coin": "SpaceXCoin",
+    "why": "snipe",
+    "t": "2026-11-28T01:28:53Z"
+   },
+   {
+    "coin": "CHILL",
+    "why": "snipe",
+    "t": "2026-11-28T01:29:04Z"
    }
   ],
   "curve": [
@@ -8744,13 +8744,17 @@
    [
     1795829280,
     47.79
+   ],
+   [
+    1795829340,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795829303.960824,
+  "np_said": 1795829363.960826,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8935,8 +8939,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 221,
-   "coins": 113,
+   "readings": 230,
+   "coins": 115,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -9051,7 +9055,9 @@
     "EvH7Lw7ZYZP4wE2HV3k9EQkNWGVGe4PuM4rPmYP8P3MH",
     "EHmqTGzyH5Dj7NP6Y6nf5u4JGWf3E4ZkK3bxShvZMDCy",
     "4vLF7YJMmQACffHfr9BZccPKUx1gMJqG6vrRBtfqca3A",
-    "5Lu1MFM8iJ9qETSHdvv3C7tVEPhdZvP99Jd8YukTUg2K"
+    "5Lu1MFM8iJ9qETSHdvv3C7tVEPhdZvP99Jd8YukTUg2K",
+    "CgRzre1JsYMPwxQ5vyYgLYSujuD6AD8ktunoBkfbb4AT",
+    "DZ7wvJaxa1ARPcwKWAHa5Y5SZPVe7maP79hJZnkTDC18"
    ]
   },
   "risk_said": {
