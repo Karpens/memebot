@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:45:20Z",
+ "updated": "2026-11-28T10:45:49Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1209,
+  "flagged": 1211,
   "checked": 49,
   "filtered": 1,
-  "lines": 2763,
+  "lines": 2766,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MI",
-   "why": "snipe",
-   "t": "2026-11-28T10:41:46Z"
-  },
   {
    "coin": "FAKECAT",
    "why": "snipe",
@@ -69,7 +64,12 @@
   {
    "coin": "dancecat",
    "why": "snipe",
-   "t": "2026-11-28T10:45:09Z"
+   "t": "2026-11-28T10:45:27Z"
+  },
+  {
+   "coin": "SNOWCAT",
+   "why": "snipe",
+   "t": "2026-11-28T10:45:48Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:47:04Z",
-   "time": "10:47:04",
-   "agent": "SCANNER",
-   "coin": "NAIL",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.101e+05 is not 30 + real SOL 1.206e+04 (off +1.98e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 660 odd readings from 256 coins tonight",
-   "n": 2564
-  },
-  {
-   "t": "2026-11-28T09:47:04Z",
-   "time": "10:47:04",
-   "agent": "SCANNER",
-   "coin": "SLAB",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.105e+05 is not 30 + real SOL 1.246e+04 (off +1.98e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 661 odd readings from 257 coins tonight",
-   "n": 2565
-  },
-  {
-   "t": "2026-11-28T09:47:04Z",
-   "time": "10:47:04",
-   "agent": "SCANNER",
-   "coin": "RULE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.037e+05 is not 30 + real SOL 5677 (off +1.98e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 662 odd readings from 258 coins tonight",
-   "n": 2566
-  },
-  {
    "t": "2026-11-28T09:47:06Z",
    "time": "10:47:06",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 16.3 SOL in · +123% since the create · mcap 75 SOL",
    "n": 2763
+  },
+  {
+   "t": "2026-11-28T10:45:25Z",
+   "time": "11:45:25",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, mayhem mode 1, no symbol or name 1)",
+   "n": 2764
+  },
+  {
+   "t": "2026-11-28T10:45:27Z",
+   "time": "11:45:27",
+   "agent": "SCANNER",
+   "coin": "dancecat",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.3 SOL in · +2% since the create · mcap 48 SOL",
+   "n": 2765
+  },
+  {
+   "t": "2026-11-28T10:45:48Z",
+   "time": "11:45:48",
+   "agent": "SCANNER",
+   "coin": "SNOWCAT",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2766
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 922 (276 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 922 (276 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 112,
-    "last_event_age_s": 12.1,
+    "events": 115,
+    "last_event_age_s": 2.7,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 3344,
+    "events": 3415,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 83,
-    "last_event_age_s": 11.9,
+    "events": 86,
+    "last_event_age_s": 2.5,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 9,
   "odd_readings": 922,
   "odd_coins": 276
  },
@@ -6578,28 +6578,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1954,
+   "sent": 1985,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1954,
+   "sent": 1985,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SNOWCAT",
+   "name": "Snowcat",
+   "mint": "6a8i9XMg2FDPRtJWXfjYC6DM6oGh9rhtd9JPE13Vpump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/buildsnowcat?s=11",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Y&E",
+   "name": "Yuki & Earth",
+   "mint": "7tmh7GXgTSAVwiNgygexMeGqpu5dcLzKAh4VcVKpJYEf",
+   "age_s": 13,
+   "sol_in": 0.46,
+   "buys": 4,
+   "sells": 4,
+   "rise_pct": 2.7,
+   "mcap_sol": 38.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.01,
+   "x": "https://x.com/kanazawakitecho/status/2126628409308782941",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 9 more coins in 60 min",
+   "why": "serial launcher: 9 more coins in 60 min"
+  },
+  {
+   "symbol": "dancecat",
+   "name": "dancing cat",
+   "mint": "HEJZ8QzTfKjYbTX5uQpuQs1A6CtJSPiNmEbfAmf5pump",
+   "age_s": 22,
+   "sol_in": 2.63,
+   "buys": 15,
+   "sells": 8,
+   "rise_pct": 13.9,
+   "mcap_sol": 53.8,
+   "dev_pct": 24.8,
+   "big_sell": 4.33,
+   "x": "https://x.com/dancecatpump/status/2126628394980753797",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "dancecat",
    "name": "dancing cat",
    "mint": "B32aSh7gnqNi9mdkFFL4jBTHzE3s74dS6CUdfz64pump",
-   "age_s": 12,
-   "sol_in": 6.39,
-   "buys": 3,
-   "sells": 7,
-   "rise_pct": 42.5,
-   "mcap_sol": 48.1,
+   "age_s": 41,
+   "sol_in": 1.62,
+   "buys": 16,
+   "sells": 19,
+   "rise_pct": 10.1,
+   "mcap_sol": 37.2,
    "dev_pct": 9.6,
    "big_sell": 5.87,
    "x": "https://x.com/dancecatpump/status/2126628394980753797",
@@ -6612,7 +6666,7 @@
    "symbol": "?",
    "name": "",
    "mint": "FqygLJ4SfaQpyXjcH5RWEsqoQiPgHtxABTXBU69Fpump",
-   "age_s": 23,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6684,7 @@
    "symbol": "bobby",
    "name": "bobby",
    "mint": "3DunnVdjaNQqdfC9Pyta8GKnGSNLPuk3tEMrTmbypump",
-   "age_s": 67,
+   "age_s": 96,
    "sol_in": -0.44,
    "buys": 4,
    "sells": 3,
@@ -6648,7 +6702,7 @@
    "symbol": "HLOVE",
    "name": "HARSH LOVE",
    "mint": "6MUFeSYFtq5PJRvQoctPXRbsbz3h3YVeazpefSC5pump",
-   "age_s": 82,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6720,7 @@
    "symbol": "Nobody",
    "name": "Nobody Huang",
    "mint": "AG63ZWy6bfyJkHAkZ5fS9cNtMCzukF7TgCTt1Rm3pump",
-   "age_s": 89,
+   "age_s": 118,
    "sol_in": -1.11,
    "buys": 2,
    "sells": 18,
@@ -6684,7 +6738,7 @@
    "symbol": "OF Orgasm",
    "name": "Orgasm Factory",
    "mint": "DTzhPYFtgn8f32qWuD96G9UePWUQhAQJjLDKNjjLpump",
-   "age_s": 101,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -6702,7 +6756,7 @@
    "symbol": "GM",
    "name": "Grok Market",
    "mint": "6UGo7KY3bEcHpYH6NY6jC1Pz41RzkWfv2KufATaYpump",
-   "age_s": 109,
+   "age_s": 138,
    "sol_in": -0.24,
    "buys": 2,
    "sells": 4,
@@ -6720,35 +6774,17 @@
    "symbol": "DIRECT",
    "name": "DIRECT",
    "mint": "CbGMxh5rinjkJde4YptAyQLVNmsftQJcQgB4dSpwpump",
-   "age_s": 111,
-   "sol_in": -8.78,
-   "buys": 45,
-   "sells": 49,
-   "rise_pct": -39.0,
-   "mcap_sol": 30.5,
+   "age_s": 140,
+   "sol_in": -8.98,
+   "buys": 47,
+   "sells": 50,
+   "rise_pct": -39.7,
+   "mcap_sol": 30.1,
    "dev_pct": 27.1,
    "big_sell": 15.36,
    "x": "https://x.com/DIRECT_BANK/status/2126627513506185392",
    "tg": false,
    "web": "https://directpad.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FAKECAT",
-   "name": "Fake Cat",
-   "mint": "8kepSqtg2eGdJc5Cnii5FcevhgNojTVJFki4mz121hqU",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.02,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
