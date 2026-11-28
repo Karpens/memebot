@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:02:02Z",
+ "updated": "2026-11-28T11:02:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1241,
+  "flagged": 1242,
   "checked": 49,
   "filtered": 1,
-  "lines": 2839,
+  "lines": 2840,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PONZI",
-   "why": "snipe",
-   "t": "2026-11-28T10:55:57Z"
-  },
   {
    "coin": "GENNY READ",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Ship",
    "why": "snipe",
    "t": "2026-11-28T11:00:23Z"
+  },
+  {
+   "coin": "SOTA",
+   "why": "snipe",
+   "t": "2026-11-28T11:02:06Z"
   }
  ],
  "curve": [
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:06:16Z",
-   "time": "11:06:16",
-   "agent": "SCANNER",
-   "coin": "GOOBER",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · -0.0 SOL in · +0% since the create · mcap 34 SOL",
-   "n": 2640
-  },
-  {
    "t": "2026-11-28T10:06:19Z",
    "time": "11:06:19",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 6.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 4, no symbol or name 3, mayhem mode 3)",
    "n": 2839
+  },
+  {
+   "t": "2026-11-28T11:02:06Z",
+   "time": "12:02:06",
+   "agent": "SCANNER",
+   "coin": "SOTA",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2840
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 979 (299 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 979 (299 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 212,
-    "last_event_age_s": 49.7,
+    "events": 215,
+    "last_event_age_s": 7.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5747,
-    "last_event_age_s": 0.4,
+    "events": 5793,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 156,
-    "last_event_age_s": 49.6,
+    "events": 157,
+    "last_event_age_s": 24.5,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.8,
+  "creates_per_min": 6.0,
   "watching": 0,
-  "followed": 5,
+  "followed": 4,
   "odd_readings": 979,
   "odd_coins": 299
  },
@@ -6578,30 +6578,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3021,
+   "sent": 3050,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3021,
+   "sent": 3050,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$PENNY",
+   "name": "The Last Penny",
+   "mint": "977Bfs7mrjn9LEJZ3CwNs6cx33e5dbHBzN8vwErLpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SOTA",
+   "name": "SOTA",
+   "mint": "HtEWzpV9omXsqgCNQ8T9pKkJzufcHK2bDvZjq5yWpump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.01,
+   "x": "https://x.com/SOTA_Launch",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GTG",
    "name": "GrandTheftGta",
    "mint": "Cx48rtXqtBvK4QFdHsDD6xqjWhi6MvMSpyG7XpNprufr",
-   "age_s": 49,
-   "sol_in": 9.75,
-   "buys": 12,
-   "sells": 24,
-   "rise_pct": 63.6,
-   "mcap_sol": 62.0,
+   "age_s": 77,
+   "sol_in": 5.11,
+   "buys": 14,
+   "sells": 32,
+   "rise_pct": 31.4,
+   "mcap_sol": 49.8,
    "dev_pct": 15.2,
-   "big_sell": 2.13,
+   "big_sell": 3.55,
    "x": "https://x.com/MarioPrezldente/status/2126632493533253746",
    "tg": false,
    "web": false,
@@ -6612,7 +6648,7 @@
    "symbol": "?",
    "name": "",
    "mint": "djV7FMQW1gjnAnumRepwF5gVevmgnBCRJevcrTA3nbo",
-   "age_s": 50,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6666,7 @@
    "symbol": "Huss",
    "name": "Huss huss",
    "mint": "9D3wW4NViyBHQbYai2p4erStEF8jVEiVJLsrHywVpump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6684,7 @@
    "symbol": "TDEV",
    "name": "Debt Intern",
    "mint": "77LsiPwQJJqbVTnPEZNUkjHFg9MWQfvGuy5wGvmHpump",
-   "age_s": 68,
+   "age_s": 96,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6702,7 @@
    "symbol": "?",
    "name": "",
    "mint": "AWrMPBfvcdTJwZEDq5yf3kQWRFGrXG4hYDqJ1oxGctX3",
-   "age_s": 80,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6720,7 @@
    "symbol": "BLOW35",
    "name": "BLOW35",
    "mint": "8yWoX6eX5LNXnpaRTeu3ormLnaNdYW6F5WLxFrR3pump",
-   "age_s": 98,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6738,7 @@
    "symbol": "?",
    "name": "",
    "mint": "25ZCeiJh2mQ5KUGf1ADev1LNHZMu1hwjuBHtvePoSmYs",
-   "age_s": 99,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6720,12 +6756,12 @@
    "symbol": "Ship",
    "name": "Ship The Sheep",
    "mint": "ANuu86Rsm9LFrCufz38K3WjYV7m1VKLwysRi3iempump",
-   "age_s": 99,
-   "sol_in": 5.73,
-   "buys": 20,
-   "sells": 27,
-   "rise_pct": 35.4,
-   "mcap_sol": 51.5,
+   "age_s": 127,
+   "sol_in": 1.23,
+   "buys": 21,
+   "sells": 32,
+   "rise_pct": 7.2,
+   "mcap_sol": 40.8,
    "dev_pct": 15.3,
    "big_sell": 3.17,
    "x": "https://x.com/onboardtheship/status/2126632226188144811",
@@ -6738,7 +6774,7 @@
    "symbol": "Farm",
    "name": "Official Farm Coin",
    "mint": "6AqMBxuhMHALxrcyjVL6aEZk4yfxcagDXHZWCaoGpump",
-   "age_s": 135,
+   "age_s": 163,
    "sol_in": 1.24,
    "buys": 9,
    "sells": 9,
@@ -6749,42 +6785,6 @@
    "x": "https://x.com/ashthebonder/status/2126632134496436330",
    "tg": false,
    "web": "https://x.com/MarioPrezldente/status/2126629072336027651",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PAYSTOCK",
-   "name": "Paystock",
-   "mint": "7Aj1xjF15AhDGcvcjR7s9qPVGK8qbavH5SoaZtxSpump",
-   "age_s": 152,
-   "sol_in": 17.37,
-   "buys": 27,
-   "sells": 15,
-   "rise_pct": 145.8,
-   "mcap_sol": 71.5,
-   "dev_pct": 2.1,
-   "big_sell": 2.02,
-   "x": "https://x.com/Paystockxyz/status/2126631997233926343",
-   "tg": false,
-   "web": "https://paystock.xyz",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "GTA 6",
-   "name": "GTA 6 Updates",
-   "mint": "5SGj3njPo5s8UAKtYQe8W5Wz9RtFNnErdL9Fvt4tpump",
-   "age_s": 177,
-   "sol_in": 19.66,
-   "buys": 59,
-   "sells": 49,
-   "rise_pct": 152.1,
-   "mcap_sol": 87.7,
-   "dev_pct": 11.1,
-   "big_sell": 0.51,
-   "x": "https://x.com/gtasix_",
-   "tg": false,
-   "web": "https://www.rockstargames.com/VI",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
