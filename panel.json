@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:48:37Z",
+ "updated": "2026-11-28T05:49:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 772,
   "checked": 49,
   "filtered": 1,
-  "lines": 1877,
+  "lines": 1878,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -1707,6 +1707,10 @@
   ],
   [
    1795844880,
+   47.79
+  ],
+  [
+   1795844940,
    47.79
   ]
  ],
@@ -3861,15 +3865,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:27:07Z",
-   "time": "05:27:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, serial launcher 3)",
-   "n": 1678
-  },
-  {
    "t": "2026-11-28T04:27:27Z",
    "time": "05:27:27",
    "agent": "SCANNER",
@@ -5659,6 +5654,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 1 watched · 7 rejected (snipe not bought: only to size 4, snipe: first reading s after the 1, serial launcher 1) · closest MWG: no curve reading yet",
    "n": 1877
+  },
+  {
+   "t": "2026-11-28T05:48:42Z",
+   "time": "06:48:42",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (snipe not bought: only to size 3, snipe: first reading s after the 2, serial launcher 1)",
+   "n": 1878
   }
  ],
  "nights": [
@@ -5725,7 +5729,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 14 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5733,24 +5737,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 257,
-    "last_event_age_s": 10.8,
+    "events": 258,
+    "last_event_age_s": 20.1,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1874,
-    "last_event_age_s": 5.6,
+    "events": 1892,
+    "last_event_age_s": 1.7,
     "errors": 190,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 202,
-    "last_event_age_s": 10.8,
+    "events": 203,
+    "last_event_age_s": 20.0,
     "errors": 11,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5763,9 +5767,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
-  "watching": 1,
-  "followed": 6,
+  "creates_per_min": 2.2,
+  "watching": 0,
+  "followed": 5,
   "odd_readings": 406,
   "odd_coins": 185
  },
@@ -5814,41 +5818,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4733,
+   "sent": 4762,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4733,
+   "sent": 4762,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MOZILLA",
+   "name": "Mozilla Foundation",
+   "mint": "8Gq8rRUyDpv87cQk4teQ4QkfxgQutGzX5denAe8Epump",
+   "age_s": 20,
+   "sol_in": 13.94,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 112.0,
+   "mcap_sol": 61.6,
+   "dev_pct": 2.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/mozilla",
+   "tg": false,
+   "web": "https://www.mozillafoundation.org/en/",
+   "status": "rejected: snipe: first reading 11.3 s after the create (max 10 s)",
+   "why": "snipe: first reading 11.3 s after the create (max 10 s)"
+  },
+  {
    "symbol": "GOOSE",
    "name": "Desktop Goose",
    "mint": "GinYiBPuH9R7prvB9Hx8fEYwjvYw8eBS3gijjT1upump",
-   "age_s": 10,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
+   "age_s": 37,
+   "sol_in": 10.21,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 78.8,
+   "mcap_sol": 50.9,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 0.32,
    "x": false,
    "tg": false,
    "web": "https://samperson.itch.io/desktop-goose",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 12.9 s after the create (max 10 s)",
+   "why": "snipe: first reading 12.9 s after the create (max 10 s)"
   },
   {
    "symbol": "MWG",
    "name": "Meme Wars General",
    "mint": "69mtEBDRfoZ8D24kaihc4pkgdqqrp75XBFCYZceuXJeh",
-   "age_s": 55,
+   "age_s": 82,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5866,7 +5888,7 @@
    "symbol": "AIR",
    "name": "Thin Air",
    "mint": "GpcVumWYftamuCCWMbyEzJ7kLec659r4YKjbQDc6pump",
-   "age_s": 65,
+   "age_s": 92,
    "sol_in": -0.98,
    "buys": 0,
    "sells": 1,
@@ -5884,7 +5906,7 @@
    "symbol": "HBDG",
    "name": "Hungry Bored Dogs Galore",
    "mint": "6rErV9HaVGtYJT71HVYE2fnuaYb1n3HnEPAZs6hvpump",
-   "age_s": 100,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5902,7 +5924,7 @@
    "symbol": "BITCOINU",
    "name": "Bitcoin Inu",
    "mint": "HEkhaMgxBmF7kNZfPa9stnKWtEi2VZU6PbdFf7FokTLA",
-   "age_s": 117,
+   "age_s": 144,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -5913,42 +5935,6 @@
    "x": false,
    "tg": false,
    "web": "https://clonepump.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SNOWCAT",
-   "name": "SNOWCAT",
-   "mint": "GsX2kjyovGW9sHsQFQZZ7BeXzLuXVpaF9fqDXA5rF5Xg",
-   "age_s": 153,
-   "sol_in": 1.13,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 7.7,
-   "mcap_sol": 30.1,
-   "dev_pct": 0.0,
-   "big_sell": 1.12,
-   "x": false,
-   "tg": false,
-   "web": "https://snowlius.fun/coin/GsX2kjyovGW9sHsQFQZZ7BeXzLuXVpaF9fqDXA5rF5Xg",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "pih",
-   "name": "pih",
-   "mint": "3xpNnXA18aBTxGaqQt9znXiMHHQAFheGgkHfTvgxpump",
-   "age_s": 171,
-   "sol_in": -0.1,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
