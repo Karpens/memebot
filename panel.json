@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:41:37Z",
+ "updated": "2026-11-28T12:42:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1425,
+  "flagged": 1426,
   "checked": 49,
   "filtered": 1,
-  "lines": 3154,
+  "lines": 3155,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "POLYMRKT",
-   "why": "snipe",
-   "t": "2026-11-28T12:35:54Z"
-  },
   {
    "coin": "OFFGRID",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "LOOTCADE",
    "why": "snipe",
    "t": "2026-11-28T12:40:37Z"
+  },
+  {
+   "coin": "SPX6900",
+   "why": "snipe",
+   "t": "2026-11-28T12:42:04Z"
   }
  ],
  "curve": [
-  [
-   1795833720,
-   47.79
-  ],
   [
    1795833780,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795869660,
    47.79
+  ],
+  [
+   1795869720,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:38:57Z",
-   "time": "12:38:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.8 a minute · 0 watched · 20 rejected (serial launcher 11, snipe not bought: only to size 6, no symbol or name 2)",
-   "n": 2955
-  },
-  {
    "t": "2026-11-28T11:39:58Z",
    "time": "12:39:58",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 12.8 a minute · 0 watched · 27 rejected (mayhem mode 20, snipe not bought: only to size 4, serial launcher 3)",
    "n": 3154
+  },
+  {
+   "t": "2026-11-28T12:42:04Z",
+   "time": "13:42:04",
+   "agent": "SCANNER",
+   "coin": "SPX6900",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · -0.0 SOL in · +0% since the create · mcap 34 SOL",
+   "n": 3155
   }
  ],
  "nights": [
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 704,
-    "last_event_age_s": 19.8,
+    "events": 706,
+    "last_event_age_s": 3.3,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17667,
-    "last_event_age_s": 0.8,
+    "events": 17747,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 423,
-    "last_event_age_s": 61.5,
+    "events": 424,
+    "last_event_age_s": 2.5,
     "errors": 16,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 12.8,
+  "creates_per_min": 13.0,
   "watching": 0,
-  "followed": 7,
+  "followed": 6,
   "odd_readings": 1010,
   "odd_coins": 309
  },
@@ -6580,23 +6580,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9379,
+   "sent": 9410,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9379,
+   "sent": 9410,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SPX6900",
+   "name": "SPX6900",
+   "mint": "7wdX9Uc7AAmx1ZJ5JG59X25mX2qyh3EZ82c7XovJWtKs",
+   "age_s": 3,
+   "sol_in": -0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 33.8,
+   "dev_pct": 9.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/MustStopMurad/status/2126657865347920123",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "FIH",
+   "name": "Fishy Dihh",
+   "mint": "G1PJrygeEz2rtopch5YWqCuicHce2zRAssPdeyXkpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "PEAT",
    "name": "PeatSwamp",
    "mint": "FzLXUkDC7n87ar2xr5PXvyxwBxSpjhcvXhFv7PE3mcrM",
-   "age_s": 19,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6650,7 @@
    "symbol": "MUDSNA",
    "name": "MuddySnail",
    "mint": "8ekRnhqCCGmJDpJWW4fChufa6cZjsjK2KkiNEMhihzZj",
-   "age_s": 21,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "SLAPCAT",
    "name": "Slapcat",
    "mint": "FoMom5ybpEJffH5YRQyFY5Ys7PhtX1AYgWAV4G1opump",
-   "age_s": 23,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6686,7 @@
    "symbol": "PLUM",
    "name": "PlumHickory",
    "mint": "8ZfZvzTTrTPFnKFsG76mTSa4L3dU9jKaas21oXgak7Lf",
-   "age_s": 24,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6704,7 @@
    "symbol": "ZELV",
    "name": "Jorvo Zelvi",
    "mint": "83XoZUskue2XubbFK5BY5xBnj61amzzMmu1qBpHkRwmW",
-   "age_s": 25,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6722,7 @@
    "symbol": "SKUNET",
    "name": "SkunkNet",
    "mint": "2imjzMVCeJpJTQy8jsboW91WraJpWTLnFttGY6sngrbk",
-   "age_s": 26,
+   "age_s": 55,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6740,7 @@
    "symbol": "QUOK",
    "name": "Quokka",
    "mint": "DLryPc6p8HXaDgi1cFmj2duETqEe1kxDx8Nid826pump",
-   "age_s": 27,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6722,7 +6758,7 @@
    "symbol": "ZHAKI",
    "name": "Baboon Smirk",
    "mint": "EE5wFyfnJ6h9s4MoJvhPzzWUDNKBo2hqi15mAqzApump",
-   "age_s": 28,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6740,7 +6776,7 @@
    "symbol": "RESTOW",
    "name": "RestfulTower",
    "mint": "3U6Z8PqBz6dywEEWPUfN1ZaaJWMPBeDcAVGhZYjkeVUa",
-   "age_s": 29,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6758,7 +6794,7 @@
    "symbol": "HANS",
    "name": "HANS",
    "mint": "7daTrmtVi4hh5pLDpvzFYCmSbFr5bEb61EhZxAFcpump",
-   "age_s": 30,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6776,7 +6812,7 @@
    "symbol": "SANCUR",
    "name": "SandpiperCurrent",
    "mint": "8YFyjqjgKVNxnMrn9yitQBDFfPvwD3SnK7JGBGBbH3eW",
-   "age_s": 31,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6794,7 +6830,7 @@
    "symbol": "DERP",
    "name": "DERPCAT",
    "mint": "3AnPEaGfFypyCWENwg8XRkJB2AcbsEpkzGMwo7V8pump",
-   "age_s": 31,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6812,7 +6848,7 @@
    "symbol": "PATDOC",
    "name": "PatientDock",
    "mint": "Hts95RhGjjuA31WwugyonjZzhFxFh5wqxBV3nQGCe819",
-   "age_s": 33,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6830,7 +6866,7 @@
    "symbol": "DORM",
    "name": "Mosku Dorma",
    "mint": "4zomjonYMv7wUXdnp6u4T3zf59Lvj91dAAyaEaHSMstw",
-   "age_s": 34,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6848,7 +6884,7 @@
    "symbol": "TACBIS",
    "name": "TacoBison",
    "mint": "DrvVu4uJxTUmRiHhCgk832RArbV88U8Vy3GVX4Yc8iYx",
-   "age_s": 36,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6866,7 +6902,7 @@
    "symbol": "GrenCAT",
    "name": "green cat",
    "mint": "8a3RwUMy6B3hMduMgon2751AqvNyoxt8DCsP48mfpump",
-   "age_s": 36,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6884,7 +6920,7 @@
    "symbol": "SUMCAV",
    "name": "SummerCave",
    "mint": "9ZrhHqkNykfv1z69a3aeUfR1gfkRmqR5662YtYXAsuHr",
-   "age_s": 38,
+   "age_s": 67,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6902,49 +6938,13 @@
    "symbol": "BIBLE",
    "name": "Holy Bible Dog",
    "mint": "GXNNHGhLUpMdFKUmgTSPzPsi8yYJrg86Yt1f1GbFpump",
-   "age_s": 40,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.7,
    "dev_pct": 1.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SHABUR",
-   "name": "ShaleBurrito",
-   "mint": "5FKFWdEUhU9vjeQW4uykdSjUVA7D4c3LDY46ZvK8qrjp",
-   "age_s": 40,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 30.8,
-   "dev_pct": 5.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "BEDLINGTON",
-   "name": "BedlingtonCoin",
-   "mint": "A1NJyPQQpDkLHpkNiZsYDBh4KEfAYAyz4wxBxKxGpump",
-   "age_s": 41,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
