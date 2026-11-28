@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:51:09Z",
+ "updated": "2026-11-28T09:51:36Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1112,
+  "flagged": 1113,
   "checked": 49,
   "filtered": 1,
-  "lines": 2585,
+  "lines": 2586,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BPUMP",
-   "why": "snipe",
-   "t": "2026-11-28T09:47:37Z"
-  },
   {
    "coin": "Slopmas",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "HUSSX3",
    "why": "snipe",
    "t": "2026-11-28T09:51:06Z"
+  },
+  {
+   "coin": "PEPSI",
+   "why": "snipe",
+   "t": "2026-11-28T09:51:25Z"
   }
  ],
  "curve": [
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:51:07Z",
-   "time": "09:51:07",
-   "agent": "SCANNER",
-   "coin": "QTC",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2386
-  },
-  {
    "t": "2026-11-28T08:51:24Z",
    "time": "09:51:24",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2585
+  },
+  {
+   "t": "2026-11-28T09:51:25Z",
+   "time": "10:51:25",
+   "agent": "SCANNER",
+   "coin": "PEPSI",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 1.2 SOL in · +8% since the create · mcap 32 SOL",
+   "n": 2586
   }
  ],
  "nights": [
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1210,
-    "last_event_age_s": 2.4,
+    "events": 1212,
+    "last_event_age_s": 5.4,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24106,
+    "events": 24178,
     "last_event_age_s": 0.3,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 867,
-    "last_event_age_s": 2.4,
+    "events": 868,
+    "last_event_age_s": 10.6,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6584,28 +6584,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20221,
+   "sent": 20249,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20221,
+   "sent": 20249,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "HUSSX3",
-   "name": "Huss Huss Huss",
-   "mint": "AoURgkAY51kaztpvdJND3GgmvLJUZewuMCYD6mhztgnr",
-   "age_s": 2,
+   "symbol": "Jobless",
+   "name": "Jobless",
+   "mint": "5oZZvTynk9RXqaLCCeG7xRH9pRnomo4xQfMzKFJHpump",
+   "age_s": 5,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "PEPSI",
+   "name": "pepsi coin",
+   "mint": "EQYsQoAzbJYJwo11364DWryfqZcehkMbuDzNCj4f1v5C",
+   "age_s": 10,
+   "sol_in": 0.55,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 3.6,
+   "mcap_sol": 30.4,
+   "dev_pct": 2.6,
+   "big_sell": 0.63,
+   "x": "https://x.com/pepsi",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "HUSSX3",
+   "name": "Huss Huss Huss",
+   "mint": "AoURgkAY51kaztpvdJND3GgmvLJUZewuMCYD6mhztgnr",
+   "age_s": 29,
+   "sol_in": 0.13,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.9,
+   "mcap_sol": 28.2,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
@@ -6618,14 +6654,14 @@
    "symbol": "CHERRY",
    "name": "Cherry Blossom",
    "mint": "7oypvbykAfsiBtqFMdPjLufzczpYki3K79ENGNLNW55X",
-   "age_s": 22,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "age_s": 49,
+   "sol_in": 0.06,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 0.4,
+   "mcap_sol": 28.1,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": "https://x.com/TryBloss",
    "tg": false,
    "web": "https://tryblossom.xyz/",
@@ -6636,7 +6672,7 @@
    "symbol": "HPD",
    "name": "The Pumpfun Bull",
    "mint": "CAFZAkuDpbQZZdiff3MS4CgZjtS2BtFUM8EqAMXwpump",
-   "age_s": 27,
+   "age_s": 54,
    "sol_in": 9.96,
    "buys": 6,
    "sells": 1,
@@ -6654,7 +6690,7 @@
    "symbol": "SOL",
    "name": "Sol Plant",
    "mint": "Eyc6KV4viZosGmCHV5hG5p2E5kNs344AAiMQB1iD5bUK",
-   "age_s": 65,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 3,
@@ -6672,7 +6708,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "3D592YpWMsMZSUuSE3FP3TMKJJfTkKqS4Wk1bXF47y9v",
-   "age_s": 114,
+   "age_s": 141,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,12 +6726,12 @@
    "symbol": "Reg",
    "name": "Little Reg",
    "mint": "9oi92CVcnjRAj6PPTQT3oTdQasZghph1RegCYQ2b7cmg",
-   "age_s": 118,
-   "sol_in": -2.95,
+   "age_s": 145,
+   "sol_in": -3.6,
    "buys": 9,
-   "sells": 17,
-   "rise_pct": -16.2,
-   "mcap_sol": 31.8,
+   "sells": 18,
+   "rise_pct": -19.6,
+   "mcap_sol": 30.5,
    "dev_pct": 15.2,
    "big_sell": 4.72,
    "x": "https://x.com/MarioPrezldente/status/2126614365491347853",
@@ -6708,12 +6744,12 @@
    "symbol": "Centipede",
    "name": "Centipede",
    "mint": "HuRaj6JrV2pdCoHgt1qJaPnhUGcG3H1ymfHPduUVvoNr",
-   "age_s": 120,
-   "sol_in": 0.27,
+   "age_s": 147,
+   "sol_in": -0.25,
    "buys": 8,
-   "sells": 8,
-   "rise_pct": 1.8,
-   "mcap_sol": 30.0,
+   "sells": 9,
+   "rise_pct": -1.6,
+   "mcap_sol": 29.0,
    "dev_pct": 2.8,
    "big_sell": 4.5,
    "x": "https://x.com/launchcentipede",
@@ -6726,7 +6762,7 @@
    "symbol": "HERB",
    "name": "BlossHerb",
    "mint": "EQLvq4hZenas9NUiAHNTDNFZ5UjqoznrEURaMzvHybED",
-   "age_s": 125,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6744,7 +6780,7 @@
    "symbol": "FLY",
    "name": "Flywheel",
    "mint": "2yawJViBHvuGWxfJQVDFGE28ztV9gUb7uVLuuDak2fft",
-   "age_s": 135,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6762,7 +6798,7 @@
    "symbol": "LOOKING",
    "name": "Is He Looking At Me",
    "mint": "EZGNSH8h6dyK4GX7V7G6KPFZqRgke35goi2FdBrLpump",
-   "age_s": 143,
+   "age_s": 170,
    "sol_in": -0.86,
    "buys": 2,
    "sells": 4,
@@ -6775,24 +6811,6 @@
    "web": false,
    "status": "rejected: snipe: first reading 10.6 s after the create (max 10 s)",
    "why": "snipe: first reading 10.6 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "EDITOR",
-   "name": "Editor",
-   "mint": "57uooyjwYX2kpSGN3QnBLWAwk4KMZYbkp5e8f7i7pump",
-   "age_s": 173,
-   "sol_in": 16.65,
-   "buys": 65,
-   "sells": 63,
-   "rise_pct": 74.7,
-   "mcap_sol": 145.3,
-   "dev_pct": 45.1,
-   "big_sell": 5.37,
-   "x": "https://x.com/tryEditordotfun/status/2126614038088221125?a=1QoWLFOinyBmkPPnJg8&s=20",
-   "tg": false,
-   "web": "https://tryeditor.fun/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
