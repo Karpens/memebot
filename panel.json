@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:31:57Z",
+ "updated": "2026-11-28T05:32:31Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 765,
+  "flagged": 766,
   "checked": 49,
   "filtered": 1,
-  "lines": 1846,
+  "lines": 1847,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Blossom",
-   "why": "snipe",
-   "t": "2026-11-28T05:23:57Z"
-  },
   {
    "coin": "SPIKE",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Derp",
    "why": "snipe",
    "t": "2026-11-28T05:31:43Z"
+  },
+  {
+   "coin": "packball",
+   "why": "snipe",
+   "t": "2026-11-28T05:32:14Z"
   }
  ],
  "curve": [
@@ -1639,6 +1639,10 @@
   ],
   [
    1795843860,
+   47.79
+  ],
+  [
+   1795843920,
    47.79
   ]
  ],
@@ -3793,15 +3797,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:19:08Z",
-   "time": "05:19:08",
-   "agent": "SCANNER",
-   "coin": "ELF",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1647
-  },
-  {
    "t": "2026-11-28T04:19:12Z",
    "time": "05:19:12",
    "agent": "SCANNER",
@@ -5591,6 +5586,15 @@
    "action": "flag",
    "text": "snipe · first reading 2.1 s after the create · 1.0 SOL in · +6% since the create · mcap 32 SOL",
    "n": 1846
+  },
+  {
+   "t": "2026-11-28T05:32:14Z",
+   "time": "06:32:14",
+   "agent": "SCANNER",
+   "coin": "packball",
+   "action": "flag",
+   "text": "snipe · first reading 2.2 s after the create · 13.2 SOL in · +105% since the create · mcap 60 SOL",
+   "n": 1847
   }
  ],
  "nights": [
@@ -5665,24 +5669,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 213,
-    "last_event_age_s": 15.7,
+    "events": 216,
+    "last_event_age_s": 12.0,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1460,
-    "last_event_age_s": 0.6,
+    "events": 1500,
+    "last_event_age_s": 2.6,
     "errors": 137,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 171,
-    "last_event_age_s": 15.5,
+    "events": 173,
+    "last_event_age_s": 11.9,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5697,7 +5701,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 5,
+  "followed": 7,
   "odd_readings": 383,
   "odd_coins": 179
  },
@@ -5746,30 +5750,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3669,
+   "sent": 3705,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3669,
+   "sent": 3705,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "chairman",
+   "name": "chairman",
+   "mint": "9YDxMeoyZiXxEhF3PnjPXh6juifDGRVZYY98v8wUpump",
+   "age_s": 11,
+   "sol_in": -0.66,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -3.8,
+   "mcap_sol": 36.5,
+   "dev_pct": 15.2,
+   "big_sell": 3.14,
+   "x": "https://x.com/CoachPatNFT/status/2126549723825795472",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "packball",
+   "name": "packball",
+   "mint": "7UjWzLjQyGySc79qHTSn9C68rUcsfEwLbhqqnFiapump",
+   "age_s": 19,
+   "sol_in": 6.82,
+   "buys": 1,
+   "sells": 4,
+   "rise_pct": 49.3,
+   "mcap_sol": 43.7,
+   "dev_pct": 2.4,
+   "big_sell": 2.69,
+   "x": "https://x.com/usepackball/status/2126549614350270666",
+   "tg": false,
+   "web": "https://packball.lol",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Derp",
    "name": "Derpdex",
    "mint": "3xKfYWpvmP4Jrdgjdae3LGBFRZjAjMWRKjDFHvH2pump",
-   "age_s": 15,
-   "sol_in": 1.0,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 6.5,
-   "mcap_sol": 31.8,
+   "age_s": 49,
+   "sol_in": 0.42,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 2.7,
+   "mcap_sol": 30.6,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.47,
    "x": "https://x.com/DerpdexApp",
    "tg": "https://t.me/DerpdexApp",
    "web": "https://derpdex.xyz",
@@ -5780,14 +5820,14 @@
    "symbol": "HBDG",
    "name": "HONEY BADGER",
    "mint": "HSPzx2NJQNFq9HcUT6iBnZkDwxXQHPvRsirY2Uz5reuk",
-   "age_s": 37,
-   "sol_in": 0.36,
+   "age_s": 71,
+   "sol_in": 0.25,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 2.4,
-   "mcap_sol": 28.8,
+   "sells": 1,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.6,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": "https://x.com/HoneyBadgersBtc",
    "tg": false,
    "web": "https://crypto.com/en/price/honey-badger-coin",
@@ -5798,14 +5838,14 @@
    "symbol": "GIFTFALL",
    "name": "GIFTFALL",
    "mint": "3v6L4J5X3UpPKFgxwBut6QCGLdHB43KKzotatxQPpump",
-   "age_s": 46,
-   "sol_in": 2.82,
-   "buys": 5,
-   "sells": 7,
-   "rise_pct": 18.9,
-   "mcap_sol": 35.8,
+   "age_s": 80,
+   "sol_in": 1.14,
+   "buys": 8,
+   "sells": 11,
+   "rise_pct": 7.4,
+   "mcap_sol": 32.3,
    "dev_pct": 3.8,
-   "big_sell": 2.63,
+   "big_sell": 4.17,
    "x": "https://x.com/Giftfall",
    "tg": false,
    "web": "https://giftfall.xyz/",
@@ -5816,12 +5856,12 @@
    "symbol": "NOOB",
    "name": "NOOB",
    "mint": "AzHmsArsXu6LVjHeeBQTamYVnAV5Z18b5t6k2DoGpump",
-   "age_s": 64,
-   "sol_in": 12.11,
-   "buys": 14,
-   "sells": 16,
-   "rise_pct": 89.7,
-   "mcap_sol": 60.7,
+   "age_s": 98,
+   "sol_in": 17.22,
+   "buys": 22,
+   "sells": 20,
+   "rise_pct": 136.1,
+   "mcap_sol": 75.5,
    "dev_pct": 7.0,
    "big_sell": 3.47,
    "x": "https://x.com/noobdotwtf/status/2126549015864942803?a=cJxZTVxRRKjy1bdAQwg&s=20",
@@ -5834,7 +5874,7 @@
    "symbol": "Hosky",
    "name": "Hosky",
    "mint": "6Qd7s5CaE76n7Gypj8EvYLLsdDGDHmAZdoD5HpBTEVoV",
-   "age_s": 128,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
