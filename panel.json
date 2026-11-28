@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:52:14Z",
+ "updated": "2026-11-28T05:52:46Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 772,
   "checked": 49,
   "filtered": 1,
-  "lines": 1881,
+  "lines": 1882,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3879,15 +3879,6 @@
   {
    "t": "2026-11-28T04:28:57Z",
    "time": "05:28:57",
-   "agent": "SCANNER",
-   "coin": "MERYLL",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 10.7 SOL in · +64% since the create · mcap 73 SOL",
-   "n": 1682
-  },
-  {
-   "t": "2026-11-28T04:28:57Z",
-   "time": "05:28:57",
    "agent": "SIZER",
    "coin": "MERYLL",
    "action": "skip",
@@ -5675,6 +5666,15 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 5 rejected (snipe: first reading s after the 4, serial launcher 1)",
    "n": 1881
+  },
+  {
+   "t": "2026-11-28T05:52:45Z",
+   "time": "06:52:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 1 watched · 2 rejected (snipe: first reading s after the 1, serial launcher 1) · closest USD1: no curve reading yet",
+   "n": 1882
   }
  ],
  "nights": [
@@ -5741,7 +5741,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 13 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5749,24 +5749,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 264,
-    "last_event_age_s": 25.0,
+    "events": 266,
+    "last_event_age_s": 16.1,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 1998,
-    "last_event_age_s": 1.9,
-    "errors": 199,
+    "connected": false,
+    "events": 2009,
+    "last_event_age_s": 22.2,
+    "errors": 202,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 208,
-    "last_event_age_s": 130.8,
+    "events": 210,
+    "last_event_age_s": 16.0,
     "errors": 11,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5780,8 +5780,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.8,
-  "watching": 0,
-  "followed": 5,
+  "watching": 1,
+  "followed": 3,
   "odd_readings": 406,
   "odd_coins": 185
  },
@@ -5830,23 +5830,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4964,
+   "sent": 4998,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4964,
+   "sent": 4998,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "USD1",
+   "name": "Useless Shitty Dollar 1",
+   "mint": "HPW9kaMqgbNUayPURhUk48dXpdSuY6mrLjJ3TaByzQiT",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 40.1,
+   "dev_pct": 17.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/clddldldl8a/status/2126554237442445469",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "USD1",
+   "name": "Useless Shitty Dollar 1",
+   "mint": "5PTnaXNiLqyMvhmFeAqToWvufMeEw9rH8D4XRA8CgaM5",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 40.1,
+   "dev_pct": 17.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/clddldldl8a/status/2126554237442445469",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "GOP",
    "name": "GOPGOP",
    "mint": "8hno54ZX6kcT9QEfjV4uj8cwwxsqKVeZ2A471wUApump",
-   "age_s": 130,
+   "age_s": 162,
    "sol_in": 1.0,
    "buys": 2,
    "sells": 0,
@@ -5859,78 +5895,6 @@
    "web": false,
    "status": "rejected: snipe: first reading 32.4 s after the create (max 10 s)",
    "why": "snipe: first reading 32.4 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "DJT",
-   "name": "Dont Jeet This",
-   "mint": "F9t6gf1WzBHrYtC8Rs95c17ZEK1TkiiUG22Q5e4Wpump",
-   "age_s": 150,
-   "sol_in": -0.0,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/ihavemotionnn/status/2126553804858327328",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 52.5 s after the create (max 10 s)",
-   "why": "snipe: first reading 52.5 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "DJT",
-   "name": "Dont Jeet This",
-   "mint": "CpHcU8mJPcoESHjmh3Zi88jdRbq2wtsEisCiVwPQpump",
-   "age_s": 151,
-   "sol_in": -0.99,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.99,
-   "x": "https://x.com/ihavemotionnn/status/2126553804858327328",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "SWOOSH",
-   "name": "Swoosh",
-   "mint": "FaRdRzaiBPPumGG3T8mD8ectCriBYKagcSNXEG1Fpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 58.7 s after the create (max 10 s)",
-   "why": "snipe: first reading 58.7 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "DON",
-   "name": "Donald Pump",
-   "mint": "9Bod7ak9LgcRrjbSmUEqmbCDwJXX41iZ89cfxW8Gpump",
-   "age_s": 174,
-   "sol_in": 0.71,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 4.7,
-   "mcap_sol": 29.8,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/DonaldPumpOnPF/status/2126553830355845171",
-   "tg": false,
-   "web": "https://www.thedonaldgrump.fun/",
-   "status": "rejected: snipe: first reading 76.2 s after the create (max 10 s)",
-   "why": "snipe: first reading 76.2 s after the create (max 10 s)"
   }
  ],
  "strategies": [
