@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:17:24Z",
+ "updated": "2026-11-28T09:17:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1057,
+  "flagged": 1058,
   "checked": 49,
   "filtered": 1,
-  "lines": 2476,
+  "lines": 2479,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CRIMEAN",
-   "why": "snipe",
-   "t": "2026-11-28T09:13:59Z"
-  },
   {
    "coin": "WLFI",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "BANANAMURP",
    "why": "snipe",
    "t": "2026-11-28T09:16:26Z"
+  },
+  {
+   "coin": "Haven",
+   "why": "snipe",
+   "t": "2026-11-28T09:17:30Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:20:07Z",
-   "time": "09:20:07",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 6, serial launcher 4)",
-   "n": 2277
-  },
-  {
-   "t": "2026-11-28T08:20:10Z",
-   "time": "09:20:10",
-   "agent": "SCANNER",
-   "coin": "WLFI",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.2 SOL in · +2% since the create · mcap 29 SOL",
-   "n": 2278
-  },
-  {
-   "t": "2026-11-28T08:21:08Z",
-   "time": "09:21:08",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (serial launcher 5, snipe not bought: only to size 3)",
-   "n": 2279
-  },
-  {
    "t": "2026-11-28T08:21:17Z",
    "time": "09:21:17",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 0 watched · 12 rejected (snipe not bought: only to size 8, mayhem mode 2, serial launcher 1)",
    "n": 2476
+  },
+  {
+   "t": "2026-11-28T09:17:30Z",
+   "time": "10:17:30",
+   "agent": "SCANNER",
+   "coin": "Haven",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 1.5 SOL in · +10% since the create · mcap 31 SOL",
+   "n": 2477
+  },
+  {
+   "t": "2026-11-28T09:17:30Z",
+   "time": "10:17:30",
+   "agent": "SIZER",
+   "coin": "Haven",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2478
+  },
+  {
+   "t": "2026-11-28T09:17:38Z",
+   "time": "10:17:38",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, mayhem mode 3, serial launcher 1)",
+   "n": 2479
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 653 (249 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 653 (249 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1077,
-    "last_event_age_s": 9.3,
+    "events": 1081,
+    "last_event_age_s": 9.7,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19788,
-    "last_event_age_s": 1.4,
+    "events": 19834,
+    "last_event_age_s": 0.2,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 770,
-    "last_event_age_s": 57.8,
+    "events": 772,
+    "last_event_age_s": 11.3,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 653,
   "odd_coins": 249
  },
@@ -6584,23 +6584,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18066,
+   "sent": 18095,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18066,
+   "sent": 18095,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Huss Huss",
+   "name": "Huss Huss Huss",
+   "mint": "Grj1BoyabbsmeLR5yY9zkURvveZ16jDepDqkEmPvpump",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "ボン",
+   "name": "tortoise wif hat",
+   "mint": "CpL2LWEdDcCJXZaqyJqVdjHfuHuFBQDsn7EZnEKapump",
+   "age_s": 11,
+   "sol_in": 14.47,
+   "buys": 4,
+   "sells": 3,
+   "rise_pct": 106.3,
+   "mcap_sol": 70.5,
+   "dev_pct": 10.2,
+   "big_sell": 1.12,
+   "x": "https://x.com/ZzzzzSol/status/2126606437509943610",
+   "tg": false,
+   "web": "https://x.com/RT_com/status/2126281532008763448",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Haven",
+   "name": "Haven Launcher",
+   "mint": "HS5Db42XFx5finy5npyC4V7BovrYSfAiGUtyYPrVpump",
+   "age_s": 21,
+   "sol_in": 1.65,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 11.2,
+   "mcap_sol": 31.4,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/HavenLaunchapp",
+   "tg": false,
+   "web": "https://HavenLaunch.app",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "$MFRG🐸",
    "name": "Moon Frog",
    "mint": "93Zsvw7jTVRj7FdQ5DFQPEUfXFpA6vFm9WBFrAqxpump",
-   "age_s": 9,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,7 +6672,7 @@
    "symbol": "egt",
    "name": "EL GATITO",
    "mint": "3hUFWtboWypifdCjEZoJg29StUVwGtq3XStWC6Agpump",
-   "age_s": 18,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,7 +6690,7 @@
    "symbol": "BANANAMURP",
    "name": "BANANA",
    "mint": "Cy3zhEh5VoPKUKwH5EjuoVLfPhKJrpUffxZuU72Jpump",
-   "age_s": 57,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -6654,7 +6708,7 @@
    "symbol": "Gem",
    "name": "Coneadin",
    "mint": "93ViH3GQwdbXhfLJ9GCRNyRwpJ4XyxqvgmmZmBCwpump",
-   "age_s": 76,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -6672,7 +6726,7 @@
    "symbol": "RICETITS",
    "name": "Comodtitties",
    "mint": "89E7wUNrPKPxwPiKSYFwsvNTDm6RzeVn6QU6nJPBo6pA",
-   "age_s": 125,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6690,7 +6744,7 @@
    "symbol": "GBG",
    "name": "GUNNA BEE GOOD",
    "mint": "GXeWXQ8vDyj33X1EQZgG3Cc5Wyd6c6eEqNWU6xn3pump",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,7 +6762,7 @@
    "symbol": "GOLDCAT",
    "name": "Gold Cat",
    "mint": "h9WdTFLmzji8JffCJ8pMvcm382GTeviqMH1tfHpMhsv",
-   "age_s": 139,
+   "age_s": 167,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6726,7 +6780,7 @@
    "symbol": "Småkager",
    "name": "Småkager",
    "mint": "AHg1s4Xs1fwpwomPNSWJ1452sUpNFT5MN34cBzp6pump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": -1.95,
    "buys": 1,
    "sells": 2,
@@ -6737,24 +6791,6 @@
    "x": "https://x.com/snowstorm_eth/status/2126602147089309884",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MOONBOY",
-   "name": "MoonBoy Verse",
-   "mint": "Et1R9YTkm4cxiBqJo8ZXmmBceM77UKBhNcCkbjM5BVRJ",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 15,
-   "sells": 6,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.1,
-   "x": "https://x.com/MoonBoySPCX",
-   "tg": "https://t.me/MoonBoySPCX",
-   "web": "https://moonboy.meme/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
