@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:43:53Z",
+ "updated": "2026-11-28T07:44:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 879,
+  "flagged": 880,
   "checked": 49,
   "filtered": 1,
-  "lines": 2168,
+  "lines": 2169,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "YEAH",
-   "why": "snipe",
-   "t": "2026-11-28T07:37:45Z"
-  },
   {
    "coin": "LCEVSGIRL",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Pigger",
    "why": "snipe",
    "t": "2026-11-28T07:43:37Z"
+  },
+  {
+   "coin": "Fraud",
+   "why": "snipe",
+   "t": "2026-11-28T07:44:14Z"
   }
  ],
  "curve": [
@@ -2167,6 +2167,10 @@
   ],
   [
    1795851780,
+   47.79
+  ],
+  [
+   1795851840,
    47.79
   ]
  ],
@@ -4321,15 +4325,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:34:30Z",
-   "time": "07:34:30",
-   "agent": "SCANNER",
-   "coin": "PEPEMON",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.649e+05 is not 30 + real SOL 0 (off +2.649e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 425 odd readings from 195 coins tonight",
-   "n": 1969
-  },
-  {
    "t": "2026-11-28T06:35:06Z",
    "time": "07:35:06",
    "agent": "SCANNER",
@@ -6119,6 +6114,15 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 13 rejected (snipe not bought: only to size 6, serial launcher 5, mayhem mode 2)",
    "n": 2168
+  },
+  {
+   "t": "2026-11-28T07:44:14Z",
+   "time": "08:44:14",
+   "agent": "SCANNER",
+   "coin": "Fraud",
+   "action": "flag",
+   "text": "snipe · first reading 6.9 s after the create · 7.5 SOL in · +51% since the create · mcap 51 SOL",
+   "n": 2169
   }
  ],
  "nights": [
@@ -6199,24 +6203,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 706,
-    "last_event_age_s": 17.9,
+    "events": 708,
+    "last_event_age_s": 3.0,
     "errors": 12,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 8367,
-    "last_event_age_s": 4.1,
+    "events": 8389,
+    "last_event_age_s": 2.3,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 499,
-    "last_event_age_s": 17.9,
+    "events": 501,
+    "last_event_age_s": 3.0,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6230,8 +6234,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.0,
-  "watching": 0,
-  "followed": 11,
+  "watching": 1,
+  "followed": 9,
   "odd_readings": 561,
   "odd_coins": 230
  },
@@ -6280,30 +6284,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12095,
+   "sent": 12131,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12095,
+   "sent": 12131,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "X",
+   "name": "x",
+   "mint": "35ohz2X5oHGACrZD7DWVxC8JsoJh6YXWvTtejn1Xpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Fraud",
+   "name": "Official Fraud",
+   "mint": "5iepM5MHwGQGpnKXTzojiyDmg7tXY69JtMXvbQ8rJCbh",
+   "age_s": 19,
+   "sol_in": 10.28,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 72.1,
+   "mcap_sol": 58.1,
+   "dev_pct": 9.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/WatcherGuru/status/2126582764484899327",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Pigger",
    "name": "Pigger",
    "mint": "9ctkPjxPDqqE26g2PyoNvuZ5cV6GtJfqt2CJVQb9pump",
-   "age_s": 17,
-   "sol_in": 0.95,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 6.4,
-   "mcap_sol": 30.0,
+   "age_s": 51,
+   "sol_in": 0.89,
+   "buys": 4,
+   "sells": 5,
+   "rise_pct": 6.0,
+   "mcap_sol": 29.9,
    "dev_pct": 0.5,
-   "big_sell": 0.0,
+   "big_sell": 0.45,
    "x": false,
    "tg": false,
    "web": false,
@@ -6314,14 +6354,14 @@
    "symbol": "MEMETARD",
    "name": "MEMETARD",
    "mint": "FzrQEpyGeH836Nn6gMsjRW33oqRnDkfmV2tUggwrLWZV",
-   "age_s": 22,
-   "sol_in": 0.32,
+   "age_s": 56,
+   "sol_in": -3.06,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 1.9,
-   "mcap_sol": 34.6,
+   "sells": 1,
+   "rise_pct": -17.7,
+   "mcap_sol": 28.0,
    "dev_pct": 9.9,
-   "big_sell": 0.0,
+   "big_sell": 3.38,
    "x": "https://x.com/StepCoinsol8/status/2126582054993494509",
    "tg": false,
    "web": false,
@@ -6332,12 +6372,12 @@
    "symbol": "RETARD",
    "name": "Retardcoin",
    "mint": "3Jbv7YDtroCHLcSxGn1gs4KwKJtYNJrqheW5TZ6ipump",
-   "age_s": 54,
-   "sol_in": 0.06,
+   "age_s": 88,
+   "sol_in": -0.0,
    "buys": 5,
-   "sells": 10,
-   "rise_pct": 0.4,
-   "mcap_sol": 29.9,
+   "sells": 11,
+   "rise_pct": -0.0,
+   "mcap_sol": 29.8,
    "dev_pct": 3.4,
    "big_sell": 4.36,
    "x": "https://x.com/dogeofficialceo/status/2126581596560261159",
@@ -6350,7 +6390,7 @@
    "symbol": "Giver",
    "name": "The Pygmy Hippo",
    "mint": "DvYxQFbCKriv3un8bJTvco2VexctQvjkB7cj8LKpggK2",
-   "age_s": 67,
+   "age_s": 101,
    "sol_in": -1.51,
    "buys": 10,
    "sells": 11,
@@ -6368,7 +6408,7 @@
    "symbol": "Jinhao",
    "name": "Xi Jinhao",
    "mint": "FPjcxkCZNxdb1tALEBjkvhGCt7mKbjh5V63hAgTe2V49",
-   "age_s": 82,
+   "age_s": 116,
    "sol_in": 0.94,
    "buys": 5,
    "sells": 0,
@@ -6386,7 +6426,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "BDWBAsTXmJV2NfhyyjR76tZTLMETqHa3EaBe3vZGpump",
-   "age_s": 85,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6404,7 +6444,7 @@
    "symbol": "bilybobjoe",
    "name": "im looking for a queen",
    "mint": "H2tdToFnDqsnTJRrG4kPtbamv8YZNchbV8atP8ndpump",
-   "age_s": 101,
+   "age_s": 135,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 2,
@@ -6422,7 +6462,7 @@
    "symbol": "WSPP",
    "name": "WASUUUUP",
    "mint": "Csq1SMXKu9NWg4ysKCSoUdyFygnKjWXPHbcjQya4pump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": 5.06,
    "buys": 8,
    "sells": 3,
@@ -6440,7 +6480,7 @@
    "symbol": "SCRVAN",
    "name": "Screaming Vandal",
    "mint": "Az3zrMvWaUQGMmp11YZVBo9DbrHWCsvAoS1kK3F4pump",
-   "age_s": 124,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6453,78 +6493,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "COIN LEO",
-   "name": "FAT LEOPARD",
-   "mint": "6x2xHUJknAhYjmmATcXjfEx1DfaASTiZWPxjQPSfpump",
-   "age_s": 147,
-   "sol_in": -0.04,
-   "buys": 5,
-   "sells": 3,
-   "rise_pct": -0.2,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.5,
-   "big_sell": 0.03,
-   "x": "https://x.com/ThorfinnOnChain/status/2122663984562057378",
-   "tg": false,
-   "web": "https://www.odditycentral.com/animals/zoo-tries-to-make-obese-leopard-lose-weight-fails.html",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "$TWINK",
-   "name": "Twink Coin",
-   "mint": "GspeAjvDhy7kkrJDjhRKzmT6166izZ7Xck4nMAoVpump",
-   "age_s": 156,
-   "sol_in": 0.02,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 9 more coins in 60 min",
-   "why": "serial launcher: 9 more coins in 60 min"
-  },
-  {
-   "symbol": "HoodGive",
-   "name": "HoodsGiving",
-   "mint": "4dr5yKpFxZciJNev3qyLuFQgrFsWyi7X2n3rPKFgpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/hoodtoshi/status/2123948290014109824?a=sUS8A2uRYDHNR7eu4SY&s=46",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MEMETARD",
-   "name": "MEMETARD",
-   "mint": "A7yZ7pDueCpgt9XiMJYYHTbYkohTREr5q2pn4hoUgwwn",
-   "age_s": 178,
-   "sol_in": -1.44,
-   "buys": 6,
-   "sells": 9,
-   "rise_pct": -8.5,
-   "mcap_sol": 31.1,
-   "dev_pct": 9.9,
-   "big_sell": 2.94,
-   "x": "https://x.com/StepCoinsol8/status/2126582054993494509",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
   }
  ],
  "strategies": [
