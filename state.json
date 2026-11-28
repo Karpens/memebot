@@ -59,42 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:31:44Z",
-    "time": "00:31:44",
-    "agent": "LEARNER",
-    "coin": "GERMIE",
-    "action": "shadow",
-    "text": "SHADOW GERMIE would have made +10.1% (TP +10%) · learned x0.5 · np:social:none now avg -7.4% over 300",
-    "n": 487
-   },
-   {
-    "t": "2026-11-27T23:31:52Z",
-    "time": "00:31:52",
-    "agent": "LEARNER",
-    "coin": "PVE",
-    "action": "shadow",
-    "text": "SHADOW PVE · not bought (night at -14%: 6 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.19 at 0.0000058345 (curve maths, every cost) · same exits, outside the book",
-    "n": 488
-   },
-   {
-    "t": "2026-11-27T23:31:56Z",
-    "time": "00:31:56",
-    "agent": "LEARNER",
-    "coin": "PVE",
-    "action": "shadow",
-    "text": "SHADOW PVE would have made -68.0% (dump: 21.2 SOL sold) · learned x0.5 · np:social:web now avg -7.9% over 300",
-    "n": 489
-   },
-   {
-    "t": "2026-11-27T23:32:03Z",
-    "time": "00:32:03",
-    "agent": "EXECUTOR",
-    "coin": "FTEST",
-    "action": "exit",
-    "text": "EXIT FTEST $-0.39 (-8%) · curve quiet for 3 min (no trade)",
-    "n": 490
-   },
-   {
     "t": "2026-11-27T23:32:03Z",
     "time": "00:32:03",
     "agent": "LEARNER",
@@ -5457,6 +5421,42 @@
     "action": "skip",
     "text": "only $4.78 left to size",
     "n": 1086
+   },
+   {
+    "t": "2026-11-28T01:36:25Z",
+    "time": "02:36:25",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.4 a minute · 0 watched · 15 rejected (mayhem mode 7, snipe not bought: only to size 4, odd curve reading: virtual SOL i 2)",
+    "n": 1087
+   },
+   {
+    "t": "2026-11-28T01:36:47Z",
+    "time": "02:36:47",
+    "agent": "SCANNER",
+    "coin": "NIHAO",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1.453e+05 is not 30 + real SOL 0 (off +1.453e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 253 odd readings from 120 coins tonight",
+    "n": 1088
+   },
+   {
+    "t": "2026-11-28T01:36:51Z",
+    "time": "02:36:51",
+    "agent": "SCANNER",
+    "coin": "MonnBay",
+    "action": "flag",
+    "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 77 SOL",
+    "n": 1089
+   },
+   {
+    "t": "2026-11-28T01:36:57Z",
+    "time": "02:36:57",
+    "agent": "SCANNER",
+    "coin": "BURN",
+    "action": "flag",
+    "text": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+    "n": 1090
    }
   ],
   "trades": [
@@ -8102,21 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 350,
+  "flagged": 352,
   "checked": 49,
   "filtered": 1,
-  "lines": 1086,
+  "lines": 1090,
   "flags": [
-   {
-    "coin": "SKORS",
-    "why": "snipe",
-    "t": "2026-11-28T01:31:08Z"
-   },
-   {
-    "coin": "RINGS",
-    "why": "snipe",
-    "t": "2026-11-28T01:31:29Z"
-   },
    {
     "coin": "rice",
     "why": "snipe",
@@ -8146,6 +8136,16 @@
     "coin": "YUP",
     "why": "snipe",
     "t": "2026-11-28T01:36:19Z"
+   },
+   {
+    "coin": "MonnBay",
+    "why": "snipe",
+    "t": "2026-11-28T01:36:51Z"
+   },
+   {
+    "coin": "BURN",
+    "why": "snipe",
+    "t": "2026-11-28T01:36:57Z"
    }
   ],
   "curve": [
@@ -8782,7 +8782,7 @@
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795829725.960744,
+  "np_said": 1795829785.960759,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8967,8 +8967,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 252,
-   "coins": 119,
+   "readings": 255,
+   "coins": 120,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -9089,7 +9089,8 @@
     "3VET775odLe6nvuAQ1jtJq4jCbFLxK4EKBvVBY1fTYD8",
     "8nUv6mSZTU3Jj3iuGbPzCoryRSeVezmg8Tu1RMFkB31T",
     "bnaawEPSB7cbQDZxmynafJwokvhxHgvkZ1EGEZyyriD",
-    "4qpN88bfTurmkwLCCDL7LxfsJA4FHDbcWuKxf89UbAHd"
+    "4qpN88bfTurmkwLCCDL7LxfsJA4FHDbcWuKxf89UbAHd",
+    "DzLwoynekcw4a9x6pxwYeyhMoLHfr29bGeFL9pZqe9fM"
    ]
   },
   "risk_said": {
