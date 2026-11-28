@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:14:16Z",
+ "updated": "2026-11-28T05:14:50Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 746,
+  "flagged": 747,
   "checked": 49,
   "filtered": 1,
-  "lines": 1802,
+  "lines": 1804,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Nancy",
-   "why": "snipe",
-   "t": "2026-11-28T05:04:27Z"
-  },
   {
    "coin": "Anthropic",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Singularity",
    "why": "snipe",
    "t": "2026-11-28T05:13:51Z"
+  },
+  {
+   "coin": "MM",
+   "why": "snipe",
+   "t": "2026-11-28T05:14:26Z"
   }
  ],
  "curve": [
@@ -3725,24 +3725,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:08:04Z",
-   "time": "05:08:04",
-   "agent": "SCANNER",
-   "coin": "AC1",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1603
-  },
-  {
-   "t": "2026-11-28T04:08:06Z",
-   "time": "05:08:06",
-   "agent": "SCANNER",
-   "coin": "Trump",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1604
-  },
-  {
    "t": "2026-11-28T04:08:12Z",
    "time": "05:08:12",
    "agent": "SCANNER",
@@ -5523,6 +5505,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.6 s after the create · 18.0 SOL in · +155% since the create · mcap 73 SOL",
    "n": 1802
+  },
+  {
+   "t": "2026-11-28T05:14:22Z",
+   "time": "06:14:22",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe: first reading s after the 3, snipe not bought: only to size 3, serial launcher 2)",
+   "n": 1803
+  },
+  {
+   "t": "2026-11-28T05:14:26Z",
+   "time": "06:14:26",
+   "agent": "SCANNER",
+   "coin": "MM",
+   "action": "flag",
+   "text": "snipe · first reading 3.9 s after the create · 0.0 SOL in · +0% since the create · mcap 31 SOL",
+   "n": 1804
   }
  ],
  "nights": [
@@ -5589,7 +5589,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5597,24 +5597,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 168,
-    "last_event_age_s": 26.0,
+    "events": 169,
+    "last_event_age_s": 27.0,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 974,
-    "last_event_age_s": 0.7,
+    "events": 1005,
+    "last_event_age_s": 0.1,
     "errors": 82,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 132,
-    "last_event_age_s": 25.8,
+    "events": 133,
+    "last_event_age_s": 26.5,
     "errors": 6,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5629,7 +5629,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 9,
+  "followed": 8,
   "odd_readings": 372,
   "odd_coins": 175
  },
@@ -5678,28 +5678,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2539,
+   "sent": 2575,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2539,
+   "sent": 2575,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MM",
+   "name": "Meme Mutation",
+   "mint": "uhpREcrFa1bqajAV7VKwAvykFnVe345T3mCQcPXUtd4",
+   "age_s": 27,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 30.8,
+   "dev_pct": 5.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/MemeMutationSOL",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Singularity",
    "name": "Singularity",
    "mint": "3njENpVLpqe7qPi5Wd2uRQne89upVHCcmyVesLEKpump",
-   "age_s": 25,
-   "sol_in": 11.18,
-   "buys": 4,
-   "sells": 6,
-   "rise_pct": 87.4,
-   "mcap_sol": 53.4,
+   "age_s": 59,
+   "sol_in": 9.84,
+   "buys": 5,
+   "sells": 9,
+   "rise_pct": 75.6,
+   "mcap_sol": 50.0,
    "dev_pct": 1.0,
    "big_sell": 3.64,
    "x": "https://x.com/PursueAGI",
@@ -5712,7 +5730,7 @@
    "symbol": "RALLY",
    "name": "rally",
    "mint": "HwTXqsnf4oNLrFJX3YW5kSQyCm7TWBaajJ1uPmC6MaS",
-   "age_s": 32,
+   "age_s": 66,
    "sol_in": -4.69,
    "buys": 1,
    "sells": 1,
@@ -5730,7 +5748,7 @@
    "symbol": "GRINGOTTS",
    "name": "The Bank of Gringotts",
    "mint": "57rwR69fg3uvetamPnhHB1wuKR6adUggDEsHQwXJpump",
-   "age_s": 38,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5748,12 +5766,12 @@
    "symbol": "USA",
    "name": "United Scammers of America",
    "mint": "2AMMCW1bmH2CTtaEwEumFKp6kSH1uib7CaQiQ8USpump",
-   "age_s": 71,
-   "sol_in": 4.38,
-   "buys": 6,
-   "sells": 11,
-   "rise_pct": 31.3,
-   "mcap_sol": 36.8,
+   "age_s": 105,
+   "sol_in": 7.05,
+   "buys": 12,
+   "sells": 17,
+   "rise_pct": 52.5,
+   "mcap_sol": 42.7,
    "dev_pct": 0.1,
    "big_sell": 3.2,
    "x": "https://x.com/ramentrade/status/2126544829404340707",
@@ -5766,7 +5784,7 @@
    "symbol": "eruc",
    "name": "OG2 YR OLD",
    "mint": "G8uG9jpdQkwqqQzkRuE79BoLodVKmMA5nK9JuJ5Uccyy",
-   "age_s": 79,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5784,7 +5802,7 @@
    "symbol": "GOLD",
    "name": "GOLD",
    "mint": "6YcKw9GYZwBwJNEDihQqd2yDA4fhjSnWT1V7BP1upump",
-   "age_s": 87,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5802,7 +5820,7 @@
    "symbol": "Anthropic",
    "name": "Anthropic official",
    "mint": "6YP7M7i73Xrmjxohm82tiTpK5tzi6Yu8hjAVqM4opump",
-   "age_s": 99,
+   "age_s": 133,
    "sol_in": 12.9,
    "buys": 2,
    "sells": 6,
@@ -5815,42 +5833,6 @@
    "web": "https://www.anthropic.com/",
    "status": "rejected: snipe: first reading 49.9 s after the create (max 10 s)",
    "why": "snipe: first reading 49.9 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "Fumb",
-   "name": "Gerry’s Fumb Burn",
-   "mint": "F4CxPeUZ2Rr2o7gVaGWbaAquLR2HiubmE4TvepwLpump",
-   "age_s": 151,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "HYDRO",
-   "name": "HYDRODYNAMIC",
-   "mint": "23Ruy8MFtxERYpy7b2gMPbTZZnsK1iazy22XP6Qzabpz",
-   "age_s": 168,
-   "sol_in": -0.59,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 0.59,
-   "x": "https://x.com/youhealedme/status/2126542444552733165",
-   "tg": false,
-   "web": "https://hydrodynamic.lol/",
-   "status": "rejected: snipe: first reading 13.6 s after the create (max 10 s)",
-   "why": "snipe: first reading 13.6 s after the create (max 10 s)"
   }
  ],
  "strategies": [
