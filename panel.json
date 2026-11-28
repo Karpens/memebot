@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:32:47Z",
+ "updated": "2026-11-28T13:33:13Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1536,
   "checked": 49,
   "filtered": 1,
-  "lines": 3340,
+  "lines": 3342,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795836780,
-   47.79
-  ],
   [
    1795836840,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795872720,
    47.79
+  ],
+  [
+   1795872780,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:36:13Z",
-   "time": "13:36:13",
-   "agent": "SCANNER",
-   "coin": "OFFGRID",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 9.2 SOL in · +60% since the create · mcap 61 SOL",
-   "n": 3141
-  },
-  {
-   "t": "2026-11-28T12:36:31Z",
-   "time": "13:36:31",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 12 rejected (snipe not bought: only to size 6, serial launcher 4, no symbol or name 1)",
-   "n": 3142
-  },
-  {
    "t": "2026-11-28T12:36:54Z",
    "time": "13:36:54",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 0.025 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1042 odd readings from 324 coins tonight",
    "n": 3340
+  },
+  {
+   "t": "2026-11-28T13:32:52Z",
+   "time": "14:32:52",
+   "agent": "SCANNER",
+   "coin": "Xbot",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.03642 is not 30 + real SOL 0 (off -29.96 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1044 odd readings from 325 coins tonight",
+   "n": 3341
+  },
+  {
+   "t": "2026-11-28T13:33:01Z",
+   "time": "14:33:01",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (snipe not bought: only to size 8, serial launcher 4)",
+   "n": 3342
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 1043 (324 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 1044 (325 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1068,
-    "last_event_age_s": 28.1,
+    "events": 1069,
+    "last_event_age_s": 21.9,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22954,
-    "last_event_age_s": 0.4,
+    "events": 23038,
+    "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 576,
-    "last_event_age_s": 24.6,
+    "events": 577,
+    "last_event_age_s": 21.7,
     "errors": 25,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,11 +6529,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 12,
-  "odd_readings": 1043,
-  "odd_coins": 324
+  "followed": 11,
+  "odd_readings": 1044,
+  "odd_coins": 325
  },
  "learner": {
   "samples": 84,
@@ -6580,23 +6580,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12645,
+   "sent": 12673,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12645,
+   "sent": 12673,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Xbot",
+   "name": "Xbot",
+   "mint": "9A4dHPsDhLojv2Y2ewxTp7qmkA2QTpikxvtmRguW1af9",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/BottomFloorChud/status/2126670628942127409",
+   "tg": false,
+   "web": "https://x.com/LimXbot",
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
    "symbol": "XCAT",
    "name": "XCAT",
    "mint": "CfQ6dtZKhGkm1aorVRrEMKjA3GkftupXYushWTNZSXrf",
-   "age_s": 28,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,12 +6632,12 @@
    "symbol": "MARIA",
    "name": "Siphonops Maria",
    "mint": "C3akbNNf9QHNGUYiy3cixf7DGjtoxqk2ENNH6cMapump",
-   "age_s": 32,
-   "sol_in": 14.44,
-   "buys": 10,
-   "sells": 19,
-   "rise_pct": 103.9,
-   "mcap_sol": 72.1,
+   "age_s": 58,
+   "sol_in": 18.01,
+   "buys": 24,
+   "sells": 26,
+   "rise_pct": 135.2,
+   "mcap_sol": 83.2,
    "dev_pct": 11.9,
    "big_sell": 3.49,
    "x": "https://x.com/barnsrebirth0/status/2126670251920126159?a=keRsVFb2tJycKJ6lYaw&s=20",
@@ -6632,12 +6650,12 @@
    "symbol": "WPPI",
    "name": "White Papers Policy Institute",
    "mint": "BFQ8fioXjnoCfN9iFV1NrKNyQyzkurnSZhQBxN89pump",
-   "age_s": 40,
-   "sol_in": 1.66,
+   "age_s": 66,
+   "sol_in": 0.92,
    "buys": 5,
-   "sells": 3,
-   "rise_pct": 7.1,
-   "mcap_sol": 75.9,
+   "sells": 6,
+   "rise_pct": 3.9,
+   "mcap_sol": 73.7,
    "dev_pct": 39.9,
    "big_sell": 1.47,
    "x": "https://x.com/WhitePapersPol",
@@ -6650,12 +6668,12 @@
    "symbol": "MOONTRUMP",
    "name": "MOONTRUMP",
    "mint": "CRWUyfrr5VDo6t8NdvDx2qxWgSukPg54b9hRCzSHpump",
-   "age_s": 43,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 69,
+   "sol_in": 0.06,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "rise_pct": 0.4,
+   "mcap_sol": 28.2,
    "dev_pct": 0.2,
    "big_sell": 0.0,
    "x": false,
@@ -6668,14 +6686,14 @@
    "symbol": "Bagwork",
    "name": "Bagwork",
    "mint": "5qDeCs9MkTAhk6q76XvKrZgimoQdJowuSWbjSZKvpump",
-   "age_s": 63,
-   "sol_in": 56.75,
-   "buys": 40,
-   "sells": 23,
-   "rise_pct": 715.8,
-   "mcap_sol": 236.9,
+   "age_s": 89,
+   "sol_in": 67.94,
+   "buys": 54,
+   "sells": 34,
+   "rise_pct": 938.2,
+   "mcap_sol": 301.5,
    "dev_pct": 2.0,
-   "big_sell": 4.38,
+   "big_sell": 4.4,
    "x": "https://x.com/Try_Bagwork/status/2126670195338981659?a=d_w1SOrle81-Z5VUm5o&s=20",
    "tg": false,
    "web": "https://trybagwork.fun/",
@@ -6686,12 +6704,12 @@
    "symbol": "Meh",
    "name": "Meh",
    "mint": "AFXPrBKuxQEtHBwiHvWY5Pewo8nUMgmCWCxqqJrUpump",
-   "age_s": 65,
-   "sol_in": 5.48,
-   "buys": 15,
-   "sells": 17,
-   "rise_pct": 33.7,
-   "mcap_sol": 50.9,
+   "age_s": 91,
+   "sol_in": 3.82,
+   "buys": 23,
+   "sells": 25,
+   "rise_pct": 23.0,
+   "mcap_sol": 46.8,
    "dev_pct": 15.3,
    "big_sell": 2.95,
    "x": "https://x.com/mehonpump/status/2126670328235741236?a=EQAHCetl1AW5Z9tqRX4&s=20",
@@ -6704,7 +6722,7 @@
    "symbol": "kimchi",
    "name": "project kimchi",
    "mint": "EKyVcrujew3Mi9aeDrRJLrLEz2cU43Jt3uUEw9QNNzRs",
-   "age_s": 80,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6722,7 +6740,7 @@
    "symbol": "TRUMP2.0",
    "name": "OFFICIAL TRUMP 2.0",
    "mint": "4HQfXKcSehjVhyakKnfKCJS3iEXRfYb3mHcBUkCwpump",
-   "age_s": 83,
+   "age_s": 109,
    "sol_in": 3.26,
    "buys": 5,
    "sells": 1,
@@ -6740,7 +6758,7 @@
    "symbol": "BAH",
    "name": "Buy and Hold",
    "mint": "HTU9hZ95z8fUB2MBWiVXWrbt5zt7nv2i3MefrXZ1G4qJ",
-   "age_s": 85,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6758,7 +6776,7 @@
    "symbol": "XPAID",
    "name": "Xpaid",
    "mint": "29Eo4p4jcppuk5obj5b6GWRC1Y5Nmx3b3mXXvNAyHBK4",
-   "age_s": 87,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6771,42 +6789,6 @@
    "web": "https://useanonpad.fun/coin/29Eo4p4jcppuk5obj5b6GWRC1Y5Nmx3b3mXXvNAyHBK4",
    "status": "rejected: serial launcher: 5 more coins in 60 min",
    "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "motion",
-   "name": "motion",
-   "mint": "3PU2MgBaenRL8qmzDNTRMmEtkk9rr9Mf9mHgcaB6pump",
-   "age_s": 158,
-   "sol_in": -0.54,
-   "buys": 3,
-   "sells": 13,
-   "rise_pct": -3.4,
-   "mcap_sol": 28.8,
-   "dev_pct": 3.4,
-   "big_sell": 1.58,
-   "x": "https://x.com/Milsaftermils/status/2126669957953880333",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Capychill",
-   "name": "Capychill",
-   "mint": "AuwLLZZqSekhQRq3kkr225dRdUCrTEsQQcMXcSCBpump",
-   "age_s": 166,
-   "sol_in": 0.06,
-   "buys": 9,
-   "sells": 5,
-   "rise_pct": 0.4,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.0,
-   "big_sell": 0.59,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
