@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:10:55Z",
+ "updated": "2026-11-28T08:11:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 919,
+  "flagged": 920,
   "checked": 49,
   "filtered": 1,
-  "lines": 2242,
+  "lines": 2245,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "NEOS",
-   "why": "snipe",
-   "t": "2026-11-28T08:05:45Z"
-  },
   {
    "coin": "TPOT",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "BLR",
    "why": "snipe",
    "t": "2026-11-28T08:10:25Z"
+  },
+  {
+   "coin": "黑鬼",
+   "why": "snipe",
+   "t": "2026-11-28T08:11:19Z"
   }
  ],
  "curve": [
@@ -2276,6 +2276,10 @@
   [
    1795853400,
    47.79
+  ],
+  [
+   1795853460,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4429,33 +4433,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:59:53Z",
-   "time": "07:59:53",
-   "agent": "SCANNER",
-   "coin": "BAGSTORY",
-   "action": "flag",
-   "text": "snipe · first reading 6.3 s after the create · 14.1 SOL in · +114% since the create · mcap 62 SOL",
-   "n": 2043
-  },
-  {
-   "t": "2026-11-28T07:00:00Z",
-   "time": "08:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-28T06 · 3659 lines (2367 curve readings) · 0.6 MB · 184 coins",
-   "n": 2044
-  },
-  {
-   "t": "2026-11-28T07:00:24Z",
-   "time": "08:00:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 0 watched · 16 rejected (serial launcher 7, snipe not bought: only to size 6, mayhem mode 2)",
-   "n": 2045
-  },
-  {
    "t": "2026-11-28T07:00:27Z",
    "time": "08:00:27",
    "agent": "SCANNER",
@@ -6227,6 +6204,33 @@
    "action": "flag",
    "text": "snipe · first reading 1.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2242
+  },
+  {
+   "t": "2026-11-28T08:10:59Z",
+   "time": "09:10:59",
+   "agent": "SCANNER",
+   "coin": "DUMP",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.8379 is not 30 + real SOL 0 (off -29.16 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 565 odd readings from 234 coins tonight",
+   "n": 2243
+  },
+  {
+   "t": "2026-11-28T08:11:03Z",
+   "time": "09:11:03",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 6 rejected (snipe not bought: only to size 3, serial launcher 3)",
+   "n": 2244
+  },
+  {
+   "t": "2026-11-28T08:11:19Z",
+   "time": "09:11:19",
+   "agent": "SCANNER",
+   "coin": "黑鬼",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 8.6 SOL in · +66% since the create · mcap 46 SOL",
+   "n": 2245
   }
  ],
  "nights": [
@@ -6299,7 +6303,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 564 (233 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 565 (234 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6307,24 +6311,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 801,
-    "last_event_age_s": 30.3,
+    "events": 803,
+    "last_event_age_s": 8.4,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11373,
-    "last_event_age_s": 2.8,
+    "events": 11430,
+    "last_event_age_s": 1.8,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 575,
-    "last_event_age_s": 29.8,
+    "events": 577,
+    "last_event_age_s": 8.2,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6337,11 +6341,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 2.2,
   "watching": 0,
   "followed": 5,
-  "odd_readings": 564,
-  "odd_coins": 233
+  "odd_readings": 565,
+  "odd_coins": 234
  },
  "learner": {
   "samples": 84,
@@ -6388,23 +6392,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13821,
+   "sent": 13855,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13821,
+   "sent": 13855,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "黑鬼",
+   "name": "黑鬼",
+   "mint": "88BRzhQJ7tBUNabBiQiCmjEUnWcnGBVj79LQGSTKMsh3",
+   "age_s": 8,
+   "sol_in": 1.68,
+   "buys": 1,
+   "sells": 4,
+   "rise_pct": 11.5,
+   "mcap_sol": 31.2,
+   "dev_pct": 0.0,
+   "big_sell": 2.05,
+   "x": "https://x.com/save_trenches/status/2126560669931815330?a=D-bkmAPiaKoz5Gglngo&s=20",
+   "tg": false,
+   "web": "https://x.com/save_trenches/status/2126560669931815330?a=D-bkmAPiaKoz5Gglngo&s=20",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DUMP",
+   "name": "Official Donald Dump Coin",
+   "mint": "pp3vJdYtNLnwmAopKmhtyzwohestVnaHDhV2EgVBPnq",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/i/web/status/2126589635442946360",
+   "tg": false,
+   "web": "https://donalddump.org/",
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
    "symbol": "BLR",
    "name": "Blur",
    "mint": "6q7ugPf2FkHcaLcjMTEEUxvpF3mDaZxB9x72eepprQjq",
-   "age_s": 30,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6422,7 +6462,7 @@
    "symbol": "BUZZ",
    "name": "buzz",
    "mint": "94z7kZMXmGmsGNjvAgP3W2kVqgaAG1cPqmfW8PDTnkgC",
-   "age_s": 109,
+   "age_s": 141,
    "sol_in": -0.1,
    "buys": 1,
    "sells": 5,
@@ -6440,55 +6480,19 @@
    "symbol": "Yoda",
    "name": "Yoda",
    "mint": "FtQjxu21dibjd6kWjGF7N6YTVawhkYWqDMw6Wujxniit",
-   "age_s": 115,
-   "sol_in": 5.54,
-   "buys": 17,
-   "sells": 17,
-   "rise_pct": 36.3,
-   "mcap_sol": 46.3,
+   "age_s": 147,
+   "sol_in": 0.14,
+   "buys": 19,
+   "sells": 22,
+   "rise_pct": 0.8,
+   "mcap_sol": 34.2,
    "dev_pct": 9.9,
-   "big_sell": 2.53,
+   "big_sell": 4.48,
    "x": "https://x.com/StepCoinsol8/status/2126589135968203211",
    "tg": false,
    "web": "https://www.instagram.com/reel/DgP-5mji8M1",
    "status": "rejected: serial launcher: 9 more coins in 60 min",
    "why": "serial launcher: 9 more coins in 60 min"
-  },
-  {
-   "symbol": "twin",
-   "name": "Eat off that twin",
-   "mint": "KPAjhfq4TvXyPcMPHTD4Usuhx1E85doJP6mJiveyStf",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/KodaqSOL/status/2126588860796723366?a=1GuJ7i_6y6kffjgmXj0&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "Robinhood",
-   "name": "Robinhood",
-   "mint": "7vfRztkzFDndReXRSz4zSzKHppJD4ZfcPVMU5YMnpump",
-   "age_s": 163,
-   "sol_in": 13.22,
-   "buys": 8,
-   "sells": 33,
-   "rise_pct": 93.6,
-   "mcap_sol": 68.5,
-   "dev_pct": 11.9,
-   "big_sell": 0.24,
-   "x": "https://x.com/RobinhoodApp",
-   "tg": false,
-   "web": "https://cdn.robinhood.com/assets/robinhood/legal/standard-social-media-disclosures.pdf",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
