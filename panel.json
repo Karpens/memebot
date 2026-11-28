@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:48:56Z",
+ "updated": "2026-11-28T01:49:28Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 371,
+  "flagged": 373,
   "checked": 49,
   "filtered": 1,
-  "lines": 1137,
+  "lines": 1139,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CALLOUT",
-   "why": "snipe",
-   "t": "2026-11-28T01:44:31Z"
-  },
-  {
-   "coin": "MANDY",
-   "why": "snipe",
-   "t": "2026-11-28T01:45:07Z"
-  },
   {
    "coin": "penisguy",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "CEPHAL",
    "why": "snipe",
    "t": "2026-11-28T01:48:14Z"
+  },
+  {
+   "coin": "CRYPTANALYSIS",
+   "why": "snipe",
+   "t": "2026-11-28T01:48:59Z"
+  },
+  {
+   "coin": "Apocrycoin",
+   "why": "snipe",
+   "t": "2026-11-28T01:49:23Z"
   }
  ],
  "curve": [
@@ -747,6 +747,10 @@
   ],
   [
    1795830480,
+   47.79
+  ],
+  [
+   1795830540,
    47.79
   ]
  ],
@@ -2901,24 +2905,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:00:00Z",
-   "time": "02:00:00",
-   "agent": "LOGGER",
-   "coin": null,
-   "action": "tape",
-   "text": "tape 2026-11-28T00 · 10491 lines (8471 curve readings) · 1.7 MB · 345 coins",
-   "n": 938
-  },
-  {
-   "t": "2026-11-28T01:00:05Z",
-   "time": "02:00:05",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 13 rejected (snipe not bought: only to size 7, odd curve reading: virtual SOL i 3, serial launcher 2)",
-   "n": 939
-  },
-  {
    "t": "2026-11-28T01:00:18Z",
    "time": "02:00:18",
    "agent": "SCANNER",
@@ -4699,6 +4685,24 @@
    "action": "scan",
    "text": "new pairs · 5.0 a minute · 0 watched · 16 rejected (snipe not bought: only to size 7, odd curve reading: virtual SOL i 3, no symbol or name 2)",
    "n": 1137
+  },
+  {
+   "t": "2026-11-28T01:48:59Z",
+   "time": "02:48:59",
+   "agent": "SCANNER",
+   "coin": "CRYPTANALYSIS",
+   "action": "flag",
+   "text": "snipe · first reading 1.3 s after the create · 0.7 SOL in · +4% since the create · mcap 32 SOL",
+   "n": 1138
+  },
+  {
+   "t": "2026-11-28T01:49:23Z",
+   "time": "02:49:23",
+   "agent": "SCANNER",
+   "coin": "Apocrycoin",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · -0.1 SOL in · -1% since the create · mcap 28 SOL",
+   "n": 1139
   }
  ],
  "nights": [
@@ -4779,24 +4783,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1339,
-    "last_event_age_s": 9.4,
+    "events": 1343,
+    "last_event_age_s": 6.2,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25229,
-    "last_event_age_s": 0.6,
+    "events": 25267,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 750,
-    "last_event_age_s": 39.8,
+    "events": 752,
+    "last_event_age_s": 6.1,
     "errors": 34,
     "last_error": "no uri"
    }
@@ -4811,7 +4815,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.8,
   "watching": 0,
-  "followed": 10,
+  "followed": 8,
   "odd_readings": 277,
   "odd_coins": 133
  },
@@ -4860,23 +4864,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11288,
+   "sent": 11322,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11288,
+   "sent": 11322,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Apocrycoin",
+   "name": "GO TO 0:13 HELLO?",
+   "mint": "Cdpkw255t4j6AuKjWcTZLSeMfKkJiLkqtEDttZ21pump",
+   "age_s": 6,
+   "sol_in": -0.1,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.4,
+   "big_sell": 0.1,
+   "x": "https://x.com/ddddddd8a/status/2126492794420162951",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "7WyeFpZD67qUDeRTRV7EcaUaTG6ooEYsy9GzYo9WAY1u",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 39.5,
+   "dev_pct": 17.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "CRYPTANALYSIS",
+   "name": "CRYPTANALYSIS",
+   "mint": "v3u7uozb4FCmtBzN2C4BEBSY6XfJ8qiCv6QoyZCpump",
+   "age_s": 30,
+   "sol_in": -1.23,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": -7.6,
+   "mcap_sol": 28.4,
+   "dev_pct": 5.0,
+   "big_sell": 1.52,
+   "x": "https://x.com/munnyonly/status/2126493405324906790",
+   "tg": false,
+   "web": "https://x.com/search?q=CRYPTANALYSIS&src=typed_query",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "6sFaxHbjUSbS2eijX2ju1oyF3w1BipcjfqsFTkmjdeNA",
-   "age_s": 9,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4894,7 +4952,7 @@
    "symbol": "COPY",
    "name": "Copy Cat",
    "mint": "EYuY9DMgGD6Dd9RgC1XpSqFnWDKUTyXKnyWzj6NGov1Y",
-   "age_s": 39,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4912,12 +4970,12 @@
    "symbol": "CEPHAL",
    "name": "Cephal",
    "mint": "CePNx8YmsJiBYB8FWsdQMdKHfGbvMHZZ9QtHHuardbPt",
-   "age_s": 43,
-   "sol_in": 6.36,
-   "buys": 9,
-   "sells": 6,
-   "rise_pct": 46.5,
-   "mcap_sol": 41.5,
+   "age_s": 75,
+   "sol_in": 7.36,
+   "buys": 13,
+   "sells": 8,
+   "rise_pct": 54.7,
+   "mcap_sol": 43.8,
    "dev_pct": 0.7,
    "big_sell": 2.84,
    "x": "https://x.com/jasperbrookkin",
@@ -4930,7 +4988,7 @@
    "symbol": "FDSFDS",
    "name": "dsfsd",
    "mint": "2gxsZWjL1QfyCXa2JV3ewpypmyDcELL8kfWzQceppump",
-   "age_s": 55,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4948,7 +5006,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "Dp5ZPTbM7tY42zoQd7eKS5ZL1V8CiaqA8dsahAKsrMmm",
-   "age_s": 67,
+   "age_s": 99,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 0,
@@ -4966,7 +5024,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "6uFhXdBkcnijets77hnzPT56c8XQYArB6PhJv17xrXnQ",
-   "age_s": 83,
+   "age_s": 115,
    "sol_in": 0.1,
    "buys": 2,
    "sells": 2,
@@ -4984,7 +5042,7 @@
    "symbol": "SLINK",
    "name": "Smol Link",
    "mint": "Ghwp6gwyKmcKN69oQ1GXm1rWwP16E6SPEaxYofsZLQV4",
-   "age_s": 110,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5002,7 +5060,7 @@
    "symbol": "FDSFDS",
    "name": "dsfsd",
    "mint": "CTSYwDeBukqRXnGPVDyDyKBJntJYridmPFQJeh5Npump",
-   "age_s": 124,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5020,7 +5078,7 @@
    "symbol": "Bambi",
    "name": "Bambi The Bison",
    "mint": "hcLfXBAdhooRYtyKNbaTSFRPeRoyufEaHF1Wrbrpump",
-   "age_s": 128,
+   "age_s": 160,
    "sol_in": -0.25,
    "buys": 1,
    "sells": 2,
@@ -5031,114 +5089,6 @@
    "x": false,
    "tg": false,
    "web": "https://patch.com/california/san-francisco/amp/35288965/longtime-sf-zoo-bison-bambi-unexpectedly-dies-officials",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "rice",
-   "name": "rice",
-   "mint": "FPdJd5G4iQCgzcLwG3xZPrhEJvPD3hb6gqnSbM27fasD",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "APOCRY",
-   "name": "Apocrycoin",
-   "mint": "EKmMyd8vBXHbxLyzNpX3oru1iiWPwgX5KhfHeLtGDGbH",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 7 more coins in 60 min",
-   "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "eˣ",
-   "name": "exponential coin",
-   "mint": "D3qjXfAsRXz98rcnTKEDGqhRikRXLHArtAtYLkyU9rUo",
-   "age_s": 167,
-   "sol_in": 0.33,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 2.2,
-   "mcap_sol": 28.7,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://clonepump.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "CGanCEY4A1YiQoyMT2iDgZCJcg82sLxcccgoEXN2BDaL",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 39.5,
-   "dev_pct": 17.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "NOTD",
-   "name": "Not A Deriv",
-   "mint": "7dotF3SmaUazL584CajLPHvTpAZEHcq15Ywxd5KJ6XPd",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://derivr.fun",
-   "status": "rejected: odd curve reading: virtual SOL 1.357e+05 is not 30 + real SOL 0 (off +1.356e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 1.357e+05 is not 30 + real SOL 0 (off +1.356e+05 SOL)"
-  },
-  {
-   "symbol": "EIFAIR",
-   "name": "Exponential Inu",
-   "mint": "GSdWSwZXgQiQPKBKD8EJa1pQeCVhUU86UmGgunE7xcyb",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
