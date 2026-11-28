@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:21:50Z",
+ "updated": "2026-11-28T11:22:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1274,
+  "flagged": 1276,
   "checked": 49,
   "filtered": 1,
-  "lines": 2899,
+  "lines": 2901,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GTA 6",
-   "why": "snipe",
-   "t": "2026-11-28T11:17:28Z"
-  },
-  {
-   "coin": "STAR",
-   "why": "snipe",
-   "t": "2026-11-28T11:18:02Z"
-  },
   {
    "coin": "HARD",
    "why": "snipe",
@@ -70,13 +60,19 @@
    "coin": "TIMOTHY",
    "why": "snipe",
    "t": "2026-11-28T11:20:08Z"
+  },
+  {
+   "coin": "CLEMENTINE",
+   "why": "snipe",
+   "t": "2026-11-28T11:21:58Z"
+  },
+  {
+   "coin": "MOOND",
+   "why": "snipe",
+   "t": "2026-11-28T11:22:19Z"
   }
  ],
  "curve": [
-  [
-   1795828920,
-   47.79
-  ],
   [
    1795828980,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795864860,
    47.79
+  ],
+  [
+   1795864920,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:24:14Z",
-   "time": "11:24:14",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 13 rejected (snipe not bought: only to size 8, serial launcher 3, odd curve reading: virtual SOL i 1)",
-   "n": 2700
-  },
-  {
-   "t": "2026-11-28T10:24:25Z",
-   "time": "11:24:25",
-   "agent": "SCANNER",
-   "coin": "yippee",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 7.4 SOL in · +54% since the create · mcap 46 SOL",
-   "n": 2701
-  },
-  {
    "t": "2026-11-28T10:24:41Z",
    "time": "11:24:41",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 0 watched · 6 rejected (snipe not bought: only to size 3, serial launcher 3)",
    "n": 2899
+  },
+  {
+   "t": "2026-11-28T11:21:58Z",
+   "time": "12:21:58",
+   "agent": "SCANNER",
+   "coin": "CLEMENTINE",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.1 SOL in · +1% since the create · mcap 33 SOL",
+   "n": 2900
+  },
+  {
+   "t": "2026-11-28T11:22:19Z",
+   "time": "12:22:19",
+   "agent": "SCANNER",
+   "coin": "MOOND",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 2.6 SOL in · +17% since the create · mcap 34 SOL",
+   "n": 2901
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 987 (302 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 288,
-    "last_event_age_s": 49.4,
+    "events": 292,
+    "last_event_age_s": 1.1,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 7827,
-    "last_event_age_s": 2.3,
+    "events": 7876,
+    "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 207,
-    "last_event_age_s": 49.2,
+    "events": 210,
+    "last_event_age_s": 0.9,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 987,
   "odd_coins": 302
  },
@@ -6578,28 +6578,100 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4284,
+   "sent": 4315,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4284,
+   "sent": 4315,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MOOND",
+   "name": "MOOND",
+   "mint": "GRsQ9fefbafFZa7m73wN7xKq8xYGzj1Ez4CudokLpump",
+   "age_s": 1,
+   "sol_in": 2.55,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 17.4,
+   "mcap_sol": 34.1,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/Moondsol/status/2126637726158192840?a=rZ3_87TXiSX64glt9tg&s=20",
+   "tg": false,
+   "web": "https://moond.lol",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CLEMENTINE",
+   "name": "Clementine",
+   "mint": "4Bqw893BxCZfg9jRfjxV8TVSCmEWyXoPaZW8mY5spump",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.8,
+   "dev_pct": 8.2,
+   "big_sell": 0.1,
+   "x": "https://x.com/wearetheretail/status/2126637690527306204",
+   "tg": false,
+   "web": "https://reddit.com/r/cats/comments/wtn9cj/hi_someone_knows_who_is_this_cat_or_who_is_the/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "RM",
+   "name": "Red Morning",
+   "mint": "2nmP7JnvYMUg29vebvebrkYrtSgR98Cf4pY37mwZThr4",
+   "age_s": 24,
+   "sol_in": 1.04,
+   "buys": 9,
+   "sells": 10,
+   "rise_pct": 6.0,
+   "mcap_sol": 40.2,
+   "dev_pct": 15.2,
+   "big_sell": 3.33,
+   "x": "https://x.com/thealexmorgan15/status/2126637460595572743",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 21 more coins in 60 min",
+   "why": "serial launcher: 21 more coins in 60 min"
+  },
+  {
+   "symbol": "Mylastmeme",
+   "name": "My last meme",
+   "mint": "GgztLZp8Gmf3pPsnHfaFynyiUbewKK5nZMzmDqWqpump",
+   "age_s": 28,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "Hilbert",
    "name": "Hilbert-Sahur conjecture",
    "mint": "2mPvWCQEYUpBqFDnrQpWgxr7tqApFenZY2KADXfy373T",
-   "age_s": 49,
-   "sol_in": -1.34,
+   "age_s": 78,
+   "sol_in": -1.44,
    "buys": 2,
-   "sells": 7,
-   "rise_pct": -7.5,
-   "mcap_sol": 35.1,
+   "sells": 8,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
    "dev_pct": 15.2,
    "big_sell": 3.05,
    "x": "https://x.com/MarioPrezldente/status/2126637480535617888",
@@ -6612,7 +6684,7 @@
    "symbol": "TIMOTHY",
    "name": "Timothy the Hippo",
    "mint": "5bkmhCpFyS6j8gCoa6ug33RGWePankbcxPZtqVfApump",
-   "age_s": 102,
+   "age_s": 131,
    "sol_in": 0.58,
    "buys": 1,
    "sells": 1,
@@ -6630,7 +6702,7 @@
    "symbol": "bunance",
    "name": "bunance",
    "mint": "Hz3tZPubrn6wESmmxor1w2QgfR4opTmdXUGXBoe3xETQ",
-   "age_s": 128,
+   "age_s": 157,
    "sol_in": -1.72,
    "buys": 8,
    "sells": 7,
@@ -6648,7 +6720,7 @@
    "symbol": "BABBYGONZ",
    "name": "BabbyGonz",
    "mint": "6rm7gyq6cUhazct9p8co3xDVVFUPhdjNWjixSMYUh7xd",
-   "age_s": 129,
+   "age_s": 158,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6659,42 +6731,6 @@
    "x": false,
    "tg": false,
    "web": "https://bsky.app/profile/gonzo.bsky.social/post/3n3ehphgxx224",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "CATZILLA",
-   "name": "Catzilla",
-   "mint": "AE4fVj2RAca4XDUkMg4QXpdGFVL7gBLXacXeaX8PHdr3",
-   "age_s": 163,
-   "sol_in": -4.52,
-   "buys": 3,
-   "sells": 8,
-   "rise_pct": -24.2,
-   "mcap_sol": 28.7,
-   "dev_pct": 15.2,
-   "big_sell": 6.97,
-   "x": "https://x.com/numanuk/status/2126636982818549869",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 20 more coins in 60 min",
-   "why": "serial launcher: 20 more coins in 60 min"
-  },
-  {
-   "symbol": "RICE",
-   "name": "Rice coin",
-   "mint": "B1B731Hinborfk4hNN8PthakSY26T4rwBR84QG445Ecq",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": "https://useyoyo.vercel.app/c/B1B731Hinborfk4hNN8PthakSY26T4rwBR84QG445Ecq",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
