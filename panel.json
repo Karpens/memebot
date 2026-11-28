@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:11:27Z",
+ "updated": "2026-11-28T08:11:55Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 920,
+  "flagged": 921,
   "checked": 49,
   "filtered": 1,
-  "lines": 2245,
+  "lines": 2247,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TPOT",
-   "why": "snipe",
-   "t": "2026-11-28T08:06:25Z"
-  },
   {
    "coin": "FINGART",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "黑鬼",
    "why": "snipe",
    "t": "2026-11-28T08:11:19Z"
+  },
+  {
+   "coin": "BIWAR",
+   "why": "snipe",
+   "t": "2026-11-28T08:11:44Z"
   }
  ],
  "curve": [
@@ -4433,24 +4433,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:00:27Z",
-   "time": "08:00:27",
-   "agent": "SCANNER",
-   "coin": "MI",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.02959 is not 30 + real SOL 0.004842 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 471 odd readings from 212 coins tonight",
-   "n": 2046
-  },
-  {
-   "t": "2026-11-28T07:00:46Z",
-   "time": "08:00:46",
-   "agent": "SCANNER",
-   "coin": "Moffy",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.194 is not 30 + real SOL 0 (off -28.81 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 474 odd readings from 213 coins tonight",
-   "n": 2047
-  },
-  {
    "t": "2026-11-28T07:01:25Z",
    "time": "08:01:25",
    "agent": "SCANNER",
@@ -6231,6 +6213,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 8.6 SOL in · +66% since the create · mcap 46 SOL",
    "n": 2245
+  },
+  {
+   "t": "2026-11-28T08:11:44Z",
+   "time": "09:11:44",
+   "agent": "SCANNER",
+   "coin": "BIWAR",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2246
+  },
+  {
+   "t": "2026-11-28T08:11:44Z",
+   "time": "09:11:44",
+   "agent": "SIZER",
+   "coin": "BIWAR",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2247
   }
  ],
  "nights": [
@@ -6311,24 +6311,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 803,
-    "last_event_age_s": 8.4,
+    "events": 807,
+    "last_event_age_s": 11.2,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11430,
-    "last_event_age_s": 1.8,
+    "events": 11470,
+    "last_event_age_s": 0.8,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 577,
-    "last_event_age_s": 8.2,
+    "events": 578,
+    "last_event_age_s": 11.0,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6341,9 +6341,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 565,
   "odd_coins": 234
  },
@@ -6392,28 +6392,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13855,
+   "sent": 13885,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13855,
+   "sent": 13885,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BIWAR",
+   "name": "Binance Warrior",
+   "mint": "ChYzwDmsQF4gVZeUqFRnuFKwvS4g654iV2tJyvk3pump",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "RICE",
+   "name": "Rice Cat",
+   "mint": "3qJepYLVGTfwQLNs1gAbinYF1fahH4v8g8ogBNq3YQvQ",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "GRAIL",
+   "name": "Grail pepe",
+   "mint": "9vxpreDQU3z8Ti9kTTwe2GJL75gQ4riAMURh2HPGTRiX",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 90.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
    "symbol": "黑鬼",
    "name": "黑鬼",
    "mint": "88BRzhQJ7tBUNabBiQiCmjEUnWcnGBVj79LQGSTKMsh3",
-   "age_s": 8,
-   "sol_in": 1.68,
+   "age_s": 36,
+   "sol_in": 0.35,
    "buys": 1,
-   "sells": 4,
-   "rise_pct": 11.5,
-   "mcap_sol": 31.2,
+   "sells": 6,
+   "rise_pct": 2.3,
+   "mcap_sol": 28.6,
    "dev_pct": 0.0,
    "big_sell": 2.05,
    "x": "https://x.com/save_trenches/status/2126560669931815330?a=D-bkmAPiaKoz5Gglngo&s=20",
@@ -6426,7 +6480,7 @@
    "symbol": "DUMP",
    "name": "Official Donald Dump Coin",
    "mint": "pp3vJdYtNLnwmAopKmhtyzwohestVnaHDhV2EgVBPnq",
-   "age_s": 28,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6444,7 +6498,7 @@
    "symbol": "BLR",
    "name": "Blur",
    "mint": "6q7ugPf2FkHcaLcjMTEEUxvpF3mDaZxB9x72eepprQjq",
-   "age_s": 62,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6462,7 +6516,7 @@
    "symbol": "BUZZ",
    "name": "buzz",
    "mint": "94z7kZMXmGmsGNjvAgP3W2kVqgaAG1cPqmfW8PDTnkgC",
-   "age_s": 141,
+   "age_s": 169,
    "sol_in": -0.1,
    "buys": 1,
    "sells": 5,
@@ -6480,10 +6534,10 @@
    "symbol": "Yoda",
    "name": "Yoda",
    "mint": "FtQjxu21dibjd6kWjGF7N6YTVawhkYWqDMw6Wujxniit",
-   "age_s": 147,
+   "age_s": 175,
    "sol_in": 0.14,
-   "buys": 19,
-   "sells": 22,
+   "buys": 21,
+   "sells": 23,
    "rise_pct": 0.8,
    "mcap_sol": 34.2,
    "dev_pct": 9.9,
