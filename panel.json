@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:33:59Z",
+ "updated": "2026-11-28T09:34:32Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1082,
+  "flagged": 1083,
   "checked": 49,
   "filtered": 1,
-  "lines": 2524,
+  "lines": 2525,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "JUGULAR",
-   "why": "snipe",
-   "t": "2026-11-28T09:30:09Z"
-  },
   {
    "coin": "SCAT",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "ALICEBOB",
    "why": "snipe",
    "t": "2026-11-28T09:33:32Z"
+  },
+  {
+   "coin": "JIE",
+   "why": "snipe",
+   "t": "2026-11-28T09:34:16Z"
   }
  ],
  "curve": [
-  [
-   1795822440,
-   48.17
-  ],
   [
    1795822500,
    48.17
@@ -2472,6 +2468,10 @@
   [
    1795858380,
    47.79
+  ],
+  [
+   1795858440,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:33:17Z",
-   "time": "09:33:17",
-   "agent": "SCANNER",
-   "coin": "MI",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.02826 is not 30 + real SOL 0.00352 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 617 odd readings from 238 coins tonight",
-   "n": 2325
-  },
-  {
    "t": "2026-11-28T08:33:23Z",
    "time": "09:33:23",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 3, mayhem mode 2)",
    "n": 2524
+  },
+  {
+   "t": "2026-11-28T09:34:16Z",
+   "time": "10:34:16",
+   "agent": "SCANNER",
+   "coin": "JIE",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.6 SOL in · +4% since the create · mcap 29 SOL",
+   "n": 2525
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1141,
-    "last_event_age_s": 1.3,
+    "events": 1144,
+    "last_event_age_s": 16.1,
     "errors": 16,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21738,
+    "events": 21796,
     "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 814,
-    "last_event_age_s": 1.2,
+    "events": 816,
+    "last_event_age_s": 16.1,
     "errors": 31,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6584,30 +6584,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19124,
+   "sent": 19160,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19124,
+   "sent": 19160,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JIE",
+   "name": "ZHONGGUO JIE",
+   "mint": "3BXysAvMGZx6bWQzYDYNBfkk6YKkDUPu4VSfcbwNpump",
+   "age_s": 16,
+   "sol_in": 0.25,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.0,
+   "big_sell": 0.3,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "nvdi",
+   "name": "NVIDIA insider",
+   "mint": "G11FyrwDFpHAG4kM4xDn8FpBqZTD3xfteDVGMtVEpump",
+   "age_s": 31,
+   "sol_in": 0.11,
+   "buys": 5,
+   "sells": 1,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
    "symbol": "HPD",
    "name": "HairyPaulDavies",
    "mint": "6tFZPu3BAFZeuXMz1NCyX2kPXna8XY5y5VKNfcLrYfqb",
-   "age_s": 1,
-   "sol_in": 4.95,
+   "age_s": 34,
+   "sol_in": -4.94,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 30.4,
-   "mcap_sol": 49.4,
+   "sells": 8,
+   "rise_pct": -26.3,
+   "mcap_sol": 28.0,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 3.5,
    "x": "https://x.com/danny8080/status/2126610488876323006",
    "tg": false,
    "web": false,
@@ -6618,14 +6654,14 @@
    "symbol": "ALICEBOB",
    "name": "Alice and Bob",
    "mint": "5CR9oPZcVYX8zEjyTtXziHLdhSBe7jHLyzPi9L25gXzh",
-   "age_s": 27,
-   "sol_in": 0.71,
-   "buys": 5,
-   "sells": 2,
-   "rise_pct": 4.8,
-   "mcap_sol": 29.9,
+   "age_s": 60,
+   "sol_in": 0.67,
+   "buys": 6,
+   "sells": 5,
+   "rise_pct": 4.5,
+   "mcap_sol": 29.8,
    "dev_pct": 1.0,
-   "big_sell": 0.04,
+   "big_sell": 0.15,
    "x": "https://x.com/LSheppard27076/status/2126610327387144473",
    "tg": false,
    "web": "https://tech.yahoo.com/ai/meta-ai/articles/sandboxed-ai-models-secretly-talk-123000193.html",
@@ -6636,12 +6672,12 @@
    "symbol": "MEMEPAY",
    "name": "Memepay",
    "mint": "B5vjokfc1s6ZLpq7rw1g6qb9FGaK1To181UG1nrfpump",
-   "age_s": 51,
-   "sol_in": -1.44,
-   "buys": 12,
+   "age_s": 84,
+   "sol_in": -1.4,
+   "buys": 14,
    "sells": 13,
-   "rise_pct": -8.7,
-   "mcap_sol": 29.8,
+   "rise_pct": -8.4,
+   "mcap_sol": 29.9,
    "dev_pct": 8.0,
    "big_sell": 13.98,
    "x": "https://x.com/memepayapp",
@@ -6654,12 +6690,12 @@
    "symbol": "STC",
    "name": "SantaCoin",
    "mint": "5wQ6ry39GjuLSuEyc88xFF11zhosfn2ghjZpmgMdpump",
-   "age_s": 71,
-   "sol_in": -0.86,
+   "age_s": 104,
+   "sol_in": -0.95,
    "buys": 16,
-   "sells": 26,
-   "rise_pct": -5.4,
-   "mcap_sol": 28.2,
+   "sells": 27,
+   "rise_pct": -6.0,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 3.14,
    "x": "https://x.com/SantaCoinPF/status/2126610210718367890",
@@ -6672,12 +6708,12 @@
    "symbol": "MEMEPAY",
    "name": "Memepay",
    "mint": "GyQzC1kUvqKgidXPhGUncKUhszSLH8e8eMUo3wWppump",
-   "age_s": 74,
-   "sol_in": -1.8,
+   "age_s": 107,
+   "sol_in": -2.09,
    "buys": 4,
-   "sells": 7,
-   "rise_pct": -10.8,
-   "mcap_sol": 29.1,
+   "sells": 8,
+   "rise_pct": -12.5,
+   "mcap_sol": 28.6,
    "dev_pct": 8.0,
    "big_sell": 1.67,
    "x": "https://x.com/memepayapp",
@@ -6690,7 +6726,7 @@
    "symbol": "RB",
    "name": "ROGUES BUM",
    "mint": "FtaVD57vLSW3YFdT3Su7mJCUSkVEYUD9sBY7dwy2pump",
-   "age_s": 78,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,7 +6744,7 @@
    "symbol": "AOTUS",
    "name": "AIPAC Of The United States",
    "mint": "9zqR454rF6wo1CkTTRVbnjT5jBQxq8ujWSSamD2hLsWV",
-   "age_s": 81,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6726,7 +6762,7 @@
    "symbol": "Saitama",
    "name": "埼玉コイン",
    "mint": "ERLVAR9UepK2V94MGNFP3mPFVsub6i2e79sKoZkxpump",
-   "age_s": 88,
+   "age_s": 121,
    "sol_in": -1.28,
    "buys": 1,
    "sells": 3,
@@ -6744,7 +6780,7 @@
    "symbol": "RB",
    "name": "ROGUES BUM",
    "mint": "2zB3ZQRNy8tiqNvB7ZkrbHFA3Pbj2u8ic73FY4pNpump",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6757,42 +6793,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "ANDRE",
-   "name": "Princess Andre",
-   "mint": "Dfavp4UpLja14HkQXQ42mxTE8ukkESdZrfEpRsmVpump",
-   "age_s": 160,
-   "sol_in": -1.47,
-   "buys": 1,
-   "sells": 6,
-   "rise_pct": -9.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 5.0,
-   "big_sell": 1.61,
-   "x": "https://x.com/dailystar/status/2126609543018717372",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "POOPBALL",
-   "name": "POOPBALL",
-   "mint": "2UmFLDMEKfVeRCjoCy3uFnC7pDusWdKJhkCf7kQLpump",
-   "age_s": 176,
-   "sol_in": 0.33,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": 1.9,
-   "mcap_sol": 39.7,
-   "dev_pct": 16.5,
-   "big_sell": 1.43,
-   "x": "https://x.com/POOPBALLSOL",
-   "tg": "https://t.me/POOPBALLSOL",
-   "web": "https://poopball.club/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
