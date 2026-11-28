@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:27:28Z",
+ "updated": "2026-11-28T06:28:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -1863,6 +1863,10 @@
   ],
   [
    1795847220,
+   47.79
+  ],
+  [
+   1795847280,
    47.79
   ]
  ],
@@ -5870,6 +5874,7 @@
  "errors": [
   "https://lite-api.jup.ag/price/v3: HTTP 429",
   "https://lite-api.jup.ag/price/v3: HTTP 429",
+  "https://lite-api.jup.ag/price/v3: HTTP 429",
   "https://lite-api.jup.ag/price/v3: HTTP 429"
  ],
  "stream": {
@@ -5885,7 +5890,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · odd curve readings 423 (193 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 19 watched · ws off · odd curve readings 423 (193 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5893,24 +5898,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 375,
-    "last_event_age_s": 26.1,
+    "events": 378,
+    "last_event_age_s": 12.4,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": true,
+    "connected": false,
     "events": 2935,
-    "last_event_age_s": 2.5,
-    "errors": 311,
+    "last_event_age_s": 35.5,
+    "errors": 316,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 275,
-    "last_event_age_s": 26.1,
+    "events": 276,
+    "last_event_age_s": 30.7,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5923,9 +5928,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
-  "watching": 0,
-  "followed": 8,
+  "creates_per_min": 2.6,
+  "watching": 1,
+  "followed": 7,
   "odd_readings": 423,
   "odd_coins": 193
  },
@@ -5974,23 +5979,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7215,
+   "sent": 7250,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7215,
+   "sent": 7250,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "sux",
+   "name": "sux",
+   "mint": "ArNPXfNZbYeiPY3g74NRrnv8ACoroapaoKHekpY7pump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "PSYOP",
+   "name": "ThisIsCrazyTekApeNowGetRich420",
+   "mint": "CYxYdbThnYHHG2eXiN73vnSF4KPox8dEKeNm7gLfRF7S",
+   "age_s": 31,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.0,
+   "dev_pct": 9.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/nonanon124/status/2126563593231741376",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "ELYW",
    "name": "ELYSIUM WORLD",
    "mint": "FoDK8UeUixkgeLQ1MF6LiEvVD37DHSypHGVgF6JApump",
-   "age_s": 26,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6008,7 +6049,7 @@
    "symbol": "GROKBOT",
    "name": "GrokBot",
    "mint": "EhWtg8XcsfgvgaLBTnxLh2dwFSAErvNhtyQ1qggUReTN",
-   "age_s": 51,
+   "age_s": 84,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -6026,7 +6067,7 @@
    "symbol": "TCC",
    "name": "Trump Corrupt Coin",
    "mint": "5gFje1Q3Gy6eh62ScHEeufEiv5tCofd57B6d4VLzpump",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 0.03,
    "buys": 1,
    "sells": 0,
@@ -6044,7 +6085,7 @@
    "symbol": "Tremp",
    "name": "The Sellooor",
    "mint": "DBJgsnkQanKRWheP4YZXemgdKrNQ8HcG8pyktqeJoXpa",
-   "age_s": 92,
+   "age_s": 125,
    "sol_in": -2.0,
    "buys": 4,
    "sells": 8,
@@ -6062,7 +6103,7 @@
    "symbol": "Wakachi Pad",
    "name": "Wakachi",
    "mint": "hABH17QbYSHwLCa8AuQt6u97uB767HM6QFwnstKpump",
-   "age_s": 93,
+   "age_s": 126,
    "sol_in": 22.69,
    "buys": 13,
    "sells": 18,
@@ -6080,7 +6121,7 @@
    "symbol": "XXX",
    "name": "xxx",
    "mint": "GpJDGR6PBD7YmFSyUJNPBrcrV94GcdcmNGgCoDzqpump",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6098,7 +6139,7 @@
    "symbol": "Jokecoin",
    "name": "Jokecoin",
    "mint": "Ym6hmWRjYpAFvmxadDVEG1S3EQiBzyGGNhhtRtkpump",
-   "age_s": 123,
+   "age_s": 156,
    "sol_in": -4.12,
    "buys": 3,
    "sells": 6,
@@ -6116,7 +6157,7 @@
    "symbol": "BTC",
    "name": "Buy The Clown",
    "mint": "2zocsvHUTCSgckQh1S1VmQRaqSLa7th1CuM7QF9Zpump",
-   "age_s": 143,
+   "age_s": 176,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6129,42 +6170,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "WATERS",
-   "name": "Official Waters Coin",
-   "mint": "AgAjxHLgaXjs1pCTvSs7pSqz9p2uWsBKu6G7rTxRpump",
-   "age_s": 151,
-   "sol_in": -1.53,
-   "buys": 0,
-   "sells": 3,
-   "rise_pct": -9.1,
-   "mcap_sol": 30.7,
-   "dev_pct": 9.6,
-   "big_sell": 1.2,
-   "x": "https://x.com/bbaoo777/status/2126562965788713096",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
-  },
-  {
-   "symbol": "schizo",
-   "name": "schizo",
-   "mint": "D14UWbMwvCUfB6F5D1tZzY2VBD8HSx9edEY4GaMvpump",
-   "age_s": 163,
-   "sol_in": 26.99,
-   "buys": 15,
-   "sells": 11,
-   "rise_pct": 251.4,
-   "mcap_sol": 104.0,
-   "dev_pct": 3.0,
-   "big_sell": 3.59,
-   "x": "https://x.com/schizochain/status/2126562723345650105?a=ApKsEE0d6kfdXfSI3qY&s=20",
-   "tg": false,
-   "web": "https://schizochain.fun/",
-   "status": "rejected: snipe: first reading 58.4 s after the create (max 10 s)",
-   "why": "snipe: first reading 58.4 s after the create (max 10 s)"
   }
  ],
  "strategies": [
