@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:43:42Z",
+ "updated": "2026-11-28T11:44:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1319,
   "checked": 49,
   "filtered": 1,
-  "lines": 2972,
+  "lines": 2973,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795830240,
-   47.79
-  ],
   [
    1795830300,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795866180,
    47.79
+  ],
+  [
+   1795866240,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:47:36Z",
-   "time": "11:47:36",
-   "agent": "SCANNER",
-   "coin": "JC",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · -0.0 SOL in · +0% since the create · mcap 34 SOL",
-   "n": 2773
-  },
-  {
    "t": "2026-11-28T10:48:27Z",
    "time": "11:48:27",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2972
+  },
+  {
+   "t": "2026-11-28T11:44:01Z",
+   "time": "12:44:01",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 6 rejected (snipe not bought: only to size 5, serial launcher 1)",
+   "n": 2973
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 1006 (305 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 1006 (305 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6498,15 +6498,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 388,
-    "last_event_age_s": 21.2,
+    "last_event_age_s": 55.2,
     "errors": 3,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10188,
-    "last_event_age_s": 0.2,
+    "events": 10248,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
@@ -6514,7 +6514,7 @@
     "name": "metadata",
     "connected": true,
     "events": 277,
-    "last_event_age_s": 21.1,
+    "last_event_age_s": 55.1,
     "errors": 3,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 8,
+  "followed": 5,
   "odd_readings": 1006,
   "odd_coins": 305
  },
@@ -6578,13 +6578,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5680,
+   "sent": 5717,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5680,
+   "sent": 5717,
    "errors": 0,
    "last_error": null
   }
@@ -6594,7 +6594,7 @@
    "symbol": "COMM",
    "name": "Commodities",
    "mint": "GCcHZjdrgSDEDYocdNX9wbaTwc67YFvxaN6k7X2W67kd",
-   "age_s": 21,
+   "age_s": 55,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6612,7 +6612,7 @@
    "symbol": "CLOVR",
    "name": "Clover Crab",
    "mint": "3GQtvekUyHCquQ7P2pHFGYasBQWRgJMUFsZhaa5hcESX",
-   "age_s": 35,
+   "age_s": 69,
    "sol_in": 0.03,
    "buys": 2,
    "sells": 0,
@@ -6630,7 +6630,7 @@
    "symbol": "Tuzi",
    "name": "Tuzi",
    "mint": "kEJf7PaRxt6k6LArDR1SfGzEWL4rpXaPyV7yB9ipump",
-   "age_s": 45,
+   "age_s": 79,
    "sol_in": 0.27,
    "buys": 2,
    "sells": 3,
@@ -6648,11 +6648,11 @@
    "symbol": "GUAP",
    "name": "MOONLAND",
    "mint": "6hRoqNzbuqpZU5BTetKKLqXHSK6fcMESXfNjpQWCpump",
-   "age_s": 79,
-   "sol_in": 0.24,
-   "buys": 3,
+   "age_s": 113,
+   "sol_in": 0.25,
+   "buys": 4,
    "sells": 1,
-   "rise_pct": 1.6,
+   "rise_pct": 1.7,
    "mcap_sol": 28.9,
    "dev_pct": 0.9,
    "big_sell": 0.4,
@@ -6666,7 +6666,7 @@
    "symbol": "GIGACHAT",
    "name": "GIGACHAT",
    "mint": "Edr7LWHpBasKiRFLUE3zY4Gw1LYrVSiGMk3oBSYhpump",
-   "age_s": 100,
+   "age_s": 134,
    "sol_in": -0.03,
    "buys": 0,
    "sells": 1,
@@ -6677,60 +6677,6 @@
    "x": "https://x.com/joinquant/status/2126642599662424260?a=Kuj-l2MrqUOzOGym-ak&s=20",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "POSSUM",
-   "name": "Possum In A Peanut",
-   "mint": "2kdcNwp26CT3ACeaAdBuqdWfaoTsToQgsj1SUTkSunjh",
-   "age_s": 155,
-   "sol_in": -1.44,
-   "buys": 3,
-   "sells": 9,
-   "rise_pct": -8.1,
-   "mcap_sol": 34.9,
-   "dev_pct": 15.2,
-   "big_sell": 1.78,
-   "x": "https://x.com/HuffPost/status/2126642477595500566",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 20 more coins in 60 min",
-   "why": "serial launcher: 20 more coins in 60 min"
-  },
-  {
-   "symbol": "FUKMOONBOY",
-   "name": "GoonBoy",
-   "mint": "FbFLaxZuff2QX7ENhS2gEbUKRxXYWM61GJVepjNnpump",
-   "age_s": 170,
-   "sol_in": 0.02,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "OBOL",
-   "name": "OBOL",
-   "mint": "HgLNN1izsfTKWoRgyCiP6DZwDzW4RmqR2KsSuUdZpump",
-   "age_s": 176,
-   "sol_in": 13.95,
-   "buys": 61,
-   "sells": 51,
-   "rise_pct": 112.9,
-   "mcap_sol": 61.0,
-   "dev_pct": 1.3,
-   "big_sell": 8.11,
-   "x": "https://x.com/ObolMarkets/status/2126642167221199252",
-   "tg": false,
-   "web": "https://oboldot.trade/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
