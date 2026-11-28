@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:49:56Z",
+ "updated": "2026-11-28T01:50:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 373,
   "checked": 49,
   "filtered": 1,
-  "lines": 1141,
+  "lines": 1142,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -751,6 +751,10 @@
   ],
   [
    1795830540,
+   47.79
+  ],
+  [
+   1795830600,
    47.79
   ]
  ],
@@ -2905,15 +2909,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:01:03Z",
-   "time": "02:01:03",
-   "agent": "SCANNER",
-   "coin": "TOGI",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 942
-  },
-  {
    "t": "2026-11-28T01:01:06Z",
    "time": "02:01:06",
    "agent": "SCANNER",
@@ -4703,6 +4698,15 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1.362e+05 is not 30 + real SOL 21.23 (off +1.361e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 278 odd readings from 134 coins tonight",
    "n": 1141
+  },
+  {
+   "t": "2026-11-28T01:50:05Z",
+   "time": "02:50:05",
+   "agent": "SCANNER",
+   "coin": "Trumpe",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 3.771 is not 30 + real SOL 0 (off -26.23 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 279 odd readings from 135 coins tonight",
+   "n": 1142
   }
  ],
  "nights": [
@@ -4775,7 +4779,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 278 (134 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 280 (135 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4783,24 +4787,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1344,
-    "last_event_age_s": 4.1,
+    "events": 1345,
+    "last_event_age_s": 26.4,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25295,
-    "last_event_age_s": 1.2,
+    "events": 25330,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 753,
-    "last_event_age_s": 3.9,
+    "events": 754,
+    "last_event_age_s": 26.2,
     "errors": 34,
     "last_error": "no uri"
    }
@@ -4813,11 +4817,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 4.4,
   "watching": 0,
   "followed": 8,
-  "odd_readings": 278,
-  "odd_coins": 134
+  "odd_readings": 280,
+  "odd_coins": 135
  },
  "learner": {
   "samples": 84,
@@ -4864,23 +4868,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11352,
+   "sent": 11388,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11352,
+   "sent": 11388,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Trumpe",
+   "name": "Trumpe",
+   "mint": "AFssx9hkxsCK6T2HJkLjG76GhzCXUBw3tGn2WQcbX3ec",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/thegoat195923/status/2126493783713816893",
+   "tg": false,
+   "web": "https://boards.4chan.org/biz/thread/62977131/day-502-of-trump-posting-till-his-memecoin",
+   "status": "rejected: serial launcher: 8 more coins in 60 min",
+   "why": "serial launcher: 8 more coins in 60 min"
+  },
+  {
    "symbol": "CHAINZ",
    "name": "Deriv Chainz",
    "mint": "FYPEEvWzVvfeo9ed1qP7a27b1idXEoPa1VBSnsZchEtr",
-   "age_s": 4,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4898,7 +4920,7 @@
    "symbol": "Apocrycoin",
    "name": "GO TO 0:13 HELLO?",
    "mint": "Cdpkw255t4j6AuKjWcTZLSeMfKkJiLkqtEDttZ21pump",
-   "age_s": 34,
+   "age_s": 68,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -4916,7 +4938,7 @@
    "symbol": "?",
    "name": "",
    "mint": "7WyeFpZD67qUDeRTRV7EcaUaTG6ooEYsy9GzYo9WAY1u",
-   "age_s": 47,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4934,7 +4956,7 @@
    "symbol": "CRYPTANALYSIS",
    "name": "CRYPTANALYSIS",
    "mint": "v3u7uozb4FCmtBzN2C4BEBSY6XfJ8qiCv6QoyZCpump",
-   "age_s": 58,
+   "age_s": 92,
    "sol_in": -1.23,
    "buys": 3,
    "sells": 5,
@@ -4952,7 +4974,7 @@
    "symbol": "?",
    "name": "",
    "mint": "6sFaxHbjUSbS2eijX2ju1oyF3w1BipcjfqsFTkmjdeNA",
-   "age_s": 69,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4970,7 +4992,7 @@
    "symbol": "COPY",
    "name": "Copy Cat",
    "mint": "EYuY9DMgGD6Dd9RgC1XpSqFnWDKUTyXKnyWzj6NGov1Y",
-   "age_s": 99,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4988,12 +5010,12 @@
    "symbol": "CEPHAL",
    "name": "Cephal",
    "mint": "CePNx8YmsJiBYB8FWsdQMdKHfGbvMHZZ9QtHHuardbPt",
-   "age_s": 103,
-   "sol_in": 2.77,
-   "buys": 14,
-   "sells": 13,
-   "rise_pct": 19.2,
-   "mcap_sol": 33.8,
+   "age_s": 137,
+   "sol_in": 3.03,
+   "buys": 16,
+   "sells": 14,
+   "rise_pct": 21.1,
+   "mcap_sol": 34.3,
    "dev_pct": 0.7,
    "big_sell": 3.28,
    "x": "https://x.com/jasperbrookkin",
@@ -5006,7 +5028,7 @@
    "symbol": "FDSFDS",
    "name": "dsfsd",
    "mint": "2gxsZWjL1QfyCXa2JV3ewpypmyDcELL8kfWzQceppump",
-   "age_s": 115,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5024,7 +5046,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "Dp5ZPTbM7tY42zoQd7eKS5ZL1V8CiaqA8dsahAKsrMmm",
-   "age_s": 127,
+   "age_s": 161,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 0,
@@ -5042,7 +5064,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "6uFhXdBkcnijets77hnzPT56c8XQYArB6PhJv17xrXnQ",
-   "age_s": 143,
+   "age_s": 177,
    "sol_in": 0.1,
    "buys": 2,
    "sells": 2,
@@ -5055,24 +5077,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SLINK",
-   "name": "Smol Link",
-   "mint": "Ghwp6gwyKmcKN69oQ1GXm1rWwP16E6SPEaxYofsZLQV4",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://derivr.fun",
-   "status": "rejected: odd curve reading: virtual SOL 1.362e+05 is not 30 + real SOL 21.23 (off +1.362e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 1.362e+05 is not 30 + real SOL 21.23 (off +1.362e+05 SOL)"
   }
  ],
  "strategies": [
