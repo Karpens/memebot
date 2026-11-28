@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:06:46Z",
+ "updated": "2026-11-28T06:07:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 777,
+  "flagged": 778,
   "checked": 49,
   "filtered": 1,
-  "lines": 1907,
+  "lines": 1910,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "pih",
-   "why": "snipe",
-   "t": "2026-11-28T05:45:50Z"
-  },
   {
    "coin": "SNOWCAT",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "flint",
    "why": "snipe",
    "t": "2026-11-28T06:01:08Z"
+  },
+  {
+   "coin": "SCAT",
+   "why": "snipe",
+   "t": "2026-11-28T06:07:16Z"
   }
  ],
  "curve": [
@@ -1779,6 +1779,10 @@
   ],
   [
    1795845960,
+   47.79
+  ],
+  [
+   1795846020,
    47.79
   ]
  ],
@@ -3933,33 +3937,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:42:23Z",
-   "time": "05:42:23",
-   "agent": "SIZER",
-   "coin": "SAITAMA",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1708
-  },
-  {
-   "t": "2026-11-28T04:42:57Z",
-   "time": "05:42:57",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.0 a minute · 0 watched · 4 rejected (snipe not bought: only to size 2, no symbol or name 2)",
-   "n": 1709
-  },
-  {
-   "t": "2026-11-28T04:42:58Z",
-   "time": "05:42:58",
-   "agent": "SCANNER",
-   "coin": "SAITAMA",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 3.0 SOL in · +19% since the create · mcap 40 SOL",
-   "n": 1710
-  },
-  {
    "t": "2026-11-28T04:43:51Z",
    "time": "05:43:51",
    "agent": "SCANNER",
@@ -5731,6 +5708,33 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 4.312 is not 30 + real SOL 0.01975 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 413 odd readings from 189 coins tonight",
    "n": 1907
+  },
+  {
+   "t": "2026-11-28T06:06:51Z",
+   "time": "07:06:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (snipe: first reading s after the 3, mayhem mode 3, serial launcher 2)",
+   "n": 1908
+  },
+  {
+   "t": "2026-11-28T06:07:16Z",
+   "time": "07:07:16",
+   "agent": "SCANNER",
+   "coin": "SCAT",
+   "action": "flag",
+   "text": "snipe · first reading 3.0 s after the create · 0.8 SOL in · +5% since the create · mcap 29 SOL",
+   "n": 1909
+  },
+  {
+   "t": "2026-11-28T06:07:16Z",
+   "time": "07:07:16",
+   "agent": "SIZER",
+   "coin": "SCAT",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1910
   }
  ],
  "nights": [
@@ -5807,24 +5811,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 315,
-    "last_event_age_s": 30.3,
+    "events": 316,
+    "last_event_age_s": 5.7,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2315,
-    "last_event_age_s": 3.4,
+    "events": 2321,
+    "last_event_age_s": 0.7,
     "errors": 247,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 238,
-    "last_event_age_s": 29.8,
+    "events": 239,
+    "last_event_age_s": 5.7,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5888,23 +5892,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5892,
+   "sent": 5928,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5892,
+   "sent": 5928,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SCAT",
+   "name": "SPLIT CAT",
+   "mint": "3DrxrkizCjmFDNbTqhQ4HPRQvWjPpFw8vyPDWSaRbuLw",
+   "age_s": 5,
+   "sol_in": 0.46,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 3.1,
+   "mcap_sol": 28.8,
+   "dev_pct": 0.0,
+   "big_sell": 0.3,
+   "x": false,
+   "tg": false,
+   "web": "https://splitball.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "NAUGHTY",
    "name": "Naughty List",
    "mint": "evi2hBmWZTepgqijxHz7AmfAA2qedpMFHBMvpbzpump",
-   "age_s": 30,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5922,7 +5944,7 @@
    "symbol": "kirk",
    "name": "kirkcoin",
    "mint": "CjnJgFzaVU5BFZeGMCjryWgrR8aWJUF8VyMHeKFFpump",
-   "age_s": 41,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5940,7 +5962,7 @@
    "symbol": "LOAF",
    "name": "Tiger Loaf",
    "mint": "DSrrmS9xftWGLHDNr63gXwEJUWVF6xmNiCFA8sNqpump",
-   "age_s": 104,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5958,7 +5980,7 @@
    "symbol": "MEMEPLOYED",
    "name": "Mememployed",
    "mint": "CcLKd4KbzdnUajhfy2GQ6nU6oBmWHmVDc5DbRwiKpump",
-   "age_s": 108,
+   "age_s": 141,
    "sol_in": -0.07,
    "buys": 0,
    "sells": 1,
@@ -5976,7 +5998,7 @@
    "symbol": "Shutdown",
    "name": "United fidelity",
    "mint": "2MufizwraQxPieZYAzbdgCWRRfTmxhLo2Q4xrjmfG1y3",
-   "age_s": 129,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5994,7 +6016,7 @@
    "symbol": "Shutdown",
    "name": "United fidelity",
    "mint": "EUvQz8ZiFNXhPF9jy23PxMhvTsRRFAxEZvSHG9wKhkPU",
-   "age_s": 137,
+   "age_s": 170,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6012,7 +6034,7 @@
    "symbol": "Harambe",
    "name": "Dian Fossey Gorilla Fund",
    "mint": "69h3tZGcWZm11UXC5MY2Vd6qPhbMydTVbAWJe7QJpump",
-   "age_s": 145,
+   "age_s": 178,
    "sol_in": -0.5,
    "buys": 5,
    "sells": 6,
@@ -6025,42 +6047,6 @@
    "web": "https://gorillafund.org/tag/harambe/",
    "status": "rejected: snipe: first reading 81.2 s after the create (max 10 s)",
    "why": "snipe: first reading 81.2 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "BTC",
-   "name": "Buy The Clown",
-   "mint": "DjFL1SwbKGrN5iR8pUUvpmVvhJnSJaLLuA88YSNDpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.1,
-   "dev_pct": 2.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "FIXED",
-   "name": "Fixed OTC Desk",
-   "mint": "9A2AV9rKU7PWbGxD8Drhv42YhusNyi7Pv8kbqUzTDesk",
-   "age_s": 178,
-   "sol_in": -0.05,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.3,
-   "mcap_sol": 29.0,
-   "dev_pct": 2.1,
-   "big_sell": 2.87,
-   "x": "https://x.com/FixedOTCDesk/status/2126557641233023342",
-   "tg": false,
-   "web": "https://fixedotc.xyz",
-   "status": "rejected: snipe: first reading 14.1 s after the create (max 10 s)",
-   "why": "snipe: first reading 14.1 s after the create (max 10 s)"
   }
  ],
  "strategies": [
