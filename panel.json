@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:02:04Z",
+ "updated": "2026-11-28T08:02:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 902,
+  "flagged": 903,
   "checked": 49,
   "filtered": 1,
-  "lines": 2214,
+  "lines": 2215,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "USNB",
-   "why": "snipe",
-   "t": "2026-11-28T07:56:36Z"
-  },
   {
    "coin": "TRUMPDOG",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "NVIDIA",
    "why": "snipe",
    "t": "2026-11-28T08:01:23Z"
+  },
+  {
+   "coin": "FMC",
+   "why": "snipe",
+   "t": "2026-11-28T08:02:23Z"
   }
  ],
  "curve": [
@@ -4397,15 +4397,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:51:19Z",
-   "time": "07:51:19",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 3 watched · 4 rejected (snipe: first reading s after the 1, snipe not bought: only to size 1, serial launcher 1) · closest Kidmas: no curve reading yet",
-   "n": 2015
-  },
-  {
    "t": "2026-11-28T06:52:20Z",
    "time": "07:52:20",
    "agent": "SCANNER",
@@ -6195,6 +6186,15 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, no symbol or name 1)",
    "n": 2214
+  },
+  {
+   "t": "2026-11-28T08:02:23Z",
+   "time": "09:02:23",
+   "agent": "SCANNER",
+   "coin": "FMC",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2215
   }
  ],
  "nights": [
@@ -6267,7 +6267,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 562 (231 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 562 (231 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6275,24 +6275,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 773,
-    "last_event_age_s": 41.0,
+    "events": 777,
+    "last_event_age_s": 1.4,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10278,
-    "last_event_age_s": 0.5,
+    "events": 10332,
+    "last_event_age_s": 1.0,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 552,
-    "last_event_age_s": 41.0,
+    "events": 555,
+    "last_event_age_s": 1.3,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6305,9 +6305,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 3,
+  "followed": 5,
   "odd_readings": 562,
   "odd_coins": 231
  },
@@ -6356,28 +6356,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13256,
+   "sent": 13292,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13256,
+   "sent": 13292,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GitHub",
+   "name": "GitHub",
+   "mint": "12RhvGrEZhqiBwvLpwf62F61G1hTioziNMMcMVZSpump",
+   "age_s": 1,
+   "sol_in": 17.59,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 132.8,
+   "mcap_sol": 81.0,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/github",
+   "tg": false,
+   "web": "https://github.com/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Hope",
+   "name": "Hope",
+   "mint": "BoYJkmCGW4iaMBPi9Rws7zg3jCpr7dSwRYuG14B88Vii",
+   "age_s": 4,
+   "sol_in": 8.91,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 61.1,
+   "mcap_sol": 54.7,
+   "dev_pct": 9.9,
+   "big_sell": 1.26,
+   "x": "https://x.com/nonanon124/status/2126587516933324911",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "FMC",
+   "name": "fuck memecoins",
+   "mint": "DRp2U4MEMoHjWYSaxrSkvtfA9E2L3DqcMvHYHxhipump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "7zsENL4kuZxLY5vvyMrq5uwzj1sEHEsxFtMLuhnEpump",
-   "age_s": 41,
-   "sol_in": 18.67,
-   "buys": 10,
-   "sells": 3,
-   "rise_pct": 142.7,
-   "mcap_sol": 84.4,
+   "age_s": 75,
+   "sol_in": 18.48,
+   "buys": 19,
+   "sells": 16,
+   "rise_pct": 141.0,
+   "mcap_sol": 83.8,
    "dev_pct": 11.1,
    "big_sell": 0.32,
    "x": "https://x.com/nvidianewsroom",
@@ -6390,7 +6444,7 @@
    "symbol": "MWJ",
    "name": "Mem Wurz Jeneral",
    "mint": "E57SqYo3B67yKhHpLxn4pS3U6Qk6a1sE15hCrC5Jpump",
-   "age_s": 97,
+   "age_s": 131,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -6408,7 +6462,7 @@
    "symbol": "?",
    "name": "",
    "mint": "g3BxhqjVCYTh5WF595Gq2fM5Bd7JUVcthe9sTW3pump",
-   "age_s": 145,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6421,24 +6475,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "Kibo",
-   "name": "キボウ",
-   "mint": "CLyjZgtZ4gHXpN4MQtoBmZd7SWMGPuwWooW4pnfrZGJE",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/early404/status/2126184901430980810",
-   "tg": false,
-   "web": "https://x.com/aws_official/status/2126135650982433123?a=yOBe1J4HLldYgXst4dU&s=20",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
