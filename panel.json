@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:34:06Z",
+ "updated": "2026-11-28T04:34:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 696,
   "checked": 49,
   "filtered": 1,
-  "lines": 1692,
+  "lines": 1694,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3565,24 +3565,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:36:34Z",
-   "time": "04:36:34",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 7 rejected (snipe not bought: only to size 4, serial launcher 2, mayhem mode 1)",
-   "n": 1493
-  },
-  {
-   "t": "2026-11-28T03:36:43Z",
-   "time": "04:36:43",
-   "agent": "SCANNER",
-   "coin": "AMD",
-   "action": "flag",
-   "text": "snipe · first reading 2.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1494
-  },
-  {
    "t": "2026-11-28T03:37:34Z",
    "time": "04:37:34",
    "agent": "SCANNER",
@@ -5363,6 +5345,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe not bought: last min of th 4, serial launcher 2, no symbol or name 1)",
    "n": 1692
+  },
+  {
+   "t": "2026-11-28T04:34:31Z",
+   "time": "05:34:31",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+   "n": 1693
+  },
+  {
+   "t": "2026-11-28T04:34:32Z",
+   "time": "05:34:32",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+   "n": 1694
   }
  ],
  "nights": [
@@ -5415,13 +5415,7 @@
    "scans": 0
   }
  ],
- "errors": [
-  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
-  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
-  "https://lite-api.jup.ag/swap/v1/quote: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/4tua24pAySj23FmNgiXwuSEEPHoMazXW6HpEoyngh2Dh/report: HTTP 400",
-  "https://api.rugcheck.xyz/v1/tokens/9jXa88DApUdqfLEsbURxRuNcBtovCmxsGfKTabr3zcuU/report: HTTP 400"
- ],
+ "errors": [],
  "stream": {
   "topic": "memebot/00ade2c3a60b7da8",
   "enabled": true,
@@ -5435,34 +5429,34 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal down · curve poll failing · 36 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 0 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
-    "connected": false,
-    "events": 2019,
-    "last_event_age_s": 26.0,
-    "errors": 6,
-    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
+    "connected": true,
+    "events": 0,
+    "last_event_age_s": null,
+    "errors": 0,
+    "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": false,
-    "events": 42791,
-    "last_event_age_s": 0.4,
+    "events": 0,
+    "last_event_age_s": null,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1243,
-    "last_event_age_s": 25.9,
-    "errors": 57,
-    "last_error": "n.uguu.se: timeout after 2 s"
+    "connected": false,
+    "events": 0,
+    "last_event_age_s": null,
+    "errors": 0,
+    "last_error": null
    }
   ],
   "strategies": [
@@ -5473,9 +5467,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 0.0,
   "watching": 0,
-  "followed": 8,
+  "followed": 0,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5524,199 +5518,18 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21835,
+   "sent": 18,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21835,
+   "sent": 18,
    "errors": 0,
    "last_error": null
   }
  },
- "watch": [
-  {
-   "symbol": "NPC",
-   "name": "Normal People Coin",
-   "mint": "B12B8QybuEB3paPb1oigLDNjKK3sdpfQz6umDkcUpump",
-   "age_s": 26,
-   "sol_in": 12.09,
-   "buys": 13,
-   "sells": 10,
-   "rise_pct": 93.7,
-   "mcap_sol": 57.3,
-   "dev_pct": 3.0,
-   "big_sell": 1.76,
-   "x": "https://x.com/npcpfx/status/2126534875674976479?a=X0LHcWwjfNwfv798_rU&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
-   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
-  },
-  {
-   "symbol": "NORMIE",
-   "name": "NORMIE",
-   "mint": "H4RzHWj9DyjsF1AzegJt2DG2xp2h7jNTonGsYaQ2pump",
-   "age_s": 50,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 0.8,
-   "big_sell": 0.0,
-   "x": "https://x.com/normiethenorman",
-   "tg": false,
-   "web": "https://steemit.com/cryptocurrency/@thrashtagtravis/normie-the-norman-discovers-the-cryptoverse",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "PWHALE",
-   "name": "Pocket Whale",
-   "mint": "HzczTanKfVtu2oLxKzuxS6UEMPgK39JfxZk7m546pump",
-   "age_s": 71,
-   "sol_in": -0.43,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": -2.8,
-   "mcap_sol": 28.2,
-   "dev_pct": 2.0,
-   "big_sell": 0.3,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
-   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
-  },
-  {
-   "symbol": "HAPPY",
-   "name": "HAPPYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
-   "mint": "2wg8yTmnKpdeLo3Cd8PQvMVyYaT6dPuASMnySHALpump",
-   "age_s": 103,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.4,
-   "dev_pct": 0.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "MOSAIC",
-   "name": "Mosaiccoin",
-   "mint": "H56uP3zYCSagKTEc2a6jYCiGsEUVCauApUGhvmYSqs4k",
-   "age_s": 117,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/ddddddd8a/status/2126534440021017005",
-   "tg": false,
-   "web": "https://www.rednote.com/discovery/item/6b092bdd000000001f014a0f?xsec_token=ABbUkcekRToy55IYAxb6rdf1WJ4n9t0cPi7gSkH9Z9m_I=&xsec_source=pc_user",
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "GREEN",
-   "name": "GREEN MORNING",
-   "mint": "8rM5XmaFJCZtwZBDXkfqbrNQPp3tZcnnK3VkZcDApump",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/cz_binance/status/2105024133566468288",
-   "tg": "https://t.me/greenmorningcto",
-   "web": "https://greenmorningcto.xyz/",
-   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
-   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
-  },
-  {
-   "symbol": "MOSAIC",
-   "name": "Mosaic",
-   "mint": "5fsWy2SQUDR8vvXNZGTNNroEt6ADrKZzd1iia4byGKuL",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/ddddddd8a/status/2126534440021017005",
-   "tg": false,
-   "web": "https://www.rednote.com/discovery/item/6b092bdd000000001f014a0f?xsec_token=ABbUkcekRToy55IYAxb6rdf1WJ4n9t0cPi7gSkH9Z9m_I=&xsec_source=pc_user",
-   "status": "rejected: serial launcher: 5 more coins in 60 min",
-   "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "BOB",
-   "name": "Barely Operational Bear",
-   "mint": "9C65pPpWanT7B7Yk25vqAvdL37UFNhdCcnW57rMEpump",
-   "age_s": 153,
-   "sol_in": -5.04,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": -26.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.4,
-   "big_sell": 6.91,
-   "x": "https://x.com/BarelyOperatio",
-   "tg": false,
-   "web": "https://barely.autos/",
-   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
-   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "2vGMcUF9Wf6tDVvweeGMLgUuV62Tq9D8ULwtTbn5pump",
-   "age_s": 173,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "PETA",
-   "name": "PETA",
-   "mint": "7cj2ZD61JHYvJ3Jmtkmo2iJrGLwzuSsZTUjEFKLkpump",
-   "age_s": 176,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": "https://x.com/MarioNawfal/status/2126534299973198287",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
-   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
-  }
- ],
+ "watch": [],
  "strategies": [
   "new_pairs"
  ],
