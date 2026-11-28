@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:49:51Z",
+ "updated": "2026-11-28T08:50:23Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 998,
+  "flagged": 999,
   "checked": 49,
   "filtered": 1,
-  "lines": 2381,
+  "lines": 2383,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ATX",
-   "why": "snipe",
-   "t": "2026-11-28T08:47:21Z"
-  },
   {
    "coin": "MoonBoy",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "FINGART",
    "why": "snipe",
    "t": "2026-11-28T08:49:04Z"
+  },
+  {
+   "coin": "HARVEY",
+   "why": "snipe",
+   "t": "2026-11-28T08:49:59Z"
   }
  ],
  "curve": [
@@ -2432,6 +2432,10 @@
   [
    1795855740,
    47.79
+  ],
+  [
+   1795855800,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4585,24 +4589,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:48:40Z",
-   "time": "08:48:40",
-   "agent": "SCANNER",
-   "coin": "crime",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2182
-  },
-  {
-   "t": "2026-11-28T07:48:52Z",
-   "time": "08:48:52",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 0 watched · 16 rejected (snipe not bought: only to size 7, snipe: first reading s after the 3, mayhem mode 3)",
-   "n": 2183
-  },
-  {
    "t": "2026-11-28T07:48:56Z",
    "time": "08:48:56",
    "agent": "SCANNER",
@@ -6383,6 +6369,24 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 9, serial launcher 3)",
    "n": 2381
+  },
+  {
+   "t": "2026-11-28T08:49:59Z",
+   "time": "09:49:59",
+   "agent": "SCANNER",
+   "coin": "HARVEY",
+   "action": "flag",
+   "text": "snipe · first reading 1.3 s after the create · 18.2 SOL in · +155% since the create · mcap 74 SOL",
+   "n": 2382
+  },
+  {
+   "t": "2026-11-28T08:49:59Z",
+   "time": "09:49:59",
+   "agent": "SIZER",
+   "coin": "HARVEY",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2383
   }
  ],
  "nights": [
@@ -6463,24 +6467,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 964,
-    "last_event_age_s": 47.4,
+    "events": 966,
+    "last_event_age_s": 25.0,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16602,
-    "last_event_age_s": 0.0,
+    "events": 16679,
+    "last_event_age_s": 0.4,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 701,
-    "last_event_age_s": 46.9,
+    "events": 702,
+    "last_event_age_s": 25.0,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6493,9 +6497,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 10,
+  "followed": 9,
   "odd_readings": 648,
   "odd_coins": 246
  },
@@ -6544,30 +6548,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16307,
+   "sent": 16341,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16307,
+   "sent": 16341,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HARVEY",
+   "name": "HARVEY",
+   "mint": "6fYkG2k1U27vQjAC3zZ2HoK5LjPFY4LtKENWzmJDpump",
+   "age_s": 24,
+   "sol_in": 23.15,
+   "buys": 10,
+   "sells": 11,
+   "rise_pct": 208.8,
+   "mcap_sol": 89.7,
+   "dev_pct": 2.0,
+   "big_sell": 1.91,
+   "x": "https://x.com/swaynfa/status/2126599385060675798",
+   "tg": false,
+   "web": "https://www.instagram.com/p/Dew6pR2BFkz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FINGART",
    "name": "Cosmic FINGART",
    "mint": "77KJ9Yjei9BhA5zeNumWpoGS8xNFz7Uof6hv4nRFPoui",
-   "age_s": 47,
+   "age_s": 79,
    "sol_in": 0.06,
-   "buys": 13,
-   "sells": 2,
+   "buys": 16,
+   "sells": 3,
    "rise_pct": 0.4,
    "mcap_sol": 28.1,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/search?q=%24FINGART&f=live",
    "tg": false,
    "web": false,
@@ -6578,7 +6600,7 @@
    "symbol": "Robinhood",
    "name": "Robinhood",
    "mint": "2WxTpAjdKGTwiwe1sLGyGVLYwFzcjskhRw7N3qSsPgAF",
-   "age_s": 62,
+   "age_s": 94,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6596,7 +6618,7 @@
    "symbol": "FlapCat",
    "name": "FlapCat",
    "mint": "3mWWMaE1w3srLPQu1p6UtXwMdM1RTJRZvrPRVoerPL44",
-   "age_s": 70,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6636,7 @@
    "symbol": "Amanda",
    "name": "Low Budget Vagina Amanda",
    "mint": "Htd6YJMBaZ5V8ae1zx4m5M1v1ZGZNshTXXveK2ARpump",
-   "age_s": 96,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6632,14 +6654,14 @@
    "symbol": "Fava",
    "name": "Fava",
    "mint": "BYbM3giGkaC9nzLNemEZVp415zQzeEvL7J9vfCLDpump",
-   "age_s": 106,
-   "sol_in": 0.01,
+   "age_s": 138,
+   "sol_in": -2.96,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 33.8,
+   "sells": 1,
+   "rise_pct": -17.1,
+   "mcap_sol": 28.0,
    "dev_pct": 9.6,
-   "big_sell": 0.0,
+   "big_sell": 2.96,
    "x": false,
    "tg": false,
    "web": false,
@@ -6650,7 +6672,7 @@
    "symbol": "CATRAVE",
    "name": "CAT RAVE",
    "mint": "6VGN4jEGEVpyTBmdufH5d12PXtn42LhjpkGURZ8Bpump",
-   "age_s": 114,
+   "age_s": 146,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -6668,14 +6690,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CtvgHuV7MhwypXUg1BfsqSHxvQ7rZdDyS1SiMuempump",
-   "age_s": 123,
-   "sol_in": 21.57,
-   "buys": 44,
-   "sells": 33,
-   "rise_pct": 170.5,
-   "mcap_sol": 94.1,
+   "age_s": 155,
+   "sol_in": 22.98,
+   "buys": 57,
+   "sells": 43,
+   "rise_pct": 184.6,
+   "mcap_sol": 99.0,
    "dev_pct": 11.1,
-   "big_sell": 0.35,
+   "big_sell": 0.39,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -6686,7 +6708,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "5vk5Nmxzse99LSNJSppjVVuQM94YDceZMBq9GRuujAis",
-   "age_s": 129,
+   "age_s": 161,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6699,42 +6721,6 @@
    "web": "https://clonepump.fun",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "ATX",
-   "name": "ATX",
-   "mint": "BAqjdZzAay7AnRgbUeVbupDTv4mipGKezo78mCVKnDv6",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.2,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "baguette",
-   "name": "france is dead, send this",
-   "mint": "5sFcHVtjskPRFcrgF5W3nWJKgXXENbChzExSJ7Lv8er3",
-   "age_s": 153,
-   "sol_in": -3.06,
-   "buys": 2,
-   "sells": 6,
-   "rise_pct": -17.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.9,
-   "big_sell": 2.81,
-   "x": "https://x.com/nonanon124/status/2126598776236458173",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 14 more coins in 60 min",
-   "why": "serial launcher: 14 more coins in 60 min"
   }
  ],
  "strategies": [
