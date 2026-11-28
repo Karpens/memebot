@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:20:46Z",
+ "updated": "2026-11-28T08:21:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 939,
+  "flagged": 940,
   "checked": 49,
   "filtered": 1,
-  "lines": 2278,
+  "lines": 2280,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T08:16:52Z"
-  },
   {
    "coin": "inuvestor",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "WLFI",
    "why": "snipe",
    "t": "2026-11-28T08:20:10Z"
+  },
+  {
+   "coin": "MOSTO",
+   "why": "snipe",
+   "t": "2026-11-28T08:21:17Z"
   }
  ],
  "curve": [
@@ -2316,6 +2316,10 @@
   [
    1795854000,
    47.79
+  ],
+  [
+   1795854060,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4469,24 +4473,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:13:32Z",
-   "time": "08:13:32",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.4 a minute · 0 watched · 3 rejected (serial launcher 3)",
-   "n": 2079
-  },
-  {
-   "t": "2026-11-28T07:14:12Z",
-   "time": "08:14:12",
-   "agent": "SCANNER",
-   "coin": "MARSCOIN",
-   "action": "flag",
-   "text": "snipe · first reading 4.5 s after the create · 1.7 SOL in · +11% since the create · mcap 33 SOL",
-   "n": 2080
-  },
-  {
    "t": "2026-11-28T07:14:12Z",
    "time": "08:14:12",
    "agent": "SIZER",
@@ -6267,6 +6253,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.6 s after the create · 0.2 SOL in · +2% since the create · mcap 29 SOL",
    "n": 2278
+  },
+  {
+   "t": "2026-11-28T08:21:08Z",
+   "time": "09:21:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 8 rejected (serial launcher 5, snipe not bought: only to size 3)",
+   "n": 2279
+  },
+  {
+   "t": "2026-11-28T08:21:17Z",
+   "time": "09:21:17",
+   "agent": "SCANNER",
+   "coin": "MOSTO",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2280
   }
  ],
  "nights": [
@@ -6339,7 +6343,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 615 (237 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 616 (237 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6347,24 +6351,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 842,
-    "last_event_age_s": 15.0,
+    "events": 845,
+    "last_event_age_s": 2.2,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12516,
-    "last_event_age_s": 0.4,
+    "events": 12588,
+    "last_event_age_s": 0.5,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 605,
-    "last_event_age_s": 14.9,
+    "events": 608,
+    "last_event_age_s": 2.2,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6377,10 +6381,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 8,
-  "odd_readings": 615,
+  "odd_readings": 616,
   "odd_coins": 237
  },
  "learner": {
@@ -6428,28 +6432,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14450,
+   "sent": 14485,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14450,
+   "sent": 14485,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MOSTO",
+   "name": "MOSTO",
+   "mint": "926c2zhGouBHnRgGFCH2zPY5KGLPiMnCeRSUWo9BuxEE",
+   "age_s": 2,
+   "sol_in": 3.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 21.1,
+   "mcap_sol": 33.9,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/mostotrade",
+   "tg": "https://t.me/mostotradechat",
+   "web": "https://mosto.trade/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "GARAGE",
+   "name": "Garagecoin",
+   "mint": "FVwKwGsfyw5Jw3zDYX5kvdadApyUyPPXbYk4fBWWsRgE",
+   "age_s": 25,
+   "sol_in": -2.19,
+   "buys": 2,
+   "sells": 9,
+   "rise_pct": -12.8,
+   "mcap_sol": 29.6,
+   "dev_pct": 9.9,
+   "big_sell": 2.82,
+   "x": "https://x.com/StepCoinsol8/status/2126590673285718063",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 10 more coins in 60 min",
+   "why": "serial launcher: 10 more coins in 60 min"
+  },
+  {
+   "symbol": "何一",
+   "name": "何一",
+   "mint": "2KFTs59k9GLpcy6TkVHhohgN8BLWYdTXTZ78A2hddMr9",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 1.04,
+   "x": "https://x.com/PANewsCN/status/2126589229010674158",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
    "symbol": "GOAT",
    "name": "Greatest Of All Tokens",
    "mint": "9JZGhnuEHrRHfAABz7xpacMabZ28Vc3DGXrftcxfpump",
-   "age_s": 14,
-   "sol_in": -0.17,
-   "buys": 4,
-   "sells": 6,
-   "rise_pct": -1.1,
-   "mcap_sol": 29.5,
+   "age_s": 47,
+   "sol_in": 19.1,
+   "buys": 18,
+   "sells": 18,
+   "rise_pct": 161.3,
+   "mcap_sol": 77.9,
    "dev_pct": 3.4,
    "big_sell": 1.62,
    "x": "https://x.com/gigadiggadev/status/2126592034744283374",
@@ -6462,14 +6520,14 @@
    "symbol": "WLFI",
    "name": "We Litarally Fuck Investors",
    "mint": "8XGP3BNGawo2uPv9hYan9VFWskUridm7AJ1o5rEnR1x",
-   "age_s": 36,
-   "sol_in": 0.42,
+   "age_s": 69,
+   "sol_in": 0.41,
    "buys": 3,
-   "sells": 0,
+   "sells": 1,
    "rise_pct": 2.8,
    "mcap_sol": 28.9,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/LuckiWeb3/status/2126536570404475079?a=XJhKwHwnLU68e1EMNl0&s=20",
    "tg": false,
    "web": false,
@@ -6480,7 +6538,7 @@
    "symbol": "BUY",
    "name": "Buy and wait",
    "mint": "3s7AabwQiAcCskKyvjJvmZsTYRvVu3rM6ezMtCB2jWyp",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6498,7 +6556,7 @@
    "symbol": "Kibo",
    "name": "UPDATE LIFE ON YOUTUBE",
    "mint": "GRM7mqWRJKRsNdsEUTvugBVMiiHc4MZAqzzhqygTpump",
-   "age_s": 110,
+   "age_s": 143,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -6516,7 +6574,7 @@
    "symbol": "TREMP",
    "name": "Tremp Family",
    "mint": "AcPxCjQkFPjLQRTMP7d7BmegHoYn57rwsN9CuoKCpump",
-   "age_s": 131,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6527,60 +6585,6 @@
    "x": false,
    "tg": "https://t.me/trempfamilycom",
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Aura",
-   "name": "Aura",
-   "mint": "7CJHpMqd86uahDn7nyAKfq7pvykLP4ASNV7pKuH2pump",
-   "age_s": 151,
-   "sol_in": -0.98,
-   "buys": 17,
-   "sells": 15,
-   "rise_pct": -6.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 3.77,
-   "x": "https://x.com/gigadiggadev/status/2126591469146480718",
-   "tg": false,
-   "web": "https://www.instagram.com/reels/DgMEThDsS2z/",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "黑鬼",
-   "name": "黑鬼",
-   "mint": "BvAD1VZQ4Lrqxn1WtBmzNaLWMeqU3k12782iYFKw2ocT",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 1.04,
-   "x": "https://x.com/save_trenches/status/2126591009685438645?a=lgMJnN4vrLsRELWEL_8&s=20",
-   "tg": false,
-   "web": "https://x.com/save_trenches/status/2126591009685438645?a=lgMJnN4vrLsRELWEL_8&s=20",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "CAT",
-   "name": "Mike",
-   "mint": "81XhqBsqVcAoCFsGYswtukXwGJ15Xeitne7QHJcnYT7s",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://bsky.app/profile/bodegacats.bsky.social/post/3n3d4ybaqq22s",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
