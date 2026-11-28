@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:27:16Z",
+ "updated": "2026-11-28T05:27:48Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 761,
   "checked": 49,
   "filtered": 1,
-  "lines": 1834,
+  "lines": 1835,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3777,15 +3777,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:16:23Z",
-   "time": "05:16:23",
-   "agent": "SCANNER",
-   "coin": "Cellutron",
-   "action": "flag",
-   "text": "snipe · first reading 1.4 s after the create · 1.2 SOL in · +8% since the create · mcap 31 SOL",
-   "n": 1635
-  },
-  {
    "t": "2026-11-28T04:17:01Z",
    "time": "05:17:01",
    "agent": "SCANNER",
@@ -5575,6 +5566,15 @@
    "action": "flag",
    "text": "snipe · first reading 2.1 s after the create · 15.0 SOL in · +122% since the create · mcap 64 SOL",
    "n": 1834
+  },
+  {
+   "t": "2026-11-28T05:27:29Z",
+   "time": "06:27:29",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 6 rejected (snipe not bought: only to size 3, snipe: first reading s after the 2, serial launcher 1)",
+   "n": 1835
   }
  ],
  "nights": [
@@ -5641,7 +5641,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 379 (177 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 23 watched · ws off · odd curve readings 379 (177 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5649,26 +5649,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 203,
-    "last_event_age_s": 11.6,
+    "events": 205,
+    "last_event_age_s": 9.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 1350,
-    "last_event_age_s": 1.7,
-    "errors": 122,
+    "connected": false,
+    "events": 1355,
+    "last_event_age_s": 15.2,
+    "errors": 124,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 162,
-    "last_event_age_s": 11.4,
-    "errors": 8,
-    "last_error": "ar-io.dev: too slow (over 2 s)"
+    "connected": false,
+    "events": 164,
+    "last_event_age_s": 6.4,
+    "errors": 9,
+    "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
   ],
   "strategies": [
@@ -5679,9 +5679,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 379,
   "odd_coins": 177
  },
@@ -5730,23 +5730,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3369,
+   "sent": 3404,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3369,
+   "sent": 3404,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GDI",
+   "name": "GDI",
+   "mint": "2GiapsFie8TkQJcadaQ4baxi8uqEd2GxHxWZXo4cpump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "MAGA",
+   "name": "Make Allegations Great Again",
+   "mint": "4UNSr6FuUnm4xNPf72mBWD8SFXSjfjBcZWeKuAdgT9yt",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
    "symbol": "BITCOINU",
    "name": "Bitcoin Inu",
    "mint": "6LbjFqCbjoqQxerbVR55YdjHBm12XHHTvyUTRhURpump",
-   "age_s": 11,
+   "age_s": 43,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5764,12 +5800,12 @@
    "symbol": "IAC",
    "name": "Internet Archive Coin",
    "mint": "6G8E7x4f9mT7PREUTB8invbKb6KZoCPhpewqZRPtpump",
-   "age_s": 46,
-   "sol_in": 20.18,
-   "buys": 14,
-   "sells": 8,
-   "rise_pct": 175.6,
-   "mcap_sol": 80.0,
+   "age_s": 78,
+   "sol_in": 16.6,
+   "buys": 16,
+   "sells": 11,
+   "rise_pct": 138.1,
+   "mcap_sol": 69.1,
    "dev_pct": 2.0,
    "big_sell": 2.9,
    "x": "https://x.com/internetarchive",
@@ -5782,7 +5818,7 @@
    "symbol": "GTAcoin",
    "name": "GTA VII",
    "mint": "2xdZ6tDeMFC4FWRHn88acziLPSRwYEK9MyioNhoepump",
-   "age_s": 60,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5800,7 +5836,7 @@
    "symbol": "SPIKE",
    "name": "King Spiky",
    "mint": "DUF6D9P9g11UENzavMW83K7jVwtfijEsuPxF4UDZKMsx",
-   "age_s": 93,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5818,7 +5854,7 @@
    "symbol": "16GIGDREAM",
    "name": "Sixteen Gig Dream",
    "mint": "F3fi1CWEcoEQFjfuzwMAvoL4oQRdrSLiwm8N9H4spump",
-   "age_s": 120,
+   "age_s": 152,
    "sol_in": 0.02,
    "buys": 1,
    "sells": 0,
@@ -5831,24 +5867,6 @@
    "web": "https://dollardeployer.netlify.app/coin/026/",
    "status": "rejected: snipe: first reading 17.1 s after the create (max 10 s)",
    "why": "snipe: first reading 17.1 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "santa6",
-   "name": "santa6",
-   "mint": "CvrGVhzvzixMGp5JFpaDLy4QZpZKks83dosx9w1ppump",
-   "age_s": 161,
-   "sol_in": 1.82,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 12.5,
-   "mcap_sol": 31.9,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/santasix6lol?s=11",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 50.2 s after the create (max 10 s)",
-   "why": "snipe: first reading 50.2 s after the create (max 10 s)"
   }
  ],
  "strategies": [
