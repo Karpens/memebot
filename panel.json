@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:58:46Z",
+ "updated": "2026-11-28T02:59:13Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 493,
+  "flagged": 494,
   "checked": 49,
   "filtered": 1,
-  "lines": 1360,
+  "lines": 1362,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "REPODE",
-   "why": "snipe",
-   "t": "2026-11-28T02:56:21Z"
-  },
   {
    "coin": "THMTID",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "walter",
    "why": "snipe",
    "t": "2026-11-28T02:58:27Z"
+  },
+  {
+   "coin": "CLVDRM",
+   "why": "snipe",
+   "t": "2026-11-28T02:59:02Z"
   }
  ],
  "curve": [
@@ -1027,6 +1027,10 @@
   ],
   [
    1795834680,
+   47.79
+  ],
+  [
+   1795834740,
    47.79
   ]
  ],
@@ -3181,24 +3185,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:56:24Z",
-   "time": "02:56:24",
-   "agent": "SCANNER",
-   "coin": "LORZ",
-   "action": "flag",
-   "text": "snipe · first reading 2.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1161
-  },
-  {
-   "t": "2026-11-28T01:56:34Z",
-   "time": "02:56:34",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 13 rejected (snipe not bought: only to size 5, serial launcher 3, mayhem mode 3)",
-   "n": 1162
-  },
-  {
    "t": "2026-11-28T01:57:13Z",
    "time": "02:57:13",
    "agent": "SCANNER",
@@ -4979,6 +4965,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 1.6 SOL in · +11% since the create · mcap 31 SOL",
    "n": 1360
+  },
+  {
+   "t": "2026-11-28T02:59:02Z",
+   "time": "03:59:02",
+   "agent": "SCANNER",
+   "coin": "CLVDRM",
+   "action": "flag",
+   "text": "snipe · first reading 2.5 s after the create · 1.0 SOL in · +6% since the create · mcap 32 SOL",
+   "n": 1361
+  },
+  {
+   "t": "2026-11-28T02:59:12Z",
+   "time": "03:59:12",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 10, serial launcher 1, no symbol or name 1)",
+   "n": 1362
   }
  ],
  "nights": [
@@ -5051,7 +5055,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · odd curve readings 334 (151 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 334 (151 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5059,24 +5063,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1583,
-    "last_event_age_s": 8.1,
+    "events": 1584,
+    "last_event_age_s": 14.4,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 33734,
-    "last_event_age_s": 0.2,
+    "events": 33765,
+    "last_event_age_s": 1.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 917,
-    "last_event_age_s": 20.8,
+    "events": 918,
+    "last_event_age_s": 14.3,
     "errors": 45,
     "last_error": "turbo-gateway.com: timeout after 2 s"
    }
@@ -5091,7 +5095,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 5.0,
   "watching": 0,
-  "followed": 10,
+  "followed": 11,
   "odd_readings": 334,
   "odd_coins": 151
  },
@@ -5140,30 +5144,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15748,
+   "sent": 15777,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15748,
+   "sent": 15777,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CLVDRM",
+   "name": "Clover Drum",
+   "mint": "3HwRtVEZFbDmgxYqJjjnoPUmgkyCXriegamz5icHBe5T",
+   "age_s": 14,
+   "sol_in": -0.99,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 1.81,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "walter",
    "name": "support walter white",
    "mint": "FudmKV5Y8tzJZVb3VkfyENrG24DAuDxeHtJXVoX1pump",
-   "age_s": 20,
-   "sol_in": 1.66,
+   "age_s": 47,
+   "sol_in": 0.0,
    "buys": 3,
-   "sells": 0,
-   "rise_pct": 11.4,
-   "mcap_sol": 31.1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 1.66,
    "x": "https://x.com/Miketrenchezs/status/2126510803113128028?a=4g8MFGILKGVdZo_kY-M&s=20",
    "tg": false,
    "web": "https://x.com/gabe_mohit/status/1774975014540136458?a=MQM0jwehERljdFV91B4&s=20",
@@ -5174,7 +5196,7 @@
    "symbol": "SLURP",
    "name": "Slurp",
    "mint": "Amszcd13e2EJot5nnig4EqB73vrjrnr2BCTUuSbEpump",
-   "age_s": 24,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5192,14 +5214,14 @@
    "symbol": "DKTDA",
    "name": "Metcalf 22-Yard Score",
    "mint": "8Q94JuJPTkvBVLjBCZ5d1SqPoBHPWaCc3Toh5KSQpump",
-   "age_s": 36,
-   "sol_in": 1.39,
+   "age_s": 63,
+   "sol_in": 1.37,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 9.2,
-   "mcap_sol": 32.5,
+   "sells": 3,
+   "rise_pct": 9.1,
+   "mcap_sol": 32.4,
    "dev_pct": 3.3,
-   "big_sell": 0.0,
+   "big_sell": 0.02,
    "x": false,
    "tg": false,
    "web": "https://sports.yahoo.com/nfl/articles/watch-mason-rudolph-connects-metcalf-204930094.html?mint=",
@@ -5210,7 +5232,7 @@
    "symbol": "LANTPIP",
    "name": "Lantern Pip",
    "mint": "9Z33Wq9r4Ht6f7qiKzAcrJgM3AQEbtYsfFaEBakrmgRh",
-   "age_s": 51,
+   "age_s": 78,
    "sol_in": -0.99,
    "buys": 2,
    "sells": 3,
@@ -5228,7 +5250,7 @@
    "symbol": "?",
    "name": "",
    "mint": "F583RS6UKgK1CJ4UuDPpyANbguq3hjM4BWxG1aYZpump",
-   "age_s": 57,
+   "age_s": 84,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5246,12 +5268,12 @@
    "symbol": "DISABLE",
    "name": "Just Disable Dev",
    "mint": "3ALDKnHERmnw3WrjcxywyEQZpT88m6QnSWyZCoL6pump",
-   "age_s": 77,
-   "sol_in": 1.66,
+   "age_s": 104,
+   "sol_in": 1.57,
    "buys": 5,
-   "sells": 4,
-   "rise_pct": 11.3,
-   "mcap_sol": 31.7,
+   "sells": 5,
+   "rise_pct": 10.6,
+   "mcap_sol": 31.5,
    "dev_pct": 1.0,
    "big_sell": 1.75,
    "x": "https://x.com/BoLoudon/status/2126457736582017162?a=GGHNf5-vGcLbQv_38ic&s=20",
@@ -5264,7 +5286,7 @@
    "symbol": "MARS",
    "name": "MarsCoin",
    "mint": "8BinwwmvZgp5XP5eALheiwYqbqqW2vq8ELc2Nbojpump",
-   "age_s": 79,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 3,
    "sells": 1,
@@ -5282,14 +5304,14 @@
    "symbol": "MARS",
    "name": "MarsCoin",
    "mint": "s3bCrxqkXnQ5Wxay7oyB8dwT47zuEYUGnemQxNmpump",
-   "age_s": 80,
-   "sol_in": 12.75,
-   "buys": 20,
-   "sells": 21,
-   "rise_pct": 89.2,
-   "mcap_sol": 67.8,
+   "age_s": 107,
+   "sol_in": -0.03,
+   "buys": 25,
+   "sells": 28,
+   "rise_pct": -0.2,
+   "mcap_sol": 35.7,
    "dev_pct": 12.5,
-   "big_sell": 4.97,
+   "big_sell": 10.78,
    "x": "https://x.com/tothemoon421742/status/2126491165298151724",
    "tg": false,
    "web": "https://www.instagram.com/reel/DgQKwGvDts8/",
@@ -5300,7 +5322,7 @@
    "symbol": "TOMBRADY",
    "name": "Tom Brady",
    "mint": "4KZkU6QJN1E43xfd7aMFEv3PqhM9SLkVAEskysC8pump",
-   "age_s": 100,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5318,7 +5340,7 @@
    "symbol": "THMTID",
    "name": "Thimble Tide",
    "mint": "7sEG7hNhrbc2ypgisAPyFBjoKMFFzL8xU6jU6YsxYDZo",
-   "age_s": 114,
+   "age_s": 141,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 4,
@@ -5336,7 +5358,7 @@
    "symbol": "REPODE",
    "name": "RepoDesk",
    "mint": "6voA5qrKnLZZ56qqBPtdgdTbS2csNagsUgBQDKZJJcj9",
-   "age_s": 146,
+   "age_s": 173,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
