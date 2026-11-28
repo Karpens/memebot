@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:44:07Z",
+ "updated": "2026-11-28T02:44:41Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 457,
+  "flagged": 458,
   "checked": 49,
   "filtered": 1,
-  "lines": 1305,
+  "lines": 1306,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "reply",
-   "why": "snipe",
-   "t": "2026-11-28T02:40:04Z"
-  },
   {
    "coin": "W1zard",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "TEST",
    "why": "snipe",
    "t": "2026-11-28T02:43:25Z"
+  },
+  {
+   "coin": "IBM",
+   "why": "snipe",
+   "t": "2026-11-28T02:44:17Z"
   }
  ],
  "curve": [
@@ -3125,15 +3125,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:41:33Z",
-   "time": "02:41:33",
-   "agent": "SCANNER",
-   "coin": "HINGE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.357e+05 is not 30 + real SOL 0 (off +1.356e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 265 odd readings from 126 coins tonight",
-   "n": 1106
-  },
-  {
    "t": "2026-11-28T01:41:42Z",
    "time": "02:41:42",
    "agent": "SCANNER",
@@ -4923,6 +4914,15 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, no bonding curve key 1, mayhem mode 1)",
    "n": 1305
+  },
+  {
+   "t": "2026-11-28T02:44:17Z",
+   "time": "03:44:17",
+   "agent": "SCANNER",
+   "coin": "IBM",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 20.0 SOL in · +176% since the create · mcap 79 SOL",
+   "n": 1306
   }
  ],
  "nights": [
@@ -4995,7 +4995,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5003,24 +5003,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1516,
-    "last_event_age_s": 43.6,
+    "events": 1519,
+    "last_event_age_s": 7.2,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 32097,
-    "last_event_age_s": 0.7,
+    "events": 32162,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 868,
-    "last_event_age_s": 43.0,
+    "events": 870,
+    "last_event_age_s": 15.5,
     "errors": 43,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -5033,9 +5033,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 7,
+  "followed": 9,
   "odd_readings": 332,
   "odd_coins": 149
  },
@@ -5084,30 +5084,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14812,
+   "sent": 14849,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14812,
+   "sent": 14849,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JWOWW",
+   "name": "JWoww",
+   "mint": "67qbsh8gBwxYNcavAReke3utHdkjUJZRL1svKb99pump",
+   "age_s": 15,
+   "sol_in": 0.1,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/nypost/status/2126507454867312721",
+   "tg": false,
+   "web": "https://trib.al/upmqw8K",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "IBM",
+   "name": "INTERNET BROKE MONEY",
+   "mint": "9uqRWJRNhdTk8ztAM1YwZwxCannzdZLJSBqhiwTQpump",
+   "age_s": 25,
+   "sol_in": 2.9,
+   "buys": 6,
+   "sells": 10,
+   "rise_pct": 20.1,
+   "mcap_sol": 34.2,
+   "dev_pct": 1.0,
+   "big_sell": 12.34,
+   "x": "https://x.com/ibmdotfun",
+   "tg": false,
+   "web": "https://www.ibmapp.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "TEST",
    "name": "test",
    "mint": "D7e33BLae74ZWwZaL9GQHsmHar9oEFEKFesnJESzCrg8",
-   "age_s": 43,
-   "sol_in": 6.23,
-   "buys": 3,
-   "sells": 0,
-   "rise_pct": 45.9,
-   "mcap_sol": 40.8,
+   "age_s": 77,
+   "sol_in": 7.63,
+   "buys": 8,
+   "sells": 1,
+   "rise_pct": 57.3,
+   "mcap_sol": 44.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.9,
    "x": false,
    "tg": false,
    "web": false,
@@ -5118,12 +5154,12 @@
    "symbol": "小猫仙",
    "name": "小猫仙人",
    "mint": "9AsZz1KSCMZVs4CxQ4Ltbiu25jfo1LNoU1cjNLgpump",
-   "age_s": 76,
-   "sol_in": 2.83,
+   "age_s": 110,
+   "sol_in": 2.79,
    "buys": 21,
-   "sells": 22,
-   "rise_pct": 19.1,
-   "mcap_sol": 35.5,
+   "sells": 23,
+   "rise_pct": 18.8,
+   "mcap_sol": 35.4,
    "dev_pct": 3.4,
    "big_sell": 13.68,
    "x": "https://x.com/Handlenie/status/2126506588475449464",
@@ -5136,7 +5172,7 @@
    "symbol": "DEADON",
    "name": "DEAD ON",
    "mint": "7yACTR3P351Rn3Xg6dS8fvuqXddSEP6rvcVep7uTpump",
-   "age_s": 99,
+   "age_s": 133,
    "sol_in": -0.1,
    "buys": 1,
    "sells": 2,
@@ -5154,7 +5190,7 @@
    "symbol": "0xcall",
    "name": "0xcall",
    "mint": "FXe1JjWn89CY3GPRpqe6pS69au6s9ULNgE8zCVKFpump",
-   "age_s": 101,
+   "age_s": 135,
    "sol_in": 0.29,
    "buys": 1,
    "sells": 2,
@@ -5172,7 +5208,7 @@
    "symbol": "FLIPEPE",
    "name": "FLIPEPE",
    "mint": "3kMxfsHcgMWa2xcmbYneixJH6HLpLax2L8cF2DadcFLP",
-   "age_s": 103,
+   "age_s": 137,
    "sol_in": 0.74,
    "buys": 1,
    "sells": 2,
@@ -5190,7 +5226,7 @@
    "symbol": "DOGWIFHAIR",
    "name": "Dogwifhair",
    "mint": "BKo5uAUfX5pRNnavEyWK6tDRNR1AYUEhJ4uTVoUppump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5208,12 +5244,12 @@
    "symbol": "小猫仙人",
    "name": "mihao",
    "mint": "43qPSUrEytsLrGqFRC8HJ72FkPWgpCoXiu7P7NFXCXT4",
-   "age_s": 108,
-   "sol_in": 6.82,
-   "buys": 38,
-   "sells": 37,
-   "rise_pct": 40.3,
-   "mcap_sol": 59.4,
+   "age_s": 142,
+   "sol_in": 9.96,
+   "buys": 43,
+   "sells": 48,
+   "rise_pct": 61.3,
+   "mcap_sol": 68.3,
    "dev_pct": 20.1,
    "big_sell": 8.22,
    "x": "https://x.com/Mateusz878787/status/2126506944257020052",
@@ -5226,7 +5262,7 @@
    "symbol": "W1zard",
    "name": "W1zard",
    "mint": "9SUopktMjC5i7FXDs98JxTtpiNdhDJrftweTLF13SqQQ",
-   "age_s": 133,
+   "age_s": 167,
    "sol_in": -3.95,
    "buys": 2,
    "sells": 17,
