@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:59:42Z",
+ "updated": "2026-11-28T07:00:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 825,
+  "flagged": 826,
   "checked": 49,
   "filtered": 1,
-  "lines": 2042,
+  "lines": 2044,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Anthropic",
-   "why": "snipe",
-   "t": "2026-11-28T06:55:36Z"
-  },
   {
    "coin": "LPI",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "memewitz",
    "why": "snipe",
    "t": "2026-11-28T06:59:16Z"
+  },
+  {
+   "coin": "BAGSTORY",
+   "why": "snipe",
+   "t": "2026-11-28T06:59:53Z"
   }
  ],
  "curve": [
@@ -1991,6 +1991,10 @@
   ],
   [
    1795849140,
+   47.79
+  ],
+  [
+   1795849200,
    47.79
   ]
  ],
@@ -4145,24 +4149,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:31:13Z",
-   "time": "06:31:13",
-   "agent": "SCANNER",
-   "coin": "GIFTFALL",
-   "action": "flag",
-   "text": "snipe · first reading 2.2 s after the create · 3.6 SOL in · +24% since the create · mcap 37 SOL",
-   "n": 1843
-  },
-  {
-   "t": "2026-11-28T05:31:20Z",
-   "time": "06:31:20",
-   "agent": "SCANNER",
-   "coin": "HBDG",
-   "action": "flag",
-   "text": "snipe · first reading 1.3 s after the create · 0.4 SOL in · +2% since the create · mcap 29 SOL",
-   "n": 1844
-  },
-  {
    "t": "2026-11-28T05:31:32Z",
    "time": "06:31:32",
    "agent": "SCANNER",
@@ -5943,6 +5929,24 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 14 rejected (serial launcher 6, snipe not bought: only to size 6, mayhem mode 2)",
    "n": 2042
+  },
+  {
+   "t": "2026-11-28T06:59:53Z",
+   "time": "07:59:53",
+   "agent": "SCANNER",
+   "coin": "BAGSTORY",
+   "action": "flag",
+   "text": "snipe · first reading 6.3 s after the create · 14.1 SOL in · +114% since the create · mcap 62 SOL",
+   "n": 2043
+  },
+  {
+   "t": "2026-11-28T07:00:00Z",
+   "time": "08:00:00",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape 2026-11-28T06 · 3659 lines (2367 curve readings) · 0.6 MB · 184 coins",
+   "n": 2044
   }
  ],
  "nights": [
@@ -6023,24 +6027,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 515,
-    "last_event_age_s": 29.7,
+    "events": 517,
+    "last_event_age_s": 29.6,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4536,
-    "last_event_age_s": 2.3,
+    "events": 4568,
+    "last_event_age_s": 5.6,
     "errors": 400,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 373,
-    "last_event_age_s": 29.5,
+    "events": 374,
+    "last_event_age_s": 28.7,
     "errors": 21,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6053,7 +6057,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 11,
   "odd_readings": 470,
@@ -6104,30 +6108,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9273,
+   "sent": 9310,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9273,
+   "sent": 9310,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BAGSTORY",
+   "name": "BAGSTORY",
+   "mint": "33fCPSXEND5aFizRowQPzAbVgU3kjYDPWjg2mayXpump",
+   "age_s": 29,
+   "sol_in": 12.42,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 98.1,
+   "mcap_sol": 57.2,
+   "dev_pct": 1.7,
+   "big_sell": 1.43,
+   "x": "https://x.com/bagstoryfun/status/2126512165960212697",
+   "tg": false,
+   "web": "https://bagstory.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "Bf4MRy5ipgBoMJ8gqf21iFNZfZjJ5FFDGW9WJAwMPh4d",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "memewitz",
    "name": "memewitz",
    "mint": "3TBo9JsviNAVsfUGZDTSAZuknxjRvW5xv3Nyb6dfpump",
-   "age_s": 29,
-   "sol_in": 0.0,
+   "age_s": 64,
+   "sol_in": -1.48,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 30.8,
+   "sells": 2,
+   "rise_pct": -9.2,
+   "mcap_sol": 28.0,
    "dev_pct": 5.0,
-   "big_sell": 0.59,
+   "big_sell": 1.48,
    "x": "https://x.com/itzmemewitz",
    "tg": false,
    "web": "https://memewitz.fun/",
@@ -6138,7 +6178,7 @@
    "symbol": "Mooncoin",
    "name": "Penus Boner",
    "mint": "HorPKvQYQ9eFRGH5ts6NWQ7SmGvxbZarZSrmrKcApump",
-   "age_s": 38,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6156,14 +6196,14 @@
    "symbol": "SEND",
    "name": "Send",
    "mint": "AghoyrhKiifSwbUrPsDiys7J13ixXhcQgADubmZvpump",
-   "age_s": 39,
-   "sol_in": 27.15,
-   "buys": 7,
-   "sells": 1,
-   "rise_pct": 256.5,
-   "mcap_sol": 103.5,
+   "age_s": 74,
+   "sol_in": 25.48,
+   "buys": 10,
+   "sells": 4,
+   "rise_pct": 236.1,
+   "mcap_sol": 97.6,
    "dev_pct": 2.0,
-   "big_sell": 0.02,
+   "big_sell": 2.02,
    "x": "https://x.com/UseSend_",
    "tg": false,
    "web": "https://sendpays.fun",
@@ -6174,7 +6214,7 @@
    "symbol": "PIGGYBANK",
    "name": "Piggy Bank",
    "mint": "G5WCjSfqVHp93tuGrt71rBsTRsag1cgepKWGRTF8pump",
-   "age_s": 43,
+   "age_s": 78,
    "sol_in": -0.03,
    "buys": 1,
    "sells": 2,
@@ -6192,7 +6232,7 @@
    "symbol": "AP",
    "name": "Artificial Penguin",
    "mint": "FR1sUHkBq8z54NhMFdmN7QYJCQsQDAgZFeCqQ1PV99kQ",
-   "age_s": 86,
+   "age_s": 121,
    "sol_in": -3.06,
    "buys": 1,
    "sells": 5,
@@ -6210,7 +6250,7 @@
    "symbol": "USELESS",
    "name": "Useless Coin",
    "mint": "5YoKPerzzjehET84ywsHdUGghWMiePiBQk8LY4Sgpump",
-   "age_s": 87,
+   "age_s": 122,
    "sol_in": -1.48,
    "buys": 0,
    "sells": 1,
@@ -6228,7 +6268,7 @@
    "symbol": "DOWNALD",
    "name": "Downald Twump",
    "mint": "G6iQuRackX8hGScYmj56dUNyhjX7QsmHF5Fzb3QkHYZQ",
-   "age_s": 100,
+   "age_s": 135,
    "sol_in": -0.05,
    "buys": 2,
    "sells": 7,
@@ -6246,14 +6286,14 @@
    "symbol": "GIRL",
    "name": "Girl Coin",
    "mint": "5igrQREosvf9U4rF7RHULeCtTPyKRDJpFZK4abhfpump",
-   "age_s": 118,
-   "sol_in": 11.4,
-   "buys": 17,
-   "sells": 15,
-   "rise_pct": 89.4,
-   "mcap_sol": 54.0,
+   "age_s": 153,
+   "sol_in": 3.22,
+   "buys": 18,
+   "sells": 19,
+   "rise_pct": 22.4,
+   "mcap_sol": 34.9,
    "dev_pct": 1.0,
-   "big_sell": 3.1,
+   "big_sell": 4.48,
    "x": "https://x.com/officialgrlcoin",
    "tg": "https://t.me/girlcoinsolana",
    "web": "https://www.girlcoin.io/",
@@ -6264,7 +6304,7 @@
    "symbol": "Ralphie",
    "name": "McInu",
    "mint": "6t5Kz1AmWBL3zGwBX9pVa4SGEG5nxXRmQxCZnfDEcW8A",
-   "age_s": 129,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6282,7 +6322,7 @@
    "symbol": "RAPIST",
    "name": "Rapist",
    "mint": "6i3NqyJxZz9ovd46tXrh268pLbEpDrhsPRxhC7u8pump",
-   "age_s": 131,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6300,7 +6340,7 @@
    "symbol": "Wifi",
    "name": "Wifi",
    "mint": "GiCxxc2pyJ6pi7YJTULRNNj1U7QjSxhDk6wcaEPsbicz",
-   "age_s": 137,
+   "age_s": 172,
    "sol_in": -2.28,
    "buys": 3,
    "sells": 9,
@@ -6313,42 +6353,6 @@
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "fuck owl",
-   "name": "flames on sol",
-   "mint": "9MBttcXFDn6jmAUSwBh2uU6t464L7XuFCcftXDxRpump",
-   "age_s": 149,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "IM",
-   "name": "Internet Money",
-   "mint": "4rXMdi5oYVUhoJ1zUs6abaSFAkEg7svuMtq4kK1qpump",
-   "age_s": 168,
-   "sol_in": -2.83,
-   "buys": 5,
-   "sells": 9,
-   "rise_pct": -16.0,
-   "mcap_sol": 30.1,
-   "dev_pct": 12.5,
-   "big_sell": 2.01,
-   "x": "https://x.com/herrdevs/status/2126570988515266597?a=m71NicbFtHuxPeEG4vk&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
