@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:11:15Z",
+ "updated": "2026-11-28T03:11:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 520,
+  "flagged": 521,
   "checked": 49,
   "filtered": 1,
-  "lines": 1403,
+  "lines": 1405,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CRJ",
-   "why": "snipe",
-   "t": "2026-11-28T03:06:50Z"
-  },
   {
    "coin": "Nighao",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GOBLIN",
    "why": "snipe",
    "t": "2026-11-28T03:09:27Z"
+  },
+  {
+   "coin": "face",
+   "why": "snipe",
+   "t": "2026-11-28T03:11:42Z"
   }
  ],
  "curve": [
@@ -3233,24 +3233,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:09:32Z",
-   "time": "03:09:32",
-   "agent": "SIZER",
-   "coin": "PERPD",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1204
-  },
-  {
-   "t": "2026-11-28T02:09:42Z",
-   "time": "03:09:42",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 9 rejected (snipe not bought: only to size 8, mayhem mode 1)",
-   "n": 1205
-  },
-  {
    "t": "2026-11-28T02:10:16Z",
    "time": "03:10:16",
    "agent": "SCANNER",
@@ -5031,6 +5013,24 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, mayhem mode 3, serial launcher 1)",
    "n": 1403
+  },
+  {
+   "t": "2026-11-28T03:11:18Z",
+   "time": "04:11:18",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 3, mayhem mode 3, serial launcher 1)",
+   "n": 1404
+  },
+  {
+   "t": "2026-11-28T03:11:42Z",
+   "time": "04:11:42",
+   "agent": "SCANNER",
+   "coin": "face",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 1405
   }
  ],
  "nights": [
@@ -5111,24 +5111,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1630,
-    "last_event_age_s": 86.6,
-    "errors": 3,
-    "last_error": "closed: no close frame received or sent"
+    "events": 1633,
+    "last_event_age_s": 3.5,
+    "errors": 4,
+    "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 34706,
-    "last_event_age_s": 0.8,
+    "events": 34718,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 948,
-    "last_event_age_s": 109.2,
+    "events": 950,
+    "last_event_age_s": 3.3,
     "errors": 45,
     "last_error": "turbo-gateway.com: timeout after 2 s"
    }
@@ -5141,9 +5141,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.6,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 335,
   "odd_coins": 152
  },
@@ -5192,23 +5192,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16545,
+   "sent": 16576,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16545,
+   "sent": 16576,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "face",
+   "name": "Face it",
+   "mint": "H98nbQHMLkCxiuiVrkTB1gyPmDa6veakNa936Acwpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "mank",
+   "name": "mank",
+   "mint": "2bWRHvhuPRsTQWU8JeWnvHhHMj7N2of6Aj6MpPzdpump",
+   "age_s": 4,
+   "sol_in": 0.83,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 4.8,
+   "mcap_sol": 39.7,
+   "dev_pct": 15.2,
+   "big_sell": 2.36,
+   "x": "https://x.com/CoachPatNFT/status/2126514330417991856",
+   "tg": false,
+   "web": "https://archive.4plebs.org/s4s/thread/13277811/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "GTAFORTNIT",
+   "name": "GTA VI VS FORTNITE",
+   "mint": "3qUUrAas5BcoNAsDDxY4yo4BJVnrYHpq8fP9fx8Wpump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "FVgkVPuojA4g4hrwkfAu8E2ZPhVbC9AJyZZS62spump",
-   "age_s": 86,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5226,7 +5280,7 @@
    "symbol": "GOBLIN",
    "name": "Goblincoin",
    "mint": "HtvfhEBLQdfip8KQrJ74WvF3HxQpcskqAtYmxNWsZ8Wk",
-   "age_s": 109,
+   "age_s": 138,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5244,7 +5298,7 @@
    "symbol": "apu",
    "name": "apu",
    "mint": "fJ8b2KhTqSdV2CYR4kcuEvAbkRiSmp61h6JdWLzpump",
-   "age_s": 121,
+   "age_s": 150,
    "sol_in": -0.99,
    "buys": 3,
    "sells": 9,
@@ -5262,11 +5316,11 @@
    "symbol": "﷽",
    "name": "﷽",
    "mint": "Fwyoevano68r7A2K5JrTt8gnLWm1NbqzwAgQNmc9pump",
-   "age_s": 127,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 156,
+   "sol_in": 0.01,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
    "big_sell": 0.0,
@@ -5280,7 +5334,7 @@
    "symbol": "CAPOYED",
    "name": "Capo the Samoyed",
    "mint": "CB1JfVYwNHGFed8UDkJpkrFTqLVdvTaGthwNmPL3Trfg",
-   "age_s": 133,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5298,7 +5352,7 @@
    "symbol": "?",
    "name": "",
    "mint": "3PxNLn7cpuExd7qpBLLg5HXfSkgt7mpVwvLDaC6d3Y7N",
-   "age_s": 139,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5311,42 +5365,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "$SPMIHAO",
-   "name": "🌕 SPACE CAT MIHAO",
-   "mint": "27ENeNeTvb7aV26pGk46oN21miJPRWRXXxhQD26Lpump",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "IKA",
-   "name": "Ika",
-   "mint": "BqoazNTvV3tyvJJg6LvdKuTtxuJjGMhAQUt3BuF6LHXu",
-   "age_s": 172,
-   "sol_in": -4.44,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -24.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 13.8,
-   "big_sell": 4.44,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
