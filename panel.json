@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:16:56Z",
+ "updated": "2026-11-28T05:17:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 749,
+  "flagged": 750,
   "checked": 49,
   "filtered": 1,
-  "lines": 1809,
+  "lines": 1811,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "USEFUL",
-   "why": "snipe",
-   "t": "2026-11-28T05:08:39Z"
-  },
   {
    "coin": "CHURLIE",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "BATM",
    "why": "snipe",
    "t": "2026-11-28T05:15:20Z"
+  },
+  {
+   "coin": "DON",
+   "why": "snipe",
+   "t": "2026-11-28T05:17:18Z"
   }
  ],
  "curve": [
@@ -1579,6 +1579,10 @@
   ],
   [
    1795842960,
+   47.79
+  ],
+  [
+   1795843020,
    47.79
   ]
  ],
@@ -3733,24 +3737,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:09:56Z",
-   "time": "05:09:56",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 11 rejected (snipe not bought: only to size 8, serial launcher 1, no bonding curve key 1)",
-   "n": 1610
-  },
-  {
-   "t": "2026-11-28T04:10:17Z",
-   "time": "05:10:17",
-   "agent": "SCANNER",
-   "coin": "is it over?",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 4.491 is not 30 + real SOL 0.1988 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 354 odd readings from 161 coins tonight",
-   "n": 1611
-  },
-  {
    "t": "2026-11-28T04:10:19Z",
    "time": "05:10:19",
    "agent": "SCANNER",
@@ -5531,6 +5517,24 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 2 watched · 6 rejected (snipe not bought: only to size 5, dump 1) · closest MYNAME: no curve reading yet",
    "n": 1809
+  },
+  {
+   "t": "2026-11-28T05:17:18Z",
+   "time": "06:17:18",
+   "agent": "SCANNER",
+   "coin": "DON",
+   "action": "flag",
+   "text": "snipe · first reading 9.2 s after the create · 11.8 SOL in · +93% since the create · mcap 55 SOL",
+   "n": 1810
+  },
+  {
+   "t": "2026-11-28T05:17:23Z",
+   "time": "06:17:23",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 1 watched · 5 rejected (snipe not bought: only to size 3, snipe: first reading s after the 2) · closest wayback: no curve reading yet",
+   "n": 1811
   }
  ],
  "nights": [
@@ -5597,7 +5601,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5605,24 +5609,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 173,
-    "last_event_age_s": 48.8,
+    "events": 175,
+    "last_event_age_s": 7.4,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1062,
-    "last_event_age_s": 0.4,
+    "events": 1065,
+    "last_event_age_s": 5.4,
     "errors": 89,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 137,
-    "last_event_age_s": 47.3,
+    "events": 139,
+    "last_event_age_s": 7.0,
     "errors": 6,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5635,9 +5639,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
-  "watching": 0,
-  "followed": 5,
+  "creates_per_min": 2.8,
+  "watching": 1,
+  "followed": 6,
   "odd_readings": 372,
   "odd_coins": 175
  },
@@ -5686,23 +5690,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2709,
+   "sent": 2739,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2709,
+   "sent": 2739,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "wayback",
+   "name": "wayback",
+   "mint": "HtFN4PMF7eP1x5wrfhZaqb79m4JjmhHQXWHBA2esR3ko",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.0,
+   "dev_pct": 2.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/usewayback",
+   "tg": false,
+   "web": "https://usewayback.fun",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "DON",
+   "name": "Donald Pump",
+   "mint": "4rq2oJXoyQZKgeiZaDhvQUBan1hQHWricEZS3ntQpump",
+   "age_s": 14,
+   "sol_in": 11.8,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 93.2,
+   "mcap_sol": 55.0,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/DonaldPumpOnPF/status/2126545813933339014",
+   "tg": false,
+   "web": "https://www.thedonaldgrump.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "YUTA",
    "name": "Yuta",
    "mint": "46dtYbdhGL69WW6cvn922R1xzX4SW5gEdVpHVcpUpump",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5720,7 +5760,7 @@
    "symbol": "MYNAME",
    "name": "mynameistrump",
    "mint": "5FJA2p2j55b8DExmGARH2bQ8dCgfYt5Nybfgznirpump",
-   "age_s": 71,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5738,7 +5778,7 @@
    "symbol": "BATM",
    "name": "Batmancer",
    "mint": "DCHGXzmbuhdcZ7qEfc2SPDGWKyCEKE6TYCzYzuz7pump",
-   "age_s": 99,
+   "age_s": 127,
    "sol_in": -3.94,
    "buys": 3,
    "sells": 1,
@@ -5756,7 +5796,7 @@
    "symbol": "FISTRAT",
    "name": "Fistfight Rat",
    "mint": "6Um3cTnPQC8a1TKTipnVBdUqCpebsrx4EpdxWpCppump",
-   "age_s": 102,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -5765,24 +5805,6 @@
    "dev_pct": 0.2,
    "big_sell": 0.0,
    "x": "https://x.com/OfAthenry/status/2126427674599920096",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MM",
-   "name": "Meme Mutation",
-   "mint": "uhpREcrFa1bqajAV7VKwAvykFnVe345T3mCQcPXUtd4",
-   "age_s": 153,
-   "sol_in": -1.5,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -9.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 5.1,
-   "big_sell": 1.5,
-   "x": "https://x.com/MemeMutationSOL",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
