@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:10:53Z",
+ "updated": "2026-11-28T12:11:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1365,
   "checked": 49,
   "filtered": 1,
-  "lines": 3055,
+  "lines": 3056,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795831860,
-   47.79
-  ],
   [
    1795831920,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795867800,
    47.79
+  ],
+  [
+   1795867860,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:09:19Z",
-   "time": "12:09:19",
-   "agent": "SCANNER",
-   "coin": "SLOWCLAPCA",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2856
-  },
-  {
    "t": "2026-11-28T11:09:30Z",
    "time": "12:09:30",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 5, no bonding curve key 2, mayhem mode 1)",
    "n": 3055
+  },
+  {
+   "t": "2026-11-28T12:11:17Z",
+   "time": "13:11:17",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 4 rejected (snipe not bought: only to size 2, serial launcher 1, no bonding curve key 1)",
+   "n": 3056
   }
  ],
  "nights": [
@@ -6500,14 +6500,14 @@
     "name": "pumpportal",
     "connected": true,
     "events": 505,
-    "last_event_age_s": 18.0,
+    "last_event_age_s": 45.0,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 13102,
+    "events": 13150,
     "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
@@ -6516,7 +6516,7 @@
     "name": "metadata",
     "connected": true,
     "events": 344,
-    "last_event_age_s": 17.8,
+    "last_event_age_s": 44.8,
     "errors": 7,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 4,
+  "followed": 3,
   "odd_readings": 1009,
   "odd_coins": 308
  },
@@ -6580,13 +6580,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7416,
+   "sent": 7445,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7416,
+   "sent": 7445,
    "errors": 0,
    "last_error": null
   }
@@ -6596,11 +6596,11 @@
    "symbol": "J7TEST",
    "name": "J7 Control TEST",
    "mint": "3DR558RvqcgPH122vYfgVN3SfL9fVnYCMij6eJ9YJuBW",
-   "age_s": 17,
-   "sol_in": 0.0,
+   "age_s": 44,
+   "sol_in": -0.0,
    "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.0,
+   "sells": 3,
+   "rise_pct": -0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
    "big_sell": 0.0,
@@ -6614,12 +6614,12 @@
    "symbol": "Nala",
    "name": "Nala",
    "mint": "Gr3NvCQQZd5mRQoXp8g1jAM6XJC6qcBKUk4oaaabpump",
-   "age_s": 103,
-   "sol_in": 34.9,
-   "buys": 55,
-   "sells": 39,
-   "rise_pct": 354.0,
-   "mcap_sol": 134.3,
+   "age_s": 130,
+   "sol_in": 39.3,
+   "buys": 68,
+   "sells": 46,
+   "rise_pct": 416.8,
+   "mcap_sol": 152.9,
    "dev_pct": 3.0,
    "big_sell": 5.58,
    "x": "https://x.com/swaynfa/status/2126649041064984822",
@@ -6632,7 +6632,7 @@
    "symbol": "rice",
    "name": "1 grain of rice",
    "mint": "7AUTKB4RLaV93mqimKJ4UmFe5f23a9E2rcPUpMeLpump",
-   "age_s": 131,
+   "age_s": 158,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6650,67 +6650,13 @@
    "symbol": "FLASK",
    "name": "Flask",
    "mint": "FLasjA4Adw8Zpso7TpBqd5A6JLutCybdQHm3eReyPQMo",
-   "age_s": 135,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 29.8,
    "dev_pct": 3.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "LEAN",
-   "name": "Lean Client",
-   "mint": "2NHKCKmY4kszKBnwutpFzDzZtLo5pubhyEj6qbJAvW8W",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://leansvm.com/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "qwEmrtR4CJrxDBSy56hSxv1sDovdaHHuTiQ9mBQJW9q",
-   "age_s": 161,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "ENC",
-   "name": "Enclip",
-   "mint": "6i1jzXoXeSQHwe63PtYcDsG4vjqiBz3vQsufeNpk6enc",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
