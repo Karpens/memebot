@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:08:47Z",
+ "updated": "2026-11-28T08:09:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 917,
+  "flagged": 918,
   "checked": 49,
   "filtered": 1,
-  "lines": 2238,
+  "lines": 2240,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BTCAGENDA",
-   "why": "snipe",
-   "t": "2026-11-28T08:05:34Z"
-  },
   {
    "coin": "TONYVI",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Robinhood",
    "why": "snipe",
    "t": "2026-11-28T08:08:12Z"
+  },
+  {
+   "coin": "BUZZ",
+   "why": "snipe",
+   "t": "2026-11-28T08:09:08Z"
   }
  ],
  "curve": [
@@ -2268,6 +2268,10 @@
   [
    1795853280,
    47.79
+  ],
+  [
+   1795853340,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4421,24 +4425,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:59:08Z",
-   "time": "07:59:08",
-   "agent": "SCANNER",
-   "coin": "SEND",
-   "action": "flag",
-   "text": "snipe · first reading 6.6 s after the create · 16.6 SOL in · +138% since the create · mcap 69 SOL",
-   "n": 2039
-  },
-  {
-   "t": "2026-11-28T06:59:16Z",
-   "time": "07:59:16",
-   "agent": "SCANNER",
-   "coin": "memewitz",
-   "action": "flag",
-   "text": "snipe · first reading 3.9 s after the create · 0.6 SOL in · +4% since the create · mcap 32 SOL",
-   "n": 2040
-  },
-  {
    "t": "2026-11-28T06:59:16Z",
    "time": "07:59:16",
    "agent": "SIZER",
@@ -6219,6 +6205,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1273 is not 30 + real SOL 0 (off +1243 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 564 odd readings from 233 coins tonight",
    "n": 2238
+  },
+  {
+   "t": "2026-11-28T08:09:02Z",
+   "time": "09:09:02",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.6 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 3)",
+   "n": 2239
+  },
+  {
+   "t": "2026-11-28T08:09:08Z",
+   "time": "09:09:08",
+   "agent": "SCANNER",
+   "coin": "BUZZ",
+   "action": "flag",
+   "text": "snipe · first reading 3.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2240
   }
  ],
  "nights": [
@@ -6291,7 +6295,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 564 (233 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 564 (233 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6299,24 +6303,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 797,
-    "last_event_age_s": 27.5,
+    "events": 799,
+    "last_event_age_s": 14.7,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11122,
-    "last_event_age_s": 0.7,
+    "events": 11199,
+    "last_event_age_s": 0.6,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 572,
-    "last_event_age_s": 24.2,
+    "events": 574,
+    "last_event_age_s": 14.2,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6329,9 +6333,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 7,
+  "followed": 9,
   "odd_readings": 564,
   "odd_coins": 233
  },
@@ -6380,23 +6384,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13685,
+   "sent": 13720,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13685,
+   "sent": 13720,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BUZZ",
+   "name": "buzz",
+   "mint": "94z7kZMXmGmsGNjvAgP3W2kVqgaAG1cPqmfW8PDTnkgC",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/noobiieez/status/2126588686351376395",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Yoda",
+   "name": "Yoda",
+   "mint": "FtQjxu21dibjd6kWjGF7N6YTVawhkYWqDMw6Wujxniit",
+   "age_s": 20,
+   "sol_in": 4.4,
+   "buys": 5,
+   "sells": 5,
+   "rise_pct": 28.4,
+   "mcap_sol": 43.6,
+   "dev_pct": 9.9,
+   "big_sell": 2.53,
+   "x": "https://x.com/StepCoinsol8/status/2126589135968203211",
+   "tg": false,
+   "web": "https://www.instagram.com/reel/DgP-5mji8M1",
+   "status": "rejected: serial launcher: 9 more coins in 60 min",
+   "why": "serial launcher: 9 more coins in 60 min"
+  },
+  {
    "symbol": "twin",
    "name": "Eat off that twin",
    "mint": "KPAjhfq4TvXyPcMPHTD4Usuhx1E85doJP6mJiveyStf",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6414,14 +6454,14 @@
    "symbol": "Robinhood",
    "name": "Robinhood",
    "mint": "7vfRztkzFDndReXRSz4zSzKHppJD4ZfcPVMU5YMnpump",
-   "age_s": 35,
-   "sol_in": 17.88,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 134.0,
-   "mcap_sol": 82.8,
+   "age_s": 68,
+   "sol_in": 17.02,
+   "buys": 6,
+   "sells": 6,
+   "rise_pct": 126.3,
+   "mcap_sol": 80.1,
    "dev_pct": 11.9,
-   "big_sell": 0.0,
+   "big_sell": 0.24,
    "x": "https://x.com/RobinhoodApp",
    "tg": false,
    "web": "https://cdn.robinhood.com/assets/robinhood/legal/standard-social-media-disclosures.pdf",
@@ -6432,7 +6472,7 @@
    "symbol": "hustlr",
    "name": "hustlr",
    "mint": "HXnLMcGiistybEHM4kYNBmv3ZJhap2pTCsQx4wBvpump",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": -1.03,
    "buys": 3,
    "sells": 5,
@@ -6450,7 +6490,7 @@
    "symbol": "GBX",
    "name": "GBX",
    "mint": "KpBgMspr8o5XEYEebTfLy4hDqgQfYzyiokCbBgR4Z5Z",
-   "age_s": 84,
+   "age_s": 117,
    "sol_in": -1.34,
    "buys": 1,
    "sells": 2,
@@ -6468,7 +6508,7 @@
    "symbol": "FINGART",
    "name": "FINGART",
    "mint": "BDF72gf2G8qFZEusT19c4ohHxxdBNeGU2sPgDdcw3scC",
-   "age_s": 121,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6486,12 +6526,12 @@
    "symbol": "TROB",
    "name": "The Rape Of Britain",
    "mint": "AxP41dNaEh6ULZhEsodFAGdRME74zgCqjbnehEp3pump",
-   "age_s": 124,
-   "sol_in": -1.98,
+   "age_s": 157,
+   "sol_in": -2.96,
    "buys": 7,
-   "sells": 21,
-   "rise_pct": -11.6,
-   "mcap_sol": 29.8,
+   "sells": 24,
+   "rise_pct": -17.2,
+   "mcap_sol": 28.0,
    "dev_pct": 9.6,
    "big_sell": 4.8,
    "x": "https://x.com/Zeeko__Dev/status/2126588559926657026",
@@ -6504,7 +6544,7 @@
    "symbol": "TPOT",
    "name": "Tiny Teapot",
    "mint": "AzbPdXqDonKdFrrbipy72EdSXpxRyk6sY6TA83Espump",
-   "age_s": 141,
+   "age_s": 174,
    "sol_in": -4.71,
    "buys": 2,
    "sells": 1,
@@ -6517,24 +6557,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "BRdyzLZvLABbP5upzKGb4opxmg6tg2AudCq2gkvtpump",
-   "age_s": 174,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
