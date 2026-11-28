@@ -59,51 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-28T07:06:28Z",
-    "time": "08:06:28",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 4.2 a minute · 2 watched · 9 rejected (serial launcher 4, snipe: first reading s after the 3, dump 1) · closest HYPOSCALER: no curve reading yet",
-    "n": 2058
-   },
-   {
-    "t": "2026-11-28T07:06:29Z",
-    "time": "08:06:29",
-    "agent": "SCANNER",
-    "coin": "HYPOSCALER",
-    "action": "flag",
-    "text": "snipe · first reading 7.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-    "n": 2059
-   },
-   {
-    "t": "2026-11-28T07:06:29Z",
-    "time": "08:06:29",
-    "agent": "SIZER",
-    "coin": "HYPOSCALER",
-    "action": "skip",
-    "text": "only $4.78 left to size",
-    "n": 2060
-   },
-   {
-    "t": "2026-11-28T07:06:29Z",
-    "time": "08:06:29",
-    "agent": "SCANNER",
-    "coin": "snowfall",
-    "action": "flag",
-    "text": "snipe · first reading 3.6 s after the create · -0.2 SOL in · -1% since the create · mcap 33 SOL",
-    "n": 2061
-   },
-   {
-    "t": "2026-11-28T07:06:29Z",
-    "time": "08:06:29",
-    "agent": "SCANNER",
-    "coin": "HYPOSCALERS",
-    "action": "odd",
-    "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 3e-09 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 504 odd readings from 219 coins tonight",
-    "n": 2062
-   },
-   {
     "t": "2026-11-28T07:06:34Z",
     "time": "08:06:34",
     "agent": "SCANNER",
@@ -5457,6 +5412,51 @@
     "action": "scan",
     "text": "new pairs · 3.2 a minute · 0 watched · 11 rejected (snipe not bought: last min of th 5, mayhem mode 3, serial launcher 2)",
     "n": 2657
+   },
+   {
+    "t": "2026-11-28T10:14:45Z",
+    "time": "11:14:45",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "feed",
+    "text": "feeds · pumpportal live · curve poll 1 s · 0 watched · ws off",
+    "n": 2658
+   },
+   {
+    "t": "2026-11-28T10:14:45Z",
+    "time": "11:14:45",
+    "agent": "LOGGER",
+    "coin": null,
+    "action": "tape",
+    "text": "tape on · every create, curve reading, RugCheck summary, decision and fill to tapes/<UTC hour>.jsonl for the backtester · coins near a trigger followed 900s after launch (at most 60)",
+    "n": 2659
+   },
+   {
+    "t": "2026-11-28T10:14:53Z",
+    "time": "11:14:53",
+    "agent": "LEARNER",
+    "coin": null,
+    "action": "snipe",
+    "text": "snipe mode: every coin that passes the cheap checks is bought on its first reading at the SIZER's size, none skipped or resized · it learns from each closed snipe in a memory of its own (memory_snipe.json: the momentum entry's memory.json never sees a snipe)",
+    "n": 2660
+   },
+   {
+    "t": "2026-11-28T10:14:53Z",
+    "time": "11:14:53",
+    "agent": "SCANNER",
+    "coin": "Liberty",
+    "action": "flag",
+    "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+    "n": 2661
+   },
+   {
+    "t": "2026-11-28T10:14:53Z",
+    "time": "11:14:53",
+    "agent": "SIZER",
+    "coin": "Liberty",
+    "action": "skip",
+    "text": "only $4.78 left to size",
+    "n": 2662
    }
   ],
   "trades": [
@@ -8102,16 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 1151,
+  "flagged": 1152,
   "checked": 49,
   "filtered": 1,
-  "lines": 2657,
+  "lines": 2662,
   "flags": [
-   {
-    "coin": "Carpad",
-    "why": "snipe",
-    "t": "2026-11-28T10:06:04Z"
-   },
    {
     "coin": "lucia",
     "why": "snipe",
@@ -8146,13 +8141,14 @@
     "coin": "yippee",
     "why": "snipe",
     "t": "2026-11-28T10:08:48Z"
+   },
+   {
+    "coin": "Liberty",
+    "why": "snipe",
+    "t": "2026-11-28T10:14:53Z"
    }
   ],
   "curve": [
-   [
-    1795824900,
-    47.79
-   ],
    [
     1795824960,
     47.79
@@ -10548,6 +10544,10 @@
    [
     1795860840,
     47.79
+   ],
+   [
+    1795860900,
+    47.79
    ]
   ],
   "last_rug": {
@@ -11018,7 +11018,7 @@
   },
   "sizer_said": {
    "why": "cash",
-   "at": 1795860482.757464
+   "at": 1795860893.083195
   }
  },
  "last_night": {
