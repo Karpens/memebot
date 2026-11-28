@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:57:50Z",
+ "updated": "2026-11-28T11:58:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1339,
+  "flagged": 1340,
   "checked": 49,
   "filtered": 1,
-  "lines": 3013,
+  "lines": 3015,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ANSEM",
-   "why": "snipe",
-   "t": "2026-11-28T11:51:16Z"
-  },
   {
    "coin": "SCR",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "PUMCH",
    "why": "snipe",
    "t": "2026-11-28T11:57:28Z"
+  },
+  {
+   "coin": "Loomgate",
+   "why": "snipe",
+   "t": "2026-11-28T11:58:09Z"
   }
  ],
  "curve": [
-  [
-   1795831080,
-   47.79
-  ],
   [
    1795831140,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795867020,
    47.79
+  ],
+  [
+   1795867080,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4628,24 +4628,6 @@
    "t": "2026-11-28T10:55:17Z",
    "time": "11:55:17",
    "agent": "SCANNER",
-   "coin": "EPEE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.211e+05 is not 30 + real SOL 5343 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 957 odd readings from 294 coins tonight",
-   "n": 2814
-  },
-  {
-   "t": "2026-11-28T10:55:17Z",
-   "time": "11:55:17",
-   "agent": "SCANNER",
-   "coin": "SCORE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.211e+05 is not 30 + real SOL 5251 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 958 odd readings from 295 coins tonight",
-   "n": 2815
-  },
-  {
-   "t": "2026-11-28T10:55:17Z",
-   "time": "11:55:17",
-   "agent": "SCANNER",
    "coin": "GLOVE",
    "action": "odd",
    "text": "odd curve reading: virtual SOL 2.291e+05 is not 30 + real SOL 1.331e+04 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 959 odd readings from 296 coins tonight",
@@ -6423,6 +6405,24 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 3013
+  },
+  {
+   "t": "2026-11-28T11:58:09Z",
+   "time": "12:58:09",
+   "agent": "SCANNER",
+   "coin": "Loomgate",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3014
+  },
+  {
+   "t": "2026-11-28T11:58:10Z",
+   "time": "12:58:10",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 14 rejected (mayhem mode 6, no symbol or name 4, serial launcher 2)",
+   "n": 3015
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 435,
-    "last_event_age_s": 1.5,
+    "events": 441,
+    "last_event_age_s": 9.1,
     "errors": 5,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11570,
-    "last_event_age_s": 0.1,
+    "events": 11597,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 303,
-    "last_event_age_s": 21.9,
+    "events": 304,
+    "last_event_age_s": 9.0,
     "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 3,
+  "followed": 4,
   "odd_readings": 1009,
   "odd_coins": 308
  },
@@ -6578,23 +6578,131 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6583,
+   "sent": 6612,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6583,
+   "sent": 6612,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Loomgate",
+   "name": "Loomgate AI",
+   "mint": "AJFYPMQPLGXqPE9wumsSdo8gk8JiSu2W4GVvR1Qxpump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/LoomgateAI",
+   "tg": false,
+   "web": "https://loomgate.run/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "4RVuGnmNwoTdS9mhbdcBNHJDzH3SqnnDb6HGY4SM86HR",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 38.2,
+   "dev_pct": 15.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "3h9M7GsjrMsqhW6AJEZiKN7F8pP6vSfKQVW6HaEN9mwW",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.6,
+   "dev_pct": 10.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "DINO STAR",
+   "name": "DINO STAR",
+   "mint": "77nTo5LFRhuyV8nGxnaSCGo8xG9xrbUVytztPq76pump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "BxNaUuJw9LpypUBwxn64CFWxjirJmkvAmg2Skhy6VWwf",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.6,
+   "dev_pct": 10.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "BALIEN",
+   "name": "BABY ALIEN",
+   "mint": "F4rkkKwWKYPBqoXsv45cQwm5CbrS9gTsKui5fXPSpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "FJR8nw6PBPwV1GFXat5wEWDZW1jkw2rBfqY5i4BmQ2N",
-   "age_s": 1,
+   "age_s": 28,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6612,7 +6720,7 @@
    "symbol": "PUMCH",
    "name": "PUNCH",
    "mint": "57BCx2HcTC4mCADU85YsyyXeYjaiVwiYxjRbERmWpump",
-   "age_s": 22,
+   "age_s": 49,
    "sol_in": 0.37,
    "buys": 1,
    "sells": 0,
@@ -6630,7 +6738,7 @@
    "symbol": "CORRUPT",
    "name": "CORRUPTION",
    "mint": "HJRQM9fm7vXY48qtU9KnQbjy7VQn1pDHLj5xHfSwpump",
-   "age_s": 26,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6756,7 @@
    "symbol": "ALOOONG",
    "name": "Alooong",
    "mint": "F1cCQDHH2SpQarZyK8RY9F3JWY5s48Wsxp9mNjAdkWiy",
-   "age_s": 73,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6774,7 @@
    "symbol": "DWIFIT",
    "name": "Deal Wif It Xmas",
    "mint": "3rFrp8w3jnBvSYc7opqGQeeRbMDtTAa63r7Fc6fApump",
-   "age_s": 102,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6792,7 @@
    "symbol": "SSPEARL",
    "name": "SILVER SURFER X TOM PEARL",
    "mint": "8DQ2PrBjgK5VF6rZN8DyB6UJEHs1xarpgAGYMifmpump",
-   "age_s": 105,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6810,7 @@
    "symbol": "J7TEST",
    "name": "J7 Control TEST",
    "mint": "42auMgwyT8kMjJJqXZZHNzyhZaRseE8UBjvKXqghFZF8",
-   "age_s": 141,
+   "age_s": 168,
    "sol_in": -0.0,
    "buys": 1,
    "sells": 2,
@@ -6720,7 +6828,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "3PH3WSC9yirvVMFzBRj2QFFfySfRVt3rcZyrGo5dpump",
-   "age_s": 150,
+   "age_s": 177,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
