@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:52:46Z",
+ "updated": "2026-11-28T05:53:18Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -1723,6 +1723,10 @@
   ],
   [
    1795845120,
+   47.79
+  ],
+  [
+   1795845180,
    47.79
   ]
  ],
@@ -5741,7 +5745,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 13 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 12 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5749,8 +5753,8 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 266,
-    "last_event_age_s": 16.1,
+    "events": 268,
+    "last_event_age_s": 16.7,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
@@ -5758,15 +5762,15 @@
     "name": "curve-poll",
     "connected": false,
     "events": 2009,
-    "last_event_age_s": 22.2,
-    "errors": 202,
+    "last_event_age_s": 54.2,
+    "errors": 206,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
     "events": 210,
-    "last_event_age_s": 16.0,
+    "last_event_age_s": 48.0,
     "errors": 11,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5779,9 +5783,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.8,
+  "creates_per_min": 2.0,
   "watching": 1,
-  "followed": 3,
+  "followed": 2,
   "odd_readings": 406,
   "odd_coins": 185
  },
@@ -5830,23 +5834,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4998,
+   "sent": 5032,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4998,
+   "sent": 5032,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RIBBIT",
+   "name": "Hoppers Pond",
+   "mint": "CwGCESUipbuiTfxo6kxYo4kvsCe7unRcaJMtyrvfjjCg",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
    "symbol": "USD1",
    "name": "Useless Shitty Dollar 1",
    "mint": "HPW9kaMqgbNUayPURhUk48dXpdSuY6mrLjJ3TaByzQiT",
-   "age_s": 16,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5864,7 +5886,7 @@
    "symbol": "USD1",
    "name": "Useless Shitty Dollar 1",
    "mint": "5PTnaXNiLqyMvhmFeAqToWvufMeEw9rH8D4XRA8CgaM5",
-   "age_s": 19,
+   "age_s": 51,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5877,24 +5899,6 @@
    "web": false,
    "status": "watching",
    "why": "no curve reading yet"
-  },
-  {
-   "symbol": "GOP",
-   "name": "GOPGOP",
-   "mint": "8hno54ZX6kcT9QEfjV4uj8cwwxsqKVeZ2A471wUApump",
-   "age_s": 162,
-   "sol_in": 1.0,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 6.8,
-   "mcap_sol": 29.9,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 32.4 s after the create (max 10 s)",
-   "why": "snipe: first reading 32.4 s after the create (max 10 s)"
   }
  ],
  "strategies": [
