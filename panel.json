@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:52:07Z",
+ "updated": "2026-11-28T09:52:41Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1115,
+  "flagged": 1116,
   "checked": 49,
   "filtered": 1,
-  "lines": 2589,
+  "lines": 2590,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "EDITOR",
-   "why": "snipe",
-   "t": "2026-11-28T09:48:16Z"
-  },
   {
    "coin": "Centipede",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GTPA6",
    "why": "snipe",
    "t": "2026-11-28T09:51:47Z"
+  },
+  {
+   "coin": "cheng",
+   "why": "snipe",
+   "t": "2026-11-28T09:52:16Z"
   }
  ],
  "curve": [
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:52:27Z",
-   "time": "09:52:27",
-   "agent": "SCANNER",
-   "coin": "DRILLER",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 1.8 SOL in · +12% since the create · mcap 31 SOL",
-   "n": 2390
-  },
-  {
    "t": "2026-11-28T08:52:33Z",
    "time": "09:52:33",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 6.6 a minute · 0 watched · 13 rejected (snipe not bought: only to size 7, serial launcher 5, mayhem mode 1)",
    "n": 2589
+  },
+  {
+   "t": "2026-11-28T09:52:16Z",
+   "time": "10:52:16",
+   "agent": "SCANNER",
+   "coin": "cheng",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 34 SOL",
+   "n": 2590
   }
  ],
  "nights": [
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1215,
-    "last_event_age_s": 20.3,
+    "events": 1216,
+    "last_event_age_s": 25.1,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 24257,
+    "events": 24329,
     "last_event_age_s": 0.3,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 871,
-    "last_event_age_s": 19.8,
+    "events": 872,
+    "last_event_age_s": 24.6,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.6,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 11,
+  "followed": 9,
   "odd_readings": 677,
   "odd_coins": 262
  },
@@ -6584,23 +6584,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20282,
+   "sent": 20318,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20282,
+   "sent": 20318,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "cheng",
+   "name": "厨神",
+   "mint": "5zhdK5tA8Fz4L74YgYeSAVjjZ2NGTfSmWNYAiWN2pump",
+   "age_s": 25,
+   "sol_in": 7.89,
+   "buys": 6,
+   "sells": 6,
+   "rise_pct": 53.4,
+   "mcap_sol": 52.1,
+   "dev_pct": 10.0,
+   "big_sell": 0.92,
+   "x": "https://x.com/chengpenguin/status/2126610732938899768",
+   "tg": false,
+   "web": "https://www.chengchef.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GTPA6",
    "name": "Get Trump Pegged Again 6",
    "mint": "DqKjKttF2ZmAwSqg6EJ1j2x8nrC8UtVPMAZD2yX1PjHY",
-   "age_s": 20,
+   "age_s": 54,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6618,12 +6636,12 @@
    "symbol": "Cricket",
    "name": "The Cricket",
    "mint": "EfZvR3HB2VkPuWCL3YzVh36Zy48QQhuSBehSxFGkpump",
-   "age_s": 22,
-   "sol_in": -0.06,
-   "buys": 2,
+   "age_s": 56,
+   "sol_in": 0.38,
+   "buys": 5,
    "sells": 4,
-   "rise_pct": -0.4,
-   "mcap_sol": 29.7,
+   "rise_pct": 2.4,
+   "mcap_sol": 30.6,
    "dev_pct": 3.4,
    "big_sell": 0.68,
    "x": "https://x.com/ashthebonder/status/2126615010688278732",
@@ -6636,7 +6654,7 @@
    "symbol": "USD2",
    "name": "USD2",
    "mint": "GxcGkEKvK3F1a1x53K9fqR3KCpuXYpax4tQsCU47rpcy",
-   "age_s": 25,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,7 +6672,7 @@
    "symbol": "Jobless",
    "name": "Jobless",
    "mint": "5oZZvTynk9RXqaLCCeG7xRH9pRnomo4xQfMzKFJHpump",
-   "age_s": 36,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6672,7 +6690,7 @@
    "symbol": "PEPSI",
    "name": "pepsi coin",
    "mint": "EQYsQoAzbJYJwo11364DWryfqZcehkMbuDzNCj4f1v5C",
-   "age_s": 41,
+   "age_s": 75,
    "sol_in": -0.49,
    "buys": 1,
    "sells": 4,
@@ -6690,7 +6708,7 @@
    "symbol": "HUSSX3",
    "name": "Huss Huss Huss",
    "mint": "AoURgkAY51kaztpvdJND3GgmvLJUZewuMCYD6mhztgnr",
-   "age_s": 60,
+   "age_s": 94,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6708,7 +6726,7 @@
    "symbol": "CHERRY",
    "name": "Cherry Blossom",
    "mint": "7oypvbykAfsiBtqFMdPjLufzczpYki3K79ENGNLNW55X",
-   "age_s": 80,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 3,
@@ -6726,12 +6744,12 @@
    "symbol": "HPD",
    "name": "The Pumpfun Bull",
    "mint": "CAFZAkuDpbQZZdiff3MS4CgZjtS2BtFUM8EqAMXwpump",
-   "age_s": 85,
-   "sol_in": 9.96,
-   "buys": 6,
-   "sells": 1,
-   "rise_pct": 77.4,
-   "mcap_sol": 49.6,
+   "age_s": 119,
+   "sol_in": 10.0,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": 77.8,
+   "mcap_sol": 49.7,
    "dev_pct": 0.0,
    "big_sell": 0.15,
    "x": "https://x.com/gunsnsoni/status/2126603027364581707",
@@ -6744,7 +6762,7 @@
    "symbol": "SOL",
    "name": "Sol Plant",
    "mint": "Eyc6KV4viZosGmCHV5hG5p2E5kNs344AAiMQB1iD5bUK",
-   "age_s": 123,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 3,
@@ -6757,60 +6775,6 @@
    "web": "https://tryblossom.xyz/",
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "MoonBoy",
-   "name": "MoonBoy",
-   "mint": "3D592YpWMsMZSUuSE3FP3TMKJJfTkKqS4Wk1bXF47y9v",
-   "age_s": 172,
-   "sol_in": -0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://clonepump.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Reg",
-   "name": "Little Reg",
-   "mint": "9oi92CVcnjRAj6PPTQT3oTdQasZghph1RegCYQ2b7cmg",
-   "age_s": 176,
-   "sol_in": -3.28,
-   "buys": 10,
-   "sells": 19,
-   "rise_pct": -17.9,
-   "mcap_sol": 31.1,
-   "dev_pct": 15.2,
-   "big_sell": 4.72,
-   "x": "https://x.com/MarioPrezldente/status/2126614365491347853",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 6 more coins in 60 min",
-   "why": "serial launcher: 6 more coins in 60 min"
-  },
-  {
-   "symbol": "Centipede",
-   "name": "Centipede",
-   "mint": "HuRaj6JrV2pdCoHgt1qJaPnhUGcG3H1ymfHPduUVvoNr",
-   "age_s": 178,
-   "sol_in": -0.72,
-   "buys": 8,
-   "sells": 12,
-   "rise_pct": -4.6,
-   "mcap_sol": 28.1,
-   "dev_pct": 2.8,
-   "big_sell": 4.5,
-   "x": "https://x.com/launchcentipede",
-   "tg": false,
-   "web": "https://centipede.site/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
