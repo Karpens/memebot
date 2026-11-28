@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:29:45Z",
+ "updated": "2026-11-28T00:30:17Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 214,
   "checked": 49,
   "filtered": 1,
-  "lines": 811,
+  "lines": 813,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -431,6 +431,10 @@
   ],
   [
    1795825740,
+   47.79
+  ],
+  [
+   1795825800,
    47.79
   ]
  ],
@@ -2585,24 +2589,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:44:15Z",
-   "time": "00:44:15",
-   "agent": "SCANNER",
-   "coin": "hac",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 612
-  },
-  {
-   "t": "2026-11-27T23:44:16Z",
-   "time": "00:44:16",
-   "agent": "SCANNER",
-   "coin": "Lucien",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.3 SOL in · +2% since the create · mcap 31 SOL",
-   "n": 613
-  },
-  {
    "t": "2026-11-27T23:44:22Z",
    "time": "00:44:22",
    "agent": "SCANNER",
@@ -4383,6 +4369,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 3.7 SOL in · +25% since the create · mcap 37 SOL",
    "n": 811
+  },
+  {
+   "t": "2026-11-28T00:29:47Z",
+   "time": "01:29:47",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.8 a minute · 0 watched · 14 rejected (snipe not bought: only to size 4, mayhem mode 4, no symbol or name 3)",
+   "n": 812
+  },
+  {
+   "t": "2026-11-28T00:30:02Z",
+   "time": "01:30:02",
+   "agent": "SCANNER",
+   "coin": "SHREKFLY",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 4.891e+04 is not 30 + real SOL 257.4 (off +4.862e+04 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 97 odd readings from 63 coins tonight",
+   "n": 813
   }
  ],
  "nights": [
@@ -4455,32 +4459,32 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 96 (62 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 97 (63 coins, never a price) · live 1s",
   "last_scan_ms": null,
-  "watch_ms": 0,
+  "watch_ms": 1,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 874,
-    "last_event_age_s": 6.5,
+    "events": 876,
+    "last_event_age_s": 15.7,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16082,
-    "last_event_age_s": 0.4,
+    "events": 16164,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 482,
-    "last_event_age_s": 6.3,
+    "events": 483,
+    "last_event_age_s": 15.5,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4495,9 +4499,9 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 4.8,
   "watching": 0,
-  "followed": 6,
-  "odd_readings": 96,
-  "odd_coins": 62
+  "followed": 7,
+  "odd_readings": 97,
+  "odd_coins": 63
  },
  "learner": {
   "samples": 84,
@@ -4544,30 +4548,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6232,
+   "sent": 6266,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6232,
+   "sent": 6266,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SHREKFLY",
+   "name": "Shreklerfly",
+   "mint": "BNrtDKDuUStKpxn1kQQUt9qdoN5g8aMNhKqzM2Cdpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/shreklerfly?s=11",
+   "tg": false,
+   "web": false,
+   "status": "rejected: odd curve reading: virtual SOL 4.891e+04 is not 30 + real SOL 257.4 (off +4.862e+04 SOL)",
+   "why": "odd curve reading: virtual SOL 4.891e+04 is not 30 + real SOL 257.4 (off +4.862e+04 SOL)"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "9DJ25etDr5K8d235GBpPvNFDjuw4JoMyLmgh75YW6YLu",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 39.5,
+   "dev_pct": 17.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "RECUR",
    "name": "Recur",
    "mint": "6DSpw3q1AeVyWYo6fuBJpF7fK1szn9onQy9yoiZQpump",
-   "age_s": 6,
-   "sol_in": 7.56,
-   "buys": 5,
-   "sells": 1,
-   "rise_pct": 54.8,
-   "mcap_sol": 46.2,
+   "age_s": 38,
+   "sol_in": 6.24,
+   "buys": 15,
+   "sells": 10,
+   "rise_pct": 44.3,
+   "mcap_sol": 43.0,
    "dev_pct": 3.4,
-   "big_sell": 0.92,
+   "big_sell": 1.95,
    "x": "https://x.com/RecurFun/status/2126473544984899598",
    "tg": false,
    "web": "https://userecur.fun/",
@@ -4578,7 +4618,7 @@
    "symbol": "TOGI",
    "name": "Togi",
    "mint": "fCdTFbcK19SYXuCbtomd5AQWG3A9fvVzw6hkT59pump",
-   "age_s": 60,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4596,7 +4636,7 @@
    "symbol": "smol MOON",
    "name": "sMOON",
    "mint": "8CyYcVYBkA8qcUzJPdi8snUHgAfusn7ZafTDBbpqpump",
-   "age_s": 72,
+   "age_s": 104,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 0,
@@ -4614,7 +4654,7 @@
    "symbol": "PILLYMAS",
    "name": "Pillymas",
    "mint": "EWQULT9RHMHyALJCA6S427XLkub114GZgjLbgtwsdeZR",
-   "age_s": 105,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4632,7 +4672,7 @@
    "symbol": "TRUMPW",
    "name": "TRUMPWIF",
    "mint": "FPkQGBCapWDxFLigwNpE6wsXXmQNNBiNhdga1jEBpump",
-   "age_s": 110,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4650,7 +4690,7 @@
    "symbol": "GIGACAT",
    "name": "GIGACAT",
    "mint": "EsjmbndAUd6VofFoHMvf3uBhU5zv4ouYseYFK6jUpump",
-   "age_s": 110,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4668,7 +4708,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CqiJS7xB9j7bWiD9vJ6LAHkkkXLAYYoDDqf1Uz4bPCLY",
-   "age_s": 118,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4686,7 +4726,7 @@
    "symbol": "?",
    "name": "",
    "mint": "7VqgjALf6yEJbSYxjqCZTNjAPapGCRWp8EH2zRjacjXT",
-   "age_s": 125,
+   "age_s": 157,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4704,7 +4744,7 @@
    "symbol": "STEADY",
    "name": "Steady Lads",
    "mint": "bxRynUaoprEU93h1jDKxmpmR2ADN8UaeMys6ENyAZyj",
-   "age_s": 131,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4722,7 +4762,7 @@
    "symbol": "BitchCoin",
    "name": "BTC",
    "mint": "H13SJaJyhsaGnV4YqhTjjurv1VZSnfmhyzp2rN65pump",
-   "age_s": 131,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4740,12 +4780,12 @@
    "symbol": "Vicewire",
    "name": "Vicewire",
    "mint": "viCEWiReoWxwmRRfGmWmpP1FFdB8Jm8PzZChVJ9dvg6",
-   "age_s": 137,
-   "sol_in": 21.04,
-   "buys": 40,
-   "sells": 33,
-   "rise_pct": 183.0,
-   "mcap_sol": 83.6,
+   "age_s": 169,
+   "sol_in": 24.47,
+   "buys": 52,
+   "sells": 40,
+   "rise_pct": 221.6,
+   "mcap_sol": 95.0,
    "dev_pct": 2.9,
    "big_sell": 6.55,
    "x": "https://x.com/playvicewire",
@@ -4758,7 +4798,7 @@
    "symbol": "gibbon",
    "name": "Baby Lar Gibbon",
    "mint": "G5bzf5RiejDa9DzgpeDYJ5mLcHA39bCCWsjDTVfZpump",
-   "age_s": 141,
+   "age_s": 173,
    "sol_in": -2.96,
    "buys": 2,
    "sells": 5,
@@ -4771,42 +4811,6 @@
    "web": "https://zooreviews.org/cheyenne-mountain-zoo-lar-gibbon-baby-keoki-holmes-2026/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "1nu",
-   "name": "1nu",
-   "mint": "88eMuLPEYLmTGtXiaAnCZZPSN9MDtSUfoLSGFP7Dpump",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.9,
-   "dev_pct": 15.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "d3nfYUtuTPbfoomVbhrYQCq8tvUrjEZqM9gu9CCR9PY",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.7,
-   "dev_pct": 14.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
