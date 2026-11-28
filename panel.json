@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:59:45Z",
+ "updated": "2026-11-28T05:00:14Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 735,
+  "flagged": 736,
   "checked": 49,
   "filtered": 1,
-  "lines": 1767,
+  "lines": 1770,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -57,11 +57,6 @@
    "t": "2026-11-28T04:57:38Z"
   },
   {
-   "coin": "TREMPS",
-   "why": "snipe",
-   "t": "2026-11-28T04:58:04Z"
-  },
-  {
    "coin": "SWEETIE",
    "why": "snipe",
    "t": "2026-11-28T04:58:16Z"
@@ -70,6 +65,11 @@
    "coin": "ODA",
    "why": "snipe",
    "t": "2026-11-28T04:58:35Z"
+  },
+  {
+   "coin": "TREMPS",
+   "why": "snipe",
+   "t": "2026-11-28T04:59:48Z"
   }
  ],
  "curve": [
@@ -1511,6 +1511,10 @@
   ],
   [
    1795841940,
+   47.79
+  ],
+  [
+   1795842000,
    47.79
   ]
  ],
@@ -3665,33 +3669,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:59:17Z",
-   "time": "04:59:17",
-   "agent": "SCANNER",
-   "coin": "GHOS",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 2.3 SOL in · +15% since the create · mcap 34 SOL",
-   "n": 1568
-  },
-  {
-   "t": "2026-11-28T03:59:19Z",
-   "time": "04:59:19",
-   "agent": "SCANNER",
-   "coin": "JPTR",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1569
-  },
-  {
-   "t": "2026-11-28T03:59:27Z",
-   "time": "04:59:27",
-   "agent": "SCANNER",
-   "coin": "Drill cat",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 1570
-  },
-  {
    "t": "2026-11-28T03:59:38Z",
    "time": "04:59:38",
    "agent": "SCANNER",
@@ -5463,6 +5440,33 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, snipe: first reading s after the 2, serial launcher 1)",
    "n": 1767
+  },
+  {
+   "t": "2026-11-28T04:59:48Z",
+   "time": "05:59:48",
+   "agent": "SCANNER",
+   "coin": "TREMPS",
+   "action": "flag",
+   "text": "snipe · first reading 9.7 s after the create · 6.1 SOL in · +45% since the create · mcap 40 SOL",
+   "n": 1768
+  },
+  {
+   "t": "2026-11-28T05:00:00Z",
+   "time": "06:00:00",
+   "agent": "LOGGER",
+   "coin": null,
+   "action": "tape",
+   "text": "tape 2026-11-28T04 · 1072 lines (489 curve readings) · 0.2 MB · 85 coins",
+   "n": 1769
+  },
+  {
+   "t": "2026-11-28T05:00:10Z",
+   "time": "06:00:10",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 1 watched · 7 rejected (snipe not bought: only to size 5, serial launcher 1, snipe: first reading s after the 1) · closest COMMODITY: no curve reading yet",
+   "n": 1770
   }
  ],
  "nights": [
@@ -5529,7 +5533,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 364 (168 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 35 watched · ws off · odd curve readings 364 (168 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5537,24 +5541,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 103,
-    "last_event_age_s": 3.3,
+    "events": 104,
+    "last_event_age_s": 4.3,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 488,
-    "last_event_age_s": 3.5,
-    "errors": 37,
-    "last_error": "HTTP 429 · paused 10 s"
+    "connected": false,
+    "events": 492,
+    "last_event_age_s": 8.7,
+    "errors": 39,
+    "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 79,
-    "last_event_age_s": 5.9,
+    "events": 80,
+    "last_event_age_s": 4.2,
     "errors": 4,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -5567,9 +5571,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 2.2,
   "watching": 1,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 364,
   "odd_coins": 168
  },
@@ -5618,41 +5622,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1612,
+   "sent": 1643,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1612,
+   "sent": 1643,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "TREMPS",
-   "name": "The Tremps",
-   "mint": "JmSopbMsWNNbwtrbedteZRxQbtRczan36yW3W67pump",
-   "age_s": 6,
+   "symbol": "COMMODITY",
+   "name": "COMMODITY",
+   "mint": "66WtdGBwzHL1kJodjvhWUj1Uo3UycFVRhLWQ96uwpump",
+   "age_s": 4,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
+   "mcap_sol": 54.4,
+   "dev_pct": 30.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/allhaildonkey/status/2126541560883953878",
+   "tg": false,
+   "web": "https://www.commodity.meme/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "TREMPS",
+   "name": "The Tremps",
+   "mint": "JmSopbMsWNNbwtrbedteZRxQbtRczan36yW3W67pump",
+   "age_s": 35,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 6.07,
    "x": "https://x.com/QuantsDev1223/status/2126540798283887064",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "ODA",
    "name": "Soda",
    "mint": "437NArxrug9qXxVUZjGGXaC9ZXYNggfHvW3Pp8iypump",
-   "age_s": 77,
+   "age_s": 106,
    "sol_in": 0.26,
    "buys": 1,
    "sells": 0,
@@ -5670,12 +5692,12 @@
    "symbol": "SWEETIE",
    "name": "SandySoSweetie",
    "mint": "DykHTTYkoFWGJeF3UmdyXbJEZAfq2FQNzPjM42gapump",
-   "age_s": 95,
-   "sol_in": 0.32,
+   "age_s": 124,
+   "sol_in": 0.13,
    "buys": 4,
-   "sells": 3,
-   "rise_pct": 2.1,
-   "mcap_sol": 29.1,
+   "sells": 4,
+   "rise_pct": 0.9,
+   "mcap_sol": 28.8,
    "dev_pct": 1.0,
    "big_sell": 0.66,
    "x": "https://x.com/sandysosweetiee",
@@ -5688,7 +5710,7 @@
    "symbol": "TREMPS",
    "name": "The Tremps",
    "mint": "EWNbb8hSKRB9ox6EcjnxuYfDvwoApJc6JwdF7UpBUGM2",
-   "age_s": 109,
+   "age_s": 138,
    "sol_in": -3.65,
    "buys": 2,
    "sells": 6,
@@ -5706,12 +5728,12 @@
    "symbol": "TCC",
    "name": "Trump Corruption Coin",
    "mint": "7PajAk9eFsZDSZivAT3HuH5qPvRxukJzYdndE4a3xxbe",
-   "age_s": 111,
-   "sol_in": -4.7,
-   "buys": 0,
+   "age_s": 140,
+   "sol_in": -1.85,
+   "buys": 1,
    "sells": 8,
-   "rise_pct": -25.1,
-   "mcap_sol": 28.4,
+   "rise_pct": -10.3,
+   "mcap_sol": 34.0,
    "dev_pct": 15.2,
    "big_sell": 3.0,
    "x": "https://x.com/MarioPrezldente/status/2126541064207307261",
@@ -5724,7 +5746,7 @@
    "symbol": "SUPERMASSIVE",
    "name": "SUPERMASSIVE",
    "mint": "31boSHx85jy8xGh5vjkRgEzeSUr2bCfjzSrovMAp752R",
-   "age_s": 134,
+   "age_s": 163,
    "sol_in": -7.4,
    "buys": 0,
    "sells": 2,
@@ -5742,7 +5764,7 @@
    "symbol": "QRUMP",
    "name": "Quant Trump",
    "mint": "79g2uRTf2AdCS81RqHs634PV34BziwbgYD5QpRpqpump",
-   "age_s": 135,
+   "age_s": 164,
    "sol_in": -0.01,
    "buys": 1,
    "sells": 1,
