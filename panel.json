@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:00:56Z",
+ "updated": "2026-11-28T13:01:29Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1467,
+  "flagged": 1468,
   "checked": 49,
   "filtered": 1,
-  "lines": 3223,
+  "lines": 3224,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Sánchez",
-   "why": "snipe",
-   "t": "2026-11-28T12:57:28Z"
-  },
   {
    "coin": "SQUIRREL",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "SOLVEX",
    "why": "snipe",
    "t": "2026-11-28T12:59:48Z"
+  },
+  {
+   "coin": "YORU",
+   "why": "snipe",
+   "t": "2026-11-28T13:01:10Z"
   }
  ],
  "curve": [
-  [
-   1795834860,
-   47.79
-  ],
   [
    1795834920,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795870800,
    47.79
+  ],
+  [
+   1795870860,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:01:01Z",
-   "time": "13:01:01",
-   "agent": "SCANNER",
-   "coin": "$ZERO",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3024
-  },
-  {
    "t": "2026-11-28T12:01:11Z",
    "time": "13:01:11",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 11.6 a minute · 0 watched · 14 rejected (snipe not bought: only to size 6, serial launcher 4, mayhem mode 4)",
    "n": 3223
+  },
+  {
+   "t": "2026-11-28T13:01:10Z",
+   "time": "14:01:10",
+   "agent": "SCANNER",
+   "coin": "YORU",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 3.0 SOL in · +20% since the create · mcap 35 SOL",
+   "n": 3224
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · odd curve readings 1015 (313 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 1015 (313 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 902,
-    "last_event_age_s": 24.6,
+    "events": 904,
+    "last_event_age_s": 16.6,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 19381,
-    "last_event_age_s": 0.7,
+    "events": 19398,
+    "last_event_age_s": 2.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 479,
-    "last_event_age_s": 24.5,
+    "events": 480,
+    "last_event_age_s": 19.7,
     "errors": 20,
     "last_error": "chainnovelsol.forum: timeout after 2 s"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 11.2,
+  "creates_per_min": 9.0,
   "watching": 0,
-  "followed": 10,
+  "followed": 9,
   "odd_readings": 1015,
   "odd_coins": 313
  },
@@ -6580,30 +6580,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10612,
+   "sent": 10647,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10612,
+   "sent": 10647,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "YORU",
+   "name": "yoru",
+   "mint": "4LBRSkaGWLJfA5ABCSKRswJ9HKqQMPhpu5q2KRt9pump",
+   "age_s": 19,
+   "sol_in": 1.85,
+   "buys": 4,
+   "sells": 3,
+   "rise_pct": 12.4,
+   "mcap_sol": 32.7,
+   "dev_pct": 2.1,
+   "big_sell": 0.89,
+   "x": "https://x.com/ttryoru/status/2126662391522013591?a=VLlg-dPd5QJX-uKl2JA&s=20",
+   "tg": false,
+   "web": "https://yoru.ink/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SeaLions",
    "name": "Save the Sea Lions",
    "mint": "EzMVPUPuaX2w8QWKPwgiQZ78LBRGRc47aoFpmd8SWVGH",
-   "age_s": 24,
-   "sol_in": -1.32,
-   "buys": 3,
-   "sells": 8,
-   "rise_pct": -7.4,
-   "mcap_sol": 35.1,
+   "age_s": 57,
+   "sol_in": -4.64,
+   "buys": 4,
+   "sells": 11,
+   "rise_pct": -24.8,
+   "mcap_sol": 28.5,
    "dev_pct": 15.2,
-   "big_sell": 3.02,
+   "big_sell": 3.22,
    "x": "https://x.com/clashreport/status/2126662403114881308",
    "tg": false,
    "web": false,
@@ -6614,7 +6632,7 @@
    "symbol": "LOME",
    "name": "Mavri Lomet",
    "mint": "3SoxpuzrrWpuemG2EXheWkdDxRLhVV2hh4XpaBsGKxCq",
-   "age_s": 37,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6650,7 @@
    "symbol": "VIP",
    "name": "VIP COIN",
    "mint": "ErPJu5uD9uCJyK9p4K8iBvW9o7yUxf2qvNYufuvmpump",
-   "age_s": 37,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6668,7 @@
    "symbol": "SOLVEX",
    "name": "SolVex",
    "mint": "DBszEdnC1TuN68arFSqHcjPnA9sk2cygC2TxhX9Ppump",
-   "age_s": 69,
+   "age_s": 102,
    "sol_in": -0.76,
    "buys": 2,
    "sells": 9,
@@ -6668,7 +6686,7 @@
    "symbol": "PAILEY",
    "name": "PEBBLE",
    "mint": "BWqTk1wrDoKXjoXZcVbU2q9booty4wEsyT4NfDoXpump",
-   "age_s": 69,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6704,7 @@
    "symbol": "$CHAT",
    "name": "Chat Decides",
    "mint": "5G6yE63g85R8G91oxVF21B8aa1ZGC56iLxZqALQ3pump",
-   "age_s": 74,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,12 +6722,12 @@
    "symbol": "CZ",
    "name": "CrimeZ",
    "mint": "6gSxE9z7Grho32tovis24K1EJEmKqv1Aig1LuzTznURL",
-   "age_s": 88,
-   "sol_in": -4.4,
+   "age_s": 121,
+   "sol_in": -4.55,
    "buys": 3,
-   "sells": 7,
-   "rise_pct": -23.6,
-   "mcap_sol": 29.0,
+   "sells": 8,
+   "rise_pct": -24.3,
+   "mcap_sol": 28.7,
    "dev_pct": 15.2,
    "big_sell": 3.09,
    "x": "https://x.com/MarioPrezldente/status/2126662255223943643",
@@ -6722,7 +6740,7 @@
    "symbol": "BRS",
    "name": "Nora BRS",
    "mint": "6xPqVUaCfwTC2RPkyTUCqgVEbwap7HFSXgkTZ4Lastcf",
-   "age_s": 113,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6740,7 +6758,7 @@
    "symbol": "CZ",
    "name": "Cuffed Zhao",
    "mint": "AJveT6mbW6YgUMhrJDdy8GuvTwCPanxbUH1eRedopump",
-   "age_s": 126,
+   "age_s": 159,
    "sol_in": -2.96,
    "buys": 1,
    "sells": 4,
@@ -6758,12 +6776,12 @@
    "symbol": "CRIME",
    "name": "Crime is legal",
    "mint": "7JCuRdYmBA1ezdB6QXYra8AjjdmozE5njMWEfL3Rpump",
-   "age_s": 127,
-   "sol_in": -9.6,
+   "age_s": 160,
+   "sol_in": -9.68,
    "buys": 46,
-   "sells": 44,
-   "rise_pct": -42.1,
-   "mcap_sol": 29.0,
+   "sells": 45,
+   "rise_pct": -42.4,
+   "mcap_sol": 28.9,
    "dev_pct": 27.2,
    "big_sell": 32.07,
    "x": "https://x.com/LeBlairDev/status/2126661871763607738",
@@ -6776,7 +6794,7 @@
    "symbol": "HANDS",
    "name": "Diamond Hands",
    "mint": "6EuHRx8rKj4N1gWnMQdsAUo59KTgd7dcD182kBuXpump",
-   "age_s": 136,
+   "age_s": 169,
    "sol_in": -9.12,
    "buys": 1,
    "sells": 6,
@@ -6794,7 +6812,7 @@
    "symbol": "HANDS",
    "name": "Diamond Hands",
    "mint": "zaZNQYBaFbzk2KwoxS6rrqXRqP8r74m2CfCPc6Kpump",
-   "age_s": 144,
+   "age_s": 177,
    "sol_in": -1.78,
    "buys": 0,
    "sells": 1,
@@ -6807,42 +6825,6 @@
    "web": "https://x.com/nena100x/status/2126661949698285691",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SIMPLE",
-   "name": "A Simple Runner",
-   "mint": "AWvETzJwi54bu3Mmig5zKLG6bbT5xaTeqW6d7ZDcpump",
-   "age_s": 151,
-   "sol_in": 0.04,
-   "buys": 2,
-   "sells": 7,
-   "rise_pct": 0.3,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.0,
-   "big_sell": 1.61,
-   "x": "https://x.com/aralliancesol/status/2126661431659483407?a=OsGHkoolWjoXLqWXuX4&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Sewerpeople",
-   "name": "Sewerpeople",
-   "mint": "9SFdqGVEujc1DEpdCwUSB2sYH5yHrG1rs7VBSHiYFXfD",
-   "age_s": 169,
-   "sol_in": -4.52,
-   "buys": 1,
-   "sells": 9,
-   "rise_pct": -24.2,
-   "mcap_sol": 28.8,
-   "dev_pct": 15.2,
-   "big_sell": 3.03,
-   "x": "https://x.com/Polymarket/status/2126661791803687339",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 13 more coins in 60 min",
-   "why": "serial launcher: 13 more coins in 60 min"
   }
  ],
  "strategies": [
