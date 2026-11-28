@@ -59,33 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:25:50Z",
-    "time": "00:25:50",
-    "agent": "LEARNER",
-    "coin": "Rizzman",
-    "action": "learn",
-    "text": "learned · np:dev:8+ now avg -8.6% over 283.5",
-    "n": 386
-   },
-   {
-    "t": "2026-11-27T23:25:56Z",
-    "time": "00:25:56",
-    "agent": "EXECUTOR",
-    "coin": "CDARS",
-    "action": "exit",
-    "text": "EXIT CDARS $-0.39 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 387
-   },
-   {
-    "t": "2026-11-27T23:25:56Z",
-    "time": "00:25:56",
-    "agent": "LEARNER",
-    "coin": "CDARS",
-    "action": "learn",
-    "text": "learned · np:dev:8+ now avg -8.6% over 284.5",
-    "n": 388
-   },
-   {
     "t": "2026-11-27T23:26:00Z",
     "time": "00:26:00",
     "agent": "LEARNER",
@@ -5457,6 +5430,33 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 2.754e+05 is not 30 + real SOL 0 (off +2.754e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 194 odd readings from 100 coins tonight",
     "n": 985
+   },
+   {
+    "t": "2026-11-28T01:12:12Z",
+    "time": "02:12:12",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 3.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 5, odd curve reading: virtual SOL i 3, mayhem mode 2)",
+    "n": 986
+   },
+   {
+    "t": "2026-11-28T01:12:20Z",
+    "time": "02:12:20",
+    "agent": "SCANNER",
+    "coin": "CyberWar",
+    "action": "flag",
+    "text": "snipe · first reading 0.4 s after the create · 0.3 SOL in · +2% since the create · mcap 30 SOL",
+    "n": 987
+   },
+   {
+    "t": "2026-11-28T01:12:27Z",
+    "time": "02:12:27",
+    "agent": "SCANNER",
+    "coin": "TEST",
+    "action": "flag",
+    "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+    "n": 988
    }
   ],
   "trades": [
@@ -8102,21 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 298,
+  "flagged": 300,
   "checked": 49,
   "filtered": 1,
-  "lines": 985,
+  "lines": 988,
   "flags": [
-   {
-    "coin": "OOPS",
-    "why": "snipe",
-    "t": "2026-11-28T01:07:02Z"
-   },
-   {
-    "coin": "SESAME",
-    "why": "snipe",
-    "t": "2026-11-28T01:08:09Z"
-   },
    {
     "coin": "GPU",
     "why": "snipe",
@@ -8146,6 +8136,16 @@
     "coin": "Elon Freak",
     "why": "snipe",
     "t": "2026-11-28T01:11:41Z"
+   },
+   {
+    "coin": "CyberWar",
+    "why": "snipe",
+    "t": "2026-11-28T01:12:20Z"
+   },
+   {
+    "coin": "TEST",
+    "why": "snipe",
+    "t": "2026-11-28T01:12:27Z"
    }
   ],
   "curve": [
@@ -8676,13 +8676,17 @@
    [
     1795828260,
     47.79
+   ],
+   [
+    1795828320,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795828272.960634,
+  "np_said": 1795828332.960933,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8867,7 +8871,7 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 194,
+   "readings": 196,
    "coins": 100,
    "followed": 0,
    "mints": [
