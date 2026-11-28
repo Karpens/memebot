@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:18:35Z",
+ "updated": "2026-11-28T03:19:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 539,
+  "flagged": 540,
   "checked": 49,
   "filtered": 1,
-  "lines": 1433,
+  "lines": 1434,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BCAT",
-   "why": "snipe",
-   "t": "2026-11-28T03:13:57Z"
-  },
   {
    "coin": "motion",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "PACKBALL",
    "why": "snipe",
    "t": "2026-11-28T03:18:21Z"
+  },
+  {
+   "coin": "Yotsuba",
+   "why": "snipe",
+   "t": "2026-11-28T03:19:01Z"
   }
  ],
  "curve": [
@@ -1107,6 +1107,10 @@
   ],
   [
    1795835880,
+   47.79
+  ],
+  [
+   1795835940,
    47.79
   ]
  ],
@@ -3264,15 +3268,6 @@
    "t": "2026-11-28T02:19:49Z",
    "time": "03:19:49",
    "agent": "SCANNER",
-   "coin": "rippete",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1234
-  },
-  {
-   "t": "2026-11-28T02:19:49Z",
-   "time": "03:19:49",
-   "agent": "SCANNER",
    "coin": null,
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 1, serial launcher 1)",
@@ -5059,6 +5054,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 0 watched · 10 rejected (snipe not bought: only to size 4, no symbol or name 3, serial launcher 2)",
    "n": 1433
+  },
+  {
+   "t": "2026-11-28T03:19:01Z",
+   "time": "04:19:01",
+   "agent": "SCANNER",
+   "coin": "Yotsuba",
+   "action": "flag",
+   "text": "snipe · first reading 7.3 s after the create · 9.2 SOL in · +68% since the create · mcap 50 SOL",
+   "n": 1434
   }
  ],
  "nights": [
@@ -5139,24 +5143,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1666,
-    "last_event_age_s": 16.8,
+    "events": 1668,
+    "last_event_age_s": 7.4,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35377,
-    "last_event_age_s": 0.2,
+    "events": 35395,
+    "last_event_age_s": 1.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 970,
-    "last_event_age_s": 16.5,
+    "events": 972,
+    "last_event_age_s": 7.0,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5171,7 +5175,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 6,
+  "followed": 8,
   "odd_readings": 336,
   "odd_coins": 153
  },
@@ -5220,30 +5224,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17013,
+   "sent": 17042,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17013,
+   "sent": 17042,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "slut",
+   "name": "slut",
+   "mint": "FthwWXLMY7D9TS6TUN9Ld8wHvsALB3PaBkW9UbBFpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Yotsuba",
+   "name": "404 Girl",
+   "mint": "Ha9X59J4fVtqjuNaqd7b2AhfpQ1tnASfGtLoHu8Xpump",
+   "age_s": 8,
+   "sol_in": 9.2,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 68.2,
+   "mcap_sol": 50.2,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/yotsubarddt",
+   "tg": false,
+   "web": "https://knowyourmeme.com/memes/yotsuba-koiwai-404-girl",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "PACKBALL",
    "name": "PackBall",
    "mint": "GWy9pr15CCFw1vQhJjiafLFYoX4XuuQHLHiUCc25pump",
-   "age_s": 16,
-   "sol_in": 7.89,
+   "age_s": 43,
+   "sol_in": 6.38,
    "buys": 2,
-   "sells": 3,
-   "rise_pct": 58.0,
-   "mcap_sol": 46.2,
+   "sells": 4,
+   "rise_pct": 45.9,
+   "mcap_sol": 42.7,
    "dev_pct": 2.4,
-   "big_sell": 0.26,
+   "big_sell": 1.51,
    "x": "https://x.com/usepackball",
    "tg": false,
    "web": "https://packball.lol",
@@ -5254,7 +5294,7 @@
    "symbol": "TRING",
    "name": "TRYING",
    "mint": "CEwctEP4qXZQHNK7uHcvWaFvZTSZfzJ1JjKnyk5epump",
-   "age_s": 42,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5272,7 +5312,7 @@
    "symbol": "?",
    "name": "",
    "mint": "B5ng1tBheQqwM775CqWW2KfBJJgSmppFimc1yZGQpump",
-   "age_s": 56,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5290,7 +5330,7 @@
    "symbol": "HOOKKE",
    "name": "HookKey",
    "mint": "3UucYwfFjAbkprEbKBGKhM32EcvSuGcqgaV2PTojZNZp",
-   "age_s": 91,
+   "age_s": 118,
    "sol_in": 0.77,
    "buys": 5,
    "sells": 5,
@@ -5308,7 +5348,7 @@
    "symbol": "BLOB",
    "name": "blob",
    "mint": "4jEmx1d29HuDfe6t3zoiVyAov9NNwT1Qgy7T7tdPU4uj",
-   "age_s": 120,
+   "age_s": 147,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5326,7 +5366,7 @@
    "symbol": "MISANTHROPIC",
    "name": "The MisAnthropic Statement",
    "mint": "BBEodVsXcxQEjTrVivJejS6DpDdUsHawpQiqozGmn6vJ",
-   "age_s": 121,
+   "age_s": 148,
    "sol_in": -5.93,
    "buys": 0,
    "sells": 4,
@@ -5344,12 +5384,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "6BdptLc6kfXsPXhnLwhhr6wqLxc2WYN3DuMQkWrdpump",
-   "age_s": 130,
-   "sol_in": 19.17,
-   "buys": 29,
-   "sells": 26,
-   "rise_pct": 147.4,
-   "mcap_sol": 86.0,
+   "age_s": 157,
+   "sol_in": 19.19,
+   "buys": 33,
+   "sells": 28,
+   "rise_pct": 147.6,
+   "mcap_sol": 86.1,
    "dev_pct": 11.1,
    "big_sell": 0.32,
    "x": "https://x.com/nvidianewsroom",
@@ -5362,7 +5402,7 @@
    "symbol": "?",
    "name": "",
    "mint": "ENDJHwoG22fbAx8L2cBUopKHFac1evFzZpQreahWpump",
-   "age_s": 143,
+   "age_s": 170,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5375,24 +5415,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "GTAFORTNIT",
-   "name": "GTA VI VS FORTNITE",
-   "mint": "E8hVMKfMhcxYVmYwTAYSaSt2b7mmesFVAdiHRBRRpump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
