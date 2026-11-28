@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:33:01Z",
+ "updated": "2026-11-28T04:33:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 696,
   "checked": 49,
   "filtered": 1,
-  "lines": 1691,
+  "lines": 1692,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3561,15 +3561,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:36:22Z",
-   "time": "04:36:22",
-   "agent": "SCANNER",
-   "coin": "BEARK",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 1.6 SOL in · +9% since the create · mcap 40 SOL",
-   "n": 1492
-  },
-  {
    "t": "2026-11-28T03:36:34Z",
    "time": "04:36:34",
    "agent": "SCANNER",
@@ -5359,6 +5350,15 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 0 watched · 12 rejected (snipe not bought: last min of th 7, serial launcher 4, no symbol or name 1)",
    "n": 1691
+  },
+  {
+   "t": "2026-11-28T04:33:11Z",
+   "time": "05:33:11",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe not bought: last min of th 4, serial launcher 2, no symbol or name 1)",
+   "n": 1692
   }
  ],
  "nights": [
@@ -5431,7 +5431,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 361 (165 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5439,24 +5439,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 2017,
-    "last_event_age_s": 6.1,
+    "events": 2018,
+    "last_event_age_s": 19.1,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 42681,
-    "last_event_age_s": 0.6,
+    "events": 42731,
+    "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1241,
-    "last_event_age_s": 5.5,
+    "events": 1242,
+    "last_event_age_s": 19.0,
     "errors": 57,
     "last_error": "n.uguu.se: timeout after 2 s"
    }
@@ -5469,9 +5469,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 6,
+  "followed": 7,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5520,28 +5520,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21766,
+   "sent": 21802,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21766,
+   "sent": 21802,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NORMIE",
+   "name": "NORMIE",
+   "mint": "H4RzHWj9DyjsF1AzegJt2DG2xp2h7jNTonGsYaQ2pump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.8,
+   "big_sell": 0.0,
+   "x": "https://x.com/normiethenorman",
+   "tg": false,
+   "web": "https://steemit.com/cryptocurrency/@thrashtagtravis/normie-the-norman-discovers-the-cryptoverse",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "PWHALE",
    "name": "Pocket Whale",
    "mint": "HzczTanKfVtu2oLxKzuxS6UEMPgK39JfxZk7m546pump",
-   "age_s": 6,
-   "sol_in": -0.27,
-   "buys": 0,
+   "age_s": 40,
+   "sol_in": -0.06,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": -1.8,
-   "mcap_sol": 28.5,
+   "rise_pct": -0.4,
+   "mcap_sol": 28.9,
    "dev_pct": 2.0,
    "big_sell": 0.27,
    "x": false,
@@ -5554,7 +5572,7 @@
    "symbol": "HAPPY",
    "name": "HAPPYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
    "mint": "2wg8yTmnKpdeLo3Cd8PQvMVyYaT6dPuASMnySHALpump",
-   "age_s": 38,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5572,7 +5590,7 @@
    "symbol": "MOSAIC",
    "name": "Mosaiccoin",
    "mint": "H56uP3zYCSagKTEc2a6jYCiGsEUVCauApUGhvmYSqs4k",
-   "age_s": 52,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5590,7 +5608,7 @@
    "symbol": "GREEN",
    "name": "GREEN MORNING",
    "mint": "8rM5XmaFJCZtwZBDXkfqbrNQPp3tZcnnK3VkZcDApump",
-   "age_s": 85,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5608,7 +5626,7 @@
    "symbol": "MOSAIC",
    "name": "Mosaic",
    "mint": "5fsWy2SQUDR8vvXNZGTNNroEt6ADrKZzd1iia4byGKuL",
-   "age_s": 85,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5626,7 +5644,7 @@
    "symbol": "BOB",
    "name": "Barely Operational Bear",
    "mint": "9C65pPpWanT7B7Yk25vqAvdL37UFNhdCcnW57rMEpump",
-   "age_s": 88,
+   "age_s": 122,
    "sol_in": -5.04,
    "buys": 3,
    "sells": 3,
@@ -5644,7 +5662,7 @@
    "symbol": "?",
    "name": "",
    "mint": "2vGMcUF9Wf6tDVvweeGMLgUuV62Tq9D8ULwtTbn5pump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5662,7 +5680,7 @@
    "symbol": "PETA",
    "name": "PETA",
    "mint": "7cj2ZD61JHYvJ3Jmtkmo2iJrGLwzuSsZTUjEFKLkpump",
-   "age_s": 111,
+   "age_s": 145,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
