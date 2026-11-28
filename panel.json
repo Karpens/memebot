@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:25:47Z",
+ "updated": "2026-11-28T05:26:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 758,
+  "flagged": 759,
   "checked": 49,
   "filtered": 1,
-  "lines": 1830,
+  "lines": 1831,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "wayback",
-   "why": "snipe",
-   "t": "2026-11-28T05:17:25Z"
-  },
   {
    "coin": "TIRED",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Blossom",
    "why": "snipe",
    "t": "2026-11-28T05:23:57Z"
+  },
+  {
+   "coin": "SPIKE",
+   "why": "snipe",
+   "t": "2026-11-28T05:25:47Z"
   }
  ],
  "curve": [
@@ -1615,6 +1615,10 @@
   ],
   [
    1795843500,
+   47.79
+  ],
+  [
+   1795843560,
    47.79
   ]
  ],
@@ -3769,15 +3773,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:15:04Z",
-   "time": "05:15:04",
-   "agent": "SCANNER",
-   "coin": "just buy",
-   "action": "flag",
-   "text": "snipe · first reading 1.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1631
-  },
-  {
    "t": "2026-11-28T04:15:28Z",
    "time": "05:15:28",
    "agent": "SCANNER",
@@ -5567,6 +5562,15 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 1 watched · 6 rejected (snipe: first reading s after the 4, serial launcher 1, snipe not bought: only to size 1) · closest 16GIGDREAM: no curve reading yet",
    "n": 1830
+  },
+  {
+   "t": "2026-11-28T05:25:47Z",
+   "time": "06:25:47",
+   "agent": "SCANNER",
+   "coin": "SPIKE",
+   "action": "flag",
+   "text": "snipe · first reading 4.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1831
   }
  ],
  "nights": [
@@ -5633,7 +5637,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 379 (177 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 379 (177 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5642,15 +5646,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 200,
-    "last_event_age_s": 4.1,
+    "last_event_age_s": 32.1,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1310,
-    "last_event_age_s": 1.6,
+    "events": 1313,
+    "last_event_age_s": 14.4,
     "errors": 121,
     "last_error": "timeout after 5 s"
    },
@@ -5658,7 +5662,7 @@
     "name": "metadata",
     "connected": false,
     "events": 159,
-    "last_event_age_s": 0.3,
+    "last_event_age_s": 28.3,
     "errors": 8,
     "last_error": "ar-io.dev: too slow (over 2 s)"
    }
@@ -5671,9 +5675,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
-  "watching": 1,
-  "followed": 8,
+  "creates_per_min": 2.4,
+  "watching": 0,
+  "followed": 7,
   "odd_readings": 379,
   "odd_coins": 177
  },
@@ -5722,13 +5726,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3275,
+   "sent": 3304,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3275,
+   "sent": 3304,
    "errors": 0,
    "last_error": null
   }
@@ -5738,7 +5742,7 @@
    "symbol": "SPIKE",
    "name": "King Spiky",
    "mint": "DUF6D9P9g11UENzavMW83K7jVwtfijEsuPxF4UDZKMsx",
-   "age_s": 4,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5749,14 +5753,14 @@
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "16GIGDREAM",
    "name": "Sixteen Gig Dream",
    "mint": "F3fi1CWEcoEQFjfuzwMAvoL4oQRdrSLiwm8N9H4spump",
-   "age_s": 31,
+   "age_s": 59,
    "sol_in": 0.02,
    "buys": 1,
    "sells": 0,
@@ -5774,7 +5778,7 @@
    "symbol": "santa6",
    "name": "santa6",
    "mint": "CvrGVhzvzixMGp5JFpaDLy4QZpZKks83dosx9w1ppump",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5792,14 +5796,14 @@
    "symbol": "SUCCESS",
    "name": "Successful Asian",
    "mint": "Ei7mcP6CrX4H4TwSjrvHKiyYkS98iPx5bFhAkcFtpump",
-   "age_s": 93,
-   "sol_in": 1.07,
+   "age_s": 121,
+   "sol_in": 0.72,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 7.2,
-   "mcap_sol": 30.5,
+   "sells": 1,
+   "rise_pct": 4.8,
+   "mcap_sol": 29.8,
    "dev_pct": 0.9,
-   "big_sell": 0.0,
+   "big_sell": 0.35,
    "x": false,
    "tg": false,
    "web": false,
@@ -5810,7 +5814,7 @@
    "symbol": "Blossom",
    "name": "Blossom",
    "mint": "267ywwCVEXQLdaZ2dLBBEHAJCXYs5BtP3TRCkZNapump",
-   "age_s": 117,
+   "age_s": 145,
    "sol_in": -0.6,
    "buys": 3,
    "sells": 1,
@@ -5828,7 +5832,7 @@
    "symbol": "BOOGIE",
    "name": "unly nigga",
    "mint": "3odeVCKzSBPDwHdBKxjgEtAjSsoSAj2nuLRjC4Zbpump",
-   "age_s": 149,
+   "age_s": 177,
    "sol_in": -1.71,
    "buys": 0,
    "sells": 1,
@@ -5846,7 +5850,7 @@
    "symbol": "DON",
    "name": "Donald Pump",
    "mint": "qyg2iHXWReJGCgEVkzG6VcCXuauXeNFoXrcm3r4pump",
-   "age_s": 150,
+   "age_s": 178,
    "sol_in": 0.24,
    "buys": 2,
    "sells": 3,
@@ -5859,24 +5863,6 @@
    "web": "https://www.thedonaldgrump.fun/",
    "status": "rejected: snipe: first reading 28.5 s after the create (max 10 s)",
    "why": "snipe: first reading 28.5 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "WLFI",
-   "name": "We Lack Funds Inu",
-   "mint": "8gd5c8BKbEWBSNMuyDRnwn4rZstUVE5CgEgrWJ48pump",
-   "age_s": 169,
-   "sol_in": -0.99,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.99,
-   "x": "https://x.com/Route151Pf/status/2126547371601375381",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
