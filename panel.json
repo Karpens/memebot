@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:23:53Z",
+ "updated": "2026-11-28T02:24:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 423,
+  "flagged": 424,
   "checked": 49,
   "filtered": 1,
-  "lines": 1245,
+  "lines": 1246,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GTAcoin",
-   "why": "snipe",
-   "t": "2026-11-28T02:16:09Z"
-  },
   {
    "coin": "TAB",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Hypeball",
    "why": "snipe",
    "t": "2026-11-28T02:23:47Z"
+  },
+  {
+   "coin": "GTAcoin",
+   "why": "snipe",
+   "t": "2026-11-28T02:24:15Z"
   }
  ],
  "curve": [
@@ -887,6 +887,10 @@
   ],
   [
    1795832580,
+   47.79
+  ],
+  [
+   1795832640,
    47.79
   ]
  ],
@@ -3041,15 +3045,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:26:13Z",
-   "time": "02:26:13",
-   "agent": "SCANNER",
-   "coin": "Mas",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 5.7 SOL in · +36% since the create · mcap 51 SOL",
-   "n": 1046
-  },
-  {
    "t": "2026-11-28T01:26:21Z",
    "time": "02:26:21",
    "agent": "SCANNER",
@@ -4839,6 +4834,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 9 rejected (serial launcher 5, snipe not bought: only to size 3, mayhem mode 1)",
    "n": 1245
+  },
+  {
+   "t": "2026-11-28T02:24:15Z",
+   "time": "03:24:15",
+   "agent": "SCANNER",
+   "coin": "GTAcoin",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1246
   }
  ],
  "nights": [
@@ -4919,24 +4923,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1457,
-    "last_event_age_s": 6.7,
+    "events": 1458,
+    "last_event_age_s": 5.4,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 29448,
-    "last_event_age_s": 0.3,
+    "events": 29549,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 826,
-    "last_event_age_s": 6.6,
+    "events": 827,
+    "last_event_age_s": 5.3,
     "errors": 39,
     "last_error": "no uri"
    }
@@ -4949,9 +4953,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 8,
+  "followed": 9,
   "odd_readings": 330,
   "odd_coins": 147
  },
@@ -5000,28 +5004,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13521,
+   "sent": 13549,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13521,
+   "sent": 13549,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GTAcoin",
+   "name": "GTA VII",
+   "mint": "Mx7Jf3az8He1BaJEyxScSsa4LXdfBoFAfRQcybgpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Hypeball",
    "name": "Hypeball",
    "mint": "GABaBRfTncvPFi91MyB6737pHqrDTS1GrXpTTptmpump",
-   "age_s": 6,
-   "sol_in": 21.44,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": 192.9,
-   "mcap_sol": 82.7,
+   "age_s": 33,
+   "sol_in": 27.07,
+   "buys": 14,
+   "sells": 12,
+   "rise_pct": 260.2,
+   "mcap_sol": 101.7,
    "dev_pct": 0.5,
    "big_sell": 3.62,
    "x": "https://x.com/tryhypeball",
@@ -5034,7 +5056,7 @@
    "symbol": "$KCARTEL",
    "name": "Kitty Cartel",
    "mint": "Fn5hGoAKBppBsW569NMkNSRuK3tmXZWaNeRoXg2Tpump",
-   "age_s": 9,
+   "age_s": 36,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5052,7 +5074,7 @@
    "symbol": "AXOS",
    "name": "Axos",
    "mint": "GTcR9mQRD7WEYgXyGgP83iETUTzJfx2dMCCWE983oiec",
-   "age_s": 12,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5070,7 +5092,7 @@
    "symbol": "Wigger",
    "name": "HADWIGGER",
    "mint": "C8NqsCB4eSm8uCvcBJWN5VToFncxGipR1cN8YbiGNPAr",
-   "age_s": 25,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5088,14 +5110,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CphBC9BLTE1GA7eYZBxakMH3v4aoFY5phvdxmD1Npump",
-   "age_s": 35,
-   "sol_in": 17.96,
-   "buys": 9,
-   "sells": 3,
-   "rise_pct": 136.2,
-   "mcap_sol": 82.1,
+   "age_s": 62,
+   "sol_in": 20.65,
+   "buys": 17,
+   "sells": 8,
+   "rise_pct": 161.5,
+   "mcap_sol": 90.9,
    "dev_pct": 11.1,
-   "big_sell": 0.31,
+   "big_sell": 0.34,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -5106,7 +5128,7 @@
    "symbol": "STEADY",
    "name": "Steady",
    "mint": "DXFZH1unVqKvGGQ84u91UABFYx6o7hvxwpkiouNKY7Sr",
-   "age_s": 36,
+   "age_s": 63,
    "sol_in": 0.1,
    "buys": 1,
    "sells": 0,
@@ -5124,12 +5146,12 @@
    "symbol": "ハクくん",
    "name": "The Resilient Chihuahua",
    "mint": "GBYWZPWYucfaRonxsGmWMzfAiKYt1Er9QCSjeKBJpump",
-   "age_s": 75,
-   "sol_in": 14.47,
-   "buys": 39,
-   "sells": 24,
-   "rise_pct": 106.3,
-   "mcap_sol": 70.5,
+   "age_s": 102,
+   "sol_in": 23.63,
+   "buys": 51,
+   "sells": 32,
+   "rise_pct": 193.3,
+   "mcap_sol": 100.2,
    "dev_pct": 10.2,
    "big_sell": 2.38,
    "x": "https://x.com/SpringDeploys/status/2126501963386806469?a=yuOrPjJnuvA_F8lugXs&s=20",
@@ -5142,7 +5164,7 @@
    "symbol": "HADWIGER",
    "name": "The Hadwiger Conjecture",
    "mint": "AYznokx74VccsYwThfhXDaCABjjqXeKcxSRBiWviWkQx",
-   "age_s": 118,
+   "age_s": 145,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5160,7 +5182,7 @@
    "symbol": "DDUST1N",
    "name": "Ddust1n",
    "mint": "1TvfJUwBkmNpTgdgmrbpK2HzZigoaaiowYWEY8CiLpV",
-   "age_s": 126,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
