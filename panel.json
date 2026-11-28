@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:34:20Z",
+ "updated": "2026-11-28T12:34:48Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1414,
+  "flagged": 1415,
   "checked": 49,
   "filtered": 1,
-  "lines": 3133,
+  "lines": 3135,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "LUPTRIX",
-   "why": "snipe",
-   "t": "2026-11-28T12:29:01Z"
-  },
   {
    "coin": "SAYLOR",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "guy",
    "why": "snipe",
    "t": "2026-11-28T12:34:02Z"
+  },
+  {
+   "coin": "FlipFlop",
+   "why": "snipe",
+   "t": "2026-11-28T12:34:31Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:32:07Z",
-   "time": "12:32:07",
-   "agent": "SCANNER",
-   "coin": "DODO",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 2934
-  },
-  {
-   "t": "2026-11-28T11:32:37Z",
-   "time": "12:32:37",
-   "agent": "SCANNER",
-   "coin": "WWW",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 1.0 SOL in · +6% since the create · mcap 32 SOL",
-   "n": 2935
-  },
-  {
    "t": "2026-11-28T11:32:52Z",
    "time": "12:32:52",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 1.3 SOL in · +7% since the create · mcap 41 SOL",
    "n": 3133
+  },
+  {
+   "t": "2026-11-28T12:34:30Z",
+   "time": "13:34:30",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 1 watched · 7 rejected (snipe not bought: only to size 3, mayhem mode 2, serial launcher 1) · closest FlipFlop: no curve reading yet",
+   "n": 3134
+  },
+  {
+   "t": "2026-11-28T12:34:31Z",
+   "time": "13:34:31",
+   "agent": "SCANNER",
+   "coin": "FlipFlop",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.5 SOL in · +4% since the create · mcap 29 SOL",
+   "n": 3135
   }
  ],
  "nights": [
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 623,
-    "last_event_age_s": 19.6,
+    "events": 625,
+    "last_event_age_s": 6.8,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16046,
+    "events": 16161,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 404,
-    "last_event_age_s": 19.4,
+    "events": 406,
+    "last_event_age_s": 6.6,
     "errors": 15,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 6,
   "odd_readings": 1010,
   "odd_coins": 309
  },
@@ -6580,30 +6580,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8914,
+   "sent": 8943,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8914,
+   "sent": 8943,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "EUGENE",
+   "name": "Eugene Lazowski and Stanislaw Ma",
+   "mint": "J1PesTnoP87gUhM71cTTtMu8gpBxQhQfHA3Wg8papump",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/Rainmaker1973/status/2126655948139753795",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "FlipFlop",
+   "name": "Flip Flop Cat",
+   "mint": "7TmMF1xmEtwKGCmKRxTvU9udpabkrhtzPRbP1aW7pump",
+   "age_s": 18,
+   "sol_in": 0.54,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 3.6,
+   "mcap_sol": 29.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/BobOngTrader/status/2126649186498335226",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "guy",
    "name": "just a guy",
    "mint": "Aoxbdo4iCqNWAwCMLsYFwctxEbwYf668Wn34wzgDpump",
-   "age_s": 19,
-   "sol_in": 2.2,
-   "buys": 6,
-   "sells": 10,
-   "rise_pct": 13.0,
-   "mcap_sol": 43.0,
+   "age_s": 47,
+   "sol_in": 10.88,
+   "buys": 20,
+   "sells": 17,
+   "rise_pct": 71.8,
+   "mcap_sol": 65.4,
    "dev_pct": 15.3,
-   "big_sell": 1.77,
+   "big_sell": 2.24,
    "x": "https://x.com/justaguysol0/status/2126655804690300930",
    "tg": false,
    "web": "https://thenormie.org/",
@@ -6614,7 +6650,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CmEFCgYTgjAcLQpStWGx7387G1W5ZraKqfoaxiKWtKW9",
-   "age_s": 47,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "J2G6RS6ZW8uPxKxeZnvFNQMKVJRwCxP8PtpXhhJHpump",
-   "age_s": 62,
+   "age_s": 90,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,12 +6686,12 @@
    "symbol": "Stefan",
    "name": "Holland Hitler",
    "mint": "DUQ3WYfYvQfnapthJvZS3Xy2sdu86GRJRc2ozWdXrqAP",
-   "age_s": 92,
-   "sol_in": 3.18,
-   "buys": 17,
-   "sells": 25,
-   "rise_pct": 19.6,
-   "mcap_sol": 42.8,
+   "age_s": 120,
+   "sol_in": 7.33,
+   "buys": 21,
+   "sells": 39,
+   "rise_pct": 47.9,
+   "mcap_sol": 52.9,
    "dev_pct": 12.5,
    "big_sell": 5.21,
    "x": false,
@@ -6668,7 +6704,7 @@
    "symbol": "NANCY",
    "name": "Nancy the Bedlington Terrier",
    "mint": "8m2sBgcpY4DwFm2gSjBNmmD4NebKGWqYPYQ7CTNJpump",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -6686,7 +6722,7 @@
    "symbol": "SLOPPY",
    "name": "Justice For Sloppy",
    "mint": "Ctr5GicNUXiHSRz1yrrni88Bvxbs3MK2ZaKsmwDApump",
-   "age_s": 138,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6699,24 +6735,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MoonBoy",
-   "name": "MoonBoy",
-   "mint": "FcnwTqvLKFWnbb2MUTw3nzFkyNzgupo5WxLHE4bGpump",
-   "age_s": 154,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
