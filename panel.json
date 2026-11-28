@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:55:00Z",
+ "updated": "2026-11-28T08:55:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1006,
   "checked": 49,
   "filtered": 1,
-  "lines": 2395,
+  "lines": 2396,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -4609,15 +4609,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:56:09Z",
-   "time": "08:56:09",
-   "agent": "SIZER",
-   "coin": "SB",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2196
-  },
-  {
    "t": "2026-11-28T07:56:18Z",
    "time": "08:56:18",
    "agent": "SCANNER",
@@ -6407,6 +6398,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2395
+  },
+  {
+   "t": "2026-11-28T08:55:25Z",
+   "time": "09:55:25",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 10 rejected (snipe not bought: only to size 4, mayhem mode 3, serial launcher 2)",
+   "n": 2396
   }
  ],
  "nights": [
@@ -6479,7 +6479,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 648 (246 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 648 (246 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6487,15 +6487,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 981,
-    "last_event_age_s": 17.4,
+    "events": 984,
+    "last_event_age_s": 19.3,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17209,
+    "events": 17277,
     "last_event_age_s": 0.8,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6503,8 +6503,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 709,
-    "last_event_age_s": 17.3,
+    "events": 711,
+    "last_event_age_s": 18.5,
     "errors": 28,
     "last_error": "usepaidball.fun: too slow (over 2 s)"
    }
@@ -6517,7 +6517,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.8,
   "watching": 0,
   "followed": 4,
   "odd_readings": 648,
@@ -6568,23 +6568,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16636,
+   "sent": 16673,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16636,
+   "sent": 16673,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SINGLE",
+   "name": "Single",
+   "mint": "Epr2nkk98bNqDqW4DKm4AcSw594ViJqWQy1pmqCDJ7NZ",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://bsky.app/profile/carnage4life.bsky.social/post/3n3d26yskok2l",
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "BFO",
+   "name": "BLACK FRIDAY OVER",
+   "mint": "Guuf6pnjZJSVEtrJc28gF6Pex9LhKaDSDX84eCGFpump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "IRON",
+   "name": "IRON Humanoid",
+   "mint": "7KaaFWmPDvB5mPTAM3p52WciqUrMPyLqyUUKqrNhpump",
+   "age_s": 32,
+   "sol_in": 13.7,
+   "buys": 14,
+   "sells": 13,
+   "rise_pct": 100.4,
+   "mcap_sol": 67.6,
+   "dev_pct": 9.6,
+   "big_sell": 0.95,
+   "x": "https://x.com/Zeeko__Dev/status/2126600725002072517",
+   "tg": false,
+   "web": "https://x.com/i/status/2126552920237977684",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "LEVER",
    "name": "Lever",
    "mint": "BsUaBJANdcz8AQW3eL8w1xqprtJt8VK8HuB6qXPZFZ21",
-   "age_s": 17,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6602,7 +6656,7 @@
    "symbol": "Huss Huss",
    "name": "Huss Huss",
    "mint": "3yqrDt1JrA9tJfkHRpst5Fy5u9hzRZ1JkskJBjGgpump",
-   "age_s": 40,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6620,7 +6674,7 @@
    "symbol": "proj 100k",
    "name": "rezigger",
    "mint": "mPnydYRGS64Du6VEH9dVAd57c7cjTcXqAbXWenTpump",
-   "age_s": 46,
+   "age_s": 81,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6638,7 +6692,7 @@
    "symbol": "?",
    "name": "",
    "mint": "1NJMqVM4PadjuzYmeB7zV7q7DV8oB3ExaQCd9x6KsLz",
-   "age_s": 80,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6656,10 +6710,10 @@
    "symbol": "BETONBLAK",
    "name": "Sneaky BetOnBlack",
    "mint": "6TfBdWsis8JMdWpeGC77ULY73L3c8X9VWMxvDVKFpxka",
-   "age_s": 138,
+   "age_s": 173,
    "sol_in": 0.08,
    "buys": 14,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": 0.5,
    "mcap_sol": 28.1,
    "dev_pct": 0.0,
@@ -6669,60 +6723,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Heinu",
-   "name": "Hien Inu",
-   "mint": "FiLXE9nENQEHh79y5btjff4TfR9dWJZdtzuKEHA1pump",
-   "age_s": 147,
-   "sol_in": -3.4,
-   "buys": 23,
-   "sells": 45,
-   "rise_pct": -19.0,
-   "mcap_sol": 29.0,
-   "dev_pct": 12.5,
-   "big_sell": 3.35,
-   "x": "https://x.com/herrdevs/status/2126600089682534527?a=aEnVcB6YCfMYZi-NOpQ&s=20",
-   "tg": false,
-   "web": "https://www.twitch.tv/hien",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "DRILLER",
-   "name": "DRILLER",
-   "mint": "BzfT5Wysyafj1edXv9Xza3qG3z68wxK8qWWMC4abyWb4",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 1.78,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "6BfqDEPHW2DaYhqjsG1FDaHPHa2BLkqvgVCdsdcspump",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
