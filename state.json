@@ -59,33 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:25:33Z",
-    "time": "00:25:33",
-    "agent": "NEWS",
-    "coin": "Rizzman",
-    "action": "plan",
-    "text": "hold plan · 0/10 (no news) · scalp: +10",
-    "n": 377
-   },
-   {
-    "t": "2026-11-27T23:25:34Z",
-    "time": "00:25:34",
-    "agent": "LEARNER",
-    "coin": "BFKITTY",
-    "action": "shadow",
-    "text": "SHADOW BFKITTY · not bought (night at -16%: 5 open and one more order could take it past -30% in one dump wave) · followed as if bought: $5.03 at 0.0000020468 (curve maths, every cost) · same exits, outside the book",
-    "n": 378
-   },
-   {
-    "t": "2026-11-27T23:25:34Z",
-    "time": "00:25:34",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "5 losses in a row · 2 min pause",
-    "n": 379
-   },
-   {
     "t": "2026-11-27T23:25:34Z",
     "time": "00:25:34",
     "agent": "EXECUTOR",
@@ -5457,6 +5430,33 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 1.185e+05 is not 30 + real SOL 0 (off +1.185e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 188 odd readings from 97 coins tonight",
     "n": 976
+   },
+   {
+    "t": "2026-11-28T01:10:00Z",
+    "time": "02:10:00",
+    "agent": "SCANNER",
+    "coin": "TEST",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 2.777e+05 is not 30 + real SOL 0 (off +2.776e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 190 odd readings from 98 coins tonight",
+    "n": 977
+   },
+   {
+    "t": "2026-11-28T01:10:11Z",
+    "time": "02:10:11",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.6 a minute · 0 watched · 11 rejected (serial launcher 3, snipe not bought: only to size 3, odd curve reading: virtual SOL i 3)",
+    "n": 978
+   },
+   {
+    "t": "2026-11-28T01:10:14Z",
+    "time": "02:10:14",
+    "agent": "SCANNER",
+    "coin": "PILLXBT",
+    "action": "flag",
+    "text": "snipe · first reading 0.7 s after the create · 6.0 SOL in · +42% since the create · mcap 44 SOL",
+    "n": 979
    }
   ],
   "trades": [
@@ -8102,16 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 294,
+  "flagged": 295,
   "checked": 49,
   "filtered": 1,
-  "lines": 976,
+  "lines": 979,
   "flags": [
-   {
-    "coin": "GHRSGSH",
-    "why": "snipe",
-    "t": "2026-11-28T01:04:00Z"
-   },
    {
     "coin": "DELTA",
     "why": "snipe",
@@ -8146,6 +8141,11 @@
     "coin": "bizcat",
     "why": "snipe",
     "t": "2026-11-28T01:09:18Z"
+   },
+   {
+    "coin": "PILLXBT",
+    "why": "snipe",
+    "t": "2026-11-28T01:10:14Z"
    }
   ],
   "curve": [
@@ -8668,13 +8668,17 @@
    [
     1795828140,
     47.79
+   ],
+   [
+    1795828200,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795828151.960669,
+  "np_said": 1795828211.96067,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8859,8 +8863,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 189,
-   "coins": 97,
+   "readings": 191,
+   "coins": 98,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -8959,7 +8963,8 @@
     "Ge4fLBDFv2wTyYsNAWebJmRWNELh9MFxoLoYm6DRJRtu",
     "DFUpEDgCgajFaSCFrnLWckmj4dTcbcf94NFtV2hUL438",
     "BxR4qoiM19Myjgcd456R1aquhhpp8zD2ZTo2wuLhSZtz",
-    "CgMtv4NDJczfUJbuCoy8Np2vxpuKMSFZNTdyEujLcmZa"
+    "CgMtv4NDJczfUJbuCoy8Np2vxpuKMSFZNTdyEujLcmZa",
+    "DtcCnseMTEpEqqC1BoSfaXk9CCR86mAoefYy88EXdCer"
    ]
   },
   "risk_said": {
