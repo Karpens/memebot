@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:02:32Z",
+ "updated": "2026-11-28T10:03:05Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1135,
+  "flagged": 1136,
   "checked": 49,
   "filtered": 1,
-  "lines": 2625,
+  "lines": 2627,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "LEAKIZEN",
-   "why": "snipe",
-   "t": "2026-11-28T09:59:49Z"
-  },
   {
    "coin": "JAPAN",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "RUGG",
    "why": "snipe",
    "t": "2026-11-28T10:02:26Z"
+  },
+  {
+   "coin": "COCK",
+   "why": "snipe",
+   "t": "2026-11-28T10:03:02Z"
   }
  ],
  "curve": [
-  [
-   1795824180,
-   47.79
-  ],
   [
    1795824240,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795860120,
    47.79
+  ],
+  [
+   1795860180,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:03:30Z",
-   "time": "10:03:30",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 1, odd curve reading: virtual SOL i 1)",
-   "n": 2426
-  },
-  {
-   "t": "2026-11-28T09:03:47Z",
-   "time": "10:03:47",
-   "agent": "SCANNER",
-   "coin": "dug",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 5.7 SOL in · +36% since the create · mcap 50 SOL",
-   "n": 2427
-  },
-  {
    "t": "2026-11-28T09:04:23Z",
    "time": "10:04:23",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 2.2 s after the create · 0.6 SOL in · +4% since the create · mcap 31 SOL",
    "n": 2625
+  },
+  {
+   "t": "2026-11-28T10:03:02Z",
+   "time": "11:03:02",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.6 a minute · 0 watched · 13 rejected (snipe not bought: only to size 7, serial launcher 4, mayhem mode 2)",
+   "n": 2626
+  },
+  {
+   "t": "2026-11-28T10:03:02Z",
+   "time": "11:03:02",
+   "agent": "SCANNER",
+   "coin": "COCK",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2627
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 880 (265 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 880 (265 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1252,
-    "last_event_age_s": 8.2,
+    "events": 1254,
+    "last_event_age_s": 2.7,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26057,
-    "last_event_age_s": 0.7,
+    "events": 26129,
+    "last_event_age_s": 0.6,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 898,
-    "last_event_age_s": 6.1,
+    "events": 900,
+    "last_event_age_s": 2.2,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,7 +6533,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.8,
   "watching": 0,
   "followed": 11,
   "odd_readings": 880,
@@ -6584,27 +6584,63 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20947,
+   "sent": 20983,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20947,
+   "sent": 20983,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "COCK",
+   "name": "COCK",
+   "mint": "6Zwcct6NvbR8XSAYm8G2Wu6aEk6sr4tqVTwJX5Drpump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Mojave",
+   "name": "Mojave The Tortoise",
+   "mint": "2p3aAqmAyjw15sJeyjsxZwr2kHdztKgGRybdMBk3cskC",
+   "age_s": 20,
+   "sol_in": 4.16,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": 26.8,
+   "mcap_sol": 42.8,
+   "dev_pct": 9.6,
+   "big_sell": 1.6,
+   "x": "https://x.com/arlenellaban/status/2126617777611903029",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "RUGG",
    "name": "RUG PULL",
    "mint": "Emmkr6pBihgz5Jne6Te6XgKzkJZcmqUeSiPstcs7pump",
-   "age_s": 8,
-   "sol_in": 0.58,
-   "buys": 1,
+   "age_s": 41,
+   "sol_in": 0.59,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 3.8,
+   "rise_pct": 3.9,
    "mcap_sol": 30.8,
    "dev_pct": 3.1,
    "big_sell": 0.0,
@@ -6618,7 +6654,7 @@
    "symbol": "SOL",
    "name": "BITCOINU",
    "mint": "83Ate2oZeG5Wzz4TLtp3TadGs913FjB9uK1XJpKDpump",
-   "age_s": 24,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,7 +6672,7 @@
    "symbol": "GENNY",
    "name": "Genny",
    "mint": "Cj7BnsPQnabBbdAJjgrkR7kBzZ5ydpeGLNkXkWhrTZmk",
-   "age_s": 31,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,14 +6690,14 @@
    "symbol": "$GHOST",
    "name": "GHOST",
    "mint": "3nQ3pDEjbHmeJyRTBYqUbwLGntAGK4UJ2Yq11AEEpump",
-   "age_s": 32,
-   "sol_in": 0.02,
-   "buys": 1,
-   "sells": 0,
+   "age_s": 65,
+   "sol_in": 0.01,
+   "buys": 2,
+   "sells": 3,
    "rise_pct": 0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -6672,14 +6708,14 @@
    "symbol": "TRUMP",
    "name": "TakingRetailUsersMoneyPersonally",
    "mint": "6xCRVvzMsqVTuScuwj7be2czzkccA82rsZ1pmJ44pump",
-   "age_s": 50,
-   "sol_in": 7.27,
-   "buys": 6,
-   "sells": 9,
-   "rise_pct": 53.0,
-   "mcap_sol": 44.8,
+   "age_s": 83,
+   "sol_in": 6.44,
+   "buys": 8,
+   "sells": 10,
+   "rise_pct": 46.3,
+   "mcap_sol": 42.8,
    "dev_pct": 2.4,
-   "big_sell": 0.94,
+   "big_sell": 1.01,
    "x": "https://x.com/realDonaldTrump",
    "tg": false,
    "web": false,
@@ -6690,7 +6726,7 @@
    "symbol": "KILL WEST",
    "name": "Stone ratwizard",
    "mint": "6Q6wJx5XNLjSAbXszqKTtCittfJx6Eds2FPTnxvNpump",
-   "age_s": 92,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -6708,7 +6744,7 @@
    "symbol": "TURKEYS",
    "name": "Turkey Gang",
    "mint": "13ftSLgxTMZd51YX3PGUt6byjafY3wut3fK1Vvfrpump",
-   "age_s": 108,
+   "age_s": 141,
    "sol_in": -0.99,
    "buys": 0,
    "sells": 1,
@@ -6726,7 +6762,7 @@
    "symbol": "cheng",
    "name": "they burnt 10% wtf",
    "mint": "CkZE6nqFhQYh8CNZ33vXCqr6oCDUd35g1HZratt5pump",
-   "age_s": 115,
+   "age_s": 148,
    "sol_in": -0.1,
    "buys": 1,
    "sells": 4,
@@ -6744,14 +6780,14 @@
    "symbol": "STRIKE",
    "name": "STRIKE",
    "mint": "ERzr3iYnRXgYKct934kDSdcFquxmEJ6eZe9X3qbepump",
-   "age_s": 126,
-   "sol_in": 15.08,
-   "buys": 38,
-   "sells": 24,
-   "rise_pct": 109.3,
-   "mcap_sol": 74.1,
+   "age_s": 159,
+   "sol_in": 9.71,
+   "buys": 46,
+   "sells": 35,
+   "rise_pct": 65.8,
+   "mcap_sol": 58.7,
    "dev_pct": 11.9,
-   "big_sell": 2.21,
+   "big_sell": 4.88,
    "x": "https://x.com/ElevenRiseSOL",
    "tg": "https://t.me/elevenrisesol",
    "web": "https://11rise.fun/",
@@ -6762,7 +6798,7 @@
    "symbol": "FIH",
    "name": "Fihh",
    "mint": "B7FCotBkkcf6ZK3iFeiaprnfHssLY8cZmTesLUuvpump",
-   "age_s": 131,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6780,7 +6816,7 @@
    "symbol": "EAD",
    "name": "EMOTIONAL ABUSE DEFENCE PROJECT",
    "mint": "Daza89fMrhbApsAxyGBDm6ffzopQZHx7q1KG3Lwvpump",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6793,42 +6829,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "JAPAN",
-   "name": "Japan Proposes",
-   "mint": "Asji7c5dpKFtkzSgB24hxskPrwQgmhm9MjLGQHUPahav",
-   "age_s": 149,
-   "sol_in": -2.96,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -17.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.6,
-   "big_sell": 2.96,
-   "x": "https://x.com/Kalshi/status/2126617094913507428",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "LEAKIZEN",
-   "name": "eCitizen Leakizen",
-   "mint": "DkSitPMFeCT3F4N6TjqssCW9Wi1Y2JWh9FeETcbge9p7",
-   "age_s": 163,
-   "sol_in": 0.28,
-   "buys": 8,
-   "sells": 3,
-   "rise_pct": 1.8,
-   "mcap_sol": 29.0,
-   "dev_pct": 0.9,
-   "big_sell": 0.44,
-   "x": "https://x.com/watchdoglive/status/2126617026957307976",
-   "tg": false,
-   "web": "https://watchdog.best",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
