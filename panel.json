@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:12:10Z",
+ "updated": "2026-11-28T05:12:44Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 744,
   "checked": 49,
   "filtered": 1,
-  "lines": 1798,
+  "lines": 1799,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3717,15 +3717,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:07:16Z",
-   "time": "05:07:16",
-   "agent": "SIZER",
-   "coin": "Whallet",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1599
-  },
-  {
    "t": "2026-11-28T04:07:42Z",
    "time": "05:07:42",
    "agent": "SCANNER",
@@ -5515,6 +5506,15 @@
    "action": "flag",
    "text": "snipe · first reading 8.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1798
+  },
+  {
+   "t": "2026-11-28T05:12:20Z",
+   "time": "06:12:20",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 9 rejected (snipe: first reading s after the 4, serial launcher 3, snipe not bought: only to size 2)",
+   "n": 1799
   }
  ],
  "nights": [
@@ -5581,7 +5581,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 23 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5589,24 +5589,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 159,
-    "last_event_age_s": 25.3,
+    "events": 161,
+    "last_event_age_s": 7.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 900,
-    "last_event_age_s": 5.0,
-    "errors": 75,
+    "connected": false,
+    "events": 906,
+    "last_event_age_s": 17.0,
+    "errors": 78,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 125,
-    "last_event_age_s": 25.1,
+    "events": 126,
+    "last_event_age_s": 7.9,
     "errors": 6,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5619,8 +5619,8 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
-  "watching": 0,
+  "creates_per_min": 3.4,
+  "watching": 1,
   "followed": 9,
   "odd_readings": 372,
   "odd_coins": 175
@@ -5670,23 +5670,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2405,
+   "sent": 2441,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2405,
+   "sent": 2441,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Anthropic",
+   "name": "Anthropic official",
+   "mint": "6YP7M7i73Xrmjxohm82tiTpK5tzi6Yu8hjAVqM4opump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 35.4,
+   "dev_pct": 11.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/AnthropicAI",
+   "tg": false,
+   "web": "https://www.anthropic.com/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "Fumb",
    "name": "Gerry’s Fumb Burn",
    "mint": "F4CxPeUZ2Rr2o7gVaGWbaAquLR2HiubmE4TvepwLpump",
-   "age_s": 25,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5704,7 +5722,7 @@
    "symbol": "HYDRO",
    "name": "HYDRODYNAMIC",
    "mint": "23Ruy8MFtxERYpy7b2gMPbTZZnsK1iazy22XP6Qzabpz",
-   "age_s": 42,
+   "age_s": 76,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5722,7 +5740,7 @@
    "symbol": "DESKCAT",
    "name": "Desk Cat",
    "mint": "34QFe7qjXZG6zNFV3UDpdRkGzmcmdc5TKpj8mbtkpump",
-   "age_s": 68,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5740,7 +5758,7 @@
    "symbol": "BANKRUPT",
    "name": "United Fidelity BANKRUPT",
    "mint": "2JCYcjpuN4ERgYLLJxtjtjQvwqs897zbybRKSArv2aCE",
-   "age_s": 74,
+   "age_s": 108,
    "sol_in": -0.49,
    "buys": 1,
    "sells": 1,
@@ -5758,7 +5776,7 @@
    "symbol": "WLFI",
    "name": "The WLFI Files",
    "mint": "GPUA9T8VgjmYYAFpc2PUQyGUkyt5FA8jGpCVXagQpump",
-   "age_s": 77,
+   "age_s": 111,
    "sol_in": -0.28,
    "buys": 1,
    "sells": 1,
@@ -5776,10 +5794,10 @@
    "symbol": "GAYJEN",
    "name": "Gay Jensen",
    "mint": "CGmXwkxQExXkrxVmnAuS6PgkNFcn2fUSsmC8bQSapump",
-   "age_s": 100,
+   "age_s": 134,
    "sol_in": 0.96,
    "buys": 2,
-   "sells": 2,
+   "sells": 3,
    "rise_pct": 6.5,
    "mcap_sol": 30.0,
    "dev_pct": 0.4,
@@ -5794,7 +5812,7 @@
    "symbol": "eruc",
    "name": "OG2 YR OLD",
    "mint": "FjfmAYMPxhYSPGBvqU2eKth4YY4sYxLtBFYVoA8wXfnm",
-   "age_s": 114,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5812,11 +5830,11 @@
    "symbol": "CHURLIE",
    "name": "churlie kerk",
    "mint": "76pm8Uo6CHX25TKfGdjSXi8yEwNsvduQogpdNTkUpump",
-   "age_s": 128,
-   "sol_in": -0.67,
+   "age_s": 162,
+   "sol_in": -0.68,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": -4.3,
+   "sells": 2,
+   "rise_pct": -4.4,
    "mcap_sol": 28.0,
    "dev_pct": 2.4,
    "big_sell": 0.68,
@@ -5825,24 +5843,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "eruc",
-   "name": "OG2 YR OLD",
-   "mint": "DaH5GqyDDM6SFYCwApXynrxhnZWYgC2jDcUK1rxTqt4t",
-   "age_s": 161,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 3,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": "https://www.youtube.com/watch?v=1A_gdjHRE4k",
-   "tg": "https://www.youtube.com/watch?v=1A_gdjHRE4k",
-   "web": "https://www.youtube.com/watch?v=1A_gdjHRE4k",
-   "status": "rejected: serial launcher: 10 more coins in 60 min",
-   "why": "serial launcher: 10 more coins in 60 min"
   }
  ],
  "strategies": [
