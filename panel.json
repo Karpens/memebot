@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:16:27Z",
+ "updated": "2026-11-28T03:17:00Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 536,
+  "flagged": 537,
   "checked": 49,
   "filtered": 1,
-  "lines": 1426,
+  "lines": 1428,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Sniffer",
-   "why": "snipe",
-   "t": "2026-11-28T03:13:19Z"
-  },
   {
    "coin": "Jew.fun",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "NVIDIA",
    "why": "snipe",
    "t": "2026-11-28T03:16:26Z"
+  },
+  {
+   "coin": "MISANTHROPIC",
+   "why": "snipe",
+   "t": "2026-11-28T03:16:34Z"
   }
  ],
  "curve": [
@@ -1099,6 +1099,10 @@
   ],
   [
    1795835760,
+   47.79
+  ],
+  [
+   1795835820,
    47.79
   ]
  ],
@@ -3253,24 +3257,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:16:57Z",
-   "time": "03:16:57",
-   "agent": "SCANNER",
-   "coin": "PI",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.908e+05 is not 30 + real SOL 2.835e+04 (off +1.624e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 319 odd readings from 144 coins tonight",
-   "n": 1227
-  },
-  {
-   "t": "2026-11-28T02:17:08Z",
-   "time": "03:17:08",
-   "agent": "SCANNER",
-   "coin": "PC",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.786e+05 is not 30 + real SOL 0 (off +2.786e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 321 odd readings from 145 coins tonight",
-   "n": 1228
-  },
-  {
    "t": "2026-11-28T02:17:11Z",
    "time": "03:17:11",
    "agent": "SCANNER",
@@ -5051,6 +5037,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.6 s after the create · 17.6 SOL in · +133% since the create · mcap 81 SOL",
    "n": 1426
+  },
+  {
+   "t": "2026-11-28T03:16:34Z",
+   "time": "04:16:34",
+   "agent": "SCANNER",
+   "coin": "MISANTHROPIC",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 40 SOL",
+   "n": 1427
+  },
+  {
+   "t": "2026-11-28T03:16:36Z",
+   "time": "04:16:36",
+   "agent": "SCANNER",
+   "coin": "BLOB",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.194 is not 30 + real SOL 0 (off -28.81 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 336 odd readings from 153 coins tonight",
+   "n": 1428
   }
  ],
  "nights": [
@@ -5123,7 +5127,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 336 (153 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5131,24 +5135,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1657,
-    "last_event_age_s": 2.4,
+    "events": 1660,
+    "last_event_age_s": 25.4,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35166,
-    "last_event_age_s": 0.8,
+    "events": 35209,
+    "last_event_age_s": 1.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 965,
-    "last_event_age_s": 2.2,
+    "events": 967,
+    "last_event_age_s": 21.6,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5161,11 +5165,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.8,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 6,
-  "odd_readings": 335,
-  "odd_coins": 152
+  "followed": 5,
+  "odd_readings": 336,
+  "odd_coins": 153
  },
  "learner": {
   "samples": 84,
@@ -5212,30 +5216,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16877,
+   "sent": 16912,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16877,
+   "sent": 16912,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "BLOB",
+   "name": "blob",
+   "mint": "4jEmx1d29HuDfe6t3zoiVyAov9NNwT1Qgy7T7tdPU4uj",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/elonmusk/status/2126515518274404508",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
+   "symbol": "MISANTHROPIC",
+   "name": "The MisAnthropic Statement",
+   "mint": "BBEodVsXcxQEjTrVivJejS6DpDdUsHawpQiqozGmn6vJ",
+   "age_s": 26,
+   "sol_in": -5.93,
+   "buys": 0,
+   "sells": 4,
+   "rise_pct": -30.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 17.7,
+   "big_sell": 4.33,
+   "x": "https://x.com/elonmusk/status/2126515518274404508",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "6BdptLc6kfXsPXhnLwhhr6wqLxc2WYN3DuMQkWrdpump",
-   "age_s": 2,
-   "sol_in": 17.82,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 134.9,
-   "mcap_sol": 81.7,
+   "age_s": 35,
+   "sol_in": 17.68,
+   "buys": 6,
+   "sells": 2,
+   "rise_pct": 133.7,
+   "mcap_sol": 81.3,
    "dev_pct": 11.1,
-   "big_sell": 0.0,
+   "big_sell": 0.31,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -5246,7 +5286,7 @@
    "symbol": "?",
    "name": "",
    "mint": "ENDJHwoG22fbAx8L2cBUopKHFac1evFzZpQreahWpump",
-   "age_s": 15,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5264,7 +5304,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "E8hVMKfMhcxYVmYwTAYSaSt2b7mmesFVAdiHRBRRpump",
-   "age_s": 29,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5282,7 +5322,7 @@
    "symbol": "?",
    "name": "",
    "mint": "EhgEYPEGrrZB9eiV4jjVxD1TZXBufbUCZSotsXvDpump",
-   "age_s": 59,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5300,7 +5340,7 @@
    "symbol": "TES",
    "name": "Tes",
    "mint": "DSzpuvqmtdxd91Q8P3EbwKRr9y81a9DM3jTBR6v893wi",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": 1.19,
    "buys": 1,
    "sells": 1,
@@ -5318,7 +5358,7 @@
    "symbol": "CRY3",
    "name": "Three-Eyed Crybaby",
    "mint": "HwvtCpUfcvpXqCpgPowW85k13s4GuvxaqReGoai7pump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": -2.75,
    "buys": 6,
    "sells": 5,
@@ -5336,7 +5376,7 @@
    "symbol": "WINTERARC",
    "name": "Capo Winter Arc",
    "mint": "3cAyvFEc3u14ivQVA9fuNFaETKR5AzWGJe8kwr2rPtZT",
-   "age_s": 110,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5349,60 +5389,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "motion",
-   "name": "motion",
-   "mint": "2ieiBxwfZJ924tnFDfeCoSBJCKSsDHeRwEktQpVjpump",
-   "age_s": 148,
-   "sol_in": -0.99,
-   "buys": 2,
-   "sells": 9,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.4,
-   "big_sell": 2.59,
-   "x": "https://x.com/Milsaftermils/status/2126514465633927356",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "BCAT",
-   "name": "Bagwork Cat",
-   "mint": "AecYHF5GTS42graxBuHyaVL1Vhm3pV8vdyXc4r344TBd",
-   "age_s": 150,
-   "sol_in": 0.01,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "JESS",
-   "name": "jessikah_grace",
-   "mint": "9XShgVXyoACg8gS3TvLbC1bKJ7ygs6CswSuEEXjRpump",
-   "age_s": 176,
-   "sol_in": 0.68,
-   "buys": 5,
-   "sells": 6,
-   "rise_pct": 4.5,
-   "mcap_sol": 29.8,
-   "dev_pct": 1.0,
-   "big_sell": 1.28,
-   "x": false,
-   "tg": false,
-   "web": "https://www.instagram.com/jessikah_grace/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
