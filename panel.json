@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:39:09Z",
+ "updated": "2026-11-28T09:39:41Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1089,
+  "flagged": 1091,
   "checked": 49,
   "filtered": 1,
-  "lines": 2536,
+  "lines": 2539,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ALICEBOB",
-   "why": "snipe",
-   "t": "2026-11-28T09:33:32Z"
-  },
-  {
-   "coin": "JIE",
-   "why": "snipe",
-   "t": "2026-11-28T09:34:16Z"
-  },
   {
    "coin": "MEMEPAY",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "PPB",
    "why": "snipe",
    "t": "2026-11-28T09:37:06Z"
+  },
+  {
+   "coin": "NOTICED",
+   "why": "snipe",
+   "t": "2026-11-28T09:39:29Z"
+  },
+  {
+   "coin": "JADE",
+   "why": "snipe",
+   "t": "2026-11-28T09:39:37Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:37:17Z",
-   "time": "09:37:17",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 5, mayhem mode 3, serial launcher 2)",
-   "n": 2337
-  },
-  {
-   "t": "2026-11-28T08:37:39Z",
-   "time": "09:37:39",
-   "agent": "SCANNER",
-   "coin": "FLOKI",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 1.2 SOL in · +8% since the create · mcap 30 SOL",
-   "n": 2338
-  },
-  {
-   "t": "2026-11-28T08:38:00Z",
-   "time": "09:38:00",
-   "agent": "SCANNER",
-   "coin": "MARKOV",
-   "action": "flag",
-   "text": "snipe · first reading 0.1 s after the create · 0.9 SOL in · +6% since the create · mcap 32 SOL",
-   "n": 2339
-  },
-  {
    "t": "2026-11-28T08:38:18Z",
    "time": "09:38:18",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 4 rejected (serial launcher 2, snipe not bought: only to size 1, mayhem mode 1)",
    "n": 2536
+  },
+  {
+   "t": "2026-11-28T09:39:29Z",
+   "time": "10:39:29",
+   "agent": "SCANNER",
+   "coin": "NOTICED",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2537
+  },
+  {
+   "t": "2026-11-28T09:39:29Z",
+   "time": "10:39:29",
+   "agent": "SIZER",
+   "coin": "NOTICED",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2538
+  },
+  {
+   "t": "2026-11-28T09:39:37Z",
+   "time": "10:39:37",
+   "agent": "SCANNER",
+   "coin": "JADE",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 1.4 SOL in · +9% since the create · mcap 33 SOL",
+   "n": 2539
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1154,
-    "last_event_age_s": 43.7,
+    "events": 1156,
+    "last_event_age_s": 4.0,
     "errors": 16,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22261,
-    "last_event_age_s": 0.6,
+    "events": 22321,
+    "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 824,
-    "last_event_age_s": 123.4,
+    "events": 826,
+    "last_event_age_s": 2.9,
     "errors": 32,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 3,
+  "followed": 4,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,23 +6584,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19454,
+   "sent": 19488,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19454,
+   "sent": 19488,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JADE",
+   "name": "JADE CHAMBER",
+   "mint": "Gwap1aFr4rwvxqNJhj9EdfJww8aKX7WAUxf1c8i4RkiE",
+   "age_s": 3,
+   "sol_in": 0.13,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 0.8,
+   "mcap_sol": 30.5,
+   "dev_pct": 4.1,
+   "big_sell": 1.3,
+   "x": "https://x.com/JadeChamberInk",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "NOTICED",
+   "name": "Senpai Noticed Me",
+   "mint": "3iRtx4D1bcQRAUq7PJsannJpBbu4eNf43SxeiLfopump",
+   "age_s": 12,
+   "sol_in": 0.1,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.6,
+   "mcap_sol": 29.1,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MAGPIE",
    "name": "HELLO MR MAGPIE",
    "mint": "8jirhm6NGje5Jco8zeMLHsaZSfx85teJWgHfFSNnpump",
-   "age_s": 43,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,7 +6654,7 @@
    "symbol": "PPB",
    "name": "PepeBoy",
    "mint": "AZM89CRfQ3nN8H1EeaLc1o1zPzM9DuDmRKkb79H8pump",
-   "age_s": 123,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,37 +6672,19 @@
    "symbol": "SALAMI",
    "name": "Kyle Salami",
    "mint": "4PDKWpoKxwxnq3xAbmCwDMeR3kHXZ3xYS3WGdN6Xpump",
-   "age_s": 143,
-   "sol_in": 32.73,
-   "buys": 74,
-   "sells": 56,
-   "rise_pct": 231.5,
-   "mcap_sol": 163.8,
+   "age_s": 175,
+   "sol_in": 25.81,
+   "buys": 90,
+   "sells": 70,
+   "rise_pct": 171.4,
+   "mcap_sol": 134.0,
    "dev_pct": 26.6,
-   "big_sell": 6.77,
+   "big_sell": 14.81,
    "x": "https://x.com/solidintel_x/status/2126609907373715543",
    "tg": false,
    "web": false,
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "Darwin",
-   "name": "Darwin",
-   "mint": "8HdzutQmMANpxPGnK2wEHUErYR7EvCXGuBZMEh1uS1CM",
-   "age_s": 170,
-   "sol_in": -4.53,
-   "buys": 19,
-   "sells": 21,
-   "rise_pct": -24.2,
-   "mcap_sol": 28.7,
-   "dev_pct": 15.2,
-   "big_sell": 3.3,
-   "x": false,
-   "tg": false,
-   "web": "https://www.youtube.com/watch?v=cKFfohFjPPE",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
   }
  ],
  "strategies": [
