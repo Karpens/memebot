@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:56:02Z",
+ "updated": "2026-11-28T03:56:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 609,
+  "flagged": 610,
   "checked": 49,
   "filtered": 1,
-  "lines": 1552,
+  "lines": 1553,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "JENN",
-   "why": "snipe",
-   "t": "2026-11-28T03:48:40Z"
-  },
   {
    "coin": "EGG",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "NVIDIA",
    "why": "snipe",
    "t": "2026-11-28T03:55:22Z"
+  },
+  {
+   "coin": "FUTURESHAW",
+   "why": "snipe",
+   "t": "2026-11-28T03:56:04Z"
   }
  ],
  "curve": [
@@ -3418,15 +3418,6 @@
    "agent": "SCANNER",
    "coin": "MARS",
    "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 1.6 SOL in · +11% since the create · mcap 31 SOL",
-   "n": 1353
-  },
-  {
-   "t": "2026-11-28T02:57:28Z",
-   "time": "03:57:28",
-   "agent": "SCANNER",
-   "coin": "MARS",
-   "action": "flag",
    "text": "snipe · first reading 1.5 s after the create · 5.4 SOL in · +34% since the create · mcap 48 SOL",
    "n": 1354
   },
@@ -5211,6 +5202,15 @@
    "action": "scan",
    "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (mayhem mode 2, serial launcher 1, snipe not bought: only to size 1)",
    "n": 1552
+  },
+  {
+   "t": "2026-11-28T03:56:04Z",
+   "time": "04:56:04",
+   "agent": "SCANNER",
+   "coin": "FUTURESHAW",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1553
   }
  ],
  "nights": [
@@ -5283,7 +5283,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5291,24 +5291,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1829,
-    "last_event_age_s": 10.3,
+    "events": 1830,
+    "last_event_age_s": 32.6,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39543,
-    "last_event_age_s": 0.9,
+    "events": 39556,
+    "last_event_age_s": 5.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1093,
-    "last_event_age_s": 40.4,
+    "events": 1094,
+    "last_event_age_s": 31.9,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5323,7 +5323,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 2,
+  "followed": 3,
   "odd_readings": 350,
   "odd_coins": 157
  },
@@ -5372,23 +5372,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19404,
+   "sent": 19440,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19404,
+   "sent": 19440,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FUTURESHAW",
+   "name": "futureshawarma",
+   "mint": "AhV6FfahoaLwYzqUhjDsLvcEdCL7eWNMEqAyb5ei1sPZ",
+   "age_s": 32,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 2.93,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "CA",
    "name": "Contract Address",
    "mint": "7VdaemZLkSadR8DVCcMm4R4j3kt9DkqXmAo6DB7gwTCA",
-   "age_s": 11,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5406,12 +5424,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CpDJgKa6t7tK9bJeh9aenH49hyrM6wutobHg3QrVpump",
-   "age_s": 40,
-   "sol_in": -3.4,
-   "buys": 7,
-   "sells": 2,
-   "rise_pct": -19.3,
-   "mcap_sol": 28.1,
+   "age_s": 73,
+   "sol_in": -3.14,
+   "buys": 8,
+   "sells": 5,
+   "rise_pct": -17.9,
+   "mcap_sol": 28.5,
    "dev_pct": 11.1,
    "big_sell": 21.65,
    "x": "https://x.com/nvidianewsroom",
@@ -5424,7 +5442,7 @@
    "symbol": "TREVOR",
    "name": "Trevor",
    "mint": "FGsEsLXs3HNWuLXnjKmpgVLAA6645aqjuXMUHoiPpump",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -5442,7 +5460,7 @@
    "symbol": "AURUMGAMMA",
    "name": "AurumGamma",
    "mint": "CDy1RbHP3G5xcKq5p575YhkPihH7bDPkjnrQus4Bpump",
-   "age_s": 122,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5460,7 +5478,7 @@
    "symbol": "躺赢",
    "name": "躺赢 💎🔥🤑",
    "mint": "5RC14U8LrHvghrbRAsxToVaynFaAHfz6tZiYFTrhpump",
-   "age_s": 146,
+   "age_s": 179,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5473,24 +5491,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "4E2sea4jnUGXuPGHFxfHQkT78pDziP3rF2qV5RFApF8T",
-   "age_s": 163,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.8,
-   "dev_pct": 1.6,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
