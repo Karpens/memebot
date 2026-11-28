@@ -59,24 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:28:59Z",
-    "time": "00:28:59",
-    "agent": "LEARNER",
-    "coin": "CLOUTCAT",
-    "action": "learn",
-    "text": "learned · np:social:none now avg -7.4% over 300",
-    "n": 425
-   },
-   {
-    "t": "2026-11-27T23:29:03Z",
-    "time": "00:29:03",
-    "agent": "SCANNER",
-    "coin": "FTEST",
-    "action": "flag",
-    "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-    "n": 426
-   },
-   {
     "t": "2026-11-27T23:29:03Z",
     "time": "00:29:03",
     "agent": "SIZER",
@@ -5457,6 +5439,24 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 1.071e+05 is not 30 + real SOL 16.67 (off +1.07e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 209 odd readings from 108 coins tonight",
     "n": 1024
+   },
+   {
+    "t": "2026-11-28T01:21:55Z",
+    "time": "02:21:55",
+    "agent": "SCANNER",
+    "coin": "ENOUGH",
+    "action": "flag",
+    "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+    "n": 1025
+   },
+   {
+    "t": "2026-11-28T01:22:20Z",
+    "time": "02:22:20",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 7.0 a minute · 0 watched · 21 rejected (mayhem mode 8, snipe not bought: only to size 7, odd curve reading: virtual SOL i 2)",
+    "n": 1026
    }
   ],
   "trades": [
@@ -8102,16 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 317,
+  "flagged": 318,
   "checked": 49,
   "filtered": 1,
-  "lines": 1024,
+  "lines": 1026,
   "flags": [
-   {
-    "coin": "Test",
-    "why": "snipe",
-    "t": "2026-11-28T01:17:30Z"
-   },
    {
     "coin": "CREMA",
     "why": "snipe",
@@ -8146,6 +8141,11 @@
     "coin": "McDogs",
     "why": "snipe",
     "t": "2026-11-28T01:20:57Z"
+   },
+   {
+    "coin": "ENOUGH",
+    "why": "snipe",
+    "t": "2026-11-28T01:21:55Z"
    }
   ],
   "curve": [
@@ -8716,13 +8716,17 @@
    [
     1795828860,
     47.79
+   ],
+   [
+    1795828920,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795828879.960805,
+  "np_said": 1795828940.960643,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8907,7 +8911,7 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 209,
+   "readings": 210,
    "coins": 108,
    "followed": 0,
    "mints": [
