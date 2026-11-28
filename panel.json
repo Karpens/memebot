@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:34:01Z",
+ "updated": "2026-11-28T05:34:35Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 766,
   "checked": 49,
   "filtered": 1,
-  "lines": 1849,
+  "lines": 1851,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3805,24 +3805,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:20:03Z",
-   "time": "05:20:03",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.4 a minute · 0 watched · 14 rejected (snipe not bought: only to size 9, mayhem mode 3, serial launcher 2)",
-   "n": 1650
-  },
-  {
-   "t": "2026-11-28T04:20:13Z",
-   "time": "05:20:13",
-   "agent": "SCANNER",
-   "coin": "SNW",
-   "action": "flag",
-   "text": "snipe · first reading 1.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1651
-  },
-  {
    "t": "2026-11-28T04:20:36Z",
    "time": "05:20:36",
    "agent": "SCANNER",
@@ -5603,6 +5585,24 @@
    "action": "scan",
    "text": "new pairs · 1.6 a minute · 0 watched · 6 rejected (snipe not bought: only to size 5, serial launcher 1)",
    "n": 1849
+  },
+  {
+   "t": "2026-11-28T05:34:19Z",
+   "time": "06:34:19",
+   "agent": "SCANNER",
+   "coin": "USD1",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 5.336 is not 30 + real SOL 1.044 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 384 odd readings from 180 coins tonight",
+   "n": 1850
+  },
+  {
+   "t": "2026-11-28T05:34:33Z",
+   "time": "06:34:33",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 0 watched · 5 rejected (snipe not bought: only to size 2, serial launcher 1, snipe: first reading s after the 1)",
+   "n": 1851
   }
  ],
  "nights": [
@@ -5669,7 +5669,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · odd curve readings 383 (179 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 15 watched · ws off · odd curve readings 384 (180 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5677,24 +5677,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 217,
-    "last_event_age_s": 6.0,
+    "events": 219,
+    "last_event_age_s": 23.3,
     "errors": 3,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 1518,
-    "last_event_age_s": 3.1,
-    "errors": 144,
+    "connected": false,
+    "events": 1531,
+    "last_event_age_s": 15.5,
+    "errors": 146,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 174,
-    "last_event_age_s": 5.9,
+    "events": 175,
+    "last_event_age_s": 26.7,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5707,11 +5707,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
-  "watching": 1,
-  "followed": 6,
-  "odd_readings": 383,
-  "odd_coins": 179
+  "creates_per_min": 1.8,
+  "watching": 0,
+  "followed": 5,
+  "odd_readings": 384,
+  "odd_coins": 180
  },
  "learner": {
   "samples": 84,
@@ -5758,46 +5758,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3801,
+   "sent": 3837,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3801,
+   "sent": 3837,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "PBJT",
-   "name": "Peanut Butter Jelly Time",
-   "mint": "3PFn4oFnnKQJpijbbTCL7NLkhtEMHbyzMji883zGpump",
-   "age_s": 5,
+   "symbol": "USD1",
+   "name": "United States Dog Shit 1",
+   "mint": "594FtC4kUEH4cFpJwHQgURtin9xLhuPMeTLJo3cZpump",
+   "age_s": 26,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
    "big_sell": 0.0,
+   "x": "https://x.com/chingchong6257/status/2126550021663260735",
+   "tg": false,
+   "web": false,
+   "status": "rejected: odd curve reading: virtual SOL 5.336 is not 30 + real SOL 1.044 (off -25.71 SOL)",
+   "why": "odd curve reading: virtual SOL 5.336 is not 30 + real SOL 1.044 (off -25.71 SOL)"
+  },
+  {
+   "symbol": "PBJT",
+   "name": "Peanut Butter Jelly Time",
+   "mint": "3PFn4oFnnKQJpijbbTCL7NLkhtEMHbyzMji883zGpump",
+   "age_s": 39,
+   "sol_in": 17.2,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 145.9,
+   "mcap_sol": 70.0,
+   "dev_pct": 1.0,
+   "big_sell": 0.59,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 10.4 s after the create (max 10 s)",
+   "why": "snipe: first reading 10.4 s after the create (max 10 s)"
   },
   {
    "symbol": "chairman",
    "name": "chairman",
    "mint": "9YDxMeoyZiXxEhF3PnjPXh6juifDGRVZYY98v8wUpump",
-   "age_s": 101,
-   "sol_in": -4.55,
-   "buys": 1,
+   "age_s": 135,
+   "sol_in": -2.74,
+   "buys": 2,
    "sells": 3,
-   "rise_pct": -24.3,
-   "mcap_sol": 28.7,
+   "rise_pct": -15.1,
+   "mcap_sol": 32.2,
    "dev_pct": 15.2,
    "big_sell": 3.87,
    "x": "https://x.com/CoachPatNFT/status/2126549723825795472",
@@ -5810,12 +5828,12 @@
    "symbol": "packball",
    "name": "packball",
    "mint": "7UjWzLjQyGySc79qHTSn9C68rUcsfEwLbhqqnFiapump",
-   "age_s": 109,
-   "sol_in": -0.4,
+   "age_s": 143,
+   "sol_in": -0.69,
    "buys": 1,
-   "sells": 6,
-   "rise_pct": -2.6,
-   "mcap_sol": 28.5,
+   "sells": 7,
+   "rise_pct": -4.4,
+   "mcap_sol": 28.0,
    "dev_pct": 2.4,
    "big_sell": 7.0,
    "x": "https://x.com/usepackball/status/2126549614350270666",
@@ -5828,7 +5846,7 @@
    "symbol": "Derp",
    "name": "Derpdex",
    "mint": "3xKfYWpvmP4Jrdgjdae3LGBFRZjAjMWRKjDFHvH2pump",
-   "age_s": 139,
+   "age_s": 173,
    "sol_in": -0.99,
    "buys": 3,
    "sells": 3,
@@ -5839,42 +5857,6 @@
    "x": "https://x.com/DerpdexApp",
    "tg": "https://t.me/DerpdexApp",
    "web": "https://derpdex.xyz",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "HBDG",
-   "name": "HONEY BADGER",
-   "mint": "HSPzx2NJQNFq9HcUT6iBnZkDwxXQHPvRsirY2Uz5reuk",
-   "age_s": 161,
-   "sol_in": 0.25,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 1.7,
-   "mcap_sol": 28.6,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/HoneyBadgersBtc",
-   "tg": false,
-   "web": "https://crypto.com/en/price/honey-badger-coin",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "GIFTFALL",
-   "name": "GIFTFALL",
-   "mint": "3v6L4J5X3UpPKFgxwBut6QCGLdHB43KKzotatxQPpump",
-   "age_s": 170,
-   "sol_in": 0.12,
-   "buys": 8,
-   "sells": 13,
-   "rise_pct": 0.7,
-   "mcap_sol": 30.3,
-   "dev_pct": 3.8,
-   "big_sell": 4.17,
-   "x": "https://x.com/Giftfall",
-   "tg": false,
-   "web": "https://giftfall.xyz/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
