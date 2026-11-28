@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:11:56Z",
+ "updated": "2026-11-28T06:12:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -1799,6 +1799,10 @@
   ],
   [
    1795846260,
+   47.79
+  ],
+  [
+   1795846320,
    47.79
   ]
  ],
@@ -5819,7 +5823,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 10 watched · ws off · odd curve readings 416 (190 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 11 watched · ws off · odd curve readings 416 (190 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5827,24 +5831,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 327,
-    "last_event_age_s": 49.5,
+    "events": 329,
+    "last_event_age_s": 3.1,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 2367,
-    "last_event_age_s": 9.0,
-    "errors": 265,
+    "connected": false,
+    "events": 2370,
+    "last_event_age_s": 19.7,
+    "errors": 266,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 244,
-    "last_event_age_s": 49.3,
+    "events": 245,
+    "last_event_age_s": 1.1,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5857,9 +5861,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.4,
-  "watching": 0,
-  "followed": 3,
+  "creates_per_min": 1.6,
+  "watching": 1,
+  "followed": 4,
   "odd_readings": 416,
   "odd_coins": 190
  },
@@ -5908,23 +5912,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6223,
+   "sent": 6259,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6223,
+   "sent": 6259,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TNDR",
+   "name": "Tenderloin",
+   "mint": "Axvm6kVZ2c212VawpMo7Pvh1KeGZJRQwZEuQp6Znpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "5F1tcEyCLSNRTNuQoHv6PpCpfzGbvd267HYbGxqSjy9b",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "GUAP",
    "name": "GUALA",
    "mint": "8cXQ5dw59weHDCUrV1pCryT4tAwXhdupYwfUbWdApump",
-   "age_s": 49,
+   "age_s": 83,
    "sol_in": 0.05,
    "buys": 2,
    "sells": 1,
@@ -5942,7 +5982,7 @@
    "symbol": "bottom",
    "name": "bottom",
    "mint": "EmayQh5jsiYhMGBnFDQuo7VnSVctoVQu2wXFbwbMpump",
-   "age_s": 102,
+   "age_s": 136,
    "sol_in": -2.04,
    "buys": 0,
    "sells": 5,
@@ -5960,7 +6000,7 @@
    "symbol": "USELESS",
    "name": "USELESS COIN",
    "mint": "EheXL1xbqTKw3aibY3ahmwKTnGZf4vUchA1ZajvQS59m",
-   "age_s": 144,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
