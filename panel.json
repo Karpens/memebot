@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:17:05Z",
+ "updated": "2026-11-28T02:17:39Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 416,
+  "flagged": 417,
   "checked": 49,
   "filtered": 1,
-  "lines": 1227,
+  "lines": 1229,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ZYRK",
-   "why": "snipe",
-   "t": "2026-11-28T02:11:29Z"
-  },
   {
    "coin": "DIP",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GTAcoin",
    "why": "snipe",
    "t": "2026-11-28T02:16:09Z"
+  },
+  {
+   "coin": "TAB",
+   "why": "snipe",
+   "t": "2026-11-28T02:17:11Z"
   }
  ],
  "curve": [
@@ -3017,24 +3017,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:22:42Z",
-   "time": "02:22:42",
-   "agent": "SCANNER",
-   "coin": "LINKY",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.067e+05 is not 30 + real SOL 15.13 (off +1.067e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 211 odd readings from 109 coins tonight",
-   "n": 1028
-  },
-  {
-   "t": "2026-11-28T01:23:08Z",
-   "time": "02:23:08",
-   "agent": "SCANNER",
-   "coin": "LPI",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 20.1 SOL in · +172% since the create · mcap 81 SOL",
-   "n": 1029
-  },
-  {
    "t": "2026-11-28T01:23:20Z",
    "time": "02:23:20",
    "agent": "SCANNER",
@@ -4815,6 +4797,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1.908e+05 is not 30 + real SOL 2.835e+04 (off +1.624e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 319 odd readings from 144 coins tonight",
    "n": 1227
+  },
+  {
+   "t": "2026-11-28T02:17:08Z",
+   "time": "03:17:08",
+   "agent": "SCANNER",
+   "coin": "PC",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 2.786e+05 is not 30 + real SOL 0 (off +2.786e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 321 odd readings from 145 coins tonight",
+   "n": 1228
+  },
+  {
+   "t": "2026-11-28T02:17:11Z",
+   "time": "03:17:11",
+   "agent": "SCANNER",
+   "coin": "TAB",
+   "action": "flag",
+   "text": "snipe · first reading 1.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1229
   }
  ],
  "nights": [
@@ -4887,7 +4887,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 320 (144 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 321 (145 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4895,26 +4895,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1440,
-    "last_event_age_s": 8.8,
+    "events": 1442,
+    "last_event_age_s": 30.0,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 28304,
+    "events": 28397,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 812,
-    "last_event_age_s": 9.9,
-    "errors": 36,
-    "last_error": "gg.sc: HTTP 404"
+    "connected": false,
+    "events": 814,
+    "last_event_age_s": 26.1,
+    "errors": 37,
+    "last_error": "n.uguu.se: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -4925,11 +4925,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
+  "creates_per_min": 2.0,
   "watching": 0,
   "followed": 7,
-  "odd_readings": 320,
-  "odd_coins": 144
+  "odd_readings": 321,
+  "odd_coins": 145
  },
  "learner": {
   "samples": 84,
@@ -4976,23 +4976,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13086,
+   "sent": 13123,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13086,
+   "sent": 13123,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TAB",
+   "name": "Street Tab",
+   "mint": "HoZCQxoZ4q4YZfKa9GWvs1zZ7fDr3PbvJew48cQCoh3Z",
+   "age_s": 29,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "PC",
+   "name": "Paired Cat",
+   "mint": "BxMBoVPyb2LGJshR4sfADKEq5QLxuYYtFdQSouznXxbr",
+   "age_s": 32,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/asdfhgdev_pf/status/2126498924739654055",
+   "tg": false,
+   "web": "https://www.pairedcoin.fun/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "PI",
    "name": "Paired Inu",
    "mint": "7FDXNtdL8fLcEnMR7zZZeVFqpVhGJvyrp53GUay2HJic",
-   "age_s": 10,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5010,7 +5046,7 @@
    "symbol": "GTAcoin",
    "name": "GTA VII",
    "mint": "BSMNRRALX56KJif9mMZE6wP97bHwPxickPp3uA5Upump",
-   "age_s": 58,
+   "age_s": 92,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,
@@ -5028,12 +5064,12 @@
    "symbol": "Liberty",
    "name": "The Wish Dog",
    "mint": "4QvBmbT7q7dQK2A2dmvmCeUwNTZUNj4JaS1nNzBxpump",
-   "age_s": 72,
-   "sol_in": 56.51,
-   "buys": 44,
-   "sells": 27,
-   "rise_pct": 636.8,
-   "mcap_sol": 248.7,
+   "age_s": 106,
+   "sol_in": 49.77,
+   "buys": 61,
+   "sells": 42,
+   "rise_pct": 529.9,
+   "mcap_sol": 212.6,
    "dev_pct": 9.6,
    "big_sell": 4.03,
    "x": "https://x.com/ZzzzzSol/status/2126500291612656013",
@@ -5046,7 +5082,7 @@
    "symbol": "PC",
    "name": "Paired Cat",
    "mint": "7NQzkuVuqd5B4mvA9jSmbdYJQpL3rjV4685RVp9vuYqN",
-   "age_s": 128,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5064,7 +5100,7 @@
    "symbol": "PC",
    "name": "Paired Cat",
    "mint": "FJcv9gWDFBsSH8mtypjbYArJ7b6SYxs4o4dbMnNXLcP1",
-   "age_s": 132,
+   "age_s": 166,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5077,42 +5113,6 @@
    "web": "https://www.pairedcoin.fun/",
    "status": "rejected: odd curve reading: virtual SOL 1.569e+05 is not 30 + real SOL 0 (off +1.568e+05 SOL)",
    "why": "odd curve reading: virtual SOL 1.569e+05 is not 30 + real SOL 0 (off +1.568e+05 SOL)"
-  },
-  {
-   "symbol": "MANDY",
-   "name": "Project Mandy",
-   "mint": "8pSXwBFHc8Z44eBhntDmkN5Bkpe6gQqygb8tCBv8pump",
-   "age_s": 157,
-   "sol_in": 19.54,
-   "buys": 58,
-   "sells": 20,
-   "rise_pct": 149.3,
-   "mcap_sol": 88.2,
-   "dev_pct": 11.9,
-   "big_sell": 1.46,
-   "x": "https://x.com/ItsNotRexed",
-   "tg": "https://telegram.me/mandyport",
-   "web": "https://github.com/ProjectLeonida/mandy",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "TEST8",
-   "name": "test8",
-   "mint": "J1rcBjFk5rHjUYXTgVig377UGnUbN8H2TWUYEz5prZ8W",
-   "age_s": 164,
-   "sol_in": -0.1,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/OnchainWhallet",
-   "tg": false,
-   "web": "https://sparechange.fun/c/J1rcBjFk5rHjUYXTgVig377UGnUbN8H2TWUYEz5prZ8W",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
