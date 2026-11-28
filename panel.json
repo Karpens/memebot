@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:37:34Z",
+ "updated": "2026-11-28T00:38:06Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 227,
   "checked": 49,
   "filtered": 1,
-  "lines": 838,
+  "lines": 840,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -463,6 +463,10 @@
   ],
   [
    1795826220,
+   47.79
+  ],
+  [
+   1795826280,
    47.79
   ]
  ],
@@ -2617,24 +2621,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:48:24Z",
-   "time": "00:48:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.8 a minute · 0 watched · 19 rejected (snipe not bought: only to size 10, mayhem mode 6, serial launcher 3)",
-   "n": 639
-  },
-  {
-   "t": "2026-11-27T23:49:21Z",
-   "time": "00:49:21",
-   "agent": "SCANNER",
-   "coin": "SOLUNA",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 640
-  },
-  {
    "t": "2026-11-27T23:49:21Z",
    "time": "00:49:21",
    "agent": "SIZER",
@@ -4415,6 +4401,24 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1.215e+05 is not 30 + real SOL 0 (off +1.215e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 127 odd readings from 66 coins tonight",
    "n": 838
+  },
+  {
+   "t": "2026-11-28T00:37:51Z",
+   "time": "01:37:51",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 1, no symbol or name 1)",
+   "n": 839
+  },
+  {
+   "t": "2026-11-28T00:37:59Z",
+   "time": "01:37:59",
+   "agent": "SCANNER",
+   "coin": "MANDY",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 4.302 is not 30 + real SOL 0.009877 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 129 odd readings from 67 coins tonight",
+   "n": 840
   }
  ],
  "nights": [
@@ -4487,7 +4491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 128 (66 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 129 (67 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4495,15 +4499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 910,
-    "last_event_age_s": 6.4,
+    "events": 911,
+    "last_event_age_s": 8.7,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 17169,
+    "events": 17238,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -4511,8 +4515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 500,
-    "last_event_age_s": 6.2,
+    "events": 501,
+    "last_event_age_s": 8.0,
     "errors": 25,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4525,11 +4529,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 5,
-  "odd_readings": 128,
-  "odd_coins": 66
+  "followed": 6,
+  "odd_readings": 129,
+  "odd_coins": 67
  },
  "learner": {
   "samples": 84,
@@ -4576,23 +4580,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6731,
+   "sent": 6766,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6731,
+   "sent": 6766,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MANDY",
+   "name": "Mandy",
+   "mint": "HfhdUziPSLf6aFPcffYwrn5M8pfc2r6qJNDDuKoypump",
+   "age_s": 8,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: odd curve reading: virtual SOL 4.302 is not 30 + real SOL 0.009877 (off -25.71 SOL)",
+   "why": "odd curve reading: virtual SOL 4.302 is not 30 + real SOL 0.009877 (off -25.71 SOL)"
+  },
+  {
    "symbol": "EVILD",
    "name": "Evil DerivR",
    "mint": "tJeR5FcPo3r8C3NWu5dzDxQQeBJ4KLxiZR7CDKjJwCK",
-   "age_s": 6,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4610,7 +4632,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BStqdhFUb2wzGQ534RR8JhN4WmjEuxfTCzrQkWp2kKLh",
-   "age_s": 15,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4628,12 +4650,12 @@
    "symbol": "$CLAWMAS",
    "name": "Santa Claws",
    "mint": "2RaHUzV23oAxWDBkHA3d8hp4pQTBVaPXnMk3XucNpump",
-   "age_s": 20,
-   "sol_in": 2.74,
-   "buys": 1,
+   "age_s": 52,
+   "sol_in": 3.15,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 18.8,
-   "mcap_sol": 34.3,
+   "rise_pct": 21.7,
+   "mcap_sol": 35.2,
    "dev_pct": 1.7,
    "big_sell": 0.0,
    "x": false,
@@ -4646,14 +4668,14 @@
    "symbol": "SILT",
    "name": "Silt",
    "mint": "1yNtw9iLMGPVSqpzbDU2CgAvrvuZzdUHQYRCp78pump",
-   "age_s": 44,
-   "sol_in": 9.62,
-   "buys": 7,
-   "sells": 0,
-   "rise_pct": 73.3,
-   "mcap_sol": 49.8,
+   "age_s": 76,
+   "sol_in": 7.54,
+   "buys": 8,
+   "sells": 3,
+   "rise_pct": 55.8,
+   "mcap_sol": 44.7,
    "dev_pct": 1.4,
-   "big_sell": 0.0,
+   "big_sell": 1.57,
    "x": "https://x.com/siltagents/status/2126474032060956850?a=DI3qoHBJ4ww3GK3ZZHY&s=20",
    "tg": false,
    "web": "https://siltagents.fun/",
@@ -4664,14 +4686,14 @@
    "symbol": "DEFLOAT",
    "name": "DefloatPad",
    "mint": "5tiJ9v8crZ1b1TftuyT3twzYNAFXV7jqFjWkqeM5bEaK",
-   "age_s": 49,
-   "sol_in": 10.07,
+   "age_s": 81,
+   "sol_in": -0.09,
    "buys": 7,
-   "sells": 15,
-   "rise_pct": 75.3,
-   "mcap_sol": 52.6,
+   "sells": 17,
+   "rise_pct": -0.6,
+   "mcap_sol": 29.8,
    "dev_pct": 3.7,
-   "big_sell": 7.36,
+   "big_sell": 8.12,
    "x": false,
    "tg": false,
    "web": "https://defloatpad.fun/",
@@ -4682,7 +4704,7 @@
    "symbol": "Steady",
    "name": "STEADY",
    "mint": "Afs95ePeJMkE4kMTsSTxr23JnMCLfDuActTxuWYBpump",
-   "age_s": 134,
+   "age_s": 166,
    "sol_in": 0.02,
    "buys": 4,
    "sells": 2,
