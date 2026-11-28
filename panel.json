@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:05:44Z",
+ "updated": "2026-11-28T01:06:12Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 286,
   "checked": 49,
   "filtered": 1,
-  "lines": 959,
+  "lines": 961,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -575,6 +575,10 @@
   ],
   [
    1795827900,
+   47.79
+  ],
+  [
+   1795827960,
    47.79
   ]
  ],
@@ -2729,24 +2733,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:13:55Z",
-   "time": "01:13:55",
-   "agent": "SCANNER",
-   "coin": "LOOPOS",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.416e+05 is not 30 + real SOL 0 (off +1.416e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 93 odd readings from 60 coins tonight",
-   "n": 760
-  },
-  {
-   "t": "2026-11-28T00:13:56Z",
-   "time": "01:13:56",
-   "agent": "SCANNER",
-   "coin": "CHRISTIANA",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 761
-  },
-  {
    "t": "2026-11-28T00:14:11Z",
    "time": "01:14:11",
    "agent": "SCANNER",
@@ -4527,6 +4513,24 @@
    "action": "scan",
    "text": "new pairs · 5.2 a minute · 0 watched · 15 rejected (snipe not bought: only to size 6, no symbol or name 4, odd curve reading: virtual SOL i 3)",
    "n": 959
+  },
+  {
+   "t": "2026-11-28T01:06:07Z",
+   "time": "02:06:07",
+   "agent": "SCANNER",
+   "coin": "JLINK",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.181e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 183 odd readings from 94 coins tonight",
+   "n": 960
+  },
+  {
+   "t": "2026-11-28T01:06:10Z",
+   "time": "02:06:10",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.2 a minute · 0 watched · 14 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 3, no symbol or name 3)",
+   "n": 961
   }
  ],
  "nights": [
@@ -4599,7 +4603,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 182 (93 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 183 (94 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4607,15 +4611,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1059,
-    "last_event_age_s": 3.4,
+    "events": 1060,
+    "last_event_age_s": 6.7,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 20462,
+    "events": 20494,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -4623,8 +4627,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 605,
-    "last_event_age_s": 31.7,
+    "events": 606,
+    "last_event_age_s": 6.6,
     "errors": 30,
     "last_error": "d.uguu.se: timeout after 2 s"
    }
@@ -4637,11 +4641,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.4,
+  "creates_per_min": 4.2,
   "watching": 0,
-  "followed": 8,
-  "odd_readings": 182,
-  "odd_coins": 93
+  "followed": 9,
+  "odd_readings": 183,
+  "odd_coins": 94
  },
  "learner": {
   "samples": 84,
@@ -4688,23 +4692,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8530,
+   "sent": 8560,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8530,
+   "sent": 8560,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JLINK",
+   "name": "just a link",
+   "mint": "Ge4fLBDFv2wTyYsNAWebJmRWNELh9MFxoLoYm6DRJRtu",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://derivr.fun",
+   "status": "rejected: odd curve reading: virtual SOL 1.181e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL)",
+   "why": "odd curve reading: virtual SOL 1.181e+05 is not 30 + real SOL 17.4 (off +1.181e+05 SOL)"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "GYe14tzMCz9sHfVrxkNu6Lj3knZ84A7xogaTUKuXUgFj",
-   "age_s": 3,
+   "age_s": 31,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4722,7 +4744,7 @@
    "symbol": "SOL",
    "name": "Solana",
    "mint": "8fDQ8ua2QYv8Kj8chsuJLp8ebhMfg6V8fLL6gU8becGz",
-   "age_s": 13,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4740,7 +4762,7 @@
    "symbol": "PRIME",
    "name": "Prime Minister Takaichi's LDP",
    "mint": "6P6EmCrEpY2jLfxNkNBAByxEXBESj7ARcwtGrr7rpump",
-   "age_s": 31,
+   "age_s": 59,
    "sol_in": -0.01,
    "buys": 0,
    "sells": 1,
@@ -4758,7 +4780,7 @@
    "symbol": "HEXED",
    "name": "Hexorcist",
    "mint": "86WwUaR4pRzxbFrit91aCEGKMquqqrSTN3CyCwbBntVT",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4776,7 +4798,7 @@
    "symbol": "?",
    "name": "",
    "mint": "5KGHZ9d3UzE2d7R9qo6y7BXVrhpnsVpsLZEjVjHKDjD3",
-   "age_s": 68,
+   "age_s": 96,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4794,7 +4816,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "BmJgQSNH2U6ANmrQ9vkPexdPHbbxUCnAjjfzgFw6pump",
-   "age_s": 104,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4812,7 +4834,7 @@
    "symbol": "GHRSGSH",
    "name": "rgwgr",
    "mint": "wQWe8K2DixycySB7RXkNU7yQeHb6PWxe6MceDePpump",
-   "age_s": 105,
+   "age_s": 133,
    "sol_in": -1.98,
    "buys": 0,
    "sells": 1,
@@ -4830,12 +4852,12 @@
    "symbol": "PIPUNYA",
    "name": "PIPUNYA",
    "mint": "5hWALsCqC7JwJmEM43JLxHB5riC8MTEo4VmhW55Rpump",
-   "age_s": 106,
-   "sol_in": 10.16,
-   "buys": 19,
-   "sells": 5,
-   "rise_pct": 79.2,
-   "mcap_sol": 50.1,
+   "age_s": 134,
+   "sol_in": 11.27,
+   "buys": 24,
+   "sells": 6,
+   "rise_pct": 89.3,
+   "mcap_sol": 52.9,
    "dev_pct": 0.0,
    "big_sell": 0.85,
    "x": "https://x.com/PIPUNYA",
@@ -4848,7 +4870,7 @@
    "symbol": "$BDOG",
    "name": "BREEZE DOG",
    "mint": "5zSnzknP7Z88QWdN4xfnaEBhcYCfbySUYhCkubd8pump",
-   "age_s": 107,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4866,7 +4888,7 @@
    "symbol": "WOW",
    "name": "wow",
    "mint": "BiKM7bRcyxnXhRyCbQogwCkvMzfFmWa52bMjg8Vpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": -0.01,
    "buys": 0,
    "sells": 1,
@@ -4884,7 +4906,7 @@
    "symbol": "LOOPS",
    "name": "Loop Strategy",
    "mint": "4C12ZeM9fJHiVnF5DKHF9iTFq6KdkyqKrskiaL89VKty",
-   "age_s": 117,
+   "age_s": 145,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4902,7 +4924,7 @@
    "symbol": "?",
    "name": "",
    "mint": "D9hygVbgS7L1MWnZtsVN67XGbxVvHA8ciFfFJP7BJyz3",
-   "age_s": 120,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4920,7 +4942,7 @@
    "symbol": "ballsackdorkl",
    "name": "ballsackdorkl",
    "mint": "DcNoFBiJ5a7hqM7QiGAQSQJ8bCe2KmisCSFAMP3fpump",
-   "age_s": 151,
+   "age_s": 179,
    "sol_in": -2.47,
    "buys": 2,
    "sells": 8,
