@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:01:48Z",
+ "updated": "2026-11-28T04:02:21Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 628,
+  "flagged": 630,
   "checked": 49,
   "filtered": 1,
-  "lines": 1580,
+  "lines": 1583,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BOOM",
-   "why": "snipe",
-   "t": "2026-11-28T03:59:17Z"
-  },
-  {
-   "coin": "GHOS",
-   "why": "snipe",
-   "t": "2026-11-28T03:59:17Z"
-  },
   {
    "coin": "JPTR",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "GOLDENDIGGER",
    "why": "snipe",
    "t": "2026-11-28T04:01:48Z"
+  },
+  {
+   "coin": "AC1",
+   "why": "snipe",
+   "t": "2026-11-28T04:01:59Z"
+  },
+  {
+   "coin": "Wildfire",
+   "why": "snipe",
+   "t": "2026-11-28T04:02:13Z"
   }
  ],
  "curve": [
@@ -1279,6 +1279,10 @@
   ],
   [
    1795838460,
+   47.79
+  ],
+  [
+   1795838520,
    47.79
   ]
  ],
@@ -3433,33 +3437,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:03:14Z",
-   "time": "04:03:14",
-   "agent": "SCANNER",
-   "coin": "GIFT",
-   "action": "flag",
-   "text": "snipe · first reading 3.7 s after the create · 6.6 SOL in · +41% since the create · mcap 54 SOL",
-   "n": 1381
-  },
-  {
-   "t": "2026-11-28T03:03:43Z",
-   "time": "04:03:43",
-   "agent": "SCANNER",
-   "coin": "Rice",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.002935 is not 30 + real SOL 0 (off -30 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 335 odd readings from 152 coins tonight",
-   "n": 1382
-  },
-  {
-   "t": "2026-11-28T03:03:46Z",
-   "time": "04:03:46",
-   "agent": "SCANNER",
-   "coin": "PAIR",
-   "action": "flag",
-   "text": "snipe · first reading 2.0 s after the create · 32.4 SOL in · +324% since the create · mcap 123 SOL",
-   "n": 1383
-  },
-  {
    "t": "2026-11-28T03:03:50Z",
    "time": "04:03:50",
    "agent": "SCANNER",
@@ -5231,6 +5208,33 @@
    "action": "flag",
    "text": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1580
+  },
+  {
+   "t": "2026-11-28T04:01:50Z",
+   "time": "05:01:50",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 11.4 a minute · 0 watched · 41 rejected (serial launcher 30, snipe not bought: only to size 9, odd curve reading: virtual SOL i 1)",
+   "n": 1581
+  },
+  {
+   "t": "2026-11-28T04:01:59Z",
+   "time": "05:01:59",
+   "agent": "SCANNER",
+   "coin": "AC1",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.4 SOL in · +3% since the create · mcap 29 SOL",
+   "n": 1582
+  },
+  {
+   "t": "2026-11-28T04:02:13Z",
+   "time": "05:02:13",
+   "agent": "SCANNER",
+   "coin": "Wildfire",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.2 SOL in · +1% since the create · mcap 30 SOL",
+   "n": 1583
   }
  ],
  "nights": [
@@ -5311,24 +5315,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1889,
-    "last_event_age_s": 1.4,
+    "events": 1891,
+    "last_event_age_s": 9.4,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 40000,
-    "last_event_age_s": 0.2,
+    "events": 40043,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1150,
-    "last_event_age_s": 0.8,
+    "events": 1152,
+    "last_event_age_s": 8.8,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5341,9 +5345,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 11.4,
+  "creates_per_min": 10.8,
   "watching": 0,
-  "followed": 40,
+  "followed": 36,
   "odd_readings": 352,
   "odd_coins": 159
  },
@@ -5392,23 +5396,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19773,
+   "sent": 19808,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19773,
+   "sent": 19808,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Wildfire",
+   "name": "Wildfire",
+   "mint": "7natfGMq8dQXCWkYgo1nHdH9QXFnbS1RjdzALwKHpump",
+   "age_s": 9,
+   "sol_in": -0.65,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -4.2,
+   "mcap_sol": 28.8,
+   "dev_pct": 3.8,
+   "big_sell": 0.85,
+   "x": "https://x.com/WildfireSolana",
+   "tg": false,
+   "web": "https://thewildfire.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "AC1",
+   "name": "Amethyst Cat",
+   "mint": "nF1yySepSzAoa4SGTBrKk1zEaSNRwLdy8EfpQtjkxQn",
+   "age_s": 22,
+   "sol_in": 0.43,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 2.9,
+   "mcap_sol": 28.8,
+   "dev_pct": 0.0,
+   "big_sell": 0.01,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GOLDENDIGGER",
    "name": "Golden Digger",
    "mint": "3JL1PKw87eHwWZd1q7HLXy29Srdaa5ocFduLHPasnmGq",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5426,7 +5466,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "G3DkXCbuTFjjvGiSnPA16e5guHwd27YuACy69wjmvu3G",
-   "age_s": 4,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5444,7 +5484,7 @@
    "symbol": "Perpscape",
    "name": "Perpscape",
    "mint": "DdJNTtre7uvXfqaGgFtBguBHqmKNVcWL2uH1dGTTKCbj",
-   "age_s": 6,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5462,7 +5502,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "Gwf2cRnkAwqHHmQwtuP2gut2d6Dd2P8P2ztQXT8mo7V5",
-   "age_s": 9,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5480,7 +5520,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "A5zSZ2DBzJ4LU5N1gZGrPrn3WMBXoR7jbmqz8yLaiqjh",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5498,7 +5538,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "3RPQW8uTaLXTg3oZV8qQBidfPacWzsvAUd4oUc1uJ3Ev",
-   "age_s": 15,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5516,7 +5556,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "Dv7ChzStv757o7Scpj4jkvRJ7Y7ie9JXDug6XH4ci6cD",
-   "age_s": 16,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5534,7 +5574,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "DrqTeMPAWhuiwseGMC8eq3QxPZqkdRTDsHh25vCgBvhi",
-   "age_s": 20,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5552,7 +5592,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "8xz4jgcDcWVMY88Diino4neUR3kwAYbhdZRWjoSPKS8N",
-   "age_s": 31,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5570,7 +5610,7 @@
    "symbol": "motion",
    "name": "motion",
    "mint": "52ejwJRZKpHvLM2iGbFsq5GuFcpR9aZtVJPsTcW5pump",
-   "age_s": 35,
+   "age_s": 68,
    "sol_in": -0.99,
    "buys": 2,
    "sells": 7,
@@ -5588,7 +5628,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "5D9xMdTnpjLE46Yq5e9wgc1enRTus118Y4HAhV4r6Wmg",
-   "age_s": 38,
+   "age_s": 71,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5606,7 +5646,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "8RX5pTTz9ywqyzrYKqB3U2Sj89gMAJcRMBdshWZzAUB4",
-   "age_s": 40,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5624,7 +5664,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "8kbZQcTL4y9a558MMbVaGMqBncBNc6xdTYqz1sE6bhkG",
-   "age_s": 41,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5642,7 +5682,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "5SBGQwh2fkveBTLbmuDpw2Qo3CQqcAMU6L1hdT2qe9K2",
-   "age_s": 42,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5660,7 +5700,7 @@
    "symbol": "MBS",
    "name": "send big boobs shark",
    "mint": "27R7RW5QJLmUgiwr58esBW9huNFpi4HxUHJhr5cyQJKP",
-   "age_s": 43,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5678,11 +5718,11 @@
    "symbol": "SEALEDROP",
    "name": "SEALEDROP",
    "mint": "DmYkRigVBzRFxmRijL1Vs4Die5oakEUmbYVW6dZ3pump",
-   "age_s": 43,
-   "sol_in": 1.89,
+   "age_s": 76,
+   "sol_in": 1.88,
    "buys": 2,
-   "sells": 1,
-   "rise_pct": 12.6,
+   "sells": 2,
+   "rise_pct": 12.5,
    "mcap_sol": 33.6,
    "dev_pct": 3.4,
    "big_sell": 0.28,
@@ -5696,14 +5736,14 @@
    "symbol": "Squirt",
    "name": "Squirt",
    "mint": "F6Roo64UBzJXEKh8WGCiyADfpQ1jzvg7ydNQFWFJpump",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
+   "buys": 1,
+   "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 28.7,
    "dev_pct": 1.4,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -5714,7 +5754,7 @@
    "symbol": "MBS",
    "name": "VIRAL BOOBS SHARK?!?",
    "mint": "Ae89wvGpAAk74VVYNTY7bteatGauodi1qNh2aJdnAYEp",
-   "age_s": 82,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5727,42 +5767,6 @@
    "web": false,
    "status": "rejected: serial launcher: 49 more coins in 60 min",
    "why": "serial launcher: 49 more coins in 60 min"
-  },
-  {
-   "symbol": "MBS",
-   "name": "VIRAL BOOBS SHARK?!?",
-   "mint": "8e1P8c8HHWBREsjPbZwQ94gKEutFniGZRijRC6tqc95D",
-   "age_s": 82,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/MagatardxSOL/status/2126526110267588709?a=oTOoq5WmMuMvVKDerD4&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 48 more coins in 60 min",
-   "why": "serial launcher: 48 more coins in 60 min"
-  },
-  {
-   "symbol": "MBS",
-   "name": "VIRAL BOOBS SHARK?!?",
-   "mint": "3cXACHMTyuAPCTmwcFyRgwYJmuvnirGyiCAcuwPQGDKZ",
-   "age_s": 84,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/MagatardxSOL/status/2126526110267588709?a=oTOoq5WmMuMvVKDerD4&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 47 more coins in 60 min",
-   "why": "serial launcher: 47 more coins in 60 min"
   }
  ],
  "strategies": [
