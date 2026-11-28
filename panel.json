@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:55:35Z",
+ "updated": "2026-11-28T03:56:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 609,
   "checked": 49,
   "filtered": 1,
-  "lines": 1551,
+  "lines": 1552,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -1255,6 +1255,10 @@
   ],
   [
    1795838100,
+   47.79
+  ],
+  [
+   1795838160,
    47.79
   ]
  ],
@@ -3409,15 +3413,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:57:12Z",
-   "time": "03:57:12",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.8 a minute · 0 watched · 16 rejected (snipe not bought: only to size 8, serial launcher 5, mayhem mode 3)",
-   "n": 1352
-  },
-  {
    "t": "2026-11-28T02:57:28Z",
    "time": "03:57:28",
    "agent": "SCANNER",
@@ -5207,6 +5202,15 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1551
+  },
+  {
+   "t": "2026-11-28T03:55:45Z",
+   "time": "04:55:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (mayhem mode 2, serial launcher 1, snipe not bought: only to size 1)",
+   "n": 1552
   }
  ],
  "nights": [
@@ -5279,7 +5283,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5287,16 +5291,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1827,
-    "last_event_age_s": 13.6,
+    "events": 1829,
+    "last_event_age_s": 10.3,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39526,
-    "last_event_age_s": 0.2,
+    "events": 39543,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
@@ -5304,7 +5308,7 @@
     "name": "metadata",
     "connected": true,
     "events": 1093,
-    "last_event_age_s": 13.4,
+    "last_event_age_s": 40.4,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5368,30 +5372,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19376,
+   "sent": 19404,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19376,
+   "sent": 19404,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CA",
+   "name": "Contract Address",
+   "mint": "7VdaemZLkSadR8DVCcMm4R4j3kt9DkqXmAo6DB7gwTCA",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 44.5,
+   "dev_pct": 22.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CpDJgKa6t7tK9bJeh9aenH49hyrM6wutobHg3QrVpump",
-   "age_s": 13,
-   "sol_in": 18.21,
-   "buys": 6,
-   "sells": 0,
-   "rise_pct": 138.5,
-   "mcap_sol": 82.9,
+   "age_s": 40,
+   "sol_in": -3.4,
+   "buys": 7,
+   "sells": 2,
+   "rise_pct": -19.3,
+   "mcap_sol": 28.1,
    "dev_pct": 11.1,
-   "big_sell": 0.0,
+   "big_sell": 21.65,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -5402,7 +5424,7 @@
    "symbol": "TREVOR",
    "name": "Trevor",
    "mint": "FGsEsLXs3HNWuLXnjKmpgVLAA6645aqjuXMUHoiPpump",
-   "age_s": 91,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -5420,7 +5442,7 @@
    "symbol": "AURUMGAMMA",
    "name": "AurumGamma",
    "mint": "CDy1RbHP3G5xcKq5p575YhkPihH7bDPkjnrQus4Bpump",
-   "age_s": 95,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5438,7 +5460,7 @@
    "symbol": "躺赢",
    "name": "躺赢 💎🔥🤑",
    "mint": "5RC14U8LrHvghrbRAsxToVaynFaAHfz6tZiYFTrhpump",
-   "age_s": 119,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5456,7 +5478,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4E2sea4jnUGXuPGHFxfHQkT78pDziP3rF2qV5RFApF8T",
-   "age_s": 136,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5469,24 +5491,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "PAWPOOL",
-   "name": "Critter Carpool",
-   "mint": "75URAUywcrV5ua2BqmHNji1GXS5L98teiVNHroXDpump",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
