@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:29:06Z",
+ "updated": "2026-11-28T13:29:39Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1526,
+  "flagged": 1527,
   "checked": 49,
   "filtered": 1,
-  "lines": 3323,
+  "lines": 3324,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BELIEVE",
-   "why": "snipe",
-   "t": "2026-11-28T13:23:05Z"
-  },
   {
    "coin": "MoneyMaxx",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "FUNDID",
    "why": "snipe",
    "t": "2026-11-28T13:28:11Z"
+  },
+  {
+   "coin": "COCKINVEST",
+   "why": "snipe",
+   "t": "2026-11-28T13:29:30Z"
   }
  ],
  "curve": [
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:29:45Z",
-   "time": "13:29:45",
-   "agent": "SIZER",
-   "coin": "DDD",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 3124
-  },
-  {
    "t": "2026-11-28T12:30:27Z",
    "time": "13:30:27",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 5.6 a minute · 0 watched · 9 rejected (snipe not bought: only to size 3, serial launcher 3, mayhem mode 2)",
    "n": 3323
+  },
+  {
+   "t": "2026-11-28T13:29:30Z",
+   "time": "14:29:30",
+   "agent": "SCANNER",
+   "coin": "COCKINVEST",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3324
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 1035 (321 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · odd curve readings 1035 (321 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1053,
-    "last_event_age_s": 2.8,
+    "events": 1055,
+    "last_event_age_s": 7.8,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22475,
+    "events": 22558,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 562,
-    "last_event_age_s": 2.5,
+    "events": 564,
+    "last_event_age_s": 7.7,
     "errors": 25,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.4,
+  "creates_per_min": 5.0,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 1035,
   "odd_coins": 321
  },
@@ -6580,30 +6580,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12410,
+   "sent": 12445,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12410,
+   "sent": 12445,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RIO",
+   "name": "Riocoin",
+   "mint": "A2hSrTBVcXsv8wWznGH4UzhNgDQFNn6WgadTSY24am8b",
+   "age_s": 7,
+   "sol_in": 0.16,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": 0.9,
+   "mcap_sol": 38.3,
+   "dev_pct": 15.2,
+   "big_sell": 2.95,
+   "x": "https://twitter.com/XHNews/status/2126669697865417146",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 18 more coins in 60 min",
+   "why": "serial launcher: 18 more coins in 60 min"
+  },
+  {
+   "symbol": "COCKINVEST",
+   "name": "Cockinvest",
+   "mint": "8qWMdRMPUBFVgCUemkisr6gGk1xJEWAGPnqm4ZSypump",
+   "age_s": 9,
+   "sol_in": 0.02,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/FolkPepe200/status/2126668410184470584",
+   "tg": false,
+   "web": "https://x.com/Lanceurpump",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "RINU",
    "name": "Red nose Inu",
    "mint": "55ugyAJ1tnYPYTtaZB35mnot74dx7cTP7kQcqEYhpump",
-   "age_s": 2,
-   "sol_in": 5.15,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": 36.7,
-   "mcap_sol": 39.3,
+   "age_s": 35,
+   "sol_in": 4.44,
+   "buys": 2,
+   "sells": 14,
+   "rise_pct": 31.3,
+   "mcap_sol": 37.8,
    "dev_pct": 1.5,
-   "big_sell": 0.24,
+   "big_sell": 0.39,
    "x": "https://x.com/RINUsol",
    "tg": false,
    "web": false,
@@ -6614,12 +6650,12 @@
    "symbol": "FUNDID",
    "name": "fundid",
    "mint": "KQpa5xcjCAU5ZbzjvqvY5NYBZYNBQGXk3y333eckfun",
-   "age_s": 56,
-   "sol_in": 2.67,
-   "buys": 19,
-   "sells": 10,
-   "rise_pct": 18.2,
-   "mcap_sol": 34.3,
+   "age_s": 89,
+   "sol_in": 20.09,
+   "buys": 34,
+   "sells": 16,
+   "rise_pct": 174.6,
+   "mcap_sol": 79.7,
    "dev_pct": 2.0,
    "big_sell": 3.2,
    "x": "https://x.com/fundidx/status/2126668931389952302",
@@ -6632,14 +6668,14 @@
    "symbol": "business",
    "name": "smol business",
    "mint": "GMsTRmrECmv2TFsR5g2eqSqJfW8roq3xiDdFoNLmpump",
-   "age_s": 59,
-   "sol_in": 7.89,
-   "buys": 25,
-   "sells": 26,
-   "rise_pct": 53.6,
-   "mcap_sol": 51.9,
+   "age_s": 92,
+   "sol_in": 5.54,
+   "buys": 40,
+   "sells": 39,
+   "rise_pct": 36.4,
+   "mcap_sol": 46.1,
    "dev_pct": 9.6,
-   "big_sell": 1.95,
+   "big_sell": 7.94,
    "x": "https://x.com/Zeeko__Dev/status/2126669448970998237",
    "tg": false,
    "web": "https://nationaldaycalendar.com/celebrations/small-business-saturday-saturday-following-thanksgiving",
@@ -6650,7 +6686,7 @@
    "symbol": "DAW",
    "name": "Dawkoins",
    "mint": "9bLQGpKEP3hhzRZgFEZaJTMDVvrYvoz6t2G9shHMYPdP",
-   "age_s": 64,
+   "age_s": 97,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6668,7 +6704,7 @@
    "symbol": "Dragonfly",
    "name": "NASA Dragonfly",
    "mint": "7VVwM84nvYiGjQUhcbavMZwTYUSxL9MM7qRJJJ24mFD3",
-   "age_s": 92,
+   "age_s": 125,
    "sol_in": -4.84,
    "buys": 7,
    "sells": 9,
@@ -6686,7 +6722,7 @@
    "symbol": "DINU",
    "name": "DOCINU",
    "mint": "HUzbkyVbEQG4FLHHWbvpGahJKCrqrEP3A6nYtuUJmNqV",
-   "age_s": 138,
+   "age_s": 171,
    "sol_in": -0.59,
    "buys": 6,
    "sells": 5,
@@ -6704,7 +6740,7 @@
    "symbol": "stest",
    "name": "stest",
    "mint": "3y1K1kKv2eyL1iUDnzANr8CGpGYGBoERvcta4srpsray",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6717,60 +6753,6 @@
    "web": false,
    "status": "rejected: no bonding curve key",
    "why": "no bonding curve key"
-  },
-  {
-   "symbol": "Huss Huss",
-   "name": "Huss Huss",
-   "mint": "4bV4cqVcrzP3mFxuVbcyWhxYSXvYgBrAB9kndDSDpump",
-   "age_s": 150,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "$JINLONG",
-   "name": "金龙 🐉",
-   "mint": "EGKg3tWWKXpSuurpeJtg6A1VoZRDRzLXTKk74bTmpump",
-   "age_s": 152,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Heist",
-   "name": "The Greatest Heist In History",
-   "mint": "AAcUSaaUpHfczJXbpcpTq69yh4Rb58M8fo7ovhTpump",
-   "age_s": 170,
-   "sol_in": 2.99,
-   "buys": 69,
-   "sells": 51,
-   "rise_pct": 20.2,
-   "mcap_sol": 35.9,
-   "dev_pct": 3.4,
-   "big_sell": 23.39,
-   "x": "https://twitter.com/Narra_Creator/status/2126668837797986737",
-   "tg": false,
-   "web": "https://visualarts.net.au/news-opinion/2026/greatest-art-heist-australian-history",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
