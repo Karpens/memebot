@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:26:24Z",
+ "updated": "2026-11-28T03:26:51Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 555,
+  "flagged": 556,
   "checked": 49,
   "filtered": 1,
-  "lines": 1459,
+  "lines": 1461,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Wildfire",
-   "why": "snipe",
-   "t": "2026-11-28T03:22:42Z"
-  },
   {
    "coin": "Anthropic",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "BAGSTORY",
    "why": "snipe",
    "t": "2026-11-28T03:25:33Z"
+  },
+  {
+   "coin": "$DEGENKIDS",
+   "why": "snipe",
+   "t": "2026-11-28T03:26:25Z"
   }
  ],
  "curve": [
@@ -3293,24 +3293,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:28:56Z",
-   "time": "03:28:56",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, serial launcher 2)",
-   "n": 1260
-  },
-  {
-   "t": "2026-11-28T02:29:09Z",
-   "time": "03:29:09",
-   "agent": "SCANNER",
-   "coin": "1",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 4.3 SOL in · +29% since the create · mcap 41 SOL",
-   "n": 1261
-  },
-  {
    "t": "2026-11-28T02:29:57Z",
    "time": "03:29:57",
    "agent": "SCANNER",
@@ -5091,6 +5073,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.3 s after the create · 1.6 SOL in · +11% since the create · mcap 32 SOL",
    "n": 1459
+  },
+  {
+   "t": "2026-11-28T03:26:25Z",
+   "time": "04:26:25",
+   "agent": "SCANNER",
+   "coin": "$DEGENKIDS",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1460
+  },
+  {
+   "t": "2026-11-28T03:26:26Z",
+   "time": "04:26:26",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 3, mayhem mode 2)",
+   "n": 1461
   }
  ],
  "nights": [
@@ -5171,24 +5171,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1696,
-    "last_event_age_s": 34.2,
+    "events": 1697,
+    "last_event_age_s": 26.9,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 36134,
-    "last_event_age_s": 0.4,
+    "events": 36199,
+    "last_event_age_s": 3.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 994,
-    "last_event_age_s": 34.1,
+    "events": 995,
+    "last_event_age_s": 26.3,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5201,7 +5201,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
+  "creates_per_min": 3.8,
   "watching": 0,
   "followed": 8,
   "odd_readings": 337,
@@ -5252,30 +5252,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17512,
+   "sent": 17541,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17512,
+   "sent": 17541,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$DEGENKIDS",
+   "name": "WE ARE THE COIN",
+   "mint": "C1XVPQEpbGvR1Uqn93iJjHKw4drM94cMw2eaFETrpump",
+   "age_s": 26,
+   "sol_in": 0.25,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.6,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "penisguy",
    "name": "penisguy",
    "mint": "H9nmf36b8LPM2oAnegzXK8zdBXcv3DtoqSQ3VQjjpump",
-   "age_s": 34,
-   "sol_in": 22.82,
-   "buys": 10,
-   "sells": 4,
-   "rise_pct": 173.3,
-   "mcap_sol": 103.6,
+   "age_s": 61,
+   "sol_in": 17.48,
+   "buys": 15,
+   "sells": 11,
+   "rise_pct": 125.1,
+   "mcap_sol": 85.4,
    "dev_pct": 15.2,
-   "big_sell": 2.71,
+   "big_sell": 5.91,
    "x": "https://x.com/CoachPatNFT/status/2126517895710527503",
    "tg": false,
    "web": "https://archive.4plebs.org/s4s/search/text/replace%20pepe/?utm_source=chatgpt.com",
@@ -5286,7 +5304,7 @@
    "symbol": "BAGSTORY",
    "name": "BAGSTORY",
    "mint": "FdjDHXiD59gpTC3yBR2BjYoDtJjQsNBZaXWVdCTepump",
-   "age_s": 52,
+   "age_s": 79,
    "sol_in": -0.28,
    "buys": 2,
    "sells": 2,
@@ -5304,12 +5322,12 @@
    "symbol": "YIPPEE",
    "name": "yippee",
    "mint": "7c6oH8DAYLHh1BdFxKRfRGLa6rkED3tqU75JPh7Wpump",
-   "age_s": 57,
-   "sol_in": -0.61,
-   "buys": 9,
+   "age_s": 84,
+   "sol_in": -0.53,
+   "buys": 13,
    "sells": 9,
-   "rise_pct": -3.9,
-   "mcap_sol": 28.7,
+   "rise_pct": -3.4,
+   "mcap_sol": 28.8,
    "dev_pct": 3.4,
    "big_sell": 7.16,
    "x": "https://x.com/yippiechrty",
@@ -5322,14 +5340,14 @@
    "symbol": "idgaf",
    "name": "idgaf",
    "mint": "Dk73e512L83a8ULJoXesQZqD3ix9wpkhQ6wbNorxpump",
-   "age_s": 81,
-   "sol_in": 0.0,
+   "age_s": 108,
+   "sol_in": -0.05,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "sells": 1,
+   "rise_pct": -0.3,
+   "mcap_sol": 28.0,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": "https://x.com/idgafonline",
    "tg": false,
    "web": false,
@@ -5340,7 +5358,7 @@
    "symbol": "BADAY",
    "name": "Bad Day Mouse",
    "mint": "DyfWmdySLtsPMgg8xpLhAJj6HtGLpuN6fQnRq1Pwpump",
-   "age_s": 123,
+   "age_s": 150,
    "sol_in": -3.93,
    "buys": 1,
    "sells": 2,
@@ -5358,7 +5376,7 @@
    "symbol": "BROKE",
    "name": "Broke Boy Coin",
    "mint": "7yjvEWAJEHE4LwPNKSSvEQgvRBM2Qf2sYsaNs24kpump",
-   "age_s": 135,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5376,7 +5394,7 @@
    "symbol": "Encrypted",
    "name": "Encrypted Coin",
    "mint": "JBLuw7dUXnZtA66d4kGU7obNdDNkWTbhryp39cRWpump",
-   "age_s": 137,
+   "age_s": 164,
    "sol_in": -4.94,
    "buys": 3,
    "sells": 7,
@@ -5394,12 +5412,12 @@
    "symbol": "gingerbread",
    "name": "market is dead send this",
    "mint": "3sq9AZEQv1kyUFisVeemhp6k8z6PMDqZKcjRkF6Fpump",
-   "age_s": 143,
-   "sol_in": -0.92,
+   "age_s": 170,
+   "sol_in": -0.98,
    "buys": 17,
-   "sells": 23,
-   "rise_pct": -5.9,
-   "mcap_sol": 28.1,
+   "sells": 24,
+   "rise_pct": -6.2,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 6.63,
    "x": "https://x.com/exitliquid1ty/status/2126517254716018919",
@@ -5407,42 +5425,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Raisin",
-   "name": "Raisin",
-   "mint": "78z1BugnvBxeY9Mr442ce9yBzRXN5XuD7p51Ektepump",
-   "age_s": 162,
-   "sol_in": 5.22,
-   "buys": 3,
-   "sells": 5,
-   "rise_pct": 34.8,
-   "mcap_sol": 44.1,
-   "dev_pct": 8.2,
-   "big_sell": 1.65,
-   "x": "https://x.com/Polinkaii/status/2126517340606972275",
-   "tg": false,
-   "web": "https://www.instagram.com/p/DgP6RLyoYbk/?hl=en",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "1XBET",
-   "name": "1Xbet 500$ Bonus 🤑💵🚀",
-   "mint": "2rYcxZnF6bkZQpjpSrJ1fVzSFK6Fbbonm3EfxTHupump",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
