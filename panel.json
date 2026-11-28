@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:19:35Z",
+ "updated": "2026-11-28T03:20:07Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 542,
+  "flagged": 543,
   "checked": 49,
   "filtered": 1,
-  "lines": 1437,
+  "lines": 1438,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TES",
-   "why": "snipe",
-   "t": "2026-11-28T03:15:15Z"
-  },
   {
    "coin": "NVIDIA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Patchwork",
    "why": "snipe",
    "t": "2026-11-28T03:19:24Z"
+  },
+  {
+   "coin": "pig",
+   "why": "snipe",
+   "t": "2026-11-28T03:19:49Z"
   }
  ],
  "curve": [
@@ -1111,6 +1111,10 @@
   ],
   [
    1795835940,
+   47.79
+  ],
+  [
+   1795836000,
    47.79
   ]
  ],
@@ -3265,15 +3269,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:21:56Z",
-   "time": "03:21:56",
-   "agent": "SCANNER",
-   "coin": "HADWIGER",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.194 is not 30 + real SOL 0 (off -28.81 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 329 odd readings from 146 coins tonight",
-   "n": 1238
-  },
-  {
    "t": "2026-11-28T02:22:39Z",
    "time": "03:22:39",
    "agent": "SCANNER",
@@ -5063,6 +5058,15 @@
    "action": "flag",
    "text": "snipe · first reading 4.3 s after the create · 1.8 SOL in · +12% since the create · mcap 32 SOL",
    "n": 1437
+  },
+  {
+   "t": "2026-11-28T03:19:49Z",
+   "time": "04:19:49",
+   "agent": "SCANNER",
+   "coin": "pig",
+   "action": "flag",
+   "text": "snipe · first reading 7.1 s after the create · 0.2 SOL in · +1% since the create · mcap 31 SOL",
+   "n": 1438
   }
  ],
  "nights": [
@@ -5135,7 +5139,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 336 (153 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 336 (153 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5143,24 +5147,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1670,
-    "last_event_age_s": 16.1,
+    "events": 1672,
+    "last_event_age_s": 25.5,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35455,
-    "last_event_age_s": 1.3,
+    "events": 35491,
+    "last_event_age_s": 2.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 974,
-    "last_event_age_s": 15.8,
+    "events": 976,
+    "last_event_age_s": 24.5,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5175,7 +5179,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 336,
   "odd_coins": 153
  },
@@ -5224,59 +5228,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17077,
+   "sent": 17111,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17077,
+   "sent": 17111,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "Patchwork",
-   "name": "Patchwork",
-   "mint": "Bqfo5tj3oARVKR3xRMzXFLBccAFiEeq8WcmQXWocpump",
-   "age_s": 16,
-   "sol_in": 1.21,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": 8.2,
-   "mcap_sol": 30.7,
-   "dev_pct": 0.9,
-   "big_sell": 0.31,
-   "x": "https://x.com/Patchworksol",
+   "symbol": "pig",
+   "name": "pig",
+   "mint": "HHoPVMqYvyVUHEye54Q9DEkNA5TCZS4CJwENQpENpump",
+   "age_s": 25,
+   "sol_in": -1.48,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": -9.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 5.0,
+   "big_sell": 1.71,
+   "x": "https://x.com/pigxhims",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   },
   {
-   "symbol": "rsrc",
-   "name": "research sources",
-   "mint": "GvpR3vqQcvZMJb7bbtK7iFwMsEhhgs2jG8ut77Yhpump",
-   "age_s": 27,
-   "sol_in": 11.17,
-   "buys": 3,
-   "sells": 8,
-   "rise_pct": 88.3,
-   "mcap_sol": 52.7,
-   "dev_pct": 0.0,
-   "big_sell": 6.08,
-   "x": "https://x.com/Gen0xRay/status/2126514525625294966",
-   "tg": false,
-   "web": "https://github.com/SamuelZ12/research-sources",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "slut",
-   "name": "slut",
-   "mint": "FthwWXLMY7D9TS6TUN9Ld8wHvsALB3PaBkW9UbBFpump",
-   "age_s": 40,
+   "symbol": "1XBET",
+   "name": "1Xbet 500$ Bonus 🤑💵🚀",
+   "mint": "4SbeHjPUJH8Q4SEzfsGst5HQBje7K9JwsBJB4u6Zpump",
+   "age_s": 26,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5291,15 +5277,69 @@
    "why": "serial launcher: 2 more coins in 60 min"
   },
   {
+   "symbol": "Patchwork",
+   "name": "Patchwork",
+   "mint": "Bqfo5tj3oARVKR3xRMzXFLBccAFiEeq8WcmQXWocpump",
+   "age_s": 48,
+   "sol_in": -0.24,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": -1.6,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.9,
+   "big_sell": 1.46,
+   "x": "https://x.com/Patchworksol",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "rsrc",
+   "name": "research sources",
+   "mint": "GvpR3vqQcvZMJb7bbtK7iFwMsEhhgs2jG8ut77Yhpump",
+   "age_s": 59,
+   "sol_in": 14.67,
+   "buys": 7,
+   "sells": 13,
+   "rise_pct": 121.7,
+   "mcap_sol": 62.0,
+   "dev_pct": 0.0,
+   "big_sell": 6.08,
+   "x": "https://x.com/Gen0xRay/status/2126514525625294966",
+   "tg": false,
+   "web": "https://github.com/SamuelZ12/research-sources",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "slut",
+   "name": "slut",
+   "mint": "FthwWXLMY7D9TS6TUN9Ld8wHvsALB3PaBkW9UbBFpump",
+   "age_s": 72,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "Yotsuba",
    "name": "404 Girl",
    "mint": "Ha9X59J4fVtqjuNaqd7b2AhfpQ1tnASfGtLoHu8Xpump",
-   "age_s": 41,
-   "sol_in": -0.49,
+   "age_s": 73,
+   "sol_in": -0.54,
    "buys": 2,
-   "sells": 10,
-   "rise_pct": -3.1,
-   "mcap_sol": 28.9,
+   "sells": 11,
+   "rise_pct": -3.5,
+   "mcap_sol": 28.8,
    "dev_pct": 3.4,
    "big_sell": 6.15,
    "x": "https://x.com/yotsubarddt",
@@ -5312,7 +5352,7 @@
    "symbol": "PACKBALL",
    "name": "PackBall",
    "mint": "GWy9pr15CCFw1vQhJjiafLFYoX4XuuQHLHiUCc25pump",
-   "age_s": 76,
+   "age_s": 108,
    "sol_in": 1.15,
    "buys": 3,
    "sells": 7,
@@ -5330,7 +5370,7 @@
    "symbol": "TRING",
    "name": "TRYING",
    "mint": "CEwctEP4qXZQHNK7uHcvWaFvZTSZfzJ1JjKnyk5epump",
-   "age_s": 102,
+   "age_s": 134,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5348,7 +5388,7 @@
    "symbol": "?",
    "name": "",
    "mint": "B5ng1tBheQqwM775CqWW2KfBJJgSmppFimc1yZGQpump",
-   "age_s": 116,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5361,24 +5401,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "HOOKKE",
-   "name": "HookKey",
-   "mint": "3UucYwfFjAbkprEbKBGKhM32EcvSuGcqgaV2PTojZNZp",
-   "age_s": 151,
-   "sol_in": -0.2,
-   "buys": 5,
-   "sells": 6,
-   "rise_pct": -1.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.7,
-   "big_sell": 1.63,
-   "x": "https://x.com/jasperbrookkin",
-   "tg": "https://t.me/hookkey_portal",
-   "web": "https://hookkey.fun",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
