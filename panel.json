@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:44:48Z",
+ "updated": "2026-11-28T01:45:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 363,
+  "flagged": 364,
   "checked": 49,
   "filtered": 1,
-  "lines": 1120,
+  "lines": 1121,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BLACKJESUS",
-   "why": "snipe",
-   "t": "2026-11-28T01:40:54Z"
-  },
   {
    "coin": "AISI",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "CALLOUT",
    "why": "snipe",
    "t": "2026-11-28T01:44:31Z"
+  },
+  {
+   "coin": "MANDY",
+   "why": "snipe",
+   "t": "2026-11-28T01:45:07Z"
   }
  ],
  "curve": [
@@ -731,6 +731,10 @@
   ],
   [
    1795830240,
+   47.79
+  ],
+  [
+   1795830300,
    47.79
   ]
  ],
@@ -2885,15 +2889,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:56:11Z",
-   "time": "01:56:11",
-   "agent": "SCANNER",
-   "coin": "OG",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 921
-  },
-  {
    "t": "2026-11-28T00:57:02Z",
    "time": "01:57:02",
    "agent": "SCANNER",
@@ -4683,6 +4678,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1120
+  },
+  {
+   "t": "2026-11-28T01:45:07Z",
+   "time": "02:45:07",
+   "agent": "SCANNER",
+   "coin": "MANDY",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1121
   }
  ],
  "nights": [
@@ -4763,24 +4767,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1319,
-    "last_event_age_s": 18.7,
+    "events": 1321,
+    "last_event_age_s": 10.6,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25004,
-    "last_event_age_s": 0.8,
+    "events": 25015,
+    "last_event_age_s": 1.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 738,
-    "last_event_age_s": 18.5,
+    "events": 739,
+    "last_event_age_s": 10.2,
     "errors": 31,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4793,7 +4797,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 6.2,
+  "creates_per_min": 5.8,
   "watching": 0,
   "followed": 8,
   "odd_readings": 271,
@@ -4844,23 +4848,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11024,
+   "sent": 11054,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11024,
+   "sent": 11054,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MANDY",
+   "name": "Project Mandy",
+   "mint": "8vrKRFwEGikKPTU6KNCu52wPjybRk39k5JjMhFsQzVYH",
+   "age_s": 10,
+   "sol_in": -0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://clonepump.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "FDSFDSF",
+   "name": "dfsd",
+   "mint": "8rfCGj4ayHi4Lw83UdmVfM5JXGzhze5TfJeeyFFPpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "CALLOUT",
    "name": "Callout Club",
    "mint": "FofY6pYBRDdyp8f4wpLFdbkrUWqX72J1swK6KHEYpump",
-   "age_s": 18,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4878,7 +4918,7 @@
    "symbol": "FDSFDSF",
    "name": "dfsd",
    "mint": "J2udMg5qVb6AJgEGgGyzKV7jBcGd2sFLdUAd8RMNpump",
-   "age_s": 21,
+   "age_s": 49,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4896,7 +4936,7 @@
    "symbol": "FDSFDSF",
    "name": "dfsd",
    "mint": "5GS5DRbgFZDr4u5SVyHPvoZApQ8mpUawo5gqgdvUpump",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4914,7 +4954,7 @@
    "symbol": "ADO",
    "name": "Ado",
    "mint": "pw2Edip6YfVYxbWh3q3WwX6PtcStzNP5fC4rVznX1BJ",
-   "age_s": 38,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4932,7 +4972,7 @@
    "symbol": "CHAINU",
    "name": "Chainu",
    "mint": "Av3PW6isjf23J9QTE7g542uyKksFGozLxKfYoZtW6tBv",
-   "age_s": 52,
+   "age_s": 80,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4950,12 +4990,12 @@
    "symbol": "HFACT",
    "name": "HershFactor",
    "mint": "8U35uWLFRARqRRL9HZZcMqo3ELiFVkLwo9Kgrrhcpump",
-   "age_s": 63,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 91,
+   "sol_in": 0.01,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "rise_pct": 0.1,
+   "mcap_sol": 29.9,
    "dev_pct": 3.4,
    "big_sell": 0.03,
    "x": "https://x.com/HFACTcoin",
@@ -4968,7 +5008,7 @@
    "symbol": "GALLIEN",
    "name": "Gallien",
    "mint": "3rQ4R88a3jc9YzoTEmXAsLtWtDSULXWvSU2jBSPsChFe",
-   "age_s": 91,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -4986,7 +5026,7 @@
    "symbol": "FDSFDSF",
    "name": "dfsd",
    "mint": "4as7j2TAHE57yYzkTqQnqtWW5WfxuvUJPqpCDjH9pump",
-   "age_s": 105,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5004,7 +5044,7 @@
    "symbol": "Test",
    "name": "Test",
    "mint": "2NLrYdn4dfzPtSK8m6to1UsyrY7UAvJhCp5LpLsqpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -5022,7 +5062,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Fi9nujU5mxXjpDfxnQKJtc8p1wWFRLioKFJyeStfLoat",
-   "age_s": 114,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5040,7 +5080,7 @@
    "symbol": "HEXUS",
    "name": "Hexus Christ",
    "mint": "4hffZQz1r9aoDhshqrc5gMS4ndTZ1XdCDM5vxqC5QPoc",
-   "age_s": 120,
+   "age_s": 148,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5058,7 +5098,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "FvMTZnpX19xgFTn9PF1epje6ohgFqLyAKrDvnK5Npump",
-   "age_s": 125,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5076,7 +5116,7 @@
    "symbol": "DOOB",
    "name": "DOOBIE",
    "mint": "FRa32YeSXpQBWETF9LvS2PYCtDGFk73TLdjXbmzbpump",
-   "age_s": 127,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5089,24 +5129,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "walkdatdog",
-   "name": "walkdatdog",
-   "mint": "vN5wJE1Rp6Hi8vo9eLaW2MsVrJ84wjcD8EsxWXLpump",
-   "age_s": 158,
-   "sol_in": 1.28,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 8.3,
-   "mcap_sol": 33.1,
-   "dev_pct": 4.7,
-   "big_sell": 0.0,
-   "x": true,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
