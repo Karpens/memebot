@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:21:45Z",
+ "updated": "2026-11-28T08:22:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 940,
+  "flagged": 941,
   "checked": 49,
   "filtered": 1,
-  "lines": 2280,
+  "lines": 2283,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "inuvestor",
-   "why": "snipe",
-   "t": "2026-11-28T08:17:17Z"
-  },
   {
    "coin": "CRYPTOGAL",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MOSTO",
    "why": "snipe",
    "t": "2026-11-28T08:21:17Z"
+  },
+  {
+   "coin": "ROMANCE",
+   "why": "snipe",
+   "t": "2026-11-28T08:22:08Z"
   }
  ],
  "curve": [
@@ -2320,6 +2320,10 @@
   [
    1795854060,
    47.79
+  ],
+  [
+   1795854120,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4473,33 +4477,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:14:12Z",
-   "time": "08:14:12",
-   "agent": "SIZER",
-   "coin": "MARSCOIN",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2081
-  },
-  {
-   "t": "2026-11-28T07:14:33Z",
-   "time": "08:14:33",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.8 a minute · 0 watched · 4 rejected (serial launcher 3, snipe not bought: only to size 1)",
-   "n": 2082
-  },
-  {
-   "t": "2026-11-28T07:14:43Z",
-   "time": "08:14:43",
-   "agent": "SCANNER",
-   "coin": "FIRSTBLOCK",
-   "action": "flag",
-   "text": "snipe · first reading 6.0 s after the create · 5.0 SOL in · +35% since the create · mcap 40 SOL",
-   "n": 2083
-  },
-  {
    "t": "2026-11-28T07:15:33Z",
    "time": "08:15:33",
    "agent": "SCANNER",
@@ -6271,6 +6248,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2280
+  },
+  {
+   "t": "2026-11-28T08:22:08Z",
+   "time": "09:22:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 1 watched · 7 rejected (serial launcher 5, snipe not bought: only to size 2) · closest ROMANCE: no curve reading yet",
+   "n": 2281
+  },
+  {
+   "t": "2026-11-28T08:22:08Z",
+   "time": "09:22:08",
+   "agent": "SCANNER",
+   "coin": "ROMANCE",
+   "action": "flag",
+   "text": "snipe · first reading 1.5 s after the create · 1.0 SOL in · +7% since the create · mcap 31 SOL",
+   "n": 2282
+  },
+  {
+   "t": "2026-11-28T08:22:08Z",
+   "time": "09:22:08",
+   "agent": "SIZER",
+   "coin": "ROMANCE",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2283
   }
  ],
  "nights": [
@@ -6343,7 +6347,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 616 (237 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 616 (237 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6351,24 +6355,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 845,
-    "last_event_age_s": 28.2,
+    "events": 848,
+    "last_event_age_s": 0.6,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12651,
-    "last_event_age_s": 0.5,
+    "events": 12713,
+    "last_event_age_s": 0.7,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 608,
-    "last_event_age_s": 28.2,
+    "events": 611,
+    "last_event_age_s": 0.6,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6381,9 +6385,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 9,
   "odd_readings": 616,
   "odd_coins": 237
  },
@@ -6432,28 +6436,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14513,
+   "sent": 14550,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14513,
+   "sent": 14550,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "4CHAN",
+   "name": "4chan coin",
+   "mint": "QpTYwezFgthYQJvm3jZUQ3mqPe9fxtSuXeTKXXBpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.8,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/gigadiggadev/status/2126592494372835513",
+   "tg": false,
+   "web": "https://archive.4plebs.org/_/articles/donate/",
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "ROMANCE",
+   "name": "PEAKROMANCE",
+   "mint": "GRsTL1ijQcVHtAJY9hQqyYqYTTD6LHAxr4E7GtnbmWc9",
+   "age_s": 13,
+   "sol_in": 1.05,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 7.0,
+   "mcap_sol": 31.1,
+   "dev_pct": 2.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/jwillestt/status/2126588599651196941",
+   "tg": false,
+   "web": "https://peakromance.lol/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "baguette",
+   "name": "france is dead, send this",
+   "mint": "FzSvqEwoas6d47BbjGi5HkAixewERYRdHs2wdQSRgdRF",
+   "age_s": 22,
+   "sol_in": 1.8,
+   "buys": 6,
+   "sells": 11,
+   "rise_pct": 11.2,
+   "mcap_sol": 37.8,
+   "dev_pct": 9.9,
+   "big_sell": 2.25,
+   "x": "https://x.com/StepCoinsol8/status/2126592380677562691",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  },
+  {
    "symbol": "MOSTO",
    "name": "MOSTO",
    "mint": "926c2zhGouBHnRgGFCH2zPY5KGLPiMnCeRSUWo9BuxEE",
-   "age_s": 28,
-   "sol_in": 5.35,
-   "buys": 7,
-   "sells": 4,
-   "rise_pct": 38.9,
-   "mcap_sol": 38.8,
+   "age_s": 63,
+   "sol_in": 5.08,
+   "buys": 8,
+   "sells": 5,
+   "rise_pct": 36.7,
+   "mcap_sol": 38.2,
    "dev_pct": 0.0,
    "big_sell": 0.62,
    "x": "https://x.com/mostotrade",
@@ -6466,7 +6524,7 @@
    "symbol": "GARAGE",
    "name": "Garagecoin",
    "mint": "FVwKwGsfyw5Jw3zDYX5kvdadApyUyPPXbYk4fBWWsRgE",
-   "age_s": 51,
+   "age_s": 86,
    "sol_in": -3.06,
    "buys": 4,
    "sells": 10,
@@ -6484,7 +6542,7 @@
    "symbol": "何一",
    "name": "何一",
    "mint": "2KFTs59k9GLpcy6TkVHhohgN8BLWYdTXTZ78A2hddMr9",
-   "age_s": 51,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6502,14 +6560,14 @@
    "symbol": "GOAT",
    "name": "Greatest Of All Tokens",
    "mint": "9JZGhnuEHrRHfAABz7xpacMabZ28Vc3DGXrftcxfpump",
-   "age_s": 73,
-   "sol_in": 23.23,
-   "buys": 32,
-   "sells": 27,
-   "rise_pct": 206.1,
-   "mcap_sol": 91.3,
+   "age_s": 108,
+   "sol_in": 24.2,
+   "buys": 48,
+   "sells": 34,
+   "rise_pct": 217.2,
+   "mcap_sol": 94.6,
    "dev_pct": 3.4,
-   "big_sell": 1.62,
+   "big_sell": 1.96,
    "x": "https://x.com/gigadiggadev/status/2126592034744283374",
    "tg": false,
    "web": false,
@@ -6520,7 +6578,7 @@
    "symbol": "WLFI",
    "name": "We Litarally Fuck Investors",
    "mint": "8XGP3BNGawo2uPv9hYan9VFWskUridm7AJ1o5rEnR1x",
-   "age_s": 95,
+   "age_s": 130,
    "sol_in": 0.41,
    "buys": 3,
    "sells": 1,
@@ -6538,7 +6596,7 @@
    "symbol": "BUY",
    "name": "Buy and wait",
    "mint": "3s7AabwQiAcCskKyvjJvmZsTYRvVu3rM6ezMtCB2jWyp",
-   "age_s": 130,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6551,24 +6609,6 @@
    "web": false,
    "status": "rejected: serial launcher: 7 more coins in 60 min",
    "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "Kibo",
-   "name": "UPDATE LIFE ON YOUTUBE",
-   "mint": "GRM7mqWRJKRsNdsEUTvugBVMiiHc4MZAqzzhqygTpump",
-   "age_s": 169,
-   "sol_in": -0.1,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/early404/status/2126184901430980810",
-   "tg": false,
-   "web": "https://www.youtube.com/@adventureworld_official?si=p8q0OK8EilJfeTxl",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
