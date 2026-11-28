@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:56:36Z",
+ "updated": "2026-11-28T04:57:08Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 730,
+  "flagged": 731,
   "checked": 49,
   "filtered": 1,
-  "lines": 1758,
+  "lines": 1760,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "WLFI",
-   "why": "snipe",
-   "t": "2026-11-28T04:49:52Z"
-  },
   {
    "coin": "CYBRCB",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "ชุด",
    "why": "snipe",
    "t": "2026-11-28T04:54:21Z"
+  },
+  {
+   "coin": "ORCHARD",
+   "why": "snipe",
+   "t": "2026-11-28T04:56:45Z"
   }
  ],
  "curve": [
@@ -1499,6 +1499,10 @@
   ],
   [
    1795841760,
+   47.79
+  ],
+  [
+   1795841820,
    47.79
   ]
  ],
@@ -3653,24 +3657,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:57:35Z",
-   "time": "04:57:35",
-   "agent": "SCANNER",
-   "coin": "SMOOSH",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.4 SOL in · +3% since the create · mcap 36 SOL",
-   "n": 1559
-  },
-  {
-   "t": "2026-11-28T03:57:47Z",
-   "time": "04:57:47",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, serial launcher 1, no bonding curve key 1)",
-   "n": 1560
-  },
-  {
    "t": "2026-11-28T03:57:59Z",
    "time": "04:57:59",
    "agent": "SCANNER",
@@ -5451,6 +5437,24 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 0 watched · 12 rejected (snipe: first reading s after the 4, snipe not bought: only to size 2, odd curve reading: virtual SOL i 2)",
    "n": 1758
+  },
+  {
+   "t": "2026-11-28T04:56:45Z",
+   "time": "05:56:45",
+   "agent": "SCANNER",
+   "coin": "ORCHARD",
+   "action": "flag",
+   "text": "snipe · first reading 9.7 s after the create · 3.9 SOL in · +27% since the create · mcap 38 SOL",
+   "n": 1759
+  },
+  {
+   "t": "2026-11-28T04:57:08Z",
+   "time": "05:57:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe: first reading s after the 3, snipe not bought: only to size 2, dump 1)",
+   "n": 1760
   }
  ],
  "nights": [
@@ -5517,7 +5521,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 364 (168 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 364 (168 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5526,15 +5530,15 @@
     "name": "pumpportal",
     "connected": true,
     "events": 94,
-    "last_event_age_s": 0.1,
+    "last_event_age_s": 32.1,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 438,
-    "last_event_age_s": 3.1,
+    "events": 450,
+    "last_event_age_s": 4.8,
     "errors": 37,
     "last_error": "HTTP 429 · paused 10 s"
    },
@@ -5542,7 +5546,7 @@
     "name": "metadata",
     "connected": true,
     "events": 72,
-    "last_event_age_s": 0.0,
+    "last_event_age_s": 32.0,
     "errors": 3,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5556,8 +5560,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.2,
-  "watching": 1,
-  "followed": 9,
+  "watching": 0,
+  "followed": 7,
   "odd_readings": 364,
   "odd_coins": 168
  },
@@ -5606,13 +5610,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1411,
+   "sent": 1445,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1411,
+   "sent": 1445,
    "errors": 0,
    "last_error": null
   }
@@ -5622,32 +5626,32 @@
    "symbol": "ORCHARD",
    "name": "Orchard",
    "mint": "oRCHLgYiic9NbGBRA2C5A8aNb8Ap86ZLWmHjjSGkJVx",
-   "age_s": 0,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
+   "age_s": 32,
+   "sol_in": 1.07,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": 7.0,
+   "mcap_sol": 31.9,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 5.5,
    "x": "https://x.com/UseOrchardPad/status/2126540718470787116?a=0Rs-1vLlqkw0OJGXCs4&s=20",
    "tg": false,
    "web": "https://orchardpad.bond/",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "Singularity",
    "name": "Singularity",
    "mint": "HSxxE647rvpSNxfUf8q4kA71qmmN5KGVgd4zJVJnpump",
-   "age_s": 18,
-   "sol_in": 11.54,
+   "age_s": 50,
+   "sol_in": 9.31,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 90.8,
-   "mcap_sol": 54.3,
+   "sells": 3,
+   "rise_pct": 70.9,
+   "mcap_sol": 48.7,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 1.2,
    "x": "https://x.com/PursueAGI",
    "tg": false,
    "web": "https://thesingularity.study/",
@@ -5658,7 +5662,7 @@
    "symbol": "QuantTrump",
    "name": "Quant Trump",
    "mint": "BM6gvMJXjDxiNL8wV4iYvu4FaPsMUH4ETFzUGBiSpump",
-   "age_s": 57,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5676,14 +5680,14 @@
    "symbol": "AI",
    "name": "Attacked Inu",
    "mint": "DdLDfJ7nF3YFCpXCbUNdFarS7bAxbHhKaKbsKy4xpump",
-   "age_s": 85,
-   "sol_in": 1.08,
+   "age_s": 117,
+   "sol_in": -2.31,
    "buys": 4,
-   "sells": 6,
-   "rise_pct": 6.6,
-   "mcap_sol": 36.0,
+   "sells": 8,
+   "rise_pct": -13.5,
+   "mcap_sol": 29.2,
    "dev_pct": 9.6,
-   "big_sell": 2.74,
+   "big_sell": 3.35,
    "x": "https://x.com/Boatyy_/status/2126540320553017830?a=jJWvZGXdQYva4UkEKT4&s=20",
    "tg": false,
    "web": false,
@@ -5694,7 +5698,7 @@
    "symbol": "WENDG",
    "name": "WENDGOLSY",
    "mint": "EvBdXaqg2oQM9CmNs6aC2sADa87ajYgDgdYQgq3hxZiv",
-   "age_s": 109,
+   "age_s": 141,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5712,7 +5716,7 @@
    "symbol": "Rape",
    "name": "Rape Coin",
    "mint": "EEzYiKRnUnoqzr9gVoKZzk92ExmDN7JTUfUs9Zze8DFF",
-   "age_s": 121,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5730,10 +5734,10 @@
    "symbol": "NYAXO",
    "name": "Nyanlotl",
    "mint": "5v7Sd6sF11y23YuXxehxSKJNZpgLbLWM5Hc6WG2Npump",
-   "age_s": 134,
+   "age_s": 166,
    "sol_in": -4.93,
    "buys": 0,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": -26.2,
    "mcap_sol": 28.0,
    "dev_pct": 15.1,
@@ -5748,7 +5752,7 @@
    "symbol": "ชุด",
    "name": "พี่ขาหมู",
    "mint": "CT6n1jXvnbWsXsqAdTAxaSN5xV72PpmG2zcVa4dEpump",
-   "age_s": 143,
+   "age_s": 175,
    "sol_in": 4.38,
    "buys": 1,
    "sells": 1,
@@ -5761,42 +5765,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PANIC",
-   "name": "DON'T PANIC",
-   "mint": "9pLinvvPnWxRdSTqP3riqKxAgE9nvKkc6u6DyBfwnFSE",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/QuantsDev1223/status/2126540010669166944",
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL)",
-   "why": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL)"
-  },
-  {
-   "symbol": "DONT",
-   "name": "Don't Panic",
-   "mint": "FXbiBB4zsac9Epc8qxhU7fcUqn3NWQPnVYZdczZ3h9qs",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/elonmusk/status/2126539857581511160",
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL)",
-   "why": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL)"
   }
  ],
  "strategies": [
