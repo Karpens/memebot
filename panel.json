@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:50:38Z",
+ "updated": "2026-11-28T07:51:11Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 890,
   "checked": 49,
   "filtered": 1,
-  "lines": 2186,
+  "lines": 2187,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -2196,6 +2196,10 @@
   [
    1795852200,
    47.79
+  ],
+  [
+   1795852260,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4349,15 +4353,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:41:10Z",
-   "time": "07:41:10",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 7 rejected (snipe: first reading s after the 3, odd curve reading: virtual SOL i 1, serial launcher 1)",
-   "n": 1987
-  },
-  {
    "t": "2026-11-28T06:41:15Z",
    "time": "07:41:15",
    "agent": "SCANNER",
@@ -6147,6 +6142,15 @@
    "action": "scan",
    "text": "new pairs · 7.0 a minute · 0 watched · 18 rejected (snipe not bought: only to size 8, serial launcher 3, snipe: first reading s after the 3)",
    "n": 2186
+  },
+  {
+   "t": "2026-11-28T07:50:53Z",
+   "time": "08:50:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 5, serial launcher 2, mayhem mode 1)",
+   "n": 2187
   }
  ],
  "nights": [
@@ -6219,7 +6223,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6227,16 +6231,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 746,
-    "last_event_age_s": 9.5,
+    "events": 747,
+    "last_event_age_s": 0.6,
     "errors": 12,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 8904,
-    "last_event_age_s": 0.8,
+    "events": 8979,
+    "last_event_age_s": 0.5,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
@@ -6244,7 +6248,7 @@
     "name": "metadata",
     "connected": true,
     "events": 532,
-    "last_event_age_s": 39.3,
+    "last_event_age_s": 72.3,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6257,7 +6261,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.4,
+  "creates_per_min": 4.6,
   "watching": 0,
   "followed": 7,
   "odd_readings": 561,
@@ -6308,23 +6312,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12526,
+   "sent": 12561,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12526,
+   "sent": 12561,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ALON",
+   "name": "Alon",
+   "mint": "CPt51jyAWJLrV68ghYYt6m7243hDtqb1QLJKgJ9vpump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "TEST",
    "name": "test",
    "mint": "Ck4qzEaaLXwvwqmoDXyTPCWaSFZ2KNPvqusc6tCVZgDo",
-   "age_s": 9,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6342,12 +6364,12 @@
    "symbol": "crime",
    "name": "crime is legal",
    "mint": "C7farRwPMuGKdr9DvDhdAahp7R4qhuSgJNhGC3Jx7x66",
-   "age_s": 39,
-   "sol_in": 2.91,
-   "buys": 15,
-   "sells": 16,
-   "rise_pct": 18.4,
-   "mcap_sol": 40.2,
+   "age_s": 72,
+   "sol_in": -0.72,
+   "buys": 16,
+   "sells": 27,
+   "rise_pct": -4.3,
+   "mcap_sol": 32.5,
    "dev_pct": 9.9,
    "big_sell": 3.04,
    "x": "https://x.com/StepCoinsol8/status/2126584347977490532",
@@ -6360,7 +6382,7 @@
    "symbol": "?",
    "name": "",
    "mint": "31cNsbxdepY4NWQqx77ByRyod3poVCQyytzFJ4mPpump",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6378,7 +6400,7 @@
    "symbol": "LUCEMA",
    "name": "The Fomo Dog",
    "mint": "5pPoDz2t8S6ecGuZ2hVTXcVwZSNWtSDBCLfQ9VWUpump",
-   "age_s": 73,
+   "age_s": 106,
    "sol_in": -0.49,
    "buys": 2,
    "sells": 10,
@@ -6396,7 +6418,7 @@
    "symbol": "CI",
    "name": "Crime Inu",
    "mint": "7r1dP7wwGVHK7dCE6QgpFLcCRMmJkjXUN1Fu82vQtfhk",
-   "age_s": 88,
+   "age_s": 121,
    "sol_in": -0.92,
    "buys": 6,
    "sells": 12,
@@ -6414,12 +6436,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "6tjAkH9EjJUXj82RgTdT2YGY9gZ1WkE28BzFn8ropump",
-   "age_s": 102,
-   "sol_in": 18.52,
-   "buys": 29,
-   "sells": 24,
-   "rise_pct": 141.3,
-   "mcap_sol": 83.9,
+   "age_s": 135,
+   "sol_in": 19.4,
+   "buys": 40,
+   "sells": 34,
+   "rise_pct": 149.6,
+   "mcap_sol": 86.8,
    "dev_pct": 11.1,
    "big_sell": 0.32,
    "x": "https://x.com/nvidianewsroom",
@@ -6432,7 +6454,7 @@
    "symbol": "crime",
    "name": "xD",
    "mint": "DzYt1Mx2UeSkHLaGGc6CEqucJJRJe2si28tRSnpmMHbb",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6450,7 +6472,7 @@
    "symbol": "MCAT",
    "name": "Moon Cat",
    "mint": "8z8GspP77xM3zH4B5ZZPFztE4d2YQZbWpu5ZFqWHZ1Rx",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6468,7 +6490,7 @@
    "symbol": "Zhaki",
    "name": "Baboon Smirk",
    "mint": "GcWhPB2mdaL1m7KjrwMGj8gXy1vk9Rehc1mJaTH26Fd8",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -6481,42 +6503,6 @@
    "web": "https://clonepump.fun",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "8uhvPMApB1RKk8pg9zPeCmiBuTD1g9xhXMpG3amWpump",
-   "age_s": 149,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "BGqTRpwNa8q3eEJodxPRVDBXYnXKgVhRwzNko8nypump",
-   "age_s": 177,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
