@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:41:34Z",
+ "updated": "2026-11-28T08:42:03Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 983,
+  "flagged": 985,
   "checked": 49,
   "filtered": 1,
-  "lines": 2352,
+  "lines": 2355,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "FLOKI",
-   "why": "snipe",
-   "t": "2026-11-28T08:37:39Z"
-  },
-  {
-   "coin": "MARKOV",
-   "why": "snipe",
-   "t": "2026-11-28T08:38:00Z"
-  },
   {
    "coin": "the cap",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "CATRAVE",
    "why": "snipe",
    "t": "2026-11-28T08:41:26Z"
+  },
+  {
+   "coin": "USD1",
+   "why": "snipe",
+   "t": "2026-11-28T08:41:49Z"
+  },
+  {
+   "coin": "GitHub",
+   "why": "snipe",
+   "t": "2026-11-28T08:41:55Z"
   }
  ],
  "curve": [
@@ -2400,6 +2400,10 @@
   [
    1795855260,
    47.79
+  ],
+  [
+   1795855320,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4553,33 +4557,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:37:46Z",
-   "time": "08:37:46",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.0 a minute · 0 watched · 14 rejected (mayhem mode 8, snipe not bought: only to size 3, serial launcher 3)",
-   "n": 2153
-  },
-  {
-   "t": "2026-11-28T07:38:46Z",
-   "time": "08:38:46",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 3, serial launcher 3, mayhem mode 3)",
-   "n": 2154
-  },
-  {
-   "t": "2026-11-28T07:38:51Z",
-   "time": "08:38:51",
-   "agent": "SCANNER",
-   "coin": "LCEVSGIRL",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 1.2 SOL in · +8% since the create · mcap 30 SOL",
-   "n": 2155
-  },
-  {
    "t": "2026-11-28T07:39:10Z",
    "time": "08:39:10",
    "agent": "SCANNER",
@@ -6351,6 +6328,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.4 s after the create · 0.6 SOL in · +4% since the create · mcap 31 SOL",
    "n": 2352
+  },
+  {
+   "t": "2026-11-28T08:41:41Z",
+   "time": "09:41:41",
+   "agent": "SCANNER",
+   "coin": "AFFORDHOU",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 2.491e+05 is not 30 + real SOL 0 (off +2.491e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 638 odd readings from 242 coins tonight",
+   "n": 2353
+  },
+  {
+   "t": "2026-11-28T08:41:49Z",
+   "time": "09:41:49",
+   "agent": "SCANNER",
+   "coin": "USD1",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 0.6 SOL in · +4% since the create · mcap 29 SOL",
+   "n": 2354
+  },
+  {
+   "t": "2026-11-28T08:41:55Z",
+   "time": "09:41:55",
+   "agent": "SCANNER",
+   "coin": "GitHub",
+   "action": "flag",
+   "text": "snipe · first reading 0.1 s after the create · 17.6 SOL in · +133% since the create · mcap 81 SOL",
+   "n": 2355
   }
  ],
  "nights": [
@@ -6423,7 +6427,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · odd curve readings 637 (241 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 43 watched · ws off · odd curve readings 639 (242 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6431,15 +6435,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 937,
-    "last_event_age_s": 8.3,
+    "events": 940,
+    "last_event_age_s": 8.1,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15854,
+    "events": 15924,
     "last_event_age_s": 0.9,
     "errors": 432,
     "last_error": "timeout after 5 s"
@@ -6447,8 +6451,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 675,
-    "last_event_age_s": 7.8,
+    "events": 678,
+    "last_event_age_s": 8.0,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6461,11 +6465,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 9,
-  "odd_readings": 637,
-  "odd_coins": 241
+  "followed": 12,
+  "odd_readings": 639,
+  "odd_coins": 242
  },
  "learner": {
   "samples": 84,
@@ -6512,30 +6516,84 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15778,
+   "sent": 15809,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15778,
+   "sent": 15809,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GitHub",
+   "name": "GitHub",
+   "mint": "A5GsopvvCBdowgX97ytvqSrFiEZav1zQTXmLT9Nvpump",
+   "age_s": 8,
+   "sol_in": 18.1,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 137.5,
+   "mcap_sol": 82.6,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/github",
+   "tg": false,
+   "web": "https://github.com/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "USD1",
+   "name": "Useless Shitty Dollar 1",
+   "mint": "7u78X6EjkeSZHioZpNkoYaZATA9BvMC4YyTapqnzpump",
+   "age_s": 14,
+   "sol_in": 0.59,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 4.0,
+   "mcap_sol": 29.1,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/AaronFlynnX/status/2126575945075343412",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "AFFORDHOU",
+   "name": "Affordable Redevelopment",
+   "mint": "3cNrzYMoNesQsakC1TFdHaoa3Sdz9keppGSWNAbuaPUN",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://twitter.com/staronline/status/2126597304392069550",
+   "tg": false,
+   "web": "https://grokfamily.fun/",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "CATRAVE",
    "name": "CAT RAVE",
    "mint": "HSJVLYBEirsmjLeotqRyJz6z48ZLTiQtYyNavqPVpump",
-   "age_s": 8,
+   "age_s": 37,
    "sol_in": 0.56,
-   "buys": 1,
-   "sells": 0,
+   "buys": 2,
+   "sells": 1,
    "rise_pct": 3.6,
    "mcap_sol": 30.9,
    "dev_pct": 3.4,
-   "big_sell": 0.0,
+   "big_sell": 0.03,
    "x": false,
    "tg": false,
    "web": "https://www.youtube.com/watch?v=IxX_QHay02M",
@@ -6546,7 +6604,7 @@
    "symbol": "HAWKING",
    "name": "The Droid Dog",
    "mint": "HgT7xDDncjwNX8icigNY6T3pczwaC3w7DJyK5i5Mpump",
-   "age_s": 48,
+   "age_s": 77,
    "sol_in": -1.98,
    "buys": 4,
    "sells": 5,
@@ -6564,7 +6622,7 @@
    "symbol": "mogmas",
    "name": "mogmas",
    "mint": "5pyVrvqPb9emTb8Snbzwg49s7mTobgAjbER2bXcGpump",
-   "age_s": 54,
+   "age_s": 83,
    "sol_in": -0.08,
    "buys": 9,
    "sells": 14,
@@ -6582,7 +6640,7 @@
    "symbol": "DAISY",
    "name": "Daisy",
    "mint": "Hovr6L3vGGAVurJv8vKr3riGDkfePJA1S7C4ajhuZdjx",
-   "age_s": 54,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6600,7 +6658,7 @@
    "symbol": "JHAGRA",
    "name": "Jhagra Disappearance",
    "mint": "A7a6bi5oLz1ob3FtMZ396AG4aUAMx9DJJYKGGxZSULKa",
-   "age_s": 85,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,7 +6676,7 @@
    "symbol": "GEEG",
    "name": "Geegel",
    "mint": "8g8k5aK8AaGPf7hoDhvNeJTW7puDoCRvLu12QBeaYDmR",
-   "age_s": 106,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,7 +6694,7 @@
    "symbol": "RANDOM",
    "name": "random",
    "mint": "EmNyCLUfvzrThVx224hAsdPMoMaLCBKXcKHPQGkziSKk",
-   "age_s": 134,
+   "age_s": 163,
    "sol_in": -0.05,
    "buys": 1,
    "sells": 2,
@@ -6654,7 +6712,7 @@
    "symbol": "Zhaki",
    "name": "Baboon Smirk",
    "mint": "5toQe11awPD2svfViqEpkFDfRnU21UwJcitPLwQJUYG6",
-   "age_s": 140,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -6672,7 +6730,7 @@
    "symbol": "the cap",
    "name": "the cap",
    "mint": "4KiYc2jd6zJLWjmwJGsh6a7irgiAUKDAuhsWAogBpump",
-   "age_s": 141,
+   "age_s": 170,
    "sol_in": -11.82,
    "buys": 14,
    "sells": 28,
