@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:39:31Z",
+ "updated": "2026-11-28T10:40:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1194,
+  "flagged": 1195,
   "checked": 49,
   "filtered": 1,
-  "lines": 2742,
+  "lines": 2743,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "test",
-   "why": "snipe",
-   "t": "2026-11-28T10:31:33Z"
-  },
   {
    "coin": "MYRON",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "RIP",
    "why": "snipe",
    "t": "2026-11-28T10:39:02Z"
+  },
+  {
+   "coin": "FLUFFI",
+   "why": "snipe",
+   "t": "2026-11-28T10:39:38Z"
   }
  ],
  "curve": [
-  [
-   1795826400,
-   47.79
-  ],
   [
    1795826460,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795862340,
    47.79
+  ],
+  [
+   1795862400,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:41:31Z",
-   "time": "10:41:31",
-   "agent": "SCANNER",
-   "coin": "BEANOS",
-   "action": "flag",
-   "text": "snipe · first reading 1.4 s after the create · 10.4 SOL in · +79% since the create · mcap 53 SOL",
-   "n": 2543
-  },
-  {
    "t": "2026-11-28T09:41:44Z",
    "time": "10:41:44",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 1.6 a minute · 0 watched · 3 rejected (serial launcher 1, snipe not bought: only to size 1, mayhem mode 1)",
    "n": 2742
+  },
+  {
+   "t": "2026-11-28T10:39:38Z",
+   "time": "11:39:38",
+   "agent": "SCANNER",
+   "coin": "FLUFFI",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 2743
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · odd curve readings 922 (276 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 20 watched · ws off · odd curve readings 922 (276 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 87,
-    "last_event_age_s": 30.4,
+    "events": 90,
+    "last_event_age_s": 10.5,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2730,
-    "last_event_age_s": 0.7,
+    "events": 2801,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 63,
-    "last_event_age_s": 30.1,
+    "events": 64,
+    "last_event_age_s": 26.7,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.4,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 2,
+  "followed": 3,
   "odd_readings": 922,
   "odd_coins": 276
  },
@@ -6578,28 +6578,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1582,
+   "sent": 1617,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1582,
+   "sent": 1617,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "RIP",
-   "name": "PJ Gallagher",
-   "mint": "CD3NGWo4RcQeLVJNrrZHyF4AzVvcZbkxQKLzF9Pspump",
-   "age_s": 30,
+   "symbol": "AL",
+   "name": "Albania",
+   "mint": "6ntxewp9KqTdrxhLsXc2kuXbTqbzmFKbRHnGT3ZGpump",
+   "age_s": 10,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.7,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "000",
+   "name": "000",
+   "mint": "ARZSh6edcmo41PfUJRAYwryXxg5S47mYGMnqRuYbpump",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "FLUFFI",
+   "name": "fluffington",
+   "mint": "BismWUPepJCCxVWTJ81ZxaHqS57gChV9Azubu14Qpump",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.6,
+   "dev_pct": 3.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/fluffisol",
+   "tg": false,
+   "web": "https://www.fluffington.ai/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "RIP",
+   "name": "PJ Gallagher",
+   "mint": "CD3NGWo4RcQeLVJNrrZHyF4AzVvcZbkxQKLzF9Pspump",
+   "age_s": 63,
+   "sol_in": 0.39,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 2.6,
+   "mcap_sol": 29.4,
    "dev_pct": 1.4,
    "big_sell": 0.0,
    "x": false,
@@ -6612,11 +6666,11 @@
    "symbol": "SOLLYXTOTH",
    "name": "SOLLYXTOTHEMOON",
    "mint": "FN8gn4cjjAjhko4DJfg1cXcmi3YCsrJkcT5sen1UYoNM",
-   "age_s": 107,
-   "sol_in": -0.08,
+   "age_s": 140,
+   "sol_in": -0.1,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.5,
+   "sells": 4,
+   "rise_pct": -0.7,
    "mcap_sol": 28.0,
    "dev_pct": 0.4,
    "big_sell": 0.1,
@@ -6625,24 +6679,6 @@
    "web": "https://www.twitch.tv/swagsollyx",
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "DERP",
-   "name": "DERPCAT",
-   "mint": "G4fPG2PpW3kcm2YKmMQqvXky5AJQa4TtesWHf8U4pump",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
