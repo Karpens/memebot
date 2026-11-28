@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:22:57Z",
+ "updated": "2026-11-28T00:23:30Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 203,
+  "flagged": 204,
   "checked": 49,
   "filtered": 1,
-  "lines": 791,
+  "lines": 792,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BORIS",
-   "why": "snipe",
-   "t": "2026-11-28T00:19:41Z"
-  },
   {
    "coin": "BLKFRIDAY",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "BAMBI",
    "why": "snipe",
    "t": "2026-11-28T00:22:12Z"
+  },
+  {
+   "coin": "GM",
+   "why": "snipe",
+   "t": "2026-11-28T00:23:23Z"
   }
  ],
  "curve": [
@@ -403,6 +403,10 @@
   ],
   [
    1795825320,
+   47.79
+  ],
+  [
+   1795825380,
    47.79
   ]
  ],
@@ -2557,15 +2561,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-27T23:41:36Z",
-   "time": "00:41:36",
-   "agent": "SCANNER",
-   "coin": "slowly",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 11.9 SOL in · +75% since the create · mcap 74 SOL",
-   "n": 592
-  },
-  {
    "t": "2026-11-27T23:41:44Z",
    "time": "00:41:44",
    "agent": "SCANNER",
@@ -4355,6 +4350,15 @@
    "action": "migrate",
    "text": "migrated: the curve is complete (pump-amm)",
    "n": 791
+  },
+  {
+   "t": "2026-11-28T00:23:23Z",
+   "time": "01:23:23",
+   "agent": "SCANNER",
+   "coin": "GM",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 1.8 SOL in · +11% since the create · mcap 38 SOL",
+   "n": 792
   }
  ],
  "nights": [
@@ -4427,7 +4431,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 93 (60 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 93 (60 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4435,15 +4439,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 839,
-    "last_event_age_s": 2.5,
+    "events": 845,
+    "last_event_age_s": 8.3,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14956,
+    "events": 15057,
     "last_event_age_s": 0.4,
     "errors": 0,
     "last_error": null
@@ -4451,10 +4455,10 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 468,
-    "last_event_age_s": 45.2,
-    "errors": 22,
-    "last_error": "meta.uxento.io: HTTP 404"
+    "events": 470,
+    "last_event_age_s": 8.2,
+    "errors": 23,
+    "last_error": "ar-io.dev: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -4465,9 +4469,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 5,
+  "followed": 7,
   "odd_readings": 93,
   "odd_coins": 60
  },
@@ -4516,23 +4520,113 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5798,
+   "sent": 5833,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5798,
+   "sent": 5833,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GM",
+   "name": "GOOD MORNING MEMESCOPE",
+   "mint": "EvuirR9E9zjfK6cQ7ScyqksS8xBM1c3QPFYc6phypump",
+   "age_s": 8,
+   "sol_in": 0.71,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 4.4,
+   "mcap_sol": 35.2,
+   "dev_pct": 9.6,
+   "big_sell": 2.02,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "Gq9nMX8MomWagjdGpqaLXf8aZ459jc5wzCnJSnmBLE7A",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 39.5,
+   "dev_pct": 17.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "98Q6StcsJRsFjKG8ExVGNUnVb7PQTpJFiHxTm1Tmw3AT",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 39.5,
+   "dev_pct": 17.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "PLOT",
+   "name": "Pippin's Plot",
+   "mint": "3cisgZZtephyqVRz5CiuMZMqxJRuH5KAUJLbuCWREEhc",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "JBFbsZdSsJGSQda7eDE1SyP3i9h3fy7is977sErnYn82",
+   "age_s": 30,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.5,
+   "dev_pct": 10.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "$AGBK",
    "name": "Billon Labs AK",
    "mint": "2JQ6mSDLxkTAvEQqWkUrzhA3gN7LKhTJBK3RpurCpump",
-   "age_s": 35,
+   "age_s": 68,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4550,7 +4644,7 @@
    "symbol": "BAMBI",
    "name": "Bambi",
    "mint": "8iD8NLwa7xi2YPtJnZwcHZfs2sK9VC6i4zFFe5yBgcPE",
-   "age_s": 45,
+   "age_s": 78,
    "sol_in": -0.59,
    "buys": 0,
    "sells": 1,
@@ -4568,7 +4662,7 @@
    "symbol": "SHINU",
    "name": "Sheep inu",
    "mint": "EgExnTmZSwgv7ZG3GmgBSamLjpivedwQV91ytJa8pump",
-   "age_s": 62,
+   "age_s": 95,
    "sol_in": 1.41,
    "buys": 1,
    "sells": 0,
@@ -4586,14 +4680,14 @@
    "symbol": "Pmup",
    "name": "Pmup",
    "mint": "7AurvX8uxM964PSgeKZbrAcSuykWALQwwK3ZDPxZpump",
-   "age_s": 80,
-   "sol_in": 19.01,
-   "buys": 36,
-   "sells": 32,
-   "rise_pct": 108.5,
-   "mcap_sol": 118.8,
+   "age_s": 113,
+   "sol_in": 22.99,
+   "buys": 51,
+   "sells": 49,
+   "rise_pct": 136.1,
+   "mcap_sol": 134.6,
    "dev_pct": 32.2,
-   "big_sell": 3.36,
+   "big_sell": 4.6,
    "x": "https://x.com/OfficialMior/status/2126471478203855108?a=dq2XXOnjtUcjjbzCR1Y&s=20",
    "tg": false,
    "web": "https://pmup.tech/",
@@ -4604,12 +4698,12 @@
    "symbol": "Midcurve",
    "name": "Midcurve",
    "mint": "14SsX1H9qge5qE3MeQK87hygFkmHBQnHxJEHgXkspump",
-   "age_s": 90,
-   "sol_in": 40.44,
-   "buys": 42,
-   "sells": 39,
-   "rise_pct": 392.7,
-   "mcap_sol": 168.3,
+   "age_s": 123,
+   "sol_in": 32.42,
+   "buys": 49,
+   "sells": 53,
+   "rise_pct": 291.2,
+   "mcap_sol": 133.6,
    "dev_pct": 10.2,
    "big_sell": 4.56,
    "x": "https://x.com/MidCurveonSol/status/2126471177640329329?a=RFJzA-hUmXgjGaLT8_o&s=20",
@@ -4622,7 +4716,7 @@
    "symbol": "...",
    "name": "...",
    "mint": "BRWo1VU5T9JDoAc3rna4noyiFEcmQviWRSm2gcBfpump",
-   "age_s": 96,
+   "age_s": 129,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4640,7 +4734,7 @@
    "symbol": "PUMP",
    "name": "Pump Airdrop",
    "mint": "71RS9FpuwB4B9Yx8nCMoFfcVvoyaHjFqTF1Rde46pump",
-   "age_s": 129,
+   "age_s": 162,
    "sol_in": -0.99,
    "buys": 6,
    "sells": 10,
