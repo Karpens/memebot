@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:57:23Z",
+ "updated": "2026-11-28T05:57:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 775,
   "checked": 49,
   "filtered": 1,
-  "lines": 1891,
+  "lines": 1892,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3897,15 +3897,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:33:11Z",
-   "time": "05:33:11",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe not bought: last min of th 4, serial launcher 2, no symbol or name 1)",
-   "n": 1692
-  },
-  {
    "t": "2026-11-28T04:34:31Z",
    "time": "05:34:31",
    "agent": "LOGGER",
@@ -5695,6 +5686,15 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 5 rejected (snipe not bought: only to size 3, serial launcher 1, mayhem mode 1)",
    "n": 1891
+  },
+  {
+   "t": "2026-11-28T05:57:46Z",
+   "time": "06:57:46",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 2 watched · 6 rejected (snipe not bought: only to size 3, mayhem mode 2, serial launcher 1) · closest 1: no curve reading yet",
+   "n": 1892
   }
  ],
  "nights": [
@@ -5761,7 +5761,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · odd curve readings 407 (186 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 16 watched · ws off · odd curve readings 407 (186 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5769,24 +5769,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 279,
-    "last_event_age_s": 7.0,
+    "events": 282,
+    "last_event_age_s": 1.6,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 2151,
-    "last_event_age_s": 1.2,
-    "errors": 214,
+    "connected": false,
+    "events": 2153,
+    "last_event_age_s": 31.3,
+    "errors": 219,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 215,
-    "last_event_age_s": 55.4,
+    "events": 217,
+    "last_event_age_s": 14.5,
     "errors": 12,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5799,9 +5799,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
-  "watching": 0,
-  "followed": 4,
+  "creates_per_min": 2.4,
+  "watching": 2,
+  "followed": 7,
   "odd_readings": 407,
   "odd_coins": 186
  },
@@ -5850,23 +5850,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5293,
+   "sent": 5329,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5293,
+   "sent": 5329,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "QTC",
+   "name": "Quantum coin",
+   "mint": "8DmtCFSb2XYg3jDjjn9Z1epGZczhsfcqR5s8A9s5wNP7",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  },
+  {
+   "symbol": "Visit",
+   "name": "Visit Pad",
+   "mint": "Db7LX5Dfn4T9VA2eJNJ3a7q2PUxTs1CFkeNUHqHnpump",
+   "age_s": 14,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.0,
+   "dev_pct": 10.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/visitpadpf/status/2126555875242295552?",
+   "tg": false,
+   "web": "https://visitpad.fun/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "1",
+   "name": "1 Coin Can Ruin Your Life",
+   "mint": "99fPSWVbEqDhoGeJzyHtxJdxfk16pCNr9fe5KuZGpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/TrenchSage/status/2126556060039467345",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "$SRICE",
    "name": "SRICE",
    "mint": "8yKrutS9QNR2cAjS2joePcvuyvskD6346s5PNSBwpump",
-   "age_s": 7,
+   "age_s": 41,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5884,7 +5938,7 @@
    "symbol": "AIR",
    "name": "ts is the best one retards",
    "mint": "54vbavmFVX7m6o8U5yC6cCfH1f46h55SkUeoRL5Vtj8G",
-   "age_s": 55,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5902,7 +5956,7 @@
    "symbol": "ALEAST",
    "name": "Staying in the AL East",
    "mint": "5fdFkwc27t4afWHsUSjDQ1JdKvxKdaWMh8an6uZ7pump",
-   "age_s": 76,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5920,7 +5974,7 @@
    "symbol": "Groo",
    "name": "Groo",
    "mint": "DuEFAc9vN2zL6DZRN4yD2MoaUWPrSQ2Mmn5dTQvepump",
-   "age_s": 86,
+   "age_s": 120,
    "sol_in": -3.91,
    "buys": 8,
    "sells": 18,
@@ -5938,7 +5992,7 @@
    "symbol": "BTC",
    "name": "Buy The Clown",
    "mint": "6wms2CxkYZD26KjNYHxJ4AnhQa5Wh6SQ1SuvSP4Apump",
-   "age_s": 108,
+   "age_s": 142,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5956,7 +6010,7 @@
    "symbol": "SPEED",
    "name": "Speed Test",
    "mint": "CHXpsAqNeDoFEGrU9EchWcnNb8NkbXe5QvhTt4Ldpump",
-   "age_s": 130,
+   "age_s": 164,
    "sol_in": -0.05,
    "buys": 0,
    "sells": 1,
