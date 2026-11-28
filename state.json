@@ -59,69 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:17:43Z",
-    "time": "00:17:43",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "15 losses in a row · 2 min pause",
-    "n": 257
-   },
-   {
-    "t": "2026-11-27T23:17:43Z",
-    "time": "00:17:43",
-    "agent": "EXECUTOR",
-    "coin": "IPOY",
-    "action": "exit",
-    "text": "EXIT IPOY $-0.42 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 258
-   },
-   {
-    "t": "2026-11-27T23:17:43Z",
-    "time": "00:17:43",
-    "agent": "LEARNER",
-    "coin": "IPOY",
-    "action": "learn",
-    "text": "learned · np:dev:8+ now avg -8.7% over 280",
-    "n": 259
-   },
-   {
-    "t": "2026-11-27T23:17:47Z",
-    "time": "00:17:47",
-    "agent": "RISK",
-    "coin": "LOFI",
-    "action": "skip",
-    "text": "no entry: pause after a losing streak",
-    "n": 260
-   },
-   {
-    "t": "2026-11-27T23:17:47Z",
-    "time": "00:17:47",
-    "agent": "LEARNER",
-    "coin": "LOFI",
-    "action": "shadow",
-    "text": "SHADOW LOFI · not bought (pause after a losing streak) · followed as if bought: $5.39 at 0.0000020449 (curve maths, every cost) · same exits, outside the book",
-    "n": 261
-   },
-   {
-    "t": "2026-11-27T23:18:02Z",
-    "time": "00:18:02",
-    "agent": "LEARNER",
-    "coin": "LOFI",
-    "action": "shadow",
-    "text": "SHADOW LOFI would have made +37.9% (TP +10%) · learned x0.5 · np:social:none now avg -7.6% over 300",
-    "n": 262
-   },
-   {
-    "t": "2026-11-27T23:18:05Z",
-    "time": "00:18:05",
-    "agent": "LEARNER",
-    "coin": "MOONBCOLL",
-    "action": "shadow",
-    "text": "SHADOW MOONBCOLL would have made -7.5% (5 min, only -3%) · learned x0.5 · np:social:web now avg -7.9% over 300",
-    "n": 263
-   },
-   {
     "t": "2026-11-27T23:18:05Z",
     "time": "00:18:05",
     "agent": "LEARNER",
@@ -5457,6 +5394,69 @@
     "action": "flag",
     "text": "snipe · first reading 0.9 s after the create · 22.2 SOL in · +191% since the create · mcap 89 SOL",
     "n": 856
+   },
+   {
+    "t": "2026-11-28T00:41:44Z",
+    "time": "01:41:44",
+    "agent": "SCANNER",
+    "coin": "MAX",
+    "action": "flag",
+    "text": "snipe · first reading 1.0 s after the create · 18.3 SOL in · +153% since the create · mcap 75 SOL",
+    "n": 857
+   },
+   {
+    "t": "2026-11-28T00:41:52Z",
+    "time": "01:41:52",
+    "agent": "SCANNER",
+    "coin": "세탁기",
+    "action": "flag",
+    "text": "snipe · first reading 1.0 s after the create · 8.4 SOL in · +62% since the create · mcap 48 SOL",
+    "n": 858
+   },
+   {
+    "t": "2026-11-28T00:41:52Z",
+    "time": "01:41:52",
+    "agent": "SIZER",
+    "coin": "세탁기",
+    "action": "skip",
+    "text": "only $4.78 left to size",
+    "n": 859
+   },
+   {
+    "t": "2026-11-28T00:41:54Z",
+    "time": "01:41:54",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.8 a minute · 0 watched · 17 rejected (snipe not bought: only to size 11, odd curve reading: virtual SOL i 2, serial launcher 2)",
+    "n": 860
+   },
+   {
+    "t": "2026-11-28T00:41:56Z",
+    "time": "01:41:56",
+    "agent": "SCANNER",
+    "coin": "THE P",
+    "action": "flag",
+    "text": "snipe · first reading 0.2 s after the create · 0.5 SOL in · +3% since the create · mcap 35 SOL",
+    "n": 861
+   },
+   {
+    "t": "2026-11-28T00:41:57Z",
+    "time": "01:41:57",
+    "agent": "SCANNER",
+    "coin": "DPOPE",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1.247e+05 is not 30 + real SOL 18.75 (off +1.247e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 140 odd readings from 71 coins tonight",
+    "n": 862
+   },
+   {
+    "t": "2026-11-28T00:42:12Z",
+    "time": "01:42:12",
+    "agent": "SCANNER",
+    "coin": "singularity",
+    "action": "migrate",
+    "text": "migrated: the curve is complete (pump-amm)",
+    "n": 863
    }
   ],
   "trades": [
@@ -8102,26 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 237,
+  "flagged": 240,
   "checked": 49,
   "filtered": 1,
-  "lines": 856,
+  "lines": 863,
   "flags": [
-   {
-    "coin": "STUDS",
-    "why": "snipe",
-    "t": "2026-11-28T00:39:22Z"
-   },
-   {
-    "coin": "MIDCURVE",
-    "why": "snipe",
-    "t": "2026-11-28T00:39:36Z"
-   },
-   {
-    "coin": "TS",
-    "why": "snipe",
-    "t": "2026-11-28T00:39:46Z"
-   },
    {
     "coin": "NOPE",
     "why": "snipe",
@@ -8146,6 +8131,21 @@
     "coin": "singularity",
     "why": "snipe",
     "t": "2026-11-28T00:41:22Z"
+   },
+   {
+    "coin": "MAX",
+    "why": "snipe",
+    "t": "2026-11-28T00:41:44Z"
+   },
+   {
+    "coin": "세탁기",
+    "why": "snipe",
+    "t": "2026-11-28T00:41:52Z"
+   },
+   {
+    "coin": "THE P",
+    "why": "snipe",
+    "t": "2026-11-28T00:41:56Z"
    }
   ],
   "curve": [
@@ -8556,13 +8556,17 @@
    [
     1795826460,
     47.79
+   ],
+   [
+    1795826520,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795826453.960815,
+  "np_said": 1795826514.960636,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8747,8 +8751,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 139,
-   "coins": 70,
+   "readings": 140,
+   "coins": 71,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -8820,7 +8824,8 @@
     "HfhdUziPSLf6aFPcffYwrn5M8pfc2r6qJNDDuKoypump",
     "7UwYYnHXkXxY6KKPUYBnPo3E7ZgKrtf5bxj28xjTkg8i",
     "63cV6LPjBkVG1PjLJ7UVwSiLMFmSmjb6UHXLnpAfUV5f",
-    "EJrWxo3UeopoJekTzdzA9onyHtuojjTvGLCJ46B9VLbZ"
+    "EJrWxo3UeopoJekTzdzA9onyHtuojjTvGLCJ46B9VLbZ",
+    "5jqkvJ4KisBG6EVUCY14fXSo2z1vAEoLS4V95WroXygm"
    ]
   },
   "risk_said": {
@@ -8829,7 +8834,7 @@
   },
   "sizer_said": {
    "why": "cash",
-   "at": 1795826206.150618
+   "at": 1795826512.176032
   }
  },
  "last_night": {
