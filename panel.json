@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:40:29Z",
+ "updated": "2026-11-28T08:41:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 980,
+  "flagged": 982,
   "checked": 49,
   "filtered": 1,
-  "lines": 2348,
+  "lines": 2350,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TIM",
-   "why": "snipe",
-   "t": "2026-11-28T08:34:37Z"
-  },
-  {
-   "coin": "DBT",
-   "why": "snipe",
-   "t": "2026-11-28T08:35:27Z"
-  },
   {
    "coin": "攀豹豹",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "RANDOM",
    "why": "snipe",
    "t": "2026-11-28T08:39:21Z"
+  },
+  {
+   "coin": "mogmas",
+   "why": "snipe",
+   "t": "2026-11-28T08:40:40Z"
+  },
+  {
+   "coin": "DAISY",
+   "why": "snipe",
+   "t": "2026-11-28T08:40:40Z"
   }
  ],
  "curve": [
@@ -2396,6 +2396,10 @@
   [
    1795855200,
    47.79
+  ],
+  [
+   1795855260,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4549,24 +4553,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:36:45Z",
-   "time": "08:36:45",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 0 watched · 20 rejected (mayhem mode 11, snipe not bought: only to size 6, serial launcher 2)",
-   "n": 2149
-  },
-  {
-   "t": "2026-11-28T07:37:06Z",
-   "time": "08:37:06",
-   "agent": "SCANNER",
-   "coin": "INTRINSIC",
-   "action": "flag",
-   "text": "snipe · first reading 0.1 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
-   "n": 2150
-  },
-  {
    "t": "2026-11-28T07:37:45Z",
    "time": "08:37:45",
    "agent": "SCANNER",
@@ -6347,6 +6333,24 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, odd curve reading: virtual SOL i 2)",
    "n": 2348
+  },
+  {
+   "t": "2026-11-28T08:40:40Z",
+   "time": "09:40:40",
+   "agent": "SCANNER",
+   "coin": "mogmas",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 6.4 SOL in · +45% since the create · mcap 43 SOL",
+   "n": 2349
+  },
+  {
+   "t": "2026-11-28T08:40:40Z",
+   "time": "09:40:40",
+   "agent": "SCANNER",
+   "coin": "DAISY",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2350
   }
  ],
  "nights": [
@@ -6419,7 +6423,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · odd curve readings 635 (241 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · odd curve readings 636 (241 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6427,15 +6431,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 933,
-    "last_event_age_s": 20.8,
+    "events": 936,
+    "last_event_age_s": 15.6,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15681,
+    "events": 15770,
     "last_event_age_s": 0.9,
     "errors": 432,
     "last_error": "timeout after 5 s"
@@ -6443,8 +6447,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 671,
-    "last_event_age_s": 20.7,
+    "events": 674,
+    "last_event_age_s": 15.6,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6457,10 +6461,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
+  "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 7,
-  "odd_readings": 635,
+  "followed": 8,
+  "odd_readings": 636,
   "odd_coins": 241
  },
  "learner": {
@@ -6508,23 +6512,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15709,
+   "sent": 15743,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15709,
+   "sent": 15743,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HAWKING",
+   "name": "The Droid Dog",
+   "mint": "HgT7xDDncjwNX8icigNY6T3pczwaC3w7DJyK5i5Mpump",
+   "age_s": 15,
+   "sol_in": 0.2,
+   "buys": 4,
+   "sells": 4,
+   "rise_pct": 1.2,
+   "mcap_sol": 32.2,
+   "dev_pct": 6.6,
+   "big_sell": 2.01,
+   "x": "https://x.com/gigadiggadev/status/2126597109080371477",
+   "tg": false,
+   "web": "https://x.com/damicelled/status/2126290276268249115",
+   "status": "rejected: serial launcher: 8 more coins in 60 min",
+   "why": "serial launcher: 8 more coins in 60 min"
+  },
+  {
+   "symbol": "mogmas",
+   "name": "mogmas",
+   "mint": "5pyVrvqPb9emTb8Snbzwg49s7mTobgAjbER2bXcGpump",
+   "age_s": 21,
+   "sol_in": 2.6,
+   "buys": 2,
+   "sells": 8,
+   "rise_pct": 17.5,
+   "mcap_sol": 35.1,
+   "dev_pct": 3.4,
+   "big_sell": 1.09,
+   "x": "https://x.com/mogmas_/status/2126597089249436053",
+   "tg": false,
+   "web": "https://x.com/mogmas_",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "DAISY",
+   "name": "Daisy",
+   "mint": "Hovr6L3vGGAVurJv8vKr3riGDkfePJA1S7C4ajhuZdjx",
+   "age_s": 21,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://bsky.app/profile/okaliz.bsky.social/post/3n3dwsmj26s2k",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "JHAGRA",
    "name": "Jhagra Disappearance",
    "mint": "A7a6bi5oLz1ob3FtMZ396AG4aUAMx9DJJYKGGxZSULKa",
-   "age_s": 20,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6542,7 +6600,7 @@
    "symbol": "GEEG",
    "name": "Geegel",
    "mint": "8g8k5aK8AaGPf7hoDhvNeJTW7puDoCRvLu12QBeaYDmR",
-   "age_s": 41,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6560,7 +6618,7 @@
    "symbol": "RANDOM",
    "name": "random",
    "mint": "EmNyCLUfvzrThVx224hAsdPMoMaLCBKXcKHPQGkziSKk",
-   "age_s": 69,
+   "age_s": 101,
    "sol_in": -0.05,
    "buys": 1,
    "sells": 2,
@@ -6578,7 +6636,7 @@
    "symbol": "Zhaki",
    "name": "Baboon Smirk",
    "mint": "5toQe11awPD2svfViqEpkFDfRnU21UwJcitPLwQJUYG6",
-   "age_s": 75,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -6596,53 +6654,17 @@
    "symbol": "the cap",
    "name": "the cap",
    "mint": "4KiYc2jd6zJLWjmwJGsh6a7irgiAUKDAuhsWAogBpump",
-   "age_s": 76,
-   "sol_in": -11.65,
+   "age_s": 108,
+   "sol_in": -11.82,
    "buys": 14,
-   "sells": 25,
-   "rise_pct": -47.9,
-   "mcap_sol": 28.3,
+   "sells": 27,
+   "rise_pct": -48.5,
+   "mcap_sol": 28.0,
    "dev_pct": 30.4,
    "big_sell": 18.93,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MARKOV",
-   "name": "Markov Robotics",
-   "mint": "DXPRTxfM22WXWqVKxYaFM4XJXXAVfjJh1Hyn6aXky4jA",
-   "age_s": 148,
-   "sol_in": -1.06,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -6.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.7,
-   "big_sell": 1.06,
-   "x": "https://x.com/markovrobotics",
-   "tg": false,
-   "web": "http://mr.inc/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FLOKI",
-   "name": "FLOKI",
-   "mint": "9YCAzPMn9cpwYFCvV4DSg8v1bhU8KGxgFi3f4ggApump",
-   "age_s": 170,
-   "sol_in": 0.01,
-   "buys": 3,
-   "sells": 5,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.78,
-   "x": "https://x.com/elonmusk/status/1474860884359094275",
-   "tg": false,
-   "web": "https://launchpad.analosstonk.xyz/a/Floki_santa",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
