@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:27:21Z",
+ "updated": "2026-11-28T04:27:53Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 693,
+  "flagged": 694,
   "checked": 49,
   "filtered": 1,
-  "lines": 1678,
+  "lines": 1680,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "frug",
-   "why": "snipe",
-   "t": "2026-11-28T04:23:35Z"
-  },
   {
    "coin": "aura",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GASSTATION",
    "why": "snipe",
    "t": "2026-11-28T04:26:35Z"
+  },
+  {
+   "coin": "PATCH",
+   "why": "snipe",
+   "t": "2026-11-28T04:27:32Z"
   }
  ],
  "curve": [
@@ -3537,24 +3537,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:32:31Z",
-   "time": "04:32:31",
-   "agent": "SCANNER",
-   "coin": "DCTY",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1479
-  },
-  {
-   "t": "2026-11-28T03:32:31Z",
-   "time": "04:32:31",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 1 watched · 6 rejected (snipe not bought: only to size 4, serial launcher 2) · closest MMS: no curve reading yet",
-   "n": 1480
-  },
-  {
    "t": "2026-11-28T03:32:32Z",
    "time": "04:32:32",
    "agent": "SCANNER",
@@ -5335,6 +5317,24 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, serial launcher 3)",
    "n": 1678
+  },
+  {
+   "t": "2026-11-28T04:27:27Z",
+   "time": "05:27:27",
+   "agent": "SCANNER",
+   "coin": "MOJAVE",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 4.295 is not 30 + real SOL 0.002963 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 359 odd readings from 163 coins tonight",
+   "n": 1679
+  },
+  {
+   "t": "2026-11-28T04:27:32Z",
+   "time": "05:27:32",
+   "agent": "SCANNER",
+   "coin": "PATCH",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 15.2 SOL in · +125% since the create · mcap 65 SOL",
+   "n": 1680
   }
  ],
  "nights": [
@@ -5407,7 +5407,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 44 watched · ws off · odd curve readings 358 (162 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 45 watched · ws off · odd curve readings 359 (163 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5415,24 +5415,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1995,
-    "last_event_age_s": 47.4,
+    "events": 1998,
+    "last_event_age_s": 22.0,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 42104,
-    "last_event_age_s": 0.2,
+    "events": 42148,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1225,
-    "last_event_age_s": 47.3,
+    "events": 1227,
+    "last_event_age_s": 21.4,
     "errors": 57,
     "last_error": "n.uguu.se: timeout after 2 s"
    }
@@ -5445,11 +5445,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 10,
-  "odd_readings": 358,
-  "odd_coins": 162
+  "followed": 11,
+  "odd_readings": 359,
+  "odd_coins": 163
  },
  "learner": {
   "samples": 84,
@@ -5496,28 +5496,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21404,
+   "sent": 21438,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21404,
+   "sent": 21438,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PATCH",
+   "name": "Patchwork",
+   "mint": "Ei4zo1JEihTB32W6B7fPa5xvxDBXn4qxmqY7yHgKpump",
+   "age_s": 21,
+   "sol_in": -0.3,
+   "buys": 3,
+   "sells": 6,
+   "rise_pct": -1.9,
+   "mcap_sol": 28.2,
+   "dev_pct": 1.5,
+   "big_sell": 14.23,
+   "x": "https://x.com/Patchworksol/status/2126533063404384303",
+   "tg": false,
+   "web": "https://patchworksol.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "HAPPY",
+   "name": "HAPPYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
+   "mint": "EKZ6TLSfZTgpcGc9LGSAiwKMKqkKsN9v1yc6oHP3pump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "MOJAVE",
+   "name": "Mojave The Tortoise",
+   "mint": "A2vZQKCWJa6zSijE57o7tCMwGvHziRxqf94hChYspump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://abc30.com/story/oldest-living-animal-san-francisco-zoo-mojave-tortoise-dies-79/20074792/",
+   "status": "rejected: odd curve reading: virtual SOL 4.295 is not 30 + real SOL 0.002963 (off -25.71 SOL)",
+   "why": "odd curve reading: virtual SOL 4.295 is not 30 + real SOL 0.002963 (off -25.71 SOL)"
+  },
+  {
    "symbol": "GASSTATION",
    "name": "Gas Station",
    "mint": "CswTYQbJWZ87BQpQNhN3Hy6uMdXBaidemMs11uBypump",
-   "age_s": 47,
-   "sol_in": 0.01,
+   "age_s": 79,
+   "sol_in": -0.09,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.2,
+   "sells": 3,
+   "rise_pct": -0.6,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
    "big_sell": 0.15,
    "x": "https://x.com/somewheresy/status/2126533163925344718",
@@ -5530,7 +5584,7 @@
    "symbol": "COOKED",
    "name": "Market Is Cooked",
    "mint": "FhAi5LP565xfxiuBQLEwe21fTDxfciCGXn5YkvrQVzDq",
-   "age_s": 63,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5548,7 +5602,7 @@
    "symbol": "EVIE",
    "name": "Evie the Lion",
    "mint": "Dw71L43osKDGUMwmAUcMVeuVaWeeC42FSaAKP96k43EY",
-   "age_s": 74,
+   "age_s": 106,
    "sol_in": -0.49,
    "buys": 2,
    "sells": 7,
@@ -5566,7 +5620,7 @@
    "symbol": "171-YK-RF",
    "name": "171-YK-RF",
    "mint": "DqJ92zbgtCWoyN3MYmLPs3cfsgBoMJ2epBn4ag7Ypump",
-   "age_s": 88,
+   "age_s": 120,
    "sol_in": 0.01,
    "buys": 2,
    "sells": 1,
@@ -5584,7 +5638,7 @@
    "symbol": "It's over",
    "name": "It's over",
    "mint": "6gVLsC5dG7PUhtHP6Z9MT6BcYowhAzV4XEh6CcR8pump",
-   "age_s": 89,
+   "age_s": 121,
    "sol_in": -1.48,
    "buys": 1,
    "sells": 2,
@@ -5602,12 +5656,12 @@
    "symbol": "guy",
    "name": "guy",
    "mint": "GbxhfJffCwYzsjH1CsDZhNJRtVdVUnPjjmgPipd5pump",
-   "age_s": 92,
-   "sol_in": -0.66,
+   "age_s": 124,
+   "sol_in": -0.72,
    "buys": 11,
-   "sells": 17,
-   "rise_pct": -4.2,
-   "mcap_sol": 28.6,
+   "sells": 18,
+   "rise_pct": -4.6,
+   "mcap_sol": 28.5,
    "dev_pct": 3.4,
    "big_sell": 8.21,
    "x": "https://x.com/pumpdutguy",
@@ -5620,12 +5674,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "GUDmxB7cZWDoDfPY6DotfuD3eytzLhAd8a8E8Lyspump",
-   "age_s": 115,
-   "sol_in": 19.41,
-   "buys": 38,
-   "sells": 28,
-   "rise_pct": 149.7,
-   "mcap_sol": 86.8,
+   "age_s": 147,
+   "sol_in": 19.74,
+   "buys": 51,
+   "sells": 37,
+   "rise_pct": 152.8,
+   "mcap_sol": 87.9,
    "dev_pct": 11.1,
    "big_sell": 0.35,
    "x": "https://x.com/nvidianewsroom",
@@ -5638,11 +5692,11 @@
    "symbol": "RAMEN",
    "name": "Ramencoin",
    "mint": "CrQoF844NBCdgXf2by7XXQ2C3wYTaQZYB2Fk75wdpump",
-   "age_s": 125,
-   "sol_in": 0.0,
+   "age_s": 157,
+   "sol_in": -0.02,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
+   "sells": 2,
+   "rise_pct": -0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
    "big_sell": 0.1,
@@ -5656,7 +5710,7 @@
    "symbol": "MUSCLEDOGE",
    "name": "Muscle Doge",
    "mint": "GSsmeUGxEvjYtbwAk9yvdYy4awYLeA6LMfMpY3P3pump",
-   "age_s": 136,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5667,24 +5721,6 @@
    "x": false,
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "aura",
-   "name": "aura",
-   "mint": "b36dLTHKwD6dQcUEwenFVb4FDhfk7u2PBTHr9WVpump",
-   "age_s": 160,
-   "sol_in": 0.28,
-   "buys": 35,
-   "sells": 48,
-   "rise_pct": 1.9,
-   "mcap_sol": 29.0,
-   "dev_pct": 1.0,
-   "big_sell": 5.66,
-   "x": "https://x.com/auracoinpf/status/2126532663708143964",
-   "tg": false,
-   "web": "https://nationaldaycalendar.com/celebrations/international-aura-awareness-day-fourth-saturday-in-november",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
