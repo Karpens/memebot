@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:58:14Z",
+ "updated": "2026-11-28T13:58:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1591,
+  "flagged": 1593,
   "checked": 49,
   "filtered": 1,
-  "lines": 3440,
+  "lines": 3443,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "livra",
-   "why": "snipe",
-   "t": "2026-11-28T13:55:03Z"
-  },
-  {
-   "coin": "RXY",
-   "why": "snipe",
-   "t": "2026-11-28T13:55:13Z"
-  },
   {
    "coin": "MBS",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "NEED$",
    "why": "snipe",
    "t": "2026-11-28T13:57:22Z"
+  },
+  {
+   "coin": "SANCHEZ",
+   "why": "snipe",
+   "t": "2026-11-28T13:58:27Z"
+  },
+  {
+   "coin": "Anthropic",
+   "why": "snipe",
+   "t": "2026-11-28T13:58:33Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T13:06:02Z",
-   "time": "14:06:02",
-   "agent": "SCANNER",
-   "coin": "PNP",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3241
-  },
-  {
-   "t": "2026-11-28T13:06:31Z",
-   "time": "14:06:31",
-   "agent": "SCANNER",
-   "coin": "ROCK",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 18.1 SOL in · +151% since the create · mcap 75 SOL",
-   "n": 3242
-  },
-  {
-   "t": "2026-11-28T13:06:50Z",
-   "time": "14:06:50",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 0 watched · 14 rejected (snipe not bought: only to size 7, serial launcher 4, mayhem mode 3)",
-   "n": 3243
-  },
-  {
    "t": "2026-11-28T13:06:53Z",
    "time": "14:06:53",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1157 odd readings from 337 coins tonight",
    "n": 3440
+  },
+  {
+   "t": "2026-11-28T13:58:15Z",
+   "time": "14:58:15",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 8.4 a minute · 0 watched · 28 rejected (mayhem mode 12, serial launcher 6, snipe not bought: only to size 6)",
+   "n": 3441
+  },
+  {
+   "t": "2026-11-28T13:58:27Z",
+   "time": "14:58:27",
+   "agent": "SCANNER",
+   "coin": "SANCHEZ",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 4.9 SOL in · +30% since the create · mcap 50 SOL",
+   "n": 3442
+  },
+  {
+   "t": "2026-11-28T13:58:33Z",
+   "time": "14:58:33",
+   "agent": "SCANNER",
+   "coin": "Anthropic",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 17.7 SOL in · +133% since the create · mcap 82 SOL",
+   "n": 3443
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 47 watched · ws off · odd curve readings 1163 (337 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 48 watched · ws off · odd curve readings 1193 (337 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1196,
-    "last_event_age_s": 6.6,
+    "events": 1198,
+    "last_event_age_s": 14.7,
     "errors": 11,
     "last_error": "TimeoutError: timed out while waiting for handshake response"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26806,
-    "last_event_age_s": 0.2,
+    "events": 26875,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 669,
-    "last_event_age_s": 6.2,
+    "events": 671,
+    "last_event_age_s": 14.4,
     "errors": 30,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,10 +6529,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 8.8,
+  "creates_per_min": 7.4,
   "watching": 0,
   "followed": 13,
-  "odd_readings": 1163,
+  "odd_readings": 1193,
   "odd_coins": 337
  },
  "learner": {
@@ -6580,23 +6580,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14271,
+   "sent": 14306,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14271,
+   "sent": 14306,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Anthropic",
+   "name": "Anthropic official",
+   "mint": "7soYxYHCo8YSsiFcrTPWEuMU2yBXuUzku6bFuiBQpump",
+   "age_s": 14,
+   "sol_in": 17.93,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 134.4,
+   "mcap_sol": 83.0,
+   "dev_pct": 11.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/AnthropicAI",
+   "tg": false,
+   "web": "https://www.anthropic.com/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "SANCHEZ",
+   "name": "Sanchez The Raccoon",
+   "mint": "AqRNV88ZW5Xd3NrWCCakeRZxi5o1oCXQD4cEFtU8pump",
+   "age_s": 21,
+   "sol_in": -1.87,
+   "buys": 10,
+   "sells": 11,
+   "rise_pct": -10.4,
+   "mcap_sol": 34.1,
+   "dev_pct": 15.3,
+   "big_sell": 8.28,
+   "x": "https://x.com/devilsiopf/status/2126676925057740867",
+   "tg": false,
+   "web": "https://www.instagram.com/reel/DgPjvPCRxNw/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FOMOON",
    "name": "Fomoon",
    "mint": "3RaaAzEXSfh4ob9oSQX2EotETnrkYboeC36zg5iEpnNH",
-   "age_s": 6,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6650,7 @@
    "symbol": "REMV",
    "name": "Yarmo Remvi",
    "mint": "2WxXbae8iswCRbykYuAXZNqNAsFS3SpwuFRc1KczFro8",
-   "age_s": 46,
+   "age_s": 79,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "NEED$",
    "name": "Money",
    "mint": "8wMYzfYYUYqrW5BzrqDyZW4MrX7CQ7K6d6jcPdCjpump",
-   "age_s": 53,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6650,7 +6686,7 @@
    "symbol": "NELV",
    "name": "Ertov Nelva",
    "mint": "9QuGJFnQvwPGdvGqs1EK34nbShM1VZqvJWaJWkZ5iz4q",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6704,7 @@
    "symbol": "REMV",
    "name": "Ardun Remvi",
    "mint": "CL9tztuGTiZkYUUQ4irWMvyW6ghTYdwRcjrZPDbTm8s1",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6722,7 @@
    "symbol": "DICE",
    "name": "DICE",
    "mint": "B7eXrA8cunbsYrkDGxvR4cRTZNg9byKLr4fqbcH5pump",
-   "age_s": 66,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,12 +6740,12 @@
    "symbol": "MARS",
    "name": "Mars the Pygmy Hippo",
    "mint": "BeWMhJazUuA3rTDKaAej7SuKgz5eKdPFK6CLhMMkpump",
-   "age_s": 74,
-   "sol_in": 8.04,
+   "age_s": 107,
+   "sol_in": 7.85,
    "buys": 17,
-   "sells": 16,
-   "rise_pct": 56.6,
-   "mcap_sol": 49.7,
+   "sells": 17,
+   "rise_pct": 55.1,
+   "mcap_sol": 49.3,
    "dev_pct": 6.6,
    "big_sell": 4.43,
    "x": "https://x.com/kryptonite3ee/status/2126676732635664537",
@@ -6722,7 +6758,7 @@
    "symbol": "ERTO",
    "name": "Ardun Ertov",
    "mint": "5sEFAt8XeXmWZkTMK91PqjxrAEVzCoiNTmDSAGA2agpL",
-   "age_s": 80,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6740,7 +6776,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "5iF3GbAbi8D63yaKSo8wAR9zVuZFhYbM2Q5KQSdhpump",
-   "age_s": 83,
+   "age_s": 116,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6758,7 +6794,7 @@
    "symbol": "igloo",
    "name": "igloo",
    "mint": "4jGMiGvBc97FnYDi6siJQ3T6UUWVLdGTxesrb37Mpump",
-   "age_s": 84,
+   "age_s": 117,
    "sol_in": -0.14,
    "buys": 2,
    "sells": 4,
@@ -6776,7 +6812,7 @@
    "symbol": "$LA BEAST",
    "name": "$HAVE A GOOD DAY",
    "mint": "4jrLyYw4cHjpKuZNhHmamy7y25soMff6zijYkB6ppump",
-   "age_s": 86,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6794,7 +6830,7 @@
    "symbol": "KIRV",
    "name": "Ubrin Kirvo",
    "mint": "GsnpWud84GBUUvd84vRwfvsLRBfXgmbjxwUrHEg3vQpP",
-   "age_s": 90,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6812,7 +6848,7 @@
    "symbol": "Orange Jew",
    "name": "Jews Are Evil",
    "mint": "GWPbqQLnGZs9mRx8jd6gduLqswTB49yJQuZ8NQZdpump",
-   "age_s": 90,
+   "age_s": 123,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6830,7 +6866,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4y9j84j12K4CmYZ7pTPLLnToUEAVDaRoNX6tZv2dpZTv",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6848,7 +6884,7 @@
    "symbol": "DIP",
    "name": "Buy the Dip",
    "mint": "Br9Ns1DMeJWkqTpDLTkN6zxJZvnUjtznPCpjVjDBeBdT",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": -3.22,
    "buys": 4,
    "sells": 8,
@@ -6866,7 +6902,7 @@
    "symbol": "LOME",
    "name": "Bisko Lomet",
    "mint": "2jKjfS1oAgkJ4xNm3fMNK2GKzrRUFRSp8icanDaYoh9H",
-   "age_s": 102,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6884,7 +6920,7 @@
    "symbol": "Memu",
    "name": "Memu coin",
    "mint": "6nTjfxvcr1onNsyJGPBRCXMJpZmFQa3prLfgQnuapump",
-   "age_s": 102,
+   "age_s": 135,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6902,7 +6938,7 @@
    "symbol": "CABAL",
    "name": "CABAL EYE",
    "mint": "5ZtAxveU2tma8yUugNnyLNR9Cx94RTWdSeDDXseor962",
-   "age_s": 103,
+   "age_s": 136,
    "sol_in": 0.37,
    "buys": 2,
    "sells": 4,
@@ -6915,42 +6951,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Sol",
-   "name": "SolCoin",
-   "mint": "HZ5bDdw7ukNDuotBP5GxKCuJtMhvh7h2XXHLyRrEnn2E",
-   "age_s": 106,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/omgxdee/status/2126675721040822662",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 13 more coins in 60 min",
-   "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "发射",
-   "name": "发射",
-   "mint": "Ap8WkJyjJMW25xfqDoQT52QuZ9LAXHZ8xawzeUnQpump",
-   "age_s": 119,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 0.5,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
