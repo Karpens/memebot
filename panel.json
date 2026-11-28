@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:55:19Z",
+ "updated": "2026-11-28T05:55:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 772,
+  "flagged": 773,
   "checked": 49,
   "filtered": 1,
-  "lines": 1884,
+  "lines": 1887,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Derp",
-   "why": "snipe",
-   "t": "2026-11-28T05:31:43Z"
-  },
   {
    "coin": "packball",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "BITCOINU",
    "why": "snipe",
    "t": "2026-11-28T05:46:40Z"
+  },
+  {
+   "coin": "SPEED",
+   "why": "snipe",
+   "t": "2026-11-28T05:55:21Z"
   }
  ],
  "curve": [
@@ -3889,33 +3889,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:29:08Z",
-   "time": "05:29:08",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 7 rejected (snipe not bought: only to size 4, serial launcher 1, odd curve reading: virtual SOL i 1)",
-   "n": 1685
-  },
-  {
-   "t": "2026-11-28T04:29:29Z",
-   "time": "05:29:29",
-   "agent": "RISK",
-   "coin": "DIRTY2RICH",
-   "action": "skip",
-   "text": "no entry: last 5 min of this job: no new entries (the next job takes over)",
-   "n": 1686
-  },
-  {
-   "t": "2026-11-28T04:30:09Z",
-   "time": "05:30:09",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 11 rejected (snipe not bought: last min of th 4, snipe not bought: only to size 3, serial launcher 2)",
-   "n": 1687
-  },
-  {
    "t": "2026-11-28T04:31:10Z",
    "time": "05:31:10",
    "agent": "SCANNER",
@@ -5687,6 +5660,33 @@
    "action": "scan",
    "text": "new pairs · 1.2 a minute · 0 watched · 5 rejected (serial launcher 3, no bonding curve key 1, mayhem mode 1)",
    "n": 1884
+  },
+  {
+   "t": "2026-11-28T05:55:21Z",
+   "time": "06:55:21",
+   "agent": "SCANNER",
+   "coin": "SPEED",
+   "action": "flag",
+   "text": "snipe · first reading 9.8 s after the create · -0.0 SOL in · -0% since the create · mcap 28 SOL",
+   "n": 1885
+  },
+  {
+   "t": "2026-11-28T05:55:21Z",
+   "time": "06:55:21",
+   "agent": "SIZER",
+   "coin": "SPEED",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1886
+  },
+  {
+   "t": "2026-11-28T05:55:45Z",
+   "time": "06:55:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.4 a minute · 0 watched · 5 rejected (mayhem mode 2, serial launcher 1, snipe not bought: only to size 1)",
+   "n": 1887
   }
  ],
  "nights": [
@@ -5753,7 +5753,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 14 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5761,16 +5761,16 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 273,
-    "last_event_age_s": 7.0,
+    "events": 274,
+    "last_event_age_s": 17.6,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 2032,
-    "last_event_age_s": 55.7,
+    "connected": true,
+    "events": 2052,
+    "last_event_age_s": 0.3,
     "errors": 214,
     "last_error": "timeout after 5 s"
    },
@@ -5778,7 +5778,7 @@
     "name": "metadata",
     "connected": false,
     "events": 212,
-    "last_event_age_s": 6.7,
+    "last_event_age_s": 39.7,
     "errors": 12,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5791,9 +5791,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.2,
-  "watching": 1,
-  "followed": 4,
+  "creates_per_min": 1.4,
+  "watching": 0,
+  "followed": 2,
   "odd_readings": 406,
   "odd_coins": 185
  },
@@ -5842,41 +5842,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5161,
+   "sent": 5196,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5161,
+   "sent": 5196,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "SPEED",
-   "name": "Speed Test",
-   "mint": "CHXpsAqNeDoFEGrU9EchWcnNb8NkbXe5QvhTt4Ldpump",
-   "age_s": 6,
+   "symbol": "BTC",
+   "name": "Buy The Clown",
+   "mint": "6wms2CxkYZD26KjNYHxJ4AnhQa5Wh6SQ1SuvSP4Apump",
+   "age_s": 17,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
+   "mcap_sol": 28.6,
+   "dev_pct": 1.2,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SPEED",
+   "name": "Speed Test",
+   "mint": "CHXpsAqNeDoFEGrU9EchWcnNb8NkbXe5QvhTt4Ldpump",
+   "age_s": 39,
+   "sol_in": -0.05,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -0.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.2,
+   "big_sell": 0.05,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "ATS",
    "name": "Alpa Trust Solutions",
    "mint": "TwegSx1dAyTbpAAfgef8vsqqUVfz3Yjjuw3Z6Nopump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5894,14 +5912,14 @@
    "symbol": "air",
    "name": "thin air",
    "mint": "DZXTLNri4bcjxNXugDpX6WmS3uvfEPNvtq5hDiYrpump",
-   "age_s": 108,
-   "sol_in": 0.01,
+   "age_s": 141,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
+   "sells": 1,
+   "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/realDonaldTrump/status/1149472282584072192",
    "tg": false,
    "web": false,
@@ -5912,7 +5930,7 @@
    "symbol": "RIBBIT",
    "name": "Hoppers Pond",
    "mint": "CwGCESUipbuiTfxo6kxYo4kvsCe7unRcaJMtyrvfjjCg",
-   "age_s": 137,
+   "age_s": 170,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5925,42 +5943,6 @@
    "web": false,
    "status": "rejected: no bonding curve key",
    "why": "no bonding curve key"
-  },
-  {
-   "symbol": "USD1",
-   "name": "Useless Shitty Dollar 1",
-   "mint": "HPW9kaMqgbNUayPURhUk48dXpdSuY6mrLjJ3TaByzQiT",
-   "age_s": 169,
-   "sol_in": -5.93,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -30.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 17.7,
-   "big_sell": 5.93,
-   "x": "https://x.com/clddldldl8a/status/2126554237442445469",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "USD1",
-   "name": "Useless Shitty Dollar 1",
-   "mint": "5PTnaXNiLqyMvhmFeAqToWvufMeEw9rH8D4XRA8CgaM5",
-   "age_s": 172,
-   "sol_in": -5.91,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -30.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 17.7,
-   "big_sell": 5.91,
-   "x": "https://x.com/clddldldl8a/status/2126554237442445469",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
