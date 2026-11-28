@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:20:47Z",
+ "updated": "2026-11-28T10:21:15Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1167,
   "checked": 49,
   "filtered": 1,
-  "lines": 2686,
+  "lines": 2688,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795825260,
-   47.79
-  ],
   [
    1795825320,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795861200,
    47.79
+  ],
+  [
+   1795861260,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:21:40Z",
-   "time": "10:21:40",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (serial launcher 4, mayhem mode 3, snipe not bought: only to size 2)",
-   "n": 2487
-  },
-  {
-   "t": "2026-11-28T09:22:00Z",
-   "time": "10:22:00",
-   "agent": "SCANNER",
-   "coin": "Dabou",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 7.9 SOL in · +50% since the create · mcap 57 SOL",
-   "n": 2488
-  },
-  {
    "t": "2026-11-28T09:22:12Z",
    "time": "10:22:12",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 8.7 SOL in · +56% since the create · mcap 59 SOL",
    "n": 2686
+  },
+  {
+   "t": "2026-11-28T10:20:51Z",
+   "time": "11:20:51",
+   "agent": "SCANNER",
+   "coin": "SOLAMI",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 6.35e+04 is not 30 + real SOL 0 (off +6.347e+04 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 912 odd readings from 270 coins tonight",
+   "n": 2687
+  },
+  {
+   "t": "2026-11-28T10:21:12Z",
+   "time": "11:21:12",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 8, mayhem mode 2, odd curve reading: virtual SOL i 1)",
+   "n": 2688
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · odd curve readings 911 (269 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 17 watched · ws off · odd curve readings 913 (270 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,26 +6497,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 24,
-    "last_event_age_s": 7.6,
+    "events": 25,
+    "last_event_age_s": 25.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 386,
+    "events": 437,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 18,
-    "last_event_age_s": 7.5,
-    "errors": 0,
-    "last_error": null
+    "connected": false,
+    "events": 19,
+    "last_event_age_s": 20.7,
+    "errors": 1,
+    "last_error": "ipfs.io: HTTP 403"
    }
   ],
   "strategies": [
@@ -6527,11 +6527,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.6,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 10,
-  "odd_readings": 911,
-  "odd_coins": 269
+  "followed": 9,
+  "odd_readings": 913,
+  "odd_coins": 270
  },
  "learner": {
   "samples": 84,
@@ -6578,28 +6578,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 386,
+   "sent": 415,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 386,
+   "sent": 415,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SOLAMI",
+   "name": "i dont want to lose solami",
+   "mint": "6pgzfNraBLKYBJCsNqVBTqowb6VHrWk7ZXtu8JZrrzYK",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: odd curve reading: virtual SOL 6.35e+04 is not 30 + real SOL 0 (off +6.347e+04 SOL)",
+   "why": "odd curve reading: virtual SOL 6.35e+04 is not 30 + real SOL 0 (off +6.347e+04 SOL)"
+  },
+  {
    "symbol": "Neema",
    "name": "Neema The Giraffe",
    "mint": "69uEA9NdNeKXcdFZtJwuaWr2F1TZtTZM2F1eMQnn8cB9",
-   "age_s": 7,
-   "sol_in": 1.55,
-   "buys": 3,
-   "sells": 4,
-   "rise_pct": 9.1,
-   "mcap_sol": 41.4,
+   "age_s": 35,
+   "sol_in": 6.87,
+   "buys": 14,
+   "sells": 11,
+   "rise_pct": 43.2,
+   "mcap_sol": 54.3,
    "dev_pct": 15.2,
    "big_sell": 4.09,
    "x": "https://x.com/MarioPrezldente/status/2126622291706761575",
@@ -6612,14 +6630,14 @@
    "symbol": "BNBRABBITS",
    "name": "BNB Rabbits",
    "mint": "dgQQT6mq85PbDUbv9wLA9zEghAvhJPdkULLyXAyiZ1J",
-   "age_s": 27,
-   "sol_in": 0.0,
+   "age_s": 55,
+   "sol_in": -0.3,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.5,
+   "sells": 1,
+   "rise_pct": -1.9,
+   "mcap_sol": 28.0,
    "dev_pct": 1.0,
-   "big_sell": 0.0,
+   "big_sell": 0.3,
    "x": "https://x.com/BNBCHAIN/status/2126622085736988741",
    "tg": false,
    "web": false,
@@ -6630,12 +6648,12 @@
    "symbol": "MARTY",
    "name": "Justice for Marty",
    "mint": "73Fka1pjzGUtTZcBraeNfsAtjast7BPPvAKVdhw1pump",
-   "age_s": 43,
-   "sol_in": 12.49,
-   "buys": 35,
-   "sells": 7,
-   "rise_pct": 73.7,
-   "mcap_sol": 83.3,
+   "age_s": 71,
+   "sol_in": 15.36,
+   "buys": 51,
+   "sells": 15,
+   "rise_pct": 93.4,
+   "mcap_sol": 92.8,
    "dev_pct": 25.4,
    "big_sell": 3.82,
    "x": "https://x.com/Sizebids/status/2126621802986082659?a=voKYtSsL8pBslTZ9VI0&s=20",
@@ -6648,7 +6666,7 @@
    "symbol": "dih",
    "name": "Fishy Dih",
    "mint": "C7U3CbjRAzPeLQVuCXGvXqjZe9tVnSz8atADcpGrpump",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,14 +6684,14 @@
    "symbol": "HANDS",
    "name": "Diamond Hands",
    "mint": "HAPyJbAcYesSJ2WKPdEDU39Uyz2EgrjL3ismwitrpump",
-   "age_s": 56,
-   "sol_in": 0.15,
+   "age_s": 84,
+   "sol_in": 0.07,
    "buys": 2,
-   "sells": 1,
-   "rise_pct": 1.0,
-   "mcap_sol": 28.4,
+   "sells": 2,
+   "rise_pct": 0.5,
+   "mcap_sol": 28.2,
    "dev_pct": 0.3,
-   "big_sell": 0.03,
+   "big_sell": 0.08,
    "x": "https://x.com/DiamondHandspf_",
    "tg": false,
    "web": false,
@@ -6684,7 +6702,7 @@
    "symbol": "ELK",
    "name": "ElonLovesKids",
    "mint": "Hw8LEnQJmUkeV8qExitRmokd2ycegPEEHYhzCh5Apump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": 0.18,
    "buys": 2,
    "sells": 1,
@@ -6702,7 +6720,7 @@
    "symbol": "DERP",
    "name": "DERPCAT",
    "mint": "6wxpRR1ke2PTn7tv8ok1qhvLu6aczmnRv9Xt1xsjpump",
-   "age_s": 99,
+   "age_s": 127,
    "sol_in": -0.88,
    "buys": 1,
    "sells": 2,
@@ -6720,7 +6738,7 @@
    "symbol": "RELAY",
    "name": "Relay",
    "mint": "6BFuGLYSCMHmfUTeiGa8irgHV2YNv9vtq8i6nLLze6Tk",
-   "age_s": 123,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 4,
    "sells": 19,
@@ -6738,7 +6756,7 @@
    "symbol": "GitHub",
    "name": "GitHub",
    "mint": "AqmbfHb4GQws2NTjt6ejWgdwmim1xMagEpETx3LWpump",
-   "age_s": 125,
+   "age_s": 153,
    "sol_in": -3.42,
    "buys": 11,
    "sells": 8,
@@ -6756,7 +6774,7 @@
    "symbol": "dih",
    "name": "Fishy Dih",
    "mint": "8zktjZPGGdLUuGVJo9zhUg48gSZBeGkiQ97u68j6pump",
-   "age_s": 127,
+   "age_s": 155,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6769,42 +6787,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "POTEMER",
-   "name": "aren't u forgetting something",
-   "mint": "AEsJZzQKdEgV31yVGr5tGaDr7KoVazuckPXFrGUNpump",
-   "age_s": 172,
-   "sol_in": -0.49,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -3.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.7,
-   "big_sell": 1.15,
-   "x": "https://x.com/mohabessxbt/status/2126621474072985623?a=N3exxjQorO0sxAUThjA&s=20",
-   "tg": false,
-   "web": "https://www.tiktok.com/search?q=arent%20you%20forgetting%20something%20potemer",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Selfvalue",
-   "name": "Selfvalue",
-   "mint": "DdSXH8p5YfwgTuB2DCS5Hki3hffJT1xG1C5PoyFYpump",
-   "age_s": 178,
-   "sol_in": -0.39,
-   "buys": 22,
-   "sells": 33,
-   "rise_pct": -2.5,
-   "mcap_sol": 28.3,
-   "dev_pct": 2.0,
-   "big_sell": 11.25,
-   "x": "https://x.com/selfvaluefun",
-   "tg": false,
-   "web": "https://selfvalue.fun",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
