@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:51:28Z",
+ "updated": "2026-11-28T13:52:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1568,
+  "flagged": 1570,
   "checked": 49,
   "filtered": 1,
-  "lines": 3407,
+  "lines": 3409,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "DZ",
-   "why": "snipe",
-   "t": "2026-11-28T13:45:03Z"
-  },
   {
    "coin": "OOPS",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "John",
    "why": "snipe",
    "t": "2026-11-28T13:50:40Z"
+  },
+  {
+   "coin": "stonks",
+   "why": "snipe",
+   "t": "2026-11-28T13:51:38Z"
   }
  ],
  "curve": [
-  [
-   1795837920,
-   47.79
-  ],
   [
    1795837980,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795873860,
    47.79
+  ],
+  [
+   1795873920,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:57:03Z",
-   "time": "13:57:03",
-   "agent": "SCANNER",
-   "coin": "NOVEL",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 6.6 SOL in · +42% since the create · mcap 51 SOL",
-   "n": 3208
-  },
-  {
-   "t": "2026-11-28T12:57:10Z",
-   "time": "13:57:10",
-   "agent": "SCANNER",
-   "coin": "MUTE",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 2.0 SOL in · +14% since the create · mcap 33 SOL",
-   "n": 3209
-  },
-  {
    "t": "2026-11-28T12:57:28Z",
    "time": "13:57:28",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 8 rejected (snipe not bought: only to size 3, serial launcher 3, mayhem mode 2)",
    "n": 3407
+  },
+  {
+   "t": "2026-11-28T13:51:33Z",
+   "time": "14:51:33",
+   "agent": "SCANNER",
+   "coin": "stonks",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 4.1 SOL in · +22% since the create · mcap 58 SOL",
+   "n": 3408
+  },
+  {
+   "t": "2026-11-28T13:51:38Z",
+   "time": "14:51:38",
+   "agent": "SCANNER",
+   "coin": "stonks",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 3.1 SOL in · +16% since the create · mcap 57 SOL",
+   "n": 3409
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 1053 (334 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 1053 (334 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1138,
-    "last_event_age_s": 19.7,
+    "events": 1144,
+    "last_event_age_s": 6.9,
     "errors": 11,
     "last_error": "TimeoutError: timed out while waiting for handshake response"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25361,
+    "events": 25484,
     "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 628,
-    "last_event_age_s": 22.8,
+    "events": 634,
+    "last_event_age_s": 6.7,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 6,
+  "followed": 12,
   "odd_readings": 1053,
   "odd_coins": 334
  },
@@ -6580,23 +6580,131 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13839,
+   "sent": 13875,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13839,
+   "sent": 13875,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SEWERPEOPLE",
+   "name": "Gold Digging Sewerpeople",
+   "mint": "2w4st8hFmGnCLapn1uoQnLmqt7RdwhSRiwbaUXEApump",
+   "age_s": 6,
+   "sol_in": -10.1,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": -43.7,
+   "mcap_sol": 28.6,
+   "dev_pct": 27.7,
+   "big_sell": 14.61,
+   "x": "https://x.com/Klint54/status/2126675390902964238",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "stonks",
+   "name": "stonks",
+   "mint": "6E6Wd112XtLmaMSsF5Smao9YQMqZ4BcLpSxAckHMpump",
+   "age_s": 17,
+   "sol_in": -10.77,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": -45.1,
+   "mcap_sol": 29.4,
+   "dev_pct": 29.8,
+   "big_sell": 13.03,
+   "x": "https://x.com/Shibtoken/status/2126675198787125327",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "stonks",
+   "name": "stonks",
+   "mint": "EC6Hwmk8aJdWixpfzLQj849B9qz3MVB1DaUh8Qpfpump",
+   "age_s": 21,
+   "sol_in": -9.5,
+   "buys": 2,
+   "sells": 4,
+   "rise_pct": -41.5,
+   "mcap_sol": 29.6,
+   "dev_pct": 27.5,
+   "big_sell": 11.83,
+   "x": "https://x.com/Shibtoken/status/2126675198787125327",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "stonks",
+   "name": "stonks",
+   "mint": "7JLfqmQ71q7hWwpcMfhzeDLv3X64Qfmu48euvqgMpump",
+   "age_s": 25,
+   "sol_in": -9.27,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": -41.3,
+   "mcap_sol": 28.6,
+   "dev_pct": 26.0,
+   "big_sell": 11.32,
+   "x": "https://x.com/Shibtoken/status/2126675198787125327",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Wolf21",
+   "name": "The Noble Wolf",
+   "mint": "ABdD2CW3LqHTHoBYuEYoHbFY7UYWAwjx7fXpRPz3pump",
+   "age_s": 27,
+   "sol_in": 0.83,
+   "buys": 11,
+   "sells": 9,
+   "rise_pct": 5.1,
+   "mcap_sol": 35.5,
+   "dev_pct": 9.6,
+   "big_sell": 1.95,
+   "x": "https://x.com/Zeeko__Dev/status/2126675351489122542",
+   "tg": false,
+   "web": "https://x.com/SamaHoole/status/2126605944167502147",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "stonks",
+   "name": "stonks",
+   "mint": "6knWgzfzZ31jnk7zzvSsgS78w1TGxpxtx6LowwtYpump",
+   "age_s": 30,
+   "sol_in": -8.57,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": -39.2,
+   "mcap_sol": 28.6,
+   "dev_pct": 24.6,
+   "big_sell": 10.92,
+   "x": "https://x.com/Shibtoken/status/2126675198787125327",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "Et4NQibNSEWgyAr6qVKkTT4tSDudeY8xik8eGagPpump",
-   "age_s": 19,
+   "age_s": 53,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6722,7 @@
    "symbol": "stonks",
    "name": "stonks",
    "mint": "M1wQYiGqXmmaG6bUPccq2MvqYmTWRvvEWo5Hkgvpcf8",
-   "age_s": 23,
+   "age_s": 57,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,12 +6740,12 @@
    "symbol": "JEW",
    "name": "Orange Jew",
    "mint": "GM1x7pcfZbQMDzfReGzvP6nnUPQ5n5dBA3rSfPNcpump",
-   "age_s": 42,
-   "sol_in": 0.27,
-   "buys": 3,
+   "age_s": 76,
+   "sol_in": 0.52,
+   "buys": 9,
    "sells": 0,
-   "rise_pct": 1.8,
-   "mcap_sol": 28.7,
+   "rise_pct": 3.5,
+   "mcap_sol": 29.1,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": "https://x.com/orangie",
@@ -6650,7 +6758,7 @@
    "symbol": "John",
    "name": "John Stockman",
    "mint": "CTsDzttQetMX2zTv8DNS6LRAWRR5YheYMa8BNF7DPwim",
-   "age_s": 49,
+   "age_s": 83,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,14 +6776,14 @@
    "symbol": "FLOORD",
    "name": "FLOORD",
    "mint": "HEDkCBjb4EEbC2hP5yNnNU91VYEGd2dpFaGfL782pump",
-   "age_s": 58,
-   "sol_in": 15.02,
-   "buys": 16,
-   "sells": 7,
-   "rise_pct": 122.3,
-   "mcap_sol": 64.6,
+   "age_s": 92,
+   "sol_in": 13.14,
+   "buys": 22,
+   "sells": 12,
+   "rise_pct": 104.4,
+   "mcap_sol": 59.4,
    "dev_pct": 2.1,
-   "big_sell": 0.65,
+   "big_sell": 1.44,
    "x": "https://x.com/Floordsol/status/2126674942095917240?a=904qygXsPi_8ti-tDDo&s=20",
    "tg": false,
    "web": "https://floord.lol",
@@ -6686,7 +6794,7 @@
    "symbol": "MYSTERY",
    "name": "Mystery Post",
    "mint": "7qsRxszduLDMmaYYVUVZ4Wciwdv3WPbndbBiFEiocNUR",
-   "age_s": 92,
+   "age_s": 126,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6812,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "GyR91RSULkLpdUp4AY8QohfwFbmrprg3MEtwDnHbpump",
-   "age_s": 109,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6722,7 +6830,7 @@
    "symbol": "believe",
    "name": "believe",
    "mint": "4v73REhbt4y868E1jkjnE1qnWg3kTUuBrXVvca3Fh5Vg",
-   "age_s": 111,
+   "age_s": 145,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
