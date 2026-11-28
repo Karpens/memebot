@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:55:37Z",
+ "updated": "2026-11-28T06:56:05Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 818,
+  "flagged": 819,
   "checked": 49,
   "filtered": 1,
-  "lines": 2028,
+  "lines": 2029,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "USD1",
-   "why": "snipe",
-   "t": "2026-11-28T06:47:00Z"
-  },
   {
    "coin": "DCAT",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Anthropic",
    "why": "snipe",
    "t": "2026-11-28T06:55:36Z"
+  },
+  {
+   "coin": "LPI",
+   "why": "snipe",
+   "t": "2026-11-28T06:55:41Z"
   }
  ],
  "curve": [
@@ -1975,6 +1975,10 @@
   ],
   [
    1795848900,
+   47.79
+  ],
+  [
+   1795848960,
    47.79
   ]
  ],
@@ -4129,15 +4133,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:24:28Z",
-   "time": "06:24:28",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 1 watched · 7 rejected (serial launcher 2, snipe: first reading s after the 2, odd curve reading: virtual SOL i 1) · closest SUCCESS: no curve reading yet",
-   "n": 1829
-  },
-  {
    "t": "2026-11-28T05:25:29Z",
    "time": "06:25:29",
    "agent": "SCANNER",
@@ -5927,6 +5922,15 @@
    "action": "flag",
    "text": "snipe · first reading 5.9 s after the create · 17.9 SOL in · +134% since the create · mcap 83 SOL",
    "n": 2028
+  },
+  {
+   "t": "2026-11-28T06:55:41Z",
+   "time": "07:55:41",
+   "agent": "SCANNER",
+   "coin": "LPI",
+   "action": "flag",
+   "text": "snipe · first reading 1.9 s after the create · 6.2 SOL in · +44% since the create · mcap 43 SOL",
+   "n": 2029
   }
  ],
  "nights": [
@@ -5999,7 +6003,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 459 (209 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 459 (209 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6007,15 +6011,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 497,
-    "last_event_age_s": 6.7,
+    "events": 498,
+    "last_event_age_s": 25.6,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4064,
+    "events": 4144,
     "last_event_age_s": 0.8,
     "errors": 400,
     "last_error": "timeout after 5 s"
@@ -6023,8 +6027,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 360,
-    "last_event_age_s": 6.6,
+    "events": 361,
+    "last_event_age_s": 25.6,
     "errors": 20,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6037,9 +6041,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 10,
+  "followed": 11,
   "odd_readings": 459,
   "odd_coins": 209
  },
@@ -6088,30 +6092,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9012,
+   "sent": 9042,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9012,
+   "sent": 9042,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "LPI",
+   "name": "Low Poly Inu",
+   "mint": "FRC9zAFQfNKzDG9jj4yXMhUPwfxbfSgUvBvKZUASpump",
+   "age_s": 25,
+   "sol_in": 11.35,
+   "buys": 10,
+   "sells": 9,
+   "rise_pct": 86.7,
+   "mcap_sol": 55.7,
+   "dev_pct": 3.4,
+   "big_sell": 2.8,
+   "x": "https://x.com/LowPolyInu_/status/2126570645429371071",
+   "tg": false,
+   "web": "https://x.com/T0KK1_OuO/status/2125174737081073722/quotes",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Anthropic",
    "name": "Anthropic official",
    "mint": "8mZnd4enxeTyd6grH6MgKkRMCb9xfooRNRasZWwjpump",
-   "age_s": 6,
-   "sol_in": 17.93,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 134.5,
-   "mcap_sol": 83.0,
+   "age_s": 34,
+   "sol_in": 17.98,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 134.9,
+   "mcap_sol": 83.1,
    "dev_pct": 11.9,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": "https://x.com/AnthropicAI",
    "tg": false,
    "web": "https://www.anthropic.com/",
@@ -6122,7 +6144,7 @@
    "symbol": "DNK",
    "name": "DANKULA",
    "mint": "FFMt5YShe9iGfVW5dgFSLdpGgdXpzk1ngJsLiKiRpump",
-   "age_s": 21,
+   "age_s": 49,
    "sol_in": 0.07,
    "buys": 1,
    "sells": 0,
@@ -6140,12 +6162,12 @@
    "symbol": "AnonPaid",
    "name": "AnonPaid",
    "mint": "5vz4XehiRPxRLSLv6nSAyvWfgTooZC4bzwbpX9Cppump",
-   "age_s": 39,
-   "sol_in": -0.72,
+   "age_s": 67,
+   "sol_in": -0.84,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": -4.6,
-   "mcap_sol": 29.4,
+   "sells": 3,
+   "rise_pct": -5.3,
+   "mcap_sol": 29.2,
    "dev_pct": 5.0,
    "big_sell": 1.56,
    "x": false,
@@ -6158,12 +6180,12 @@
    "symbol": "IM",
    "name": "Internet Money",
    "mint": "BoPNYKYA7Mq5qwfCrR8ToqBro9UzwsahWsmEYa1Bpump",
-   "age_s": 41,
-   "sol_in": -2.11,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": -11.7,
-   "mcap_sol": 33.5,
+   "age_s": 69,
+   "sol_in": -4.24,
+   "buys": 4,
+   "sells": 6,
+   "rise_pct": -22.8,
+   "mcap_sol": 29.3,
    "dev_pct": 15.2,
    "big_sell": 4.93,
    "x": "https://x.com/KankiAlpha/status/2126570484015960355",
@@ -6176,12 +6198,12 @@
    "symbol": "Hedge",
    "name": "Hedgecoin",
    "mint": "Fbk7F2AnR9CF5eMTFAsTp53XjegPN5RX6iNriNeyGYFv",
-   "age_s": 46,
-   "sol_in": 1.0,
-   "buys": 2,
-   "sells": 1,
-   "rise_pct": 6.1,
-   "mcap_sol": 36.0,
+   "age_s": 74,
+   "sol_in": 1.87,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": 11.7,
+   "mcap_sol": 37.9,
    "dev_pct": 9.9,
    "big_sell": 1.96,
    "x": "https://x.com/StepCoinsol8/status/2126570441691013346",
@@ -6194,7 +6216,7 @@
    "symbol": "NBA",
    "name": "Never Broke Again",
    "mint": "EijpunfUGFPAfC9nKNSgqq3s5C7tPLqvPDNpLoeTpump",
-   "age_s": 85,
+   "age_s": 113,
    "sol_in": -2.22,
    "buys": 4,
    "sells": 11,
@@ -6212,14 +6234,14 @@
    "symbol": "snowfall",
    "name": "snowfall",
    "mint": "snowgTN7GKBFPQ24o9x7ByFgdUABaUeejLyuLw4W7Y2",
-   "age_s": 103,
-   "sol_in": 34.34,
-   "buys": 15,
-   "sells": 20,
-   "rise_pct": 359.9,
-   "mcap_sol": 128.6,
+   "age_s": 131,
+   "sol_in": 28.93,
+   "buys": 27,
+   "sells": 32,
+   "rise_pct": 285.9,
+   "mcap_sol": 107.9,
    "dev_pct": 0.0,
-   "big_sell": 2.58,
+   "big_sell": 3.23,
    "x": "https://x.com/snowfallpf/status/2126570223860134275",
    "tg": false,
    "web": true,
@@ -6230,7 +6252,7 @@
    "symbol": "Dog Think",
    "name": "Dog Think",
    "mint": "86TgD1M5nZx7VPno6ujT8ZNUFZMxdY9EanSz3nYNpump",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6248,7 +6270,7 @@
    "symbol": "benk",
    "name": "benk",
    "mint": "HMK54v1wRMW7hXoMDdZpqmkrUzyJ3phnem1QiPfcpump",
-   "age_s": 136,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6266,7 +6288,7 @@
    "symbol": "BOOBIES",
    "name": "I Love Boobies",
    "mint": "7CrbidrHRhyXDTrimYM8wM2avF3GygLig3QM1FZspump",
-   "age_s": 138,
+   "age_s": 166,
    "sol_in": 1.68,
    "buys": 5,
    "sells": 2,
@@ -6284,7 +6306,7 @@
    "symbol": "Crack",
    "name": "Crackcoin",
    "mint": "Cq5GD7MPwqSSd13EvFQzY9deLsWS3iEWwjWq1wymeXSV",
-   "age_s": 138,
+   "age_s": 166,
    "sol_in": -3.06,
    "buys": 9,
    "sells": 13,
