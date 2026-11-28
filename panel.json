@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:40:26Z",
+ "updated": "2026-11-28T03:40:54Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 583,
   "checked": 49,
   "filtered": 1,
-  "lines": 1504,
+  "lines": 1506,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3349,24 +3349,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:44:04Z",
-   "time": "03:44:04",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 7, no bonding curve key 1, mayhem mode 1)",
-   "n": 1305
-  },
-  {
-   "t": "2026-11-28T02:44:17Z",
-   "time": "03:44:17",
-   "agent": "SCANNER",
-   "coin": "IBM",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 20.0 SOL in · +176% since the create · mcap 79 SOL",
-   "n": 1306
-  },
-  {
    "t": "2026-11-28T02:45:04Z",
    "time": "03:45:04",
    "agent": "SCANNER",
@@ -5147,6 +5129,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 31 SOL",
    "n": 1504
+  },
+  {
+   "t": "2026-11-28T03:40:37Z",
+   "time": "04:40:37",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.6 a minute · 0 watched · 13 rejected (snipe not bought: only to size 6, mayhem mode 4, serial launcher 2)",
+   "n": 1505
+  },
+  {
+   "t": "2026-11-28T03:40:49Z",
+   "time": "04:40:49",
+   "agent": "SCANNER",
+   "coin": "FSDV15",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.8237 is not 30 + real SOL 0 (off -29.18 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 338 odd readings from 155 coins tonight",
+   "n": 1506
   }
  ],
  "nights": [
@@ -5219,7 +5219,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 338 (155 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5227,24 +5227,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1744,
-    "last_event_age_s": 7.9,
+    "events": 1746,
+    "last_event_age_s": 5.8,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 37624,
-    "last_event_age_s": 0.0,
+    "events": 37646,
+    "last_event_age_s": 1.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1030,
-    "last_event_age_s": 7.3,
+    "events": 1031,
+    "last_event_age_s": 5.6,
     "errors": 51,
     "last_error": "ar-io.dev: too slow (over 2 s)"
    }
@@ -5257,11 +5257,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.4,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 8,
-  "odd_readings": 337,
-  "odd_coins": 154
+  "odd_readings": 338,
+  "odd_coins": 155
  },
  "learner": {
   "samples": 84,
@@ -5308,30 +5308,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18408,
+   "sent": 18438,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18408,
+   "sent": 18438,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "FSDV15",
+   "name": "Tesla FSD v15",
+   "mint": "D3hRL2yURMFf2d13VAgPG1WKpfyoMCND6XtpczeEKqMu",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://twitter.com/Polymarket/status/2126521617576866004",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "BISCUITY",
+   "name": "Biscuity",
+   "mint": "FLVzUK76ZVSMhKhUXwbgSnPBMVEhnrUtwDr3LSLDpump",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "CKSC",
    "name": "Captain Kirk Second Chance",
    "mint": "4w8YSUYytvvVEG7PujYKhC8gFnw9TeJ7NUdHBrnQpump",
-   "age_s": 7,
-   "sol_in": 0.01,
+   "age_s": 35,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
+   "sells": 1,
+   "rise_pct": 0.0,
    "mcap_sol": 30.8,
    "dev_pct": 5.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -5342,7 +5378,7 @@
    "symbol": "CHOKITTY",
    "name": "Chokitty",
    "mint": "GN9W5giX7c6UvzrpbWQpJw59YPaYNkzeJoRXH8Bqpump",
-   "age_s": 47,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5360,7 +5396,7 @@
    "symbol": "OTTO",
    "name": "Otto the Otter",
    "mint": "8j2yMhoFxhhAdiHAX1yo9X3aFUmTDAZN4uAN5aqfpump",
-   "age_s": 58,
+   "age_s": 86,
    "sol_in": -0.99,
    "buys": 1,
    "sells": 2,
@@ -5378,7 +5414,7 @@
    "symbol": "FLAT",
    "name": "Folded Air",
    "mint": "JCgfN7Dp7t5fKZee3zZCVhXxRem9iweWwp8TLAuaWwhS",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5396,7 +5432,7 @@
    "symbol": "NANCY",
    "name": "Nancycoin",
    "mint": "DDVEqSXsSWUkTVqfkAoN7Hr3Q6PxVPogSbjNKbkDpump",
-   "age_s": 78,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5414,7 +5450,7 @@
    "symbol": "FCAT",
    "name": "Flip Cat",
    "mint": "6GNNY7JLcGxCKspesmvqoeCp7hbZLqkyeAUqgcxtzFLP",
-   "age_s": 80,
+   "age_s": 108,
    "sol_in": 0.49,
    "buys": 2,
    "sells": 1,
@@ -5432,7 +5468,7 @@
    "symbol": "USFF",
    "name": "USFF",
    "mint": "BRrYZ98EyaEJyK2kuj4Y1xzCp8Q2F5HpxXy3JYY5pump",
-   "age_s": 125,
+   "age_s": 153,
    "sol_in": -0.49,
    "buys": 0,
    "sells": 3,
@@ -5450,7 +5486,7 @@
    "symbol": "째무",
    "name": "째무 🚀🤑💎",
    "mint": "DBrJj8tdsWUR4iHz2rMPTtMz1boWmFjrU3s2zvrnpump",
-   "age_s": 134,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5468,7 +5504,7 @@
    "symbol": "BUYBACK",
    "name": "Buyback",
    "mint": "E4ZArtqQw78zFLHXGFmT52wTtmRC123hQu1wbaSZBpoX",
-   "age_s": 137,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5486,7 +5522,7 @@
    "symbol": "PUMPMAS",
    "name": "MERRY PUMPMAS",
    "mint": "9cJwKueirae6jbHbseeGJWMgyrfZwe1WWwdhCMxQpump",
-   "age_s": 143,
+   "age_s": 171,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5499,42 +5535,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "badger",
-   "name": "honey badger",
-   "mint": "FwhzvqV4xuL4rXNZjjBRAJBymCkoQ3CmC1rAcNjLpump",
-   "age_s": 158,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.02,
-   "x": "https://x.com/search?q=honey%20badger&src=typed_query&f=top",
-   "tg": false,
-   "web": "https://x.com/search?q=honey%20badger&src=typed_query&f=top",
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "GWw5GMZNpockSLopKfgnmKAxkzrwUv5FXfk5KSCdpump",
-   "age_s": 161,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
   }
  ],
  "strategies": [
