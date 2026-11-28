@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:35:23Z",
+ "updated": "2026-11-28T12:35:50Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1416,
   "checked": 49,
   "filtered": 1,
-  "lines": 3137,
+  "lines": 3138,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:34:01Z",
-   "time": "12:34:01",
-   "agent": "SCANNER",
-   "coin": "DCTYC",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1000 odd readings from 304 coins tonight",
-   "n": 2938
-  },
-  {
    "t": "2026-11-28T11:34:20Z",
    "time": "12:34:20",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 3137
+  },
+  {
+   "t": "2026-11-28T12:35:31Z",
+   "time": "13:35:31",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (snipe not bought: only to size 4, serial launcher 1, mayhem mode 1)",
+   "n": 3138
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 628,
-    "last_event_age_s": 5.3,
+    "events": 630,
+    "last_event_age_s": 0.1,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 16290,
+    "events": 16390,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 407,
-    "last_event_age_s": 5.2,
+    "events": 408,
+    "last_event_age_s": 6.9,
     "errors": 15,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6530,7 +6530,7 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.8,
-  "watching": 0,
+  "watching": 1,
   "followed": 6,
   "odd_readings": 1010,
   "odd_coins": 309
@@ -6580,23 +6580,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8981,
+   "sent": 9010,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8981,
+   "sent": 9010,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ZBAL",
+   "name": "ZBAL",
+   "mint": "4QcMfe2LdFuusgmT24CfmHtTW4UryQt9GdoUn68opump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.4,
+   "dev_pct": 2.6,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "MoonBoy",
+   "name": "MoonBoy",
+   "mint": "CuhxSEZBi1oXiumRqkeGHQRJXVqyEAnqFjxwas8Rpump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
    "symbol": "MRMEOW",
    "name": "Margin Meow",
    "mint": "G12M1V31uxBzbiwHVknjyK1b4bjTVRjfbtsbrUfdpump",
-   "age_s": 5,
+   "age_s": 32,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -6614,7 +6650,7 @@
    "symbol": "EUGENE",
    "name": "Eugene Lazowski and Stanislaw Ma",
    "mint": "J1PesTnoP87gUhM71cTTtMu8gpBxQhQfHA3Wg8papump",
-   "age_s": 41,
+   "age_s": 68,
    "sol_in": 0.03,
    "buys": 1,
    "sells": 0,
@@ -6632,7 +6668,7 @@
    "symbol": "FlipFlop",
    "name": "Flip Flop Cat",
    "mint": "7TmMF1xmEtwKGCmKRxTvU9udpabkrhtzPRbP1aW7pump",
-   "age_s": 53,
+   "age_s": 80,
    "sol_in": 0.54,
    "buys": 1,
    "sells": 0,
@@ -6650,12 +6686,12 @@
    "symbol": "guy",
    "name": "just a guy",
    "mint": "Aoxbdo4iCqNWAwCMLsYFwctxEbwYf668Wn34wzgDpump",
-   "age_s": 82,
-   "sol_in": 26.01,
-   "buys": 31,
-   "sells": 39,
-   "rise_pct": 203.8,
-   "mcap_sol": 115.6,
+   "age_s": 109,
+   "sol_in": 29.06,
+   "buys": 43,
+   "sells": 54,
+   "rise_pct": 235.0,
+   "mcap_sol": 127.5,
    "dev_pct": 15.3,
    "big_sell": 2.83,
    "x": "https://x.com/justaguysol0/status/2126655804690300930",
@@ -6668,7 +6704,7 @@
    "symbol": "?",
    "name": "",
    "mint": "CmEFCgYTgjAcLQpStWGx7387G1W5ZraKqfoaxiKWtKW9",
-   "age_s": 110,
+   "age_s": 137,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6722,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "J2G6RS6ZW8uPxKxeZnvFNQMKVJRwCxP8PtpXhhJHpump",
-   "age_s": 125,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6699,42 +6735,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "Stefan",
-   "name": "Holland Hitler",
-   "mint": "DUQ3WYfYvQfnapthJvZS3Xy2sdu86GRJRc2ozWdXrqAP",
-   "age_s": 155,
-   "sol_in": 14.23,
-   "buys": 24,
-   "sells": 48,
-   "rise_pct": 101.4,
-   "mcap_sol": 72.1,
-   "dev_pct": 12.5,
-   "big_sell": 5.21,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "NANCY",
-   "name": "Nancy the Bedlington Terrier",
-   "mint": "8m2sBgcpY4DwFm2gSjBNmmD4NebKGWqYPYQ7CTNJpump",
-   "age_s": 179,
-   "sol_in": -0.1,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -0.7,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.4,
-   "big_sell": 0.1,
-   "x": "https://x.com/reiluKehittaja/status/2126655061300252891",
-   "tg": false,
-   "web": "https://www.behance.net/gallery/68060071/The-Dog-Show-Season-2/modules/397872947",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
