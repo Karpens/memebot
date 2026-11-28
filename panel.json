@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:41:48Z",
+ "updated": "2026-11-28T07:42:22Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 874,
+  "flagged": 876,
   "checked": 49,
   "filtered": 1,
-  "lines": 2160,
+  "lines": 2162,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Azuke",
-   "why": "snipe",
-   "t": "2026-11-28T07:34:23Z"
-  },
-  {
-   "coin": "hep",
-   "why": "snipe",
-   "t": "2026-11-28T07:34:37Z"
-  },
   {
    "coin": "LEOCOIN",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "HoodGive",
    "why": "snipe",
    "t": "2026-11-28T07:41:22Z"
+  },
+  {
+   "coin": "WSPP",
+   "why": "snipe",
+   "t": "2026-11-28T07:42:05Z"
+  },
+  {
+   "coin": "bilybobjoe",
+   "why": "snipe",
+   "t": "2026-11-28T07:42:12Z"
   }
  ],
  "curve": [
@@ -2159,6 +2159,10 @@
   ],
   [
    1795851660,
+   47.79
+  ],
+  [
+   1795851720,
    47.79
   ]
  ],
@@ -4313,24 +4317,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:31:05Z",
-   "time": "07:31:05",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, snipe: first reading s after the 3, mayhem mode 2)",
-   "n": 1961
-  },
-  {
-   "t": "2026-11-28T06:31:52Z",
-   "time": "07:31:52",
-   "agent": "SCANNER",
-   "coin": "AIR",
-   "action": "flag",
-   "text": "snipe · first reading 4.4 s after the create · 4.9 SOL in · +32% since the create · mcap 45 SOL",
-   "n": 1962
-  },
-  {
    "t": "2026-11-28T06:31:52Z",
    "time": "07:31:52",
    "agent": "SIZER",
@@ -6111,6 +6097,24 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (serial launcher 3, snipe not bought: only to size 2, odd curve reading: virtual SOL i 1)",
    "n": 2160
+  },
+  {
+   "t": "2026-11-28T07:42:05Z",
+   "time": "08:42:05",
+   "agent": "SCANNER",
+   "coin": "WSPP",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.1 SOL in · +0% since the create · mcap 66 SOL",
+   "n": 2161
+  },
+  {
+   "t": "2026-11-28T07:42:12Z",
+   "time": "08:42:12",
+   "agent": "SCANNER",
+   "coin": "bilybobjoe",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 2162
   }
  ],
  "nights": [
@@ -6183,7 +6187,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6191,24 +6195,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 697,
-    "last_event_age_s": 22.2,
+    "events": 700,
+    "last_event_age_s": 10.5,
     "errors": 12,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 8206,
-    "last_event_age_s": 0.5,
+    "events": 8251,
+    "last_event_age_s": 0.1,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 492,
-    "last_event_age_s": 22.1,
+    "events": 494,
+    "last_event_age_s": 10.4,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6221,7 +6225,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 2.6,
   "watching": 0,
   "followed": 6,
   "odd_readings": 561,
@@ -6272,27 +6276,81 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11962,
+   "sent": 11998,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11962,
+   "sent": 11998,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "bilybobjoe",
+   "name": "im looking for a queen",
+   "mint": "H2tdToFnDqsnTJRrG4kPtbamv8YZNchbV8atP8ndpump",
+   "age_s": 10,
+   "sol_in": 0.01,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/6xvvvvv/status/2126582350343491660",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "WSPP",
+   "name": "WASUUUUP",
+   "mint": "Csq1SMXKu9NWg4ysKCSoUdyFygnKjWXPHbcjQya4pump",
+   "age_s": 17,
+   "sol_in": 0.1,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 0.4,
+   "mcap_sol": 66.2,
+   "dev_pct": 37.4,
+   "big_sell": 0.1,
+   "x": "https://x.com/WASUUUP_sool",
+   "tg": false,
+   "web": "https://wasuuup.co",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "SCRVAN",
+   "name": "Screaming Vandal",
+   "mint": "Az3zrMvWaUQGMmp11YZVBo9DbrHWCsvAoS1kK3F4pump",
+   "age_s": 33,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "COIN LEO",
    "name": "FAT LEOPARD",
    "mint": "6x2xHUJknAhYjmmATcXjfEx1DfaASTiZWPxjQPSfpump",
-   "age_s": 22,
-   "sol_in": -0.02,
-   "buys": 1,
+   "age_s": 56,
+   "sol_in": -0.01,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": -0.1,
+   "rise_pct": -0.0,
    "mcap_sol": 28.2,
    "dev_pct": 0.5,
    "big_sell": 0.03,
@@ -6306,12 +6364,12 @@
    "symbol": "$TWINK",
    "name": "Twink Coin",
    "mint": "GspeAjvDhy7kkrJDjhRKzmT6166izZ7Xck4nMAoVpump",
-   "age_s": 31,
+   "age_s": 65,
    "sol_in": 0.0,
-   "buys": 0,
+   "buys": 2,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.1,
+   "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.0,
    "x": false,
@@ -6324,7 +6382,7 @@
    "symbol": "HoodGive",
    "name": "HoodsGiving",
    "mint": "4dr5yKpFxZciJNev3qyLuFQgrFsWyi7X2n3rPKFgpump",
-   "age_s": 32,
+   "age_s": 66,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6342,9 +6400,9 @@
    "symbol": "MEMETARD",
    "name": "MEMETARD",
    "mint": "A7yZ7pDueCpgt9XiMJYYHTbYkohTREr5q2pn4hoUgwwn",
-   "age_s": 53,
-   "sol_in": -1.69,
-   "buys": 4,
+   "age_s": 87,
+   "sol_in": -1.68,
+   "buys": 5,
    "sells": 9,
    "rise_pct": -9.9,
    "mcap_sol": 30.6,
@@ -6355,60 +6413,6 @@
    "web": false,
    "status": "rejected: serial launcher: 11 more coins in 60 min",
    "why": "serial launcher: 11 more coins in 60 min"
-  },
-  {
-   "symbol": "Peppe",
-   "name": "Pepecion",
-   "mint": "BPssXvL7gTYt9EmWc4VFAdRa5CrUei1FtHhtzA3Xpump",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "PILE",
-   "name": "Pile of Useless Dollars",
-   "mint": "5fju4MsnL4BYfYMyrAjhCGzYvZ956mQyLn9hkESf7Kai",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 2.078e+05 is not 30 + real SOL 0 (off +2.078e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.078e+05 is not 30 + real SOL 0 (off +2.078e+05 SOL)"
-  },
-  {
-   "symbol": "LCEVSGIRL",
-   "name": "LceVSGirl",
-   "mint": "DAWFRCRH2YZxaZieHtZad8Fh5wGzxng2VwqGi1Kupump",
-   "age_s": 177,
-   "sol_in": 0.0,
-   "buys": 22,
-   "sells": 15,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 2.51,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
