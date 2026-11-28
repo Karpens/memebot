@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:57:13Z",
+ "updated": "2026-11-28T01:57:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 384,
+  "flagged": 385,
   "checked": 49,
   "filtered": 1,
-  "lines": 1163,
+  "lines": 1166,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SHHH",
-   "why": "snipe",
-   "t": "2026-11-28T01:52:49Z"
-  },
   {
    "coin": "NVIDIA",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MARS",
    "why": "snipe",
    "t": "2026-11-28T01:57:13Z"
+  },
+  {
+   "coin": "V1",
+   "why": "snipe",
+   "t": "2026-11-28T01:57:37Z"
   }
  ],
  "curve": [
@@ -2937,33 +2937,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:06:46Z",
-   "time": "02:06:46",
-   "agent": "SCANNER",
-   "coin": "TEST8",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 964
-  },
-  {
-   "t": "2026-11-28T01:07:00Z",
-   "time": "02:07:00",
-   "agent": "SCANNER",
-   "coin": "OOPS",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.1 SOL in · +1% since the create · mcap 28 SOL",
-   "n": 965
-  },
-  {
-   "t": "2026-11-28T01:07:02Z",
-   "time": "02:07:02",
-   "agent": "SCANNER",
-   "coin": "OOPS",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.1 SOL in · +1% since the create · mcap 28 SOL",
-   "n": 966
-  },
-  {
    "t": "2026-11-28T01:07:05Z",
    "time": "02:07:05",
    "agent": "SCANNER",
@@ -4735,6 +4708,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1163
+  },
+  {
+   "t": "2026-11-28T01:57:35Z",
+   "time": "02:57:35",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 0 watched · 12 rejected (snipe not bought: only to size 5, mayhem mode 3, serial launcher 2)",
+   "n": 1164
+  },
+  {
+   "t": "2026-11-28T01:57:37Z",
+   "time": "02:57:37",
+   "agent": "SCANNER",
+   "coin": "V1",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.3 SOL in · +2% since the create · mcap 32 SOL",
+   "n": 1165
+  },
+  {
+   "t": "2026-11-28T01:57:37Z",
+   "time": "02:57:37",
+   "agent": "SIZER",
+   "coin": "V1",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1166
   }
  ],
  "nights": [
@@ -4807,7 +4807,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 286 (137 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 286 (137 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4815,24 +4815,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1370,
-    "last_event_age_s": 1.1,
+    "events": 1372,
+    "last_event_age_s": 11.1,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25994,
-    "last_event_age_s": 0.2,
+    "events": 26039,
+    "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 768,
-    "last_event_age_s": 51.4,
+    "events": 770,
+    "last_event_age_s": 10.9,
     "errors": 36,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4845,7 +4845,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 7,
   "odd_readings": 286,
@@ -4896,23 +4896,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11818,
+   "sent": 11854,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11818,
+   "sent": 11854,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "V1",
+   "name": "Voyager 1",
+   "mint": "A3vk9A71n7Mo92i3vuE1Cpw16vLFRPBvJGcmp7cCpump",
+   "age_s": 11,
+   "sol_in": -0.16,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": -1.0,
+   "mcap_sol": 31.4,
+   "dev_pct": 6.6,
+   "big_sell": 0.56,
+   "x": "https://x.com/munnyonly/status/2126495668957257799",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "$IPHONE",
+   "name": "iPhone",
+   "mint": "EaAEmeFrSfHGEG6FNGitzMUEVEGkZQ55avHhYQjipump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "MARS",
    "name": "MarsCoin",
    "mint": "FtrbAabGNNmdXVZLBE6v2wvC4yxb4xYx8PSUJ5qZpump",
-   "age_s": 1,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4930,7 +4966,7 @@
    "symbol": "LORZ",
    "name": "Lord Of ErazyumRing",
    "mint": "2SZKstg3BFtaz9q5UsrxwSQBnUg54FvRBNiT4KPtpump",
-   "age_s": 52,
+   "age_s": 86,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4948,7 +4984,7 @@
    "symbol": "BLIND",
    "name": "Kevin The Blind Producer",
    "mint": "2yFotiRADB3TzAPj49XWsJVsiMiiLvMokKTMUVV9pump",
-   "age_s": 74,
+   "age_s": 108,
    "sol_in": 0.6,
    "buys": 5,
    "sells": 5,
@@ -4966,7 +5002,7 @@
    "symbol": "DUCKY",
    "name": "Save Ducky",
    "mint": "9ZxASWMMQuaRRp6xutZva9eJ31FNTgAY5psk882Zpump",
-   "age_s": 75,
+   "age_s": 109,
    "sol_in": -1.98,
    "buys": 5,
    "sells": 7,
@@ -4984,7 +5020,7 @@
    "symbol": "FI6900",
    "name": "Fertility and Income Index 6900",
    "mint": "2Ve7g1EvR3cDzsARNnF92M8NiAcyoY6sEUf7DcPeUaJo",
-   "age_s": 93,
+   "age_s": 127,
    "sol_in": -6.42,
    "buys": 0,
    "sells": 4,
@@ -5002,7 +5038,7 @@
    "symbol": "sexcoin",
    "name": "sexcoin",
    "mint": "J8bSoGp4hkuyBCSChCp7dbSJmFMTxByVvRTCLGYSDY13",
-   "age_s": 102,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5020,7 +5056,7 @@
    "symbol": "SRG",
    "name": "SHRIGGA",
    "mint": "5W8KGsoLrmFY1m4KGKFL8RrMGnr5yCSc32zqhBHepump",
-   "age_s": 111,
+   "age_s": 145,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5038,7 +5074,7 @@
    "symbol": "CMDTYCHAN",
    "name": "CMDTY CHAN",
    "mint": "CKhbsG9LvNdyfw2JaTdAdt3NURRF8PS6jz5t1XdbfqHR",
-   "age_s": 133,
+   "age_s": 167,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5056,7 +5092,7 @@
    "symbol": "?",
    "name": "",
    "mint": "Bv861xkna1uVKCzN9JHyH2p2szr4npuqNqTAvyanP9V6",
-   "age_s": 134,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5074,43 +5110,7 @@
    "symbol": "SRG",
    "name": "SHRIGGA",
    "mint": "H7r9CQdEzXVEEqE9AGX4Jwi5X8XivpEAtAztH9k3pump",
-   "age_s": 135,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.9,
-   "dev_pct": 15.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "GUAP",
-   "name": "MOONLAND",
-   "mint": "F4v5td2Z4WhX4hsNtw28UtcaPPpZEmctDTFahKH2pump",
-   "age_s": 149,
-   "sol_in": 0.27,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 1.8,
-   "mcap_sol": 28.7,
-   "dev_pct": 0.5,
-   "big_sell": 0.02,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SRG",
-   "name": "SHRIGGA",
-   "mint": "DM7FmApWKyNvL9zPb6chFDrZHBsmE6Vu2CPQnVhypump",
-   "age_s": 170,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
