@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:29:52Z",
+ "updated": "2026-11-28T09:30:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1073,
+  "flagged": 1074,
   "checked": 49,
   "filtered": 1,
-  "lines": 2510,
+  "lines": 2511,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "FABIO",
-   "why": "snipe",
-   "t": "2026-11-28T09:23:08Z"
-  },
   {
    "coin": "PadWars",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "SCAT",
    "why": "snipe",
    "t": "2026-11-28T09:29:46Z"
+  },
+  {
+   "coin": "JUGULAR",
+   "why": "snipe",
+   "t": "2026-11-28T09:30:09Z"
   }
  ],
  "curve": [
-  [
-   1795822200,
-   51.41
-  ],
   [
    1795822260,
    51.89
@@ -2472,6 +2468,10 @@
   [
    1795858140,
    47.79
+  ],
+  [
+   1795858200,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:30:19Z",
-   "time": "09:30:19",
-   "agent": "SCANNER",
-   "coin": "www",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 10.0 SOL in · +75% since the create · mcap 52 SOL",
-   "n": 2311
-  },
-  {
    "t": "2026-11-28T08:30:26Z",
    "time": "09:30:26",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 4.4 SOL in · +32% since the create · mcap 37 SOL",
    "n": 2510
+  },
+  {
+   "t": "2026-11-28T09:30:09Z",
+   "time": "10:30:09",
+   "agent": "SCANNER",
+   "coin": "JUGULAR",
+   "action": "flag",
+   "text": "snipe · first reading 0.1 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+   "n": 2511
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,25 +6503,25 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1123,
-    "last_event_age_s": 6.8,
+    "events": 1126,
+    "last_event_age_s": 8.3,
     "errors": 16,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21369,
+    "events": 21411,
     "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 799,
-    "last_event_age_s": 6.2,
-    "errors": 30,
+    "connected": false,
+    "events": 801,
+    "last_event_age_s": 5.6,
+    "errors": 31,
     "last_error": "ipfs.io: HTTP 403"
    }
   ],
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.8,
+  "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 4,
+  "followed": 6,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,28 +6584,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18861,
+   "sent": 18890,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18861,
+   "sent": 18890,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "JUGULAR",
+   "name": "GTA 6 Ocelot Jugular",
+   "mint": "9i7kUcrQtNWcsjwGkMwrjbwKMZi4jaEyHpoXW7etafzC",
+   "age_s": 9,
+   "sol_in": -0.7,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -4.5,
+   "mcap_sol": 28.5,
+   "dev_pct": 3.4,
+   "big_sell": 0.73,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "RANRAN",
+   "name": "Ran Ran",
+   "mint": "G3TdknJCRqxryG8McNyXPsAgdhQJaEuJ96GVbWYvjkEW",
+   "age_s": 14,
+   "sol_in": -0.49,
+   "buys": 3,
+   "sells": 5,
+   "rise_pct": -2.8,
+   "mcap_sol": 36.9,
+   "dev_pct": 15.2,
+   "big_sell": 3.08,
+   "x": "https://x.com/CGTNOfficial/status/2126609547481469061",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "SCAT",
    "name": "Smooth Cat",
    "mint": "2aDfYeo9MLV1B51mfYqwvmTntCaJyHJttgEPSBdAJXSQ",
-   "age_s": 6,
-   "sol_in": 3.89,
+   "age_s": 33,
+   "sol_in": 3.56,
    "buys": 3,
-   "sells": 2,
-   "rise_pct": 27.6,
-   "mcap_sol": 35.7,
+   "sells": 4,
+   "rise_pct": 25.1,
+   "mcap_sol": 35.0,
    "dev_pct": 0.0,
    "big_sell": 3.22,
    "x": false,
@@ -6618,7 +6654,7 @@
    "symbol": "ABYSS",
    "name": "Abysscat",
    "mint": "3F1KgnsU4opTBkkyfuvwC5ReNECu9W8JZLemTPQCTRiX",
-   "age_s": 17,
+   "age_s": 44,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,7 +6672,7 @@
    "symbol": "DCTY",
    "name": "DCTY LAUNCHED IN GTA",
    "mint": "6KYQHx2yr38HSnjfDuZLDcdLksog53retAMgC7R9pump",
-   "age_s": 25,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,7 +6690,7 @@
    "symbol": "DCTY",
    "name": "DCTY LAUNCHED IN GTA",
    "mint": "zy6SN9znrMPkUFxFZ15nGC6ZHkLFCZLNwfx3DtQpump",
-   "age_s": 25,
+   "age_s": 52,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6672,10 +6708,10 @@
    "symbol": "DICKCAT",
    "name": "dickcat",
    "mint": "FuEeZJgi45M1nnpCK5op41cYPMqERkgvD8nx74Z4pump",
-   "age_s": 83,
+   "age_s": 110,
    "sol_in": 0.01,
-   "buys": 2,
-   "sells": 3,
+   "buys": 3,
+   "sells": 4,
    "rise_pct": 0.1,
    "mcap_sol": 28.9,
    "dev_pct": 1.7,
