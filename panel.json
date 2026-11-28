@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:25:14Z",
+ "updated": "2026-11-28T04:25:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 688,
+  "flagged": 690,
   "checked": 49,
   "filtered": 1,
-  "lines": 1670,
+  "lines": 1672,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "AC1",
-   "why": "snipe",
-   "t": "2026-11-28T04:21:24Z"
-  },
-  {
-   "coin": "SQUAT",
-   "why": "snipe",
-   "t": "2026-11-28T04:21:45Z"
-  },
   {
    "coin": "farmed",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "MUSCLEDOGE",
    "why": "snipe",
    "t": "2026-11-28T04:25:06Z"
+  },
+  {
+   "coin": "RAMEN",
+   "why": "snipe",
+   "t": "2026-11-28T04:25:17Z"
+  },
+  {
+   "coin": "NVIDIA",
+   "why": "snipe",
+   "t": "2026-11-28T04:25:27Z"
   }
  ],
  "curve": [
@@ -3529,24 +3529,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:29:04Z",
-   "time": "04:29:04",
-   "agent": "SCANNER",
-   "coin": "HOPE",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 38 SOL",
-   "n": 1471
-  },
-  {
-   "t": "2026-11-28T03:29:24Z",
-   "time": "04:29:24",
-   "agent": "SCANNER",
-   "coin": "DOTPAID",
-   "action": "flag",
-   "text": "snipe · first reading 1.4 s after the create · 10.9 SOL in · +85% since the create · mcap 53 SOL",
-   "n": 1472
-  },
-  {
    "t": "2026-11-28T03:29:28Z",
    "time": "04:29:28",
    "agent": "SCANNER",
@@ -5327,6 +5309,24 @@
    "action": "scan",
    "text": "new pairs · 3.4 a minute · 0 watched · 4 rejected (snipe not bought: only to size 4)",
    "n": 1670
+  },
+  {
+   "t": "2026-11-28T04:25:17Z",
+   "time": "05:25:17",
+   "agent": "SCANNER",
+   "coin": "RAMEN",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1671
+  },
+  {
+   "t": "2026-11-28T04:25:27Z",
+   "time": "05:25:27",
+   "agent": "SCANNER",
+   "coin": "NVIDIA",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 17.6 SOL in · +133% since the create · mcap 81 SOL",
+   "n": 1672
   }
  ],
  "nights": [
@@ -5407,24 +5407,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1986,
-    "last_event_age_s": 9.3,
+    "events": 1988,
+    "last_event_age_s": 21.1,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 41892,
+    "events": 41949,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1217,
-    "last_event_age_s": 6.9,
+    "connected": true,
+    "events": 1219,
+    "last_event_age_s": 21.0,
     "errors": 57,
     "last_error": "n.uguu.se: timeout after 2 s"
    }
@@ -5439,7 +5439,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 6,
   "odd_readings": 357,
   "odd_coins": 161
  },
@@ -5488,23 +5488,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21269,
+   "sent": 21304,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21269,
+   "sent": 21304,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "GUDmxB7cZWDoDfPY6DotfuD3eytzLhAd8a8E8Lyspump",
+   "age_s": 21,
+   "sol_in": 18.1,
+   "buys": 6,
+   "sells": 0,
+   "rise_pct": 137.5,
+   "mcap_sol": 82.6,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": "https://t.co/5UY6GdgPL1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "RAMEN",
+   "name": "Ramencoin",
+   "mint": "CrQoF844NBCdgXf2by7XXQ2C3wYTaQZYB2Fk75wdpump",
+   "age_s": 31,
+   "sol_in": 0.1,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.7,
+   "mcap_sol": 28.2,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/ramentrade/status/2126532755056107754",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MUSCLEDOGE",
    "name": "Muscle Doge",
    "mint": "GSsmeUGxEvjYtbwAk9yvdYy4awYLeA6LMfMpY3P3pump",
-   "age_s": 9,
+   "age_s": 42,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5522,14 +5558,14 @@
    "symbol": "aura",
    "name": "aura",
    "mint": "b36dLTHKwD6dQcUEwenFVb4FDhfk7u2PBTHr9WVpump",
-   "age_s": 33,
-   "sol_in": 20.5,
-   "buys": 17,
-   "sells": 14,
-   "rise_pct": 181.2,
-   "mcap_sol": 80.1,
+   "age_s": 66,
+   "sol_in": 10.72,
+   "buys": 33,
+   "sells": 30,
+   "rise_pct": 83.3,
+   "mcap_sol": 52.2,
    "dev_pct": 1.0,
-   "big_sell": 2.76,
+   "big_sell": 5.66,
    "x": "https://x.com/auracoinpf/status/2126532663708143964",
    "tg": false,
    "web": "https://nationaldaycalendar.com/celebrations/international-aura-awareness-day-fourth-saturday-in-november",
@@ -5540,12 +5576,12 @@
    "symbol": "frug",
    "name": "frug",
    "mint": "5qFCkFric7GUgH1QawU122epioUMyYdtKEDQQY4Bpump",
-   "age_s": 100,
-   "sol_in": 2.23,
-   "buys": 36,
-   "sells": 37,
-   "rise_pct": 15.4,
-   "mcap_sol": 32.4,
+   "age_s": 133,
+   "sol_in": 1.32,
+   "buys": 38,
+   "sells": 44,
+   "rise_pct": 9.0,
+   "mcap_sol": 30.6,
    "dev_pct": 0.2,
    "big_sell": 3.14,
    "x": "https://x.com/itsmefrug/status/2126532026581090512",
@@ -5558,7 +5594,7 @@
    "symbol": "ELF",
    "name": "ELF",
    "mint": "6XVxjwmYyGrNoHrjeseLt9eDwSBJTBZViWHTPHUevjSC",
-   "age_s": 120,
+   "age_s": 153,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
