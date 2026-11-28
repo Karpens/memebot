@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:04:33Z",
+ "updated": "2026-11-28T02:05:05Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 395,
+  "flagged": 396,
   "checked": 49,
   "filtered": 1,
-  "lines": 1187,
+  "lines": 1189,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "RED",
-   "why": "snipe",
-   "t": "2026-11-28T01:58:37Z"
-  },
   {
    "coin": "Default",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Impact",
    "why": "snipe",
    "t": "2026-11-28T02:04:19Z"
+  },
+  {
+   "coin": "HOBOBO",
+   "why": "snipe",
+   "t": "2026-11-28T02:04:50Z"
   }
  ],
  "curve": [
@@ -811,6 +811,10 @@
   ],
   [
    1795831440,
+   47.79
+  ],
+  [
+   1795831500,
    47.79
   ]
  ],
@@ -2965,24 +2969,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:12:27Z",
-   "time": "02:12:27",
-   "agent": "SCANNER",
-   "coin": "TEST",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 988
-  },
-  {
-   "t": "2026-11-28T01:12:56Z",
-   "time": "02:12:56",
-   "agent": "SCANNER",
-   "coin": "PUG",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 989
-  },
-  {
    "t": "2026-11-28T01:13:13Z",
    "time": "02:13:13",
    "agent": "SCANNER",
@@ -4763,6 +4749,24 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1187
+  },
+  {
+   "t": "2026-11-28T02:04:39Z",
+   "time": "03:04:39",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, odd curve reading: virtual SOL i 1)",
+   "n": 1188
+  },
+  {
+   "t": "2026-11-28T02:04:50Z",
+   "time": "03:04:50",
+   "agent": "SCANNER",
+   "coin": "HOBOBO",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1189
   }
  ],
  "nights": [
@@ -4835,7 +4839,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 292 (140 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 292 (140 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4843,24 +4847,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1396,
-    "last_event_age_s": 16.0,
+    "events": 1398,
+    "last_event_age_s": 9.5,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26672,
-    "last_event_age_s": 0.0,
+    "events": 26721,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 786,
-    "last_event_age_s": 15.8,
+    "events": 787,
+    "last_event_age_s": 14.9,
     "errors": 36,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4873,9 +4877,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 1.4,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 292,
   "odd_coins": 140
  },
@@ -4924,28 +4928,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12286,
+   "sent": 12320,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12286,
+   "sent": 12320,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HOBOBO",
+   "name": "HOBOBO",
+   "mint": "2fPGB5PSA1bZUHvKtM5feFXXrXNiUTv5m6vi87zspump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/HIMCRYPTO/status/2126495731255046608?a=_Z0VmpdWXKUUfNZ51ek&s=19",
+   "tg": false,
+   "web": "https://x.com/HIMCRYPTO/status/2126495731255046608?a=_Z0VmpdWXKUUfNZ51ek&s=19",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Impact",
    "name": "Impact",
    "mint": "5juN9boU6DKLEkye891ERyi4ubESHPRy8MNcbwqfpump",
-   "age_s": 15,
-   "sol_in": 18.49,
-   "buys": 4,
-   "sells": 7,
-   "rise_pct": 157.5,
-   "mcap_sol": 74.8,
+   "age_s": 47,
+   "sol_in": 21.7,
+   "buys": 12,
+   "sells": 18,
+   "rise_pct": 192.4,
+   "mcap_sol": 84.9,
    "dev_pct": 2.0,
    "big_sell": 3.58,
    "x": "https://x.com/useimpact/status/2126497280895091162?a=oyztLclUdJzSvpb2JQI&s=20",
@@ -4958,7 +4980,7 @@
    "symbol": "Marscoin",
    "name": "Marscoin",
    "mint": "2gjJ2t4rRFHZ2oUpQQmeKyfxCy5zuDaShMFuLA9Qpump",
-   "age_s": 119,
+   "age_s": 151,
    "sol_in": 0.03,
    "buys": 7,
    "sells": 5,
@@ -4976,7 +4998,7 @@
    "symbol": "BRASSGL",
    "name": "Brass Gull Gale",
    "mint": "G1UqCSRpF9LNxMBxgir5uimEbrFU3WmDFsDWx8LWpump",
-   "age_s": 133,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4994,7 +5016,7 @@
    "symbol": "MALIN",
    "name": "Malin",
    "mint": "EeZsdv4XmWTvwuuZm8xU6zYWGXkzvhkxeK7AvjZ37NiK",
-   "age_s": 143,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
