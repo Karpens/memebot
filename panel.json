@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:40:46Z",
+ "updated": "2026-11-28T07:41:19Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 873,
   "checked": 49,
   "filtered": 1,
-  "lines": 2157,
+  "lines": 2158,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -2155,6 +2155,10 @@
   ],
   [
    1795851600,
+   47.79
+  ],
+  [
+   1795851660,
    47.79
   ]
  ],
@@ -4309,15 +4313,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:30:04Z",
-   "time": "07:30:04",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 7 rejected (snipe: first reading s after the 2, snipe not bought: only to size 2, mayhem mode 2)",
-   "n": 1958
-  },
-  {
    "t": "2026-11-28T06:30:35Z",
    "time": "07:30:35",
    "agent": "SCANNER",
@@ -6107,6 +6102,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 0 watched · 9 rejected (snipe not bought: only to size 3, mayhem mode 3, serial launcher 2)",
    "n": 2157
+  },
+  {
+   "t": "2026-11-28T07:40:47Z",
+   "time": "08:40:47",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 0 watched · 4 rejected (mayhem mode 2, snipe not bought: only to size 1, odd curve reading: virtual SOL i 1)",
+   "n": 2158
   }
  ],
  "nights": [
@@ -6179,7 +6183,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 559 (230 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 559 (230 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6187,24 +6191,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 693,
-    "last_event_age_s": 97.1,
+    "events": 696,
+    "last_event_age_s": 3.0,
     "errors": 12,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 8127,
-    "last_event_age_s": 2.1,
+    "events": 8174,
+    "last_event_age_s": 1.2,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 488,
-    "last_event_age_s": 97.8,
+    "events": 491,
+    "last_event_age_s": 2.9,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6217,9 +6221,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
-  "watching": 0,
-  "followed": 2,
+  "creates_per_min": 2.6,
+  "watching": 1,
+  "followed": 5,
   "odd_readings": 559,
   "odd_coins": 230
  },
@@ -6268,23 +6272,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 11896,
+   "sent": 11931,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 11896,
+   "sent": 11931,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$TWINK",
+   "name": "Twink Coin",
+   "mint": "GspeAjvDhy7kkrJDjhRKzmT6166izZ7Xck4nMAoVpump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 9 more coins in 60 min",
+   "why": "serial launcher: 9 more coins in 60 min"
+  },
+  {
+   "symbol": "HoodGive",
+   "name": "HoodsGiving",
+   "mint": "4dr5yKpFxZciJNev3qyLuFQgrFsWyi7X2n3rPKFgpump",
+   "age_s": 3,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/hoodtoshi/status/2123948290014109824?a=sUS8A2uRYDHNR7eu4SY&s=46",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "MEMETARD",
+   "name": "MEMETARD",
+   "mint": "A7yZ7pDueCpgt9XiMJYYHTbYkohTREr5q2pn4hoUgwwn",
+   "age_s": 24,
+   "sol_in": 0.12,
+   "buys": 4,
+   "sells": 7,
+   "rise_pct": 0.7,
+   "mcap_sol": 34.2,
+   "dev_pct": 9.9,
+   "big_sell": 2.94,
+   "x": "https://x.com/StepCoinsol8/status/2126582054993494509",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  },
+  {
    "symbol": "Peppe",
    "name": "Pepecion",
    "mint": "BPssXvL7gTYt9EmWc4VFAdRa5CrUei1FtHhtzA3Xpump",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6302,7 +6360,7 @@
    "symbol": "PILE",
    "name": "Pile of Useless Dollars",
    "mint": "5fju4MsnL4BYfYMyrAjhCGzYvZ956mQyLn9hkESf7Kai",
-   "age_s": 97,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6320,12 +6378,12 @@
    "symbol": "LCEVSGIRL",
    "name": "LceVSGirl",
    "mint": "DAWFRCRH2YZxaZieHtZad8Fh5wGzxng2VwqGi1Kupump",
-   "age_s": 115,
-   "sol_in": 0.0,
-   "buys": 9,
-   "sells": 9,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "age_s": 148,
+   "sol_in": 0.61,
+   "buys": 19,
+   "sells": 13,
+   "rise_pct": 4.1,
+   "mcap_sol": 29.1,
    "dev_pct": 0.0,
    "big_sell": 2.51,
    "x": false,
@@ -6338,7 +6396,7 @@
    "symbol": "JEW",
    "name": "Jew",
    "mint": "HMpv8YXVNkfnCNShyVsSpHeiGNb7Gym4ftagsGpkpump",
-   "age_s": 121,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
