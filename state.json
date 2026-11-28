@@ -59,51 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:17:05Z",
-    "time": "00:17:05",
-    "agent": "EXECUTOR",
-    "coin": "HSTAPART",
-    "action": "exit",
-    "text": "EXIT HSTAPART $-0.42 (-7%) · curve quiet for 3 min (no trade)",
-    "n": 251
-   },
-   {
-    "t": "2026-11-27T23:17:05Z",
-    "time": "00:17:05",
-    "agent": "LEARNER",
-    "coin": "HSTAPART",
-    "action": "learn",
-    "text": "learned · np:social:web now avg -7.9% over 300",
-    "n": 252
-   },
-   {
-    "t": "2026-11-27T23:17:08Z",
-    "time": "00:17:08",
-    "agent": "SCANNER",
-    "coin": null,
-    "action": "scan",
-    "text": "new pairs · 11.0 a minute · 0 watched · 28 rejected (snipe not bought: pause after a  14, mayhem mode 9, serial launcher 3)",
-    "n": 253
-   },
-   {
-    "t": "2026-11-27T23:17:18Z",
-    "time": "00:17:18",
-    "agent": "RISK",
-    "coin": null,
-    "action": "pause",
-    "text": "14 losses in a row · 2 min pause",
-    "n": 254
-   },
-   {
-    "t": "2026-11-27T23:17:18Z",
-    "time": "00:17:18",
-    "agent": "EXECUTOR",
-    "coin": "OMP",
-    "action": "exit",
-    "text": "EXIT OMP $-0.42 (-8%) · curve quiet for 3 min (no trade)",
-    "n": 255
-   },
-   {
     "t": "2026-11-27T23:17:18Z",
     "time": "00:17:18",
     "agent": "LEARNER",
@@ -5457,6 +5412,51 @@
     "action": "flag",
     "text": "snipe · first reading 1.1 s after the create · 8.2 SOL in · +60% since the create · mcap 48 SOL",
     "n": 850
+   },
+   {
+    "t": "2026-11-28T00:40:45Z",
+    "time": "01:40:45",
+    "agent": "SCANNER",
+    "coin": "HATS",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1.247e+05 is not 30 + real SOL 0 (off +1.247e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 137 odd readings from 70 coins tonight",
+    "n": 851
+   },
+   {
+    "t": "2026-11-28T00:40:50Z",
+    "time": "01:40:50",
+    "agent": "SCANNER",
+    "coin": "Steady",
+    "action": "flag",
+    "text": "snipe · first reading 1.0 s after the create · 2.1 SOL in · +14% since the create · mcap 32 SOL",
+    "n": 852
+   },
+   {
+    "t": "2026-11-28T00:40:53Z",
+    "time": "01:40:53",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: only to size 7, odd curve reading: virtual SOL i 4, no symbol or name 2)",
+    "n": 853
+   },
+   {
+    "t": "2026-11-28T00:40:58Z",
+    "time": "01:40:58",
+    "agent": "SCANNER",
+    "coin": "STREAK",
+    "action": "flag",
+    "text": "snipe · first reading 1.0 s after the create · 5.9 SOL in · +38% since the create · mcap 49 SOL",
+    "n": 854
+   },
+   {
+    "t": "2026-11-28T00:41:02Z",
+    "time": "01:41:02",
+    "agent": "SCANNER",
+    "coin": "singularity",
+    "action": "flag",
+    "text": "snipe · first reading 0.4 s after the create · 21.5 SOL in · +186% since the create · mcap 86 SOL",
+    "n": 855
    }
   ],
   "trades": [
@@ -8102,26 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 233,
+  "flagged": 236,
   "checked": 49,
   "filtered": 1,
-  "lines": 850,
+  "lines": 855,
   "flags": [
-   {
-    "coin": "SILT",
-    "why": "snipe",
-    "t": "2026-11-28T00:36:51Z"
-   },
-   {
-    "coin": "$CLAWMAS",
-    "why": "snipe",
-    "t": "2026-11-28T00:37:15Z"
-   },
-   {
-    "coin": "FLAMISH",
-    "why": "snipe",
-    "t": "2026-11-28T00:38:26Z"
-   },
    {
     "coin": "STUDS",
     "why": "snipe",
@@ -8146,6 +8131,21 @@
     "coin": "Midcurve",
     "why": "snipe",
     "t": "2026-11-28T00:40:23Z"
+   },
+   {
+    "coin": "Steady",
+    "why": "snipe",
+    "t": "2026-11-28T00:40:50Z"
+   },
+   {
+    "coin": "STREAK",
+    "why": "snipe",
+    "t": "2026-11-28T00:40:58Z"
+   },
+   {
+    "coin": "singularity",
+    "why": "snipe",
+    "t": "2026-11-28T00:41:02Z"
    }
   ],
   "curve": [
@@ -8552,13 +8552,17 @@
    [
     1795826400,
     47.79
+   ],
+   [
+    1795826460,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795826392.960897,
+  "np_said": 1795826453.960815,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8743,8 +8747,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 136,
-   "coins": 69,
+   "readings": 139,
+   "coins": 70,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -8815,7 +8819,8 @@
     "tJeR5FcPo3r8C3NWu5dzDxQQeBJ4KLxiZR7CDKjJwCK",
     "HfhdUziPSLf6aFPcffYwrn5M8pfc2r6qJNDDuKoypump",
     "7UwYYnHXkXxY6KKPUYBnPo3E7ZgKrtf5bxj28xjTkg8i",
-    "63cV6LPjBkVG1PjLJ7UVwSiLMFmSmjb6UHXLnpAfUV5f"
+    "63cV6LPjBkVG1PjLJ7UVwSiLMFmSmjb6UHXLnpAfUV5f",
+    "EJrWxo3UeopoJekTzdzA9onyHtuojjTvGLCJ46B9VLbZ"
    ]
   },
   "risk_said": {
