@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:37:52Z",
+ "updated": "2026-11-28T08:38:25Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 976,
+  "flagged": 977,
   "checked": 49,
   "filtered": 1,
-  "lines": 2338,
+  "lines": 2340,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TEST",
-   "why": "snipe",
-   "t": "2026-11-28T08:33:04Z"
-  },
   {
    "coin": "www",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "FLOKI",
    "why": "snipe",
    "t": "2026-11-28T08:37:39Z"
+  },
+  {
+   "coin": "MARKOV",
+   "why": "snipe",
+   "t": "2026-11-28T08:38:00Z"
   }
  ],
  "curve": [
@@ -2384,6 +2384,10 @@
   [
    1795855020,
    47.79
+  ],
+  [
+   1795855080,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4537,24 +4541,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:33:44Z",
-   "time": "08:33:44",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.2 a minute · 5 watched · 16 rejected (mayhem mode 7, odd curve reading: virtual SOL i 3, serial launcher 3) · closest MUTED: no curve reading yet",
-   "n": 2139
-  },
-  {
-   "t": "2026-11-28T07:33:58Z",
-   "time": "08:33:58",
-   "agent": "SCANNER",
-   "coin": "USD1",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.568e+05 is not 30 + real SOL 0 (off +1.568e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 558 odd readings from 229 coins tonight",
-   "n": 2140
-  },
-  {
    "t": "2026-11-28T07:34:16Z",
    "time": "08:34:16",
    "agent": "SCANNER",
@@ -6335,6 +6321,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.6 s after the create · 1.2 SOL in · +8% since the create · mcap 30 SOL",
    "n": 2338
+  },
+  {
+   "t": "2026-11-28T08:38:00Z",
+   "time": "09:38:00",
+   "agent": "SCANNER",
+   "coin": "MARKOV",
+   "action": "flag",
+   "text": "snipe · first reading 0.1 s after the create · 0.9 SOL in · +6% since the create · mcap 32 SOL",
+   "n": 2339
+  },
+  {
+   "t": "2026-11-28T08:38:18Z",
+   "time": "09:38:18",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 7 rejected (snipe not bought: only to size 4, serial launcher 2, mayhem mode 1)",
+   "n": 2340
   }
  ],
  "nights": [
@@ -6407,7 +6411,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 43 watched · ws off · odd curve readings 630 (239 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · odd curve readings 630 (239 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6415,24 +6419,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 926,
-    "last_event_age_s": 13.4,
+    "events": 927,
+    "last_event_age_s": 25.0,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15293,
-    "last_event_age_s": 0.8,
+    "events": 15378,
+    "last_event_age_s": 0.7,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 665,
-    "last_event_age_s": 13.3,
+    "events": 666,
+    "last_event_age_s": 24.1,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6445,7 +6449,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.4,
+  "creates_per_min": 3.2,
   "watching": 0,
   "followed": 6,
   "odd_readings": 630,
@@ -6496,28 +6500,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15541,
+   "sent": 15577,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15541,
+   "sent": 15577,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MARKOV",
+   "name": "Markov Robotics",
+   "mint": "DXPRTxfM22WXWqVKxYaFM4XJXXAVfjJh1Hyn6aXky4jA",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.0,
+   "dev_pct": 3.7,
+   "big_sell": 0.89,
+   "x": "https://x.com/markovrobotics",
+   "tg": false,
+   "web": "http://mr.inc/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FLOKI",
    "name": "FLOKI",
    "mint": "9YCAzPMn9cpwYFCvV4DSg8v1bhU8KGxgFi3f4ggApump",
-   "age_s": 13,
-   "sol_in": 0.71,
+   "age_s": 46,
+   "sol_in": 0.25,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": 4.8,
-   "mcap_sol": 29.3,
+   "sells": 3,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.4,
    "dev_pct": 0.0,
    "big_sell": 0.78,
    "x": "https://x.com/elonmusk/status/1474860884359094275",
@@ -6530,14 +6552,14 @@
    "symbol": "Yuki",
    "name": "RIP Yuki",
    "mint": "2ecwTxBFoWcZq24bgirxng8GpZozM53NgbzHf63Vua6F",
-   "age_s": 42,
-   "sol_in": 9.39,
-   "buys": 17,
-   "sells": 16,
-   "rise_pct": 64.9,
-   "mcap_sol": 56.0,
+   "age_s": 75,
+   "sol_in": 6.22,
+   "buys": 25,
+   "sells": 29,
+   "rise_pct": 41.1,
+   "mcap_sol": 47.9,
    "dev_pct": 9.9,
-   "big_sell": 2.01,
+   "big_sell": 3.13,
    "x": "https://x.com/StepCoinsol8/status/2126595900097093946",
    "tg": false,
    "web": false,
@@ -6548,7 +6570,7 @@
    "symbol": "rezigger",
    "name": "project 100k",
    "mint": "CcBKFj6s1MCpGKhDhcsgeYnuRgjWp5ZHWiDS98vxpump",
-   "age_s": 45,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6566,7 +6588,7 @@
    "symbol": "Deg",
    "name": "Deg",
    "mint": "B7vu2oCXsTVwoemHhfjfQpvTCEcmjseGec4m7FGEpump",
-   "age_s": 120,
+   "age_s": 153,
    "sol_in": -0.72,
    "buys": 19,
    "sells": 28,
@@ -6584,7 +6606,7 @@
    "symbol": "攀豹豹",
    "name": "Pan Bao Bao",
    "mint": "5ZcKR1V1FoUQsqTvEo7A7oJqnSySskrQirXC1CGapET2",
-   "age_s": 132,
+   "age_s": 165,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6602,7 +6624,7 @@
    "symbol": "DBT",
    "name": "DON'T BUY THIS",
    "mint": "GCQi25Tzryv3oLGwYijeHCXV4H8u5NoFTv2DDGVvpump",
-   "age_s": 145,
+   "age_s": 178,
    "sol_in": -0.05,
    "buys": 3,
    "sells": 2,
@@ -6615,42 +6637,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SCRVAN",
-   "name": "Screaming Vandal",
-   "mint": "4AszW7HAk2yDsuT45wnmFaHxw8dViZiHow14xFk5pump",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "MUNICH",
-   "name": "Munich Air Disaster",
-   "mint": "aiCMQtmXs44FYXCKiyf3D772C4H9b51cqUifUZZotve",
-   "age_s": 165,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://twitter.com/BBCNews/status/2126595677266285012",
-   "tg": false,
-   "web": "https://grokfamily.fun/",
-   "status": "rejected: odd curve reading: virtual SOL 2.462e+05 is not 30 + real SOL 0 (off +2.462e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.462e+05 is not 30 + real SOL 0 (off +2.462e+05 SOL)"
   }
  ],
  "strategies": [
