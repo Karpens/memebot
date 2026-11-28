@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:14:32Z",
+ "updated": "2026-11-28T08:15:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 925,
+  "flagged": 926,
   "checked": 49,
   "filtered": 1,
-  "lines": 2255,
+  "lines": 2256,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BUZZ",
-   "why": "snipe",
-   "t": "2026-11-28T08:09:08Z"
-  },
   {
    "coin": "BLR",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "WINTER",
    "why": "snipe",
    "t": "2026-11-28T08:14:20Z"
+  },
+  {
+   "coin": "PERPD",
+   "why": "snipe",
+   "t": "2026-11-28T08:14:50Z"
   }
  ],
  "curve": [
@@ -2292,6 +2292,10 @@
   [
    1795853640,
    47.79
+  ],
+  [
+   1795853700,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4445,15 +4449,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:04:26Z",
-   "time": "08:04:26",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 1 watched · 11 rejected (serial launcher 9, dump 1, snipe: first reading s after the 1) · closest BI: no curve reading yet",
-   "n": 2056
-  },
-  {
    "t": "2026-11-28T07:05:27Z",
    "time": "08:05:27",
    "agent": "SCANNER",
@@ -6243,6 +6238,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2255
+  },
+  {
+   "t": "2026-11-28T08:14:50Z",
+   "time": "09:14:50",
+   "agent": "SCANNER",
+   "coin": "PERPD",
+   "action": "flag",
+   "text": "snipe · first reading 0.1 s after the create · 14.6 SOL in · +118% since the create · mcap 63 SOL",
+   "n": 2256
   }
  ],
  "nights": [
@@ -6315,7 +6319,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 582 (235 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 587 (235 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6323,15 +6327,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 819,
-    "last_event_age_s": 11.7,
+    "events": 820,
+    "last_event_age_s": 13.3,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11646,
+    "events": 11676,
     "last_event_age_s": 0.2,
     "errors": 432,
     "last_error": "timeout after 5 s"
@@ -6339,8 +6343,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 585,
-    "last_event_age_s": 11.7,
+    "events": 586,
+    "last_event_age_s": 12.8,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6353,10 +6357,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.0,
   "watching": 0,
   "followed": 8,
-  "odd_readings": 582,
+  "odd_readings": 587,
   "odd_coins": 235
  },
  "learner": {
@@ -6404,23 +6408,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14052,
+   "sent": 14086,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14052,
+   "sent": 14086,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PERPD",
+   "name": "Perpd Tech",
+   "mint": "BxMuqE8zu82k1uXkC3Kyyqnj5aXCh7G3FABkAzkzpump",
+   "age_s": 13,
+   "sol_in": 12.28,
+   "buys": 3,
+   "sells": 9,
+   "rise_pct": 96.5,
+   "mcap_sol": 57.0,
+   "dev_pct": 2.0,
+   "big_sell": 1.02,
+   "x": "https://x.com/perpdtech/status/2126590374047343024",
+   "tg": false,
+   "web": "https://www.perpd.tech/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "WINTER",
    "name": "WINTER ARC",
    "mint": "24uYb1tPiyn4hc2yccut9NiGjoVBSsWpb6nfK9uSXZru",
-   "age_s": 11,
+   "age_s": 43,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6438,12 +6460,12 @@
    "symbol": "VECTRA",
    "name": "VectraTrade",
    "mint": "3BSt5Fzt7JxuaiGKHLXPSAQeSCHuoaohUZEW6bFZpump",
-   "age_s": 21,
-   "sol_in": -1.0,
+   "age_s": 53,
+   "sol_in": -1.09,
    "buys": 2,
-   "sells": 4,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.1,
+   "sells": 5,
+   "rise_pct": -6.9,
+   "mcap_sol": 28.0,
    "dev_pct": 3.7,
    "big_sell": 1.09,
    "x": "https://x.com/VectraExchange",
@@ -6456,7 +6478,7 @@
    "symbol": "Pumpany",
    "name": "Pumpany",
    "mint": "44DbavBjGgKht3yHs4Zq9sxkKBNgBTKBgNFFbjnGrQ2n",
-   "age_s": 41,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6474,7 +6496,7 @@
    "symbol": "减速",
    "name": "减速",
    "mint": "6Uoihvh7CqfJQpjVKLTma9TC9NqZg6XGw4S61YSTTX8E",
-   "age_s": 47,
+   "age_s": 79,
    "sol_in": -1.98,
    "buys": 1,
    "sells": 4,
@@ -6492,7 +6514,7 @@
    "symbol": "Rice",
    "name": "RiceCoin",
    "mint": "BzywULhF8ZCA8iJfdybAjF6Y6fwtBu4vCWzz96BJQmrz",
-   "age_s": 69,
+   "age_s": 101,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6510,7 +6532,7 @@
    "symbol": "FT",
    "name": "french toast",
    "mint": "FB5D2wXjXGYgnzSEotpA6TGrje2ujCiQ5Bp8LW6pump",
-   "age_s": 104,
+   "age_s": 136,
    "sol_in": -2.77,
    "buys": 7,
    "sells": 12,
@@ -6528,7 +6550,7 @@
    "symbol": "Yoda",
    "name": "Yoda",
    "mint": "FHecdqiUJf1GZh5Yu9nyAWNyEm4fdxeVXPpvBrmuYW4D",
-   "age_s": 108,
+   "age_s": 140,
    "sol_in": -3.06,
    "buys": 3,
    "sells": 7,
@@ -6546,7 +6568,7 @@
    "symbol": "uUSD1",
    "name": "unstable USD1",
    "mint": "C8J8oaX1pVkhVcZmGZdXmd5Gg6uqPQkycw6fpDjipump",
-   "age_s": 115,
+   "age_s": 147,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6559,60 +6581,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "BIWAR",
-   "name": "Binance Warrior",
-   "mint": "ChYzwDmsQF4gVZeUqFRnuFKwvS4g654iV2tJyvk3pump",
-   "age_s": 168,
-   "sol_in": -0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.01,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "RICE",
-   "name": "Rice Cat",
-   "mint": "3qJepYLVGTfwQLNs1gAbinYF1fahH4v8g8ogBNq3YQvQ",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 3.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
-  },
-  {
-   "symbol": "GRAIL",
-   "name": "Grail pepe",
-   "mint": "9vxpreDQU3z8Ti9kTTwe2GJL75gQ4riAMURh2HPGTRiX",
-   "age_s": 175,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.8,
-   "dev_pct": 90.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
