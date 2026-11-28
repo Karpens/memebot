@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:39:24Z",
+ "updated": "2026-11-28T03:39:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 581,
+  "flagged": 582,
   "checked": 49,
   "filtered": 1,
-  "lines": 1501,
+  "lines": 1503,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "FLIP",
-   "why": "snipe",
-   "t": "2026-11-28T03:35:59Z"
-  },
   {
    "coin": "GENGHISKON",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "NANCY",
    "why": "snipe",
    "t": "2026-11-28T03:39:09Z"
+  },
+  {
+   "coin": "OTTO",
+   "why": "snipe",
+   "t": "2026-11-28T03:39:29Z"
   }
  ],
  "curve": [
@@ -3345,24 +3345,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:42:52Z",
-   "time": "03:42:52",
-   "agent": "SCANNER",
-   "coin": "小猫仙",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 17.7 SOL in · +147% since the create · mcap 74 SOL",
-   "n": 1302
-  },
-  {
-   "t": "2026-11-28T02:43:03Z",
-   "time": "03:43:03",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 9 rejected (snipe not bought: only to size 6, mayhem mode 2, no bonding curve key 1)",
-   "n": 1303
-  },
-  {
    "t": "2026-11-28T02:43:25Z",
    "time": "03:43:25",
    "agent": "SCANNER",
@@ -5143,6 +5125,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.5 s after the create · 0.0 SOL in · +0% since the create · mcap 38 SOL",
    "n": 1501
+  },
+  {
+   "t": "2026-11-28T03:39:29Z",
+   "time": "04:39:29",
+   "agent": "SCANNER",
+   "coin": "OTTO",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · -1.0 SOL in · -6% since the create · mcap 28 SOL",
+   "n": 1502
+  },
+  {
+   "t": "2026-11-28T03:39:36Z",
+   "time": "04:39:36",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 2, mayhem mode 2)",
+   "n": 1503
   }
  ],
  "nights": [
@@ -5215,7 +5215,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 33 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5223,24 +5223,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1741,
-    "last_event_age_s": 10.8,
+    "events": 1743,
+    "last_event_age_s": 13.6,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 37565,
-    "last_event_age_s": 1.4,
+    "events": 37591,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 1028,
-    "last_event_age_s": 6.9,
+    "connected": true,
+    "events": 1029,
+    "last_event_age_s": 24.2,
     "errors": 51,
     "last_error": "ar-io.dev: too slow (over 2 s)"
    }
@@ -5253,7 +5253,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.6,
   "watching": 0,
   "followed": 7,
   "odd_readings": 337,
@@ -5304,30 +5304,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18342,
+   "sent": 18372,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18342,
+   "sent": 18372,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CHOKITTY",
+   "name": "Chokitty",
+   "mint": "GN9W5giX7c6UvzrpbWQpJw59YPaYNkzeJoRXH8Bqpump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "OTTO",
+   "name": "Otto the Otter",
+   "mint": "8j2yMhoFxhhAdiHAX1yo9X3aFUmTDAZN4uAN5aqfpump",
+   "age_s": 24,
+   "sol_in": -0.98,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -6.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 0.99,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FLAT",
    "name": "Folded Air",
    "mint": "JCgfN7Dp7t5fKZee3zZCVhXxRem9iweWwp8TLAuaWwhS",
-   "age_s": 10,
-   "sol_in": 0.01,
+   "age_s": 38,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
+   "sells": 1,
+   "rise_pct": 0.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -5338,14 +5374,14 @@
    "symbol": "NANCY",
    "name": "Nancycoin",
    "mint": "DDVEqSXsSWUkTVqfkAoN7Hr3Q6PxVPogSbjNKbkDpump",
-   "age_s": 16,
-   "sol_in": 0.1,
+   "age_s": 44,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.6,
-   "mcap_sol": 38.1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
    "dev_pct": 15.2,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": "https://x.com/nevdevvv/status/2126520965169324050",
    "tg": false,
    "web": "https://www.behance.net/gallery/68060071/The-Dog-Show-Season-2/modules/397872947",
@@ -5356,14 +5392,14 @@
    "symbol": "FCAT",
    "name": "Flip Cat",
    "mint": "6GNNY7JLcGxCKspesmvqoeCp7hbZLqkyeAUqgcxtzFLP",
-   "age_s": 18,
-   "sol_in": 0.5,
+   "age_s": 46,
+   "sol_in": 0.49,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 3.4,
+   "sells": 1,
+   "rise_pct": 3.3,
    "mcap_sol": 28.9,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -5374,7 +5410,7 @@
    "symbol": "USFF",
    "name": "USFF",
    "mint": "BRrYZ98EyaEJyK2kuj4Y1xzCp8Q2F5HpxXy3JYY5pump",
-   "age_s": 63,
+   "age_s": 91,
    "sol_in": -0.49,
    "buys": 0,
    "sells": 3,
@@ -5392,7 +5428,7 @@
    "symbol": "째무",
    "name": "째무 🚀🤑💎",
    "mint": "DBrJj8tdsWUR4iHz2rMPTtMz1boWmFjrU3s2zvrnpump",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5410,7 +5446,7 @@
    "symbol": "BUYBACK",
    "name": "Buyback",
    "mint": "E4ZArtqQw78zFLHXGFmT52wTtmRC123hQu1wbaSZBpoX",
-   "age_s": 75,
+   "age_s": 103,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5428,7 +5464,7 @@
    "symbol": "PUMPMAS",
    "name": "MERRY PUMPMAS",
    "mint": "9cJwKueirae6jbHbseeGJWMgyrfZwe1WWwdhCMxQpump",
-   "age_s": 81,
+   "age_s": 109,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5446,7 +5482,7 @@
    "symbol": "badger",
    "name": "honey badger",
    "mint": "FwhzvqV4xuL4rXNZjjBRAJBymCkoQ3CmC1rAcNjLpump",
-   "age_s": 96,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 2,
@@ -5464,7 +5500,7 @@
    "symbol": "?",
    "name": "",
    "mint": "GWw5GMZNpockSLopKfgnmKAxkzrwUv5FXfk5KSCdpump",
-   "age_s": 99,
+   "age_s": 127,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5477,24 +5513,6 @@
    "web": false,
    "status": "rejected: no symbol or name",
    "why": "no symbol or name"
-  },
-  {
-   "symbol": "AMD",
-   "name": "A Massive Douche",
-   "mint": "5sZLNAQgC3gD9XGW1h6FTFRgQGwhnxAzhmVxmF1Rpump",
-   "age_s": 163,
-   "sol_in": 0.02,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/blknoiz06",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
