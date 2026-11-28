@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:33:31Z",
+ "updated": "2026-11-28T05:34:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 766,
   "checked": 49,
   "filtered": 1,
-  "lines": 1848,
+  "lines": 1849,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -1647,6 +1647,10 @@
   ],
   [
    1795843980,
+   47.79
+  ],
+  [
+   1795844040,
    47.79
   ]
  ],
@@ -3801,15 +3805,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:19:19Z",
-   "time": "05:19:19",
-   "agent": "SCANNER",
-   "coin": "GRUMPFLUFF",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1649
-  },
-  {
    "t": "2026-11-28T04:20:03Z",
    "time": "05:20:03",
    "agent": "SCANNER",
@@ -5599,6 +5594,15 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, serial launcher 2)",
    "n": 1848
+  },
+  {
+   "t": "2026-11-28T05:33:33Z",
+   "time": "06:33:33",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.6 a minute · 0 watched · 6 rejected (snipe not bought: only to size 5, serial launcher 1)",
+   "n": 1849
   }
  ],
  "nights": [
@@ -5665,7 +5669,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 16 watched · ws off · odd curve readings 383 (179 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 15 watched · ws off · odd curve readings 383 (179 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5673,24 +5677,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 216,
-    "last_event_age_s": 72.0,
-    "errors": 2,
-    "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
+    "events": 217,
+    "last_event_age_s": 6.0,
+    "errors": 3,
+    "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 1506,
-    "last_event_age_s": 3.4,
+    "events": 1518,
+    "last_event_age_s": 3.1,
     "errors": 144,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 173,
-    "last_event_age_s": 71.9,
+    "events": 174,
+    "last_event_age_s": 5.9,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5704,7 +5708,7 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.6,
-  "watching": 0,
+  "watching": 1,
   "followed": 6,
   "odd_readings": 383,
   "odd_coins": 179
@@ -5754,26 +5758,44 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 3769,
+   "sent": 3801,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 3769,
+   "sent": 3801,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PBJT",
+   "name": "Peanut Butter Jelly Time",
+   "mint": "3PFn4oFnnKQJpijbbTCL7NLkhtEMHbyzMji883zGpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "chairman",
    "name": "chairman",
    "mint": "9YDxMeoyZiXxEhF3PnjPXh6juifDGRVZYY98v8wUpump",
-   "age_s": 71,
-   "sol_in": -4.54,
+   "age_s": 101,
+   "sol_in": -4.55,
    "buys": 1,
-   "sells": 2,
+   "sells": 3,
    "rise_pct": -24.3,
    "mcap_sol": 28.7,
    "dev_pct": 15.2,
@@ -5788,12 +5810,12 @@
    "symbol": "packball",
    "name": "packball",
    "mint": "7UjWzLjQyGySc79qHTSn9C68rUcsfEwLbhqqnFiapump",
-   "age_s": 79,
-   "sol_in": -0.19,
+   "age_s": 109,
+   "sol_in": -0.4,
    "buys": 1,
-   "sells": 5,
-   "rise_pct": -1.2,
-   "mcap_sol": 28.9,
+   "sells": 6,
+   "rise_pct": -2.6,
+   "mcap_sol": 28.5,
    "dev_pct": 2.4,
    "big_sell": 7.0,
    "x": "https://x.com/usepackball/status/2126549614350270666",
@@ -5806,7 +5828,7 @@
    "symbol": "Derp",
    "name": "Derpdex",
    "mint": "3xKfYWpvmP4Jrdgjdae3LGBFRZjAjMWRKjDFHvH2pump",
-   "age_s": 109,
+   "age_s": 139,
    "sol_in": -0.99,
    "buys": 3,
    "sells": 3,
@@ -5824,7 +5846,7 @@
    "symbol": "HBDG",
    "name": "HONEY BADGER",
    "mint": "HSPzx2NJQNFq9HcUT6iBnZkDwxXQHPvRsirY2Uz5reuk",
-   "age_s": 131,
+   "age_s": 161,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 1,
@@ -5842,35 +5864,17 @@
    "symbol": "GIFTFALL",
    "name": "GIFTFALL",
    "mint": "3v6L4J5X3UpPKFgxwBut6QCGLdHB43KKzotatxQPpump",
-   "age_s": 140,
-   "sol_in": 0.71,
+   "age_s": 170,
+   "sol_in": 0.12,
    "buys": 8,
-   "sells": 12,
-   "rise_pct": 4.6,
-   "mcap_sol": 31.5,
+   "sells": 13,
+   "rise_pct": 0.7,
+   "mcap_sol": 30.3,
    "dev_pct": 3.8,
    "big_sell": 4.17,
    "x": "https://x.com/Giftfall",
    "tg": false,
    "web": "https://giftfall.xyz/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "NOOB",
-   "name": "NOOB",
-   "mint": "AzHmsArsXu6LVjHeeBQTamYVnAV5Z18b5t6k2DoGpump",
-   "age_s": 158,
-   "sol_in": 20.75,
-   "buys": 23,
-   "sells": 20,
-   "rise_pct": 171.1,
-   "mcap_sol": 86.7,
-   "dev_pct": 7.0,
-   "big_sell": 3.47,
-   "x": "https://x.com/noobdotwtf/status/2126549015864942803?a=cJxZTVxRRKjy1bdAQwg&s=20",
-   "tg": false,
-   "web": "https://www.noobdot.wtf/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
