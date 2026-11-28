@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:15:17Z",
+ "updated": "2026-11-28T05:15:50Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 748,
+  "flagged": 749,
   "checked": 49,
   "filtered": 1,
-  "lines": 1806,
+  "lines": 1808,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PUMADRIP",
-   "why": "snipe",
-   "t": "2026-11-28T05:08:30Z"
-  },
   {
    "coin": "USEFUL",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "FISTRAT",
    "why": "snipe",
    "t": "2026-11-28T05:15:15Z"
+  },
+  {
+   "coin": "BATM",
+   "why": "snipe",
+   "t": "2026-11-28T05:15:20Z"
   }
  ],
  "curve": [
@@ -3729,24 +3729,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:08:55Z",
-   "time": "05:08:55",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 8 rejected (snipe not bought: only to size 6, serial launcher 1, no bonding curve key 1)",
-   "n": 1607
-  },
-  {
-   "t": "2026-11-28T04:09:08Z",
-   "time": "05:09:08",
-   "agent": "SCANNER",
-   "coin": "NVIDIA",
-   "action": "flag",
-   "text": "snipe · first reading 1.8 s after the create · 17.8 SOL in · +135% since the create · mcap 82 SOL",
-   "n": 1608
-  },
-  {
    "t": "2026-11-28T04:09:44Z",
    "time": "05:09:44",
    "agent": "SCANNER",
@@ -5527,6 +5509,24 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 1806
+  },
+  {
+   "t": "2026-11-28T05:15:20Z",
+   "time": "06:15:20",
+   "agent": "SCANNER",
+   "coin": "BATM",
+   "action": "flag",
+   "text": "snipe · first reading 4.6 s after the create · 0.0 SOL in · +0% since the create · mcap 36 SOL",
+   "n": 1807
+  },
+  {
+   "t": "2026-11-28T05:15:23Z",
+   "time": "06:15:23",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 10 rejected (snipe not bought: only to size 5, snipe: first reading s after the 2, serial launcher 2)",
+   "n": 1808
   }
  ],
  "nights": [
@@ -5593,7 +5593,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 21 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 21 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5601,24 +5601,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 171,
-    "last_event_age_s": 1.0,
+    "events": 172,
+    "last_event_age_s": 5.0,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 1040,
-    "last_event_age_s": 0.1,
-    "errors": 82,
+    "connected": false,
+    "events": 1053,
+    "last_event_age_s": 15.1,
+    "errors": 84,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 135,
-    "last_event_age_s": 0.8,
+    "events": 136,
+    "last_event_age_s": 4.1,
     "errors": 6,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5633,7 +5633,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.2,
   "watching": 1,
-  "followed": 10,
+  "followed": 9,
   "odd_readings": 372,
   "odd_coins": 175
  },
@@ -5682,43 +5682,61 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2604,
+   "sent": 2639,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2604,
+   "sent": 2639,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "BATM",
-   "name": "Batmancer",
-   "mint": "DCHGXzmbuhdcZ7qEfc2SPDGWKyCEKE6TYCzYzuz7pump",
-   "age_s": 0,
+   "symbol": "MYNAME",
+   "name": "mynameistrump",
+   "mint": "5FJA2p2j55b8DExmGARH2bQ8dCgfYt5Nybfgznirpump",
+   "age_s": 5,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 36.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "BATM",
+   "name": "Batmancer",
+   "mint": "DCHGXzmbuhdcZ7qEfc2SPDGWKyCEKE6TYCzYzuz7pump",
+   "age_s": 33,
+   "sol_in": 0.5,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 3.0,
+   "mcap_sol": 37.3,
    "dev_pct": 13.1,
    "big_sell": 0.0,
    "x": "https://x.com/Batmancer",
    "tg": false,
    "web": "https://batmancer.xyz/",
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "FISTRAT",
    "name": "Fistfight Rat",
    "mint": "6Um3cTnPQC8a1TKTipnVBdUqCpebsrx4EpdxWpCppump",
-   "age_s": 3,
+   "age_s": 36,
    "sol_in": 0.0,
-   "buys": 1,
+   "buys": 2,
    "sells": 1,
    "rise_pct": 0.0,
    "mcap_sol": 28.1,
@@ -5734,14 +5752,14 @@
    "symbol": "MM",
    "name": "Meme Mutation",
    "mint": "uhpREcrFa1bqajAV7VKwAvykFnVe345T3mCQcPXUtd4",
-   "age_s": 54,
-   "sol_in": 0.01,
+   "age_s": 87,
+   "sol_in": -1.49,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 30.8,
+   "sells": 1,
+   "rise_pct": -9.2,
+   "mcap_sol": 28.0,
    "dev_pct": 5.1,
-   "big_sell": 0.0,
+   "big_sell": 1.5,
    "x": "https://x.com/MemeMutationSOL",
    "tg": false,
    "web": false,
@@ -5752,7 +5770,7 @@
    "symbol": "Singularity",
    "name": "Singularity",
    "mint": "3njENpVLpqe7qPi5Wd2uRQne89upVHCcmyVesLEKpump",
-   "age_s": 86,
+   "age_s": 119,
    "sol_in": 0.01,
    "buys": 5,
    "sells": 13,
@@ -5770,7 +5788,7 @@
    "symbol": "RALLY",
    "name": "rally",
    "mint": "HwTXqsnf4oNLrFJX3YW5kSQyCm7TWBaajJ1uPmC6MaS",
-   "age_s": 93,
+   "age_s": 126,
    "sol_in": -3.86,
    "buys": 2,
    "sells": 1,
@@ -5788,7 +5806,7 @@
    "symbol": "GRINGOTTS",
    "name": "The Bank of Gringotts",
    "mint": "57rwR69fg3uvetamPnhHB1wuKR6adUggDEsHQwXJpump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5806,12 +5824,12 @@
    "symbol": "USA",
    "name": "United Scammers of America",
    "mint": "2AMMCW1bmH2CTtaEwEumFKp6kSH1uib7CaQiQ8USpump",
-   "age_s": 132,
-   "sol_in": 3.53,
-   "buys": 18,
-   "sells": 29,
-   "rise_pct": 24.9,
-   "mcap_sol": 35.0,
+   "age_s": 165,
+   "sol_in": 3.21,
+   "buys": 19,
+   "sells": 32,
+   "rise_pct": 22.5,
+   "mcap_sol": 34.3,
    "dev_pct": 0.1,
    "big_sell": 3.2,
    "x": "https://x.com/ramentrade/status/2126544829404340707",
@@ -5824,7 +5842,7 @@
    "symbol": "eruc",
    "name": "OG2 YR OLD",
    "mint": "G8uG9jpdQkwqqQzkRuE79BoLodVKmMA5nK9JuJ5Uccyy",
-   "age_s": 140,
+   "age_s": 173,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5837,42 +5855,6 @@
    "web": "https://www.youtube.com/watch?v=1A_gdjHRE4k",
    "status": "rejected: serial launcher: 12 more coins in 60 min",
    "why": "serial launcher: 12 more coins in 60 min"
-  },
-  {
-   "symbol": "GOLD",
-   "name": "GOLD",
-   "mint": "6YcKw9GYZwBwJNEDihQqd2yDA4fhjSnWT1V7BP1upump",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.7,
-   "dev_pct": 1.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 37.5 s after the create (max 10 s)",
-   "why": "snipe: first reading 37.5 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "Anthropic",
-   "name": "Anthropic official",
-   "mint": "6YP7M7i73Xrmjxohm82tiTpK5tzi6Yu8hjAVqM4opump",
-   "age_s": 160,
-   "sol_in": 12.9,
-   "buys": 2,
-   "sells": 6,
-   "rise_pct": 91.0,
-   "mcap_sol": 67.6,
-   "dev_pct": 11.9,
-   "big_sell": 0.75,
-   "x": "https://x.com/AnthropicAI",
-   "tg": false,
-   "web": "https://www.anthropic.com/",
-   "status": "rejected: snipe: first reading 49.9 s after the create (max 10 s)",
-   "why": "snipe: first reading 49.9 s after the create (max 10 s)"
   }
  ],
  "strategies": [
