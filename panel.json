@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:41:05Z",
+ "updated": "2026-11-28T10:41:38Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1200,
+  "flagged": 1201,
   "checked": 49,
   "filtered": 1,
-  "lines": 2749,
+  "lines": 2752,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "$MULTI",
-   "why": "snipe",
-   "t": "2026-11-28T10:35:48Z"
-  },
   {
    "coin": "MAYCHAN",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "PUDS",
    "why": "snipe",
    "t": "2026-11-28T10:40:59Z"
+  },
+  {
+   "coin": "MI",
+   "why": "snipe",
+   "t": "2026-11-28T10:41:27Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:44:32Z",
-   "time": "10:44:32",
-   "agent": "SIZER",
-   "coin": "GPU",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 2550
-  },
-  {
-   "t": "2026-11-28T09:44:53Z",
-   "time": "10:44:53",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.2 a minute · 0 watched · 7 rejected (serial launcher 3, snipe not bought: only to size 2, mayhem mode 2)",
-   "n": 2551
-  },
-  {
-   "t": "2026-11-28T09:45:36Z",
-   "time": "10:45:36",
-   "agent": "SCANNER",
-   "coin": "SCAT",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 4.379e+04 is not 30 + real SOL 0 (off +4.376e+04 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 656 odd readings from 252 coins tonight",
-   "n": 2552
-  },
-  {
    "t": "2026-11-28T09:45:54Z",
    "time": "10:45:54",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
    "n": 2749
+  },
+  {
+   "t": "2026-11-28T10:41:22Z",
+   "time": "11:41:22",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 14 rejected (snipe not bought: only to size 7, serial launcher 4, mayhem mode 3)",
+   "n": 2750
+  },
+  {
+   "t": "2026-11-28T10:41:27Z",
+   "time": "11:41:27",
+   "agent": "SCANNER",
+   "coin": "MI",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 2.0 SOL in · +10% since the create · mcap 58 SOL",
+   "n": 2751
+  },
+  {
+   "t": "2026-11-28T10:41:27Z",
+   "time": "11:41:27",
+   "agent": "SIZER",
+   "coin": "MI",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2752
   }
  ],
  "nights": [
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 100,
-    "last_event_age_s": 5.3,
+    "events": 101,
+    "last_event_age_s": 12.8,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2930,
+    "events": 2966,
     "last_event_age_s": 0.6,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 73,
-    "last_event_age_s": 5.2,
+    "events": 74,
+    "last_event_age_s": 12.6,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,7 +6529,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 11,
+  "followed": 12,
   "odd_readings": 922,
   "odd_coins": 276
  },
@@ -6578,23 +6578,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1682,
+   "sent": 1718,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1682,
+   "sent": 1718,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MI",
+   "name": "Maths Inu",
+   "mint": "4PFbtb6iStL5iMEWjAqFh7KMaTJu8NTBzTUUh85Vpump",
+   "age_s": 12,
+   "sol_in": 15.66,
+   "buys": 9,
+   "sells": 3,
+   "rise_pct": 90.7,
+   "mcap_sol": 100.2,
+   "dev_pct": 29.0,
+   "big_sell": 12.56,
+   "x": "https://x.com/MarioPrezldente/status/2126627268294533594",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Huss Huss",
    "name": "Huss Huss Huss",
    "mint": "A9NTMH8T3k9VcFF2aX3WJtQzoMexAzWRQYGRsuEspump",
-   "age_s": 5,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6612,7 +6630,7 @@
    "symbol": "PUDS",
    "name": "Puds",
    "mint": "GhPXkFNJg6CYAcUKoHME5uF5WFuVc3VySEW4KdjEN7pn",
-   "age_s": 6,
+   "age_s": 39,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,12 +6648,12 @@
    "symbol": "OOPS",
    "name": "Accidental Millionaires",
    "mint": "FqSKvUkeQUJQfEbPJZXSqhJVc2wkuHqCod7BrkB3LjoS",
-   "age_s": 25,
-   "sol_in": 0.13,
-   "buys": 1,
+   "age_s": 58,
+   "sol_in": 0.26,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 0.8,
-   "mcap_sol": 28.2,
+   "rise_pct": 1.8,
+   "mcap_sol": 28.5,
    "dev_pct": 0.1,
    "big_sell": 0.01,
    "x": false,
@@ -6648,7 +6666,7 @@
    "symbol": "OOPS",
    "name": "Accidental Millionaires",
    "mint": "ExR4CswnnLJzxQRgyN8iWL18QJxE5P8PqRsBfjhrZ2Us",
-   "age_s": 28,
+   "age_s": 61,
    "sol_in": 0.12,
    "buys": 2,
    "sells": 1,
@@ -6666,7 +6684,7 @@
    "symbol": "GRASS",
    "name": "GRASS",
    "mint": "D5A9SaLKPQ85xMuzYLrUgiUhVWJwrQ6aJ8CdsVy9pump",
-   "age_s": 29,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,14 +6702,14 @@
    "symbol": "OOPS",
    "name": "Accidental Millionaires",
    "mint": "5eH1rJ8gsjPkESjarddUP3yHx5iXELkFbhkycFMtHnq3",
-   "age_s": 30,
+   "age_s": 63,
    "sol_in": 0.13,
-   "buys": 1,
-   "sells": 1,
+   "buys": 2,
+   "sells": 2,
    "rise_pct": 0.9,
    "mcap_sol": 28.3,
    "dev_pct": 0.1,
-   "big_sell": 0.01,
+   "big_sell": 0.21,
    "x": false,
    "tg": false,
    "web": false,
@@ -6702,7 +6720,7 @@
    "symbol": "OOPS",
    "name": "Accidental Millionaires",
    "mint": "9JFzhAvANHSTPg2hwx2kJwHkU8ySXsxHu4bfnwQmqcbf",
-   "age_s": 32,
+   "age_s": 65,
    "sol_in": 0.3,
    "buys": 3,
    "sells": 1,
@@ -6720,7 +6738,7 @@
    "symbol": "OOPS",
    "name": "Accidental Millionaires",
    "mint": "GMtVMzB8YnEnHv82W5PwDxcHPZiHCXWeoQp1iD5fptA6",
-   "age_s": 34,
+   "age_s": 67,
    "sol_in": 0.23,
    "buys": 4,
    "sells": 0,
@@ -6738,7 +6756,7 @@
    "symbol": "MI",
    "name": "Maths Inu",
    "mint": "FoqCQeDAhMcpiJLBA3nYj8XQegeT4AL94LQcUKbnpwto",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": -4.64,
    "buys": 1,
    "sells": 7,
@@ -6756,12 +6774,12 @@
    "symbol": "bobby",
    "name": "bobby",
    "mint": "A9poGTjQd3oZrtRYeZMStMx4gjQnACqwv3VQfiqqpump",
-   "age_s": 47,
-   "sol_in": 7.01,
-   "buys": 16,
-   "sells": 13,
-   "rise_pct": 51.9,
-   "mcap_sol": 42.9,
+   "age_s": 80,
+   "sol_in": 11.54,
+   "buys": 28,
+   "sells": 18,
+   "rise_pct": 91.2,
+   "mcap_sol": 54.0,
    "dev_pct": 0.5,
    "big_sell": 4.53,
    "x": "https://x.com/belikebobbypf",
@@ -6774,7 +6792,7 @@
    "symbol": "AL",
    "name": "Albania",
    "mint": "6ntxewp9KqTdrxhLsXc2kuXbTqbzmFKbRHnGT3ZGpump",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6792,7 +6810,7 @@
    "symbol": "000",
    "name": "000",
    "mint": "ARZSh6edcmo41PfUJRAYwryXxg5S47mYGMnqRuYbpump",
-   "age_s": 83,
+   "age_s": 116,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6810,12 +6828,12 @@
    "symbol": "FLUFFI",
    "name": "fluffington",
    "mint": "BismWUPepJCCxVWTJ81ZxaHqS57gChV9Azubu14Qpump",
-   "age_s": 87,
-   "sol_in": 0.01,
-   "buys": 2,
+   "age_s": 120,
+   "sol_in": 0.08,
+   "buys": 3,
    "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 29.7,
+   "rise_pct": 0.5,
+   "mcap_sol": 29.8,
    "dev_pct": 3.1,
    "big_sell": 0.0,
    "x": "https://x.com/fluffisol",
@@ -6828,7 +6846,7 @@
    "symbol": "RIP",
    "name": "PJ Gallagher",
    "mint": "CD3NGWo4RcQeLVJNrrZHyF4AzVvcZbkxQKLzF9Pspump",
-   "age_s": 124,
+   "age_s": 157,
    "sol_in": -0.4,
    "buys": 1,
    "sells": 1,
