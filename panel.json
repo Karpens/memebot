@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:54:39Z",
+ "updated": "2026-11-28T10:55:12Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1228,
+  "flagged": 1230,
   "checked": 49,
   "filtered": 1,
-  "lines": 2808,
+  "lines": 2810,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TwoDeep",
-   "why": "snipe",
-   "t": "2026-11-28T10:50:29Z"
-  },
-  {
-   "coin": "ETHDRAFT",
-   "why": "snipe",
-   "t": "2026-11-28T10:51:07Z"
-  },
   {
    "coin": "Manager",
    "why": "snipe",
@@ -70,13 +60,19 @@
    "coin": "CAKE",
    "why": "snipe",
    "t": "2026-11-28T10:54:39Z"
+  },
+  {
+   "coin": "Farm",
+   "why": "snipe",
+   "t": "2026-11-28T10:54:59Z"
+  },
+  {
+   "coin": "PARRY",
+   "why": "snipe",
+   "t": "2026-11-28T10:55:11Z"
   }
  ],
  "curve": [
-  [
-   1795827300,
-   47.79
-  ],
   [
    1795827360,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795863240,
    47.79
+  ],
+  [
+   1795863300,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:58:42Z",
-   "time": "10:58:42",
-   "agent": "SCANNER",
-   "coin": "LUCIA",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2609
-  },
-  {
-   "t": "2026-11-28T09:59:00Z",
-   "time": "10:59:00",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (snipe not bought: only to size 4, serial launcher 3, odd curve reading: virtual SOL i 1)",
-   "n": 2610
-  },
-  {
    "t": "2026-11-28T09:59:31Z",
    "time": "10:59:31",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL",
    "n": 2808
+  },
+  {
+   "t": "2026-11-28T10:54:59Z",
+   "time": "11:54:59",
+   "agent": "SCANNER",
+   "coin": "Farm",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2809
+  },
+  {
+   "t": "2026-11-28T10:55:11Z",
+   "time": "11:55:11",
+   "agent": "SCANNER",
+   "coin": "PARRY",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 2.5 SOL in · +17% since the create · mcap 33 SOL",
+   "n": 2810
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 953 (290 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 953 (290 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 159,
-    "last_event_age_s": 1.0,
+    "events": 164,
+    "last_event_age_s": 2.0,
     "errors": 1,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4717,
+    "events": 4829,
     "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
@@ -6513,7 +6513,7 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 121,
+    "events": 125,
     "last_event_age_s": 0.9,
     "errors": 2,
     "last_error": "ipfs.io: HTTP 403"
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 10,
   "odd_readings": 953,
   "odd_coins": 290
  },
@@ -6578,28 +6578,118 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 2549,
+   "sent": 2584,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 2549,
+   "sent": 2584,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PARRY",
+   "name": "Parry",
+   "mint": "8LxbQGnMQDRkFS65W8oj3YT1P4TqScta3V3EQNVgPSBU",
+   "age_s": 1,
+   "sol_in": 7.46,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 55.8,
+   "mcap_sol": 43.8,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/ParryFun",
+   "tg": false,
+   "web": "https://parryfun.xyz",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "WLFI",
+   "name": "We Lack Funds Inu",
+   "mint": "3nrcetVH7CnoV2Fgcx7ekSLFFDEyCoYy65CoYaGTpump",
+   "age_s": 6,
+   "sol_in": 5.3,
+   "buys": 2,
+   "sells": 3,
+   "rise_pct": 34.5,
+   "mcap_sol": 45.9,
+   "dev_pct": 10.2,
+   "big_sell": 1.44,
+   "x": "https://x.com/ZzzzzSol/status/2126630955095892117",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "Farm",
+   "name": "Official Farm Coin",
+   "mint": "6Qr8gzShcg5CWBfjP9HLqhMmtuK6ANm1RZ7YVTQApump",
+   "age_s": 14,
+   "sol_in": 2.22,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 15.1,
+   "mcap_sol": 33.3,
+   "dev_pct": 1.7,
+   "big_sell": 0.08,
+   "x": "https://x.com/ashthebonder/status/2126630921642074360",
+   "tg": false,
+   "web": "https://x.com/lilbruhfish/status/2126629477308620845",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "HORSE",
+   "name": "DaRk HoRse",
+   "mint": "DaRkq1ufFYAWoVvgeA9dKtounCUaAFKbTX7Z6dTYmViN",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "trader",
+   "name": "in a world full of insiders",
+   "mint": "9mTAf8jysifqrMLdouELZFoUFqtYKpVW2ARd6gLZqtKE",
+   "age_s": 21,
+   "sol_in": 14.17,
+   "buys": 11,
+   "sells": 9,
+   "rise_pct": 97.6,
+   "mcap_sol": 74.9,
+   "dev_pct": 15.2,
+   "big_sell": 1.29,
+   "x": "https://x.com/MarioPrezldente/status/2126630896174510094",
+   "tg": false,
+   "web": "https://x.com/i/trending/2125910097083691514",
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  },
+  {
    "symbol": "GitHub",
    "name": "GitHub",
    "mint": "3ZHK1bjiE5aCw872WcX1W5wqcJcGe6PTtL8JUw7Hpump",
-   "age_s": 0,
-   "sol_in": 17.8,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 134.7,
-   "mcap_sol": 81.6,
+   "age_s": 33,
+   "sol_in": 17.9,
+   "buys": 3,
+   "sells": 1,
+   "rise_pct": 135.6,
+   "mcap_sol": 81.9,
    "dev_pct": 11.1,
    "big_sell": 0.0,
    "x": "https://x.com/github",
@@ -6612,7 +6702,7 @@
    "symbol": "CAKE",
    "name": "CAKE",
    "mint": "H6hMLFB2DbjA8fsJ4iYayDvm8zmy7FuRGrt2r99xpump",
-   "age_s": 1,
+   "age_s": 34,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 0,
@@ -6630,14 +6720,14 @@
    "symbol": "GTA 6",
    "name": "GTA 6 Updates",
    "mint": "2rio2WqtrAppbKoM6ZQCPyySyAe6UpF2uQTkLf1epump",
-   "age_s": 11,
-   "sol_in": 18.46,
+   "age_s": 44,
+   "sol_in": -3.29,
    "buys": 5,
-   "sells": 0,
-   "rise_pct": 140.8,
-   "mcap_sol": 83.7,
+   "sells": 5,
+   "rise_pct": -18.7,
+   "mcap_sol": 28.3,
    "dev_pct": 11.1,
-   "big_sell": 0.0,
+   "big_sell": 21.63,
    "x": "https://x.com/gtasix_",
    "tg": false,
    "web": "https://www.rockstargames.com/VI",
@@ -6648,7 +6738,7 @@
    "symbol": "AFOX",
    "name": "ALPHA FOx",
    "mint": "5gc61azQmYyJtU3Ts1C2sGGMBUQwKf5CeBXJoQPhpump",
-   "age_s": 79,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,12 +6756,12 @@
    "symbol": "crimemas",
    "name": "crimemas",
    "mint": "Hq11XKxUR6Qy5KjW2RQhSMjVWiPsX1VGQuW9mDtRyKkK",
-   "age_s": 89,
-   "sol_in": 9.82,
-   "buys": 40,
-   "sells": 38,
-   "rise_pct": 74.5,
-   "mcap_sol": 50.7,
+   "age_s": 122,
+   "sol_in": 0.16,
+   "buys": 45,
+   "sells": 54,
+   "rise_pct": 1.0,
+   "mcap_sol": 29.4,
    "dev_pct": 2.1,
    "big_sell": 5.86,
    "x": "https://x.com/CRIMEMAS_SOL/status/2126630419215044812?a=nIz4V4AaJaiJUrWJsgA&s=20",
@@ -6684,7 +6774,7 @@
    "symbol": "TWEMP",
    "name": "doland twemp",
    "mint": "FgL6du4C4h8eh7zwjvCVRZccCcukqQEktn3TvNvzpump",
-   "age_s": 137,
+   "age_s": 170,
    "sol_in": -2.52,
    "buys": 3,
    "sells": 18,
@@ -6702,27 +6792,9 @@
    "symbol": "BANACAT",
    "name": "Banana Cat",
    "mint": "E2b58pgAqdzcnRYX18QkSw8CBdCAogRwLGa1c7KbySfw",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Manager",
-   "name": "Nathan Mother Fucker",
-   "mint": "D5yh8mDurZJwUvmuqKa31H1kHSAaCbvoBYjx2Jqpump",
-   "age_s": 162,
-   "sol_in": 0.01,
-   "buys": 1,
    "sells": 0,
    "rise_pct": 0.0,
    "mcap_sol": 28.0,
