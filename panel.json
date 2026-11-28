@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:24:20Z",
+ "updated": "2026-11-28T02:24:53Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 424,
+  "flagged": 426,
   "checked": 49,
   "filtered": 1,
-  "lines": 1246,
+  "lines": 1249,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "TAB",
-   "why": "snipe",
-   "t": "2026-11-28T02:17:11Z"
-  },
-  {
-   "coin": "FIONA",
-   "why": "snipe",
-   "t": "2026-11-28T02:17:47Z"
-  },
   {
    "coin": "HDD",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "GTAcoin",
    "why": "snipe",
    "t": "2026-11-28T02:24:15Z"
+  },
+  {
+   "coin": "ORO",
+   "why": "snipe",
+   "t": "2026-11-28T02:24:32Z"
+  },
+  {
+   "coin": "pildo",
+   "why": "snipe",
+   "t": "2026-11-28T02:24:52Z"
   }
  ],
  "curve": [
@@ -3045,33 +3045,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:26:21Z",
-   "time": "02:26:21",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.6 a minute · 0 watched · 23 rejected (snipe not bought: only to size 11, mayhem mode 9, odd curve reading: virtual SOL i 2)",
-   "n": 1047
-  },
-  {
-   "t": "2026-11-28T01:26:31Z",
-   "time": "02:26:31",
-   "agent": "SCANNER",
-   "coin": "MIPSA",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 9.6 SOL in · +74% since the create · mcap 49 SOL",
-   "n": 1048
-  },
-  {
-   "t": "2026-11-28T01:26:36Z",
-   "time": "02:26:36",
-   "agent": "SCANNER",
-   "coin": "WIFR",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.072e+05 is not 30 + real SOL 16.75 (off +1.071e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 219 odd readings from 112 coins tonight",
-   "n": 1049
-  },
-  {
    "t": "2026-11-28T01:26:59Z",
    "time": "02:26:59",
    "agent": "SCANNER",
@@ -4843,6 +4816,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1246
+  },
+  {
+   "t": "2026-11-28T02:24:32Z",
+   "time": "03:24:32",
+   "agent": "SCANNER",
+   "coin": "ORO",
+   "action": "flag",
+   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 1247
+  },
+  {
+   "t": "2026-11-28T02:24:52Z",
+   "time": "03:24:52",
+   "agent": "SCANNER",
+   "coin": "pildo",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 32.0 SOL in · +287% since the create · mcap 131 SOL",
+   "n": 1248
+  },
+  {
+   "t": "2026-11-28T02:24:53Z",
+   "time": "03:24:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 4, mayhem mode 1)",
+   "n": 1249
   }
  ],
  "nights": [
@@ -4923,15 +4923,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1458,
-    "last_event_age_s": 5.4,
+    "events": 1460,
+    "last_event_age_s": 1.7,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 29549,
+    "events": 29661,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -4939,8 +4939,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 827,
-    "last_event_age_s": 5.3,
+    "events": 829,
+    "last_event_age_s": 1.6,
     "errors": 39,
     "last_error": "no uri"
    }
@@ -4955,7 +4955,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 9,
+  "followed": 10,
   "odd_readings": 330,
   "odd_coins": 147
  },
@@ -5004,23 +5004,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13549,
+   "sent": 13584,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13549,
+   "sent": 13584,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "pildo",
+   "name": "pildo",
+   "mint": "e9exmz6rLsxFRMi3gdY7ac7SDujhWDUgJyDeAQjpump",
+   "age_s": 1,
+   "sol_in": 29.64,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 259.5,
+   "mcap_sol": 122.2,
+   "dev_pct": 10.0,
+   "big_sell": 2.33,
+   "x": "https://x.com/wholetpildout/status/2126502456422969387",
+   "tg": false,
+   "web": true,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "ORO",
+   "name": "Tesoro",
+   "mint": "3N92Tp4BsZkxJVuDx66P3JbQUrWBFTr1QLAQQb9ipump",
+   "age_s": 21,
+   "sol_in": 0.39,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 2.5,
+   "mcap_sol": 30.0,
+   "dev_pct": 2.5,
+   "big_sell": 0.03,
+   "x": "https://x.com/tesoroapp",
+   "tg": "https://t.me/TesoroApp",
+   "web": "https://tesoroapp.io/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GTAcoin",
    "name": "GTA VII",
    "mint": "Mx7Jf3az8He1BaJEyxScSsa4LXdfBoFAfRQcybgpump",
-   "age_s": 5,
+   "age_s": 38,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5038,12 +5074,12 @@
    "symbol": "Hypeball",
    "name": "Hypeball",
    "mint": "GABaBRfTncvPFi91MyB6737pHqrDTS1GrXpTTptmpump",
-   "age_s": 33,
-   "sol_in": 27.07,
-   "buys": 14,
-   "sells": 12,
-   "rise_pct": 260.2,
-   "mcap_sol": 101.7,
+   "age_s": 66,
+   "sol_in": 40.9,
+   "buys": 30,
+   "sells": 21,
+   "rise_pct": 455.5,
+   "mcap_sol": 156.8,
    "dev_pct": 0.5,
    "big_sell": 3.62,
    "x": "https://x.com/tryhypeball",
@@ -5056,7 +5092,7 @@
    "symbol": "$KCARTEL",
    "name": "Kitty Cartel",
    "mint": "Fn5hGoAKBppBsW569NMkNSRuK3tmXZWaNeRoXg2Tpump",
-   "age_s": 36,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5074,7 +5110,7 @@
    "symbol": "AXOS",
    "name": "Axos",
    "mint": "GTcR9mQRD7WEYgXyGgP83iETUTzJfx2dMCCWE983oiec",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5092,7 +5128,7 @@
    "symbol": "Wigger",
    "name": "HADWIGGER",
    "mint": "C8NqsCB4eSm8uCvcBJWN5VToFncxGipR1cN8YbiGNPAr",
-   "age_s": 52,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5110,14 +5146,14 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CphBC9BLTE1GA7eYZBxakMH3v4aoFY5phvdxmD1Npump",
-   "age_s": 62,
-   "sol_in": 20.65,
-   "buys": 17,
-   "sells": 8,
-   "rise_pct": 161.5,
-   "mcap_sol": 90.9,
+   "age_s": 95,
+   "sol_in": -3.4,
+   "buys": 18,
+   "sells": 13,
+   "rise_pct": -19.3,
+   "mcap_sol": 28.1,
    "dev_pct": 11.1,
-   "big_sell": 0.34,
+   "big_sell": 23.31,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
@@ -5128,14 +5164,14 @@
    "symbol": "STEADY",
    "name": "Steady",
    "mint": "DXFZH1unVqKvGGQ84u91UABFYx6o7hvxwpkiouNKY7Sr",
-   "age_s": 63,
-   "sol_in": 0.1,
+   "age_s": 96,
+   "sol_in": -0.05,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.7,
-   "mcap_sol": 28.2,
+   "sells": 2,
+   "rise_pct": -0.3,
+   "mcap_sol": 28.0,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": false,
    "tg": false,
    "web": false,
@@ -5146,14 +5182,14 @@
    "symbol": "ハクくん",
    "name": "The Resilient Chihuahua",
    "mint": "GBYWZPWYucfaRonxsGmWMzfAiKYt1Er9QCSjeKBJpump",
-   "age_s": 102,
-   "sol_in": 23.63,
-   "buys": 51,
-   "sells": 32,
-   "rise_pct": 193.3,
-   "mcap_sol": 100.2,
+   "age_s": 135,
+   "sol_in": 10.99,
+   "buys": 64,
+   "sells": 50,
+   "rise_pct": 77.3,
+   "mcap_sol": 60.6,
    "dev_pct": 10.2,
-   "big_sell": 2.38,
+   "big_sell": 8.74,
    "x": "https://x.com/SpringDeploys/status/2126501963386806469?a=yuOrPjJnuvA_F8lugXs&s=20",
    "tg": false,
    "web": "https://news.yahoo.co.jp/articles/c9cd993023e95739394765a064df7c6259d645b2",
@@ -5164,7 +5200,7 @@
    "symbol": "HADWIGER",
    "name": "The Hadwiger Conjecture",
    "mint": "AYznokx74VccsYwThfhXDaCABjjqXeKcxSRBiWviWkQx",
-   "age_s": 145,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5177,24 +5213,6 @@
    "web": false,
    "status": "rejected: serial launcher: 8 more coins in 60 min",
    "why": "serial launcher: 8 more coins in 60 min"
-  },
-  {
-   "symbol": "DDUST1N",
-   "name": "Ddust1n",
-   "mint": "1TvfJUwBkmNpTgdgmrbpK2HzZigoaaiowYWEY8CiLpV",
-   "age_s": 153,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 2,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.3,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
