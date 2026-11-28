@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:21:09Z",
+ "updated": "2026-11-28T03:21:43Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 543,
   "checked": 49,
   "filtered": 1,
-  "lines": 1439,
+  "lines": 1441,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3273,24 +3273,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:22:39Z",
-   "time": "03:22:39",
-   "agent": "SIZER",
-   "coin": "ハクくん",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1240
-  },
-  {
-   "t": "2026-11-28T02:22:52Z",
-   "time": "03:22:52",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.2 a minute · 0 watched · 4 rejected (serial launcher 3, snipe not bought: only to size 1)",
-   "n": 1241
-  },
-  {
    "t": "2026-11-28T02:23:19Z",
    "time": "03:23:19",
    "agent": "SCANNER",
@@ -5071,6 +5053,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 9 rejected (snipe not bought: only to size 6, serial launcher 2, no symbol or name 1)",
    "n": 1439
+  },
+  {
+   "t": "2026-11-28T03:21:24Z",
+   "time": "04:21:24",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, serial launcher 2)",
+   "n": 1440
+  },
+  {
+   "t": "2026-11-28T03:21:27Z",
+   "time": "04:21:27",
+   "agent": "SCANNER",
+   "coin": "Trader",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.194 is not 30 + real SOL 0 (off -28.81 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 337 odd readings from 154 coins tonight",
+   "n": 1441
   }
  ],
  "nights": [
@@ -5143,7 +5143,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 336 (153 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5151,24 +5151,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1673,
-    "last_event_age_s": 48.2,
+    "events": 1674,
+    "last_event_age_s": 19.0,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35544,
-    "last_event_age_s": 0.9,
+    "events": 35573,
+    "last_event_age_s": 2.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 976,
-    "last_event_age_s": 86.5,
+    "events": 977,
+    "last_event_age_s": 16.7,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5181,11 +5181,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.2,
   "watching": 0,
   "followed": 7,
-  "odd_readings": 336,
-  "odd_coins": 153
+  "odd_readings": 337,
+  "odd_coins": 154
  },
  "learner": {
   "samples": 84,
@@ -5232,23 +5232,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17177,
+   "sent": 17213,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17177,
+   "sent": 17213,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Trader",
+   "name": "The Trader",
+   "mint": "7TbrDqtUrJq3e6g2y5Qd3EZqVsCc5q95ySubcE87LLrb",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/solidintel_x/status/2126516682206368103",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
    "symbol": "pig",
    "name": "pig",
    "mint": "HHoPVMqYvyVUHEye54Q9DEkNA5TCZS4CJwENQpENpump",
-   "age_s": 87,
+   "age_s": 121,
    "sol_in": -1.48,
    "buys": 2,
    "sells": 1,
@@ -5266,7 +5284,7 @@
    "symbol": "1XBET",
    "name": "1Xbet 500$ Bonus 🤑💵🚀",
    "mint": "4SbeHjPUJH8Q4SEzfsGst5HQBje7K9JwsBJB4u6Zpump",
-   "age_s": 88,
+   "age_s": 122,
    "sol_in": -0.07,
    "buys": 0,
    "sells": 1,
@@ -5284,7 +5302,7 @@
    "symbol": "Patchwork",
    "name": "Patchwork",
    "mint": "Bqfo5tj3oARVKR3xRMzXFLBccAFiEeq8WcmQXWocpump",
-   "age_s": 110,
+   "age_s": 144,
    "sol_in": -0.24,
    "buys": 3,
    "sells": 4,
@@ -5302,12 +5320,12 @@
    "symbol": "rsrc",
    "name": "research sources",
    "mint": "GvpR3vqQcvZMJb7bbtK7iFwMsEhhgs2jG8ut77Yhpump",
-   "age_s": 121,
-   "sol_in": 15.46,
-   "buys": 18,
-   "sells": 19,
-   "rise_pct": 129.7,
-   "mcap_sol": 64.2,
+   "age_s": 155,
+   "sol_in": 15.41,
+   "buys": 21,
+   "sells": 24,
+   "rise_pct": 129.2,
+   "mcap_sol": 64.1,
    "dev_pct": 0.0,
    "big_sell": 6.08,
    "x": "https://x.com/Gen0xRay/status/2126514525625294966",
@@ -5320,7 +5338,7 @@
    "symbol": "slut",
    "name": "slut",
    "mint": "FthwWXLMY7D9TS6TUN9Ld8wHvsALB3PaBkW9UbBFpump",
-   "age_s": 134,
+   "age_s": 168,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5338,7 +5356,7 @@
    "symbol": "Yotsuba",
    "name": "404 Girl",
    "mint": "Ha9X59J4fVtqjuNaqd7b2AhfpQ1tnASfGtLoHu8Xpump",
-   "age_s": 135,
+   "age_s": 169,
    "sol_in": -0.54,
    "buys": 2,
    "sells": 11,
@@ -5349,24 +5367,6 @@
    "x": "https://x.com/yotsubarddt",
    "tg": false,
    "web": "https://knowyourmeme.com/memes/yotsuba-koiwai-404-girl",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PACKBALL",
-   "name": "PackBall",
-   "mint": "GWy9pr15CCFw1vQhJjiafLFYoX4XuuQHLHiUCc25pump",
-   "age_s": 170,
-   "sol_in": -0.68,
-   "buys": 4,
-   "sells": 8,
-   "rise_pct": -4.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.4,
-   "big_sell": 3.1,
-   "x": "https://x.com/usepackball",
-   "tg": false,
-   "web": "https://packball.lol",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
