@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:02:50Z",
+ "updated": "2026-11-28T07:03:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 826,
   "checked": 49,
   "filtered": 1,
-  "lines": 2053,
+  "lines": 2054,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -2003,6 +2003,10 @@
   ],
   [
    1795849320,
+   47.79
+  ],
+  [
+   1795849380,
    47.79
   ]
  ],
@@ -4157,15 +4161,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:35:54Z",
-   "time": "06:35:54",
-   "agent": "SCANNER",
-   "coin": "GTAVI",
-   "action": "flag",
-   "text": "snipe · first reading 3.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1854
-  },
-  {
    "t": "2026-11-28T05:36:35Z",
    "time": "06:36:35",
    "agent": "SCANNER",
@@ -5955,6 +5950,15 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 495 odd readings from 217 coins tonight",
    "n": 2053
+  },
+  {
+   "t": "2026-11-28T07:03:13Z",
+   "time": "08:03:13",
+   "agent": "SCANNER",
+   "coin": "TI",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 0.8297 is not 30 + real SOL 0 (off -29.17 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 503 odd readings from 218 coins tonight",
+   "n": 2054
   }
  ],
  "nights": [
@@ -6027,7 +6031,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 497 (217 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 503 (218 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6035,24 +6039,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 529,
-    "last_event_age_s": 24.5,
+    "events": 531,
+    "last_event_age_s": 22.2,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 4728,
-    "last_event_age_s": 3.0,
+    "events": 4762,
+    "last_event_age_s": 6.4,
     "errors": 402,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 385,
-    "last_event_age_s": 24.4,
+    "events": 387,
+    "last_event_age_s": 22.2,
     "errors": 23,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6065,11 +6069,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 11,
-  "odd_readings": 497,
-  "odd_coins": 217
+  "odd_readings": 503,
+  "odd_coins": 218
  },
  "learner": {
   "samples": 84,
@@ -6116,23 +6120,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9473,
+   "sent": 9509,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9473,
+   "sent": 9509,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TI",
+   "name": "Official Trump Inu",
+   "mint": "6LTUZmSeaYiZSMFv5uv2f9sfojTwHg1Tepr9fKkT1QJD",
+   "age_s": 22,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/i/web/status/2126572536230281370",
+   "tg": false,
+   "web": "https://x.com/i/trending/2126450733499261058?s=20",
+   "status": "rejected: serial launcher: 17 more coins in 60 min",
+   "why": "serial launcher: 17 more coins in 60 min"
+  },
+  {
+   "symbol": "benk",
+   "name": "benk",
+   "mint": "6U4cGmXUMYsZyMgaHrbhSWM2uaaXPz36fw61mEZLpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/ramentrade/status/2126572490415611993",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
    "symbol": "House",
    "name": "Housecoin",
    "mint": "6Ymd5zeAVcixEgZniriksh1xuRVX4Ep8Pvf7zkCj7FNR",
-   "age_s": 24,
+   "age_s": 58,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6150,7 +6190,7 @@
    "symbol": "COMPUTINU",
    "name": "Computinu",
    "mint": "2dMAiXdhakFnNi6abAUzCzCeHMVz1opBn9PFfHZPgnuL",
-   "age_s": 28,
+   "age_s": 62,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6168,7 +6208,7 @@
    "symbol": "COMPUTINU",
    "name": "Computinu",
    "mint": "CGoTNrVGy79QayiFr9bRXD6U4CZt8w1ihveAvoE8ufP8",
-   "age_s": 36,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6186,7 +6226,7 @@
    "symbol": "benk",
    "name": "benk",
    "mint": "Dy19PhSy6U44tTYt1RAfr8LpZ1mBxvrZ1MXDUw1jpump",
-   "age_s": 51,
+   "age_s": 85,
    "sol_in": -1.48,
    "buys": 0,
    "sells": 1,
@@ -6204,7 +6244,7 @@
    "symbol": "BANKLESS",
    "name": "Bankless",
    "mint": "BJuJ8FkXDfN8CsX8BrCwREwduXLZy4DPGjQh2KwjLG5A",
-   "age_s": 53,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6222,12 +6262,12 @@
    "symbol": "MI",
    "name": "Mars Inu",
    "mint": "HebPHH5iJA9cAkDqQWNmQa81vigQq8EgvMDDEJiYpump",
-   "age_s": 56,
-   "sol_in": 12.21,
-   "buys": 3,
-   "sells": 3,
-   "rise_pct": 94.4,
-   "mcap_sol": 58.0,
+   "age_s": 90,
+   "sol_in": 16.64,
+   "buys": 6,
+   "sells": 5,
+   "rise_pct": 136.2,
+   "mcap_sol": 70.5,
    "dev_pct": 3.4,
    "big_sell": 7.99,
    "x": "https://x.com/StepCoinsol8/status/2126571816898470367",
@@ -6240,7 +6280,7 @@
    "symbol": "OVERALL",
    "name": "Overall",
    "mint": "9hE9APo4mouaaCsHwQ2bK3xRQHVwGigGGEr82SKZaF3m",
-   "age_s": 57,
+   "age_s": 91,
    "sol_in": -2.96,
    "buys": 0,
    "sells": 1,
@@ -6258,12 +6298,12 @@
    "symbol": "BANKLESS",
    "name": "Bankless",
    "mint": "5XtXsSWxnk9LrquYARW8smZZR9SfzXyRkM4MrDR3pump",
-   "age_s": 79,
-   "sol_in": 36.6,
-   "buys": 7,
-   "sells": 3,
-   "rise_pct": 342.5,
-   "mcap_sol": 151.2,
+   "age_s": 113,
+   "sol_in": 43.59,
+   "buys": 10,
+   "sells": 5,
+   "rise_pct": 435.7,
+   "mcap_sol": 183.0,
    "dev_pct": 10.2,
    "big_sell": 4.86,
    "x": "https://x.com/ZzzzzSol/status/2126572170822263193",
@@ -6276,7 +6316,7 @@
    "symbol": "Moffy",
    "name": "Moffy",
    "mint": "2SZghEWSLS4QvKnxsWZqfs9n9trDJ6QnJNTZi8ruuvgu",
-   "age_s": 134,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6289,60 +6329,6 @@
    "web": "https://gemini.google.com/share/718665ae2cc9?skid=68c4c30b-5fbf-468c-91c7-573818324d12",
    "status": "rejected: serial launcher: 13 more coins in 60 min",
    "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "d",
-   "name": "yuop chil",
-   "mint": "2YcXRbPCHsGdM9db6JnkeD7iH1ZWgx3QWh7Fs2a7pump",
-   "age_s": 146,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 40.1,
-   "dev_pct": 17.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "MI",
-   "name": "Mars Inu",
-   "mint": "44tuQU4V4XcrXauyTouaZtukcSBazV4tG4qbfbemHqoN",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.8,
-   "dev_pct": 6.7,
-   "big_sell": 0.0,
-   "x": "https://x.com/StepCoinsol8/status/2126571816898470367",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 7 more coins in 60 min",
-   "why": "serial launcher: 7 more coins in 60 min"
-  },
-  {
-   "symbol": "GOOBER",
-   "name": "Goober",
-   "mint": "4DxDqgbBQvyKAifZUdgDG5KqFcu39ZQysWbxT4Bmbsqm",
-   "age_s": 148,
-   "sol_in": -6.13,
-   "buys": 1,
-   "sells": 4,
-   "rise_pct": -30.5,
-   "mcap_sol": 29.4,
-   "dev_pct": 20.1,
-   "big_sell": 3.32,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
