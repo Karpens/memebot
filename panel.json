@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:17:06Z",
+ "updated": "2026-11-28T10:17:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1156,
+  "flagged": 1157,
   "checked": 49,
   "filtered": 1,
-  "lines": 2670,
+  "lines": 2672,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GERMANY",
-   "why": "snipe",
-   "t": "2026-11-28T10:08:02Z"
-  },
   {
    "coin": "N1N",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "WINSTON",
    "why": "snipe",
    "t": "2026-11-28T10:16:43Z"
+  },
+  {
+   "coin": "MEME",
+   "why": "snipe",
+   "t": "2026-11-28T10:17:39Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:14:53Z",
-   "time": "10:14:53",
-   "agent": "SCANNER",
-   "coin": "Småkager",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 2.0 SOL in · +13% since the create · mcap 36 SOL",
-   "n": 2471
-  },
-  {
-   "t": "2026-11-28T09:15:19Z",
-   "time": "10:15:19",
-   "agent": "SCANNER",
-   "coin": "RICETITS",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1273 is not 30 + real SOL 0 (off +1243 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 653 odd readings from 249 coins tonight",
-   "n": 2472
-  },
-  {
    "t": "2026-11-28T09:15:37Z",
    "time": "10:15:37",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 2670
+  },
+  {
+   "t": "2026-11-28T10:17:09Z",
+   "time": "11:17:09",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 10 rejected (snipe not bought: only to size 5, odd curve reading: virtual SOL i 2, mayhem mode 2)",
+   "n": 2671
+  },
+  {
+   "t": "2026-11-28T10:17:39Z",
+   "time": "11:17:39",
+   "agent": "SCANNER",
+   "coin": "MEME",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 8.1 SOL in · +59% since the create · mcap 47 SOL",
+   "n": 2672
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · odd curve readings 910 (269 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 8 watched · ws off · odd curve readings 910 (269 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 10,
-    "last_event_age_s": 24.1,
+    "events": 11,
+    "last_event_age_s": 2.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 141,
+    "events": 163,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 7,
-    "last_event_age_s": 21.6,
+    "events": 8,
+    "last_event_age_s": 2.5,
     "errors": 0,
     "last_error": null
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 910,
   "odd_coins": 269
  },
@@ -6578,28 +6578,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 151,
+   "sent": 187,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 151,
+   "sent": 187,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MEME",
+   "name": "Mаke Every Moment Epic",
+   "mint": "55kBiVb9JFF9hUHBKp8JSKUC518me1cjfaY18TyRpump",
+   "age_s": 2,
+   "sol_in": 7.72,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 56.0,
+   "mcap_sol": 46.5,
+   "dev_pct": 3.4,
+   "big_sell": 0.37,
+   "x": "https://x.com/MemesOnPF/status/2126621500857807323",
+   "tg": false,
+   "web": "https://www.indiememe.org/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "WINSTON",
    "name": "We Literally Fuck Investors",
    "mint": "DzKJPaZi7mV4mq3ANSENP8T7QouQgWe3666k9Hcs1iEU",
-   "age_s": 24,
-   "sol_in": 0.15,
-   "buys": 1,
+   "age_s": 58,
+   "sol_in": 0.35,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 1.0,
-   "mcap_sol": 28.2,
+   "rise_pct": 2.3,
+   "mcap_sol": 28.6,
    "dev_pct": 0.0,
    "big_sell": 0.2,
    "x": "https://x.com/LuckiWeb3/status/2126536570404475079?s=20",
@@ -6612,7 +6630,7 @@
    "symbol": "dih",
    "name": "Fihh",
    "mint": "4i7sUR5ToHE6Dof84brajsioUZyw7NxkyvcauciPpump",
-   "age_s": 58,
+   "age_s": 92,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,12 +6648,12 @@
    "symbol": "KFC",
    "name": "Kentucky Fried Chicken",
    "mint": "9qTvVYRNj9nacLRqmxgzutmUiu74ir68iqY4um2ZRAom",
-   "age_s": 60,
-   "sol_in": -0.06,
-   "buys": 10,
-   "sells": 22,
-   "rise_pct": -0.4,
-   "mcap_sol": 37.8,
+   "age_s": 94,
+   "sol_in": -4.45,
+   "buys": 13,
+   "sells": 25,
+   "rise_pct": -23.8,
+   "mcap_sol": 28.9,
    "dev_pct": 15.2,
    "big_sell": 4.33,
    "x": "https://x.com/MarioPrezldente/status/2126621142618345845",
@@ -6648,7 +6666,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4u7VmmydLQN5GQnxiDoMn2aDyLZkBc1DXE5QVdAhqRbK",
-   "age_s": 61,
+   "age_s": 95,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6684,7 @@
    "symbol": "000",
    "name": "000",
    "mint": "7XALeHop1ZS6tTE3qw8CdjACC5xjqHesN522hjW7pump",
-   "age_s": 64,
+   "age_s": 98,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6702,7 @@
    "symbol": "CentipedeCat",
    "name": "CentipedeCat",
    "mint": "341ZXnAPiSk6knSCsimSKsJUd5HuWfW9aqPMkJNqA6TL",
-   "age_s": 96,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6720,7 @@
    "symbol": "SOLAMI",
    "name": "Solami",
    "mint": "8FgbacVUWwc127B5z1xYxV637mr2bgRYXcD6Eq7LBXAp",
-   "age_s": 99,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6720,12 +6738,12 @@
    "symbol": "Liberty",
    "name": "The Wish Dog",
    "mint": "63tNBYhSAV4V4oUkvjLPeuxM1MA7vcByxoHioDSDpump",
-   "age_s": 104,
-   "sol_in": 3.22,
+   "age_s": 138,
+   "sol_in": -2.38,
    "buys": 36,
-   "sells": 43,
-   "rise_pct": 20.4,
-   "mcap_sol": 41.1,
+   "sells": 56,
+   "rise_pct": -13.8,
+   "mcap_sol": 29.4,
    "dev_pct": 10.2,
    "big_sell": 5.03,
    "x": "https://x.com/ZzzzzSol/status/2126620956403593508",
@@ -6738,7 +6756,7 @@
    "symbol": "TLOAF",
    "name": "Tiger Loaf",
    "mint": "4tB5JzL3SzCmWxd1HtskoapHQJfHLBTU5yWvs1GVpump",
-   "age_s": 114,
+   "age_s": 148,
    "sol_in": 0.26,
    "buys": 2,
    "sells": 0,
@@ -6756,7 +6774,7 @@
    "symbol": "Liberty",
    "name": "The Wish Dog",
    "mint": "AsdLhriyac9AAN31wACjCpS5fm1qU3GXhm4EW1EKpump",
-   "age_s": 134,
+   "age_s": 168,
    "sol_in": -0.02,
    "buys": 3,
    "sells": 5,
