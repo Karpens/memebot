@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:22:50Z",
+ "updated": "2026-11-28T10:23:23Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1171,
+  "flagged": 1172,
   "checked": 49,
   "filtered": 1,
-  "lines": 2693,
+  "lines": 2695,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HANDS",
-   "why": "snipe",
-   "t": "2026-11-28T10:19:52Z"
-  },
   {
    "coin": "MARTY",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "BACKUPA",
    "why": "snipe",
    "t": "2026-11-28T10:22:12Z"
+  },
+  {
+   "coin": "YPD",
+   "why": "snipe",
+   "t": "2026-11-28T10:22:57Z"
   }
  ],
  "curve": [
-  [
-   1795825380,
-   47.79
-  ],
   [
    1795825440,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795861320,
    47.79
+  ],
+  [
+   1795861380,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:23:08Z",
-   "time": "10:23:08",
-   "agent": "SCANNER",
-   "coin": "FABIO",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 4.9 SOL in · +30% since the create · mcap 49 SOL",
-   "n": 2494
-  },
-  {
-   "t": "2026-11-28T09:23:42Z",
-   "time": "10:23:42",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 15 rejected (snipe not bought: only to size 7, serial launcher 5, mayhem mode 3)",
-   "n": 2495
-  },
-  {
    "t": "2026-11-28T09:23:51Z",
    "time": "10:23:51",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 13 rejected (snipe not bought: only to size 9, mayhem mode 2, odd curve reading: virtual SOL i 1)",
    "n": 2693
+  },
+  {
+   "t": "2026-11-28T10:22:57Z",
+   "time": "11:22:57",
+   "agent": "SCANNER",
+   "coin": "YPD",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2694
+  },
+  {
+   "t": "2026-11-28T10:23:13Z",
+   "time": "11:23:13",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 12 rejected (snipe not bought: only to size 7, serial launcher 3, odd curve reading: virtual SOL i 1)",
+   "n": 2695
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 913 (270 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 913 (270 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 33,
-    "last_event_age_s": 12.6,
+    "events": 35,
+    "last_event_age_s": 27.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 636,
+    "events": 678,
     "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 25,
-    "last_event_age_s": 12.5,
+    "events": 27,
+    "last_event_age_s": 26.8,
     "errors": 1,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 11,
+  "followed": 10,
   "odd_readings": 913,
   "odd_coins": 270
  },
@@ -6578,28 +6578,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 517,
+   "sent": 552,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 517,
+   "sent": 552,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "YPD",
+   "name": "Yolo push dat",
+   "mint": "DmHE5Hz4i2hqUFqfDeQNZWZuUCmcNq6QUo4xJajWFN2X",
+   "age_s": 27,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/BNBCHAIN/status/2126622085736988741",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "GMFRENS",
+   "name": "GM, frens",
+   "mint": "HNdyxLu5PHa3qTa2Vhm2RKqWPmoj8XE5PzwgqwyYpump",
+   "age_s": 31,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.8,
+   "big_sell": 0.0,
+   "x": "https://x.com/Darkfarms1/status/2126622733693837353",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
    "symbol": "Money",
    "name": "MoneyMaxxing",
    "mint": "4A9ZrDg5S8yK22SZt8EddRGito7MRjaF8gTy82PBxaPj",
-   "age_s": 12,
-   "sol_in": -1.23,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": -6.9,
-   "mcap_sol": 35.3,
+   "age_s": 45,
+   "sol_in": -1.44,
+   "buys": 4,
+   "sells": 4,
+   "rise_pct": -8.1,
+   "mcap_sol": 34.9,
    "dev_pct": 15.2,
    "big_sell": 3.27,
    "x": "https://x.com/Independent/status/2126622544908181851",
@@ -6612,12 +6648,12 @@
    "symbol": "MoneyMax",
    "name": "MoneyMaxxing",
    "mint": "Fw9RBdsK3V3gWAi5uHVyXkxLM1HaRwswKwktSq2tFsgC",
-   "age_s": 38,
-   "sol_in": 1.26,
-   "buys": 11,
-   "sells": 12,
-   "rise_pct": 7.4,
-   "mcap_sol": 40.7,
+   "age_s": 71,
+   "sol_in": 3.91,
+   "buys": 19,
+   "sells": 19,
+   "rise_pct": 23.6,
+   "mcap_sol": 46.9,
    "dev_pct": 15.2,
    "big_sell": 4.15,
    "x": "https://x.com/Independent/status/2126622544908181851",
@@ -6630,7 +6666,7 @@
    "symbol": "BACKUPA",
    "name": "Backup Bowl",
    "mint": "HUghfaHCigdK6RfAoNT1DikiLkHA6UJEh7k94QtSpump",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 1.86,
    "buys": 3,
    "sells": 2,
@@ -6648,7 +6684,7 @@
    "symbol": "AFOX",
    "name": "ALPHA FOx",
    "mint": "4NfzZJKaos4Tsh8NMY1DNpBSZJkgffdqLft2WRpQpump",
-   "age_s": 40,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6702,7 @@
    "symbol": "6065",
    "name": "6065",
    "mint": "47N56DBzUPWm5DGPeFcuHyLwfkDWCuEhuLUfhexgpump",
-   "age_s": 42,
+   "age_s": 75,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6720,7 @@
    "symbol": "BNBUNNIES",
    "name": "BNBBunnies",
    "mint": "8mQhb8FV9grwTV3KCpTWpcLCz3MqTiZ6HwXTxx6upump",
-   "age_s": 57,
+   "age_s": 90,
    "sol_in": -0.23,
    "buys": 0,
    "sells": 1,
@@ -6702,7 +6738,7 @@
    "symbol": "BAHA",
    "name": "BairyHalls",
    "mint": "9v5S34FPpXxC93ykvgCDppEAzYJX4rsf5iK8dxSPpump",
-   "age_s": 83,
+   "age_s": 116,
    "sol_in": 0.02,
    "buys": 1,
    "sells": 0,
@@ -6720,7 +6756,7 @@
    "symbol": "SOLAMI",
    "name": "i dont want to lose solami",
    "mint": "6pgzfNraBLKYBJCsNqVBTqowb6VHrWk7ZXtu8JZrrzYK",
-   "age_s": 120,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6738,87 +6774,15 @@
    "symbol": "Neema",
    "name": "Neema The Giraffe",
    "mint": "69uEA9NdNeKXcdFZtJwuaWr2F1TZtTZM2F1eMQnn8cB9",
-   "age_s": 130,
-   "sol_in": 19.0,
-   "buys": 52,
-   "sells": 39,
-   "rise_pct": 138.3,
-   "mcap_sol": 90.4,
+   "age_s": 163,
+   "sol_in": 17.51,
+   "buys": 58,
+   "sells": 48,
+   "rise_pct": 125.3,
+   "mcap_sol": 85.5,
    "dev_pct": 15.2,
    "big_sell": 5.8,
    "x": "https://x.com/MarioPrezldente/status/2126622291706761575",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "BNBRABBITS",
-   "name": "BNB Rabbits",
-   "mint": "dgQQT6mq85PbDUbv9wLA9zEghAvhJPdkULLyXAyiZ1J",
-   "age_s": 150,
-   "sol_in": -0.3,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -1.9,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.0,
-   "big_sell": 0.3,
-   "x": "https://x.com/BNBCHAIN/status/2126622085736988741",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "MARTY",
-   "name": "Justice for Marty",
-   "mint": "73Fka1pjzGUtTZcBraeNfsAtjast7BPPvAKVdhw1pump",
-   "age_s": 166,
-   "sol_in": -8.54,
-   "buys": 89,
-   "sells": 62,
-   "rise_pct": -38.7,
-   "mcap_sol": 29.4,
-   "dev_pct": 25.4,
-   "big_sell": 13.28,
-   "x": "https://x.com/Sizebids/status/2126621802986082659?a=voKYtSsL8pBslTZ9VI0&s=20",
-   "tg": false,
-   "web": "https://www.263chat.com/zebra-killed-six-arrested-as-human-wildlife-conflict-raises-concern/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "dih",
-   "name": "Fishy Dih",
-   "mint": "C7U3CbjRAzPeLQVuCXGvXqjZe9tVnSz8atADcpGrpump",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "HANDS",
-   "name": "Diamond Hands",
-   "mint": "HAPyJbAcYesSJ2WKPdEDU39Uyz2EgrjL3ismwitrpump",
-   "age_s": 179,
-   "sol_in": -0.08,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -0.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.3,
-   "big_sell": 0.15,
-   "x": "https://x.com/DiamondHandspf_",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
