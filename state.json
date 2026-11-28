@@ -59,33 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:32:39Z",
-    "time": "00:32:39",
-    "agent": "EXECUTOR",
-    "coin": "PVE",
-    "action": "take",
-    "text": "TP +10% · sold 50% for $2.55 · stop to break-even · out · 0.1 s after the reading",
-    "n": 516
-   },
-   {
-    "t": "2026-11-27T23:32:39Z",
-    "time": "00:32:39",
-    "agent": "EXECUTOR",
-    "coin": "PVE",
-    "action": "exit",
-    "text": "EXIT PVE $-1.71 (-34%) · dump: 23.8 SOL sold · out · 0.1 s after the reading",
-    "n": 517
-   },
-   {
-    "t": "2026-11-27T23:32:39Z",
-    "time": "00:32:39",
-    "agent": "LEARNER",
-    "coin": "PVE",
-    "action": "learn",
-    "text": "learned · tier:swing now avg -8.3% over 142.5",
-    "n": 518
-   },
-   {
     "t": "2026-11-27T23:32:51Z",
     "time": "00:32:51",
     "agent": "RISK",
@@ -5457,6 +5430,33 @@
     "action": "scan",
     "text": "new pairs · 5.8 a minute · 0 watched · 19 rejected (mayhem mode 7, snipe not bought: only to size 6, no symbol or name 3)",
     "n": 1115
+   },
+   {
+    "t": "2026-11-28T01:43:46Z",
+    "time": "02:43:46",
+    "agent": "SCANNER",
+    "coin": "HFACT",
+    "action": "flag",
+    "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 30 SOL",
+    "n": 1116
+   },
+   {
+    "t": "2026-11-28T01:43:57Z",
+    "time": "02:43:57",
+    "agent": "SCANNER",
+    "coin": "CHAINU",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 1.357e+05 is not 30 + real SOL 0 (off +1.356e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 269 odd readings from 128 coins tonight",
+    "n": 1117
+   },
+   {
+    "t": "2026-11-28T01:44:11Z",
+    "time": "02:44:11",
+    "agent": "SCANNER",
+    "coin": "ADO",
+    "action": "odd",
+    "text": "odd curve reading: virtual SOL 0.05675 is not 30 + real SOL 0 (off -29.94 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 271 odd readings from 129 coins tonight",
+    "n": 1118
    }
   ],
   "trades": [
@@ -8102,16 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 361,
+  "flagged": 362,
   "checked": 49,
   "filtered": 1,
-  "lines": 1115,
+  "lines": 1118,
   "flags": [
-   {
-    "coin": "DOGCAT",
-    "why": "snipe",
-    "t": "2026-11-28T01:37:09Z"
-   },
    {
     "coin": "JERKPE",
     "why": "snipe",
@@ -8146,6 +8141,11 @@
     "coin": "Test",
     "why": "snipe",
     "t": "2026-11-28T01:43:01Z"
+   },
+   {
+    "coin": "HFACT",
+    "why": "snipe",
+    "t": "2026-11-28T01:43:46Z"
    }
   ],
   "curve": [
@@ -8804,6 +8804,10 @@
    [
     1795830180,
     47.79
+   ],
+   [
+    1795830240,
+    47.79
    ]
   ],
   "last_rug": {
@@ -8995,8 +8999,8 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 268,
-   "coins": 127,
+   "readings": 271,
+   "coins": 129,
    "followed": 0,
    "mints": [
     "8hfSggFF15BWVK5x5cpcEArGm36KB3poDwo3ErNoZaFh",
@@ -9125,7 +9129,9 @@
     "DqdNJC9QrJ4dWbcyi2beW8ix28hxbGkDTeuQY2kALZBY",
     "J6q4ZsX12htNdS72ytKfBgchjzsp6d2NbrmfK93N54cg",
     "G9v8H8YD8fyxVhmC7TpWyMrb9JDyAZwmeFZ5p3r5YRQk",
-    "4hffZQz1r9aoDhshqrc5gMS4ndTZ1XdCDM5vxqC5QPoc"
+    "4hffZQz1r9aoDhshqrc5gMS4ndTZ1XdCDM5vxqC5QPoc",
+    "Av3PW6isjf23J9QTE7g542uyKksFGozLxKfYoZtW6tBv",
+    "pw2Edip6YfVYxbWh3q3WwX6PtcStzNP5fC4rVznX1BJ"
    ]
   },
   "risk_said": {
