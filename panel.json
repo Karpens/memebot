@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:15:34Z",
+ "updated": "2026-11-28T06:16:08Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 778,
+  "flagged": 779,
   "checked": 49,
   "filtered": 1,
-  "lines": 1920,
+  "lines": 1923,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SNOWCAT",
-   "why": "snipe",
-   "t": "2026-11-28T05:46:08Z"
-  },
   {
    "coin": "BITCOINU",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SCAT",
    "why": "snipe",
    "t": "2026-11-28T06:07:16Z"
+  },
+  {
+   "coin": "CarPad",
+   "why": "snipe",
+   "t": "2026-11-28T06:15:50Z"
   }
  ],
  "curve": [
@@ -1815,6 +1815,10 @@
   ],
   [
    1795846500,
+   47.79
+  ],
+  [
+   1795846560,
    47.79
   ]
  ],
@@ -3969,33 +3973,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:46:10Z",
-   "time": "05:46:10",
-   "agent": "SCANNER",
-   "coin": "RICE",
-   "action": "flag",
-   "text": "snipe · first reading 1.4 s after the create · -0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1721
-  },
-  {
-   "t": "2026-11-28T04:47:00Z",
-   "time": "05:47:00",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 11 rejected (snipe not bought: only to size 7, serial launcher 3, mayhem mode 1)",
-   "n": 1722
-  },
-  {
-   "t": "2026-11-28T04:47:02Z",
-   "time": "05:47:02",
-   "agent": "SCANNER",
-   "coin": "HOOT",
-   "action": "flag",
-   "text": "snipe · first reading 1.5 s after the create · -1.0 SOL in · -6% since the create · mcap 28 SOL",
-   "n": 1723
-  },
-  {
    "t": "2026-11-28T04:47:15Z",
    "time": "05:47:15",
    "agent": "SCANNER",
@@ -5767,6 +5744,33 @@
    "action": "scan",
    "text": "new pairs · 1.8 a minute · 0 watched · 7 rejected (snipe: first reading s after the 3, serial launcher 2, no symbol or name 1)",
    "n": 1920
+  },
+  {
+   "t": "2026-11-28T06:15:50Z",
+   "time": "07:15:50",
+   "agent": "SCANNER",
+   "coin": "CarPad",
+   "action": "flag",
+   "text": "snipe · first reading 4.4 s after the create · 0.6 SOL in · +4% since the create · mcap 32 SOL",
+   "n": 1921
+  },
+  {
+   "t": "2026-11-28T06:15:50Z",
+   "time": "07:15:50",
+   "agent": "SIZER",
+   "coin": "CarPad",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1922
+  },
+  {
+   "t": "2026-11-28T06:15:56Z",
+   "time": "07:15:56",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 0 watched · 5 rejected (snipe: first reading s after the 2, serial launcher 1, snipe not bought: only to size 1)",
+   "n": 1923
   }
  ],
  "nights": [
@@ -5836,7 +5840,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 9 watched · ws off · odd curve readings 417 (191 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 7 watched · ws off · odd curve readings 417 (191 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5844,24 +5848,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 337,
-    "last_event_age_s": 80.7,
-    "errors": 5,
+    "events": 338,
+    "last_event_age_s": 21.6,
+    "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 2394,
-    "last_event_age_s": 72.7,
+    "connected": true,
+    "events": 2414,
+    "last_event_age_s": 0.5,
     "errors": 281,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 249,
-    "last_event_age_s": 91.4,
+    "events": 250,
+    "last_event_age_s": 20.9,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5876,7 +5880,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 1.6,
   "watching": 0,
-  "followed": 4,
+  "followed": 3,
   "odd_readings": 417,
   "odd_coins": 191
  },
@@ -5925,23 +5929,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6455,
+   "sent": 6491,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6455,
+   "sent": 6491,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CarPad",
+   "name": "CarPad",
+   "mint": "4MZWwDoktbWt8RHx9hJNznCsoYyvbi79Ftc9sySYpump",
+   "age_s": 21,
+   "sol_in": 2.94,
+   "buys": 5,
+   "sells": 2,
+   "rise_pct": 19.5,
+   "mcap_sol": 36.8,
+   "dev_pct": 5.0,
+   "big_sell": 2.4,
+   "x": "https://x.com/CarPaddotfun/status/2126560576293781795?a=HDX1NNoCU1NgyMleLgg&s=20",
+   "tg": false,
+   "web": "https://carpad.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FLUX",
    "name": "FLUX",
    "mint": "9kFRyobb6a2PVXHXgm1stvTHt52LYdbCLLYTM41Apump",
-   "age_s": 80,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5959,14 +5981,14 @@
    "symbol": "BAGPAROLE",
    "name": "Bag Parole",
    "mint": "ByJ2SDh1vqv2PQa3j8hCkqGBr5F5Qdgq2ewhUJLSYutL",
-   "age_s": 91,
-   "sol_in": 0.76,
+   "age_s": 125,
+   "sol_in": 0.0,
    "buys": 1,
-   "sells": 1,
-   "rise_pct": 5.1,
-   "mcap_sol": 29.6,
+   "sells": 2,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
    "dev_pct": 0.4,
-   "big_sell": 0.03,
+   "big_sell": 0.76,
    "x": false,
    "tg": false,
    "web": false,
@@ -5977,11 +5999,11 @@
    "symbol": "tremp",
    "name": "donald tremp",
    "mint": "CaHLu4uLNECU1zTVJXZ6USm66aTsRfBhAcfnAAnspump",
-   "age_s": 142,
-   "sol_in": -1.77,
+   "age_s": 176,
+   "sol_in": -1.78,
    "buys": 2,
-   "sells": 2,
-   "rise_pct": -10.8,
+   "sells": 3,
+   "rise_pct": -10.9,
    "mcap_sol": 28.0,
    "dev_pct": 6.0,
    "big_sell": 4.32,
@@ -5990,42 +6012,6 @@
    "web": false,
    "status": "rejected: snipe: first reading 26.4 s after the create (max 10 s)",
    "why": "snipe: first reading 26.4 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "Boobscan",
-   "name": "Boobscan",
-   "mint": "9QyS2cg4RGQc49h2C4ZUePG3QGrpBHGe437kXH2Zpump",
-   "age_s": 153,
-   "sol_in": 2.64,
-   "buys": 5,
-   "sells": 2,
-   "rise_pct": 17.8,
-   "mcap_sol": 35.1,
-   "dev_pct": 3.4,
-   "big_sell": 0.12,
-   "x": "https://x.com/boobscaner",
-   "tg": false,
-   "web": "https://boobscan.xyz",
-   "status": "rejected: snipe: first reading 37.2 s after the create (max 10 s)",
-   "why": "snipe: first reading 37.2 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "WORTHLESS",
-   "name": "Worthless Coin",
-   "mint": "8tp92pRJmcvUqxnBHtpg5WUgiKYVoH659MuTTBif8avS",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/NikolaiHauckx/status/2126559891775197392?a=dJpEo1TQ4eURCK6nwys&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 11 more coins in 60 min",
-   "why": "serial launcher: 11 more coins in 60 min"
   }
  ],
  "strategies": [
