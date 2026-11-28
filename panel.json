@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:04:55Z",
+ "updated": "2026-11-28T05:05:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 739,
+  "flagged": 740,
   "checked": 49,
   "filtered": 1,
-  "lines": 1784,
+  "lines": 1787,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "ORCHARD",
-   "why": "snipe",
-   "t": "2026-11-28T04:56:45Z"
-  },
   {
    "coin": "QRUMP",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Nancy",
    "why": "snipe",
    "t": "2026-11-28T05:04:27Z"
+  },
+  {
+   "coin": "Anthropic",
+   "why": "snipe",
+   "t": "2026-11-28T05:05:13Z"
   }
  ],
  "curve": [
@@ -1531,6 +1531,10 @@
   ],
   [
    1795842240,
+   47.79
+  ],
+  [
+   1795842300,
    47.79
   ]
  ],
@@ -3685,33 +3689,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:02:33Z",
-   "time": "05:02:33",
-   "agent": "SCANNER",
-   "coin": "FCAT",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1585
-  },
-  {
-   "t": "2026-11-28T04:02:51Z",
-   "time": "05:02:51",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 11.0 a minute · 0 watched · 28 rejected (serial launcher 20, snipe not bought: only to size 7, odd curve reading: virtual SOL i 1)",
-   "n": 1586
-  },
-  {
-   "t": "2026-11-28T04:03:02Z",
-   "time": "05:03:02",
-   "agent": "SCANNER",
-   "coin": "Alpha",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 6.4 SOL in · +47% since the create · mcap 41 SOL",
-   "n": 1587
-  },
-  {
    "t": "2026-11-28T04:03:31Z",
    "time": "05:03:31",
    "agent": "SCANNER",
@@ -5483,6 +5460,33 @@
    "action": "flag",
    "text": "snipe · first reading 5.1 s after the create · 8.8 SOL in · +65% since the create · mcap 49 SOL",
    "n": 1784
+  },
+  {
+   "t": "2026-11-28T05:05:04Z",
+   "time": "06:05:04",
+   "agent": "SCANNER",
+   "coin": "MOONDOGE",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 5739 is not 30 + real SOL 0 (off +5709 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 372 odd readings from 175 coins tonight",
+   "n": 1785
+  },
+  {
+   "t": "2026-11-28T05:05:13Z",
+   "time": "06:05:13",
+   "agent": "SCANNER",
+   "coin": "Anthropic",
+   "action": "flag",
+   "text": "snipe · first reading 1.5 s after the create · 17.8 SOL in · +133% since the create · mcap 83 SOL",
+   "n": 1786
+  },
+  {
+   "t": "2026-11-28T05:05:15Z",
+   "time": "06:05:15",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.4 a minute · 0 watched · 12 rejected (snipe not bought: only to size 4, serial launcher 3, snipe: first reading s after the 2)",
+   "n": 1787
   }
  ],
  "nights": [
@@ -5549,7 +5553,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 371 (174 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 372 (175 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5557,24 +5561,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 127,
-    "last_event_age_s": 31.0,
+    "events": 130,
+    "last_event_age_s": 5.8,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 656,
-    "last_event_age_s": 1.4,
+    "events": 713,
+    "last_event_age_s": 4.1,
     "errors": 51,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 99,
-    "last_event_age_s": 32.5,
+    "events": 101,
+    "last_event_age_s": 15.0,
     "errors": 5,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5587,11 +5591,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 11,
-  "odd_readings": 371,
-  "odd_coins": 174
+  "followed": 12,
+  "odd_readings": 372,
+  "odd_coins": 175
  },
  "learner": {
   "samples": 84,
@@ -5638,28 +5642,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 1942,
+   "sent": 1976,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 1942,
+   "sent": 1976,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "$ptoken",
+   "name": "PIRATE TOKEN",
+   "mint": "5dYyJTjfGNHBaFjcWoLPEDbQVTAGeBUF9dPBdbuxpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Anthropic",
+   "name": "Anthropic official",
+   "mint": "5Uv8vjM4bumgVPbqZBLecTNSfag5hLMCWXhEC8SFpump",
+   "age_s": 14,
+   "sol_in": 17.92,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 134.4,
+   "mcap_sol": 82.9,
+   "dev_pct": 11.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/AnthropicAI",
+   "tg": false,
+   "web": "https://www.anthropic.com/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "MOONDOGE",
+   "name": "Moondoge",
+   "mint": "BjFnJJL7PGLRYh6nxjmTWRBtSnr65G2qj8kpzgX2hWhP",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/DogeOS/status/2126542804302299317",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
    "symbol": "Nancy",
    "name": "The Insider",
    "mint": "5drrJbCdzWeYf3sU9wnc3EDqfg78b3yBx8PJ12dDpump",
-   "age_s": 32,
-   "sol_in": 10.7,
-   "buys": 4,
-   "sells": 6,
-   "rise_pct": 81.0,
-   "mcap_sol": 54.0,
+   "age_s": 64,
+   "sol_in": 2.16,
+   "buys": 6,
+   "sells": 17,
+   "rise_pct": 14.4,
+   "mcap_sol": 34.1,
    "dev_pct": 3.4,
    "big_sell": 2.45,
    "x": "https://x.com/uncquant/status/2126542621707214931",
@@ -5672,14 +5730,14 @@
    "symbol": "Billy Bux",
    "name": "Billy Bux",
    "mint": "6bEAt1X73ZCDpXFRfFauCaefdxunwwzX73of5cKKpump",
-   "age_s": 42,
-   "sol_in": 8.95,
-   "buys": 7,
-   "sells": 7,
-   "rise_pct": 60.7,
-   "mcap_sol": 55.9,
+   "age_s": 74,
+   "sol_in": 2.76,
+   "buys": 10,
+   "sells": 17,
+   "rise_pct": 17.2,
+   "mcap_sol": 40.8,
    "dev_pct": 11.1,
-   "big_sell": 1.47,
+   "big_sell": 1.52,
    "x": "https://x.com/BillyBuxUSD/status/2126541018996556027",
    "tg": false,
    "web": "https://www.billybux.xyz/",
@@ -5690,12 +5748,12 @@
    "symbol": "1",
    "name": "1 coin can change ruin life",
    "mint": "hX4TVKofjiD7GS8q9mnhj9okTajoLnUd1tCK6Hcpump",
-   "age_s": 56,
-   "sol_in": -0.99,
-   "buys": 1,
+   "age_s": 88,
+   "sol_in": -0.89,
+   "buys": 2,
    "sells": 3,
-   "rise_pct": -6.3,
-   "mcap_sol": 28.0,
+   "rise_pct": -5.6,
+   "mcap_sol": 28.1,
    "dev_pct": 3.4,
    "big_sell": 2.22,
    "x": "https://x.com/Route151Pf/status/2126542568746012825",
@@ -5708,7 +5766,7 @@
    "symbol": "RUBBER",
    "name": "Rubber",
    "mint": "7eXHKpA4D6bn1hiD8fwneiCRaA6qdssM6A6RyrJ9PuQF",
-   "age_s": 78,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5726,7 +5784,7 @@
    "symbol": "WOOL",
    "name": "Wool",
    "mint": "9k3WUv63zNmE6Zqwr8JChn4hE3hhkioeGckXudsPtvHL",
-   "age_s": 80,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5744,7 +5802,7 @@
    "symbol": "COTTON",
    "name": "Cotton",
    "mint": "FRjze8ztVPrVC7TF99u9kW1MD18Bd2Ry6f3ot195gBox",
-   "age_s": 83,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5762,7 +5820,7 @@
    "symbol": "RICE",
    "name": "Rice",
    "mint": "634LMwLqMFM751qbyqdrwAL2oKvXJ28u59HcR9N6kooS",
-   "age_s": 85,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5780,12 +5838,12 @@
    "symbol": "DONEALD",
    "name": "Doneald Tremp",
    "mint": "5CzowP3WwMngj7xDMNeHYJajP2S1UYWtgUjG5ELMpump",
-   "age_s": 110,
-   "sol_in": 1.01,
+   "age_s": 142,
+   "sol_in": 0.79,
    "buys": 7,
-   "sells": 13,
-   "rise_pct": 6.3,
-   "mcap_sol": 34.8,
+   "sells": 15,
+   "rise_pct": 4.9,
+   "mcap_sol": 34.4,
    "dev_pct": 8.2,
    "big_sell": 3.94,
    "x": "https://x.com/AxTrades32/status/2126542285320118561?a=XZLk2O3z_0-DUK8pVNM&s=20",
@@ -5798,7 +5856,7 @@
    "symbol": "Criminu",
    "name": "Criminu",
    "mint": "AmZg81zK6z2TCN8i2x3bokeweMr7dqYWPgwAAXuspump",
-   "age_s": 113,
+   "age_s": 145,
    "sol_in": -4.23,
    "buys": 1,
    "sells": 3,
@@ -5816,12 +5874,12 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "56ZD4LTsbzDzW9qA2dKStPDew2gQMTstFvHJtxgdpump",
-   "age_s": 133,
-   "sol_in": 19.5,
-   "buys": 16,
-   "sells": 14,
-   "rise_pct": 150.5,
-   "mcap_sol": 87.1,
+   "age_s": 165,
+   "sol_in": 19.71,
+   "buys": 21,
+   "sells": 21,
+   "rise_pct": 152.5,
+   "mcap_sol": 87.8,
    "dev_pct": 11.1,
    "big_sell": 0.85,
    "x": "https://x.com/nvidianewsroom",
@@ -5829,24 +5887,6 @@
    "web": "https://t.co/5UY6GdgPL1",
    "status": "rejected: snipe: first reading 51.9 s after the create (max 10 s)",
    "why": "snipe: first reading 51.9 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "BURRON",
-   "name": "burron tremp",
-   "mint": "6ifvC2dZ1zneoe1f9Qw7ojNn6JTtFz5PBLeKwsRLC2xU",
-   "age_s": 172,
-   "sol_in": -3.99,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -20.4,
-   "mcap_sol": 33.7,
-   "dev_pct": 20.1,
-   "big_sell": 3.99,
-   "x": "https://x.com/Mateusz878787/status/2126542101751930999",
-   "tg": false,
-   "web": "https://www.instagram.com/donaldjtrumpjr/?hl=en",
-   "status": "rejected: dump: 4.0 SOL sold",
-   "why": "dump: 4.0 SOL sold"
   }
  ],
  "strategies": [
