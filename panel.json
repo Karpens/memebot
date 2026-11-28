@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:51:04Z",
+ "updated": "2026-11-28T11:51:32Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1331,
+  "flagged": 1333,
   "checked": 49,
   "filtered": 1,
-  "lines": 2996,
+  "lines": 2999,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BIRTH",
-   "why": "snipe",
-   "t": "2026-11-28T11:46:51Z"
-  },
-  {
-   "coin": "STATS",
-   "why": "snipe",
-   "t": "2026-11-28T11:46:52Z"
-  },
   {
    "coin": "USD1",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "rice",
    "why": "snipe",
    "t": "2026-11-28T11:50:29Z"
+  },
+  {
+   "coin": "ANSEM",
+   "why": "snipe",
+   "t": "2026-11-28T11:51:16Z"
+  },
+  {
+   "coin": "SCR",
+   "why": "snipe",
+   "t": "2026-11-28T11:51:27Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:51:07Z",
-   "time": "11:51:07",
-   "agent": "SCANNER",
-   "coin": "ETHDRAFT",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 40 SOL",
-   "n": 2797
-  },
-  {
-   "t": "2026-11-28T10:51:28Z",
-   "time": "11:51:28",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 6.4 a minute · 0 watched · 25 rejected (odd curve reading: virtual SOL i 13, snipe not bought: only to size 8, mayhem mode 3)",
-   "n": 2798
-  },
-  {
-   "t": "2026-11-28T10:51:58Z",
-   "time": "11:51:58",
-   "agent": "SCANNER",
-   "coin": "Manager",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2799
-  },
-  {
    "t": "2026-11-28T10:51:58Z",
    "time": "11:51:58",
    "agent": "SIZER",
@@ -6423,6 +6396,33 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 2996
+  },
+  {
+   "t": "2026-11-28T11:51:06Z",
+   "time": "12:51:06",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, serial launcher 2, mayhem mode 1)",
+   "n": 2997
+  },
+  {
+   "t": "2026-11-28T11:51:16Z",
+   "time": "12:51:16",
+   "agent": "SCANNER",
+   "coin": "ANSEM",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 5.0 SOL in · +35% since the create · mcap 40 SOL",
+   "n": 2998
+  },
+  {
+   "t": "2026-11-28T11:51:27Z",
+   "time": "12:51:27",
+   "agent": "SCANNER",
+   "coin": "SCR",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.1 SOL in · +1% since the create · mcap 33 SOL",
+   "n": 2999
   }
  ],
  "nights": [
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 411,
-    "last_event_age_s": 3.3,
+    "events": 414,
+    "last_event_age_s": 5.1,
     "errors": 5,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 10751,
-    "last_event_age_s": 1.1,
+    "events": 10795,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 293,
-    "last_event_age_s": 3.1,
+    "events": 295,
+    "last_event_age_s": 5.7,
     "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 9,
   "odd_readings": 1008,
   "odd_coins": 307
  },
@@ -6578,28 +6578,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6151,
+   "sent": 6181,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6151,
+   "sent": 6181,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SCR",
+   "name": "Santa Clause Rally",
+   "mint": "APGfrpJ1dddLNSNDSqHnaQPvcXtNAwVeu7DZFrAapump",
+   "age_s": 6,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.8,
+   "dev_pct": 8.2,
+   "big_sell": 0.1,
+   "x": "https://x.com/theogdeveloper1/status/2126645099828224178",
+   "tg": false,
+   "web": "https://www.investopedia.com/terms/s/santaclauseffect.asp",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "ANSEM",
+   "name": "AlwaysNukingSmallEntrantsMoney",
+   "mint": "9xMFbZoi7BAqguZuM9aw7RQ6FmZuRiwH6YvKortdpump",
+   "age_s": 16,
+   "sol_in": 6.31,
+   "buys": 4,
+   "sells": 1,
+   "rise_pct": 45.4,
+   "mcap_sol": 42.5,
+   "dev_pct": 2.4,
+   "big_sell": 0.78,
+   "x": "https://x.com/blknoiz06",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "$GTA 8",
    "name": "GTA 8",
    "mint": "EGmW7cPizx7zb5QQyZqdhmZNEoAJ57Kk3CWFbyjBpump",
-   "age_s": 3,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 31,
+   "sol_in": 0.04,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
    "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
@@ -6612,7 +6648,7 @@
    "symbol": "rice",
    "name": "1 grain of rice",
    "mint": "7PJpX14WUVKWYSxVFcrzxqyUXLw74xyM5cP3oWViNAtx",
-   "age_s": 35,
+   "age_s": 63,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6666,7 @@
    "symbol": "333",
    "name": "singularity",
    "mint": "Cu1vWwrRPJohLtvbzszcPqSQxjvUBXyKcpH9APNspump",
-   "age_s": 65,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6684,7 @@
    "symbol": "OKOWARE",
    "name": "怒ワレ",
    "mint": "84tCouLidg1ALqJTncbfFAYYZL5chsEBiGTi7M49TWnC",
-   "age_s": 73,
+   "age_s": 101,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6702,7 @@
    "symbol": "almost",
    "name": "almost",
    "mint": "2zz7sgJB2Q9VSf291Ez54NXLsNKE19bPcDpxXSMxpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6720,7 @@
    "symbol": "Dognald",
    "name": "Dognald",
    "mint": "9tv3nDa3TXaRGpuSSBr6paQ1xhm91mttrG6Ew4jH141p",
-   "age_s": 118,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,12 +6738,12 @@
    "symbol": "TRUMPDOG",
    "name": "Trump Dog",
    "mint": "8sjzVK7KyUEeYBnQ2soDjE1RyY9rq9D84eqqZA3opump",
-   "age_s": 125,
-   "sol_in": 22.81,
-   "buys": 43,
-   "sells": 8,
-   "rise_pct": 193.1,
-   "mcap_sol": 93.4,
+   "age_s": 153,
+   "sol_in": 23.39,
+   "buys": 46,
+   "sells": 10,
+   "rise_pct": 199.4,
+   "mcap_sol": 95.4,
    "dev_pct": 6.8,
    "big_sell": 8.26,
    "x": "https://x.com/theogdeveloper1/status/2126644350700384562?a=qNd4cKVN3B5cmTbbx-w&s=20",
@@ -6720,7 +6756,7 @@
    "symbol": "DODO",
    "name": "Dodo la grenouille",
    "mint": "3ScGLdBLQ2kjhW4S9GRqzzVxsvbViy5729zX74KPYVPv",
-   "age_s": 135,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
