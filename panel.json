@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:44:24Z",
+ "updated": "2026-11-28T09:44:56Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1095,
+  "flagged": 1096,
   "checked": 49,
   "filtered": 1,
-  "lines": 2548,
+  "lines": 2551,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BOOR",
-   "why": "snipe",
-   "t": "2026-11-28T09:35:35Z"
-  },
   {
    "coin": "PPB",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "MANGO",
    "why": "snipe",
    "t": "2026-11-28T09:44:09Z"
+  },
+  {
+   "coin": "GPU",
+   "why": "snipe",
+   "t": "2026-11-28T09:44:32Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:40:40Z",
-   "time": "09:40:40",
-   "agent": "SCANNER",
-   "coin": "mogmas",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 6.4 SOL in · +45% since the create · mcap 43 SOL",
-   "n": 2349
-  },
-  {
-   "t": "2026-11-28T08:40:40Z",
-   "time": "09:40:40",
-   "agent": "SCANNER",
-   "coin": "DAISY",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2350
-  },
-  {
-   "t": "2026-11-28T08:41:20Z",
-   "time": "09:41:20",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 8 rejected (snipe not bought: only to size 5, odd curve reading: virtual SOL i 2, serial launcher 1)",
-   "n": 2351
-  },
-  {
    "t": "2026-11-28T08:41:26Z",
    "time": "09:41:26",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "flag",
    "text": "snipe · first reading 0.8 s after the create · 6.0 SOL in · +44% since the create · mcap 40 SOL",
    "n": 2548
+  },
+  {
+   "t": "2026-11-28T09:44:32Z",
+   "time": "10:44:32",
+   "agent": "SCANNER",
+   "coin": "GPU",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 2549
+  },
+  {
+   "t": "2026-11-28T09:44:32Z",
+   "time": "10:44:32",
+   "agent": "SIZER",
+   "coin": "GPU",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2550
+  },
+  {
+   "t": "2026-11-28T09:44:53Z",
+   "time": "10:44:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 7 rejected (serial launcher 3, snipe not bought: only to size 2, mayhem mode 2)",
+   "n": 2551
   }
  ],
  "nights": [
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1165,
-    "last_event_age_s": 15.5,
+    "events": 1167,
+    "last_event_age_s": 24.6,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22989,
+    "events": 23108,
     "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 833,
-    "last_event_age_s": 15.5,
+    "events": 834,
+    "last_event_age_s": 24.4,
     "errors": 32,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6535,7 +6535,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 6,
+  "followed": 4,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,28 +6584,64 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19790,
+   "sent": 19824,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19790,
+   "sent": 19824,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GPU",
+   "name": "Graphic Process Unit",
+   "mint": "G8T2LcGHYH5dMUDcfHFv96kqEUgw4WkixjhRLwC5pump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.6,
+   "dev_pct": 1.2,
+   "big_sell": 0.0,
+   "x": "https://x.com/GPUhardware",
+   "tg": false,
+   "web": "https://GPU.community",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "WAFFLOTH",
+   "name": "Waffle the Sleepy Sloth",
+   "mint": "HFJrupqVA53AJDF2np1fMGxmhvNiLHi3dq3U7DJ6mayy",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.7,
+   "dev_pct": 1.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "MANGO",
    "name": "Mango",
    "mint": "7v875gFBMknoLZmtW1TpaKdnrZdn1vWft7HVR9ZWvxjM",
-   "age_s": 15,
-   "sol_in": 4.63,
-   "buys": 4,
-   "sells": 7,
-   "rise_pct": 33.2,
-   "mcap_sol": 37.3,
+   "age_s": 47,
+   "sol_in": 3.62,
+   "buys": 6,
+   "sells": 13,
+   "rise_pct": 25.6,
+   "mcap_sol": 35.1,
    "dev_pct": 0.0,
    "big_sell": 1.23,
    "x": false,
@@ -6618,12 +6654,12 @@
    "symbol": "Monacoin",
    "name": "Monacoin",
    "mint": "HNLm2avPb3z9DBrCLq2txGFoqWoZAtM1axFKQyALpump",
-   "age_s": 38,
-   "sol_in": 7.09,
-   "buys": 13,
-   "sells": 13,
-   "rise_pct": 47.3,
-   "mcap_sol": 50.3,
+   "age_s": 70,
+   "sol_in": 10.03,
+   "buys": 24,
+   "sells": 24,
+   "rise_pct": 69.6,
+   "mcap_sol": 57.9,
    "dev_pct": 10.2,
    "big_sell": 1.92,
    "x": "https://x.com/ZzzzzSol/status/2126613002145194217",
@@ -6636,7 +6672,7 @@
    "symbol": "ilm",
    "name": "illuminati",
    "mint": "4rtAMB815Cvej3oon7eJuoDQuRaEB8BUth75JjTvpump",
-   "age_s": 108,
+   "age_s": 140,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,12 +6690,12 @@
    "symbol": "Neema",
    "name": "Neema The Giraffe",
    "mint": "E8EnTz4JJZN6kZHM3KDAbw7tRYMUsHf3i4CNNXrehCiW",
-   "age_s": 112,
-   "sol_in": 9.25,
-   "buys": 27,
-   "sells": 25,
-   "rise_pct": 60.0,
-   "mcap_sol": 60.7,
+   "age_s": 144,
+   "sol_in": 7.74,
+   "buys": 28,
+   "sells": 34,
+   "rise_pct": 49.2,
+   "mcap_sol": 56.6,
    "dev_pct": 15.2,
    "big_sell": 2.6,
    "x": "https://x.com/MarioPrezldente/status/2126612692198899730",
@@ -6667,60 +6703,6 @@
    "web": false,
    "status": "rejected: serial launcher: 5 more coins in 60 min",
    "why": "serial launcher: 5 more coins in 60 min"
-  },
-  {
-   "symbol": "Ralph",
-   "name": "RalphCoin",
-   "mint": "AJR36iNQqzzYtWGJZfEBCc4AFnFjDcSvWhq1QxPQTEfu",
-   "age_s": 149,
-   "sol_in": -0.53,
-   "buys": 13,
-   "sells": 17,
-   "rise_pct": -3.2,
-   "mcap_sol": 32.7,
-   "dev_pct": 9.6,
-   "big_sell": 3.85,
-   "x": "https://x.com/RalphCoinOnSol/status/2126612395128656106?a=PYiUCKL9n2dYJ729nno&s=20",
-   "tg": false,
-   "web": "https://www.tiktok.com/@ralphthegentleman_/video/7711146374472961293",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "RalphCoin",
-   "name": "RalphCoin",
-   "mint": "FTqZyadGqF8K74Lbfgjj3GVQTjrUwLCDkh52f1q3pump",
-   "age_s": 160,
-   "sol_in": 20.96,
-   "buys": 64,
-   "sells": 68,
-   "rise_pct": 165.2,
-   "mcap_sol": 91.7,
-   "dev_pct": 10.8,
-   "big_sell": 5.13,
-   "x": "https://x.com/RalphCoinOnSol/status/2126612395128656106?a=PYiUCKL9n2dYJ729nno&s=20",
-   "tg": false,
-   "web": "https://www.tiktok.com/@ralphthegentleman_/video/7711146374472961293",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "BEANOS",
-   "name": "Beanos",
-   "mint": "85qY5aXoWTQHAEjv2JPjeTJNzfAjVsdUAoS4TEGrpump",
-   "age_s": 173,
-   "sol_in": 1.11,
-   "buys": 7,
-   "sells": 27,
-   "rise_pct": 7.3,
-   "mcap_sol": 32.0,
-   "dev_pct": 3.4,
-   "big_sell": 2.62,
-   "x": "https://x.com/BeanosOnPF_/status/2126612387101049317",
-   "tg": false,
-   "web": "https://x.com/BeanosOnPF_",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
