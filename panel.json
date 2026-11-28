@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:28:18Z",
+ "updated": "2026-11-28T09:28:45Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1071,
+  "flagged": 1072,
   "checked": 49,
   "filtered": 1,
-  "lines": 2505,
+  "lines": 2508,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "RALLY",
-   "why": "snipe",
-   "t": "2026-11-28T09:22:46Z"
-  },
   {
    "coin": "Bon-chan",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "nib",
    "why": "snipe",
    "t": "2026-11-28T09:26:16Z"
+  },
+  {
+   "coin": "DICKCAT",
+   "why": "snipe",
+   "t": "2026-11-28T09:28:29Z"
   }
  ],
  "curve": [
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:29:39Z",
-   "time": "09:29:39",
-   "agent": "SCANNER",
-   "coin": "ELF",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2306
-  },
-  {
-   "t": "2026-11-28T08:29:58Z",
-   "time": "09:29:58",
-   "agent": "SCANNER",
-   "coin": "Robinhood",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 17.6 SOL in · +131% since the create · mcap 82 SOL",
-   "n": 2307
-  },
-  {
-   "t": "2026-11-28T08:30:03Z",
-   "time": "09:30:03",
-   "agent": "SCANNER",
-   "coin": "EXCESSIVE",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · -0.0 SOL in · +0% since the create · mcap 34 SOL",
-   "n": 2308
-  },
-  {
    "t": "2026-11-28T08:30:11Z",
    "time": "09:30:11",
    "agent": "SCANNER",
@@ -6423,6 +6396,33 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 4 rejected (snipe not bought: only to size 2, serial launcher 1, mayhem mode 1)",
    "n": 2505
+  },
+  {
+   "t": "2026-11-28T09:28:29Z",
+   "time": "10:28:29",
+   "agent": "SCANNER",
+   "coin": "DICKCAT",
+   "action": "flag",
+   "text": "snipe · first reading 0.4 s after the create · 0.9 SOL in · +6% since the create · mcap 31 SOL",
+   "n": 2506
+  },
+  {
+   "t": "2026-11-28T09:28:29Z",
+   "time": "10:28:29",
+   "agent": "SIZER",
+   "coin": "DICKCAT",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 2507
+  },
+  {
+   "t": "2026-11-28T09:28:45Z",
+   "time": "10:28:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, serial launcher 1)",
+   "n": 2508
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1118,
-    "last_event_age_s": 95.2,
+    "events": 1119,
+    "last_event_age_s": 16.2,
     "errors": 16,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21253,
-    "last_event_age_s": 0.8,
+    "events": 21291,
+    "last_event_age_s": 1.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 795,
-    "last_event_age_s": 95.2,
+    "events": 796,
+    "last_event_age_s": 15.7,
     "errors": 30,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6535,7 +6535,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.0,
   "watching": 0,
-  "followed": 3,
+  "followed": 4,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,23 +6584,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18761,
+   "sent": 18790,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18761,
+   "sent": 18790,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DICKCAT",
+   "name": "dickcat",
+   "mint": "FuEeZJgi45M1nnpCK5op41cYPMqERkgvD8nx74Z4pump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 3,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.89,
+   "x": "https://x.com/ibbambinaa/status/2126360411780087828?a=qX8cVPfzenj0oMc3BlA&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Ant",
    "name": "Antcoin",
    "mint": "F2nAQqsZRQfK5zsvMVsSaAJuNLx4H1q3G8dxAWfgD8jz",
-   "age_s": 95,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6618,12 +6636,12 @@
    "symbol": "nib",
    "name": "nib",
    "mint": "GYHaYUa4dz784a5CL6JVCi7PHaV4cdeveyhwBNp6pump",
-   "age_s": 122,
-   "sol_in": 1.18,
+   "age_s": 149,
+   "sol_in": 0.28,
    "buys": 20,
-   "sells": 27,
-   "rise_pct": 7.7,
-   "mcap_sol": 32.1,
+   "sells": 29,
+   "rise_pct": 1.8,
+   "mcap_sol": 30.4,
    "dev_pct": 3.4,
    "big_sell": 2.83,
    "x": "https://x.com/nibonpf/status/2126608565997613245",
@@ -6636,10 +6654,10 @@
    "symbol": "ROCKSTAR",
    "name": "rockstar",
    "mint": "CeKnD2jhd6Y7RrJ6pARaG7qkMjhjmRu1TNZcQ6xtpump",
-   "age_s": 126,
+   "age_s": 153,
    "sol_in": 0.03,
    "buys": 3,
-   "sells": 1,
+   "sells": 2,
    "rise_pct": 0.2,
    "mcap_sol": 28.0,
    "dev_pct": 0.0,
