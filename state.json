@@ -59,33 +59,6 @@
   "started": "2026-11-27T23:00:00Z",
   "decisions": [
    {
-    "t": "2026-11-27T23:25:34Z",
-    "time": "00:25:34",
-    "agent": "LEARNER",
-    "coin": "X",
-    "action": "learn",
-    "text": "learned · np:social:none now avg -7.7% over 300",
-    "n": 381
-   },
-   {
-    "t": "2026-11-27T23:25:44Z",
-    "time": "00:25:44",
-    "agent": "RISK",
-    "coin": "Joe",
-    "action": "skip",
-    "text": "no entry: pause after a losing streak",
-    "n": 382
-   },
-   {
-    "t": "2026-11-27T23:25:44Z",
-    "time": "00:25:44",
-    "agent": "LEARNER",
-    "coin": "Joe",
-    "action": "shadow",
-    "text": "SHADOW Joe · not bought (pause after a losing streak) · followed as if bought: $5.01 at 0.0000056194 (curve maths, every cost) · same exits, outside the book",
-    "n": 383
-   },
-   {
     "t": "2026-11-27T23:25:48Z",
     "time": "00:25:48",
     "agent": "LEARNER",
@@ -5457,6 +5430,33 @@
     "action": "odd",
     "text": "odd curve reading: virtual SOL 2.765e+05 is not 30 + real SOL 0 (off +2.765e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 192 odd readings from 99 coins tonight",
     "n": 980
+   },
+   {
+    "t": "2026-11-28T01:11:12Z",
+    "time": "02:11:12",
+    "agent": "SCANNER",
+    "coin": null,
+    "action": "scan",
+    "text": "new pairs · 5.8 a minute · 1 watched · 10 rejected (odd curve reading: virtual SOL i 4, snipe not bought: only to size 3, mayhem mode 2) · closest SCARLET: no curve reading yet",
+    "n": 981
+   },
+   {
+    "t": "2026-11-28T01:11:13Z",
+    "time": "02:11:13",
+    "agent": "SCANNER",
+    "coin": "SCARLET",
+    "action": "flag",
+    "text": "snipe · first reading 0.8 s after the create · 6.8 SOL in · +50% since the create · mcap 42 SOL",
+    "n": 982
+   },
+   {
+    "t": "2026-11-28T01:11:17Z",
+    "time": "02:11:17",
+    "agent": "SCANNER",
+    "coin": "simulcrum",
+    "action": "flag",
+    "text": "snipe · first reading 1.1 s after the create · 0.8 SOL in · +5% since the create · mcap 35 SOL",
+    "n": 983
    }
   ],
   "trades": [
@@ -8102,21 +8102,11 @@
   "streak": 4,
   "cooldown_until": 1795822054.960666,
   "scans": 0,
-  "flagged": 295,
+  "flagged": 297,
   "checked": 49,
   "filtered": 1,
-  "lines": 980,
+  "lines": 983,
   "flags": [
-   {
-    "coin": "DELTA",
-    "why": "snipe",
-    "t": "2026-11-28T01:06:33Z"
-   },
-   {
-    "coin": "der",
-    "why": "snipe",
-    "t": "2026-11-28T01:06:37Z"
-   },
    {
     "coin": "TEST8",
     "why": "snipe",
@@ -8146,6 +8136,16 @@
     "coin": "PILLXBT",
     "why": "snipe",
     "t": "2026-11-28T01:10:14Z"
+   },
+   {
+    "coin": "SCARLET",
+    "why": "snipe",
+    "t": "2026-11-28T01:11:13Z"
+   },
+   {
+    "coin": "simulcrum",
+    "why": "snipe",
+    "t": "2026-11-28T01:11:17Z"
    }
   ],
   "curve": [
@@ -8672,13 +8672,17 @@
    [
     1795828200,
     47.79
+   ],
+   [
+    1795828260,
+    47.79
    ]
   ],
   "last_rug": {
    "coin": "PVE",
    "pass": true
   },
-  "np_said": 1795828211.96067,
+  "np_said": 1795828272.960634,
   "shadow": {
    "n": 83,
    "wins": 23,
@@ -8863,7 +8867,7 @@
    "7ibWME61onuuTShrJfPHLnXLwLbGbPBGuEo1hrTkAJRQ": 1795822822.960943
   },
   "odd": {
-   "readings": 192,
+   "readings": 193,
    "coins": 99,
    "followed": 0,
    "mints": [

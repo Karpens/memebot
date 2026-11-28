@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:10:56Z",
+ "updated": "2026-11-28T01:11:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 295,
+  "flagged": 297,
   "checked": 49,
   "filtered": 1,
-  "lines": 980,
+  "lines": 983,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "DELTA",
-   "why": "snipe",
-   "t": "2026-11-28T01:06:33Z"
-  },
-  {
-   "coin": "der",
-   "why": "snipe",
-   "t": "2026-11-28T01:06:37Z"
-  },
   {
    "coin": "TEST8",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "PILLXBT",
    "why": "snipe",
    "t": "2026-11-28T01:10:14Z"
+  },
+  {
+   "coin": "SCARLET",
+   "why": "snipe",
+   "t": "2026-11-28T01:11:13Z"
+  },
+  {
+   "coin": "simulcrum",
+   "why": "snipe",
+   "t": "2026-11-28T01:11:17Z"
   }
  ],
  "curve": [
@@ -595,6 +595,10 @@
   ],
   [
    1795828200,
+   47.79
+  ],
+  [
+   1795828260,
    47.79
   ]
  ],
@@ -2749,33 +2753,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:19:57Z",
-   "time": "01:19:57",
-   "agent": "SCANNER",
-   "coin": "Chapacoin",
-   "action": "flag",
-   "text": "snipe · first reading 1.2 s after the create · 0.1 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 781
-  },
-  {
-   "t": "2026-11-28T00:20:43Z",
-   "time": "01:20:43",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, no symbol or name 4, mayhem mode 1)",
-   "n": 782
-  },
-  {
-   "t": "2026-11-28T00:21:04Z",
-   "time": "01:21:04",
-   "agent": "SCANNER",
-   "coin": "Joe",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 19.6 SOL in · +168% since the create · mcap 79 SOL",
-   "n": 783
-  },
-  {
    "t": "2026-11-28T00:21:04Z",
    "time": "01:21:04",
    "agent": "SIZER",
@@ -4547,6 +4524,33 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 2.765e+05 is not 30 + real SOL 0 (off +2.765e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 192 odd readings from 99 coins tonight",
    "n": 980
+  },
+  {
+   "t": "2026-11-28T01:11:12Z",
+   "time": "02:11:12",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 5.8 a minute · 1 watched · 10 rejected (odd curve reading: virtual SOL i 4, snipe not bought: only to size 3, mayhem mode 2) · closest SCARLET: no curve reading yet",
+   "n": 981
+  },
+  {
+   "t": "2026-11-28T01:11:13Z",
+   "time": "02:11:13",
+   "agent": "SCANNER",
+   "coin": "SCARLET",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 6.8 SOL in · +50% since the create · mcap 42 SOL",
+   "n": 982
+  },
+  {
+   "t": "2026-11-28T01:11:17Z",
+   "time": "02:11:17",
+   "agent": "SCANNER",
+   "coin": "simulcrum",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.8 SOL in · +5% since the create · mcap 35 SOL",
+   "n": 983
   }
  ],
  "nights": [
@@ -4619,7 +4623,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 192 (99 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 193 (99 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4627,24 +4631,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1088,
-    "last_event_age_s": 6.7,
+    "events": 1091,
+    "last_event_age_s": 8.9,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21131,
-    "last_event_age_s": 0.9,
+    "events": 21220,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 628,
-    "last_event_age_s": 6.6,
+    "events": 630,
+    "last_event_age_s": 8.7,
     "errors": 30,
     "last_error": "d.uguu.se: timeout after 2 s"
    }
@@ -4657,10 +4661,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 5.6,
+  "creates_per_min": 6.0,
   "watching": 0,
-  "followed": 9,
-  "odd_readings": 192,
+  "followed": 8,
+  "odd_readings": 193,
   "odd_coins": 99
  },
  "learner": {
@@ -4708,23 +4712,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8862,
+   "sent": 8892,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8862,
+   "sent": 8892,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "simulcrum",
+   "name": "simulcrum",
+   "mint": "D8DSJ1BLi6By6y3f5idFDVhzissDQzUQktmB7m3Qpump",
+   "age_s": 8,
+   "sol_in": 0.28,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 1.8,
+   "mcap_sol": 33.4,
+   "dev_pct": 8.2,
+   "big_sell": 0.55,
+   "x": "https://x.com/simulcrumsol",
+   "tg": false,
+   "web": "https://simulcrum.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "SCARLET",
+   "name": "Scarlet",
+   "mint": "9723cSH2TXgqf54HLArBW9Y2Upop1JHjnW9yEGTrpump",
+   "age_s": 12,
+   "sol_in": 1.1,
+   "buys": 3,
+   "sells": 4,
+   "rise_pct": 7.4,
+   "mcap_sol": 30.0,
+   "dev_pct": 0.0,
+   "big_sell": 5.82,
+   "x": "https://x.com/scarletdevsol",
+   "tg": false,
+   "web": "https://scarletdev.site/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "WANNARACE",
+   "name": "Wanna Race",
+   "mint": "8mtedykWgrY69S3PpE7jMao41SDjAueMu96zMGqopump",
+   "age_s": 19,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "TEST",
    "name": "test",
    "mint": "7ENEgrtsKxEWo3mDQ2gfjZyNZpMBLyqZvCpaHyrP3iwH",
-   "age_s": 6,
+   "age_s": 34,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4742,7 +4800,7 @@
    "symbol": "ASF",
    "name": "Asf",
    "mint": "F9LgBYi8VjF31hkicehTPDMkvj3WzX94zvVWLfXupump",
-   "age_s": 37,
+   "age_s": 65,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4760,12 +4818,12 @@
    "symbol": "PILLXBT",
    "name": "pillXBT",
    "mint": "Wd6LY8NNANR1tPUhKKaNhDw8otNgfmnRyM9nhzxMppp",
-   "age_s": 43,
-   "sol_in": 33.2,
-   "buys": 19,
-   "sells": 22,
-   "rise_pct": 319.0,
-   "mcap_sol": 130.9,
+   "age_s": 71,
+   "sol_in": 23.15,
+   "buys": 23,
+   "sells": 38,
+   "rise_pct": 199.2,
+   "mcap_sol": 93.5,
    "dev_pct": 5.8,
    "big_sell": 2.95,
    "x": false,
@@ -4778,7 +4836,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "DtcCnseMTEpEqqC1BoSfaXk9CCR86mAoefYy88EXdCer",
-   "age_s": 57,
+   "age_s": 85,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4796,7 +4854,7 @@
    "symbol": "SEMIR",
    "name": "SemiDeriv",
    "mint": "CgMtv4NDJczfUJbuCoy8Np2vxpuKMSFZNTdyEujLcmZa",
-   "age_s": 89,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4814,12 +4872,12 @@
    "symbol": "bizcat",
    "name": "bizcat",
    "mint": "3eFzFy3YMHh67prR7BC3q9MZvDFRLZNRnvsjFApcpump",
-   "age_s": 99,
-   "sol_in": 2.11,
-   "buys": 16,
-   "sells": 30,
-   "rise_pct": 14.2,
-   "mcap_sol": 33.8,
+   "age_s": 127,
+   "sol_in": 23.69,
+   "buys": 23,
+   "sells": 32,
+   "rise_pct": 212.5,
+   "mcap_sol": 92.5,
    "dev_pct": 3.0,
    "big_sell": 3.6,
    "x": "https://x.com/bizcatPF/status/2126483327314010221?a=MMgRc4g5J8ZSzL6kLHs&s=20",
@@ -4832,7 +4890,7 @@
    "symbol": "GPU",
    "name": "Giga Purr Unit",
    "mint": "7YNL7N2JNcFcoamDdXUPWy6GBLEkzYZn3vhWzSxpump",
-   "age_s": 114,
+   "age_s": 142,
    "sol_in": 1.96,
    "buys": 35,
    "sells": 22,
@@ -4845,96 +4903,6 @@
    "web": "https://gigapurrunit.com/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "CNJm8DGMzJNC2rzTEcX1WNR5GSJdABvTmzZn9qBagnWN",
-   "age_s": 159,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "H6900",
-   "name": "HexFlip 6900",
-   "mint": "BxR4qoiM19Myjgcd456R1aquhhpp8zD2ZTo2wuLhSZtz",
-   "age_s": 160,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://derivr.fun",
-   "status": "rejected: odd curve reading: virtual SOL 1.186e+05 is not 30 + real SOL 0 (off +1.186e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 1.186e+05 is not 30 + real SOL 0 (off +1.186e+05 SOL)"
-  },
-  {
-   "symbol": "SESAME",
-   "name": "Sesame Parade",
-   "mint": "EGwkTsJjpeaec6jErpkxPQZRhqgmNsC3WCRJKQvGpump",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/sesamestreet/status/2126481268208452092?a=g_IRCMDHCxsN0T4XEXA&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "GTAFORTNIT",
-   "name": "GTA VI VS FORTNITE",
-   "mint": "92NccXbZQ2sqVufZYveEb1zpzpk7xqTTAKzuwmPxpump",
-   "age_s": 173,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "ScamCoin",
-   "name": "Scam Coin",
-   "mint": "3d5yD1BknsDSVThn4dEqUear48wmmNnFTBdjrxA4pump",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.2,
-   "dev_pct": 2.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 3 more coins in 60 min",
-   "why": "serial launcher: 3 more coins in 60 min"
   }
  ],
  "strategies": [
