@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:22:43Z",
+ "updated": "2026-11-28T03:23:16Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 548,
+  "flagged": 550,
   "checked": 49,
   "filtered": 1,
-  "lines": 1447,
+  "lines": 1450,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "rsrc",
-   "why": "snipe",
-   "t": "2026-11-28T03:19:09Z"
-  },
-  {
-   "coin": "Patchwork",
-   "why": "snipe",
-   "t": "2026-11-28T03:19:24Z"
-  },
   {
    "coin": "pig",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "Wildfire",
    "why": "snipe",
    "t": "2026-11-28T03:22:42Z"
+  },
+  {
+   "coin": "Anthropic",
+   "why": "snipe",
+   "t": "2026-11-28T03:22:55Z"
+  },
+  {
+   "coin": "Skrol",
+   "why": "snipe",
+   "t": "2026-11-28T03:22:56Z"
   }
  ],
  "curve": [
@@ -1123,6 +1123,10 @@
   ],
   [
    1795836120,
+   47.79
+  ],
+  [
+   1795836180,
    47.79
   ]
  ],
@@ -3277,33 +3281,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:24:52Z",
-   "time": "03:24:52",
-   "agent": "SCANNER",
-   "coin": "pildo",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 32.0 SOL in · +287% since the create · mcap 131 SOL",
-   "n": 1248
-  },
-  {
-   "t": "2026-11-28T02:24:53Z",
-   "time": "03:24:53",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 4, mayhem mode 1)",
-   "n": 1249
-  },
-  {
-   "t": "2026-11-28T02:25:29Z",
-   "time": "03:25:29",
-   "agent": "SCANNER",
-   "coin": "HDD",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.6 SOL in · +4% since the create · mcap 31 SOL",
-   "n": 1250
-  },
-  {
    "t": "2026-11-28T02:25:53Z",
    "time": "03:25:53",
    "agent": "SCANNER",
@@ -5075,6 +5052,33 @@
    "action": "flag",
    "text": "snipe · first reading 2.5 s after the create · 20.3 SOL in · +174% since the create · mcap 82 SOL",
    "n": 1447
+  },
+  {
+   "t": "2026-11-28T03:22:55Z",
+   "time": "04:22:55",
+   "agent": "SCANNER",
+   "coin": "Anthropic",
+   "action": "flag",
+   "text": "snipe · first reading 2.3 s after the create · 18.0 SOL in · +135% since the create · mcap 83 SOL",
+   "n": 1448
+  },
+  {
+   "t": "2026-11-28T03:22:55Z",
+   "time": "04:22:55",
+   "agent": "SIZER",
+   "coin": "Anthropic",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1449
+  },
+  {
+   "t": "2026-11-28T03:22:56Z",
+   "time": "04:22:56",
+   "agent": "SCANNER",
+   "coin": "Skrol",
+   "action": "flag",
+   "text": "snipe · first reading 1.2 s after the create · 0.9 SOL in · +6% since the create · mcap 30 SOL",
+   "n": 1450
   }
  ],
  "nights": [
@@ -5147,7 +5151,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5155,24 +5159,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1682,
-    "last_event_age_s": 4.0,
+    "events": 1685,
+    "last_event_age_s": 15.0,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35625,
-    "last_event_age_s": 0.6,
+    "events": 35702,
+    "last_event_age_s": 1.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 983,
-    "last_event_age_s": 1.2,
+    "events": 986,
+    "last_event_age_s": 14.7,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5185,9 +5189,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.0,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
+  "followed": 10,
   "odd_readings": 337,
   "odd_coins": 154
  },
@@ -5236,30 +5240,84 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17277,
+   "sent": 17312,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17277,
+   "sent": 17312,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "DCTY",
+   "name": "DacityCoin",
+   "mint": "FKzLbmXpyk3qxY4j3CbxqwjdtbCWb1HZZttok9AD5dio",
+   "age_s": 14,
+   "sol_in": 59.6,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 791.9,
+   "mcap_sol": 249.4,
+   "dev_pct": 0.0,
+   "big_sell": 8.89,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "Skrol",
+   "name": "Skrolfun",
+   "mint": "BEenEN44sRutN63s97eUCy5tcN1JZxXPdDdvFQKGpump",
+   "age_s": 21,
+   "sol_in": 0.06,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 0.4,
+   "mcap_sol": 28.5,
+   "dev_pct": 0.9,
+   "big_sell": 0.6,
+   "x": "https://x.com/Skrolfun",
+   "tg": false,
+   "web": "https://skrol.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Anthropic",
+   "name": "Anthropic official",
+   "mint": "8gaDpnDsrQosy8nKrG7tRb4xGgDdgvsM9ujXcEDEpump",
+   "age_s": 23,
+   "sol_in": 18.08,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 135.9,
+   "mcap_sol": 83.5,
+   "dev_pct": 11.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/AnthropicAI",
+   "tg": false,
+   "web": "https://www.anthropic.com/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Wildfire",
    "name": "Wildfire",
    "mint": "9cmL8R2jZjKss6uYiQpQFphv6ygfirZQJEpEatKGpump",
-   "age_s": 4,
-   "sol_in": 19.58,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 166.2,
-   "mcap_sol": 79.5,
+   "age_s": 37,
+   "sol_in": 18.74,
+   "buys": 6,
+   "sells": 9,
+   "rise_pct": 157.5,
+   "mcap_sol": 76.9,
    "dev_pct": 3.5,
-   "big_sell": 0.74,
+   "big_sell": 1.64,
    "x": "https://x.com/WildfireSolana",
    "tg": false,
    "web": "https://thewildfire.xyz/",
@@ -5270,14 +5328,14 @@
    "symbol": "HI",
    "name": "Human Intelligence",
    "mint": "JDKMRzPk1vTxGvf2pmM1WZaBhh5HGwaQqnKf2BrMpump",
-   "age_s": 9,
-   "sol_in": 10.73,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 81.3,
-   "mcap_sol": 54.1,
+   "age_s": 42,
+   "sol_in": 0.37,
+   "buys": 7,
+   "sells": 8,
+   "rise_pct": 2.4,
+   "mcap_sol": 30.6,
    "dev_pct": 3.4,
-   "big_sell": 1.9,
+   "big_sell": 7.3,
    "x": "https://x.com/humanitelstock",
    "tg": false,
    "web": false,
@@ -5288,14 +5346,14 @@
    "symbol": "WWF",
    "name": "WWF Coin",
    "mint": "7xwPrYRTo63D299CijBCY4xJN24JnG1dqZxb9vBfpump",
-   "age_s": 15,
-   "sol_in": 14.81,
-   "buys": 4,
-   "sells": 1,
-   "rise_pct": 110.0,
-   "mcap_sol": 70.9,
+   "age_s": 48,
+   "sol_in": 18.35,
+   "buys": 13,
+   "sells": 6,
+   "rise_pct": 142.4,
+   "mcap_sol": 81.8,
    "dev_pct": 9.6,
-   "big_sell": 0.92,
+   "big_sell": 3.65,
    "x": "https://x.com/ZzzzzSol/status/2126517046145847311",
    "tg": false,
    "web": "https://www.royalmint.com/shop/monarch/queen-elizabeth-ii/2011-Elizabeth-II-Celebrating-50-Years-of-the-Work-of-WWF-50p-Coin/?utm_",
@@ -5306,7 +5364,7 @@
    "symbol": "SPERX",
    "name": "SpermAI",
    "mint": "42HSAZbcmpZTRdSqxJHJLatp1GLc1oe4VHg6E4qzJqG4",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5324,14 +5382,14 @@
    "symbol": "HOPE",
    "name": "HOPE",
    "mint": "A1wgzgqVtFRQhxxcVQYnAmubBQtwu733n2Gc1vs2pump",
-   "age_s": 35,
-   "sol_in": 0.66,
-   "buys": 3,
-   "sells": 2,
-   "rise_pct": 4.0,
-   "mcap_sol": 35.3,
+   "age_s": 68,
+   "sol_in": -2.82,
+   "buys": 4,
+   "sells": 5,
+   "rise_pct": -16.4,
+   "mcap_sol": 28.4,
    "dev_pct": 9.9,
-   "big_sell": 0.26,
+   "big_sell": 5.19,
    "x": false,
    "tg": false,
    "web": "https://hopegang.xyz/",
@@ -5342,7 +5400,7 @@
    "symbol": "PORCHWALL",
    "name": "Porch Wall",
    "mint": "Cwv3n7qN2hnRdMwc2vs3StM5CEZf24x1kGkmSRVJpump",
-   "age_s": 56,
+   "age_s": 89,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 3,
@@ -5360,7 +5418,7 @@
    "symbol": "Trader",
    "name": "The Trader",
    "mint": "7TbrDqtUrJq3e6g2y5Qd3EZqVsCc5q95ySubcE87LLrb",
-   "age_s": 78,
+   "age_s": 111,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
