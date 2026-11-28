@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:14:52Z",
+ "updated": "2026-11-28T03:15:25Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 534,
+  "flagged": 535,
   "checked": 49,
   "filtered": 1,
-  "lines": 1422,
+  "lines": 1424,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "NEONPA",
-   "why": "snipe",
-   "t": "2026-11-28T03:13:10Z"
-  },
   {
    "coin": "PILL",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "CRY3",
    "why": "snipe",
    "t": "2026-11-28T03:14:49Z"
+  },
+  {
+   "coin": "TES",
+   "why": "snipe",
+   "t": "2026-11-28T03:15:15Z"
   }
  ],
  "curve": [
@@ -1091,6 +1091,10 @@
   ],
   [
    1795835640,
+   47.79
+  ],
+  [
+   1795835700,
    47.79
   ]
  ],
@@ -3245,24 +3249,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:15:54Z",
-   "time": "03:15:54",
-   "agent": "SCANNER",
-   "coin": "Liberty",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 7.9 SOL in · +54% since the create · mcap 52 SOL",
-   "n": 1223
-  },
-  {
-   "t": "2026-11-28T02:15:54Z",
-   "time": "03:15:54",
-   "agent": "SIZER",
-   "coin": "Liberty",
-   "action": "skip",
-   "text": "only $4.78 left to size",
-   "n": 1224
-  },
-  {
    "t": "2026-11-28T02:16:09Z",
    "time": "03:16:09",
    "agent": "SCANNER",
@@ -5043,6 +5029,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.6 s after the create · -0.0 SOL in · +0% since the create · mcap 34 SOL",
    "n": 1422
+  },
+  {
+   "t": "2026-11-28T03:15:15Z",
+   "time": "04:15:15",
+   "agent": "SCANNER",
+   "coin": "TES",
+   "action": "flag",
+   "text": "snipe · first reading 0.9 s after the create · 1.2 SOL in · +8% since the create · mcap 30 SOL",
+   "n": 1423
+  },
+  {
+   "t": "2026-11-28T03:15:21Z",
+   "time": "04:15:21",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: only to size 13, mayhem mode 2)",
+   "n": 1424
   }
  ],
  "nights": [
@@ -5115,7 +5119,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5123,26 +5127,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1652,
-    "last_event_age_s": 4.0,
+    "events": 1653,
+    "last_event_age_s": 11.0,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35024,
-    "last_event_age_s": 0.1,
+    "events": 35081,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 963,
-    "last_event_age_s": 3.8,
-    "errors": 46,
-    "last_error": "calldot.fun: gaierror: [Errno -5] No address associated with hostname"
+    "connected": false,
+    "events": 964,
+    "last_event_age_s": 8.4,
+    "errors": 47,
+    "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
   ],
   "strategies": [
@@ -5153,7 +5157,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
   "followed": 13,
   "odd_readings": 335,
@@ -5204,30 +5208,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16776,
+   "sent": 16811,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16776,
+   "sent": 16811,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TES",
+   "name": "Tes",
+   "mint": "DSzpuvqmtdxd91Q8P3EbwKRr9y81a9DM3jTBR6v893wi",
+   "age_s": 11,
+   "sol_in": 1.23,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 8.4,
+   "mcap_sol": 30.3,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "CRY3",
    "name": "Three-Eyed Crybaby",
    "mint": "HwvtCpUfcvpXqCpgPowW85k13s4GuvxaqReGoai7pump",
-   "age_s": 4,
-   "sol_in": -0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 33.8,
+   "age_s": 37,
+   "sol_in": -2.18,
+   "buys": 6,
+   "sells": 3,
+   "rise_pct": -12.8,
+   "mcap_sol": 29.4,
    "dev_pct": 9.6,
-   "big_sell": 0.0,
+   "big_sell": 7.76,
    "x": "https://x.com/ThreeEyedCrybab",
    "tg": false,
    "web": "https://crybaby.pro/",
@@ -5238,7 +5260,7 @@
    "symbol": "WINTERARC",
    "name": "Capo Winter Arc",
    "mint": "3cAyvFEc3u14ivQVA9fuNFaETKR5AzWGJe8kwr2rPtZT",
-   "age_s": 15,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5256,7 +5278,7 @@
    "symbol": "motion",
    "name": "motion",
    "mint": "2ieiBxwfZJ924tnFDfeCoSBJCKSsDHeRwEktQpVjpump",
-   "age_s": 53,
+   "age_s": 86,
    "sol_in": -0.69,
    "buys": 2,
    "sells": 8,
@@ -5274,7 +5296,7 @@
    "symbol": "BCAT",
    "name": "Bagwork Cat",
    "mint": "AecYHF5GTS42graxBuHyaVL1Vhm3pV8vdyXc4r344TBd",
-   "age_s": 55,
+   "age_s": 88,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5292,12 +5314,12 @@
    "symbol": "JESS",
    "name": "jessikah_grace",
    "mint": "9XShgVXyoACg8gS3TvLbC1bKJ7ygs6CswSuEEXjRpump",
-   "age_s": 81,
-   "sol_in": 1.6,
+   "age_s": 114,
+   "sol_in": 0.69,
    "buys": 5,
-   "sells": 4,
-   "rise_pct": 10.8,
-   "mcap_sol": 31.6,
+   "sells": 5,
+   "rise_pct": 4.6,
+   "mcap_sol": 29.8,
    "dev_pct": 1.0,
    "big_sell": 1.28,
    "x": false,
@@ -5310,7 +5332,7 @@
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "Bqyf3p982HBxkkeGiz1ttNLkgbeTA8CxejihYmcMpump",
-   "age_s": 88,
+   "age_s": 121,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5328,7 +5350,7 @@
    "symbol": "Jew.fun",
    "name": "Jew.Fun",
    "mint": "5xWsp9tH5dgS1Q96zGMuvzbMqgwP8oaepczsHBHkpump",
-   "age_s": 88,
+   "age_s": 121,
    "sol_in": -0.08,
    "buys": 4,
    "sells": 2,
@@ -5346,7 +5368,7 @@
    "symbol": "Sniffer",
    "name": "Sniffer",
    "mint": "46ePVY6PJYpSMwkv34CuVa7y1Sv3yDNmL7iQ51KDpump",
-   "age_s": 93,
+   "age_s": 126,
    "sol_in": -0.11,
    "buys": 5,
    "sells": 5,
@@ -5364,12 +5386,12 @@
    "symbol": "PILL",
    "name": "Mr.Pillson",
    "mint": "F92NZmdSk5AUwtz8H6mLF9ud7RSdgob2aspq3zGCpump",
-   "age_s": 96,
-   "sol_in": 0.68,
+   "age_s": 129,
+   "sol_in": 0.1,
    "buys": 15,
-   "sells": 28,
-   "rise_pct": 4.4,
-   "mcap_sol": 31.1,
+   "sells": 31,
+   "rise_pct": 0.7,
+   "mcap_sol": 30.0,
    "dev_pct": 3.4,
    "big_sell": 4.73,
    "x": "https://x.com/mrspillson",
@@ -5382,7 +5404,7 @@
    "symbol": "NEONPA",
    "name": "NeonPay",
    "mint": "CAsNojx1guquvXdnaeAEX6isGVLzZ4eS5Rbeeh1zkFPe",
-   "age_s": 103,
+   "age_s": 136,
    "sol_in": -0.2,
    "buys": 0,
    "sells": 1,
@@ -5400,7 +5422,7 @@
    "symbol": "WING",
    "name": "Wingmen",
    "mint": "ASAjdVeEZNZGfFbqJtQ6uVX5oR2M8hPRAHpHvG79pump",
-   "age_s": 116,
+   "age_s": 149,
    "sol_in": 0.32,
    "buys": 3,
    "sells": 1,
@@ -5418,7 +5440,7 @@
    "symbol": "HIM",
    "name": "100% Me 0% Him",
    "mint": "4HkTRgwuNYTS4YHrYd5HEvBp5AVGV64mLKMYdaqLpump",
-   "age_s": 123,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5436,7 +5458,7 @@
    "symbol": "NAMED",
    "name": "Named",
    "mint": "5P8b5A8VH6Mq2y1TeKWrL3KeErEPJxgG1PwfcHSdpump",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5454,35 +5476,17 @@
    "symbol": "BAGWORK",
    "name": "BAGWORK",
    "mint": "9z3oGjDpRJUY9u2YZnPARiNHURu9zE3VByBPFiSPpump",
-   "age_s": 145,
-   "sol_in": 22.57,
-   "buys": 65,
-   "sells": 48,
-   "rise_pct": 198.8,
-   "mcap_sol": 89.1,
+   "age_s": 178,
+   "sol_in": 21.91,
+   "buys": 81,
+   "sells": 59,
+   "rise_pct": 191.4,
+   "mcap_sol": 86.9,
    "dev_pct": 3.4,
    "big_sell": 3.72,
    "x": "https://x.com/bagworkbond/status/2126514502933807347?a=iht6vgHSw79L7R3jC6Y&s=20",
    "tg": false,
    "web": "https://bagwork.bond/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "motion",
-   "name": "motion",
-   "mint": "4WZgXs3aVzMaADdipPAr3AhHJWFw91XMbe2dmk1Jpump",
-   "age_s": 159,
-   "sol_in": -0.84,
-   "buys": 3,
-   "sells": 12,
-   "rise_pct": -5.3,
-   "mcap_sol": 28.2,
-   "dev_pct": 3.4,
-   "big_sell": 1.7,
-   "x": "https://x.com/Milsaftermils/status/2126514465633927356",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
