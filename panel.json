@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:51:23Z",
+ "updated": "2026-11-28T03:51:56Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 604,
+  "flagged": 605,
   "checked": 49,
   "filtered": 1,
-  "lines": 1541,
+  "lines": 1543,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PRISMEICE",
-   "why": "snipe",
-   "t": "2026-11-28T03:45:46Z"
-  },
   {
    "coin": "SIGMOID",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "HOS",
    "why": "snipe",
    "t": "2026-11-28T03:50:10Z"
+  },
+  {
+   "coin": "FREEVPS",
+   "why": "snipe",
+   "t": "2026-11-28T03:51:31Z"
   }
  ],
  "curve": [
@@ -3393,24 +3393,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:54:36Z",
-   "time": "03:54:36",
-   "agent": "SCANNER",
-   "coin": "ringzi",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1342
-  },
-  {
-   "t": "2026-11-28T02:54:38Z",
-   "time": "03:54:38",
-   "agent": "SCANNER",
-   "coin": "ringzi",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1343
-  },
-  {
    "t": "2026-11-28T02:54:46Z",
    "time": "03:54:46",
    "agent": "SCANNER",
@@ -5191,6 +5173,24 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, serial launcher 2)",
    "n": 1541
+  },
+  {
+   "t": "2026-11-28T03:51:31Z",
+   "time": "04:51:31",
+   "agent": "SCANNER",
+   "coin": "FREEVPS",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 37 SOL",
+   "n": 1542
+  },
+  {
+   "t": "2026-11-28T03:51:43Z",
+   "time": "04:51:43",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.2 a minute · 0 watched · 5 rejected (snipe not bought: only to size 3, serial launcher 1, no symbol or name 1)",
+   "n": 1543
   }
  ],
  "nights": [
@@ -5263,7 +5263,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 350 (157 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5271,24 +5271,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1814,
-    "last_event_age_s": 34.2,
+    "events": 1816,
+    "last_event_age_s": 0.1,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 39100,
-    "last_event_age_s": 1.5,
+    "events": 39155,
+    "last_event_age_s": 1.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1087,
-    "last_event_age_s": 74.3,
+    "events": 1088,
+    "last_event_age_s": 26.0,
     "errors": 53,
     "last_error": "ar-io.dev: timeout after 2 s"
    }
@@ -5301,9 +5301,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
-  "watching": 0,
-  "followed": 5,
+  "creates_per_min": 2.2,
+  "watching": 1,
+  "followed": 4,
   "odd_readings": 350,
   "odd_coins": 157
  },
@@ -5352,23 +5352,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19107,
+   "sent": 19142,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19107,
+   "sent": 19142,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "TIM",
+   "name": "Tim Berners-Lee Coin",
+   "mint": "CrJvFqQdsYJjhz3A6vgWrVNRcykXjY4mf2xAAvwapump",
+   "age_s": 0,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 32.8,
+   "dev_pct": 8.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "FREEVPS",
+   "name": "Freevps",
+   "mint": "AJnVSE5Xj2yb5SgkXw1j8s4Sxfy9uVV6th3MCDqtPqac",
+   "age_s": 26,
+   "sol_in": -4.44,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -24.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 13.8,
+   "big_sell": 4.44,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "?",
    "name": "",
    "mint": "56N4srZWzZ5ZXnfp2kiydTKuxBruhhh5qq9RtL3Wpump",
-   "age_s": 34,
+   "age_s": 67,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5386,14 +5422,14 @@
    "symbol": "HOS",
    "name": "Hit or Stay?",
    "mint": "De4g6QYTo23F1QZATRai54P2SbH6fLrJGByF1wCspump",
-   "age_s": 74,
-   "sol_in": 0.89,
-   "buys": 9,
-   "sells": 8,
-   "rise_pct": 6.0,
-   "mcap_sol": 29.8,
+   "age_s": 107,
+   "sol_in": 0.45,
+   "buys": 11,
+   "sells": 12,
+   "rise_pct": 3.0,
+   "mcap_sol": 29.0,
    "dev_pct": 0.3,
-   "big_sell": 0.11,
+   "big_sell": 0.24,
    "x": false,
    "tg": false,
    "web": false,
@@ -5404,12 +5440,12 @@
    "symbol": "MBS",
    "name": "Massive Boobs Shark",
    "mint": "36DFTERdwQ86QPnVAtNxgSVyvhcbcsBWJpK9eJYppump",
-   "age_s": 101,
-   "sol_in": 9.3,
-   "buys": 11,
-   "sells": 19,
-   "rise_pct": 69.0,
-   "mcap_sol": 50.4,
+   "age_s": 134,
+   "sol_in": 11.73,
+   "buys": 20,
+   "sells": 27,
+   "rise_pct": 90.0,
+   "mcap_sol": 56.7,
    "dev_pct": 3.4,
    "big_sell": 1.85,
    "x": "https://x.com/Milsaftermils/status/2126523901463142464",
@@ -5417,60 +5453,6 @@
    "web": "https://x.com/migihida44/status/2126211897121013829",
    "status": "rejected: serial launcher: 2 more coins in 60 min",
    "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "EGG",
-   "name": "Egg On Face",
-   "mint": "GJg8dnKe95xCWqGDzDWdX8gsin7GuN3SR9M6oCe1pump",
-   "age_s": 156,
-   "sol_in": -0.79,
-   "buys": 2,
-   "sells": 5,
-   "rise_pct": -5.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.8,
-   "big_sell": 1.85,
-   "x": "https://x.com/amitisinvesting/status/2126510260840001878?a=zh9Aca9jenJXoEa3HJQ&s=20",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "JENN",
-   "name": "Jenna Zimmerman",
-   "mint": "BpMTggLP1wwe3ifNLYbax3SheSN9wSysSqtMKxFdpump",
-   "age_s": 166,
-   "sol_in": -0.07,
-   "buys": 7,
-   "sells": 13,
-   "rise_pct": -0.5,
-   "mcap_sol": 28.4,
-   "dev_pct": 1.0,
-   "big_sell": 3.71,
-   "x": "https://twitter.com/jennamzimmerman",
-   "tg": false,
-   "web": "https://www.tiktok.com/@jenna_zimmerman",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "DoubleK",
-   "name": "Karkerkar Kurkur",
-   "mint": "F1qcCJqs6GGaSNoSCVLHwEvKMBcrxgTzszuSVosDpump",
-   "age_s": 171,
-   "sol_in": -0.39,
-   "buys": 4,
-   "sells": 10,
-   "rise_pct": -2.4,
-   "mcap_sol": 31.0,
-   "dev_pct": 6.6,
-   "big_sell": 2.2,
-   "x": "https://x.com/CapriSunMonkey_/status/2126523403515396250",
-   "tg": false,
-   "web": "https://x.com/reverrsecowboy/status/2126393485708407010",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
