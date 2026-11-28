@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:29:20Z",
+ "updated": "2026-11-28T09:29:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1072,
+  "flagged": 1073,
   "checked": 49,
   "filtered": 1,
-  "lines": 2508,
+  "lines": 2510,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "Bon-chan",
-   "why": "snipe",
-   "t": "2026-11-28T09:23:00Z"
-  },
   {
    "coin": "FABIO",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "DICKCAT",
    "why": "snipe",
    "t": "2026-11-28T09:28:29Z"
+  },
+  {
+   "coin": "SCAT",
+   "why": "snipe",
+   "t": "2026-11-28T09:29:46Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:30:11Z",
-   "time": "09:30:11",
-   "agent": "SCANNER",
-   "coin": "MUDPIE",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL",
-   "n": 2309
-  },
-  {
-   "t": "2026-11-28T08:30:13Z",
-   "time": "09:30:13",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.8 a minute · 0 watched · 14 rejected (snipe not bought: only to size 8, serial launcher 4, mayhem mode 2)",
-   "n": 2310
-  },
-  {
    "t": "2026-11-28T08:30:19Z",
    "time": "09:30:19",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 4 rejected (snipe not bought: only to size 3, serial launcher 1)",
    "n": 2508
+  },
+  {
+   "t": "2026-11-28T09:29:45Z",
+   "time": "10:29:45",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.6 a minute · 0 watched · 4 rejected (serial launcher 2, snipe not bought: only to size 1, no bonding curve key 1)",
+   "n": 2509
+  },
+  {
+   "t": "2026-11-28T09:29:46Z",
+   "time": "10:29:46",
+   "agent": "SCANNER",
+   "coin": "SCAT",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 4.4 SOL in · +32% since the create · mcap 37 SOL",
+   "n": 2510
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,15 +6503,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1119,
-    "last_event_age_s": 51.2,
+    "events": 1123,
+    "last_event_age_s": 6.8,
     "errors": 16,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21325,
+    "events": 21369,
     "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
@@ -6519,8 +6519,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 796,
-    "last_event_age_s": 50.7,
+    "events": 799,
+    "last_event_age_s": 6.2,
     "errors": 30,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 2,
+  "followed": 4,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,27 +6584,99 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 18827,
+   "sent": 18861,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 18827,
+   "sent": 18861,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SCAT",
+   "name": "Smooth Cat",
+   "mint": "2aDfYeo9MLV1B51mfYqwvmTntCaJyHJttgEPSBdAJXSQ",
+   "age_s": 6,
+   "sol_in": 3.89,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 27.6,
+   "mcap_sol": 35.7,
+   "dev_pct": 0.0,
+   "big_sell": 3.22,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "ABYSS",
+   "name": "Abysscat",
+   "mint": "3F1KgnsU4opTBkkyfuvwC5ReNECu9W8JZLemTPQCTRiX",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.4,
+   "dev_pct": 0.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "DCTY",
+   "name": "DCTY LAUNCHED IN GTA",
+   "mint": "6KYQHx2yr38HSnjfDuZLDcdLksog53retAMgC7R9pump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Trencherbill77/status/2126520574369202355",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 4 more coins in 60 min",
+   "why": "serial launcher: 4 more coins in 60 min"
+  },
+  {
+   "symbol": "DCTY",
+   "name": "DCTY LAUNCHED IN GTA",
+   "mint": "zy6SN9znrMPkUFxFZ15nGC6ZHkLFCZLNwfx3DtQpump",
+   "age_s": 25,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/Trencherbill77/status/2126520574369202355",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
    "symbol": "DICKCAT",
    "name": "dickcat",
    "mint": "FuEeZJgi45M1nnpCK5op41cYPMqERkgvD8nx74Z4pump",
-   "age_s": 51,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 83,
+   "sol_in": 0.01,
+   "buys": 2,
    "sells": 3,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.9,
    "dev_pct": 1.7,
    "big_sell": 0.89,
@@ -6613,24 +6685,6 @@
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Ant",
-   "name": "Antcoin",
-   "mint": "F2nAQqsZRQfK5zsvMVsSaAJuNLx4H1q3G8dxAWfgD8jz",
-   "age_s": 157,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/MarioPrezldente/status/2126608708025381226",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
   }
  ],
  "strategies": [
