@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:42:36Z",
+ "updated": "2026-11-28T08:43:04Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 985,
+  "flagged": 986,
   "checked": 49,
   "filtered": 1,
-  "lines": 2356,
+  "lines": 2357,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "the cap",
-   "why": "snipe",
-   "t": "2026-11-28T08:39:13Z"
-  },
   {
    "coin": "Zhaki",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GitHub",
    "why": "snipe",
    "t": "2026-11-28T08:41:55Z"
+  },
+  {
+   "coin": "NAKEDCAMA",
+   "why": "snipe",
+   "t": "2026-11-28T08:42:38Z"
   }
  ],
  "curve": [
@@ -2404,6 +2404,10 @@
   [
    1795855320,
    47.79
+  ],
+  [
+   1795855380,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4557,15 +4561,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:39:46Z",
-   "time": "08:39:46",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.6 a minute · 0 watched · 9 rejected (snipe not bought: only to size 3, mayhem mode 3, serial launcher 2)",
-   "n": 2157
-  },
-  {
    "t": "2026-11-28T07:40:47Z",
    "time": "08:40:47",
    "agent": "SCANNER",
@@ -6355,6 +6350,15 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 0 watched · 9 rejected (snipe not bought: only to size 5, odd curve reading: virtual SOL i 2, serial launcher 2)",
    "n": 2356
+  },
+  {
+   "t": "2026-11-28T08:42:38Z",
+   "time": "09:42:38",
+   "agent": "SCANNER",
+   "coin": "NAKEDCAMA",
+   "action": "flag",
+   "text": "snipe · first reading 0.3 s after the create · 1.4 SOL in · +9% since the create · mcap 34 SOL",
+   "n": 2357
   }
  ],
  "nights": [
@@ -6427,7 +6431,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 43 watched · ws off · odd curve readings 639 (242 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 42 watched · ws off · odd curve readings 639 (242 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6435,15 +6439,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 941,
-    "last_event_age_s": 14.0,
+    "events": 943,
+    "last_event_age_s": 14.5,
     "errors": 15,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 15983,
+    "events": 16041,
     "last_event_age_s": 0.9,
     "errors": 432,
     "last_error": "timeout after 5 s"
@@ -6451,8 +6455,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 678,
-    "last_event_age_s": 41.0,
+    "events": 680,
+    "last_event_age_s": 14.5,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6467,7 +6471,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 9,
+  "followed": 10,
   "odd_readings": 639,
   "odd_coins": 242
  },
@@ -6516,30 +6520,66 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15844,
+   "sent": 15874,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15844,
+   "sent": 15874,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "hair",
+   "name": "dogwifhair",
+   "mint": "2hTV3nbPEpSABkVsivoFEU82RH26twxevg4bPdN8pump",
+   "age_s": 14,
+   "sol_in": 4.71,
+   "buys": 7,
+   "sells": 5,
+   "rise_pct": 31.7,
+   "mcap_sol": 41.8,
+   "dev_pct": 6.6,
+   "big_sell": 2.82,
+   "x": "https://x.com/gigadiggadev/status/2126597652531835284",
+   "tg": false,
+   "web": "https://x.com/yk__kk/status/2126371215518622151?a=OJqwUseAM2uf3KESQVY&s=20",
+   "status": "rejected: serial launcher: 9 more coins in 60 min",
+   "why": "serial launcher: 9 more coins in 60 min"
+  },
+  {
+   "symbol": "NAKEDCAMA",
+   "name": "Naked Camera",
+   "mint": "C7nZqtbqsVM8XcqGLiFrL1i1bQ8Cmcon4JjWhyhfpump",
+   "age_s": 26,
+   "sol_in": -1.23,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": -7.7,
+   "mcap_sol": 28.4,
+   "dev_pct": 5.0,
+   "big_sell": 2.66,
+   "x": false,
+   "tg": false,
+   "web": "https://www.irishexaminer.com/news/arid-41943612.html?mint=",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GitHub",
    "name": "GitHub",
    "mint": "A5GsopvvCBdowgX97ytvqSrFiEZav1zQTXmLT9Nvpump",
-   "age_s": 41,
-   "sol_in": 18.62,
-   "buys": 11,
-   "sells": 3,
-   "rise_pct": 142.2,
-   "mcap_sol": 84.2,
+   "age_s": 69,
+   "sol_in": 19.33,
+   "buys": 20,
+   "sells": 11,
+   "rise_pct": 148.9,
+   "mcap_sol": 86.6,
    "dev_pct": 11.1,
-   "big_sell": 0.0,
+   "big_sell": 0.32,
    "x": "https://x.com/github",
    "tg": false,
    "web": "https://github.com/",
@@ -6550,7 +6590,7 @@
    "symbol": "USD1",
    "name": "Useless Shitty Dollar 1",
    "mint": "7u78X6EjkeSZHioZpNkoYaZATA9BvMC4YyTapqnzpump",
-   "age_s": 47,
+   "age_s": 75,
    "sol_in": 0.62,
    "buys": 2,
    "sells": 0,
@@ -6568,7 +6608,7 @@
    "symbol": "AFFORDHOU",
    "name": "Affordable Redevelopment",
    "mint": "3cNrzYMoNesQsakC1TFdHaoa3Sdz9keppGSWNAbuaPUN",
-   "age_s": 55,
+   "age_s": 83,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6586,7 +6626,7 @@
    "symbol": "CATRAVE",
    "name": "CAT RAVE",
    "mint": "HSJVLYBEirsmjLeotqRyJz6z48ZLTiQtYyNavqPVpump",
-   "age_s": 70,
+   "age_s": 98,
    "sol_in": 0.56,
    "buys": 2,
    "sells": 1,
@@ -6604,7 +6644,7 @@
    "symbol": "HAWKING",
    "name": "The Droid Dog",
    "mint": "HgT7xDDncjwNX8icigNY6T3pczwaC3w7DJyK5i5Mpump",
-   "age_s": 110,
+   "age_s": 138,
    "sol_in": -1.98,
    "buys": 4,
    "sells": 5,
@@ -6622,7 +6662,7 @@
    "symbol": "mogmas",
    "name": "mogmas",
    "mint": "5pyVrvqPb9emTb8Snbzwg49s7mTobgAjbER2bXcGpump",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": -0.75,
    "buys": 9,
    "sells": 15,
@@ -6640,7 +6680,7 @@
    "symbol": "DAISY",
    "name": "Daisy",
    "mint": "Hovr6L3vGGAVurJv8vKr3riGDkfePJA1S7C4ajhuZdjx",
-   "age_s": 116,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6658,7 +6698,7 @@
    "symbol": "JHAGRA",
    "name": "Jhagra Disappearance",
    "mint": "A7a6bi5oLz1ob3FtMZ396AG4aUAMx9DJJYKGGxZSULKa",
-   "age_s": 147,
+   "age_s": 175,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6671,24 +6711,6 @@
    "web": "https://grokfamily.fun/",
    "status": "rejected: odd curve reading: virtual SOL 2.491e+05 is not 30 + real SOL 0 (off +2.491e+05 SOL)",
    "why": "odd curve reading: virtual SOL 2.491e+05 is not 30 + real SOL 0 (off +2.491e+05 SOL)"
-  },
-  {
-   "symbol": "GEEG",
-   "name": "Geegel",
-   "mint": "8g8k5aK8AaGPf7hoDhvNeJTW7puDoCRvLu12QBeaYDmR",
-   "age_s": 168,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/8g8k5aK8AaGPf7hoDhvNeJTW7puDoCRvLu12QBeaYDmR",
-   "status": "rejected: odd curve reading: virtual SOL 2.649e+05 is not 30 + real SOL 0 (off +2.649e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.649e+05 is not 30 + real SOL 0 (off +2.649e+05 SOL)"
   }
  ],
  "strategies": [
