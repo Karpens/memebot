@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:40:14Z",
+ "updated": "2026-11-28T05:40:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 767,
+  "flagged": 768,
   "checked": 49,
   "filtered": 1,
-  "lines": 1858,
+  "lines": 1861,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GTAcoin",
-   "why": "snipe",
-   "t": "2026-11-28T05:26:17Z"
-  },
   {
    "coin": "IAC",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GTAVI",
    "why": "snipe",
    "t": "2026-11-28T05:35:54Z"
+  },
+  {
+   "coin": "PSX1",
+   "why": "snipe",
+   "t": "2026-11-28T05:40:38Z"
   }
  ],
  "curve": [
@@ -3829,33 +3829,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:21:45Z",
-   "time": "05:21:45",
-   "agent": "SCANNER",
-   "coin": "SQUAT",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1659
-  },
-  {
-   "t": "2026-11-28T04:21:46Z",
-   "time": "05:21:46",
-   "agent": "SCANNER",
-   "coin": "farmed",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1660
-  },
-  {
-   "t": "2026-11-28T04:22:02Z",
-   "time": "05:22:02",
-   "agent": "SCANNER",
-   "coin": "X",
-   "action": "flag",
-   "text": "snipe · first reading 2.4 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1661
-  },
-  {
    "t": "2026-11-28T04:22:04Z",
    "time": "05:22:04",
    "agent": "SCANNER",
@@ -5627,6 +5600,33 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 4 rejected (snipe: first reading s after the 3, no symbol or name 1)",
    "n": 1858
+  },
+  {
+   "t": "2026-11-28T05:40:37Z",
+   "time": "06:40:37",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.8 a minute · 1 watched · 3 rejected (snipe: first reading s after the 1, serial launcher 1, mayhem mode 1) · closest PSX1: no curve reading yet",
+   "n": 1859
+  },
+  {
+   "t": "2026-11-28T05:40:38Z",
+   "time": "06:40:38",
+   "agent": "SCANNER",
+   "coin": "PSX1",
+   "action": "flag",
+   "text": "snipe · first reading 3.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1860
+  },
+  {
+   "t": "2026-11-28T05:40:38Z",
+   "time": "06:40:38",
+   "agent": "SIZER",
+   "coin": "PSX1",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1861
   }
  ],
  "nights": [
@@ -5693,7 +5693,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 13 watched · ws off · odd curve readings 401 (181 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 12 watched · ws off · odd curve readings 401 (181 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5701,24 +5701,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 233,
-    "last_event_age_s": 1.4,
+    "events": 234,
+    "last_event_age_s": 12.3,
     "errors": 3,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
-    "connected": false,
-    "events": 1640,
-    "last_event_age_s": 42.4,
-    "errors": 167,
+    "connected": true,
+    "events": 1657,
+    "last_event_age_s": 1.2,
+    "errors": 168,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 184,
-    "last_event_age_s": 0.8,
+    "events": 185,
+    "last_event_age_s": 12.2,
     "errors": 10,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5731,9 +5731,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 3,
   "odd_readings": 401,
   "odd_coins": 181
  },
@@ -5782,30 +5782,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 4198,
+   "sent": 4233,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 4198,
+   "sent": 4233,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "TREMPS",
-   "name": "the tremps",
-   "mint": "8JZAPd3RmqoD2JjUeN2cqqpNo9NMC3jvXewknxjVf4L3",
-   "age_s": 1,
+   "symbol": "PSX1",
+   "name": "PROFESOTOX",
+   "mint": "B5bGFHSaJ1hh76oBexc6VvvwixqkcfzbM9gY2Jy5pump",
+   "age_s": 12,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.7,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.1,
    "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "TREMPS",
+   "name": "the tremps",
+   "mint": "8JZAPd3RmqoD2JjUeN2cqqpNo9NMC3jvXewknxjVf4L3",
+   "age_s": 34,
+   "sol_in": -0.49,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": -3.2,
+   "mcap_sol": 28.0,
+   "dev_pct": 1.7,
+   "big_sell": 0.49,
    "x": "https://x.com/igetsjiggy6767/status/2126551014795005970",
    "tg": false,
    "web": false,
@@ -5816,7 +5834,7 @@
    "symbol": "BTC",
    "name": "Buy The Clown",
    "mint": "NCnhc1WDrLsh35Qz8Wnn96KwXLQ1mNGjtJhu4Ccpump",
-   "age_s": 4,
+   "age_s": 37,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5834,7 +5852,7 @@
    "symbol": "DALE",
    "name": "THE BEST NEIGHBOUR",
    "mint": "8uAqssUyhQJy8vaABYeouVN3SXg753LCm1hE4vRupump",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": 0.98,
    "buys": 1,
    "sells": 0,
@@ -5847,42 +5865,6 @@
    "web": false,
    "status": "rejected: snipe: first reading 36.9 s after the create (max 10 s)",
    "why": "snipe: first reading 36.9 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "SODA",
-   "name": "Christmas Soda",
-   "mint": "9QNXPi6L89hv4JjHaJz8KT46zKPSMtnQJLRwoup5pump",
-   "age_s": 158,
-   "sol_in": 0.25,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 1.7,
-   "mcap_sol": 28.8,
-   "dev_pct": 0.7,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 64.9 s after the create (max 10 s)",
-   "why": "snipe: first reading 64.9 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "SUCCESS",
-   "name": "Successful Asian",
-   "mint": "GYo6oruw4rcNH78nWgFeYG1RgrcDtEif1UZbh9uhpump",
-   "age_s": 159,
-   "sol_in": 0.91,
-   "buys": 8,
-   "sells": 0,
-   "rise_pct": 6.1,
-   "mcap_sol": 30.2,
-   "dev_pct": 0.9,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe: first reading 66.3 s after the create (max 10 s)",
-   "why": "snipe: first reading 66.3 s after the create (max 10 s)"
   }
  ],
  "strategies": [
