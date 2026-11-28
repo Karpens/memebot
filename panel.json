@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:15:19Z",
+ "updated": "2026-11-28T04:15:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 661,
+  "flagged": 662,
   "checked": 49,
   "filtered": 1,
-  "lines": 1631,
+  "lines": 1632,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "BEARCAT",
-   "why": "snipe",
-   "t": "2026-11-28T04:12:03Z"
-  },
   {
    "coin": "AC1",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "just buy",
    "why": "snipe",
    "t": "2026-11-28T04:15:04Z"
+  },
+  {
+   "coin": "EVOLIQ",
+   "why": "snipe",
+   "t": "2026-11-28T04:15:28Z"
   }
  ],
  "curve": [
@@ -3489,15 +3489,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:18:21Z",
-   "time": "04:18:21",
-   "agent": "SCANNER",
-   "coin": "PACKBALL",
-   "action": "flag",
-   "text": "snipe · first reading 2.8 s after the create · 8.1 SOL in · +60% since the create · mcap 47 SOL",
-   "n": 1432
-  },
-  {
    "t": "2026-11-28T03:18:22Z",
    "time": "04:18:22",
    "agent": "SCANNER",
@@ -5287,6 +5278,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1631
+  },
+  {
+   "t": "2026-11-28T04:15:28Z",
+   "time": "05:15:28",
+   "agent": "SCANNER",
+   "coin": "EVOLIQ",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 1632
   }
  ],
  "nights": [
@@ -5359,7 +5359,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 38 watched · ws off · odd curve readings 357 (161 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 39 watched · ws off · odd curve readings 357 (161 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5367,24 +5367,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1942,
-    "last_event_age_s": 17.6,
+    "events": 1946,
+    "last_event_age_s": 1.2,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 41048,
-    "last_event_age_s": 3.3,
+    "events": 41061,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1187,
-    "last_event_age_s": 17.0,
+    "events": 1189,
+    "last_event_age_s": 1.1,
     "errors": 54,
     "last_error": "turbo-gateway.com: too slow (over 2 s)"
    }
@@ -5397,9 +5397,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
-  "watching": 0,
-  "followed": 8,
+  "creates_per_min": 4.4,
+  "watching": 1,
+  "followed": 9,
   "odd_readings": 357,
   "odd_coins": 161
  },
@@ -5448,23 +5448,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20636,
+   "sent": 20671,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20636,
+   "sent": 20671,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PUMP",
+   "name": "Pump",
+   "mint": "2ddTcY3TR7aWbkHNSVehoFfWHinXBcoyANazkeLLpump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.5,
+   "dev_pct": 1.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/__Pump_X/status/2126530113416073636",
+   "tg": false,
+   "web": "https://t.co/Gc7JchKgsW",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "Rice",
+   "name": "RICE TYSON",
+   "mint": "9w2KbnYLCoHxcmqvsDNZ9udtNxznaeX3m8ovDFQxpump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 37.9,
+   "dev_pct": 15.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "sol",
+   "name": "SOLCASH",
+   "mint": "9ChWo3mV9NHGT6kU5TmrLcagSgvHzbvzNruHb5Q4pump",
+   "age_s": 17,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "EVOLIQ",
+   "name": "Evoliq",
+   "mint": "EiwzrChgC9u24U4W8ETSrED1CNCoAjYSiRPf8UoNpump",
+   "age_s": 25,
+   "sol_in": 0.49,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 3.2,
+   "mcap_sol": 30.3,
+   "dev_pct": 2.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/tryevoliqxyz",
+   "tg": false,
+   "web": "https://evoliq.xyz/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "just buy",
    "name": "just buy this coin",
    "mint": "Abp4pvYp9fNhYrxfM3skYMxpfK7cjgh5n2t7AtGtpump",
-   "age_s": 17,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5482,7 +5554,7 @@
    "symbol": "CHPD",
    "name": "CHOPPED",
    "mint": "FsYWJJFJk1bTTmZGAzPS6niox6G5gjqsc8XzHaLQpump",
-   "age_s": 22,
+   "age_s": 55,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5500,7 +5572,7 @@
    "symbol": "ELF",
    "name": "ELF",
    "mint": "F8qhqKdyyNmReFFqNhZA8HY5D6SNN87VVLhnRZxdE6ds",
-   "age_s": 26,
+   "age_s": 59,
    "sol_in": -0.0,
    "buys": 1,
    "sells": 2,
@@ -5518,7 +5590,7 @@
    "symbol": "MOONJEW",
    "name": "Moonjew",
    "mint": "CWE444S8V8u28Y6dky4yuYNfZWCwXkMWZomEhEs3pump",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5536,7 +5608,7 @@
    "symbol": "FI",
    "name": "Food Inu",
    "mint": "CzqTPE2pyNpwrSqLzCb5VZdwxusYJMKibCmawCMZpump",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 4,
    "sells": 4,
@@ -5554,7 +5626,7 @@
    "symbol": "MI",
    "name": "Material Inu",
    "mint": "ASkpet4ohaSjHKVTEcKvBa26TLj5kouHUjHn7J4Mmrhb",
-   "age_s": 77,
+   "age_s": 110,
    "sol_in": -4.64,
    "buys": 8,
    "sells": 13,
@@ -5572,7 +5644,7 @@
    "symbol": "HAPPY",
    "name": "HAPPYYYYYYYYYYYYYYYYYYYYYYYYYYYY",
    "mint": "8y4gc8ud2Kuq14GDeLPr4SmQrMX8vZ7GPu21kS8Fpump",
-   "age_s": 92,
+   "age_s": 125,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5590,7 +5662,7 @@
    "symbol": "Gus",
    "name": "Gus",
    "mint": "HLbi5ho5RHmLTs95frb8LYzmjkGyPYNMLSE3syxtpump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": -2.1,
    "buys": 6,
    "sells": 16,
@@ -5608,7 +5680,7 @@
    "symbol": "小猫仙人",
    "name": "小猫仙人",
    "mint": "DxSFZmPe9CNu9jkd6ZHkTtp97m4xS6S5SNqaPkvLpump",
-   "age_s": 136,
+   "age_s": 169,
    "sol_in": -1.11,
    "buys": 2,
    "sells": 1,
@@ -5626,7 +5698,7 @@
    "symbol": "PATCHWORK",
    "name": "Patchwork",
    "mint": "GdWkLrC7dz5UmWeegjBM8nFAMdMVoxmMQgUoBtW9pump",
-   "age_s": 142,
+   "age_s": 175,
    "sol_in": -0.42,
    "buys": 3,
    "sells": 10,
@@ -5637,42 +5709,6 @@
    "x": "https://x.com/Patchworksol",
    "tg": false,
    "web": "https://patchworksol.xyz/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "$SPACEB",
-   "name": "🚀 SPACE BILLIONAIRE",
-   "mint": "FBZrFKmdH2ANQFhbcPy35WdnsQ2RoHU1RptMQqDYpump",
-   "age_s": 148,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "AC1",
-   "name": "Amethyst Cat",
-   "mint": "4QdRCN1ApVo4EoJ81cwV7RabdGpQgUQcJhsnSPCQfVtc",
-   "age_s": 155,
-   "sol_in": -0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": -0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
