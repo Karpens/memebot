@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:12:28Z",
+ "updated": "2026-11-28T01:13:02Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 300,
+  "flagged": 301,
   "checked": 49,
   "filtered": 1,
-  "lines": 988,
+  "lines": 989,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GPU",
-   "why": "snipe",
-   "t": "2026-11-28T01:09:03Z"
-  },
   {
    "coin": "bizcat",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "TEST",
    "why": "snipe",
    "t": "2026-11-28T01:12:27Z"
+  },
+  {
+   "coin": "PUG",
+   "why": "snipe",
+   "t": "2026-11-28T01:12:56Z"
   }
  ],
  "curve": [
@@ -603,6 +603,10 @@
   ],
   [
    1795828320,
+   47.79
+  ],
+  [
+   1795828380,
    47.79
   ]
  ],
@@ -2757,15 +2761,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T00:22:12Z",
-   "time": "01:22:12",
-   "agent": "SCANNER",
-   "coin": "BAMBI",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 789
-  },
-  {
    "t": "2026-11-28T00:22:44Z",
    "time": "01:22:44",
    "agent": "SCANNER",
@@ -4555,6 +4550,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.9 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 988
+  },
+  {
+   "t": "2026-11-28T01:12:56Z",
+   "time": "02:12:56",
+   "agent": "SCANNER",
+   "coin": "PUG",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 989
   }
  ],
  "nights": [
@@ -4627,7 +4631,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 196 (100 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 196 (100 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4635,24 +4639,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1095,
-    "last_event_age_s": 2.8,
+    "events": 1099,
+    "last_event_age_s": 7.5,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21376,
-    "last_event_age_s": 1.8,
+    "events": 21451,
+    "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 634,
-    "last_event_age_s": 2.7,
+    "events": 636,
+    "last_event_age_s": 6.9,
     "errors": 30,
     "last_error": "d.uguu.se: timeout after 2 s"
    }
@@ -4665,9 +4669,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 9,
+  "followed": 10,
   "odd_readings": 196,
   "odd_coins": 100
  },
@@ -4716,23 +4720,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8960,
+   "sent": 8996,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8960,
+   "sent": 8996,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "TEST",
-   "name": "Test Coin",
-   "mint": "HwyLaunLGEmorxEiUpVWqf3YMU1A7YnGKLGtpnnwANR1",
-   "age_s": 2,
+   "symbol": "PUG",
+   "name": "PUGLORD",
+   "mint": "9DEkYoLQi3N6aukw5v3F2WW6qTQvZXggvnmDvFH9pump",
+   "age_s": 7,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "WOMEN",
+   "name": "Help Afghan Women",
+   "mint": "G1EQc2ytq58HisqKkehDmGNGQ94Qr7yc256iAZJGpump",
+   "age_s": 16,
+   "sol_in": 5.77,
+   "buys": 8,
+   "sells": 7,
+   "rise_pct": 38.7,
+   "mcap_sol": 45.4,
+   "dev_pct": 8.2,
+   "big_sell": 3.62,
+   "x": "https://x.com/Jay_S0L/status/2126481766420738161",
+   "tg": false,
+   "web": "https://x.com/elonmusk/status/2126479727066272164",
+   "status": "rejected: serial launcher: 5 more coins in 60 min",
+   "why": "serial launcher: 5 more coins in 60 min"
+  },
+  {
+   "symbol": "AMNESTY",
+   "name": "Amnesty International",
+   "mint": "3CoTw4n7imy6F2kLJuipe3y2esYKsRmdUsZcerM4pump",
+   "age_s": 20,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "SSOL",
+   "name": "Steady Sol",
+   "mint": "BV4KEoyJeU6476vMAwrsnTqrdYAWjsupwEqbh5axs5tg",
+   "age_s": 31,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4743,6 +4801,24 @@
    "x": false,
    "tg": false,
    "web": false,
+   "status": "rejected: no bonding curve key",
+   "why": "no bonding curve key"
+  },
+  {
+   "symbol": "TEST",
+   "name": "Test Coin",
+   "mint": "HwyLaunLGEmorxEiUpVWqf3YMU1A7YnGKLGtpnnwANR1",
+   "age_s": 36,
+   "sol_in": 0.02,
+   "buys": 1,
+   "sells": 1,
+   "rise_pct": 0.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.01,
+   "x": false,
+   "tg": false,
+   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   },
@@ -4750,12 +4826,12 @@
    "symbol": "CyberWar",
    "name": "CyberWar",
    "mint": "26zv4SiumvLmuHN1e1fAtp1nbez8xeCMSQx1aFjEpump",
-   "age_s": 9,
-   "sol_in": 2.43,
+   "age_s": 43,
+   "sol_in": 1.96,
    "buys": 4,
-   "sells": 2,
-   "rise_pct": 16.3,
-   "mcap_sol": 34.7,
+   "sells": 4,
+   "rise_pct": 13.1,
+   "mcap_sol": 33.7,
    "dev_pct": 3.4,
    "big_sell": 3.44,
    "x": "https://x.com/MarioNawfal/status/2126480053701583194",
@@ -4768,7 +4844,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "HhEiPE946hLsWHRTkRknbaZjy1UZuvL2YT8sVWV7qVc8",
-   "age_s": 36,
+   "age_s": 70,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4786,12 +4862,12 @@
    "symbol": "Elon Freak",
    "name": "Elon Freak",
    "mint": "7LrbrPkdHcregSki3c7X7fJZqR3EJyFN7aSrFUipump",
-   "age_s": 48,
-   "sol_in": 0.01,
-   "buys": 1,
+   "age_s": 82,
+   "sol_in": 0.26,
+   "buys": 2,
    "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.1,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.5,
    "dev_pct": 0.2,
    "big_sell": 0.0,
    "x": "https://x.com/elonmusk/status/1662654838398697472/photo/1",
@@ -4804,7 +4880,7 @@
    "symbol": "simulcrum",
    "name": "simulcrum",
    "mint": "D8DSJ1BLi6By6y3f5idFDVhzissDQzUQktmB7m3Qpump",
-   "age_s": 72,
+   "age_s": 106,
    "sol_in": 0.28,
    "buys": 1,
    "sells": 1,
@@ -4822,7 +4898,7 @@
    "symbol": "SCARLET",
    "name": "Scarlet",
    "mint": "9723cSH2TXgqf54HLArBW9Y2Upop1JHjnW9yEGTrpump",
-   "age_s": 76,
+   "age_s": 110,
    "sol_in": 0.87,
    "buys": 3,
    "sells": 5,
@@ -4840,7 +4916,7 @@
    "symbol": "WANNARACE",
    "name": "Wanna Race",
    "mint": "8mtedykWgrY69S3PpE7jMao41SDjAueMu96zMGqopump",
-   "age_s": 83,
+   "age_s": 117,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4858,7 +4934,7 @@
    "symbol": "TEST",
    "name": "test",
    "mint": "7ENEgrtsKxEWo3mDQ2gfjZyNZpMBLyqZvCpaHyrP3iwH",
-   "age_s": 98,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4876,7 +4952,7 @@
    "symbol": "ASF",
    "name": "Asf",
    "mint": "F9LgBYi8VjF31hkicehTPDMkvj3WzX94zvVWLfXupump",
-   "age_s": 129,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4894,37 +4970,19 @@
    "symbol": "PILLXBT",
    "name": "pillXBT",
    "mint": "Wd6LY8NNANR1tPUhKKaNhDw8otNgfmnRyM9nhzxMppp",
-   "age_s": 135,
-   "sol_in": 21.54,
-   "buys": 36,
-   "sells": 55,
-   "rise_pct": 182.0,
-   "mcap_sol": 88.1,
+   "age_s": 169,
+   "sol_in": 22.96,
+   "buys": 40,
+   "sells": 64,
+   "rise_pct": 197.2,
+   "mcap_sol": 92.9,
    "dev_pct": 5.8,
-   "big_sell": 2.95,
+   "big_sell": 3.01,
    "x": false,
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "TEST",
-   "name": "test",
-   "mint": "DtcCnseMTEpEqqC1BoSfaXk9CCR86mAoefYy88EXdCer",
-   "age_s": 149,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://steadypad.fun/burns",
-   "tg": false,
-   "web": "https://steadypad.fun/burns",
-   "status": "rejected: odd curve reading: virtual SOL 2.777e+05 is not 30 + real SOL 0 (off +2.776e+05 SOL)",
-   "why": "odd curve reading: virtual SOL 2.777e+05 is not 30 + real SOL 0 (off +2.776e+05 SOL)"
   }
  ],
  "strategies": [
