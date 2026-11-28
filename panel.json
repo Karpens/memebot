@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:32:35Z",
+ "updated": "2026-11-28T03:33:07Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 569,
+  "flagged": 571,
   "checked": 49,
   "filtered": 1,
-  "lines": 1481,
+  "lines": 1483,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "GOOSE",
-   "why": "snipe",
-   "t": "2026-11-28T03:28:45Z"
-  },
-  {
-   "coin": "HOPE",
-   "why": "snipe",
-   "t": "2026-11-28T03:29:04Z"
-  },
   {
    "coin": "DOTPAID",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "MMS",
    "why": "snipe",
    "t": "2026-11-28T03:32:32Z"
+  },
+  {
+   "coin": "milkers",
+   "why": "snipe",
+   "t": "2026-11-28T03:32:50Z"
+  },
+  {
+   "coin": "WAVECS",
+   "why": "snipe",
+   "t": "2026-11-28T03:33:00Z"
   }
  ],
  "curve": [
@@ -1163,6 +1163,10 @@
   ],
   [
    1795836720,
+   47.79
+  ],
+  [
+   1795836780,
    47.79
   ]
  ],
@@ -3317,24 +3321,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:36:04Z",
-   "time": "03:36:04",
-   "agent": "SCANNER",
-   "coin": "MANDY",
-   "action": "flag",
-   "text": "snipe · first reading 2.9 s after the create · 0.5 SOL in · +3% since the create · mcap 31 SOL",
-   "n": 1282
-  },
-  {
-   "t": "2026-11-28T02:36:23Z",
-   "time": "03:36:23",
-   "agent": "SCANNER",
-   "coin": "Meatnald",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1283
-  },
-  {
    "t": "2026-11-28T02:36:39Z",
    "time": "03:36:39",
    "agent": "SCANNER",
@@ -5115,6 +5101,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.5 s after the create · 1.3 SOL in · +9% since the create · mcap 31 SOL",
    "n": 1481
+  },
+  {
+   "t": "2026-11-28T03:32:50Z",
+   "time": "04:32:50",
+   "agent": "SCANNER",
+   "coin": "milkers",
+   "action": "flag",
+   "text": "snipe · first reading 2.7 s after the create · -0.5 SOL in · -3% since the create · mcap 29 SOL",
+   "n": 1482
+  },
+  {
+   "t": "2026-11-28T03:33:00Z",
+   "time": "04:33:00",
+   "agent": "SCANNER",
+   "coin": "WAVECS",
+   "action": "flag",
+   "text": "snipe · first reading 4.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1483
   }
  ],
  "nights": [
@@ -5195,26 +5199,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1715,
-    "last_event_age_s": 5.0,
+    "events": 1718,
+    "last_event_age_s": 11.9,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 36872,
-    "last_event_age_s": 1.1,
+    "events": 36928,
+    "last_event_age_s": 0.7,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": true,
-    "events": 1011,
-    "last_event_age_s": 4.4,
-    "errors": 49,
-    "last_error": "ar-io.dev: too slow (over 2 s)"
+    "connected": false,
+    "events": 1013,
+    "last_event_age_s": 9.6,
+    "errors": 50,
+    "last_error": "d.uguu.se: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -5225,9 +5229,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.2,
   "watching": 0,
-  "followed": 7,
+  "followed": 8,
   "odd_readings": 337,
   "odd_coins": 154
  },
@@ -5276,30 +5280,84 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17907,
+   "sent": 17941,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17907,
+   "sent": 17941,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WAVECS",
+   "name": "Wavecase",
+   "mint": "21mpqZFwfQscJJbxScKKssEufBwXEKhk75fCgHtxJ92Y",
+   "age_s": 11,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "GTAFORTNIT",
+   "name": "GTA VI VS FORTNITE",
+   "mint": "7tJxpFLwPju4WWTjMqGbFs9cqiGWy6JYfChBFViApump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "milkers",
+   "name": "milkers",
+   "mint": "BpLMiqjYgVEFX5tav5ZhKjZtmYHErgf2e4f2Bg29pump",
+   "age_s": 19,
+   "sol_in": -0.49,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -3.2,
+   "mcap_sol": 28.7,
+   "dev_pct": 3.0,
+   "big_sell": 0.49,
+   "x": "https://x.com/milkersPF",
+   "tg": false,
+   "web": "https://milkerspf.fun",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "MMS",
    "name": "Mei Mei Seal",
    "mint": "EvgFLWQzUEDVXtH8pE9XnJiWVPDwKWk9QVVBZRhXpump",
-   "age_s": 4,
-   "sol_in": 2.79,
-   "buys": 4,
-   "sells": 0,
-   "rise_pct": 19.3,
-   "mcap_sol": 33.9,
+   "age_s": 36,
+   "sol_in": 2.9,
+   "buys": 5,
+   "sells": 3,
+   "rise_pct": 20.1,
+   "mcap_sol": 34.1,
    "dev_pct": 0.8,
-   "big_sell": 0.0,
+   "big_sell": 0.21,
    "x": false,
    "tg": false,
    "web": false,
@@ -5310,11 +5368,11 @@
    "symbol": "DCTY",
    "name": "DacityCoin",
    "mint": "GQaNL6U89b3Wq8vPuLAT7HtLdD2Uf65WfowUriKDpump",
-   "age_s": 5,
-   "sol_in": 0.0,
-   "buys": 0,
+   "age_s": 37,
+   "sol_in": 0.01,
+   "buys": 1,
    "sells": 0,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.1,
    "dev_pct": 0.3,
    "big_sell": 0.0,
@@ -5328,12 +5386,12 @@
    "symbol": "SWAPSP",
    "name": "SwapSplit",
    "mint": "CyTrg8o8XUBqc2REN3PefWqR5Qn1aVx8xAeJQyuxhEpf",
-   "age_s": 22,
-   "sol_in": 0.0,
-   "buys": 1,
+   "age_s": 54,
+   "sol_in": 0.07,
+   "buys": 2,
    "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.3,
+   "rise_pct": 0.5,
+   "mcap_sol": 28.5,
    "dev_pct": 0.7,
    "big_sell": 0.0,
    "x": "https://x.com/jasperbrookkin",
@@ -5346,7 +5404,7 @@
    "symbol": "STRUT",
    "name": "Prance",
    "mint": "HbY4t6uaqK4ynEMZA4hsXn5YknERftMH9AU5SgaHdUUX",
-   "age_s": 46,
+   "age_s": 78,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5364,7 +5422,7 @@
    "symbol": "PMIX",
    "name": "pixmixes",
    "mint": "8MFwfvYpfV73L6vTDxGLzFzkzkC3jMXEMzS5QgiMpump",
-   "age_s": 103,
+   "age_s": 135,
    "sol_in": -0.98,
    "buys": 1,
    "sells": 3,
@@ -5382,7 +5440,7 @@
    "symbol": "SPEW",
    "name": "CrocoSpew",
    "mint": "54zrqGExWi3ui8TQK8pJV3uCNSBLifResFxnV54qpump",
-   "age_s": 139,
+   "age_s": 171,
    "sol_in": -4.05,
    "buys": 1,
    "sells": 1,
@@ -5395,24 +5453,6 @@
    "web": "https://crocospew.live/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SIMUS",
-   "name": "Simus",
-   "mint": "4Yoj6G3TD9PPumJsyBDbpQKFUvwmn4SJrsycmywai81s",
-   "age_s": 166,
-   "sol_in": -2.96,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -17.2,
-   "mcap_sol": 28.0,
-   "dev_pct": 9.6,
-   "big_sell": 2.67,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
