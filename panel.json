@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:52:31Z",
+ "updated": "2026-11-28T02:52:59Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 475,
+  "flagged": 476,
   "checked": 49,
   "filtered": 1,
-  "lines": 1335,
+  "lines": 1336,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "MANDY",
-   "why": "snipe",
-   "t": "2026-11-28T02:47:55Z"
-  },
   {
    "coin": "EPSTEIN",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "NOTHING",
    "why": "snipe",
    "t": "2026-11-28T02:52:03Z"
+  },
+  {
+   "coin": "Dyor",
+   "why": "snipe",
+   "t": "2026-11-28T02:52:58Z"
   }
  ],
  "curve": [
@@ -3157,15 +3157,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:48:17Z",
-   "time": "02:48:17",
-   "agent": "SCANNER",
-   "coin": "COPY",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.362e+05 is not 30 + real SOL 0 (off +1.361e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 276 odd readings from 133 coins tonight",
-   "n": 1136
-  },
-  {
    "t": "2026-11-28T01:48:30Z",
    "time": "02:48:30",
    "agent": "SCANNER",
@@ -4955,6 +4946,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 7 rejected (snipe not bought: only to size 6, mayhem mode 1)",
    "n": 1335
+  },
+  {
+   "t": "2026-11-28T02:52:58Z",
+   "time": "03:52:58",
+   "agent": "SCANNER",
+   "coin": "Dyor",
+   "action": "flag",
+   "text": "snipe · first reading 1.2 s after the create · 1.8 SOL in · +12% since the create · mcap 32 SOL",
+   "n": 1336
   }
  ],
  "nights": [
@@ -5027,7 +5027,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 334 (151 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 334 (151 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5035,24 +5035,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1548,
-    "last_event_age_s": 28.7,
+    "events": 1552,
+    "last_event_age_s": 2.6,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 32880,
-    "last_event_age_s": 1.5,
+    "events": 32908,
+    "last_event_age_s": 0.5,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 893,
-    "last_event_age_s": 28.7,
+    "events": 895,
+    "last_event_age_s": 2.4,
     "errors": 45,
     "last_error": "turbo-gateway.com: timeout after 2 s"
    }
@@ -5067,7 +5067,7 @@
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 334,
   "odd_coins": 151
  },
@@ -5116,23 +5116,95 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 15349,
+   "sent": 15379,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 15349,
+   "sent": 15379,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Dyor",
+   "name": "DyorSwap",
+   "mint": "LM8VqKWpUvcLUKY1Gp9wkvkZFY9TuBHQiwLfHvepump",
+   "age_s": 2,
+   "sol_in": 1.91,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 12.9,
+   "mcap_sol": 32.8,
+   "dev_pct": 2.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/dyorswapdex",
+   "tg": "https://t.me/Dyorswapfinance",
+   "web": "https://dyorswap.org/?chainId=5042",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CumCoin",
+   "name": "PEPE ESCOBAR",
+   "mint": "AsCLfcjrXBa5gyV9uV4W39qsjzxV6cFHCXM5afz3pump",
+   "age_s": 4,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "BEAR",
+   "name": "St. Jude Bear",
+   "mint": "L3iAb22uAGTUrafJmFtobJxNFN7GiNCbwghSJEApump",
+   "age_s": 16,
+   "sol_in": 17.96,
+   "buys": 11,
+   "sells": 5,
+   "rise_pct": 138.6,
+   "mcap_sol": 80.5,
+   "dev_pct": 9.6,
+   "big_sell": 0.94,
+   "x": "https://x.com/ZzzzzSol/status/2126509560735080576",
+   "tg": false,
+   "web": "https://www.target.com/p/-/A-95283150?utm_",
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "9NkTQL8GNTZNJgV2EkEpGtcUuSTLFEqDrP966BJnpump",
+   "age_s": 18,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "neegy",
    "name": "nEEGY",
    "mint": "5tjDquKs4XkPd37fkcA6F2ZJC98r3WjeguEgVFK9pump",
-   "age_s": 28,
+   "age_s": 56,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5150,12 +5222,12 @@
    "symbol": "NOTHING",
    "name": "Nothing Even Matters",
    "mint": "C7dhZCSb88f3KHJApGiJpcwtdnMz6361WanHJ5sUdWaa",
-   "age_s": 28,
-   "sol_in": -3.92,
-   "buys": 7,
-   "sells": 8,
-   "rise_pct": -21.8,
-   "mcap_sol": 28.0,
+   "age_s": 56,
+   "sol_in": -3.88,
+   "buys": 8,
+   "sells": 11,
+   "rise_pct": -21.5,
+   "mcap_sol": 28.1,
    "dev_pct": 12.5,
    "big_sell": 6.1,
    "x": "https://x.com/search?q=nothing+even+matters&src=typed_query",
@@ -5168,7 +5240,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "DLkcFBKADjeDaEfpmV5o1VPjGHtLXcBB1veoB12Tpump",
-   "age_s": 41,
+   "age_s": 69,
    "sol_in": 0.0,
    "buys": 3,
    "sells": 1,
@@ -5186,7 +5258,7 @@
    "symbol": "TRENCH98",
    "name": "Trench 98",
    "mint": "6JWpAvoexHohqkBw5oSL1yom8SYwgcrwuyfpoHG3pump",
-   "age_s": 58,
+   "age_s": 86,
    "sol_in": -1.48,
    "buys": 1,
    "sells": 1,
@@ -5204,33 +5276,15 @@
    "symbol": "senta",
    "name": "senta",
    "mint": "3rsYAMhqx6vnU11SHbyui26qdbTKWVFke8fYsJiJpump",
-   "age_s": 72,
+   "age_s": 100,
    "sol_in": -4.47,
-   "buys": 15,
-   "sells": 29,
+   "buys": 16,
+   "sells": 30,
    "rise_pct": -24.0,
    "mcap_sol": 28.8,
    "dev_pct": 15.2,
    "big_sell": 2.33,
    "x": "https://x.com/KankiAlpha/status/2126509183701061960",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "pillclicker",
-   "name": "Pill Clicker",
-   "mint": "GZ6GH72JaZaALYnNfFU64EZu4cqngsdX9KaTGHsjpump",
-   "age_s": 152,
-   "sol_in": -1.32,
-   "buys": 9,
-   "sells": 11,
-   "rise_pct": -8.2,
-   "mcap_sol": 28.2,
-   "dev_pct": 5.0,
-   "big_sell": 3.47,
-   "x": "https://x.com/pillclickerfun/status/2112700610722267207?s=20",
    "tg": false,
    "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
