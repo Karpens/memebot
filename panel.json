@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T14:05:35Z",
+ "updated": "2026-11-28T14:06:08Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1608,
   "checked": 49,
   "filtered": 1,
-  "lines": 3471,
+  "lines": 3473,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795838760,
-   47.79
-  ],
   [
    1795838820,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795874700,
    47.79
+  ],
+  [
+   1795874760,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T13:14:48Z",
-   "time": "14:14:48",
-   "agent": "SCANNER",
-   "coin": "POL",
-   "action": "flag",
-   "text": "snipe · first reading 0.7 s after the create · 0.3 SOL in · +2% since the create · mcap 29 SOL",
-   "n": 3272
-  },
-  {
-   "t": "2026-11-28T13:14:54Z",
-   "time": "14:14:54",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.0 a minute · 0 watched · 13 rejected (snipe not bought: only to size 7, mayhem mode 6)",
-   "n": 3273
-  },
-  {
    "t": "2026-11-28T13:15:03Z",
    "time": "14:15:03",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 4.4 a minute · 0 watched · 11 rejected (snipe not bought: only to size 5, serial launcher 3, odd curve reading: virtual SOL i 1)",
    "n": 3471
+  },
+  {
+   "t": "2026-11-28T14:05:46Z",
+   "time": "15:05:46",
+   "agent": "SCANNER",
+   "coin": "100x",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1286 is not 30 + real SOL 0 (off +1256 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 1240 odd readings from 341 coins tonight",
+   "n": 3472
+  },
+  {
+   "t": "2026-11-28T14:06:08Z",
+   "time": "15:06:08",
+   "agent": "SCANNER",
+   "coin": "juhnya",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 4.511 is not 30 + real SOL 0.2193 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 1241 odd readings from 342 coins tonight",
+   "n": 3473
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 53 watched · ws off · odd curve readings 1239 (340 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 53 watched · ws off · odd curve readings 1241 (342 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,15 +6499,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1231,
-    "last_event_age_s": 14.3,
+    "events": 1234,
+    "last_event_age_s": 1.3,
     "errors": 11,
     "last_error": "TimeoutError: timed out while waiting for handshake response"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 27947,
+    "events": 28021,
     "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
@@ -6515,8 +6515,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 697,
-    "last_event_age_s": 53.6,
+    "events": 699,
+    "last_event_age_s": 1.1,
     "errors": 30,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,11 +6529,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.2,
+  "creates_per_min": 4.4,
   "watching": 0,
-  "followed": 9,
-  "odd_readings": 1239,
-  "odd_coins": 340
+  "followed": 8,
+  "odd_readings": 1241,
+  "odd_coins": 342
  },
  "learner": {
   "samples": 84,
@@ -6580,23 +6580,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14740,
+   "sent": 14775,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14740,
+   "sent": 14775,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "juhnya",
+   "name": "juhnya",
+   "mint": "G58YcW7bQ822wvfzn3RrMRe1XgeXBECadxYuVaBypump",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 30.9,
+   "dev_pct": 5.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: odd curve reading: virtual SOL 4.511 is not 30 + real SOL 0.2193 (off -25.71 SOL)",
+   "why": "odd curve reading: virtual SOL 4.511 is not 30 + real SOL 0.2193 (off -25.71 SOL)"
+  },
+  {
+   "symbol": "100x",
+   "name": "The Fastest 100x",
+   "mint": "5u7SWuxWc2udmJVKmz3tcHTBMsqdpjDxDNP6KiynZMcG",
+   "age_s": 23,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 15 more coins in 60 min",
+   "why": "serial launcher: 15 more coins in 60 min"
+  },
+  {
    "symbol": "test",
    "name": "test",
    "mint": "4XNo1kvDJPPSD2jwaN14Adrn9f3ENcuYvYd5Fx5Abonk",
-   "age_s": 14,
+   "age_s": 47,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,12 +6650,12 @@
    "symbol": "PIGEON",
    "name": "Cyborg Pigeons",
    "mint": "5JTeQ62wTHEiWGY3rqZmFonrQobVCk3vRf9QTpgX4DFQ",
-   "age_s": 53,
-   "sol_in": 19.79,
-   "buys": 29,
-   "sells": 23,
-   "rise_pct": 145.4,
-   "mcap_sol": 93.0,
+   "age_s": 86,
+   "sol_in": 23.51,
+   "buys": 45,
+   "sells": 38,
+   "rise_pct": 179.8,
+   "mcap_sol": 106.1,
    "dev_pct": 15.2,
    "big_sell": 5.88,
    "x": "https://x.com/DecryptMedia/status/2126678638569414879",
@@ -6632,7 +6668,7 @@
    "symbol": "(DBNG)",
    "name": "SHIBA",
    "mint": "AXkGX7wrTSgYkWH5ia265Cgux4kPHwvaGavYUeTMpump",
-   "age_s": 61,
+   "age_s": 94,
    "sol_in": 0.01,
    "buys": 3,
    "sells": 2,
@@ -6650,12 +6686,12 @@
    "symbol": "AI",
    "name": "Adolf Inu",
    "mint": "6CyPafJWuEocHuaL1Sy9B2sTKstHc6beLbGEXvJZpump",
-   "age_s": 98,
-   "sol_in": 1.92,
-   "buys": 8,
-   "sells": 20,
-   "rise_pct": 13.1,
-   "mcap_sol": 32.0,
+   "age_s": 131,
+   "sol_in": 8.67,
+   "buys": 12,
+   "sells": 24,
+   "rise_pct": 65.6,
+   "mcap_sol": 46.9,
    "dev_pct": 0.7,
    "big_sell": 3.57,
    "x": false,
@@ -6668,7 +6704,7 @@
    "symbol": "CHIP",
    "name": "Chip Coin",
    "mint": "GQpLZ2xdB6vLwMx6Gz7idUoQ8DhkPRarmDEuvHkrJ67c",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6686,7 +6722,7 @@
    "symbol": "INUX",
    "name": "Alien Shiba Inux",
    "mint": "4ygGT2D83KN1PtyVs9Hg9uxZZo6fs9UHx8LDxPBZ6wLi",
-   "age_s": 125,
+   "age_s": 158,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6704,7 +6740,7 @@
    "symbol": "PATTINSON",
    "name": "Robert Pattinson",
    "mint": "ARxEPNXcbvABkZf7GHXxz9cHaBGwafV9VaWPCgYqg3t1",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": -2.66,
    "buys": 3,
    "sells": 6,
@@ -6717,78 +6753,6 @@
    "web": "https://www.instagram.com/p/DgSbHqEgE2Y/",
    "status": "rejected: serial launcher: 16 more coins in 60 min",
    "why": "serial launcher: 16 more coins in 60 min"
-  },
-  {
-   "symbol": "GRAYPASS",
-   "name": "GrayPass",
-   "mint": "8w8AfViss2x8uKAeJxLfd58EW5ooZuk5ggTSjneJpump",
-   "age_s": 158,
-   "sol_in": -0.08,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -0.5,
-   "mcap_sol": 28.3,
-   "dev_pct": 1.0,
-   "big_sell": 12.43,
-   "x": "https://x.com/graypassinc",
-   "tg": false,
-   "web": "https://graypass.com",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Banana",
-   "name": "Banana Coin",
-   "mint": "2X6y93Q827ttUTm4gTUEs6fQYeg9VSn6Qi5DMBe5HBmz",
-   "age_s": 163,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.6,
-   "dev_pct": 6.3,
-   "big_sell": 0.0,
-   "x": "https://x.com/i/status/2126678177938604428",
-   "tg": false,
-   "web": false,
-   "status": "rejected: odd curve reading: virtual SOL 2.572 is not 30 + real SOL 0.3442 (off -27.77 SOL)",
-   "why": "odd curve reading: virtual SOL 2.572 is not 30 + real SOL 0.3442 (off -27.77 SOL)"
-  },
-  {
-   "symbol": "?",
-   "name": "",
-   "mint": "7EsbNnZm6C52TBV6gkD3ps2TKzwnNTMG5NJRE3ycMi77",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no symbol or name",
-   "why": "no symbol or name"
-  },
-  {
-   "symbol": "MEMESLAVES",
-   "name": "Meme Slaves",
-   "mint": "8L21GXgnei48tkGaZMXto8ApQk97eqzc2CUYhMZFn9X4",
-   "age_s": 171,
-   "sol_in": -0.85,
-   "buys": 4,
-   "sells": 18,
-   "rise_pct": -5.4,
-   "mcap_sol": 28.0,
-   "dev_pct": 3.0,
-   "big_sell": 4.53,
-   "x": "https://x.com/4devvvv/status/2126677073930674289",
-   "tg": false,
-   "web": "https://x.com/mogisosuke/status/2126156252250353781",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
