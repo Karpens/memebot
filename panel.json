@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T12:24:54Z",
+ "updated": "2026-11-28T12:25:28Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1396,
+  "flagged": 1398,
   "checked": 49,
   "filtered": 1,
-  "lines": 3105,
+  "lines": 3108,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HEH",
-   "why": "snipe",
-   "t": "2026-11-28T12:21:45Z"
-  },
-  {
-   "coin": "TOLETOLE",
-   "why": "snipe",
-   "t": "2026-11-28T12:21:45Z"
-  },
   {
    "coin": "SCAT",
    "why": "snipe",
@@ -70,13 +60,19 @@
    "coin": "WRP",
    "why": "snipe",
    "t": "2026-11-28T12:24:39Z"
+  },
+  {
+   "coin": "GLITTER",
+   "why": "snipe",
+   "t": "2026-11-28T12:25:03Z"
+  },
+  {
+   "coin": "MERYLL",
+   "why": "snipe",
+   "t": "2026-11-28T12:25:26Z"
   }
  ],
  "curve": [
-  [
-   1795832700,
-   47.79
-  ],
   [
    1795832760,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795868640,
    47.79
+  ],
+  [
+   1795868700,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,33 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T11:23:30Z",
-   "time": "12:23:30",
-   "agent": "SCANNER",
-   "coin": "LIBERTY",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.8379 is not 30 + real SOL 0 (off -29.16 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 988 odd readings from 303 coins tonight",
-   "n": 2906
-  },
-  {
-   "t": "2026-11-28T11:23:47Z",
-   "time": "12:23:47",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.4 a minute · 0 watched · 12 rejected (serial launcher 6, snipe not bought: only to size 5, mayhem mode 1)",
-   "n": 2907
-  },
-  {
-   "t": "2026-11-28T11:24:35Z",
-   "time": "12:24:35",
-   "agent": "SCANNER",
-   "coin": "Mojave",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 0.2 SOL in · +1% since the create · mcap 28 SOL",
-   "n": 2908
-  },
-  {
    "t": "2026-11-28T11:24:35Z",
    "time": "12:24:35",
    "agent": "SIZER",
@@ -6423,6 +6396,33 @@
    "action": "skip",
    "text": "only $4.78 left to size",
    "n": 3105
+  },
+  {
+   "t": "2026-11-28T12:25:03Z",
+   "time": "13:25:03",
+   "agent": "SCANNER",
+   "coin": "GLITTER",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 62 SOL",
+   "n": 3106
+  },
+  {
+   "t": "2026-11-28T12:25:25Z",
+   "time": "13:25:25",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.8 a minute · 1 watched · 13 rejected (snipe not bought: only to size 6, mayhem mode 3, serial launcher 2) · closest MERYLL: no curve reading yet",
+   "n": 3107
+  },
+  {
+   "t": "2026-11-28T12:25:26Z",
+   "time": "13:25:26",
+   "agent": "SCANNER",
+   "coin": "MERYLL",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 2.0 SOL in · +10% since the create · mcap 54 SOL",
+   "n": 3108
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 31 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 1010 (309 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 561,
-    "last_event_age_s": 14.4,
+    "events": 566,
+    "last_event_age_s": 3.4,
     "errors": 6,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 14627,
-    "last_event_age_s": 0.9,
+    "events": 14701,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 379,
-    "last_event_age_s": 16.1,
+    "events": 382,
+    "last_event_age_s": 3.3,
     "errors": 13,
     "last_error": "snowgent.fun: timeout after 2 s"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 7,
+  "followed": 9,
   "odd_readings": 1010,
   "odd_coins": 309
  },
@@ -6580,23 +6580,113 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8311,
+   "sent": 8347,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8311,
+   "sent": 8347,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MERYLL",
+   "name": "The Pepe Killer",
+   "mint": "9rgeihgM4BTNuYWrh3o5cyQywhpfELtV83ANYivfpump",
+   "age_s": 3,
+   "sol_in": 5.37,
+   "buys": 3,
+   "sells": 0,
+   "rise_pct": 28.8,
+   "mcap_sol": 63.6,
+   "dev_pct": 26.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/We_are_coooked/status/2126653343539798338",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "KEMB",
+   "name": "Gimro Kemba",
+   "mint": "EGswqKjrztL2Go9ogaijTRFXec3hi6L6HqfWLgSLZPFH",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "BlueBalls",
+   "name": "BlueBalls",
+   "mint": "6JJ27tgEY79JQtRMhCwWHHyqXB21oXWncNZoSykJbVP9",
+   "age_s": 16,
+   "sol_in": 1.04,
+   "buys": 4,
+   "sells": 7,
+   "rise_pct": 6.1,
+   "mcap_sol": 40.2,
+   "dev_pct": 15.2,
+   "big_sell": 1.78,
+   "x": "https://x.com/MarioPrezldente/status/2126653157212319896",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 7 more coins in 60 min",
+   "why": "serial launcher: 7 more coins in 60 min"
+  },
+  {
+   "symbol": "SORB",
+   "name": "Cevin Sorbi",
+   "mint": "DzfWbpqMRTvLoRWWhafMxSKePQkcBZw2DGLQgZvF46nY",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "GLITTER",
+   "name": "glittermaxxing",
+   "mint": "4UmeSfqdUo1Nhyt1bfaefxi95J4th6dPYohCrj9rpump",
+   "age_s": 26,
+   "sol_in": 0.03,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.1,
+   "mcap_sol": 62.5,
+   "dev_pct": 35.5,
+   "big_sell": 0.0,
+   "x": "https://x.com/glittermaxxingo",
+   "tg": "https://t.me/glittermaxxing",
+   "web": "https://glittermaxxing.top",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "ELVI",
    "name": "Calvo Elvit",
    "mint": "2kYdMSzK8UVM7eyhQhXwi1VHSXpSVfd8saLZF6dXcJ9e",
-   "age_s": 14,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6614,7 +6704,7 @@
    "symbol": "WRP",
    "name": "WRP",
    "mint": "DPDzzczqpk4ZtMNdgaq56HzbN7Go1tKgp53BTcLwpump",
-   "age_s": 16,
+   "age_s": 50,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6722,7 @@
    "symbol": "DRAG",
    "name": "dragon",
    "mint": "DragARcVqgjmEhv38TJgxnQ3wg5bWHQACDJq1VB5wf86",
-   "age_s": 26,
+   "age_s": 60,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6740,7 @@
    "symbol": "?",
    "name": "",
    "mint": "8RTUgQn4uG9sYtpna3dZsa9JzZtQ9joSc2YDy7YK4hVq",
-   "age_s": 65,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6758,7 @@
    "symbol": "SYCKA",
    "name": "snowvycka",
    "mint": "wKKJMrPW4wY4AUsapmVGfyLj6dzkjGZGwpxP8tuyGDb",
-   "age_s": 79,
+   "age_s": 113,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6686,7 +6776,7 @@
    "symbol": "WINDOWS",
    "name": "Windows",
    "mint": "FmR6vFjcretg1soD8bt6JFb8CS68ZHRkRXs8LeE7cwYo",
-   "age_s": 92,
+   "age_s": 126,
    "sol_in": -0.74,
    "buys": 0,
    "sells": 1,
@@ -6704,12 +6794,12 @@
    "symbol": "BB",
    "name": "Blue Balls",
    "mint": "CkYq7WUZwAvvUy2q4PYj7WK7hrxWugdt3GjER3zKNibj",
-   "age_s": 95,
-   "sol_in": -0.77,
-   "buys": 24,
-   "sells": 20,
-   "rise_pct": -4.4,
-   "mcap_sol": 36.3,
+   "age_s": 129,
+   "sol_in": -0.71,
+   "buys": 25,
+   "sells": 24,
+   "rise_pct": -4.0,
+   "mcap_sol": 36.4,
    "dev_pct": 15.2,
    "big_sell": 4.97,
    "x": "https://x.com/MarioPrezldente/status/2126653157212319896",
@@ -6722,14 +6812,14 @@
    "symbol": "PEPEHOOD",
    "name": "PEPEHOOD",
    "mint": "6R3TVbLWUBB9NojK133eX6yeroZdLH9vTpS3QQYxpump",
-   "age_s": 99,
-   "sol_in": 0.06,
+   "age_s": 133,
+   "sol_in": 0.05,
    "buys": 2,
-   "sells": 0,
-   "rise_pct": 0.4,
+   "sells": 1,
+   "rise_pct": 0.3,
    "mcap_sol": 28.1,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": false,
    "tg": false,
    "web": false,
@@ -6740,7 +6830,7 @@
    "symbol": "Buck",
    "name": "BuckPad",
    "mint": "4BPSbY54QbQuSts2LyY3zfD8QXc5qZPvPTjsv1hhpump",
-   "age_s": 127,
+   "age_s": 161,
    "sol_in": -0.28,
    "buys": 1,
    "sells": 2,
@@ -6751,24 +6841,6 @@
    "x": "https://x.com/BuckPadSol",
    "tg": false,
    "web": "https://buckpad.site/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "SCAT",
-   "name": "SNOWCAT",
-   "mint": "9Z2vhrzzx4z5gmYLCnX1RzcJeh6g3jCwbSZvntoGz6zD",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": 0.0,
-   "mcap_sol": 29.2,
-   "dev_pct": 2.3,
-   "big_sell": 0.5,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
