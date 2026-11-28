@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T00:46:27Z",
+ "updated": "2026-11-28T00:46:55Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 247,
+  "flagged": 248,
   "checked": 49,
   "filtered": 1,
-  "lines": 878,
+  "lines": 880,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "THE P",
-   "why": "snipe",
-   "t": "2026-11-28T00:41:56Z"
-  },
   {
    "coin": "RIDOG",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Memeball",
    "why": "snipe",
    "t": "2026-11-28T00:45:41Z"
+  },
+  {
+   "coin": "BLACK",
+   "why": "snipe",
+   "t": "2026-11-28T00:46:27Z"
   }
  ],
  "curve": [
@@ -2656,24 +2656,6 @@
    "t": "2026-11-27T23:57:30Z",
    "time": "00:57:30",
    "agent": "SCANNER",
-   "coin": "SOLUNA",
-   "action": "flag",
-   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 679
-  },
-  {
-   "t": "2026-11-27T23:57:30Z",
-   "time": "00:57:30",
-   "agent": "SCANNER",
-   "coin": "A",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.6 SOL in · +4% since the create · mcap 30 SOL",
-   "n": 680
-  },
-  {
-   "t": "2026-11-27T23:57:30Z",
-   "time": "00:57:30",
-   "agent": "SCANNER",
    "coin": null,
    "action": "scan",
    "text": "new pairs · 9.6 a minute · 0 watched · 33 rejected (mayhem mode 17, snipe not bought: only to size 9, serial launcher 5)",
@@ -4451,6 +4433,24 @@
    "action": "scan",
    "text": "new pairs · 4.2 a minute · 0 watched · 13 rejected (snipe not bought: only to size 7, odd curve reading: virtual SOL i 3, serial launcher 2)",
    "n": 878
+  },
+  {
+   "t": "2026-11-28T00:46:27Z",
+   "time": "01:46:27",
+   "agent": "SCANNER",
+   "coin": "BLACK",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 879
+  },
+  {
+   "t": "2026-11-28T00:46:46Z",
+   "time": "01:46:46",
+   "agent": "SCANNER",
+   "coin": "DDAQ",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.219e+05 is not 30 + real SOL 0 (off +1.218e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 152 odd readings from 76 coins tonight",
+   "n": 880
   }
  ],
  "nights": [
@@ -4523,7 +4523,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 151 (75 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 37 watched · ws off · odd curve readings 155 (76 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4531,15 +4531,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 954,
-    "last_event_age_s": 0.5,
+    "events": 956,
+    "last_event_age_s": 9.2,
     "errors": 2,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 18313,
+    "events": 18358,
     "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
@@ -4547,8 +4547,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 533,
-    "last_event_age_s": 46.2,
+    "events": 536,
+    "last_event_age_s": 8.9,
     "errors": 26,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -4561,11 +4561,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.0,
-  "watching": 1,
-  "followed": 12,
-  "odd_readings": 151,
-  "odd_coins": 75
+  "creates_per_min": 3.6,
+  "watching": 0,
+  "followed": 14,
+  "odd_readings": 155,
+  "odd_coins": 76
  },
  "learner": {
   "samples": 84,
@@ -4612,41 +4612,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 7299,
+   "sent": 7328,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 7299,
+   "sent": 7328,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
-   "symbol": "BLACK",
-   "name": "FRIDAY",
-   "mint": "52yFmjwmVV4RVFjNKMzC76q7hpLbhVEZ9nqXm2nypump",
-   "age_s": 0,
+   "symbol": "DDAQ",
+   "name": "DerivDAQ",
+   "mint": "6QhfbaA66yMgdHbXnAjLGhRzAgR2BRr24kdKtEYT1W4W",
+   "age_s": 9,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
    "rise_pct": 0.0,
-   "mcap_sol": 28.5,
-   "dev_pct": 1.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
    "big_sell": 0.0,
    "x": false,
    "tg": false,
+   "web": "https://derivr.fun",
+   "status": "rejected: odd curve reading: virtual SOL 1.219e+05 is not 30 + real SOL 0 (off +1.218e+05 SOL)",
+   "why": "odd curve reading: virtual SOL 1.219e+05 is not 30 + real SOL 0 (off +1.218e+05 SOL)"
+  },
+  {
+   "symbol": "FLYING SHIP",
+   "name": "FLYING SHIP",
+   "mint": "2YUCowCf73uHePLw9fJfc82yxAEw2nhNdV8scrBmpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.9,
+   "dev_pct": 1.7,
+   "big_sell": 0.0,
+   "x": "https://x.com/CBSNews/status/2126477560997667152",
+   "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: serial launcher: 2 more coins in 60 min",
+   "why": "serial launcher: 2 more coins in 60 min"
+  },
+  {
+   "symbol": "BLACK",
+   "name": "FRIDAY",
+   "mint": "52yFmjwmVV4RVFjNKMzC76q7hpLbhVEZ9nqXm2nypump",
+   "age_s": 28,
+   "sol_in": -0.3,
+   "buys": 0,
+   "sells": 1,
+   "rise_pct": -1.9,
+   "mcap_sol": 28.0,
+   "dev_pct": 1.0,
+   "big_sell": 0.3,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "Memeball",
    "name": "Memeball",
    "mint": "EWEpgtbqR6Gmx3UZ9r9Kc9DnQ4wc3edgJQDDeo9J8k2K",
-   "age_s": 46,
+   "age_s": 74,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -4664,7 +4700,7 @@
    "symbol": "DEAL",
    "name": "Real Deal Deriv",
    "mint": "FoYLFgMPM9ChHHUYXk3F5AFdmiHYjLzLrTagBQoP8p8M",
-   "age_s": 48,
+   "age_s": 76,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4682,7 +4718,7 @@
    "symbol": "SIGMA",
    "name": "SIGMA COIN",
    "mint": "51ZiyrAy38p4fwNGXDTnwujL1esoMzBCmBVyg1gJpump",
-   "age_s": 60,
+   "age_s": 88,
    "sol_in": -0.99,
    "buys": 2,
    "sells": 6,
@@ -4700,12 +4736,12 @@
    "symbol": "NBA",
    "name": "Never Broke Again",
    "mint": "2dFYPmw2yPvfChG3FzvMEhSSNVidsnVM3kLGohjHpump",
-   "age_s": 65,
-   "sol_in": 30.8,
-   "buys": 30,
-   "sells": 27,
-   "rise_pct": 274.2,
-   "mcap_sol": 126.3,
+   "age_s": 93,
+   "sol_in": 34.86,
+   "buys": 47,
+   "sells": 35,
+   "rise_pct": 323.4,
+   "mcap_sol": 142.9,
    "dev_pct": 9.6,
    "big_sell": 2.56,
    "x": "https://x.com/ZzzzzSol/status/2126477513098502149",
@@ -4718,7 +4754,7 @@
    "symbol": "RETAIL",
    "name": "Retail Investors",
    "mint": "8mha1iqbaYj4LZoaYoT7Wigr9oC3CxsDPe73Zkxapump",
-   "age_s": 77,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4736,10 +4772,10 @@
    "symbol": "Frogger",
    "name": "Frogger",
    "mint": "BjJBapxGNMMV1Rq8We25hdGXuD6fPV9XqiMGiLk4pump",
-   "age_s": 96,
-   "sol_in": -2.46,
+   "age_s": 124,
+   "sol_in": -2.47,
    "buys": 4,
-   "sells": 10,
+   "sells": 11,
    "rise_pct": -14.6,
    "mcap_sol": 28.0,
    "dev_pct": 8.2,
@@ -4754,7 +4790,7 @@
    "symbol": "PRUG",
    "name": "PRUG SCAN",
    "mint": "5PWMZVeHym17dSMM6D7JRgpVBwTCzoyKB1Vw6Z5Lpump",
-   "age_s": 111,
+   "age_s": 139,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4772,7 +4808,7 @@
    "symbol": "ANT",
    "name": "Anthropic Coin",
    "mint": "Fc85rBnJNxMPkrkTZGcsQMcmMjbrcgSZY1JBGuWeusR6",
-   "age_s": 114,
+   "age_s": 142,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 0,
@@ -4790,7 +4826,7 @@
    "symbol": "DRV69",
    "name": "Deriv6900",
    "mint": "4wKaP55UQq2rP1fzgt9nTzGHonVTxqm9nnrgZwqoWojo",
-   "age_s": 115,
+   "age_s": 143,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4808,7 +4844,7 @@
    "symbol": "BONUS",
    "name": "Broke Bonus",
    "mint": "BFe7UFvqC4XM2iA8Qr3xQ91xuK6Qu5YPn3VLuEEfpump",
-   "age_s": 131,
+   "age_s": 159,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -4826,7 +4862,7 @@
    "symbol": "RIDOG",
    "name": "Ridiculous Dog",
    "mint": "2nwxsW43FA1Fv1Di75hohdUhGyTfXchLDHRL2i6Zpump",
-   "age_s": 146,
+   "age_s": 174,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 3,
