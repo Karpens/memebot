@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:25:27Z",
+ "updated": "2026-11-28T02:25:54Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 426,
+  "flagged": 427,
   "checked": 49,
   "filtered": 1,
-  "lines": 1249,
+  "lines": 1251,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "HDD",
-   "why": "snipe",
-   "t": "2026-11-28T02:19:46Z"
-  },
   {
    "coin": "rippete",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "pildo",
    "why": "snipe",
    "t": "2026-11-28T02:24:52Z"
+  },
+  {
+   "coin": "HDD",
+   "why": "snipe",
+   "t": "2026-11-28T02:25:29Z"
   }
  ],
  "curve": [
@@ -3049,24 +3049,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:26:59Z",
-   "time": "02:26:59",
-   "agent": "SCANNER",
-   "coin": "YAMIONI",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 39 SOL",
-   "n": 1050
-  },
-  {
-   "t": "2026-11-28T01:27:03Z",
-   "time": "02:27:03",
-   "agent": "SCANNER",
-   "coin": "Pete",
-   "action": "migrate",
-   "text": "migrated: the curve is complete (pump-amm)",
-   "n": 1051
-  },
-  {
    "t": "2026-11-28T01:27:16Z",
    "time": "02:27:16",
    "agent": "SCANNER",
@@ -4847,6 +4829,24 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 4, mayhem mode 1)",
    "n": 1249
+  },
+  {
+   "t": "2026-11-28T02:25:29Z",
+   "time": "03:25:29",
+   "agent": "SCANNER",
+   "coin": "HDD",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 0.6 SOL in · +4% since the create · mcap 31 SOL",
+   "n": 1250
+  },
+  {
+   "t": "2026-11-28T02:25:53Z",
+   "time": "03:25:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.8 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, serial launcher 4, mayhem mode 1)",
+   "n": 1251
   }
  ],
  "nights": [
@@ -4919,7 +4919,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 330 (147 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 330 (147 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4927,24 +4927,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1461,
-    "last_event_age_s": 8.5,
+    "events": 1462,
+    "last_event_age_s": 25.7,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 29791,
-    "last_event_age_s": 0.1,
+    "events": 29876,
+    "last_event_age_s": 1.0,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 830,
-    "last_event_age_s": 8.5,
+    "connected": true,
+    "events": 831,
+    "last_event_age_s": 25.5,
     "errors": 40,
     "last_error": "no uri"
    }
@@ -5008,30 +5008,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13621,
+   "sent": 13649,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13621,
+   "sent": 13649,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HDD",
+   "name": "LOST BTC",
+   "mint": "BT7BjgTNcGCEN8Um2EP7snkrzy7kePC3DWp5agi8sefF",
+   "age_s": 25,
+   "sol_in": 1.4,
+   "buys": 3,
+   "sells": 2,
+   "rise_pct": 9.3,
+   "mcap_sol": 32.4,
+   "dev_pct": 3.1,
+   "big_sell": 0.14,
+   "x": "https://x.com/Nedeflexa/status/2126500788897808616?a=jr_sxjqT5N6nHbrZjso&s=20",
+   "tg": false,
+   "web": "https://news.bitcoin.com/how-to-lose-8000-btc-a-british-mans-landfill-odyssey/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Hypeball",
    "name": "Hypeball",
    "mint": "797pRn1pg5EgxrU3qBw91NxA38uKuRLscLZNwwjAqEjd",
-   "age_s": 8,
-   "sol_in": 0.1,
+   "age_s": 35,
+   "sol_in": 0.05,
    "buys": 2,
-   "sells": 1,
-   "rise_pct": 0.7,
-   "mcap_sol": 28.2,
+   "sells": 2,
+   "rise_pct": 0.3,
+   "mcap_sol": 28.1,
    "dev_pct": 0.2,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": false,
    "tg": false,
    "web": false,
@@ -5042,12 +5060,12 @@
    "symbol": "pildo",
    "name": "pildo",
    "mint": "e9exmz6rLsxFRMi3gdY7ac7SDujhWDUgJyDeAQjpump",
-   "age_s": 35,
-   "sol_in": 34.9,
-   "buys": 23,
-   "sells": 13,
-   "rise_pct": 322.3,
-   "mcap_sol": 143.6,
+   "age_s": 62,
+   "sol_in": 30.6,
+   "buys": 34,
+   "sells": 26,
+   "rise_pct": 270.5,
+   "mcap_sol": 126.0,
    "dev_pct": 10.0,
    "big_sell": 4.67,
    "x": "https://x.com/wholetpildout/status/2126502456422969387",
@@ -5060,11 +5078,11 @@
    "symbol": "ORO",
    "name": "Tesoro",
    "mint": "3N92Tp4BsZkxJVuDx66P3JbQUrWBFTr1QLAQQb9ipump",
-   "age_s": 55,
-   "sol_in": 0.12,
+   "age_s": 82,
+   "sol_in": 0.11,
    "buys": 4,
-   "sells": 4,
-   "rise_pct": 0.8,
+   "sells": 5,
+   "rise_pct": 0.7,
    "mcap_sol": 29.5,
    "dev_pct": 2.5,
    "big_sell": 0.26,
@@ -5078,7 +5096,7 @@
    "symbol": "GTAcoin",
    "name": "GTA VII",
    "mint": "Mx7Jf3az8He1BaJEyxScSsa4LXdfBoFAfRQcybgpump",
-   "age_s": 72,
+   "age_s": 99,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5096,12 +5114,12 @@
    "symbol": "Hypeball",
    "name": "Hypeball",
    "mint": "GABaBRfTncvPFi91MyB6737pHqrDTS1GrXpTTptmpump",
-   "age_s": 100,
-   "sol_in": 38.53,
-   "buys": 44,
-   "sells": 40,
-   "rise_pct": 419.1,
-   "mcap_sol": 146.5,
+   "age_s": 127,
+   "sol_in": 57.39,
+   "buys": 56,
+   "sells": 52,
+   "rise_pct": 743.4,
+   "mcap_sol": 238.0,
    "dev_pct": 0.5,
    "big_sell": 9.64,
    "x": "https://x.com/tryhypeball",
@@ -5114,7 +5132,7 @@
    "symbol": "$KCARTEL",
    "name": "Kitty Cartel",
    "mint": "Fn5hGoAKBppBsW569NMkNSRuK3tmXZWaNeRoXg2Tpump",
-   "age_s": 103,
+   "age_s": 130,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5132,7 +5150,7 @@
    "symbol": "AXOS",
    "name": "Axos",
    "mint": "GTcR9mQRD7WEYgXyGgP83iETUTzJfx2dMCCWE983oiec",
-   "age_s": 106,
+   "age_s": 133,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 0,
@@ -5150,7 +5168,7 @@
    "symbol": "Wigger",
    "name": "HADWIGGER",
    "mint": "C8NqsCB4eSm8uCvcBJWN5VToFncxGipR1cN8YbiGNPAr",
-   "age_s": 119,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5168,7 +5186,7 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "CphBC9BLTE1GA7eYZBxakMH3v4aoFY5phvdxmD1Npump",
-   "age_s": 129,
+   "age_s": 156,
    "sol_in": -3.4,
    "buys": 18,
    "sells": 13,
@@ -5186,7 +5204,7 @@
    "symbol": "STEADY",
    "name": "Steady",
    "mint": "DXFZH1unVqKvGGQ84u91UABFYx6o7hvxwpkiouNKY7Sr",
-   "age_s": 130,
+   "age_s": 157,
    "sol_in": -0.05,
    "buys": 1,
    "sells": 2,
@@ -5199,24 +5217,6 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "ハクくん",
-   "name": "The Resilient Chihuahua",
-   "mint": "GBYWZPWYucfaRonxsGmWMzfAiKYt1Er9QCSjeKBJpump",
-   "age_s": 169,
-   "sol_in": 9.99,
-   "buys": 77,
-   "sells": 65,
-   "rise_pct": 69.3,
-   "mcap_sol": 57.8,
-   "dev_pct": 10.2,
-   "big_sell": 8.74,
-   "x": "https://x.com/SpringDeploys/status/2126501963386806469?a=yuOrPjJnuvA_F8lugXs&s=20",
-   "tg": false,
-   "web": "https://news.yahoo.co.jp/articles/c9cd993023e95739394765a064df7c6259d645b2",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
