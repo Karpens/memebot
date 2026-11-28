@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:36:23Z",
+ "updated": "2026-11-28T02:36:50Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 444,
+  "flagged": 445,
   "checked": 49,
   "filtered": 1,
-  "lines": 1283,
+  "lines": 1284,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "bonk",
-   "why": "snipe",
-   "t": "2026-11-28T02:33:24Z"
-  },
   {
    "coin": "HOLIDAY",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Meatnald",
    "why": "snipe",
    "t": "2026-11-28T02:36:23Z"
+  },
+  {
+   "coin": "POPCAT",
+   "why": "snipe",
+   "t": "2026-11-28T02:36:39Z"
   }
  ],
  "curve": [
@@ -3093,15 +3093,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:35:58Z",
-   "time": "02:35:58",
-   "agent": "SCANNER",
-   "coin": "STA",
-   "action": "flag",
-   "text": "snipe · first reading 0.3 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1084
-  },
-  {
    "t": "2026-11-28T01:36:19Z",
    "time": "02:36:19",
    "agent": "SCANNER",
@@ -4891,6 +4882,15 @@
    "action": "flag",
    "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
    "n": 1283
+  },
+  {
+   "t": "2026-11-28T02:36:39Z",
+   "time": "03:36:39",
+   "agent": "SCANNER",
+   "coin": "POPCAT",
+   "action": "flag",
+   "text": "snipe · first reading 1.9 s after the create · 0.0 SOL in · +0% since the create · mcap 43 SOL",
+   "n": 1284
   }
  ],
  "nights": [
@@ -4963,7 +4963,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 25 watched · ws off · odd curve readings 332 (149 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4971,24 +4971,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1493,
-    "last_event_age_s": 1.7,
+    "events": 1496,
+    "last_event_age_s": 13.1,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 31131,
-    "last_event_age_s": 0.7,
+    "events": 31184,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 853,
-    "last_event_age_s": 1.1,
+    "events": 855,
+    "last_event_age_s": 12.9,
     "errors": 43,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -5001,7 +5001,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 3.0,
   "watching": 0,
   "followed": 7,
   "odd_readings": 332,
@@ -5052,23 +5052,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14319,
+   "sent": 14347,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14319,
+   "sent": 14347,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "POPCAT",
+   "name": "Popcorn Cat",
+   "mint": "GpcpnshdMA8bcetGpncJCWZqEtdkcZFzFyB9JkXDUG9E",
+   "age_s": 13,
+   "sol_in": -6.44,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": -31.5,
+   "mcap_sol": 29.8,
+   "dev_pct": 21.2,
+   "big_sell": 8.34,
+   "x": "https://x.com/renyukong/status/2126505483809018134",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Panda",
+   "name": "PandaCoin",
+   "mint": "DobtK3BqpkpSLQaNBPaLsU2kgtUj5RJBwAt7FPHwpump",
+   "age_s": 16,
+   "sol_in": 7.77,
+   "buys": 8,
+   "sells": 6,
+   "rise_pct": 53.5,
+   "mcap_sol": 50.3,
+   "dev_pct": 8.2,
+   "big_sell": 1.95,
+   "x": "https://x.com/bwamsbrother/status/2126505367005753708",
+   "tg": false,
+   "web": "https://x.com/SolanaSensei/status/2125995009258524741",
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "By71RoFEdsACMxkzy4n9HzvhhSE5hRH1dAbyc1zEpump",
+   "age_s": 24,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "Meatnald",
    "name": "Meatnald Trump",
    "mint": "65QJY8k3sCX1dpVN6ZLHuERdF5sg9MraD55v863Kpump",
-   "age_s": 1,
+   "age_s": 28,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5086,7 +5140,7 @@
    "symbol": "Pump.fun",
    "name": "Coin",
    "mint": "3n7ukcoK1D5Jfxth7gCHnRVXdbiSh9fUFwhT4Ra4pump",
-   "age_s": 21,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5104,14 +5158,14 @@
    "symbol": "MANDY",
    "name": "Project Mandy",
    "mint": "7dw2UYhRB654XjkXMRGNVoKV7Pf5gh1yrbvZrCgEpump",
-   "age_s": 22,
-   "sol_in": 0.58,
+   "age_s": 49,
+   "sol_in": 0.2,
    "buys": 3,
-   "sells": 1,
-   "rise_pct": 3.8,
-   "mcap_sol": 31.0,
+   "sells": 4,
+   "rise_pct": 1.3,
+   "mcap_sol": 30.2,
    "dev_pct": 3.4,
-   "big_sell": 0.03,
+   "big_sell": 0.27,
    "x": false,
    "tg": false,
    "web": false,
@@ -5122,12 +5176,12 @@
    "symbol": "qCoin",
    "name": "qCoin",
    "mint": "Dw1EvoimYFhPzUjfsRNRo9Xr8vWHRga9B5tLDYkwDXTT",
-   "age_s": 26,
-   "sol_in": -3.55,
+   "age_s": 53,
+   "sol_in": -3.61,
    "buys": 4,
-   "sells": 11,
-   "rise_pct": -19.8,
-   "mcap_sol": 28.7,
+   "sells": 12,
+   "rise_pct": -20.1,
+   "mcap_sol": 28.6,
    "dev_pct": 12.5,
    "big_sell": 7.94,
    "x": false,
@@ -5140,7 +5194,7 @@
    "symbol": "PINEWALK",
    "name": "Pine Walk",
    "mint": "79CmqsKxp98uUjb7s8sxLoQ7bXnYci22wnT7xkcQpump",
-   "age_s": 127,
+   "age_s": 154,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5151,42 +5205,6 @@
    "x": "https://x.com/dollardeployer",
    "tg": false,
    "web": "https://dollardeployer.netlify.app/coin/023/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "LUCIA",
-   "name": "Project Lucia",
-   "mint": "44CTVfqTLPbuoiJNFBrAPMDdVC22W1Lws4dN5Puupump",
-   "age_s": 154,
-   "sol_in": 0.58,
-   "buys": 4,
-   "sells": 5,
-   "rise_pct": 3.8,
-   "mcap_sol": 31.0,
-   "dev_pct": 3.4,
-   "big_sell": 0.89,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "HOLIDAY",
-   "name": "HOLIDAY COIN",
-   "mint": "AbvDjgCVjMY3yBZbjYwJNzRMuwrjCsSkvfZcqJ29pump",
-   "age_s": 156,
-   "sol_in": -0.0,
-   "buys": 49,
-   "sells": 83,
-   "rise_pct": -0.0,
-   "mcap_sol": 32.6,
-   "dev_pct": 8.0,
-   "big_sell": 8.12,
-   "x": "https://x.com/HolidayCoinsol",
-   "tg": false,
-   "web": "https://holidaycoinsol.fun/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
