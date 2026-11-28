@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:21:43Z",
+ "updated": "2026-11-28T03:22:10Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 543,
+  "flagged": 544,
   "checked": 49,
   "filtered": 1,
-  "lines": 1441,
+  "lines": 1442,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T03:16:26Z"
-  },
   {
    "coin": "MISANTHROPIC",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "pig",
    "why": "snipe",
    "t": "2026-11-28T03:19:49Z"
+  },
+  {
+   "coin": "PORCHWALL",
+   "why": "snipe",
+   "t": "2026-11-28T03:21:49Z"
   }
  ],
  "curve": [
@@ -1119,6 +1119,10 @@
   ],
   [
    1795836060,
+   47.79
+  ],
+  [
+   1795836120,
    47.79
   ]
  ],
@@ -3273,15 +3277,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:23:19Z",
-   "time": "03:23:19",
-   "agent": "SCANNER",
-   "coin": "NVIDIA",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 17.8 SOL in · +135% since the create · mcap 82 SOL",
-   "n": 1242
-  },
-  {
    "t": "2026-11-28T02:23:29Z",
    "time": "03:23:29",
    "agent": "SCANNER",
@@ -5071,6 +5066,15 @@
    "action": "odd",
    "text": "odd curve reading: virtual SOL 1.194 is not 30 + real SOL 0 (off -28.81 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 337 odd readings from 154 coins tonight",
    "n": 1441
+  },
+  {
+   "t": "2026-11-28T03:21:49Z",
+   "time": "04:21:49",
+   "agent": "SCANNER",
+   "coin": "PORCHWALL",
+   "action": "flag",
+   "text": "snipe · first reading 2.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1442
   }
  ],
  "nights": [
@@ -5143,7 +5147,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 337 (154 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5151,24 +5155,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1674,
-    "last_event_age_s": 19.0,
+    "events": 1677,
+    "last_event_age_s": 2.4,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35573,
-    "last_event_age_s": 2.3,
+    "events": 35591,
+    "last_event_age_s": 3.3,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 977,
-    "last_event_age_s": 16.7,
+    "events": 979,
+    "last_event_age_s": 1.8,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5181,9 +5185,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.2,
-  "watching": 0,
-  "followed": 7,
+  "creates_per_min": 2.4,
+  "watching": 1,
+  "followed": 6,
   "odd_readings": 337,
   "odd_coins": 154
  },
@@ -5232,23 +5236,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 17213,
+   "sent": 17242,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 17213,
+   "sent": 17242,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "HOPE",
+   "name": "HOPE",
+   "mint": "A1wgzgqVtFRQhxxcVQYnAmubBQtwu733n2Gc1vs2pump",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 34.0,
+   "dev_pct": 9.9,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://hopegang.xyz/",
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
+   "symbol": "PORCHWALL",
+   "name": "Porch Wall",
+   "mint": "Cwv3n7qN2hnRdMwc2vs3StM5CEZf24x1kGkmSRVJpump",
+   "age_s": 23,
+   "sol_in": 0.12,
+   "buys": 2,
+   "sells": 1,
+   "rise_pct": 0.8,
+   "mcap_sol": 28.3,
+   "dev_pct": 0.2,
+   "big_sell": 0.01,
+   "x": "https://x.com/dollardeployer",
+   "tg": false,
+   "web": "https://dollardeployer.netlify.app/coin/024/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Trader",
    "name": "The Trader",
    "mint": "7TbrDqtUrJq3e6g2y5Qd3EZqVsCc5q95ySubcE87LLrb",
-   "age_s": 18,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5266,7 +5306,7 @@
    "symbol": "pig",
    "name": "pig",
    "mint": "HHoPVMqYvyVUHEye54Q9DEkNA5TCZS4CJwENQpENpump",
-   "age_s": 121,
+   "age_s": 148,
    "sol_in": -1.48,
    "buys": 2,
    "sells": 1,
@@ -5284,7 +5324,7 @@
    "symbol": "1XBET",
    "name": "1Xbet 500$ Bonus 🤑💵🚀",
    "mint": "4SbeHjPUJH8Q4SEzfsGst5HQBje7K9JwsBJB4u6Zpump",
-   "age_s": 122,
+   "age_s": 149,
    "sol_in": -0.07,
    "buys": 0,
    "sells": 1,
@@ -5302,7 +5342,7 @@
    "symbol": "Patchwork",
    "name": "Patchwork",
    "mint": "Bqfo5tj3oARVKR3xRMzXFLBccAFiEeq8WcmQXWocpump",
-   "age_s": 144,
+   "age_s": 171,
    "sol_in": -0.24,
    "buys": 3,
    "sells": 4,
@@ -5313,60 +5353,6 @@
    "x": "https://x.com/Patchworksol",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "rsrc",
-   "name": "research sources",
-   "mint": "GvpR3vqQcvZMJb7bbtK7iFwMsEhhgs2jG8ut77Yhpump",
-   "age_s": 155,
-   "sol_in": 15.41,
-   "buys": 21,
-   "sells": 24,
-   "rise_pct": 129.2,
-   "mcap_sol": 64.1,
-   "dev_pct": 0.0,
-   "big_sell": 6.08,
-   "x": "https://x.com/Gen0xRay/status/2126514525625294966",
-   "tg": false,
-   "web": "https://github.com/SamuelZ12/research-sources",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "slut",
-   "name": "slut",
-   "mint": "FthwWXLMY7D9TS6TUN9Ld8wHvsALB3PaBkW9UbBFpump",
-   "age_s": 168,
-   "sol_in": 0.01,
-   "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "Yotsuba",
-   "name": "404 Girl",
-   "mint": "Ha9X59J4fVtqjuNaqd7b2AhfpQ1tnASfGtLoHu8Xpump",
-   "age_s": 169,
-   "sol_in": -0.54,
-   "buys": 2,
-   "sells": 11,
-   "rise_pct": -3.5,
-   "mcap_sol": 28.8,
-   "dev_pct": 3.4,
-   "big_sell": 6.15,
-   "x": "https://x.com/yotsubarddt",
-   "tg": false,
-   "web": "https://knowyourmeme.com/memes/yotsuba-koiwai-404-girl",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
