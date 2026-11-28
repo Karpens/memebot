@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:57:15Z",
+ "updated": "2026-11-28T11:57:50Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1338,
+  "flagged": 1339,
   "checked": 49,
   "filtered": 1,
-  "lines": 3011,
+  "lines": 3013,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "rice",
-   "why": "snipe",
-   "t": "2026-11-28T11:50:29Z"
-  },
   {
    "coin": "ANSEM",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "UPSWING",
    "why": "snipe",
    "t": "2026-11-28T11:53:52Z"
+  },
+  {
+   "coin": "PUMCH",
+   "why": "snipe",
+   "t": "2026-11-28T11:57:28Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:55:16Z",
-   "time": "11:55:16",
-   "agent": "SCANNER",
-   "coin": "MASK",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.263e+05 is not 30 + real SOL 1.046e+04 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 955 odd readings from 292 coins tonight",
-   "n": 2812
-  },
-  {
-   "t": "2026-11-28T10:55:17Z",
-   "time": "11:55:17",
-   "agent": "SCANNER",
-   "coin": "PISTE",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.261e+05 is not 30 + real SOL 1.031e+04 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 956 odd readings from 293 coins tonight",
-   "n": 2813
-  },
-  {
    "t": "2026-11-28T10:55:17Z",
    "time": "11:55:17",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 0 watched · 5 rejected (mayhem mode 3, serial launcher 2)",
    "n": 3011
+  },
+  {
+   "t": "2026-11-28T11:57:28Z",
+   "time": "12:57:28",
+   "agent": "SCANNER",
+   "coin": "PUMCH",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 3012
+  },
+  {
+   "t": "2026-11-28T11:57:28Z",
+   "time": "12:57:28",
+   "agent": "SIZER",
+   "coin": "PUMCH",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 3013
   }
  ],
  "nights": [
@@ -6497,24 +6497,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 432,
-    "last_event_age_s": 9.1,
+    "events": 435,
+    "last_event_age_s": 1.5,
     "errors": 5,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11533,
-    "last_event_age_s": 0.0,
+    "events": 11570,
+    "last_event_age_s": 0.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 302,
-    "last_event_age_s": 37.7,
+    "events": 303,
+    "last_event_age_s": 21.9,
     "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 3.0,
   "watching": 0,
-  "followed": 2,
+  "followed": 3,
   "odd_readings": 1009,
   "odd_coins": 308
  },
@@ -6578,23 +6578,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6546,
+   "sent": 6583,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6546,
+   "sent": 6583,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "?",
+   "name": "",
+   "mint": "FJR8nw6PBPwV1GFXat5wEWDZW1jkw2rBfqY5i4BmQ2N",
+   "age_s": 1,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 38.2,
+   "dev_pct": 15.5,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
+   "symbol": "PUMCH",
+   "name": "PUNCH",
+   "mint": "57BCx2HcTC4mCADU85YsyyXeYjaiVwiYxjRbERmWpump",
+   "age_s": 22,
+   "sol_in": 0.37,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 2.5,
+   "mcap_sol": 28.8,
+   "dev_pct": 0.4,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "CORRUPT",
+   "name": "CORRUPTION",
+   "mint": "HJRQM9fm7vXY48qtU9KnQbjy7VQn1pDHLj5xHfSwpump",
+   "age_s": 26,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
    "symbol": "ALOOONG",
    "name": "Alooong",
    "mint": "F1cCQDHH2SpQarZyK8RY9F3JWY5s48Wsxp9mNjAdkWiy",
-   "age_s": 38,
+   "age_s": 73,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6612,7 +6666,7 @@
    "symbol": "DWIFIT",
    "name": "Deal Wif It Xmas",
    "mint": "3rFrp8w3jnBvSYc7opqGQeeRbMDtTAa63r7Fc6fApump",
-   "age_s": 67,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6630,7 +6684,7 @@
    "symbol": "SSPEARL",
    "name": "SILVER SURFER X TOM PEARL",
    "mint": "8DQ2PrBjgK5VF6rZN8DyB6UJEHs1xarpgAGYMifmpump",
-   "age_s": 70,
+   "age_s": 105,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6648,7 +6702,7 @@
    "symbol": "J7TEST",
    "name": "J7 Control TEST",
    "mint": "42auMgwyT8kMjJJqXZZHNzyhZaRseE8UBjvKXqghFZF8",
-   "age_s": 106,
+   "age_s": 141,
    "sol_in": -0.0,
    "buys": 1,
    "sells": 2,
@@ -6666,7 +6720,7 @@
    "symbol": "MoonBoy",
    "name": "MoonBoy",
    "mint": "3PH3WSC9yirvVMFzBRj2QFFfySfRVt3rcZyrGo5dpump",
-   "age_s": 115,
+   "age_s": 150,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
