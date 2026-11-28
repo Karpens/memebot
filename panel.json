@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:32:59Z",
+ "updated": "2026-11-28T09:33:26Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1080,
+  "flagged": 1081,
   "checked": 49,
   "filtered": 1,
-  "lines": 2520,
+  "lines": 2521,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -62,21 +62,17 @@
    "t": "2026-11-28T09:31:19Z"
   },
   {
-   "coin": "MEMEPAY",
-   "why": "snipe",
-   "t": "2026-11-28T09:32:45Z"
-  },
-  {
    "coin": "STC",
    "why": "snipe",
    "t": "2026-11-28T09:32:48Z"
+  },
+  {
+   "coin": "MEMEPAY",
+   "why": "snipe",
+   "t": "2026-11-28T09:33:08Z"
   }
  ],
  "curve": [
-  [
-   1795822380,
-   48.56
-  ],
   [
    1795822440,
    48.17
@@ -2472,6 +2468,10 @@
   [
    1795858320,
    47.79
+  ],
+  [
+   1795858380,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:32:45Z",
-   "time": "09:32:45",
-   "agent": "SCANNER",
-   "coin": "BFC",
-   "action": "flag",
-   "text": "snipe · first reading 0.1 s after the create · 5.9 SOL in · +37% since the create · mcap 52 SOL",
-   "n": 2321
-  },
-  {
    "t": "2026-11-28T08:33:04Z",
    "time": "09:33:04",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "flag",
    "text": "snipe · first reading 0.4 s after the create · 8.1 SOL in · +59% since the create · mcap 47 SOL",
    "n": 2520
+  },
+  {
+   "t": "2026-11-28T09:33:08Z",
+   "time": "10:33:08",
+   "agent": "SCANNER",
+   "coin": "MEMEPAY",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 5.5 SOL in · +37% since the create · mcap 45 SOL",
+   "n": 2521
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 29 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1138,
-    "last_event_age_s": 11.1,
+    "events": 1139,
+    "last_event_age_s": 18.1,
     "errors": 16,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 21621,
-    "last_event_age_s": 0.7,
+    "events": 21676,
+    "last_event_age_s": 1.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 811,
-    "last_event_age_s": 11.1,
+    "events": 812,
+    "last_event_age_s": 18.1,
     "errors": 31,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.8,
+  "creates_per_min": 4.0,
   "watching": 0,
-  "followed": 12,
+  "followed": 11,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,28 +6584,46 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19060,
+   "sent": 19089,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19060,
+   "sent": 19089,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MEMEPAY",
+   "name": "Memepay",
+   "mint": "B5vjokfc1s6ZLpq7rw1g6qb9FGaK1To181UG1nrfpump",
+   "age_s": 18,
+   "sol_in": -0.05,
+   "buys": 6,
+   "sells": 6,
+   "rise_pct": -0.3,
+   "mcap_sol": 32.5,
+   "dev_pct": 8.0,
+   "big_sell": 13.98,
+   "x": "https://x.com/memepayapp",
+   "tg": false,
+   "web": "https://memepay.online",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "STC",
    "name": "SantaCoin",
    "mint": "5wQ6ry39GjuLSuEyc88xFF11zhosfn2ghjZpmgMdpump",
-   "age_s": 11,
-   "sol_in": 12.74,
-   "buys": 7,
-   "sells": 3,
-   "rise_pct": 99.1,
-   "mcap_sol": 59.4,
+   "age_s": 38,
+   "sol_in": 6.83,
+   "buys": 14,
+   "sells": 14,
+   "rise_pct": 48.9,
+   "mcap_sol": 44.4,
    "dev_pct": 3.4,
    "big_sell": 3.14,
    "x": "https://x.com/SantaCoinPF/status/2126610210718367890",
@@ -6618,12 +6636,12 @@
    "symbol": "MEMEPAY",
    "name": "Memepay",
    "mint": "GyQzC1kUvqKgidXPhGUncKUhszSLH8e8eMUo3wWppump",
-   "age_s": 14,
-   "sol_in": -0.14,
-   "buys": 2,
-   "sells": 5,
-   "rise_pct": -0.9,
-   "mcap_sol": 32.4,
+   "age_s": 41,
+   "sol_in": -1.59,
+   "buys": 4,
+   "sells": 6,
+   "rise_pct": -9.6,
+   "mcap_sol": 29.5,
    "dev_pct": 8.0,
    "big_sell": 1.67,
    "x": "https://x.com/memepayapp",
@@ -6636,7 +6654,7 @@
    "symbol": "RB",
    "name": "ROGUES BUM",
    "mint": "FtaVD57vLSW3YFdT3Su7mJCUSkVEYUD9sBY7dwy2pump",
-   "age_s": 18,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6654,7 +6672,7 @@
    "symbol": "AOTUS",
    "name": "AIPAC Of The United States",
    "mint": "9zqR454rF6wo1CkTTRVbnjT5jBQxq8ujWSSamD2hLsWV",
-   "age_s": 21,
+   "age_s": 48,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6672,14 +6690,14 @@
    "symbol": "Saitama",
    "name": "埼玉コイン",
    "mint": "ERLVAR9UepK2V94MGNFP3mPFVsub6i2e79sKoZkxpump",
-   "age_s": 28,
-   "sol_in": 0.35,
+   "age_s": 55,
+   "sol_in": -1.28,
    "buys": 1,
-   "sells": 2,
-   "rise_pct": 2.2,
-   "mcap_sol": 31.1,
+   "sells": 3,
+   "rise_pct": -8.0,
+   "mcap_sol": 28.0,
    "dev_pct": 4.4,
-   "big_sell": 1.43,
+   "big_sell": 1.63,
    "x": "https://x.com/TrenchbullDevs/status/2126609957143589149?a=mQcbnSqbyPHZfDBJoX8&s=20",
    "tg": false,
    "web": "https://www.ownerpet.net/up/u2/read.php?p=1&q=125&s=4",
@@ -6690,7 +6708,7 @@
    "symbol": "RB",
    "name": "ROGUES BUM",
    "mint": "2zB3ZQRNy8tiqNvB7ZkrbHFA3Pbj2u8ic73FY4pNpump",
-   "age_s": 66,
+   "age_s": 93,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6708,7 +6726,7 @@
    "symbol": "ANDRE",
    "name": "Princess Andre",
    "mint": "Dfavp4UpLja14HkQXQ42mxTE8ukkESdZrfEpRsmVpump",
-   "age_s": 100,
+   "age_s": 127,
    "sol_in": -1.47,
    "buys": 1,
    "sells": 6,
@@ -6726,7 +6744,7 @@
    "symbol": "POOPBALL",
    "name": "POOPBALL",
    "mint": "2UmFLDMEKfVeRCjoCy3uFnC7pDusWdKJhkCf7kQLpump",
-   "age_s": 116,
+   "age_s": 143,
    "sol_in": 0.33,
    "buys": 3,
    "sells": 3,
@@ -6744,7 +6762,7 @@
    "symbol": "nvdi",
    "name": "NVIDIA insider",
    "mint": "BmYm9mxM96Sg5CTZr49UxrQTcfuVWBmtSYqScKCupump",
-   "age_s": 121,
+   "age_s": 148,
    "sol_in": -0.15,
    "buys": 6,
    "sells": 1,
@@ -6762,7 +6780,7 @@
    "symbol": "EYS",
    "name": "EYES",
    "mint": "Ap99RRYqLnL6YuomiRHzCbShWyuKf4YRVaF91CiApump",
-   "age_s": 135,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 0,
@@ -6780,7 +6798,7 @@
    "symbol": "WOMAN",
    "name": "woman",
    "mint": "Bc9XedbK7G8H3HsvP3C8B1xoH6D8LzSWojNxdjjJidm9",
-   "age_s": 143,
+   "age_s": 170,
    "sol_in": -0.3,
    "buys": 0,
    "sells": 1,
@@ -6798,7 +6816,7 @@
    "symbol": "SCAT",
    "name": "Smothie Cat",
    "mint": "7GaiwBcg9WmiDwrjAxShPuwQvx23yMnQNQmboCZPp9kb",
-   "age_s": 148,
+   "age_s": 175,
    "sol_in": 1.03,
    "buys": 1,
    "sells": 1,
@@ -6811,42 +6829,6 @@
    "web": "https://smoothie.exchange/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "JUGULAR",
-   "name": "GTA 6 Ocelot Jugular",
-   "mint": "9i7kUcrQtNWcsjwGkMwrjbwKMZi4jaEyHpoXW7etafzC",
-   "age_s": 169,
-   "sol_in": -0.7,
-   "buys": 2,
-   "sells": 3,
-   "rise_pct": -4.5,
-   "mcap_sol": 28.5,
-   "dev_pct": 3.4,
-   "big_sell": 0.73,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "RANRAN",
-   "name": "Ran Ran",
-   "mint": "G3TdknJCRqxryG8McNyXPsAgdhQJaEuJ96GVbWYvjkEW",
-   "age_s": 174,
-   "sol_in": -2.06,
-   "buys": 9,
-   "sells": 14,
-   "rise_pct": -11.4,
-   "mcap_sol": 33.6,
-   "dev_pct": 15.2,
-   "big_sell": 3.08,
-   "x": "https://x.com/CGTNOfficial/status/2126609547481469061",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
