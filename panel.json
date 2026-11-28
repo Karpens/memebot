@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T10:12:54Z",
+ "updated": "2026-11-28T10:13:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1151,
   "checked": 49,
   "filtered": 1,
-  "lines": 2654,
+  "lines": 2656,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -73,10 +73,6 @@
   }
  ],
  "curve": [
-  [
-   1795824780,
-   47.79
-  ],
   [
    1795824840,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795860720,
    47.79
+  ],
+  [
+   1795860780,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T09:10:58Z",
-   "time": "10:10:58",
-   "agent": "SCANNER",
-   "coin": "Inu",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 1.4 SOL in · +7% since the create · mcap 53 SOL",
-   "n": 2455
-  },
-  {
-   "t": "2026-11-28T09:11:15Z",
-   "time": "10:11:15",
-   "agent": "SCANNER",
-   "coin": "AASF",
-   "action": "flag",
-   "text": "snipe · first reading 0.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 2456
-  },
-  {
    "t": "2026-11-28T09:11:34Z",
    "time": "10:11:34",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 10 rejected (snipe not bought: last min of th 4, mayhem mode 3, serial launcher 2)",
    "n": 2654
+  },
+  {
+   "t": "2026-11-28T10:13:08Z",
+   "time": "11:13:08",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.2 a minute · 1 watched · 7 rejected (snipe not bought: last min of th 3, serial launcher 2, odd curve reading: virtual SOL i 1) · closest PEBBLES: no curve reading yet",
+   "n": 2655
+  },
+  {
+   "t": "2026-11-28T10:13:08Z",
+   "time": "11:13:08",
+   "agent": "SCANNER",
+   "coin": "PEBBLES",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 4.309 is not 30 + real SOL 0.01731 (off -25.71 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 887 odd readings from 267 coins tonight",
+   "n": 2656
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 886 (266 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 36 watched · ws off · odd curve readings 891 (267 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1294,
-    "last_event_age_s": 42.4,
+    "events": 1298,
+    "last_event_age_s": 4.4,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26941,
-    "last_event_age_s": 0.9,
+    "events": 26976,
+    "last_event_age_s": 0.4,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 928,
-    "last_event_age_s": 43.8,
+    "events": 930,
+    "last_event_age_s": 14.0,
     "errors": 34,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,11 +6533,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.4,
   "watching": 0,
-  "followed": 7,
-  "odd_readings": 886,
-  "odd_coins": 266
+  "followed": 8,
+  "odd_readings": 891,
+  "odd_coins": 267
  },
  "learner": {
   "samples": 84,
@@ -6584,28 +6584,82 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 21609,
+   "sent": 21641,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 21609,
+   "sent": 21641,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "000",
+   "name": "000",
+   "mint": "2oxQQFNWRyfqGYft7bqESRbMRj7BeuDEwX5fXux6pump",
+   "age_s": 9,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.2,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "Billionair",
+   "name": "Billionaire club",
+   "mint": "Gjrqb6QZh1sSe8VHti3DtNwSXVBucXdAiugRhdY9pump",
+   "age_s": 14,
+   "sol_in": 0.25,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 1.7,
+   "mcap_sol": 28.5,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
+   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
+  },
+  {
+   "symbol": "PEBBLES",
+   "name": "Pebbles",
+   "mint": "5pfZH2UMVphAJYnJufNWwTBLRWDuJHthFFuGGs9Upump",
+   "age_s": 16,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/PebblesFun",
+   "tg": false,
+   "web": "https://pebblesfun.tech/",
+   "status": "rejected: odd curve reading: virtual SOL 4.309 is not 30 + real SOL 0.01731 (off -25.71 SOL)",
+   "why": "odd curve reading: virtual SOL 4.309 is not 30 + real SOL 0.01731 (off -25.71 SOL)"
+  },
+  {
    "symbol": "Verdict",
    "name": "Verdict",
    "mint": "6zLzZLeknx3dnr8VgQuV9fr4L3sHUho2efuL9xMepump",
-   "age_s": 44,
-   "sol_in": 0.29,
-   "buys": 14,
-   "sells": 21,
-   "rise_pct": 1.9,
-   "mcap_sol": 28.8,
+   "age_s": 74,
+   "sol_in": -0.01,
+   "buys": 15,
+   "sells": 25,
+   "rise_pct": -0.1,
+   "mcap_sol": 28.2,
    "dev_pct": 0.5,
    "big_sell": 4.69,
    "x": "https://x.com/verdictbackup",
@@ -6618,12 +6672,12 @@
    "symbol": "Hope",
    "name": "Hope",
    "mint": "HnhchaK89jJ8nJN5ZV1L5i9dGQTvo8DmYcUh2QED2xX2",
-   "age_s": 57,
-   "sol_in": -2.3,
-   "buys": 6,
-   "sells": 15,
-   "rise_pct": -12.7,
-   "mcap_sol": 33.1,
+   "age_s": 87,
+   "sol_in": -4.79,
+   "buys": 8,
+   "sells": 18,
+   "rise_pct": -25.5,
+   "mcap_sol": 28.2,
    "dev_pct": 15.2,
    "big_sell": 3.03,
    "x": "https://x.com/MarioPrezldente/status/2126620094633754956",
@@ -6636,12 +6690,12 @@
    "symbol": "RELAY",
    "name": "Relay",
    "mint": "vXgDBtXoSJM2ZzvA1oLYQ45X3v1VuDX86z8C2xwRdPS",
-   "age_s": 74,
-   "sol_in": 0.13,
+   "age_s": 104,
+   "sol_in": -0.06,
    "buys": 3,
-   "sells": 8,
-   "rise_pct": 0.8,
-   "mcap_sol": 28.3,
+   "sells": 9,
+   "rise_pct": -0.4,
+   "mcap_sol": 28.0,
    "dev_pct": 0.2,
    "big_sell": 7.2,
    "x": "https://x.com/Relay_Key",
@@ -6654,7 +6708,7 @@
    "symbol": "000",
    "name": "000",
    "mint": "6Pw6Vh5kn7ZaM7DTJA2mdTLwfc7UoQ8Wy8SKr6Sgpump",
-   "age_s": 80,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6672,7 +6726,7 @@
    "symbol": "Hope",
    "name": "Hope",
    "mint": "8ow3gH6mfoeyWMLdHM1GMygEKNpJFra3YRUrDt47pump",
-   "age_s": 80,
+   "age_s": 110,
    "sol_in": -0.09,
    "buys": 5,
    "sells": 19,
@@ -6690,7 +6744,7 @@
    "symbol": "SATNA",
    "name": "Satna Klause",
    "mint": "3UWF2btPVVSF8zbnkkfprdngLqCJwRitPXdaGL6Rpump",
-   "age_s": 82,
+   "age_s": 112,
    "sol_in": -1.42,
    "buys": 7,
    "sells": 8,
@@ -6708,7 +6762,7 @@
    "symbol": "MONEYGRAM",
    "name": "MoneyGram",
    "mint": "GNY4n7otdW3x54xYEpGgmV21a2pkSRWPx6tYy5oVDCHN",
-   "age_s": 132,
+   "age_s": 162,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6721,42 +6775,6 @@
    "web": "https://useanonpad.fun/coin/GNY4n7otdW3x54xYEpGgmV21a2pkSRWPx6tYy5oVDCHN",
    "status": "rejected: odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL)",
    "why": "odd curve reading: virtual SOL 2.652e+05 is not 30 + real SOL 0 (off +2.652e+05 SOL)"
-  },
-  {
-   "symbol": "FCOURT",
-   "name": "Family Court Gaurdian",
-   "mint": "FgPv6SkREp9TdqeCciFAkRg7n8sevMa2FMq2ZMptpump",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.3,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "BUSYNADS",
-   "name": "BusyNads",
-   "mint": "8C5ecYfdbvLbNLDLHbZZS3VZ97mT8paw7X7HBsJfJvKW",
-   "age_s": 179,
-   "sol_in": -1.29,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -8.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 4.4,
-   "big_sell": 1.29,
-   "x": "https://x.com/BusyNads",
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: last 5 min of this job: no new entries (the next job takes over)",
-   "why": "snipe not bought: last 5 min of this job: no new entries (the next job takes over)"
   }
  ],
  "strategies": [
