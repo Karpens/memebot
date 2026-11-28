@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T08:24:23Z",
+ "updated": "2026-11-28T08:24:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 943,
+  "flagged": 944,
   "checked": 49,
   "filtered": 1,
-  "lines": 2287,
+  "lines": 2288,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "CAT",
-   "why": "snipe",
-   "t": "2026-11-28T08:17:47Z"
-  },
   {
    "coin": "TREMP",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "GRCL",
    "why": "snipe",
    "t": "2026-11-28T08:24:08Z"
+  },
+  {
+   "coin": "ascend",
+   "why": "snipe",
+   "t": "2026-11-28T08:24:25Z"
   }
  ],
  "curve": [
@@ -4485,15 +4485,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T07:16:45Z",
-   "time": "08:16:45",
-   "agent": "SCANNER",
-   "coin": "Catfood",
-   "action": "flag",
-   "text": "snipe · first reading 5.0 s after the create · 0.1 SOL in · +1% since the create · mcap 28 SOL",
-   "n": 2088
-  },
-  {
    "t": "2026-11-28T07:17:33Z",
    "time": "08:17:33",
    "agent": "SCANNER",
@@ -6283,6 +6274,15 @@
    "action": "scan",
    "text": "new pairs · 2.4 a minute · 0 watched · 7 rejected (snipe not bought: only to size 4, serial launcher 3)",
    "n": 2287
+  },
+  {
+   "t": "2026-11-28T08:24:25Z",
+   "time": "09:24:25",
+   "agent": "SCANNER",
+   "coin": "ascend",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 4.4 SOL in · +27% since the create · mcap 47 SOL",
+   "n": 2288
   }
  ],
  "nights": [
@@ -6355,7 +6355,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 32 watched · ws off · odd curve readings 616 (237 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 616 (237 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6363,24 +6363,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 853,
-    "last_event_age_s": 9.3,
+    "events": 856,
+    "last_event_age_s": 15.0,
     "errors": 13,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 12931,
-    "last_event_age_s": 2.7,
+    "events": 13023,
+    "last_event_age_s": 0.4,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 614,
-    "last_event_age_s": 11.4,
+    "connected": true,
+    "events": 617,
+    "last_event_age_s": 14.9,
     "errors": 27,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6393,9 +6393,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 6,
+  "followed": 9,
   "odd_readings": 616,
   "odd_coins": 237
  },
@@ -6444,23 +6444,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14681,
+   "sent": 14717,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14681,
+   "sent": 14717,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "GitHub",
+   "name": "GitHub",
+   "mint": "FcducEFKNXEqSzcs7eCo1xegtR4U98SzETYXx47Lpump",
+   "age_s": 14,
+   "sol_in": 17.97,
+   "buys": 5,
+   "sells": 1,
+   "rise_pct": 136.2,
+   "mcap_sol": 82.1,
+   "dev_pct": 11.1,
+   "big_sell": 0.49,
+   "x": "https://x.com/github",
+   "tg": false,
+   "web": "https://github.com/",
+   "status": "rejected: serial launcher: 3 more coins in 60 min",
+   "why": "serial launcher: 3 more coins in 60 min"
+  },
+  {
+   "symbol": "PHIPHI",
+   "name": "The Felis Catus",
+   "mint": "CJuqb15hWKG4i9iH1kcgCcWU7uqKjYJsqyq9Un8jpump",
+   "age_s": 15,
+   "sol_in": 7.47,
+   "buys": 7,
+   "sells": 5,
+   "rise_pct": 54.0,
+   "mcap_sol": 45.9,
+   "dev_pct": 3.4,
+   "big_sell": 0.94,
+   "x": "https://x.com/gigadiggadev/status/2126593090056073447",
+   "tg": false,
+   "web": "https://www.instagram.com/reels/Dfrvv87AImb/",
+   "status": "rejected: serial launcher: 6 more coins in 60 min",
+   "why": "serial launcher: 6 more coins in 60 min"
+  },
+  {
+   "symbol": "ascend",
+   "name": "ascend",
+   "mint": "A7xhY12G388pXGsBuweS6NkyZyv53ogH1dNfEkCMpump",
+   "age_s": 32,
+   "sol_in": 18.39,
+   "buys": 15,
+   "sells": 12,
+   "rise_pct": 135.2,
+   "mcap_sol": 86.7,
+   "dev_pct": 13.8,
+   "big_sell": 1.46,
+   "x": "https://x.com/ascendcatpf/status/2126592996984471650",
+   "tg": false,
+   "web": "https://www.instagram.com/reels/DgMEThDsS2z/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "GRCL",
    "name": "Grumpy Cloud",
    "mint": "GKs1qFTdXAzEyM8vxJcpSw6aAjvyzMCzevUqZTRqpump",
-   "age_s": 15,
+   "age_s": 49,
    "sol_in": 0.47,
    "buys": 2,
    "sells": 1,
@@ -6478,12 +6532,12 @@
    "symbol": "HI",
    "name": "Homeless Inu",
    "mint": "FkzGwq4VZ3XYHtk33fTofxFWeWn6PZpS2pB18rHRpump",
-   "age_s": 65,
-   "sol_in": -0.69,
+   "age_s": 99,
+   "sol_in": -0.98,
    "buys": 11,
-   "sells": 14,
-   "rise_pct": -4.4,
-   "mcap_sol": 28.5,
+   "sells": 15,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
    "dev_pct": 3.4,
    "big_sell": 1.66,
    "x": "https://x.com/gigadiggadev/status/2126592736589500575",
@@ -6496,7 +6550,7 @@
    "symbol": "jimmy_is_b",
    "name": "JIMMY",
    "mint": "HnK7zpG1QPgsPyMzbcmCU7om2Y7mkpsmEbqp3cLVpump",
-   "age_s": 112,
+   "age_s": 146,
    "sol_in": 0.25,
    "buys": 1,
    "sells": 0,
@@ -6514,7 +6568,7 @@
    "symbol": "4CHAN",
    "name": "4chan coin",
    "mint": "QpTYwezFgthYQJvm3jZUQ3mqPe9fxtSuXeTKXXBpump",
-   "age_s": 123,
+   "age_s": 157,
    "sol_in": -0.99,
    "buys": 5,
    "sells": 9,
@@ -6532,7 +6586,7 @@
    "symbol": "ROMANCE",
    "name": "PEAKROMANCE",
    "mint": "GRsTL1ijQcVHtAJY9hQqyYqYTTD6LHAxr4E7GtnbmWc9",
-   "age_s": 136,
+   "age_s": 170,
    "sol_in": -0.59,
    "buys": 1,
    "sells": 2,
@@ -6550,7 +6604,7 @@
    "symbol": "baguette",
    "name": "france is dead, send this",
    "mint": "FzSvqEwoas6d47BbjGi5HkAixewERYRdHs2wdQSRgdRF",
-   "age_s": 145,
+   "age_s": 179,
    "sol_in": -0.03,
    "buys": 10,
    "sells": 17,
