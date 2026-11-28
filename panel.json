@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:58:47Z",
+ "updated": "2026-11-28T13:59:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1593,
+  "flagged": 1594,
   "checked": 49,
   "filtered": 1,
-  "lines": 3443,
+  "lines": 3445,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -47,11 +47,6 @@
    "t": "2026-11-28T13:56:31Z"
   },
   {
-   "coin": "igloo",
-   "why": "snipe",
-   "t": "2026-11-28T13:56:51Z"
-  },
-  {
    "coin": "MARS",
    "why": "snipe",
    "t": "2026-11-28T13:57:00Z"
@@ -70,13 +65,14 @@
    "coin": "Anthropic",
    "why": "snipe",
    "t": "2026-11-28T13:58:33Z"
+  },
+  {
+   "coin": "igloo",
+   "why": "snipe",
+   "t": "2026-11-28T13:59:03Z"
   }
  ],
  "curve": [
-  [
-   1795838340,
-   47.79
-  ],
   [
    1795838400,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795874280,
    47.79
+  ],
+  [
+   1795874340,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T13:06:53Z",
-   "time": "14:06:53",
-   "agent": "SCANNER",
-   "coin": "ELF",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3244
-  },
-  {
-   "t": "2026-11-28T13:07:06Z",
-   "time": "14:07:06",
-   "agent": "SCANNER",
-   "coin": "BRELLA",
-   "action": "flag",
-   "text": "snipe · first reading 0.4 s after the create · 0.9 SOL in · +6% since the create · mcap 32 SOL",
-   "n": 3245
-  },
-  {
    "t": "2026-11-28T13:07:10Z",
    "time": "14:07:10",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 17.7 SOL in · +133% since the create · mcap 82 SOL",
    "n": 3443
+  },
+  {
+   "t": "2026-11-28T13:59:03Z",
+   "time": "14:59:03",
+   "agent": "SCANNER",
+   "coin": "igloo",
+   "action": "flag",
+   "text": "snipe · first reading 0.7 s after the create · 0.4 SOL in · +2% since the create · mcap 31 SOL",
+   "n": 3444
+  },
+  {
+   "t": "2026-11-28T13:59:16Z",
+   "time": "14:59:16",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 7.2 a minute · 0 watched · 22 rejected (mayhem mode 11, snipe not bought: only to size 7, serial launcher 3)",
+   "n": 3445
   }
  ],
  "nights": [
@@ -6491,7 +6491,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 48 watched · ws off · odd curve readings 1193 (337 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 45 watched · ws off · odd curve readings 1213 (337 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6499,24 +6499,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1198,
-    "last_event_age_s": 14.7,
+    "events": 1199,
+    "last_event_age_s": 17.9,
     "errors": 11,
     "last_error": "TimeoutError: timed out while waiting for handshake response"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 26875,
-    "last_event_age_s": 0.1,
+    "events": 26949,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 671,
-    "last_event_age_s": 14.4,
+    "events": 672,
+    "last_event_age_s": 17.7,
     "errors": 30,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,10 +6529,10 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 7.4,
+  "creates_per_min": 7.2,
   "watching": 0,
-  "followed": 13,
-  "odd_readings": 1193,
+  "followed": 10,
+  "odd_readings": 1213,
   "odd_coins": 337
  },
  "learner": {
@@ -6580,30 +6580,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14306,
+   "sent": 14341,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14306,
+   "sent": 14341,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "igloo",
+   "name": "igloo",
+   "mint": "CujuNKEALCk2jEXNKrfd8x5iPR3tBrNJDQc67R5Lpump",
+   "age_s": 17,
+   "sol_in": 3.13,
+   "buys": 4,
+   "sells": 0,
+   "rise_pct": 21.2,
+   "mcap_sol": 36.2,
+   "dev_pct": 3.4,
+   "big_sell": 0.0,
+   "x": "https://x.com/igloo_tech",
+   "tg": false,
+   "web": "https://iglootech.app/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Anthropic",
    "name": "Anthropic official",
    "mint": "7soYxYHCo8YSsiFcrTPWEuMU2yBXuUzku6bFuiBQpump",
-   "age_s": 14,
-   "sol_in": 17.93,
-   "buys": 5,
-   "sells": 0,
-   "rise_pct": 134.4,
-   "mcap_sol": 83.0,
+   "age_s": 47,
+   "sol_in": 42.79,
+   "buys": 8,
+   "sells": 5,
+   "rise_pct": 414.2,
+   "mcap_sol": 182.0,
    "dev_pct": 11.9,
-   "big_sell": 0.0,
+   "big_sell": 0.43,
    "x": "https://x.com/AnthropicAI",
    "tg": false,
    "web": "https://www.anthropic.com/",
@@ -6614,12 +6632,12 @@
    "symbol": "SANCHEZ",
    "name": "Sanchez The Raccoon",
    "mint": "AqRNV88ZW5Xd3NrWCCakeRZxi5o1oCXQD4cEFtU8pump",
-   "age_s": 21,
-   "sol_in": -1.87,
-   "buys": 10,
-   "sells": 11,
-   "rise_pct": -10.4,
-   "mcap_sol": 34.1,
+   "age_s": 54,
+   "sol_in": -1.57,
+   "buys": 17,
+   "sells": 22,
+   "rise_pct": -8.8,
+   "mcap_sol": 34.7,
    "dev_pct": 15.3,
    "big_sell": 8.28,
    "x": "https://x.com/devilsiopf/status/2126676925057740867",
@@ -6632,7 +6650,7 @@
    "symbol": "FOMOON",
    "name": "Fomoon",
    "mint": "3RaaAzEXSfh4ob9oSQX2EotETnrkYboeC36zg5iEpnNH",
-   "age_s": 39,
+   "age_s": 72,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6650,7 +6668,7 @@
    "symbol": "REMV",
    "name": "Yarmo Remvi",
    "mint": "2WxXbae8iswCRbykYuAXZNqNAsFS3SpwuFRc1KczFro8",
-   "age_s": 79,
+   "age_s": 112,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6668,7 +6686,7 @@
    "symbol": "NEED$",
    "name": "Money",
    "mint": "8wMYzfYYUYqrW5BzrqDyZW4MrX7CQ7K6d6jcPdCjpump",
-   "age_s": 86,
+   "age_s": 119,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -6686,7 +6704,7 @@
    "symbol": "NELV",
    "name": "Ertov Nelva",
    "mint": "9QuGJFnQvwPGdvGqs1EK34nbShM1VZqvJWaJWkZ5iz4q",
-   "age_s": 89,
+   "age_s": 122,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6704,7 +6722,7 @@
    "symbol": "REMV",
    "name": "Ardun Remvi",
    "mint": "CL9tztuGTiZkYUUQ4irWMvyW6ghTYdwRcjrZPDbTm8s1",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6722,7 +6740,7 @@
    "symbol": "DICE",
    "name": "DICE",
    "mint": "B7eXrA8cunbsYrkDGxvR4cRTZNg9byKLr4fqbcH5pump",
-   "age_s": 99,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6740,12 +6758,12 @@
    "symbol": "MARS",
    "name": "Mars the Pygmy Hippo",
    "mint": "BeWMhJazUuA3rTDKaAej7SuKgz5eKdPFK6CLhMMkpump",
-   "age_s": 107,
-   "sol_in": 7.85,
-   "buys": 17,
+   "age_s": 140,
+   "sol_in": 7.99,
+   "buys": 18,
    "sells": 17,
-   "rise_pct": 55.1,
-   "mcap_sol": 49.3,
+   "rise_pct": 56.2,
+   "mcap_sol": 49.6,
    "dev_pct": 6.6,
    "big_sell": 4.43,
    "x": "https://x.com/kryptonite3ee/status/2126676732635664537",
@@ -6758,7 +6776,7 @@
    "symbol": "ERTO",
    "name": "Ardun Ertov",
    "mint": "5sEFAt8XeXmWZkTMK91PqjxrAEVzCoiNTmDSAGA2agpL",
-   "age_s": 113,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6776,7 +6794,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "5iF3GbAbi8D63yaKSo8wAR9zVuZFhYbM2Q5KQSdhpump",
-   "age_s": 116,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6794,7 +6812,7 @@
    "symbol": "igloo",
    "name": "igloo",
    "mint": "4jGMiGvBc97FnYDi6siJQ3T6UUWVLdGTxesrb37Mpump",
-   "age_s": 117,
+   "age_s": 150,
    "sol_in": -0.14,
    "buys": 2,
    "sells": 4,
@@ -6812,7 +6830,7 @@
    "symbol": "$LA BEAST",
    "name": "$HAVE A GOOD DAY",
    "mint": "4jrLyYw4cHjpKuZNhHmamy7y25soMff6zijYkB6ppump",
-   "age_s": 119,
+   "age_s": 152,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6830,7 +6848,7 @@
    "symbol": "KIRV",
    "name": "Ubrin Kirvo",
    "mint": "GsnpWud84GBUUvd84vRwfvsLRBfXgmbjxwUrHEg3vQpP",
-   "age_s": 123,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6848,7 +6866,7 @@
    "symbol": "Orange Jew",
    "name": "Jews Are Evil",
    "mint": "GWPbqQLnGZs9mRx8jd6gduLqswTB49yJQuZ8NQZdpump",
-   "age_s": 123,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6866,7 +6884,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4y9j84j12K4CmYZ7pTPLLnToUEAVDaRoNX6tZv2dpZTv",
-   "age_s": 130,
+   "age_s": 163,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6884,12 +6902,12 @@
    "symbol": "DIP",
    "name": "Buy the Dip",
    "mint": "Br9Ns1DMeJWkqTpDLTkN6zxJZvnUjtznPCpjVjDBeBdT",
-   "age_s": 132,
-   "sol_in": -3.22,
+   "age_s": 165,
+   "sol_in": -3.97,
    "buys": 4,
-   "sells": 8,
-   "rise_pct": -17.6,
-   "mcap_sol": 31.3,
+   "sells": 9,
+   "rise_pct": -21.4,
+   "mcap_sol": 29.8,
    "dev_pct": 15.2,
    "big_sell": 3.04,
    "x": "https://x.com/wallstreetbets/status/2126676570743923058",
@@ -6902,7 +6920,7 @@
    "symbol": "LOME",
    "name": "Bisko Lomet",
    "mint": "2jKjfS1oAgkJ4xNm3fMNK2GKzrRUFRSp8icanDaYoh9H",
-   "age_s": 135,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6920,7 +6938,7 @@
    "symbol": "Memu",
    "name": "Memu coin",
    "mint": "6nTjfxvcr1onNsyJGPBRCXMJpZmFQa3prLfgQnuapump",
-   "age_s": 135,
+   "age_s": 168,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6933,24 +6951,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "CABAL",
-   "name": "CABAL EYE",
-   "mint": "5ZtAxveU2tma8yUugNnyLNR9Cx94RTWdSeDDXseor962",
-   "age_s": 136,
-   "sol_in": 0.37,
-   "buys": 2,
-   "sells": 4,
-   "rise_pct": 2.5,
-   "mcap_sol": 28.8,
-   "dev_pct": 0.2,
-   "big_sell": 0.51,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
   }
  ],
  "strategies": [
