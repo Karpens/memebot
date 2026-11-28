@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T13:48:19Z",
+ "updated": "2026-11-28T13:48:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 1565,
   "checked": 49,
   "filtered": 1,
-  "lines": 3398,
+  "lines": 3399,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -4625,15 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T12:55:07Z",
-   "time": "13:55:07",
-   "agent": "SCANNER",
-   "coin": "Mars",
-   "action": "flag",
-   "text": "snipe · first reading 0.2 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 3199
-  },
-  {
    "t": "2026-11-28T12:55:09Z",
    "time": "13:55:09",
    "agent": "SCANNER",
@@ -6423,6 +6414,15 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, serial launcher 1, no symbol or name 1)",
    "n": 3398
+  },
+  {
+   "t": "2026-11-28T13:48:40Z",
+   "time": "14:48:40",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "feed",
+   "text": "pumpportal live again · pumpportal live · curve poll 1 s · 30 watched · ws off",
+   "n": 3399
   }
  ],
  "nights": [
@@ -6491,23 +6491,23 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal down · curve poll 1 s · 30 watched · ws off · odd curve readings 1052 (333 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 30 watched · ws off · odd curve readings 1052 (333 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
   "feeds": [
    {
     "name": "pumpportal",
-    "connected": false,
+    "connected": true,
     "events": 1129,
-    "last_event_age_s": 112.4,
+    "last_event_age_s": 145.4,
     "errors": 11,
     "last_error": "TimeoutError: timed out while waiting for handshake response"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 25073,
+    "events": 25124,
     "last_event_age_s": 0.3,
     "errors": 0,
     "last_error": null
@@ -6516,7 +6516,7 @@
     "name": "metadata",
     "connected": true,
     "events": 622,
-    "last_event_age_s": 112.3,
+    "last_event_age_s": 145.3,
     "errors": 29,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6529,9 +6529,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 2.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 3,
   "odd_readings": 1052,
   "odd_coins": 333
  },
@@ -6580,13 +6580,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13638,
+   "sent": 13673,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13638,
+   "sent": 13673,
    "errors": 0,
    "last_error": null
   }
@@ -6596,7 +6596,7 @@
    "symbol": "GrandmaV2",
    "name": "Minecraft Grandma Fund V2",
    "mint": "2a6XZNBDdnpBBfEfGEA5P2Qa3iLv4hMsBFaNGbRopump",
-   "age_s": 112,
+   "age_s": 145,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 2,
@@ -6614,7 +6614,7 @@
    "symbol": "?",
    "name": "",
    "mint": "2YrG5QTw8vaZ3sxoJn3Bg5cnBgNF3VAF8bKse6TqPkqV",
-   "age_s": 113,
+   "age_s": 146,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6632,7 +6632,7 @@
    "symbol": "GBLIN",
    "name": "GOBLIN",
    "mint": "4BDtJ7Mm7B14k9CTbswvkxfrLGAyhhzwxRcammh9pump",
-   "age_s": 138,
+   "age_s": 171,
    "sol_in": -0.2,
    "buys": 2,
    "sells": 3,
@@ -6650,7 +6650,7 @@
    "symbol": "aura",
    "name": "aura",
    "mint": "4ZDtN1b8Ptidok4JYUcNGtuSEPKFYb63wsXuZBWYpump",
-   "age_s": 143,
+   "age_s": 176,
    "sol_in": -0.92,
    "buys": 7,
    "sells": 18,
@@ -6661,24 +6661,6 @@
    "x": "https://x.com/onchainmidas_/status/2126673891976155197",
    "tg": false,
    "web": "https://x.com/jwwcyl/status/2126536323163209853",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PONZI",
-   "name": "PonziPump",
-   "mint": "qSsXP7i93ZFZZMuCqDW4ucjnJxrAUcZAmKx6yLJpump",
-   "age_s": 179,
-   "sol_in": -0.59,
-   "buys": 5,
-   "sells": 9,
-   "rise_pct": -3.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 2.1,
-   "big_sell": 3.81,
-   "x": "https://x.com/Ponzipumpsol/status/2126673742969680070?a=rzgaWp_cuNdZ6cDWsnA&s=20",
-   "tg": false,
-   "web": "https://ponzipump.lol",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
