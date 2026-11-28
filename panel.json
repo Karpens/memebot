@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T05:55:52Z",
+ "updated": "2026-11-28T05:56:20Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 773,
+  "flagged": 775,
   "checked": 49,
   "filtered": 1,
-  "lines": 1887,
+  "lines": 1889,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "packball",
-   "why": "snipe",
-   "t": "2026-11-28T05:32:14Z"
-  },
-  {
-   "coin": "GTAVI",
-   "why": "snipe",
-   "t": "2026-11-28T05:35:54Z"
-  },
   {
    "coin": "PSX1",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "SPEED",
    "why": "snipe",
    "t": "2026-11-28T05:55:21Z"
+  },
+  {
+   "coin": "Groo",
+   "why": "snipe",
+   "t": "2026-11-28T05:55:58Z"
+  },
+  {
+   "coin": "ALEAST",
+   "why": "snipe",
+   "t": "2026-11-28T05:56:08Z"
   }
  ],
  "curve": [
@@ -1735,6 +1735,10 @@
   ],
   [
    1795845300,
+   47.79
+  ],
+  [
+   1795845360,
    47.79
   ]
  ],
@@ -3889,24 +3893,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:31:10Z",
-   "time": "05:31:10",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.8 a minute · 1 watched · 8 rejected (snipe not bought: last min of th 4, snipe not bought: only to size 2, serial launcher 2) · closest PETA: no curve reading yet",
-   "n": 1688
-  },
-  {
-   "t": "2026-11-28T04:31:36Z",
-   "time": "05:31:36",
-   "agent": "SCANNER",
-   "coin": "MOSAIC",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 360 odd readings from 164 coins tonight",
-   "n": 1689
-  },
-  {
    "t": "2026-11-28T04:32:10Z",
    "time": "05:32:10",
    "agent": "SCANNER",
@@ -5687,6 +5673,24 @@
    "action": "scan",
    "text": "new pairs · 1.4 a minute · 0 watched · 5 rejected (mayhem mode 2, serial launcher 1, snipe not bought: only to size 1)",
    "n": 1887
+  },
+  {
+   "t": "2026-11-28T05:55:58Z",
+   "time": "06:55:58",
+   "agent": "SCANNER",
+   "coin": "Groo",
+   "action": "flag",
+   "text": "snipe · first reading 2.8 s after the create · 11.8 SOL in · +79% since the create · mcap 68 SOL",
+   "n": 1888
+  },
+  {
+   "t": "2026-11-28T05:56:08Z",
+   "time": "06:56:08",
+   "agent": "SCANNER",
+   "coin": "ALEAST",
+   "action": "flag",
+   "text": "snipe · first reading 2.3 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
+   "n": 1889
   }
  ],
  "nights": [
@@ -5753,7 +5757,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 11 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 13 watched · ws off · odd curve readings 406 (185 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5761,24 +5765,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 274,
-    "last_event_age_s": 17.6,
+    "events": 276,
+    "last_event_age_s": 13.4,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 2052,
-    "last_event_age_s": 0.3,
+    "events": 2083,
+    "last_event_age_s": 2.2,
     "errors": 214,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 212,
-    "last_event_age_s": 39.7,
+    "connected": true,
+    "events": 214,
+    "last_event_age_s": 12.9,
     "errors": 12,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5791,9 +5795,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.4,
+  "creates_per_min": 1.8,
   "watching": 0,
-  "followed": 2,
+  "followed": 4,
   "odd_readings": 406,
   "odd_coins": 185
  },
@@ -5842,23 +5846,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 5196,
+   "sent": 5226,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 5196,
+   "sent": 5226,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "ALEAST",
+   "name": "Staying in the AL East",
+   "mint": "5fdFkwc27t4afWHsUSjDQ1JdKvxKdaWMh8an6uZ7pump",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.5,
+   "dev_pct": 2.8,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": "https://sports.yahoo.com/mlb/articles/yankees-lose-jazz-chisholm-american-205243238.html?mint=",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "Groo",
+   "name": "Groo",
+   "mint": "DuEFAc9vN2zL6DZRN4yD2MoaUWPrSQ2Mmn5dTQvepump",
+   "age_s": 23,
+   "sol_in": 7.68,
+   "buys": 5,
+   "sells": 5,
+   "rise_pct": 48.8,
+   "mcap_sol": 56.4,
+   "dev_pct": 15.2,
+   "big_sell": 3.27,
+   "x": "https://x.com/WojTheDegen/status/2126555520290959666",
+   "tg": false,
+   "web": "https://x.com/i/communities/2023407389253435661",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "BTC",
    "name": "Buy The Clown",
    "mint": "6wms2CxkYZD26KjNYHxJ4AnhQa5Wh6SQ1SuvSP4Apump",
-   "age_s": 17,
+   "age_s": 45,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5876,7 +5916,7 @@
    "symbol": "SPEED",
    "name": "Speed Test",
    "mint": "CHXpsAqNeDoFEGrU9EchWcnNb8NkbXe5QvhTt4Ldpump",
-   "age_s": 39,
+   "age_s": 67,
    "sol_in": -0.05,
    "buys": 0,
    "sells": 1,
@@ -5894,7 +5934,7 @@
    "symbol": "ATS",
    "name": "Alpa Trust Solutions",
    "mint": "TwegSx1dAyTbpAAfgef8vsqqUVfz3Yjjuw3Z6Nopump",
-   "age_s": 132,
+   "age_s": 160,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5912,7 +5952,7 @@
    "symbol": "air",
    "name": "thin air",
    "mint": "DZXTLNri4bcjxNXugDpX6WmS3uvfEPNvtq5hDiYrpump",
-   "age_s": 141,
+   "age_s": 169,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5925,24 +5965,6 @@
    "web": false,
    "status": "rejected: serial launcher: 4 more coins in 60 min",
    "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "RIBBIT",
-   "name": "Hoppers Pond",
-   "mint": "CwGCESUipbuiTfxo6kxYo4kvsCe7unRcaJMtyrvfjjCg",
-   "age_s": 170,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.9,
-   "dev_pct": 1.8,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
