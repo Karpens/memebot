@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:40:00Z",
+ "updated": "2026-11-28T02:40:33Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 449,
+  "flagged": 450,
   "checked": 49,
   "filtered": 1,
-  "lines": 1291,
+  "lines": 1294,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "qCoin",
-   "why": "snipe",
-   "t": "2026-11-28T02:35:59Z"
-  },
   {
    "coin": "Pump.fun",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "SHAT",
    "why": "snipe",
    "t": "2026-11-28T02:38:10Z"
+  },
+  {
+   "coin": "reply",
+   "why": "snipe",
+   "t": "2026-11-28T02:40:04Z"
   }
  ],
  "curve": [
@@ -3109,33 +3109,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:37:25Z",
-   "time": "02:37:25",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 5.6 a minute · 0 watched · 20 rejected (mayhem mode 9, snipe not bought: only to size 7, odd curve reading: virtual SOL i 2)",
-   "n": 1092
-  },
-  {
-   "t": "2026-11-28T01:37:54Z",
-   "time": "02:37:54",
-   "agent": "SCANNER",
-   "coin": "D6900",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 1.351e+05 is not 30 + real SOL 0 (off +1.351e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 256 odd readings from 121 coins tonight",
-   "n": 1093
-  },
-  {
-   "t": "2026-11-28T01:38:06Z",
-   "time": "02:38:06",
-   "agent": "SCANNER",
-   "coin": "JERKPE",
-   "action": "flag",
-   "text": "snipe · first reading 0.9 s after the create · 6.1 SOL in · +45% since the create · mcap 40 SOL",
-   "n": 1094
-  },
-  {
    "t": "2026-11-28T01:38:26Z",
    "time": "02:38:26",
    "agent": "SCANNER",
@@ -4907,6 +4880,33 @@
    "action": "scan",
    "text": "new pairs · 2.8 a minute · 0 watched · 10 rejected (snipe not bought: only to size 7, serial launcher 2, no symbol or name 1)",
    "n": 1291
+  },
+  {
+   "t": "2026-11-28T02:40:01Z",
+   "time": "03:40:01",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.4 a minute · 0 watched · 5 rejected (snipe not bought: only to size 4, serial launcher 1)",
+   "n": 1292
+  },
+  {
+   "t": "2026-11-28T02:40:04Z",
+   "time": "03:40:04",
+   "agent": "SCANNER",
+   "coin": "reply",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · -0.7 SOL in · -4% since the create · mcap 29 SOL",
+   "n": 1293
+  },
+  {
+   "t": "2026-11-28T02:40:04Z",
+   "time": "03:40:04",
+   "agent": "SIZER",
+   "coin": "reply",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1294
   }
  ],
  "nights": [
@@ -4987,24 +4987,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1503,
-    "last_event_age_s": 47.9,
+    "events": 1504,
+    "last_event_age_s": 30.0,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 31632,
-    "last_event_age_s": 0.9,
+    "events": 31706,
+    "last_event_age_s": 0.2,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 860,
-    "last_event_age_s": 111.3,
+    "events": 861,
+    "last_event_age_s": 29.8,
     "errors": 43,
     "last_error": "h.uguu.se: timeout after 2 s"
    }
@@ -5017,9 +5017,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.4,
+  "creates_per_min": 2.6,
   "watching": 0,
-  "followed": 5,
+  "followed": 3,
   "odd_readings": 332,
   "odd_coins": 149
  },
@@ -5068,23 +5068,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 14550,
+   "sent": 14585,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 14550,
+   "sent": 14585,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "reply",
+   "name": "reply guy",
+   "mint": "3myzZsLUSaxNLRtN9QJfxKEtCpVVkUnU6ChkaYgYpump",
+   "age_s": 30,
+   "sol_in": -0.99,
+   "buys": 1,
+   "sells": 4,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 0.66,
+   "x": "https://x.com/replyguy_sol_",
+   "tg": false,
+   "web": "https://thereplyguy.fun/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "SHAT",
    "name": "Have A Good Day",
    "mint": "CUSsott6Pivkvgw8MSaedw8XGzgnWk9HW9mWEcZypump",
-   "age_s": 111,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5102,71 +5120,17 @@
    "symbol": "NVIDIA",
    "name": "NVIDIA Newsroom",
    "mint": "FYqEQjYEPq7LVrPRwsLBpXdr1NgNyg9j8GJNs8Adpump",
-   "age_s": 116,
-   "sol_in": 18.99,
-   "buys": 34,
-   "sells": 28,
-   "rise_pct": 145.7,
-   "mcap_sol": 85.5,
+   "age_s": 149,
+   "sol_in": 19.32,
+   "buys": 45,
+   "sells": 38,
+   "rise_pct": 148.8,
+   "mcap_sol": 86.5,
    "dev_pct": 11.1,
    "big_sell": 0.71,
    "x": "https://x.com/nvidianewsroom",
    "tg": false,
    "web": "https://t.co/5UY6GdgPL1",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Randy",
-   "name": "The Survivor",
-   "mint": "CVg4WznF7BBH3KL5WQEL5ZZzADkohubMqi7hfDvipump",
-   "age_s": 158,
-   "sol_in": 17.19,
-   "buys": 72,
-   "sells": 60,
-   "rise_pct": 122.6,
-   "mcap_sol": 84.4,
-   "dev_pct": 15.2,
-   "big_sell": 4.07,
-   "x": "https://x.com/CoachPatNFT/status/2126505696908681522",
-   "tg": false,
-   "web": "https://faktakalbar.id/berita/kisah-penyelamatan-randy-bayi-orangutan-malnutrisi-yang-diselamatkan-dari-lokasi-peti",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "Anthropic",
-   "name": "Anthropic official",
-   "mint": "FoTaY7ihQApDVVepsYtmbmEoVHweE2mw2TUED1vZpump",
-   "age_s": 166,
-   "sol_in": 20.16,
-   "buys": 43,
-   "sells": 28,
-   "rise_pct": 155.1,
-   "mcap_sol": 90.3,
-   "dev_pct": 11.9,
-   "big_sell": 0.63,
-   "x": "https://x.com/AnthropicAI",
-   "tg": false,
-   "web": "https://www.anthropic.com/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "POPCAT",
-   "name": "Popcorn Cat",
-   "mint": "2su7mXvZsiKBo4RdXAKsbQkoucbJNFtjVJwfGJDgpump",
-   "age_s": 167,
-   "sol_in": -0.69,
-   "buys": 3,
-   "sells": 6,
-   "rise_pct": -3.9,
-   "mcap_sol": 36.4,
-   "dev_pct": 15.2,
-   "big_sell": 4.56,
-   "x": "https://x.com/renyukong/status/2126505483809018134",
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
