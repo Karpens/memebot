@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:05:25Z",
+ "updated": "2026-11-28T07:06:00Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 826,
   "checked": 49,
   "filtered": 1,
-  "lines": 2056,
+  "lines": 2057,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -2015,6 +2015,10 @@
   ],
   [
    1795849500,
+   47.79
+  ],
+  [
+   1795849560,
    47.79
   ]
  ],
@@ -4169,15 +4173,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:38:36Z",
-   "time": "06:38:36",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 3 watched · 3 rejected (snipe not bought: only to size 1, mayhem mode 1, no symbol or name 1) · closest SUCCESS: no curve reading yet",
-   "n": 1857
-  },
-  {
    "t": "2026-11-28T05:39:36Z",
    "time": "06:39:36",
    "agent": "SCANNER",
@@ -5967,6 +5962,15 @@
    "action": "scan",
    "text": "new pairs · 3.6 a minute · 1 watched · 11 rejected (serial launcher 9, dump 1, snipe: first reading s after the 1) · closest BI: no curve reading yet",
    "n": 2056
+  },
+  {
+   "t": "2026-11-28T07:05:27Z",
+   "time": "08:05:27",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 3.4 a minute · 2 watched · 6 rejected (serial launcher 5, mayhem mode 1) · closest BI: no curve reading yet",
+   "n": 2057
   }
  ],
  "nights": [
@@ -6039,7 +6043,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 28 watched · ws off · odd curve readings 503 (218 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 26 watched · ws off · odd curve readings 503 (218 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6047,24 +6051,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 540,
-    "last_event_age_s": 5.1,
+    "events": 542,
+    "last_event_age_s": 13.1,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
     "connected": false,
-    "events": 4768,
-    "last_event_age_s": 119.5,
-    "errors": 413,
+    "events": 4785,
+    "last_event_age_s": 15.7,
+    "errors": 416,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 392,
-    "last_event_age_s": 4.6,
+    "events": 393,
+    "last_event_age_s": 12.1,
     "errors": 23,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6078,8 +6082,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 3.4,
-  "watching": 2,
-  "followed": 8,
+  "watching": 1,
+  "followed": 7,
   "odd_readings": 503,
   "odd_coins": 218
  },
@@ -6128,23 +6132,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 9638,
+   "sent": 9676,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 9638,
+   "sent": 9676,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PURPS",
+   "name": "Purps",
+   "mint": "CWqAFW8hvckRssbNTg2g4NgzxcA9meNsvJvDUfgc4wNc",
+   "age_s": 13,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 29.9,
+   "dev_pct": 3.6,
+   "big_sell": 0.0,
+   "x": "https://x.com/purpstrade",
+   "tg": false,
+   "web": false,
+   "status": "watching",
+   "why": "no curve reading yet"
+  },
+  {
    "symbol": "SUIT",
    "name": "Business Doge",
    "mint": "BWvYzEgGX7JzATCG1Kia77P1kRgxknNG45jJB3sepump",
-   "age_s": 5,
+   "age_s": 40,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6155,14 +6177,14 @@
    "x": false,
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 24.4 s after the create (max 10 s)",
+   "why": "snipe: first reading 24.4 s after the create (max 10 s)"
   },
   {
    "symbol": "BTC",
    "name": "Buy The Clown",
    "mint": "BetUaFpaF9S68V58ZRefAJ1e7WUPowPkPxm537u8pump",
-   "age_s": 11,
+   "age_s": 46,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6180,14 +6202,14 @@
    "symbol": "MARSCOIN",
    "name": "MarsCoin",
    "mint": "2fHFyJwHo31fUQHP74FMEr8rG66m6LuSbawaLJHepump",
-   "age_s": 32,
-   "sol_in": 0.0,
+   "age_s": 67,
+   "sol_in": -3.95,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 35.8,
+   "sells": 1,
+   "rise_pct": -21.9,
+   "mcap_sol": 28.0,
    "dev_pct": 12.5,
-   "big_sell": 0.0,
+   "big_sell": 3.95,
    "x": "https://x.com/herrdevs/status/2126572994961047764?a=3UMVLEYlyeRYAIrzCdo&s=20",
    "tg": false,
    "web": false,
@@ -6198,14 +6220,14 @@
    "symbol": "Crypto",
    "name": "Crypto",
    "mint": "6THQBMQytXZoF7Vbo7PkJzn55NKE4Ws8qRbCPTrTBs4o",
-   "age_s": 53,
-   "sol_in": 0.0,
+   "age_s": 88,
+   "sol_in": -1.75,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 34.0,
+   "sells": 1,
+   "rise_pct": -10.3,
+   "mcap_sol": 30.4,
    "dev_pct": 9.9,
-   "big_sell": 0.0,
+   "big_sell": 1.75,
    "x": "https://x.com/StepCoinsol8/status/2126572901813883076",
    "tg": false,
    "web": false,
@@ -6216,14 +6238,14 @@
    "symbol": "BANKGUY",
    "name": "just a bank guy",
    "mint": "73jzn698F2V58x2Y9p7c6kGCr9WamPMZreh8vEFZpump",
-   "age_s": 86,
-   "sol_in": 0.0,
+   "age_s": 121,
+   "sol_in": -0.01,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
+   "sells": 1,
+   "rise_pct": -0.1,
    "mcap_sol": 28.0,
    "dev_pct": 0.1,
-   "big_sell": 0.0,
+   "big_sell": 0.01,
    "x": "https://x.com/ramentrade/status/2126572743856410896",
    "tg": false,
    "web": false,
@@ -6234,25 +6256,25 @@
    "symbol": "BI",
    "name": "Bank Inu",
    "mint": "EVqX21Hp7cu8DkktAq3hJTmucqMZPhq1EPoQaR7xpump",
-   "age_s": 95,
-   "sol_in": 0.0,
+   "age_s": 130,
+   "sol_in": -1.85,
    "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 31.8,
+   "sells": 1,
+   "rise_pct": -11.2,
+   "mcap_sol": 28.2,
    "dev_pct": 6.6,
-   "big_sell": 0.0,
+   "big_sell": 1.85,
    "x": "https://x.com/jonelipsis/status/2126572754438668750",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe: first reading 114.6 s after the create (max 10 s)",
+   "why": "snipe: first reading 114.6 s after the create (max 10 s)"
   },
   {
    "symbol": "TI",
    "name": "Official Trump Inu",
    "mint": "6LTUZmSeaYiZSMFv5uv2f9sfojTwHg1Tepr9fKkT1QJD",
-   "age_s": 143,
+   "age_s": 178,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6265,42 +6287,6 @@
    "web": "https://x.com/i/trending/2126450733499261058?s=20",
    "status": "rejected: serial launcher: 17 more coins in 60 min",
    "why": "serial launcher: 17 more coins in 60 min"
-  },
-  {
-   "symbol": "benk",
-   "name": "benk",
-   "mint": "6U4cGmXUMYsZyMgaHrbhSWM2uaaXPz36fw61mEZLpump",
-   "age_s": 146,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.1,
-   "big_sell": 0.0,
-   "x": "https://x.com/ramentrade/status/2126572490415611993",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 4 more coins in 60 min",
-   "why": "serial launcher: 4 more coins in 60 min"
-  },
-  {
-   "symbol": "House",
-   "name": "Housecoin",
-   "mint": "6Ymd5zeAVcixEgZniriksh1xuRVX4Ep8Pvf7zkCj7FNR",
-   "age_s": 179,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://twitter.com/elonmusk/status/2126572259896623544",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 16 more coins in 60 min",
-   "why": "serial launcher: 16 more coins in 60 min"
   }
  ],
  "strategies": [
