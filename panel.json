@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:42:06Z",
+ "updated": "2026-11-28T04:42:34Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 698,
+  "flagged": 699,
   "checked": 49,
   "filtered": 1,
-  "lines": 1706,
+  "lines": 1708,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "guy",
-   "why": "snipe",
-   "t": "2026-11-28T04:25:49Z"
-  },
   {
    "coin": "EVIE",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "FISH",
    "why": "snipe",
    "t": "2026-11-28T04:41:28Z"
+  },
+  {
+   "coin": "SAITAMA",
+   "why": "snipe",
+   "t": "2026-11-28T04:42:23Z"
   }
  ],
  "curve": [
@@ -3597,24 +3597,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:41:10Z",
-   "time": "04:41:10",
-   "agent": "SCANNER",
-   "coin": "BAGWORK",
-   "action": "flag",
-   "text": "snipe · first reading 0.8 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1507
-  },
-  {
-   "t": "2026-11-28T03:41:18Z",
-   "time": "04:41:18",
-   "agent": "SCANNER",
-   "coin": "USFF",
-   "action": "flag",
-   "text": "snipe · first reading 1.9 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 1508
-  },
-  {
    "t": "2026-11-28T03:41:23Z",
    "time": "04:41:23",
    "agent": "SCANNER",
@@ -5395,6 +5377,24 @@
    "action": "scan",
    "text": "new pairs · 2.6 a minute · 0 watched · 7 rejected (dump 2, snipe: first reading s after the 2, no symbol or name 2)",
    "n": 1706
+  },
+  {
+   "t": "2026-11-28T04:42:23Z",
+   "time": "05:42:23",
+   "agent": "SCANNER",
+   "coin": "SAITAMA",
+   "action": "flag",
+   "text": "snipe · first reading 1.2 s after the create · 0.0 SOL in · +0% since the create · mcap 34 SOL",
+   "n": 1707
+  },
+  {
+   "t": "2026-11-28T04:42:23Z",
+   "time": "05:42:23",
+   "agent": "SIZER",
+   "coin": "SAITAMA",
+   "action": "skip",
+   "text": "only $4.78 left to size",
+   "n": 1708
   }
  ],
  "nights": [
@@ -5469,24 +5469,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 23,
-    "last_event_age_s": 39.8,
+    "events": 25,
+    "last_event_age_s": 11.9,
     "errors": 2,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 53,
-    "last_event_age_s": 1.5,
+    "events": 83,
+    "last_event_age_s": 0.7,
     "errors": 37,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 16,
-    "last_event_age_s": 38.8,
+    "events": 17,
+    "last_event_age_s": 11.8,
     "errors": 0,
     "last_error": null
    }
@@ -5499,9 +5499,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.6,
+  "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 5,
+  "followed": 4,
   "odd_readings": 361,
   "odd_coins": 165
  },
@@ -5550,30 +5550,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 485,
+   "sent": 515,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 485,
+   "sent": 515,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "SAITAMA",
+   "name": "さいたまコイン",
+   "mint": "DpjUnPsVXsyVzrwr5jHoJoKtwNaHYFqMRiqZrSXUpump",
+   "age_s": 11,
+   "sol_in": -2.95,
+   "buys": 2,
+   "sells": 2,
+   "rise_pct": -17.1,
+   "mcap_sol": 28.0,
+   "dev_pct": 9.6,
+   "big_sell": 2.97,
+   "x": "https://x.com/AxTrades32/status/2126536120791978339?a=Su_9jXX82NOyvi3vbbc&s=20",
+   "tg": false,
+   "web": "https://www.ownerpet.net/up/u2/read.php?p=1&q=125&s=4",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "FISH",
    "name": "Fishcoin",
    "mint": "8bFxrtgUPt5LMehqqm5z8WhvdmQb7aBjW1ZnXa18pump",
-   "age_s": 39,
-   "sol_in": 0.0,
-   "buys": 1,
-   "sells": 1,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
+   "age_s": 67,
+   "sol_in": 7.16,
+   "buys": 4,
+   "sells": 2,
+   "rise_pct": 53.4,
+   "mcap_sol": 42.9,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.69,
    "x": false,
    "tg": false,
    "web": false,
@@ -5584,7 +5602,7 @@
    "symbol": "?",
    "name": "",
    "mint": "HmGQsYJyeiWrV6jABUY2Cb3bEmVxwk6LzVxCchsCpump",
-   "age_s": 59,
+   "age_s": 87,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5602,7 +5620,7 @@
    "symbol": "?",
    "name": "",
    "mint": "9y5CCzhgS7LTc3KoWc1JqG5QBgP9U2Vqc68Qk5oTpump",
-   "age_s": 108,
+   "age_s": 136,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5620,7 +5638,7 @@
    "symbol": "CATS",
    "name": "Nova",
    "mint": "GFv26PmYGDvP7QMTuTkjDB2VJs7XWGCByCCZTq2WfD4S",
-   "age_s": 136,
+   "age_s": 164,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5638,7 +5656,7 @@
    "symbol": "Pleb",
    "name": "Plebeian",
    "mint": "BwQhaWtC4UpocurWrzvzsaaQenZwjZL6KzHmWguhpump",
-   "age_s": 139,
+   "age_s": 167,
    "sol_in": -2.74,
    "buys": 1,
    "sells": 1,
@@ -5651,42 +5669,6 @@
    "web": false,
    "status": "rejected: dump: 4.6 SOL sold",
    "why": "dump: 4.6 SOL sold"
-  },
-  {
-   "symbol": "MEMES",
-   "name": "Memes Corporation",
-   "mint": "HpN63T13XBcp2xmM6yRkGPB5HMwxtXTghCQjooS8pump",
-   "age_s": 169,
-   "sol_in": 49.77,
-   "buys": 5,
-   "sells": 15,
-   "rise_pct": 566.6,
-   "mcap_sol": 205.0,
-   "dev_pct": 5.0,
-   "big_sell": 3.97,
-   "x": "https://x.com/TheMemesCorp",
-   "tg": false,
-   "web": "https://memescorp.org/",
-   "status": "rejected: snipe: first reading 132.6 s after the create (max 10 s)",
-   "why": "snipe: first reading 132.6 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "DEERANGED",
-   "name": "Deeranged Human",
-   "mint": "5jF6Npou8QYXmQCGWfwtraswuZCuEYGk9gcRA5Bppump",
-   "age_s": 176,
-   "sol_in": -5.15,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -27.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 15.7,
-   "big_sell": 5.15,
-   "x": "https://x.com/DeerangedHuman",
-   "tg": false,
-   "web": "https://deeranged.fun/",
-   "status": "rejected: dump: 5.1 SOL sold",
-   "why": "dump: 5.1 SOL sold"
   }
  ],
  "strategies": [
