@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T02:16:34Z",
+ "updated": "2026-11-28T02:17:05Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 416,
   "checked": 49,
   "filtered": 1,
-  "lines": 1225,
+  "lines": 1227,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -859,6 +859,10 @@
   ],
   [
    1795832160,
+   47.79
+  ],
+  [
+   1795832220,
    47.79
   ]
  ],
@@ -3013,24 +3017,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T01:22:20Z",
-   "time": "02:22:20",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 7.0 a minute · 0 watched · 21 rejected (mayhem mode 8, snipe not bought: only to size 7, odd curve reading: virtual SOL i 2)",
-   "n": 1026
-  },
-  {
-   "t": "2026-11-28T01:22:28Z",
-   "time": "02:22:28",
-   "agent": "SCANNER",
-   "coin": "LPI",
-   "action": "flag",
-   "text": "snipe · first reading 1.0 s after the create · 7.7 SOL in · +56% since the create · mcap 47 SOL",
-   "n": 1027
-  },
-  {
    "t": "2026-11-28T01:22:42Z",
    "time": "02:22:42",
    "agent": "SCANNER",
@@ -4811,6 +4797,24 @@
    "action": "flag",
    "text": "snipe · first reading 1.1 s after the create · 0.3 SOL in · +2% since the create · mcap 28 SOL",
    "n": 1225
+  },
+  {
+   "t": "2026-11-28T02:16:48Z",
+   "time": "03:16:48",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.4 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 1, serial launcher 1)",
+   "n": 1226
+  },
+  {
+   "t": "2026-11-28T02:16:57Z",
+   "time": "03:16:57",
+   "agent": "SCANNER",
+   "coin": "PI",
+   "action": "odd",
+   "text": "odd curve reading: virtual SOL 1.908e+05 is not 30 + real SOL 2.835e+04 (off +1.624e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 319 odd readings from 144 coins tonight",
+   "n": 1227
   }
  ],
  "nights": [
@@ -4883,7 +4887,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 26 watched · ws off · odd curve readings 315 (143 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 320 (144 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -4891,15 +4895,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1438,
-    "last_event_age_s": 27.0,
+    "events": 1440,
+    "last_event_age_s": 8.8,
     "errors": 3,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 28205,
+    "events": 28304,
     "last_event_age_s": 0.9,
     "errors": 0,
     "last_error": null
@@ -4907,8 +4911,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 811,
-    "last_event_age_s": 26.8,
+    "events": 812,
+    "last_event_age_s": 9.9,
     "errors": 36,
     "last_error": "gg.sc: HTTP 404"
    }
@@ -4921,11 +4925,11 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.8,
+  "creates_per_min": 1.6,
   "watching": 0,
   "followed": 7,
-  "odd_readings": 315,
-  "odd_coins": 143
+  "odd_readings": 320,
+  "odd_coins": 144
  },
  "learner": {
   "samples": 84,
@@ -4972,23 +4976,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 13053,
+   "sent": 13086,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 13053,
+   "sent": 13086,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "PI",
+   "name": "Paired Inu",
+   "mint": "7FDXNtdL8fLcEnMR7zZZeVFqpVhGJvyrp53GUay2HJic",
+   "age_s": 10,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/asdfhgdev_pf/status/2126498924739654055",
+   "tg": false,
+   "web": "https://www.pairedcoin.fun/",
+   "status": "rejected: odd curve reading: virtual SOL 1.908e+05 is not 30 + real SOL 2.835e+04 (off +1.624e+05 SOL)",
+   "why": "odd curve reading: virtual SOL 1.908e+05 is not 30 + real SOL 2.835e+04 (off +1.624e+05 SOL)"
+  },
+  {
    "symbol": "GTAcoin",
    "name": "GTA VII",
    "mint": "BSMNRRALX56KJif9mMZE6wP97bHwPxickPp3uA5Upump",
-   "age_s": 27,
+   "age_s": 58,
    "sol_in": 0.25,
    "buys": 2,
    "sells": 1,
@@ -5006,14 +5028,14 @@
    "symbol": "Liberty",
    "name": "The Wish Dog",
    "mint": "4QvBmbT7q7dQK2A2dmvmCeUwNTZUNj4JaS1nNzBxpump",
-   "age_s": 41,
-   "sol_in": 53.45,
-   "buys": 27,
-   "sells": 13,
-   "rise_pct": 587.2,
-   "mcap_sol": 232.0,
+   "age_s": 72,
+   "sol_in": 56.51,
+   "buys": 44,
+   "sells": 27,
+   "rise_pct": 636.8,
+   "mcap_sol": 248.7,
    "dev_pct": 9.6,
-   "big_sell": 2.01,
+   "big_sell": 4.03,
    "x": "https://x.com/ZzzzzSol/status/2126500291612656013",
    "tg": false,
    "web": "https://shop.jazwares.com/pages/make-a-wish?utm_",
@@ -5024,7 +5046,7 @@
    "symbol": "PC",
    "name": "Paired Cat",
    "mint": "7NQzkuVuqd5B4mvA9jSmbdYJQpL3rjV4685RVp9vuYqN",
-   "age_s": 97,
+   "age_s": 128,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5042,7 +5064,7 @@
    "symbol": "PC",
    "name": "Paired Cat",
    "mint": "FJcv9gWDFBsSH8mtypjbYArJ7b6SYxs4o4dbMnNXLcP1",
-   "age_s": 101,
+   "age_s": 132,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5060,12 +5082,12 @@
    "symbol": "MANDY",
    "name": "Project Mandy",
    "mint": "8pSXwBFHc8Z44eBhntDmkN5Bkpe6gQqygb8tCBv8pump",
-   "age_s": 126,
-   "sol_in": 19.1,
-   "buys": 47,
-   "sells": 13,
-   "rise_pct": 145.2,
-   "mcap_sol": 86.8,
+   "age_s": 157,
+   "sol_in": 19.54,
+   "buys": 58,
+   "sells": 20,
+   "rise_pct": 149.3,
+   "mcap_sol": 88.2,
    "dev_pct": 11.9,
    "big_sell": 1.46,
    "x": "https://x.com/ItsNotRexed",
@@ -5078,7 +5100,7 @@
    "symbol": "TEST8",
    "name": "test8",
    "mint": "J1rcBjFk5rHjUYXTgVig377UGnUbN8H2TWUYEz5prZ8W",
-   "age_s": 133,
+   "age_s": 164,
    "sol_in": -0.1,
    "buys": 0,
    "sells": 1,
@@ -5089,24 +5111,6 @@
    "x": "https://x.com/OnchainWhallet",
    "tg": false,
    "web": "https://sparechange.fun/c/J1rcBjFk5rHjUYXTgVig377UGnUbN8H2TWUYEz5prZ8W",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "DAWK",
-   "name": "Dawk Coin",
-   "mint": "Hfkw9rHfkdxMaAXUhsmbGoAmiks6AveUkAbNaosspump",
-   "age_s": 166,
-   "sol_in": 0.01,
-   "buys": 3,
-   "sells": 1,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.04,
-   "x": false,
-   "tg": false,
-   "web": false,
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
