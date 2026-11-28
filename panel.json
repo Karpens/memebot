@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T03:15:59Z",
+ "updated": "2026-11-28T03:16:27Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 535,
+  "flagged": 536,
   "checked": 49,
   "filtered": 1,
-  "lines": 1424,
+  "lines": 1426,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PILL",
-   "why": "snipe",
-   "t": "2026-11-28T03:13:16Z"
-  },
   {
    "coin": "Sniffer",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "TES",
    "why": "snipe",
    "t": "2026-11-28T03:15:15Z"
+  },
+  {
+   "coin": "NVIDIA",
+   "why": "snipe",
+   "t": "2026-11-28T03:16:26Z"
   }
  ],
  "curve": [
@@ -1095,6 +1095,10 @@
   ],
   [
    1795835700,
+   47.79
+  ],
+  [
+   1795835760,
    47.79
   ]
  ],
@@ -3249,24 +3253,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T02:16:09Z",
-   "time": "03:16:09",
-   "agent": "SCANNER",
-   "coin": "GTAcoin",
-   "action": "flag",
-   "text": "snipe · first reading 1.1 s after the create · 0.3 SOL in · +2% since the create · mcap 28 SOL",
-   "n": 1225
-  },
-  {
-   "t": "2026-11-28T02:16:48Z",
-   "time": "03:16:48",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 1.4 a minute · 0 watched · 6 rejected (snipe not bought: only to size 4, odd curve reading: virtual SOL i 1, serial launcher 1)",
-   "n": 1226
-  },
-  {
    "t": "2026-11-28T02:16:57Z",
    "time": "03:16:57",
    "agent": "SCANNER",
@@ -5047,6 +5033,24 @@
    "action": "scan",
    "text": "new pairs · 4.0 a minute · 0 watched · 15 rejected (snipe not bought: only to size 13, mayhem mode 2)",
    "n": 1424
+  },
+  {
+   "t": "2026-11-28T03:16:21Z",
+   "time": "04:16:21",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 4.6 a minute · 0 watched · 11 rejected (snipe not bought: only to size 6, mayhem mode 3, no symbol or name 2)",
+   "n": 1425
+  },
+  {
+   "t": "2026-11-28T03:16:26Z",
+   "time": "04:16:26",
+   "agent": "SCANNER",
+   "coin": "NVIDIA",
+   "action": "flag",
+   "text": "snipe · first reading 0.6 s after the create · 17.6 SOL in · +133% since the create · mcap 81 SOL",
+   "n": 1426
   }
  ],
  "nights": [
@@ -5119,7 +5123,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 35 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 34 watched · ws off · odd curve readings 335 (152 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5127,24 +5131,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1655,
-    "last_event_age_s": 1.9,
+    "events": 1657,
+    "last_event_age_s": 2.4,
     "errors": 4,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 35130,
-    "last_event_age_s": 1.6,
+    "events": 35166,
+    "last_event_age_s": 0.8,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
-    "connected": false,
-    "events": 964,
-    "last_event_age_s": 42.4,
+    "connected": true,
+    "events": 965,
+    "last_event_age_s": 2.2,
     "errors": 47,
     "last_error": "api.equilis.run: RemoteDisconnected: Remote end closed connection without response"
    }
@@ -5157,9 +5161,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 4.4,
+  "creates_per_min": 4.8,
   "watching": 0,
-  "followed": 9,
+  "followed": 6,
   "odd_readings": 335,
   "odd_coins": 152
  },
@@ -5208,23 +5212,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 16847,
+   "sent": 16877,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 16847,
+   "sent": 16877,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "6BdptLc6kfXsPXhnLwhhr6wqLxc2WYN3DuMQkWrdpump",
+   "age_s": 2,
+   "sol_in": 17.82,
+   "buys": 2,
+   "sells": 0,
+   "rise_pct": 134.9,
+   "mcap_sol": 81.7,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": "https://t.co/5UY6GdgPL1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "?",
+   "name": "",
+   "mint": "ENDJHwoG22fbAx8L2cBUopKHFac1evFzZpQreahWpump",
+   "age_s": 15,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: no symbol or name",
+   "why": "no symbol or name"
+  },
+  {
    "symbol": "GTAFORTNIT",
    "name": "GTA VI VS FORTNITE",
    "mint": "E8hVMKfMhcxYVmYwTAYSaSt2b7mmesFVAdiHRBRRpump",
-   "age_s": 1,
+   "age_s": 29,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5242,7 +5282,7 @@
    "symbol": "?",
    "name": "",
    "mint": "EhgEYPEGrrZB9eiV4jjVxD1TZXBufbUCZSotsXvDpump",
-   "age_s": 31,
+   "age_s": 59,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5260,14 +5300,14 @@
    "symbol": "TES",
    "name": "Tes",
    "mint": "DSzpuvqmtdxd91Q8P3EbwKRr9y81a9DM3jTBR6v893wi",
-   "age_s": 45,
-   "sol_in": 1.23,
+   "age_s": 73,
+   "sol_in": 1.19,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 8.4,
-   "mcap_sol": 30.3,
+   "sells": 1,
+   "rise_pct": 8.1,
+   "mcap_sol": 30.2,
    "dev_pct": 0.0,
-   "big_sell": 0.0,
+   "big_sell": 0.05,
    "x": false,
    "tg": false,
    "web": false,
@@ -5278,7 +5318,7 @@
    "symbol": "CRY3",
    "name": "Three-Eyed Crybaby",
    "mint": "HwvtCpUfcvpXqCpgPowW85k13s4GuvxaqReGoai7pump",
-   "age_s": 71,
+   "age_s": 99,
    "sol_in": -2.75,
    "buys": 6,
    "sells": 5,
@@ -5296,7 +5336,7 @@
    "symbol": "WINTERARC",
    "name": "Capo Winter Arc",
    "mint": "3cAyvFEc3u14ivQVA9fuNFaETKR5AzWGJe8kwr2rPtZT",
-   "age_s": 82,
+   "age_s": 110,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5314,7 +5354,7 @@
    "symbol": "motion",
    "name": "motion",
    "mint": "2ieiBxwfZJ924tnFDfeCoSBJCKSsDHeRwEktQpVjpump",
-   "age_s": 120,
+   "age_s": 148,
    "sol_in": -0.99,
    "buys": 2,
    "sells": 9,
@@ -5332,7 +5372,7 @@
    "symbol": "BCAT",
    "name": "Bagwork Cat",
    "mint": "AecYHF5GTS42graxBuHyaVL1Vhm3pV8vdyXc4r344TBd",
-   "age_s": 122,
+   "age_s": 150,
    "sol_in": 0.01,
    "buys": 1,
    "sells": 0,
@@ -5350,7 +5390,7 @@
    "symbol": "JESS",
    "name": "jessikah_grace",
    "mint": "9XShgVXyoACg8gS3TvLbC1bKJ7ygs6CswSuEEXjRpump",
-   "age_s": 148,
+   "age_s": 176,
    "sol_in": 0.68,
    "buys": 5,
    "sells": 6,
@@ -5361,96 +5401,6 @@
    "x": false,
    "tg": false,
    "web": "https://www.instagram.com/jessikah_grace/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "GTAFORTNIT",
-   "name": "GTA VI VS FORTNITE",
-   "mint": "Bqyf3p982HBxkkeGiz1ttNLkgbeTA8CxejihYmcMpump",
-   "age_s": 155,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "Jew.fun",
-   "name": "Jew.Fun",
-   "mint": "5xWsp9tH5dgS1Q96zGMuvzbMqgwP8oaepczsHBHkpump",
-   "age_s": 155,
-   "sol_in": -0.08,
-   "buys": 4,
-   "sells": 2,
-   "rise_pct": -0.5,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.3,
-   "big_sell": 0.1,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Sniffer",
-   "name": "Sniffer",
-   "mint": "46ePVY6PJYpSMwkv34CuVa7y1Sv3yDNmL7iQ51KDpump",
-   "age_s": 160,
-   "sol_in": -0.53,
-   "buys": 5,
-   "sells": 6,
-   "rise_pct": -3.4,
-   "mcap_sol": 28.8,
-   "dev_pct": 3.4,
-   "big_sell": 1.92,
-   "x": "https://x.com/Sniffer_PF",
-   "tg": false,
-   "web": "https://www.coinsniffer.lol/",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "PILL",
-   "name": "Mr.Pillson",
-   "mint": "F92NZmdSk5AUwtz8H6mLF9ud7RSdgob2aspq3zGCpump",
-   "age_s": 163,
-   "sol_in": -0.07,
-   "buys": 15,
-   "sells": 33,
-   "rise_pct": -0.5,
-   "mcap_sol": 29.7,
-   "dev_pct": 3.4,
-   "big_sell": 4.73,
-   "x": "https://x.com/mrspillson",
-   "tg": false,
-   "web": "https://www.tiktok.com/@pills0n",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "NEONPA",
-   "name": "NeonPay",
-   "mint": "CAsNojx1guquvXdnaeAEX6isGVLzZ4eS5Rbeeh1zkFPe",
-   "age_s": 170,
-   "sol_in": -0.2,
-   "buys": 0,
-   "sells": 1,
-   "rise_pct": -1.3,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.7,
-   "big_sell": 0.2,
-   "x": "https://x.com/bakerford91",
-   "tg": "https://t.me/neonpay_portal",
-   "web": "https://neonpay.fun",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
