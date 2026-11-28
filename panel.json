@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T04:18:28Z",
+ "updated": "2026-11-28T04:19:01Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 669,
+  "flagged": 671,
   "checked": 49,
   "filtered": 1,
-  "lines": 1643,
+  "lines": 1645,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "EVOLIQ",
-   "why": "snipe",
-   "t": "2026-11-28T04:15:28Z"
-  },
-  {
-   "coin": "PUMP",
-   "why": "snipe",
-   "t": "2026-11-28T04:15:53Z"
-  },
   {
    "coin": "Cellutron",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "OVER",
    "why": "snipe",
    "t": "2026-11-28T04:18:20Z"
+  },
+  {
+   "coin": "BIGGIE",
+   "why": "snipe",
+   "t": "2026-11-28T04:18:31Z"
+  },
+  {
+   "coin": "NVIDIA",
+   "why": "snipe",
+   "t": "2026-11-28T04:18:49Z"
   }
  ],
  "curve": [
@@ -1347,6 +1347,10 @@
   ],
   [
    1795839480,
+   47.79
+  ],
+  [
+   1795839540,
    47.79
   ]
  ],
@@ -3501,24 +3505,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T03:22:24Z",
-   "time": "04:22:24",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.6 a minute · 0 watched · 6 rejected (serial launcher 3, snipe not bought: only to size 3)",
-   "n": 1444
-  },
-  {
-   "t": "2026-11-28T03:22:36Z",
-   "time": "04:22:36",
-   "agent": "SCANNER",
-   "coin": "WWF",
-   "action": "flag",
-   "text": "snipe · first reading 8.2 s after the create · 13.3 SOL in · +97% since the create · mcap 66 SOL",
-   "n": 1445
-  },
-  {
    "t": "2026-11-28T03:22:39Z",
    "time": "04:22:39",
    "agent": "SCANNER",
@@ -5299,6 +5285,24 @@
    "action": "flag",
    "text": "snipe · first reading 0.5 s after the create · 1.1 SOL in · +7% since the create · mcap 36 SOL",
    "n": 1643
+  },
+  {
+   "t": "2026-11-28T04:18:31Z",
+   "time": "05:18:31",
+   "agent": "SCANNER",
+   "coin": "BIGGIE",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
+   "n": 1644
+  },
+  {
+   "t": "2026-11-28T04:18:49Z",
+   "time": "05:18:49",
+   "agent": "SCANNER",
+   "coin": "NVIDIA",
+   "action": "flag",
+   "text": "snipe · first reading 1.0 s after the create · 17.8 SOL in · +135% since the create · mcap 82 SOL",
+   "n": 1645
   }
  ],
  "nights": [
@@ -5371,7 +5375,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 41 watched · ws off · odd curve readings 357 (161 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 40 watched · ws off · odd curve readings 357 (161 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5379,26 +5383,26 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1960,
-    "last_event_age_s": 0.8,
+    "events": 1962,
+    "last_event_age_s": 13.6,
     "errors": 6,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 41229,
-    "last_event_age_s": 0.1,
+    "events": 41272,
+    "last_event_age_s": 1.1,
     "errors": 0,
     "last_error": null
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 1198,
-    "last_event_age_s": 8.5,
-    "errors": 55,
-    "last_error": "ar-io.dev: too slow (over 2 s)"
+    "events": 1200,
+    "last_event_age_s": 13.5,
+    "errors": 56,
+    "last_error": "d.uguu.se: timeout after 2 s"
    }
   ],
   "strategies": [
@@ -5460,23 +5464,59 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 20837,
+   "sent": 20872,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 20837,
+   "sent": 20872,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "NVIDIA",
+   "name": "NVIDIA Newsroom",
+   "mint": "3yahwLYFQwfL96SyuVdAkYLkhcot6hnY1jSUJCSppump",
+   "age_s": 13,
+   "sol_in": 18.07,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 137.1,
+   "mcap_sol": 82.5,
+   "dev_pct": 11.1,
+   "big_sell": 0.0,
+   "x": "https://x.com/nvidianewsroom",
+   "tg": false,
+   "web": "https://t.co/5UY6GdgPL1",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "BIGGIE",
+   "name": "Biggie Smalls",
+   "mint": "D54eMJPpLTTJroQrTiukhTueykTt1ypoiz5ucwZHwsps",
+   "age_s": 31,
+   "sol_in": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "666",
    "name": "Baphomet Goat",
    "mint": "EPj42CFofi7LW16JETzu4xn3SYyzkA4uuEwsfRtopump",
-   "age_s": 0,
+   "age_s": 33,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5494,12 +5534,12 @@
    "symbol": "OVER",
    "name": "Its over",
    "mint": "86P745iUZi5bC4da5DBDJyoFFzhpVtdXdLihwnP8pump",
-   "age_s": 8,
-   "sol_in": -2.06,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": -12.1,
-   "mcap_sol": 29.7,
+   "age_s": 41,
+   "sol_in": -2.96,
+   "buys": 2,
+   "sells": 4,
+   "rise_pct": -17.2,
+   "mcap_sol": 28.0,
    "dev_pct": 9.6,
    "big_sell": 2.46,
    "x": "https://x.com/jonelipsis/status/2126531107348680930",
@@ -5512,10 +5552,10 @@
    "symbol": "awd",
    "name": "awdawd",
    "mint": "B8dqfFFJ1ftNjJgQKhK3P5nnRJkmAtNkpZgbR3MWpump",
-   "age_s": 12,
+   "age_s": 45,
    "sol_in": -0.1,
-   "buys": 1,
-   "sells": 3,
+   "buys": 2,
+   "sells": 4,
    "rise_pct": -0.6,
    "mcap_sol": 28.0,
    "dev_pct": 0.4,
@@ -5530,7 +5570,7 @@
    "symbol": "DRAM",
    "name": "DRAM Sold Out",
    "mint": "7uGCDaoSDAhzEmGQ76yxmeBfvWbeiKV9DFRhhZxJpump",
-   "age_s": 27,
+   "age_s": 60,
    "sol_in": -0.8,
    "buys": 1,
    "sells": 3,
@@ -5548,7 +5588,7 @@
    "symbol": "BIRZHYI",
    "name": "BIRZHYI",
    "mint": "4mrqg6wiv3hv9u9B2CoyVX6r8fBKJo4jsGuzLhJ2pump",
-   "age_s": 28,
+   "age_s": 61,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5566,14 +5606,14 @@
    "symbol": "REDCROSS",
    "name": "Red Cross Coin",
    "mint": "BQXY1C79PGCXiTAYq2eQrY5BnLmjotu3cMn1fpxGpump",
-   "age_s": 52,
-   "sol_in": 16.6,
-   "buys": 28,
-   "sells": 23,
-   "rise_pct": 126.1,
-   "mcap_sol": 76.3,
+   "age_s": 85,
+   "sol_in": 17.49,
+   "buys": 41,
+   "sells": 40,
+   "rise_pct": 134.3,
+   "mcap_sol": 79.1,
    "dev_pct": 9.6,
-   "big_sell": 2.03,
+   "big_sell": 2.8,
    "x": "https://x.com/ZzzzzSol/status/2126530922480595357",
    "tg": false,
    "web": false,
@@ -5584,7 +5624,7 @@
    "symbol": "RSEC",
    "name": "REDSEC",
    "mint": "4UWiJdwodTjeVgREishq2a3FjvP6MZsbT1kPo1Xyb4Ch",
-   "age_s": 69,
+   "age_s": 102,
    "sol_in": 0.0,
    "buys": 1,
    "sells": 1,
@@ -5602,7 +5642,7 @@
    "symbol": "STUFF",
    "name": "Full Post",
    "mint": "2Bvm6MUK8Dam7GWohRxvD457bGRZM4vqcwU8Y4USV6r1",
-   "age_s": 71,
+   "age_s": 104,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5620,7 +5660,7 @@
    "symbol": "FINTECH",
    "name": "FINTECH",
    "mint": "DWYkUHdMdS87m8hA3xt6DjZ2xz1M5nVbmfMF6aQFpump",
-   "age_s": 74,
+   "age_s": 107,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5638,7 +5678,7 @@
    "symbol": "AC1",
    "name": "Amethyst Cat",
    "mint": "HRXxqENh1L4pWVoaPPrgH2K8n35QELyYe3q4ag3bc13u",
-   "age_s": 85,
+   "age_s": 118,
    "sol_in": -0.0,
    "buys": 0,
    "sells": 1,
@@ -5656,7 +5696,7 @@
    "symbol": "?",
    "name": "",
    "mint": "ABa47xrNBU58Y9d1Mg9dugzTyn7NsuFhnVjWNQLppump",
-   "age_s": 120,
+   "age_s": 153,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5674,7 +5714,7 @@
    "symbol": "Cellutron",
    "name": "Cellutron",
    "mint": "3tBYhV5YYxBRabse91T8P49iYdvVT8UTV1ikpJvbpump",
-   "age_s": 127,
+   "age_s": 160,
    "sol_in": 0.12,
    "buys": 5,
    "sells": 5,
@@ -5687,78 +5727,6 @@
    "web": "https://www.instagram.com/cellutron_/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Frogger",
-   "name": "Frogger",
-   "mint": "GGatn9GfrvRgFMFZy9ZSaTsKmpwnzCTogmocLHCjpump",
-   "age_s": 151,
-   "sol_in": 0.65,
-   "buys": 6,
-   "sells": 4,
-   "rise_pct": 1.3,
-   "mcap_sol": 309.3,
-   "dev_pct": 74.8,
-   "big_sell": 0.14,
-   "x": "https://www.youtube.com/watch?v=m1D18t6yoAI",
-   "tg": false,
-   "web": false,
-   "status": "rejected: dev bought 74.8% (max 70%)",
-   "why": "dev bought 74.8% (max 70%)"
-  },
-  {
-   "symbol": "PUMP",
-   "name": "Pump",
-   "mint": "2ddTcY3TR7aWbkHNSVehoFfWHinXBcoyANazkeLLpump",
-   "age_s": 157,
-   "sol_in": -0.27,
-   "buys": 12,
-   "sells": 36,
-   "rise_pct": -1.8,
-   "mcap_sol": 28.0,
-   "dev_pct": 1.0,
-   "big_sell": 11.62,
-   "x": "https://x.com/__Pump_X/status/2126530113416073636",
-   "tg": false,
-   "web": "https://t.co/Gc7JchKgsW",
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "Rice",
-   "name": "RICE TYSON",
-   "mint": "9w2KbnYLCoHxcmqvsDNZ9udtNxznaeX3m8ovDFQxpump",
-   "age_s": 172,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 37.9,
-   "dev_pct": 15.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
-  },
-  {
-   "symbol": "sol",
-   "name": "SOLCASH",
-   "mint": "9ChWo3mV9NHGT6kU5TmrLcagSgvHzbvzNruHb5Q4pump",
-   "age_s": 173,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.4,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
