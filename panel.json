@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T11:59:21Z",
+ "updated": "2026-11-28T11:59:53Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,26 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1340,
+  "flagged": 1342,
   "checked": 49,
   "filtered": 1,
-  "lines": 3016,
+  "lines": 3018,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SCR",
-   "why": "snipe",
-   "t": "2026-11-28T11:51:27Z"
-  },
-  {
-   "coin": "KOTH",
-   "why": "snipe",
-   "t": "2026-11-28T11:52:52Z"
-  },
   {
    "coin": "PMUP",
    "why": "snipe",
@@ -70,6 +60,16 @@
    "coin": "Loomgate",
    "why": "snipe",
    "t": "2026-11-28T11:58:09Z"
+  },
+  {
+   "coin": "motion",
+   "why": "snipe",
+   "t": "2026-11-28T11:59:33Z"
+  },
+  {
+   "coin": "HEALA",
+   "why": "snipe",
+   "t": "2026-11-28T11:59:33Z"
   }
  ],
  "curve": [
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T10:55:17Z",
-   "time": "11:55:17",
-   "agent": "SCANNER",
-   "coin": "CROWN",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.279e+05 is not 30 + real SOL 1.215e+04 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 960 odd readings from 297 coins tonight",
-   "n": 2817
-  },
-  {
-   "t": "2026-11-28T10:55:18Z",
-   "time": "11:55:18",
-   "agent": "SCANNER",
-   "coin": "CORD",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.235e+05 is not 30 + real SOL 7673 (off +2.158e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 961 odd readings from 298 coins tonight",
-   "n": 2818
-  },
-  {
    "t": "2026-11-28T10:55:18Z",
    "time": "11:55:18",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 3.2 a minute · 0 watched · 12 rejected (mayhem mode 4, no symbol or name 4, serial launcher 2)",
    "n": 3016
+  },
+  {
+   "t": "2026-11-28T11:59:33Z",
+   "time": "12:59:33",
+   "agent": "SCANNER",
+   "coin": "motion",
+   "action": "flag",
+   "text": "snipe · first reading 0.5 s after the create · 3.8 SOL in · +26% since the create · mcap 37 SOL",
+   "n": 3017
+  },
+  {
+   "t": "2026-11-28T11:59:33Z",
+   "time": "12:59:33",
+   "agent": "SCANNER",
+   "coin": "HEALA",
+   "action": "flag",
+   "text": "snipe · first reading 1.1 s after the create · -0.9 SOL in · -6% since the create · mcap 28 SOL",
+   "n": 3018
   }
  ],
  "nights": [
@@ -6489,7 +6489,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 23 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 1009 (308 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6497,15 +6497,15 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 445,
-    "last_event_age_s": 1.6,
+    "events": 448,
+    "last_event_age_s": 5.6,
     "errors": 5,
     "last_error": "closed: no close frame received or sent"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 11671,
+    "events": 11722,
     "last_event_age_s": 0.0,
     "errors": 0,
     "last_error": null
@@ -6513,8 +6513,8 @@
    {
     "name": "metadata",
     "connected": true,
-    "events": 305,
-    "last_event_age_s": 51.4,
+    "events": 307,
+    "last_event_age_s": 19.3,
     "errors": 4,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6527,9 +6527,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 3.2,
+  "creates_per_min": 3.8,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 1009,
   "odd_coins": 308
  },
@@ -6578,23 +6578,77 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6680,
+   "sent": 6714,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6680,
+   "sent": 6714,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "CORRUPT",
+   "name": "CORRUPTION",
+   "mint": "FjsgJK4f7zKRr8fVcyo7SUEUza7f2BNqv48aE8Dcpump",
+   "age_s": 5,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.1,
+   "dev_pct": 0.3,
+   "big_sell": 0.0,
+   "x": false,
+   "tg": false,
+   "web": false,
+   "status": "rejected: mayhem mode",
+   "why": "mayhem mode"
+  },
+  {
+   "symbol": "motion",
+   "name": "motionmkts.com",
+   "mint": "2sAKJvmN8E8twDoGEtSYBCdj8MCySXkgs5hynvetpump",
+   "age_s": 20,
+   "sol_in": 9.12,
+   "buys": 10,
+   "sells": 7,
+   "rise_pct": 68.5,
+   "mcap_sol": 49.0,
+   "dev_pct": 2.1,
+   "big_sell": 1.61,
+   "x": "https://x.com/motionmkts",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
+   "symbol": "HEALA",
+   "name": "Heal",
+   "mint": "GAYt1bmbcf5bWUdiFBHnXUBFbYHsiF1WyzwBmfy8pump",
+   "age_s": 21,
+   "sol_in": -0.99,
+   "buys": 0,
+   "sells": 2,
+   "rise_pct": -6.3,
+   "mcap_sol": 28.0,
+   "dev_pct": 3.4,
+   "big_sell": 0.9,
+   "x": false,
+   "tg": false,
+   "web": "https://www.theguardian.com/uk-news/2026/nov/27/catherine-princess-of-wales-heal-documentary-cancer?mint=",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "DINO STAR",
    "name": "DINO STAR",
    "mint": "83smKiHaknGztfzxu9hgnVYU79JEr4DJJzNtA17xpump",
-   "age_s": 32,
+   "age_s": 64,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6612,7 +6666,7 @@
    "symbol": "HI",
    "name": "Hacker Inu",
    "mint": "D3WGuKvcM8GtrhVHxdh9Cfb9uLZyNvnt5EbNwVNBpump",
-   "age_s": 51,
+   "age_s": 83,
    "sol_in": -9.69,
    "buys": 2,
    "sells": 12,
@@ -6630,11 +6684,11 @@
    "symbol": "Loomgate",
    "name": "Loomgate AI",
    "mint": "AJFYPMQPLGXqPE9wumsSdo8gk8JiSu2W4GVvR1Qxpump",
-   "age_s": 73,
-   "sol_in": -0.14,
+   "age_s": 105,
+   "sol_in": -0.15,
    "buys": 1,
-   "sells": 2,
-   "rise_pct": -0.9,
+   "sells": 4,
+   "rise_pct": -1.0,
    "mcap_sol": 28.0,
    "dev_pct": 0.5,
    "big_sell": 0.15,
@@ -6648,7 +6702,7 @@
    "symbol": "?",
    "name": "",
    "mint": "4RVuGnmNwoTdS9mhbdcBNHJDzH3SqnnDb6HGY4SM86HR",
-   "age_s": 74,
+   "age_s": 106,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6666,7 +6720,7 @@
    "symbol": "?",
    "name": "",
    "mint": "3h9M7GsjrMsqhW6AJEZiKN7F8pP6vSfKQVW6HaEN9mwW",
-   "age_s": 82,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6684,7 +6738,7 @@
    "symbol": "DINO STAR",
    "name": "DINO STAR",
    "mint": "77nTo5LFRhuyV8nGxnaSCGo8xG9xrbUVytztPq76pump",
-   "age_s": 82,
+   "age_s": 114,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6702,7 +6756,7 @@
    "symbol": "?",
    "name": "",
    "mint": "BxNaUuJw9LpypUBwxn64CFWxjirJmkvAmg2Skhy6VWwf",
-   "age_s": 83,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6720,7 +6774,7 @@
    "symbol": "BALIEN",
    "name": "BABY ALIEN",
    "mint": "F4rkkKwWKYPBqoXsv45cQwm5CbrS9gTsKui5fXPSpump",
-   "age_s": 83,
+   "age_s": 115,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6738,7 +6792,7 @@
    "symbol": "?",
    "name": "",
    "mint": "FJR8nw6PBPwV1GFXat5wEWDZW1jkw2rBfqY5i4BmQ2N",
-   "age_s": 92,
+   "age_s": 124,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6756,7 +6810,7 @@
    "symbol": "PUMCH",
    "name": "PUNCH",
    "mint": "57BCx2HcTC4mCADU85YsyyXeYjaiVwiYxjRbERmWpump",
-   "age_s": 113,
+   "age_s": 145,
    "sol_in": 0.37,
    "buys": 1,
    "sells": 0,
@@ -6774,7 +6828,7 @@
    "symbol": "CORRUPT",
    "name": "CORRUPTION",
    "mint": "HJRQM9fm7vXY48qtU9KnQbjy7VQn1pDHLj5xHfSwpump",
-   "age_s": 117,
+   "age_s": 149,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6787,24 +6841,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "ALOOONG",
-   "name": "Alooong",
-   "mint": "F1cCQDHH2SpQarZyK8RY9F3JWY5s48Wsxp9mNjAdkWiy",
-   "age_s": 164,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": "https://useanonpad.fun/coin/F1cCQDHH2SpQarZyK8RY9F3JWY5s48Wsxp9mNjAdkWiy",
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
   }
  ],
  "strategies": [
