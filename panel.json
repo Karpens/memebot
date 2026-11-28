@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:53:15Z",
+ "updated": "2026-11-28T07:53:47Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 891,
+  "flagged": 892,
   "checked": 49,
   "filtered": 1,
-  "lines": 2190,
+  "lines": 2191,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "PairBall",
-   "why": "snipe",
-   "t": "2026-11-28T07:47:35Z"
-  },
   {
    "coin": "MOGCOIN",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "ok",
    "why": "snipe",
    "t": "2026-11-28T07:51:12Z"
+  },
+  {
+   "coin": "Robinhood",
+   "why": "snipe",
+   "t": "2026-11-28T07:53:26Z"
   }
  ],
  "curve": [
@@ -4361,15 +4361,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T06:41:28Z",
-   "time": "07:41:28",
-   "agent": "SCANNER",
-   "coin": "NEON",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 0.02474 is not 30 + real SOL 0 (off -29.98 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 437 odd readings from 203 coins tonight",
-   "n": 1991
-  },
-  {
    "t": "2026-11-28T06:42:11Z",
    "time": "07:42:11",
    "agent": "SCANNER",
@@ -6159,6 +6150,15 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 7 rejected (serial launcher 4, snipe not bought: only to size 1, no bonding curve key 1)",
    "n": 2190
+  },
+  {
+   "t": "2026-11-28T07:53:26Z",
+   "time": "08:53:26",
+   "agent": "SCANNER",
+   "coin": "Robinhood",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 17.6 SOL in · +131% since the create · mcap 82 SOL",
+   "n": 2191
   }
  ],
  "nights": [
@@ -6231,7 +6231,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 561 (230 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6239,24 +6239,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 753,
-    "last_event_age_s": 29.5,
+    "events": 754,
+    "last_event_age_s": 21.3,
     "errors": 12,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 9265,
-    "last_event_age_s": 0.4,
+    "events": 9345,
+    "last_event_age_s": 1.2,
     "errors": 432,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 536,
-    "last_event_age_s": 28.5,
+    "events": 537,
+    "last_event_age_s": 21.2,
     "errors": 26,
     "last_error": "891017b7-0737-4d08-a5a8-b03ef6a17670.lovableproject.com: HTTP 401"
    }
@@ -6269,9 +6269,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.8,
+  "creates_per_min": 2.4,
   "watching": 0,
-  "followed": 4,
+  "followed": 5,
   "odd_readings": 561,
   "odd_coins": 230
  },
@@ -6320,30 +6320,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 12693,
+   "sent": 12727,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 12693,
+   "sent": 12727,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "Robinhood",
+   "name": "Robinhood",
+   "mint": "9RTaur3Y4tK8BaL63b94yomnGMY8JciYd1pHRC6hpump",
+   "age_s": 21,
+   "sol_in": 17.89,
+   "buys": 5,
+   "sells": 0,
+   "rise_pct": 134.1,
+   "mcap_sol": 82.9,
+   "dev_pct": 11.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/RobinhoodApp",
+   "tg": false,
+   "web": "https://cdn.robinhood.com/assets/robinhood/legal/standard-social-media-disclosures.pdf",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "bob",
    "name": "in a world of crime",
    "mint": "G7frToFoVn5ScwkefELAUwcNqNSFi4VtUTzM8JLohBmw",
-   "age_s": 29,
-   "sol_in": 6.89,
-   "buys": 13,
-   "sells": 9,
-   "rise_pct": 46.0,
-   "mcap_sol": 49.6,
+   "age_s": 61,
+   "sol_in": 1.95,
+   "buys": 20,
+   "sells": 19,
+   "rise_pct": 12.1,
+   "mcap_sol": 38.1,
    "dev_pct": 9.9,
-   "big_sell": 2.92,
+   "big_sell": 3.81,
    "x": "https://x.com/nonanon124/status/2126584828980330894",
    "tg": false,
    "web": false,
@@ -6354,7 +6372,7 @@
    "symbol": "Justice",
    "name": "Justice coin",
    "mint": "32RXMJBNV7opUftFX44vNgEBEL3tAZcCvqkPBeU7LBbm",
-   "age_s": 81,
+   "age_s": 113,
    "sol_in": -1.64,
    "buys": 10,
    "sells": 13,
@@ -6372,11 +6390,11 @@
    "symbol": "clashCoin",
    "name": "CLASH OF CLANS",
    "mint": "2f99oLowsDeBthEs2VgW1vdKJgBRmZmjCh3FQcH3pump",
-   "age_s": 104,
+   "age_s": 136,
    "sol_in": 0.01,
-   "buys": 6,
+   "buys": 7,
    "sells": 3,
-   "rise_pct": 0.0,
+   "rise_pct": 0.1,
    "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.14,
@@ -6390,7 +6408,7 @@
    "symbol": "ok",
    "name": "ok",
    "mint": "Hsdj81ZDF6FL5VxMCVJtLzHU8ebsqQkrNi1mGicqpump",
-   "age_s": 122,
+   "age_s": 154,
    "sol_in": -0.37,
    "buys": 13,
    "sells": 13,
@@ -6408,7 +6426,7 @@
    "symbol": "ALON",
    "name": "Alon",
    "mint": "CPt51jyAWJLrV68ghYYt6m7243hDtqb1QLJKgJ9vpump",
-   "age_s": 124,
+   "age_s": 156,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6421,24 +6439,6 @@
    "web": false,
    "status": "rejected: mayhem mode",
    "why": "mayhem mode"
-  },
-  {
-   "symbol": "TEST",
-   "name": "test",
-   "mint": "Ck4qzEaaLXwvwqmoDXyTPCWaSFZ2KNPvqusc6tCVZgDo",
-   "age_s": 166,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: no bonding curve key",
-   "why": "no bonding curve key"
   }
  ],
  "strategies": [
