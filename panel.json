@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:12:30Z",
+ "updated": "2026-11-28T06:12:57Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -24,7 +24,7 @@
   "flagged": 778,
   "checked": 49,
   "filtered": 1,
-  "lines": 1916,
+  "lines": 1917,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -3957,15 +3957,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T04:44:58Z",
-   "time": "05:44:58",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 3.8 a minute · 0 watched · 16 rejected (serial launcher 9, snipe not bought: only to size 7)",
-   "n": 1717
-  },
-  {
    "t": "2026-11-28T04:45:20Z",
    "time": "05:45:20",
    "agent": "SCANNER",
@@ -5755,6 +5746,15 @@
    "action": "scan",
    "text": "new pairs · 1.4 a minute · 0 watched · 3 rejected (serial launcher 2, snipe: first reading s after the 1)",
    "n": 1916
+  },
+  {
+   "t": "2026-11-28T06:12:53Z",
+   "time": "07:12:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.6 a minute · 1 watched · 3 rejected (snipe: first reading s after the 1, serial launcher 1, no symbol or name 1) · closest TNDR: no curve reading yet",
+   "n": 1917
   }
  ],
  "nights": [
@@ -5823,7 +5823,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll failing · 11 watched · ws off · odd curve readings 416 (190 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 10 watched · ws off · odd curve readings 416 (190 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5831,8 +5831,8 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 329,
-    "last_event_age_s": 3.1,
+    "events": 331,
+    "last_event_age_s": 2.9,
     "errors": 5,
     "last_error": "silent for 90 s · reconnecting"
    },
@@ -5840,15 +5840,15 @@
     "name": "curve-poll",
     "connected": false,
     "events": 2370,
-    "last_event_age_s": 19.7,
-    "errors": 266,
+    "last_event_age_s": 46.7,
+    "errors": 270,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 245,
-    "last_event_age_s": 1.1,
+    "events": 246,
+    "last_event_age_s": 2.8,
     "errors": 14,
     "last_error": "institutes-entirely-lottery-head.trycloudflare.com: HTTP 429"
    }
@@ -5861,7 +5861,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.6,
+  "creates_per_min": 1.8,
   "watching": 1,
   "followed": 4,
   "odd_readings": 416,
@@ -5912,23 +5912,41 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 6259,
+   "sent": 6287,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 6259,
+   "sent": 6287,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "WORTHLESS",
+   "name": "Worthless Coin",
+   "mint": "8tp92pRJmcvUqxnBHtpg5WUgiKYVoH659MuTTBif8avS",
+   "age_s": 2,
+   "sol_in": 0.0,
+   "buys": 0,
+   "sells": 0,
+   "rise_pct": 0.0,
+   "mcap_sol": 28.0,
+   "dev_pct": 0.0,
+   "big_sell": 0.0,
+   "x": "https://x.com/NikolaiHauckx/status/2126559891775197392?a=dJpEo1TQ4eURCK6nwys&s=20",
+   "tg": false,
+   "web": false,
+   "status": "rejected: serial launcher: 11 more coins in 60 min",
+   "why": "serial launcher: 11 more coins in 60 min"
+  },
+  {
    "symbol": "TNDR",
    "name": "Tenderloin",
    "mint": "Axvm6kVZ2c212VawpMo7Pvh1KeGZJRQwZEuQp6Znpump",
-   "age_s": 3,
+   "age_s": 30,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5946,7 +5964,7 @@
    "symbol": "?",
    "name": "",
    "mint": "5F1tcEyCLSNRTNuQoHv6PpCpfzGbvd267HYbGxqSjy9b",
-   "age_s": 8,
+   "age_s": 35,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -5964,7 +5982,7 @@
    "symbol": "GUAP",
    "name": "GUALA",
    "mint": "8cXQ5dw59weHDCUrV1pCryT4tAwXhdupYwfUbWdApump",
-   "age_s": 83,
+   "age_s": 110,
    "sol_in": 0.05,
    "buys": 2,
    "sells": 1,
@@ -5982,7 +6000,7 @@
    "symbol": "bottom",
    "name": "bottom",
    "mint": "EmayQh5jsiYhMGBnFDQuo7VnSVctoVQu2wXFbwbMpump",
-   "age_s": 136,
+   "age_s": 163,
    "sol_in": -2.04,
    "buys": 0,
    "sells": 5,
@@ -5995,24 +6013,6 @@
    "web": false,
    "status": "rejected: snipe: first reading 18.2 s after the create (max 10 s)",
    "why": "snipe: first reading 18.2 s after the create (max 10 s)"
-  },
-  {
-   "symbol": "USELESS",
-   "name": "USELESS COIN",
-   "mint": "EheXL1xbqTKw3aibY3ahmwKTnGZf4vUchA1ZajvQS59m",
-   "age_s": 178,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/Trencherbill77/status/2126559061412077749",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 10 more coins in 60 min",
-   "why": "serial launcher: 10 more coins in 60 min"
   }
  ],
  "strategies": [
