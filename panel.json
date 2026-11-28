@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T07:17:23Z",
+ "updated": "2026-11-28T07:17:52Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 841,
+  "flagged": 842,
   "checked": 49,
   "filtered": 1,
-  "lines": 2088,
+  "lines": 2090,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "NVIDIA",
-   "why": "snipe",
-   "t": "2026-11-28T07:08:14Z"
-  },
   {
    "coin": "AIR",
    "why": "snipe",
@@ -70,6 +65,11 @@
    "coin": "Catfood",
    "why": "snipe",
    "t": "2026-11-28T07:16:45Z"
+  },
+  {
+   "coin": "RECRUIT",
+   "why": "snipe",
+   "t": "2026-11-28T07:17:50Z"
   }
  ],
  "curve": [
@@ -4217,24 +4217,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:56:08Z",
-   "time": "06:56:08",
-   "agent": "SCANNER",
-   "coin": "ALEAST",
-   "action": "flag",
-   "text": "snipe · first reading 2.3 s after the create · 0.0 SOL in · +0% since the create · mcap 29 SOL",
-   "n": 1889
-  },
-  {
-   "t": "2026-11-28T05:56:30Z",
-   "time": "06:56:30",
-   "agent": "SCANNER",
-   "coin": "AIR",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 8.227e+04 is not 30 + real SOL 0 (off +8.224e+04 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · not traded · 407 odd readings from 186 coins tonight",
-   "n": 1890
-  },
-  {
    "t": "2026-11-28T05:56:46Z",
    "time": "06:56:46",
    "agent": "SCANNER",
@@ -6015,6 +5997,24 @@
    "action": "flag",
    "text": "snipe · first reading 5.0 s after the create · 0.1 SOL in · +1% since the create · mcap 28 SOL",
    "n": 2088
+  },
+  {
+   "t": "2026-11-28T07:17:33Z",
+   "time": "08:17:33",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 1.4 a minute · 0 watched · 5 rejected (snipe not bought: only to size 4, serial launcher 1)",
+   "n": 2089
+  },
+  {
+   "t": "2026-11-28T07:17:50Z",
+   "time": "08:17:50",
+   "agent": "SCANNER",
+   "coin": "RECRUIT",
+   "action": "flag",
+   "text": "snipe · first reading 2.2 s after the create · 14.7 SOL in · +110% since the create · mcap 70 SOL",
+   "n": 2090
   }
  ],
  "nights": [
@@ -6087,7 +6087,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 18 watched · ws off · odd curve readings 550 (221 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 19 watched · ws off · odd curve readings 550 (221 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6095,24 +6095,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 577,
-    "last_event_age_s": 33.3,
+    "events": 578,
+    "last_event_age_s": 3.4,
     "errors": 11,
     "last_error": "silent for 90 s · reconnecting"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 5898,
-    "last_event_age_s": 1.1,
+    "events": 5912,
+    "last_event_age_s": 1.2,
     "errors": 419,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 421,
-    "last_event_age_s": 33.1,
+    "events": 422,
+    "last_event_age_s": 3.1,
     "errors": 24,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6125,7 +6125,7 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 1.4,
+  "creates_per_min": 1.6,
   "watching": 0,
   "followed": 5,
   "odd_readings": 550,
@@ -6176,30 +6176,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 10402,
+   "sent": 10433,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 10402,
+   "sent": 10433,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "RECRUIT",
+   "name": "RECRUIT",
+   "mint": "GhgALX7p6wNbxBsyrWiyN4UEw4mddux85fSzLdpJpump",
+   "age_s": 3,
+   "sol_in": 14.69,
+   "buys": 1,
+   "sells": 0,
+   "rise_pct": 109.9,
+   "mcap_sol": 69.8,
+   "dev_pct": 8.9,
+   "big_sell": 0.0,
+   "x": "https://x.com/recruitonpumpf?s=11",
+   "tg": false,
+   "web": false,
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "$PANDA",
    "name": "PandaCoin",
    "mint": "9cSWsAngBoPVXEFt4vDTwVopMg1X6iYS9Mtq5uS9pump",
-   "age_s": 33,
-   "sol_in": 0.01,
+   "age_s": 62,
+   "sol_in": -0.1,
    "buys": 1,
-   "sells": 0,
-   "rise_pct": 0.1,
-   "mcap_sol": 28.2,
+   "sells": 2,
+   "rise_pct": -0.7,
+   "mcap_sol": 28.0,
    "dev_pct": 0.4,
-   "big_sell": 0.0,
+   "big_sell": 0.1,
    "x": false,
    "tg": false,
    "web": false,
@@ -6210,14 +6228,14 @@
    "symbol": "Catfood",
    "name": "Cat Fat Coin",
    "mint": "7zRSjoiqTUJwvbiagRA2sHDTPocWT6hQojjcJ8TNpump",
-   "age_s": 42,
-   "sol_in": 0.2,
-   "buys": 5,
-   "sells": 2,
-   "rise_pct": 1.3,
+   "age_s": 71,
+   "sol_in": 0.18,
+   "buys": 7,
+   "sells": 4,
+   "rise_pct": 1.2,
    "mcap_sol": 28.4,
    "dev_pct": 0.1,
-   "big_sell": 0.01,
+   "big_sell": 0.02,
    "x": "https://x.com/ThorfinnOnChain/status/2122663984562057378",
    "tg": false,
    "web": "https://www.odditycentral.com/animals/zoo-tries-to-make-obese-leopard-lose-weight-fails.html",
@@ -6228,7 +6246,7 @@
    "symbol": "POLEDOG",
    "name": "Pole Dog",
    "mint": "45XHPTp3N4W32XJwXqe4mm6BQsZa9rtWd5L78ywNpump",
-   "age_s": 89,
+   "age_s": 118,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6246,35 +6264,17 @@
    "symbol": "pptsk",
    "name": "pepetusk",
    "mint": "EQ1THqGy4nr4vs3XRZ4dZ6DdGgtWs5i5iogsgAcmpump",
-   "age_s": 108,
-   "sol_in": 0.04,
+   "age_s": 137,
+   "sol_in": 0.03,
    "buys": 4,
-   "sells": 1,
-   "rise_pct": 0.3,
+   "sells": 2,
+   "rise_pct": 0.2,
    "mcap_sol": 28.2,
    "dev_pct": 0.4,
    "big_sell": 0.35,
    "x": "https://x.com/LunchBackin5/status/2126564232774771039?a=MyZayj1DZa22xDbXDRo&s=20",
    "tg": false,
    "web": false,
-   "status": "rejected: snipe not bought: only $4.78 to size",
-   "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "FIRSTBLOCK",
-   "name": "FIRSTBLOCK",
-   "mint": "BeBzufWqZ1dtjq8DhB2VVJoNhyuxMUoAy3rDAHCapump",
-   "age_s": 165,
-   "sol_in": -0.78,
-   "buys": 8,
-   "sells": 12,
-   "rise_pct": -5.0,
-   "mcap_sol": 28.2,
-   "dev_pct": 3.1,
-   "big_sell": 1.69,
-   "x": "https://x.com/FirstBlockHQ/status/2126575127789797513",
-   "tg": false,
-   "web": "https://firstblock.hair/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
   }
