@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T06:44:07Z",
+ "updated": "2026-11-28T06:44:40Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,10 +21,10 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 806,
+  "flagged": 807,
   "checked": 49,
   "filtered": 1,
-  "lines": 1996,
+  "lines": 1998,
   "last_rug": {
    "coin": "PVE",
    "pass": true
@@ -47,11 +47,6 @@
    "t": "2026-11-28T06:36:15Z"
   },
   {
-   "coin": "Artcoin",
-   "why": "snipe",
-   "t": "2026-11-28T06:36:25Z"
-  },
-  {
    "coin": "SPSC",
    "why": "snipe",
    "t": "2026-11-28T06:36:25Z"
@@ -70,6 +65,11 @@
    "coin": "SLOP",
    "why": "snipe",
    "t": "2026-11-28T06:42:19Z"
+  },
+  {
+   "coin": "Artcoin",
+   "why": "snipe",
+   "t": "2026-11-28T06:44:07Z"
   }
  ],
  "curve": [
@@ -4085,24 +4085,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T05:11:19Z",
-   "time": "06:11:19",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 4.2 a minute · 3 watched · 10 rejected (serial launcher 7, snipe not bought: only to size 3) · closest GAYJEN: no curve reading yet",
-   "n": 1797
-  },
-  {
-   "t": "2026-11-28T05:11:53Z",
-   "time": "06:11:53",
-   "agent": "SCANNER",
-   "coin": "Fumb",
-   "action": "flag",
-   "text": "snipe · first reading 8.5 s after the create · 0.0 SOL in · +0% since the create · mcap 28 SOL",
-   "n": 1798
-  },
-  {
    "t": "2026-11-28T05:12:20Z",
    "time": "06:12:20",
    "agent": "SCANNER",
@@ -5883,6 +5865,24 @@
    "action": "scan",
    "text": "new pairs · 3.0 a minute · 0 watched · 9 rejected (serial launcher 6, snipe not bought: only to size 2, no symbol or name 1)",
    "n": 1996
+  },
+  {
+   "t": "2026-11-28T06:44:07Z",
+   "time": "07:44:07",
+   "agent": "SCANNER",
+   "coin": "Artcoin",
+   "action": "flag",
+   "text": "snipe · first reading 9.6 s after the create · 9.7 SOL in · +67% since the create · mcap 56 SOL",
+   "n": 1997
+  },
+  {
+   "t": "2026-11-28T06:44:13Z",
+   "time": "07:44:13",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.6 a minute · 0 watched · 11 rejected (serial launcher 5, snipe not bought: only to size 3, snipe: first reading s after the 3)",
+   "n": 1998
   }
  ],
  "nights": [
@@ -5955,7 +5955,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 24 watched · ws off · odd curve readings 445 (203 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll failing · 20 watched · ws off · odd curve readings 445 (203 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -5963,24 +5963,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 447,
-    "last_event_age_s": 9.3,
+    "events": 448,
+    "last_event_age_s": 1.8,
     "errors": 10,
     "last_error": "ConnectionRefusedError: [Errno 111] Connection refused"
    },
    {
     "name": "curve-poll",
-    "connected": true,
-    "events": 3568,
-    "last_event_age_s": 4.9,
-    "errors": 366,
+    "connected": false,
+    "events": 3575,
+    "last_event_age_s": 18.7,
+    "errors": 368,
     "last_error": "timeout after 5 s"
    },
    {
     "name": "metadata",
     "connected": true,
     "events": 323,
-    "last_event_age_s": 9.2,
+    "last_event_age_s": 42.2,
     "errors": 20,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -5994,8 +5994,8 @@
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
   "creates_per_min": 2.6,
-  "watching": 1,
-  "followed": 12,
+  "watching": 0,
+  "followed": 8,
   "odd_readings": 445,
   "odd_coins": 203
  },
@@ -6044,13 +6044,13 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 8278,
+   "sent": 8313,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 8278,
+   "sent": 8313,
    "errors": 0,
    "last_error": null
   }
@@ -6060,25 +6060,25 @@
    "symbol": "Artcoin",
    "name": "Artcoin",
    "mint": "9BGEdPZqwG5ze8kvuHe4Vn9t1Bbu7oiK6JRGz1SVpump",
-   "age_s": 9,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 33.8,
+   "age_s": 42,
+   "sol_in": 4.11,
+   "buys": 1,
+   "sells": 2,
+   "rise_pct": 26.5,
+   "mcap_sol": 42.7,
    "dev_pct": 9.6,
-   "big_sell": 0.0,
+   "big_sell": 4.7,
    "x": "https://x.com/NJPigeon/status/2126567753305686251",
    "tg": false,
    "web": false,
-   "status": "watching",
-   "why": "no curve reading yet"
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
   },
   {
    "symbol": "ARGON",
    "name": "Argon",
    "mint": "2qdwDCVLu2sykKfdDVxS4bk4GDfZkNyqGwFaMxtDVxUz",
-   "age_s": 34,
+   "age_s": 67,
    "sol_in": -0.49,
    "buys": 0,
    "sells": 1,
@@ -6096,14 +6096,14 @@
    "symbol": "AI",
    "name": "Aura Inu",
    "mint": "8pQzTHNyTW8ZUuKyTH2W4GXsmE5dcxVRtfoKseVApump",
-   "age_s": 45,
-   "sol_in": 10.44,
-   "buys": 1,
-   "sells": 2,
-   "rise_pct": 68.7,
-   "mcap_sol": 64.0,
+   "age_s": 78,
+   "sol_in": 9.08,
+   "buys": 3,
+   "sells": 3,
+   "rise_pct": 58.7,
+   "mcap_sol": 60.2,
    "dev_pct": 15.2,
-   "big_sell": 1.77,
+   "big_sell": 3.54,
    "x": "https://x.com/herrdevs/status/2126567579971879038?a=k1bw7eXxzyEPOro2n4I&s=20",
    "tg": false,
    "web": false,
@@ -6114,7 +6114,7 @@
    "symbol": "SPSC",
    "name": "Shit Piss Skin Can",
    "mint": "8zGXXmSh78Qhur6qQP5LVU9Y2MqijGXuy7qJheQXLXxq",
-   "age_s": 47,
+   "age_s": 80,
    "sol_in": 0.06,
    "buys": 1,
    "sells": 1,
@@ -6132,7 +6132,7 @@
    "symbol": "believe",
    "name": "believe",
    "mint": "2U9aS6BNZepF9Nc6w7vQqknL2q1JkbQccTLXQw7hpump",
-   "age_s": 91,
+   "age_s": 124,
    "sol_in": -1.48,
    "buys": 0,
    "sells": 1,
@@ -6150,7 +6150,7 @@
    "symbol": "SLOP",
    "name": "slop",
    "mint": "E89P7JVL2VnArCzjXvs76SEh9jub3EDeUp95vykw5F9a",
-   "age_s": 111,
+   "age_s": 144,
    "sol_in": 0.0,
    "buys": 2,
    "sells": 1,
@@ -6168,7 +6168,7 @@
    "symbol": "fuck",
    "name": "fish + duck",
    "mint": "5Aq4uhH15yJBGPdFszfugT7ujZSpAuVCZK5BiSDpump",
-   "age_s": 111,
+   "age_s": 144,
    "sol_in": -3.16,
    "buys": 1,
    "sells": 3,
@@ -6186,7 +6186,7 @@
    "symbol": "Haven",
    "name": "Haven",
    "mint": "GL9fqipBWJX8NDBXLZR6uRho733C38CSurKU7EWxpump",
-   "age_s": 118,
+   "age_s": 151,
    "sol_in": -1.48,
    "buys": 1,
    "sells": 1,
@@ -6199,78 +6199,6 @@
    "web": "https://launchlocally.xyz/",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "NEON",
-   "name": "Neonjak",
-   "mint": "9kLUUJNWtwtPZAUAvEKfup4vQDEiZiNh8ay3uCfa1n9i",
-   "age_s": 162,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 13 more coins in 60 min",
-   "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "GEMINICHADS",
-   "name": "Gemini Chads",
-   "mint": "3Tkg3dEMxJiYfWdwR1zwo2PXuopAeNCM9UVREzDQsuXm",
-   "age_s": 167,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/elonmusk/status/2126567035308233215",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 13 more coins in 60 min",
-   "why": "serial launcher: 13 more coins in 60 min"
-  },
-  {
-   "symbol": "GEMINICHADS",
-   "name": "Gemini Chads",
-   "mint": "DwPyBxSyzWAniuafNihbhdRoacfkjFsJijdf9KpHQzMF",
-   "age_s": 169,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 2 more coins in 60 min",
-   "why": "serial launcher: 2 more coins in 60 min"
-  },
-  {
-   "symbol": "NI",
-   "name": "Neon Inu",
-   "mint": "3ELNidZstJpE4j3k6deoJom7QiALkCZqHYpF64oA5uTj",
-   "age_s": 174,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.0,
-   "dev_pct": 0.0,
-   "big_sell": 0.0,
-   "x": "https://x.com/elonmusk/status/2126567035308233215",
-   "tg": false,
-   "web": false,
-   "status": "rejected: serial launcher: 12 more coins in 60 min",
-   "why": "serial launcher: 12 more coins in 60 min"
   }
  ],
  "strategies": [
