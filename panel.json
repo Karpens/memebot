@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T09:43:51Z",
+ "updated": "2026-11-28T09:44:24Z",
  "mode": "paper",
  "start_balance": 100.0,
  "balance": 47.79,
@@ -21,21 +21,16 @@
   "start_equity": 59.14,
   "started": "2026-11-27T23:00:00Z",
   "scans": 0,
-  "flagged": 1094,
+  "flagged": 1095,
   "checked": 49,
   "filtered": 1,
-  "lines": 2546,
+  "lines": 2548,
   "last_rug": {
    "coin": "PVE",
    "pass": true
   }
  },
  "flags": [
-  {
-   "coin": "SNOWMEI",
-   "why": "snipe",
-   "t": "2026-11-28T09:35:07Z"
-  },
   {
    "coin": "BOOR",
    "why": "snipe",
@@ -70,13 +65,14 @@
    "coin": "RalphCoin",
    "why": "snipe",
    "t": "2026-11-28T09:41:44Z"
+  },
+  {
+   "coin": "MANGO",
+   "why": "snipe",
+   "t": "2026-11-28T09:44:09Z"
   }
  ],
  "curve": [
-  [
-   1795823040,
-   47.79
-  ],
   [
    1795823100,
    47.79
@@ -2472,6 +2468,10 @@
   [
    1795858980,
    47.79
+  ],
+  [
+   1795859040,
+   47.79
   ]
  ],
  "position_pct": 10.0,
@@ -4625,24 +4625,6 @@
  ],
  "log": [
   {
-   "t": "2026-11-28T08:40:09Z",
-   "time": "09:40:09",
-   "agent": "SCANNER",
-   "coin": "JHAGRA",
-   "action": "odd",
-   "text": "odd curve reading: virtual SOL 2.491e+05 is not 30 + real SOL 0 (off +2.491e+05 SOL) · no standard pump.fun curve reads so: never a price, a fill or an exit's reading · never bought: rejected for good · 634 odd readings from 241 coins tonight",
-   "n": 2347
-  },
-  {
-   "t": "2026-11-28T08:40:19Z",
-   "time": "09:40:19",
-   "agent": "SCANNER",
-   "coin": null,
-   "action": "scan",
-   "text": "new pairs · 2.4 a minute · 0 watched · 7 rejected (snipe not bought: only to size 5, odd curve reading: virtual SOL i 2)",
-   "n": 2348
-  },
-  {
    "t": "2026-11-28T08:40:40Z",
    "time": "09:40:40",
    "agent": "SCANNER",
@@ -6423,6 +6405,24 @@
    "action": "scan",
    "text": "new pairs · 2.0 a minute · 0 watched · 7 rejected (snipe not bought: only to size 3, serial launcher 2, mayhem mode 2)",
    "n": 2546
+  },
+  {
+   "t": "2026-11-28T09:43:53Z",
+   "time": "10:43:53",
+   "agent": "SCANNER",
+   "coin": null,
+   "action": "scan",
+   "text": "new pairs · 2.0 a minute · 0 watched · 7 rejected (serial launcher 3, snipe not bought: only to size 2, mayhem mode 2)",
+   "n": 2547
+  },
+  {
+   "t": "2026-11-28T09:44:09Z",
+   "time": "10:44:09",
+   "agent": "SCANNER",
+   "coin": "MANGO",
+   "action": "flag",
+   "text": "snipe · first reading 0.8 s after the create · 6.0 SOL in · +44% since the create · mcap 40 SOL",
+   "n": 2548
   }
  ],
  "nights": [
@@ -6495,7 +6495,7 @@
   "tick_sec": 1,
   "scan_sec": 5,
   "gt_sec": 20,
-  "feed": "pumpportal live · curve poll 1 s · 27 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
+  "feed": "pumpportal live · curve poll 1 s · 28 watched · ws off · odd curve readings 655 (251 coins, never a price) · live 1s",
   "last_scan_ms": null,
   "watch_ms": 0,
   "scans_per_min": 0,
@@ -6503,24 +6503,24 @@
    {
     "name": "pumpportal",
     "connected": true,
-    "events": 1164,
-    "last_event_age_s": 5.3,
+    "events": 1165,
+    "last_event_age_s": 15.5,
     "errors": 18,
     "last_error": "InvalidStatus: server rejected WebSocket connection: HTTP 502"
    },
    {
     "name": "curve-poll",
     "connected": true,
-    "events": 22891,
-    "last_event_age_s": 2.4,
+    "events": 22989,
+    "last_event_age_s": 0.7,
     "errors": 433,
     "last_error": "HTTP 429 · paused 10 s"
    },
    {
     "name": "metadata",
     "connected": true,
-    "events": 832,
-    "last_event_age_s": 5.3,
+    "events": 833,
+    "last_event_age_s": 15.5,
     "errors": 32,
     "last_error": "ipfs.io: HTTP 403"
    }
@@ -6533,9 +6533,9 @@
   "exit_ms": 122.5,
   "exit_last_ms": 113,
   "launch_to_entry_s": 0.0,
-  "creates_per_min": 2.0,
+  "creates_per_min": 2.2,
   "watching": 0,
-  "followed": 5,
+  "followed": 6,
   "odd_readings": 655,
   "odd_coins": 251
  },
@@ -6584,30 +6584,48 @@
  "live_stats": {
   "broker.hivemq.com": {
    "connected": true,
-   "sent": 19754,
+   "sent": 19790,
    "errors": 0,
    "last_error": null
   },
   "broker.emqx.io": {
    "connected": true,
-   "sent": 19754,
+   "sent": 19790,
    "errors": 0,
    "last_error": null
   }
  },
  "watch": [
   {
+   "symbol": "MANGO",
+   "name": "Mango",
+   "mint": "7v875gFBMknoLZmtW1TpaKdnrZdn1vWft7HVR9ZWvxjM",
+   "age_s": 15,
+   "sol_in": 4.63,
+   "buys": 4,
+   "sells": 7,
+   "rise_pct": 33.2,
+   "mcap_sol": 37.3,
+   "dev_pct": 0.0,
+   "big_sell": 1.23,
+   "x": false,
+   "tg": false,
+   "web": "https://smoothie.exchange/",
+   "status": "rejected: snipe not bought: only $4.78 to size",
+   "why": "snipe not bought: only $4.78 to size"
+  },
+  {
    "symbol": "Monacoin",
    "name": "Monacoin",
    "mint": "HNLm2avPb3z9DBrCLq2txGFoqWoZAtM1axFKQyALpump",
-   "age_s": 5,
-   "sol_in": 11.19,
-   "buys": 2,
-   "sells": 0,
-   "rise_pct": 78.9,
-   "mcap_sol": 61.1,
+   "age_s": 38,
+   "sol_in": 7.09,
+   "buys": 13,
+   "sells": 13,
+   "rise_pct": 47.3,
+   "mcap_sol": 50.3,
    "dev_pct": 10.2,
-   "big_sell": 0.0,
+   "big_sell": 1.92,
    "x": "https://x.com/ZzzzzSol/status/2126613002145194217",
    "tg": false,
    "web": "https://github.com/monacoinproject/monacoin",
@@ -6618,7 +6636,7 @@
    "symbol": "ilm",
    "name": "illuminati",
    "mint": "4rtAMB815Cvej3oon7eJuoDQuRaEB8BUth75JjTvpump",
-   "age_s": 75,
+   "age_s": 108,
    "sol_in": 0.0,
    "buys": 0,
    "sells": 0,
@@ -6636,12 +6654,12 @@
    "symbol": "Neema",
    "name": "Neema The Giraffe",
    "mint": "E8EnTz4JJZN6kZHM3KDAbw7tRYMUsHf3i4CNNXrehCiW",
-   "age_s": 79,
-   "sol_in": 12.85,
-   "buys": 25,
-   "sells": 21,
-   "rise_pct": 87.1,
-   "mcap_sol": 70.9,
+   "age_s": 112,
+   "sol_in": 9.25,
+   "buys": 27,
+   "sells": 25,
+   "rise_pct": 60.0,
+   "mcap_sol": 60.7,
    "dev_pct": 15.2,
    "big_sell": 2.6,
    "x": "https://x.com/MarioPrezldente/status/2126612692198899730",
@@ -6654,7 +6672,7 @@
    "symbol": "Ralph",
    "name": "RalphCoin",
    "mint": "AJR36iNQqzzYtWGJZfEBCc4AFnFjDcSvWhq1QxPQTEfu",
-   "age_s": 116,
+   "age_s": 149,
    "sol_in": -0.53,
    "buys": 13,
    "sells": 17,
@@ -6672,12 +6690,12 @@
    "symbol": "RalphCoin",
    "name": "RalphCoin",
    "mint": "FTqZyadGqF8K74Lbfgjj3GVQTjrUwLCDkh52f1q3pump",
-   "age_s": 127,
-   "sol_in": 20.5,
-   "buys": 54,
-   "sells": 57,
-   "rise_pct": 160.7,
-   "mcap_sol": 90.1,
+   "age_s": 160,
+   "sol_in": 20.96,
+   "buys": 64,
+   "sells": 68,
+   "rise_pct": 165.2,
+   "mcap_sol": 91.7,
    "dev_pct": 10.8,
    "big_sell": 5.13,
    "x": "https://x.com/RalphCoinOnSol/status/2126612395128656106?a=PYiUCKL9n2dYJ729nno&s=20",
@@ -6690,12 +6708,12 @@
    "symbol": "BEANOS",
    "name": "Beanos",
    "mint": "85qY5aXoWTQHAEjv2JPjeTJNzfAjVsdUAoS4TEGrpump",
-   "age_s": 140,
-   "sol_in": 0.79,
-   "buys": 6,
-   "sells": 26,
-   "rise_pct": 5.2,
-   "mcap_sol": 31.4,
+   "age_s": 173,
+   "sol_in": 1.11,
+   "buys": 7,
+   "sells": 27,
+   "rise_pct": 7.3,
+   "mcap_sol": 32.0,
    "dev_pct": 3.4,
    "big_sell": 2.62,
    "x": "https://x.com/BeanosOnPF_/status/2126612387101049317",
@@ -6703,24 +6721,6 @@
    "web": "https://x.com/BeanosOnPF_",
    "status": "rejected: snipe not bought: only $4.78 to size",
    "why": "snipe not bought: only $4.78 to size"
-  },
-  {
-   "symbol": "ilm",
-   "name": "illuminati",
-   "mint": "DtrqkzPHD9bJLPGA5qY71GsikdB9uNzD4TJwL6aKpump",
-   "age_s": 171,
-   "sol_in": 0.0,
-   "buys": 0,
-   "sells": 0,
-   "rise_pct": 0.0,
-   "mcap_sol": 28.1,
-   "dev_pct": 0.2,
-   "big_sell": 0.0,
-   "x": false,
-   "tg": false,
-   "web": false,
-   "status": "rejected: mayhem mode",
-   "why": "mayhem mode"
   }
  ],
  "strategies": [
